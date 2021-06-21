@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package performance.autoscaling.v1alpha1;
+
+option csharp_namespace = "Performance.Autoscaling.V1Alpha1";
+option go_package = "github.com/performance-grpc-sdk/autoscalingv1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "AutoscalingProto";
+option java_package = "io.cuemby.performance.autoscaling.v1alpha1";
+option objc_class_prefix = "PFX";
+option php_namespace = "Performance\\Autoscaling\\V1Alpha1";
+
+// Metadata ...
+message Metadata {
+    string name = 1;
+    string namespace = 2;
+    map<string, string> labels = 3;
+    map<string, string> annotations = 4;
+}
+
+// AutoScalingSpecTarget ...
+message AutoScalingSpecTarget {
+    string api_version = 1;
+    string kind = 2;
+    string name = 3;
+    string container = 4;
+
+}
+
+// AutoscalingSpecRule ... 
+message AutoscalingSpecRule {
+    string metric = 1;
+    string value = 2;
+    string type = 3;
+    map<string, string> metadata = 4;
+}
+
+// AutoscalingSpec ...
+message AutoscalingSpec {
+    AutoScalingSpecTarget target_ref = 1;
+    int32 min = 2;
+    int32 max = 3;
+    int32 polling_interval = 4;
+    int32 cooldown_period = 5;
+    repeated AutoscalingSpecRule rules = 6;
+
+}
+
+// Autoscaling ...
+message Autoscaling {
+    Metadata metadata = 1;
+    AutoscalingSpec spec = 2;
+}
+

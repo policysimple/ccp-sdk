@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package performance.autoscaling.v1alpha1;
+
+option csharp_namespace = "Performance.Autoscaling.V1Alpha1";
+option go_package = "github.com/performance-grpc-sdk/autoscalingv1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "AutoscalingApiProto";
+option java_package = "io.cuemby.performance.autoscaling.v1alpha1";
+option objc_class_prefix = "PFX";
+option php_namespace = "Performance\\Autoscaling\\V1Alpha1";
+
+import "performance/autoscaling/v1alpha1/autoscaling.proto";
+
+
+service AutoscalingAPIService{
+    rpc CreateAutoscaling(CreateAutoscalingRequest) returns (CreateAutoscalingResponse) {};
+    rpc UpdateAutoscaling(UpdateAutoscalingRequest) returns (UpdateAutoscalingResponse) {};
+    rpc DeleteAutoscaling(DeleteAutoscalingRequest) returns (DeleteAutoscalingResponse) {};
+    rpc GetAutoscaling(GetAutoscalingRequest) returns (GetAutoscalingResponse) {};
+    rpc ListAutoscaling(ListAutoscalingRequest) returns (ListAutoscalingResponse) {};
+}
+
+
+
+message CreateAutoscalingRequest {
+    performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
+}
+
+message CreateAutoscalingResponse {
+    performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
+    string status = 2;
+}
+
+message UpdateAutoscalingRequest {
+    performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
+}
+
+message UpdateAutoscalingResponse {
+    performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
+    string status = 2;
+}
+
+message DeleteAutoscalingRequest {
+    performance.autoscaling.v1alpha1.Metadata metadata = 1;
+}
+
+message DeleteAutoscalingResponse {
+    performance.autoscaling.v1alpha1.Metadata metadata = 1;
+    string status = 2;
+}
+
+message GetAutoscalingRequest {
+    performance.autoscaling.v1alpha1.Metadata metadata = 1;
+}
+
+message GetAutoscalingResponse {
+    performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
+    string status = 2;
+}
+
+message ListAutoscalingRequest {
+    performance.autoscaling.v1alpha1.Metadata metadata = 1;
+}
+
+message ListAutoscalingResponse {
+    repeated performance.autoscaling.v1alpha1.Autoscaling autoscalings = 1;
+}

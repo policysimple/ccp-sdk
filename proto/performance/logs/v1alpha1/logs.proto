@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package performance.logs.v1alpha1;
+
+option csharp_namespace = "Performance.Logs.V1Alpha1";
+option go_package = "github.com/performance-grpc-sdk/logsv1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "LogsProto";
+option java_package = "io.cuemby.performance.logs.v1alpha1";
+option objc_class_prefix = "PFX";
+option php_namespace = "Performance\\Logs\\V1Alpha1";
+
+// LogItem ...
+message LogItem {
+    string date = 1;
+    string container = 2;
+    string pod_name = 3;
+    string namespace = 4;
+    string message =5;
+}

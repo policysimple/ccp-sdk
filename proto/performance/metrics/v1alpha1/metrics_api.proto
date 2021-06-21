@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package performance.metrics.v1alpha1;
+
+option csharp_namespace = "Performance.Metrics.V1Alpha1";
+option go_package = "github.com/performance-grpc-sdk/metricsv1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "MetricsApiProto";
+option java_package = "io.cuemby.performance.metrics.v1alpha1";
+option objc_class_prefix = "PFX";
+option php_namespace = "Performance\\Metrics\\V1Alpha1";
+
+import "performance/metrics/v1alpha1/metrics.proto";
+
+
+service MetricsAPIService{
+    rpc GetMetrics(GetMetricsRequest) returns (GetMetricsResponse) {};
+}
+
+enum MetricsInterval {
+    METRICS_INTERVAL_UNSPECIFIED = 0;
+    METRICS_INTERVAL_1_MUNITE = 1;
+    METRICS_INTERVAL_5_MUNITES = 2;
+    METRICS_INTERVAL_15_MUNITES = 3;
+    METRICS_INTERVAL_30_MUNITES = 4;
+    METRICS_INTERVAL_1_HOUR = 5;
+    METRICS_INTERVAL_12_HOURS = 6;
+    METRICS_INTERVAL_1_DAY = 7;
+    METRICS_INTERVAL_1_WEEK = 8;
+}
+
+message Range {
+    string date_from = 1;
+    string date_to = 2;
+    string timezone = 3;
+}
+
+message GetMetricsRequest {
+    map<string, string> labels = 1;
+    repeated string containers = 2;
+    MetricsInterval interval =3;
+    Range range =4;
+
+    
+}
+
+message GetMetricsResponse {
+    repeated performance.metrics.v1alpha1.MetricItem memory = 1;
+    repeated performance.metrics.v1alpha1.MetricItem cpu = 2;
+}

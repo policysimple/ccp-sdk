@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package performance.metrics.v1alpha1;
+
+option csharp_namespace = "Performance.Metrics.V1Alpha1";
+option go_package = "github.com/performance-grpc-sdk/metricsv1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "MetricsProto";
+option java_package = "io.cuemby.performance.metrics.v1alpha1";
+option objc_class_prefix = "PFX";
+option php_namespace = "Performance\\Metrics\\V1Alpha1";
+
+// MetricItem ...
+message MetricItem {
+    string date = 1;
+    string container = 2;
+    string resource = 3;
+    double value = 4;
+}

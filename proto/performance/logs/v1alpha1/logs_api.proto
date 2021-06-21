@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package performance.logs.v1alpha1;
+
+option csharp_namespace = "Performance.Logs.V1Alpha1";
+option go_package = "github.com/performance-grpc-sdk/logsv1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "LogsApiProto";
+option java_package = "io.cuemby.performance.logs.v1alpha1";
+option objc_class_prefix = "PFX";
+option php_namespace = "Performance\\Logs\\V1Alpha1";
+
+import "performance/logs/v1alpha1/logs.proto";
+
+
+service LogsAPIService{
+    rpc GetLogs(GetLogsRequest) returns (GetLogsResponse) {};
+}
+
+
+
+message Range {
+    string date_from = 1;
+    string date_to = 2;
+    string timezone = 3;
+}
+
+message GetLogsRequest {
+    map<string, string> labels = 1;
+    repeated string containers = 2;
+    Range range =3;
+    int32 size = 4;
+    string next_page_id = 5;
+
+    
+}
+
+message GetLogsResponse {
+    repeated performance.logs.v1alpha1.LogItem logs = 1;
+    string next_page_id = 2;
+}
