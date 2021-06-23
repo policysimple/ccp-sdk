@@ -1,3 +1,3 @@
-module github.com/cuembyio/performance-sdk
+module github.com/cuemby/ccp-sdk
 
 go 1.16
