@@ -43,7 +43,7 @@ class GetAutoscalingResponse extends \Google\Protobuf\Internal\Message
      */
     public function getAutoscaling()
     {
-        return isset($this->autoscaling) ? $this->autoscaling : null;
+        return $this->autoscaling;
     }
 
     public function hasAutoscaling()

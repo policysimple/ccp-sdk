@@ -45,7 +45,7 @@ class Autoscaling extends \Google\Protobuf\Internal\Message
      */
     public function getMetadata()
     {
-        return isset($this->metadata) ? $this->metadata : null;
+        return $this->metadata;
     }
 
     public function hasMetadata()
@@ -77,7 +77,7 @@ class Autoscaling extends \Google\Protobuf\Internal\Message
      */
     public function getSpec()
     {
-        return isset($this->spec) ? $this->spec : null;
+        return $this->spec;
     }
 
     public function hasSpec()

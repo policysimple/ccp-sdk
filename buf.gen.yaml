@@ -9,6 +9,9 @@ plugins:
     out: gen/python
   - name: php
     out: gen/php
+  - name: js
+    out: gen/js
+    opt: import_style=commonjs,binary
 
   - name: go-grpc
     out: gen/go
@@ -19,3 +22,6 @@ plugins:
   - name: grpc_php
     path: grpc_php_plugin
     out: gen/php
+  - name: grpc_node_plugin
+    path: grpc_node_plugin
+    out: gen/js

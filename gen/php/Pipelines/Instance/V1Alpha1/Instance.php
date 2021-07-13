@@ -121,7 +121,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      */
     public function getGitProvider()
     {
-        return isset($this->git_provider) ? $this->git_provider : null;
+        return $this->git_provider;
     }
 
     public function hasGitProvider()

@@ -65,7 +65,7 @@ class AutoscalingSpec extends \Google\Protobuf\Internal\Message
      */
     public function getTargetRef()
     {
-        return isset($this->target_ref) ? $this->target_ref : null;
+        return $this->target_ref;
     }
 
     public function hasTargetRef()
