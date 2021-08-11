@@ -285,7 +285,8 @@ proto.pipelines.instance.v1alpha1.Instance.toObject = function(includeInstance, 
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
     typeSource: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    gitProvider: (f = msg.getGitProvider()) && proto.pipelines.instance.v1alpha1.TypeGitProvider.toObject(includeInstance, f)
+    gitProvider: (f = msg.getGitProvider()) && proto.pipelines.instance.v1alpha1.TypeGitProvider.toObject(includeInstance, f),
+    envVariablesMap: (f = msg.getEnvVariablesMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -338,6 +339,12 @@ proto.pipelines.instance.v1alpha1.Instance.deserializeBinaryFromReader = functio
       var value = new proto.pipelines.instance.v1alpha1.TypeGitProvider;
       reader.readMessage(value,proto.pipelines.instance.v1alpha1.TypeGitProvider.deserializeBinaryFromReader);
       msg.setGitProvider(value);
+      break;
+    case 5:
+      var value = msg.getEnvVariablesMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
       break;
     default:
       reader.skipField();
@@ -396,6 +403,10 @@ proto.pipelines.instance.v1alpha1.Instance.serializeBinaryToWriter = function(me
       f,
       proto.pipelines.instance.v1alpha1.TypeGitProvider.serializeBinaryToWriter
     );
+  }
+  f = message.getEnvVariablesMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -489,6 +500,28 @@ proto.pipelines.instance.v1alpha1.Instance.prototype.clearGitProvider = function
 proto.pipelines.instance.v1alpha1.Instance.prototype.hasGitProvider = function() {
   return jspb.Message.getField(this, 4) != null;
 };
+
+
+/**
+ * map<string, string> env_variables = 5;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.pipelines.instance.v1alpha1.Instance.prototype.getEnvVariablesMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.pipelines.instance.v1alpha1.Instance} returns this
+ */
+proto.pipelines.instance.v1alpha1.Instance.prototype.clearEnvVariablesMap = function() {
+  this.getEnvVariablesMap().clear();
+  return this;};
 
 
 /**

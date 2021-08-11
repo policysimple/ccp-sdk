@@ -29,4 +29,5 @@ message Instance {
   string namespace = 2;
   InstanceType type_source = 3;
   TypeGitProvider git_provider = 4;
+  map<string, string> env_variables = 5;
 }

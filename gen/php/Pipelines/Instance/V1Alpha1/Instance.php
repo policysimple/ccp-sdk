@@ -31,6 +31,10 @@ class Instance extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.pipelines.instance.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
      */
     protected $git_provider = null;
+    /**
+     * Generated from protobuf field <code>map<string, string> env_variables = 5 [json_name = "envVariables"];</code>
+     */
+    private $env_variables;
 
     /**
      * Constructor.
@@ -42,6 +46,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      *     @type string $namespace
      *     @type int $type_source
      *     @type \Pipelines\Instance\V1Alpha1\TypeGitProvider $git_provider
+     *     @type array|\Google\Protobuf\Internal\MapField $env_variables
      * }
      */
     public function __construct($data = NULL) {
@@ -143,6 +148,28 @@ class Instance extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Pipelines\Instance\V1Alpha1\TypeGitProvider::class);
         $this->git_provider = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> env_variables = 5 [json_name = "envVariables"];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getEnvVariables()
+    {
+        return $this->env_variables;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> env_variables = 5 [json_name = "envVariables"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setEnvVariables($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->env_variables = $arr;
 
         return $this;
     }
