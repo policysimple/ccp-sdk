@@ -56,4 +56,38 @@ public interface InstanceOrBuilder extends
    * <code>.pipelines.instance.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
    */
   io.cuemby.pipelines.instance.v1alpha1.TypeGitProviderOrBuilder getGitProviderOrBuilder();
+
+  /**
+   * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+   */
+  int getEnvVariablesCount();
+  /**
+   * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+   */
+  boolean containsEnvVariables(
+      java.lang.String key);
+  /**
+   * Use {@link #getEnvVariablesMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getEnvVariables();
+  /**
+   * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getEnvVariablesMap();
+  /**
+   * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+   */
+
+  java.lang.String getEnvVariablesOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+   */
+
+  java.lang.String getEnvVariablesOrThrow(
+      java.lang.String key);
 }
