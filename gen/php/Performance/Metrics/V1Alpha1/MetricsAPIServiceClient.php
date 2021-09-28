@@ -20,6 +20,7 @@ class MetricsAPIServiceClient extends \Grpc\BaseStub {
      * @param \Performance\Metrics\V1Alpha1\GetMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetMetrics(\Performance\Metrics\V1Alpha1\GetMetricsRequest $argument,
       $metadata = [], $options = []) {

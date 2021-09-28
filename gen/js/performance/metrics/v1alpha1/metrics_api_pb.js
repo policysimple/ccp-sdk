@@ -316,7 +316,9 @@ proto.performance.metrics.v1alpha1.GetMetricsRequest.toObject = function(include
     labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
     containersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     interval: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    range: (f = msg.getRange()) && proto.performance.metrics.v1alpha1.Range.toObject(includeInstance, f)
+    range: (f = msg.getRange()) && proto.performance.metrics.v1alpha1.Range.toObject(includeInstance, f),
+    page: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    size: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -372,6 +374,14 @@ proto.performance.metrics.v1alpha1.GetMetricsRequest.deserializeBinaryFromReader
       reader.readMessage(value,proto.performance.metrics.v1alpha1.Range.deserializeBinaryFromReader);
       msg.setRange(value);
       break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPage(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSize(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -425,6 +435,20 @@ proto.performance.metrics.v1alpha1.GetMetricsRequest.serializeBinaryToWriter = f
       4,
       f,
       proto.performance.metrics.v1alpha1.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getPage();
+  if (f !== 0) {
+    writer.writeInt32(
+      5,
+      f
+    );
+  }
+  f = message.getSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      6,
+      f
     );
   }
 };
@@ -541,6 +565,42 @@ proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.clearRange = func
  */
 proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.hasRange = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional int32 page = 5;
+ * @return {number}
+ */
+proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.getPage = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.performance.metrics.v1alpha1.GetMetricsRequest} returns this
+ */
+proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.setPage = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional int32 size = 6;
+ * @return {number}
+ */
+proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.getSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.performance.metrics.v1alpha1.GetMetricsRequest} returns this
+ */
+proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.setSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 

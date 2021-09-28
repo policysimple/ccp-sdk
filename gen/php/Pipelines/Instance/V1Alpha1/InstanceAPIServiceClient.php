@@ -20,6 +20,7 @@ class InstanceAPIServiceClient extends \Grpc\BaseStub {
      * @param \Pipelines\Instance\V1Alpha1\CreateInstanceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function CreateInstance(\Pipelines\Instance\V1Alpha1\CreateInstanceRequest $argument,
       $metadata = [], $options = []) {

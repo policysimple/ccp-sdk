@@ -20,6 +20,7 @@ class EnvinromentAPIServiceClient extends \Grpc\BaseStub {
      * @param \Pipelines\Environment\V1Alpha1\CreateEnvironmentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function CreateEnvironment(\Pipelines\Environment\V1Alpha1\CreateEnvironmentRequest $argument,
       $metadata = [], $options = []) {

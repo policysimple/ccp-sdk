@@ -40,8 +40,8 @@ message GetMetricsRequest {
     repeated string containers = 2;
     MetricsInterval interval =3;
     Range range =4;
-
-    
+    int32 page = 5;
+    int32 size = 6;
 }
 
 message GetMetricsResponse {

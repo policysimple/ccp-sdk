@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n&io.cuemby.performance.metrics.v1alpha1B\017MetricsApiProtoP\001Z/github.com/performance-grpc-sdk/metricsv1alpha1\242\002\003PFX\252\002\034Performance.Metrics.V1Alpha1\312\002\034Performance\\Metrics\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n.performance/metrics/v1alpha1/metrics_api.proto\x12\x1cperformance.metrics.v1alpha1\x1a*performance/metrics/v1alpha1/metrics.proto\"Y\n\x05Range\x12\x1b\n\tdate_from\x18\x01 \x01(\tR\x08\x64\x61teFrom\x12\x17\n\x07\x64\x61te_to\x18\x02 \x01(\tR\x06\x64\x61teTo\x12\x1a\n\x08timezone\x18\x03 \x01(\tR\x08timezone\"\xc9\x02\n\x11GetMetricsRequest\x12S\n\x06labels\x18\x01 \x03(\x0b\x32;.performance.metrics.v1alpha1.GetMetricsRequest.LabelsEntryR\x06labels\x12\x1e\n\ncontainers\x18\x02 \x03(\tR\ncontainers\x12I\n\x08interval\x18\x03 \x01(\x0e\x32-.performance.metrics.v1alpha1.MetricsIntervalR\x08interval\x12\x39\n\x05range\x18\x04 \x01(\x0b\x32#.performance.metrics.v1alpha1.RangeR\x05range\x1a\x39\n\x0bLabelsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x92\x01\n\x12GetMetricsResponse\x12@\n\x06memory\x18\x01 \x03(\x0b\x32(.performance.metrics.v1alpha1.MetricItemR\x06memory\x12:\n\x03\x63pu\x18\x02 \x03(\x0b\x32(.performance.metrics.v1alpha1.MetricItemR\x03\x63pu*\xa9\x02\n\x0fMetricsInterval\x12 \n\x1cMETRICS_INTERVAL_UNSPECIFIED\x10\x00\x12\x1d\n\x19METRICS_INTERVAL_1_MUNITE\x10\x01\x12\x1e\n\x1aMETRICS_INTERVAL_5_MUNITES\x10\x02\x12\x1f\n\x1bMETRICS_INTERVAL_15_MUNITES\x10\x03\x12\x1f\n\x1bMETRICS_INTERVAL_30_MUNITES\x10\x04\x12\x1b\n\x17METRICS_INTERVAL_1_HOUR\x10\x05\x12\x1d\n\x19METRICS_INTERVAL_12_HOURS\x10\x06\x12\x1a\n\x16METRICS_INTERVAL_1_DAY\x10\x07\x12\x1b\n\x17METRICS_INTERVAL_1_WEEK\x10\x08\x32\x86\x01\n\x11MetricsAPIService\x12q\n\nGetMetrics\x12/.performance.metrics.v1alpha1.GetMetricsRequest\x1a\x30.performance.metrics.v1alpha1.GetMetricsResponse\"\x00\x42\xb0\x01\n&io.cuemby.performance.metrics.v1alpha1B\x0fMetricsApiProtoP\x01Z/github.com/performance-grpc-sdk/metricsv1alpha1\xa2\x02\x03PFX\xaa\x02\x1cPerformance.Metrics.V1Alpha1\xca\x02\x1cPerformance\\Metrics\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n.performance/metrics/v1alpha1/metrics_api.proto\x12\x1cperformance.metrics.v1alpha1\x1a*performance/metrics/v1alpha1/metrics.proto\"Y\n\x05Range\x12\x1b\n\tdate_from\x18\x01 \x01(\tR\x08\x64\x61teFrom\x12\x17\n\x07\x64\x61te_to\x18\x02 \x01(\tR\x06\x64\x61teTo\x12\x1a\n\x08timezone\x18\x03 \x01(\tR\x08timezone\"\xf1\x02\n\x11GetMetricsRequest\x12S\n\x06labels\x18\x01 \x03(\x0b\x32;.performance.metrics.v1alpha1.GetMetricsRequest.LabelsEntryR\x06labels\x12\x1e\n\ncontainers\x18\x02 \x03(\tR\ncontainers\x12I\n\x08interval\x18\x03 \x01(\x0e\x32-.performance.metrics.v1alpha1.MetricsIntervalR\x08interval\x12\x39\n\x05range\x18\x04 \x01(\x0b\x32#.performance.metrics.v1alpha1.RangeR\x05range\x12\x12\n\x04page\x18\x05 \x01(\x05R\x04page\x12\x12\n\x04size\x18\x06 \x01(\x05R\x04size\x1a\x39\n\x0bLabelsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x92\x01\n\x12GetMetricsResponse\x12@\n\x06memory\x18\x01 \x03(\x0b\x32(.performance.metrics.v1alpha1.MetricItemR\x06memory\x12:\n\x03\x63pu\x18\x02 \x03(\x0b\x32(.performance.metrics.v1alpha1.MetricItemR\x03\x63pu*\xa9\x02\n\x0fMetricsInterval\x12 \n\x1cMETRICS_INTERVAL_UNSPECIFIED\x10\x00\x12\x1d\n\x19METRICS_INTERVAL_1_MUNITE\x10\x01\x12\x1e\n\x1aMETRICS_INTERVAL_5_MUNITES\x10\x02\x12\x1f\n\x1bMETRICS_INTERVAL_15_MUNITES\x10\x03\x12\x1f\n\x1bMETRICS_INTERVAL_30_MUNITES\x10\x04\x12\x1b\n\x17METRICS_INTERVAL_1_HOUR\x10\x05\x12\x1d\n\x19METRICS_INTERVAL_12_HOURS\x10\x06\x12\x1a\n\x16METRICS_INTERVAL_1_DAY\x10\x07\x12\x1b\n\x17METRICS_INTERVAL_1_WEEK\x10\x08\x32\x86\x01\n\x11MetricsAPIService\x12q\n\nGetMetrics\x12/.performance.metrics.v1alpha1.GetMetricsRequest\x1a\x30.performance.metrics.v1alpha1.GetMetricsResponse\"\x00\x42\xb0\x01\n&io.cuemby.performance.metrics.v1alpha1B\x0fMetricsApiProtoP\x01Z/github.com/performance-grpc-sdk/metricsv1alpha1\xa2\x02\x03PFX\xaa\x02\x1cPerformance.Metrics.V1Alpha1\xca\x02\x1cPerformance\\Metrics\\V1Alpha1b\x06proto3'
   ,
   dependencies=[performance_dot_metrics_dot_v1alpha1_dot_metrics__pb2.DESCRIPTOR,])
 
@@ -80,8 +80,8 @@ _METRICSINTERVAL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=697,
-  serialized_end=994,
+  serialized_start=737,
+  serialized_end=1034,
 )
 _sym_db.RegisterEnumDescriptor(_METRICSINTERVAL)
 
@@ -178,8 +178,8 @@ _GETMETRICSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=488,
-  serialized_end=545,
+  serialized_start=528,
+  serialized_end=585,
 )
 
 _GETMETRICSREQUEST = _descriptor.Descriptor(
@@ -218,6 +218,20 @@ _GETMETRICSREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='range', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page', full_name='performance.metrics.v1alpha1.GetMetricsRequest.page', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='page', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='size', full_name='performance.metrics.v1alpha1.GetMetricsRequest.size', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='size', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -231,7 +245,7 @@ _GETMETRICSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=216,
-  serialized_end=545,
+  serialized_end=585,
 )
 
 
@@ -269,8 +283,8 @@ _GETMETRICSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=548,
-  serialized_end=694,
+  serialized_start=588,
+  serialized_end=734,
 )
 
 _GETMETRICSREQUEST_LABELSENTRY.containing_type = _GETMETRICSREQUEST
@@ -325,8 +339,8 @@ _METRICSAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=997,
-  serialized_end=1131,
+  serialized_start=1037,
+  serialized_end=1171,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetMetrics',

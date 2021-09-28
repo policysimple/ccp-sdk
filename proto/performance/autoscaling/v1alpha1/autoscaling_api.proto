@@ -22,7 +22,6 @@ service AutoscalingAPIService{
 }
 
 
-
 message CreateAutoscalingRequest {
     performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
 }
