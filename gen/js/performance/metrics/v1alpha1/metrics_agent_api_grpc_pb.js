@@ -31,7 +31,7 @@ function deserialize_performance_metrics_v1alpha1_SaveMetricsResponse(buffer_arg
 var MetricsAgentAPIServiceService = exports.MetricsAgentAPIServiceService = {
   saveMetrics: {
     path: '/performance.metrics.v1alpha1.MetricsAgentAPIService/SaveMetrics',
-    requestStream: false,
+    requestStream: true,
     responseStream: true,
     requestType: performance_metrics_v1alpha1_metrics_agent_api_pb.SaveMetricsRequest,
     responseType: performance_metrics_v1alpha1_metrics_agent_api_pb.SaveMetricsResponse,

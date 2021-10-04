@@ -18,7 +18,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MetricsAgentAPIServiceClient interface {
-	SaveMetrics(ctx context.Context, in *SaveMetricsRequest, opts ...grpc.CallOption) (MetricsAgentAPIService_SaveMetricsClient, error)
+	SaveMetrics(ctx context.Context, opts ...grpc.CallOption) (MetricsAgentAPIService_SaveMetricsClient, error)
 }
 
 type metricsAgentAPIServiceClient struct {
@@ -29,28 +29,27 @@ func NewMetricsAgentAPIServiceClient(cc grpc.ClientConnInterface) MetricsAgentAP
 	return &metricsAgentAPIServiceClient{cc}
 }
 
-func (c *metricsAgentAPIServiceClient) SaveMetrics(ctx context.Context, in *SaveMetricsRequest, opts ...grpc.CallOption) (MetricsAgentAPIService_SaveMetricsClient, error) {
+func (c *metricsAgentAPIServiceClient) SaveMetrics(ctx context.Context, opts ...grpc.CallOption) (MetricsAgentAPIService_SaveMetricsClient, error) {
 	stream, err := c.cc.NewStream(ctx, &MetricsAgentAPIService_ServiceDesc.Streams[0], "/performance.metrics.v1alpha1.MetricsAgentAPIService/SaveMetrics", opts...)
 	if err != nil {
 		return nil, err
 	}
 	x := &metricsAgentAPIServiceSaveMetricsClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
 	return x, nil
 }
 
 type MetricsAgentAPIService_SaveMetricsClient interface {
+	Send(*SaveMetricsRequest) error
 	Recv() (*SaveMetricsResponse, error)
 	grpc.ClientStream
 }
 
 type metricsAgentAPIServiceSaveMetricsClient struct {
 	grpc.ClientStream
+}
+
+func (x *metricsAgentAPIServiceSaveMetricsClient) Send(m *SaveMetricsRequest) error {
+	return x.ClientStream.SendMsg(m)
 }
 
 func (x *metricsAgentAPIServiceSaveMetricsClient) Recv() (*SaveMetricsResponse, error) {
@@ -65,14 +64,14 @@ func (x *metricsAgentAPIServiceSaveMetricsClient) Recv() (*SaveMetricsResponse, 
 // All implementations should embed UnimplementedMetricsAgentAPIServiceServer
 // for forward compatibility
 type MetricsAgentAPIServiceServer interface {
-	SaveMetrics(*SaveMetricsRequest, MetricsAgentAPIService_SaveMetricsServer) error
+	SaveMetrics(MetricsAgentAPIService_SaveMetricsServer) error
 }
 
 // UnimplementedMetricsAgentAPIServiceServer should be embedded to have forward compatible implementations.
 type UnimplementedMetricsAgentAPIServiceServer struct {
 }
 
-func (UnimplementedMetricsAgentAPIServiceServer) SaveMetrics(*SaveMetricsRequest, MetricsAgentAPIService_SaveMetricsServer) error {
+func (UnimplementedMetricsAgentAPIServiceServer) SaveMetrics(MetricsAgentAPIService_SaveMetricsServer) error {
 	return status.Errorf(codes.Unimplemented, "method SaveMetrics not implemented")
 }
 
@@ -88,15 +87,12 @@ func RegisterMetricsAgentAPIServiceServer(s grpc.ServiceRegistrar, srv MetricsAg
 }
 
 func _MetricsAgentAPIService_SaveMetrics_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(SaveMetricsRequest)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(MetricsAgentAPIServiceServer).SaveMetrics(m, &metricsAgentAPIServiceSaveMetricsServer{stream})
+	return srv.(MetricsAgentAPIServiceServer).SaveMetrics(&metricsAgentAPIServiceSaveMetricsServer{stream})
 }
 
 type MetricsAgentAPIService_SaveMetricsServer interface {
 	Send(*SaveMetricsResponse) error
+	Recv() (*SaveMetricsRequest, error)
 	grpc.ServerStream
 }
 
@@ -106,6 +102,14 @@ type metricsAgentAPIServiceSaveMetricsServer struct {
 
 func (x *metricsAgentAPIServiceSaveMetricsServer) Send(m *SaveMetricsResponse) error {
 	return x.ServerStream.SendMsg(m)
+}
+
+func (x *metricsAgentAPIServiceSaveMetricsServer) Recv() (*SaveMetricsRequest, error) {
+	m := new(SaveMetricsRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
 }
 
 // MetricsAgentAPIService_ServiceDesc is the grpc.ServiceDesc for MetricsAgentAPIService service.
@@ -120,6 +124,7 @@ var MetricsAgentAPIService_ServiceDesc = grpc.ServiceDesc{
 			StreamName:    "SaveMetrics",
 			Handler:       _MetricsAgentAPIService_SaveMetrics_Handler,
 			ServerStreams: true,
+			ClientStreams: true,
 		},
 	},
 	Metadata: "performance/metrics/v1alpha1/metrics_agent_api.proto",

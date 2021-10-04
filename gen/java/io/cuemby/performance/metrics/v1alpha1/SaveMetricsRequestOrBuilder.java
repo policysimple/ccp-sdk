@@ -52,4 +52,28 @@ public interface SaveMetricsRequestOrBuilder extends
 
   java.lang.String getMetaOrThrow(
       java.lang.String key);
+
+  /**
+   * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+   */
+  java.util.List<io.cuemby.performance.metrics.v1alpha1.PodMetric> 
+      getMetricsList();
+  /**
+   * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+   */
+  io.cuemby.performance.metrics.v1alpha1.PodMetric getMetrics(int index);
+  /**
+   * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+   */
+  int getMetricsCount();
+  /**
+   * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+   */
+  java.util.List<? extends io.cuemby.performance.metrics.v1alpha1.PodMetricOrBuilder> 
+      getMetricsOrBuilderList();
+  /**
+   * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+   */
+  io.cuemby.performance.metrics.v1alpha1.PodMetricOrBuilder getMetricsOrBuilder(
+      int index);
 }

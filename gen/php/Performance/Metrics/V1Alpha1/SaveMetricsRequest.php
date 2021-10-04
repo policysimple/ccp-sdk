@@ -21,6 +21,10 @@ class SaveMetricsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> meta = 2 [json_name = "meta"];</code>
      */
     private $meta;
+    /**
+     * Generated from protobuf field <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    private $metrics;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class SaveMetricsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $cluster_name
      *     @type array|\Google\Protobuf\Internal\MapField $meta
+     *     @type \Performance\Metrics\V1Alpha1\PodMetric[]|\Google\Protobuf\Internal\RepeatedField $metrics
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class SaveMetricsRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->meta = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getMetrics()
+    {
+        return $this->metrics;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     * @param \Performance\Metrics\V1Alpha1\PodMetric[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setMetrics($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Performance\Metrics\V1Alpha1\PodMetric::class);
+        $this->metrics = $arr;
 
         return $this;
     }

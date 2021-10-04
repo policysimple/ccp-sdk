@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private SaveMetricsRequest() {
     clusterName_ = "";
+    metrics_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -69,6 +70,15 @@ private static final long serialVersionUID = 0L;
                 meta__.getKey(), meta__.getValue());
             break;
           }
+          case 26: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              metrics_ = new java.util.ArrayList<io.cuemby.performance.metrics.v1alpha1.PodMetric>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            metrics_.add(
+                input.readMessage(io.cuemby.performance.metrics.v1alpha1.PodMetric.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -84,6 +94,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        metrics_ = java.util.Collections.unmodifiableList(metrics_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -232,6 +245,46 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int METRICS_FIELD_NUMBER = 3;
+  private java.util.List<io.cuemby.performance.metrics.v1alpha1.PodMetric> metrics_;
+  /**
+   * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+   */
+  @java.lang.Override
+  public java.util.List<io.cuemby.performance.metrics.v1alpha1.PodMetric> getMetricsList() {
+    return metrics_;
+  }
+  /**
+   * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends io.cuemby.performance.metrics.v1alpha1.PodMetricOrBuilder> 
+      getMetricsOrBuilderList() {
+    return metrics_;
+  }
+  /**
+   * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+   */
+  @java.lang.Override
+  public int getMetricsCount() {
+    return metrics_.size();
+  }
+  /**
+   * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.performance.metrics.v1alpha1.PodMetric getMetrics(int index) {
+    return metrics_.get(index);
+  }
+  /**
+   * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.performance.metrics.v1alpha1.PodMetricOrBuilder getMetricsOrBuilder(
+      int index) {
+    return metrics_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -255,6 +308,9 @@ private static final long serialVersionUID = 0L;
         internalGetMeta(),
         MetaDefaultEntryHolder.defaultEntry,
         2);
+    for (int i = 0; i < metrics_.size(); i++) {
+      output.writeMessage(3, metrics_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -277,6 +333,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, meta__);
     }
+    for (int i = 0; i < metrics_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, metrics_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -296,6 +356,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getClusterName())) return false;
     if (!internalGetMeta().equals(
         other.internalGetMeta())) return false;
+    if (!getMetricsList()
+        .equals(other.getMetricsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -312,6 +374,10 @@ private static final long serialVersionUID = 0L;
     if (!internalGetMeta().getMap().isEmpty()) {
       hash = (37 * hash) + META_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMeta().hashCode();
+    }
+    if (getMetricsCount() > 0) {
+      hash = (37 * hash) + METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getMetricsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -463,6 +529,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getMetricsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -471,6 +538,12 @@ private static final long serialVersionUID = 0L;
       clusterName_ = "";
 
       internalGetMutableMeta().clear();
+      if (metricsBuilder_ == null) {
+        metrics_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        metricsBuilder_.clear();
+      }
       return this;
     }
 
@@ -501,6 +574,15 @@ private static final long serialVersionUID = 0L;
       result.clusterName_ = clusterName_;
       result.meta_ = internalGetMeta();
       result.meta_.makeImmutable();
+      if (metricsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          metrics_ = java.util.Collections.unmodifiableList(metrics_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.metrics_ = metrics_;
+      } else {
+        result.metrics_ = metricsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -555,6 +637,32 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableMeta().mergeFrom(
           other.internalGetMeta());
+      if (metricsBuilder_ == null) {
+        if (!other.metrics_.isEmpty()) {
+          if (metrics_.isEmpty()) {
+            metrics_ = other.metrics_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureMetricsIsMutable();
+            metrics_.addAll(other.metrics_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.metrics_.isEmpty()) {
+          if (metricsBuilder_.isEmpty()) {
+            metricsBuilder_.dispose();
+            metricsBuilder_ = null;
+            metrics_ = other.metrics_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            metricsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getMetricsFieldBuilder() : null;
+          } else {
+            metricsBuilder_.addAllMessages(other.metrics_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -787,6 +895,246 @@ private static final long serialVersionUID = 0L;
       internalGetMutableMeta().getMutableMap()
           .putAll(values);
       return this;
+    }
+
+    private java.util.List<io.cuemby.performance.metrics.v1alpha1.PodMetric> metrics_ =
+      java.util.Collections.emptyList();
+    private void ensureMetricsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        metrics_ = new java.util.ArrayList<io.cuemby.performance.metrics.v1alpha1.PodMetric>(metrics_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.performance.metrics.v1alpha1.PodMetric, io.cuemby.performance.metrics.v1alpha1.PodMetric.Builder, io.cuemby.performance.metrics.v1alpha1.PodMetricOrBuilder> metricsBuilder_;
+
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public java.util.List<io.cuemby.performance.metrics.v1alpha1.PodMetric> getMetricsList() {
+      if (metricsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(metrics_);
+      } else {
+        return metricsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public int getMetricsCount() {
+      if (metricsBuilder_ == null) {
+        return metrics_.size();
+      } else {
+        return metricsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public io.cuemby.performance.metrics.v1alpha1.PodMetric getMetrics(int index) {
+      if (metricsBuilder_ == null) {
+        return metrics_.get(index);
+      } else {
+        return metricsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public Builder setMetrics(
+        int index, io.cuemby.performance.metrics.v1alpha1.PodMetric value) {
+      if (metricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMetricsIsMutable();
+        metrics_.set(index, value);
+        onChanged();
+      } else {
+        metricsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public Builder setMetrics(
+        int index, io.cuemby.performance.metrics.v1alpha1.PodMetric.Builder builderForValue) {
+      if (metricsBuilder_ == null) {
+        ensureMetricsIsMutable();
+        metrics_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        metricsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public Builder addMetrics(io.cuemby.performance.metrics.v1alpha1.PodMetric value) {
+      if (metricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMetricsIsMutable();
+        metrics_.add(value);
+        onChanged();
+      } else {
+        metricsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public Builder addMetrics(
+        int index, io.cuemby.performance.metrics.v1alpha1.PodMetric value) {
+      if (metricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMetricsIsMutable();
+        metrics_.add(index, value);
+        onChanged();
+      } else {
+        metricsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public Builder addMetrics(
+        io.cuemby.performance.metrics.v1alpha1.PodMetric.Builder builderForValue) {
+      if (metricsBuilder_ == null) {
+        ensureMetricsIsMutable();
+        metrics_.add(builderForValue.build());
+        onChanged();
+      } else {
+        metricsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public Builder addMetrics(
+        int index, io.cuemby.performance.metrics.v1alpha1.PodMetric.Builder builderForValue) {
+      if (metricsBuilder_ == null) {
+        ensureMetricsIsMutable();
+        metrics_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        metricsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public Builder addAllMetrics(
+        java.lang.Iterable<? extends io.cuemby.performance.metrics.v1alpha1.PodMetric> values) {
+      if (metricsBuilder_ == null) {
+        ensureMetricsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, metrics_);
+        onChanged();
+      } else {
+        metricsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public Builder clearMetrics() {
+      if (metricsBuilder_ == null) {
+        metrics_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        metricsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public Builder removeMetrics(int index) {
+      if (metricsBuilder_ == null) {
+        ensureMetricsIsMutable();
+        metrics_.remove(index);
+        onChanged();
+      } else {
+        metricsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public io.cuemby.performance.metrics.v1alpha1.PodMetric.Builder getMetricsBuilder(
+        int index) {
+      return getMetricsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public io.cuemby.performance.metrics.v1alpha1.PodMetricOrBuilder getMetricsOrBuilder(
+        int index) {
+      if (metricsBuilder_ == null) {
+        return metrics_.get(index);  } else {
+        return metricsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public java.util.List<? extends io.cuemby.performance.metrics.v1alpha1.PodMetricOrBuilder> 
+         getMetricsOrBuilderList() {
+      if (metricsBuilder_ != null) {
+        return metricsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(metrics_);
+      }
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public io.cuemby.performance.metrics.v1alpha1.PodMetric.Builder addMetricsBuilder() {
+      return getMetricsFieldBuilder().addBuilder(
+          io.cuemby.performance.metrics.v1alpha1.PodMetric.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public io.cuemby.performance.metrics.v1alpha1.PodMetric.Builder addMetricsBuilder(
+        int index) {
+      return getMetricsFieldBuilder().addBuilder(
+          index, io.cuemby.performance.metrics.v1alpha1.PodMetric.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .performance.metrics.v1alpha1.PodMetric metrics = 3 [json_name = "metrics"];</code>
+     */
+    public java.util.List<io.cuemby.performance.metrics.v1alpha1.PodMetric.Builder> 
+         getMetricsBuilderList() {
+      return getMetricsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.performance.metrics.v1alpha1.PodMetric, io.cuemby.performance.metrics.v1alpha1.PodMetric.Builder, io.cuemby.performance.metrics.v1alpha1.PodMetricOrBuilder> 
+        getMetricsFieldBuilder() {
+      if (metricsBuilder_ == null) {
+        metricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            io.cuemby.performance.metrics.v1alpha1.PodMetric, io.cuemby.performance.metrics.v1alpha1.PodMetric.Builder, io.cuemby.performance.metrics.v1alpha1.PodMetricOrBuilder>(
+                metrics_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        metrics_ = null;
+      }
+      return metricsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

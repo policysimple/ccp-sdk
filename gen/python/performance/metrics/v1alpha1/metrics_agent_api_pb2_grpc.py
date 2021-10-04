@@ -14,7 +14,7 @@ class MetricsAgentAPIServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.SaveMetrics = channel.unary_stream(
+        self.SaveMetrics = channel.stream_stream(
                 '/performance.metrics.v1alpha1.MetricsAgentAPIService/SaveMetrics',
                 request_serializer=performance_dot_metrics_dot_v1alpha1_dot_metrics__agent__api__pb2.SaveMetricsRequest.SerializeToString,
                 response_deserializer=performance_dot_metrics_dot_v1alpha1_dot_metrics__agent__api__pb2.SaveMetricsResponse.FromString,
@@ -24,7 +24,7 @@ class MetricsAgentAPIServiceStub(object):
 class MetricsAgentAPIServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def SaveMetrics(self, request, context):
+    def SaveMetrics(self, request_iterator, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -33,7 +33,7 @@ class MetricsAgentAPIServiceServicer(object):
 
 def add_MetricsAgentAPIServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'SaveMetrics': grpc.unary_stream_rpc_method_handler(
+            'SaveMetrics': grpc.stream_stream_rpc_method_handler(
                     servicer.SaveMetrics,
                     request_deserializer=performance_dot_metrics_dot_v1alpha1_dot_metrics__agent__api__pb2.SaveMetricsRequest.FromString,
                     response_serializer=performance_dot_metrics_dot_v1alpha1_dot_metrics__agent__api__pb2.SaveMetricsResponse.SerializeToString,
@@ -49,7 +49,7 @@ class MetricsAgentAPIService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def SaveMetrics(request,
+    def SaveMetrics(request_iterator,
             target,
             options=(),
             channel_credentials=None,
@@ -59,7 +59,7 @@ class MetricsAgentAPIService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/performance.metrics.v1alpha1.MetricsAgentAPIService/SaveMetrics',
+        return grpc.experimental.stream_stream(request_iterator, target, '/performance.metrics.v1alpha1.MetricsAgentAPIService/SaveMetrics',
             performance_dot_metrics_dot_v1alpha1_dot_metrics__agent__api__pb2.SaveMetricsRequest.SerializeToString,
             performance_dot_metrics_dot_v1alpha1_dot_metrics__agent__api__pb2.SaveMetricsResponse.FromString,
             options, channel_credentials,

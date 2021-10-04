@@ -30,10 +30,20 @@ public final class MetricsAgentApiProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_performance_metrics_v1alpha1_SaveMetricsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_performance_metrics_v1alpha1_Metric_descriptor;
+    internal_static_performance_metrics_v1alpha1_PodMetric_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_performance_metrics_v1alpha1_Metric_fieldAccessorTable;
+      internal_static_performance_metrics_v1alpha1_PodMetric_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_performance_metrics_v1alpha1_PodMetric_AnnotationsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_performance_metrics_v1alpha1_PodMetric_AnnotationsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_performance_metrics_v1alpha1_PodMetric_LabelsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_performance_metrics_v1alpha1_PodMetric_LabelsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -46,24 +56,54 @@ public final class MetricsAgentApiProto {
       "\n4performance/metrics/v1alpha1/metrics_a" +
       "gent_api.proto\022\034performance.metrics.v1al" +
       "pha1\032*performance/metrics/v1alpha1/metri" +
-      "cs.proto\"\300\001\n\022SaveMetricsRequest\022!\n\014clust" +
+      "cs.proto\"\203\002\n\022SaveMetricsRequest\022!\n\014clust" +
       "er_name\030\001 \001(\tR\013clusterName\022N\n\004meta\030\002 \003(\013" +
       "2:.performance.metrics.v1alpha1.SaveMetr" +
-      "icsRequest.MetaEntryR\004meta\0327\n\tMetaEntry\022" +
-      "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:" +
-      "\0028\001\"U\n\023SaveMetricsResponse\022>\n\007metrics\030\001 " +
-      "\003(\0132$.performance.metrics.v1alpha1.Metri" +
-      "cR\007metrics\":\n\006Metric\022\026\n\006metric\030\001 \001(\014R\006me" +
-      "tric\022\030\n\007cluster\030\002 \001(\tR\007cluster2\220\001\n\026Metri" +
-      "csAgentAPIService\022v\n\013SaveMetrics\0220.perfo" +
-      "rmance.metrics.v1alpha1.SaveMetricsReque" +
-      "st\0321.performance.metrics.v1alpha1.SaveMe" +
-      "tricsResponse\"\0000\001B\265\001\n&io.cuemby.performa" +
-      "nce.metrics.v1alpha1B\024MetricsAgentApiPro" +
-      "toP\001Z/github.com/performance-grpc-sdk/me" +
-      "tricsv1alpha1\242\002\003PFX\252\002\034Performance.Metric" +
-      "s.V1Alpha1\312\002\034Performance\\Metrics\\V1Alpha" +
-      "1b\006proto3"
+      "icsRequest.MetaEntryR\004meta\022A\n\007metrics\030\003 " +
+      "\003(\0132\'.performance.metrics.v1alpha1.PodMe" +
+      "tricR\007metrics\0327\n\tMetaEntry\022\020\n\003key\030\001 \001(\tR" +
+      "\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"/\n\023SaveMe" +
+      "tricsResponse\022\030\n\007success\030\001 \001(\010R\007success\"" +
+      "\306\t\n\tPodMetric\022\034\n\tnamespace\030\001 \001(\tR\tnamesp" +
+      "ace\022\022\n\004name\030\002 \001(\tR\004name\022\035\n\nowner_name\030\003 " +
+      "\001(\tR\townerName\0220\n\024owner_kubernetes_uid\030\004" +
+      " \001(\tR\022ownerKubernetesUid\022\035\n\nowner_kind\030\005" +
+      " \001(\tR\townerKind\022*\n\021owner_api_version\030\006 \001" +
+      "(\tR\017ownerApiVersion\022%\n\016container_name\030\007 " +
+      "\001(\tR\rcontainerName\022\026\n\006status\030\010 \001(\tR\006stat" +
+      "us\022#\n\ris_controlled\030\t \001(\010R\014isControlled\022" +
+      "#\n\rrestart_count\030\n \001(\005R\014restartCount\022\031\n\010" +
+      "is_ready\030\013 \001(\010R\007isReady\022!\n\014cluster_name\030" +
+      "\014 \001(\tR\013clusterName\022\033\n\tusage_cpu\030\r \001(\003R\010u" +
+      "sageCpu\022!\n\014usage_memory\030\016 \001(\003R\013usageMemo" +
+      "ry\022#\n\rusage_storage\030\017 \001(\003R\014usageStorage\022" +
+      "\037\n\013request_cpu\030\020 \001(\003R\nrequestCpu\022%\n\016requ" +
+      "est_memory\030\021 \001(\003R\rrequestMemory\022\033\n\tlimit" +
+      "_cpu\030\022 \001(\003R\010limitCpu\022!\n\014limit_memory\030\023 \001" +
+      "(\003R\013limitMemory\022\030\n\007volumes\030\024 \003(\tR\007volume" +
+      "s\022Z\n\013annotations\030\025 \003(\01328.performance.met" +
+      "rics.v1alpha1.PodMetric.AnnotationsEntry" +
+      "R\013annotations\022K\n\006labels\030\026 \003(\01323.performa" +
+      "nce.metrics.v1alpha1.PodMetric.LabelsEnt" +
+      "ryR\006labels\022\037\n\013external_ip\030\027 \001(\tR\nexterna" +
+      "lIp\022\037\n\013internal_ip\030\030 \001(\tR\ninternalIp\022B\n\035" +
+      "allocatable_storage_ephemeral\030\031 \001(\003R\033all" +
+      "ocatableStorageEphemeral\022/\n\023allocatable_" +
+      "storage\030\032 \001(\003R\022allocatableStorage\022\033\n\tnod" +
+      "e_name\030\033 \001(\tR\010nodeName\022%\n\016kubernetes_uid" +
+      "\030\034 \001(\tR\rkubernetesUid\032>\n\020AnnotationsEntr" +
+      "y\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005valu" +
+      "e:\0028\001\0329\n\013LabelsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024" +
+      "\n\005value\030\002 \001(\tR\005value:\0028\0012\222\001\n\026MetricsAgen" +
+      "tAPIService\022x\n\013SaveMetrics\0220.performance" +
+      ".metrics.v1alpha1.SaveMetricsRequest\0321.p" +
+      "erformance.metrics.v1alpha1.SaveMetricsR" +
+      "esponse\"\000(\0010\001B\265\001\n&io.cuemby.performance." +
+      "metrics.v1alpha1B\024MetricsAgentApiProtoP\001" +
+      "Z/github.com/performance-grpc-sdk/metric" +
+      "sv1alpha1\242\002\003PFX\252\002\034Performance.Metrics.V1" +
+      "Alpha1\312\002\034Performance\\Metrics\\V1Alpha1b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -75,7 +115,7 @@ public final class MetricsAgentApiProto {
     internal_static_performance_metrics_v1alpha1_SaveMetricsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_metrics_v1alpha1_SaveMetricsRequest_descriptor,
-        new java.lang.String[] { "ClusterName", "Meta", });
+        new java.lang.String[] { "ClusterName", "Meta", "Metrics", });
     internal_static_performance_metrics_v1alpha1_SaveMetricsRequest_MetaEntry_descriptor =
       internal_static_performance_metrics_v1alpha1_SaveMetricsRequest_descriptor.getNestedTypes().get(0);
     internal_static_performance_metrics_v1alpha1_SaveMetricsRequest_MetaEntry_fieldAccessorTable = new
@@ -87,13 +127,25 @@ public final class MetricsAgentApiProto {
     internal_static_performance_metrics_v1alpha1_SaveMetricsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_metrics_v1alpha1_SaveMetricsResponse_descriptor,
-        new java.lang.String[] { "Metrics", });
-    internal_static_performance_metrics_v1alpha1_Metric_descriptor =
+        new java.lang.String[] { "Success", });
+    internal_static_performance_metrics_v1alpha1_PodMetric_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_performance_metrics_v1alpha1_Metric_fieldAccessorTable = new
+    internal_static_performance_metrics_v1alpha1_PodMetric_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_performance_metrics_v1alpha1_Metric_descriptor,
-        new java.lang.String[] { "Metric", "Cluster", });
+        internal_static_performance_metrics_v1alpha1_PodMetric_descriptor,
+        new java.lang.String[] { "Namespace", "Name", "OwnerName", "OwnerKubernetesUid", "OwnerKind", "OwnerApiVersion", "ContainerName", "Status", "IsControlled", "RestartCount", "IsReady", "ClusterName", "UsageCpu", "UsageMemory", "UsageStorage", "RequestCpu", "RequestMemory", "LimitCpu", "LimitMemory", "Volumes", "Annotations", "Labels", "ExternalIp", "InternalIp", "AllocatableStorageEphemeral", "AllocatableStorage", "NodeName", "KubernetesUid", });
+    internal_static_performance_metrics_v1alpha1_PodMetric_AnnotationsEntry_descriptor =
+      internal_static_performance_metrics_v1alpha1_PodMetric_descriptor.getNestedTypes().get(0);
+    internal_static_performance_metrics_v1alpha1_PodMetric_AnnotationsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_performance_metrics_v1alpha1_PodMetric_AnnotationsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_performance_metrics_v1alpha1_PodMetric_LabelsEntry_descriptor =
+      internal_static_performance_metrics_v1alpha1_PodMetric_descriptor.getNestedTypes().get(1);
+    internal_static_performance_metrics_v1alpha1_PodMetric_LabelsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_performance_metrics_v1alpha1_PodMetric_LabelsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     io.cuemby.performance.metrics.v1alpha1.MetricsProto.getDescriptor();
   }
 

@@ -17,16 +17,13 @@ class MetricsAgentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Performance\Metrics\V1Alpha1\SaveMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\ServerStreamingCall
+     * @return \Grpc\BidiStreamingCall
      */
-    public function SaveMetrics(\Performance\Metrics\V1Alpha1\SaveMetricsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_serverStreamRequest('/performance.metrics.v1alpha1.MetricsAgentAPIService/SaveMetrics',
-        $argument,
-        ['\Performance\Metrics\V1Alpha1\SaveMetricsResponse', 'decode'],
+    public function SaveMetrics($metadata = [], $options = []) {
+        return $this->_bidiRequest('/performance.metrics.v1alpha1.MetricsAgentAPIService/SaveMetrics',
+        ['\Performance\Metrics\V1Alpha1\SaveMetricsResponse','decode'],
         $metadata, $options);
     }
 

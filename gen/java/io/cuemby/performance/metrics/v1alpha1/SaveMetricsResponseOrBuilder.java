@@ -8,26 +8,8 @@ public interface SaveMetricsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .performance.metrics.v1alpha1.Metric metrics = 1 [json_name = "metrics"];</code>
+   * <code>bool success = 1 [json_name = "success"];</code>
+   * @return The success.
    */
-  java.util.List<io.cuemby.performance.metrics.v1alpha1.Metric> 
-      getMetricsList();
-  /**
-   * <code>repeated .performance.metrics.v1alpha1.Metric metrics = 1 [json_name = "metrics"];</code>
-   */
-  io.cuemby.performance.metrics.v1alpha1.Metric getMetrics(int index);
-  /**
-   * <code>repeated .performance.metrics.v1alpha1.Metric metrics = 1 [json_name = "metrics"];</code>
-   */
-  int getMetricsCount();
-  /**
-   * <code>repeated .performance.metrics.v1alpha1.Metric metrics = 1 [json_name = "metrics"];</code>
-   */
-  java.util.List<? extends io.cuemby.performance.metrics.v1alpha1.MetricOrBuilder> 
-      getMetricsOrBuilderList();
-  /**
-   * <code>repeated .performance.metrics.v1alpha1.Metric metrics = 1 [json_name = "metrics"];</code>
-   */
-  io.cuemby.performance.metrics.v1alpha1.MetricOrBuilder getMetricsOrBuilder(
-      int index);
+  boolean getSuccess();
 }
