@@ -1,4 +1,7 @@
 # Docker commands
+NAME_IMAGE=proto-compiler
+NAME_CONTAINER=proto-compiler
+DIR_LOCAL=`pwd`
 docker build --tag $NAME_IMAGE .
 
 docker rm -fv $NAME_CONTAINER
