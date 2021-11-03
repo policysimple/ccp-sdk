@@ -19,7 +19,6 @@ class AutoscalingAgentAPIServiceClient extends \Grpc\BaseStub {
     /**
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\BidiStreamingCall
      */
     public function AgentCreateAutoscaling($metadata = [], $options = []) {
         return $this->_bidiRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentCreateAutoscaling',
@@ -30,7 +29,6 @@ class AutoscalingAgentAPIServiceClient extends \Grpc\BaseStub {
     /**
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\BidiStreamingCall
      */
     public function AgentUpdateAutoscaling($metadata = [], $options = []) {
         return $this->_bidiRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentUpdateAutoscaling',
@@ -41,7 +39,6 @@ class AutoscalingAgentAPIServiceClient extends \Grpc\BaseStub {
     /**
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\BidiStreamingCall
      */
     public function AgentDeleteAutoscaling($metadata = [], $options = []) {
         return $this->_bidiRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentDeleteAutoscaling',
@@ -52,7 +49,6 @@ class AutoscalingAgentAPIServiceClient extends \Grpc\BaseStub {
     /**
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\BidiStreamingCall
      */
     public function AgentGetAutoscaling($metadata = [], $options = []) {
         return $this->_bidiRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentGetAutoscaling',
@@ -63,7 +59,6 @@ class AutoscalingAgentAPIServiceClient extends \Grpc\BaseStub {
     /**
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\BidiStreamingCall
      */
     public function AgentListAutoscaling($metadata = [], $options = []) {
         return $this->_bidiRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentListAutoscaling',

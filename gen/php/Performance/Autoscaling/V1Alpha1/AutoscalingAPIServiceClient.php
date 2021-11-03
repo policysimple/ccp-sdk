@@ -20,7 +20,6 @@ class AutoscalingAPIServiceClient extends \Grpc\BaseStub {
      * @param \Performance\Autoscaling\V1Alpha1\CreateAutoscalingRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
      */
     public function CreateAutoscaling(\Performance\Autoscaling\V1Alpha1\CreateAutoscalingRequest $argument,
       $metadata = [], $options = []) {
@@ -34,7 +33,6 @@ class AutoscalingAPIServiceClient extends \Grpc\BaseStub {
      * @param \Performance\Autoscaling\V1Alpha1\UpdateAutoscalingRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
      */
     public function UpdateAutoscaling(\Performance\Autoscaling\V1Alpha1\UpdateAutoscalingRequest $argument,
       $metadata = [], $options = []) {
@@ -48,7 +46,6 @@ class AutoscalingAPIServiceClient extends \Grpc\BaseStub {
      * @param \Performance\Autoscaling\V1Alpha1\DeleteAutoscalingRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
      */
     public function DeleteAutoscaling(\Performance\Autoscaling\V1Alpha1\DeleteAutoscalingRequest $argument,
       $metadata = [], $options = []) {
@@ -62,7 +59,6 @@ class AutoscalingAPIServiceClient extends \Grpc\BaseStub {
      * @param \Performance\Autoscaling\V1Alpha1\GetAutoscalingRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
      */
     public function GetAutoscaling(\Performance\Autoscaling\V1Alpha1\GetAutoscalingRequest $argument,
       $metadata = [], $options = []) {
@@ -76,7 +72,6 @@ class AutoscalingAPIServiceClient extends \Grpc\BaseStub {
      * @param \Performance\Autoscaling\V1Alpha1\ListAutoscalingRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
      */
     public function ListAutoscaling(\Performance\Autoscaling\V1Alpha1\ListAutoscalingRequest $argument,
       $metadata = [], $options = []) {
