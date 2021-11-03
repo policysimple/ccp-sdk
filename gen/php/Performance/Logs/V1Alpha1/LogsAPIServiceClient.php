@@ -20,7 +20,6 @@ class LogsAPIServiceClient extends \Grpc\BaseStub {
      * @param \Performance\Logs\V1Alpha1\GetLogsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
      */
     public function GetLogs(\Performance\Logs\V1Alpha1\GetLogsRequest $argument,
       $metadata = [], $options = []) {

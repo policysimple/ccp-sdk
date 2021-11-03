@@ -19,7 +19,6 @@ class LogsAgentAPIServiceClient extends \Grpc\BaseStub {
     /**
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\BidiStreamingCall
      */
     public function SaveLogs($metadata = [], $options = []) {
         return $this->_bidiRequest('/performance.logs.v1alpha1.LogsAgentAPIService/SaveLogs',
