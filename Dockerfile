@@ -1,4 +1,8 @@
 FROM debian:10-slim
+LABEL "com.example.vendor"="ACME Incorporated"
+LABEL org.opencontainers.image.authors="fabiomoreno@outlook.com"
+LABEL version="1.0"
+LABEL description="compile proto files with buf tool. Support generate for cpp, go, java, javascript, php, python"
 
 RUN apt update 
 RUN apt-get install -y git curl wget
@@ -38,7 +42,7 @@ RUN go get google.golang.org/protobuf/cmd/protoc-gen-go
 RUN go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
 RUN go version
 
-
+RUN apt autoclean
 
 # install buf
 RUN BIN="/usr/local/bin" && \
@@ -52,3 +56,9 @@ RUN BIN="/usr/local/bin" && \
 RUN buf --version
 
 RUN wget https://raw.githubusercontent.com/rootbean/example-image-docker-buf/master/generate-buf.sh
+
+RUN echo "#!/bin/sh" > compile.sh
+RUN echo "cd /temp/buf-gen && buf lint && buf generate" > compile.sh
+RUN chmod +x compile.sh
+
+ENTRYPOINT [ "sh", "compile.sh" ]

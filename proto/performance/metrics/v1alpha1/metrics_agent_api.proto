@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package performance.metrics.v1alpha1;
+
+option csharp_namespace = "Performance.Metrics.V1Alpha1";
+option go_package = "github.com/performance-grpc-sdk/metricsv1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "MetricsAgentApiProto";
+option java_package = "io.cuemby.performance.metrics.v1alpha1";
+option objc_class_prefix = "PFX";
+option php_namespace = "Performance\\Metrics\\V1Alpha1";
+
+import "performance/metrics/v1alpha1/metrics.proto";
+
+
+service MetricsAgentAPIService{
+    rpc SaveMetrics(stream SaveMetricsRequest) returns (stream SaveMetricsResponse) {};
+}
+
+message SaveMetricsRequest {
+    string cluster_name = 1;
+    map<string,string> meta = 2;
+    repeated PodMetric metrics = 3;
+}
+
+message SaveMetricsResponse{
+    bool success = 1; 
+}
+
+message PodMetric {
+   string namespace = 1;
+   string name= 2;
+   string owner_name = 3;
+   string owner_kubernetes_uid = 4;
+   string owner_kind = 5;
+   string owner_api_version = 6;
+   string container_name = 7;
+   string status= 8;
+   bool is_controlled = 9;
+   int32 restart_count = 10;
+   bool is_ready= 11;
+   string cluster_name= 12;
+   int64 usage_cpu= 13;
+   int64 usage_memory= 14;
+   int64 usage_storage= 15;
+   int64 request_cpu= 16;
+   int64 request_memory = 17;
+   int64 limit_cpu = 18;
+   int64 limit_memory= 19;
+   repeated string volumes= 20;
+   map<string, string> annotations= 21;
+   map<string, string> labels= 22;
+   string external_ip= 23;
+   string internal_ip= 24;
+   int64 allocatable_storage_ephemeral= 25;
+   int64 allocatable_storage= 26;
+   string node_name= 27;
+   string kubernetes_uid= 28;
+}

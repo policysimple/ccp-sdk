@@ -29,6 +29,14 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.performance.metrics.v1alpha1.Range range = 4 [json_name = "range"];</code>
      */
     protected $range = null;
+    /**
+     * Generated from protobuf field <code>int32 page = 5 [json_name = "page"];</code>
+     */
+    protected $page = 0;
+    /**
+     * Generated from protobuf field <code>int32 size = 6 [json_name = "size"];</code>
+     */
+    protected $size = 0;
 
     /**
      * Constructor.
@@ -40,6 +48,8 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $containers
      *     @type int $interval
      *     @type \Performance\Metrics\V1Alpha1\Range $range
+     *     @type int $page
+     *     @type int $size
      * }
      */
     public function __construct($data = NULL) {
@@ -141,6 +151,50 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Performance\Metrics\V1Alpha1\Range::class);
         $this->range = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 page = 5 [json_name = "page"];</code>
+     * @return int
+     */
+    public function getPage()
+    {
+        return $this->page;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 page = 5 [json_name = "page"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPage($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->page = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 size = 6 [json_name = "size"];</code>
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 size = 6 [json_name = "size"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSize($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->size = $var;
 
         return $this;
     }

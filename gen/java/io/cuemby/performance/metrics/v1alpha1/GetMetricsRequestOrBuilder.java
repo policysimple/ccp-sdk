@@ -91,4 +91,16 @@ public interface GetMetricsRequestOrBuilder extends
    * <code>.performance.metrics.v1alpha1.Range range = 4 [json_name = "range"];</code>
    */
   io.cuemby.performance.metrics.v1alpha1.RangeOrBuilder getRangeOrBuilder();
+
+  /**
+   * <code>int32 page = 5 [json_name = "page"];</code>
+   * @return The page.
+   */
+  int getPage();
+
+  /**
+   * <code>int32 size = 6 [json_name = "size"];</code>
+   * @return The size.
+   */
+  int getSize();
 }

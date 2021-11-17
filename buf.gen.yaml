@@ -12,6 +12,8 @@ plugins:
   - name: js
     out: gen/js
     opt: import_style=commonjs,binary
+  - name: cpp
+    out: gen/cpp
 
   - name: go-grpc
     out: gen/go
@@ -25,3 +27,6 @@ plugins:
   - name: grpc_node_plugin
     path: grpc_node_plugin
     out: gen/js
+  - name: grpc_cpp_plugin
+    path: grpc_cpp_plugin
+    out: gen/cpp

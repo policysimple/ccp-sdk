@@ -48,14 +48,15 @@ public final class MetricsApiProto {
       "performance/metrics/v1alpha1/metrics.pro" +
       "to\"Y\n\005Range\022\033\n\tdate_from\030\001 \001(\tR\010dateFrom" +
       "\022\027\n\007date_to\030\002 \001(\tR\006dateTo\022\032\n\010timezone\030\003 " +
-      "\001(\tR\010timezone\"\311\002\n\021GetMetricsRequest\022S\n\006l" +
+      "\001(\tR\010timezone\"\361\002\n\021GetMetricsRequest\022S\n\006l" +
       "abels\030\001 \003(\0132;.performance.metrics.v1alph" +
       "a1.GetMetricsRequest.LabelsEntryR\006labels" +
       "\022\036\n\ncontainers\030\002 \003(\tR\ncontainers\022I\n\010inte" +
       "rval\030\003 \001(\0162-.performance.metrics.v1alpha" +
       "1.MetricsIntervalR\010interval\0229\n\005range\030\004 \001" +
       "(\0132#.performance.metrics.v1alpha1.RangeR" +
-      "\005range\0329\n\013LabelsEntry\022\020\n\003key\030\001 \001(\tR\003key\022" +
+      "\005range\022\022\n\004page\030\005 \001(\005R\004page\022\022\n\004size\030\006 \001(\005" +
+      "R\004size\0329\n\013LabelsEntry\022\020\n\003key\030\001 \001(\tR\003key\022" +
       "\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\222\001\n\022GetMetrics" +
       "Response\022@\n\006memory\030\001 \003(\0132(.performance.m" +
       "etrics.v1alpha1.MetricItemR\006memory\022:\n\003cp" +
@@ -93,7 +94,7 @@ public final class MetricsApiProto {
     internal_static_performance_metrics_v1alpha1_GetMetricsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_metrics_v1alpha1_GetMetricsRequest_descriptor,
-        new java.lang.String[] { "Labels", "Containers", "Interval", "Range", });
+        new java.lang.String[] { "Labels", "Containers", "Interval", "Range", "Page", "Size", });
     internal_static_performance_metrics_v1alpha1_GetMetricsRequest_LabelsEntry_descriptor =
       internal_static_performance_metrics_v1alpha1_GetMetricsRequest_descriptor.getNestedTypes().get(0);
     internal_static_performance_metrics_v1alpha1_GetMetricsRequest_LabelsEntry_fieldAccessorTable = new

@@ -92,6 +92,16 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 40: {
+
+            page_ = input.readInt32();
+            break;
+          }
+          case 48: {
+
+            size_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -300,6 +310,28 @@ private static final long serialVersionUID = 0L;
     return getRange();
   }
 
+  public static final int PAGE_FIELD_NUMBER = 5;
+  private int page_;
+  /**
+   * <code>int32 page = 5 [json_name = "page"];</code>
+   * @return The page.
+   */
+  @java.lang.Override
+  public int getPage() {
+    return page_;
+  }
+
+  public static final int SIZE_FIELD_NUMBER = 6;
+  private int size_;
+  /**
+   * <code>int32 size = 6 [json_name = "size"];</code>
+   * @return The size.
+   */
+  @java.lang.Override
+  public int getSize() {
+    return size_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -328,6 +360,12 @@ private static final long serialVersionUID = 0L;
     }
     if (range_ != null) {
       output.writeMessage(4, getRange());
+    }
+    if (page_ != 0) {
+      output.writeInt32(5, page_);
+    }
+    if (size_ != 0) {
+      output.writeInt32(6, size_);
     }
     unknownFields.writeTo(output);
   }
@@ -364,6 +402,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getRange());
     }
+    if (page_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(5, page_);
+    }
+    if (size_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(6, size_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -389,6 +435,10 @@ private static final long serialVersionUID = 0L;
       if (!getRange()
           .equals(other.getRange())) return false;
     }
+    if (getPage()
+        != other.getPage()) return false;
+    if (getSize()
+        != other.getSize()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -414,6 +464,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + RANGE_FIELD_NUMBER;
       hash = (53 * hash) + getRange().hashCode();
     }
+    hash = (37 * hash) + PAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getPage();
+    hash = (37 * hash) + SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getSize();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -580,6 +634,10 @@ private static final long serialVersionUID = 0L;
         range_ = null;
         rangeBuilder_ = null;
       }
+      page_ = 0;
+
+      size_ = 0;
+
       return this;
     }
 
@@ -620,6 +678,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.range_ = rangeBuilder_.build();
       }
+      result.page_ = page_;
+      result.size_ = size_;
       onBuilt();
       return result;
     }
@@ -685,6 +745,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasRange()) {
         mergeRange(other.getRange());
+      }
+      if (other.getPage() != 0) {
+        setPage(other.getPage());
+      }
+      if (other.getSize() != 0) {
+        setSize(other.getSize());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1125,6 +1191,68 @@ private static final long serialVersionUID = 0L;
         range_ = null;
       }
       return rangeBuilder_;
+    }
+
+    private int page_ ;
+    /**
+     * <code>int32 page = 5 [json_name = "page"];</code>
+     * @return The page.
+     */
+    @java.lang.Override
+    public int getPage() {
+      return page_;
+    }
+    /**
+     * <code>int32 page = 5 [json_name = "page"];</code>
+     * @param value The page to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPage(int value) {
+      
+      page_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 page = 5 [json_name = "page"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPage() {
+      
+      page_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int size_ ;
+    /**
+     * <code>int32 size = 6 [json_name = "size"];</code>
+     * @return The size.
+     */
+    @java.lang.Override
+    public int getSize() {
+      return size_;
+    }
+    /**
+     * <code>int32 size = 6 [json_name = "size"];</code>
+     * @param value The size to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSize(int value) {
+      
+      size_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 size = 6 [json_name = "size"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSize() {
+      
+      size_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

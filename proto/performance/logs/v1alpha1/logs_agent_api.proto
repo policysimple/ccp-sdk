@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package performance.logs.v1alpha1;
+
+option csharp_namespace = "Performance.Logs.V1Alpha1";
+option go_package = "github.com/performance-grpc-sdk/logsv1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "LogsAgentApiProto";
+option java_package = "io.cuemby.performance.logs.v1alpha1";
+option objc_class_prefix = "PFX";
+option php_namespace = "Performance\\Logs\\V1Alpha1";
+
+import "performance/logs/v1alpha1/logs.proto";
+
+
+service LogsAgentAPIService{
+    rpc SaveLogs(stream SaveLogsRequest) returns (stream SaveLogsResponse) {};
+}
+
+message SaveLogsRequest {
+    string cluster_name = 1;
+    map<string,string> meta = 2;
+    repeated Log logs = 3;
+}
+
+message SaveLogsResponse{
+    bool success = 1; 
+}
+
+message Log {
+    double date = 1;
+    string log = 2;
+    LogKuebrnetesInfo kubernetes = 3;
+}
+message LogKuebrnetesInfo {
+    string pod_name = 1;
+    string namespace_name = 2;
+    string pod_id = 3;
+    map<string,string> labels = 4;
+    map<string,string> annotations = 5;
+    string host = 6;
+    string container_name = 7;
+    string docker_id = 8;
+    string container_hash = 10;
+    string container_image = 11;
+}
