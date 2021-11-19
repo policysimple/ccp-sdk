@@ -17,6 +17,10 @@ class AgentDeleteAutoscalingResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
      */
     protected $metadata = null;
+    /**
+     * Generated from protobuf field <code>string origin = 2 [json_name = "origin"];</code>
+     */
+    protected $origin = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class AgentDeleteAutoscalingResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Performance\Autoscaling\V1Alpha1\Metadata $metadata
+     *     @type string $origin
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +65,28 @@ class AgentDeleteAutoscalingResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Performance\Autoscaling\V1Alpha1\Metadata::class);
         $this->metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string origin = 2 [json_name = "origin"];</code>
+     * @return string
+     */
+    public function getOrigin()
+    {
+        return $this->origin;
+    }
+
+    /**
+     * Generated from protobuf field <code>string origin = 2 [json_name = "origin"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOrigin($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->origin = $var;
 
         return $this;
     }

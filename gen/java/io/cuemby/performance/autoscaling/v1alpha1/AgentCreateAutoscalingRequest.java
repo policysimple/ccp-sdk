@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private AgentCreateAutoscalingRequest() {
     status_ = "";
+    origin_ = "";
   }
 
   @java.lang.Override
@@ -66,6 +67,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             status_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            origin_ = s;
             break;
           }
           default: {
@@ -164,6 +171,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ORIGIN_FIELD_NUMBER = 3;
+  private volatile java.lang.Object origin_;
+  /**
+   * <code>string origin = 3 [json_name = "origin"];</code>
+   * @return The origin.
+   */
+  @java.lang.Override
+  public java.lang.String getOrigin() {
+    java.lang.Object ref = origin_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      origin_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string origin = 3 [json_name = "origin"];</code>
+   * @return The bytes for origin.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOriginBytes() {
+    java.lang.Object ref = origin_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      origin_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -184,6 +229,9 @@ private static final long serialVersionUID = 0L;
     if (!getStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
     }
+    if (!getOriginBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, origin_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -199,6 +247,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+    }
+    if (!getOriginBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, origin_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -222,6 +273,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getStatus()
         .equals(other.getStatus())) return false;
+    if (!getOrigin()
+        .equals(other.getOrigin())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -239,6 +292,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + ORIGIN_FIELD_NUMBER;
+    hash = (53 * hash) + getOrigin().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -380,6 +435,8 @@ private static final long serialVersionUID = 0L;
       }
       status_ = "";
 
+      origin_ = "";
+
       return this;
     }
 
@@ -412,6 +469,7 @@ private static final long serialVersionUID = 0L;
         result.autoscaling_ = autoscalingBuilder_.build();
       }
       result.status_ = status_;
+      result.origin_ = origin_;
       onBuilt();
       return result;
     }
@@ -465,6 +523,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getStatus().isEmpty()) {
         status_ = other.status_;
+        onChanged();
+      }
+      if (!other.getOrigin().isEmpty()) {
+        origin_ = other.origin_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -687,6 +749,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       status_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object origin_ = "";
+    /**
+     * <code>string origin = 3 [json_name = "origin"];</code>
+     * @return The origin.
+     */
+    public java.lang.String getOrigin() {
+      java.lang.Object ref = origin_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        origin_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string origin = 3 [json_name = "origin"];</code>
+     * @return The bytes for origin.
+     */
+    public com.google.protobuf.ByteString
+        getOriginBytes() {
+      java.lang.Object ref = origin_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        origin_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string origin = 3 [json_name = "origin"];</code>
+     * @param value The origin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrigin(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      origin_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string origin = 3 [json_name = "origin"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOrigin() {
+      
+      origin_ = getDefaultInstance().getOrigin();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string origin = 3 [json_name = "origin"];</code>
+     * @param value The bytes for origin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      origin_ = value;
       onChanged();
       return this;
     }

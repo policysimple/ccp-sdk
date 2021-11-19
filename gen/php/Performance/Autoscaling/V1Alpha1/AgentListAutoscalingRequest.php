@@ -17,6 +17,10 @@ class AgentListAutoscalingRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 1 [json_name = "autoscalings"];</code>
      */
     private $autoscalings;
+    /**
+     * Generated from protobuf field <code>string origin = 2 [json_name = "origin"];</code>
+     */
+    protected $origin = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class AgentListAutoscalingRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Performance\Autoscaling\V1Alpha1\Autoscaling[]|\Google\Protobuf\Internal\RepeatedField $autoscalings
+     *     @type string $origin
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class AgentListAutoscalingRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Performance\Autoscaling\V1Alpha1\Autoscaling::class);
         $this->autoscalings = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string origin = 2 [json_name = "origin"];</code>
+     * @return string
+     */
+    public function getOrigin()
+    {
+        return $this->origin;
+    }
+
+    /**
+     * Generated from protobuf field <code>string origin = 2 [json_name = "origin"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOrigin($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->origin = $var;
 
         return $this;
     }

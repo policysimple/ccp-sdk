@@ -21,4 +21,16 @@ public interface AgentDeleteAutoscalingResponseOrBuilder extends
    * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
    */
   io.cuemby.performance.autoscaling.v1alpha1.MetadataOrBuilder getMetadataOrBuilder();
+
+  /**
+   * <code>string origin = 2 [json_name = "origin"];</code>
+   * @return The origin.
+   */
+  java.lang.String getOrigin();
+  /**
+   * <code>string origin = 2 [json_name = "origin"];</code>
+   * @return The bytes for origin.
+   */
+  com.google.protobuf.ByteString
+      getOriginBytes();
 }

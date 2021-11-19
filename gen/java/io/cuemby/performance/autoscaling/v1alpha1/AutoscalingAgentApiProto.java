@@ -76,63 +76,69 @@ public final class AutoscalingAgentApiProto {
       "\n<performance/autoscaling/v1alpha1/autos" +
       "caling_agent_api.proto\022 performance.auto" +
       "scaling.v1alpha1\0322performance/autoscalin" +
-      "g/v1alpha1/autoscaling.proto\"q\n\036AgentCre" +
-      "ateAutoscalingResponse\022O\n\013autoscaling\030\001 " +
-      "\001(\0132-.performance.autoscaling.v1alpha1.A" +
-      "utoscalingR\013autoscaling\"\210\001\n\035AgentCreateA" +
-      "utoscalingRequest\022O\n\013autoscaling\030\001 \001(\0132-" +
-      ".performance.autoscaling.v1alpha1.Autosc" +
-      "alingR\013autoscaling\022\026\n\006status\030\002 \001(\tR\006stat" +
-      "us\"q\n\036AgentUpdateAutoscalingResponse\022O\n\013" +
-      "autoscaling\030\001 \001(\0132-.performance.autoscal" +
-      "ing.v1alpha1.AutoscalingR\013autoscaling\"\210\001" +
-      "\n\035AgentUpdateAutoscalingRequest\022O\n\013autos" +
-      "caling\030\001 \001(\0132-.performance.autoscaling.v" +
-      "1alpha1.AutoscalingR\013autoscaling\022\026\n\006stat" +
-      "us\030\002 \001(\tR\006status\"h\n\036AgentDeleteAutoscali" +
-      "ngResponse\022F\n\010metadata\030\001 \001(\0132*.performan" +
-      "ce.autoscaling.v1alpha1.MetadataR\010metada" +
-      "ta\"\177\n\035AgentDeleteAutoscalingRequest\022F\n\010m" +
-      "etadata\030\001 \001(\0132*.performance.autoscaling." +
-      "v1alpha1.MetadataR\010metadata\022\026\n\006status\030\002 " +
-      "\001(\tR\006status\"e\n\033AgentGetAutoscalingRespon" +
-      "se\022F\n\010metadata\030\001 \001(\0132*.performance.autos" +
-      "caling.v1alpha1.MetadataR\010metadata\"\205\001\n\032A" +
-      "gentGetAutoscalingRequest\022O\n\013autoscaling" +
+      "g/v1alpha1/autoscaling.proto\"\211\001\n\036AgentCr" +
+      "eateAutoscalingResponse\022O\n\013autoscaling\030\001" +
+      " \001(\0132-.performance.autoscaling.v1alpha1." +
+      "AutoscalingR\013autoscaling\022\026\n\006origin\030\002 \001(\t" +
+      "R\006origin\"\240\001\n\035AgentCreateAutoscalingReque" +
+      "st\022O\n\013autoscaling\030\001 \001(\0132-.performance.au" +
+      "toscaling.v1alpha1.AutoscalingR\013autoscal" +
+      "ing\022\026\n\006status\030\002 \001(\tR\006status\022\026\n\006origin\030\003 " +
+      "\001(\tR\006origin\"\211\001\n\036AgentUpdateAutoscalingRe" +
+      "sponse\022O\n\013autoscaling\030\001 \001(\0132-.performanc" +
+      "e.autoscaling.v1alpha1.AutoscalingR\013auto" +
+      "scaling\022\026\n\006origin\030\002 \001(\tR\006origin\"\240\001\n\035Agen" +
+      "tUpdateAutoscalingRequest\022O\n\013autoscaling" +
       "\030\001 \001(\0132-.performance.autoscaling.v1alpha" +
       "1.AutoscalingR\013autoscaling\022\026\n\006status\030\002 \001" +
-      "(\tR\006status\"f\n\034AgentListAutoscalingRespon" +
-      "se\022F\n\010metadata\030\001 \001(\0132*.performance.autos" +
-      "caling.v1alpha1.MetadataR\010metadata\"p\n\033Ag" +
-      "entListAutoscalingRequest\022Q\n\014autoscaling" +
-      "s\030\001 \003(\0132-.performance.autoscaling.v1alph" +
-      "a1.AutoscalingR\014autoscalings2\301\006\n\032Autosca" +
-      "lingAgentAPIService\022\241\001\n\026AgentCreateAutos" +
-      "caling\022?.performance.autoscaling.v1alpha" +
-      "1.AgentCreateAutoscalingRequest\032@.perfor" +
-      "mance.autoscaling.v1alpha1.AgentCreateAu" +
-      "toscalingResponse\"\000(\0010\001\022\241\001\n\026AgentUpdateA" +
-      "utoscaling\022?.performance.autoscaling.v1a" +
-      "lpha1.AgentUpdateAutoscalingRequest\032@.pe" +
-      "rformance.autoscaling.v1alpha1.AgentUpda" +
-      "teAutoscalingResponse\"\000(\0010\001\022\241\001\n\026AgentDel" +
-      "eteAutoscaling\022?.performance.autoscaling" +
-      ".v1alpha1.AgentDeleteAutoscalingRequest\032" +
-      "@.performance.autoscaling.v1alpha1.Agent" +
-      "DeleteAutoscalingResponse\"\000(\0010\001\022\230\001\n\023Agen" +
-      "tGetAutoscaling\022<.performance.autoscalin" +
-      "g.v1alpha1.AgentGetAutoscalingRequest\032=." +
-      "performance.autoscaling.v1alpha1.AgentGe" +
-      "tAutoscalingResponse\"\000(\0010\001\022\233\001\n\024AgentList" +
-      "Autoscaling\022=.performance.autoscaling.v1" +
-      "alpha1.AgentListAutoscalingRequest\032>.per" +
-      "formance.autoscaling.v1alpha1.AgentListA" +
-      "utoscalingResponse\"\000(\0010\001B\312\001\n*io.cuemby.p" +
-      "erformance.autoscaling.v1alpha1B\030Autosca" +
-      "lingAgentApiProtoP\001Z4github.com/performa" +
-      "nce-grpc-sdk/autoscaling/v1alpha1\242\002\003PFX\252" +
-      "\002 Performance.Autoscaling.V1Alpha1\312\002 Per" +
-      "formance\\Autoscaling\\V1Alpha1b\006proto3"
+      "(\tR\006status\022\026\n\006origin\030\003 \001(\tR\006origin\"\200\001\n\036A" +
+      "gentDeleteAutoscalingResponse\022F\n\010metadat" +
+      "a\030\001 \001(\0132*.performance.autoscaling.v1alph" +
+      "a1.MetadataR\010metadata\022\026\n\006origin\030\002 \001(\tR\006o" +
+      "rigin\"\177\n\035AgentDeleteAutoscalingRequest\022F" +
+      "\n\010metadata\030\001 \001(\0132*.performance.autoscali" +
+      "ng.v1alpha1.MetadataR\010metadata\022\026\n\006status" +
+      "\030\002 \001(\tR\006status\"}\n\033AgentGetAutoscalingRes" +
+      "ponse\022F\n\010metadata\030\001 \001(\0132*.performance.au" +
+      "toscaling.v1alpha1.MetadataR\010metadata\022\026\n" +
+      "\006origin\030\002 \001(\tR\006origin\"\235\001\n\032AgentGetAutosc" +
+      "alingRequest\022O\n\013autoscaling\030\001 \001(\0132-.perf" +
+      "ormance.autoscaling.v1alpha1.Autoscaling" +
+      "R\013autoscaling\022\026\n\006status\030\002 \001(\tR\006status\022\026\n" +
+      "\006origin\030\003 \001(\tR\006origin\"~\n\034AgentListAutosc" +
+      "alingResponse\022F\n\010metadata\030\001 \001(\0132*.perfor" +
+      "mance.autoscaling.v1alpha1.MetadataR\010met" +
+      "adata\022\026\n\006origin\030\002 \001(\tR\006origin\"\210\001\n\033AgentL" +
+      "istAutoscalingRequest\022Q\n\014autoscalings\030\001 " +
+      "\003(\0132-.performance.autoscaling.v1alpha1.A" +
+      "utoscalingR\014autoscalings\022\026\n\006origin\030\002 \001(\t" +
+      "R\006origin2\301\006\n\032AutoscalingAgentAPIService\022" +
+      "\241\001\n\026AgentCreateAutoscaling\022?.performance" +
+      ".autoscaling.v1alpha1.AgentCreateAutosca" +
+      "lingRequest\032@.performance.autoscaling.v1" +
+      "alpha1.AgentCreateAutoscalingResponse\"\000(" +
+      "\0010\001\022\241\001\n\026AgentUpdateAutoscaling\022?.perform" +
+      "ance.autoscaling.v1alpha1.AgentUpdateAut" +
+      "oscalingRequest\032@.performance.autoscalin" +
+      "g.v1alpha1.AgentUpdateAutoscalingRespons" +
+      "e\"\000(\0010\001\022\241\001\n\026AgentDeleteAutoscaling\022?.per" +
+      "formance.autoscaling.v1alpha1.AgentDelet" +
+      "eAutoscalingRequest\032@.performance.autosc" +
+      "aling.v1alpha1.AgentDeleteAutoscalingRes" +
+      "ponse\"\000(\0010\001\022\230\001\n\023AgentGetAutoscaling\022<.pe" +
+      "rformance.autoscaling.v1alpha1.AgentGetA" +
+      "utoscalingRequest\032=.performance.autoscal" +
+      "ing.v1alpha1.AgentGetAutoscalingResponse" +
+      "\"\000(\0010\001\022\233\001\n\024AgentListAutoscaling\022=.perfor" +
+      "mance.autoscaling.v1alpha1.AgentListAuto" +
+      "scalingRequest\032>.performance.autoscaling" +
+      ".v1alpha1.AgentListAutoscalingResponse\"\000" +
+      "(\0010\001B\312\001\n*io.cuemby.performance.autoscali" +
+      "ng.v1alpha1B\030AutoscalingAgentApiProtoP\001Z" +
+      "4github.com/performance-grpc-sdk/autosca" +
+      "ling/v1alpha1\242\002\003PFX\252\002 Performance.Autosc" +
+      "aling.V1Alpha1\312\002 Performance\\Autoscaling" +
+      "\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -144,31 +150,31 @@ public final class AutoscalingAgentApiProto {
     internal_static_performance_autoscaling_v1alpha1_AgentCreateAutoscalingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_autoscaling_v1alpha1_AgentCreateAutoscalingResponse_descriptor,
-        new java.lang.String[] { "Autoscaling", });
+        new java.lang.String[] { "Autoscaling", "Origin", });
     internal_static_performance_autoscaling_v1alpha1_AgentCreateAutoscalingRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_performance_autoscaling_v1alpha1_AgentCreateAutoscalingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_autoscaling_v1alpha1_AgentCreateAutoscalingRequest_descriptor,
-        new java.lang.String[] { "Autoscaling", "Status", });
+        new java.lang.String[] { "Autoscaling", "Status", "Origin", });
     internal_static_performance_autoscaling_v1alpha1_AgentUpdateAutoscalingResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_performance_autoscaling_v1alpha1_AgentUpdateAutoscalingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_autoscaling_v1alpha1_AgentUpdateAutoscalingResponse_descriptor,
-        new java.lang.String[] { "Autoscaling", });
+        new java.lang.String[] { "Autoscaling", "Origin", });
     internal_static_performance_autoscaling_v1alpha1_AgentUpdateAutoscalingRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_performance_autoscaling_v1alpha1_AgentUpdateAutoscalingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_autoscaling_v1alpha1_AgentUpdateAutoscalingRequest_descriptor,
-        new java.lang.String[] { "Autoscaling", "Status", });
+        new java.lang.String[] { "Autoscaling", "Status", "Origin", });
     internal_static_performance_autoscaling_v1alpha1_AgentDeleteAutoscalingResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_performance_autoscaling_v1alpha1_AgentDeleteAutoscalingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_autoscaling_v1alpha1_AgentDeleteAutoscalingResponse_descriptor,
-        new java.lang.String[] { "Metadata", });
+        new java.lang.String[] { "Metadata", "Origin", });
     internal_static_performance_autoscaling_v1alpha1_AgentDeleteAutoscalingRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_performance_autoscaling_v1alpha1_AgentDeleteAutoscalingRequest_fieldAccessorTable = new
@@ -180,25 +186,25 @@ public final class AutoscalingAgentApiProto {
     internal_static_performance_autoscaling_v1alpha1_AgentGetAutoscalingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_autoscaling_v1alpha1_AgentGetAutoscalingResponse_descriptor,
-        new java.lang.String[] { "Metadata", });
+        new java.lang.String[] { "Metadata", "Origin", });
     internal_static_performance_autoscaling_v1alpha1_AgentGetAutoscalingRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_performance_autoscaling_v1alpha1_AgentGetAutoscalingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_autoscaling_v1alpha1_AgentGetAutoscalingRequest_descriptor,
-        new java.lang.String[] { "Autoscaling", "Status", });
+        new java.lang.String[] { "Autoscaling", "Status", "Origin", });
     internal_static_performance_autoscaling_v1alpha1_AgentListAutoscalingResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_performance_autoscaling_v1alpha1_AgentListAutoscalingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_autoscaling_v1alpha1_AgentListAutoscalingResponse_descriptor,
-        new java.lang.String[] { "Metadata", });
+        new java.lang.String[] { "Metadata", "Origin", });
     internal_static_performance_autoscaling_v1alpha1_AgentListAutoscalingRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_performance_autoscaling_v1alpha1_AgentListAutoscalingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_autoscaling_v1alpha1_AgentListAutoscalingRequest_descriptor,
-        new java.lang.String[] { "Autoscalings", });
+        new java.lang.String[] { "Autoscalings", "Origin", });
     io.cuemby.performance.autoscaling.v1alpha1.AutoscalingProto.getDescriptor();
   }
 

@@ -21,4 +21,16 @@ public interface AgentUpdateAutoscalingResponseOrBuilder extends
    * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
    */
   io.cuemby.performance.autoscaling.v1alpha1.AutoscalingOrBuilder getAutoscalingOrBuilder();
+
+  /**
+   * <code>string origin = 2 [json_name = "origin"];</code>
+   * @return The origin.
+   */
+  java.lang.String getOrigin();
+  /**
+   * <code>string origin = 2 [json_name = "origin"];</code>
+   * @return The bytes for origin.
+   */
+  com.google.protobuf.ByteString
+      getOriginBytes();
 }

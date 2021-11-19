@@ -23,24 +23,29 @@ service AutoscalingAgentAPIService{
 
 message AgentCreateAutoscalingResponse {
     performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
+    string origin = 2;
 }
 
 message AgentCreateAutoscalingRequest {
     performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
     string status = 2;
+    string origin = 3;
 }
 
 message AgentUpdateAutoscalingResponse {
     performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
+    string origin = 2;
 }
 
 message AgentUpdateAutoscalingRequest {
     performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
     string status = 2;
+    string origin = 3;
 }
 
 message AgentDeleteAutoscalingResponse {
     performance.autoscaling.v1alpha1.Metadata metadata = 1;
+    string origin = 2;
 }
 
 message AgentDeleteAutoscalingRequest {
@@ -50,17 +55,21 @@ message AgentDeleteAutoscalingRequest {
 
 message AgentGetAutoscalingResponse {
     performance.autoscaling.v1alpha1.Metadata metadata = 1;
+    string origin = 2;
 }
 
 message AgentGetAutoscalingRequest {
     performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
     string status = 2;
+    string origin = 3;
 }
 
 message AgentListAutoscalingResponse {
     performance.autoscaling.v1alpha1.Metadata metadata = 1;
+    string origin = 2;
 }
 
 message AgentListAutoscalingRequest {
     repeated performance.autoscaling.v1alpha1.Autoscaling autoscalings = 1;
+    string origin = 2;
 }

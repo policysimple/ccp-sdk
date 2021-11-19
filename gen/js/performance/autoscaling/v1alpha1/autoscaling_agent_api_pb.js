@@ -269,7 +269,8 @@ proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.prototype.
  */
 proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoscaling: (f = msg.getAutoscaling()) && performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.toObject(includeInstance, f)
+    autoscaling: (f = msg.getAutoscaling()) && performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.toObject(includeInstance, f),
+    origin: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -311,6 +312,10 @@ proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.deserializ
       reader.readMessage(value,performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.deserializeBinaryFromReader);
       msg.setAutoscaling(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrigin(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -346,6 +351,13 @@ proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.serializeB
       1,
       f,
       performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrigin();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -388,6 +400,24 @@ proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.prototype.
 };
 
 
+/**
+ * optional string origin = 2;
+ * @return {string}
+ */
+proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.prototype.getOrigin = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse} returns this
+ */
+proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.prototype.setOrigin = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
 
 
 
@@ -421,7 +451,8 @@ proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.prototype.t
 proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     autoscaling: (f = msg.getAutoscaling()) && performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 2, "")
+    status: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    origin: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -467,6 +498,10 @@ proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.deserialize
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrigin(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -508,6 +543,13 @@ proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.serializeBi
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getOrigin();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -569,6 +611,24 @@ proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.prototype.s
 };
 
 
+/**
+ * optional string origin = 3;
+ * @return {string}
+ */
+proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.prototype.getOrigin = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest} returns this
+ */
+proto.performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.prototype.setOrigin = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
 
 
 
@@ -601,7 +661,8 @@ proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.prototype.
  */
 proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    autoscaling: (f = msg.getAutoscaling()) && performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.toObject(includeInstance, f)
+    autoscaling: (f = msg.getAutoscaling()) && performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.toObject(includeInstance, f),
+    origin: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -643,6 +704,10 @@ proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.deserializ
       reader.readMessage(value,performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.deserializeBinaryFromReader);
       msg.setAutoscaling(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrigin(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -678,6 +743,13 @@ proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.serializeB
       1,
       f,
       performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrigin();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -720,6 +792,24 @@ proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.prototype.
 };
 
 
+/**
+ * optional string origin = 2;
+ * @return {string}
+ */
+proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.prototype.getOrigin = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse} returns this
+ */
+proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.prototype.setOrigin = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
 
 
 
@@ -753,7 +843,8 @@ proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.prototype.t
 proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     autoscaling: (f = msg.getAutoscaling()) && performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 2, "")
+    status: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    origin: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -799,6 +890,10 @@ proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.deserialize
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrigin(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -840,6 +935,13 @@ proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.serializeBi
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getOrigin();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -901,6 +1003,24 @@ proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.prototype.s
 };
 
 
+/**
+ * optional string origin = 3;
+ * @return {string}
+ */
+proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.prototype.getOrigin = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest} returns this
+ */
+proto.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.prototype.setOrigin = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
 
 
 
@@ -933,7 +1053,8 @@ proto.performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.prototype.
  */
 proto.performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    metadata: (f = msg.getMetadata()) && performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.toObject(includeInstance, f)
+    metadata: (f = msg.getMetadata()) && performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.toObject(includeInstance, f),
+    origin: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -975,6 +1096,10 @@ proto.performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.deserializ
       reader.readMessage(value,performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.deserializeBinaryFromReader);
       msg.setMetadata(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrigin(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1010,6 +1135,13 @@ proto.performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.serializeB
       1,
       f,
       performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrigin();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -1049,6 +1181,24 @@ proto.performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.prototype.
  */
 proto.performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.prototype.hasMetadata = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string origin = 2;
+ * @return {string}
+ */
+proto.performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.prototype.getOrigin = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse} returns this
+ */
+proto.performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.prototype.setOrigin = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1265,7 +1415,8 @@ proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.prototype.toO
  */
 proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    metadata: (f = msg.getMetadata()) && performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.toObject(includeInstance, f)
+    metadata: (f = msg.getMetadata()) && performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.toObject(includeInstance, f),
+    origin: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1307,6 +1458,10 @@ proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.deserializeBi
       reader.readMessage(value,performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.deserializeBinaryFromReader);
       msg.setMetadata(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrigin(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1342,6 +1497,13 @@ proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.serializeBina
       1,
       f,
       performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrigin();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -1384,6 +1546,24 @@ proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.prototype.has
 };
 
 
+/**
+ * optional string origin = 2;
+ * @return {string}
+ */
+proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.prototype.getOrigin = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse} returns this
+ */
+proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.prototype.setOrigin = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
 
 
 
@@ -1417,7 +1597,8 @@ proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.prototype.toOb
 proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     autoscaling: (f = msg.getAutoscaling()) && performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 2, "")
+    status: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    origin: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1463,6 +1644,10 @@ proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.deserializeBin
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrigin(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1504,6 +1689,13 @@ proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.serializeBinar
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getOrigin();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -1565,6 +1757,24 @@ proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.prototype.setS
 };
 
 
+/**
+ * optional string origin = 3;
+ * @return {string}
+ */
+proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.prototype.getOrigin = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest} returns this
+ */
+proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.prototype.setOrigin = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
 
 
 
@@ -1597,7 +1807,8 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.prototype.to
  */
 proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    metadata: (f = msg.getMetadata()) && performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.toObject(includeInstance, f)
+    metadata: (f = msg.getMetadata()) && performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.toObject(includeInstance, f),
+    origin: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1639,6 +1850,10 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.deserializeB
       reader.readMessage(value,performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.deserializeBinaryFromReader);
       msg.setMetadata(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrigin(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1674,6 +1889,13 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.serializeBin
       1,
       f,
       performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrigin();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -1713,6 +1935,24 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.prototype.cl
  */
 proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.prototype.hasMetadata = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string origin = 2;
+ * @return {string}
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.prototype.getOrigin = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse} returns this
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.prototype.setOrigin = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1756,7 +1996,8 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.prototype.toO
 proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     autoscalingsList: jspb.Message.toObjectList(msg.getAutoscalingsList(),
-    performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.toObject, includeInstance)
+    performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.toObject, includeInstance),
+    origin: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1798,6 +2039,10 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.deserializeBi
       reader.readMessage(value,performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.deserializeBinaryFromReader);
       msg.addAutoscalings(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrigin(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1833,6 +2078,13 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.serializeBina
       1,
       f,
       performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrigin();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -1873,6 +2125,24 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.prototype.add
  */
 proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.prototype.clearAutoscalingsList = function() {
   return this.setAutoscalingsList([]);
+};
+
+
+/**
+ * optional string origin = 2;
+ * @return {string}
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.prototype.getOrigin = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest} returns this
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.prototype.setOrigin = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

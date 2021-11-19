@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n*io.cuemby.performance.autoscaling.v1alpha1B\030AutoscalingAgentApiProtoP\001Z4github.com/performance-grpc-sdk/autoscaling/v1alpha1\242\002\003PFX\252\002 Performance.Autoscaling.V1Alpha1\312\002 Performance\\Autoscaling\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n<performance/autoscaling/v1alpha1/autoscaling_agent_api.proto\x12 performance.autoscaling.v1alpha1\x1a\x32performance/autoscaling/v1alpha1/autoscaling.proto\"q\n\x1e\x41gentCreateAutoscalingResponse\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\"\x88\x01\n\x1d\x41gentCreateAutoscalingRequest\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"q\n\x1e\x41gentUpdateAutoscalingResponse\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\"\x88\x01\n\x1d\x41gentUpdateAutoscalingRequest\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"h\n\x1e\x41gentDeleteAutoscalingResponse\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\"\x7f\n\x1d\x41gentDeleteAutoscalingRequest\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"e\n\x1b\x41gentGetAutoscalingResponse\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\"\x85\x01\n\x1a\x41gentGetAutoscalingRequest\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"f\n\x1c\x41gentListAutoscalingResponse\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\"p\n\x1b\x41gentListAutoscalingRequest\x12Q\n\x0c\x61utoscalings\x18\x01 \x03(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0c\x61utoscalings2\xc1\x06\n\x1a\x41utoscalingAgentAPIService\x12\xa1\x01\n\x16\x41gentCreateAutoscaling\x12?.performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest\x1a@.performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse\"\x00(\x01\x30\x01\x12\xa1\x01\n\x16\x41gentUpdateAutoscaling\x12?.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest\x1a@.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse\"\x00(\x01\x30\x01\x12\xa1\x01\n\x16\x41gentDeleteAutoscaling\x12?.performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest\x1a@.performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse\"\x00(\x01\x30\x01\x12\x98\x01\n\x13\x41gentGetAutoscaling\x12<.performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest\x1a=.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse\"\x00(\x01\x30\x01\x12\x9b\x01\n\x14\x41gentListAutoscaling\x12=.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest\x1a>.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse\"\x00(\x01\x30\x01\x42\xca\x01\n*io.cuemby.performance.autoscaling.v1alpha1B\x18\x41utoscalingAgentApiProtoP\x01Z4github.com/performance-grpc-sdk/autoscaling/v1alpha1\xa2\x02\x03PFX\xaa\x02 Performance.Autoscaling.V1Alpha1\xca\x02 Performance\\Autoscaling\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n<performance/autoscaling/v1alpha1/autoscaling_agent_api.proto\x12 performance.autoscaling.v1alpha1\x1a\x32performance/autoscaling/v1alpha1/autoscaling.proto\"\x89\x01\n\x1e\x41gentCreateAutoscalingResponse\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\x12\x16\n\x06origin\x18\x02 \x01(\tR\x06origin\"\xa0\x01\n\x1d\x41gentCreateAutoscalingRequest\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\x12\x16\n\x06origin\x18\x03 \x01(\tR\x06origin\"\x89\x01\n\x1e\x41gentUpdateAutoscalingResponse\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\x12\x16\n\x06origin\x18\x02 \x01(\tR\x06origin\"\xa0\x01\n\x1d\x41gentUpdateAutoscalingRequest\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\x12\x16\n\x06origin\x18\x03 \x01(\tR\x06origin\"\x80\x01\n\x1e\x41gentDeleteAutoscalingResponse\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\x12\x16\n\x06origin\x18\x02 \x01(\tR\x06origin\"\x7f\n\x1d\x41gentDeleteAutoscalingRequest\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"}\n\x1b\x41gentGetAutoscalingResponse\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\x12\x16\n\x06origin\x18\x02 \x01(\tR\x06origin\"\x9d\x01\n\x1a\x41gentGetAutoscalingRequest\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\x12\x16\n\x06origin\x18\x03 \x01(\tR\x06origin\"~\n\x1c\x41gentListAutoscalingResponse\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\x12\x16\n\x06origin\x18\x02 \x01(\tR\x06origin\"\x88\x01\n\x1b\x41gentListAutoscalingRequest\x12Q\n\x0c\x61utoscalings\x18\x01 \x03(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0c\x61utoscalings\x12\x16\n\x06origin\x18\x02 \x01(\tR\x06origin2\xc1\x06\n\x1a\x41utoscalingAgentAPIService\x12\xa1\x01\n\x16\x41gentCreateAutoscaling\x12?.performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest\x1a@.performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse\"\x00(\x01\x30\x01\x12\xa1\x01\n\x16\x41gentUpdateAutoscaling\x12?.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest\x1a@.performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse\"\x00(\x01\x30\x01\x12\xa1\x01\n\x16\x41gentDeleteAutoscaling\x12?.performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest\x1a@.performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse\"\x00(\x01\x30\x01\x12\x98\x01\n\x13\x41gentGetAutoscaling\x12<.performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest\x1a=.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse\"\x00(\x01\x30\x01\x12\x9b\x01\n\x14\x41gentListAutoscaling\x12=.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest\x1a>.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse\"\x00(\x01\x30\x01\x42\xca\x01\n*io.cuemby.performance.autoscaling.v1alpha1B\x18\x41utoscalingAgentApiProtoP\x01Z4github.com/performance-grpc-sdk/autoscaling/v1alpha1\xa2\x02\x03PFX\xaa\x02 Performance.Autoscaling.V1Alpha1\xca\x02 Performance\\Autoscaling\\V1Alpha1b\x06proto3'
   ,
   dependencies=[performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__pb2.DESCRIPTOR,])
 
@@ -42,6 +42,13 @@ _AGENTCREATEAUTOSCALINGRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='autoscaling', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='origin', full_name='performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.origin', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='origin', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -54,8 +61,8 @@ _AGENTCREATEAUTOSCALINGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=150,
-  serialized_end=263,
+  serialized_start=151,
+  serialized_end=288,
 )
 
 
@@ -81,6 +88,13 @@ _AGENTCREATEAUTOSCALINGREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='origin', full_name='performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.origin', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='origin', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -93,8 +107,8 @@ _AGENTCREATEAUTOSCALINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=266,
-  serialized_end=402,
+  serialized_start=291,
+  serialized_end=451,
 )
 
 
@@ -113,6 +127,13 @@ _AGENTUPDATEAUTOSCALINGRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='autoscaling', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='origin', full_name='performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.origin', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='origin', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -125,8 +146,8 @@ _AGENTUPDATEAUTOSCALINGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=404,
-  serialized_end=517,
+  serialized_start=454,
+  serialized_end=591,
 )
 
 
@@ -152,6 +173,13 @@ _AGENTUPDATEAUTOSCALINGREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='origin', full_name='performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.origin', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='origin', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -164,8 +192,8 @@ _AGENTUPDATEAUTOSCALINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=520,
-  serialized_end=656,
+  serialized_start=594,
+  serialized_end=754,
 )
 
 
@@ -184,6 +212,13 @@ _AGENTDELETEAUTOSCALINGRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='metadata', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='origin', full_name='performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.origin', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='origin', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -196,8 +231,8 @@ _AGENTDELETEAUTOSCALINGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=658,
-  serialized_end=762,
+  serialized_start=757,
+  serialized_end=885,
 )
 
 
@@ -235,8 +270,8 @@ _AGENTDELETEAUTOSCALINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=764,
-  serialized_end=891,
+  serialized_start=887,
+  serialized_end=1014,
 )
 
 
@@ -255,6 +290,13 @@ _AGENTGETAUTOSCALINGRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='metadata', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='origin', full_name='performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.origin', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='origin', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -267,8 +309,8 @@ _AGENTGETAUTOSCALINGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=893,
-  serialized_end=994,
+  serialized_start=1016,
+  serialized_end=1141,
 )
 
 
@@ -294,6 +336,13 @@ _AGENTGETAUTOSCALINGREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='origin', full_name='performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.origin', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='origin', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -306,8 +355,8 @@ _AGENTGETAUTOSCALINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=997,
-  serialized_end=1130,
+  serialized_start=1144,
+  serialized_end=1301,
 )
 
 
@@ -326,6 +375,13 @@ _AGENTLISTAUTOSCALINGRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='metadata', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='origin', full_name='performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.origin', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='origin', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -338,8 +394,8 @@ _AGENTLISTAUTOSCALINGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1132,
-  serialized_end=1234,
+  serialized_start=1303,
+  serialized_end=1429,
 )
 
 
@@ -358,6 +414,13 @@ _AGENTLISTAUTOSCALINGREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='autoscalings', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='origin', full_name='performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.origin', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='origin', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -370,8 +433,8 @@ _AGENTLISTAUTOSCALINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1236,
-  serialized_end=1348,
+  serialized_start=1432,
+  serialized_end=1568,
 )
 
 _AGENTCREATEAUTOSCALINGRESPONSE.fields_by_name['autoscaling'].message_type = performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__pb2._AUTOSCALING
@@ -476,8 +539,8 @@ _AUTOSCALINGAGENTAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1351,
-  serialized_end=2184,
+  serialized_start=1571,
+  serialized_end=2404,
   methods=[
   _descriptor.MethodDescriptor(
     name='AgentCreateAutoscaling',
