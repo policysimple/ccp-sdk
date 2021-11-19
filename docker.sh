@@ -1,12 +1,6 @@
 # Docker commands
-NAME_IMAGE=proto-compiler
-NAME_CONTAINER=proto-compiler
-DIR_LOCAL='C:\Users\madel\Documents\Cuemby\github.com\cuemby\ccp-sdk'
+NAME_IMAGE=proto-compiler2
+DIR_LOCAL=`pwd`
 docker build --tag $NAME_IMAGE .
 
-docker rm -fv $NAME_CONTAINER
-
-docker run -dti --name $NAME_CONTAINER -v $DIR_LOCAL:/temp/buf-gen $NAME_IMAGE
-
-
-docker exec -ti $NAME_CONTAINER bash
+docker run --rm -v `pwd`:/temp/buf-gen $NAME_IMAGE
