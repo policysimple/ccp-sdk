@@ -1,0 +1,481 @@
+
+syntax = "proto3";
+
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1";
+
+package accounts.v1alpha1;
+
+service AccountService {
+    
+    ///AUTH
+    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+    rpc ListUser(ListUserRequest) returns (ListUserResponse);
+    rpc GetOneUser(GetOneUserRequest) returns (GetOneUserResponse);
+    rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+    rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+    rpc ListUserPagination(ListUserPaginationRequest) returns (ListUserPaginationResponse);
+
+    ///PERMISSION
+    rpc CreatePermission(CreatePermissionRequest) returns (CreatePermissionResponse);
+    //rpc AssignPermission(AssignPermissionRequest) returns (MsgResponse);
+    rpc ListPermission(ListPermissionRequest) returns (ListPermissionResponse);
+    rpc GetOnePermission(GetOnePermissionRequest) returns (GetOnePermissionResponse);
+    rpc UpdatePermission(UpdatePermissionRequest) returns (UpdatePermissionResponse);
+    rpc DeletePermission(DeletePermissionRequest) returns (DeletePermissionResponse);
+
+    ///Organization
+    rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse);
+    rpc ListOrganization(ListOrganizationRequest) returns (ListOrganizationResponse);
+    rpc GetOneOrganization(GetOneOrganizationRequest) returns (GetOneOrganizationResponse);
+    rpc UpdateOrganization(UpdateOrganizationRequest) returns (UpdateOrganizationResponse);
+    rpc DeleteOrganization(DeleteOrganizationRequest) returns (DeleteOrganizationResponse);
+
+
+    //Roles 
+    rpc CreateRole(CreateRoleRequest) returns (CreateRoleResponse);
+    rpc ListRoles(ListRolesRequest) returns (ListRolesResponse);
+    rpc UpdateRole(UpdateRoleRequest) returns (UpdateRoleResponse);
+    rpc GetOneRole(GetOneRoleRequest) returns (GetOneRoleResponse);
+    rpc DeleteRole(DeleteRoleRequest) returns (DeleteRoleResponse);
+
+    //filter group by teamid
+    //rpc ListRolesByTeamId(ListRolesByTeamIdRequest) returns (ListRolesResponse);
+
+    //CRUD Project
+    rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse);
+    rpc GetOneProject(GetOneProjectRequest) returns (GetOneProjectResponse);
+    rpc UpdateProject(UpdateProjectRequest) returns (UpdateProjectResponse);
+    rpc DeleteProject(DeleteProjectRequest) returns (DeleteProjectResponse);
+    rpc ListProject(ListProjectRequest) returns (ListProjectResponse);
+    //rpc ListProjectPagination(ListProjectPaginationRequest) returns (ListProjectPaginationResponse);    
+
+
+    // Get Users Dex
+    rpc GetListUserDex(GetListUserDexRequest) returns (GetListUserDexResponse);
+
+}
+
+
+
+
+/*
+
+
+USERS
+
+
+*/
+
+
+message CreateUserResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message UpdateUserResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message DeleteUserResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+
+
+//ListUser
+message ListUserRequest {
+}
+
+
+//Create
+message CreateUserRequest {
+    string user_id = 2;
+    bool is_active = 3;
+    repeated uint32 roles_ids = 5;
+    repeated uint32 permissions_ids = 6;
+
+}
+
+//Update
+message UpdateUserRequest {
+    uint32 auth_id = 1;
+    CreateUserRequest auth = 2;
+}
+
+//Update
+message DeleteUserRequest {
+    uint32 auth_id = 1;
+}
+
+//Authentication without group and permission
+message UserList {
+    uint32 id = 1;
+    string user_id = 2;
+    bool is_active = 3;
+}
+
+
+//GetOneUserRequest
+message GetOneUserRequest {
+    uint32 id = 1;
+}
+
+message GetOneUserResponse {
+    uint32 id = 1;
+    string user_id = 2;
+    bool is_active = 3;
+    string created_at = 4;
+    string updated_at = 5;
+    repeated Rol roles = 6;
+    repeated Permission permissions = 7;
+}
+
+
+//ListResponse
+message ListUserResponse {
+    repeated UserList users = 1;
+}
+
+
+//pagination
+
+message ListUserPaginationRequest{
+    int32 offset = 1;
+    int32 limit = 2;
+} 
+
+message ListUserPaginationResponse {
+    int64 count = 1;
+    repeated UserList users = 2;
+}
+
+
+
+
+
+/*
+    ROLES
+*/
+
+message Rol {
+    uint32 id = 1;
+    string name = 2;
+    //uint32 TeamId = 4;
+    uint32 project_id = 3;
+    repeated Permission permissions = 4;
+}
+
+message CreateRoleRequest {
+    string name = 1;
+    string description = 2;
+    uint32 project_id = 3;
+    //uint32 team_id = 3;
+    repeated uint32 permission_ids = 4;
+}
+
+
+message UpdateRoleRequest {
+    uint32 rol_id = 1;
+    CreateRoleRequest rol = 2;
+}
+
+message GetOneRoleRequest {
+    uint32 rol_id = 1;
+}
+
+message GetOneRoleResponse{
+    uint32 id = 1;
+    string name = 2;
+    //uint32 TeamId = 4;
+    uint32 project_id = 3;
+    repeated Permission permissions = 4;
+}
+
+message DeleteRoleRequest {
+    uint32 rol_id = 1;
+}
+
+message ListRolesRequest {
+}   
+
+//
+
+/* 
+    Responses
+*/
+
+message ListRolesResponse {
+    repeated Rol roles = 1;
+}
+
+message CreateRoleResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message UpdateRoleResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message DeleteRoleResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+/*
+    PROJECTS
+
+*/
+
+message Project {
+    int32 id = 1;
+    string name = 2;
+    string image = 3;
+    uint32 organization_id = 4;
+    string description = 5;
+
+    string created_at = 6;
+    string updated_at = 7;
+}
+
+/*
+    Requests
+*/  
+
+message CreateProjectRequest {
+    string name = 1;
+    string description = 2;
+    string image = 3;
+    uint32 organization_id = 4;
+}
+
+message GetOneProjectRequest {
+    int32 id = 1;
+}
+
+message DeleteProjectRequest {
+    int32 id = 1;
+}
+
+message ListProjectRequest{
+}
+
+message UpdateProjectRequest {
+    int32 id = 1;
+    CreateProjectRequest project = 2;
+}
+
+
+/*
+    Responses
+*/
+message CreateProjectResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message UpdateProjectResponse{
+    string msg = 1;
+    string error = 2;
+}
+
+message DeleteProjectResponse{
+    string msg = 1;
+    string error = 2;
+}
+
+message GetOneProjectResponse {
+    int32 id = 1;
+    string name = 2;
+    string image = 3;
+    uint32 organization_id = 4;
+    string description = 5;
+
+    string created_at = 6;
+    string updated_at = 7;
+}
+
+
+message ListProjectResponse {
+    repeated Project projects = 1;
+}
+
+message ListProjectPaginationRequest {
+    int32 offset = 1;
+    int32 limit = 2;
+}
+
+message ListProjectPaginationResponse {
+    repeated Project projects = 1;
+    int64 count = 2;
+}
+
+
+
+
+/*
+    PERMISSIONS
+*/
+
+message Permission {
+    uint32 id = 1;
+    string name = 2;
+}
+
+message ListPermissionResponse {
+    repeated Permission permissions = 1;
+}
+
+message AssignPermissionRequest {
+    uint32 user_id = 1;
+    uint32 permission_id = 2;
+}
+
+
+/*
+    Requests
+*/
+
+message ListPermissionRequest{
+}
+
+message CreatePermissionRequest {
+    string name = 1;
+}
+
+message UpdatePermissionRequest {
+    uint32 permission_id = 1;
+    string name = 2;
+}   
+
+message GetOnePermissionRequest {
+    uint32 permission_id = 1;
+}
+
+message GetOnePermissionResponse {
+    uint32 id = 1;
+    string name = 2;
+}
+
+message DeletePermissionRequest {
+    uint32 permission_id = 1;
+}
+
+
+/*
+    Responses
+*/
+
+message UpdatePermissionResponse {
+    string msg = 1;
+    string error = 2;
+}   
+
+message DeletePermissionResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message CreatePermissionResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+
+/*
+    ORGANIZATIONS
+*/
+
+
+
+message Member {
+    uint32 id = 1;
+    string user_id = 2;
+    bool is_active = 3;
+}
+
+//Project Organization
+message ProjectOrganization {
+    int32 id = 1;
+    string name = 2;
+    string image = 3;
+
+    repeated Member members = 4;
+}
+
+message GetOneOrganizationResponse{
+    uint32 id = 1;
+    string name = 2;
+    string image = 3;
+
+    repeated ProjectOrganization projects = 4;
+}
+
+message Organization {
+    uint32 id = 1;
+    string name = 2;
+    string image = 3;
+}
+
+/*
+
+Requests
+
+*/
+
+message CreateOrganizationRequest {
+    string name = 1;
+    string image = 2;
+}
+
+message ListOrganizationRequest {
+}
+
+message GetOneOrganizationRequest {
+    uint32 organization_id = 1;
+}
+
+message UpdateOrganizationRequest {
+    uint32 organization_id = 1;
+    string name = 2;
+    //repeated uint32 team_ids = 3;
+    string image = 4;
+}
+
+
+message DeleteOrganizationRequest {
+    uint32 organization_id = 1;
+}
+
+/*
+    Responses
+*/
+
+message ListOrganizationResponse {
+    repeated Organization organizations = 1;
+}
+
+message CreateOrganizationResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message UpdateOrganizationResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message DeleteOrganizationResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message GetListUserDexRequest {}
+
+message GetListUserDexResponse {
+    string user_id=1;
+    string provider=2;
+}
