@@ -14,53 +14,53 @@ import "performance/autoscaling/v1alpha1/autoscaling.proto";
 
 
 service AutoscalingAgentAPIService{
-    rpc AgentCreateAutoscaling(stream AgentCreateAutoscalingResponse) returns (stream AgentCreateAutoscalingRequest) {};
-    rpc AgentUpdateAutoscaling(stream AgentUpdateAutoscalingResponse) returns (stream AgentUpdateAutoscalingRequest) {};
-    rpc AgentDeleteAutoscaling(stream AgentDeleteAutoscalingResponse) returns (stream AgentDeleteAutoscalingRequest) {};
-    rpc AgentGetAutoscaling(stream AgentGetAutoscalingResponse) returns (stream AgentGetAutoscalingRequest) {};
-    rpc AgentListAutoscaling(stream AgentListAutoscalingResponse) returns (stream AgentListAutoscalingRequest) {};
-}
-
-message AgentCreateAutoscalingRequest {
-    performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
+    rpc AgentCreateAutoscaling(stream AgentCreateAutoscalingRequest) returns (stream AgentCreateAutoscalingResponse) {};
+    rpc AgentUpdateAutoscaling(stream AgentUpdateAutoscalingRequest) returns (stream AgentUpdateAutoscalingResponse) {};
+    rpc AgentDeleteAutoscaling(stream AgentDeleteAutoscalingRequest) returns (stream AgentDeleteAutoscalingResponse) {};
+    rpc AgentGetAutoscaling(stream AgentGetAutoscalingRequest) returns (stream AgentGetAutoscalingResponse) {};
+    rpc AgentListAutoscaling(stream AgentListAutoscalingRequest) returns (stream AgentListAutoscalingResponse) {};
 }
 
 message AgentCreateAutoscalingResponse {
     performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
-    string status = 2;
 }
 
-message AgentUpdateAutoscalingRequest {
+message AgentCreateAutoscalingRequest {
     performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
+    string status = 2;
 }
 
 message AgentUpdateAutoscalingResponse {
     performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
-    string status = 2;
 }
 
-message AgentDeleteAutoscalingRequest {
-    performance.autoscaling.v1alpha1.Metadata metadata = 1;
-}
-
-message AgentDeleteAutoscalingResponse {
-    performance.autoscaling.v1alpha1.Metadata metadata = 1;
-    string status = 2;
-}
-
-message AgentGetAutoscalingRequest {
-    performance.autoscaling.v1alpha1.Metadata metadata = 1;
-}
-
-message AgentGetAutoscalingResponse {
+message AgentUpdateAutoscalingRequest {
     performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
     string status = 2;
 }
 
-message AgentListAutoscalingRequest {
+message AgentDeleteAutoscalingResponse {
     performance.autoscaling.v1alpha1.Metadata metadata = 1;
 }
 
+message AgentDeleteAutoscalingRequest {
+    performance.autoscaling.v1alpha1.Metadata metadata = 1;
+    string status = 2;
+}
+
+message AgentGetAutoscalingResponse {
+    performance.autoscaling.v1alpha1.Metadata metadata = 1;
+}
+
+message AgentGetAutoscalingRequest {
+    performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1;
+    string status = 2;
+}
+
 message AgentListAutoscalingResponse {
+    performance.autoscaling.v1alpha1.Metadata metadata = 1;
+}
+
+message AgentListAutoscalingRequest {
     repeated performance.autoscaling.v1alpha1.Autoscaling autoscalings = 1;
 }
