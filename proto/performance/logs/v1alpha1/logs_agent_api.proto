@@ -13,6 +13,7 @@ option php_namespace = "Performance\\Logs\\V1Alpha1";
 import "performance/logs/v1alpha1/logs.proto";
 
 
+
 service LogsAgentAPIService{
     rpc SaveLogs(stream SaveLogsRequest) returns (stream SaveLogsResponse) {};
 }

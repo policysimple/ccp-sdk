@@ -3,7 +3,7 @@ syntax = "proto3";
 package performance.autoscaling.v1alpha1;
 
 option csharp_namespace = "Performance.Autoscaling.V1Alpha1";
-option go_package = "github.com/performance-grpc-sdk/autoscalingv1alpha1";
+option go_package = "github.com/performance-grpc-sdk/autoscaling/v1alpha1";
 option java_multiple_files = true;
 option java_outer_classname = "AutoscalingAgentApiProto";
 option java_package = "io.cuemby.performance.autoscaling.v1alpha1";
@@ -14,11 +14,11 @@ import "performance/autoscaling/v1alpha1/autoscaling.proto";
 
 
 service AutoscalingAgentAPIService{
-    rpc AgentCreateAutoscaling(stream AgentCreateAutoscalingRequest) returns (stream AgentCreateAutoscalingResponse) {};
-    rpc AgentUpdateAutoscaling(stream AgentUpdateAutoscalingRequest) returns (stream AgentUpdateAutoscalingResponse) {};
-    rpc AgentDeleteAutoscaling(stream AgentDeleteAutoscalingRequest) returns (stream AgentDeleteAutoscalingResponse) {};
-    rpc AgentGetAutoscaling(stream AgentGetAutoscalingRequest) returns (stream AgentGetAutoscalingResponse) {};
-    rpc AgentListAutoscaling(stream AgentListAutoscalingRequest) returns (stream AgentListAutoscalingResponse) {};
+    rpc AgentCreateAutoscaling(stream AgentCreateAutoscalingResponse) returns (stream AgentCreateAutoscalingRequest) {};
+    rpc AgentUpdateAutoscaling(stream AgentUpdateAutoscalingResponse) returns (stream AgentUpdateAutoscalingRequest) {};
+    rpc AgentDeleteAutoscaling(stream AgentDeleteAutoscalingResponse) returns (stream AgentDeleteAutoscalingRequest) {};
+    rpc AgentGetAutoscaling(stream AgentGetAutoscalingResponse) returns (stream AgentGetAutoscalingRequest) {};
+    rpc AgentListAutoscaling(stream AgentListAutoscalingResponse) returns (stream AgentListAutoscalingRequest) {};
 }
 
 message AgentCreateAutoscalingRequest {
