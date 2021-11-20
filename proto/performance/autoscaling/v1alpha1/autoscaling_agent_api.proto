@@ -67,9 +67,13 @@ message AgentGetAutoscalingRequest {
 message AgentListAutoscalingResponse {
     performance.autoscaling.v1alpha1.Metadata metadata = 1;
     string origin = 2;
+    repeated performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3;
+    string status = 4;
 }
 
 message AgentListAutoscalingRequest {
     repeated performance.autoscaling.v1alpha1.Autoscaling autoscalings = 1;
     string origin = 2;
+    performance.autoscaling.v1alpha1.Metadata metadata = 3;
+    string status = 4;
 }

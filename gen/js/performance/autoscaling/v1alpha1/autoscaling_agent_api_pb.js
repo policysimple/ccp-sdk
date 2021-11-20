@@ -206,7 +206,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.repeatedFields_, null);
 };
 goog.inherits(proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1776,6 +1776,13 @@ proto.performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.prototype.setO
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1808,7 +1815,10 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.prototype.to
 proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     metadata: (f = msg.getMetadata()) && performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.toObject(includeInstance, f),
-    origin: jspb.Message.getFieldWithDefault(msg, 2, "")
+    origin: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    autoscalingsList: jspb.Message.toObjectList(msg.getAutoscalingsList(),
+    performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.toObject, includeInstance),
+    status: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1854,6 +1864,15 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.deserializeB
       var value = /** @type {string} */ (reader.readString());
       msg.setOrigin(value);
       break;
+    case 3:
+      var value = new performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling;
+      reader.readMessage(value,performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.deserializeBinaryFromReader);
+      msg.addAutoscalings(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1895,6 +1914,21 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.serializeBin
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getAutoscalingsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -1956,6 +1990,62 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.prototype.se
 };
 
 
+/**
+ * repeated Autoscaling autoscalings = 3;
+ * @return {!Array<!proto.performance.autoscaling.v1alpha1.Autoscaling>}
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.prototype.getAutoscalingsList = function() {
+  return /** @type{!Array<!proto.performance.autoscaling.v1alpha1.Autoscaling>} */ (
+    jspb.Message.getRepeatedWrapperField(this, performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.performance.autoscaling.v1alpha1.Autoscaling>} value
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse} returns this
+*/
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.prototype.setAutoscalingsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.performance.autoscaling.v1alpha1.Autoscaling=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.performance.autoscaling.v1alpha1.Autoscaling}
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.prototype.addAutoscalings = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.performance.autoscaling.v1alpha1.Autoscaling, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse} returns this
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.prototype.clearAutoscalingsList = function() {
+  return this.setAutoscalingsList([]);
+};
+
+
+/**
+ * optional string status = 4;
+ * @return {string}
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse} returns this
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -1997,7 +2087,9 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.toObject = fu
   var f, obj = {
     autoscalingsList: jspb.Message.toObjectList(msg.getAutoscalingsList(),
     performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.toObject, includeInstance),
-    origin: jspb.Message.getFieldWithDefault(msg, 2, "")
+    origin: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    metadata: (f = msg.getMetadata()) && performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.toObject(includeInstance, f),
+    status: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -2043,6 +2135,15 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.deserializeBi
       var value = /** @type {string} */ (reader.readString());
       msg.setOrigin(value);
       break;
+    case 3:
+      var value = new performance_autoscaling_v1alpha1_autoscaling_pb.Metadata;
+      reader.readMessage(value,performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.deserializeBinaryFromReader);
+      msg.setMetadata(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2084,6 +2185,21 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.serializeBina
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getMetadata();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      performance_autoscaling_v1alpha1_autoscaling_pb.Metadata.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -2143,6 +2259,61 @@ proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.prototype.get
  */
 proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.prototype.setOrigin = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional Metadata metadata = 3;
+ * @return {?proto.performance.autoscaling.v1alpha1.Metadata}
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.prototype.getMetadata = function() {
+  return /** @type{?proto.performance.autoscaling.v1alpha1.Metadata} */ (
+    jspb.Message.getWrapperField(this, performance_autoscaling_v1alpha1_autoscaling_pb.Metadata, 3));
+};
+
+
+/**
+ * @param {?proto.performance.autoscaling.v1alpha1.Metadata|undefined} value
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest} returns this
+*/
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.prototype.setMetadata = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest} returns this
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.prototype.clearMetadata = function() {
+  return this.setMetadata(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.prototype.hasMetadata = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string status = 4;
+ * @return {string}
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest} returns this
+ */
+proto.performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

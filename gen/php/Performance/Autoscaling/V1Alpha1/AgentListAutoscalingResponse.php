@@ -21,6 +21,14 @@ class AgentListAutoscalingResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string origin = 2 [json_name = "origin"];</code>
      */
     protected $origin = '';
+    /**
+     * Generated from protobuf field <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    private $autoscalings;
+    /**
+     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     */
+    protected $status = '';
 
     /**
      * Constructor.
@@ -30,6 +38,8 @@ class AgentListAutoscalingResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Performance\Autoscaling\V1Alpha1\Metadata $metadata
      *     @type string $origin
+     *     @type \Performance\Autoscaling\V1Alpha1\Autoscaling[]|\Google\Protobuf\Internal\RepeatedField $autoscalings
+     *     @type string $status
      * }
      */
     public function __construct($data = NULL) {
@@ -87,6 +97,50 @@ class AgentListAutoscalingResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->origin = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAutoscalings()
+    {
+        return $this->autoscalings;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     * @param \Performance\Autoscaling\V1Alpha1\Autoscaling[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAutoscalings($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Performance\Autoscaling\V1Alpha1\Autoscaling::class);
+        $this->autoscalings = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
 
         return $this;
     }

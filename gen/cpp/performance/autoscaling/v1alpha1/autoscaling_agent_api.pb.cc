@@ -128,7 +128,9 @@ struct AgentGetAutoscalingRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AgentGetAutoscalingRequestDefaultTypeInternal _AgentGetAutoscalingRequest_default_instance_;
 constexpr AgentListAutoscalingResponse::AgentListAutoscalingResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : origin_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : autoscalings_()
+  , origin_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , metadata_(nullptr){}
 struct AgentListAutoscalingResponseDefaultTypeInternal {
   constexpr AgentListAutoscalingResponseDefaultTypeInternal()
@@ -142,7 +144,9 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AgentListAutoscalingResponseDef
 constexpr AgentListAutoscalingRequest::AgentListAutoscalingRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : autoscalings_()
-  , origin_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , origin_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , metadata_(nullptr){}
 struct AgentListAutoscalingRequestDefaultTypeInternal {
   constexpr AgentListAutoscalingRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -226,6 +230,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_performance_2fautoscaling_2fv1
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse, metadata_),
   PROTOBUF_FIELD_OFFSET(::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse, origin_),
+  PROTOBUF_FIELD_OFFSET(::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse, autoscalings_),
+  PROTOBUF_FIELD_OFFSET(::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse, status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -233,6 +239,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_performance_2fautoscaling_2fv1
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, autoscalings_),
   PROTOBUF_FIELD_OFFSET(::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, origin_),
+  PROTOBUF_FIELD_OFFSET(::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, metadata_),
+  PROTOBUF_FIELD_OFFSET(::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, status_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse)},
@@ -244,7 +252,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 44, -1, sizeof(::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse)},
   { 51, -1, sizeof(::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest)},
   { 59, -1, sizeof(::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse)},
-  { 66, -1, sizeof(::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest)},
+  { 68, -1, sizeof(::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -293,47 +301,52 @@ const char descriptor_table_protodef_performance_2fautoscaling_2fv1alpha1_2fauto
   "alingRequest\022O\n\013autoscaling\030\001 \001(\0132-.perf"
   "ormance.autoscaling.v1alpha1.Autoscaling"
   "R\013autoscaling\022\026\n\006status\030\002 \001(\tR\006status\022\026\n"
-  "\006origin\030\003 \001(\tR\006origin\"~\n\034AgentListAutosc"
-  "alingResponse\022F\n\010metadata\030\001 \001(\0132*.perfor"
-  "mance.autoscaling.v1alpha1.MetadataR\010met"
-  "adata\022\026\n\006origin\030\002 \001(\tR\006origin\"\210\001\n\033AgentL"
-  "istAutoscalingRequest\022Q\n\014autoscalings\030\001 "
-  "\003(\0132-.performance.autoscaling.v1alpha1.A"
-  "utoscalingR\014autoscalings\022\026\n\006origin\030\002 \001(\t"
-  "R\006origin2\301\006\n\032AutoscalingAgentAPIService\022"
-  "\241\001\n\026AgentCreateAutoscaling\022\?.performance"
-  ".autoscaling.v1alpha1.AgentCreateAutosca"
-  "lingRequest\032@.performance.autoscaling.v1"
-  "alpha1.AgentCreateAutoscalingResponse\"\000("
-  "\0010\001\022\241\001\n\026AgentUpdateAutoscaling\022\?.perform"
-  "ance.autoscaling.v1alpha1.AgentUpdateAut"
+  "\006origin\030\003 \001(\tR\006origin\"\351\001\n\034AgentListAutos"
+  "calingResponse\022F\n\010metadata\030\001 \001(\0132*.perfo"
+  "rmance.autoscaling.v1alpha1.MetadataR\010me"
+  "tadata\022\026\n\006origin\030\002 \001(\tR\006origin\022Q\n\014autosc"
+  "alings\030\003 \003(\0132-.performance.autoscaling.v"
+  "1alpha1.AutoscalingR\014autoscalings\022\026\n\006sta"
+  "tus\030\004 \001(\tR\006status\"\350\001\n\033AgentListAutoscali"
+  "ngRequest\022Q\n\014autoscalings\030\001 \003(\0132-.perfor"
+  "mance.autoscaling.v1alpha1.AutoscalingR\014"
+  "autoscalings\022\026\n\006origin\030\002 \001(\tR\006origin\022F\n\010"
+  "metadata\030\003 \001(\0132*.performance.autoscaling"
+  ".v1alpha1.MetadataR\010metadata\022\026\n\006status\030\004"
+  " \001(\tR\006status2\301\006\n\032AutoscalingAgentAPIServ"
+  "ice\022\241\001\n\026AgentCreateAutoscaling\022\?.perform"
+  "ance.autoscaling.v1alpha1.AgentCreateAut"
   "oscalingRequest\032@.performance.autoscalin"
-  "g.v1alpha1.AgentUpdateAutoscalingRespons"
-  "e\"\000(\0010\001\022\241\001\n\026AgentDeleteAutoscaling\022\?.per"
-  "formance.autoscaling.v1alpha1.AgentDelet"
+  "g.v1alpha1.AgentCreateAutoscalingRespons"
+  "e\"\000(\0010\001\022\241\001\n\026AgentUpdateAutoscaling\022\?.per"
+  "formance.autoscaling.v1alpha1.AgentUpdat"
   "eAutoscalingRequest\032@.performance.autosc"
-  "aling.v1alpha1.AgentDeleteAutoscalingRes"
-  "ponse\"\000(\0010\001\022\230\001\n\023AgentGetAutoscaling\022<.pe"
-  "rformance.autoscaling.v1alpha1.AgentGetA"
-  "utoscalingRequest\032=.performance.autoscal"
-  "ing.v1alpha1.AgentGetAutoscalingResponse"
-  "\"\000(\0010\001\022\233\001\n\024AgentListAutoscaling\022=.perfor"
-  "mance.autoscaling.v1alpha1.AgentListAuto"
-  "scalingRequest\032>.performance.autoscaling"
-  ".v1alpha1.AgentListAutoscalingResponse\"\000"
-  "(\0010\001B\312\001\n*io.cuemby.performance.autoscali"
-  "ng.v1alpha1B\030AutoscalingAgentApiProtoP\001Z"
-  "4github.com/performance-grpc-sdk/autosca"
-  "ling/v1alpha1\242\002\003PFX\252\002 Performance.Autosc"
-  "aling.V1Alpha1\312\002 Performance\\Autoscaling"
-  "\\V1Alpha1b\006proto3"
+  "aling.v1alpha1.AgentUpdateAutoscalingRes"
+  "ponse\"\000(\0010\001\022\241\001\n\026AgentDeleteAutoscaling\022\?"
+  ".performance.autoscaling.v1alpha1.AgentD"
+  "eleteAutoscalingRequest\032@.performance.au"
+  "toscaling.v1alpha1.AgentDeleteAutoscalin"
+  "gResponse\"\000(\0010\001\022\230\001\n\023AgentGetAutoscaling\022"
+  "<.performance.autoscaling.v1alpha1.Agent"
+  "GetAutoscalingRequest\032=.performance.auto"
+  "scaling.v1alpha1.AgentGetAutoscalingResp"
+  "onse\"\000(\0010\001\022\233\001\n\024AgentListAutoscaling\022=.pe"
+  "rformance.autoscaling.v1alpha1.AgentList"
+  "AutoscalingRequest\032>.performance.autosca"
+  "ling.v1alpha1.AgentListAutoscalingRespon"
+  "se\"\000(\0010\001B\312\001\n*io.cuemby.performance.autos"
+  "caling.v1alpha1B\030AutoscalingAgentApiProt"
+  "oP\001Z4github.com/performance-grpc-sdk/aut"
+  "oscaling/v1alpha1\242\002\003PFX\252\002 Performance.Au"
+  "toscaling.V1Alpha1\312\002 Performance\\Autosca"
+  "ling\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto_deps[1] = {
   &::descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto = {
-  false, false, 2617, descriptor_table_protodef_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto, "performance/autoscaling/v1alpha1/autoscaling_agent_api.proto", 
+  false, false, 2821, descriptor_table_protodef_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto, "performance/autoscaling/v1alpha1/autoscaling_agent_api.proto", 
   &descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto_once, descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto_deps, 1, 10,
   schemas, file_default_instances, TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto::offsets,
   file_level_metadata_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto, file_level_enum_descriptors_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto, file_level_service_descriptors_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto,
@@ -2475,9 +2488,13 @@ void AgentListAutoscalingResponse::clear_metadata() {
   }
   metadata_ = nullptr;
 }
+void AgentListAutoscalingResponse::clear_autoscalings() {
+  autoscalings_.Clear();
+}
 AgentListAutoscalingResponse::AgentListAutoscalingResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  autoscalings_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -2485,11 +2502,17 @@ AgentListAutoscalingResponse::AgentListAutoscalingResponse(::PROTOBUF_NAMESPACE_
   // @@protoc_insertion_point(arena_constructor:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse)
 }
 AgentListAutoscalingResponse::AgentListAutoscalingResponse(const AgentListAutoscalingResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      autoscalings_(from.autoscalings_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   origin_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_origin().empty()) {
     origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_origin(), 
+      GetArenaForAllocation());
+  }
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
       GetArenaForAllocation());
   }
   if (from._internal_has_metadata()) {
@@ -2502,6 +2525,7 @@ AgentListAutoscalingResponse::AgentListAutoscalingResponse(const AgentListAutosc
 
 inline void AgentListAutoscalingResponse::SharedCtor() {
 origin_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 metadata_ = nullptr;
 }
 
@@ -2515,6 +2539,7 @@ AgentListAutoscalingResponse::~AgentListAutoscalingResponse() {
 inline void AgentListAutoscalingResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   origin_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete metadata_;
 }
 
@@ -2534,7 +2559,9 @@ void AgentListAutoscalingResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  autoscalings_.Clear();
   origin_.ClearToEmpty();
+  status_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && metadata_ != nullptr) {
     delete metadata_;
   }
@@ -2561,6 +2588,27 @@ const char* AgentListAutoscalingResponse::_InternalParse(const char* ptr, ::PROT
           auto str = _internal_mutable_origin();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.origin"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_autoscalings(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // string status = 4 [json_name = "status"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.status"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2611,6 +2659,24 @@ failure:
         2, this->_internal_origin(), target);
   }
 
+  // repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_autoscalings_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, this->_internal_autoscalings(i), target, stream);
+  }
+
+  // string status = 4 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.status");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_status(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2627,11 +2693,25 @@ size_t AgentListAutoscalingResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];
+  total_size += 1UL * this->_internal_autoscalings_size();
+  for (const auto& msg : this->autoscalings_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
   // string origin = 2 [json_name = "origin"];
   if (!this->_internal_origin().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_origin());
+  }
+
+  // string status = 4 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
   }
 
   // .performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
@@ -2669,8 +2749,12 @@ void AgentListAutoscalingResponse::MergeFrom(const AgentListAutoscalingResponse&
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  autoscalings_.MergeFrom(from.autoscalings_);
   if (!from._internal_origin().empty()) {
     _internal_set_origin(from._internal_origin());
+  }
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
   }
   if (from._internal_has_metadata()) {
     _internal_mutable_metadata()->::performance::autoscaling::v1alpha1::Metadata::MergeFrom(from._internal_metadata());
@@ -2692,10 +2776,16 @@ bool AgentListAutoscalingResponse::IsInitialized() const {
 void AgentListAutoscalingResponse::InternalSwap(AgentListAutoscalingResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  autoscalings_.InternalSwap(&other->autoscalings_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &origin_, GetArenaForAllocation(),
       &other->origin_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
   );
   swap(metadata_, other->metadata_);
 }
@@ -2710,10 +2800,21 @@ void AgentListAutoscalingResponse::InternalSwap(AgentListAutoscalingResponse* ot
 
 class AgentListAutoscalingRequest::_Internal {
  public:
+  static const ::performance::autoscaling::v1alpha1::Metadata& metadata(const AgentListAutoscalingRequest* msg);
 };
 
+const ::performance::autoscaling::v1alpha1::Metadata&
+AgentListAutoscalingRequest::_Internal::metadata(const AgentListAutoscalingRequest* msg) {
+  return *msg->metadata_;
+}
 void AgentListAutoscalingRequest::clear_autoscalings() {
   autoscalings_.Clear();
+}
+void AgentListAutoscalingRequest::clear_metadata() {
+  if (GetArenaForAllocation() == nullptr && metadata_ != nullptr) {
+    delete metadata_;
+  }
+  metadata_ = nullptr;
 }
 AgentListAutoscalingRequest::AgentListAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -2734,11 +2835,23 @@ AgentListAutoscalingRequest::AgentListAutoscalingRequest(const AgentListAutoscal
     origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_origin(), 
       GetArenaForAllocation());
   }
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_metadata()) {
+    metadata_ = new ::performance::autoscaling::v1alpha1::Metadata(*from.metadata_);
+  } else {
+    metadata_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest)
 }
 
 inline void AgentListAutoscalingRequest::SharedCtor() {
 origin_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+metadata_ = nullptr;
 }
 
 AgentListAutoscalingRequest::~AgentListAutoscalingRequest() {
@@ -2751,6 +2864,8 @@ AgentListAutoscalingRequest::~AgentListAutoscalingRequest() {
 inline void AgentListAutoscalingRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   origin_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete metadata_;
 }
 
 void AgentListAutoscalingRequest::ArenaDtor(void* object) {
@@ -2771,6 +2886,11 @@ void AgentListAutoscalingRequest::Clear() {
 
   autoscalings_.Clear();
   origin_.ClearToEmpty();
+  status_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && metadata_ != nullptr) {
+    delete metadata_;
+  }
+  metadata_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2798,6 +2918,22 @@ const char* AgentListAutoscalingRequest::_InternalParse(const char* ptr, ::PROTO
           auto str = _internal_mutable_origin();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.origin"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .performance.autoscaling.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_metadata(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string status = 4 [json_name = "status"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.status"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2848,6 +2984,24 @@ failure:
         2, this->_internal_origin(), target);
   }
 
+  // .performance.autoscaling.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];
+  if (this->_internal_has_metadata()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::metadata(this), target, stream);
+  }
+
+  // string status = 4 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.status");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_status(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2876,6 +3030,20 @@ size_t AgentListAutoscalingRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_origin());
+  }
+
+  // string status = 4 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
+  }
+
+  // .performance.autoscaling.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];
+  if (this->_internal_has_metadata()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *metadata_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2910,6 +3078,12 @@ void AgentListAutoscalingRequest::MergeFrom(const AgentListAutoscalingRequest& f
   if (!from._internal_origin().empty()) {
     _internal_set_origin(from._internal_origin());
   }
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
+  }
+  if (from._internal_has_metadata()) {
+    _internal_mutable_metadata()->::performance::autoscaling::v1alpha1::Metadata::MergeFrom(from._internal_metadata());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2933,6 +3107,12 @@ void AgentListAutoscalingRequest::InternalSwap(AgentListAutoscalingRequest* othe
       &origin_, GetArenaForAllocation(),
       &other->origin_, other->GetArenaForAllocation()
   );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
+  );
+  swap(metadata_, other->metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AgentListAutoscalingRequest::GetMetadata() const {

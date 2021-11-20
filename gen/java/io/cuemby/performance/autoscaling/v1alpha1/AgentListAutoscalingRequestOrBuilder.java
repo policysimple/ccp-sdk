@@ -42,4 +42,31 @@ public interface AgentListAutoscalingRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getOriginBytes();
+
+  /**
+   * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+   * @return The metadata.
+   */
+  io.cuemby.performance.autoscaling.v1alpha1.Metadata getMetadata();
+  /**
+   * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+   */
+  io.cuemby.performance.autoscaling.v1alpha1.MetadataOrBuilder getMetadataOrBuilder();
+
+  /**
+   * <code>string status = 4 [json_name = "status"];</code>
+   * @return The status.
+   */
+  java.lang.String getStatus();
+  /**
+   * <code>string status = 4 [json_name = "status"];</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
 }

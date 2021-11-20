@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private AgentListAutoscalingResponse() {
     origin_ = "";
+    autoscalings_ = java.util.Collections.emptyList();
+    status_ = "";
   }
 
   @java.lang.Override
@@ -39,6 +41,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -68,6 +71,21 @@ private static final long serialVersionUID = 0L;
             origin_ = s;
             break;
           }
+          case 26: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              autoscalings_ = new java.util.ArrayList<io.cuemby.performance.autoscaling.v1alpha1.Autoscaling>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            autoscalings_.add(
+                input.readMessage(io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.parser(), extensionRegistry));
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            status_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -83,6 +101,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        autoscalings_ = java.util.Collections.unmodifiableList(autoscalings_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -164,6 +185,84 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int AUTOSCALINGS_FIELD_NUMBER = 3;
+  private java.util.List<io.cuemby.performance.autoscaling.v1alpha1.Autoscaling> autoscalings_;
+  /**
+   * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+   */
+  @java.lang.Override
+  public java.util.List<io.cuemby.performance.autoscaling.v1alpha1.Autoscaling> getAutoscalingsList() {
+    return autoscalings_;
+  }
+  /**
+   * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends io.cuemby.performance.autoscaling.v1alpha1.AutoscalingOrBuilder> 
+      getAutoscalingsOrBuilderList() {
+    return autoscalings_;
+  }
+  /**
+   * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+   */
+  @java.lang.Override
+  public int getAutoscalingsCount() {
+    return autoscalings_.size();
+  }
+  /**
+   * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.performance.autoscaling.v1alpha1.Autoscaling getAutoscalings(int index) {
+    return autoscalings_.get(index);
+  }
+  /**
+   * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.performance.autoscaling.v1alpha1.AutoscalingOrBuilder getAutoscalingsOrBuilder(
+      int index) {
+    return autoscalings_.get(index);
+  }
+
+  public static final int STATUS_FIELD_NUMBER = 4;
+  private volatile java.lang.Object status_;
+  /**
+   * <code>string status = 4 [json_name = "status"];</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string status = 4 [json_name = "status"];</code>
+   * @return The bytes for status.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -184,6 +283,12 @@ private static final long serialVersionUID = 0L;
     if (!getOriginBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, origin_);
     }
+    for (int i = 0; i < autoscalings_.size(); i++) {
+      output.writeMessage(3, autoscalings_.get(i));
+    }
+    if (!getStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -199,6 +304,13 @@ private static final long serialVersionUID = 0L;
     }
     if (!getOriginBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, origin_);
+    }
+    for (int i = 0; i < autoscalings_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, autoscalings_.get(i));
+    }
+    if (!getStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -222,6 +334,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getOrigin()
         .equals(other.getOrigin())) return false;
+    if (!getAutoscalingsList()
+        .equals(other.getAutoscalingsList())) return false;
+    if (!getStatus()
+        .equals(other.getStatus())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -239,6 +355,12 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + ORIGIN_FIELD_NUMBER;
     hash = (53 * hash) + getOrigin().hashCode();
+    if (getAutoscalingsCount() > 0) {
+      hash = (37 * hash) + AUTOSCALINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoscalingsList().hashCode();
+    }
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getStatus().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -367,6 +489,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getAutoscalingsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -379,6 +502,14 @@ private static final long serialVersionUID = 0L;
         metadataBuilder_ = null;
       }
       origin_ = "";
+
+      if (autoscalingsBuilder_ == null) {
+        autoscalings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        autoscalingsBuilder_.clear();
+      }
+      status_ = "";
 
       return this;
     }
@@ -406,12 +537,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse buildPartial() {
       io.cuemby.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse result = new io.cuemby.performance.autoscaling.v1alpha1.AgentListAutoscalingResponse(this);
+      int from_bitField0_ = bitField0_;
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
       result.origin_ = origin_;
+      if (autoscalingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          autoscalings_ = java.util.Collections.unmodifiableList(autoscalings_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.autoscalings_ = autoscalings_;
+      } else {
+        result.autoscalings_ = autoscalingsBuilder_.build();
+      }
+      result.status_ = status_;
       onBuilt();
       return result;
     }
@@ -467,6 +609,36 @@ private static final long serialVersionUID = 0L;
         origin_ = other.origin_;
         onChanged();
       }
+      if (autoscalingsBuilder_ == null) {
+        if (!other.autoscalings_.isEmpty()) {
+          if (autoscalings_.isEmpty()) {
+            autoscalings_ = other.autoscalings_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureAutoscalingsIsMutable();
+            autoscalings_.addAll(other.autoscalings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.autoscalings_.isEmpty()) {
+          if (autoscalingsBuilder_.isEmpty()) {
+            autoscalingsBuilder_.dispose();
+            autoscalingsBuilder_ = null;
+            autoscalings_ = other.autoscalings_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            autoscalingsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAutoscalingsFieldBuilder() : null;
+          } else {
+            autoscalingsBuilder_.addAllMessages(other.autoscalings_);
+          }
+        }
+      }
+      if (!other.getStatus().isEmpty()) {
+        status_ = other.status_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -495,6 +667,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private io.cuemby.performance.autoscaling.v1alpha1.Metadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -687,6 +860,322 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       origin_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<io.cuemby.performance.autoscaling.v1alpha1.Autoscaling> autoscalings_ =
+      java.util.Collections.emptyList();
+    private void ensureAutoscalingsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        autoscalings_ = new java.util.ArrayList<io.cuemby.performance.autoscaling.v1alpha1.Autoscaling>(autoscalings_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.performance.autoscaling.v1alpha1.Autoscaling, io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder, io.cuemby.performance.autoscaling.v1alpha1.AutoscalingOrBuilder> autoscalingsBuilder_;
+
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public java.util.List<io.cuemby.performance.autoscaling.v1alpha1.Autoscaling> getAutoscalingsList() {
+      if (autoscalingsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(autoscalings_);
+      } else {
+        return autoscalingsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public int getAutoscalingsCount() {
+      if (autoscalingsBuilder_ == null) {
+        return autoscalings_.size();
+      } else {
+        return autoscalingsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public io.cuemby.performance.autoscaling.v1alpha1.Autoscaling getAutoscalings(int index) {
+      if (autoscalingsBuilder_ == null) {
+        return autoscalings_.get(index);
+      } else {
+        return autoscalingsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public Builder setAutoscalings(
+        int index, io.cuemby.performance.autoscaling.v1alpha1.Autoscaling value) {
+      if (autoscalingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAutoscalingsIsMutable();
+        autoscalings_.set(index, value);
+        onChanged();
+      } else {
+        autoscalingsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public Builder setAutoscalings(
+        int index, io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder builderForValue) {
+      if (autoscalingsBuilder_ == null) {
+        ensureAutoscalingsIsMutable();
+        autoscalings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        autoscalingsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public Builder addAutoscalings(io.cuemby.performance.autoscaling.v1alpha1.Autoscaling value) {
+      if (autoscalingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAutoscalingsIsMutable();
+        autoscalings_.add(value);
+        onChanged();
+      } else {
+        autoscalingsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public Builder addAutoscalings(
+        int index, io.cuemby.performance.autoscaling.v1alpha1.Autoscaling value) {
+      if (autoscalingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAutoscalingsIsMutable();
+        autoscalings_.add(index, value);
+        onChanged();
+      } else {
+        autoscalingsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public Builder addAutoscalings(
+        io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder builderForValue) {
+      if (autoscalingsBuilder_ == null) {
+        ensureAutoscalingsIsMutable();
+        autoscalings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        autoscalingsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public Builder addAutoscalings(
+        int index, io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder builderForValue) {
+      if (autoscalingsBuilder_ == null) {
+        ensureAutoscalingsIsMutable();
+        autoscalings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        autoscalingsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public Builder addAllAutoscalings(
+        java.lang.Iterable<? extends io.cuemby.performance.autoscaling.v1alpha1.Autoscaling> values) {
+      if (autoscalingsBuilder_ == null) {
+        ensureAutoscalingsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, autoscalings_);
+        onChanged();
+      } else {
+        autoscalingsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public Builder clearAutoscalings() {
+      if (autoscalingsBuilder_ == null) {
+        autoscalings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        autoscalingsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public Builder removeAutoscalings(int index) {
+      if (autoscalingsBuilder_ == null) {
+        ensureAutoscalingsIsMutable();
+        autoscalings_.remove(index);
+        onChanged();
+      } else {
+        autoscalingsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder getAutoscalingsBuilder(
+        int index) {
+      return getAutoscalingsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public io.cuemby.performance.autoscaling.v1alpha1.AutoscalingOrBuilder getAutoscalingsOrBuilder(
+        int index) {
+      if (autoscalingsBuilder_ == null) {
+        return autoscalings_.get(index);  } else {
+        return autoscalingsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public java.util.List<? extends io.cuemby.performance.autoscaling.v1alpha1.AutoscalingOrBuilder> 
+         getAutoscalingsOrBuilderList() {
+      if (autoscalingsBuilder_ != null) {
+        return autoscalingsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(autoscalings_);
+      }
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder addAutoscalingsBuilder() {
+      return getAutoscalingsFieldBuilder().addBuilder(
+          io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder addAutoscalingsBuilder(
+        int index) {
+      return getAutoscalingsFieldBuilder().addBuilder(
+          index, io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];</code>
+     */
+    public java.util.List<io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder> 
+         getAutoscalingsBuilderList() {
+      return getAutoscalingsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.performance.autoscaling.v1alpha1.Autoscaling, io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder, io.cuemby.performance.autoscaling.v1alpha1.AutoscalingOrBuilder> 
+        getAutoscalingsFieldBuilder() {
+      if (autoscalingsBuilder_ == null) {
+        autoscalingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            io.cuemby.performance.autoscaling.v1alpha1.Autoscaling, io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder, io.cuemby.performance.autoscaling.v1alpha1.AutoscalingOrBuilder>(
+                autoscalings_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        autoscalings_ = null;
+      }
+      return autoscalingsBuilder_;
+    }
+
+    private java.lang.Object status_ = "";
+    /**
+     * <code>string status = 4 [json_name = "status"];</code>
+     * @return The status.
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string status = 4 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string status = 4 [json_name = "status"];</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      status_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 4 [json_name = "status"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      
+      status_ = getDefaultInstance().getStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 4 [json_name = "status"];</code>
+     * @param value The bytes for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      status_ = value;
       onChanged();
       return this;
     }
