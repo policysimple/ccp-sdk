@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>accounts.v1alpha1.GetOneUserResponse</code>
+ * Generated from protobuf message <code>accounts.v1alpha1.GetOneUserDexResponse</code>
  */
-class GetOneUserResponse extends \Google\Protobuf\Internal\Message
+class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>

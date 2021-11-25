@@ -9,18 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>accounts.v1alpha1.GetListUserDexResponse</code>
+ * Generated from protobuf message <code>accounts.v1alpha1.GetOneUserDexRequest</code>
  */
-class GetListUserDexResponse extends \Google\Protobuf\Internal\Message
+class GetOneUserDexRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
      */
     protected $user_id = '';
-    /**
-     * Generated from protobuf field <code>string provider = 2 [json_name = "provider"];</code>
-     */
-    protected $provider = '';
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class GetListUserDexResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $user_id
-     *     @type string $provider
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class GetListUserDexResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string provider = 2 [json_name = "provider"];</code>
-     * @return string
-     */
-    public function getProvider()
-    {
-        return $this->provider;
-    }
-
-    /**
-     * Generated from protobuf field <code>string provider = 2 [json_name = "provider"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProvider($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->provider = $var;
 
         return $this;
     }

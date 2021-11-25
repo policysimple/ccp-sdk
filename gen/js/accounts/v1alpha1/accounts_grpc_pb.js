@@ -334,6 +334,28 @@ function deserialize_accounts_v1alpha1_GetOneRoleResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.GetOneRoleResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_GetOneUserDexRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneUserDexRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetOneUserDexRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetOneUserDexRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetOneUserDexRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_GetOneUserDexResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneUserDexResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetOneUserDexResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetOneUserDexResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetOneUserDexResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_GetOneUserRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneUserRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.GetOneUserRequest');
@@ -907,6 +929,17 @@ var AccountServiceService = exports.AccountServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_GetListUserDexRequest,
     responseSerialize: serialize_accounts_v1alpha1_GetListUserDexResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_GetListUserDexResponse,
+  },
+  getOneUserDex: {
+    path: '/accounts.v1alpha1.AccountService/GetOneUserDex',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.GetOneUserDexRequest,
+    responseType: accounts_v1alpha1_accounts_pb.GetOneUserDexResponse,
+    requestSerialize: serialize_accounts_v1alpha1_GetOneUserDexRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_GetOneUserDexRequest,
+    responseSerialize: serialize_accounts_v1alpha1_GetOneUserDexResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_GetOneUserDexResponse,
   },
 };
 
