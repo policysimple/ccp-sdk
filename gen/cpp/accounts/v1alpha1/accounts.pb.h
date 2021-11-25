@@ -46,11 +46,7 @@ struct TableStruct_accounts_2fv1alpha1_2faccounts_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-<<<<<<< HEAD
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[66]
-=======
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[65]
->>>>>>> origin
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[67]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -10702,7 +10698,7 @@ class GetOneUserDexRequest final :
                &_GetOneUserDexRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    65;
 
   friend void swap(GetOneUserDexRequest& a, GetOneUserDexRequest& b) {
     a.Swap(&b);
@@ -10846,7 +10842,7 @@ class GetOneUserDexResponse final :
                &_GetOneUserDexResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    66;
 
   friend void swap(GetOneUserDexResponse& a, GetOneUserDexResponse& b) {
     a.Swap(&b);
@@ -16793,11 +16789,10 @@ GetOneUserDexResponse::permissions() const {
 
 // -------------------------------------------------------------------
 
-<<<<<<< HEAD
 // -------------------------------------------------------------------
 
-=======
->>>>>>> origin
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
