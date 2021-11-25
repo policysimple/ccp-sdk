@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-ƒ@
+¥C
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"?
 UsersDex
 user_id (	RuserId
@@ -226,7 +226,19 @@ Permission
 error (	Rerror"
 GetListUserDexRequest"R
 GetListUserDexResponse8
-	users_dex (2.accounts.v1alpha1.UsersDexRusersDex2±
+	users_dex (2.accounts.v1alpha1.UsersDexRusersDex"/
+GetOneUserDexRequest
+user_id (	RuserId"Š
+GetOneUserDexResponse
+id (Rid
+user_id (	RuserId
+	is_active (RisActive
+
+created_at (	R	createdAt
+
+updated_at (	R	updatedAt,
+roles (2.accounts.v1alpha1.RolRroles?
+permissions (2.accounts.v1alpha1.PermissionRpermissions2•
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
@@ -262,7 +274,8 @@ DeleteRole$.accounts.v1alpha1.DeleteRoleRequest%.accounts.v1alpha1.DeleteRoleR
 UpdateProject\'.accounts.v1alpha1.UpdateProjectRequest(.accounts.v1alpha1.UpdateProjectResponseb
 DeleteProject\'.accounts.v1alpha1.DeleteProjectRequest(.accounts.v1alpha1.DeleteProjectResponse\\
 ListProject%.accounts.v1alpha1.ListProjectRequest&.accounts.v1alpha1.ListProjectResponsee
-GetListUserDex(.accounts.v1alpha1.GetListUserDexRequest).accounts.v1alpha1.GetListUserDexResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
+GetListUserDex(.accounts.v1alpha1.GetListUserDexRequest).accounts.v1alpha1.GetListUserDexResponseb
+GetOneUserDex\'.accounts.v1alpha1.GetOneUserDexRequest(.accounts.v1alpha1.GetOneUserDexResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

@@ -377,4 +377,17 @@ class AccountServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Accounts\V1alpha1\GetOneUserDexRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetOneUserDex(\Accounts\V1alpha1\GetOneUserDexRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/GetOneUserDex',
+        $argument,
+        ['\Accounts\V1alpha1\GetOneUserDexResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

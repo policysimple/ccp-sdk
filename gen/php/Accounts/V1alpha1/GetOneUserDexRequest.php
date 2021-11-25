@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>accounts.v1alpha1.CreatePermissionRequest</code>
+ * Generated from protobuf message <code>accounts.v1alpha1.GetOneUserDexRequest</code>
  */
-class CreatePermissionRequest extends \Google\Protobuf\Internal\Message
+class GetOneUserDexRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
      */
-    protected $name = '';
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class CreatePermissionRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $name
+     *     @type string $user_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class CreatePermissionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
      * @return string
      */
-    public function getName()
+    public function getUserId()
     {
-        return $this->name;
+        return $this->user_id;
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setUserId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->name = $var;
+        $this->user_id = $var;
 
         return $this;
     }
