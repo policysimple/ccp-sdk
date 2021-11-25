@@ -46,7 +46,11 @@ struct TableStruct_accounts_2fv1alpha1_2faccounts_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
+<<<<<<< HEAD
   static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[66]
+=======
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[65]
+>>>>>>> origin
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -253,6 +257,9 @@ extern UpdateUserResponseDefaultTypeInternal _UpdateUserResponse_default_instanc
 class UserList;
 struct UserListDefaultTypeInternal;
 extern UserListDefaultTypeInternal _UserList_default_instance_;
+class UsersDex;
+struct UsersDexDefaultTypeInternal;
+extern UsersDexDefaultTypeInternal _UsersDex_default_instance_;
 }  // namespace v1alpha1
 }  // namespace accounts
 PROTOBUF_NAMESPACE_OPEN
@@ -322,11 +329,172 @@ template<> ::accounts::v1alpha1::UpdateRoleResponse* Arena::CreateMaybeMessage<:
 template<> ::accounts::v1alpha1::UpdateUserRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::UpdateUserRequest>(Arena*);
 template<> ::accounts::v1alpha1::UpdateUserResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::UpdateUserResponse>(Arena*);
 template<> ::accounts::v1alpha1::UserList* Arena::CreateMaybeMessage<::accounts::v1alpha1::UserList>(Arena*);
+template<> ::accounts::v1alpha1::UsersDex* Arena::CreateMaybeMessage<::accounts::v1alpha1::UsersDex>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace accounts {
 namespace v1alpha1 {
 
 // ===================================================================
+
+class UsersDex final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.UsersDex) */ {
+ public:
+  inline UsersDex() : UsersDex(nullptr) {}
+  ~UsersDex() override;
+  explicit constexpr UsersDex(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UsersDex(const UsersDex& from);
+  UsersDex(UsersDex&& from) noexcept
+    : UsersDex() {
+    *this = ::std::move(from);
+  }
+
+  inline UsersDex& operator=(const UsersDex& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UsersDex& operator=(UsersDex&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UsersDex& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UsersDex* internal_default_instance() {
+    return reinterpret_cast<const UsersDex*>(
+               &_UsersDex_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(UsersDex& a, UsersDex& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UsersDex* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UsersDex* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UsersDex* New() const final {
+    return new UsersDex();
+  }
+
+  UsersDex* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UsersDex>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UsersDex& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UsersDex& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UsersDex* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "accounts.v1alpha1.UsersDex";
+  }
+  protected:
+  explicit UsersDex(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kUserIdFieldNumber = 1,
+    kProviderFieldNumber = 2,
+  };
+  // string user_id = 1 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
+  // string provider = 2 [json_name = "provider"];
+  void clear_provider();
+  const std::string& provider() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_provider(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_provider();
+  PROTOBUF_MUST_USE_RESULT std::string* release_provider();
+  void set_allocated_provider(std::string* provider);
+  private:
+  const std::string& _internal_provider() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_provider(const std::string& value);
+  std::string* _internal_mutable_provider();
+  public:
+
+  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.UsersDex)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr provider_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
+};
+// -------------------------------------------------------------------
 
 class CreateUserResponse final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.CreateUserResponse) */ {
@@ -372,7 +540,7 @@ class CreateUserResponse final :
                &_CreateUserResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(CreateUserResponse& a, CreateUserResponse& b) {
     a.Swap(&b);
@@ -532,7 +700,7 @@ class UpdateUserResponse final :
                &_UpdateUserResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(UpdateUserResponse& a, UpdateUserResponse& b) {
     a.Swap(&b);
@@ -692,7 +860,7 @@ class DeleteUserResponse final :
                &_DeleteUserResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(DeleteUserResponse& a, DeleteUserResponse& b) {
     a.Swap(&b);
@@ -852,7 +1020,7 @@ class ListUserRequest final :
                &_ListUserRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(ListUserRequest& a, ListUserRequest& b) {
     a.Swap(&b);
@@ -978,7 +1146,7 @@ class CreateUserRequest final :
                &_CreateUserRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(CreateUserRequest& a, CreateUserRequest& b) {
     a.Swap(&b);
@@ -1183,7 +1351,7 @@ class UpdateUserRequest final :
                &_UpdateUserRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(UpdateUserRequest& a, UpdateUserRequest& b) {
     a.Swap(&b);
@@ -1342,7 +1510,7 @@ class DeleteUserRequest final :
                &_DeleteUserRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(DeleteUserRequest& a, DeleteUserRequest& b) {
     a.Swap(&b);
@@ -1481,7 +1649,7 @@ class UserList final :
                &_UserList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(UserList& a, UserList& b) {
     a.Swap(&b);
@@ -1647,7 +1815,7 @@ class GetOneUserRequest final :
                &_GetOneUserRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(GetOneUserRequest& a, GetOneUserRequest& b) {
     a.Swap(&b);
@@ -1786,7 +1954,7 @@ class GetOneUserResponse final :
                &_GetOneUserResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(GetOneUserResponse& a, GetOneUserResponse& b) {
     a.Swap(&b);
@@ -2024,7 +2192,7 @@ class ListUserResponse final :
                &_ListUserResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(ListUserResponse& a, ListUserResponse& b) {
     a.Swap(&b);
@@ -2172,7 +2340,7 @@ class ListUserPaginationRequest final :
                &_ListUserPaginationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(ListUserPaginationRequest& a, ListUserPaginationRequest& b) {
     a.Swap(&b);
@@ -2322,7 +2490,7 @@ class ListUserPaginationResponse final :
                &_ListUserPaginationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(ListUserPaginationResponse& a, ListUserPaginationResponse& b) {
     a.Swap(&b);
@@ -2481,7 +2649,7 @@ class Rol final :
                &_Rol_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(Rol& a, Rol& b) {
     a.Swap(&b);
@@ -2667,7 +2835,7 @@ class CreateRoleRequest final :
                &_CreateRoleRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(CreateRoleRequest& a, CreateRoleRequest& b) {
     a.Swap(&b);
@@ -2863,7 +3031,7 @@ class UpdateRoleRequest final :
                &_UpdateRoleRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(UpdateRoleRequest& a, UpdateRoleRequest& b) {
     a.Swap(&b);
@@ -3022,7 +3190,7 @@ class GetOneRoleRequest final :
                &_GetOneRoleRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   friend void swap(GetOneRoleRequest& a, GetOneRoleRequest& b) {
     a.Swap(&b);
@@ -3161,7 +3329,7 @@ class GetOneRoleResponse final :
                &_GetOneRoleResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(GetOneRoleResponse& a, GetOneRoleResponse& b) {
     a.Swap(&b);
@@ -3347,7 +3515,7 @@ class DeleteRoleRequest final :
                &_DeleteRoleRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(DeleteRoleRequest& a, DeleteRoleRequest& b) {
     a.Swap(&b);
@@ -3486,7 +3654,7 @@ class ListRolesRequest final :
                &_ListRolesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(ListRolesRequest& a, ListRolesRequest& b) {
     a.Swap(&b);
@@ -3612,7 +3780,7 @@ class ListRolesResponse final :
                &_ListRolesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(ListRolesResponse& a, ListRolesResponse& b) {
     a.Swap(&b);
@@ -3760,7 +3928,7 @@ class CreateRoleResponse final :
                &_CreateRoleResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   friend void swap(CreateRoleResponse& a, CreateRoleResponse& b) {
     a.Swap(&b);
@@ -3920,7 +4088,7 @@ class UpdateRoleResponse final :
                &_UpdateRoleResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   friend void swap(UpdateRoleResponse& a, UpdateRoleResponse& b) {
     a.Swap(&b);
@@ -4080,7 +4248,7 @@ class DeleteRoleResponse final :
                &_DeleteRoleResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   friend void swap(DeleteRoleResponse& a, DeleteRoleResponse& b) {
     a.Swap(&b);
@@ -4240,7 +4408,7 @@ class Project final :
                &_Project_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   friend void swap(Project& a, Project& b) {
     a.Swap(&b);
@@ -4470,7 +4638,7 @@ class CreateProjectRequest final :
                &_CreateProjectRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   friend void swap(CreateProjectRequest& a, CreateProjectRequest& b) {
     a.Swap(&b);
@@ -4657,7 +4825,7 @@ class GetOneProjectRequest final :
                &_GetOneProjectRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   friend void swap(GetOneProjectRequest& a, GetOneProjectRequest& b) {
     a.Swap(&b);
@@ -4796,7 +4964,7 @@ class DeleteProjectRequest final :
                &_DeleteProjectRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   friend void swap(DeleteProjectRequest& a, DeleteProjectRequest& b) {
     a.Swap(&b);
@@ -4935,7 +5103,7 @@ class ListProjectRequest final :
                &_ListProjectRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   friend void swap(ListProjectRequest& a, ListProjectRequest& b) {
     a.Swap(&b);
@@ -5061,7 +5229,7 @@ class UpdateProjectRequest final :
                &_UpdateProjectRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   friend void swap(UpdateProjectRequest& a, UpdateProjectRequest& b) {
     a.Swap(&b);
@@ -5220,7 +5388,7 @@ class CreateProjectResponse final :
                &_CreateProjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    31;
 
   friend void swap(CreateProjectResponse& a, CreateProjectResponse& b) {
     a.Swap(&b);
@@ -5380,7 +5548,7 @@ class UpdateProjectResponse final :
                &_UpdateProjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    32;
 
   friend void swap(UpdateProjectResponse& a, UpdateProjectResponse& b) {
     a.Swap(&b);
@@ -5540,7 +5708,7 @@ class DeleteProjectResponse final :
                &_DeleteProjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    33;
 
   friend void swap(DeleteProjectResponse& a, DeleteProjectResponse& b) {
     a.Swap(&b);
@@ -5700,7 +5868,7 @@ class GetOneProjectResponse final :
                &_GetOneProjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    34;
 
   friend void swap(GetOneProjectResponse& a, GetOneProjectResponse& b) {
     a.Swap(&b);
@@ -5930,7 +6098,7 @@ class ListProjectResponse final :
                &_ListProjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    35;
 
   friend void swap(ListProjectResponse& a, ListProjectResponse& b) {
     a.Swap(&b);
@@ -6078,7 +6246,7 @@ class ListProjectPaginationRequest final :
                &_ListProjectPaginationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    36;
 
   friend void swap(ListProjectPaginationRequest& a, ListProjectPaginationRequest& b) {
     a.Swap(&b);
@@ -6228,7 +6396,7 @@ class ListProjectPaginationResponse final :
                &_ListProjectPaginationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    37;
 
   friend void swap(ListProjectPaginationResponse& a, ListProjectPaginationResponse& b) {
     a.Swap(&b);
@@ -6387,7 +6555,7 @@ class Permission final :
                &_Permission_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    38;
 
   friend void swap(Permission& a, Permission& b) {
     a.Swap(&b);
@@ -6542,7 +6710,7 @@ class ListPermissionResponse final :
                &_ListPermissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    39;
 
   friend void swap(ListPermissionResponse& a, ListPermissionResponse& b) {
     a.Swap(&b);
@@ -6690,7 +6858,7 @@ class AssignPermissionRequest final :
                &_AssignPermissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    40;
 
   friend void swap(AssignPermissionRequest& a, AssignPermissionRequest& b) {
     a.Swap(&b);
@@ -6840,7 +7008,7 @@ class ListPermissionRequest final :
                &_ListPermissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    41;
 
   friend void swap(ListPermissionRequest& a, ListPermissionRequest& b) {
     a.Swap(&b);
@@ -6966,7 +7134,7 @@ class CreatePermissionRequest final :
                &_CreatePermissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    42;
 
   friend void swap(CreatePermissionRequest& a, CreatePermissionRequest& b) {
     a.Swap(&b);
@@ -7110,7 +7278,7 @@ class UpdatePermissionRequest final :
                &_UpdatePermissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    43;
 
   friend void swap(UpdatePermissionRequest& a, UpdatePermissionRequest& b) {
     a.Swap(&b);
@@ -7265,7 +7433,7 @@ class GetOnePermissionRequest final :
                &_GetOnePermissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    44;
 
   friend void swap(GetOnePermissionRequest& a, GetOnePermissionRequest& b) {
     a.Swap(&b);
@@ -7404,7 +7572,7 @@ class GetOnePermissionResponse final :
                &_GetOnePermissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    45;
 
   friend void swap(GetOnePermissionResponse& a, GetOnePermissionResponse& b) {
     a.Swap(&b);
@@ -7559,7 +7727,7 @@ class DeletePermissionRequest final :
                &_DeletePermissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    46;
 
   friend void swap(DeletePermissionRequest& a, DeletePermissionRequest& b) {
     a.Swap(&b);
@@ -7698,7 +7866,7 @@ class UpdatePermissionResponse final :
                &_UpdatePermissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    47;
 
   friend void swap(UpdatePermissionResponse& a, UpdatePermissionResponse& b) {
     a.Swap(&b);
@@ -7858,7 +8026,7 @@ class DeletePermissionResponse final :
                &_DeletePermissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    48;
 
   friend void swap(DeletePermissionResponse& a, DeletePermissionResponse& b) {
     a.Swap(&b);
@@ -8018,7 +8186,7 @@ class CreatePermissionResponse final :
                &_CreatePermissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    49;
 
   friend void swap(CreatePermissionResponse& a, CreatePermissionResponse& b) {
     a.Swap(&b);
@@ -8178,7 +8346,7 @@ class Member final :
                &_Member_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    50;
 
   friend void swap(Member& a, Member& b) {
     a.Swap(&b);
@@ -8344,7 +8512,7 @@ class ProjectOrganization final :
                &_ProjectOrganization_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    51;
 
   friend void swap(ProjectOrganization& a, ProjectOrganization& b) {
     a.Swap(&b);
@@ -8535,7 +8703,7 @@ class GetOneOrganizationResponse final :
                &_GetOneOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    52;
 
   friend void swap(GetOneOrganizationResponse& a, GetOneOrganizationResponse& b) {
     a.Swap(&b);
@@ -8726,7 +8894,7 @@ class Organization final :
                &_Organization_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    53;
 
   friend void swap(Organization& a, Organization& b) {
     a.Swap(&b);
@@ -8897,7 +9065,7 @@ class CreateOrganizationRequest final :
                &_CreateOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    54;
 
   friend void swap(CreateOrganizationRequest& a, CreateOrganizationRequest& b) {
     a.Swap(&b);
@@ -9057,7 +9225,7 @@ class ListOrganizationRequest final :
                &_ListOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    55;
 
   friend void swap(ListOrganizationRequest& a, ListOrganizationRequest& b) {
     a.Swap(&b);
@@ -9183,7 +9351,7 @@ class GetOneOrganizationRequest final :
                &_GetOneOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    56;
 
   friend void swap(GetOneOrganizationRequest& a, GetOneOrganizationRequest& b) {
     a.Swap(&b);
@@ -9322,7 +9490,7 @@ class UpdateOrganizationRequest final :
                &_UpdateOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    57;
 
   friend void swap(UpdateOrganizationRequest& a, UpdateOrganizationRequest& b) {
     a.Swap(&b);
@@ -9493,7 +9661,7 @@ class DeleteOrganizationRequest final :
                &_DeleteOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    58;
 
   friend void swap(DeleteOrganizationRequest& a, DeleteOrganizationRequest& b) {
     a.Swap(&b);
@@ -9632,7 +9800,7 @@ class ListOrganizationResponse final :
                &_ListOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    59;
 
   friend void swap(ListOrganizationResponse& a, ListOrganizationResponse& b) {
     a.Swap(&b);
@@ -9780,7 +9948,7 @@ class CreateOrganizationResponse final :
                &_CreateOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    60;
 
   friend void swap(CreateOrganizationResponse& a, CreateOrganizationResponse& b) {
     a.Swap(&b);
@@ -9940,7 +10108,7 @@ class UpdateOrganizationResponse final :
                &_UpdateOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    61;
 
   friend void swap(UpdateOrganizationResponse& a, UpdateOrganizationResponse& b) {
     a.Swap(&b);
@@ -10100,7 +10268,7 @@ class DeleteOrganizationResponse final :
                &_DeleteOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    62;
 
   friend void swap(DeleteOrganizationResponse& a, DeleteOrganizationResponse& b) {
     a.Swap(&b);
@@ -10260,7 +10428,7 @@ class GetListUserDexRequest final :
                &_GetListUserDexRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    63;
 
   friend void swap(GetListUserDexRequest& a, GetListUserDexRequest& b) {
     a.Swap(&b);
@@ -10386,7 +10554,7 @@ class GetListUserDexResponse final :
                &_GetListUserDexResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    64;
 
   friend void swap(GetListUserDexResponse& a, GetListUserDexResponse& b) {
     a.Swap(&b);
@@ -10457,36 +10625,25 @@ class GetListUserDexResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUserIdFieldNumber = 1,
-    kProviderFieldNumber = 2,
+    kUsersDexFieldNumber = 1,
   };
-  // string user_id = 1 [json_name = "userId"];
-  void clear_user_id();
-  const std::string& user_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_user_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_user_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
-  void set_allocated_user_id(std::string* user_id);
+  // repeated .accounts.v1alpha1.UsersDex users_dex = 1 [json_name = "usersDex"];
+  int users_dex_size() const;
   private:
-  const std::string& _internal_user_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
-  std::string* _internal_mutable_user_id();
+  int _internal_users_dex_size() const;
   public:
-
-  // string provider = 2 [json_name = "provider"];
-  void clear_provider();
-  const std::string& provider() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_provider(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_provider();
-  PROTOBUF_MUST_USE_RESULT std::string* release_provider();
-  void set_allocated_provider(std::string* provider);
+  void clear_users_dex();
+  ::accounts::v1alpha1::UsersDex* mutable_users_dex(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UsersDex >*
+      mutable_users_dex();
   private:
-  const std::string& _internal_provider() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_provider(const std::string& value);
-  std::string* _internal_mutable_provider();
+  const ::accounts::v1alpha1::UsersDex& _internal_users_dex(int index) const;
+  ::accounts::v1alpha1::UsersDex* _internal_add_users_dex();
   public:
+  const ::accounts::v1alpha1::UsersDex& users_dex(int index) const;
+  ::accounts::v1alpha1::UsersDex* add_users_dex();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UsersDex >&
+      users_dex() const;
 
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.GetListUserDexResponse)
  private:
@@ -10495,8 +10652,7 @@ class GetListUserDexResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr provider_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UsersDex > users_dex_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -10891,6 +11047,102 @@ class GetOneUserDexResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// UsersDex
+
+// string user_id = 1 [json_name = "userId"];
+inline void UsersDex::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& UsersDex::user_id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UsersDex.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UsersDex::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UsersDex.user_id)
+}
+inline std::string* UsersDex::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UsersDex.user_id)
+  return _s;
+}
+inline const std::string& UsersDex::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void UsersDex::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UsersDex::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UsersDex::release_user_id() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UsersDex.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UsersDex::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UsersDex.user_id)
+}
+
+// string provider = 2 [json_name = "provider"];
+inline void UsersDex::clear_provider() {
+  provider_.ClearToEmpty();
+}
+inline const std::string& UsersDex::provider() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UsersDex.provider)
+  return _internal_provider();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UsersDex::set_provider(ArgT0&& arg0, ArgT... args) {
+ 
+ provider_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UsersDex.provider)
+}
+inline std::string* UsersDex::mutable_provider() {
+  std::string* _s = _internal_mutable_provider();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UsersDex.provider)
+  return _s;
+}
+inline const std::string& UsersDex::_internal_provider() const {
+  return provider_.Get();
+}
+inline void UsersDex::_internal_set_provider(const std::string& value) {
+  
+  provider_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UsersDex::_internal_mutable_provider() {
+  
+  return provider_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UsersDex::release_provider() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UsersDex.provider)
+  return provider_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UsersDex::set_allocated_provider(std::string* provider) {
+  if (provider != nullptr) {
+    
+  } else {
+    
+  }
+  provider_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), provider,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UsersDex.provider)
+}
+
+// -------------------------------------------------------------------
+
 // CreateUserResponse
 
 // string msg = 1 [json_name = "msg"];
@@ -16058,96 +16310,44 @@ inline void DeleteOrganizationResponse::set_allocated_error(std::string* error) 
 
 // GetListUserDexResponse
 
-// string user_id = 1 [json_name = "userId"];
-inline void GetListUserDexResponse::clear_user_id() {
-  user_id_.ClearToEmpty();
+// repeated .accounts.v1alpha1.UsersDex users_dex = 1 [json_name = "usersDex"];
+inline int GetListUserDexResponse::_internal_users_dex_size() const {
+  return users_dex_.size();
 }
-inline const std::string& GetListUserDexResponse::user_id() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetListUserDexResponse.user_id)
-  return _internal_user_id();
+inline int GetListUserDexResponse::users_dex_size() const {
+  return _internal_users_dex_size();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void GetListUserDexResponse::set_user_id(ArgT0&& arg0, ArgT... args) {
- 
- user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetListUserDexResponse.user_id)
+inline void GetListUserDexResponse::clear_users_dex() {
+  users_dex_.Clear();
 }
-inline std::string* GetListUserDexResponse::mutable_user_id() {
-  std::string* _s = _internal_mutable_user_id();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetListUserDexResponse.user_id)
-  return _s;
+inline ::accounts::v1alpha1::UsersDex* GetListUserDexResponse::mutable_users_dex(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetListUserDexResponse.users_dex)
+  return users_dex_.Mutable(index);
 }
-inline const std::string& GetListUserDexResponse::_internal_user_id() const {
-  return user_id_.Get();
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UsersDex >*
+GetListUserDexResponse::mutable_users_dex() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.GetListUserDexResponse.users_dex)
+  return &users_dex_;
 }
-inline void GetListUserDexResponse::_internal_set_user_id(const std::string& value) {
-  
-  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+inline const ::accounts::v1alpha1::UsersDex& GetListUserDexResponse::_internal_users_dex(int index) const {
+  return users_dex_.Get(index);
 }
-inline std::string* GetListUserDexResponse::_internal_mutable_user_id() {
-  
-  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+inline const ::accounts::v1alpha1::UsersDex& GetListUserDexResponse::users_dex(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetListUserDexResponse.users_dex)
+  return _internal_users_dex(index);
 }
-inline std::string* GetListUserDexResponse::release_user_id() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.GetListUserDexResponse.user_id)
-  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline ::accounts::v1alpha1::UsersDex* GetListUserDexResponse::_internal_add_users_dex() {
+  return users_dex_.Add();
 }
-inline void GetListUserDexResponse::set_allocated_user_id(std::string* user_id) {
-  if (user_id != nullptr) {
-    
-  } else {
-    
-  }
-  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetListUserDexResponse.user_id)
+inline ::accounts::v1alpha1::UsersDex* GetListUserDexResponse::add_users_dex() {
+  ::accounts::v1alpha1::UsersDex* _add = _internal_add_users_dex();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.GetListUserDexResponse.users_dex)
+  return _add;
 }
-
-// string provider = 2 [json_name = "provider"];
-inline void GetListUserDexResponse::clear_provider() {
-  provider_.ClearToEmpty();
-}
-inline const std::string& GetListUserDexResponse::provider() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetListUserDexResponse.provider)
-  return _internal_provider();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void GetListUserDexResponse::set_provider(ArgT0&& arg0, ArgT... args) {
- 
- provider_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetListUserDexResponse.provider)
-}
-inline std::string* GetListUserDexResponse::mutable_provider() {
-  std::string* _s = _internal_mutable_provider();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetListUserDexResponse.provider)
-  return _s;
-}
-inline const std::string& GetListUserDexResponse::_internal_provider() const {
-  return provider_.Get();
-}
-inline void GetListUserDexResponse::_internal_set_provider(const std::string& value) {
-  
-  provider_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* GetListUserDexResponse::_internal_mutable_provider() {
-  
-  return provider_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* GetListUserDexResponse::release_provider() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.GetListUserDexResponse.provider)
-  return provider_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void GetListUserDexResponse::set_allocated_provider(std::string* provider) {
-  if (provider != nullptr) {
-    
-  } else {
-    
-  }
-  provider_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), provider,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetListUserDexResponse.provider)
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UsersDex >&
+GetListUserDexResponse::users_dex() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.GetListUserDexResponse.users_dex)
+  return users_dex_;
 }
 
 // -------------------------------------------------------------------
@@ -16593,8 +16793,11 @@ GetOneUserDexResponse::permissions() const {
 
 // -------------------------------------------------------------------
 
+<<<<<<< HEAD
 // -------------------------------------------------------------------
 
+=======
+>>>>>>> origin
 
 // @@protoc_insertion_point(namespace_scope)
 

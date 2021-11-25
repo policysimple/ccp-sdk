@@ -16,8 +16,16 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
+<<<<<<< HEAD
 ßB
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"<
+=======
+ƒ@
+ accounts/v1alpha1/accounts.protoaccounts.v1alpha1"?
+UsersDex
+user_id (	RuserId
+provider (	Rprovider"<
+>>>>>>> origin
 CreateUserResponse
 msg (	Rmsg
 error (	Rerror"<
@@ -221,6 +229,7 @@ Permission
 DeleteOrganizationResponse
 msg (	Rmsg
 error (	Rerror"
+<<<<<<< HEAD
 GetListUserDexRequest"M
 GetListUserDexResponse
 user_id (	RuserId
@@ -237,6 +246,11 @@ created_at (	R	createdAt
 updated_at (	R	updatedAt,
 roles (2.accounts.v1alpha1.RolRroles?
 permissions (2.accounts.v1alpha1.PermissionRpermissions2•
+=======
+GetListUserDexRequest"R
+GetListUserDexResponse8
+	users_dex (2.accounts.v1alpha1.UsersDexRusersDex2±
+>>>>>>> origin
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
