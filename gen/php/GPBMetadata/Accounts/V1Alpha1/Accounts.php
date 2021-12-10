@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-•C
+˜C
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"?
 UsersDex
 user_id (	RuserId
@@ -30,12 +30,16 @@ class Accounts
 DeleteUserResponse
 msg (	Rmsg
 error (	Rerror"
-ListUserRequest"è
+ListUserRequest"·
 CreateUserRequest
-user_id (	RuserId
-	is_active (RisActive
-	roles_ids (RrolesIds\'
-permissions_ids (RpermissionsIds"f
+user_id (	RuserId
+
+first_name (	R	firstName
+	last_name (	RlastName
+email (	Remail
+	is_active (RisActive
+	roles_ids (RrolesIds\'
+permissions_ids (RpermissionsIds"f
 UpdateUserRequest
 auth_id (RauthId8
 auth (2$.accounts.v1alpha1.CreateUserRequestRauth",
