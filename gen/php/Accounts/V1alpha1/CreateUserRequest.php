@@ -16,19 +16,31 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateUserRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
+     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
      */
     protected $user_id = '';
     /**
-     * Generated from protobuf field <code>bool is_active = 3 [json_name = "isActive"];</code>
+     * Generated from protobuf field <code>string first_name = 2 [json_name = "firstName"];</code>
+     */
+    protected $first_name = '';
+    /**
+     * Generated from protobuf field <code>string last_name = 3 [json_name = "lastName"];</code>
+     */
+    protected $last_name = '';
+    /**
+     * Generated from protobuf field <code>string email = 4 [json_name = "email"];</code>
+     */
+    protected $email = '';
+    /**
+     * Generated from protobuf field <code>bool is_active = 5 [json_name = "isActive"];</code>
      */
     protected $is_active = false;
     /**
-     * Generated from protobuf field <code>repeated uint32 roles_ids = 5 [json_name = "rolesIds"];</code>
+     * Generated from protobuf field <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
      */
     private $roles_ids;
     /**
-     * Generated from protobuf field <code>repeated uint32 permissions_ids = 6 [json_name = "permissionsIds"];</code>
+     * Generated from protobuf field <code>repeated uint32 permissions_ids = 7 [json_name = "permissionsIds"];</code>
      */
     private $permissions_ids;
 
@@ -39,6 +51,9 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $user_id
+     *     @type string $first_name
+     *     @type string $last_name
+     *     @type string $email
      *     @type bool $is_active
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $roles_ids
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $permissions_ids
@@ -50,7 +65,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
+     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
      * @return string
      */
     public function getUserId()
@@ -59,7 +74,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
+     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
      * @param string $var
      * @return $this
      */
@@ -72,7 +87,73 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_active = 3 [json_name = "isActive"];</code>
+     * Generated from protobuf field <code>string first_name = 2 [json_name = "firstName"];</code>
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->first_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string first_name = 2 [json_name = "firstName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFirstName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->first_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string last_name = 3 [json_name = "lastName"];</code>
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->last_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string last_name = 3 [json_name = "lastName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLastName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->last_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 4 [json_name = "email"];</code>
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 4 [json_name = "email"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_active = 5 [json_name = "isActive"];</code>
      * @return bool
      */
     public function getIsActive()
@@ -81,7 +162,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_active = 3 [json_name = "isActive"];</code>
+     * Generated from protobuf field <code>bool is_active = 5 [json_name = "isActive"];</code>
      * @param bool $var
      * @return $this
      */
@@ -94,7 +175,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated uint32 roles_ids = 5 [json_name = "rolesIds"];</code>
+     * Generated from protobuf field <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRolesIds()
@@ -103,7 +184,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated uint32 roles_ids = 5 [json_name = "rolesIds"];</code>
+     * Generated from protobuf field <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
      * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -116,7 +197,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated uint32 permissions_ids = 6 [json_name = "permissionsIds"];</code>
+     * Generated from protobuf field <code>repeated uint32 permissions_ids = 7 [json_name = "permissionsIds"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPermissionsIds()
@@ -125,7 +206,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated uint32 permissions_ids = 6 [json_name = "permissionsIds"];</code>
+     * Generated from protobuf field <code>repeated uint32 permissions_ids = 7 [json_name = "permissionsIds"];</code>
      * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

@@ -94,10 +94,13 @@ message ListUserRequest {
 
 //Create
 message CreateUserRequest {
-    string user_id = 2;
-    bool is_active = 3;
-    repeated uint32 roles_ids = 5;
-    repeated uint32 permissions_ids = 6;
+    string user_id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string email = 4;
+    bool is_active = 5;
+    repeated uint32 roles_ids = 6;
+    repeated uint32 permissions_ids = 7;
 
 }
 

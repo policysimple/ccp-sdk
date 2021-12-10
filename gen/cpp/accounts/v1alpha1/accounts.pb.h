@@ -1213,12 +1213,15 @@ class CreateUserRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRolesIdsFieldNumber = 5,
-    kPermissionsIdsFieldNumber = 6,
-    kUserIdFieldNumber = 2,
-    kIsActiveFieldNumber = 3,
+    kRolesIdsFieldNumber = 6,
+    kPermissionsIdsFieldNumber = 7,
+    kUserIdFieldNumber = 1,
+    kFirstNameFieldNumber = 2,
+    kLastNameFieldNumber = 3,
+    kEmailFieldNumber = 4,
+    kIsActiveFieldNumber = 5,
   };
-  // repeated uint32 roles_ids = 5 [json_name = "rolesIds"];
+  // repeated uint32 roles_ids = 6 [json_name = "rolesIds"];
   int roles_ids_size() const;
   private:
   int _internal_roles_ids_size() const;
@@ -1240,7 +1243,7 @@ class CreateUserRequest final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
       mutable_roles_ids();
 
-  // repeated uint32 permissions_ids = 6 [json_name = "permissionsIds"];
+  // repeated uint32 permissions_ids = 7 [json_name = "permissionsIds"];
   int permissions_ids_size() const;
   private:
   int _internal_permissions_ids_size() const;
@@ -1262,7 +1265,7 @@ class CreateUserRequest final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
       mutable_permissions_ids();
 
-  // string user_id = 2 [json_name = "userId"];
+  // string user_id = 1 [json_name = "userId"];
   void clear_user_id();
   const std::string& user_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1276,7 +1279,49 @@ class CreateUserRequest final :
   std::string* _internal_mutable_user_id();
   public:
 
-  // bool is_active = 3 [json_name = "isActive"];
+  // string first_name = 2 [json_name = "firstName"];
+  void clear_first_name();
+  const std::string& first_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_first_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_first_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_first_name();
+  void set_allocated_first_name(std::string* first_name);
+  private:
+  const std::string& _internal_first_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_first_name(const std::string& value);
+  std::string* _internal_mutable_first_name();
+  public:
+
+  // string last_name = 3 [json_name = "lastName"];
+  void clear_last_name();
+  const std::string& last_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_last_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_last_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_last_name();
+  void set_allocated_last_name(std::string* last_name);
+  private:
+  const std::string& _internal_last_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_last_name(const std::string& value);
+  std::string* _internal_mutable_last_name();
+  public:
+
+  // string email = 4 [json_name = "email"];
+  void clear_email();
+  const std::string& email() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_email(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_email();
+  PROTOBUF_MUST_USE_RESULT std::string* release_email();
+  void set_allocated_email(std::string* email);
+  private:
+  const std::string& _internal_email() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_email(const std::string& value);
+  std::string* _internal_mutable_email();
+  public:
+
+  // bool is_active = 5 [json_name = "isActive"];
   void clear_is_active();
   bool is_active() const;
   void set_is_active(bool value);
@@ -1297,6 +1342,9 @@ class CreateUserRequest final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 > permissions_ids_;
   mutable std::atomic<int> _permissions_ids_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
   bool is_active_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
@@ -11433,7 +11481,7 @@ inline void DeleteUserResponse::set_allocated_error(std::string* error) {
 
 // CreateUserRequest
 
-// string user_id = 2 [json_name = "userId"];
+// string user_id = 1 [json_name = "userId"];
 inline void CreateUserRequest::clear_user_id() {
   user_id_.ClearToEmpty();
 }
@@ -11479,7 +11527,145 @@ inline void CreateUserRequest::set_allocated_user_id(std::string* user_id) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.CreateUserRequest.user_id)
 }
 
-// bool is_active = 3 [json_name = "isActive"];
+// string first_name = 2 [json_name = "firstName"];
+inline void CreateUserRequest::clear_first_name() {
+  first_name_.ClearToEmpty();
+}
+inline const std::string& CreateUserRequest::first_name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateUserRequest.first_name)
+  return _internal_first_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateUserRequest::set_first_name(ArgT0&& arg0, ArgT... args) {
+ 
+ first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateUserRequest.first_name)
+}
+inline std::string* CreateUserRequest::mutable_first_name() {
+  std::string* _s = _internal_mutable_first_name();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.CreateUserRequest.first_name)
+  return _s;
+}
+inline const std::string& CreateUserRequest::_internal_first_name() const {
+  return first_name_.Get();
+}
+inline void CreateUserRequest::_internal_set_first_name(const std::string& value) {
+  
+  first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateUserRequest::_internal_mutable_first_name() {
+  
+  return first_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateUserRequest::release_first_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.CreateUserRequest.first_name)
+  return first_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateUserRequest::set_allocated_first_name(std::string* first_name) {
+  if (first_name != nullptr) {
+    
+  } else {
+    
+  }
+  first_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), first_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.CreateUserRequest.first_name)
+}
+
+// string last_name = 3 [json_name = "lastName"];
+inline void CreateUserRequest::clear_last_name() {
+  last_name_.ClearToEmpty();
+}
+inline const std::string& CreateUserRequest::last_name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateUserRequest.last_name)
+  return _internal_last_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateUserRequest::set_last_name(ArgT0&& arg0, ArgT... args) {
+ 
+ last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateUserRequest.last_name)
+}
+inline std::string* CreateUserRequest::mutable_last_name() {
+  std::string* _s = _internal_mutable_last_name();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.CreateUserRequest.last_name)
+  return _s;
+}
+inline const std::string& CreateUserRequest::_internal_last_name() const {
+  return last_name_.Get();
+}
+inline void CreateUserRequest::_internal_set_last_name(const std::string& value) {
+  
+  last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateUserRequest::_internal_mutable_last_name() {
+  
+  return last_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateUserRequest::release_last_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.CreateUserRequest.last_name)
+  return last_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateUserRequest::set_allocated_last_name(std::string* last_name) {
+  if (last_name != nullptr) {
+    
+  } else {
+    
+  }
+  last_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), last_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.CreateUserRequest.last_name)
+}
+
+// string email = 4 [json_name = "email"];
+inline void CreateUserRequest::clear_email() {
+  email_.ClearToEmpty();
+}
+inline const std::string& CreateUserRequest::email() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateUserRequest.email)
+  return _internal_email();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateUserRequest::set_email(ArgT0&& arg0, ArgT... args) {
+ 
+ email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateUserRequest.email)
+}
+inline std::string* CreateUserRequest::mutable_email() {
+  std::string* _s = _internal_mutable_email();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.CreateUserRequest.email)
+  return _s;
+}
+inline const std::string& CreateUserRequest::_internal_email() const {
+  return email_.Get();
+}
+inline void CreateUserRequest::_internal_set_email(const std::string& value) {
+  
+  email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateUserRequest::_internal_mutable_email() {
+  
+  return email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateUserRequest::release_email() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.CreateUserRequest.email)
+  return email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateUserRequest::set_allocated_email(std::string* email) {
+  if (email != nullptr) {
+    
+  } else {
+    
+  }
+  email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.CreateUserRequest.email)
+}
+
+// bool is_active = 5 [json_name = "isActive"];
 inline void CreateUserRequest::clear_is_active() {
   is_active_ = false;
 }
@@ -11499,7 +11685,7 @@ inline void CreateUserRequest::set_is_active(bool value) {
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateUserRequest.is_active)
 }
 
-// repeated uint32 roles_ids = 5 [json_name = "rolesIds"];
+// repeated uint32 roles_ids = 6 [json_name = "rolesIds"];
 inline int CreateUserRequest::_internal_roles_ids_size() const {
   return roles_ids_.size();
 }
@@ -11546,7 +11732,7 @@ CreateUserRequest::mutable_roles_ids() {
   return _internal_mutable_roles_ids();
 }
 
-// repeated uint32 permissions_ids = 6 [json_name = "permissionsIds"];
+// repeated uint32 permissions_ids = 7 [json_name = "permissionsIds"];
 inline int CreateUserRequest::_internal_permissions_ids_size() const {
   return permissions_ids_.size();
 }

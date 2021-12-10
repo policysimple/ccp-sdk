@@ -2236,7 +2236,7 @@ proto.accounts.v1alpha1.ListUserRequest.serializeBinaryToWriter = function(messa
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.CreateUserRequest.repeatedFields_ = [5,6];
+proto.accounts.v1alpha1.CreateUserRequest.repeatedFields_ = [6,7];
 
 
 
@@ -2269,10 +2269,13 @@ proto.accounts.v1alpha1.CreateUserRequest.prototype.toObject = function(opt_incl
  */
 proto.accounts.v1alpha1.CreateUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    rolesIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    permissionsIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    firstName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    lastName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    email: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    rolesIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+    permissionsIdsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2309,21 +2312,33 @@ proto.accounts.v1alpha1.CreateUserRequest.deserializeBinaryFromReader = function
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFirstName(value);
+      break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLastName(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEmail(value);
+      break;
+    case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsActive(value);
       break;
-    case 5:
+    case 6:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
       for (var i = 0; i < values.length; i++) {
         msg.addRolesIds(values[i]);
       }
       break;
-    case 6:
+    case 7:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
       for (var i = 0; i < values.length; i++) {
         msg.addPermissionsIds(values[i]);
@@ -2361,28 +2376,49 @@ proto.accounts.v1alpha1.CreateUserRequest.serializeBinaryToWriter = function(mes
   f = message.getUserId();
   if (f.length > 0) {
     writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getFirstName();
+  if (f.length > 0) {
+    writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getLastName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getEmail();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
   f = message.getIsActive();
   if (f) {
     writer.writeBool(
-      3,
+      5,
       f
     );
   }
   f = message.getRolesIdsList();
   if (f.length > 0) {
     writer.writePackedUint32(
-      5,
+      6,
       f
     );
   }
   f = message.getPermissionsIdsList();
   if (f.length > 0) {
     writer.writePackedUint32(
-      6,
+      7,
       f
     );
   }
@@ -2390,11 +2426,11 @@ proto.accounts.v1alpha1.CreateUserRequest.serializeBinaryToWriter = function(mes
 
 
 /**
- * optional string user_id = 2;
+ * optional string user_id = 1;
  * @return {string}
  */
 proto.accounts.v1alpha1.CreateUserRequest.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -2403,16 +2439,70 @@ proto.accounts.v1alpha1.CreateUserRequest.prototype.getUserId = function() {
  * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
  */
 proto.accounts.v1alpha1.CreateUserRequest.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string first_name = 2;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.getFirstName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.setFirstName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional bool is_active = 3;
+ * optional string last_name = 3;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.getLastName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.setLastName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string email = 4;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.getEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.setEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional bool is_active = 5;
  * @return {boolean}
  */
 proto.accounts.v1alpha1.CreateUserRequest.prototype.getIsActive = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
@@ -2421,16 +2511,16 @@ proto.accounts.v1alpha1.CreateUserRequest.prototype.getIsActive = function() {
  * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
  */
 proto.accounts.v1alpha1.CreateUserRequest.prototype.setIsActive = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
 /**
- * repeated uint32 roles_ids = 5;
+ * repeated uint32 roles_ids = 6;
  * @return {!Array<number>}
  */
 proto.accounts.v1alpha1.CreateUserRequest.prototype.getRolesIdsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 5));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 6));
 };
 
 
@@ -2439,7 +2529,7 @@ proto.accounts.v1alpha1.CreateUserRequest.prototype.getRolesIdsList = function()
  * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
  */
 proto.accounts.v1alpha1.CreateUserRequest.prototype.setRolesIdsList = function(value) {
-  return jspb.Message.setField(this, 5, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
@@ -2449,7 +2539,7 @@ proto.accounts.v1alpha1.CreateUserRequest.prototype.setRolesIdsList = function(v
  * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
  */
 proto.accounts.v1alpha1.CreateUserRequest.prototype.addRolesIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
@@ -2463,11 +2553,11 @@ proto.accounts.v1alpha1.CreateUserRequest.prototype.clearRolesIdsList = function
 
 
 /**
- * repeated uint32 permissions_ids = 6;
+ * repeated uint32 permissions_ids = 7;
  * @return {!Array<number>}
  */
 proto.accounts.v1alpha1.CreateUserRequest.prototype.getPermissionsIdsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 6));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 7));
 };
 
 
@@ -2476,7 +2566,7 @@ proto.accounts.v1alpha1.CreateUserRequest.prototype.getPermissionsIdsList = func
  * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
  */
 proto.accounts.v1alpha1.CreateUserRequest.prototype.setPermissionsIdsList = function(value) {
-  return jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
@@ -2486,7 +2576,7 @@ proto.accounts.v1alpha1.CreateUserRequest.prototype.setPermissionsIdsList = func
  * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
  */
 proto.accounts.v1alpha1.CreateUserRequest.prototype.addPermissionsIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
