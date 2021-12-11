@@ -22,23 +22,35 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
      */
     protected $user_id = '';
     /**
-     * Generated from protobuf field <code>bool is_active = 3 [json_name = "isActive"];</code>
+     * Generated from protobuf field <code>string first_name = 3 [json_name = "firstName"];</code>
+     */
+    protected $first_name = '';
+    /**
+     * Generated from protobuf field <code>string last_name = 4 [json_name = "lastName"];</code>
+     */
+    protected $last_name = '';
+    /**
+     * Generated from protobuf field <code>string email = 5 [json_name = "email"];</code>
+     */
+    protected $email = '';
+    /**
+     * Generated from protobuf field <code>bool is_active = 6 [json_name = "isActive"];</code>
      */
     protected $is_active = false;
     /**
-     * Generated from protobuf field <code>string created_at = 4 [json_name = "createdAt"];</code>
+     * Generated from protobuf field <code>string created_at = 7 [json_name = "createdAt"];</code>
      */
     protected $created_at = '';
     /**
-     * Generated from protobuf field <code>string updated_at = 5 [json_name = "updatedAt"];</code>
+     * Generated from protobuf field <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      */
     protected $updated_at = '';
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 6 [json_name = "roles"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 9 [json_name = "roles"];</code>
      */
     private $roles;
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 7 [json_name = "permissions"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
      */
     private $permissions;
 
@@ -50,6 +62,9 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type int $id
      *     @type string $user_id
+     *     @type string $first_name
+     *     @type string $last_name
+     *     @type string $email
      *     @type bool $is_active
      *     @type string $created_at
      *     @type string $updated_at
@@ -107,7 +122,73 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_active = 3 [json_name = "isActive"];</code>
+     * Generated from protobuf field <code>string first_name = 3 [json_name = "firstName"];</code>
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->first_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string first_name = 3 [json_name = "firstName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFirstName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->first_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string last_name = 4 [json_name = "lastName"];</code>
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->last_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string last_name = 4 [json_name = "lastName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLastName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->last_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 5 [json_name = "email"];</code>
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 5 [json_name = "email"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_active = 6 [json_name = "isActive"];</code>
      * @return bool
      */
     public function getIsActive()
@@ -116,7 +197,7 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_active = 3 [json_name = "isActive"];</code>
+     * Generated from protobuf field <code>bool is_active = 6 [json_name = "isActive"];</code>
      * @param bool $var
      * @return $this
      */
@@ -129,7 +210,7 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string created_at = 4 [json_name = "createdAt"];</code>
+     * Generated from protobuf field <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @return string
      */
     public function getCreatedAt()
@@ -138,7 +219,7 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string created_at = 4 [json_name = "createdAt"];</code>
+     * Generated from protobuf field <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @param string $var
      * @return $this
      */
@@ -151,7 +232,7 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string updated_at = 5 [json_name = "updatedAt"];</code>
+     * Generated from protobuf field <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      * @return string
      */
     public function getUpdatedAt()
@@ -160,7 +241,7 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string updated_at = 5 [json_name = "updatedAt"];</code>
+     * Generated from protobuf field <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      * @param string $var
      * @return $this
      */
@@ -173,7 +254,7 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 6 [json_name = "roles"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 9 [json_name = "roles"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRoles()
@@ -182,7 +263,7 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 6 [json_name = "roles"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 9 [json_name = "roles"];</code>
      * @param \Accounts\V1alpha1\Rol[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -195,7 +276,7 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 7 [json_name = "permissions"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPermissions()
@@ -204,7 +285,7 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 7 [json_name = "permissions"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
      * @param \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

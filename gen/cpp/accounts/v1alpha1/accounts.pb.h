@@ -1764,11 +1764,56 @@ class UserList final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUserIdFieldNumber = 2,
+    kFirstNameFieldNumber = 2,
+    kLastNameFieldNumber = 3,
+    kEmailFieldNumber = 4,
+    kUserIdFieldNumber = 5,
     kIdFieldNumber = 1,
-    kIsActiveFieldNumber = 3,
+    kIsActiveFieldNumber = 6,
   };
-  // string user_id = 2 [json_name = "userId"];
+  // string first_name = 2 [json_name = "firstName"];
+  void clear_first_name();
+  const std::string& first_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_first_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_first_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_first_name();
+  void set_allocated_first_name(std::string* first_name);
+  private:
+  const std::string& _internal_first_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_first_name(const std::string& value);
+  std::string* _internal_mutable_first_name();
+  public:
+
+  // string last_name = 3 [json_name = "lastName"];
+  void clear_last_name();
+  const std::string& last_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_last_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_last_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_last_name();
+  void set_allocated_last_name(std::string* last_name);
+  private:
+  const std::string& _internal_last_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_last_name(const std::string& value);
+  std::string* _internal_mutable_last_name();
+  public:
+
+  // string email = 4 [json_name = "email"];
+  void clear_email();
+  const std::string& email() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_email(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_email();
+  PROTOBUF_MUST_USE_RESULT std::string* release_email();
+  void set_allocated_email(std::string* email);
+  private:
+  const std::string& _internal_email() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_email(const std::string& value);
+  std::string* _internal_mutable_email();
+  public:
+
+  // string user_id = 5 [json_name = "userId"];
   void clear_user_id();
   const std::string& user_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1791,7 +1836,7 @@ class UserList final :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // bool is_active = 3 [json_name = "isActive"];
+  // bool is_active = 6 [json_name = "isActive"];
   void clear_is_active();
   bool is_active() const;
   void set_is_active(bool value);
@@ -1807,6 +1852,9 @@ class UserList final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   bool is_active_;
@@ -2069,15 +2117,18 @@ class GetOneUserResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRolesFieldNumber = 6,
-    kPermissionsFieldNumber = 7,
+    kRolesFieldNumber = 9,
+    kPermissionsFieldNumber = 10,
     kUserIdFieldNumber = 2,
-    kCreatedAtFieldNumber = 4,
-    kUpdatedAtFieldNumber = 5,
+    kFirstNameFieldNumber = 3,
+    kLastNameFieldNumber = 4,
+    kEmailFieldNumber = 5,
+    kCreatedAtFieldNumber = 7,
+    kUpdatedAtFieldNumber = 8,
     kIdFieldNumber = 1,
-    kIsActiveFieldNumber = 3,
+    kIsActiveFieldNumber = 6,
   };
-  // repeated .accounts.v1alpha1.Rol roles = 6 [json_name = "roles"];
+  // repeated .accounts.v1alpha1.Rol roles = 9 [json_name = "roles"];
   int roles_size() const;
   private:
   int _internal_roles_size() const;
@@ -2095,7 +2146,7 @@ class GetOneUserResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol >&
       roles() const;
 
-  // repeated .accounts.v1alpha1.Permission permissions = 7 [json_name = "permissions"];
+  // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
   int permissions_size() const;
   private:
   int _internal_permissions_size() const;
@@ -2127,7 +2178,49 @@ class GetOneUserResponse final :
   std::string* _internal_mutable_user_id();
   public:
 
-  // string created_at = 4 [json_name = "createdAt"];
+  // string first_name = 3 [json_name = "firstName"];
+  void clear_first_name();
+  const std::string& first_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_first_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_first_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_first_name();
+  void set_allocated_first_name(std::string* first_name);
+  private:
+  const std::string& _internal_first_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_first_name(const std::string& value);
+  std::string* _internal_mutable_first_name();
+  public:
+
+  // string last_name = 4 [json_name = "lastName"];
+  void clear_last_name();
+  const std::string& last_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_last_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_last_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_last_name();
+  void set_allocated_last_name(std::string* last_name);
+  private:
+  const std::string& _internal_last_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_last_name(const std::string& value);
+  std::string* _internal_mutable_last_name();
+  public:
+
+  // string email = 5 [json_name = "email"];
+  void clear_email();
+  const std::string& email() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_email(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_email();
+  PROTOBUF_MUST_USE_RESULT std::string* release_email();
+  void set_allocated_email(std::string* email);
+  private:
+  const std::string& _internal_email() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_email(const std::string& value);
+  std::string* _internal_mutable_email();
+  public:
+
+  // string created_at = 7 [json_name = "createdAt"];
   void clear_created_at();
   const std::string& created_at() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2141,7 +2234,7 @@ class GetOneUserResponse final :
   std::string* _internal_mutable_created_at();
   public:
 
-  // string updated_at = 5 [json_name = "updatedAt"];
+  // string updated_at = 8 [json_name = "updatedAt"];
   void clear_updated_at();
   const std::string& updated_at() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2164,7 +2257,7 @@ class GetOneUserResponse final :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // bool is_active = 3 [json_name = "isActive"];
+  // bool is_active = 6 [json_name = "isActive"];
   void clear_is_active();
   bool is_active() const;
   void set_is_active(bool value);
@@ -2183,6 +2276,9 @@ class GetOneUserResponse final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol > roles_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission > permissions_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
@@ -10961,15 +11057,18 @@ class GetOneUserDexResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRolesFieldNumber = 6,
-    kPermissionsFieldNumber = 7,
+    kRolesFieldNumber = 9,
+    kPermissionsFieldNumber = 10,
     kUserIdFieldNumber = 2,
-    kCreatedAtFieldNumber = 4,
-    kUpdatedAtFieldNumber = 5,
+    kFirstNameFieldNumber = 3,
+    kLastNameFieldNumber = 4,
+    kEmailFieldNumber = 5,
+    kCreatedAtFieldNumber = 7,
+    kUpdatedAtFieldNumber = 8,
     kIdFieldNumber = 1,
-    kIsActiveFieldNumber = 3,
+    kIsActiveFieldNumber = 6,
   };
-  // repeated .accounts.v1alpha1.Rol roles = 6 [json_name = "roles"];
+  // repeated .accounts.v1alpha1.Rol roles = 9 [json_name = "roles"];
   int roles_size() const;
   private:
   int _internal_roles_size() const;
@@ -10987,7 +11086,7 @@ class GetOneUserDexResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol >&
       roles() const;
 
-  // repeated .accounts.v1alpha1.Permission permissions = 7 [json_name = "permissions"];
+  // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
   int permissions_size() const;
   private:
   int _internal_permissions_size() const;
@@ -11019,7 +11118,49 @@ class GetOneUserDexResponse final :
   std::string* _internal_mutable_user_id();
   public:
 
-  // string created_at = 4 [json_name = "createdAt"];
+  // string first_name = 3 [json_name = "firstName"];
+  void clear_first_name();
+  const std::string& first_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_first_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_first_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_first_name();
+  void set_allocated_first_name(std::string* first_name);
+  private:
+  const std::string& _internal_first_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_first_name(const std::string& value);
+  std::string* _internal_mutable_first_name();
+  public:
+
+  // string last_name = 4 [json_name = "lastName"];
+  void clear_last_name();
+  const std::string& last_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_last_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_last_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_last_name();
+  void set_allocated_last_name(std::string* last_name);
+  private:
+  const std::string& _internal_last_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_last_name(const std::string& value);
+  std::string* _internal_mutable_last_name();
+  public:
+
+  // string email = 5 [json_name = "email"];
+  void clear_email();
+  const std::string& email() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_email(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_email();
+  PROTOBUF_MUST_USE_RESULT std::string* release_email();
+  void set_allocated_email(std::string* email);
+  private:
+  const std::string& _internal_email() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_email(const std::string& value);
+  std::string* _internal_mutable_email();
+  public:
+
+  // string created_at = 7 [json_name = "createdAt"];
   void clear_created_at();
   const std::string& created_at() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -11033,7 +11174,7 @@ class GetOneUserDexResponse final :
   std::string* _internal_mutable_created_at();
   public:
 
-  // string updated_at = 5 [json_name = "updatedAt"];
+  // string updated_at = 8 [json_name = "updatedAt"];
   void clear_updated_at();
   const std::string& updated_at() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -11056,7 +11197,7 @@ class GetOneUserDexResponse final :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // bool is_active = 3 [json_name = "isActive"];
+  // bool is_active = 6 [json_name = "isActive"];
   void clear_is_active();
   bool is_active() const;
   void set_is_active(bool value);
@@ -11075,6 +11216,9 @@ class GetOneUserDexResponse final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol > roles_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission > permissions_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
@@ -11941,7 +12085,145 @@ inline void UserList::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserList.id)
 }
 
-// string user_id = 2 [json_name = "userId"];
+// string first_name = 2 [json_name = "firstName"];
+inline void UserList::clear_first_name() {
+  first_name_.ClearToEmpty();
+}
+inline const std::string& UserList::first_name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserList.first_name)
+  return _internal_first_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserList::set_first_name(ArgT0&& arg0, ArgT... args) {
+ 
+ first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserList.first_name)
+}
+inline std::string* UserList::mutable_first_name() {
+  std::string* _s = _internal_mutable_first_name();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserList.first_name)
+  return _s;
+}
+inline const std::string& UserList::_internal_first_name() const {
+  return first_name_.Get();
+}
+inline void UserList::_internal_set_first_name(const std::string& value) {
+  
+  first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserList::_internal_mutable_first_name() {
+  
+  return first_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserList::release_first_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserList.first_name)
+  return first_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserList::set_allocated_first_name(std::string* first_name) {
+  if (first_name != nullptr) {
+    
+  } else {
+    
+  }
+  first_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), first_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserList.first_name)
+}
+
+// string last_name = 3 [json_name = "lastName"];
+inline void UserList::clear_last_name() {
+  last_name_.ClearToEmpty();
+}
+inline const std::string& UserList::last_name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserList.last_name)
+  return _internal_last_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserList::set_last_name(ArgT0&& arg0, ArgT... args) {
+ 
+ last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserList.last_name)
+}
+inline std::string* UserList::mutable_last_name() {
+  std::string* _s = _internal_mutable_last_name();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserList.last_name)
+  return _s;
+}
+inline const std::string& UserList::_internal_last_name() const {
+  return last_name_.Get();
+}
+inline void UserList::_internal_set_last_name(const std::string& value) {
+  
+  last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserList::_internal_mutable_last_name() {
+  
+  return last_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserList::release_last_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserList.last_name)
+  return last_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserList::set_allocated_last_name(std::string* last_name) {
+  if (last_name != nullptr) {
+    
+  } else {
+    
+  }
+  last_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), last_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserList.last_name)
+}
+
+// string email = 4 [json_name = "email"];
+inline void UserList::clear_email() {
+  email_.ClearToEmpty();
+}
+inline const std::string& UserList::email() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserList.email)
+  return _internal_email();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserList::set_email(ArgT0&& arg0, ArgT... args) {
+ 
+ email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserList.email)
+}
+inline std::string* UserList::mutable_email() {
+  std::string* _s = _internal_mutable_email();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserList.email)
+  return _s;
+}
+inline const std::string& UserList::_internal_email() const {
+  return email_.Get();
+}
+inline void UserList::_internal_set_email(const std::string& value) {
+  
+  email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserList::_internal_mutable_email() {
+  
+  return email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserList::release_email() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserList.email)
+  return email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserList::set_allocated_email(std::string* email) {
+  if (email != nullptr) {
+    
+  } else {
+    
+  }
+  email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserList.email)
+}
+
+// string user_id = 5 [json_name = "userId"];
 inline void UserList::clear_user_id() {
   user_id_.ClearToEmpty();
 }
@@ -11987,7 +12269,7 @@ inline void UserList::set_allocated_user_id(std::string* user_id) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserList.user_id)
 }
 
-// bool is_active = 3 [json_name = "isActive"];
+// bool is_active = 6 [json_name = "isActive"];
 inline void UserList::clear_is_active() {
   is_active_ = false;
 }
@@ -12101,7 +12383,145 @@ inline void GetOneUserResponse::set_allocated_user_id(std::string* user_id) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserResponse.user_id)
 }
 
-// bool is_active = 3 [json_name = "isActive"];
+// string first_name = 3 [json_name = "firstName"];
+inline void GetOneUserResponse::clear_first_name() {
+  first_name_.ClearToEmpty();
+}
+inline const std::string& GetOneUserResponse::first_name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserResponse.first_name)
+  return _internal_first_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetOneUserResponse::set_first_name(ArgT0&& arg0, ArgT... args) {
+ 
+ first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserResponse.first_name)
+}
+inline std::string* GetOneUserResponse::mutable_first_name() {
+  std::string* _s = _internal_mutable_first_name();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneUserResponse.first_name)
+  return _s;
+}
+inline const std::string& GetOneUserResponse::_internal_first_name() const {
+  return first_name_.Get();
+}
+inline void GetOneUserResponse::_internal_set_first_name(const std::string& value) {
+  
+  first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetOneUserResponse::_internal_mutable_first_name() {
+  
+  return first_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetOneUserResponse::release_first_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.GetOneUserResponse.first_name)
+  return first_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetOneUserResponse::set_allocated_first_name(std::string* first_name) {
+  if (first_name != nullptr) {
+    
+  } else {
+    
+  }
+  first_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), first_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserResponse.first_name)
+}
+
+// string last_name = 4 [json_name = "lastName"];
+inline void GetOneUserResponse::clear_last_name() {
+  last_name_.ClearToEmpty();
+}
+inline const std::string& GetOneUserResponse::last_name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserResponse.last_name)
+  return _internal_last_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetOneUserResponse::set_last_name(ArgT0&& arg0, ArgT... args) {
+ 
+ last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserResponse.last_name)
+}
+inline std::string* GetOneUserResponse::mutable_last_name() {
+  std::string* _s = _internal_mutable_last_name();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneUserResponse.last_name)
+  return _s;
+}
+inline const std::string& GetOneUserResponse::_internal_last_name() const {
+  return last_name_.Get();
+}
+inline void GetOneUserResponse::_internal_set_last_name(const std::string& value) {
+  
+  last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetOneUserResponse::_internal_mutable_last_name() {
+  
+  return last_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetOneUserResponse::release_last_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.GetOneUserResponse.last_name)
+  return last_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetOneUserResponse::set_allocated_last_name(std::string* last_name) {
+  if (last_name != nullptr) {
+    
+  } else {
+    
+  }
+  last_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), last_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserResponse.last_name)
+}
+
+// string email = 5 [json_name = "email"];
+inline void GetOneUserResponse::clear_email() {
+  email_.ClearToEmpty();
+}
+inline const std::string& GetOneUserResponse::email() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserResponse.email)
+  return _internal_email();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetOneUserResponse::set_email(ArgT0&& arg0, ArgT... args) {
+ 
+ email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserResponse.email)
+}
+inline std::string* GetOneUserResponse::mutable_email() {
+  std::string* _s = _internal_mutable_email();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneUserResponse.email)
+  return _s;
+}
+inline const std::string& GetOneUserResponse::_internal_email() const {
+  return email_.Get();
+}
+inline void GetOneUserResponse::_internal_set_email(const std::string& value) {
+  
+  email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetOneUserResponse::_internal_mutable_email() {
+  
+  return email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetOneUserResponse::release_email() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.GetOneUserResponse.email)
+  return email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetOneUserResponse::set_allocated_email(std::string* email) {
+  if (email != nullptr) {
+    
+  } else {
+    
+  }
+  email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserResponse.email)
+}
+
+// bool is_active = 6 [json_name = "isActive"];
 inline void GetOneUserResponse::clear_is_active() {
   is_active_ = false;
 }
@@ -12121,7 +12541,7 @@ inline void GetOneUserResponse::set_is_active(bool value) {
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserResponse.is_active)
 }
 
-// string created_at = 4 [json_name = "createdAt"];
+// string created_at = 7 [json_name = "createdAt"];
 inline void GetOneUserResponse::clear_created_at() {
   created_at_.ClearToEmpty();
 }
@@ -12167,7 +12587,7 @@ inline void GetOneUserResponse::set_allocated_created_at(std::string* created_at
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserResponse.created_at)
 }
 
-// string updated_at = 5 [json_name = "updatedAt"];
+// string updated_at = 8 [json_name = "updatedAt"];
 inline void GetOneUserResponse::clear_updated_at() {
   updated_at_.ClearToEmpty();
 }
@@ -12213,7 +12633,7 @@ inline void GetOneUserResponse::set_allocated_updated_at(std::string* updated_at
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserResponse.updated_at)
 }
 
-// repeated .accounts.v1alpha1.Rol roles = 6 [json_name = "roles"];
+// repeated .accounts.v1alpha1.Rol roles = 9 [json_name = "roles"];
 inline int GetOneUserResponse::_internal_roles_size() const {
   return roles_.size();
 }
@@ -12253,7 +12673,7 @@ GetOneUserResponse::roles() const {
   return roles_;
 }
 
-// repeated .accounts.v1alpha1.Permission permissions = 7 [json_name = "permissions"];
+// repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
 inline int GetOneUserResponse::_internal_permissions_size() const {
   return permissions_.size();
 }
@@ -16652,7 +17072,145 @@ inline void GetOneUserDexResponse::set_allocated_user_id(std::string* user_id) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserDexResponse.user_id)
 }
 
-// bool is_active = 3 [json_name = "isActive"];
+// string first_name = 3 [json_name = "firstName"];
+inline void GetOneUserDexResponse::clear_first_name() {
+  first_name_.ClearToEmpty();
+}
+inline const std::string& GetOneUserDexResponse::first_name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.first_name)
+  return _internal_first_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetOneUserDexResponse::set_first_name(ArgT0&& arg0, ArgT... args) {
+ 
+ first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserDexResponse.first_name)
+}
+inline std::string* GetOneUserDexResponse::mutable_first_name() {
+  std::string* _s = _internal_mutable_first_name();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneUserDexResponse.first_name)
+  return _s;
+}
+inline const std::string& GetOneUserDexResponse::_internal_first_name() const {
+  return first_name_.Get();
+}
+inline void GetOneUserDexResponse::_internal_set_first_name(const std::string& value) {
+  
+  first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetOneUserDexResponse::_internal_mutable_first_name() {
+  
+  return first_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetOneUserDexResponse::release_first_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.GetOneUserDexResponse.first_name)
+  return first_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetOneUserDexResponse::set_allocated_first_name(std::string* first_name) {
+  if (first_name != nullptr) {
+    
+  } else {
+    
+  }
+  first_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), first_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserDexResponse.first_name)
+}
+
+// string last_name = 4 [json_name = "lastName"];
+inline void GetOneUserDexResponse::clear_last_name() {
+  last_name_.ClearToEmpty();
+}
+inline const std::string& GetOneUserDexResponse::last_name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.last_name)
+  return _internal_last_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetOneUserDexResponse::set_last_name(ArgT0&& arg0, ArgT... args) {
+ 
+ last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserDexResponse.last_name)
+}
+inline std::string* GetOneUserDexResponse::mutable_last_name() {
+  std::string* _s = _internal_mutable_last_name();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneUserDexResponse.last_name)
+  return _s;
+}
+inline const std::string& GetOneUserDexResponse::_internal_last_name() const {
+  return last_name_.Get();
+}
+inline void GetOneUserDexResponse::_internal_set_last_name(const std::string& value) {
+  
+  last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetOneUserDexResponse::_internal_mutable_last_name() {
+  
+  return last_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetOneUserDexResponse::release_last_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.GetOneUserDexResponse.last_name)
+  return last_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetOneUserDexResponse::set_allocated_last_name(std::string* last_name) {
+  if (last_name != nullptr) {
+    
+  } else {
+    
+  }
+  last_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), last_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserDexResponse.last_name)
+}
+
+// string email = 5 [json_name = "email"];
+inline void GetOneUserDexResponse::clear_email() {
+  email_.ClearToEmpty();
+}
+inline const std::string& GetOneUserDexResponse::email() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.email)
+  return _internal_email();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetOneUserDexResponse::set_email(ArgT0&& arg0, ArgT... args) {
+ 
+ email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserDexResponse.email)
+}
+inline std::string* GetOneUserDexResponse::mutable_email() {
+  std::string* _s = _internal_mutable_email();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneUserDexResponse.email)
+  return _s;
+}
+inline const std::string& GetOneUserDexResponse::_internal_email() const {
+  return email_.Get();
+}
+inline void GetOneUserDexResponse::_internal_set_email(const std::string& value) {
+  
+  email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetOneUserDexResponse::_internal_mutable_email() {
+  
+  return email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetOneUserDexResponse::release_email() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.GetOneUserDexResponse.email)
+  return email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetOneUserDexResponse::set_allocated_email(std::string* email) {
+  if (email != nullptr) {
+    
+  } else {
+    
+  }
+  email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserDexResponse.email)
+}
+
+// bool is_active = 6 [json_name = "isActive"];
 inline void GetOneUserDexResponse::clear_is_active() {
   is_active_ = false;
 }
@@ -16672,7 +17230,7 @@ inline void GetOneUserDexResponse::set_is_active(bool value) {
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserDexResponse.is_active)
 }
 
-// string created_at = 4 [json_name = "createdAt"];
+// string created_at = 7 [json_name = "createdAt"];
 inline void GetOneUserDexResponse::clear_created_at() {
   created_at_.ClearToEmpty();
 }
@@ -16718,7 +17276,7 @@ inline void GetOneUserDexResponse::set_allocated_created_at(std::string* created
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserDexResponse.created_at)
 }
 
-// string updated_at = 5 [json_name = "updatedAt"];
+// string updated_at = 8 [json_name = "updatedAt"];
 inline void GetOneUserDexResponse::clear_updated_at() {
   updated_at_.ClearToEmpty();
 }
@@ -16764,7 +17322,7 @@ inline void GetOneUserDexResponse::set_allocated_updated_at(std::string* updated
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserDexResponse.updated_at)
 }
 
-// repeated .accounts.v1alpha1.Rol roles = 6 [json_name = "roles"];
+// repeated .accounts.v1alpha1.Rol roles = 9 [json_name = "roles"];
 inline int GetOneUserDexResponse::_internal_roles_size() const {
   return roles_.size();
 }
@@ -16804,7 +17362,7 @@ GetOneUserDexResponse::roles() const {
   return roles_;
 }
 
-// repeated .accounts.v1alpha1.Permission permissions = 7 [json_name = "permissions"];
+// repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
 inline int GetOneUserDexResponse::_internal_permissions_size() const {
   return permissions_.size();
 }

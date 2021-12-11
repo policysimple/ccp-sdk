@@ -2933,8 +2933,11 @@ proto.accounts.v1alpha1.UserList.prototype.toObject = function(opt_includeInstan
 proto.accounts.v1alpha1.UserList.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+    firstName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    lastName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    email: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -2977,9 +2980,21 @@ proto.accounts.v1alpha1.UserList.deserializeBinaryFromReader = function(msg, rea
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUserId(value);
+      msg.setFirstName(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLastName(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEmail(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsActive(value);
       break;
@@ -3019,17 +3034,38 @@ proto.accounts.v1alpha1.UserList.serializeBinaryToWriter = function(message, wri
       f
     );
   }
-  f = message.getUserId();
+  f = message.getFirstName();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
+  f = message.getLastName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getEmail();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
   f = message.getIsActive();
   if (f) {
     writer.writeBool(
-      3,
+      6,
       f
     );
   }
@@ -3055,10 +3091,10 @@ proto.accounts.v1alpha1.UserList.prototype.setId = function(value) {
 
 
 /**
- * optional string user_id = 2;
+ * optional string first_name = 2;
  * @return {string}
  */
-proto.accounts.v1alpha1.UserList.prototype.getUserId = function() {
+proto.accounts.v1alpha1.UserList.prototype.getFirstName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -3067,17 +3103,71 @@ proto.accounts.v1alpha1.UserList.prototype.getUserId = function() {
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.UserList} returns this
  */
-proto.accounts.v1alpha1.UserList.prototype.setUserId = function(value) {
+proto.accounts.v1alpha1.UserList.prototype.setFirstName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional bool is_active = 3;
+ * optional string last_name = 3;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.UserList.prototype.getLastName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.UserList} returns this
+ */
+proto.accounts.v1alpha1.UserList.prototype.setLastName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string email = 4;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.UserList.prototype.getEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.UserList} returns this
+ */
+proto.accounts.v1alpha1.UserList.prototype.setEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string user_id = 5;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.UserList.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.UserList} returns this
+ */
+proto.accounts.v1alpha1.UserList.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional bool is_active = 6;
  * @return {boolean}
  */
 proto.accounts.v1alpha1.UserList.prototype.getIsActive = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
@@ -3086,7 +3176,7 @@ proto.accounts.v1alpha1.UserList.prototype.getIsActive = function() {
  * @return {!proto.accounts.v1alpha1.UserList} returns this
  */
 proto.accounts.v1alpha1.UserList.prototype.setIsActive = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -3226,7 +3316,7 @@ proto.accounts.v1alpha1.GetOneUserRequest.prototype.setId = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.GetOneUserResponse.repeatedFields_ = [6,7];
+proto.accounts.v1alpha1.GetOneUserResponse.repeatedFields_ = [9,10];
 
 
 
@@ -3261,9 +3351,12 @@ proto.accounts.v1alpha1.GetOneUserResponse.toObject = function(includeInstance, 
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    createdAt: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    email: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    createdAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 8, ""),
     rolesList: jspb.Message.toObjectList(msg.getRolesList(),
     proto.accounts.v1alpha1.Rol.toObject, includeInstance),
     permissionsList: jspb.Message.toObjectList(msg.getPermissionsList(),
@@ -3313,23 +3406,35 @@ proto.accounts.v1alpha1.GetOneUserResponse.deserializeBinaryFromReader = functio
       msg.setUserId(value);
       break;
     case 3:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsActive(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFirstName(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCreatedAt(value);
+      msg.setLastName(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUpdatedAt(value);
+      msg.setEmail(value);
       break;
     case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsActive(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCreatedAt(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUpdatedAt(value);
+      break;
+    case 9:
       var value = new proto.accounts.v1alpha1.Rol;
       reader.readMessage(value,proto.accounts.v1alpha1.Rol.deserializeBinaryFromReader);
       msg.addRoles(value);
       break;
-    case 7:
+    case 10:
       var value = new proto.accounts.v1alpha1.Permission;
       reader.readMessage(value,proto.accounts.v1alpha1.Permission.deserializeBinaryFromReader);
       msg.addPermissions(value);
@@ -3377,31 +3482,52 @@ proto.accounts.v1alpha1.GetOneUserResponse.serializeBinaryToWriter = function(me
       f
     );
   }
-  f = message.getIsActive();
-  if (f) {
-    writer.writeBool(
+  f = message.getFirstName();
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
-  f = message.getCreatedAt();
+  f = message.getLastName();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getUpdatedAt();
+  f = message.getEmail();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
+  f = message.getIsActive();
+  if (f) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+  f = message.getCreatedAt();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getUpdatedAt();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
   f = message.getRolesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      9,
       f,
       proto.accounts.v1alpha1.Rol.serializeBinaryToWriter
     );
@@ -3409,7 +3535,7 @@ proto.accounts.v1alpha1.GetOneUserResponse.serializeBinaryToWriter = function(me
   f = message.getPermissionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      10,
       f,
       proto.accounts.v1alpha1.Permission.serializeBinaryToWriter
     );
@@ -3454,28 +3580,28 @@ proto.accounts.v1alpha1.GetOneUserResponse.prototype.setUserId = function(value)
 
 
 /**
- * optional bool is_active = 3;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.GetOneUserResponse.prototype.getIsActive = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.GetOneUserResponse.prototype.setIsActive = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
-};
-
-
-/**
- * optional string created_at = 4;
+ * optional string first_name = 3;
  * @return {string}
  */
-proto.accounts.v1alpha1.GetOneUserResponse.prototype.getCreatedAt = function() {
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getFirstName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setFirstName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string last_name = 4;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getLastName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -3484,16 +3610,16 @@ proto.accounts.v1alpha1.GetOneUserResponse.prototype.getCreatedAt = function() {
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
  */
-proto.accounts.v1alpha1.GetOneUserResponse.prototype.setCreatedAt = function(value) {
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setLastName = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string updated_at = 5;
+ * optional string email = 5;
  * @return {string}
  */
-proto.accounts.v1alpha1.GetOneUserResponse.prototype.getUpdatedAt = function() {
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -3502,18 +3628,72 @@ proto.accounts.v1alpha1.GetOneUserResponse.prototype.getUpdatedAt = function() {
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
  */
-proto.accounts.v1alpha1.GetOneUserResponse.prototype.setUpdatedAt = function(value) {
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setEmail = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * repeated Rol roles = 6;
+ * optional bool is_active = 6;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getIsActive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setIsActive = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
+/**
+ * optional string created_at = 7;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getCreatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setCreatedAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string updated_at = 8;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getUpdatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setUpdatedAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * repeated Rol roles = 9;
  * @return {!Array<!proto.accounts.v1alpha1.Rol>}
  */
 proto.accounts.v1alpha1.GetOneUserResponse.prototype.getRolesList = function() {
   return /** @type{!Array<!proto.accounts.v1alpha1.Rol>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Rol, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Rol, 9));
 };
 
 
@@ -3522,7 +3702,7 @@ proto.accounts.v1alpha1.GetOneUserResponse.prototype.getRolesList = function() {
  * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
 */
 proto.accounts.v1alpha1.GetOneUserResponse.prototype.setRolesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -3532,7 +3712,7 @@ proto.accounts.v1alpha1.GetOneUserResponse.prototype.setRolesList = function(val
  * @return {!proto.accounts.v1alpha1.Rol}
  */
 proto.accounts.v1alpha1.GetOneUserResponse.prototype.addRoles = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.accounts.v1alpha1.Rol, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.accounts.v1alpha1.Rol, opt_index);
 };
 
 
@@ -3546,12 +3726,12 @@ proto.accounts.v1alpha1.GetOneUserResponse.prototype.clearRolesList = function()
 
 
 /**
- * repeated Permission permissions = 7;
+ * repeated Permission permissions = 10;
  * @return {!Array<!proto.accounts.v1alpha1.Permission>}
  */
 proto.accounts.v1alpha1.GetOneUserResponse.prototype.getPermissionsList = function() {
   return /** @type{!Array<!proto.accounts.v1alpha1.Permission>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Permission, 7));
+    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Permission, 10));
 };
 
 
@@ -3560,7 +3740,7 @@ proto.accounts.v1alpha1.GetOneUserResponse.prototype.getPermissionsList = functi
  * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
 */
 proto.accounts.v1alpha1.GetOneUserResponse.prototype.setPermissionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -3570,7 +3750,7 @@ proto.accounts.v1alpha1.GetOneUserResponse.prototype.setPermissionsList = functi
  * @return {!proto.accounts.v1alpha1.Permission}
  */
 proto.accounts.v1alpha1.GetOneUserResponse.prototype.addPermissions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.accounts.v1alpha1.Permission, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.accounts.v1alpha1.Permission, opt_index);
 };
 
 
@@ -12794,7 +12974,7 @@ proto.accounts.v1alpha1.GetOneUserDexRequest.prototype.setUserId = function(valu
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.GetOneUserDexResponse.repeatedFields_ = [6,7];
+proto.accounts.v1alpha1.GetOneUserDexResponse.repeatedFields_ = [9,10];
 
 
 
@@ -12829,9 +13009,12 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.toObject = function(includeInstanc
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    createdAt: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    email: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    createdAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 8, ""),
     rolesList: jspb.Message.toObjectList(msg.getRolesList(),
     proto.accounts.v1alpha1.Rol.toObject, includeInstance),
     permissionsList: jspb.Message.toObjectList(msg.getPermissionsList(),
@@ -12881,23 +13064,35 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.deserializeBinaryFromReader = func
       msg.setUserId(value);
       break;
     case 3:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsActive(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFirstName(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCreatedAt(value);
+      msg.setLastName(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUpdatedAt(value);
+      msg.setEmail(value);
       break;
     case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsActive(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCreatedAt(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUpdatedAt(value);
+      break;
+    case 9:
       var value = new proto.accounts.v1alpha1.Rol;
       reader.readMessage(value,proto.accounts.v1alpha1.Rol.deserializeBinaryFromReader);
       msg.addRoles(value);
       break;
-    case 7:
+    case 10:
       var value = new proto.accounts.v1alpha1.Permission;
       reader.readMessage(value,proto.accounts.v1alpha1.Permission.deserializeBinaryFromReader);
       msg.addPermissions(value);
@@ -12945,31 +13140,52 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.serializeBinaryToWriter = function
       f
     );
   }
-  f = message.getIsActive();
-  if (f) {
-    writer.writeBool(
+  f = message.getFirstName();
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
-  f = message.getCreatedAt();
+  f = message.getLastName();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getUpdatedAt();
+  f = message.getEmail();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
+  f = message.getIsActive();
+  if (f) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+  f = message.getCreatedAt();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getUpdatedAt();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
   f = message.getRolesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      9,
       f,
       proto.accounts.v1alpha1.Rol.serializeBinaryToWriter
     );
@@ -12977,7 +13193,7 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.serializeBinaryToWriter = function
   f = message.getPermissionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      10,
       f,
       proto.accounts.v1alpha1.Permission.serializeBinaryToWriter
     );
@@ -13022,28 +13238,28 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setUserId = function(val
 
 
 /**
- * optional bool is_active = 3;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getIsActive = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setIsActive = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
-};
-
-
-/**
- * optional string created_at = 4;
+ * optional string first_name = 3;
  * @return {string}
  */
-proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getCreatedAt = function() {
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getFirstName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setFirstName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string last_name = 4;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getLastName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -13052,16 +13268,16 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getCreatedAt = function(
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
  */
-proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setCreatedAt = function(value) {
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setLastName = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string updated_at = 5;
+ * optional string email = 5;
  * @return {string}
  */
-proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getUpdatedAt = function() {
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -13070,18 +13286,72 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getUpdatedAt = function(
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
  */
-proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setUpdatedAt = function(value) {
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setEmail = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * repeated Rol roles = 6;
+ * optional bool is_active = 6;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getIsActive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setIsActive = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
+/**
+ * optional string created_at = 7;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getCreatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setCreatedAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string updated_at = 8;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getUpdatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setUpdatedAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * repeated Rol roles = 9;
  * @return {!Array<!proto.accounts.v1alpha1.Rol>}
  */
 proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getRolesList = function() {
   return /** @type{!Array<!proto.accounts.v1alpha1.Rol>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Rol, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Rol, 9));
 };
 
 
@@ -13090,7 +13360,7 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getRolesList = function(
  * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
 */
 proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setRolesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -13100,7 +13370,7 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setRolesList = function(
  * @return {!proto.accounts.v1alpha1.Rol}
  */
 proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.addRoles = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.accounts.v1alpha1.Rol, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.accounts.v1alpha1.Rol, opt_index);
 };
 
 
@@ -13114,12 +13384,12 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.clearRolesList = functio
 
 
 /**
- * repeated Permission permissions = 7;
+ * repeated Permission permissions = 10;
  * @return {!Array<!proto.accounts.v1alpha1.Permission>}
  */
 proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getPermissionsList = function() {
   return /** @type{!Array<!proto.accounts.v1alpha1.Permission>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Permission, 7));
+    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Permission, 10));
 };
 
 
@@ -13128,7 +13398,7 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getPermissionsList = fun
  * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
 */
 proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setPermissionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -13138,7 +13408,7 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setPermissionsList = fun
  * @return {!proto.accounts.v1alpha1.Permission}
  */
 proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.addPermissions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.accounts.v1alpha1.Permission, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.accounts.v1alpha1.Permission, opt_index);
 };
 
 
