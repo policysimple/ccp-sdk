@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-÷C
+îE
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"?
 UsersDex
 user_id (	RuserId
@@ -44,23 +44,32 @@ first_name (	R	firstName
 auth_id (RauthId8
 auth (2$.accounts.v1alpha1.CreateUserRequestRauth",
 DeleteUserRequest
-auth_id (RauthId"P
+auth_id (RauthId"¢
 UserList
-id (Rid
-user_id (	RuserId
-	is_active (RisActive"#
+id (Rid
+
+first_name (	R	firstName
+	last_name (	RlastName
+email (	Remail
+user_id (	RuserId
+	is_active (RisActive"#
 GetOneUserRequest
-id (Rid"‡
+id (Rid"Ù
 GetOneUserResponse
 id (Rid
-user_id (	RuserId
-	is_active (RisActive
+user_id (	RuserId
 
-created_at (	R	createdAt
+first_name (	R	firstName
+	last_name (	RlastName
+email (	Remail
+	is_active (RisActive
 
-updated_at (	R	updatedAt,
-roles (2.accounts.v1alpha1.RolRroles?
-permissions (2.accounts.v1alpha1.PermissionRpermissions"E
+created_at (	R	createdAt
+
+updated_at (	R	updatedAt,
+roles	 (2.accounts.v1alpha1.RolRroles?
+permissions
+ (2.accounts.v1alpha1.PermissionRpermissions"E
 ListUserResponse1
 users (2.accounts.v1alpha1.UserListRusers"I
 ListUserPaginationRequest
@@ -232,17 +241,22 @@ Permission
 GetListUserDexResponse8
 	users_dex (2.accounts.v1alpha1.UsersDexRusersDex"/
 GetOneUserDexRequest
-user_id (	RuserId"Š
+user_id (	RuserId"Ü
 GetOneUserDexResponse
 id (Rid
-user_id (	RuserId
-	is_active (RisActive
+user_id (	RuserId
 
-created_at (	R	createdAt
+first_name (	R	firstName
+	last_name (	RlastName
+email (	Remail
+	is_active (RisActive
 
-updated_at (	R	updatedAt,
-roles (2.accounts.v1alpha1.RolRroles?
-permissions (2.accounts.v1alpha1.PermissionRpermissions2•
+created_at (	R	createdAt
+
+updated_at (	R	updatedAt,
+roles	 (2.accounts.v1alpha1.RolRroles?
+permissions
+ (2.accounts.v1alpha1.PermissionRpermissions2•
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS

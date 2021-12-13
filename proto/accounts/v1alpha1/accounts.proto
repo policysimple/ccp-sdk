@@ -118,8 +118,14 @@ message DeleteUserRequest {
 //Authentication without group and permission
 message UserList {
     uint32 id = 1;
-    string user_id = 2;
-    bool is_active = 3;
+
+    string first_name = 2;
+    string last_name = 3;
+    string email = 4;
+
+    string user_id = 5;
+    bool is_active = 6;
+
 }
 
 
@@ -131,11 +137,14 @@ message GetOneUserRequest {
 message GetOneUserResponse {
     uint32 id = 1;
     string user_id = 2;
-    bool is_active = 3;
-    string created_at = 4;
-    string updated_at = 5;
-    repeated Rol roles = 6;
-    repeated Permission permissions = 7;
+    string first_name = 3;
+    string last_name = 4;
+    string email = 5;
+    bool is_active = 6;
+    string created_at = 7;
+    string updated_at = 8;
+    repeated Rol roles = 9;
+    repeated Permission permissions = 10;
 }
 
 
@@ -497,9 +506,12 @@ message GetOneUserDexRequest {
 message GetOneUserDexResponse {
     uint32 id = 1;
     string user_id = 2;
-    bool is_active = 3;
-    string created_at = 4;
-    string updated_at = 5;
-    repeated Rol roles = 6;
-    repeated Permission permissions = 7;
+    string first_name = 3;
+    string last_name = 4;
+    string email = 5;
+    bool is_active = 6;
+    string created_at = 7;
+    string updated_at = 8;
+    repeated Rol roles = 9;
+    repeated Permission permissions = 10;
 }
