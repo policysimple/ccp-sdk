@@ -3864,6 +3864,18 @@ class ListRolesRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kProjectIdFieldNumber = 1,
+  };
+  // uint32 project_id = 1 [json_name = "projectId"];
+  void clear_project_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
+  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
+  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.ListRolesRequest)
  private:
   class _Internal;
@@ -3871,6 +3883,7 @@ class ListRolesRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -4619,6 +4632,7 @@ class Project final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kRolesFieldNumber = 8,
     kNameFieldNumber = 2,
     kImageFieldNumber = 3,
     kDescriptionFieldNumber = 5,
@@ -4627,6 +4641,24 @@ class Project final :
     kIdFieldNumber = 1,
     kOrganizationIdFieldNumber = 4,
   };
+  // repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];
+  int roles_size() const;
+  private:
+  int _internal_roles_size() const;
+  public:
+  void clear_roles();
+  ::accounts::v1alpha1::Rol* mutable_roles(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol >*
+      mutable_roles();
+  private:
+  const ::accounts::v1alpha1::Rol& _internal_roles(int index) const;
+  ::accounts::v1alpha1::Rol* _internal_add_roles();
+  public:
+  const ::accounts::v1alpha1::Rol& roles(int index) const;
+  ::accounts::v1alpha1::Rol* add_roles();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol >&
+      roles() const;
+
   // string name = 2 [json_name = "name"];
   void clear_name();
   const std::string& name() const;
@@ -4722,6 +4754,7 @@ class Project final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol > roles_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
@@ -13454,6 +13487,26 @@ inline void DeleteRoleRequest::set_rol_id(::PROTOBUF_NAMESPACE_ID::uint32 value)
 
 // ListRolesRequest
 
+// uint32 project_id = 1 [json_name = "projectId"];
+inline void ListRolesRequest::clear_project_id() {
+  project_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListRolesRequest::_internal_project_id() const {
+  return project_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListRolesRequest::project_id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.ListRolesRequest.project_id)
+  return _internal_project_id();
+}
+inline void ListRolesRequest::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  project_id_ = value;
+}
+inline void ListRolesRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_project_id(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.ListRolesRequest.project_id)
+}
+
 // -------------------------------------------------------------------
 
 // ListRolesResponse
@@ -14058,6 +14111,46 @@ inline void Project::set_allocated_updated_at(std::string* updated_at) {
   updated_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), updated_at,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.Project.updated_at)
+}
+
+// repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];
+inline int Project::_internal_roles_size() const {
+  return roles_.size();
+}
+inline int Project::roles_size() const {
+  return _internal_roles_size();
+}
+inline void Project::clear_roles() {
+  roles_.Clear();
+}
+inline ::accounts::v1alpha1::Rol* Project::mutable_roles(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.Project.roles)
+  return roles_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol >*
+Project::mutable_roles() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.Project.roles)
+  return &roles_;
+}
+inline const ::accounts::v1alpha1::Rol& Project::_internal_roles(int index) const {
+  return roles_.Get(index);
+}
+inline const ::accounts::v1alpha1::Rol& Project::roles(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.Project.roles)
+  return _internal_roles(index);
+}
+inline ::accounts::v1alpha1::Rol* Project::_internal_add_roles() {
+  return roles_.Add();
+}
+inline ::accounts::v1alpha1::Rol* Project::add_roles() {
+  ::accounts::v1alpha1::Rol* _add = _internal_add_roles();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.Project.roles)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol >&
+Project::roles() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.Project.roles)
+  return roles_;
 }
 
 // -------------------------------------------------------------------

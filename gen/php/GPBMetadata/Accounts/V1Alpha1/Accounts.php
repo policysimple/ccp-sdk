@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-ÓE
+ªF
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"?
 UsersDex
 user_id (	RuserId
@@ -102,8 +102,10 @@ project_id (R	projectId%
 project_id (R	projectId?
 permissions (2.accounts.v1alpha1.PermissionRpermissions"*
 DeleteRoleRequest
-rol_id (RrolId"
-ListRolesRequest"A
+rol_id (RrolId"1
+ListRolesRequest
+
+project_id (R	projectId"A
 ListRolesResponse,
 roles (2.accounts.v1alpha1.RolRroles"<
 CreateRoleResponse
@@ -114,7 +116,7 @@ project_id (R	projectId?
 error (	Rerror"<
 DeleteRoleResponse
 msg (	Rmsg
-error (	Rerror"Ã
+error (	Rerror"˙
 Project
 id (Rid
 name (	Rname
@@ -124,7 +126,8 @@ project_id (R	projectId?
 
 created_at (	R	createdAt
 
-updated_at (	R	updatedAt"ã
+updated_at (	R	updatedAt,
+roles (2.accounts.v1alpha1.RolRroles"ã
 CreateProjectRequest
 name (	Rname 
 description (	Rdescription

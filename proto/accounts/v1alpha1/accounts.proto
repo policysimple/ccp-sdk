@@ -213,6 +213,7 @@ message DeleteRoleRequest {
 }
 
 message ListRolesRequest {
+    uint32 project_id = 1;
 }   
 
 //
@@ -254,6 +255,8 @@ message Project {
 
     string created_at = 6;
     string updated_at = 7;
+
+    repeated Rol roles = 8;
 }
 
 /*
