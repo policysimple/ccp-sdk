@@ -41,6 +41,10 @@ class Project extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string updated_at = 7 [json_name = "updatedAt"];</code>
      */
     protected $updated_at = '';
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];</code>
+     */
+    private $roles;
 
     /**
      * Constructor.
@@ -55,6 +59,7 @@ class Project extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *     @type string $created_at
      *     @type string $updated_at
+     *     @type \Accounts\V1alpha1\Rol[]|\Google\Protobuf\Internal\RepeatedField $roles
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +217,28 @@ class Project extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];</code>
+     * @param \Accounts\V1alpha1\Rol[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRoles($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Rol::class);
+        $this->roles = $arr;
 
         return $this;
     }

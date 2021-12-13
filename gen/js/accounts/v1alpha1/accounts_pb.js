@@ -618,7 +618,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.accounts.v1alpha1.Project = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.Project.repeatedFields_, null);
 };
 goog.inherits(proto.accounts.v1alpha1.Project, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -5494,7 +5494,7 @@ proto.accounts.v1alpha1.ListRolesRequest.prototype.toObject = function(opt_inclu
  */
 proto.accounts.v1alpha1.ListRolesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    projectId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -5531,6 +5531,10 @@ proto.accounts.v1alpha1.ListRolesRequest.deserializeBinaryFromReader = function(
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setProjectId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5560,6 +5564,31 @@ proto.accounts.v1alpha1.ListRolesRequest.prototype.serializeBinary = function() 
  */
 proto.accounts.v1alpha1.ListRolesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getProjectId();
+  if (f !== 0) {
+    writer.writeUint32(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional uint32 project_id = 1;
+ * @return {number}
+ */
+proto.accounts.v1alpha1.ListRolesRequest.prototype.getProjectId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.accounts.v1alpha1.ListRolesRequest} returns this
+ */
+proto.accounts.v1alpha1.ListRolesRequest.prototype.setProjectId = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -6204,6 +6233,13 @@ proto.accounts.v1alpha1.DeleteRoleResponse.prototype.setError = function(value) 
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.accounts.v1alpha1.Project.repeatedFields_ = [8];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -6241,7 +6277,9 @@ proto.accounts.v1alpha1.Project.toObject = function(includeInstance, msg) {
     organizationId: jspb.Message.getFieldWithDefault(msg, 4, 0),
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
     createdAt: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 7, "")
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    rolesList: jspb.Message.toObjectList(msg.getRolesList(),
+    proto.accounts.v1alpha1.Rol.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -6305,6 +6343,11 @@ proto.accounts.v1alpha1.Project.deserializeBinaryFromReader = function(msg, read
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setUpdatedAt(value);
+      break;
+    case 8:
+      var value = new proto.accounts.v1alpha1.Rol;
+      reader.readMessage(value,proto.accounts.v1alpha1.Rol.deserializeBinaryFromReader);
+      msg.addRoles(value);
       break;
     default:
       reader.skipField();
@@ -6382,6 +6425,14 @@ proto.accounts.v1alpha1.Project.serializeBinaryToWriter = function(message, writ
     writer.writeString(
       7,
       f
+    );
+  }
+  f = message.getRolesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      8,
+      f,
+      proto.accounts.v1alpha1.Rol.serializeBinaryToWriter
     );
   }
 };
@@ -6510,6 +6561,44 @@ proto.accounts.v1alpha1.Project.prototype.getUpdatedAt = function() {
  */
 proto.accounts.v1alpha1.Project.prototype.setUpdatedAt = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * repeated Rol roles = 8;
+ * @return {!Array<!proto.accounts.v1alpha1.Rol>}
+ */
+proto.accounts.v1alpha1.Project.prototype.getRolesList = function() {
+  return /** @type{!Array<!proto.accounts.v1alpha1.Rol>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Rol, 8));
+};
+
+
+/**
+ * @param {!Array<!proto.accounts.v1alpha1.Rol>} value
+ * @return {!proto.accounts.v1alpha1.Project} returns this
+*/
+proto.accounts.v1alpha1.Project.prototype.setRolesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+};
+
+
+/**
+ * @param {!proto.accounts.v1alpha1.Rol=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.accounts.v1alpha1.Rol}
+ */
+proto.accounts.v1alpha1.Project.prototype.addRoles = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.accounts.v1alpha1.Rol, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.accounts.v1alpha1.Project} returns this
+ */
+proto.accounts.v1alpha1.Project.prototype.clearRolesList = function() {
+  return this.setRolesList([]);
 };
 
 
