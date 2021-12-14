@@ -314,12 +314,13 @@ class Integration final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDataFieldNumber = 4,
+    kDataFieldNumber = 5,
     kIdFieldNumber = 1,
-    kNameFieldNumber = 2,
-    kProviderFieldNumber = 3,
+    kUserIdFieldNumber = 2,
+    kNameFieldNumber = 3,
+    kProviderFieldNumber = 4,
   };
-  // map<string, string> data = 4 [json_name = "data"];
+  // map<string, string> data = 5 [json_name = "data"];
   int data_size() const;
   private:
   int _internal_data_size() const;
@@ -350,7 +351,21 @@ class Integration final :
   std::string* _internal_mutable_id();
   public:
 
-  // string name = 2 [json_name = "name"];
+  // string user_id = 2 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
+  // string name = 3 [json_name = "name"];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -364,7 +379,7 @@ class Integration final :
   std::string* _internal_mutable_name();
   public:
 
-  // .source.v1alpha1.Provider provider = 3 [json_name = "provider"];
+  // .source.v1alpha1.Provider provider = 4 [json_name = "provider"];
   bool has_provider() const;
   private:
   bool _internal_has_provider() const;
@@ -395,6 +410,7 @@ class Integration final :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> data_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::source::v1alpha1::Provider* provider_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -545,12 +561,13 @@ class CreateIntegrationRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDataFieldNumber = 4,
+    kDataFieldNumber = 5,
     kIdFieldNumber = 1,
-    kNameFieldNumber = 2,
-    kProviderFieldNumber = 3,
+    kUserIdFieldNumber = 2,
+    kNameFieldNumber = 3,
+    kProviderFieldNumber = 4,
   };
-  // map<string, string> data = 4 [json_name = "data"];
+  // map<string, string> data = 5 [json_name = "data"];
   int data_size() const;
   private:
   int _internal_data_size() const;
@@ -581,7 +598,21 @@ class CreateIntegrationRequest final :
   std::string* _internal_mutable_id();
   public:
 
-  // string name = 2 [json_name = "name"];
+  // string user_id = 2 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
+  // string name = 3 [json_name = "name"];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -595,7 +626,7 @@ class CreateIntegrationRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // .source.v1alpha1.Provider provider = 3 [json_name = "provider"];
+  // .source.v1alpha1.Provider provider = 4 [json_name = "provider"];
   bool has_provider() const;
   private:
   bool _internal_has_provider() const;
@@ -626,6 +657,7 @@ class CreateIntegrationRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> data_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::source::v1alpha1::Provider* provider_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -3886,7 +3918,53 @@ inline void Integration::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.Integration.id)
 }
 
-// string name = 2 [json_name = "name"];
+// string user_id = 2 [json_name = "userId"];
+inline void Integration::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& Integration::user_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.Integration.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Integration::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.Integration.user_id)
+}
+inline std::string* Integration::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.Integration.user_id)
+  return _s;
+}
+inline const std::string& Integration::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void Integration::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Integration::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Integration::release_user_id() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.Integration.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Integration::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.Integration.user_id)
+}
+
+// string name = 3 [json_name = "name"];
 inline void Integration::clear_name() {
   name_.ClearToEmpty();
 }
@@ -3932,7 +4010,7 @@ inline void Integration::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.Integration.name)
 }
 
-// .source.v1alpha1.Provider provider = 3 [json_name = "provider"];
+// .source.v1alpha1.Provider provider = 4 [json_name = "provider"];
 inline bool Integration::_internal_has_provider() const {
   return this != internal_default_instance() && provider_ != nullptr;
 }
@@ -4022,7 +4100,7 @@ inline void Integration::set_allocated_provider(::source::v1alpha1::Provider* pr
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.Integration.provider)
 }
 
-// map<string, string> data = 4 [json_name = "data"];
+// map<string, string> data = 5 [json_name = "data"];
 inline int Integration::_internal_data_size() const {
   return data_.size();
 }
@@ -4103,7 +4181,53 @@ inline void CreateIntegrationRequest::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateIntegrationRequest.id)
 }
 
-// string name = 2 [json_name = "name"];
+// string user_id = 2 [json_name = "userId"];
+inline void CreateIntegrationRequest::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& CreateIntegrationRequest::user_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateIntegrationRequest.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateIntegrationRequest::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.CreateIntegrationRequest.user_id)
+}
+inline std::string* CreateIntegrationRequest::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.CreateIntegrationRequest.user_id)
+  return _s;
+}
+inline const std::string& CreateIntegrationRequest::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void CreateIntegrationRequest::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateIntegrationRequest::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateIntegrationRequest::release_user_id() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.CreateIntegrationRequest.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateIntegrationRequest::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateIntegrationRequest.user_id)
+}
+
+// string name = 3 [json_name = "name"];
 inline void CreateIntegrationRequest::clear_name() {
   name_.ClearToEmpty();
 }
@@ -4149,7 +4273,7 @@ inline void CreateIntegrationRequest::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateIntegrationRequest.name)
 }
 
-// .source.v1alpha1.Provider provider = 3 [json_name = "provider"];
+// .source.v1alpha1.Provider provider = 4 [json_name = "provider"];
 inline bool CreateIntegrationRequest::_internal_has_provider() const {
   return this != internal_default_instance() && provider_ != nullptr;
 }
@@ -4239,7 +4363,7 @@ inline void CreateIntegrationRequest::set_allocated_provider(::source::v1alpha1:
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateIntegrationRequest.provider)
 }
 
-// map<string, string> data = 4 [json_name = "data"];
+// map<string, string> data = 5 [json_name = "data"];
 inline int CreateIntegrationRequest::_internal_data_size() const {
   return data_.size();
 }

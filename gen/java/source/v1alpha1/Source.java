@@ -31,38 +31,50 @@ public final class Source {
         getIdBytes();
 
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>string name = 3 [json_name = "name"];</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
+     * <code>string name = 3 [json_name = "name"];</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+     * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
      * @return Whether the provider field is set.
      */
     boolean hasProvider();
     /**
-     * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+     * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
      * @return The provider.
      */
     source.v1alpha1.Source.Provider getProvider();
     /**
-     * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+     * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
      */
     source.v1alpha1.Source.ProviderOrBuilder getProviderOrBuilder();
 
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
     int getDataCount();
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
     boolean containsData(
         java.lang.String key);
@@ -73,19 +85,19 @@ public final class Source {
     java.util.Map<java.lang.String, java.lang.String>
     getData();
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getDataMap();
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
 
     java.lang.String getDataOrDefault(
         java.lang.String key,
         java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
 
     java.lang.String getDataOrThrow(
@@ -105,6 +117,7 @@ public final class Source {
     }
     private Integration() {
       id_ = "";
+      userId_ = "";
       name_ = "";
     }
 
@@ -148,10 +161,16 @@ public final class Source {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              userId_ = s;
               break;
             }
             case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 34: {
               source.v1alpha1.Source.Provider.Builder subBuilder = null;
               if (provider_ != null) {
                 subBuilder = provider_.toBuilder();
@@ -164,7 +183,7 @@ public final class Source {
 
               break;
             }
-            case 34: {
+            case 42: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 data_ = com.google.protobuf.MapField.newMapField(
                     DataDefaultEntryHolder.defaultEntry);
@@ -206,7 +225,7 @@ public final class Source {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 4:
+        case 5:
           return internalGetData();
         default:
           throw new RuntimeException(
@@ -259,10 +278,48 @@ public final class Source {
       }
     }
 
-    public static final int NAME_FIELD_NUMBER = 2;
+    public static final int USER_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object userId_;
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object name_;
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
+     * <code>string name = 3 [json_name = "name"];</code>
      * @return The name.
      */
     @java.lang.Override
@@ -279,7 +336,7 @@ public final class Source {
       }
     }
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
+     * <code>string name = 3 [json_name = "name"];</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -297,10 +354,10 @@ public final class Source {
       }
     }
 
-    public static final int PROVIDER_FIELD_NUMBER = 3;
+    public static final int PROVIDER_FIELD_NUMBER = 4;
     private source.v1alpha1.Source.Provider provider_;
     /**
-     * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+     * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
      * @return Whether the provider field is set.
      */
     @java.lang.Override
@@ -308,7 +365,7 @@ public final class Source {
       return provider_ != null;
     }
     /**
-     * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+     * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
      * @return The provider.
      */
     @java.lang.Override
@@ -316,14 +373,14 @@ public final class Source {
       return provider_ == null ? source.v1alpha1.Source.Provider.getDefaultInstance() : provider_;
     }
     /**
-     * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+     * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
      */
     @java.lang.Override
     public source.v1alpha1.Source.ProviderOrBuilder getProviderOrBuilder() {
       return getProvider();
     }
 
-    public static final int DATA_FIELD_NUMBER = 4;
+    public static final int DATA_FIELD_NUMBER = 5;
     private static final class DataDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -350,7 +407,7 @@ public final class Source {
       return internalGetData().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
 
     @java.lang.Override
@@ -368,7 +425,7 @@ public final class Source {
       return getDataMap();
     }
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
     @java.lang.Override
 
@@ -376,7 +433,7 @@ public final class Source {
       return internalGetData().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
     @java.lang.Override
 
@@ -389,7 +446,7 @@ public final class Source {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
     @java.lang.Override
 
@@ -421,18 +478,21 @@ public final class Source {
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
+      }
       if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
       if (provider_ != null) {
-        output.writeMessage(3, getProvider());
+        output.writeMessage(4, getProvider());
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetData(),
           DataDefaultEntryHolder.defaultEntry,
-          4);
+          5);
       unknownFields.writeTo(output);
     }
 
@@ -445,12 +505,15 @@ public final class Source {
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
+      }
       if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
       if (provider_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getProvider());
+          .computeMessageSize(4, getProvider());
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetData().getMap().entrySet()) {
@@ -460,7 +523,7 @@ public final class Source {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, data__);
+            .computeMessageSize(5, data__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -479,6 +542,8 @@ public final class Source {
 
       if (!getId()
           .equals(other.getId())) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
       if (!getName()
           .equals(other.getName())) return false;
       if (hasProvider() != other.hasProvider()) return false;
@@ -501,6 +566,8 @@ public final class Source {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       if (hasProvider()) {
@@ -622,7 +689,7 @@ public final class Source {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 4:
+          case 5:
             return internalGetData();
           default:
             throw new RuntimeException(
@@ -633,7 +700,7 @@ public final class Source {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 4:
+          case 5:
             return internalGetMutableData();
           default:
             throw new RuntimeException(
@@ -667,6 +734,8 @@ public final class Source {
       public Builder clear() {
         super.clear();
         id_ = "";
+
+        userId_ = "";
 
         name_ = "";
 
@@ -705,6 +774,7 @@ public final class Source {
         source.v1alpha1.Source.Integration result = new source.v1alpha1.Source.Integration(this);
         int from_bitField0_ = bitField0_;
         result.id_ = id_;
+        result.userId_ = userId_;
         result.name_ = name_;
         if (providerBuilder_ == null) {
           result.provider_ = provider_;
@@ -763,6 +833,10 @@ public final class Source {
         if (other == source.v1alpha1.Source.Integration.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
@@ -880,9 +954,85 @@ public final class Source {
         return this;
       }
 
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object name_ = "";
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>string name = 3 [json_name = "name"];</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -898,7 +1048,7 @@ public final class Source {
         }
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>string name = 3 [json_name = "name"];</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -915,7 +1065,7 @@ public final class Source {
         }
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>string name = 3 [json_name = "name"];</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -930,7 +1080,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>string name = 3 [json_name = "name"];</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -940,7 +1090,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>string name = 3 [json_name = "name"];</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -960,14 +1110,14 @@ public final class Source {
       private com.google.protobuf.SingleFieldBuilderV3<
           source.v1alpha1.Source.Provider, source.v1alpha1.Source.Provider.Builder, source.v1alpha1.Source.ProviderOrBuilder> providerBuilder_;
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        * @return Whether the provider field is set.
        */
       public boolean hasProvider() {
         return providerBuilder_ != null || provider_ != null;
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        * @return The provider.
        */
       public source.v1alpha1.Source.Provider getProvider() {
@@ -978,7 +1128,7 @@ public final class Source {
         }
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        */
       public Builder setProvider(source.v1alpha1.Source.Provider value) {
         if (providerBuilder_ == null) {
@@ -994,7 +1144,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        */
       public Builder setProvider(
           source.v1alpha1.Source.Provider.Builder builderForValue) {
@@ -1008,7 +1158,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        */
       public Builder mergeProvider(source.v1alpha1.Source.Provider value) {
         if (providerBuilder_ == null) {
@@ -1026,7 +1176,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        */
       public Builder clearProvider() {
         if (providerBuilder_ == null) {
@@ -1040,7 +1190,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        */
       public source.v1alpha1.Source.Provider.Builder getProviderBuilder() {
         
@@ -1048,7 +1198,7 @@ public final class Source {
         return getProviderFieldBuilder().getBuilder();
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        */
       public source.v1alpha1.Source.ProviderOrBuilder getProviderOrBuilder() {
         if (providerBuilder_ != null) {
@@ -1059,7 +1209,7 @@ public final class Source {
         }
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           source.v1alpha1.Source.Provider, source.v1alpha1.Source.Provider.Builder, source.v1alpha1.Source.ProviderOrBuilder> 
@@ -1102,7 +1252,7 @@ public final class Source {
         return internalGetData().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
        */
 
       @java.lang.Override
@@ -1120,7 +1270,7 @@ public final class Source {
         return getDataMap();
       }
       /**
-       * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
        */
       @java.lang.Override
 
@@ -1128,7 +1278,7 @@ public final class Source {
         return internalGetData().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
        */
       @java.lang.Override
 
@@ -1141,7 +1291,7 @@ public final class Source {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
        */
       @java.lang.Override
 
@@ -1162,7 +1312,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
        */
 
       public Builder removeData(
@@ -1181,7 +1331,7 @@ public final class Source {
         return internalGetMutableData().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
        */
       public Builder putData(
           java.lang.String key,
@@ -1193,7 +1343,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
        */
 
       public Builder putAllData(
@@ -1272,38 +1422,50 @@ public final class Source {
         getIdBytes();
 
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>string name = 3 [json_name = "name"];</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
+     * <code>string name = 3 [json_name = "name"];</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+     * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
      * @return Whether the provider field is set.
      */
     boolean hasProvider();
     /**
-     * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+     * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
      * @return The provider.
      */
     source.v1alpha1.Source.Provider getProvider();
     /**
-     * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+     * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
      */
     source.v1alpha1.Source.ProviderOrBuilder getProviderOrBuilder();
 
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
     int getDataCount();
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
     boolean containsData(
         java.lang.String key);
@@ -1314,19 +1476,19 @@ public final class Source {
     java.util.Map<java.lang.String, java.lang.String>
     getData();
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getDataMap();
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
 
     java.lang.String getDataOrDefault(
         java.lang.String key,
         java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
 
     java.lang.String getDataOrThrow(
@@ -1346,6 +1508,7 @@ public final class Source {
     }
     private CreateIntegrationRequest() {
       id_ = "";
+      userId_ = "";
       name_ = "";
     }
 
@@ -1389,10 +1552,16 @@ public final class Source {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              userId_ = s;
               break;
             }
             case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 34: {
               source.v1alpha1.Source.Provider.Builder subBuilder = null;
               if (provider_ != null) {
                 subBuilder = provider_.toBuilder();
@@ -1405,7 +1574,7 @@ public final class Source {
 
               break;
             }
-            case 34: {
+            case 42: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 data_ = com.google.protobuf.MapField.newMapField(
                     DataDefaultEntryHolder.defaultEntry);
@@ -1447,7 +1616,7 @@ public final class Source {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 4:
+        case 5:
           return internalGetData();
         default:
           throw new RuntimeException(
@@ -1500,10 +1669,48 @@ public final class Source {
       }
     }
 
-    public static final int NAME_FIELD_NUMBER = 2;
+    public static final int USER_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object userId_;
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object name_;
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
+     * <code>string name = 3 [json_name = "name"];</code>
      * @return The name.
      */
     @java.lang.Override
@@ -1520,7 +1727,7 @@ public final class Source {
       }
     }
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
+     * <code>string name = 3 [json_name = "name"];</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -1538,10 +1745,10 @@ public final class Source {
       }
     }
 
-    public static final int PROVIDER_FIELD_NUMBER = 3;
+    public static final int PROVIDER_FIELD_NUMBER = 4;
     private source.v1alpha1.Source.Provider provider_;
     /**
-     * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+     * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
      * @return Whether the provider field is set.
      */
     @java.lang.Override
@@ -1549,7 +1756,7 @@ public final class Source {
       return provider_ != null;
     }
     /**
-     * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+     * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
      * @return The provider.
      */
     @java.lang.Override
@@ -1557,14 +1764,14 @@ public final class Source {
       return provider_ == null ? source.v1alpha1.Source.Provider.getDefaultInstance() : provider_;
     }
     /**
-     * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+     * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
      */
     @java.lang.Override
     public source.v1alpha1.Source.ProviderOrBuilder getProviderOrBuilder() {
       return getProvider();
     }
 
-    public static final int DATA_FIELD_NUMBER = 4;
+    public static final int DATA_FIELD_NUMBER = 5;
     private static final class DataDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -1591,7 +1798,7 @@ public final class Source {
       return internalGetData().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
 
     @java.lang.Override
@@ -1609,7 +1816,7 @@ public final class Source {
       return getDataMap();
     }
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
     @java.lang.Override
 
@@ -1617,7 +1824,7 @@ public final class Source {
       return internalGetData().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
     @java.lang.Override
 
@@ -1630,7 +1837,7 @@ public final class Source {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
      */
     @java.lang.Override
 
@@ -1662,18 +1869,21 @@ public final class Source {
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
+      }
       if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
       if (provider_ != null) {
-        output.writeMessage(3, getProvider());
+        output.writeMessage(4, getProvider());
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetData(),
           DataDefaultEntryHolder.defaultEntry,
-          4);
+          5);
       unknownFields.writeTo(output);
     }
 
@@ -1686,12 +1896,15 @@ public final class Source {
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
+      }
       if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
       if (provider_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getProvider());
+          .computeMessageSize(4, getProvider());
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetData().getMap().entrySet()) {
@@ -1701,7 +1914,7 @@ public final class Source {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, data__);
+            .computeMessageSize(5, data__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1720,6 +1933,8 @@ public final class Source {
 
       if (!getId()
           .equals(other.getId())) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
       if (!getName()
           .equals(other.getName())) return false;
       if (hasProvider() != other.hasProvider()) return false;
@@ -1742,6 +1957,8 @@ public final class Source {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       if (hasProvider()) {
@@ -1863,7 +2080,7 @@ public final class Source {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 4:
+          case 5:
             return internalGetData();
           default:
             throw new RuntimeException(
@@ -1874,7 +2091,7 @@ public final class Source {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 4:
+          case 5:
             return internalGetMutableData();
           default:
             throw new RuntimeException(
@@ -1908,6 +2125,8 @@ public final class Source {
       public Builder clear() {
         super.clear();
         id_ = "";
+
+        userId_ = "";
 
         name_ = "";
 
@@ -1946,6 +2165,7 @@ public final class Source {
         source.v1alpha1.Source.CreateIntegrationRequest result = new source.v1alpha1.Source.CreateIntegrationRequest(this);
         int from_bitField0_ = bitField0_;
         result.id_ = id_;
+        result.userId_ = userId_;
         result.name_ = name_;
         if (providerBuilder_ == null) {
           result.provider_ = provider_;
@@ -2004,6 +2224,10 @@ public final class Source {
         if (other == source.v1alpha1.Source.CreateIntegrationRequest.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
@@ -2121,9 +2345,85 @@ public final class Source {
         return this;
       }
 
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object name_ = "";
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>string name = 3 [json_name = "name"];</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -2139,7 +2439,7 @@ public final class Source {
         }
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>string name = 3 [json_name = "name"];</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -2156,7 +2456,7 @@ public final class Source {
         }
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>string name = 3 [json_name = "name"];</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -2171,7 +2471,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>string name = 3 [json_name = "name"];</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -2181,7 +2481,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>string name = 3 [json_name = "name"];</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -2201,14 +2501,14 @@ public final class Source {
       private com.google.protobuf.SingleFieldBuilderV3<
           source.v1alpha1.Source.Provider, source.v1alpha1.Source.Provider.Builder, source.v1alpha1.Source.ProviderOrBuilder> providerBuilder_;
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        * @return Whether the provider field is set.
        */
       public boolean hasProvider() {
         return providerBuilder_ != null || provider_ != null;
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        * @return The provider.
        */
       public source.v1alpha1.Source.Provider getProvider() {
@@ -2219,7 +2519,7 @@ public final class Source {
         }
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        */
       public Builder setProvider(source.v1alpha1.Source.Provider value) {
         if (providerBuilder_ == null) {
@@ -2235,7 +2535,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        */
       public Builder setProvider(
           source.v1alpha1.Source.Provider.Builder builderForValue) {
@@ -2249,7 +2549,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        */
       public Builder mergeProvider(source.v1alpha1.Source.Provider value) {
         if (providerBuilder_ == null) {
@@ -2267,7 +2567,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        */
       public Builder clearProvider() {
         if (providerBuilder_ == null) {
@@ -2281,7 +2581,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        */
       public source.v1alpha1.Source.Provider.Builder getProviderBuilder() {
         
@@ -2289,7 +2589,7 @@ public final class Source {
         return getProviderFieldBuilder().getBuilder();
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        */
       public source.v1alpha1.Source.ProviderOrBuilder getProviderOrBuilder() {
         if (providerBuilder_ != null) {
@@ -2300,7 +2600,7 @@ public final class Source {
         }
       }
       /**
-       * <code>.source.v1alpha1.Provider provider = 3 [json_name = "provider"];</code>
+       * <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           source.v1alpha1.Source.Provider, source.v1alpha1.Source.Provider.Builder, source.v1alpha1.Source.ProviderOrBuilder> 
@@ -2343,7 +2643,7 @@ public final class Source {
         return internalGetData().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
        */
 
       @java.lang.Override
@@ -2361,7 +2661,7 @@ public final class Source {
         return getDataMap();
       }
       /**
-       * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
        */
       @java.lang.Override
 
@@ -2369,7 +2669,7 @@ public final class Source {
         return internalGetData().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
        */
       @java.lang.Override
 
@@ -2382,7 +2682,7 @@ public final class Source {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
        */
       @java.lang.Override
 
@@ -2403,7 +2703,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
        */
 
       public Builder removeData(
@@ -2422,7 +2722,7 @@ public final class Source {
         return internalGetMutableData().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
        */
       public Builder putData(
           java.lang.String key,
@@ -2434,7 +2734,7 @@ public final class Source {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; data = 4 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; data = 5 [json_name = "data"];</code>
        */
 
       public Builder putAllData(
@@ -17270,86 +17570,88 @@ public final class Source {
   static {
     java.lang.String[] descriptorData = {
       "\n\034source/v1alpha1/source.proto\022\017source.v" +
-      "1alpha1\"\335\001\n\013Integration\022\016\n\002id\030\001 \001(\tR\002id\022" +
-      "\022\n\004name\030\002 \001(\tR\004name\0225\n\010provider\030\003 \001(\0132\031." +
-      "source.v1alpha1.ProviderR\010provider\022:\n\004da" +
-      "ta\030\004 \003(\0132&.source.v1alpha1.Integration.D" +
-      "ataEntryR\004data\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\t" +
-      "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\367\001\n\030Crea" +
-      "teIntegrationRequest\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004" +
-      "name\030\002 \001(\tR\004name\0225\n\010provider\030\003 \001(\0132\031.sou" +
-      "rce.v1alpha1.ProviderR\010provider\022G\n\004data\030" +
-      "\004 \003(\01323.source.v1alpha1.CreateIntegratio" +
-      "nRequest.DataEntryR\004data\0327\n\tDataEntry\022\020\n" +
-      "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028" +
-      "\001\"C\n\031CreateIntegrationResponse\022\020\n\003msg\030\001 " +
-      "\001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"2\n\027ListIn" +
-      "tegrationsRequest\022\027\n\007user_id\030\001 \001(\tR\006user" +
-      "Id\"\\\n\030ListIntegrationsResponse\022@\n\014integr" +
-      "ations\030\001 \003(\0132\034.source.v1alpha1.Integrati" +
-      "onR\014integrations\"\'\n\025GetIntegrationReques" +
-      "t\022\016\n\002id\030\001 \001(\tR\002id\"X\n\026GetIntegrationRespo" +
-      "nse\022>\n\013integration\030\001 \001(\0132\034.source.v1alph" +
-      "a1.IntegrationR\013integration\"y\n\030UpdateInt" +
-      "egrationRequest\022\016\n\002id\030\001 \001(\tR\002id\022M\n\014integ" +
-      "rations\030\002 \003(\0132).source.v1alpha1.CreateIn" +
-      "tegrationRequestR\014integrations\"C\n\031Update" +
-      "IntegrationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n" +
-      "\005error\030\002 \001(\tR\005error\"*\n\030DeleteIntegration" +
-      "Request\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteIntegra" +
-      "tionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030" +
-      "\002 \001(\tR\005error\"\326\001\n\010Provider\022\016\n\002id\030\001 \001(\tR\002i" +
-      "d\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013description\030\003 \001" +
-      "(\tR\013description\022\022\n\004logo\030\004 \001(\tR\004logo\0227\n\004d" +
-      "ata\030\005 \003(\0132#.source.v1alpha1.Provider.Dat" +
-      "aEntryR\004data\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003" +
-      "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\'\n\025DeleteP" +
-      "roviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"@\n\026Delete" +
-      "ProviderResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005er" +
-      "ror\030\002 \001(\tR\005error\"k\n\025UpdateProviderReques" +
-      "t\022\016\n\002id\030\001 \001(\tR\002id\022B\n\010provider\030\002 \001(\0132&.so" +
-      "urce.v1alpha1.CreateProviderRequestR\010pro" +
-      "vider\"@\n\026UpdateProviderResponse\022\020\n\003msg\030\001" +
-      " \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"$\n\022GetPr" +
-      "oviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"L\n\023GetProv" +
-      "iderResponse\0225\n\010provider\030\001 \001(\0132\031.source." +
-      "v1alpha1.ProviderR\010provider\"\340\001\n\025CreatePr" +
-      "oviderRequest\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013des" +
-      "cription\030\002 \001(\tR\013description\022\022\n\004logo\030\003 \001(" +
-      "\tR\004logo\022D\n\004data\030\005 \003(\01320.source.v1alpha1." +
-      "CreateProviderRequest.DataEntryR\004data\0327\n" +
-      "\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 " +
-      "\001(\tR\005value:\0028\001\"@\n\026CreateProviderResponse" +
+      "1alpha1\"\366\001\n\013Integration\022\016\n\002id\030\001 \001(\tR\002id\022" +
+      "\027\n\007user_id\030\002 \001(\tR\006userId\022\022\n\004name\030\003 \001(\tR\004" +
+      "name\0225\n\010provider\030\004 \001(\0132\031.source.v1alpha1" +
+      ".ProviderR\010provider\022:\n\004data\030\005 \003(\0132&.sour" +
+      "ce.v1alpha1.Integration.DataEntryR\004data\032" +
+      "7\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030" +
+      "\002 \001(\tR\005value:\0028\001\"\220\002\n\030CreateIntegrationRe" +
+      "quest\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006" +
+      "userId\022\022\n\004name\030\003 \001(\tR\004name\0225\n\010provider\030\004" +
+      " \001(\0132\031.source.v1alpha1.ProviderR\010provide" +
+      "r\022G\n\004data\030\005 \003(\01323.source.v1alpha1.Create" +
+      "IntegrationRequest.DataEntryR\004data\0327\n\tDa" +
+      "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t" +
+      "R\005value:\0028\001\"C\n\031CreateIntegrationResponse" +
       "\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error" +
-      "\"\026\n\024ListProvidersRequest\"P\n\025ListProvider" +
-      "sResponse\0227\n\tproviders\030\001 \003(\0132\031.source.v1" +
-      "alpha1.ProviderR\tproviders2\202\010\n\rSourceSer" +
-      "vice\022a\n\016CreateProvider\022&.source.v1alpha1" +
-      ".CreateProviderRequest\032\'.source.v1alpha1" +
-      ".CreateProviderResponse\022^\n\rListProviders" +
-      "\022%.source.v1alpha1.ListProvidersRequest\032" +
-      "&.source.v1alpha1.ListProvidersResponse\022" +
-      "X\n\013GetProvider\022#.source.v1alpha1.GetProv" +
-      "iderRequest\032$.source.v1alpha1.GetProvide" +
-      "rResponse\022a\n\016UpdateProvider\022&.source.v1a" +
-      "lpha1.UpdateProviderRequest\032\'.source.v1a" +
-      "lpha1.UpdateProviderResponse\022a\n\016DeletePr" +
-      "ovider\022&.source.v1alpha1.DeleteProviderR" +
-      "equest\032\'.source.v1alpha1.DeleteProviderR" +
-      "esponse\022j\n\021CreateIntegration\022).source.v1" +
-      "alpha1.CreateIntegrationRequest\032*.source" +
-      ".v1alpha1.CreateIntegrationResponse\022g\n\020L" +
-      "istIntegrations\022(.source.v1alpha1.ListIn" +
-      "tegrationsRequest\032).source.v1alpha1.List" +
-      "IntegrationsResponse\022a\n\016GetIntegration\022&" +
-      ".source.v1alpha1.GetIntegrationRequest\032\'" +
-      ".source.v1alpha1.GetIntegrationResponse\022" +
-      "j\n\021UpdateIntegration\022).source.v1alpha1.U" +
-      "pdateIntegrationRequest\032*.source.v1alpha" +
-      "1.UpdateIntegrationResponse\022j\n\021DeleteInt" +
-      "egration\022).source.v1alpha1.DeleteIntegra" +
-      "tionRequest\032*.source.v1alpha1.DeleteInte" +
-      "grationResponseB\nZ\010./sourceb\006proto3"
+      "\"2\n\027ListIntegrationsRequest\022\027\n\007user_id\030\001" +
+      " \001(\tR\006userId\"\\\n\030ListIntegrationsResponse" +
+      "\022@\n\014integrations\030\001 \003(\0132\034.source.v1alpha1" +
+      ".IntegrationR\014integrations\"\'\n\025GetIntegra" +
+      "tionRequest\022\016\n\002id\030\001 \001(\tR\002id\"X\n\026GetIntegr" +
+      "ationResponse\022>\n\013integration\030\001 \001(\0132\034.sou" +
+      "rce.v1alpha1.IntegrationR\013integration\"y\n" +
+      "\030UpdateIntegrationRequest\022\016\n\002id\030\001 \001(\tR\002i" +
+      "d\022M\n\014integrations\030\002 \003(\0132).source.v1alpha" +
+      "1.CreateIntegrationRequestR\014integrations" +
+      "\"C\n\031UpdateIntegrationResponse\022\020\n\003msg\030\001 \001" +
+      "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"*\n\030DeleteI" +
+      "ntegrationRequest\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031Del" +
+      "eteIntegrationResponse\022\020\n\003msg\030\001 \001(\tR\003msg" +
+      "\022\024\n\005error\030\002 \001(\tR\005error\"\326\001\n\010Provider\022\016\n\002i" +
+      "d\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013descr" +
+      "iption\030\003 \001(\tR\013description\022\022\n\004logo\030\004 \001(\tR" +
+      "\004logo\0227\n\004data\030\005 \003(\0132#.source.v1alpha1.Pr" +
+      "ovider.DataEntryR\004data\0327\n\tDataEntry\022\020\n\003k" +
+      "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"" +
+      "\'\n\025DeleteProviderRequest\022\016\n\002id\030\001 \001(\tR\002id" +
+      "\"@\n\026DeleteProviderResponse\022\020\n\003msg\030\001 \001(\tR" +
+      "\003msg\022\024\n\005error\030\002 \001(\tR\005error\"k\n\025UpdateProv" +
+      "iderRequest\022\016\n\002id\030\001 \001(\tR\002id\022B\n\010provider\030" +
+      "\002 \001(\0132&.source.v1alpha1.CreateProviderRe" +
+      "questR\010provider\"@\n\026UpdateProviderRespons" +
+      "e\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005erro" +
+      "r\"$\n\022GetProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"" +
+      "L\n\023GetProviderResponse\0225\n\010provider\030\001 \001(\013" +
+      "2\031.source.v1alpha1.ProviderR\010provider\"\340\001" +
+      "\n\025CreateProviderRequest\022\022\n\004name\030\001 \001(\tR\004n" +
+      "ame\022 \n\013description\030\002 \001(\tR\013description\022\022\n" +
+      "\004logo\030\003 \001(\tR\004logo\022D\n\004data\030\005 \003(\01320.source" +
+      ".v1alpha1.CreateProviderRequest.DataEntr" +
+      "yR\004data\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024" +
+      "\n\005value\030\002 \001(\tR\005value:\0028\001\"@\n\026CreateProvid" +
+      "erResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 " +
+      "\001(\tR\005error\"\026\n\024ListProvidersRequest\"P\n\025Li" +
+      "stProvidersResponse\0227\n\tproviders\030\001 \003(\0132\031" +
+      ".source.v1alpha1.ProviderR\tproviders2\202\010\n" +
+      "\rSourceService\022a\n\016CreateProvider\022&.sourc" +
+      "e.v1alpha1.CreateProviderRequest\032\'.sourc" +
+      "e.v1alpha1.CreateProviderResponse\022^\n\rLis" +
+      "tProviders\022%.source.v1alpha1.ListProvide" +
+      "rsRequest\032&.source.v1alpha1.ListProvider" +
+      "sResponse\022X\n\013GetProvider\022#.source.v1alph" +
+      "a1.GetProviderRequest\032$.source.v1alpha1." +
+      "GetProviderResponse\022a\n\016UpdateProvider\022&." +
+      "source.v1alpha1.UpdateProviderRequest\032\'." +
+      "source.v1alpha1.UpdateProviderResponse\022a" +
+      "\n\016DeleteProvider\022&.source.v1alpha1.Delet" +
+      "eProviderRequest\032\'.source.v1alpha1.Delet" +
+      "eProviderResponse\022j\n\021CreateIntegration\022)" +
+      ".source.v1alpha1.CreateIntegrationReques" +
+      "t\032*.source.v1alpha1.CreateIntegrationRes" +
+      "ponse\022g\n\020ListIntegrations\022(.source.v1alp" +
+      "ha1.ListIntegrationsRequest\032).source.v1a" +
+      "lpha1.ListIntegrationsResponse\022a\n\016GetInt" +
+      "egration\022&.source.v1alpha1.GetIntegratio" +
+      "nRequest\032\'.source.v1alpha1.GetIntegratio" +
+      "nResponse\022j\n\021UpdateIntegration\022).source." +
+      "v1alpha1.UpdateIntegrationRequest\032*.sour" +
+      "ce.v1alpha1.UpdateIntegrationResponse\022j\n" +
+      "\021DeleteIntegration\022).source.v1alpha1.Del" +
+      "eteIntegrationRequest\032*.source.v1alpha1." +
+      "DeleteIntegrationResponseB\nZ\010./sourceb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -17360,7 +17662,7 @@ public final class Source {
     internal_static_source_v1alpha1_Integration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_Integration_descriptor,
-        new java.lang.String[] { "Id", "Name", "Provider", "Data", });
+        new java.lang.String[] { "Id", "UserId", "Name", "Provider", "Data", });
     internal_static_source_v1alpha1_Integration_DataEntry_descriptor =
       internal_static_source_v1alpha1_Integration_descriptor.getNestedTypes().get(0);
     internal_static_source_v1alpha1_Integration_DataEntry_fieldAccessorTable = new
@@ -17372,7 +17674,7 @@ public final class Source {
     internal_static_source_v1alpha1_CreateIntegrationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_CreateIntegrationRequest_descriptor,
-        new java.lang.String[] { "Id", "Name", "Provider", "Data", });
+        new java.lang.String[] { "Id", "UserId", "Name", "Provider", "Data", });
     internal_static_source_v1alpha1_CreateIntegrationRequest_DataEntry_descriptor =
       internal_static_source_v1alpha1_CreateIntegrationRequest_descriptor.getNestedTypes().get(0);
     internal_static_source_v1alpha1_CreateIntegrationRequest_DataEntry_fieldAccessorTable = new

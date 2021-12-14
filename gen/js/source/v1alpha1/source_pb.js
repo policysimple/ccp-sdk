@@ -532,7 +532,8 @@ proto.source.v1alpha1.Integration.prototype.toObject = function(opt_includeInsta
 proto.source.v1alpha1.Integration.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     provider: (f = msg.getProvider()) && proto.source.v1alpha1.Provider.toObject(includeInstance, f),
     dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, undefined) : []
   };
@@ -577,14 +578,18 @@ proto.source.v1alpha1.Integration.deserializeBinaryFromReader = function(msg, re
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setUserId(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 4:
       var value = new proto.source.v1alpha1.Provider;
       reader.readMessage(value,proto.source.v1alpha1.Provider.deserializeBinaryFromReader);
       msg.setProvider(value);
       break;
-    case 4:
+    case 5:
       var value = msg.getDataMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
@@ -626,24 +631,31 @@ proto.source.v1alpha1.Integration.serializeBinaryToWriter = function(message, wr
       f
     );
   }
-  f = message.getName();
+  f = message.getUserId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getProvider();
   if (f != null) {
     writer.writeMessage(
-      3,
+      4,
       f,
       proto.source.v1alpha1.Provider.serializeBinaryToWriter
     );
   }
   f = message.getDataMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -667,10 +679,10 @@ proto.source.v1alpha1.Integration.prototype.setId = function(value) {
 
 
 /**
- * optional string name = 2;
+ * optional string user_id = 2;
  * @return {string}
  */
-proto.source.v1alpha1.Integration.prototype.getName = function() {
+proto.source.v1alpha1.Integration.prototype.getUserId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -679,18 +691,36 @@ proto.source.v1alpha1.Integration.prototype.getName = function() {
  * @param {string} value
  * @return {!proto.source.v1alpha1.Integration} returns this
  */
-proto.source.v1alpha1.Integration.prototype.setName = function(value) {
+proto.source.v1alpha1.Integration.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional Provider provider = 3;
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.source.v1alpha1.Integration.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.source.v1alpha1.Integration} returns this
+ */
+proto.source.v1alpha1.Integration.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional Provider provider = 4;
  * @return {?proto.source.v1alpha1.Provider}
  */
 proto.source.v1alpha1.Integration.prototype.getProvider = function() {
   return /** @type{?proto.source.v1alpha1.Provider} */ (
-    jspb.Message.getWrapperField(this, proto.source.v1alpha1.Provider, 3));
+    jspb.Message.getWrapperField(this, proto.source.v1alpha1.Provider, 4));
 };
 
 
@@ -699,7 +729,7 @@ proto.source.v1alpha1.Integration.prototype.getProvider = function() {
  * @return {!proto.source.v1alpha1.Integration} returns this
 */
 proto.source.v1alpha1.Integration.prototype.setProvider = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -717,19 +747,19 @@ proto.source.v1alpha1.Integration.prototype.clearProvider = function() {
  * @return {boolean}
  */
 proto.source.v1alpha1.Integration.prototype.hasProvider = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * map<string, string> data = 4;
+ * map<string, string> data = 5;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.source.v1alpha1.Integration.prototype.getDataMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
       null));
 };
 
@@ -776,7 +806,8 @@ proto.source.v1alpha1.CreateIntegrationRequest.prototype.toObject = function(opt
 proto.source.v1alpha1.CreateIntegrationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     provider: (f = msg.getProvider()) && proto.source.v1alpha1.Provider.toObject(includeInstance, f),
     dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, undefined) : []
   };
@@ -821,14 +852,18 @@ proto.source.v1alpha1.CreateIntegrationRequest.deserializeBinaryFromReader = fun
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setUserId(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 4:
       var value = new proto.source.v1alpha1.Provider;
       reader.readMessage(value,proto.source.v1alpha1.Provider.deserializeBinaryFromReader);
       msg.setProvider(value);
       break;
-    case 4:
+    case 5:
       var value = msg.getDataMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
@@ -870,24 +905,31 @@ proto.source.v1alpha1.CreateIntegrationRequest.serializeBinaryToWriter = functio
       f
     );
   }
-  f = message.getName();
+  f = message.getUserId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getProvider();
   if (f != null) {
     writer.writeMessage(
-      3,
+      4,
       f,
       proto.source.v1alpha1.Provider.serializeBinaryToWriter
     );
   }
   f = message.getDataMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -911,10 +953,10 @@ proto.source.v1alpha1.CreateIntegrationRequest.prototype.setId = function(value)
 
 
 /**
- * optional string name = 2;
+ * optional string user_id = 2;
  * @return {string}
  */
-proto.source.v1alpha1.CreateIntegrationRequest.prototype.getName = function() {
+proto.source.v1alpha1.CreateIntegrationRequest.prototype.getUserId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -923,18 +965,36 @@ proto.source.v1alpha1.CreateIntegrationRequest.prototype.getName = function() {
  * @param {string} value
  * @return {!proto.source.v1alpha1.CreateIntegrationRequest} returns this
  */
-proto.source.v1alpha1.CreateIntegrationRequest.prototype.setName = function(value) {
+proto.source.v1alpha1.CreateIntegrationRequest.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional Provider provider = 3;
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.source.v1alpha1.CreateIntegrationRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.source.v1alpha1.CreateIntegrationRequest} returns this
+ */
+proto.source.v1alpha1.CreateIntegrationRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional Provider provider = 4;
  * @return {?proto.source.v1alpha1.Provider}
  */
 proto.source.v1alpha1.CreateIntegrationRequest.prototype.getProvider = function() {
   return /** @type{?proto.source.v1alpha1.Provider} */ (
-    jspb.Message.getWrapperField(this, proto.source.v1alpha1.Provider, 3));
+    jspb.Message.getWrapperField(this, proto.source.v1alpha1.Provider, 4));
 };
 
 
@@ -943,7 +1003,7 @@ proto.source.v1alpha1.CreateIntegrationRequest.prototype.getProvider = function(
  * @return {!proto.source.v1alpha1.CreateIntegrationRequest} returns this
 */
 proto.source.v1alpha1.CreateIntegrationRequest.prototype.setProvider = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -961,19 +1021,19 @@ proto.source.v1alpha1.CreateIntegrationRequest.prototype.clearProvider = functio
  * @return {boolean}
  */
 proto.source.v1alpha1.CreateIntegrationRequest.prototype.hasProvider = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * map<string, string> data = 4;
+ * map<string, string> data = 5;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.source.v1alpha1.CreateIntegrationRequest.prototype.getDataMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
       null));
 };
 

@@ -33,6 +33,7 @@ constexpr Integration::Integration(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : data_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , provider_(nullptr){}
 struct IntegrationDefaultTypeInternal {
@@ -59,6 +60,7 @@ constexpr CreateIntegrationRequest::CreateIntegrationRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : data_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , provider_(nullptr){}
 struct CreateIntegrationRequestDefaultTypeInternal {
@@ -368,6 +370,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2ep
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration, id_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration, user_id_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration, name_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration, provider_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration, data_),
@@ -386,6 +389,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2ep
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest, user_id_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest, name_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest, provider_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest, data_),
@@ -545,30 +549,30 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2ep
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 7, sizeof(::source::v1alpha1::Integration_DataEntry_DoNotUse)},
   { 9, -1, sizeof(::source::v1alpha1::Integration)},
-  { 18, 25, sizeof(::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse)},
-  { 27, -1, sizeof(::source::v1alpha1::CreateIntegrationRequest)},
-  { 36, -1, sizeof(::source::v1alpha1::CreateIntegrationResponse)},
-  { 43, -1, sizeof(::source::v1alpha1::ListIntegrationsRequest)},
-  { 49, -1, sizeof(::source::v1alpha1::ListIntegrationsResponse)},
-  { 55, -1, sizeof(::source::v1alpha1::GetIntegrationRequest)},
-  { 61, -1, sizeof(::source::v1alpha1::GetIntegrationResponse)},
-  { 67, -1, sizeof(::source::v1alpha1::UpdateIntegrationRequest)},
-  { 74, -1, sizeof(::source::v1alpha1::UpdateIntegrationResponse)},
-  { 81, -1, sizeof(::source::v1alpha1::DeleteIntegrationRequest)},
-  { 87, -1, sizeof(::source::v1alpha1::DeleteIntegrationResponse)},
-  { 94, 101, sizeof(::source::v1alpha1::Provider_DataEntry_DoNotUse)},
-  { 103, -1, sizeof(::source::v1alpha1::Provider)},
-  { 113, -1, sizeof(::source::v1alpha1::DeleteProviderRequest)},
-  { 119, -1, sizeof(::source::v1alpha1::DeleteProviderResponse)},
-  { 126, -1, sizeof(::source::v1alpha1::UpdateProviderRequest)},
-  { 133, -1, sizeof(::source::v1alpha1::UpdateProviderResponse)},
-  { 140, -1, sizeof(::source::v1alpha1::GetProviderRequest)},
-  { 146, -1, sizeof(::source::v1alpha1::GetProviderResponse)},
-  { 152, 159, sizeof(::source::v1alpha1::CreateProviderRequest_DataEntry_DoNotUse)},
-  { 161, -1, sizeof(::source::v1alpha1::CreateProviderRequest)},
-  { 170, -1, sizeof(::source::v1alpha1::CreateProviderResponse)},
-  { 177, -1, sizeof(::source::v1alpha1::ListProvidersRequest)},
-  { 182, -1, sizeof(::source::v1alpha1::ListProvidersResponse)},
+  { 19, 26, sizeof(::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse)},
+  { 28, -1, sizeof(::source::v1alpha1::CreateIntegrationRequest)},
+  { 38, -1, sizeof(::source::v1alpha1::CreateIntegrationResponse)},
+  { 45, -1, sizeof(::source::v1alpha1::ListIntegrationsRequest)},
+  { 51, -1, sizeof(::source::v1alpha1::ListIntegrationsResponse)},
+  { 57, -1, sizeof(::source::v1alpha1::GetIntegrationRequest)},
+  { 63, -1, sizeof(::source::v1alpha1::GetIntegrationResponse)},
+  { 69, -1, sizeof(::source::v1alpha1::UpdateIntegrationRequest)},
+  { 76, -1, sizeof(::source::v1alpha1::UpdateIntegrationResponse)},
+  { 83, -1, sizeof(::source::v1alpha1::DeleteIntegrationRequest)},
+  { 89, -1, sizeof(::source::v1alpha1::DeleteIntegrationResponse)},
+  { 96, 103, sizeof(::source::v1alpha1::Provider_DataEntry_DoNotUse)},
+  { 105, -1, sizeof(::source::v1alpha1::Provider)},
+  { 115, -1, sizeof(::source::v1alpha1::DeleteProviderRequest)},
+  { 121, -1, sizeof(::source::v1alpha1::DeleteProviderResponse)},
+  { 128, -1, sizeof(::source::v1alpha1::UpdateProviderRequest)},
+  { 135, -1, sizeof(::source::v1alpha1::UpdateProviderResponse)},
+  { 142, -1, sizeof(::source::v1alpha1::GetProviderRequest)},
+  { 148, -1, sizeof(::source::v1alpha1::GetProviderResponse)},
+  { 154, 161, sizeof(::source::v1alpha1::CreateProviderRequest_DataEntry_DoNotUse)},
+  { 163, -1, sizeof(::source::v1alpha1::CreateProviderRequest)},
+  { 172, -1, sizeof(::source::v1alpha1::CreateProviderResponse)},
+  { 179, -1, sizeof(::source::v1alpha1::ListProvidersRequest)},
+  { 184, -1, sizeof(::source::v1alpha1::ListProvidersResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -602,90 +606,92 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_source_2fv1alpha1_2fsource_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\034source/v1alpha1/source.proto\022\017source.v"
-  "1alpha1\"\335\001\n\013Integration\022\016\n\002id\030\001 \001(\tR\002id\022"
-  "\022\n\004name\030\002 \001(\tR\004name\0225\n\010provider\030\003 \001(\0132\031."
-  "source.v1alpha1.ProviderR\010provider\022:\n\004da"
-  "ta\030\004 \003(\0132&.source.v1alpha1.Integration.D"
-  "ataEntryR\004data\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\t"
-  "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\367\001\n\030Crea"
-  "teIntegrationRequest\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004"
-  "name\030\002 \001(\tR\004name\0225\n\010provider\030\003 \001(\0132\031.sou"
-  "rce.v1alpha1.ProviderR\010provider\022G\n\004data\030"
-  "\004 \003(\01323.source.v1alpha1.CreateIntegratio"
-  "nRequest.DataEntryR\004data\0327\n\tDataEntry\022\020\n"
-  "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028"
-  "\001\"C\n\031CreateIntegrationResponse\022\020\n\003msg\030\001 "
-  "\001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"2\n\027ListIn"
-  "tegrationsRequest\022\027\n\007user_id\030\001 \001(\tR\006user"
-  "Id\"\\\n\030ListIntegrationsResponse\022@\n\014integr"
-  "ations\030\001 \003(\0132\034.source.v1alpha1.Integrati"
-  "onR\014integrations\"\'\n\025GetIntegrationReques"
-  "t\022\016\n\002id\030\001 \001(\tR\002id\"X\n\026GetIntegrationRespo"
-  "nse\022>\n\013integration\030\001 \001(\0132\034.source.v1alph"
-  "a1.IntegrationR\013integration\"y\n\030UpdateInt"
-  "egrationRequest\022\016\n\002id\030\001 \001(\tR\002id\022M\n\014integ"
-  "rations\030\002 \003(\0132).source.v1alpha1.CreateIn"
-  "tegrationRequestR\014integrations\"C\n\031Update"
-  "IntegrationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n"
-  "\005error\030\002 \001(\tR\005error\"*\n\030DeleteIntegration"
-  "Request\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteIntegra"
-  "tionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030"
-  "\002 \001(\tR\005error\"\326\001\n\010Provider\022\016\n\002id\030\001 \001(\tR\002i"
-  "d\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013description\030\003 \001"
-  "(\tR\013description\022\022\n\004logo\030\004 \001(\tR\004logo\0227\n\004d"
-  "ata\030\005 \003(\0132#.source.v1alpha1.Provider.Dat"
-  "aEntryR\004data\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003"
-  "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\'\n\025DeleteP"
-  "roviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"@\n\026Delete"
-  "ProviderResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005er"
-  "ror\030\002 \001(\tR\005error\"k\n\025UpdateProviderReques"
-  "t\022\016\n\002id\030\001 \001(\tR\002id\022B\n\010provider\030\002 \001(\0132&.so"
-  "urce.v1alpha1.CreateProviderRequestR\010pro"
-  "vider\"@\n\026UpdateProviderResponse\022\020\n\003msg\030\001"
-  " \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"$\n\022GetPr"
-  "oviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"L\n\023GetProv"
-  "iderResponse\0225\n\010provider\030\001 \001(\0132\031.source."
-  "v1alpha1.ProviderR\010provider\"\340\001\n\025CreatePr"
-  "oviderRequest\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013des"
-  "cription\030\002 \001(\tR\013description\022\022\n\004logo\030\003 \001("
-  "\tR\004logo\022D\n\004data\030\005 \003(\01320.source.v1alpha1."
-  "CreateProviderRequest.DataEntryR\004data\0327\n"
-  "\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 "
-  "\001(\tR\005value:\0028\001\"@\n\026CreateProviderResponse"
+  "1alpha1\"\366\001\n\013Integration\022\016\n\002id\030\001 \001(\tR\002id\022"
+  "\027\n\007user_id\030\002 \001(\tR\006userId\022\022\n\004name\030\003 \001(\tR\004"
+  "name\0225\n\010provider\030\004 \001(\0132\031.source.v1alpha1"
+  ".ProviderR\010provider\022:\n\004data\030\005 \003(\0132&.sour"
+  "ce.v1alpha1.Integration.DataEntryR\004data\032"
+  "7\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030"
+  "\002 \001(\tR\005value:\0028\001\"\220\002\n\030CreateIntegrationRe"
+  "quest\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006"
+  "userId\022\022\n\004name\030\003 \001(\tR\004name\0225\n\010provider\030\004"
+  " \001(\0132\031.source.v1alpha1.ProviderR\010provide"
+  "r\022G\n\004data\030\005 \003(\01323.source.v1alpha1.Create"
+  "IntegrationRequest.DataEntryR\004data\0327\n\tDa"
+  "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t"
+  "R\005value:\0028\001\"C\n\031CreateIntegrationResponse"
   "\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error"
-  "\"\026\n\024ListProvidersRequest\"P\n\025ListProvider"
-  "sResponse\0227\n\tproviders\030\001 \003(\0132\031.source.v1"
-  "alpha1.ProviderR\tproviders2\202\010\n\rSourceSer"
-  "vice\022a\n\016CreateProvider\022&.source.v1alpha1"
-  ".CreateProviderRequest\032\'.source.v1alpha1"
-  ".CreateProviderResponse\022^\n\rListProviders"
-  "\022%.source.v1alpha1.ListProvidersRequest\032"
-  "&.source.v1alpha1.ListProvidersResponse\022"
-  "X\n\013GetProvider\022#.source.v1alpha1.GetProv"
-  "iderRequest\032$.source.v1alpha1.GetProvide"
-  "rResponse\022a\n\016UpdateProvider\022&.source.v1a"
-  "lpha1.UpdateProviderRequest\032\'.source.v1a"
-  "lpha1.UpdateProviderResponse\022a\n\016DeletePr"
-  "ovider\022&.source.v1alpha1.DeleteProviderR"
-  "equest\032\'.source.v1alpha1.DeleteProviderR"
-  "esponse\022j\n\021CreateIntegration\022).source.v1"
-  "alpha1.CreateIntegrationRequest\032*.source"
-  ".v1alpha1.CreateIntegrationResponse\022g\n\020L"
-  "istIntegrations\022(.source.v1alpha1.ListIn"
-  "tegrationsRequest\032).source.v1alpha1.List"
-  "IntegrationsResponse\022a\n\016GetIntegration\022&"
-  ".source.v1alpha1.GetIntegrationRequest\032\'"
-  ".source.v1alpha1.GetIntegrationResponse\022"
-  "j\n\021UpdateIntegration\022).source.v1alpha1.U"
-  "pdateIntegrationRequest\032*.source.v1alpha"
-  "1.UpdateIntegrationResponse\022j\n\021DeleteInt"
-  "egration\022).source.v1alpha1.DeleteIntegra"
-  "tionRequest\032*.source.v1alpha1.DeleteInte"
-  "grationResponseB\nZ\010./sourceb\006proto3"
+  "\"2\n\027ListIntegrationsRequest\022\027\n\007user_id\030\001"
+  " \001(\tR\006userId\"\\\n\030ListIntegrationsResponse"
+  "\022@\n\014integrations\030\001 \003(\0132\034.source.v1alpha1"
+  ".IntegrationR\014integrations\"\'\n\025GetIntegra"
+  "tionRequest\022\016\n\002id\030\001 \001(\tR\002id\"X\n\026GetIntegr"
+  "ationResponse\022>\n\013integration\030\001 \001(\0132\034.sou"
+  "rce.v1alpha1.IntegrationR\013integration\"y\n"
+  "\030UpdateIntegrationRequest\022\016\n\002id\030\001 \001(\tR\002i"
+  "d\022M\n\014integrations\030\002 \003(\0132).source.v1alpha"
+  "1.CreateIntegrationRequestR\014integrations"
+  "\"C\n\031UpdateIntegrationResponse\022\020\n\003msg\030\001 \001"
+  "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"*\n\030DeleteI"
+  "ntegrationRequest\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031Del"
+  "eteIntegrationResponse\022\020\n\003msg\030\001 \001(\tR\003msg"
+  "\022\024\n\005error\030\002 \001(\tR\005error\"\326\001\n\010Provider\022\016\n\002i"
+  "d\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013descr"
+  "iption\030\003 \001(\tR\013description\022\022\n\004logo\030\004 \001(\tR"
+  "\004logo\0227\n\004data\030\005 \003(\0132#.source.v1alpha1.Pr"
+  "ovider.DataEntryR\004data\0327\n\tDataEntry\022\020\n\003k"
+  "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\""
+  "\'\n\025DeleteProviderRequest\022\016\n\002id\030\001 \001(\tR\002id"
+  "\"@\n\026DeleteProviderResponse\022\020\n\003msg\030\001 \001(\tR"
+  "\003msg\022\024\n\005error\030\002 \001(\tR\005error\"k\n\025UpdateProv"
+  "iderRequest\022\016\n\002id\030\001 \001(\tR\002id\022B\n\010provider\030"
+  "\002 \001(\0132&.source.v1alpha1.CreateProviderRe"
+  "questR\010provider\"@\n\026UpdateProviderRespons"
+  "e\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005erro"
+  "r\"$\n\022GetProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\""
+  "L\n\023GetProviderResponse\0225\n\010provider\030\001 \001(\013"
+  "2\031.source.v1alpha1.ProviderR\010provider\"\340\001"
+  "\n\025CreateProviderRequest\022\022\n\004name\030\001 \001(\tR\004n"
+  "ame\022 \n\013description\030\002 \001(\tR\013description\022\022\n"
+  "\004logo\030\003 \001(\tR\004logo\022D\n\004data\030\005 \003(\01320.source"
+  ".v1alpha1.CreateProviderRequest.DataEntr"
+  "yR\004data\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024"
+  "\n\005value\030\002 \001(\tR\005value:\0028\001\"@\n\026CreateProvid"
+  "erResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 "
+  "\001(\tR\005error\"\026\n\024ListProvidersRequest\"P\n\025Li"
+  "stProvidersResponse\0227\n\tproviders\030\001 \003(\0132\031"
+  ".source.v1alpha1.ProviderR\tproviders2\202\010\n"
+  "\rSourceService\022a\n\016CreateProvider\022&.sourc"
+  "e.v1alpha1.CreateProviderRequest\032\'.sourc"
+  "e.v1alpha1.CreateProviderResponse\022^\n\rLis"
+  "tProviders\022%.source.v1alpha1.ListProvide"
+  "rsRequest\032&.source.v1alpha1.ListProvider"
+  "sResponse\022X\n\013GetProvider\022#.source.v1alph"
+  "a1.GetProviderRequest\032$.source.v1alpha1."
+  "GetProviderResponse\022a\n\016UpdateProvider\022&."
+  "source.v1alpha1.UpdateProviderRequest\032\'."
+  "source.v1alpha1.UpdateProviderResponse\022a"
+  "\n\016DeleteProvider\022&.source.v1alpha1.Delet"
+  "eProviderRequest\032\'.source.v1alpha1.Delet"
+  "eProviderResponse\022j\n\021CreateIntegration\022)"
+  ".source.v1alpha1.CreateIntegrationReques"
+  "t\032*.source.v1alpha1.CreateIntegrationRes"
+  "ponse\022g\n\020ListIntegrations\022(.source.v1alp"
+  "ha1.ListIntegrationsRequest\032).source.v1a"
+  "lpha1.ListIntegrationsResponse\022a\n\016GetInt"
+  "egration\022&.source.v1alpha1.GetIntegratio"
+  "nRequest\032\'.source.v1alpha1.GetIntegratio"
+  "nResponse\022j\n\021UpdateIntegration\022).source."
+  "v1alpha1.UpdateIntegrationRequest\032*.sour"
+  "ce.v1alpha1.UpdateIntegrationResponse\022j\n"
+  "\021DeleteIntegration\022).source.v1alpha1.Del"
+  "eteIntegrationRequest\032*.source.v1alpha1."
+  "DeleteIntegrationResponseB\nZ\010./sourceb\006p"
+  "roto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_source_2fv1alpha1_2fsource_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_source_2fv1alpha1_2fsource_2eproto = {
-  false, false, 3235, descriptor_table_protodef_source_2fv1alpha1_2fsource_2eproto, "source/v1alpha1/source.proto", 
+  false, false, 3285, descriptor_table_protodef_source_2fv1alpha1_2fsource_2eproto, "source/v1alpha1/source.proto", 
   &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once, nullptr, 0, 26,
   schemas, file_default_instances, TableStruct_source_2fv1alpha1_2fsource_2eproto::offsets,
   file_level_metadata_source_2fv1alpha1_2fsource_2eproto, file_level_enum_descriptors_source_2fv1alpha1_2fsource_2eproto, file_level_service_descriptors_source_2fv1alpha1_2fsource_2eproto,
@@ -743,6 +749,11 @@ Integration::Integration(const Integration& from)
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArenaForAllocation());
   }
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
+      GetArenaForAllocation());
+  }
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
@@ -758,6 +769,7 @@ Integration::Integration(const Integration& from)
 
 inline void Integration::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 provider_ = nullptr;
 }
@@ -772,6 +784,7 @@ Integration::~Integration() {
 inline void Integration::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete provider_;
 }
@@ -798,6 +811,7 @@ void Integration::Clear() {
 
   data_.Clear();
   id_.ClearToEmpty();
+  user_id_.ClearToEmpty();
   name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && provider_ != nullptr) {
     delete provider_;
@@ -821,32 +835,41 @@ const char* Integration::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string name = 2 [json_name = "name"];
+      // string user_id = 2 [json_name = "userId"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "source.v1alpha1.Integration.user_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string name = 3 [json_name = "name"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "source.v1alpha1.Integration.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .source.v1alpha1.Provider provider = 3 [json_name = "provider"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // .source.v1alpha1.Provider provider = 4 [json_name = "provider"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_provider(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // map<string, string> data = 4 [json_name = "data"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // map<string, string> data = 5 [json_name = "data"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(&data_, ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -888,25 +911,35 @@ failure:
         1, this->_internal_id(), target);
   }
 
-  // string name = 2 [json_name = "name"];
+  // string user_id = 2 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "source.v1alpha1.Integration.user_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_user_id(), target);
+  }
+
+  // string name = 3 [json_name = "name"];
   if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "source.v1alpha1.Integration.name");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_name(), target);
+        3, this->_internal_name(), target);
   }
 
-  // .source.v1alpha1.Provider provider = 3 [json_name = "provider"];
+  // .source.v1alpha1.Provider provider = 4 [json_name = "provider"];
   if (this->_internal_has_provider()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::provider(this), target, stream);
+        4, _Internal::provider(this), target, stream);
   }
 
-  // map<string, string> data = 4 [json_name = "data"];
+  // map<string, string> data = 5 [json_name = "data"];
   if (!this->_internal_data().empty()) {
     typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
         ConstPtr;
@@ -939,14 +972,14 @@ failure:
       }
       ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       for (size_type i = 0; i < n; i++) {
-        target = Integration_DataEntry_DoNotUse::Funcs::InternalSerialize(4, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        target = Integration_DataEntry_DoNotUse::Funcs::InternalSerialize(5, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
         Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
       }
     } else {
       for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
           it = this->_internal_data().begin();
           it != this->_internal_data().end(); ++it) {
-        target = Integration_DataEntry_DoNotUse::Funcs::InternalSerialize(4, it->first, it->second, target, stream);
+        target = Integration_DataEntry_DoNotUse::Funcs::InternalSerialize(5, it->first, it->second, target, stream);
         Utf8Check::Check(&(*it));
       }
     }
@@ -968,7 +1001,7 @@ size_t Integration::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<string, string> data = 4 [json_name = "data"];
+  // map<string, string> data = 5 [json_name = "data"];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_data_size());
   for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
@@ -984,14 +1017,21 @@ size_t Integration::ByteSizeLong() const {
         this->_internal_id());
   }
 
-  // string name = 2 [json_name = "name"];
+  // string user_id = 2 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
+  }
+
+  // string name = 3 [json_name = "name"];
   if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
   }
 
-  // .source.v1alpha1.Provider provider = 3 [json_name = "provider"];
+  // .source.v1alpha1.Provider provider = 4 [json_name = "provider"];
   if (this->_internal_has_provider()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1030,6 +1070,9 @@ void Integration::MergeFrom(const Integration& from) {
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
+  if (!from._internal_user_id().empty()) {
+    _internal_set_user_id(from._internal_user_id());
+  }
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
@@ -1058,6 +1101,11 @@ void Integration::InternalSwap(Integration* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),
       &other->id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_id_, GetArenaForAllocation(),
+      &other->user_id_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
@@ -1117,6 +1165,11 @@ CreateIntegrationRequest::CreateIntegrationRequest(const CreateIntegrationReques
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArenaForAllocation());
   }
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
+      GetArenaForAllocation());
+  }
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
@@ -1132,6 +1185,7 @@ CreateIntegrationRequest::CreateIntegrationRequest(const CreateIntegrationReques
 
 inline void CreateIntegrationRequest::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 provider_ = nullptr;
 }
@@ -1146,6 +1200,7 @@ CreateIntegrationRequest::~CreateIntegrationRequest() {
 inline void CreateIntegrationRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete provider_;
 }
@@ -1172,6 +1227,7 @@ void CreateIntegrationRequest::Clear() {
 
   data_.Clear();
   id_.ClearToEmpty();
+  user_id_.ClearToEmpty();
   name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && provider_ != nullptr) {
     delete provider_;
@@ -1195,32 +1251,41 @@ const char* CreateIntegrationRequest::_InternalParse(const char* ptr, ::PROTOBUF
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string name = 2 [json_name = "name"];
+      // string user_id = 2 [json_name = "userId"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "source.v1alpha1.CreateIntegrationRequest.user_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string name = 3 [json_name = "name"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "source.v1alpha1.CreateIntegrationRequest.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .source.v1alpha1.Provider provider = 3 [json_name = "provider"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // .source.v1alpha1.Provider provider = 4 [json_name = "provider"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_provider(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // map<string, string> data = 4 [json_name = "data"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // map<string, string> data = 5 [json_name = "data"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(&data_, ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -1262,25 +1327,35 @@ failure:
         1, this->_internal_id(), target);
   }
 
-  // string name = 2 [json_name = "name"];
+  // string user_id = 2 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "source.v1alpha1.CreateIntegrationRequest.user_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_user_id(), target);
+  }
+
+  // string name = 3 [json_name = "name"];
   if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "source.v1alpha1.CreateIntegrationRequest.name");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_name(), target);
+        3, this->_internal_name(), target);
   }
 
-  // .source.v1alpha1.Provider provider = 3 [json_name = "provider"];
+  // .source.v1alpha1.Provider provider = 4 [json_name = "provider"];
   if (this->_internal_has_provider()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::provider(this), target, stream);
+        4, _Internal::provider(this), target, stream);
   }
 
-  // map<string, string> data = 4 [json_name = "data"];
+  // map<string, string> data = 5 [json_name = "data"];
   if (!this->_internal_data().empty()) {
     typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
         ConstPtr;
@@ -1313,14 +1388,14 @@ failure:
       }
       ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       for (size_type i = 0; i < n; i++) {
-        target = CreateIntegrationRequest_DataEntry_DoNotUse::Funcs::InternalSerialize(4, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        target = CreateIntegrationRequest_DataEntry_DoNotUse::Funcs::InternalSerialize(5, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
         Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
       }
     } else {
       for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
           it = this->_internal_data().begin();
           it != this->_internal_data().end(); ++it) {
-        target = CreateIntegrationRequest_DataEntry_DoNotUse::Funcs::InternalSerialize(4, it->first, it->second, target, stream);
+        target = CreateIntegrationRequest_DataEntry_DoNotUse::Funcs::InternalSerialize(5, it->first, it->second, target, stream);
         Utf8Check::Check(&(*it));
       }
     }
@@ -1342,7 +1417,7 @@ size_t CreateIntegrationRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<string, string> data = 4 [json_name = "data"];
+  // map<string, string> data = 5 [json_name = "data"];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_data_size());
   for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
@@ -1358,14 +1433,21 @@ size_t CreateIntegrationRequest::ByteSizeLong() const {
         this->_internal_id());
   }
 
-  // string name = 2 [json_name = "name"];
+  // string user_id = 2 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
+  }
+
+  // string name = 3 [json_name = "name"];
   if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
   }
 
-  // .source.v1alpha1.Provider provider = 3 [json_name = "provider"];
+  // .source.v1alpha1.Provider provider = 4 [json_name = "provider"];
   if (this->_internal_has_provider()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1404,6 +1486,9 @@ void CreateIntegrationRequest::MergeFrom(const CreateIntegrationRequest& from) {
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
+  if (!from._internal_user_id().empty()) {
+    _internal_set_user_id(from._internal_user_id());
+  }
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
@@ -1432,6 +1517,11 @@ void CreateIntegrationRequest::InternalSwap(CreateIntegrationRequest* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),
       &other->id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_id_, GetArenaForAllocation(),
+      &other->user_id_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
