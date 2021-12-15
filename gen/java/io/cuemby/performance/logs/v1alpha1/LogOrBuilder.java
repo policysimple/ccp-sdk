@@ -8,10 +8,10 @@ public interface LogOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>double date = 1 [json_name = "date"];</code>
+   * <code>int64 date = 1 [json_name = "date"];</code>
    * @return The date.
    */
-  double getDate();
+  long getDate();
 
   /**
    * <code>string log = 2 [json_name = "log"];</code>

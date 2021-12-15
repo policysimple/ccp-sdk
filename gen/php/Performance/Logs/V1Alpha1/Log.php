@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Log extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>double date = 1 [json_name = "date"];</code>
+     * Generated from protobuf field <code>int64 date = 1 [json_name = "date"];</code>
      */
-    protected $date = 0.0;
+    protected $date = 0;
     /**
      * Generated from protobuf field <code>string log = 2 [json_name = "log"];</code>
      */
@@ -36,7 +36,7 @@ class Log extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type float $date
+     *     @type int|string $date
      *     @type string $log
      *     @type \Performance\Logs\V1Alpha1\LogKuebrnetesInfo $kubernetes
      *     @type string $log_id
@@ -48,8 +48,8 @@ class Log extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>double date = 1 [json_name = "date"];</code>
-     * @return float
+     * Generated from protobuf field <code>int64 date = 1 [json_name = "date"];</code>
+     * @return int|string
      */
     public function getDate()
     {
@@ -57,13 +57,13 @@ class Log extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>double date = 1 [json_name = "date"];</code>
-     * @param float $var
+     * Generated from protobuf field <code>int64 date = 1 [json_name = "date"];</code>
+     * @param int|string $var
      * @return $this
      */
     public function setDate($var)
     {
-        GPBUtil::checkDouble($var);
+        GPBUtil::checkInt64($var);
         $this->date = $var;
 
         return $this;
