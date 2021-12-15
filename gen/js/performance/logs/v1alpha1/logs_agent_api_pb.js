@@ -147,8 +147,7 @@ proto.performance.logs.v1alpha1.SaveLogsRequest.toObject = function(includeInsta
     clusterName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     metaMap: (f = msg.getMetaMap()) ? f.toObject(includeInstance, undefined) : [],
     logsList: jspb.Message.toObjectList(msg.getLogsList(),
-    proto.performance.logs.v1alpha1.Log.toObject, includeInstance),
-    logId: jspb.Message.getFieldWithDefault(msg, 4, "")
+    proto.performance.logs.v1alpha1.Log.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -200,10 +199,6 @@ proto.performance.logs.v1alpha1.SaveLogsRequest.deserializeBinaryFromReader = fu
       reader.readMessage(value,proto.performance.logs.v1alpha1.Log.deserializeBinaryFromReader);
       msg.addLogs(value);
       break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLogId(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -250,13 +245,6 @@ proto.performance.logs.v1alpha1.SaveLogsRequest.serializeBinaryToWriter = functi
       3,
       f,
       proto.performance.logs.v1alpha1.Log.serializeBinaryToWriter
-    );
-  }
-  f = message.getLogId();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
     );
   }
 };
@@ -337,24 +325,6 @@ proto.performance.logs.v1alpha1.SaveLogsRequest.prototype.addLogs = function(opt
  */
 proto.performance.logs.v1alpha1.SaveLogsRequest.prototype.clearLogsList = function() {
   return this.setLogsList([]);
-};
-
-
-/**
- * optional string log_id = 4;
- * @return {string}
- */
-proto.performance.logs.v1alpha1.SaveLogsRequest.prototype.getLogId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.performance.logs.v1alpha1.SaveLogsRequest} returns this
- */
-proto.performance.logs.v1alpha1.SaveLogsRequest.prototype.setLogId = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -522,7 +492,8 @@ proto.performance.logs.v1alpha1.Log.toObject = function(includeInstance, msg) {
   var f, obj = {
     date: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
     log: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    kubernetes: (f = msg.getKubernetes()) && proto.performance.logs.v1alpha1.LogKuebrnetesInfo.toObject(includeInstance, f)
+    kubernetes: (f = msg.getKubernetes()) && proto.performance.logs.v1alpha1.LogKuebrnetesInfo.toObject(includeInstance, f),
+    logId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -571,6 +542,10 @@ proto.performance.logs.v1alpha1.Log.deserializeBinaryFromReader = function(msg, 
       var value = new proto.performance.logs.v1alpha1.LogKuebrnetesInfo;
       reader.readMessage(value,proto.performance.logs.v1alpha1.LogKuebrnetesInfo.deserializeBinaryFromReader);
       msg.setKubernetes(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLogId(value);
       break;
     default:
       reader.skipField();
@@ -621,6 +596,13 @@ proto.performance.logs.v1alpha1.Log.serializeBinaryToWriter = function(message, 
       3,
       f,
       proto.performance.logs.v1alpha1.LogKuebrnetesInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getLogId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -699,6 +681,24 @@ proto.performance.logs.v1alpha1.Log.prototype.hasKubernetes = function() {
 };
 
 
+/**
+ * optional string log_id = 4;
+ * @return {string}
+ */
+proto.performance.logs.v1alpha1.Log.prototype.getLogId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.logs.v1alpha1.Log} returns this
+ */
+proto.performance.logs.v1alpha1.Log.prototype.setLogId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
 
 
 
@@ -740,7 +740,12 @@ proto.performance.logs.v1alpha1.LogKuebrnetesInfo.toObject = function(includeIns
     containerName: jspb.Message.getFieldWithDefault(msg, 7, ""),
     dockerId: jspb.Message.getFieldWithDefault(msg, 8, ""),
     containerHash: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    containerImage: jspb.Message.getFieldWithDefault(msg, 11, "")
+    containerImage: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    ownerName: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    ownerKubernetesUid: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    ownerKind: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    ownerApiVersion: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 16, "")
   };
 
   if (includeInstance) {
@@ -820,6 +825,26 @@ proto.performance.logs.v1alpha1.LogKuebrnetesInfo.deserializeBinaryFromReader = 
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setContainerImage(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOwnerName(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOwnerKubernetesUid(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOwnerKind(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOwnerApiVersion(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -911,6 +936,41 @@ proto.performance.logs.v1alpha1.LogKuebrnetesInfo.serializeBinaryToWriter = func
   if (f.length > 0) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = message.getOwnerName();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getOwnerKubernetesUid();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
+  f = message.getOwnerKind();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
+    );
+  }
+  f = message.getOwnerApiVersion();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      16,
       f
     );
   }
@@ -1102,6 +1162,96 @@ proto.performance.logs.v1alpha1.LogKuebrnetesInfo.prototype.getContainerImage = 
  */
 proto.performance.logs.v1alpha1.LogKuebrnetesInfo.prototype.setContainerImage = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional string owner_name = 12;
+ * @return {string}
+ */
+proto.performance.logs.v1alpha1.LogKuebrnetesInfo.prototype.getOwnerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.logs.v1alpha1.LogKuebrnetesInfo} returns this
+ */
+proto.performance.logs.v1alpha1.LogKuebrnetesInfo.prototype.setOwnerName = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string owner_kubernetes_uid = 13;
+ * @return {string}
+ */
+proto.performance.logs.v1alpha1.LogKuebrnetesInfo.prototype.getOwnerKubernetesUid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.logs.v1alpha1.LogKuebrnetesInfo} returns this
+ */
+proto.performance.logs.v1alpha1.LogKuebrnetesInfo.prototype.setOwnerKubernetesUid = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional string owner_kind = 14;
+ * @return {string}
+ */
+proto.performance.logs.v1alpha1.LogKuebrnetesInfo.prototype.getOwnerKind = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.logs.v1alpha1.LogKuebrnetesInfo} returns this
+ */
+proto.performance.logs.v1alpha1.LogKuebrnetesInfo.prototype.setOwnerKind = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional string owner_api_version = 15;
+ * @return {string}
+ */
+proto.performance.logs.v1alpha1.LogKuebrnetesInfo.prototype.getOwnerApiVersion = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.logs.v1alpha1.LogKuebrnetesInfo} returns this
+ */
+proto.performance.logs.v1alpha1.LogKuebrnetesInfo.prototype.setOwnerApiVersion = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * optional string status = 16;
+ * @return {string}
+ */
+proto.performance.logs.v1alpha1.LogKuebrnetesInfo.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.logs.v1alpha1.LogKuebrnetesInfo} returns this
+ */
+proto.performance.logs.v1alpha1.LogKuebrnetesInfo.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 16, value);
 };
 
 

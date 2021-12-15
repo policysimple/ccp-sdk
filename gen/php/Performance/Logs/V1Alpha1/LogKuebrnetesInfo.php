@@ -42,10 +42,14 @@ class LogKuebrnetesInfo extends \Google\Protobuf\Internal\Message
      */
     protected $container_name = '';
     /**
+     * DEPRECATED
+     *
      * Generated from protobuf field <code>string docker_id = 8 [json_name = "dockerId"];</code>
      */
     protected $docker_id = '';
     /**
+     * DEPRECATED
+     *
      * Generated from protobuf field <code>string container_hash = 10 [json_name = "containerHash"];</code>
      */
     protected $container_hash = '';
@@ -53,6 +57,26 @@ class LogKuebrnetesInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string container_image = 11 [json_name = "containerImage"];</code>
      */
     protected $container_image = '';
+    /**
+     * Generated from protobuf field <code>string owner_name = 12 [json_name = "ownerName"];</code>
+     */
+    protected $owner_name = '';
+    /**
+     * Generated from protobuf field <code>string owner_kubernetes_uid = 13 [json_name = "ownerKubernetesUid"];</code>
+     */
+    protected $owner_kubernetes_uid = '';
+    /**
+     * Generated from protobuf field <code>string owner_kind = 14 [json_name = "ownerKind"];</code>
+     */
+    protected $owner_kind = '';
+    /**
+     * Generated from protobuf field <code>string owner_api_version = 15 [json_name = "ownerApiVersion"];</code>
+     */
+    protected $owner_api_version = '';
+    /**
+     * Generated from protobuf field <code>string status = 16 [json_name = "status"];</code>
+     */
+    protected $status = '';
 
     /**
      * Constructor.
@@ -68,8 +92,15 @@ class LogKuebrnetesInfo extends \Google\Protobuf\Internal\Message
      *     @type string $host
      *     @type string $container_name
      *     @type string $docker_id
+     *           DEPRECATED
      *     @type string $container_hash
+     *           DEPRECATED
      *     @type string $container_image
+     *     @type string $owner_name
+     *     @type string $owner_kubernetes_uid
+     *     @type string $owner_kind
+     *     @type string $owner_api_version
+     *     @type string $status
      * }
      */
     public function __construct($data = NULL) {
@@ -232,6 +263,8 @@ class LogKuebrnetesInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * DEPRECATED
+     *
      * Generated from protobuf field <code>string docker_id = 8 [json_name = "dockerId"];</code>
      * @return string
      */
@@ -241,6 +274,8 @@ class LogKuebrnetesInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * DEPRECATED
+     *
      * Generated from protobuf field <code>string docker_id = 8 [json_name = "dockerId"];</code>
      * @param string $var
      * @return $this
@@ -254,6 +289,8 @@ class LogKuebrnetesInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * DEPRECATED
+     *
      * Generated from protobuf field <code>string container_hash = 10 [json_name = "containerHash"];</code>
      * @return string
      */
@@ -263,6 +300,8 @@ class LogKuebrnetesInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * DEPRECATED
+     *
      * Generated from protobuf field <code>string container_hash = 10 [json_name = "containerHash"];</code>
      * @param string $var
      * @return $this
@@ -293,6 +332,116 @@ class LogKuebrnetesInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->container_image = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string owner_name = 12 [json_name = "ownerName"];</code>
+     * @return string
+     */
+    public function getOwnerName()
+    {
+        return $this->owner_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string owner_name = 12 [json_name = "ownerName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOwnerName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->owner_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string owner_kubernetes_uid = 13 [json_name = "ownerKubernetesUid"];</code>
+     * @return string
+     */
+    public function getOwnerKubernetesUid()
+    {
+        return $this->owner_kubernetes_uid;
+    }
+
+    /**
+     * Generated from protobuf field <code>string owner_kubernetes_uid = 13 [json_name = "ownerKubernetesUid"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOwnerKubernetesUid($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->owner_kubernetes_uid = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string owner_kind = 14 [json_name = "ownerKind"];</code>
+     * @return string
+     */
+    public function getOwnerKind()
+    {
+        return $this->owner_kind;
+    }
+
+    /**
+     * Generated from protobuf field <code>string owner_kind = 14 [json_name = "ownerKind"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOwnerKind($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->owner_kind = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string owner_api_version = 15 [json_name = "ownerApiVersion"];</code>
+     * @return string
+     */
+    public function getOwnerApiVersion()
+    {
+        return $this->owner_api_version;
+    }
+
+    /**
+     * Generated from protobuf field <code>string owner_api_version = 15 [json_name = "ownerApiVersion"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOwnerApiVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->owner_api_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 16 [json_name = "status"];</code>
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 16 [json_name = "status"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
 
         return $this;
     }

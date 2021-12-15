@@ -25,6 +25,10 @@ class Log extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.performance.logs.v1alpha1.LogKuebrnetesInfo kubernetes = 3 [json_name = "kubernetes"];</code>
      */
     protected $kubernetes = null;
+    /**
+     * Generated from protobuf field <code>string log_id = 4 [json_name = "logId"];</code>
+     */
+    protected $log_id = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class Log extends \Google\Protobuf\Internal\Message
      *     @type float $date
      *     @type string $log
      *     @type \Performance\Logs\V1Alpha1\LogKuebrnetesInfo $kubernetes
+     *     @type string $log_id
      * }
      */
     public function __construct($data = NULL) {
@@ -114,6 +119,28 @@ class Log extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Performance\Logs\V1Alpha1\LogKuebrnetesInfo::class);
         $this->kubernetes = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string log_id = 4 [json_name = "logId"];</code>
+     * @return string
+     */
+    public function getLogId()
+    {
+        return $this->log_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string log_id = 4 [json_name = "logId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLogId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->log_id = $var;
 
         return $this;
     }

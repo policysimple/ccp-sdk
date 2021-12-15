@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private Log() {
     log_ = "";
+    logId_ = "";
   }
 
   @java.lang.Override
@@ -71,6 +72,12 @@ private static final long serialVersionUID = 0L;
               kubernetes_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            logId_ = s;
             break;
           }
           default: {
@@ -180,6 +187,44 @@ private static final long serialVersionUID = 0L;
     return getKubernetes();
   }
 
+  public static final int LOG_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object logId_;
+  /**
+   * <code>string log_id = 4 [json_name = "logId"];</code>
+   * @return The logId.
+   */
+  @java.lang.Override
+  public java.lang.String getLogId() {
+    java.lang.Object ref = logId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      logId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string log_id = 4 [json_name = "logId"];</code>
+   * @return The bytes for logId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLogIdBytes() {
+    java.lang.Object ref = logId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      logId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -203,6 +248,9 @@ private static final long serialVersionUID = 0L;
     if (kubernetes_ != null) {
       output.writeMessage(3, getKubernetes());
     }
+    if (!getLogIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, logId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -222,6 +270,9 @@ private static final long serialVersionUID = 0L;
     if (kubernetes_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getKubernetes());
+    }
+    if (!getLogIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, logId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -248,6 +299,8 @@ private static final long serialVersionUID = 0L;
       if (!getKubernetes()
           .equals(other.getKubernetes())) return false;
     }
+    if (!getLogId()
+        .equals(other.getLogId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -268,6 +321,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + KUBERNETES_FIELD_NUMBER;
       hash = (53 * hash) + getKubernetes().hashCode();
     }
+    hash = (37 * hash) + LOG_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getLogId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -411,6 +466,8 @@ private static final long serialVersionUID = 0L;
         kubernetes_ = null;
         kubernetesBuilder_ = null;
       }
+      logId_ = "";
+
       return this;
     }
 
@@ -444,6 +501,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.kubernetes_ = kubernetesBuilder_.build();
       }
+      result.logId_ = logId_;
       onBuilt();
       return result;
     }
@@ -501,6 +559,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasKubernetes()) {
         mergeKubernetes(other.getKubernetes());
+      }
+      if (!other.getLogId().isEmpty()) {
+        logId_ = other.logId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -755,6 +817,82 @@ private static final long serialVersionUID = 0L;
         kubernetes_ = null;
       }
       return kubernetesBuilder_;
+    }
+
+    private java.lang.Object logId_ = "";
+    /**
+     * <code>string log_id = 4 [json_name = "logId"];</code>
+     * @return The logId.
+     */
+    public java.lang.String getLogId() {
+      java.lang.Object ref = logId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        logId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string log_id = 4 [json_name = "logId"];</code>
+     * @return The bytes for logId.
+     */
+    public com.google.protobuf.ByteString
+        getLogIdBytes() {
+      java.lang.Object ref = logId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        logId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string log_id = 4 [json_name = "logId"];</code>
+     * @param value The logId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      logId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string log_id = 4 [json_name = "logId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLogId() {
+      
+      logId_ = getDefaultInstance().getLogId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string log_id = 4 [json_name = "logId"];</code>
+     * @param value The bytes for logId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      logId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

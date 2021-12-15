@@ -39,4 +39,16 @@ public interface LogOrBuilder extends
    * <code>.performance.logs.v1alpha1.LogKuebrnetesInfo kubernetes = 3 [json_name = "kubernetes"];</code>
    */
   io.cuemby.performance.logs.v1alpha1.LogKuebrnetesInfoOrBuilder getKubernetesOrBuilder();
+
+  /**
+   * <code>string log_id = 4 [json_name = "logId"];</code>
+   * @return The logId.
+   */
+  java.lang.String getLogId();
+  /**
+   * <code>string log_id = 4 [json_name = "logId"];</code>
+   * @return The bytes for logId.
+   */
+  com.google.protobuf.ByteString
+      getLogIdBytes();
 }
