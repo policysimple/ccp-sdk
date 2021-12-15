@@ -10,6 +10,7 @@ option java_package = "io.cuemby.performance.logs.v1alpha1";
 option objc_class_prefix = "PFX";
 option php_namespace = "Performance\\Logs\\V1Alpha1";
 
+
 // LogItem ...
 message LogItem {
     string date = 1;

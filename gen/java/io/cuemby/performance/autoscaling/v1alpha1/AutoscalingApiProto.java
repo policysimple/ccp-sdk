@@ -102,33 +102,34 @@ public final class AutoscalingApiProto {
       "scalingR\013autoscaling\022\026\n\006status\030\002 \001(\tR\006st" +
       "atus\"`\n\026ListAutoscalingRequest\022F\n\010metada" +
       "ta\030\001 \001(\0132*.performance.autoscaling.v1alp" +
-      "ha1.MetadataR\010metadata\"l\n\027ListAutoscalin" +
-      "gResponse\022Q\n\014autoscalings\030\001 \003(\0132-.perfor" +
-      "mance.autoscaling.v1alpha1.AutoscalingR\014" +
-      "autoscalings2\335\005\n\025AutoscalingAPIService\022\216" +
-      "\001\n\021CreateAutoscaling\022:.performance.autos" +
-      "caling.v1alpha1.CreateAutoscalingRequest" +
-      "\032;.performance.autoscaling.v1alpha1.Crea" +
-      "teAutoscalingResponse\"\000\022\216\001\n\021UpdateAutosc" +
+      "ha1.MetadataR\010metadata\"\204\001\n\027ListAutoscali" +
+      "ngResponse\022Q\n\014autoscalings\030\001 \003(\0132-.perfo" +
+      "rmance.autoscaling.v1alpha1.AutoscalingR" +
+      "\014autoscalings\022\026\n\006status\030\002 \001(\tR\006status2\335\005" +
+      "\n\025AutoscalingAPIService\022\216\001\n\021CreateAutosc" +
       "aling\022:.performance.autoscaling.v1alpha1" +
-      ".UpdateAutoscalingRequest\032;.performance." +
-      "autoscaling.v1alpha1.UpdateAutoscalingRe" +
-      "sponse\"\000\022\216\001\n\021DeleteAutoscaling\022:.perform" +
-      "ance.autoscaling.v1alpha1.DeleteAutoscal" +
+      ".CreateAutoscalingRequest\032;.performance." +
+      "autoscaling.v1alpha1.CreateAutoscalingRe" +
+      "sponse\"\000\022\216\001\n\021UpdateAutoscaling\022:.perform" +
+      "ance.autoscaling.v1alpha1.UpdateAutoscal" +
       "ingRequest\032;.performance.autoscaling.v1a" +
-      "lpha1.DeleteAutoscalingResponse\"\000\022\205\001\n\016Ge" +
-      "tAutoscaling\0227.performance.autoscaling.v" +
-      "1alpha1.GetAutoscalingRequest\0328.performa" +
-      "nce.autoscaling.v1alpha1.GetAutoscalingR" +
-      "esponse\"\000\022\210\001\n\017ListAutoscaling\0228.performa" +
-      "nce.autoscaling.v1alpha1.ListAutoscaling" +
-      "Request\0329.performance.autoscaling.v1alph" +
-      "a1.ListAutoscalingResponse\"\000B\304\001\n*io.cuem" +
-      "by.performance.autoscaling.v1alpha1B\023Aut" +
-      "oscalingApiProtoP\001Z3github.com/performan" +
-      "ce-grpc-sdk/autoscalingv1alpha1\242\002\003PFX\252\002 " +
-      "Performance.Autoscaling.V1Alpha1\312\002 Perfo" +
-      "rmance\\Autoscaling\\V1Alpha1b\006proto3"
+      "lpha1.UpdateAutoscalingResponse\"\000\022\216\001\n\021De" +
+      "leteAutoscaling\022:.performance.autoscalin" +
+      "g.v1alpha1.DeleteAutoscalingRequest\032;.pe" +
+      "rformance.autoscaling.v1alpha1.DeleteAut" +
+      "oscalingResponse\"\000\022\205\001\n\016GetAutoscaling\0227." +
+      "performance.autoscaling.v1alpha1.GetAuto" +
+      "scalingRequest\0328.performance.autoscaling" +
+      ".v1alpha1.GetAutoscalingResponse\"\000\022\210\001\n\017L" +
+      "istAutoscaling\0228.performance.autoscaling" +
+      ".v1alpha1.ListAutoscalingRequest\0329.perfo" +
+      "rmance.autoscaling.v1alpha1.ListAutoscal" +
+      "ingResponse\"\000B\305\001\n*io.cuemby.performance." +
+      "autoscaling.v1alpha1B\023AutoscalingApiProt" +
+      "oP\001Z4github.com/performance-grpc-sdk/aut" +
+      "oscaling/v1alpha1\242\002\003PFX\252\002 Performance.Au" +
+      "toscaling.V1Alpha1\312\002 Performance\\Autosca" +
+      "ling\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -194,7 +195,7 @@ public final class AutoscalingApiProto {
     internal_static_performance_autoscaling_v1alpha1_ListAutoscalingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_autoscaling_v1alpha1_ListAutoscalingResponse_descriptor,
-        new java.lang.String[] { "Autoscalings", });
+        new java.lang.String[] { "Autoscalings", "Status", });
     io.cuemby.performance.autoscaling.v1alpha1.AutoscalingProto.getDescriptor();
   }
 

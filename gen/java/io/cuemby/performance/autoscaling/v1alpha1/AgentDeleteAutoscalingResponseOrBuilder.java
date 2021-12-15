@@ -23,14 +23,14 @@ public interface AgentDeleteAutoscalingResponseOrBuilder extends
   io.cuemby.performance.autoscaling.v1alpha1.MetadataOrBuilder getMetadataOrBuilder();
 
   /**
-   * <code>string status = 2 [json_name = "status"];</code>
-   * @return The status.
+   * <code>string origin = 2 [json_name = "origin"];</code>
+   * @return The origin.
    */
-  java.lang.String getStatus();
+  java.lang.String getOrigin();
   /**
-   * <code>string status = 2 [json_name = "status"];</code>
-   * @return The bytes for status.
+   * <code>string origin = 2 [json_name = "origin"];</code>
+   * @return The bytes for origin.
    */
   com.google.protobuf.ByteString
-      getStatusBytes();
+      getOriginBytes();
 }

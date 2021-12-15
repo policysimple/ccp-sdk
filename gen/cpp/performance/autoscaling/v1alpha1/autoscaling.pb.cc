@@ -263,16 +263,16 @@ const char descriptor_table_protodef_performance_2fautoscaling_2fv1alpha1_2fauto
   "(\0132*.performance.autoscaling.v1alpha1.Me"
   "tadataR\010metadata\022E\n\004spec\030\002 \001(\01321.perform"
   "ance.autoscaling.v1alpha1.AutoscalingSpe"
-  "cR\004specB\301\001\n*io.cuemby.performance.autosc"
-  "aling.v1alpha1B\020AutoscalingProtoP\001Z3gith"
-  "ub.com/performance-grpc-sdk/autoscalingv"
-  "1alpha1\242\002\003PFX\252\002 Performance.Autoscaling."
-  "V1Alpha1\312\002 Performance\\Autoscaling\\V1Alp"
-  "ha1b\006proto3"
+  "cR\004specB\302\001\n*io.cuemby.performance.autosc"
+  "aling.v1alpha1B\020AutoscalingProtoP\001Z4gith"
+  "ub.com/performance-grpc-sdk/autoscaling/"
+  "v1alpha1\242\002\003PFX\252\002 Performance.Autoscaling"
+  ".V1Alpha1\312\002 Performance\\Autoscaling\\V1Al"
+  "pha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_2eproto = {
-  false, false, 1491, descriptor_table_protodef_performance_2fautoscaling_2fv1alpha1_2fautoscaling_2eproto, "performance/autoscaling/v1alpha1/autoscaling.proto", 
+  false, false, 1492, descriptor_table_protodef_performance_2fautoscaling_2fv1alpha1_2fautoscaling_2eproto, "performance/autoscaling/v1alpha1/autoscaling.proto", 
   &descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_2eproto_once, nullptr, 0, 8,
   schemas, file_default_instances, TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_2eproto::offsets,
   file_level_metadata_performance_2fautoscaling_2fv1alpha1_2fautoscaling_2eproto, file_level_enum_descriptors_performance_2fautoscaling_2fv1alpha1_2fautoscaling_2eproto, file_level_service_descriptors_performance_2fautoscaling_2fv1alpha1_2fautoscaling_2eproto,

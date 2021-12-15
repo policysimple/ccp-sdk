@@ -14,13 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class AgentGetAutoscalingResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
+     * Generated from protobuf field <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
      */
-    protected $autoscaling = null;
+    protected $metadata = null;
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string origin = 2 [json_name = "origin"];</code>
      */
-    protected $status = '';
+    protected $origin = '';
 
     /**
      * Constructor.
@@ -28,8 +28,8 @@ class AgentGetAutoscalingResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Performance\Autoscaling\V1Alpha1\Autoscaling $autoscaling
-     *     @type string $status
+     *     @type \Performance\Autoscaling\V1Alpha1\Metadata $metadata
+     *     @type string $origin
      * }
      */
     public function __construct($data = NULL) {
@@ -38,55 +38,55 @@ class AgentGetAutoscalingResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
-     * @return \Performance\Autoscaling\V1Alpha1\Autoscaling|null
+     * Generated from protobuf field <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
+     * @return \Performance\Autoscaling\V1Alpha1\Metadata|null
      */
-    public function getAutoscaling()
+    public function getMetadata()
     {
-        return $this->autoscaling;
+        return $this->metadata;
     }
 
-    public function hasAutoscaling()
+    public function hasMetadata()
     {
-        return isset($this->autoscaling);
+        return isset($this->metadata);
     }
 
-    public function clearAutoscaling()
+    public function clearMetadata()
     {
-        unset($this->autoscaling);
+        unset($this->metadata);
     }
 
     /**
-     * Generated from protobuf field <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
-     * @param \Performance\Autoscaling\V1Alpha1\Autoscaling $var
+     * Generated from protobuf field <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
+     * @param \Performance\Autoscaling\V1Alpha1\Metadata $var
      * @return $this
      */
-    public function setAutoscaling($var)
+    public function setMetadata($var)
     {
-        GPBUtil::checkMessage($var, \Performance\Autoscaling\V1Alpha1\Autoscaling::class);
-        $this->autoscaling = $var;
+        GPBUtil::checkMessage($var, \Performance\Autoscaling\V1Alpha1\Metadata::class);
+        $this->metadata = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string origin = 2 [json_name = "origin"];</code>
      * @return string
      */
-    public function getStatus()
+    public function getOrigin()
     {
-        return $this->status;
+        return $this->origin;
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string origin = 2 [json_name = "origin"];</code>
      * @param string $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setOrigin($var)
     {
         GPBUtil::checkString($var, True);
-        $this->status = $var;
+        $this->origin = $var;
 
         return $this;
     }

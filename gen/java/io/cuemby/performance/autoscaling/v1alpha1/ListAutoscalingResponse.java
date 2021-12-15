@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListAutoscalingResponse() {
     autoscalings_ = java.util.Collections.emptyList();
+    status_ = "";
   }
 
   @java.lang.Override
@@ -57,6 +58,12 @@ private static final long serialVersionUID = 0L;
             }
             autoscalings_.add(
                 input.readMessage(io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.parser(), extensionRegistry));
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            status_ = s;
             break;
           }
           default: {
@@ -134,6 +141,44 @@ private static final long serialVersionUID = 0L;
     return autoscalings_.get(index);
   }
 
+  public static final int STATUS_FIELD_NUMBER = 2;
+  private volatile java.lang.Object status_;
+  /**
+   * <code>string status = 2 [json_name = "status"];</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string status = 2 [json_name = "status"];</code>
+   * @return The bytes for status.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -151,6 +196,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < autoscalings_.size(); i++) {
       output.writeMessage(1, autoscalings_.get(i));
     }
+    if (!getStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -163,6 +211,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < autoscalings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, autoscalings_.get(i));
+    }
+    if (!getStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -181,6 +232,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getAutoscalingsList()
         .equals(other.getAutoscalingsList())) return false;
+    if (!getStatus()
+        .equals(other.getStatus())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -196,6 +249,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + AUTOSCALINGS_FIELD_NUMBER;
       hash = (53 * hash) + getAutoscalingsList().hashCode();
     }
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getStatus().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -336,6 +391,8 @@ private static final long serialVersionUID = 0L;
       } else {
         autoscalingsBuilder_.clear();
       }
+      status_ = "";
+
       return this;
     }
 
@@ -372,6 +429,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.autoscalings_ = autoscalingsBuilder_.build();
       }
+      result.status_ = status_;
       onBuilt();
       return result;
     }
@@ -445,6 +503,10 @@ private static final long serialVersionUID = 0L;
             autoscalingsBuilder_.addAllMessages(other.autoscalings_);
           }
         }
+      }
+      if (!other.getStatus().isEmpty()) {
+        status_ = other.status_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -714,6 +776,82 @@ private static final long serialVersionUID = 0L;
         autoscalings_ = null;
       }
       return autoscalingsBuilder_;
+    }
+
+    private java.lang.Object status_ = "";
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      status_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      
+      status_ = getDefaultInstance().getStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @param value The bytes for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      status_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

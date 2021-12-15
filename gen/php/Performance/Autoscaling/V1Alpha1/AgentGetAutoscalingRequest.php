@@ -14,9 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class AgentGetAutoscalingRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
+     * Generated from protobuf field <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
      */
-    protected $metadata = null;
+    protected $autoscaling = null;
+    /**
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     */
+    protected $status = '';
+    /**
+     * Generated from protobuf field <code>string origin = 3 [json_name = "origin"];</code>
+     */
+    protected $origin = '';
 
     /**
      * Constructor.
@@ -24,7 +32,9 @@ class AgentGetAutoscalingRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Performance\Autoscaling\V1Alpha1\Metadata $metadata
+     *     @type \Performance\Autoscaling\V1Alpha1\Autoscaling $autoscaling
+     *     @type string $status
+     *     @type string $origin
      * }
      */
     public function __construct($data = NULL) {
@@ -33,33 +43,77 @@ class AgentGetAutoscalingRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
-     * @return \Performance\Autoscaling\V1Alpha1\Metadata|null
+     * Generated from protobuf field <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
+     * @return \Performance\Autoscaling\V1Alpha1\Autoscaling|null
      */
-    public function getMetadata()
+    public function getAutoscaling()
     {
-        return $this->metadata;
+        return $this->autoscaling;
     }
 
-    public function hasMetadata()
+    public function hasAutoscaling()
     {
-        return isset($this->metadata);
+        return isset($this->autoscaling);
     }
 
-    public function clearMetadata()
+    public function clearAutoscaling()
     {
-        unset($this->metadata);
+        unset($this->autoscaling);
     }
 
     /**
-     * Generated from protobuf field <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
-     * @param \Performance\Autoscaling\V1Alpha1\Metadata $var
+     * Generated from protobuf field <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
+     * @param \Performance\Autoscaling\V1Alpha1\Autoscaling $var
      * @return $this
      */
-    public function setMetadata($var)
+    public function setAutoscaling($var)
     {
-        GPBUtil::checkMessage($var, \Performance\Autoscaling\V1Alpha1\Metadata::class);
-        $this->metadata = $var;
+        GPBUtil::checkMessage($var, \Performance\Autoscaling\V1Alpha1\Autoscaling::class);
+        $this->autoscaling = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string origin = 3 [json_name = "origin"];</code>
+     * @return string
+     */
+    public function getOrigin()
+    {
+        return $this->origin;
+    }
+
+    /**
+     * Generated from protobuf field <code>string origin = 3 [json_name = "origin"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOrigin($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->origin = $var;
 
         return $this;
     }

@@ -17,6 +17,10 @@ class ListAutoscalingResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 1 [json_name = "autoscalings"];</code>
      */
     private $autoscalings;
+    /**
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     */
+    protected $status = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class ListAutoscalingResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Performance\Autoscaling\V1Alpha1\Autoscaling[]|\Google\Protobuf\Internal\RepeatedField $autoscalings
+     *     @type string $status
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class ListAutoscalingResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Performance\Autoscaling\V1Alpha1\Autoscaling::class);
         $this->autoscalings = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
 
         return $this;
     }

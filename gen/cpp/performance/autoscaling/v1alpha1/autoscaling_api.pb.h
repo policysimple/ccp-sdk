@@ -1620,6 +1620,7 @@ class ListAutoscalingResponse final :
 
   enum : int {
     kAutoscalingsFieldNumber = 1,
+    kStatusFieldNumber = 2,
   };
   // repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 1 [json_name = "autoscalings"];
   int autoscalings_size() const;
@@ -1639,6 +1640,20 @@ class ListAutoscalingResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::autoscaling::v1alpha1::Autoscaling >&
       autoscalings() const;
 
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
   // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.ListAutoscalingResponse)
  private:
   class _Internal;
@@ -1647,6 +1662,7 @@ class ListAutoscalingResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::autoscaling::v1alpha1::Autoscaling > autoscalings_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fapi_2eproto;
 };
@@ -2690,6 +2706,52 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::autoscali
 ListAutoscalingResponse::autoscalings() const {
   // @@protoc_insertion_point(field_list:performance.autoscaling.v1alpha1.ListAutoscalingResponse.autoscalings)
   return autoscalings_;
+}
+
+// string status = 2 [json_name = "status"];
+inline void ListAutoscalingResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& ListAutoscalingResponse::status() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.ListAutoscalingResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListAutoscalingResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.ListAutoscalingResponse.status)
+}
+inline std::string* ListAutoscalingResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.ListAutoscalingResponse.status)
+  return _s;
+}
+inline const std::string& ListAutoscalingResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void ListAutoscalingResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListAutoscalingResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListAutoscalingResponse::release_status() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.ListAutoscalingResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListAutoscalingResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.ListAutoscalingResponse.status)
 }
 
 #ifdef __GNUC__

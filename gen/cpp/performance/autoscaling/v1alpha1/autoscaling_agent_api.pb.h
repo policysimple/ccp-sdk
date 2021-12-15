@@ -108,154 +108,6 @@ namespace v1alpha1 {
 
 // ===================================================================
 
-class AgentCreateAutoscalingRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest) */ {
- public:
-  inline AgentCreateAutoscalingRequest() : AgentCreateAutoscalingRequest(nullptr) {}
-  ~AgentCreateAutoscalingRequest() override;
-  explicit constexpr AgentCreateAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  AgentCreateAutoscalingRequest(const AgentCreateAutoscalingRequest& from);
-  AgentCreateAutoscalingRequest(AgentCreateAutoscalingRequest&& from) noexcept
-    : AgentCreateAutoscalingRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline AgentCreateAutoscalingRequest& operator=(const AgentCreateAutoscalingRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline AgentCreateAutoscalingRequest& operator=(AgentCreateAutoscalingRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const AgentCreateAutoscalingRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const AgentCreateAutoscalingRequest* internal_default_instance() {
-    return reinterpret_cast<const AgentCreateAutoscalingRequest*>(
-               &_AgentCreateAutoscalingRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    0;
-
-  friend void swap(AgentCreateAutoscalingRequest& a, AgentCreateAutoscalingRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(AgentCreateAutoscalingRequest* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(AgentCreateAutoscalingRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline AgentCreateAutoscalingRequest* New() const final {
-    return new AgentCreateAutoscalingRequest();
-  }
-
-  AgentCreateAutoscalingRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<AgentCreateAutoscalingRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AgentCreateAutoscalingRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AgentCreateAutoscalingRequest& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(AgentCreateAutoscalingRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest";
-  }
-  protected:
-  explicit AgentCreateAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kAutoscalingFieldNumber = 1,
-  };
-  // .performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];
-  bool has_autoscaling() const;
-  private:
-  bool _internal_has_autoscaling() const;
-  public:
-  void clear_autoscaling();
-  const ::performance::autoscaling::v1alpha1::Autoscaling& autoscaling() const;
-  PROTOBUF_MUST_USE_RESULT ::performance::autoscaling::v1alpha1::Autoscaling* release_autoscaling();
-  ::performance::autoscaling::v1alpha1::Autoscaling* mutable_autoscaling();
-  void set_allocated_autoscaling(::performance::autoscaling::v1alpha1::Autoscaling* autoscaling);
-  private:
-  const ::performance::autoscaling::v1alpha1::Autoscaling& _internal_autoscaling() const;
-  ::performance::autoscaling::v1alpha1::Autoscaling* _internal_mutable_autoscaling();
-  public:
-  void unsafe_arena_set_allocated_autoscaling(
-      ::performance::autoscaling::v1alpha1::Autoscaling* autoscaling);
-  ::performance::autoscaling::v1alpha1::Autoscaling* unsafe_arena_release_autoscaling();
-
-  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::performance::autoscaling::v1alpha1::Autoscaling* autoscaling_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto;
-};
-// -------------------------------------------------------------------
-
 class AgentCreateAutoscalingResponse final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse) */ {
  public:
@@ -300,7 +152,7 @@ class AgentCreateAutoscalingResponse final :
                &_AgentCreateAutoscalingResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    0;
 
   friend void swap(AgentCreateAutoscalingResponse& a, AgentCreateAutoscalingResponse& b) {
     a.Swap(&b);
@@ -371,21 +223,21 @@ class AgentCreateAutoscalingResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 2,
+    kOriginFieldNumber = 2,
     kAutoscalingFieldNumber = 1,
   };
-  // string status = 2 [json_name = "status"];
-  void clear_status();
-  const std::string& status() const;
+  // string origin = 2 [json_name = "origin"];
+  void clear_origin();
+  const std::string& origin() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_status();
-  void set_allocated_status(std::string* status);
+  void set_origin(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_origin();
+  PROTOBUF_MUST_USE_RESULT std::string* release_origin();
+  void set_allocated_origin(std::string* origin);
   private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
+  const std::string& _internal_origin() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_origin(const std::string& value);
+  std::string* _internal_mutable_origin();
   public:
 
   // .performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];
@@ -413,31 +265,31 @@ class AgentCreateAutoscalingResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr origin_;
   ::performance::autoscaling::v1alpha1::Autoscaling* autoscaling_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto;
 };
 // -------------------------------------------------------------------
 
-class AgentUpdateAutoscalingRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest) */ {
+class AgentCreateAutoscalingRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest) */ {
  public:
-  inline AgentUpdateAutoscalingRequest() : AgentUpdateAutoscalingRequest(nullptr) {}
-  ~AgentUpdateAutoscalingRequest() override;
-  explicit constexpr AgentUpdateAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline AgentCreateAutoscalingRequest() : AgentCreateAutoscalingRequest(nullptr) {}
+  ~AgentCreateAutoscalingRequest() override;
+  explicit constexpr AgentCreateAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  AgentUpdateAutoscalingRequest(const AgentUpdateAutoscalingRequest& from);
-  AgentUpdateAutoscalingRequest(AgentUpdateAutoscalingRequest&& from) noexcept
-    : AgentUpdateAutoscalingRequest() {
+  AgentCreateAutoscalingRequest(const AgentCreateAutoscalingRequest& from);
+  AgentCreateAutoscalingRequest(AgentCreateAutoscalingRequest&& from) noexcept
+    : AgentCreateAutoscalingRequest() {
     *this = ::std::move(from);
   }
 
-  inline AgentUpdateAutoscalingRequest& operator=(const AgentUpdateAutoscalingRequest& from) {
+  inline AgentCreateAutoscalingRequest& operator=(const AgentCreateAutoscalingRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AgentUpdateAutoscalingRequest& operator=(AgentUpdateAutoscalingRequest&& from) noexcept {
+  inline AgentCreateAutoscalingRequest& operator=(AgentCreateAutoscalingRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -456,20 +308,20 @@ class AgentUpdateAutoscalingRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const AgentUpdateAutoscalingRequest& default_instance() {
+  static const AgentCreateAutoscalingRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const AgentUpdateAutoscalingRequest* internal_default_instance() {
-    return reinterpret_cast<const AgentUpdateAutoscalingRequest*>(
-               &_AgentUpdateAutoscalingRequest_default_instance_);
+  static inline const AgentCreateAutoscalingRequest* internal_default_instance() {
+    return reinterpret_cast<const AgentCreateAutoscalingRequest*>(
+               &_AgentCreateAutoscalingRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    1;
 
-  friend void swap(AgentUpdateAutoscalingRequest& a, AgentUpdateAutoscalingRequest& b) {
+  friend void swap(AgentCreateAutoscalingRequest& a, AgentCreateAutoscalingRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(AgentUpdateAutoscalingRequest* other) {
+  inline void Swap(AgentCreateAutoscalingRequest* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -477,7 +329,7 @@ class AgentUpdateAutoscalingRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AgentUpdateAutoscalingRequest* other) {
+  void UnsafeArenaSwap(AgentCreateAutoscalingRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -485,17 +337,17 @@ class AgentUpdateAutoscalingRequest final :
 
   // implements Message ----------------------------------------------
 
-  inline AgentUpdateAutoscalingRequest* New() const final {
-    return new AgentUpdateAutoscalingRequest();
+  inline AgentCreateAutoscalingRequest* New() const final {
+    return new AgentCreateAutoscalingRequest();
   }
 
-  AgentUpdateAutoscalingRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<AgentUpdateAutoscalingRequest>(arena);
+  AgentCreateAutoscalingRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AgentCreateAutoscalingRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AgentUpdateAutoscalingRequest& from);
+  void CopyFrom(const AgentCreateAutoscalingRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AgentUpdateAutoscalingRequest& from);
+  void MergeFrom(const AgentCreateAutoscalingRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -512,13 +364,13 @@ class AgentUpdateAutoscalingRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AgentUpdateAutoscalingRequest* other);
+  void InternalSwap(AgentCreateAutoscalingRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest";
+    return "performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest";
   }
   protected:
-  explicit AgentUpdateAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit AgentCreateAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -535,8 +387,38 @@ class AgentUpdateAutoscalingRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kStatusFieldNumber = 2,
+    kOriginFieldNumber = 3,
     kAutoscalingFieldNumber = 1,
   };
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // string origin = 3 [json_name = "origin"];
+  void clear_origin();
+  const std::string& origin() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_origin(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_origin();
+  PROTOBUF_MUST_USE_RESULT std::string* release_origin();
+  void set_allocated_origin(std::string* origin);
+  private:
+  const std::string& _internal_origin() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_origin(const std::string& value);
+  std::string* _internal_mutable_origin();
+  public:
+
   // .performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];
   bool has_autoscaling() const;
   private:
@@ -555,13 +437,15 @@ class AgentUpdateAutoscalingRequest final :
       ::performance::autoscaling::v1alpha1::Autoscaling* autoscaling);
   ::performance::autoscaling::v1alpha1::Autoscaling* unsafe_arena_release_autoscaling();
 
-  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest)
+  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr origin_;
   ::performance::autoscaling::v1alpha1::Autoscaling* autoscaling_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto;
@@ -612,7 +496,7 @@ class AgentUpdateAutoscalingResponse final :
                &_AgentUpdateAutoscalingResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    2;
 
   friend void swap(AgentUpdateAutoscalingResponse& a, AgentUpdateAutoscalingResponse& b) {
     a.Swap(&b);
@@ -683,21 +567,21 @@ class AgentUpdateAutoscalingResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 2,
+    kOriginFieldNumber = 2,
     kAutoscalingFieldNumber = 1,
   };
-  // string status = 2 [json_name = "status"];
-  void clear_status();
-  const std::string& status() const;
+  // string origin = 2 [json_name = "origin"];
+  void clear_origin();
+  const std::string& origin() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_status();
-  void set_allocated_status(std::string* status);
+  void set_origin(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_origin();
+  PROTOBUF_MUST_USE_RESULT std::string* release_origin();
+  void set_allocated_origin(std::string* origin);
   private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
+  const std::string& _internal_origin() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_origin(const std::string& value);
+  std::string* _internal_mutable_origin();
   public:
 
   // .performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];
@@ -725,31 +609,31 @@ class AgentUpdateAutoscalingResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr origin_;
   ::performance::autoscaling::v1alpha1::Autoscaling* autoscaling_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto;
 };
 // -------------------------------------------------------------------
 
-class AgentDeleteAutoscalingRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest) */ {
+class AgentUpdateAutoscalingRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest) */ {
  public:
-  inline AgentDeleteAutoscalingRequest() : AgentDeleteAutoscalingRequest(nullptr) {}
-  ~AgentDeleteAutoscalingRequest() override;
-  explicit constexpr AgentDeleteAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline AgentUpdateAutoscalingRequest() : AgentUpdateAutoscalingRequest(nullptr) {}
+  ~AgentUpdateAutoscalingRequest() override;
+  explicit constexpr AgentUpdateAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  AgentDeleteAutoscalingRequest(const AgentDeleteAutoscalingRequest& from);
-  AgentDeleteAutoscalingRequest(AgentDeleteAutoscalingRequest&& from) noexcept
-    : AgentDeleteAutoscalingRequest() {
+  AgentUpdateAutoscalingRequest(const AgentUpdateAutoscalingRequest& from);
+  AgentUpdateAutoscalingRequest(AgentUpdateAutoscalingRequest&& from) noexcept
+    : AgentUpdateAutoscalingRequest() {
     *this = ::std::move(from);
   }
 
-  inline AgentDeleteAutoscalingRequest& operator=(const AgentDeleteAutoscalingRequest& from) {
+  inline AgentUpdateAutoscalingRequest& operator=(const AgentUpdateAutoscalingRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AgentDeleteAutoscalingRequest& operator=(AgentDeleteAutoscalingRequest&& from) noexcept {
+  inline AgentUpdateAutoscalingRequest& operator=(AgentUpdateAutoscalingRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -768,20 +652,20 @@ class AgentDeleteAutoscalingRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const AgentDeleteAutoscalingRequest& default_instance() {
+  static const AgentUpdateAutoscalingRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const AgentDeleteAutoscalingRequest* internal_default_instance() {
-    return reinterpret_cast<const AgentDeleteAutoscalingRequest*>(
-               &_AgentDeleteAutoscalingRequest_default_instance_);
+  static inline const AgentUpdateAutoscalingRequest* internal_default_instance() {
+    return reinterpret_cast<const AgentUpdateAutoscalingRequest*>(
+               &_AgentUpdateAutoscalingRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
-  friend void swap(AgentDeleteAutoscalingRequest& a, AgentDeleteAutoscalingRequest& b) {
+  friend void swap(AgentUpdateAutoscalingRequest& a, AgentUpdateAutoscalingRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(AgentDeleteAutoscalingRequest* other) {
+  inline void Swap(AgentUpdateAutoscalingRequest* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -789,7 +673,7 @@ class AgentDeleteAutoscalingRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AgentDeleteAutoscalingRequest* other) {
+  void UnsafeArenaSwap(AgentUpdateAutoscalingRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -797,17 +681,17 @@ class AgentDeleteAutoscalingRequest final :
 
   // implements Message ----------------------------------------------
 
-  inline AgentDeleteAutoscalingRequest* New() const final {
-    return new AgentDeleteAutoscalingRequest();
+  inline AgentUpdateAutoscalingRequest* New() const final {
+    return new AgentUpdateAutoscalingRequest();
   }
 
-  AgentDeleteAutoscalingRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<AgentDeleteAutoscalingRequest>(arena);
+  AgentUpdateAutoscalingRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AgentUpdateAutoscalingRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AgentDeleteAutoscalingRequest& from);
+  void CopyFrom(const AgentUpdateAutoscalingRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AgentDeleteAutoscalingRequest& from);
+  void MergeFrom(const AgentUpdateAutoscalingRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -824,13 +708,13 @@ class AgentDeleteAutoscalingRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AgentDeleteAutoscalingRequest* other);
+  void InternalSwap(AgentUpdateAutoscalingRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest";
+    return "performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest";
   }
   protected:
-  explicit AgentDeleteAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit AgentUpdateAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -847,34 +731,66 @@ class AgentDeleteAutoscalingRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMetadataFieldNumber = 1,
+    kStatusFieldNumber = 2,
+    kOriginFieldNumber = 3,
+    kAutoscalingFieldNumber = 1,
   };
-  // .performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
-  bool has_metadata() const;
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
   private:
-  bool _internal_has_metadata() const;
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
   public:
-  void clear_metadata();
-  const ::performance::autoscaling::v1alpha1::Metadata& metadata() const;
-  PROTOBUF_MUST_USE_RESULT ::performance::autoscaling::v1alpha1::Metadata* release_metadata();
-  ::performance::autoscaling::v1alpha1::Metadata* mutable_metadata();
-  void set_allocated_metadata(::performance::autoscaling::v1alpha1::Metadata* metadata);
-  private:
-  const ::performance::autoscaling::v1alpha1::Metadata& _internal_metadata() const;
-  ::performance::autoscaling::v1alpha1::Metadata* _internal_mutable_metadata();
-  public:
-  void unsafe_arena_set_allocated_metadata(
-      ::performance::autoscaling::v1alpha1::Metadata* metadata);
-  ::performance::autoscaling::v1alpha1::Metadata* unsafe_arena_release_metadata();
 
-  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest)
+  // string origin = 3 [json_name = "origin"];
+  void clear_origin();
+  const std::string& origin() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_origin(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_origin();
+  PROTOBUF_MUST_USE_RESULT std::string* release_origin();
+  void set_allocated_origin(std::string* origin);
+  private:
+  const std::string& _internal_origin() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_origin(const std::string& value);
+  std::string* _internal_mutable_origin();
+  public:
+
+  // .performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];
+  bool has_autoscaling() const;
+  private:
+  bool _internal_has_autoscaling() const;
+  public:
+  void clear_autoscaling();
+  const ::performance::autoscaling::v1alpha1::Autoscaling& autoscaling() const;
+  PROTOBUF_MUST_USE_RESULT ::performance::autoscaling::v1alpha1::Autoscaling* release_autoscaling();
+  ::performance::autoscaling::v1alpha1::Autoscaling* mutable_autoscaling();
+  void set_allocated_autoscaling(::performance::autoscaling::v1alpha1::Autoscaling* autoscaling);
+  private:
+  const ::performance::autoscaling::v1alpha1::Autoscaling& _internal_autoscaling() const;
+  ::performance::autoscaling::v1alpha1::Autoscaling* _internal_mutable_autoscaling();
+  public:
+  void unsafe_arena_set_allocated_autoscaling(
+      ::performance::autoscaling::v1alpha1::Autoscaling* autoscaling);
+  ::performance::autoscaling::v1alpha1::Autoscaling* unsafe_arena_release_autoscaling();
+
+  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::performance::autoscaling::v1alpha1::Metadata* metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr origin_;
+  ::performance::autoscaling::v1alpha1::Autoscaling* autoscaling_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto;
 };
@@ -924,7 +840,7 @@ class AgentDeleteAutoscalingResponse final :
                &_AgentDeleteAutoscalingResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    4;
 
   friend void swap(AgentDeleteAutoscalingResponse& a, AgentDeleteAutoscalingResponse& b) {
     a.Swap(&b);
@@ -995,6 +911,170 @@ class AgentDeleteAutoscalingResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kOriginFieldNumber = 2,
+    kMetadataFieldNumber = 1,
+  };
+  // string origin = 2 [json_name = "origin"];
+  void clear_origin();
+  const std::string& origin() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_origin(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_origin();
+  PROTOBUF_MUST_USE_RESULT std::string* release_origin();
+  void set_allocated_origin(std::string* origin);
+  private:
+  const std::string& _internal_origin() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_origin(const std::string& value);
+  std::string* _internal_mutable_origin();
+  public:
+
+  // .performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
+  bool has_metadata() const;
+  private:
+  bool _internal_has_metadata() const;
+  public:
+  void clear_metadata();
+  const ::performance::autoscaling::v1alpha1::Metadata& metadata() const;
+  PROTOBUF_MUST_USE_RESULT ::performance::autoscaling::v1alpha1::Metadata* release_metadata();
+  ::performance::autoscaling::v1alpha1::Metadata* mutable_metadata();
+  void set_allocated_metadata(::performance::autoscaling::v1alpha1::Metadata* metadata);
+  private:
+  const ::performance::autoscaling::v1alpha1::Metadata& _internal_metadata() const;
+  ::performance::autoscaling::v1alpha1::Metadata* _internal_mutable_metadata();
+  public:
+  void unsafe_arena_set_allocated_metadata(
+      ::performance::autoscaling::v1alpha1::Metadata* metadata);
+  ::performance::autoscaling::v1alpha1::Metadata* unsafe_arena_release_metadata();
+
+  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr origin_;
+  ::performance::autoscaling::v1alpha1::Metadata* metadata_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AgentDeleteAutoscalingRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest) */ {
+ public:
+  inline AgentDeleteAutoscalingRequest() : AgentDeleteAutoscalingRequest(nullptr) {}
+  ~AgentDeleteAutoscalingRequest() override;
+  explicit constexpr AgentDeleteAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AgentDeleteAutoscalingRequest(const AgentDeleteAutoscalingRequest& from);
+  AgentDeleteAutoscalingRequest(AgentDeleteAutoscalingRequest&& from) noexcept
+    : AgentDeleteAutoscalingRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AgentDeleteAutoscalingRequest& operator=(const AgentDeleteAutoscalingRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AgentDeleteAutoscalingRequest& operator=(AgentDeleteAutoscalingRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AgentDeleteAutoscalingRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AgentDeleteAutoscalingRequest* internal_default_instance() {
+    return reinterpret_cast<const AgentDeleteAutoscalingRequest*>(
+               &_AgentDeleteAutoscalingRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(AgentDeleteAutoscalingRequest& a, AgentDeleteAutoscalingRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AgentDeleteAutoscalingRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AgentDeleteAutoscalingRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AgentDeleteAutoscalingRequest* New() const final {
+    return new AgentDeleteAutoscalingRequest();
+  }
+
+  AgentDeleteAutoscalingRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AgentDeleteAutoscalingRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AgentDeleteAutoscalingRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const AgentDeleteAutoscalingRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AgentDeleteAutoscalingRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest";
+  }
+  protected:
+  explicit AgentDeleteAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
     kStatusFieldNumber = 2,
     kMetadataFieldNumber = 1,
   };
@@ -1030,7 +1110,7 @@ class AgentDeleteAutoscalingResponse final :
       ::performance::autoscaling::v1alpha1::Metadata* metadata);
   ::performance::autoscaling::v1alpha1::Metadata* unsafe_arena_release_metadata();
 
-  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse)
+  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest)
  private:
   class _Internal;
 
@@ -1038,154 +1118,6 @@ class AgentDeleteAutoscalingResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
-  ::performance::autoscaling::v1alpha1::Metadata* metadata_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto;
-};
-// -------------------------------------------------------------------
-
-class AgentGetAutoscalingRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest) */ {
- public:
-  inline AgentGetAutoscalingRequest() : AgentGetAutoscalingRequest(nullptr) {}
-  ~AgentGetAutoscalingRequest() override;
-  explicit constexpr AgentGetAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  AgentGetAutoscalingRequest(const AgentGetAutoscalingRequest& from);
-  AgentGetAutoscalingRequest(AgentGetAutoscalingRequest&& from) noexcept
-    : AgentGetAutoscalingRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline AgentGetAutoscalingRequest& operator=(const AgentGetAutoscalingRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline AgentGetAutoscalingRequest& operator=(AgentGetAutoscalingRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const AgentGetAutoscalingRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const AgentGetAutoscalingRequest* internal_default_instance() {
-    return reinterpret_cast<const AgentGetAutoscalingRequest*>(
-               &_AgentGetAutoscalingRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    6;
-
-  friend void swap(AgentGetAutoscalingRequest& a, AgentGetAutoscalingRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(AgentGetAutoscalingRequest* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(AgentGetAutoscalingRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline AgentGetAutoscalingRequest* New() const final {
-    return new AgentGetAutoscalingRequest();
-  }
-
-  AgentGetAutoscalingRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<AgentGetAutoscalingRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AgentGetAutoscalingRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AgentGetAutoscalingRequest& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(AgentGetAutoscalingRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest";
-  }
-  protected:
-  explicit AgentGetAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kMetadataFieldNumber = 1,
-  };
-  // .performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
-  bool has_metadata() const;
-  private:
-  bool _internal_has_metadata() const;
-  public:
-  void clear_metadata();
-  const ::performance::autoscaling::v1alpha1::Metadata& metadata() const;
-  PROTOBUF_MUST_USE_RESULT ::performance::autoscaling::v1alpha1::Metadata* release_metadata();
-  ::performance::autoscaling::v1alpha1::Metadata* mutable_metadata();
-  void set_allocated_metadata(::performance::autoscaling::v1alpha1::Metadata* metadata);
-  private:
-  const ::performance::autoscaling::v1alpha1::Metadata& _internal_metadata() const;
-  ::performance::autoscaling::v1alpha1::Metadata* _internal_mutable_metadata();
-  public:
-  void unsafe_arena_set_allocated_metadata(
-      ::performance::autoscaling::v1alpha1::Metadata* metadata);
-  ::performance::autoscaling::v1alpha1::Metadata* unsafe_arena_release_metadata();
-
-  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
   ::performance::autoscaling::v1alpha1::Metadata* metadata_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto;
@@ -1236,7 +1168,7 @@ class AgentGetAutoscalingResponse final :
                &_AgentGetAutoscalingResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   friend void swap(AgentGetAutoscalingResponse& a, AgentGetAutoscalingResponse& b) {
     a.Swap(&b);
@@ -1307,7 +1239,172 @@ class AgentGetAutoscalingResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kOriginFieldNumber = 2,
+    kMetadataFieldNumber = 1,
+  };
+  // string origin = 2 [json_name = "origin"];
+  void clear_origin();
+  const std::string& origin() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_origin(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_origin();
+  PROTOBUF_MUST_USE_RESULT std::string* release_origin();
+  void set_allocated_origin(std::string* origin);
+  private:
+  const std::string& _internal_origin() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_origin(const std::string& value);
+  std::string* _internal_mutable_origin();
+  public:
+
+  // .performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
+  bool has_metadata() const;
+  private:
+  bool _internal_has_metadata() const;
+  public:
+  void clear_metadata();
+  const ::performance::autoscaling::v1alpha1::Metadata& metadata() const;
+  PROTOBUF_MUST_USE_RESULT ::performance::autoscaling::v1alpha1::Metadata* release_metadata();
+  ::performance::autoscaling::v1alpha1::Metadata* mutable_metadata();
+  void set_allocated_metadata(::performance::autoscaling::v1alpha1::Metadata* metadata);
+  private:
+  const ::performance::autoscaling::v1alpha1::Metadata& _internal_metadata() const;
+  ::performance::autoscaling::v1alpha1::Metadata* _internal_mutable_metadata();
+  public:
+  void unsafe_arena_set_allocated_metadata(
+      ::performance::autoscaling::v1alpha1::Metadata* metadata);
+  ::performance::autoscaling::v1alpha1::Metadata* unsafe_arena_release_metadata();
+
+  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr origin_;
+  ::performance::autoscaling::v1alpha1::Metadata* metadata_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AgentGetAutoscalingRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest) */ {
+ public:
+  inline AgentGetAutoscalingRequest() : AgentGetAutoscalingRequest(nullptr) {}
+  ~AgentGetAutoscalingRequest() override;
+  explicit constexpr AgentGetAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AgentGetAutoscalingRequest(const AgentGetAutoscalingRequest& from);
+  AgentGetAutoscalingRequest(AgentGetAutoscalingRequest&& from) noexcept
+    : AgentGetAutoscalingRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AgentGetAutoscalingRequest& operator=(const AgentGetAutoscalingRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AgentGetAutoscalingRequest& operator=(AgentGetAutoscalingRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AgentGetAutoscalingRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AgentGetAutoscalingRequest* internal_default_instance() {
+    return reinterpret_cast<const AgentGetAutoscalingRequest*>(
+               &_AgentGetAutoscalingRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(AgentGetAutoscalingRequest& a, AgentGetAutoscalingRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AgentGetAutoscalingRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AgentGetAutoscalingRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AgentGetAutoscalingRequest* New() const final {
+    return new AgentGetAutoscalingRequest();
+  }
+
+  AgentGetAutoscalingRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AgentGetAutoscalingRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AgentGetAutoscalingRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const AgentGetAutoscalingRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AgentGetAutoscalingRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest";
+  }
+  protected:
+  explicit AgentGetAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
     kStatusFieldNumber = 2,
+    kOriginFieldNumber = 3,
     kAutoscalingFieldNumber = 1,
   };
   // string status = 2 [json_name = "status"];
@@ -1322,6 +1419,20 @@ class AgentGetAutoscalingResponse final :
   const std::string& _internal_status() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
   std::string* _internal_mutable_status();
+  public:
+
+  // string origin = 3 [json_name = "origin"];
+  void clear_origin();
+  const std::string& origin() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_origin(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_origin();
+  PROTOBUF_MUST_USE_RESULT std::string* release_origin();
+  void set_allocated_origin(std::string* origin);
+  private:
+  const std::string& _internal_origin() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_origin(const std::string& value);
+  std::string* _internal_mutable_origin();
   public:
 
   // .performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];
@@ -1342,7 +1453,7 @@ class AgentGetAutoscalingResponse final :
       ::performance::autoscaling::v1alpha1::Autoscaling* autoscaling);
   ::performance::autoscaling::v1alpha1::Autoscaling* unsafe_arena_release_autoscaling();
 
-  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse)
+  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest)
  private:
   class _Internal;
 
@@ -1350,155 +1461,8 @@ class AgentGetAutoscalingResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr origin_;
   ::performance::autoscaling::v1alpha1::Autoscaling* autoscaling_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto;
-};
-// -------------------------------------------------------------------
-
-class AgentListAutoscalingRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest) */ {
- public:
-  inline AgentListAutoscalingRequest() : AgentListAutoscalingRequest(nullptr) {}
-  ~AgentListAutoscalingRequest() override;
-  explicit constexpr AgentListAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  AgentListAutoscalingRequest(const AgentListAutoscalingRequest& from);
-  AgentListAutoscalingRequest(AgentListAutoscalingRequest&& from) noexcept
-    : AgentListAutoscalingRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline AgentListAutoscalingRequest& operator=(const AgentListAutoscalingRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline AgentListAutoscalingRequest& operator=(AgentListAutoscalingRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const AgentListAutoscalingRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const AgentListAutoscalingRequest* internal_default_instance() {
-    return reinterpret_cast<const AgentListAutoscalingRequest*>(
-               &_AgentListAutoscalingRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    8;
-
-  friend void swap(AgentListAutoscalingRequest& a, AgentListAutoscalingRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(AgentListAutoscalingRequest* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(AgentListAutoscalingRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline AgentListAutoscalingRequest* New() const final {
-    return new AgentListAutoscalingRequest();
-  }
-
-  AgentListAutoscalingRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<AgentListAutoscalingRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AgentListAutoscalingRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AgentListAutoscalingRequest& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(AgentListAutoscalingRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "performance.autoscaling.v1alpha1.AgentListAutoscalingRequest";
-  }
-  protected:
-  explicit AgentListAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kMetadataFieldNumber = 1,
-  };
-  // .performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
-  bool has_metadata() const;
-  private:
-  bool _internal_has_metadata() const;
-  public:
-  void clear_metadata();
-  const ::performance::autoscaling::v1alpha1::Metadata& metadata() const;
-  PROTOBUF_MUST_USE_RESULT ::performance::autoscaling::v1alpha1::Metadata* release_metadata();
-  ::performance::autoscaling::v1alpha1::Metadata* mutable_metadata();
-  void set_allocated_metadata(::performance::autoscaling::v1alpha1::Metadata* metadata);
-  private:
-  const ::performance::autoscaling::v1alpha1::Metadata& _internal_metadata() const;
-  ::performance::autoscaling::v1alpha1::Metadata* _internal_mutable_metadata();
-  public:
-  void unsafe_arena_set_allocated_metadata(
-      ::performance::autoscaling::v1alpha1::Metadata* metadata);
-  ::performance::autoscaling::v1alpha1::Metadata* unsafe_arena_release_metadata();
-
-  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::performance::autoscaling::v1alpha1::Metadata* metadata_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto;
 };
@@ -1548,7 +1512,7 @@ class AgentListAutoscalingResponse final :
                &_AgentListAutoscalingResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    8;
 
   friend void swap(AgentListAutoscalingResponse& a, AgentListAutoscalingResponse& b) {
     a.Swap(&b);
@@ -1619,7 +1583,210 @@ class AgentListAutoscalingResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kAutoscalingsFieldNumber = 3,
+    kOriginFieldNumber = 2,
+    kStatusFieldNumber = 4,
+    kMetadataFieldNumber = 1,
+  };
+  // repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];
+  int autoscalings_size() const;
+  private:
+  int _internal_autoscalings_size() const;
+  public:
+  void clear_autoscalings();
+  ::performance::autoscaling::v1alpha1::Autoscaling* mutable_autoscalings(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::autoscaling::v1alpha1::Autoscaling >*
+      mutable_autoscalings();
+  private:
+  const ::performance::autoscaling::v1alpha1::Autoscaling& _internal_autoscalings(int index) const;
+  ::performance::autoscaling::v1alpha1::Autoscaling* _internal_add_autoscalings();
+  public:
+  const ::performance::autoscaling::v1alpha1::Autoscaling& autoscalings(int index) const;
+  ::performance::autoscaling::v1alpha1::Autoscaling* add_autoscalings();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::autoscaling::v1alpha1::Autoscaling >&
+      autoscalings() const;
+
+  // string origin = 2 [json_name = "origin"];
+  void clear_origin();
+  const std::string& origin() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_origin(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_origin();
+  PROTOBUF_MUST_USE_RESULT std::string* release_origin();
+  void set_allocated_origin(std::string* origin);
+  private:
+  const std::string& _internal_origin() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_origin(const std::string& value);
+  std::string* _internal_mutable_origin();
+  public:
+
+  // string status = 4 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // .performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
+  bool has_metadata() const;
+  private:
+  bool _internal_has_metadata() const;
+  public:
+  void clear_metadata();
+  const ::performance::autoscaling::v1alpha1::Metadata& metadata() const;
+  PROTOBUF_MUST_USE_RESULT ::performance::autoscaling::v1alpha1::Metadata* release_metadata();
+  ::performance::autoscaling::v1alpha1::Metadata* mutable_metadata();
+  void set_allocated_metadata(::performance::autoscaling::v1alpha1::Metadata* metadata);
+  private:
+  const ::performance::autoscaling::v1alpha1::Metadata& _internal_metadata() const;
+  ::performance::autoscaling::v1alpha1::Metadata* _internal_mutable_metadata();
+  public:
+  void unsafe_arena_set_allocated_metadata(
+      ::performance::autoscaling::v1alpha1::Metadata* metadata);
+  ::performance::autoscaling::v1alpha1::Metadata* unsafe_arena_release_metadata();
+
+  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::autoscaling::v1alpha1::Autoscaling > autoscalings_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr origin_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::performance::autoscaling::v1alpha1::Metadata* metadata_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AgentListAutoscalingRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest) */ {
+ public:
+  inline AgentListAutoscalingRequest() : AgentListAutoscalingRequest(nullptr) {}
+  ~AgentListAutoscalingRequest() override;
+  explicit constexpr AgentListAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AgentListAutoscalingRequest(const AgentListAutoscalingRequest& from);
+  AgentListAutoscalingRequest(AgentListAutoscalingRequest&& from) noexcept
+    : AgentListAutoscalingRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AgentListAutoscalingRequest& operator=(const AgentListAutoscalingRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AgentListAutoscalingRequest& operator=(AgentListAutoscalingRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AgentListAutoscalingRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AgentListAutoscalingRequest* internal_default_instance() {
+    return reinterpret_cast<const AgentListAutoscalingRequest*>(
+               &_AgentListAutoscalingRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(AgentListAutoscalingRequest& a, AgentListAutoscalingRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AgentListAutoscalingRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AgentListAutoscalingRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AgentListAutoscalingRequest* New() const final {
+    return new AgentListAutoscalingRequest();
+  }
+
+  AgentListAutoscalingRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AgentListAutoscalingRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AgentListAutoscalingRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const AgentListAutoscalingRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AgentListAutoscalingRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "performance.autoscaling.v1alpha1.AgentListAutoscalingRequest";
+  }
+  protected:
+  explicit AgentListAutoscalingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
     kAutoscalingsFieldNumber = 1,
+    kOriginFieldNumber = 2,
+    kStatusFieldNumber = 4,
+    kMetadataFieldNumber = 3,
   };
   // repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 1 [json_name = "autoscalings"];
   int autoscalings_size() const;
@@ -1639,7 +1806,53 @@ class AgentListAutoscalingResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::autoscaling::v1alpha1::Autoscaling >&
       autoscalings() const;
 
-  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse)
+  // string origin = 2 [json_name = "origin"];
+  void clear_origin();
+  const std::string& origin() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_origin(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_origin();
+  PROTOBUF_MUST_USE_RESULT std::string* release_origin();
+  void set_allocated_origin(std::string* origin);
+  private:
+  const std::string& _internal_origin() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_origin(const std::string& value);
+  std::string* _internal_mutable_origin();
+  public:
+
+  // string status = 4 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // .performance.autoscaling.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];
+  bool has_metadata() const;
+  private:
+  bool _internal_has_metadata() const;
+  public:
+  void clear_metadata();
+  const ::performance::autoscaling::v1alpha1::Metadata& metadata() const;
+  PROTOBUF_MUST_USE_RESULT ::performance::autoscaling::v1alpha1::Metadata* release_metadata();
+  ::performance::autoscaling::v1alpha1::Metadata* mutable_metadata();
+  void set_allocated_metadata(::performance::autoscaling::v1alpha1::Metadata* metadata);
+  private:
+  const ::performance::autoscaling::v1alpha1::Metadata& _internal_metadata() const;
+  ::performance::autoscaling::v1alpha1::Metadata* _internal_mutable_metadata();
+  public:
+  void unsafe_arena_set_allocated_metadata(
+      ::performance::autoscaling::v1alpha1::Metadata* metadata);
+  ::performance::autoscaling::v1alpha1::Metadata* unsafe_arena_release_metadata();
+
+  // @@protoc_insertion_point(class_scope:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest)
  private:
   class _Internal;
 
@@ -1647,6 +1860,9 @@ class AgentListAutoscalingResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::autoscaling::v1alpha1::Autoscaling > autoscalings_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr origin_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::performance::autoscaling::v1alpha1::Metadata* metadata_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fagent_5fapi_2eproto;
 };
@@ -1659,96 +1875,6 @@ class AgentListAutoscalingResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// AgentCreateAutoscalingRequest
-
-// .performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];
-inline bool AgentCreateAutoscalingRequest::_internal_has_autoscaling() const {
-  return this != internal_default_instance() && autoscaling_ != nullptr;
-}
-inline bool AgentCreateAutoscalingRequest::has_autoscaling() const {
-  return _internal_has_autoscaling();
-}
-inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentCreateAutoscalingRequest::_internal_autoscaling() const {
-  const ::performance::autoscaling::v1alpha1::Autoscaling* p = autoscaling_;
-  return p != nullptr ? *p : reinterpret_cast<const ::performance::autoscaling::v1alpha1::Autoscaling&>(
-      ::performance::autoscaling::v1alpha1::_Autoscaling_default_instance_);
-}
-inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentCreateAutoscalingRequest::autoscaling() const {
-  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.autoscaling)
-  return _internal_autoscaling();
-}
-inline void AgentCreateAutoscalingRequest::unsafe_arena_set_allocated_autoscaling(
-    ::performance::autoscaling::v1alpha1::Autoscaling* autoscaling) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(autoscaling_);
-  }
-  autoscaling_ = autoscaling;
-  if (autoscaling) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.autoscaling)
-}
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentCreateAutoscalingRequest::release_autoscaling() {
-  
-  ::performance::autoscaling::v1alpha1::Autoscaling* temp = autoscaling_;
-  autoscaling_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentCreateAutoscalingRequest::unsafe_arena_release_autoscaling() {
-  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.autoscaling)
-  
-  ::performance::autoscaling::v1alpha1::Autoscaling* temp = autoscaling_;
-  autoscaling_ = nullptr;
-  return temp;
-}
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentCreateAutoscalingRequest::_internal_mutable_autoscaling() {
-  
-  if (autoscaling_ == nullptr) {
-    auto* p = CreateMaybeMessage<::performance::autoscaling::v1alpha1::Autoscaling>(GetArenaForAllocation());
-    autoscaling_ = p;
-  }
-  return autoscaling_;
-}
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentCreateAutoscalingRequest::mutable_autoscaling() {
-  ::performance::autoscaling::v1alpha1::Autoscaling* _msg = _internal_mutable_autoscaling();
-  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.autoscaling)
-  return _msg;
-}
-inline void AgentCreateAutoscalingRequest::set_allocated_autoscaling(::performance::autoscaling::v1alpha1::Autoscaling* autoscaling) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(autoscaling_);
-  }
-  if (autoscaling) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(autoscaling));
-    if (message_arena != submessage_arena) {
-      autoscaling = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, autoscaling, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  autoscaling_ = autoscaling;
-  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.autoscaling)
-}
-
-// -------------------------------------------------------------------
-
 // AgentCreateAutoscalingResponse
 
 // .performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];
@@ -1837,73 +1963,73 @@ inline void AgentCreateAutoscalingResponse::set_allocated_autoscaling(::performa
   // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.autoscaling)
 }
 
-// string status = 2 [json_name = "status"];
-inline void AgentCreateAutoscalingResponse::clear_status() {
-  status_.ClearToEmpty();
+// string origin = 2 [json_name = "origin"];
+inline void AgentCreateAutoscalingResponse::clear_origin() {
+  origin_.ClearToEmpty();
 }
-inline const std::string& AgentCreateAutoscalingResponse::status() const {
-  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.status)
-  return _internal_status();
+inline const std::string& AgentCreateAutoscalingResponse::origin() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.origin)
+  return _internal_origin();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void AgentCreateAutoscalingResponse::set_status(ArgT0&& arg0, ArgT... args) {
+void AgentCreateAutoscalingResponse::set_origin(ArgT0&& arg0, ArgT... args) {
  
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.status)
+ origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.origin)
 }
-inline std::string* AgentCreateAutoscalingResponse::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.status)
+inline std::string* AgentCreateAutoscalingResponse::mutable_origin() {
+  std::string* _s = _internal_mutable_origin();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.origin)
   return _s;
 }
-inline const std::string& AgentCreateAutoscalingResponse::_internal_status() const {
-  return status_.Get();
+inline const std::string& AgentCreateAutoscalingResponse::_internal_origin() const {
+  return origin_.Get();
 }
-inline void AgentCreateAutoscalingResponse::_internal_set_status(const std::string& value) {
+inline void AgentCreateAutoscalingResponse::_internal_set_origin(const std::string& value) {
   
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* AgentCreateAutoscalingResponse::_internal_mutable_status() {
+inline std::string* AgentCreateAutoscalingResponse::_internal_mutable_origin() {
   
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return origin_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* AgentCreateAutoscalingResponse::release_status() {
-  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* AgentCreateAutoscalingResponse::release_origin() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.origin)
+  return origin_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void AgentCreateAutoscalingResponse::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
+inline void AgentCreateAutoscalingResponse::set_allocated_origin(std::string* origin) {
+  if (origin != nullptr) {
     
   } else {
     
   }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+  origin_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), origin,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.status)
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentCreateAutoscalingResponse.origin)
 }
 
 // -------------------------------------------------------------------
 
-// AgentUpdateAutoscalingRequest
+// AgentCreateAutoscalingRequest
 
 // .performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];
-inline bool AgentUpdateAutoscalingRequest::_internal_has_autoscaling() const {
+inline bool AgentCreateAutoscalingRequest::_internal_has_autoscaling() const {
   return this != internal_default_instance() && autoscaling_ != nullptr;
 }
-inline bool AgentUpdateAutoscalingRequest::has_autoscaling() const {
+inline bool AgentCreateAutoscalingRequest::has_autoscaling() const {
   return _internal_has_autoscaling();
 }
-inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentUpdateAutoscalingRequest::_internal_autoscaling() const {
+inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentCreateAutoscalingRequest::_internal_autoscaling() const {
   const ::performance::autoscaling::v1alpha1::Autoscaling* p = autoscaling_;
   return p != nullptr ? *p : reinterpret_cast<const ::performance::autoscaling::v1alpha1::Autoscaling&>(
       ::performance::autoscaling::v1alpha1::_Autoscaling_default_instance_);
 }
-inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentUpdateAutoscalingRequest::autoscaling() const {
-  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.autoscaling)
+inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentCreateAutoscalingRequest::autoscaling() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.autoscaling)
   return _internal_autoscaling();
 }
-inline void AgentUpdateAutoscalingRequest::unsafe_arena_set_allocated_autoscaling(
+inline void AgentCreateAutoscalingRequest::unsafe_arena_set_allocated_autoscaling(
     ::performance::autoscaling::v1alpha1::Autoscaling* autoscaling) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(autoscaling_);
@@ -1914,9 +2040,9 @@ inline void AgentUpdateAutoscalingRequest::unsafe_arena_set_allocated_autoscalin
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.autoscaling)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.autoscaling)
 }
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentUpdateAutoscalingRequest::release_autoscaling() {
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentCreateAutoscalingRequest::release_autoscaling() {
   
   ::performance::autoscaling::v1alpha1::Autoscaling* temp = autoscaling_;
   autoscaling_ = nullptr;
@@ -1931,14 +2057,14 @@ inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentUpdateAutoscaling
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentUpdateAutoscalingRequest::unsafe_arena_release_autoscaling() {
-  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.autoscaling)
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentCreateAutoscalingRequest::unsafe_arena_release_autoscaling() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.autoscaling)
   
   ::performance::autoscaling::v1alpha1::Autoscaling* temp = autoscaling_;
   autoscaling_ = nullptr;
   return temp;
 }
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentUpdateAutoscalingRequest::_internal_mutable_autoscaling() {
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentCreateAutoscalingRequest::_internal_mutable_autoscaling() {
   
   if (autoscaling_ == nullptr) {
     auto* p = CreateMaybeMessage<::performance::autoscaling::v1alpha1::Autoscaling>(GetArenaForAllocation());
@@ -1946,12 +2072,12 @@ inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentUpdateAutoscaling
   }
   return autoscaling_;
 }
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentUpdateAutoscalingRequest::mutable_autoscaling() {
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentCreateAutoscalingRequest::mutable_autoscaling() {
   ::performance::autoscaling::v1alpha1::Autoscaling* _msg = _internal_mutable_autoscaling();
-  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.autoscaling)
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.autoscaling)
   return _msg;
 }
-inline void AgentUpdateAutoscalingRequest::set_allocated_autoscaling(::performance::autoscaling::v1alpha1::Autoscaling* autoscaling) {
+inline void AgentCreateAutoscalingRequest::set_allocated_autoscaling(::performance::autoscaling::v1alpha1::Autoscaling* autoscaling) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(autoscaling_);
@@ -1970,7 +2096,99 @@ inline void AgentUpdateAutoscalingRequest::set_allocated_autoscaling(::performan
     
   }
   autoscaling_ = autoscaling;
-  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.autoscaling)
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.autoscaling)
+}
+
+// string status = 2 [json_name = "status"];
+inline void AgentCreateAutoscalingRequest::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& AgentCreateAutoscalingRequest::status() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AgentCreateAutoscalingRequest::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.status)
+}
+inline std::string* AgentCreateAutoscalingRequest::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.status)
+  return _s;
+}
+inline const std::string& AgentCreateAutoscalingRequest::_internal_status() const {
+  return status_.Get();
+}
+inline void AgentCreateAutoscalingRequest::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AgentCreateAutoscalingRequest::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AgentCreateAutoscalingRequest::release_status() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AgentCreateAutoscalingRequest::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.status)
+}
+
+// string origin = 3 [json_name = "origin"];
+inline void AgentCreateAutoscalingRequest::clear_origin() {
+  origin_.ClearToEmpty();
+}
+inline const std::string& AgentCreateAutoscalingRequest::origin() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.origin)
+  return _internal_origin();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AgentCreateAutoscalingRequest::set_origin(ArgT0&& arg0, ArgT... args) {
+ 
+ origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.origin)
+}
+inline std::string* AgentCreateAutoscalingRequest::mutable_origin() {
+  std::string* _s = _internal_mutable_origin();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.origin)
+  return _s;
+}
+inline const std::string& AgentCreateAutoscalingRequest::_internal_origin() const {
+  return origin_.Get();
+}
+inline void AgentCreateAutoscalingRequest::_internal_set_origin(const std::string& value) {
+  
+  origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AgentCreateAutoscalingRequest::_internal_mutable_origin() {
+  
+  return origin_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AgentCreateAutoscalingRequest::release_origin() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.origin)
+  return origin_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AgentCreateAutoscalingRequest::set_allocated_origin(std::string* origin) {
+  if (origin != nullptr) {
+    
+  } else {
+    
+  }
+  origin_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), origin,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentCreateAutoscalingRequest.origin)
 }
 
 // -------------------------------------------------------------------
@@ -2063,89 +2281,89 @@ inline void AgentUpdateAutoscalingResponse::set_allocated_autoscaling(::performa
   // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.autoscaling)
 }
 
-// string status = 2 [json_name = "status"];
-inline void AgentUpdateAutoscalingResponse::clear_status() {
-  status_.ClearToEmpty();
+// string origin = 2 [json_name = "origin"];
+inline void AgentUpdateAutoscalingResponse::clear_origin() {
+  origin_.ClearToEmpty();
 }
-inline const std::string& AgentUpdateAutoscalingResponse::status() const {
-  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.status)
-  return _internal_status();
+inline const std::string& AgentUpdateAutoscalingResponse::origin() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.origin)
+  return _internal_origin();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void AgentUpdateAutoscalingResponse::set_status(ArgT0&& arg0, ArgT... args) {
+void AgentUpdateAutoscalingResponse::set_origin(ArgT0&& arg0, ArgT... args) {
  
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.status)
+ origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.origin)
 }
-inline std::string* AgentUpdateAutoscalingResponse::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.status)
+inline std::string* AgentUpdateAutoscalingResponse::mutable_origin() {
+  std::string* _s = _internal_mutable_origin();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.origin)
   return _s;
 }
-inline const std::string& AgentUpdateAutoscalingResponse::_internal_status() const {
-  return status_.Get();
+inline const std::string& AgentUpdateAutoscalingResponse::_internal_origin() const {
+  return origin_.Get();
 }
-inline void AgentUpdateAutoscalingResponse::_internal_set_status(const std::string& value) {
+inline void AgentUpdateAutoscalingResponse::_internal_set_origin(const std::string& value) {
   
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* AgentUpdateAutoscalingResponse::_internal_mutable_status() {
+inline std::string* AgentUpdateAutoscalingResponse::_internal_mutable_origin() {
   
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return origin_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* AgentUpdateAutoscalingResponse::release_status() {
-  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* AgentUpdateAutoscalingResponse::release_origin() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.origin)
+  return origin_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void AgentUpdateAutoscalingResponse::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
+inline void AgentUpdateAutoscalingResponse::set_allocated_origin(std::string* origin) {
+  if (origin != nullptr) {
     
   } else {
     
   }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+  origin_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), origin,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.status)
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingResponse.origin)
 }
 
 // -------------------------------------------------------------------
 
-// AgentDeleteAutoscalingRequest
+// AgentUpdateAutoscalingRequest
 
-// .performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
-inline bool AgentDeleteAutoscalingRequest::_internal_has_metadata() const {
-  return this != internal_default_instance() && metadata_ != nullptr;
+// .performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];
+inline bool AgentUpdateAutoscalingRequest::_internal_has_autoscaling() const {
+  return this != internal_default_instance() && autoscaling_ != nullptr;
 }
-inline bool AgentDeleteAutoscalingRequest::has_metadata() const {
-  return _internal_has_metadata();
+inline bool AgentUpdateAutoscalingRequest::has_autoscaling() const {
+  return _internal_has_autoscaling();
 }
-inline const ::performance::autoscaling::v1alpha1::Metadata& AgentDeleteAutoscalingRequest::_internal_metadata() const {
-  const ::performance::autoscaling::v1alpha1::Metadata* p = metadata_;
-  return p != nullptr ? *p : reinterpret_cast<const ::performance::autoscaling::v1alpha1::Metadata&>(
-      ::performance::autoscaling::v1alpha1::_Metadata_default_instance_);
+inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentUpdateAutoscalingRequest::_internal_autoscaling() const {
+  const ::performance::autoscaling::v1alpha1::Autoscaling* p = autoscaling_;
+  return p != nullptr ? *p : reinterpret_cast<const ::performance::autoscaling::v1alpha1::Autoscaling&>(
+      ::performance::autoscaling::v1alpha1::_Autoscaling_default_instance_);
 }
-inline const ::performance::autoscaling::v1alpha1::Metadata& AgentDeleteAutoscalingRequest::metadata() const {
-  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.metadata)
-  return _internal_metadata();
+inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentUpdateAutoscalingRequest::autoscaling() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.autoscaling)
+  return _internal_autoscaling();
 }
-inline void AgentDeleteAutoscalingRequest::unsafe_arena_set_allocated_metadata(
-    ::performance::autoscaling::v1alpha1::Metadata* metadata) {
+inline void AgentUpdateAutoscalingRequest::unsafe_arena_set_allocated_autoscaling(
+    ::performance::autoscaling::v1alpha1::Autoscaling* autoscaling) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(metadata_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(autoscaling_);
   }
-  metadata_ = metadata;
-  if (metadata) {
+  autoscaling_ = autoscaling;
+  if (autoscaling) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.metadata)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.autoscaling)
 }
-inline ::performance::autoscaling::v1alpha1::Metadata* AgentDeleteAutoscalingRequest::release_metadata() {
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentUpdateAutoscalingRequest::release_autoscaling() {
   
-  ::performance::autoscaling::v1alpha1::Metadata* temp = metadata_;
-  metadata_ = nullptr;
+  ::performance::autoscaling::v1alpha1::Autoscaling* temp = autoscaling_;
+  autoscaling_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -2157,46 +2375,138 @@ inline ::performance::autoscaling::v1alpha1::Metadata* AgentDeleteAutoscalingReq
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::performance::autoscaling::v1alpha1::Metadata* AgentDeleteAutoscalingRequest::unsafe_arena_release_metadata() {
-  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.metadata)
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentUpdateAutoscalingRequest::unsafe_arena_release_autoscaling() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.autoscaling)
   
-  ::performance::autoscaling::v1alpha1::Metadata* temp = metadata_;
-  metadata_ = nullptr;
+  ::performance::autoscaling::v1alpha1::Autoscaling* temp = autoscaling_;
+  autoscaling_ = nullptr;
   return temp;
 }
-inline ::performance::autoscaling::v1alpha1::Metadata* AgentDeleteAutoscalingRequest::_internal_mutable_metadata() {
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentUpdateAutoscalingRequest::_internal_mutable_autoscaling() {
   
-  if (metadata_ == nullptr) {
-    auto* p = CreateMaybeMessage<::performance::autoscaling::v1alpha1::Metadata>(GetArenaForAllocation());
-    metadata_ = p;
+  if (autoscaling_ == nullptr) {
+    auto* p = CreateMaybeMessage<::performance::autoscaling::v1alpha1::Autoscaling>(GetArenaForAllocation());
+    autoscaling_ = p;
   }
-  return metadata_;
+  return autoscaling_;
 }
-inline ::performance::autoscaling::v1alpha1::Metadata* AgentDeleteAutoscalingRequest::mutable_metadata() {
-  ::performance::autoscaling::v1alpha1::Metadata* _msg = _internal_mutable_metadata();
-  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.metadata)
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentUpdateAutoscalingRequest::mutable_autoscaling() {
+  ::performance::autoscaling::v1alpha1::Autoscaling* _msg = _internal_mutable_autoscaling();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.autoscaling)
   return _msg;
 }
-inline void AgentDeleteAutoscalingRequest::set_allocated_metadata(::performance::autoscaling::v1alpha1::Metadata* metadata) {
+inline void AgentUpdateAutoscalingRequest::set_allocated_autoscaling(::performance::autoscaling::v1alpha1::Autoscaling* autoscaling) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(metadata_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(autoscaling_);
   }
-  if (metadata) {
+  if (autoscaling) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(metadata));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(autoscaling));
     if (message_arena != submessage_arena) {
-      metadata = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, metadata, submessage_arena);
+      autoscaling = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, autoscaling, submessage_arena);
     }
     
   } else {
     
   }
-  metadata_ = metadata;
-  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.metadata)
+  autoscaling_ = autoscaling;
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.autoscaling)
+}
+
+// string status = 2 [json_name = "status"];
+inline void AgentUpdateAutoscalingRequest::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& AgentUpdateAutoscalingRequest::status() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AgentUpdateAutoscalingRequest::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.status)
+}
+inline std::string* AgentUpdateAutoscalingRequest::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.status)
+  return _s;
+}
+inline const std::string& AgentUpdateAutoscalingRequest::_internal_status() const {
+  return status_.Get();
+}
+inline void AgentUpdateAutoscalingRequest::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AgentUpdateAutoscalingRequest::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AgentUpdateAutoscalingRequest::release_status() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AgentUpdateAutoscalingRequest::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.status)
+}
+
+// string origin = 3 [json_name = "origin"];
+inline void AgentUpdateAutoscalingRequest::clear_origin() {
+  origin_.ClearToEmpty();
+}
+inline const std::string& AgentUpdateAutoscalingRequest::origin() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.origin)
+  return _internal_origin();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AgentUpdateAutoscalingRequest::set_origin(ArgT0&& arg0, ArgT... args) {
+ 
+ origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.origin)
+}
+inline std::string* AgentUpdateAutoscalingRequest::mutable_origin() {
+  std::string* _s = _internal_mutable_origin();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.origin)
+  return _s;
+}
+inline const std::string& AgentUpdateAutoscalingRequest::_internal_origin() const {
+  return origin_.Get();
+}
+inline void AgentUpdateAutoscalingRequest::_internal_set_origin(const std::string& value) {
+  
+  origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AgentUpdateAutoscalingRequest::_internal_mutable_origin() {
+  
+  return origin_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AgentUpdateAutoscalingRequest::release_origin() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.origin)
+  return origin_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AgentUpdateAutoscalingRequest::set_allocated_origin(std::string* origin) {
+  if (origin != nullptr) {
+    
+  } else {
+    
+  }
+  origin_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), origin,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentUpdateAutoscalingRequest.origin)
 }
 
 // -------------------------------------------------------------------
@@ -2289,73 +2599,73 @@ inline void AgentDeleteAutoscalingResponse::set_allocated_metadata(::performance
   // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.metadata)
 }
 
-// string status = 2 [json_name = "status"];
-inline void AgentDeleteAutoscalingResponse::clear_status() {
-  status_.ClearToEmpty();
+// string origin = 2 [json_name = "origin"];
+inline void AgentDeleteAutoscalingResponse::clear_origin() {
+  origin_.ClearToEmpty();
 }
-inline const std::string& AgentDeleteAutoscalingResponse::status() const {
-  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.status)
-  return _internal_status();
+inline const std::string& AgentDeleteAutoscalingResponse::origin() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.origin)
+  return _internal_origin();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void AgentDeleteAutoscalingResponse::set_status(ArgT0&& arg0, ArgT... args) {
+void AgentDeleteAutoscalingResponse::set_origin(ArgT0&& arg0, ArgT... args) {
  
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.status)
+ origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.origin)
 }
-inline std::string* AgentDeleteAutoscalingResponse::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.status)
+inline std::string* AgentDeleteAutoscalingResponse::mutable_origin() {
+  std::string* _s = _internal_mutable_origin();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.origin)
   return _s;
 }
-inline const std::string& AgentDeleteAutoscalingResponse::_internal_status() const {
-  return status_.Get();
+inline const std::string& AgentDeleteAutoscalingResponse::_internal_origin() const {
+  return origin_.Get();
 }
-inline void AgentDeleteAutoscalingResponse::_internal_set_status(const std::string& value) {
+inline void AgentDeleteAutoscalingResponse::_internal_set_origin(const std::string& value) {
   
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* AgentDeleteAutoscalingResponse::_internal_mutable_status() {
+inline std::string* AgentDeleteAutoscalingResponse::_internal_mutable_origin() {
   
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return origin_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* AgentDeleteAutoscalingResponse::release_status() {
-  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* AgentDeleteAutoscalingResponse::release_origin() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.origin)
+  return origin_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void AgentDeleteAutoscalingResponse::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
+inline void AgentDeleteAutoscalingResponse::set_allocated_origin(std::string* origin) {
+  if (origin != nullptr) {
     
   } else {
     
   }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+  origin_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), origin,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.status)
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingResponse.origin)
 }
 
 // -------------------------------------------------------------------
 
-// AgentGetAutoscalingRequest
+// AgentDeleteAutoscalingRequest
 
 // .performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
-inline bool AgentGetAutoscalingRequest::_internal_has_metadata() const {
+inline bool AgentDeleteAutoscalingRequest::_internal_has_metadata() const {
   return this != internal_default_instance() && metadata_ != nullptr;
 }
-inline bool AgentGetAutoscalingRequest::has_metadata() const {
+inline bool AgentDeleteAutoscalingRequest::has_metadata() const {
   return _internal_has_metadata();
 }
-inline const ::performance::autoscaling::v1alpha1::Metadata& AgentGetAutoscalingRequest::_internal_metadata() const {
+inline const ::performance::autoscaling::v1alpha1::Metadata& AgentDeleteAutoscalingRequest::_internal_metadata() const {
   const ::performance::autoscaling::v1alpha1::Metadata* p = metadata_;
   return p != nullptr ? *p : reinterpret_cast<const ::performance::autoscaling::v1alpha1::Metadata&>(
       ::performance::autoscaling::v1alpha1::_Metadata_default_instance_);
 }
-inline const ::performance::autoscaling::v1alpha1::Metadata& AgentGetAutoscalingRequest::metadata() const {
-  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.metadata)
+inline const ::performance::autoscaling::v1alpha1::Metadata& AgentDeleteAutoscalingRequest::metadata() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.metadata)
   return _internal_metadata();
 }
-inline void AgentGetAutoscalingRequest::unsafe_arena_set_allocated_metadata(
+inline void AgentDeleteAutoscalingRequest::unsafe_arena_set_allocated_metadata(
     ::performance::autoscaling::v1alpha1::Metadata* metadata) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(metadata_);
@@ -2366,9 +2676,9 @@ inline void AgentGetAutoscalingRequest::unsafe_arena_set_allocated_metadata(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.metadata)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.metadata)
 }
-inline ::performance::autoscaling::v1alpha1::Metadata* AgentGetAutoscalingRequest::release_metadata() {
+inline ::performance::autoscaling::v1alpha1::Metadata* AgentDeleteAutoscalingRequest::release_metadata() {
   
   ::performance::autoscaling::v1alpha1::Metadata* temp = metadata_;
   metadata_ = nullptr;
@@ -2383,14 +2693,14 @@ inline ::performance::autoscaling::v1alpha1::Metadata* AgentGetAutoscalingReques
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::performance::autoscaling::v1alpha1::Metadata* AgentGetAutoscalingRequest::unsafe_arena_release_metadata() {
-  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.metadata)
+inline ::performance::autoscaling::v1alpha1::Metadata* AgentDeleteAutoscalingRequest::unsafe_arena_release_metadata() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.metadata)
   
   ::performance::autoscaling::v1alpha1::Metadata* temp = metadata_;
   metadata_ = nullptr;
   return temp;
 }
-inline ::performance::autoscaling::v1alpha1::Metadata* AgentGetAutoscalingRequest::_internal_mutable_metadata() {
+inline ::performance::autoscaling::v1alpha1::Metadata* AgentDeleteAutoscalingRequest::_internal_mutable_metadata() {
   
   if (metadata_ == nullptr) {
     auto* p = CreateMaybeMessage<::performance::autoscaling::v1alpha1::Metadata>(GetArenaForAllocation());
@@ -2398,12 +2708,12 @@ inline ::performance::autoscaling::v1alpha1::Metadata* AgentGetAutoscalingReques
   }
   return metadata_;
 }
-inline ::performance::autoscaling::v1alpha1::Metadata* AgentGetAutoscalingRequest::mutable_metadata() {
+inline ::performance::autoscaling::v1alpha1::Metadata* AgentDeleteAutoscalingRequest::mutable_metadata() {
   ::performance::autoscaling::v1alpha1::Metadata* _msg = _internal_mutable_metadata();
-  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.metadata)
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.metadata)
   return _msg;
 }
-inline void AgentGetAutoscalingRequest::set_allocated_metadata(::performance::autoscaling::v1alpha1::Metadata* metadata) {
+inline void AgentDeleteAutoscalingRequest::set_allocated_metadata(::performance::autoscaling::v1alpha1::Metadata* metadata) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(metadata_);
@@ -2422,30 +2732,212 @@ inline void AgentGetAutoscalingRequest::set_allocated_metadata(::performance::au
     
   }
   metadata_ = metadata;
-  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.metadata)
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.metadata)
+}
+
+// string status = 2 [json_name = "status"];
+inline void AgentDeleteAutoscalingRequest::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& AgentDeleteAutoscalingRequest::status() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AgentDeleteAutoscalingRequest::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.status)
+}
+inline std::string* AgentDeleteAutoscalingRequest::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.status)
+  return _s;
+}
+inline const std::string& AgentDeleteAutoscalingRequest::_internal_status() const {
+  return status_.Get();
+}
+inline void AgentDeleteAutoscalingRequest::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AgentDeleteAutoscalingRequest::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AgentDeleteAutoscalingRequest::release_status() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AgentDeleteAutoscalingRequest::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentDeleteAutoscalingRequest.status)
 }
 
 // -------------------------------------------------------------------
 
 // AgentGetAutoscalingResponse
 
+// .performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
+inline bool AgentGetAutoscalingResponse::_internal_has_metadata() const {
+  return this != internal_default_instance() && metadata_ != nullptr;
+}
+inline bool AgentGetAutoscalingResponse::has_metadata() const {
+  return _internal_has_metadata();
+}
+inline const ::performance::autoscaling::v1alpha1::Metadata& AgentGetAutoscalingResponse::_internal_metadata() const {
+  const ::performance::autoscaling::v1alpha1::Metadata* p = metadata_;
+  return p != nullptr ? *p : reinterpret_cast<const ::performance::autoscaling::v1alpha1::Metadata&>(
+      ::performance::autoscaling::v1alpha1::_Metadata_default_instance_);
+}
+inline const ::performance::autoscaling::v1alpha1::Metadata& AgentGetAutoscalingResponse::metadata() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.metadata)
+  return _internal_metadata();
+}
+inline void AgentGetAutoscalingResponse::unsafe_arena_set_allocated_metadata(
+    ::performance::autoscaling::v1alpha1::Metadata* metadata) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(metadata_);
+  }
+  metadata_ = metadata;
+  if (metadata) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.metadata)
+}
+inline ::performance::autoscaling::v1alpha1::Metadata* AgentGetAutoscalingResponse::release_metadata() {
+  
+  ::performance::autoscaling::v1alpha1::Metadata* temp = metadata_;
+  metadata_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::performance::autoscaling::v1alpha1::Metadata* AgentGetAutoscalingResponse::unsafe_arena_release_metadata() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.metadata)
+  
+  ::performance::autoscaling::v1alpha1::Metadata* temp = metadata_;
+  metadata_ = nullptr;
+  return temp;
+}
+inline ::performance::autoscaling::v1alpha1::Metadata* AgentGetAutoscalingResponse::_internal_mutable_metadata() {
+  
+  if (metadata_ == nullptr) {
+    auto* p = CreateMaybeMessage<::performance::autoscaling::v1alpha1::Metadata>(GetArenaForAllocation());
+    metadata_ = p;
+  }
+  return metadata_;
+}
+inline ::performance::autoscaling::v1alpha1::Metadata* AgentGetAutoscalingResponse::mutable_metadata() {
+  ::performance::autoscaling::v1alpha1::Metadata* _msg = _internal_mutable_metadata();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.metadata)
+  return _msg;
+}
+inline void AgentGetAutoscalingResponse::set_allocated_metadata(::performance::autoscaling::v1alpha1::Metadata* metadata) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(metadata_);
+  }
+  if (metadata) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(metadata));
+    if (message_arena != submessage_arena) {
+      metadata = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, metadata, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  metadata_ = metadata;
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.metadata)
+}
+
+// string origin = 2 [json_name = "origin"];
+inline void AgentGetAutoscalingResponse::clear_origin() {
+  origin_.ClearToEmpty();
+}
+inline const std::string& AgentGetAutoscalingResponse::origin() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.origin)
+  return _internal_origin();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AgentGetAutoscalingResponse::set_origin(ArgT0&& arg0, ArgT... args) {
+ 
+ origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.origin)
+}
+inline std::string* AgentGetAutoscalingResponse::mutable_origin() {
+  std::string* _s = _internal_mutable_origin();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.origin)
+  return _s;
+}
+inline const std::string& AgentGetAutoscalingResponse::_internal_origin() const {
+  return origin_.Get();
+}
+inline void AgentGetAutoscalingResponse::_internal_set_origin(const std::string& value) {
+  
+  origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AgentGetAutoscalingResponse::_internal_mutable_origin() {
+  
+  return origin_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AgentGetAutoscalingResponse::release_origin() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.origin)
+  return origin_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AgentGetAutoscalingResponse::set_allocated_origin(std::string* origin) {
+  if (origin != nullptr) {
+    
+  } else {
+    
+  }
+  origin_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), origin,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.origin)
+}
+
+// -------------------------------------------------------------------
+
+// AgentGetAutoscalingRequest
+
 // .performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];
-inline bool AgentGetAutoscalingResponse::_internal_has_autoscaling() const {
+inline bool AgentGetAutoscalingRequest::_internal_has_autoscaling() const {
   return this != internal_default_instance() && autoscaling_ != nullptr;
 }
-inline bool AgentGetAutoscalingResponse::has_autoscaling() const {
+inline bool AgentGetAutoscalingRequest::has_autoscaling() const {
   return _internal_has_autoscaling();
 }
-inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentGetAutoscalingResponse::_internal_autoscaling() const {
+inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentGetAutoscalingRequest::_internal_autoscaling() const {
   const ::performance::autoscaling::v1alpha1::Autoscaling* p = autoscaling_;
   return p != nullptr ? *p : reinterpret_cast<const ::performance::autoscaling::v1alpha1::Autoscaling&>(
       ::performance::autoscaling::v1alpha1::_Autoscaling_default_instance_);
 }
-inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentGetAutoscalingResponse::autoscaling() const {
-  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.autoscaling)
+inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentGetAutoscalingRequest::autoscaling() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.autoscaling)
   return _internal_autoscaling();
 }
-inline void AgentGetAutoscalingResponse::unsafe_arena_set_allocated_autoscaling(
+inline void AgentGetAutoscalingRequest::unsafe_arena_set_allocated_autoscaling(
     ::performance::autoscaling::v1alpha1::Autoscaling* autoscaling) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(autoscaling_);
@@ -2456,9 +2948,9 @@ inline void AgentGetAutoscalingResponse::unsafe_arena_set_allocated_autoscaling(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.autoscaling)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.autoscaling)
 }
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentGetAutoscalingResponse::release_autoscaling() {
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentGetAutoscalingRequest::release_autoscaling() {
   
   ::performance::autoscaling::v1alpha1::Autoscaling* temp = autoscaling_;
   autoscaling_ = nullptr;
@@ -2473,14 +2965,14 @@ inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentGetAutoscalingRes
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentGetAutoscalingResponse::unsafe_arena_release_autoscaling() {
-  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.autoscaling)
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentGetAutoscalingRequest::unsafe_arena_release_autoscaling() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.autoscaling)
   
   ::performance::autoscaling::v1alpha1::Autoscaling* temp = autoscaling_;
   autoscaling_ = nullptr;
   return temp;
 }
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentGetAutoscalingResponse::_internal_mutable_autoscaling() {
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentGetAutoscalingRequest::_internal_mutable_autoscaling() {
   
   if (autoscaling_ == nullptr) {
     auto* p = CreateMaybeMessage<::performance::autoscaling::v1alpha1::Autoscaling>(GetArenaForAllocation());
@@ -2488,12 +2980,12 @@ inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentGetAutoscalingRes
   }
   return autoscaling_;
 }
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentGetAutoscalingResponse::mutable_autoscaling() {
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentGetAutoscalingRequest::mutable_autoscaling() {
   ::performance::autoscaling::v1alpha1::Autoscaling* _msg = _internal_mutable_autoscaling();
-  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.autoscaling)
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.autoscaling)
   return _msg;
 }
-inline void AgentGetAutoscalingResponse::set_allocated_autoscaling(::performance::autoscaling::v1alpha1::Autoscaling* autoscaling) {
+inline void AgentGetAutoscalingRequest::set_allocated_autoscaling(::performance::autoscaling::v1alpha1::Autoscaling* autoscaling) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(autoscaling_);
@@ -2512,45 +3004,45 @@ inline void AgentGetAutoscalingResponse::set_allocated_autoscaling(::performance
     
   }
   autoscaling_ = autoscaling;
-  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.autoscaling)
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.autoscaling)
 }
 
 // string status = 2 [json_name = "status"];
-inline void AgentGetAutoscalingResponse::clear_status() {
+inline void AgentGetAutoscalingRequest::clear_status() {
   status_.ClearToEmpty();
 }
-inline const std::string& AgentGetAutoscalingResponse::status() const {
-  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.status)
+inline const std::string& AgentGetAutoscalingRequest::status() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.status)
   return _internal_status();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void AgentGetAutoscalingResponse::set_status(ArgT0&& arg0, ArgT... args) {
+void AgentGetAutoscalingRequest::set_status(ArgT0&& arg0, ArgT... args) {
  
  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.status)
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.status)
 }
-inline std::string* AgentGetAutoscalingResponse::mutable_status() {
+inline std::string* AgentGetAutoscalingRequest::mutable_status() {
   std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.status)
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.status)
   return _s;
 }
-inline const std::string& AgentGetAutoscalingResponse::_internal_status() const {
+inline const std::string& AgentGetAutoscalingRequest::_internal_status() const {
   return status_.Get();
 }
-inline void AgentGetAutoscalingResponse::_internal_set_status(const std::string& value) {
+inline void AgentGetAutoscalingRequest::_internal_set_status(const std::string& value) {
   
   status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* AgentGetAutoscalingResponse::_internal_mutable_status() {
+inline std::string* AgentGetAutoscalingRequest::_internal_mutable_status() {
   
   return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* AgentGetAutoscalingResponse::release_status() {
-  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.status)
+inline std::string* AgentGetAutoscalingRequest::release_status() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.status)
   return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void AgentGetAutoscalingResponse::set_allocated_status(std::string* status) {
+inline void AgentGetAutoscalingRequest::set_allocated_status(std::string* status) {
   if (status != nullptr) {
     
   } else {
@@ -2558,14 +3050,362 @@ inline void AgentGetAutoscalingResponse::set_allocated_status(std::string* statu
   }
   status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.status)
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.status)
+}
+
+// string origin = 3 [json_name = "origin"];
+inline void AgentGetAutoscalingRequest::clear_origin() {
+  origin_.ClearToEmpty();
+}
+inline const std::string& AgentGetAutoscalingRequest::origin() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.origin)
+  return _internal_origin();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AgentGetAutoscalingRequest::set_origin(ArgT0&& arg0, ArgT... args) {
+ 
+ origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.origin)
+}
+inline std::string* AgentGetAutoscalingRequest::mutable_origin() {
+  std::string* _s = _internal_mutable_origin();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.origin)
+  return _s;
+}
+inline const std::string& AgentGetAutoscalingRequest::_internal_origin() const {
+  return origin_.Get();
+}
+inline void AgentGetAutoscalingRequest::_internal_set_origin(const std::string& value) {
+  
+  origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AgentGetAutoscalingRequest::_internal_mutable_origin() {
+  
+  return origin_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AgentGetAutoscalingRequest::release_origin() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.origin)
+  return origin_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AgentGetAutoscalingRequest::set_allocated_origin(std::string* origin) {
+  if (origin != nullptr) {
+    
+  } else {
+    
+  }
+  origin_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), origin,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentGetAutoscalingRequest.origin)
+}
+
+// -------------------------------------------------------------------
+
+// AgentListAutoscalingResponse
+
+// .performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
+inline bool AgentListAutoscalingResponse::_internal_has_metadata() const {
+  return this != internal_default_instance() && metadata_ != nullptr;
+}
+inline bool AgentListAutoscalingResponse::has_metadata() const {
+  return _internal_has_metadata();
+}
+inline const ::performance::autoscaling::v1alpha1::Metadata& AgentListAutoscalingResponse::_internal_metadata() const {
+  const ::performance::autoscaling::v1alpha1::Metadata* p = metadata_;
+  return p != nullptr ? *p : reinterpret_cast<const ::performance::autoscaling::v1alpha1::Metadata&>(
+      ::performance::autoscaling::v1alpha1::_Metadata_default_instance_);
+}
+inline const ::performance::autoscaling::v1alpha1::Metadata& AgentListAutoscalingResponse::metadata() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.metadata)
+  return _internal_metadata();
+}
+inline void AgentListAutoscalingResponse::unsafe_arena_set_allocated_metadata(
+    ::performance::autoscaling::v1alpha1::Metadata* metadata) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(metadata_);
+  }
+  metadata_ = metadata;
+  if (metadata) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.metadata)
+}
+inline ::performance::autoscaling::v1alpha1::Metadata* AgentListAutoscalingResponse::release_metadata() {
+  
+  ::performance::autoscaling::v1alpha1::Metadata* temp = metadata_;
+  metadata_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::performance::autoscaling::v1alpha1::Metadata* AgentListAutoscalingResponse::unsafe_arena_release_metadata() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.metadata)
+  
+  ::performance::autoscaling::v1alpha1::Metadata* temp = metadata_;
+  metadata_ = nullptr;
+  return temp;
+}
+inline ::performance::autoscaling::v1alpha1::Metadata* AgentListAutoscalingResponse::_internal_mutable_metadata() {
+  
+  if (metadata_ == nullptr) {
+    auto* p = CreateMaybeMessage<::performance::autoscaling::v1alpha1::Metadata>(GetArenaForAllocation());
+    metadata_ = p;
+  }
+  return metadata_;
+}
+inline ::performance::autoscaling::v1alpha1::Metadata* AgentListAutoscalingResponse::mutable_metadata() {
+  ::performance::autoscaling::v1alpha1::Metadata* _msg = _internal_mutable_metadata();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.metadata)
+  return _msg;
+}
+inline void AgentListAutoscalingResponse::set_allocated_metadata(::performance::autoscaling::v1alpha1::Metadata* metadata) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(metadata_);
+  }
+  if (metadata) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(metadata));
+    if (message_arena != submessage_arena) {
+      metadata = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, metadata, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  metadata_ = metadata;
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.metadata)
+}
+
+// string origin = 2 [json_name = "origin"];
+inline void AgentListAutoscalingResponse::clear_origin() {
+  origin_.ClearToEmpty();
+}
+inline const std::string& AgentListAutoscalingResponse::origin() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.origin)
+  return _internal_origin();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AgentListAutoscalingResponse::set_origin(ArgT0&& arg0, ArgT... args) {
+ 
+ origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.origin)
+}
+inline std::string* AgentListAutoscalingResponse::mutable_origin() {
+  std::string* _s = _internal_mutable_origin();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.origin)
+  return _s;
+}
+inline const std::string& AgentListAutoscalingResponse::_internal_origin() const {
+  return origin_.Get();
+}
+inline void AgentListAutoscalingResponse::_internal_set_origin(const std::string& value) {
+  
+  origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AgentListAutoscalingResponse::_internal_mutable_origin() {
+  
+  return origin_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AgentListAutoscalingResponse::release_origin() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.origin)
+  return origin_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AgentListAutoscalingResponse::set_allocated_origin(std::string* origin) {
+  if (origin != nullptr) {
+    
+  } else {
+    
+  }
+  origin_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), origin,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.origin)
+}
+
+// repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 3 [json_name = "autoscalings"];
+inline int AgentListAutoscalingResponse::_internal_autoscalings_size() const {
+  return autoscalings_.size();
+}
+inline int AgentListAutoscalingResponse::autoscalings_size() const {
+  return _internal_autoscalings_size();
+}
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentListAutoscalingResponse::mutable_autoscalings(int index) {
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.autoscalings)
+  return autoscalings_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::autoscaling::v1alpha1::Autoscaling >*
+AgentListAutoscalingResponse::mutable_autoscalings() {
+  // @@protoc_insertion_point(field_mutable_list:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.autoscalings)
+  return &autoscalings_;
+}
+inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentListAutoscalingResponse::_internal_autoscalings(int index) const {
+  return autoscalings_.Get(index);
+}
+inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentListAutoscalingResponse::autoscalings(int index) const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.autoscalings)
+  return _internal_autoscalings(index);
+}
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentListAutoscalingResponse::_internal_add_autoscalings() {
+  return autoscalings_.Add();
+}
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentListAutoscalingResponse::add_autoscalings() {
+  ::performance::autoscaling::v1alpha1::Autoscaling* _add = _internal_add_autoscalings();
+  // @@protoc_insertion_point(field_add:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.autoscalings)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::autoscaling::v1alpha1::Autoscaling >&
+AgentListAutoscalingResponse::autoscalings() const {
+  // @@protoc_insertion_point(field_list:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.autoscalings)
+  return autoscalings_;
+}
+
+// string status = 4 [json_name = "status"];
+inline void AgentListAutoscalingResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& AgentListAutoscalingResponse::status() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AgentListAutoscalingResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.status)
+}
+inline std::string* AgentListAutoscalingResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.status)
+  return _s;
+}
+inline const std::string& AgentListAutoscalingResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void AgentListAutoscalingResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AgentListAutoscalingResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AgentListAutoscalingResponse::release_status() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AgentListAutoscalingResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.status)
 }
 
 // -------------------------------------------------------------------
 
 // AgentListAutoscalingRequest
 
-// .performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
+// repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 1 [json_name = "autoscalings"];
+inline int AgentListAutoscalingRequest::_internal_autoscalings_size() const {
+  return autoscalings_.size();
+}
+inline int AgentListAutoscalingRequest::autoscalings_size() const {
+  return _internal_autoscalings_size();
+}
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentListAutoscalingRequest::mutable_autoscalings(int index) {
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.autoscalings)
+  return autoscalings_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::autoscaling::v1alpha1::Autoscaling >*
+AgentListAutoscalingRequest::mutable_autoscalings() {
+  // @@protoc_insertion_point(field_mutable_list:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.autoscalings)
+  return &autoscalings_;
+}
+inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentListAutoscalingRequest::_internal_autoscalings(int index) const {
+  return autoscalings_.Get(index);
+}
+inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentListAutoscalingRequest::autoscalings(int index) const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.autoscalings)
+  return _internal_autoscalings(index);
+}
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentListAutoscalingRequest::_internal_add_autoscalings() {
+  return autoscalings_.Add();
+}
+inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentListAutoscalingRequest::add_autoscalings() {
+  ::performance::autoscaling::v1alpha1::Autoscaling* _add = _internal_add_autoscalings();
+  // @@protoc_insertion_point(field_add:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.autoscalings)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::autoscaling::v1alpha1::Autoscaling >&
+AgentListAutoscalingRequest::autoscalings() const {
+  // @@protoc_insertion_point(field_list:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.autoscalings)
+  return autoscalings_;
+}
+
+// string origin = 2 [json_name = "origin"];
+inline void AgentListAutoscalingRequest::clear_origin() {
+  origin_.ClearToEmpty();
+}
+inline const std::string& AgentListAutoscalingRequest::origin() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.origin)
+  return _internal_origin();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AgentListAutoscalingRequest::set_origin(ArgT0&& arg0, ArgT... args) {
+ 
+ origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.origin)
+}
+inline std::string* AgentListAutoscalingRequest::mutable_origin() {
+  std::string* _s = _internal_mutable_origin();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.origin)
+  return _s;
+}
+inline const std::string& AgentListAutoscalingRequest::_internal_origin() const {
+  return origin_.Get();
+}
+inline void AgentListAutoscalingRequest::_internal_set_origin(const std::string& value) {
+  
+  origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AgentListAutoscalingRequest::_internal_mutable_origin() {
+  
+  return origin_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AgentListAutoscalingRequest::release_origin() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.origin)
+  return origin_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AgentListAutoscalingRequest::set_allocated_origin(std::string* origin) {
+  if (origin != nullptr) {
+    
+  } else {
+    
+  }
+  origin_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), origin,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.origin)
+}
+
+// .performance.autoscaling.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];
 inline bool AgentListAutoscalingRequest::_internal_has_metadata() const {
   return this != internal_default_instance() && metadata_ != nullptr;
 }
@@ -2651,45 +3491,50 @@ inline void AgentListAutoscalingRequest::set_allocated_metadata(::performance::a
   // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.metadata)
 }
 
-// -------------------------------------------------------------------
-
-// AgentListAutoscalingResponse
-
-// repeated .performance.autoscaling.v1alpha1.Autoscaling autoscalings = 1 [json_name = "autoscalings"];
-inline int AgentListAutoscalingResponse::_internal_autoscalings_size() const {
-  return autoscalings_.size();
+// string status = 4 [json_name = "status"];
+inline void AgentListAutoscalingRequest::clear_status() {
+  status_.ClearToEmpty();
 }
-inline int AgentListAutoscalingResponse::autoscalings_size() const {
-  return _internal_autoscalings_size();
+inline const std::string& AgentListAutoscalingRequest::status() const {
+  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.status)
+  return _internal_status();
 }
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentListAutoscalingResponse::mutable_autoscalings(int index) {
-  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.autoscalings)
-  return autoscalings_.Mutable(index);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AgentListAutoscalingRequest::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.status)
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::autoscaling::v1alpha1::Autoscaling >*
-AgentListAutoscalingResponse::mutable_autoscalings() {
-  // @@protoc_insertion_point(field_mutable_list:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.autoscalings)
-  return &autoscalings_;
+inline std::string* AgentListAutoscalingRequest::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.status)
+  return _s;
 }
-inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentListAutoscalingResponse::_internal_autoscalings(int index) const {
-  return autoscalings_.Get(index);
+inline const std::string& AgentListAutoscalingRequest::_internal_status() const {
+  return status_.Get();
 }
-inline const ::performance::autoscaling::v1alpha1::Autoscaling& AgentListAutoscalingResponse::autoscalings(int index) const {
-  // @@protoc_insertion_point(field_get:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.autoscalings)
-  return _internal_autoscalings(index);
+inline void AgentListAutoscalingRequest::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentListAutoscalingResponse::_internal_add_autoscalings() {
-  return autoscalings_.Add();
+inline std::string* AgentListAutoscalingRequest::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline ::performance::autoscaling::v1alpha1::Autoscaling* AgentListAutoscalingResponse::add_autoscalings() {
-  ::performance::autoscaling::v1alpha1::Autoscaling* _add = _internal_add_autoscalings();
-  // @@protoc_insertion_point(field_add:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.autoscalings)
-  return _add;
+inline std::string* AgentListAutoscalingRequest::release_status() {
+  // @@protoc_insertion_point(field_release:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::autoscaling::v1alpha1::Autoscaling >&
-AgentListAutoscalingResponse::autoscalings() const {
-  // @@protoc_insertion_point(field_list:performance.autoscaling.v1alpha1.AgentListAutoscalingResponse.autoscalings)
-  return autoscalings_;
+inline void AgentListAutoscalingRequest::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.autoscaling.v1alpha1.AgentListAutoscalingRequest.status)
 }
 
 #ifdef __GNUC__

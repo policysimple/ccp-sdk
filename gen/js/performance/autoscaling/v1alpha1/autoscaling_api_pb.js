@@ -1756,7 +1756,8 @@ proto.performance.autoscaling.v1alpha1.ListAutoscalingResponse.prototype.toObjec
 proto.performance.autoscaling.v1alpha1.ListAutoscalingResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     autoscalingsList: jspb.Message.toObjectList(msg.getAutoscalingsList(),
-    performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.toObject, includeInstance)
+    performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.toObject, includeInstance),
+    status: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1798,6 +1799,10 @@ proto.performance.autoscaling.v1alpha1.ListAutoscalingResponse.deserializeBinary
       reader.readMessage(value,performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.deserializeBinaryFromReader);
       msg.addAutoscalings(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1833,6 +1838,13 @@ proto.performance.autoscaling.v1alpha1.ListAutoscalingResponse.serializeBinaryTo
       1,
       f,
       performance_autoscaling_v1alpha1_autoscaling_pb.Autoscaling.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -1873,6 +1885,24 @@ proto.performance.autoscaling.v1alpha1.ListAutoscalingResponse.prototype.addAuto
  */
 proto.performance.autoscaling.v1alpha1.ListAutoscalingResponse.prototype.clearAutoscalingsList = function() {
   return this.setAutoscalingsList([]);
+};
+
+
+/**
+ * optional string status = 2;
+ * @return {string}
+ */
+proto.performance.autoscaling.v1alpha1.ListAutoscalingResponse.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.autoscaling.v1alpha1.ListAutoscalingResponse} returns this
+ */
+proto.performance.autoscaling.v1alpha1.ListAutoscalingResponse.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

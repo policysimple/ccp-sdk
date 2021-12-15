@@ -8,29 +8,29 @@ public interface AgentGetAutoscalingResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
-   * @return Whether the autoscaling field is set.
+   * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
+   * @return Whether the metadata field is set.
    */
-  boolean hasAutoscaling();
+  boolean hasMetadata();
   /**
-   * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
-   * @return The autoscaling.
+   * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
+   * @return The metadata.
    */
-  io.cuemby.performance.autoscaling.v1alpha1.Autoscaling getAutoscaling();
+  io.cuemby.performance.autoscaling.v1alpha1.Metadata getMetadata();
   /**
-   * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
+   * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
    */
-  io.cuemby.performance.autoscaling.v1alpha1.AutoscalingOrBuilder getAutoscalingOrBuilder();
+  io.cuemby.performance.autoscaling.v1alpha1.MetadataOrBuilder getMetadataOrBuilder();
 
   /**
-   * <code>string status = 2 [json_name = "status"];</code>
-   * @return The status.
+   * <code>string origin = 2 [json_name = "origin"];</code>
+   * @return The origin.
    */
-  java.lang.String getStatus();
+  java.lang.String getOrigin();
   /**
-   * <code>string status = 2 [json_name = "status"];</code>
-   * @return The bytes for status.
+   * <code>string origin = 2 [json_name = "origin"];</code>
+   * @return The bytes for origin.
    */
   com.google.protobuf.ByteString
-      getStatusBytes();
+      getOriginBytes();
 }

@@ -95,12 +95,12 @@ public final class AutoscalingProto {
       "(\0132*.performance.autoscaling.v1alpha1.Me" +
       "tadataR\010metadata\022E\n\004spec\030\002 \001(\01321.perform" +
       "ance.autoscaling.v1alpha1.AutoscalingSpe" +
-      "cR\004specB\301\001\n*io.cuemby.performance.autosc" +
-      "aling.v1alpha1B\020AutoscalingProtoP\001Z3gith" +
-      "ub.com/performance-grpc-sdk/autoscalingv" +
-      "1alpha1\242\002\003PFX\252\002 Performance.Autoscaling." +
-      "V1Alpha1\312\002 Performance\\Autoscaling\\V1Alp" +
-      "ha1b\006proto3"
+      "cR\004specB\302\001\n*io.cuemby.performance.autosc" +
+      "aling.v1alpha1B\020AutoscalingProtoP\001Z4gith" +
+      "ub.com/performance-grpc-sdk/autoscaling/" +
+      "v1alpha1\242\002\003PFX\252\002 Performance.Autoscaling" +
+      ".V1Alpha1\312\002 Performance\\Autoscaling\\V1Al" +
+      "pha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -18,9 +18,9 @@ class AgentCreateAutoscalingResponse extends \Google\Protobuf\Internal\Message
      */
     protected $autoscaling = null;
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string origin = 2 [json_name = "origin"];</code>
      */
-    protected $status = '';
+    protected $origin = '';
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class AgentCreateAutoscalingResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Performance\Autoscaling\V1Alpha1\Autoscaling $autoscaling
-     *     @type string $status
+     *     @type string $origin
      * }
      */
     public function __construct($data = NULL) {
@@ -70,23 +70,23 @@ class AgentCreateAutoscalingResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string origin = 2 [json_name = "origin"];</code>
      * @return string
      */
-    public function getStatus()
+    public function getOrigin()
     {
-        return $this->status;
+        return $this->origin;
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string origin = 2 [json_name = "origin"];</code>
      * @param string $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setOrigin($var)
     {
         GPBUtil::checkString($var, True);
-        $this->status = $var;
+        $this->origin = $var;
 
         return $this;
     }

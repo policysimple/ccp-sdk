@@ -18,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='performance/autoscaling/v1alpha1/autoscaling_api.proto',
   package='performance.autoscaling.v1alpha1',
   syntax='proto3',
-  serialized_options=b'\n*io.cuemby.performance.autoscaling.v1alpha1B\023AutoscalingApiProtoP\001Z3github.com/performance-grpc-sdk/autoscalingv1alpha1\242\002\003PFX\252\002 Performance.Autoscaling.V1Alpha1\312\002 Performance\\Autoscaling\\V1Alpha1',
+  serialized_options=b'\n*io.cuemby.performance.autoscaling.v1alpha1B\023AutoscalingApiProtoP\001Z4github.com/performance-grpc-sdk/autoscaling/v1alpha1\242\002\003PFX\252\002 Performance.Autoscaling.V1Alpha1\312\002 Performance\\Autoscaling\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n6performance/autoscaling/v1alpha1/autoscaling_api.proto\x12 performance.autoscaling.v1alpha1\x1a\x32performance/autoscaling/v1alpha1/autoscaling.proto\"k\n\x18\x43reateAutoscalingRequest\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\"\x84\x01\n\x19\x43reateAutoscalingResponse\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"k\n\x18UpdateAutoscalingRequest\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\"\x84\x01\n\x19UpdateAutoscalingResponse\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"b\n\x18\x44\x65leteAutoscalingRequest\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\"{\n\x19\x44\x65leteAutoscalingResponse\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"_\n\x15GetAutoscalingRequest\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\"\x81\x01\n\x16GetAutoscalingResponse\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"`\n\x16ListAutoscalingRequest\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\"l\n\x17ListAutoscalingResponse\x12Q\n\x0c\x61utoscalings\x18\x01 \x03(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0c\x61utoscalings2\xdd\x05\n\x15\x41utoscalingAPIService\x12\x8e\x01\n\x11\x43reateAutoscaling\x12:.performance.autoscaling.v1alpha1.CreateAutoscalingRequest\x1a;.performance.autoscaling.v1alpha1.CreateAutoscalingResponse\"\x00\x12\x8e\x01\n\x11UpdateAutoscaling\x12:.performance.autoscaling.v1alpha1.UpdateAutoscalingRequest\x1a;.performance.autoscaling.v1alpha1.UpdateAutoscalingResponse\"\x00\x12\x8e\x01\n\x11\x44\x65leteAutoscaling\x12:.performance.autoscaling.v1alpha1.DeleteAutoscalingRequest\x1a;.performance.autoscaling.v1alpha1.DeleteAutoscalingResponse\"\x00\x12\x85\x01\n\x0eGetAutoscaling\x12\x37.performance.autoscaling.v1alpha1.GetAutoscalingRequest\x1a\x38.performance.autoscaling.v1alpha1.GetAutoscalingResponse\"\x00\x12\x88\x01\n\x0fListAutoscaling\x12\x38.performance.autoscaling.v1alpha1.ListAutoscalingRequest\x1a\x39.performance.autoscaling.v1alpha1.ListAutoscalingResponse\"\x00\x42\xc4\x01\n*io.cuemby.performance.autoscaling.v1alpha1B\x13\x41utoscalingApiProtoP\x01Z3github.com/performance-grpc-sdk/autoscalingv1alpha1\xa2\x02\x03PFX\xaa\x02 Performance.Autoscaling.V1Alpha1\xca\x02 Performance\\Autoscaling\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n6performance/autoscaling/v1alpha1/autoscaling_api.proto\x12 performance.autoscaling.v1alpha1\x1a\x32performance/autoscaling/v1alpha1/autoscaling.proto\"k\n\x18\x43reateAutoscalingRequest\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\"\x84\x01\n\x19\x43reateAutoscalingResponse\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"k\n\x18UpdateAutoscalingRequest\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\"\x84\x01\n\x19UpdateAutoscalingResponse\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"b\n\x18\x44\x65leteAutoscalingRequest\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\"{\n\x19\x44\x65leteAutoscalingResponse\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"_\n\x15GetAutoscalingRequest\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\"\x81\x01\n\x16GetAutoscalingResponse\x12O\n\x0b\x61utoscaling\x18\x01 \x01(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0b\x61utoscaling\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"`\n\x16ListAutoscalingRequest\x12\x46\n\x08metadata\x18\x01 \x01(\x0b\x32*.performance.autoscaling.v1alpha1.MetadataR\x08metadata\"\x84\x01\n\x17ListAutoscalingResponse\x12Q\n\x0c\x61utoscalings\x18\x01 \x03(\x0b\x32-.performance.autoscaling.v1alpha1.AutoscalingR\x0c\x61utoscalings\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xdd\x05\n\x15\x41utoscalingAPIService\x12\x8e\x01\n\x11\x43reateAutoscaling\x12:.performance.autoscaling.v1alpha1.CreateAutoscalingRequest\x1a;.performance.autoscaling.v1alpha1.CreateAutoscalingResponse\"\x00\x12\x8e\x01\n\x11UpdateAutoscaling\x12:.performance.autoscaling.v1alpha1.UpdateAutoscalingRequest\x1a;.performance.autoscaling.v1alpha1.UpdateAutoscalingResponse\"\x00\x12\x8e\x01\n\x11\x44\x65leteAutoscaling\x12:.performance.autoscaling.v1alpha1.DeleteAutoscalingRequest\x1a;.performance.autoscaling.v1alpha1.DeleteAutoscalingResponse\"\x00\x12\x85\x01\n\x0eGetAutoscaling\x12\x37.performance.autoscaling.v1alpha1.GetAutoscalingRequest\x1a\x38.performance.autoscaling.v1alpha1.GetAutoscalingResponse\"\x00\x12\x88\x01\n\x0fListAutoscaling\x12\x38.performance.autoscaling.v1alpha1.ListAutoscalingRequest\x1a\x39.performance.autoscaling.v1alpha1.ListAutoscalingResponse\"\x00\x42\xc5\x01\n*io.cuemby.performance.autoscaling.v1alpha1B\x13\x41utoscalingApiProtoP\x01Z4github.com/performance-grpc-sdk/autoscaling/v1alpha1\xa2\x02\x03PFX\xaa\x02 Performance.Autoscaling.V1Alpha1\xca\x02 Performance\\Autoscaling\\V1Alpha1b\x06proto3'
   ,
   dependencies=[performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__pb2.DESCRIPTOR,])
 
@@ -358,6 +358,13 @@ _LISTAUTOSCALINGRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='autoscalings', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='performance.autoscaling.v1alpha1.ListAutoscalingResponse.status', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -370,8 +377,8 @@ _LISTAUTOSCALINGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1184,
-  serialized_end=1292,
+  serialized_start=1185,
+  serialized_end=1317,
 )
 
 _CREATEAUTOSCALINGREQUEST.fields_by_name['autoscaling'].message_type = performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__pb2._AUTOSCALING
@@ -476,8 +483,8 @@ _AUTOSCALINGAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1295,
-  serialized_end=2028,
+  serialized_start=1320,
+  serialized_end=2053,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateAutoscaling',

@@ -133,7 +133,8 @@ struct ListAutoscalingRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListAutoscalingRequestDefaultTypeInternal _ListAutoscalingRequest_default_instance_;
 constexpr ListAutoscalingResponse::ListAutoscalingResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : autoscalings_(){}
+  : autoscalings_()
+  , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct ListAutoscalingResponseDefaultTypeInternal {
   constexpr ListAutoscalingResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -215,6 +216,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_performance_2fautoscaling_2fv1
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::performance::autoscaling::v1alpha1::ListAutoscalingResponse, autoscalings_),
+  PROTOBUF_FIELD_OFFSET(::performance::autoscaling::v1alpha1::ListAutoscalingResponse, status_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::performance::autoscaling::v1alpha1::CreateAutoscalingRequest)},
@@ -272,40 +274,41 @@ const char descriptor_table_protodef_performance_2fautoscaling_2fv1alpha1_2fauto
   "scalingR\013autoscaling\022\026\n\006status\030\002 \001(\tR\006st"
   "atus\"`\n\026ListAutoscalingRequest\022F\n\010metada"
   "ta\030\001 \001(\0132*.performance.autoscaling.v1alp"
-  "ha1.MetadataR\010metadata\"l\n\027ListAutoscalin"
-  "gResponse\022Q\n\014autoscalings\030\001 \003(\0132-.perfor"
-  "mance.autoscaling.v1alpha1.AutoscalingR\014"
-  "autoscalings2\335\005\n\025AutoscalingAPIService\022\216"
-  "\001\n\021CreateAutoscaling\022:.performance.autos"
-  "caling.v1alpha1.CreateAutoscalingRequest"
-  "\032;.performance.autoscaling.v1alpha1.Crea"
-  "teAutoscalingResponse\"\000\022\216\001\n\021UpdateAutosc"
+  "ha1.MetadataR\010metadata\"\204\001\n\027ListAutoscali"
+  "ngResponse\022Q\n\014autoscalings\030\001 \003(\0132-.perfo"
+  "rmance.autoscaling.v1alpha1.AutoscalingR"
+  "\014autoscalings\022\026\n\006status\030\002 \001(\tR\006status2\335\005"
+  "\n\025AutoscalingAPIService\022\216\001\n\021CreateAutosc"
   "aling\022:.performance.autoscaling.v1alpha1"
-  ".UpdateAutoscalingRequest\032;.performance."
-  "autoscaling.v1alpha1.UpdateAutoscalingRe"
-  "sponse\"\000\022\216\001\n\021DeleteAutoscaling\022:.perform"
-  "ance.autoscaling.v1alpha1.DeleteAutoscal"
+  ".CreateAutoscalingRequest\032;.performance."
+  "autoscaling.v1alpha1.CreateAutoscalingRe"
+  "sponse\"\000\022\216\001\n\021UpdateAutoscaling\022:.perform"
+  "ance.autoscaling.v1alpha1.UpdateAutoscal"
   "ingRequest\032;.performance.autoscaling.v1a"
-  "lpha1.DeleteAutoscalingResponse\"\000\022\205\001\n\016Ge"
-  "tAutoscaling\0227.performance.autoscaling.v"
-  "1alpha1.GetAutoscalingRequest\0328.performa"
-  "nce.autoscaling.v1alpha1.GetAutoscalingR"
-  "esponse\"\000\022\210\001\n\017ListAutoscaling\0228.performa"
-  "nce.autoscaling.v1alpha1.ListAutoscaling"
-  "Request\0329.performance.autoscaling.v1alph"
-  "a1.ListAutoscalingResponse\"\000B\304\001\n*io.cuem"
-  "by.performance.autoscaling.v1alpha1B\023Aut"
-  "oscalingApiProtoP\001Z3github.com/performan"
-  "ce-grpc-sdk/autoscalingv1alpha1\242\002\003PFX\252\002 "
-  "Performance.Autoscaling.V1Alpha1\312\002 Perfo"
-  "rmance\\Autoscaling\\V1Alpha1b\006proto3"
+  "lpha1.UpdateAutoscalingResponse\"\000\022\216\001\n\021De"
+  "leteAutoscaling\022:.performance.autoscalin"
+  "g.v1alpha1.DeleteAutoscalingRequest\032;.pe"
+  "rformance.autoscaling.v1alpha1.DeleteAut"
+  "oscalingResponse\"\000\022\205\001\n\016GetAutoscaling\0227."
+  "performance.autoscaling.v1alpha1.GetAuto"
+  "scalingRequest\0328.performance.autoscaling"
+  ".v1alpha1.GetAutoscalingResponse\"\000\022\210\001\n\017L"
+  "istAutoscaling\0228.performance.autoscaling"
+  ".v1alpha1.ListAutoscalingRequest\0329.perfo"
+  "rmance.autoscaling.v1alpha1.ListAutoscal"
+  "ingResponse\"\000B\305\001\n*io.cuemby.performance."
+  "autoscaling.v1alpha1B\023AutoscalingApiProt"
+  "oP\001Z4github.com/performance-grpc-sdk/aut"
+  "oscaling/v1alpha1\242\002\003PFX\252\002 Performance.Au"
+  "toscaling.V1Alpha1\312\002 Performance\\Autosca"
+  "ling\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fapi_2eproto_deps[1] = {
   &::descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fapi_2eproto = {
-  false, false, 2235, descriptor_table_protodef_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fapi_2eproto, "performance/autoscaling/v1alpha1/autoscaling_api.proto", 
+  false, false, 2261, descriptor_table_protodef_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fapi_2eproto, "performance/autoscaling/v1alpha1/autoscaling_api.proto", 
   &descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fapi_2eproto_once, descriptor_table_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fapi_2eproto_deps, 1, 10,
   schemas, file_default_instances, TableStruct_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fapi_2eproto::offsets,
   file_level_metadata_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fapi_2eproto, file_level_enum_descriptors_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fapi_2eproto, file_level_service_descriptors_performance_2fautoscaling_2fv1alpha1_2fautoscaling_5fapi_2eproto,
@@ -2365,10 +2368,16 @@ ListAutoscalingResponse::ListAutoscalingResponse(const ListAutoscalingResponse& 
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       autoscalings_(from.autoscalings_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:performance.autoscaling.v1alpha1.ListAutoscalingResponse)
 }
 
 inline void ListAutoscalingResponse::SharedCtor() {
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 ListAutoscalingResponse::~ListAutoscalingResponse() {
@@ -2380,6 +2389,7 @@ ListAutoscalingResponse::~ListAutoscalingResponse() {
 
 inline void ListAutoscalingResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ListAutoscalingResponse::ArenaDtor(void* object) {
@@ -2399,6 +2409,7 @@ void ListAutoscalingResponse::Clear() {
   (void) cached_has_bits;
 
   autoscalings_.Clear();
+  status_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2418,6 +2429,15 @@ const char* ListAutoscalingResponse::_InternalParse(const char* ptr, ::PROTOBUF_
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // string status = 2 [json_name = "status"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.autoscaling.v1alpha1.ListAutoscalingResponse.status"));
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -2457,6 +2477,16 @@ failure:
       InternalWriteMessage(1, this->_internal_autoscalings(i), target, stream);
   }
 
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.autoscaling.v1alpha1.ListAutoscalingResponse.status");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_status(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2478,6 +2508,13 @@ size_t ListAutoscalingResponse::ByteSizeLong() const {
   for (const auto& msg : this->autoscalings_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2509,6 +2546,9 @@ void ListAutoscalingResponse::MergeFrom(const ListAutoscalingResponse& from) {
   (void) cached_has_bits;
 
   autoscalings_.MergeFrom(from.autoscalings_);
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2527,6 +2567,11 @@ void ListAutoscalingResponse::InternalSwap(ListAutoscalingResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   autoscalings_.InternalSwap(&other->autoscalings_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListAutoscalingResponse::GetMetadata() const {

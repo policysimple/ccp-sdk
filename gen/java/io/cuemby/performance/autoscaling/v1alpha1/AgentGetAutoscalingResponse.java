@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AgentGetAutoscalingResponse() {
-    status_ = "";
+    origin_ = "";
   }
 
   @java.lang.Override
@@ -50,14 +50,14 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder subBuilder = null;
-            if (autoscaling_ != null) {
-              subBuilder = autoscaling_.toBuilder();
+            io.cuemby.performance.autoscaling.v1alpha1.Metadata.Builder subBuilder = null;
+            if (metadata_ != null) {
+              subBuilder = metadata_.toBuilder();
             }
-            autoscaling_ = input.readMessage(io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.parser(), extensionRegistry);
+            metadata_ = input.readMessage(io.cuemby.performance.autoscaling.v1alpha1.Metadata.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(autoscaling_);
-              autoscaling_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(metadata_);
+              metadata_ = subBuilder.buildPartial();
             }
 
             break;
@@ -65,7 +65,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            status_ = s;
+            origin_ = s;
             break;
           }
           default: {
@@ -100,64 +100,64 @@ private static final long serialVersionUID = 0L;
             io.cuemby.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.class, io.cuemby.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.Builder.class);
   }
 
-  public static final int AUTOSCALING_FIELD_NUMBER = 1;
-  private io.cuemby.performance.autoscaling.v1alpha1.Autoscaling autoscaling_;
+  public static final int METADATA_FIELD_NUMBER = 1;
+  private io.cuemby.performance.autoscaling.v1alpha1.Metadata metadata_;
   /**
-   * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
-   * @return Whether the autoscaling field is set.
+   * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
+   * @return Whether the metadata field is set.
    */
   @java.lang.Override
-  public boolean hasAutoscaling() {
-    return autoscaling_ != null;
+  public boolean hasMetadata() {
+    return metadata_ != null;
   }
   /**
-   * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
-   * @return The autoscaling.
+   * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
+   * @return The metadata.
    */
   @java.lang.Override
-  public io.cuemby.performance.autoscaling.v1alpha1.Autoscaling getAutoscaling() {
-    return autoscaling_ == null ? io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.getDefaultInstance() : autoscaling_;
+  public io.cuemby.performance.autoscaling.v1alpha1.Metadata getMetadata() {
+    return metadata_ == null ? io.cuemby.performance.autoscaling.v1alpha1.Metadata.getDefaultInstance() : metadata_;
   }
   /**
-   * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
+   * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
    */
   @java.lang.Override
-  public io.cuemby.performance.autoscaling.v1alpha1.AutoscalingOrBuilder getAutoscalingOrBuilder() {
-    return getAutoscaling();
+  public io.cuemby.performance.autoscaling.v1alpha1.MetadataOrBuilder getMetadataOrBuilder() {
+    return getMetadata();
   }
 
-  public static final int STATUS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object status_;
+  public static final int ORIGIN_FIELD_NUMBER = 2;
+  private volatile java.lang.Object origin_;
   /**
-   * <code>string status = 2 [json_name = "status"];</code>
-   * @return The status.
+   * <code>string origin = 2 [json_name = "origin"];</code>
+   * @return The origin.
    */
   @java.lang.Override
-  public java.lang.String getStatus() {
-    java.lang.Object ref = status_;
+  public java.lang.String getOrigin() {
+    java.lang.Object ref = origin_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      status_ = s;
+      origin_ = s;
       return s;
     }
   }
   /**
-   * <code>string status = 2 [json_name = "status"];</code>
-   * @return The bytes for status.
+   * <code>string origin = 2 [json_name = "origin"];</code>
+   * @return The bytes for origin.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getStatusBytes() {
-    java.lang.Object ref = status_;
+      getOriginBytes() {
+    java.lang.Object ref = origin_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      status_ = b;
+      origin_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -178,11 +178,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (autoscaling_ != null) {
-      output.writeMessage(1, getAutoscaling());
+    if (metadata_ != null) {
+      output.writeMessage(1, getMetadata());
     }
-    if (!getStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+    if (!getOriginBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, origin_);
     }
     unknownFields.writeTo(output);
   }
@@ -193,12 +193,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (autoscaling_ != null) {
+    if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getAutoscaling());
+        .computeMessageSize(1, getMetadata());
     }
-    if (!getStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+    if (!getOriginBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, origin_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,13 +215,13 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse other = (io.cuemby.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse) obj;
 
-    if (hasAutoscaling() != other.hasAutoscaling()) return false;
-    if (hasAutoscaling()) {
-      if (!getAutoscaling()
-          .equals(other.getAutoscaling())) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata()
+          .equals(other.getMetadata())) return false;
     }
-    if (!getStatus()
-        .equals(other.getStatus())) return false;
+    if (!getOrigin()
+        .equals(other.getOrigin())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -233,12 +233,12 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasAutoscaling()) {
-      hash = (37 * hash) + AUTOSCALING_FIELD_NUMBER;
-      hash = (53 * hash) + getAutoscaling().hashCode();
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
     }
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + ORIGIN_FIELD_NUMBER;
+    hash = (53 * hash) + getOrigin().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -372,13 +372,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (autoscalingBuilder_ == null) {
-        autoscaling_ = null;
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
       } else {
-        autoscaling_ = null;
-        autoscalingBuilder_ = null;
+        metadata_ = null;
+        metadataBuilder_ = null;
       }
-      status_ = "";
+      origin_ = "";
 
       return this;
     }
@@ -406,12 +406,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse buildPartial() {
       io.cuemby.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse result = new io.cuemby.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse(this);
-      if (autoscalingBuilder_ == null) {
-        result.autoscaling_ = autoscaling_;
+      if (metadataBuilder_ == null) {
+        result.metadata_ = metadata_;
       } else {
-        result.autoscaling_ = autoscalingBuilder_.build();
+        result.metadata_ = metadataBuilder_.build();
       }
-      result.status_ = status_;
+      result.origin_ = origin_;
       onBuilt();
       return result;
     }
@@ -460,11 +460,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse other) {
       if (other == io.cuemby.performance.autoscaling.v1alpha1.AgentGetAutoscalingResponse.getDefaultInstance()) return this;
-      if (other.hasAutoscaling()) {
-        mergeAutoscaling(other.getAutoscaling());
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
       }
-      if (!other.getStatus().isEmpty()) {
-        status_ = other.status_;
+      if (!other.getOrigin().isEmpty()) {
+        origin_ = other.origin_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -496,197 +496,197 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private io.cuemby.performance.autoscaling.v1alpha1.Autoscaling autoscaling_;
+    private io.cuemby.performance.autoscaling.v1alpha1.Metadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.performance.autoscaling.v1alpha1.Autoscaling, io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder, io.cuemby.performance.autoscaling.v1alpha1.AutoscalingOrBuilder> autoscalingBuilder_;
+        io.cuemby.performance.autoscaling.v1alpha1.Metadata, io.cuemby.performance.autoscaling.v1alpha1.Metadata.Builder, io.cuemby.performance.autoscaling.v1alpha1.MetadataOrBuilder> metadataBuilder_;
     /**
-     * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
-     * @return Whether the autoscaling field is set.
+     * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
+     * @return Whether the metadata field is set.
      */
-    public boolean hasAutoscaling() {
-      return autoscalingBuilder_ != null || autoscaling_ != null;
+    public boolean hasMetadata() {
+      return metadataBuilder_ != null || metadata_ != null;
     }
     /**
-     * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
-     * @return The autoscaling.
+     * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
+     * @return The metadata.
      */
-    public io.cuemby.performance.autoscaling.v1alpha1.Autoscaling getAutoscaling() {
-      if (autoscalingBuilder_ == null) {
-        return autoscaling_ == null ? io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.getDefaultInstance() : autoscaling_;
+    public io.cuemby.performance.autoscaling.v1alpha1.Metadata getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null ? io.cuemby.performance.autoscaling.v1alpha1.Metadata.getDefaultInstance() : metadata_;
       } else {
-        return autoscalingBuilder_.getMessage();
+        return metadataBuilder_.getMessage();
       }
     }
     /**
-     * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
+     * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
      */
-    public Builder setAutoscaling(io.cuemby.performance.autoscaling.v1alpha1.Autoscaling value) {
-      if (autoscalingBuilder_ == null) {
+    public Builder setMetadata(io.cuemby.performance.autoscaling.v1alpha1.Metadata value) {
+      if (metadataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        autoscaling_ = value;
+        metadata_ = value;
         onChanged();
       } else {
-        autoscalingBuilder_.setMessage(value);
+        metadataBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
+     * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
      */
-    public Builder setAutoscaling(
-        io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder builderForValue) {
-      if (autoscalingBuilder_ == null) {
-        autoscaling_ = builderForValue.build();
+    public Builder setMetadata(
+        io.cuemby.performance.autoscaling.v1alpha1.Metadata.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
         onChanged();
       } else {
-        autoscalingBuilder_.setMessage(builderForValue.build());
+        metadataBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
+     * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
      */
-    public Builder mergeAutoscaling(io.cuemby.performance.autoscaling.v1alpha1.Autoscaling value) {
-      if (autoscalingBuilder_ == null) {
-        if (autoscaling_ != null) {
-          autoscaling_ =
-            io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.newBuilder(autoscaling_).mergeFrom(value).buildPartial();
+    public Builder mergeMetadata(io.cuemby.performance.autoscaling.v1alpha1.Metadata value) {
+      if (metadataBuilder_ == null) {
+        if (metadata_ != null) {
+          metadata_ =
+            io.cuemby.performance.autoscaling.v1alpha1.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
         } else {
-          autoscaling_ = value;
+          metadata_ = value;
         }
         onChanged();
       } else {
-        autoscalingBuilder_.mergeFrom(value);
+        metadataBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
+     * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
      */
-    public Builder clearAutoscaling() {
-      if (autoscalingBuilder_ == null) {
-        autoscaling_ = null;
+    public Builder clearMetadata() {
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
         onChanged();
       } else {
-        autoscaling_ = null;
-        autoscalingBuilder_ = null;
+        metadata_ = null;
+        metadataBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
+     * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
      */
-    public io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder getAutoscalingBuilder() {
+    public io.cuemby.performance.autoscaling.v1alpha1.Metadata.Builder getMetadataBuilder() {
       
       onChanged();
-      return getAutoscalingFieldBuilder().getBuilder();
+      return getMetadataFieldBuilder().getBuilder();
     }
     /**
-     * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
+     * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
      */
-    public io.cuemby.performance.autoscaling.v1alpha1.AutoscalingOrBuilder getAutoscalingOrBuilder() {
-      if (autoscalingBuilder_ != null) {
-        return autoscalingBuilder_.getMessageOrBuilder();
+    public io.cuemby.performance.autoscaling.v1alpha1.MetadataOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
       } else {
-        return autoscaling_ == null ?
-            io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.getDefaultInstance() : autoscaling_;
+        return metadata_ == null ?
+            io.cuemby.performance.autoscaling.v1alpha1.Metadata.getDefaultInstance() : metadata_;
       }
     }
     /**
-     * <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
+     * <code>.performance.autoscaling.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.performance.autoscaling.v1alpha1.Autoscaling, io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder, io.cuemby.performance.autoscaling.v1alpha1.AutoscalingOrBuilder> 
-        getAutoscalingFieldBuilder() {
-      if (autoscalingBuilder_ == null) {
-        autoscalingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.cuemby.performance.autoscaling.v1alpha1.Autoscaling, io.cuemby.performance.autoscaling.v1alpha1.Autoscaling.Builder, io.cuemby.performance.autoscaling.v1alpha1.AutoscalingOrBuilder>(
-                getAutoscaling(),
+        io.cuemby.performance.autoscaling.v1alpha1.Metadata, io.cuemby.performance.autoscaling.v1alpha1.Metadata.Builder, io.cuemby.performance.autoscaling.v1alpha1.MetadataOrBuilder> 
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.cuemby.performance.autoscaling.v1alpha1.Metadata, io.cuemby.performance.autoscaling.v1alpha1.Metadata.Builder, io.cuemby.performance.autoscaling.v1alpha1.MetadataOrBuilder>(
+                getMetadata(),
                 getParentForChildren(),
                 isClean());
-        autoscaling_ = null;
+        metadata_ = null;
       }
-      return autoscalingBuilder_;
+      return metadataBuilder_;
     }
 
-    private java.lang.Object status_ = "";
+    private java.lang.Object origin_ = "";
     /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
+     * <code>string origin = 2 [json_name = "origin"];</code>
+     * @return The origin.
      */
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
+    public java.lang.String getOrigin() {
+      java.lang.Object ref = origin_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        status_ = s;
+        origin_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
+     * <code>string origin = 2 [json_name = "origin"];</code>
+     * @return The bytes for origin.
      */
     public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
+        getOriginBytes() {
+      java.lang.Object ref = origin_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        status_ = b;
+        origin_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @param value The status to set.
+     * <code>string origin = 2 [json_name = "origin"];</code>
+     * @param value The origin to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(
+    public Builder setOrigin(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      status_ = value;
+      origin_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string status = 2 [json_name = "status"];</code>
+     * <code>string origin = 2 [json_name = "origin"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
+    public Builder clearOrigin() {
       
-      status_ = getDefaultInstance().getStatus();
+      origin_ = getDefaultInstance().getOrigin();
       onChanged();
       return this;
     }
     /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @param value The bytes for status to set.
+     * <code>string origin = 2 [json_name = "origin"];</code>
+     * @param value The bytes for origin to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusBytes(
+    public Builder setOriginBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      status_ = value;
+      origin_ = value;
       onChanged();
       return this;
     }

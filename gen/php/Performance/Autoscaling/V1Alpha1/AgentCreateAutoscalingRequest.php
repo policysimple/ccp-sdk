@@ -17,6 +17,14 @@ class AgentCreateAutoscalingRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.performance.autoscaling.v1alpha1.Autoscaling autoscaling = 1 [json_name = "autoscaling"];</code>
      */
     protected $autoscaling = null;
+    /**
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     */
+    protected $status = '';
+    /**
+     * Generated from protobuf field <code>string origin = 3 [json_name = "origin"];</code>
+     */
+    protected $origin = '';
 
     /**
      * Constructor.
@@ -25,6 +33,8 @@ class AgentCreateAutoscalingRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Performance\Autoscaling\V1Alpha1\Autoscaling $autoscaling
+     *     @type string $status
+     *     @type string $origin
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +70,50 @@ class AgentCreateAutoscalingRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Performance\Autoscaling\V1Alpha1\Autoscaling::class);
         $this->autoscaling = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string origin = 3 [json_name = "origin"];</code>
+     * @return string
+     */
+    public function getOrigin()
+    {
+        return $this->origin;
+    }
+
+    /**
+     * Generated from protobuf field <code>string origin = 3 [json_name = "origin"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOrigin($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->origin = $var;
 
         return $this;
     }

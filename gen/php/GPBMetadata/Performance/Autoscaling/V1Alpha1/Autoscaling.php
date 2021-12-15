@@ -16,7 +16,7 @@ class Autoscaling
         }
         $pool->internalAddGeneratedFile(
             '
-Ó
+Ô
 2performance/autoscaling/v1alpha1/autoscaling.proto performance.autoscaling.v1alpha1"æ
 Metadata
 name (	Rname
@@ -53,8 +53,8 @@ target_ref (27.performance.autoscaling.v1alpha1.AutoScalingSpecTargetR	targe
 rules (25.performance.autoscaling.v1alpha1.AutoscalingSpecRuleRrules"œ
 AutoscalingF
 metadata (2*.performance.autoscaling.v1alpha1.MetadataRmetadataE
-spec (21.performance.autoscaling.v1alpha1.AutoscalingSpecRspecBÁ
-*io.cuemby.performance.autoscaling.v1alpha1BAutoscalingProtoPZ3github.com/performance-grpc-sdk/autoscalingv1alpha1¢PFXª Performance.Autoscaling.V1Alpha1Ê Performance\\Autoscaling\\V1Alpha1bproto3'
+spec (21.performance.autoscaling.v1alpha1.AutoscalingSpecRspecBÂ
+*io.cuemby.performance.autoscaling.v1alpha1BAutoscalingProtoPZ4github.com/performance-grpc-sdk/autoscaling/v1alpha1¢PFXª Performance.Autoscaling.V1Alpha1Ê Performance\\Autoscaling\\V1Alpha1bproto3'
         , true);
 
         static::$is_initialized = true;
