@@ -34,7 +34,8 @@ constexpr SaveLogsRequest::SaveLogsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : meta_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , logs_()
-  , cluster_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , cluster_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , log_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct SaveLogsRequestDefaultTypeInternal {
   constexpr SaveLogsRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -138,6 +139,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_performance_2flogs_2fv1alpha1_
   PROTOBUF_FIELD_OFFSET(::performance::logs::v1alpha1::SaveLogsRequest, cluster_name_),
   PROTOBUF_FIELD_OFFSET(::performance::logs::v1alpha1::SaveLogsRequest, meta_),
   PROTOBUF_FIELD_OFFSET(::performance::logs::v1alpha1::SaveLogsRequest, logs_),
+  PROTOBUF_FIELD_OFFSET(::performance::logs::v1alpha1::SaveLogsRequest, log_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::performance::logs::v1alpha1::SaveLogsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -189,11 +191,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_performance_2flogs_2fv1alpha1_
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 7, sizeof(::performance::logs::v1alpha1::SaveLogsRequest_MetaEntry_DoNotUse)},
   { 9, -1, sizeof(::performance::logs::v1alpha1::SaveLogsRequest)},
-  { 17, -1, sizeof(::performance::logs::v1alpha1::SaveLogsResponse)},
-  { 23, -1, sizeof(::performance::logs::v1alpha1::Log)},
-  { 31, 38, sizeof(::performance::logs::v1alpha1::LogKuebrnetesInfo_LabelsEntry_DoNotUse)},
-  { 40, 47, sizeof(::performance::logs::v1alpha1::LogKuebrnetesInfo_AnnotationsEntry_DoNotUse)},
-  { 49, -1, sizeof(::performance::logs::v1alpha1::LogKuebrnetesInfo)},
+  { 18, -1, sizeof(::performance::logs::v1alpha1::SaveLogsResponse)},
+  { 24, -1, sizeof(::performance::logs::v1alpha1::Log)},
+  { 32, 39, sizeof(::performance::logs::v1alpha1::LogKuebrnetesInfo_LabelsEntry_DoNotUse)},
+  { 41, 48, sizeof(::performance::logs::v1alpha1::LogKuebrnetesInfo_AnnotationsEntry_DoNotUse)},
+  { 50, -1, sizeof(::performance::logs::v1alpha1::LogKuebrnetesInfo)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -209,47 +211,47 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n.performance/logs/v1alpha1/logs_agent_a"
   "pi.proto\022\031performance.logs.v1alpha1\032$per"
-  "formance/logs/v1alpha1/logs.proto\"\353\001\n\017Sa"
+  "formance/logs/v1alpha1/logs.proto\"\202\002\n\017Sa"
   "veLogsRequest\022!\n\014cluster_name\030\001 \001(\tR\013clu"
   "sterName\022H\n\004meta\030\002 \003(\01324.performance.log"
   "s.v1alpha1.SaveLogsRequest.MetaEntryR\004me"
   "ta\0222\n\004logs\030\003 \003(\0132\036.performance.logs.v1al"
-  "pha1.LogR\004logs\0327\n\tMetaEntry\022\020\n\003key\030\001 \001(\t"
-  "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\",\n\020SaveL"
-  "ogsResponse\022\030\n\007success\030\001 \001(\010R\007success\"y\n"
-  "\003Log\022\022\n\004date\030\001 \001(\001R\004date\022\020\n\003log\030\002 \001(\tR\003l"
-  "og\022L\n\nkubernetes\030\003 \001(\0132,.performance.log"
-  "s.v1alpha1.LogKuebrnetesInfoR\nkubernetes"
-  "\"\302\004\n\021LogKuebrnetesInfo\022\031\n\010pod_name\030\001 \001(\t"
-  "R\007podName\022%\n\016namespace_name\030\002 \001(\tR\rnames"
-  "paceName\022\025\n\006pod_id\030\003 \001(\tR\005podId\022P\n\006label"
-  "s\030\004 \003(\01328.performance.logs.v1alpha1.LogK"
-  "uebrnetesInfo.LabelsEntryR\006labels\022_\n\013ann"
-  "otations\030\005 \003(\0132=.performance.logs.v1alph"
-  "a1.LogKuebrnetesInfo.AnnotationsEntryR\013a"
-  "nnotations\022\022\n\004host\030\006 \001(\tR\004host\022%\n\016contai"
-  "ner_name\030\007 \001(\tR\rcontainerName\022\033\n\tdocker_"
-  "id\030\010 \001(\tR\010dockerId\022%\n\016container_hash\030\n \001"
-  "(\tR\rcontainerHash\022\'\n\017container_image\030\013 \001"
-  "(\tR\016containerImage\0329\n\013LabelsEntry\022\020\n\003key"
-  "\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032>\n"
-  "\020AnnotationsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005v"
-  "alue\030\002 \001(\tR\005value:\0028\0012\200\001\n\023LogsAgentAPISe"
-  "rvice\022i\n\010SaveLogs\022*.performance.logs.v1a"
-  "lpha1.SaveLogsRequest\032+.performance.logs"
-  ".v1alpha1.SaveLogsResponse\"\000(\0010\001B\246\001\n#io."
-  "cuemby.performance.logs.v1alpha1B\021LogsAg"
-  "entApiProtoP\001Z,github.com/performance-gr"
-  "pc-sdk/logsv1alpha1\242\002\003PFX\252\002\031Performance."
-  "Logs.V1Alpha1\312\002\031Performance\\Logs\\V1Alpha"
-  "1b\006proto3"
+  "pha1.LogR\004logs\022\025\n\006log_id\030\004 \001(\tR\005logId\0327\n"
+  "\tMetaEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 "
+  "\001(\tR\005value:\0028\001\",\n\020SaveLogsResponse\022\030\n\007su"
+  "ccess\030\001 \001(\010R\007success\"y\n\003Log\022\022\n\004date\030\001 \001("
+  "\001R\004date\022\020\n\003log\030\002 \001(\tR\003log\022L\n\nkubernetes\030"
+  "\003 \001(\0132,.performance.logs.v1alpha1.LogKue"
+  "brnetesInfoR\nkubernetes\"\302\004\n\021LogKuebrnete"
+  "sInfo\022\031\n\010pod_name\030\001 \001(\tR\007podName\022%\n\016name"
+  "space_name\030\002 \001(\tR\rnamespaceName\022\025\n\006pod_i"
+  "d\030\003 \001(\tR\005podId\022P\n\006labels\030\004 \003(\01328.perform"
+  "ance.logs.v1alpha1.LogKuebrnetesInfo.Lab"
+  "elsEntryR\006labels\022_\n\013annotations\030\005 \003(\0132=."
+  "performance.logs.v1alpha1.LogKuebrnetesI"
+  "nfo.AnnotationsEntryR\013annotations\022\022\n\004hos"
+  "t\030\006 \001(\tR\004host\022%\n\016container_name\030\007 \001(\tR\rc"
+  "ontainerName\022\033\n\tdocker_id\030\010 \001(\tR\010dockerI"
+  "d\022%\n\016container_hash\030\n \001(\tR\rcontainerHash"
+  "\022\'\n\017container_image\030\013 \001(\tR\016containerImag"
+  "e\0329\n\013LabelsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va"
+  "lue\030\002 \001(\tR\005value:\0028\001\032>\n\020AnnotationsEntry"
+  "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value"
+  ":\0028\0012\200\001\n\023LogsAgentAPIService\022i\n\010SaveLogs"
+  "\022*.performance.logs.v1alpha1.SaveLogsReq"
+  "uest\032+.performance.logs.v1alpha1.SaveLog"
+  "sResponse\"\000(\0010\001B\246\001\n#io.cuemby.performanc"
+  "e.logs.v1alpha1B\021LogsAgentApiProtoP\001Z,gi"
+  "thub.com/performance-grpc-sdk/logsv1alph"
+  "a1\242\002\003PFX\252\002\031Performance.Logs.V1Alpha1\312\002\031P"
+  "erformance\\Logs\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto_deps[1] = {
   &::descriptor_table_performance_2flogs_2fv1alpha1_2flogs_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto = {
-  false, false, 1409, descriptor_table_protodef_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto, "performance/logs/v1alpha1/logs_agent_api.proto", 
+  false, false, 1432, descriptor_table_protodef_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto, "performance/logs/v1alpha1/logs_agent_api.proto", 
   &descriptor_table_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto_once, descriptor_table_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto_deps, 1, 7,
   schemas, file_default_instances, TableStruct_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto::offsets,
   file_level_metadata_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto, file_level_enum_descriptors_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto, file_level_service_descriptors_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto,
@@ -305,11 +307,17 @@ SaveLogsRequest::SaveLogsRequest(const SaveLogsRequest& from)
     cluster_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_cluster_name(), 
       GetArenaForAllocation());
   }
+  log_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_log_id().empty()) {
+    log_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_log_id(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:performance.logs.v1alpha1.SaveLogsRequest)
 }
 
 inline void SaveLogsRequest::SharedCtor() {
 cluster_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+log_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 SaveLogsRequest::~SaveLogsRequest() {
@@ -322,6 +330,7 @@ SaveLogsRequest::~SaveLogsRequest() {
 inline void SaveLogsRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   cluster_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  log_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void SaveLogsRequest::ArenaDtor(void* object) {
@@ -347,6 +356,7 @@ void SaveLogsRequest::Clear() {
   meta_.Clear();
   logs_.Clear();
   cluster_name_.ClearToEmpty();
+  log_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -387,6 +397,15 @@ const char* SaveLogsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // string log_id = 4 [json_name = "logId"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_log_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.logs.v1alpha1.SaveLogsRequest.log_id"));
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -482,6 +501,16 @@ failure:
       InternalWriteMessage(3, this->_internal_logs(i), target, stream);
   }
 
+  // string log_id = 4 [json_name = "logId"];
+  if (!this->_internal_log_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_log_id().data(), static_cast<int>(this->_internal_log_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.logs.v1alpha1.SaveLogsRequest.log_id");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_log_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -521,6 +550,13 @@ size_t SaveLogsRequest::ByteSizeLong() const {
         this->_internal_cluster_name());
   }
 
+  // string log_id = 4 [json_name = "logId"];
+  if (!this->_internal_log_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_log_id());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -554,6 +590,9 @@ void SaveLogsRequest::MergeFrom(const SaveLogsRequest& from) {
   if (!from._internal_cluster_name().empty()) {
     _internal_set_cluster_name(from._internal_cluster_name());
   }
+  if (!from._internal_log_id().empty()) {
+    _internal_set_log_id(from._internal_log_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -577,6 +616,11 @@ void SaveLogsRequest::InternalSwap(SaveLogsRequest* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &cluster_name_, GetArenaForAllocation(),
       &other->cluster_name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &log_id_, GetArenaForAllocation(),
+      &other->log_id_, other->GetArenaForAllocation()
   );
 }
 

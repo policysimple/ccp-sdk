@@ -76,4 +76,16 @@ public interface SaveLogsRequestOrBuilder extends
    */
   io.cuemby.performance.logs.v1alpha1.LogOrBuilder getLogsOrBuilder(
       int index);
+
+  /**
+   * <code>string log_id = 4 [json_name = "logId"];</code>
+   * @return The logId.
+   */
+  java.lang.String getLogId();
+  /**
+   * <code>string log_id = 4 [json_name = "logId"];</code>
+   * @return The bytes for logId.
+   */
+  com.google.protobuf.ByteString
+      getLogIdBytes();
 }

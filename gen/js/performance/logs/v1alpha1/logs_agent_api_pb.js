@@ -147,7 +147,8 @@ proto.performance.logs.v1alpha1.SaveLogsRequest.toObject = function(includeInsta
     clusterName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     metaMap: (f = msg.getMetaMap()) ? f.toObject(includeInstance, undefined) : [],
     logsList: jspb.Message.toObjectList(msg.getLogsList(),
-    proto.performance.logs.v1alpha1.Log.toObject, includeInstance)
+    proto.performance.logs.v1alpha1.Log.toObject, includeInstance),
+    logId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -199,6 +200,10 @@ proto.performance.logs.v1alpha1.SaveLogsRequest.deserializeBinaryFromReader = fu
       reader.readMessage(value,proto.performance.logs.v1alpha1.Log.deserializeBinaryFromReader);
       msg.addLogs(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLogId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -245,6 +250,13 @@ proto.performance.logs.v1alpha1.SaveLogsRequest.serializeBinaryToWriter = functi
       3,
       f,
       proto.performance.logs.v1alpha1.Log.serializeBinaryToWriter
+    );
+  }
+  f = message.getLogId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -325,6 +337,24 @@ proto.performance.logs.v1alpha1.SaveLogsRequest.prototype.addLogs = function(opt
  */
 proto.performance.logs.v1alpha1.SaveLogsRequest.prototype.clearLogsList = function() {
   return this.setLogsList([]);
+};
+
+
+/**
+ * optional string log_id = 4;
+ * @return {string}
+ */
+proto.performance.logs.v1alpha1.SaveLogsRequest.prototype.getLogId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.logs.v1alpha1.SaveLogsRequest} returns this
+ */
+proto.performance.logs.v1alpha1.SaveLogsRequest.prototype.setLogId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

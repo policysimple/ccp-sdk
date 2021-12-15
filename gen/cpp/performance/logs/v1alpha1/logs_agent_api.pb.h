@@ -245,6 +245,7 @@ class SaveLogsRequest final :
     kMetaFieldNumber = 2,
     kLogsFieldNumber = 3,
     kClusterNameFieldNumber = 1,
+    kLogIdFieldNumber = 4,
   };
   // map<string, string> meta = 2 [json_name = "meta"];
   int meta_size() const;
@@ -295,6 +296,20 @@ class SaveLogsRequest final :
   std::string* _internal_mutable_cluster_name();
   public:
 
+  // string log_id = 4 [json_name = "logId"];
+  void clear_log_id();
+  const std::string& log_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_log_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_log_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_log_id();
+  void set_allocated_log_id(std::string* log_id);
+  private:
+  const std::string& _internal_log_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_log_id(const std::string& value);
+  std::string* _internal_mutable_log_id();
+  public:
+
   // @@protoc_insertion_point(class_scope:performance.logs.v1alpha1.SaveLogsRequest)
  private:
   class _Internal;
@@ -309,6 +324,7 @@ class SaveLogsRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> meta_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::logs::v1alpha1::Log > logs_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cluster_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr log_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto;
 };
@@ -1109,6 +1125,52 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::logs::v1a
 SaveLogsRequest::logs() const {
   // @@protoc_insertion_point(field_list:performance.logs.v1alpha1.SaveLogsRequest.logs)
   return logs_;
+}
+
+// string log_id = 4 [json_name = "logId"];
+inline void SaveLogsRequest::clear_log_id() {
+  log_id_.ClearToEmpty();
+}
+inline const std::string& SaveLogsRequest::log_id() const {
+  // @@protoc_insertion_point(field_get:performance.logs.v1alpha1.SaveLogsRequest.log_id)
+  return _internal_log_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SaveLogsRequest::set_log_id(ArgT0&& arg0, ArgT... args) {
+ 
+ log_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.logs.v1alpha1.SaveLogsRequest.log_id)
+}
+inline std::string* SaveLogsRequest::mutable_log_id() {
+  std::string* _s = _internal_mutable_log_id();
+  // @@protoc_insertion_point(field_mutable:performance.logs.v1alpha1.SaveLogsRequest.log_id)
+  return _s;
+}
+inline const std::string& SaveLogsRequest::_internal_log_id() const {
+  return log_id_.Get();
+}
+inline void SaveLogsRequest::_internal_set_log_id(const std::string& value) {
+  
+  log_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SaveLogsRequest::_internal_mutable_log_id() {
+  
+  return log_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SaveLogsRequest::release_log_id() {
+  // @@protoc_insertion_point(field_release:performance.logs.v1alpha1.SaveLogsRequest.log_id)
+  return log_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SaveLogsRequest::set_allocated_log_id(std::string* log_id) {
+  if (log_id != nullptr) {
+    
+  } else {
+    
+  }
+  log_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), log_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.logs.v1alpha1.SaveLogsRequest.log_id)
 }
 
 // -------------------------------------------------------------------

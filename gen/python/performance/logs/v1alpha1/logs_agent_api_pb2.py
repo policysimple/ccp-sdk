@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#io.cuemby.performance.logs.v1alpha1B\021LogsAgentApiProtoP\001Z,github.com/performance-grpc-sdk/logsv1alpha1\242\002\003PFX\252\002\031Performance.Logs.V1Alpha1\312\002\031Performance\\Logs\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n.performance/logs/v1alpha1/logs_agent_api.proto\x12\x19performance.logs.v1alpha1\x1a$performance/logs/v1alpha1/logs.proto\"\xeb\x01\n\x0fSaveLogsRequest\x12!\n\x0c\x63luster_name\x18\x01 \x01(\tR\x0b\x63lusterName\x12H\n\x04meta\x18\x02 \x03(\x0b\x32\x34.performance.logs.v1alpha1.SaveLogsRequest.MetaEntryR\x04meta\x12\x32\n\x04logs\x18\x03 \x03(\x0b\x32\x1e.performance.logs.v1alpha1.LogR\x04logs\x1a\x37\n\tMetaEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\",\n\x10SaveLogsResponse\x12\x18\n\x07success\x18\x01 \x01(\x08R\x07success\"y\n\x03Log\x12\x12\n\x04\x64\x61te\x18\x01 \x01(\x01R\x04\x64\x61te\x12\x10\n\x03log\x18\x02 \x01(\tR\x03log\x12L\n\nkubernetes\x18\x03 \x01(\x0b\x32,.performance.logs.v1alpha1.LogKuebrnetesInfoR\nkubernetes\"\xc2\x04\n\x11LogKuebrnetesInfo\x12\x19\n\x08pod_name\x18\x01 \x01(\tR\x07podName\x12%\n\x0enamespace_name\x18\x02 \x01(\tR\rnamespaceName\x12\x15\n\x06pod_id\x18\x03 \x01(\tR\x05podId\x12P\n\x06labels\x18\x04 \x03(\x0b\x32\x38.performance.logs.v1alpha1.LogKuebrnetesInfo.LabelsEntryR\x06labels\x12_\n\x0b\x61nnotations\x18\x05 \x03(\x0b\x32=.performance.logs.v1alpha1.LogKuebrnetesInfo.AnnotationsEntryR\x0b\x61nnotations\x12\x12\n\x04host\x18\x06 \x01(\tR\x04host\x12%\n\x0e\x63ontainer_name\x18\x07 \x01(\tR\rcontainerName\x12\x1b\n\tdocker_id\x18\x08 \x01(\tR\x08\x64ockerId\x12%\n\x0e\x63ontainer_hash\x18\n \x01(\tR\rcontainerHash\x12\'\n\x0f\x63ontainer_image\x18\x0b \x01(\tR\x0e\x63ontainerImage\x1a\x39\n\x0bLabelsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a>\n\x10\x41nnotationsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x32\x80\x01\n\x13LogsAgentAPIService\x12i\n\x08SaveLogs\x12*.performance.logs.v1alpha1.SaveLogsRequest\x1a+.performance.logs.v1alpha1.SaveLogsResponse\"\x00(\x01\x30\x01\x42\xa6\x01\n#io.cuemby.performance.logs.v1alpha1B\x11LogsAgentApiProtoP\x01Z,github.com/performance-grpc-sdk/logsv1alpha1\xa2\x02\x03PFX\xaa\x02\x19Performance.Logs.V1Alpha1\xca\x02\x19Performance\\Logs\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n.performance/logs/v1alpha1/logs_agent_api.proto\x12\x19performance.logs.v1alpha1\x1a$performance/logs/v1alpha1/logs.proto\"\x82\x02\n\x0fSaveLogsRequest\x12!\n\x0c\x63luster_name\x18\x01 \x01(\tR\x0b\x63lusterName\x12H\n\x04meta\x18\x02 \x03(\x0b\x32\x34.performance.logs.v1alpha1.SaveLogsRequest.MetaEntryR\x04meta\x12\x32\n\x04logs\x18\x03 \x03(\x0b\x32\x1e.performance.logs.v1alpha1.LogR\x04logs\x12\x15\n\x06log_id\x18\x04 \x01(\tR\x05logId\x1a\x37\n\tMetaEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\",\n\x10SaveLogsResponse\x12\x18\n\x07success\x18\x01 \x01(\x08R\x07success\"y\n\x03Log\x12\x12\n\x04\x64\x61te\x18\x01 \x01(\x01R\x04\x64\x61te\x12\x10\n\x03log\x18\x02 \x01(\tR\x03log\x12L\n\nkubernetes\x18\x03 \x01(\x0b\x32,.performance.logs.v1alpha1.LogKuebrnetesInfoR\nkubernetes\"\xc2\x04\n\x11LogKuebrnetesInfo\x12\x19\n\x08pod_name\x18\x01 \x01(\tR\x07podName\x12%\n\x0enamespace_name\x18\x02 \x01(\tR\rnamespaceName\x12\x15\n\x06pod_id\x18\x03 \x01(\tR\x05podId\x12P\n\x06labels\x18\x04 \x03(\x0b\x32\x38.performance.logs.v1alpha1.LogKuebrnetesInfo.LabelsEntryR\x06labels\x12_\n\x0b\x61nnotations\x18\x05 \x03(\x0b\x32=.performance.logs.v1alpha1.LogKuebrnetesInfo.AnnotationsEntryR\x0b\x61nnotations\x12\x12\n\x04host\x18\x06 \x01(\tR\x04host\x12%\n\x0e\x63ontainer_name\x18\x07 \x01(\tR\rcontainerName\x12\x1b\n\tdocker_id\x18\x08 \x01(\tR\x08\x64ockerId\x12%\n\x0e\x63ontainer_hash\x18\n \x01(\tR\rcontainerHash\x12\'\n\x0f\x63ontainer_image\x18\x0b \x01(\tR\x0e\x63ontainerImage\x1a\x39\n\x0bLabelsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a>\n\x10\x41nnotationsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x32\x80\x01\n\x13LogsAgentAPIService\x12i\n\x08SaveLogs\x12*.performance.logs.v1alpha1.SaveLogsRequest\x1a+.performance.logs.v1alpha1.SaveLogsResponse\"\x00(\x01\x30\x01\x42\xa6\x01\n#io.cuemby.performance.logs.v1alpha1B\x11LogsAgentApiProtoP\x01Z,github.com/performance-grpc-sdk/logsv1alpha1\xa2\x02\x03PFX\xaa\x02\x19Performance.Logs.V1Alpha1\xca\x02\x19Performance\\Logs\\V1Alpha1b\x06proto3'
   ,
   dependencies=[performance_dot_logs_dot_v1alpha1_dot_logs__pb2.DESCRIPTOR,])
 
@@ -61,8 +61,8 @@ _SAVELOGSREQUEST_METAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=296,
-  serialized_end=351,
+  serialized_start=319,
+  serialized_end=374,
 )
 
 _SAVELOGSREQUEST = _descriptor.Descriptor(
@@ -94,6 +94,13 @@ _SAVELOGSREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='logs', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_id', full_name='performance.logs.v1alpha1.SaveLogsRequest.log_id', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='logId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -107,7 +114,7 @@ _SAVELOGSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=116,
-  serialized_end=351,
+  serialized_end=374,
 )
 
 
@@ -138,8 +145,8 @@ _SAVELOGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=353,
-  serialized_end=397,
+  serialized_start=376,
+  serialized_end=420,
 )
 
 
@@ -184,8 +191,8 @@ _LOG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=399,
-  serialized_end=520,
+  serialized_start=422,
+  serialized_end=543,
 )
 
 
@@ -223,8 +230,8 @@ _LOGKUEBRNETESINFO_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=980,
-  serialized_end=1037,
+  serialized_start=1003,
+  serialized_end=1060,
 )
 
 _LOGKUEBRNETESINFO_ANNOTATIONSENTRY = _descriptor.Descriptor(
@@ -261,8 +268,8 @@ _LOGKUEBRNETESINFO_ANNOTATIONSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1039,
-  serialized_end=1101,
+  serialized_start=1062,
+  serialized_end=1124,
 )
 
 _LOGKUEBRNETESINFO = _descriptor.Descriptor(
@@ -355,8 +362,8 @@ _LOGKUEBRNETESINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=523,
-  serialized_end=1101,
+  serialized_start=546,
+  serialized_end=1124,
 )
 
 _SAVELOGSREQUEST_METAENTRY.containing_type = _SAVELOGSREQUEST
@@ -438,8 +445,8 @@ _LOGSAGENTAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1104,
-  serialized_end=1232,
+  serialized_start=1127,
+  serialized_end=1255,
   methods=[
   _descriptor.MethodDescriptor(
     name='SaveLogs',

@@ -60,40 +60,40 @@ public final class LogsAgentApiProto {
     java.lang.String[] descriptorData = {
       "\n.performance/logs/v1alpha1/logs_agent_a" +
       "pi.proto\022\031performance.logs.v1alpha1\032$per" +
-      "formance/logs/v1alpha1/logs.proto\"\353\001\n\017Sa" +
+      "formance/logs/v1alpha1/logs.proto\"\202\002\n\017Sa" +
       "veLogsRequest\022!\n\014cluster_name\030\001 \001(\tR\013clu" +
       "sterName\022H\n\004meta\030\002 \003(\01324.performance.log" +
       "s.v1alpha1.SaveLogsRequest.MetaEntryR\004me" +
       "ta\0222\n\004logs\030\003 \003(\0132\036.performance.logs.v1al" +
-      "pha1.LogR\004logs\0327\n\tMetaEntry\022\020\n\003key\030\001 \001(\t" +
-      "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\",\n\020SaveL" +
-      "ogsResponse\022\030\n\007success\030\001 \001(\010R\007success\"y\n" +
-      "\003Log\022\022\n\004date\030\001 \001(\001R\004date\022\020\n\003log\030\002 \001(\tR\003l" +
-      "og\022L\n\nkubernetes\030\003 \001(\0132,.performance.log" +
-      "s.v1alpha1.LogKuebrnetesInfoR\nkubernetes" +
-      "\"\302\004\n\021LogKuebrnetesInfo\022\031\n\010pod_name\030\001 \001(\t" +
-      "R\007podName\022%\n\016namespace_name\030\002 \001(\tR\rnames" +
-      "paceName\022\025\n\006pod_id\030\003 \001(\tR\005podId\022P\n\006label" +
-      "s\030\004 \003(\01328.performance.logs.v1alpha1.LogK" +
-      "uebrnetesInfo.LabelsEntryR\006labels\022_\n\013ann" +
-      "otations\030\005 \003(\0132=.performance.logs.v1alph" +
-      "a1.LogKuebrnetesInfo.AnnotationsEntryR\013a" +
-      "nnotations\022\022\n\004host\030\006 \001(\tR\004host\022%\n\016contai" +
-      "ner_name\030\007 \001(\tR\rcontainerName\022\033\n\tdocker_" +
-      "id\030\010 \001(\tR\010dockerId\022%\n\016container_hash\030\n \001" +
-      "(\tR\rcontainerHash\022\'\n\017container_image\030\013 \001" +
-      "(\tR\016containerImage\0329\n\013LabelsEntry\022\020\n\003key" +
-      "\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032>\n" +
-      "\020AnnotationsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005v" +
-      "alue\030\002 \001(\tR\005value:\0028\0012\200\001\n\023LogsAgentAPISe" +
-      "rvice\022i\n\010SaveLogs\022*.performance.logs.v1a" +
-      "lpha1.SaveLogsRequest\032+.performance.logs" +
-      ".v1alpha1.SaveLogsResponse\"\000(\0010\001B\246\001\n#io." +
-      "cuemby.performance.logs.v1alpha1B\021LogsAg" +
-      "entApiProtoP\001Z,github.com/performance-gr" +
-      "pc-sdk/logsv1alpha1\242\002\003PFX\252\002\031Performance." +
-      "Logs.V1Alpha1\312\002\031Performance\\Logs\\V1Alpha" +
-      "1b\006proto3"
+      "pha1.LogR\004logs\022\025\n\006log_id\030\004 \001(\tR\005logId\0327\n" +
+      "\tMetaEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 " +
+      "\001(\tR\005value:\0028\001\",\n\020SaveLogsResponse\022\030\n\007su" +
+      "ccess\030\001 \001(\010R\007success\"y\n\003Log\022\022\n\004date\030\001 \001(" +
+      "\001R\004date\022\020\n\003log\030\002 \001(\tR\003log\022L\n\nkubernetes\030" +
+      "\003 \001(\0132,.performance.logs.v1alpha1.LogKue" +
+      "brnetesInfoR\nkubernetes\"\302\004\n\021LogKuebrnete" +
+      "sInfo\022\031\n\010pod_name\030\001 \001(\tR\007podName\022%\n\016name" +
+      "space_name\030\002 \001(\tR\rnamespaceName\022\025\n\006pod_i" +
+      "d\030\003 \001(\tR\005podId\022P\n\006labels\030\004 \003(\01328.perform" +
+      "ance.logs.v1alpha1.LogKuebrnetesInfo.Lab" +
+      "elsEntryR\006labels\022_\n\013annotations\030\005 \003(\0132=." +
+      "performance.logs.v1alpha1.LogKuebrnetesI" +
+      "nfo.AnnotationsEntryR\013annotations\022\022\n\004hos" +
+      "t\030\006 \001(\tR\004host\022%\n\016container_name\030\007 \001(\tR\rc" +
+      "ontainerName\022\033\n\tdocker_id\030\010 \001(\tR\010dockerI" +
+      "d\022%\n\016container_hash\030\n \001(\tR\rcontainerHash" +
+      "\022\'\n\017container_image\030\013 \001(\tR\016containerImag" +
+      "e\0329\n\013LabelsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va" +
+      "lue\030\002 \001(\tR\005value:\0028\001\032>\n\020AnnotationsEntry" +
+      "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value" +
+      ":\0028\0012\200\001\n\023LogsAgentAPIService\022i\n\010SaveLogs" +
+      "\022*.performance.logs.v1alpha1.SaveLogsReq" +
+      "uest\032+.performance.logs.v1alpha1.SaveLog" +
+      "sResponse\"\000(\0010\001B\246\001\n#io.cuemby.performanc" +
+      "e.logs.v1alpha1B\021LogsAgentApiProtoP\001Z,gi" +
+      "thub.com/performance-grpc-sdk/logsv1alph" +
+      "a1\242\002\003PFX\252\002\031Performance.Logs.V1Alpha1\312\002\031P" +
+      "erformance\\Logs\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -105,7 +105,7 @@ public final class LogsAgentApiProto {
     internal_static_performance_logs_v1alpha1_SaveLogsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_logs_v1alpha1_SaveLogsRequest_descriptor,
-        new java.lang.String[] { "ClusterName", "Meta", "Logs", });
+        new java.lang.String[] { "ClusterName", "Meta", "Logs", "LogId", });
     internal_static_performance_logs_v1alpha1_SaveLogsRequest_MetaEntry_descriptor =
       internal_static_performance_logs_v1alpha1_SaveLogsRequest_descriptor.getNestedTypes().get(0);
     internal_static_performance_logs_v1alpha1_SaveLogsRequest_MetaEntry_fieldAccessorTable = new
