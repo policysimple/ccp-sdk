@@ -61,7 +61,7 @@ constexpr Log::Log(
   : log_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , log_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , kubernetes_(nullptr)
-  , date_(0){}
+  , date_(int64_t{0}){}
 struct LogDefaultTypeInternal {
   constexpr LogDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -229,7 +229,7 @@ const char descriptor_table_protodef_performance_2flogs_2fv1alpha1_2flogs_5fagen
   "pha1.LogR\004logs\0327\n\tMetaEntry\022\020\n\003key\030\001 \001(\t"
   "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\",\n\020SaveL"
   "ogsResponse\022\030\n\007success\030\001 \001(\010R\007success\"\220\001"
-  "\n\003Log\022\022\n\004date\030\001 \001(\001R\004date\022\020\n\003log\030\002 \001(\tR\003"
+  "\n\003Log\022\022\n\004date\030\001 \001(\003R\004date\022\020\n\003log\030\002 \001(\tR\003"
   "log\022L\n\nkubernetes\030\003 \001(\0132,.performance.lo"
   "gs.v1alpha1.LogKuebrnetesInfoR\nkubernete"
   "s\022\025\n\006log_id\030\004 \001(\tR\005logId\"\366\005\n\021LogKuebrnet"
@@ -873,7 +873,7 @@ void Log::Clear() {
     delete kubernetes_;
   }
   kubernetes_ = nullptr;
-  date_ = 0;
+  date_ = int64_t{0};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -883,11 +883,11 @@ const char* Log::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::intern
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double date = 1 [json_name = "date"];
+      // int64 date = 1 [json_name = "date"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
-          date_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
-          ptr += sizeof(double);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          date_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // string log = 2 [json_name = "log"];
@@ -944,10 +944,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double date = 1 [json_name = "date"];
-  if (!(this->_internal_date() <= 0 && this->_internal_date() >= 0)) {
+  // int64 date = 1 [json_name = "date"];
+  if (this->_internal_date() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_date(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_date(), target);
   }
 
   // string log = 2 [json_name = "log"];
@@ -1015,9 +1015,11 @@ size_t Log::ByteSizeLong() const {
         *kubernetes_);
   }
 
-  // double date = 1 [json_name = "date"];
-  if (!(this->_internal_date() <= 0 && this->_internal_date() >= 0)) {
-    total_size += 1 + 8;
+  // int64 date = 1 [json_name = "date"];
+  if (this->_internal_date() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_date());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1057,7 +1059,7 @@ void Log::MergeFrom(const Log& from) {
   if (from._internal_has_kubernetes()) {
     _internal_mutable_kubernetes()->::performance::logs::v1alpha1::LogKuebrnetesInfo::MergeFrom(from._internal_kubernetes());
   }
-  if (!(from._internal_date() <= 0 && from._internal_date() >= 0)) {
+  if (from._internal_date() != 0) {
     _internal_set_date(from._internal_date());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);

@@ -619,13 +619,13 @@ class Log final :
       ::performance::logs::v1alpha1::LogKuebrnetesInfo* kubernetes);
   ::performance::logs::v1alpha1::LogKuebrnetesInfo* unsafe_arena_release_kubernetes();
 
-  // double date = 1 [json_name = "date"];
+  // int64 date = 1 [json_name = "date"];
   void clear_date();
-  double date() const;
-  void set_date(double value);
+  ::PROTOBUF_NAMESPACE_ID::int64 date() const;
+  void set_date(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  double _internal_date() const;
-  void _internal_set_date(double value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_date() const;
+  void _internal_set_date(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:performance.logs.v1alpha1.Log)
@@ -638,7 +638,7 @@ class Log final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr log_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr log_id_;
   ::performance::logs::v1alpha1::LogKuebrnetesInfo* kubernetes_;
-  double date_;
+  ::PROTOBUF_NAMESPACE_ID::int64 date_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto;
 };
@@ -1235,22 +1235,22 @@ inline void SaveLogsResponse::set_success(bool value) {
 
 // Log
 
-// double date = 1 [json_name = "date"];
+// int64 date = 1 [json_name = "date"];
 inline void Log::clear_date() {
-  date_ = 0;
+  date_ = int64_t{0};
 }
-inline double Log::_internal_date() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 Log::_internal_date() const {
   return date_;
 }
-inline double Log::date() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 Log::date() const {
   // @@protoc_insertion_point(field_get:performance.logs.v1alpha1.Log.date)
   return _internal_date();
 }
-inline void Log::_internal_set_date(double value) {
+inline void Log::_internal_set_date(::PROTOBUF_NAMESPACE_ID::int64 value) {
   
   date_ = value;
 }
-inline void Log::set_date(double value) {
+inline void Log::set_date(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_date(value);
   // @@protoc_insertion_point(field_set:performance.logs.v1alpha1.Log.date)
 }

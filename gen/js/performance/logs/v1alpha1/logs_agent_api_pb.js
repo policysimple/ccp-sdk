@@ -490,7 +490,7 @@ proto.performance.logs.v1alpha1.Log.prototype.toObject = function(opt_includeIns
  */
 proto.performance.logs.v1alpha1.Log.toObject = function(includeInstance, msg) {
   var f, obj = {
-    date: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+    date: jspb.Message.getFieldWithDefault(msg, 1, 0),
     log: jspb.Message.getFieldWithDefault(msg, 2, ""),
     kubernetes: (f = msg.getKubernetes()) && proto.performance.logs.v1alpha1.LogKuebrnetesInfo.toObject(includeInstance, f),
     logId: jspb.Message.getFieldWithDefault(msg, 4, "")
@@ -531,7 +531,7 @@ proto.performance.logs.v1alpha1.Log.deserializeBinaryFromReader = function(msg, 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setDate(value);
       break;
     case 2:
@@ -577,8 +577,8 @@ proto.performance.logs.v1alpha1.Log.prototype.serializeBinary = function() {
 proto.performance.logs.v1alpha1.Log.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDate();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
@@ -609,11 +609,11 @@ proto.performance.logs.v1alpha1.Log.serializeBinaryToWriter = function(message, 
 
 
 /**
- * optional double date = 1;
+ * optional int64 date = 1;
  * @return {number}
  */
 proto.performance.logs.v1alpha1.Log.prototype.getDate = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
@@ -622,7 +622,7 @@ proto.performance.logs.v1alpha1.Log.prototype.getDate = function() {
  * @return {!proto.performance.logs.v1alpha1.Log} returns this
  */
 proto.performance.logs.v1alpha1.Log.prototype.setDate = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 

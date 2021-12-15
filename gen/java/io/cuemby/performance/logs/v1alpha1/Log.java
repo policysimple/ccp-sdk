@@ -50,9 +50,9 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 9: {
+          case 8: {
 
-            date_ = input.readDouble();
+            date_ = input.readInt64();
             break;
           }
           case 18: {
@@ -113,13 +113,13 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DATE_FIELD_NUMBER = 1;
-  private double date_;
+  private long date_;
   /**
-   * <code>double date = 1 [json_name = "date"];</code>
+   * <code>int64 date = 1 [json_name = "date"];</code>
    * @return The date.
    */
   @java.lang.Override
-  public double getDate() {
+  public long getDate() {
     return date_;
   }
 
@@ -239,8 +239,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (date_ != 0D) {
-      output.writeDouble(1, date_);
+    if (date_ != 0L) {
+      output.writeInt64(1, date_);
     }
     if (!getLogBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, log_);
@@ -260,9 +260,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (date_ != 0D) {
+    if (date_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(1, date_);
+        .computeInt64Size(1, date_);
     }
     if (!getLogBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, log_);
@@ -289,9 +289,8 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.performance.logs.v1alpha1.Log other = (io.cuemby.performance.logs.v1alpha1.Log) obj;
 
-    if (java.lang.Double.doubleToLongBits(getDate())
-        != java.lang.Double.doubleToLongBits(
-            other.getDate())) return false;
+    if (getDate()
+        != other.getDate()) return false;
     if (!getLog()
         .equals(other.getLog())) return false;
     if (hasKubernetes() != other.hasKubernetes()) return false;
@@ -314,7 +313,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DATE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getDate()));
+        getDate());
     hash = (37 * hash) + LOG_FIELD_NUMBER;
     hash = (53 * hash) + getLog().hashCode();
     if (hasKubernetes()) {
@@ -456,7 +455,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      date_ = 0D;
+      date_ = 0L;
 
       log_ = "";
 
@@ -550,7 +549,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.performance.logs.v1alpha1.Log other) {
       if (other == io.cuemby.performance.logs.v1alpha1.Log.getDefaultInstance()) return this;
-      if (other.getDate() != 0D) {
+      if (other.getDate() != 0L) {
         setDate(other.getDate());
       }
       if (!other.getLog().isEmpty()) {
@@ -593,33 +592,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double date_ ;
+    private long date_ ;
     /**
-     * <code>double date = 1 [json_name = "date"];</code>
+     * <code>int64 date = 1 [json_name = "date"];</code>
      * @return The date.
      */
     @java.lang.Override
-    public double getDate() {
+    public long getDate() {
       return date_;
     }
     /**
-     * <code>double date = 1 [json_name = "date"];</code>
+     * <code>int64 date = 1 [json_name = "date"];</code>
      * @param value The date to set.
      * @return This builder for chaining.
      */
-    public Builder setDate(double value) {
+    public Builder setDate(long value) {
       
       date_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>double date = 1 [json_name = "date"];</code>
+     * <code>int64 date = 1 [json_name = "date"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDate() {
       
-      date_ = 0D;
+      date_ = 0L;
       onChanged();
       return this;
     }

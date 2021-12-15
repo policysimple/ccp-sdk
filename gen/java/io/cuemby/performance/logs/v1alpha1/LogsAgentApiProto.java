@@ -68,7 +68,7 @@ public final class LogsAgentApiProto {
       "pha1.LogR\004logs\0327\n\tMetaEntry\022\020\n\003key\030\001 \001(\t" +
       "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\",\n\020SaveL" +
       "ogsResponse\022\030\n\007success\030\001 \001(\010R\007success\"\220\001" +
-      "\n\003Log\022\022\n\004date\030\001 \001(\001R\004date\022\020\n\003log\030\002 \001(\tR\003" +
+      "\n\003Log\022\022\n\004date\030\001 \001(\003R\004date\022\020\n\003log\030\002 \001(\tR\003" +
       "log\022L\n\nkubernetes\030\003 \001(\0132,.performance.lo" +
       "gs.v1alpha1.LogKuebrnetesInfoR\nkubernete" +
       "s\022\025\n\006log_id\030\004 \001(\tR\005logId\"\366\005\n\021LogKuebrnet" +
