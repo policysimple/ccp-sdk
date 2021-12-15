@@ -24,6 +24,11 @@ private static final long serialVersionUID = 0L;
     dockerId_ = "";
     containerHash_ = "";
     containerImage_ = "";
+    ownerName_ = "";
+    ownerKubernetesUid_ = "";
+    ownerKind_ = "";
+    ownerApiVersion_ = "";
+    status_ = "";
   }
 
   @java.lang.Override
@@ -129,6 +134,36 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             containerImage_ = s;
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            ownerName_ = s;
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            ownerKubernetesUid_ = s;
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            ownerKind_ = s;
+            break;
+          }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            ownerApiVersion_ = s;
+            break;
+          }
+          case 130: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            status_ = s;
             break;
           }
           default: {
@@ -532,6 +567,10 @@ private static final long serialVersionUID = 0L;
   public static final int DOCKER_ID_FIELD_NUMBER = 8;
   private volatile java.lang.Object dockerId_;
   /**
+   * <pre>
+   * DEPRECATED
+   * </pre>
+   *
    * <code>string docker_id = 8 [json_name = "dockerId"];</code>
    * @return The dockerId.
    */
@@ -549,6 +588,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * DEPRECATED
+   * </pre>
+   *
    * <code>string docker_id = 8 [json_name = "dockerId"];</code>
    * @return The bytes for dockerId.
    */
@@ -570,6 +613,10 @@ private static final long serialVersionUID = 0L;
   public static final int CONTAINER_HASH_FIELD_NUMBER = 10;
   private volatile java.lang.Object containerHash_;
   /**
+   * <pre>
+   * DEPRECATED
+   * </pre>
+   *
    * <code>string container_hash = 10 [json_name = "containerHash"];</code>
    * @return The containerHash.
    */
@@ -587,6 +634,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * DEPRECATED
+   * </pre>
+   *
    * <code>string container_hash = 10 [json_name = "containerHash"];</code>
    * @return The bytes for containerHash.
    */
@@ -643,6 +694,196 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int OWNER_NAME_FIELD_NUMBER = 12;
+  private volatile java.lang.Object ownerName_;
+  /**
+   * <code>string owner_name = 12 [json_name = "ownerName"];</code>
+   * @return The ownerName.
+   */
+  @java.lang.Override
+  public java.lang.String getOwnerName() {
+    java.lang.Object ref = ownerName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ownerName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string owner_name = 12 [json_name = "ownerName"];</code>
+   * @return The bytes for ownerName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOwnerNameBytes() {
+    java.lang.Object ref = ownerName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ownerName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int OWNER_KUBERNETES_UID_FIELD_NUMBER = 13;
+  private volatile java.lang.Object ownerKubernetesUid_;
+  /**
+   * <code>string owner_kubernetes_uid = 13 [json_name = "ownerKubernetesUid"];</code>
+   * @return The ownerKubernetesUid.
+   */
+  @java.lang.Override
+  public java.lang.String getOwnerKubernetesUid() {
+    java.lang.Object ref = ownerKubernetesUid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ownerKubernetesUid_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string owner_kubernetes_uid = 13 [json_name = "ownerKubernetesUid"];</code>
+   * @return The bytes for ownerKubernetesUid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOwnerKubernetesUidBytes() {
+    java.lang.Object ref = ownerKubernetesUid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ownerKubernetesUid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int OWNER_KIND_FIELD_NUMBER = 14;
+  private volatile java.lang.Object ownerKind_;
+  /**
+   * <code>string owner_kind = 14 [json_name = "ownerKind"];</code>
+   * @return The ownerKind.
+   */
+  @java.lang.Override
+  public java.lang.String getOwnerKind() {
+    java.lang.Object ref = ownerKind_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ownerKind_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string owner_kind = 14 [json_name = "ownerKind"];</code>
+   * @return The bytes for ownerKind.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOwnerKindBytes() {
+    java.lang.Object ref = ownerKind_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ownerKind_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int OWNER_API_VERSION_FIELD_NUMBER = 15;
+  private volatile java.lang.Object ownerApiVersion_;
+  /**
+   * <code>string owner_api_version = 15 [json_name = "ownerApiVersion"];</code>
+   * @return The ownerApiVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getOwnerApiVersion() {
+    java.lang.Object ref = ownerApiVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ownerApiVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string owner_api_version = 15 [json_name = "ownerApiVersion"];</code>
+   * @return The bytes for ownerApiVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOwnerApiVersionBytes() {
+    java.lang.Object ref = ownerApiVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ownerApiVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STATUS_FIELD_NUMBER = 16;
+  private volatile java.lang.Object status_;
+  /**
+   * <code>string status = 16 [json_name = "status"];</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string status = 16 [json_name = "status"];</code>
+   * @return The bytes for status.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -692,6 +933,21 @@ private static final long serialVersionUID = 0L;
     }
     if (!getContainerImageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, containerImage_);
+    }
+    if (!getOwnerNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, ownerName_);
+    }
+    if (!getOwnerKubernetesUidBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, ownerKubernetesUid_);
+    }
+    if (!getOwnerKindBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, ownerKind_);
+    }
+    if (!getOwnerApiVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, ownerApiVersion_);
+    }
+    if (!getStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, status_);
     }
     unknownFields.writeTo(output);
   }
@@ -746,6 +1002,21 @@ private static final long serialVersionUID = 0L;
     if (!getContainerImageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, containerImage_);
     }
+    if (!getOwnerNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, ownerName_);
+    }
+    if (!getOwnerKubernetesUidBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, ownerKubernetesUid_);
+    }
+    if (!getOwnerKindBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, ownerKind_);
+    }
+    if (!getOwnerApiVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, ownerApiVersion_);
+    }
+    if (!getStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, status_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -781,6 +1052,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getContainerHash())) return false;
     if (!getContainerImage()
         .equals(other.getContainerImage())) return false;
+    if (!getOwnerName()
+        .equals(other.getOwnerName())) return false;
+    if (!getOwnerKubernetesUid()
+        .equals(other.getOwnerKubernetesUid())) return false;
+    if (!getOwnerKind()
+        .equals(other.getOwnerKind())) return false;
+    if (!getOwnerApiVersion()
+        .equals(other.getOwnerApiVersion())) return false;
+    if (!getStatus()
+        .equals(other.getStatus())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -816,6 +1097,16 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getContainerHash().hashCode();
     hash = (37 * hash) + CONTAINER_IMAGE_FIELD_NUMBER;
     hash = (53 * hash) + getContainerImage().hashCode();
+    hash = (37 * hash) + OWNER_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getOwnerName().hashCode();
+    hash = (37 * hash) + OWNER_KUBERNETES_UID_FIELD_NUMBER;
+    hash = (53 * hash) + getOwnerKubernetesUid().hashCode();
+    hash = (37 * hash) + OWNER_KIND_FIELD_NUMBER;
+    hash = (53 * hash) + getOwnerKind().hashCode();
+    hash = (37 * hash) + OWNER_API_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getOwnerApiVersion().hashCode();
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getStatus().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -993,6 +1284,16 @@ private static final long serialVersionUID = 0L;
 
       containerImage_ = "";
 
+      ownerName_ = "";
+
+      ownerKubernetesUid_ = "";
+
+      ownerKind_ = "";
+
+      ownerApiVersion_ = "";
+
+      status_ = "";
+
       return this;
     }
 
@@ -1032,6 +1333,11 @@ private static final long serialVersionUID = 0L;
       result.dockerId_ = dockerId_;
       result.containerHash_ = containerHash_;
       result.containerImage_ = containerImage_;
+      result.ownerName_ = ownerName_;
+      result.ownerKubernetesUid_ = ownerKubernetesUid_;
+      result.ownerKind_ = ownerKind_;
+      result.ownerApiVersion_ = ownerApiVersion_;
+      result.status_ = status_;
       onBuilt();
       return result;
     }
@@ -1114,6 +1420,26 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getContainerImage().isEmpty()) {
         containerImage_ = other.containerImage_;
+        onChanged();
+      }
+      if (!other.getOwnerName().isEmpty()) {
+        ownerName_ = other.ownerName_;
+        onChanged();
+      }
+      if (!other.getOwnerKubernetesUid().isEmpty()) {
+        ownerKubernetesUid_ = other.ownerKubernetesUid_;
+        onChanged();
+      }
+      if (!other.getOwnerKind().isEmpty()) {
+        ownerKind_ = other.ownerKind_;
+        onChanged();
+      }
+      if (!other.getOwnerApiVersion().isEmpty()) {
+        ownerApiVersion_ = other.ownerApiVersion_;
+        onChanged();
+      }
+      if (!other.getStatus().isEmpty()) {
+        status_ = other.status_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1784,6 +2110,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object dockerId_ = "";
     /**
+     * <pre>
+     * DEPRECATED
+     * </pre>
+     *
      * <code>string docker_id = 8 [json_name = "dockerId"];</code>
      * @return The dockerId.
      */
@@ -1800,6 +2130,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * DEPRECATED
+     * </pre>
+     *
      * <code>string docker_id = 8 [json_name = "dockerId"];</code>
      * @return The bytes for dockerId.
      */
@@ -1817,6 +2151,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * DEPRECATED
+     * </pre>
+     *
      * <code>string docker_id = 8 [json_name = "dockerId"];</code>
      * @param value The dockerId to set.
      * @return This builder for chaining.
@@ -1832,6 +2170,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * DEPRECATED
+     * </pre>
+     *
      * <code>string docker_id = 8 [json_name = "dockerId"];</code>
      * @return This builder for chaining.
      */
@@ -1842,6 +2184,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * DEPRECATED
+     * </pre>
+     *
      * <code>string docker_id = 8 [json_name = "dockerId"];</code>
      * @param value The bytes for dockerId to set.
      * @return This builder for chaining.
@@ -1860,6 +2206,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object containerHash_ = "";
     /**
+     * <pre>
+     * DEPRECATED
+     * </pre>
+     *
      * <code>string container_hash = 10 [json_name = "containerHash"];</code>
      * @return The containerHash.
      */
@@ -1876,6 +2226,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * DEPRECATED
+     * </pre>
+     *
      * <code>string container_hash = 10 [json_name = "containerHash"];</code>
      * @return The bytes for containerHash.
      */
@@ -1893,6 +2247,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * DEPRECATED
+     * </pre>
+     *
      * <code>string container_hash = 10 [json_name = "containerHash"];</code>
      * @param value The containerHash to set.
      * @return This builder for chaining.
@@ -1908,6 +2266,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * DEPRECATED
+     * </pre>
+     *
      * <code>string container_hash = 10 [json_name = "containerHash"];</code>
      * @return This builder for chaining.
      */
@@ -1918,6 +2280,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * DEPRECATED
+     * </pre>
+     *
      * <code>string container_hash = 10 [json_name = "containerHash"];</code>
      * @param value The bytes for containerHash to set.
      * @return This builder for chaining.
@@ -2006,6 +2372,386 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       containerImage_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ownerName_ = "";
+    /**
+     * <code>string owner_name = 12 [json_name = "ownerName"];</code>
+     * @return The ownerName.
+     */
+    public java.lang.String getOwnerName() {
+      java.lang.Object ref = ownerName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ownerName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string owner_name = 12 [json_name = "ownerName"];</code>
+     * @return The bytes for ownerName.
+     */
+    public com.google.protobuf.ByteString
+        getOwnerNameBytes() {
+      java.lang.Object ref = ownerName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ownerName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string owner_name = 12 [json_name = "ownerName"];</code>
+     * @param value The ownerName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOwnerName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      ownerName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string owner_name = 12 [json_name = "ownerName"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOwnerName() {
+      
+      ownerName_ = getDefaultInstance().getOwnerName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string owner_name = 12 [json_name = "ownerName"];</code>
+     * @param value The bytes for ownerName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOwnerNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      ownerName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ownerKubernetesUid_ = "";
+    /**
+     * <code>string owner_kubernetes_uid = 13 [json_name = "ownerKubernetesUid"];</code>
+     * @return The ownerKubernetesUid.
+     */
+    public java.lang.String getOwnerKubernetesUid() {
+      java.lang.Object ref = ownerKubernetesUid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ownerKubernetesUid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string owner_kubernetes_uid = 13 [json_name = "ownerKubernetesUid"];</code>
+     * @return The bytes for ownerKubernetesUid.
+     */
+    public com.google.protobuf.ByteString
+        getOwnerKubernetesUidBytes() {
+      java.lang.Object ref = ownerKubernetesUid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ownerKubernetesUid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string owner_kubernetes_uid = 13 [json_name = "ownerKubernetesUid"];</code>
+     * @param value The ownerKubernetesUid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOwnerKubernetesUid(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      ownerKubernetesUid_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string owner_kubernetes_uid = 13 [json_name = "ownerKubernetesUid"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOwnerKubernetesUid() {
+      
+      ownerKubernetesUid_ = getDefaultInstance().getOwnerKubernetesUid();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string owner_kubernetes_uid = 13 [json_name = "ownerKubernetesUid"];</code>
+     * @param value The bytes for ownerKubernetesUid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOwnerKubernetesUidBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      ownerKubernetesUid_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ownerKind_ = "";
+    /**
+     * <code>string owner_kind = 14 [json_name = "ownerKind"];</code>
+     * @return The ownerKind.
+     */
+    public java.lang.String getOwnerKind() {
+      java.lang.Object ref = ownerKind_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ownerKind_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string owner_kind = 14 [json_name = "ownerKind"];</code>
+     * @return The bytes for ownerKind.
+     */
+    public com.google.protobuf.ByteString
+        getOwnerKindBytes() {
+      java.lang.Object ref = ownerKind_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ownerKind_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string owner_kind = 14 [json_name = "ownerKind"];</code>
+     * @param value The ownerKind to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOwnerKind(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      ownerKind_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string owner_kind = 14 [json_name = "ownerKind"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOwnerKind() {
+      
+      ownerKind_ = getDefaultInstance().getOwnerKind();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string owner_kind = 14 [json_name = "ownerKind"];</code>
+     * @param value The bytes for ownerKind to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOwnerKindBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      ownerKind_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ownerApiVersion_ = "";
+    /**
+     * <code>string owner_api_version = 15 [json_name = "ownerApiVersion"];</code>
+     * @return The ownerApiVersion.
+     */
+    public java.lang.String getOwnerApiVersion() {
+      java.lang.Object ref = ownerApiVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ownerApiVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string owner_api_version = 15 [json_name = "ownerApiVersion"];</code>
+     * @return The bytes for ownerApiVersion.
+     */
+    public com.google.protobuf.ByteString
+        getOwnerApiVersionBytes() {
+      java.lang.Object ref = ownerApiVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ownerApiVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string owner_api_version = 15 [json_name = "ownerApiVersion"];</code>
+     * @param value The ownerApiVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOwnerApiVersion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      ownerApiVersion_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string owner_api_version = 15 [json_name = "ownerApiVersion"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOwnerApiVersion() {
+      
+      ownerApiVersion_ = getDefaultInstance().getOwnerApiVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string owner_api_version = 15 [json_name = "ownerApiVersion"];</code>
+     * @param value The bytes for ownerApiVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOwnerApiVersionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      ownerApiVersion_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object status_ = "";
+    /**
+     * <code>string status = 16 [json_name = "status"];</code>
+     * @return The status.
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string status = 16 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string status = 16 [json_name = "status"];</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      status_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 16 [json_name = "status"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      
+      status_ = getDefaultInstance().getStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 16 [json_name = "status"];</code>
+     * @param value The bytes for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      status_ = value;
       onChanged();
       return this;
     }

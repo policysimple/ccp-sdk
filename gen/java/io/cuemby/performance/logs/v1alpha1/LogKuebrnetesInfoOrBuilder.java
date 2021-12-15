@@ -136,11 +136,19 @@ public interface LogKuebrnetesInfoOrBuilder extends
       getContainerNameBytes();
 
   /**
+   * <pre>
+   * DEPRECATED
+   * </pre>
+   *
    * <code>string docker_id = 8 [json_name = "dockerId"];</code>
    * @return The dockerId.
    */
   java.lang.String getDockerId();
   /**
+   * <pre>
+   * DEPRECATED
+   * </pre>
+   *
    * <code>string docker_id = 8 [json_name = "dockerId"];</code>
    * @return The bytes for dockerId.
    */
@@ -148,11 +156,19 @@ public interface LogKuebrnetesInfoOrBuilder extends
       getDockerIdBytes();
 
   /**
+   * <pre>
+   * DEPRECATED
+   * </pre>
+   *
    * <code>string container_hash = 10 [json_name = "containerHash"];</code>
    * @return The containerHash.
    */
   java.lang.String getContainerHash();
   /**
+   * <pre>
+   * DEPRECATED
+   * </pre>
+   *
    * <code>string container_hash = 10 [json_name = "containerHash"];</code>
    * @return The bytes for containerHash.
    */
@@ -170,4 +186,64 @@ public interface LogKuebrnetesInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getContainerImageBytes();
+
+  /**
+   * <code>string owner_name = 12 [json_name = "ownerName"];</code>
+   * @return The ownerName.
+   */
+  java.lang.String getOwnerName();
+  /**
+   * <code>string owner_name = 12 [json_name = "ownerName"];</code>
+   * @return The bytes for ownerName.
+   */
+  com.google.protobuf.ByteString
+      getOwnerNameBytes();
+
+  /**
+   * <code>string owner_kubernetes_uid = 13 [json_name = "ownerKubernetesUid"];</code>
+   * @return The ownerKubernetesUid.
+   */
+  java.lang.String getOwnerKubernetesUid();
+  /**
+   * <code>string owner_kubernetes_uid = 13 [json_name = "ownerKubernetesUid"];</code>
+   * @return The bytes for ownerKubernetesUid.
+   */
+  com.google.protobuf.ByteString
+      getOwnerKubernetesUidBytes();
+
+  /**
+   * <code>string owner_kind = 14 [json_name = "ownerKind"];</code>
+   * @return The ownerKind.
+   */
+  java.lang.String getOwnerKind();
+  /**
+   * <code>string owner_kind = 14 [json_name = "ownerKind"];</code>
+   * @return The bytes for ownerKind.
+   */
+  com.google.protobuf.ByteString
+      getOwnerKindBytes();
+
+  /**
+   * <code>string owner_api_version = 15 [json_name = "ownerApiVersion"];</code>
+   * @return The ownerApiVersion.
+   */
+  java.lang.String getOwnerApiVersion();
+  /**
+   * <code>string owner_api_version = 15 [json_name = "ownerApiVersion"];</code>
+   * @return The bytes for ownerApiVersion.
+   */
+  com.google.protobuf.ByteString
+      getOwnerApiVersionBytes();
+
+  /**
+   * <code>string status = 16 [json_name = "status"];</code>
+   * @return The status.
+   */
+  java.lang.String getStatus();
+  /**
+   * <code>string status = 16 [json_name = "status"];</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
 }

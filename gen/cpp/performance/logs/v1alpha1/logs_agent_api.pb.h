@@ -245,7 +245,6 @@ class SaveLogsRequest final :
     kMetaFieldNumber = 2,
     kLogsFieldNumber = 3,
     kClusterNameFieldNumber = 1,
-    kLogIdFieldNumber = 4,
   };
   // map<string, string> meta = 2 [json_name = "meta"];
   int meta_size() const;
@@ -296,20 +295,6 @@ class SaveLogsRequest final :
   std::string* _internal_mutable_cluster_name();
   public:
 
-  // string log_id = 4 [json_name = "logId"];
-  void clear_log_id();
-  const std::string& log_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_log_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_log_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_log_id();
-  void set_allocated_log_id(std::string* log_id);
-  private:
-  const std::string& _internal_log_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_log_id(const std::string& value);
-  std::string* _internal_mutable_log_id();
-  public:
-
   // @@protoc_insertion_point(class_scope:performance.logs.v1alpha1.SaveLogsRequest)
  private:
   class _Internal;
@@ -324,7 +309,6 @@ class SaveLogsRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> meta_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::logs::v1alpha1::Log > logs_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cluster_name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr log_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto;
 };
@@ -585,6 +569,7 @@ class Log final :
 
   enum : int {
     kLogFieldNumber = 2,
+    kLogIdFieldNumber = 4,
     kKubernetesFieldNumber = 3,
     kDateFieldNumber = 1,
   };
@@ -600,6 +585,20 @@ class Log final :
   const std::string& _internal_log() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_log(const std::string& value);
   std::string* _internal_mutable_log();
+  public:
+
+  // string log_id = 4 [json_name = "logId"];
+  void clear_log_id();
+  const std::string& log_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_log_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_log_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_log_id();
+  void set_allocated_log_id(std::string* log_id);
+  private:
+  const std::string& _internal_log_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_log_id(const std::string& value);
+  std::string* _internal_mutable_log_id();
   public:
 
   // .performance.logs.v1alpha1.LogKuebrnetesInfo kubernetes = 3 [json_name = "kubernetes"];
@@ -620,13 +619,13 @@ class Log final :
       ::performance::logs::v1alpha1::LogKuebrnetesInfo* kubernetes);
   ::performance::logs::v1alpha1::LogKuebrnetesInfo* unsafe_arena_release_kubernetes();
 
-  // double date = 1 [json_name = "date"];
+  // int64 date = 1 [json_name = "date"];
   void clear_date();
-  double date() const;
-  void set_date(double value);
+  ::PROTOBUF_NAMESPACE_ID::int64 date() const;
+  void set_date(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  double _internal_date() const;
-  void _internal_set_date(double value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_date() const;
+  void _internal_set_date(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:performance.logs.v1alpha1.Log)
@@ -637,8 +636,9 @@ class Log final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr log_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr log_id_;
   ::performance::logs::v1alpha1::LogKuebrnetesInfo* kubernetes_;
-  double date_;
+  ::PROTOBUF_NAMESPACE_ID::int64 date_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto;
 };
@@ -824,6 +824,11 @@ class LogKuebrnetesInfo final :
     kDockerIdFieldNumber = 8,
     kContainerHashFieldNumber = 10,
     kContainerImageFieldNumber = 11,
+    kOwnerNameFieldNumber = 12,
+    kOwnerKubernetesUidFieldNumber = 13,
+    kOwnerKindFieldNumber = 14,
+    kOwnerApiVersionFieldNumber = 15,
+    kStatusFieldNumber = 16,
   };
   // map<string, string> labels = 4 [json_name = "labels"];
   int labels_size() const;
@@ -971,6 +976,76 @@ class LogKuebrnetesInfo final :
   std::string* _internal_mutable_container_image();
   public:
 
+  // string owner_name = 12 [json_name = "ownerName"];
+  void clear_owner_name();
+  const std::string& owner_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_owner_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_owner_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_owner_name();
+  void set_allocated_owner_name(std::string* owner_name);
+  private:
+  const std::string& _internal_owner_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_owner_name(const std::string& value);
+  std::string* _internal_mutable_owner_name();
+  public:
+
+  // string owner_kubernetes_uid = 13 [json_name = "ownerKubernetesUid"];
+  void clear_owner_kubernetes_uid();
+  const std::string& owner_kubernetes_uid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_owner_kubernetes_uid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_owner_kubernetes_uid();
+  PROTOBUF_MUST_USE_RESULT std::string* release_owner_kubernetes_uid();
+  void set_allocated_owner_kubernetes_uid(std::string* owner_kubernetes_uid);
+  private:
+  const std::string& _internal_owner_kubernetes_uid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_owner_kubernetes_uid(const std::string& value);
+  std::string* _internal_mutable_owner_kubernetes_uid();
+  public:
+
+  // string owner_kind = 14 [json_name = "ownerKind"];
+  void clear_owner_kind();
+  const std::string& owner_kind() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_owner_kind(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_owner_kind();
+  PROTOBUF_MUST_USE_RESULT std::string* release_owner_kind();
+  void set_allocated_owner_kind(std::string* owner_kind);
+  private:
+  const std::string& _internal_owner_kind() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_owner_kind(const std::string& value);
+  std::string* _internal_mutable_owner_kind();
+  public:
+
+  // string owner_api_version = 15 [json_name = "ownerApiVersion"];
+  void clear_owner_api_version();
+  const std::string& owner_api_version() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_owner_api_version(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_owner_api_version();
+  PROTOBUF_MUST_USE_RESULT std::string* release_owner_api_version();
+  void set_allocated_owner_api_version(std::string* owner_api_version);
+  private:
+  const std::string& _internal_owner_api_version() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_owner_api_version(const std::string& value);
+  std::string* _internal_mutable_owner_api_version();
+  public:
+
+  // string status = 16 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
   // @@protoc_insertion_point(class_scope:performance.logs.v1alpha1.LogKuebrnetesInfo)
  private:
   class _Internal;
@@ -996,6 +1071,11 @@ class LogKuebrnetesInfo final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr docker_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr container_hash_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr container_image_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr owner_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr owner_kubernetes_uid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr owner_kind_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr owner_api_version_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2flogs_2fv1alpha1_2flogs_5fagent_5fapi_2eproto;
 };
@@ -1127,52 +1207,6 @@ SaveLogsRequest::logs() const {
   return logs_;
 }
 
-// string log_id = 4 [json_name = "logId"];
-inline void SaveLogsRequest::clear_log_id() {
-  log_id_.ClearToEmpty();
-}
-inline const std::string& SaveLogsRequest::log_id() const {
-  // @@protoc_insertion_point(field_get:performance.logs.v1alpha1.SaveLogsRequest.log_id)
-  return _internal_log_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void SaveLogsRequest::set_log_id(ArgT0&& arg0, ArgT... args) {
- 
- log_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:performance.logs.v1alpha1.SaveLogsRequest.log_id)
-}
-inline std::string* SaveLogsRequest::mutable_log_id() {
-  std::string* _s = _internal_mutable_log_id();
-  // @@protoc_insertion_point(field_mutable:performance.logs.v1alpha1.SaveLogsRequest.log_id)
-  return _s;
-}
-inline const std::string& SaveLogsRequest::_internal_log_id() const {
-  return log_id_.Get();
-}
-inline void SaveLogsRequest::_internal_set_log_id(const std::string& value) {
-  
-  log_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* SaveLogsRequest::_internal_mutable_log_id() {
-  
-  return log_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* SaveLogsRequest::release_log_id() {
-  // @@protoc_insertion_point(field_release:performance.logs.v1alpha1.SaveLogsRequest.log_id)
-  return log_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void SaveLogsRequest::set_allocated_log_id(std::string* log_id) {
-  if (log_id != nullptr) {
-    
-  } else {
-    
-  }
-  log_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), log_id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:performance.logs.v1alpha1.SaveLogsRequest.log_id)
-}
-
 // -------------------------------------------------------------------
 
 // SaveLogsResponse
@@ -1201,22 +1235,22 @@ inline void SaveLogsResponse::set_success(bool value) {
 
 // Log
 
-// double date = 1 [json_name = "date"];
+// int64 date = 1 [json_name = "date"];
 inline void Log::clear_date() {
-  date_ = 0;
+  date_ = int64_t{0};
 }
-inline double Log::_internal_date() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 Log::_internal_date() const {
   return date_;
 }
-inline double Log::date() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 Log::date() const {
   // @@protoc_insertion_point(field_get:performance.logs.v1alpha1.Log.date)
   return _internal_date();
 }
-inline void Log::_internal_set_date(double value) {
+inline void Log::_internal_set_date(::PROTOBUF_NAMESPACE_ID::int64 value) {
   
   date_ = value;
 }
-inline void Log::set_date(double value) {
+inline void Log::set_date(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_date(value);
   // @@protoc_insertion_point(field_set:performance.logs.v1alpha1.Log.date)
 }
@@ -1355,6 +1389,52 @@ inline void Log::set_allocated_kubernetes(::performance::logs::v1alpha1::LogKueb
   }
   kubernetes_ = kubernetes;
   // @@protoc_insertion_point(field_set_allocated:performance.logs.v1alpha1.Log.kubernetes)
+}
+
+// string log_id = 4 [json_name = "logId"];
+inline void Log::clear_log_id() {
+  log_id_.ClearToEmpty();
+}
+inline const std::string& Log::log_id() const {
+  // @@protoc_insertion_point(field_get:performance.logs.v1alpha1.Log.log_id)
+  return _internal_log_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Log::set_log_id(ArgT0&& arg0, ArgT... args) {
+ 
+ log_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.logs.v1alpha1.Log.log_id)
+}
+inline std::string* Log::mutable_log_id() {
+  std::string* _s = _internal_mutable_log_id();
+  // @@protoc_insertion_point(field_mutable:performance.logs.v1alpha1.Log.log_id)
+  return _s;
+}
+inline const std::string& Log::_internal_log_id() const {
+  return log_id_.Get();
+}
+inline void Log::_internal_set_log_id(const std::string& value) {
+  
+  log_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Log::_internal_mutable_log_id() {
+  
+  return log_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Log::release_log_id() {
+  // @@protoc_insertion_point(field_release:performance.logs.v1alpha1.Log.log_id)
+  return log_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Log::set_allocated_log_id(std::string* log_id) {
+  if (log_id != nullptr) {
+    
+  } else {
+    
+  }
+  log_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), log_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.logs.v1alpha1.Log.log_id)
 }
 
 // -------------------------------------------------------------------
@@ -1789,6 +1869,236 @@ inline void LogKuebrnetesInfo::set_allocated_container_image(std::string* contai
   container_image_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), container_image,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:performance.logs.v1alpha1.LogKuebrnetesInfo.container_image)
+}
+
+// string owner_name = 12 [json_name = "ownerName"];
+inline void LogKuebrnetesInfo::clear_owner_name() {
+  owner_name_.ClearToEmpty();
+}
+inline const std::string& LogKuebrnetesInfo::owner_name() const {
+  // @@protoc_insertion_point(field_get:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_name)
+  return _internal_owner_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LogKuebrnetesInfo::set_owner_name(ArgT0&& arg0, ArgT... args) {
+ 
+ owner_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_name)
+}
+inline std::string* LogKuebrnetesInfo::mutable_owner_name() {
+  std::string* _s = _internal_mutable_owner_name();
+  // @@protoc_insertion_point(field_mutable:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_name)
+  return _s;
+}
+inline const std::string& LogKuebrnetesInfo::_internal_owner_name() const {
+  return owner_name_.Get();
+}
+inline void LogKuebrnetesInfo::_internal_set_owner_name(const std::string& value) {
+  
+  owner_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* LogKuebrnetesInfo::_internal_mutable_owner_name() {
+  
+  return owner_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* LogKuebrnetesInfo::release_owner_name() {
+  // @@protoc_insertion_point(field_release:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_name)
+  return owner_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void LogKuebrnetesInfo::set_allocated_owner_name(std::string* owner_name) {
+  if (owner_name != nullptr) {
+    
+  } else {
+    
+  }
+  owner_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), owner_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_name)
+}
+
+// string owner_kubernetes_uid = 13 [json_name = "ownerKubernetesUid"];
+inline void LogKuebrnetesInfo::clear_owner_kubernetes_uid() {
+  owner_kubernetes_uid_.ClearToEmpty();
+}
+inline const std::string& LogKuebrnetesInfo::owner_kubernetes_uid() const {
+  // @@protoc_insertion_point(field_get:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_kubernetes_uid)
+  return _internal_owner_kubernetes_uid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LogKuebrnetesInfo::set_owner_kubernetes_uid(ArgT0&& arg0, ArgT... args) {
+ 
+ owner_kubernetes_uid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_kubernetes_uid)
+}
+inline std::string* LogKuebrnetesInfo::mutable_owner_kubernetes_uid() {
+  std::string* _s = _internal_mutable_owner_kubernetes_uid();
+  // @@protoc_insertion_point(field_mutable:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_kubernetes_uid)
+  return _s;
+}
+inline const std::string& LogKuebrnetesInfo::_internal_owner_kubernetes_uid() const {
+  return owner_kubernetes_uid_.Get();
+}
+inline void LogKuebrnetesInfo::_internal_set_owner_kubernetes_uid(const std::string& value) {
+  
+  owner_kubernetes_uid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* LogKuebrnetesInfo::_internal_mutable_owner_kubernetes_uid() {
+  
+  return owner_kubernetes_uid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* LogKuebrnetesInfo::release_owner_kubernetes_uid() {
+  // @@protoc_insertion_point(field_release:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_kubernetes_uid)
+  return owner_kubernetes_uid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void LogKuebrnetesInfo::set_allocated_owner_kubernetes_uid(std::string* owner_kubernetes_uid) {
+  if (owner_kubernetes_uid != nullptr) {
+    
+  } else {
+    
+  }
+  owner_kubernetes_uid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), owner_kubernetes_uid,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_kubernetes_uid)
+}
+
+// string owner_kind = 14 [json_name = "ownerKind"];
+inline void LogKuebrnetesInfo::clear_owner_kind() {
+  owner_kind_.ClearToEmpty();
+}
+inline const std::string& LogKuebrnetesInfo::owner_kind() const {
+  // @@protoc_insertion_point(field_get:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_kind)
+  return _internal_owner_kind();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LogKuebrnetesInfo::set_owner_kind(ArgT0&& arg0, ArgT... args) {
+ 
+ owner_kind_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_kind)
+}
+inline std::string* LogKuebrnetesInfo::mutable_owner_kind() {
+  std::string* _s = _internal_mutable_owner_kind();
+  // @@protoc_insertion_point(field_mutable:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_kind)
+  return _s;
+}
+inline const std::string& LogKuebrnetesInfo::_internal_owner_kind() const {
+  return owner_kind_.Get();
+}
+inline void LogKuebrnetesInfo::_internal_set_owner_kind(const std::string& value) {
+  
+  owner_kind_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* LogKuebrnetesInfo::_internal_mutable_owner_kind() {
+  
+  return owner_kind_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* LogKuebrnetesInfo::release_owner_kind() {
+  // @@protoc_insertion_point(field_release:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_kind)
+  return owner_kind_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void LogKuebrnetesInfo::set_allocated_owner_kind(std::string* owner_kind) {
+  if (owner_kind != nullptr) {
+    
+  } else {
+    
+  }
+  owner_kind_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), owner_kind,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_kind)
+}
+
+// string owner_api_version = 15 [json_name = "ownerApiVersion"];
+inline void LogKuebrnetesInfo::clear_owner_api_version() {
+  owner_api_version_.ClearToEmpty();
+}
+inline const std::string& LogKuebrnetesInfo::owner_api_version() const {
+  // @@protoc_insertion_point(field_get:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_api_version)
+  return _internal_owner_api_version();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LogKuebrnetesInfo::set_owner_api_version(ArgT0&& arg0, ArgT... args) {
+ 
+ owner_api_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_api_version)
+}
+inline std::string* LogKuebrnetesInfo::mutable_owner_api_version() {
+  std::string* _s = _internal_mutable_owner_api_version();
+  // @@protoc_insertion_point(field_mutable:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_api_version)
+  return _s;
+}
+inline const std::string& LogKuebrnetesInfo::_internal_owner_api_version() const {
+  return owner_api_version_.Get();
+}
+inline void LogKuebrnetesInfo::_internal_set_owner_api_version(const std::string& value) {
+  
+  owner_api_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* LogKuebrnetesInfo::_internal_mutable_owner_api_version() {
+  
+  return owner_api_version_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* LogKuebrnetesInfo::release_owner_api_version() {
+  // @@protoc_insertion_point(field_release:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_api_version)
+  return owner_api_version_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void LogKuebrnetesInfo::set_allocated_owner_api_version(std::string* owner_api_version) {
+  if (owner_api_version != nullptr) {
+    
+  } else {
+    
+  }
+  owner_api_version_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), owner_api_version,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.logs.v1alpha1.LogKuebrnetesInfo.owner_api_version)
+}
+
+// string status = 16 [json_name = "status"];
+inline void LogKuebrnetesInfo::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& LogKuebrnetesInfo::status() const {
+  // @@protoc_insertion_point(field_get:performance.logs.v1alpha1.LogKuebrnetesInfo.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LogKuebrnetesInfo::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.logs.v1alpha1.LogKuebrnetesInfo.status)
+}
+inline std::string* LogKuebrnetesInfo::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:performance.logs.v1alpha1.LogKuebrnetesInfo.status)
+  return _s;
+}
+inline const std::string& LogKuebrnetesInfo::_internal_status() const {
+  return status_.Get();
+}
+inline void LogKuebrnetesInfo::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* LogKuebrnetesInfo::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* LogKuebrnetesInfo::release_status() {
+  // @@protoc_insertion_point(field_release:performance.logs.v1alpha1.LogKuebrnetesInfo.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void LogKuebrnetesInfo::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.logs.v1alpha1.LogKuebrnetesInfo.status)
 }
 
 #ifdef __GNUC__

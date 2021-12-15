@@ -8,10 +8,10 @@ public interface LogOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>double date = 1 [json_name = "date"];</code>
+   * <code>int64 date = 1 [json_name = "date"];</code>
    * @return The date.
    */
-  double getDate();
+  long getDate();
 
   /**
    * <code>string log = 2 [json_name = "log"];</code>
@@ -39,4 +39,16 @@ public interface LogOrBuilder extends
    * <code>.performance.logs.v1alpha1.LogKuebrnetesInfo kubernetes = 3 [json_name = "kubernetes"];</code>
    */
   io.cuemby.performance.logs.v1alpha1.LogKuebrnetesInfoOrBuilder getKubernetesOrBuilder();
+
+  /**
+   * <code>string log_id = 4 [json_name = "logId"];</code>
+   * @return The logId.
+   */
+  java.lang.String getLogId();
+  /**
+   * <code>string log_id = 4 [json_name = "logId"];</code>
+   * @return The bytes for logId.
+   */
+  com.google.protobuf.ByteString
+      getLogIdBytes();
 }
