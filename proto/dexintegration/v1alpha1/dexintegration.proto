@@ -1,0 +1,26 @@
+
+syntax = "proto3";
+
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/dexintegration/v1alpha1";
+
+package dexintegration.v1alpha1;
+
+service DexIntegrationService {
+    
+    // Get Users Dex
+    rpc GetListUserDex(GetListUserDexRequest) returns (GetListUserDexResponse);
+
+}
+
+message UsersDex {
+    string user_id=1;
+    string provider=2;
+    string refresh=3;
+    string connector_data=4;
+}
+
+message GetListUserDexRequest {}
+
+message GetListUserDexResponse {
+    repeated UsersDex users_dex = 1;
+}
