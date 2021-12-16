@@ -195,7 +195,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.source.v1alpha1.UpdateIntegrationRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.source.v1alpha1.UpdateIntegrationRequest.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.source.v1alpha1.UpdateIntegrationRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1779,13 +1779,6 @@ proto.source.v1alpha1.GetIntegrationResponse.prototype.hasIntegration = function
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.source.v1alpha1.UpdateIntegrationRequest.repeatedFields_ = [2];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1818,8 +1811,7 @@ proto.source.v1alpha1.UpdateIntegrationRequest.prototype.toObject = function(opt
 proto.source.v1alpha1.UpdateIntegrationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    integrationsList: jspb.Message.toObjectList(msg.getIntegrationsList(),
-    proto.source.v1alpha1.CreateIntegrationRequest.toObject, includeInstance)
+    integrations: (f = msg.getIntegrations()) && proto.source.v1alpha1.CreateIntegrationRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1863,7 +1855,7 @@ proto.source.v1alpha1.UpdateIntegrationRequest.deserializeBinaryFromReader = fun
     case 2:
       var value = new proto.source.v1alpha1.CreateIntegrationRequest;
       reader.readMessage(value,proto.source.v1alpha1.CreateIntegrationRequest.deserializeBinaryFromReader);
-      msg.addIntegrations(value);
+      msg.setIntegrations(value);
       break;
     default:
       reader.skipField();
@@ -1901,9 +1893,9 @@ proto.source.v1alpha1.UpdateIntegrationRequest.serializeBinaryToWriter = functio
       f
     );
   }
-  f = message.getIntegrationsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getIntegrations();
+  if (f != null) {
+    writer.writeMessage(
       2,
       f,
       proto.source.v1alpha1.CreateIntegrationRequest.serializeBinaryToWriter
@@ -1931,40 +1923,39 @@ proto.source.v1alpha1.UpdateIntegrationRequest.prototype.setId = function(value)
 
 
 /**
- * repeated CreateIntegrationRequest integrations = 2;
- * @return {!Array<!proto.source.v1alpha1.CreateIntegrationRequest>}
+ * optional CreateIntegrationRequest integrations = 2;
+ * @return {?proto.source.v1alpha1.CreateIntegrationRequest}
  */
-proto.source.v1alpha1.UpdateIntegrationRequest.prototype.getIntegrationsList = function() {
-  return /** @type{!Array<!proto.source.v1alpha1.CreateIntegrationRequest>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.source.v1alpha1.CreateIntegrationRequest, 2));
+proto.source.v1alpha1.UpdateIntegrationRequest.prototype.getIntegrations = function() {
+  return /** @type{?proto.source.v1alpha1.CreateIntegrationRequest} */ (
+    jspb.Message.getWrapperField(this, proto.source.v1alpha1.CreateIntegrationRequest, 2));
 };
 
 
 /**
- * @param {!Array<!proto.source.v1alpha1.CreateIntegrationRequest>} value
+ * @param {?proto.source.v1alpha1.CreateIntegrationRequest|undefined} value
  * @return {!proto.source.v1alpha1.UpdateIntegrationRequest} returns this
 */
-proto.source.v1alpha1.UpdateIntegrationRequest.prototype.setIntegrationsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.source.v1alpha1.UpdateIntegrationRequest.prototype.setIntegrations = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
- * @param {!proto.source.v1alpha1.CreateIntegrationRequest=} opt_value
- * @param {number=} opt_index
- * @return {!proto.source.v1alpha1.CreateIntegrationRequest}
- */
-proto.source.v1alpha1.UpdateIntegrationRequest.prototype.addIntegrations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.source.v1alpha1.CreateIntegrationRequest, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.source.v1alpha1.UpdateIntegrationRequest} returns this
  */
-proto.source.v1alpha1.UpdateIntegrationRequest.prototype.clearIntegrationsList = function() {
-  return this.setIntegrationsList([]);
+proto.source.v1alpha1.UpdateIntegrationRequest.prototype.clearIntegrations = function() {
+  return this.setIntegrations(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.source.v1alpha1.UpdateIntegrationRequest.prototype.hasIntegrations = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

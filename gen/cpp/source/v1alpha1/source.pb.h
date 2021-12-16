@@ -1524,27 +1524,9 @@ class UpdateIntegrationRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIntegrationsFieldNumber = 2,
     kIdFieldNumber = 1,
+    kIntegrationsFieldNumber = 2,
   };
-  // repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];
-  int integrations_size() const;
-  private:
-  int _internal_integrations_size() const;
-  public:
-  void clear_integrations();
-  ::source::v1alpha1::CreateIntegrationRequest* mutable_integrations(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::CreateIntegrationRequest >*
-      mutable_integrations();
-  private:
-  const ::source::v1alpha1::CreateIntegrationRequest& _internal_integrations(int index) const;
-  ::source::v1alpha1::CreateIntegrationRequest* _internal_add_integrations();
-  public:
-  const ::source::v1alpha1::CreateIntegrationRequest& integrations(int index) const;
-  ::source::v1alpha1::CreateIntegrationRequest* add_integrations();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::CreateIntegrationRequest >&
-      integrations() const;
-
   // string id = 1 [json_name = "id"];
   void clear_id();
   const std::string& id() const;
@@ -1559,6 +1541,24 @@ class UpdateIntegrationRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];
+  bool has_integrations() const;
+  private:
+  bool _internal_has_integrations() const;
+  public:
+  void clear_integrations();
+  const ::source::v1alpha1::CreateIntegrationRequest& integrations() const;
+  PROTOBUF_MUST_USE_RESULT ::source::v1alpha1::CreateIntegrationRequest* release_integrations();
+  ::source::v1alpha1::CreateIntegrationRequest* mutable_integrations();
+  void set_allocated_integrations(::source::v1alpha1::CreateIntegrationRequest* integrations);
+  private:
+  const ::source::v1alpha1::CreateIntegrationRequest& _internal_integrations() const;
+  ::source::v1alpha1::CreateIntegrationRequest* _internal_mutable_integrations();
+  public:
+  void unsafe_arena_set_allocated_integrations(
+      ::source::v1alpha1::CreateIntegrationRequest* integrations);
+  ::source::v1alpha1::CreateIntegrationRequest* unsafe_arena_release_integrations();
+
   // @@protoc_insertion_point(class_scope:source.v1alpha1.UpdateIntegrationRequest)
  private:
   class _Internal;
@@ -1566,8 +1566,8 @@ class UpdateIntegrationRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::CreateIntegrationRequest > integrations_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::source::v1alpha1::CreateIntegrationRequest* integrations_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
 };
@@ -4776,44 +4776,94 @@ inline void UpdateIntegrationRequest::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.UpdateIntegrationRequest.id)
 }
 
-// repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];
-inline int UpdateIntegrationRequest::_internal_integrations_size() const {
-  return integrations_.size();
+// .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];
+inline bool UpdateIntegrationRequest::_internal_has_integrations() const {
+  return this != internal_default_instance() && integrations_ != nullptr;
 }
-inline int UpdateIntegrationRequest::integrations_size() const {
-  return _internal_integrations_size();
+inline bool UpdateIntegrationRequest::has_integrations() const {
+  return _internal_has_integrations();
 }
 inline void UpdateIntegrationRequest::clear_integrations() {
-  integrations_.Clear();
+  if (GetArenaForAllocation() == nullptr && integrations_ != nullptr) {
+    delete integrations_;
+  }
+  integrations_ = nullptr;
 }
-inline ::source::v1alpha1::CreateIntegrationRequest* UpdateIntegrationRequest::mutable_integrations(int index) {
-  // @@protoc_insertion_point(field_mutable:source.v1alpha1.UpdateIntegrationRequest.integrations)
-  return integrations_.Mutable(index);
+inline const ::source::v1alpha1::CreateIntegrationRequest& UpdateIntegrationRequest::_internal_integrations() const {
+  const ::source::v1alpha1::CreateIntegrationRequest* p = integrations_;
+  return p != nullptr ? *p : reinterpret_cast<const ::source::v1alpha1::CreateIntegrationRequest&>(
+      ::source::v1alpha1::_CreateIntegrationRequest_default_instance_);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::CreateIntegrationRequest >*
-UpdateIntegrationRequest::mutable_integrations() {
-  // @@protoc_insertion_point(field_mutable_list:source.v1alpha1.UpdateIntegrationRequest.integrations)
-  return &integrations_;
-}
-inline const ::source::v1alpha1::CreateIntegrationRequest& UpdateIntegrationRequest::_internal_integrations(int index) const {
-  return integrations_.Get(index);
-}
-inline const ::source::v1alpha1::CreateIntegrationRequest& UpdateIntegrationRequest::integrations(int index) const {
+inline const ::source::v1alpha1::CreateIntegrationRequest& UpdateIntegrationRequest::integrations() const {
   // @@protoc_insertion_point(field_get:source.v1alpha1.UpdateIntegrationRequest.integrations)
-  return _internal_integrations(index);
+  return _internal_integrations();
 }
-inline ::source::v1alpha1::CreateIntegrationRequest* UpdateIntegrationRequest::_internal_add_integrations() {
-  return integrations_.Add();
+inline void UpdateIntegrationRequest::unsafe_arena_set_allocated_integrations(
+    ::source::v1alpha1::CreateIntegrationRequest* integrations) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(integrations_);
+  }
+  integrations_ = integrations;
+  if (integrations) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:source.v1alpha1.UpdateIntegrationRequest.integrations)
 }
-inline ::source::v1alpha1::CreateIntegrationRequest* UpdateIntegrationRequest::add_integrations() {
-  ::source::v1alpha1::CreateIntegrationRequest* _add = _internal_add_integrations();
-  // @@protoc_insertion_point(field_add:source.v1alpha1.UpdateIntegrationRequest.integrations)
-  return _add;
+inline ::source::v1alpha1::CreateIntegrationRequest* UpdateIntegrationRequest::release_integrations() {
+  
+  ::source::v1alpha1::CreateIntegrationRequest* temp = integrations_;
+  integrations_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::CreateIntegrationRequest >&
-UpdateIntegrationRequest::integrations() const {
-  // @@protoc_insertion_point(field_list:source.v1alpha1.UpdateIntegrationRequest.integrations)
+inline ::source::v1alpha1::CreateIntegrationRequest* UpdateIntegrationRequest::unsafe_arena_release_integrations() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.UpdateIntegrationRequest.integrations)
+  
+  ::source::v1alpha1::CreateIntegrationRequest* temp = integrations_;
+  integrations_ = nullptr;
+  return temp;
+}
+inline ::source::v1alpha1::CreateIntegrationRequest* UpdateIntegrationRequest::_internal_mutable_integrations() {
+  
+  if (integrations_ == nullptr) {
+    auto* p = CreateMaybeMessage<::source::v1alpha1::CreateIntegrationRequest>(GetArenaForAllocation());
+    integrations_ = p;
+  }
   return integrations_;
+}
+inline ::source::v1alpha1::CreateIntegrationRequest* UpdateIntegrationRequest::mutable_integrations() {
+  ::source::v1alpha1::CreateIntegrationRequest* _msg = _internal_mutable_integrations();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.UpdateIntegrationRequest.integrations)
+  return _msg;
+}
+inline void UpdateIntegrationRequest::set_allocated_integrations(::source::v1alpha1::CreateIntegrationRequest* integrations) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete integrations_;
+  }
+  if (integrations) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::source::v1alpha1::CreateIntegrationRequest>::GetOwningArena(integrations);
+    if (message_arena != submessage_arena) {
+      integrations = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, integrations, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  integrations_ = integrations;
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.UpdateIntegrationRequest.integrations)
 }
 
 // -------------------------------------------------------------------

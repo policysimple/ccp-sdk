@@ -135,8 +135,8 @@ struct GetIntegrationResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetIntegrationResponseDefaultTypeInternal _GetIntegrationResponse_default_instance_;
 constexpr UpdateIntegrationRequest::UpdateIntegrationRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : integrations_()
-  , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , integrations_(nullptr){}
 struct UpdateIntegrationRequestDefaultTypeInternal {
   constexpr UpdateIntegrationRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -629,7 +629,7 @@ const char descriptor_table_protodef_source_2fv1alpha1_2fsource_2eproto[] PROTOB
   "ationResponse\022>\n\013integration\030\001 \001(\0132\034.sou"
   "rce.v1alpha1.IntegrationR\013integration\"y\n"
   "\030UpdateIntegrationRequest\022\016\n\002id\030\001 \001(\tR\002i"
-  "d\022M\n\014integrations\030\002 \003(\0132).source.v1alpha"
+  "d\022M\n\014integrations\030\002 \001(\0132).source.v1alpha"
   "1.CreateIntegrationRequestR\014integrations"
   "\"C\n\031UpdateIntegrationResponse\022\020\n\003msg\030\001 \001"
   "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"*\n\030DeleteI"
@@ -2573,12 +2573,16 @@ void GetIntegrationResponse::InternalSwap(GetIntegrationResponse* other) {
 
 class UpdateIntegrationRequest::_Internal {
  public:
+  static const ::source::v1alpha1::CreateIntegrationRequest& integrations(const UpdateIntegrationRequest* msg);
 };
 
+const ::source::v1alpha1::CreateIntegrationRequest&
+UpdateIntegrationRequest::_Internal::integrations(const UpdateIntegrationRequest* msg) {
+  return *msg->integrations_;
+}
 UpdateIntegrationRequest::UpdateIntegrationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  integrations_(arena) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -2586,19 +2590,24 @@ UpdateIntegrationRequest::UpdateIntegrationRequest(::PROTOBUF_NAMESPACE_ID::Aren
   // @@protoc_insertion_point(arena_constructor:source.v1alpha1.UpdateIntegrationRequest)
 }
 UpdateIntegrationRequest::UpdateIntegrationRequest(const UpdateIntegrationRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      integrations_(from.integrations_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArenaForAllocation());
   }
+  if (from._internal_has_integrations()) {
+    integrations_ = new ::source::v1alpha1::CreateIntegrationRequest(*from.integrations_);
+  } else {
+    integrations_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:source.v1alpha1.UpdateIntegrationRequest)
 }
 
 inline void UpdateIntegrationRequest::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+integrations_ = nullptr;
 }
 
 UpdateIntegrationRequest::~UpdateIntegrationRequest() {
@@ -2611,6 +2620,7 @@ UpdateIntegrationRequest::~UpdateIntegrationRequest() {
 inline void UpdateIntegrationRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete integrations_;
 }
 
 void UpdateIntegrationRequest::ArenaDtor(void* object) {
@@ -2629,8 +2639,11 @@ void UpdateIntegrationRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  integrations_.Clear();
   id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && integrations_ != nullptr) {
+    delete integrations_;
+  }
+  integrations_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2649,16 +2662,11 @@ const char* UpdateIntegrationRequest::_InternalParse(const char* ptr, ::PROTOBUF
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];
+      // .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_integrations(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+          ptr = ctx->ParseMessage(_internal_mutable_integrations(), ptr);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -2700,12 +2708,12 @@ failure:
         1, this->_internal_id(), target);
   }
 
-  // repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_integrations_size()); i < n; i++) {
+  // .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];
+  if (this->_internal_has_integrations()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, this->_internal_integrations(i), target, stream);
+      InternalWriteMessage(
+        2, _Internal::integrations(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2724,18 +2732,18 @@ size_t UpdateIntegrationRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];
-  total_size += 1UL * this->_internal_integrations_size();
-  for (const auto& msg : this->integrations_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
   // string id = 1 [json_name = "id"];
   if (!this->_internal_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_id());
+  }
+
+  // .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];
+  if (this->_internal_has_integrations()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *integrations_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2766,9 +2774,11 @@ void UpdateIntegrationRequest::MergeFrom(const UpdateIntegrationRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  integrations_.MergeFrom(from.integrations_);
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
+  }
+  if (from._internal_has_integrations()) {
+    _internal_mutable_integrations()->::source::v1alpha1::CreateIntegrationRequest::MergeFrom(from._internal_integrations());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2787,12 +2797,12 @@ bool UpdateIntegrationRequest::IsInitialized() const {
 void UpdateIntegrationRequest::InternalSwap(UpdateIntegrationRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  integrations_.InternalSwap(&other->integrations_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),
       &other->id_, other->GetArenaForAllocation()
   );
+  swap(integrations_, other->integrations_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateIntegrationRequest::GetMetadata() const {

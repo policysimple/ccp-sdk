@@ -18,9 +18,9 @@ class UpdateIntegrationRequest extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+     * Generated from protobuf field <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
      */
-    private $integrations;
+    protected $integrations = null;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class UpdateIntegrationRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type \Source\V1alpha1\CreateIntegrationRequest[]|\Google\Protobuf\Internal\RepeatedField $integrations
+     *     @type \Source\V1alpha1\CreateIntegrationRequest $integrations
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +60,33 @@ class UpdateIntegrationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+     * @return \Source\V1alpha1\CreateIntegrationRequest|null
      */
     public function getIntegrations()
     {
         return $this->integrations;
     }
 
+    public function hasIntegrations()
+    {
+        return isset($this->integrations);
+    }
+
+    public function clearIntegrations()
+    {
+        unset($this->integrations);
+    }
+
     /**
-     * Generated from protobuf field <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-     * @param \Source\V1alpha1\CreateIntegrationRequest[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+     * @param \Source\V1alpha1\CreateIntegrationRequest $var
      * @return $this
      */
     public function setIntegrations($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Source\V1alpha1\CreateIntegrationRequest::class);
-        $this->integrations = $arr;
+        GPBUtil::checkMessage($var, \Source\V1alpha1\CreateIntegrationRequest::class);
+        $this->integrations = $var;
 
         return $this;
     }

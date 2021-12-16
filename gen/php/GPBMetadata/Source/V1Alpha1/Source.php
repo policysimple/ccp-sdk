@@ -49,7 +49,7 @@ class Source
 integration (2.source.v1alpha1.IntegrationRintegration"y
 UpdateIntegrationRequest
 id (	RidM
-integrations (2).source.v1alpha1.CreateIntegrationRequestRintegrations"C
+integrations (2).source.v1alpha1.CreateIntegrationRequestRintegrations"C
 UpdateIntegrationResponse
 msg (	Rmsg
 error (	Rerror"*

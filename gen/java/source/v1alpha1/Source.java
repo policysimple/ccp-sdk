@@ -6081,28 +6081,19 @@ public final class Source {
         getIdBytes();
 
     /**
-     * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+     * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+     * @return Whether the integrations field is set.
      */
-    java.util.List<source.v1alpha1.Source.CreateIntegrationRequest> 
-        getIntegrationsList();
+    boolean hasIntegrations();
     /**
-     * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+     * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+     * @return The integrations.
      */
-    source.v1alpha1.Source.CreateIntegrationRequest getIntegrations(int index);
+    source.v1alpha1.Source.CreateIntegrationRequest getIntegrations();
     /**
-     * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+     * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
      */
-    int getIntegrationsCount();
-    /**
-     * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-     */
-    java.util.List<? extends source.v1alpha1.Source.CreateIntegrationRequestOrBuilder> 
-        getIntegrationsOrBuilderList();
-    /**
-     * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-     */
-    source.v1alpha1.Source.CreateIntegrationRequestOrBuilder getIntegrationsOrBuilder(
-        int index);
+    source.v1alpha1.Source.CreateIntegrationRequestOrBuilder getIntegrationsOrBuilder();
   }
   /**
    * Protobuf type {@code source.v1alpha1.UpdateIntegrationRequest}
@@ -6118,7 +6109,6 @@ public final class Source {
     }
     private UpdateIntegrationRequest() {
       id_ = "";
-      integrations_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -6141,7 +6131,6 @@ public final class Source {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -6159,12 +6148,16 @@ public final class Source {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                integrations_ = new java.util.ArrayList<source.v1alpha1.Source.CreateIntegrationRequest>();
-                mutable_bitField0_ |= 0x00000001;
+              source.v1alpha1.Source.CreateIntegrationRequest.Builder subBuilder = null;
+              if (integrations_ != null) {
+                subBuilder = integrations_.toBuilder();
               }
-              integrations_.add(
-                  input.readMessage(source.v1alpha1.Source.CreateIntegrationRequest.parser(), extensionRegistry));
+              integrations_ = input.readMessage(source.v1alpha1.Source.CreateIntegrationRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(integrations_);
+                integrations_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -6182,9 +6175,6 @@ public final class Source {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          integrations_ = java.util.Collections.unmodifiableList(integrations_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -6241,43 +6231,29 @@ public final class Source {
     }
 
     public static final int INTEGRATIONS_FIELD_NUMBER = 2;
-    private java.util.List<source.v1alpha1.Source.CreateIntegrationRequest> integrations_;
+    private source.v1alpha1.Source.CreateIntegrationRequest integrations_;
     /**
-     * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+     * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+     * @return Whether the integrations field is set.
      */
     @java.lang.Override
-    public java.util.List<source.v1alpha1.Source.CreateIntegrationRequest> getIntegrationsList() {
-      return integrations_;
+    public boolean hasIntegrations() {
+      return integrations_ != null;
     }
     /**
-     * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+     * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+     * @return The integrations.
      */
     @java.lang.Override
-    public java.util.List<? extends source.v1alpha1.Source.CreateIntegrationRequestOrBuilder> 
-        getIntegrationsOrBuilderList() {
-      return integrations_;
+    public source.v1alpha1.Source.CreateIntegrationRequest getIntegrations() {
+      return integrations_ == null ? source.v1alpha1.Source.CreateIntegrationRequest.getDefaultInstance() : integrations_;
     }
     /**
-     * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+     * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
      */
     @java.lang.Override
-    public int getIntegrationsCount() {
-      return integrations_.size();
-    }
-    /**
-     * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-     */
-    @java.lang.Override
-    public source.v1alpha1.Source.CreateIntegrationRequest getIntegrations(int index) {
-      return integrations_.get(index);
-    }
-    /**
-     * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-     */
-    @java.lang.Override
-    public source.v1alpha1.Source.CreateIntegrationRequestOrBuilder getIntegrationsOrBuilder(
-        int index) {
-      return integrations_.get(index);
+    public source.v1alpha1.Source.CreateIntegrationRequestOrBuilder getIntegrationsOrBuilder() {
+      return getIntegrations();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6297,8 +6273,8 @@ public final class Source {
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      for (int i = 0; i < integrations_.size(); i++) {
-        output.writeMessage(2, integrations_.get(i));
+      if (integrations_ != null) {
+        output.writeMessage(2, getIntegrations());
       }
       unknownFields.writeTo(output);
     }
@@ -6312,9 +6288,9 @@ public final class Source {
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      for (int i = 0; i < integrations_.size(); i++) {
+      if (integrations_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, integrations_.get(i));
+          .computeMessageSize(2, getIntegrations());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6333,8 +6309,11 @@ public final class Source {
 
       if (!getId()
           .equals(other.getId())) return false;
-      if (!getIntegrationsList()
-          .equals(other.getIntegrationsList())) return false;
+      if (hasIntegrations() != other.hasIntegrations()) return false;
+      if (hasIntegrations()) {
+        if (!getIntegrations()
+            .equals(other.getIntegrations())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6348,9 +6327,9 @@ public final class Source {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
-      if (getIntegrationsCount() > 0) {
+      if (hasIntegrations()) {
         hash = (37 * hash) + INTEGRATIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getIntegrationsList().hashCode();
+        hash = (53 * hash) + getIntegrations().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -6480,7 +6459,6 @@ public final class Source {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getIntegrationsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -6489,10 +6467,10 @@ public final class Source {
         id_ = "";
 
         if (integrationsBuilder_ == null) {
-          integrations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          integrations_ = null;
         } else {
-          integrationsBuilder_.clear();
+          integrations_ = null;
+          integrationsBuilder_ = null;
         }
         return this;
       }
@@ -6520,13 +6498,8 @@ public final class Source {
       @java.lang.Override
       public source.v1alpha1.Source.UpdateIntegrationRequest buildPartial() {
         source.v1alpha1.Source.UpdateIntegrationRequest result = new source.v1alpha1.Source.UpdateIntegrationRequest(this);
-        int from_bitField0_ = bitField0_;
         result.id_ = id_;
         if (integrationsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            integrations_ = java.util.Collections.unmodifiableList(integrations_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
           result.integrations_ = integrations_;
         } else {
           result.integrations_ = integrationsBuilder_.build();
@@ -6583,31 +6556,8 @@ public final class Source {
           id_ = other.id_;
           onChanged();
         }
-        if (integrationsBuilder_ == null) {
-          if (!other.integrations_.isEmpty()) {
-            if (integrations_.isEmpty()) {
-              integrations_ = other.integrations_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureIntegrationsIsMutable();
-              integrations_.addAll(other.integrations_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.integrations_.isEmpty()) {
-            if (integrationsBuilder_.isEmpty()) {
-              integrationsBuilder_.dispose();
-              integrationsBuilder_ = null;
-              integrations_ = other.integrations_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              integrationsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getIntegrationsFieldBuilder() : null;
-            } else {
-              integrationsBuilder_.addAllMessages(other.integrations_);
-            }
-          }
+        if (other.hasIntegrations()) {
+          mergeIntegrations(other.getIntegrations());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6637,7 +6587,6 @@ public final class Source {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -6715,239 +6664,118 @@ public final class Source {
         return this;
       }
 
-      private java.util.List<source.v1alpha1.Source.CreateIntegrationRequest> integrations_ =
-        java.util.Collections.emptyList();
-      private void ensureIntegrationsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          integrations_ = new java.util.ArrayList<source.v1alpha1.Source.CreateIntegrationRequest>(integrations_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private source.v1alpha1.Source.CreateIntegrationRequest integrations_;
+      private com.google.protobuf.SingleFieldBuilderV3<
           source.v1alpha1.Source.CreateIntegrationRequest, source.v1alpha1.Source.CreateIntegrationRequest.Builder, source.v1alpha1.Source.CreateIntegrationRequestOrBuilder> integrationsBuilder_;
+      /**
+       * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+       * @return Whether the integrations field is set.
+       */
+      public boolean hasIntegrations() {
+        return integrationsBuilder_ != null || integrations_ != null;
+      }
+      /**
+       * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+       * @return The integrations.
+       */
+      public source.v1alpha1.Source.CreateIntegrationRequest getIntegrations() {
+        if (integrationsBuilder_ == null) {
+          return integrations_ == null ? source.v1alpha1.Source.CreateIntegrationRequest.getDefaultInstance() : integrations_;
+        } else {
+          return integrationsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+       */
+      public Builder setIntegrations(source.v1alpha1.Source.CreateIntegrationRequest value) {
+        if (integrationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          integrations_ = value;
+          onChanged();
+        } else {
+          integrationsBuilder_.setMessage(value);
+        }
 
-      /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-       */
-      public java.util.List<source.v1alpha1.Source.CreateIntegrationRequest> getIntegrationsList() {
-        if (integrationsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(integrations_);
-        } else {
-          return integrationsBuilder_.getMessageList();
-        }
+        return this;
       }
       /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-       */
-      public int getIntegrationsCount() {
-        if (integrationsBuilder_ == null) {
-          return integrations_.size();
-        } else {
-          return integrationsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-       */
-      public source.v1alpha1.Source.CreateIntegrationRequest getIntegrations(int index) {
-        if (integrationsBuilder_ == null) {
-          return integrations_.get(index);
-        } else {
-          return integrationsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+       * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
        */
       public Builder setIntegrations(
-          int index, source.v1alpha1.Source.CreateIntegrationRequest value) {
-        if (integrationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureIntegrationsIsMutable();
-          integrations_.set(index, value);
-          onChanged();
-        } else {
-          integrationsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-       */
-      public Builder setIntegrations(
-          int index, source.v1alpha1.Source.CreateIntegrationRequest.Builder builderForValue) {
-        if (integrationsBuilder_ == null) {
-          ensureIntegrationsIsMutable();
-          integrations_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          integrationsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-       */
-      public Builder addIntegrations(source.v1alpha1.Source.CreateIntegrationRequest value) {
-        if (integrationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureIntegrationsIsMutable();
-          integrations_.add(value);
-          onChanged();
-        } else {
-          integrationsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-       */
-      public Builder addIntegrations(
-          int index, source.v1alpha1.Source.CreateIntegrationRequest value) {
-        if (integrationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureIntegrationsIsMutable();
-          integrations_.add(index, value);
-          onChanged();
-        } else {
-          integrationsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-       */
-      public Builder addIntegrations(
           source.v1alpha1.Source.CreateIntegrationRequest.Builder builderForValue) {
         if (integrationsBuilder_ == null) {
-          ensureIntegrationsIsMutable();
-          integrations_.add(builderForValue.build());
+          integrations_ = builderForValue.build();
           onChanged();
         } else {
-          integrationsBuilder_.addMessage(builderForValue.build());
+          integrationsBuilder_.setMessage(builderForValue.build());
         }
+
         return this;
       }
       /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+       * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
        */
-      public Builder addIntegrations(
-          int index, source.v1alpha1.Source.CreateIntegrationRequest.Builder builderForValue) {
+      public Builder mergeIntegrations(source.v1alpha1.Source.CreateIntegrationRequest value) {
         if (integrationsBuilder_ == null) {
-          ensureIntegrationsIsMutable();
-          integrations_.add(index, builderForValue.build());
+          if (integrations_ != null) {
+            integrations_ =
+              source.v1alpha1.Source.CreateIntegrationRequest.newBuilder(integrations_).mergeFrom(value).buildPartial();
+          } else {
+            integrations_ = value;
+          }
           onChanged();
         } else {
-          integrationsBuilder_.addMessage(index, builderForValue.build());
+          integrationsBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-       */
-      public Builder addAllIntegrations(
-          java.lang.Iterable<? extends source.v1alpha1.Source.CreateIntegrationRequest> values) {
-        if (integrationsBuilder_ == null) {
-          ensureIntegrationsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, integrations_);
-          onChanged();
-        } else {
-          integrationsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+       * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
        */
       public Builder clearIntegrations() {
         if (integrationsBuilder_ == null) {
-          integrations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          integrations_ = null;
           onChanged();
         } else {
-          integrationsBuilder_.clear();
+          integrations_ = null;
+          integrationsBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+       * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
        */
-      public Builder removeIntegrations(int index) {
-        if (integrationsBuilder_ == null) {
-          ensureIntegrationsIsMutable();
-          integrations_.remove(index);
-          onChanged();
-        } else {
-          integrationsBuilder_.remove(index);
-        }
-        return this;
+      public source.v1alpha1.Source.CreateIntegrationRequest.Builder getIntegrationsBuilder() {
+        
+        onChanged();
+        return getIntegrationsFieldBuilder().getBuilder();
       }
       /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+       * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
        */
-      public source.v1alpha1.Source.CreateIntegrationRequest.Builder getIntegrationsBuilder(
-          int index) {
-        return getIntegrationsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-       */
-      public source.v1alpha1.Source.CreateIntegrationRequestOrBuilder getIntegrationsOrBuilder(
-          int index) {
-        if (integrationsBuilder_ == null) {
-          return integrations_.get(index);  } else {
-          return integrationsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-       */
-      public java.util.List<? extends source.v1alpha1.Source.CreateIntegrationRequestOrBuilder> 
-           getIntegrationsOrBuilderList() {
+      public source.v1alpha1.Source.CreateIntegrationRequestOrBuilder getIntegrationsOrBuilder() {
         if (integrationsBuilder_ != null) {
-          return integrationsBuilder_.getMessageOrBuilderList();
+          return integrationsBuilder_.getMessageOrBuilder();
         } else {
-          return java.util.Collections.unmodifiableList(integrations_);
+          return integrations_ == null ?
+              source.v1alpha1.Source.CreateIntegrationRequest.getDefaultInstance() : integrations_;
         }
       }
       /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
+       * <code>.source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
        */
-      public source.v1alpha1.Source.CreateIntegrationRequest.Builder addIntegrationsBuilder() {
-        return getIntegrationsFieldBuilder().addBuilder(
-            source.v1alpha1.Source.CreateIntegrationRequest.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-       */
-      public source.v1alpha1.Source.CreateIntegrationRequest.Builder addIntegrationsBuilder(
-          int index) {
-        return getIntegrationsFieldBuilder().addBuilder(
-            index, source.v1alpha1.Source.CreateIntegrationRequest.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .source.v1alpha1.CreateIntegrationRequest integrations = 2 [json_name = "integrations"];</code>
-       */
-      public java.util.List<source.v1alpha1.Source.CreateIntegrationRequest.Builder> 
-           getIntegrationsBuilderList() {
-        return getIntegrationsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilderV3<
           source.v1alpha1.Source.CreateIntegrationRequest, source.v1alpha1.Source.CreateIntegrationRequest.Builder, source.v1alpha1.Source.CreateIntegrationRequestOrBuilder> 
           getIntegrationsFieldBuilder() {
         if (integrationsBuilder_ == null) {
-          integrationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          integrationsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               source.v1alpha1.Source.CreateIntegrationRequest, source.v1alpha1.Source.CreateIntegrationRequest.Builder, source.v1alpha1.Source.CreateIntegrationRequestOrBuilder>(
-                  integrations_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  getIntegrations(),
                   getParentForChildren(),
                   isClean());
           integrations_ = null;
@@ -17593,7 +17421,7 @@ public final class Source {
       "ationResponse\022>\n\013integration\030\001 \001(\0132\034.sou" +
       "rce.v1alpha1.IntegrationR\013integration\"y\n" +
       "\030UpdateIntegrationRequest\022\016\n\002id\030\001 \001(\tR\002i" +
-      "d\022M\n\014integrations\030\002 \003(\0132).source.v1alpha" +
+      "d\022M\n\014integrations\030\002 \001(\0132).source.v1alpha" +
       "1.CreateIntegrationRequestR\014integrations" +
       "\"C\n\031UpdateIntegrationResponse\022\020\n\003msg\030\001 \001" +
       "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"*\n\030DeleteI" +

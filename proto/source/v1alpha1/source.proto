@@ -74,7 +74,7 @@ message GetIntegrationResponse {
 
 message UpdateIntegrationRequest {
     string id = 1;
-    repeated CreateIntegrationRequest integrations = 2;
+    CreateIntegrationRequest integrations = 2;
 }
 
 message UpdateIntegrationResponse {
