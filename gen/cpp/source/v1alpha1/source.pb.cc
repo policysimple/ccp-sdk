@@ -686,12 +686,13 @@ const char descriptor_table_protodef_source_2fv1alpha1_2fsource_2eproto[] PROTOB
   "ce.v1alpha1.UpdateIntegrationResponse\022j\n"
   "\021DeleteIntegration\022).source.v1alpha1.Del"
   "eteIntegrationRequest\032*.source.v1alpha1."
-  "DeleteIntegrationResponseB\nZ\010./sourceb\006p"
+  "DeleteIntegrationResponseB2Z0github.com/"
+  "cuemby/ccp-sdk/gen/go/source/v1alpha1b\006p"
   "roto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_source_2fv1alpha1_2fsource_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_source_2fv1alpha1_2fsource_2eproto = {
-  false, false, 3285, descriptor_table_protodef_source_2fv1alpha1_2fsource_2eproto, "source/v1alpha1/source.proto", 
+  false, false, 3325, descriptor_table_protodef_source_2fv1alpha1_2fsource_2eproto, "source/v1alpha1/source.proto", 
   &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once, nullptr, 0, 26,
   schemas, file_default_instances, TableStruct_source_2fv1alpha1_2fsource_2eproto::offsets,
   file_level_metadata_source_2fv1alpha1_2fsource_2eproto, file_level_enum_descriptors_source_2fv1alpha1_2fsource_2eproto, file_level_service_descriptors_source_2fv1alpha1_2fsource_2eproto,

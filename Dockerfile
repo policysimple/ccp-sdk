@@ -55,10 +55,8 @@ RUN BIN="/usr/local/bin" && \
 
 RUN buf --version
 
-RUN wget https://raw.githubusercontent.com/rootbean/example-image-docker-buf/master/generate-buf.sh
-
 RUN echo "#!/bin/sh" > compile.sh
-RUN echo "cd /temp/buf-gen && buf lint && buf generate" > compile.sh
+RUN echo "cd /temp/buf-gen && buf lint && buf generate && chmod 777 -R gen" > compile.sh
 RUN chmod +x compile.sh
 
 ENTRYPOINT [ "sh", "compile.sh" ]

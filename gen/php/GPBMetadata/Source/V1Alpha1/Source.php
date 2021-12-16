@@ -16,7 +16,7 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-Õ
+ý
 source/v1alpha1/source.protosource.v1alpha1"ö
 Integration
 id (	Rid
@@ -106,8 +106,7 @@ class Source
 ListIntegrations(.source.v1alpha1.ListIntegrationsRequest).source.v1alpha1.ListIntegrationsResponsea
 GetIntegration&.source.v1alpha1.GetIntegrationRequest\'.source.v1alpha1.GetIntegrationResponsej
 UpdateIntegration).source.v1alpha1.UpdateIntegrationRequest*.source.v1alpha1.UpdateIntegrationResponsej
-DeleteIntegration).source.v1alpha1.DeleteIntegrationRequest*.source.v1alpha1.DeleteIntegrationResponseB
-Z./sourcebproto3'
+DeleteIntegration).source.v1alpha1.DeleteIntegrationRequest*.source.v1alpha1.DeleteIntegrationResponseB2Z0github.com/cuemby/ccp-sdk/gen/go/source/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

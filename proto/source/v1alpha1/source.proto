@@ -1,8 +1,9 @@
 
 syntax = "proto3";
-package source.v1alpha1;
-option go_package = "./source";
 
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/source/v1alpha1";
+
+package source.v1alpha1;
 
 service SourceService {
 
