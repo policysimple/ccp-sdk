@@ -17478,7 +17478,8 @@ public final class Source {
       "ce.v1alpha1.UpdateIntegrationResponse\022j\n" +
       "\021DeleteIntegration\022).source.v1alpha1.Del" +
       "eteIntegrationRequest\032*.source.v1alpha1." +
-      "DeleteIntegrationResponseB\nZ\010./sourceb\006p" +
+      "DeleteIntegrationResponseB2Z0github.com/" +
+      "cuemby/ccp-sdk/gen/go/source/v1alpha1b\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
