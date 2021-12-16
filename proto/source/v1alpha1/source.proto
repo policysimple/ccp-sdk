@@ -1,0 +1,155 @@
+
+syntax = "proto3";
+package source.v1alpha1;
+option go_package = "./source";
+
+
+service SourceService {
+
+    //PROVIDERS
+
+    rpc CreateProvider(CreateProviderRequest) returns (CreateProviderResponse);
+    rpc ListProviders(ListProvidersRequest) returns (ListProvidersResponse);
+    rpc GetProvider(GetProviderRequest) returns (GetProviderResponse);
+    rpc UpdateProvider(UpdateProviderRequest) returns (UpdateProviderResponse);
+    rpc DeleteProvider(DeleteProviderRequest) returns (DeleteProviderResponse);
+
+    //INTEGRATIONS
+
+    rpc CreateIntegration(CreateIntegrationRequest) returns (CreateIntegrationResponse);
+    rpc ListIntegrations(ListIntegrationsRequest) returns (ListIntegrationsResponse);
+    rpc GetIntegration(GetIntegrationRequest) returns (GetIntegrationResponse);
+    rpc UpdateIntegration(UpdateIntegrationRequest) returns (UpdateIntegrationResponse);
+    rpc DeleteIntegration(DeleteIntegrationRequest) returns (DeleteIntegrationResponse);
+}
+
+/*
+    Integration
+
+    type Integrations struct {
+	ID           primitive.ObjectID `bson:"_id"`
+	Name         string             `bson:"text"`
+	Provider     *Providers         `bson:"provider"`
+	ProviderData map[string]string  `bson:"provider_data,omitempty"`
+    }
+
+*/
+
+message Integration {
+    string id = 1;
+    string user_id = 2;
+    string name = 3;
+    Provider provider = 4;
+    map<string, string> data = 5;
+}
+
+message CreateIntegrationRequest {
+    string id = 1;
+    string user_id = 2;
+    string name = 3;
+    Provider provider = 4;
+    map<string, string> data = 5;
+}
+
+message CreateIntegrationResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message ListIntegrationsRequest {
+    string user_id = 1;
+}
+
+message ListIntegrationsResponse{
+    repeated Integration integrations = 1;
+}
+
+message GetIntegrationRequest {
+    string id = 1;
+}
+
+message GetIntegrationResponse {
+    Integration integration = 1;
+}
+
+message UpdateIntegrationRequest {
+    string id = 1;
+    CreateIntegrationRequest integrations = 2;
+}
+
+message UpdateIntegrationResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message DeleteIntegrationRequest {
+    string id = 1;
+}
+
+message DeleteIntegrationResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+/*
+ END
+
+ */
+
+message Provider{
+    string id =1 ;
+    string name = 2;
+    string description = 3;
+    string logo = 4;
+    map<string, string> data = 5;
+
+}
+
+
+message DeleteProviderRequest{
+    string id = 1;
+}
+
+message DeleteProviderResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message UpdateProviderRequest {
+    string id = 1;
+    CreateProviderRequest provider = 2;
+}
+
+message UpdateProviderResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+
+message GetProviderRequest{
+    string id = 1;
+} 
+
+message GetProviderResponse{
+    Provider provider = 1;
+}
+
+message CreateProviderRequest {
+    string name = 1;
+    string description = 2;
+    string logo = 3;
+    map<string, string> data = 5;
+
+}
+
+message CreateProviderResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message ListProvidersRequest {
+}
+
+message ListProvidersResponse {
+    repeated Provider providers = 1;
+}
