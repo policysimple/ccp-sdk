@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/vault/v1alpha1";
+
+package vault.v1alpha1;
+
+service VaultService {
+    ///CRUD
+    rpc WriteSecret(WriteSecretRequest) returns (WriteSecretResponse);
+    rpc ReadSecret(ReadSecretRequest) returns (ReadSecretResponse);
+    rpc DeleteSecret(DeleteSecretRequest) returns (DeleteSecretResponse);
+}
+
+message WriteSecretRequest {
+        string name = 1;
+        string value = 2;
+}
+
+message WriteSecretResponse {
+        string name = 1;
+        string value = 2;
+}
+
+message ReadSecretRequest {
+        string name = 1;
+}
+
+message ReadSecretResponse {
+        string name = 1;
+        string value = 2;
+}
+
+message DeleteSecretRequest {
+        string name = 1;
+}
+
+message DeleteSecretResponse {
+        string name = 1;
+}
