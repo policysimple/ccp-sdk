@@ -86,23 +86,23 @@ const char descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenviro
   "ent\"\202\001\n\031CreateEnvironmentResponse\022M\n\013env"
   "ironment\030\001 \001(\0132+.pipelines.environment.v"
   "1alpha1.EnvironmentR\013environment\022\026\n\006stat"
-  "us\030\002 \001(\tR\006status2\244\001\n\025EnvinromentAPIServi"
-  "ce\022\212\001\n\021CreateEnvironment\0228.pipelines.env"
+  "us\030\002 \001(\tR\006status2\242\001\n\025EnvironmentAPIServi"
+  "ce\022\210\001\n\021CreateEnvironment\0228.pipelines.env"
   "ironment.v1alpha1.CreateEnvironmentReque"
   "st\0329.pipelines.environment.v1alpha1.Crea"
-  "teEnvironmentResponse\"\000B\306\001\n(io.cuemby.pi"
-  "pelines.environment.v1alpha1B\023Environmen"
-  "tAPIProtoP\001Z;github.com/cuemby/ccp-pipel"
-  "ines-service/environmentv1alpha1\242\002\003PPX\252\002"
-  "\036Pipelines.Environment.V1Alpha1\312\002\036Pipeli"
-  "nes\\Environment\\V1Alpha1b\006proto3"
+  "teEnvironmentResponseB\312\001\n(io.cuemby.pipe"
+  "lines.environment.v1alpha1B\023EnvironmentA"
+  "PIProtoP\001Z\?github.com/cuemby/ccp-sdk/gen"
+  "/go/pipelines/environment/v1alpha1\242\002\003PPX"
+  "\252\002\036Pipelines.Environment.V1Alpha1\312\002\036Pipe"
+  "lines\\Environment\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_deps[1] = {
   &::descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto = {
-  false, false, 752, descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto, "pipelines/environment/v1alpha1/environment_api.proto", 
+  false, false, 754, descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto, "pipelines/environment/v1alpha1/environment_api.proto", 
   &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_once, descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto::offsets,
   file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto, file_level_enum_descriptors_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto, file_level_service_descriptors_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto,

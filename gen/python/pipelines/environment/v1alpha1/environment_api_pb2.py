@@ -18,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='pipelines/environment/v1alpha1/environment_api.proto',
   package='pipelines.environment.v1alpha1',
   syntax='proto3',
-  serialized_options=b'\n(io.cuemby.pipelines.environment.v1alpha1B\023EnvironmentAPIProtoP\001Z;github.com/cuemby/ccp-pipelines-service/environmentv1alpha1\242\002\003PPX\252\002\036Pipelines.Environment.V1Alpha1\312\002\036Pipelines\\Environment\\V1Alpha1',
+  serialized_options=b'\n(io.cuemby.pipelines.environment.v1alpha1B\023EnvironmentAPIProtoP\001Z?github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1\242\002\003PPX\252\002\036Pipelines.Environment.V1Alpha1\312\002\036Pipelines\\Environment\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n4pipelines/environment/v1alpha1/environment_api.proto\x12\x1epipelines.environment.v1alpha1\x1a\x30pipelines/environment/v1alpha1/environment.proto\"i\n\x18\x43reateEnvironmentRequest\x12M\n\x0b\x65nvironment\x18\x01 \x01(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\"\x82\x01\n\x19\x43reateEnvironmentResponse\x12M\n\x0b\x65nvironment\x18\x01 \x01(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xa4\x01\n\x15\x45nvinromentAPIService\x12\x8a\x01\n\x11\x43reateEnvironment\x12\x38.pipelines.environment.v1alpha1.CreateEnvironmentRequest\x1a\x39.pipelines.environment.v1alpha1.CreateEnvironmentResponse\"\x00\x42\xc6\x01\n(io.cuemby.pipelines.environment.v1alpha1B\x13\x45nvironmentAPIProtoP\x01Z;github.com/cuemby/ccp-pipelines-service/environmentv1alpha1\xa2\x02\x03PPX\xaa\x02\x1ePipelines.Environment.V1Alpha1\xca\x02\x1ePipelines\\Environment\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n4pipelines/environment/v1alpha1/environment_api.proto\x12\x1epipelines.environment.v1alpha1\x1a\x30pipelines/environment/v1alpha1/environment.proto\"i\n\x18\x43reateEnvironmentRequest\x12M\n\x0b\x65nvironment\x18\x01 \x01(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\"\x82\x01\n\x19\x43reateEnvironmentResponse\x12M\n\x0b\x65nvironment\x18\x01 \x01(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xa2\x01\n\x15\x45nvironmentAPIService\x12\x88\x01\n\x11\x43reateEnvironment\x12\x38.pipelines.environment.v1alpha1.CreateEnvironmentRequest\x1a\x39.pipelines.environment.v1alpha1.CreateEnvironmentResponseB\xca\x01\n(io.cuemby.pipelines.environment.v1alpha1B\x13\x45nvironmentAPIProtoP\x01Z?github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1ePipelines.Environment.V1Alpha1\xca\x02\x1ePipelines\\Environment\\V1Alpha1b\x06proto3'
   ,
   dependencies=[pipelines_dot_environment_dot_v1alpha1_dot_environment__pb2.DESCRIPTOR,])
 
@@ -120,19 +120,19 @@ _sym_db.RegisterMessage(CreateEnvironmentResponse)
 
 DESCRIPTOR._options = None
 
-_ENVINROMENTAPISERVICE = _descriptor.ServiceDescriptor(
-  name='EnvinromentAPIService',
-  full_name='pipelines.environment.v1alpha1.EnvinromentAPIService',
+_ENVIRONMENTAPISERVICE = _descriptor.ServiceDescriptor(
+  name='EnvironmentAPIService',
+  full_name='pipelines.environment.v1alpha1.EnvironmentAPIService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=379,
-  serialized_end=543,
+  serialized_end=541,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateEnvironment',
-    full_name='pipelines.environment.v1alpha1.EnvinromentAPIService.CreateEnvironment',
+    full_name='pipelines.environment.v1alpha1.EnvironmentAPIService.CreateEnvironment',
     index=0,
     containing_service=None,
     input_type=_CREATEENVIRONMENTREQUEST,
@@ -141,8 +141,8 @@ _ENVINROMENTAPISERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_ENVINROMENTAPISERVICE)
+_sym_db.RegisterServiceDescriptor(_ENVIRONMENTAPISERVICE)
 
-DESCRIPTOR.services_by_name['EnvinromentAPIService'] = _ENVINROMENTAPISERVICE
+DESCRIPTOR.services_by_name['EnvironmentAPIService'] = _ENVIRONMENTAPISERVICE
 
 # @@protoc_insertion_point(module_scope)

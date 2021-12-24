@@ -3,7 +3,7 @@ syntax = "proto3";
 package pipelines.environment.v1alpha1;
 
 option csharp_namespace = "Pipelines.Environment.V1Alpha1";
-option go_package = "github.com/cuemby/ccp-pipelines-service/environmentv1alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1";
 option java_multiple_files = true;
 option java_outer_classname = "EnvironmentAPIProto";
 option java_package = "io.cuemby.pipelines.environment.v1alpha1";
@@ -11,10 +11,10 @@ option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Environment\\V1Alpha1";
 
 import "pipelines/environment/v1alpha1/environment.proto";
+//import "environment.proto";
 
-
-service EnvinromentAPIService{
-    rpc CreateEnvironment(CreateEnvironmentRequest) returns (CreateEnvironmentResponse) {};
+service EnvironmentAPIService{
+    rpc CreateEnvironment(CreateEnvironmentRequest) returns (CreateEnvironmentResponse);
 }
 
 message CreateEnvironmentRequest {

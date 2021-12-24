@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='pipelines/environment/v1alpha1/environment.proto',
   package='pipelines.environment.v1alpha1',
   syntax='proto3',
-  serialized_options=b'\n(io.cuemby.pipelines.environment.v1alpha1B\020EnvironmentProtoP\001Z;github.com/cuemby/ccp-pipelines-service/environmentv1alpha1\242\002\003PPX\252\002\036Pipelines.Environment.V1Alpha1\312\002\036Pipelines\\Environment\\V1Alpha1',
+  serialized_options=b'\n(io.cuemby.pipelines.environment.v1alpha1B\020EnvironmentProtoP\001Z?github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1\242\002\003PPX\252\002\036Pipelines.Environment.V1Alpha1\312\002\036Pipelines\\Environment\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0pipelines/environment/v1alpha1/environment.proto\x12\x1epipelines.environment.v1alpha1\"Y\n\x0b\x45nvironment\x12\x1d\n\naccount_id\x18\x01 \x01(\tR\taccountId\x12\x17\n\x07team_id\x18\x02 \x01(\tR\x06teamId\x12\x12\n\x04name\x18\x03 \x01(\tR\x04nameB\xc3\x01\n(io.cuemby.pipelines.environment.v1alpha1B\x10\x45nvironmentProtoP\x01Z;github.com/cuemby/ccp-pipelines-service/environmentv1alpha1\xa2\x02\x03PPX\xaa\x02\x1ePipelines.Environment.V1Alpha1\xca\x02\x1ePipelines\\Environment\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n0pipelines/environment/v1alpha1/environment.proto\x12\x1epipelines.environment.v1alpha1\"Y\n\x0b\x45nvironment\x12\x1d\n\naccount_id\x18\x01 \x01(\tR\taccountId\x12\x17\n\x07team_id\x18\x02 \x01(\tR\x06teamId\x12\x12\n\x04name\x18\x03 \x01(\tR\x04nameB\xc7\x01\n(io.cuemby.pipelines.environment.v1alpha1B\x10\x45nvironmentProtoP\x01Z?github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1ePipelines.Environment.V1Alpha1\xca\x02\x1ePipelines\\Environment\\V1Alpha1b\x06proto3'
 )
 
 

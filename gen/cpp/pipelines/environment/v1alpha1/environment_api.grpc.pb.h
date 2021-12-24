@@ -29,10 +29,10 @@ namespace pipelines {
 namespace environment {
 namespace v1alpha1 {
 
-class EnvinromentAPIService final {
+class EnvironmentAPIService final {
  public:
   static constexpr char const* service_full_name() {
-    return "pipelines.environment.v1alpha1.EnvinromentAPIService";
+    return "pipelines.environment.v1alpha1.EnvironmentAPIService";
   }
   class StubInterface {
    public:

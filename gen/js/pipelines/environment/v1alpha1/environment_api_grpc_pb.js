@@ -28,9 +28,9 @@ function deserialize_pipelines_environment_v1alpha1_CreateEnvironmentResponse(bu
 }
 
 
-var EnvinromentAPIServiceService = exports.EnvinromentAPIServiceService = {
+var EnvironmentAPIServiceService = exports.EnvironmentAPIServiceService = {
   createEnvironment: {
-    path: '/pipelines.environment.v1alpha1.EnvinromentAPIService/CreateEnvironment',
+    path: '/pipelines.environment.v1alpha1.EnvironmentAPIService/CreateEnvironment',
     requestStream: false,
     responseStream: false,
     requestType: pipelines_environment_v1alpha1_environment_api_pb.CreateEnvironmentRequest,
@@ -42,4 +42,4 @@ var EnvinromentAPIServiceService = exports.EnvinromentAPIServiceService = {
   },
 };
 
-exports.EnvinromentAPIServiceClient = grpc.makeGenericClientConstructor(EnvinromentAPIServiceService);
+exports.EnvironmentAPIServiceClient = grpc.makeGenericClientConstructor(EnvironmentAPIServiceService);

@@ -16,14 +16,14 @@ class Environment
         }
         $pool->internalAddGeneratedFile(
             '
-û
+ÿ
 0pipelines/environment/v1alpha1/environment.protopipelines.environment.v1alpha1"Y
 Environment
 
 account_id (	R	accountId
 team_id (	RteamId
-name (	RnameBÃ
-(io.cuemby.pipelines.environment.v1alpha1BEnvironmentProtoPZ;github.com/cuemby/ccp-pipelines-service/environmentv1alpha1¢PPXªPipelines.Environment.V1Alpha1ÊPipelines\\Environment\\V1Alpha1bproto3'
+name (	RnameBÇ
+(io.cuemby.pipelines.environment.v1alpha1BEnvironmentProtoPZ?github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1¢PPXªPipelines.Environment.V1Alpha1ÊPipelines\\Environment\\V1Alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

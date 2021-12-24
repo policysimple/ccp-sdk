@@ -63,16 +63,16 @@ const char descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenviro
   "ment.proto\022\036pipelines.environment.v1alph"
   "a1\"Y\n\013Environment\022\035\n\naccount_id\030\001 \001(\tR\ta"
   "ccountId\022\027\n\007team_id\030\002 \001(\tR\006teamId\022\022\n\004nam"
-  "e\030\003 \001(\tR\004nameB\303\001\n(io.cuemby.pipelines.en"
-  "vironment.v1alpha1B\020EnvironmentProtoP\001Z;"
-  "github.com/cuemby/ccp-pipelines-service/"
-  "environmentv1alpha1\242\002\003PPX\252\002\036Pipelines.En"
-  "vironment.V1Alpha1\312\002\036Pipelines\\Environme"
-  "nt\\V1Alpha1b\006proto3"
+  "e\030\003 \001(\tR\004nameB\307\001\n(io.cuemby.pipelines.en"
+  "vironment.v1alpha1B\020EnvironmentProtoP\001Z\?"
+  "github.com/cuemby/ccp-sdk/gen/go/pipelin"
+  "es/environment/v1alpha1\242\002\003PPX\252\002\036Pipeline"
+  "s.Environment.V1Alpha1\312\002\036Pipelines\\Envir"
+  "onment\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto = {
-  false, false, 379, descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto, "pipelines/environment/v1alpha1/environment.proto", 
+  false, false, 383, descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto, "pipelines/environment/v1alpha1/environment.proto", 
   &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto::offsets,
   file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto, file_level_enum_descriptors_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto, file_level_service_descriptors_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto,

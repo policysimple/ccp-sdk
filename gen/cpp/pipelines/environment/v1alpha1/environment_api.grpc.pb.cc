@@ -19,48 +19,48 @@ namespace pipelines {
 namespace environment {
 namespace v1alpha1 {
 
-static const char* EnvinromentAPIService_method_names[] = {
-  "/pipelines.environment.v1alpha1.EnvinromentAPIService/CreateEnvironment",
+static const char* EnvironmentAPIService_method_names[] = {
+  "/pipelines.environment.v1alpha1.EnvironmentAPIService/CreateEnvironment",
 };
 
-std::unique_ptr< EnvinromentAPIService::Stub> EnvinromentAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+std::unique_ptr< EnvironmentAPIService::Stub> EnvironmentAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< EnvinromentAPIService::Stub> stub(new EnvinromentAPIService::Stub(channel));
+  std::unique_ptr< EnvironmentAPIService::Stub> stub(new EnvironmentAPIService::Stub(channel));
   return stub;
 }
 
-EnvinromentAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_CreateEnvironment_(EnvinromentAPIService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+EnvironmentAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_CreateEnvironment_(EnvironmentAPIService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status EnvinromentAPIService::Stub::CreateEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest& request, ::pipelines::environment::v1alpha1::CreateEnvironmentResponse* response) {
+::grpc::Status EnvironmentAPIService::Stub::CreateEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest& request, ::pipelines::environment::v1alpha1::CreateEnvironmentResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateEnvironment_, context, request, response);
 }
 
-void EnvinromentAPIService::Stub::experimental_async::CreateEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest* request, ::pipelines::environment::v1alpha1::CreateEnvironmentResponse* response, std::function<void(::grpc::Status)> f) {
+void EnvironmentAPIService::Stub::experimental_async::CreateEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest* request, ::pipelines::environment::v1alpha1::CreateEnvironmentResponse* response, std::function<void(::grpc::Status)> f) {
   return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateEnvironment_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>* EnvinromentAPIService::Stub::AsyncCreateEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>* EnvironmentAPIService::Stub::AsyncCreateEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>::Create(channel_.get(), cq, rpcmethod_CreateEnvironment_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>* EnvinromentAPIService::Stub::PrepareAsyncCreateEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>* EnvironmentAPIService::Stub::PrepareAsyncCreateEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>::Create(channel_.get(), cq, rpcmethod_CreateEnvironment_, context, request, false);
 }
 
-EnvinromentAPIService::Service::Service() {
+EnvironmentAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      EnvinromentAPIService_method_names[0],
+      EnvironmentAPIService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< EnvinromentAPIService::Service, ::pipelines::environment::v1alpha1::CreateEnvironmentRequest, ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>(
-          std::mem_fn(&EnvinromentAPIService::Service::CreateEnvironment), this)));
+      new ::grpc::internal::RpcMethodHandler< EnvironmentAPIService::Service, ::pipelines::environment::v1alpha1::CreateEnvironmentRequest, ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>(
+          std::mem_fn(&EnvironmentAPIService::Service::CreateEnvironment), this)));
 }
 
-EnvinromentAPIService::Service::~Service() {
+EnvironmentAPIService::Service::~Service() {
 }
 
-::grpc::Status EnvinromentAPIService::Service::CreateEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest* request, ::pipelines::environment::v1alpha1::CreateEnvironmentResponse* response) {
+::grpc::Status EnvironmentAPIService::Service::CreateEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest* request, ::pipelines::environment::v1alpha1::CreateEnvironmentResponse* response) {
   (void) context;
   (void) request;
   (void) response;
