@@ -21,6 +21,10 @@ class CreateOrganizationRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string image = 2 [json_name = "image"];</code>
      */
     protected $image = '';
+    /**
+     * Generated from protobuf field <code>string user_id = 3 [json_name = "userId"];</code>
+     */
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class CreateOrganizationRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *     @type string $image
+     *     @type string $user_id
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class CreateOrganizationRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->image = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 3 [json_name = "userId"];</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 3 [json_name = "userId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }

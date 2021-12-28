@@ -53,6 +53,7 @@ type AccountServiceClient interface {
 	// Get Users Dex
 	GetListUserDex(ctx context.Context, in *GetListUserDexRequest, opts ...grpc.CallOption) (*GetListUserDexResponse, error)
 	GetOneUserDex(ctx context.Context, in *GetOneUserDexRequest, opts ...grpc.CallOption) (*GetOneUserDexResponse, error)
+	CheckUser(ctx context.Context, in *CheckUserRequest, opts ...grpc.CallOption) (*CheckUserResponse, error)
 }
 
 type accountServiceClient struct {
@@ -315,6 +316,15 @@ func (c *accountServiceClient) GetOneUserDex(ctx context.Context, in *GetOneUser
 	return out, nil
 }
 
+func (c *accountServiceClient) CheckUser(ctx context.Context, in *CheckUserRequest, opts ...grpc.CallOption) (*CheckUserResponse, error) {
+	out := new(CheckUserResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/CheckUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AccountServiceServer is the server API for AccountService service.
 // All implementations should embed UnimplementedAccountServiceServer
 // for forward compatibility
@@ -354,6 +364,7 @@ type AccountServiceServer interface {
 	// Get Users Dex
 	GetListUserDex(context.Context, *GetListUserDexRequest) (*GetListUserDexResponse, error)
 	GetOneUserDex(context.Context, *GetOneUserDexRequest) (*GetOneUserDexResponse, error)
+	CheckUser(context.Context, *CheckUserRequest) (*CheckUserResponse, error)
 }
 
 // UnimplementedAccountServiceServer should be embedded to have forward compatible implementations.
@@ -443,6 +454,9 @@ func (UnimplementedAccountServiceServer) GetListUserDex(context.Context, *GetLis
 }
 func (UnimplementedAccountServiceServer) GetOneUserDex(context.Context, *GetOneUserDexRequest) (*GetOneUserDexResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOneUserDex not implemented")
+}
+func (UnimplementedAccountServiceServer) CheckUser(context.Context, *CheckUserRequest) (*CheckUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CheckUser not implemented")
 }
 
 // UnsafeAccountServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -960,6 +974,24 @@ func _AccountService_GetOneUserDex_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AccountService_CheckUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CheckUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).CheckUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/CheckUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).CheckUser(ctx, req.(*CheckUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AccountService_ServiceDesc is the grpc.ServiceDesc for AccountService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1078,6 +1110,10 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetOneUserDex",
 			Handler:    _AccountService_GetOneUserDex_Handler,
+		},
+		{
+			MethodName: "CheckUser",
+			Handler:    _AccountService_CheckUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

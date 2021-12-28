@@ -4,6 +4,28 @@
 var grpc = require('grpc');
 var accounts_v1alpha1_accounts_pb = require('../../accounts/v1alpha1/accounts_pb.js');
 
+function serialize_accounts_v1alpha1_CheckUserRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.CheckUserRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.CheckUserRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_CheckUserRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.CheckUserRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_CheckUserResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.CheckUserResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.CheckUserResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_CheckUserResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.CheckUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_CreateOrganizationRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.CreateOrganizationRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.CreateOrganizationRequest');
@@ -940,6 +962,17 @@ var AccountServiceService = exports.AccountServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_GetOneUserDexRequest,
     responseSerialize: serialize_accounts_v1alpha1_GetOneUserDexResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_GetOneUserDexResponse,
+  },
+  checkUser: {
+    path: '/accounts.v1alpha1.AccountService/CheckUser',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.CheckUserRequest,
+    responseType: accounts_v1alpha1_accounts_pb.CheckUserResponse,
+    requestSerialize: serialize_accounts_v1alpha1_CheckUserRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_CheckUserRequest,
+    responseSerialize: serialize_accounts_v1alpha1_CheckUserResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_CheckUserResponse,
   },
 };
 
