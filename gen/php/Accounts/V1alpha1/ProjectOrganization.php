@@ -24,13 +24,11 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
+     *repeated Member members = 4;
+     *
      * Generated from protobuf field <code>string image = 3 [json_name = "image"];</code>
      */
     protected $image = '';
-    /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Member members = 4 [json_name = "members"];</code>
-     */
-    private $members;
 
     /**
      * Constructor.
@@ -41,7 +39,7 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
      *     @type int $id
      *     @type string $name
      *     @type string $image
-     *     @type \Accounts\V1alpha1\Member[]|\Google\Protobuf\Internal\RepeatedField $members
+     *          repeated Member members = 4;
      * }
      */
     public function __construct($data = NULL) {
@@ -94,6 +92,8 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *repeated Member members = 4;
+     *
      * Generated from protobuf field <code>string image = 3 [json_name = "image"];</code>
      * @return string
      */
@@ -103,6 +103,8 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *repeated Member members = 4;
+     *
      * Generated from protobuf field <code>string image = 3 [json_name = "image"];</code>
      * @param string $var
      * @return $this
@@ -111,28 +113,6 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->image = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Member members = 4 [json_name = "members"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getMembers()
-    {
-        return $this->members;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Member members = 4 [json_name = "members"];</code>
-     * @param \Accounts\V1alpha1\Member[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setMembers($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Member::class);
-        $this->members = $arr;
 
         return $this;
     }

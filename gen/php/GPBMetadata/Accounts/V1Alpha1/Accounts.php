@@ -16,8 +16,25 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-ªF
- accounts/v1alpha1/accounts.protoaccounts.v1alpha1"?
+ÏO
+ accounts/v1alpha1/accounts.protoaccounts.v1alpha1"‡
+CheckUserRequest\'
+organization_id (RorganizationId
+
+project_id (R	projectIdA
+get_organization_from_project (RgetOrganizationFromProject
+
+permission (	R
+permission
+user_id_dex (	R	userIdDex"
+user_id_admin (	RuserIdAdmin
+user_id (RuserId\'
+type_permission	 (	RtypePermission
+	roles_ids
+ (RrolesIds"F
+CheckUserResponse
+	is_exists (RisExists
+error (	Rerror"?
 UsersDex
 user_id (	RuserId
 provider (	Rprovider"<
@@ -29,8 +46,11 @@ class Accounts
 error (	Rerror"<
 DeleteUserResponse
 msg (	Rmsg
-error (	Rerror"
-ListUserRequest"·
+error (	Rerror"Y
+ListUserRequest\'
+organization_id (RorganizationId
+
+project_id (R	projectId"é
 CreateUserRequest
 user_id (	RuserId
 
@@ -39,12 +59,13 @@ first_name (	R	firstName
 email (	Remail
 	is_active (RisActive
 	roles_ids (RrolesIds\'
-permissions_ids (RpermissionsIds"f
+permissions_ids (RpermissionsIds+
+organizations_ids (RorganizationsIds"f
 UpdateUserRequest
 auth_id (RauthId8
 auth (2$.accounts.v1alpha1.CreateUserRequestRauth",
 DeleteUserRequest
-auth_id (RauthId"¢
+auth_id (RauthId"∆
 UserList
 id (Rid
 
@@ -52,9 +73,10 @@ first_name (	R	firstName
 	last_name (	RlastName
 email (	Remail
 user_id (	RuserId
-	is_active (RisActive"#
+	is_active (RisActive"
+is_super_user (RisSuperUser"#
 GetOneUserRequest
-id (Rid"Ÿ
+id (Rid"ƒ
 GetOneUserResponse
 id (Rid
 user_id (	RuserId
@@ -69,7 +91,9 @@ created_at (	R	createdAt
 updated_at (	R	updatedAt,
 roles	 (2.accounts.v1alpha1.RolRroles?
 permissions
- (2.accounts.v1alpha1.PermissionRpermissions"E
+ (2.accounts.v1alpha1.PermissionRpermissions"
+is_super_user (RisSuperUserE
+organizations (2.accounts.v1alpha1.OrganizationRorganizations"E
 ListUserResponse1
 users (2.accounts.v1alpha1.UserListRusers"I
 ListUserPaginationRequest
@@ -77,35 +101,39 @@ updated_at (	R	updatedAt,
 limit (Rlimit"e
 ListUserPaginationResponse
 count (Rcount1
-users (2.accounts.v1alpha1.UserListRusers"â
+users (2.accounts.v1alpha1.UserListRusers"≤
 Rol
 id (Rid
 name (	Rname
 
-project_id (R	projectId?
-permissions (2.accounts.v1alpha1.PermissionRpermissions"è
+project_id (R	projectId\'
+organization_id (RorganizationId?
+permissions (2.accounts.v1alpha1.PermissionRpermissions"∏
 CreateRoleRequest
 name (	Rname 
 description (	Rdescription
 
-project_id (R	projectId%
-permission_ids (RpermissionIds"b
+project_id (R	projectId\'
+organization_id (RorganizationId%
+permission_ids (RpermissionIds"b
 UpdateRoleRequest
 rol_id (RrolId6
 rol (2$.accounts.v1alpha1.CreateRoleRequestRrol"*
 GetOneRoleRequest
-rol_id (RrolId"ò
+rol_id (RrolId"¡
 GetOneRoleResponse
 id (Rid
-name (	Rname
+name (	Rname\'
+organization_id (RorganizationId
 
-project_id (R	projectId?
-permissions (2.accounts.v1alpha1.PermissionRpermissions"*
+project_id (R	projectId?
+permissions (2.accounts.v1alpha1.PermissionRpermissions"*
 DeleteRoleRequest
-rol_id (RrolId"1
+rol_id (RrolId"Z
 ListRolesRequest
 
-project_id (R	projectId"A
+project_id (R	projectId\'
+organization_id (RorganizationId"A
 ListRolesResponse,
 roles (2.accounts.v1alpha1.RolRroles"<
 CreateRoleResponse
@@ -136,8 +164,9 @@ updated_at (	R	updatedAt,
 GetOneProjectRequest
 id (Rid"&
 DeleteProjectRequest
-id (Rid"
-ListProjectRequest"i
+id (Rid"=
+ListProjectRequest\'
+organization_id (RorganizationId"i
 UpdateProjectRequest
 id (RidA
 project (2\'.accounts.v1alpha1.CreateProjectRequestRproject"?
@@ -167,27 +196,32 @@ updated_at (	R	updatedAt"M
 limit (Rlimit"m
 ListProjectPaginationResponse6
 projects (2.accounts.v1alpha1.ProjectRprojects
-count (Rcount"0
+count (Rcount"D
 
 Permission
 id (Rid
-name (	Rname"Y
+name (	Rname
+type (	Rtype"Y
 ListPermissionResponse?
 permissions (2.accounts.v1alpha1.PermissionRpermissions"W
 AssignPermissionRequest
 user_id (RuserId#
-permission_id (RpermissionId"
-ListPermissionRequest"-
+permission_id (RpermissionId"+
+ListPermissionRequest
+type (	Rtype"A
 CreatePermissionRequest
-name (	Rname"R
+name (	Rname
+type (	Rtype"f
 UpdatePermissionRequest#
 permission_id (RpermissionId
-name (	Rname">
+name (	Rname
+type (	Rtype">
 GetOnePermissionRequest#
-permission_id (RpermissionId">
+permission_id (RpermissionId"R
 GetOnePermissionResponse
 id (Rid
-name (	Rname">
+name (	Rname
+type (	Rtype">
 DeletePermissionRequest#
 permission_id (RpermissionId"B
 UpdatePermissionResponse
@@ -198,28 +232,26 @@ Permission
 error (	Rerror"B
 CreatePermissionResponse
 msg (	Rmsg
-error (	Rerror"N
+error (	Rerror"ä
 Member
 id (Rid
-user_id (	RuserId
-	is_active (RisActive"Ñ
+user_id (	RuserId
+
+first_name (	R	firstName
+	last_name (	RlastName
+	is_active (RisActive"O
 ProjectOrganization
 id (Rid
 name (	Rname
-image (	Rimage3
-members (2.accounts.v1alpha1.MemberRmembers"ö
-GetOneOrganizationResponse
-id (Rid
-name (	Rname
-image (	RimageB
-projects (2&.accounts.v1alpha1.ProjectOrganizationRprojects"H
+image (	Rimage"H
 Organization
 id (Rid
 name (	Rname
-image (	Rimage"E
+image (	Rimage"^
 CreateOrganizationRequest
 name (	Rname
-image (	Rimage"
+image (	Rimage
+user_id (	RuserId"
 ListOrganizationRequest"D
 GetOneOrganizationRequest\'
 organization_id (RorganizationId"n
@@ -228,7 +260,13 @@ Permission
 name (	Rname
 image (	Rimage"D
 DeleteOrganizationRequest\'
-organization_id (RorganizationId"a
+organization_id (RorganizationId"œ
+GetOneOrganizationResponse
+id (Rid
+name (	Rname
+image (	RimageB
+projects (2&.accounts.v1alpha1.ProjectOrganizationRprojects3
+menbers (2.accounts.v1alpha1.MemberRmenbers"a
 ListOrganizationResponseE
 organizations (2.accounts.v1alpha1.OrganizationRorganizations"D
 CreateOrganizationResponse
@@ -244,7 +282,7 @@ Permission
 GetListUserDexResponse8
 	users_dex (2.accounts.v1alpha1.UsersDexRusersDex"/
 GetOneUserDexRequest
-user_id (	RuserId"‹
+user_id (	RuserId"Ä
 GetOneUserDexResponse
 id (Rid
 user_id (	RuserId
@@ -259,7 +297,8 @@ created_at (	R	createdAt
 updated_at (	R	updatedAt,
 roles	 (2.accounts.v1alpha1.RolRroles?
 permissions
- (2.accounts.v1alpha1.PermissionRpermissions2ï
+ (2.accounts.v1alpha1.PermissionRpermissions"
+is_super_user (RisSuperUser2Ì
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
@@ -296,7 +335,8 @@ DeleteRole$.accounts.v1alpha1.DeleteRoleRequest%.accounts.v1alpha1.DeleteRoleR
 DeleteProject\'.accounts.v1alpha1.DeleteProjectRequest(.accounts.v1alpha1.DeleteProjectResponse\\
 ListProject%.accounts.v1alpha1.ListProjectRequest&.accounts.v1alpha1.ListProjectResponsee
 GetListUserDex(.accounts.v1alpha1.GetListUserDexRequest).accounts.v1alpha1.GetListUserDexResponseb
-GetOneUserDex\'.accounts.v1alpha1.GetOneUserDexRequest(.accounts.v1alpha1.GetOneUserDexResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
+GetOneUserDex\'.accounts.v1alpha1.GetOneUserDexRequest(.accounts.v1alpha1.GetOneUserDexResponseV
+	CheckUser#.accounts.v1alpha1.CheckUserRequest$.accounts.v1alpha1.CheckUserResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

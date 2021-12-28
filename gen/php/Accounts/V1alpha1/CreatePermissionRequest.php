@@ -17,6 +17,10 @@ class CreatePermissionRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
      */
     protected $name = '';
+    /**
+     * Generated from protobuf field <code>string type = 2 [json_name = "type"];</code>
+     */
+    protected $type = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class CreatePermissionRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
+     *     @type string $type
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class CreatePermissionRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string type = 2 [json_name = "type"];</code>
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string type = 2 [json_name = "type"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->type = $var;
 
         return $this;
     }

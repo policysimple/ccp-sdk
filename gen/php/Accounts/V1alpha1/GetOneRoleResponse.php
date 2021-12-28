@@ -24,11 +24,15 @@ class GetOneRoleResponse extends \Google\Protobuf\Internal\Message
     /**
      *uint32 TeamId = 4;
      *
-     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 3 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 4 [json_name = "projectId"];</code>
      */
     protected $project_id = 0;
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 4 [json_name = "permissions"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 5 [json_name = "permissions"];</code>
      */
     private $permissions;
 
@@ -40,8 +44,9 @@ class GetOneRoleResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type int $id
      *     @type string $name
-     *     @type int $project_id
+     *     @type int $organization_id
      *          uint32 TeamId = 4;
+     *     @type int $project_id
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
      * }
      */
@@ -97,7 +102,31 @@ class GetOneRoleResponse extends \Google\Protobuf\Internal\Message
     /**
      *uint32 TeamId = 4;
      *
-     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 3 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     *uint32 TeamId = 4;
+     *
+     * Generated from protobuf field <code>uint32 organization_id = 3 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 4 [json_name = "projectId"];</code>
      * @return int
      */
     public function getProjectId()
@@ -106,9 +135,7 @@ class GetOneRoleResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *uint32 TeamId = 4;
-     *
-     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 4 [json_name = "projectId"];</code>
      * @param int $var
      * @return $this
      */
@@ -121,7 +148,7 @@ class GetOneRoleResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 4 [json_name = "permissions"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 5 [json_name = "permissions"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPermissions()
@@ -130,7 +157,7 @@ class GetOneRoleResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 4 [json_name = "permissions"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 5 [json_name = "permissions"];</code>
      * @param \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

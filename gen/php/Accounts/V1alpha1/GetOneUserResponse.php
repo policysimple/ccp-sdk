@@ -53,6 +53,14 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
      */
     private $permissions;
+    /**
+     * Generated from protobuf field <code>bool is_super_user = 11 [json_name = "isSuperUser"];</code>
+     */
+    protected $is_super_user = false;
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
+     */
+    private $organizations;
 
     /**
      * Constructor.
@@ -70,6 +78,8 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
      *     @type string $updated_at
      *     @type \Accounts\V1alpha1\Rol[]|\Google\Protobuf\Internal\RepeatedField $roles
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
+     *     @type bool $is_super_user
+     *     @type \Accounts\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $organizations
      * }
      */
     public function __construct($data = NULL) {
@@ -293,6 +303,50 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Permission::class);
         $this->permissions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_super_user = 11 [json_name = "isSuperUser"];</code>
+     * @return bool
+     */
+    public function getIsSuperUser()
+    {
+        return $this->is_super_user;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_super_user = 11 [json_name = "isSuperUser"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsSuperUser($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_super_user = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOrganizations()
+    {
+        return $this->organizations;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
+     * @param \Accounts\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOrganizations($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Organization::class);
+        $this->organizations = $arr;
 
         return $this;
     }
