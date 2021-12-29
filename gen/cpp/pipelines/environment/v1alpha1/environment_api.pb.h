@@ -338,42 +338,6 @@ class CreateEnvironmentResponse final :
 
   // accessors -------------------------------------------------------
 
-  enum : int {
-    kStatusFieldNumber = 2,
-    kEnvironmentFieldNumber = 1,
-  };
-  // string status = 2 [json_name = "status"];
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
-  // .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
-  bool has_environment() const;
-  private:
-  bool _internal_has_environment() const;
-  public:
-  void clear_environment();
-  const ::pipelines::environment::v1alpha1::Environment& environment() const;
-  PROTOBUF_MUST_USE_RESULT ::pipelines::environment::v1alpha1::Environment* release_environment();
-  ::pipelines::environment::v1alpha1::Environment* mutable_environment();
-  void set_allocated_environment(::pipelines::environment::v1alpha1::Environment* environment);
-  private:
-  const ::pipelines::environment::v1alpha1::Environment& _internal_environment() const;
-  ::pipelines::environment::v1alpha1::Environment* _internal_mutable_environment();
-  public:
-  void unsafe_arena_set_allocated_environment(
-      ::pipelines::environment::v1alpha1::Environment* environment);
-  ::pipelines::environment::v1alpha1::Environment* unsafe_arena_release_environment();
-
   // @@protoc_insertion_point(class_scope:pipelines.environment.v1alpha1.CreateEnvironmentResponse)
  private:
   class _Internal;
@@ -381,8 +345,6 @@ class CreateEnvironmentResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
-  ::pipelines::environment::v1alpha1::Environment* environment_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto;
 };
@@ -486,138 +448,6 @@ inline void CreateEnvironmentRequest::set_allocated_environment(::pipelines::env
 // -------------------------------------------------------------------
 
 // CreateEnvironmentResponse
-
-// .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
-inline bool CreateEnvironmentResponse::_internal_has_environment() const {
-  return this != internal_default_instance() && environment_ != nullptr;
-}
-inline bool CreateEnvironmentResponse::has_environment() const {
-  return _internal_has_environment();
-}
-inline const ::pipelines::environment::v1alpha1::Environment& CreateEnvironmentResponse::_internal_environment() const {
-  const ::pipelines::environment::v1alpha1::Environment* p = environment_;
-  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::environment::v1alpha1::Environment&>(
-      ::pipelines::environment::v1alpha1::_Environment_default_instance_);
-}
-inline const ::pipelines::environment::v1alpha1::Environment& CreateEnvironmentResponse::environment() const {
-  // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.CreateEnvironmentResponse.environment)
-  return _internal_environment();
-}
-inline void CreateEnvironmentResponse::unsafe_arena_set_allocated_environment(
-    ::pipelines::environment::v1alpha1::Environment* environment) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(environment_);
-  }
-  environment_ = environment;
-  if (environment) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.environment.v1alpha1.CreateEnvironmentResponse.environment)
-}
-inline ::pipelines::environment::v1alpha1::Environment* CreateEnvironmentResponse::release_environment() {
-  
-  ::pipelines::environment::v1alpha1::Environment* temp = environment_;
-  environment_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::pipelines::environment::v1alpha1::Environment* CreateEnvironmentResponse::unsafe_arena_release_environment() {
-  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.CreateEnvironmentResponse.environment)
-  
-  ::pipelines::environment::v1alpha1::Environment* temp = environment_;
-  environment_ = nullptr;
-  return temp;
-}
-inline ::pipelines::environment::v1alpha1::Environment* CreateEnvironmentResponse::_internal_mutable_environment() {
-  
-  if (environment_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pipelines::environment::v1alpha1::Environment>(GetArenaForAllocation());
-    environment_ = p;
-  }
-  return environment_;
-}
-inline ::pipelines::environment::v1alpha1::Environment* CreateEnvironmentResponse::mutable_environment() {
-  ::pipelines::environment::v1alpha1::Environment* _msg = _internal_mutable_environment();
-  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.CreateEnvironmentResponse.environment)
-  return _msg;
-}
-inline void CreateEnvironmentResponse::set_allocated_environment(::pipelines::environment::v1alpha1::Environment* environment) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(environment_);
-  }
-  if (environment) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(environment));
-    if (message_arena != submessage_arena) {
-      environment = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, environment, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  environment_ = environment;
-  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.CreateEnvironmentResponse.environment)
-}
-
-// string status = 2 [json_name = "status"];
-inline void CreateEnvironmentResponse::clear_status() {
-  status_.ClearToEmpty();
-}
-inline const std::string& CreateEnvironmentResponse::status() const {
-  // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.CreateEnvironmentResponse.status)
-  return _internal_status();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateEnvironmentResponse::set_status(ArgT0&& arg0, ArgT... args) {
- 
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.environment.v1alpha1.CreateEnvironmentResponse.status)
-}
-inline std::string* CreateEnvironmentResponse::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.CreateEnvironmentResponse.status)
-  return _s;
-}
-inline const std::string& CreateEnvironmentResponse::_internal_status() const {
-  return status_.Get();
-}
-inline void CreateEnvironmentResponse::_internal_set_status(const std::string& value) {
-  
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateEnvironmentResponse::_internal_mutable_status() {
-  
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateEnvironmentResponse::release_status() {
-  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.CreateEnvironmentResponse.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateEnvironmentResponse::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.CreateEnvironmentResponse.status)
-}
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop

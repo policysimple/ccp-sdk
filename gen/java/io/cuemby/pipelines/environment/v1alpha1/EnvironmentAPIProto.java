@@ -39,19 +39,17 @@ public final class EnvironmentAPIProto {
       "nvironment.proto\"i\n\030CreateEnvironmentReq" +
       "uest\022M\n\013environment\030\001 \001(\0132+.pipelines.en" +
       "vironment.v1alpha1.EnvironmentR\013environm" +
-      "ent\"\202\001\n\031CreateEnvironmentResponse\022M\n\013env" +
-      "ironment\030\001 \001(\0132+.pipelines.environment.v" +
-      "1alpha1.EnvironmentR\013environment\022\026\n\006stat" +
-      "us\030\002 \001(\tR\006status2\242\001\n\025EnvironmentAPIServi" +
-      "ce\022\210\001\n\021CreateEnvironment\0228.pipelines.env" +
-      "ironment.v1alpha1.CreateEnvironmentReque" +
-      "st\0329.pipelines.environment.v1alpha1.Crea" +
-      "teEnvironmentResponseB\312\001\n(io.cuemby.pipe" +
-      "lines.environment.v1alpha1B\023EnvironmentA" +
-      "PIProtoP\001Z?github.com/cuemby/ccp-sdk/gen" +
-      "/go/pipelines/environment/v1alpha1\242\002\003PPX" +
-      "\252\002\036Pipelines.Environment.V1Alpha1\312\002\036Pipe" +
-      "lines\\Environment\\V1Alpha1b\006proto3"
+      "ent\"\033\n\031CreateEnvironmentResponse2\242\001\n\025Env" +
+      "ironmentAPIService\022\210\001\n\021CreateEnvironment" +
+      "\0228.pipelines.environment.v1alpha1.Create" +
+      "EnvironmentRequest\0329.pipelines.environme" +
+      "nt.v1alpha1.CreateEnvironmentResponseB\312\001" +
+      "\n(io.cuemby.pipelines.environment.v1alph" +
+      "a1B\023EnvironmentAPIProtoP\001Z?github.com/cu" +
+      "emby/ccp-sdk/gen/go/pipelines/environmen" +
+      "t/v1alpha1\242\002\003PPX\252\002\036Pipelines.Environment" +
+      ".V1Alpha1\312\002\036Pipelines\\Environment\\V1Alph" +
+      "a1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -69,7 +67,7 @@ public final class EnvironmentAPIProto {
     internal_static_pipelines_environment_v1alpha1_CreateEnvironmentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_environment_v1alpha1_CreateEnvironmentResponse_descriptor,
-        new java.lang.String[] { "Environment", "Status", });
+        new java.lang.String[] { });
     io.cuemby.pipelines.environment.v1alpha1.EnvironmentProto.getDescriptor();
   }
 

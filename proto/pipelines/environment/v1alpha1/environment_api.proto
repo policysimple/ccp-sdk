@@ -22,7 +22,7 @@ message CreateEnvironmentRequest {
 }
 
 message CreateEnvironmentResponse {
-    pipelines.environment.v1alpha1.Environment environment = 1;
-    string status = 2;
+    // pipelines.environment.v1alpha1.Environment environment = 1;
+    // string status = 2;
 }
 

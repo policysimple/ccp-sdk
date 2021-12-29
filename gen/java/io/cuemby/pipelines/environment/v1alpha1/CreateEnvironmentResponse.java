@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateEnvironmentResponse() {
-    status_ = "";
   }
 
   @java.lang.Override
@@ -49,25 +48,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            io.cuemby.pipelines.environment.v1alpha1.Environment.Builder subBuilder = null;
-            if (environment_ != null) {
-              subBuilder = environment_.toBuilder();
-            }
-            environment_ = input.readMessage(io.cuemby.pipelines.environment.v1alpha1.Environment.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(environment_);
-              environment_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            status_ = s;
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -100,70 +80,6 @@ private static final long serialVersionUID = 0L;
             io.cuemby.pipelines.environment.v1alpha1.CreateEnvironmentResponse.class, io.cuemby.pipelines.environment.v1alpha1.CreateEnvironmentResponse.Builder.class);
   }
 
-  public static final int ENVIRONMENT_FIELD_NUMBER = 1;
-  private io.cuemby.pipelines.environment.v1alpha1.Environment environment_;
-  /**
-   * <code>.pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];</code>
-   * @return Whether the environment field is set.
-   */
-  @java.lang.Override
-  public boolean hasEnvironment() {
-    return environment_ != null;
-  }
-  /**
-   * <code>.pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];</code>
-   * @return The environment.
-   */
-  @java.lang.Override
-  public io.cuemby.pipelines.environment.v1alpha1.Environment getEnvironment() {
-    return environment_ == null ? io.cuemby.pipelines.environment.v1alpha1.Environment.getDefaultInstance() : environment_;
-  }
-  /**
-   * <code>.pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];</code>
-   */
-  @java.lang.Override
-  public io.cuemby.pipelines.environment.v1alpha1.EnvironmentOrBuilder getEnvironmentOrBuilder() {
-    return getEnvironment();
-  }
-
-  public static final int STATUS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object status_;
-  /**
-   * <code>string status = 2 [json_name = "status"];</code>
-   * @return The status.
-   */
-  @java.lang.Override
-  public java.lang.String getStatus() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      status_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string status = 2 [json_name = "status"];</code>
-   * @return The bytes for status.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getStatusBytes() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      status_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -178,12 +94,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (environment_ != null) {
-      output.writeMessage(1, getEnvironment());
-    }
-    if (!getStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -193,13 +103,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (environment_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getEnvironment());
-    }
-    if (!getStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -215,13 +118,6 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.pipelines.environment.v1alpha1.CreateEnvironmentResponse other = (io.cuemby.pipelines.environment.v1alpha1.CreateEnvironmentResponse) obj;
 
-    if (hasEnvironment() != other.hasEnvironment()) return false;
-    if (hasEnvironment()) {
-      if (!getEnvironment()
-          .equals(other.getEnvironment())) return false;
-    }
-    if (!getStatus()
-        .equals(other.getStatus())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -233,12 +129,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasEnvironment()) {
-      hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
-      hash = (53 * hash) + getEnvironment().hashCode();
-    }
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getStatus().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -372,14 +262,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (environmentBuilder_ == null) {
-        environment_ = null;
-      } else {
-        environment_ = null;
-        environmentBuilder_ = null;
-      }
-      status_ = "";
-
       return this;
     }
 
@@ -406,12 +288,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.pipelines.environment.v1alpha1.CreateEnvironmentResponse buildPartial() {
       io.cuemby.pipelines.environment.v1alpha1.CreateEnvironmentResponse result = new io.cuemby.pipelines.environment.v1alpha1.CreateEnvironmentResponse(this);
-      if (environmentBuilder_ == null) {
-        result.environment_ = environment_;
-      } else {
-        result.environment_ = environmentBuilder_.build();
-      }
-      result.status_ = status_;
       onBuilt();
       return result;
     }
@@ -460,13 +336,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.pipelines.environment.v1alpha1.CreateEnvironmentResponse other) {
       if (other == io.cuemby.pipelines.environment.v1alpha1.CreateEnvironmentResponse.getDefaultInstance()) return this;
-      if (other.hasEnvironment()) {
-        mergeEnvironment(other.getEnvironment());
-      }
-      if (!other.getStatus().isEmpty()) {
-        status_ = other.status_;
-        onChanged();
-      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -493,201 +362,6 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
-      return this;
-    }
-
-    private io.cuemby.pipelines.environment.v1alpha1.Environment environment_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.environment.v1alpha1.Environment, io.cuemby.pipelines.environment.v1alpha1.Environment.Builder, io.cuemby.pipelines.environment.v1alpha1.EnvironmentOrBuilder> environmentBuilder_;
-    /**
-     * <code>.pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];</code>
-     * @return Whether the environment field is set.
-     */
-    public boolean hasEnvironment() {
-      return environmentBuilder_ != null || environment_ != null;
-    }
-    /**
-     * <code>.pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];</code>
-     * @return The environment.
-     */
-    public io.cuemby.pipelines.environment.v1alpha1.Environment getEnvironment() {
-      if (environmentBuilder_ == null) {
-        return environment_ == null ? io.cuemby.pipelines.environment.v1alpha1.Environment.getDefaultInstance() : environment_;
-      } else {
-        return environmentBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];</code>
-     */
-    public Builder setEnvironment(io.cuemby.pipelines.environment.v1alpha1.Environment value) {
-      if (environmentBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        environment_ = value;
-        onChanged();
-      } else {
-        environmentBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];</code>
-     */
-    public Builder setEnvironment(
-        io.cuemby.pipelines.environment.v1alpha1.Environment.Builder builderForValue) {
-      if (environmentBuilder_ == null) {
-        environment_ = builderForValue.build();
-        onChanged();
-      } else {
-        environmentBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];</code>
-     */
-    public Builder mergeEnvironment(io.cuemby.pipelines.environment.v1alpha1.Environment value) {
-      if (environmentBuilder_ == null) {
-        if (environment_ != null) {
-          environment_ =
-            io.cuemby.pipelines.environment.v1alpha1.Environment.newBuilder(environment_).mergeFrom(value).buildPartial();
-        } else {
-          environment_ = value;
-        }
-        onChanged();
-      } else {
-        environmentBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];</code>
-     */
-    public Builder clearEnvironment() {
-      if (environmentBuilder_ == null) {
-        environment_ = null;
-        onChanged();
-      } else {
-        environment_ = null;
-        environmentBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];</code>
-     */
-    public io.cuemby.pipelines.environment.v1alpha1.Environment.Builder getEnvironmentBuilder() {
-      
-      onChanged();
-      return getEnvironmentFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];</code>
-     */
-    public io.cuemby.pipelines.environment.v1alpha1.EnvironmentOrBuilder getEnvironmentOrBuilder() {
-      if (environmentBuilder_ != null) {
-        return environmentBuilder_.getMessageOrBuilder();
-      } else {
-        return environment_ == null ?
-            io.cuemby.pipelines.environment.v1alpha1.Environment.getDefaultInstance() : environment_;
-      }
-    }
-    /**
-     * <code>.pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.environment.v1alpha1.Environment, io.cuemby.pipelines.environment.v1alpha1.Environment.Builder, io.cuemby.pipelines.environment.v1alpha1.EnvironmentOrBuilder> 
-        getEnvironmentFieldBuilder() {
-      if (environmentBuilder_ == null) {
-        environmentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.cuemby.pipelines.environment.v1alpha1.Environment, io.cuemby.pipelines.environment.v1alpha1.Environment.Builder, io.cuemby.pipelines.environment.v1alpha1.EnvironmentOrBuilder>(
-                getEnvironment(),
-                getParentForChildren(),
-                isClean());
-        environment_ = null;
-      }
-      return environmentBuilder_;
-    }
-
-    private java.lang.Object status_ = "";
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
-     */
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @param value The status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatus(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      status_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearStatus() {
-      
-      status_ = getDefaultInstance().getStatus();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @param value The bytes for status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatusBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      status_ = value;
-      onChanged();
       return this;
     }
     @java.lang.Override
