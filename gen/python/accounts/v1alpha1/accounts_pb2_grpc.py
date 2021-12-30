@@ -154,6 +154,11 @@ class AccountServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneUserDexRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneUserDexResponse.FromString,
         )
+    self.CheckUser = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/CheckUser',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CheckUserRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.CheckUserResponse.FromString,
+        )
 
 
 class AccountServiceServicer(object):
@@ -359,6 +364,13 @@ class AccountServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CheckUser(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AccountServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -501,6 +513,11 @@ def add_AccountServiceServicer_to_server(servicer, server):
           servicer.GetOneUserDex,
           request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneUserDexRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneUserDexResponse.SerializeToString,
+      ),
+      'CheckUser': grpc.unary_unary_rpc_method_handler(
+          servicer.CheckUser,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.CheckUserRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CheckUserResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

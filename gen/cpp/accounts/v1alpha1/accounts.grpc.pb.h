@@ -243,6 +243,13 @@ class AccountService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneUserDexResponse>> PrepareAsyncGetOneUserDex(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneUserDexResponse>>(PrepareAsyncGetOneUserDexRaw(context, request, cq));
     }
+    virtual ::grpc::Status CheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest& request, ::accounts::v1alpha1::CheckUserResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CheckUserResponse>> AsyncCheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CheckUserResponse>>(AsyncCheckUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CheckUserResponse>> PrepareAsyncCheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CheckUserResponse>>(PrepareAsyncCheckUserRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -285,6 +292,7 @@ class AccountService final {
       // Get Users Dex
       virtual void GetListUserDex(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetListUserDexRequest* request, ::accounts::v1alpha1::GetListUserDexResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetOneUserDex(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest* request, ::accounts::v1alpha1::GetOneUserDexResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -344,6 +352,8 @@ class AccountService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetListUserDexResponse>* PrepareAsyncGetListUserDexRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetListUserDexRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneUserDexResponse>* AsyncGetOneUserDexRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneUserDexResponse>* PrepareAsyncGetOneUserDexRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CheckUserResponse>* AsyncCheckUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CheckUserResponse>* PrepareAsyncCheckUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -544,6 +554,13 @@ class AccountService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneUserDexResponse>> PrepareAsyncGetOneUserDex(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneUserDexResponse>>(PrepareAsyncGetOneUserDexRaw(context, request, cq));
     }
+    ::grpc::Status CheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest& request, ::accounts::v1alpha1::CheckUserResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CheckUserResponse>> AsyncCheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CheckUserResponse>>(AsyncCheckUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CheckUserResponse>> PrepareAsyncCheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CheckUserResponse>>(PrepareAsyncCheckUserRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -575,6 +592,7 @@ class AccountService final {
       void ListProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListProjectRequest* request, ::accounts::v1alpha1::ListProjectResponse* response, std::function<void(::grpc::Status)>) override;
       void GetListUserDex(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetListUserDexRequest* request, ::accounts::v1alpha1::GetListUserDexResponse* response, std::function<void(::grpc::Status)>) override;
       void GetOneUserDex(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest* request, ::accounts::v1alpha1::GetOneUserDexResponse* response, std::function<void(::grpc::Status)>) override;
+      void CheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -642,6 +660,8 @@ class AccountService final {
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetListUserDexResponse>* PrepareAsyncGetListUserDexRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetListUserDexRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneUserDexResponse>* AsyncGetOneUserDexRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneUserDexResponse>* PrepareAsyncGetOneUserDexRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CheckUserResponse>* AsyncCheckUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CheckUserResponse>* PrepareAsyncCheckUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateUser_;
     const ::grpc::internal::RpcMethod rpcmethod_ListUser_;
     const ::grpc::internal::RpcMethod rpcmethod_GetOneUser_;
@@ -670,6 +690,7 @@ class AccountService final {
     const ::grpc::internal::RpcMethod rpcmethod_ListProject_;
     const ::grpc::internal::RpcMethod rpcmethod_GetListUserDex_;
     const ::grpc::internal::RpcMethod rpcmethod_GetOneUserDex_;
+    const ::grpc::internal::RpcMethod rpcmethod_CheckUser_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -716,6 +737,7 @@ class AccountService final {
     // Get Users Dex
     virtual ::grpc::Status GetListUserDex(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetListUserDexRequest* request, ::accounts::v1alpha1::GetListUserDexResponse* response);
     virtual ::grpc::Status GetOneUserDex(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest* request, ::accounts::v1alpha1::GetOneUserDexResponse* response);
+    virtual ::grpc::Status CheckUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateUser : public BaseClass {
@@ -1277,7 +1299,27 @@ class AccountService final {
       ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateUser<WithAsyncMethod_ListUser<WithAsyncMethod_GetOneUser<WithAsyncMethod_UpdateUser<WithAsyncMethod_DeleteUser<WithAsyncMethod_ListUserPagination<WithAsyncMethod_CreatePermission<WithAsyncMethod_ListPermission<WithAsyncMethod_GetOnePermission<WithAsyncMethod_UpdatePermission<WithAsyncMethod_DeletePermission<WithAsyncMethod_CreateOrganization<WithAsyncMethod_ListOrganization<WithAsyncMethod_GetOneOrganization<WithAsyncMethod_UpdateOrganization<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_CreateRole<WithAsyncMethod_ListRoles<WithAsyncMethod_UpdateRole<WithAsyncMethod_GetOneRole<WithAsyncMethod_DeleteRole<WithAsyncMethod_CreateProject<WithAsyncMethod_GetOneProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_DeleteProject<WithAsyncMethod_ListProject<WithAsyncMethod_GetListUserDex<WithAsyncMethod_GetOneUserDex<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_CheckUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_CheckUser() {
+      ::grpc::Service::MarkMethodAsync(28);
+    }
+    ~WithAsyncMethod_CheckUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CheckUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCheckUser(::grpc::ServerContext* context, ::accounts::v1alpha1::CheckUserRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::CheckUserResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateUser<WithAsyncMethod_ListUser<WithAsyncMethod_GetOneUser<WithAsyncMethod_UpdateUser<WithAsyncMethod_DeleteUser<WithAsyncMethod_ListUserPagination<WithAsyncMethod_CreatePermission<WithAsyncMethod_ListPermission<WithAsyncMethod_GetOnePermission<WithAsyncMethod_UpdatePermission<WithAsyncMethod_DeletePermission<WithAsyncMethod_CreateOrganization<WithAsyncMethod_ListOrganization<WithAsyncMethod_GetOneOrganization<WithAsyncMethod_UpdateOrganization<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_CreateRole<WithAsyncMethod_ListRoles<WithAsyncMethod_UpdateRole<WithAsyncMethod_GetOneRole<WithAsyncMethod_DeleteRole<WithAsyncMethod_CreateProject<WithAsyncMethod_GetOneProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_DeleteProject<WithAsyncMethod_ListProject<WithAsyncMethod_GetListUserDex<WithAsyncMethod_GetOneUserDex<WithAsyncMethod_CheckUser<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateUser : public BaseClass {
    private:
@@ -1750,6 +1792,23 @@ class AccountService final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetOneUserDex(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest* request, ::accounts::v1alpha1::GetOneUserDexResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_CheckUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_CheckUser() {
+      ::grpc::Service::MarkMethodGeneric(28);
+    }
+    ~WithGenericMethod_CheckUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CheckUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2315,6 +2374,26 @@ class AccountService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_CheckUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_CheckUser() {
+      ::grpc::Service::MarkMethodRaw(28);
+    }
+    ~WithRawMethod_CheckUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CheckUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCheckUser(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateUser : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -2874,9 +2953,29 @@ class AccountService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetOneUserDex(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::GetOneUserDexRequest,::accounts::v1alpha1::GetOneUserDexResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_CheckUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_CheckUser() {
+      ::grpc::Service::MarkMethodStreamed(28,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::CheckUserRequest, ::accounts::v1alpha1::CheckUserResponse>(std::bind(&WithStreamedUnaryMethod_CheckUser<BaseClass>::StreamedCheckUser, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_CheckUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status CheckUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedCheckUser(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::CheckUserRequest,::accounts::v1alpha1::CheckUserResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

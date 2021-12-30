@@ -39,6 +39,10 @@ class UserList extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_active = 6 [json_name = "isActive"];</code>
      */
     protected $is_active = false;
+    /**
+     * Generated from protobuf field <code>bool is_super_user = 7 [json_name = "isSuperUser"];</code>
+     */
+    protected $is_super_user = false;
 
     /**
      * Constructor.
@@ -52,6 +56,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      *     @type string $email
      *     @type string $user_id
      *     @type bool $is_active
+     *     @type bool $is_super_user
      * }
      */
     public function __construct($data = NULL) {
@@ -187,6 +192,28 @@ class UserList extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_active = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_super_user = 7 [json_name = "isSuperUser"];</code>
+     * @return bool
+     */
+    public function getIsSuperUser()
+    {
+        return $this->is_super_user;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_super_user = 7 [json_name = "isSuperUser"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsSuperUser($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_super_user = $var;
 
         return $this;
     }

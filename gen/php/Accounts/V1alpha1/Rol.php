@@ -28,7 +28,11 @@ class Rol extends \Google\Protobuf\Internal\Message
      */
     protected $project_id = 0;
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 4 [json_name = "permissions"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 5 [json_name = "permissions"];</code>
      */
     private $permissions;
 
@@ -42,6 +46,7 @@ class Rol extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type int $project_id
      *          uint32 TeamId = 4;
+     *     @type int $organization_id
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
      * }
      */
@@ -121,7 +126,29 @@ class Rol extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 4 [json_name = "permissions"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 5 [json_name = "permissions"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPermissions()
@@ -130,7 +157,7 @@ class Rol extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 4 [json_name = "permissions"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 5 [json_name = "permissions"];</code>
      * @param \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

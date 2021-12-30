@@ -390,4 +390,17 @@ class AccountServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Accounts\V1alpha1\CheckUserRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function CheckUser(\Accounts\V1alpha1\CheckUserRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/CheckUser',
+        $argument,
+        ['\Accounts\V1alpha1\CheckUserResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

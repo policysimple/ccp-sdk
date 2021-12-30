@@ -47,6 +47,7 @@ static const char* AccountService_method_names[] = {
   "/accounts.v1alpha1.AccountService/ListProject",
   "/accounts.v1alpha1.AccountService/GetListUserDex",
   "/accounts.v1alpha1.AccountService/GetOneUserDex",
+  "/accounts.v1alpha1.AccountService/CheckUser",
 };
 
 std::unique_ptr< AccountService::Stub> AccountService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -84,6 +85,7 @@ AccountService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& cha
   , rpcmethod_ListProject_(AccountService_method_names[25], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetListUserDex_(AccountService_method_names[26], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetOneUserDex_(AccountService_method_names[27], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CheckUser_(AccountService_method_names[28], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status AccountService::Stub::CreateUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateUserRequest& request, ::accounts::v1alpha1::CreateUserResponse* response) {
@@ -534,6 +536,22 @@ void AccountService::Stub::experimental_async::GetOneUserDex(::grpc::ClientConte
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::GetOneUserDexResponse>::Create(channel_.get(), cq, rpcmethod_GetOneUserDex_, context, request, false);
 }
 
+::grpc::Status AccountService::Stub::CheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest& request, ::accounts::v1alpha1::CheckUserResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CheckUser_, context, request, response);
+}
+
+void AccountService::Stub::experimental_async::CheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CheckUser_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CheckUserResponse>* AccountService::Stub::AsyncCheckUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::CheckUserResponse>::Create(channel_.get(), cq, rpcmethod_CheckUser_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CheckUserResponse>* AccountService::Stub::PrepareAsyncCheckUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::CheckUserResponse>::Create(channel_.get(), cq, rpcmethod_CheckUser_, context, request, false);
+}
+
 AccountService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AccountService_method_names[0],
@@ -675,6 +693,11 @@ AccountService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::GetOneUserDexRequest, ::accounts::v1alpha1::GetOneUserDexResponse>(
           std::mem_fn(&AccountService::Service::GetOneUserDex), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AccountService_method_names[28],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::CheckUserRequest, ::accounts::v1alpha1::CheckUserResponse>(
+          std::mem_fn(&AccountService::Service::CheckUser), this)));
 }
 
 AccountService::Service::~Service() {
@@ -870,6 +893,13 @@ AccountService::Service::~Service() {
 }
 
 ::grpc::Status AccountService::Service::GetOneUserDex(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest* request, ::accounts::v1alpha1::GetOneUserDexResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AccountService::Service::CheckUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response) {
   (void) context;
   (void) request;
   (void) response;

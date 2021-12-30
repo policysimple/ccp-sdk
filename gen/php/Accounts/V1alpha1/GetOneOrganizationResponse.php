@@ -29,6 +29,10 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.ProjectOrganization projects = 4 [json_name = "projects"];</code>
      */
     private $projects;
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Member menbers = 5 [json_name = "menbers"];</code>
+     */
+    private $menbers;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $image
      *     @type \Accounts\V1alpha1\ProjectOrganization[]|\Google\Protobuf\Internal\RepeatedField $projects
+     *     @type \Accounts\V1alpha1\Member[]|\Google\Protobuf\Internal\RepeatedField $menbers
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\ProjectOrganization::class);
         $this->projects = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Member menbers = 5 [json_name = "menbers"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getMenbers()
+    {
+        return $this->menbers;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Member menbers = 5 [json_name = "menbers"];</code>
+     * @param \Accounts\V1alpha1\Member[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setMenbers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Member::class);
+        $this->menbers = $arr;
 
         return $this;
     }
