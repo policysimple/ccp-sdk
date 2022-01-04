@@ -6716,14 +6716,33 @@ class GetOneProjectResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kMembersFieldNumber = 6,
     kNameFieldNumber = 2,
     kImageFieldNumber = 3,
     kDescriptionFieldNumber = 5,
-    kCreatedAtFieldNumber = 6,
-    kUpdatedAtFieldNumber = 7,
+    kCreatedAtFieldNumber = 7,
+    kUpdatedAtFieldNumber = 8,
     kIdFieldNumber = 1,
     kOrganizationIdFieldNumber = 4,
   };
+  // repeated .accounts.v1alpha1.Member members = 6 [json_name = "members"];
+  int members_size() const;
+  private:
+  int _internal_members_size() const;
+  public:
+  void clear_members();
+  ::accounts::v1alpha1::Member* mutable_members(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Member >*
+      mutable_members();
+  private:
+  const ::accounts::v1alpha1::Member& _internal_members(int index) const;
+  ::accounts::v1alpha1::Member* _internal_add_members();
+  public:
+  const ::accounts::v1alpha1::Member& members(int index) const;
+  ::accounts::v1alpha1::Member* add_members();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Member >&
+      members() const;
+
   // string name = 2 [json_name = "name"];
   void clear_name();
   const std::string& name() const;
@@ -6766,7 +6785,7 @@ class GetOneProjectResponse final :
   std::string* _internal_mutable_description();
   public:
 
-  // string created_at = 6 [json_name = "createdAt"];
+  // string created_at = 7 [json_name = "createdAt"];
   void clear_created_at();
   const std::string& created_at() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -6780,7 +6799,7 @@ class GetOneProjectResponse final :
   std::string* _internal_mutable_created_at();
   public:
 
-  // string updated_at = 7 [json_name = "updatedAt"];
+  // string updated_at = 8 [json_name = "updatedAt"];
   void clear_updated_at();
   const std::string& updated_at() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -6819,6 +6838,7 @@ class GetOneProjectResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Member > members_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
@@ -16512,7 +16532,47 @@ inline void GetOneProjectResponse::set_allocated_description(std::string* descri
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneProjectResponse.description)
 }
 
-// string created_at = 6 [json_name = "createdAt"];
+// repeated .accounts.v1alpha1.Member members = 6 [json_name = "members"];
+inline int GetOneProjectResponse::_internal_members_size() const {
+  return members_.size();
+}
+inline int GetOneProjectResponse::members_size() const {
+  return _internal_members_size();
+}
+inline void GetOneProjectResponse::clear_members() {
+  members_.Clear();
+}
+inline ::accounts::v1alpha1::Member* GetOneProjectResponse::mutable_members(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneProjectResponse.members)
+  return members_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Member >*
+GetOneProjectResponse::mutable_members() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.GetOneProjectResponse.members)
+  return &members_;
+}
+inline const ::accounts::v1alpha1::Member& GetOneProjectResponse::_internal_members(int index) const {
+  return members_.Get(index);
+}
+inline const ::accounts::v1alpha1::Member& GetOneProjectResponse::members(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneProjectResponse.members)
+  return _internal_members(index);
+}
+inline ::accounts::v1alpha1::Member* GetOneProjectResponse::_internal_add_members() {
+  return members_.Add();
+}
+inline ::accounts::v1alpha1::Member* GetOneProjectResponse::add_members() {
+  ::accounts::v1alpha1::Member* _add = _internal_add_members();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.GetOneProjectResponse.members)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Member >&
+GetOneProjectResponse::members() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.GetOneProjectResponse.members)
+  return members_;
+}
+
+// string created_at = 7 [json_name = "createdAt"];
 inline void GetOneProjectResponse::clear_created_at() {
   created_at_.ClearToEmpty();
 }
@@ -16558,7 +16618,7 @@ inline void GetOneProjectResponse::set_allocated_created_at(std::string* created
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneProjectResponse.created_at)
 }
 
-// string updated_at = 7 [json_name = "updatedAt"];
+// string updated_at = 8 [json_name = "updatedAt"];
 inline void GetOneProjectResponse::clear_updated_at() {
   updated_at_.ClearToEmpty();
 }

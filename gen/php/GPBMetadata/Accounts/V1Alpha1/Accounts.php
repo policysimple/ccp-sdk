@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-ÛQ
+®R
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"‡
 CheckUserRequest\'
 organization_id (RorganizationId
@@ -180,17 +180,18 @@ updated_at (	R	updatedAt,
 error (	Rerror"?
 DeleteProjectResponse
 msg (	Rmsg
-error (	Rerror"⁄
+error (	Rerror"è
 GetOneProjectResponse
 id (Rid
 name (	Rname
 image (	Rimage\'
 organization_id (RorganizationId 
-description (	Rdescription
+description (	Rdescription3
+members (2.accounts.v1alpha1.MemberRmembers
 
-created_at (	R	createdAt
+created_at (	R	createdAt
 
-updated_at (	R	updatedAt"M
+updated_at (	R	updatedAt"M
 ListProjectResponse6
 projects (2.accounts.v1alpha1.ProjectRprojects"L
 ListProjectPaginationRequest
