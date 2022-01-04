@@ -244,7 +244,8 @@ proto.pipelines.environment.v1alpha1.CreateEnvironmentResponse.prototype.toObjec
  */
 proto.pipelines.environment.v1alpha1.CreateEnvironmentResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    environment: (f = msg.getEnvironment()) && pipelines_environment_v1alpha1_environment_pb.Environment.toObject(includeInstance, f),
+    status: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -281,6 +282,15 @@ proto.pipelines.environment.v1alpha1.CreateEnvironmentResponse.deserializeBinary
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new pipelines_environment_v1alpha1_environment_pb.Environment;
+      reader.readMessage(value,pipelines_environment_v1alpha1_environment_pb.Environment.deserializeBinaryFromReader);
+      msg.setEnvironment(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -310,6 +320,76 @@ proto.pipelines.environment.v1alpha1.CreateEnvironmentResponse.prototype.seriali
  */
 proto.pipelines.environment.v1alpha1.CreateEnvironmentResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getEnvironment();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      pipelines_environment_v1alpha1_environment_pb.Environment.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional Environment environment = 1;
+ * @return {?proto.pipelines.environment.v1alpha1.Environment}
+ */
+proto.pipelines.environment.v1alpha1.CreateEnvironmentResponse.prototype.getEnvironment = function() {
+  return /** @type{?proto.pipelines.environment.v1alpha1.Environment} */ (
+    jspb.Message.getWrapperField(this, pipelines_environment_v1alpha1_environment_pb.Environment, 1));
+};
+
+
+/**
+ * @param {?proto.pipelines.environment.v1alpha1.Environment|undefined} value
+ * @return {!proto.pipelines.environment.v1alpha1.CreateEnvironmentResponse} returns this
+*/
+proto.pipelines.environment.v1alpha1.CreateEnvironmentResponse.prototype.setEnvironment = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.pipelines.environment.v1alpha1.CreateEnvironmentResponse} returns this
+ */
+proto.pipelines.environment.v1alpha1.CreateEnvironmentResponse.prototype.clearEnvironment = function() {
+  return this.setEnvironment(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.pipelines.environment.v1alpha1.CreateEnvironmentResponse.prototype.hasEnvironment = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string status = 2;
+ * @return {string}
+ */
+proto.pipelines.environment.v1alpha1.CreateEnvironmentResponse.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.environment.v1alpha1.CreateEnvironmentResponse} returns this
+ */
+proto.pipelines.environment.v1alpha1.CreateEnvironmentResponse.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

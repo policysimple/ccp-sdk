@@ -12,7 +12,7 @@ option php_namespace = "Pipelines\\Environment\\V1Alpha1";
 
 // Environment ...
 message Environment {
-    string account_id = 1;
-    string team_id = 2;
+    string organization_id = 1;
+    string project_id = 2;
     string name = 3;
 }

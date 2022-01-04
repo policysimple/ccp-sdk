@@ -186,36 +186,36 @@ class Environment final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAccountIdFieldNumber = 1,
-    kTeamIdFieldNumber = 2,
+    kOrganizationIdFieldNumber = 1,
+    kProjectIdFieldNumber = 2,
     kNameFieldNumber = 3,
   };
-  // string account_id = 1 [json_name = "accountId"];
-  void clear_account_id();
-  const std::string& account_id() const;
+  // string organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_account_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_account_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_account_id();
-  void set_allocated_account_id(std::string* account_id);
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
   private:
-  const std::string& _internal_account_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_account_id(const std::string& value);
-  std::string* _internal_mutable_account_id();
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
   public:
 
-  // string team_id = 2 [json_name = "teamId"];
-  void clear_team_id();
-  const std::string& team_id() const;
+  // string project_id = 2 [json_name = "projectId"];
+  void clear_project_id();
+  const std::string& project_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_team_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_team_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_team_id();
-  void set_allocated_team_id(std::string* team_id);
+  void set_project_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_id();
+  void set_allocated_project_id(std::string* project_id);
   private:
-  const std::string& _internal_team_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_team_id(const std::string& value);
-  std::string* _internal_mutable_team_id();
+  const std::string& _internal_project_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_id(const std::string& value);
+  std::string* _internal_mutable_project_id();
   public:
 
   // string name = 3 [json_name = "name"];
@@ -239,8 +239,8 @@ class Environment final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr account_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr team_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto;
@@ -256,96 +256,96 @@ class Environment final :
 #endif  // __GNUC__
 // Environment
 
-// string account_id = 1 [json_name = "accountId"];
-inline void Environment::clear_account_id() {
-  account_id_.ClearToEmpty();
+// string organization_id = 1 [json_name = "organizationId"];
+inline void Environment::clear_organization_id() {
+  organization_id_.ClearToEmpty();
 }
-inline const std::string& Environment::account_id() const {
-  // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.Environment.account_id)
-  return _internal_account_id();
+inline const std::string& Environment::organization_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.Environment.organization_id)
+  return _internal_organization_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void Environment::set_account_id(ArgT0&& arg0, ArgT... args) {
+void Environment::set_organization_id(ArgT0&& arg0, ArgT... args) {
  
- account_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.environment.v1alpha1.Environment.account_id)
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.environment.v1alpha1.Environment.organization_id)
 }
-inline std::string* Environment::mutable_account_id() {
-  std::string* _s = _internal_mutable_account_id();
-  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.Environment.account_id)
+inline std::string* Environment::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.Environment.organization_id)
   return _s;
 }
-inline const std::string& Environment::_internal_account_id() const {
-  return account_id_.Get();
+inline const std::string& Environment::_internal_organization_id() const {
+  return organization_id_.Get();
 }
-inline void Environment::_internal_set_account_id(const std::string& value) {
+inline void Environment::_internal_set_organization_id(const std::string& value) {
   
-  account_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* Environment::_internal_mutable_account_id() {
+inline std::string* Environment::_internal_mutable_organization_id() {
   
-  return account_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* Environment::release_account_id() {
-  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.Environment.account_id)
-  return account_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* Environment::release_organization_id() {
+  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.Environment.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void Environment::set_allocated_account_id(std::string* account_id) {
-  if (account_id != nullptr) {
+inline void Environment::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
     
   } else {
     
   }
-  account_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), account_id,
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.Environment.account_id)
+  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.Environment.organization_id)
 }
 
-// string team_id = 2 [json_name = "teamId"];
-inline void Environment::clear_team_id() {
-  team_id_.ClearToEmpty();
+// string project_id = 2 [json_name = "projectId"];
+inline void Environment::clear_project_id() {
+  project_id_.ClearToEmpty();
 }
-inline const std::string& Environment::team_id() const {
-  // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.Environment.team_id)
-  return _internal_team_id();
+inline const std::string& Environment::project_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.Environment.project_id)
+  return _internal_project_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void Environment::set_team_id(ArgT0&& arg0, ArgT... args) {
+void Environment::set_project_id(ArgT0&& arg0, ArgT... args) {
  
- team_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.environment.v1alpha1.Environment.team_id)
+ project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.environment.v1alpha1.Environment.project_id)
 }
-inline std::string* Environment::mutable_team_id() {
-  std::string* _s = _internal_mutable_team_id();
-  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.Environment.team_id)
+inline std::string* Environment::mutable_project_id() {
+  std::string* _s = _internal_mutable_project_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.Environment.project_id)
   return _s;
 }
-inline const std::string& Environment::_internal_team_id() const {
-  return team_id_.Get();
+inline const std::string& Environment::_internal_project_id() const {
+  return project_id_.Get();
 }
-inline void Environment::_internal_set_team_id(const std::string& value) {
+inline void Environment::_internal_set_project_id(const std::string& value) {
   
-  team_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* Environment::_internal_mutable_team_id() {
+inline std::string* Environment::_internal_mutable_project_id() {
   
-  return team_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return project_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* Environment::release_team_id() {
-  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.Environment.team_id)
-  return team_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* Environment::release_project_id() {
+  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.Environment.project_id)
+  return project_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void Environment::set_allocated_team_id(std::string* team_id) {
-  if (team_id != nullptr) {
+inline void Environment::set_allocated_project_id(std::string* project_id) {
+  if (project_id != nullptr) {
     
   } else {
     
   }
-  team_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), team_id,
+  project_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.Environment.team_id)
+  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.Environment.project_id)
 }
 
 // string name = 3 [json_name = "name"];

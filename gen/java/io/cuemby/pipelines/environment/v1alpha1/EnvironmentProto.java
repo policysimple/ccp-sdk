@@ -30,14 +30,14 @@ public final class EnvironmentProto {
     java.lang.String[] descriptorData = {
       "\n0pipelines/environment/v1alpha1/environ" +
       "ment.proto\022\036pipelines.environment.v1alph" +
-      "a1\"Y\n\013Environment\022\035\n\naccount_id\030\001 \001(\tR\ta" +
-      "ccountId\022\027\n\007team_id\030\002 \001(\tR\006teamId\022\022\n\004nam" +
-      "e\030\003 \001(\tR\004nameB\307\001\n(io.cuemby.pipelines.en" +
-      "vironment.v1alpha1B\020EnvironmentProtoP\001Z?" +
-      "github.com/cuemby/ccp-sdk/gen/go/pipelin" +
-      "es/environment/v1alpha1\242\002\003PPX\252\002\036Pipeline" +
-      "s.Environment.V1Alpha1\312\002\036Pipelines\\Envir" +
-      "onment\\V1Alpha1b\006proto3"
+      "a1\"i\n\013Environment\022\'\n\017organization_id\030\001 \001" +
+      "(\tR\016organizationId\022\035\n\nproject_id\030\002 \001(\tR\t" +
+      "projectId\022\022\n\004name\030\003 \001(\tR\004nameB\307\001\n(io.cue" +
+      "mby.pipelines.environment.v1alpha1B\020Envi" +
+      "ronmentProtoP\001Z?github.com/cuemby/ccp-sd" +
+      "k/gen/go/pipelines/environment/v1alpha1\242" +
+      "\002\003PPX\252\002\036Pipelines.Environment.V1Alpha1\312\002" +
+      "\036Pipelines\\Environment\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -48,7 +48,7 @@ public final class EnvironmentProto {
     internal_static_pipelines_environment_v1alpha1_Environment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_environment_v1alpha1_Environment_descriptor,
-        new java.lang.String[] { "AccountId", "TeamId", "Name", });
+        new java.lang.String[] { "OrganizationId", "ProjectId", "Name", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

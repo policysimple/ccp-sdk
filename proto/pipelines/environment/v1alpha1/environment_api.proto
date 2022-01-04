@@ -11,7 +11,6 @@ option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Environment\\V1Alpha1";
 
 import "pipelines/environment/v1alpha1/environment.proto";
-//import "environment.proto";
 
 service EnvironmentAPIService{
     rpc CreateEnvironment(CreateEnvironmentRequest) returns (CreateEnvironmentResponse);
@@ -22,7 +21,7 @@ message CreateEnvironmentRequest {
 }
 
 message CreateEnvironmentResponse {
-    // pipelines.environment.v1alpha1.Environment environment = 1;
-    // string status = 2;
+    pipelines.environment.v1alpha1.Environment environment = 1;
+    string status = 2;
 }
 

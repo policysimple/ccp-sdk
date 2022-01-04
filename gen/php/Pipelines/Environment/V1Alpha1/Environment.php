@@ -16,13 +16,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class Environment extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string account_id = 1 [json_name = "accountId"];</code>
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
      */
-    protected $account_id = '';
+    protected $organization_id = '';
     /**
-     * Generated from protobuf field <code>string team_id = 2 [json_name = "teamId"];</code>
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
      */
-    protected $team_id = '';
+    protected $project_id = '';
     /**
      * Generated from protobuf field <code>string name = 3 [json_name = "name"];</code>
      */
@@ -34,8 +34,8 @@ class Environment extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $account_id
-     *     @type string $team_id
+     *     @type string $organization_id
+     *     @type string $project_id
      *     @type string $name
      * }
      */
@@ -45,45 +45,45 @@ class Environment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string account_id = 1 [json_name = "accountId"];</code>
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
      * @return string
      */
-    public function getAccountId()
+    public function getOrganizationId()
     {
-        return $this->account_id;
+        return $this->organization_id;
     }
 
     /**
-     * Generated from protobuf field <code>string account_id = 1 [json_name = "accountId"];</code>
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setAccountId($var)
+    public function setOrganizationId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->account_id = $var;
+        $this->organization_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string team_id = 2 [json_name = "teamId"];</code>
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
      * @return string
      */
-    public function getTeamId()
+    public function getProjectId()
     {
-        return $this->team_id;
+        return $this->project_id;
     }
 
     /**
-     * Generated from protobuf field <code>string team_id = 2 [json_name = "teamId"];</code>
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setTeamId($var)
+    public function setProjectId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->team_id = $var;
+        $this->project_id = $var;
 
         return $this;
     }
