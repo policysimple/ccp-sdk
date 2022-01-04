@@ -17,6 +17,10 @@ class GetOneUserDexRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
      */
     protected $user_id = '';
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.CreateUserRequest user = 2 [json_name = "user"];</code>
+     */
+    protected $user = null;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class GetOneUserDexRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $user_id
+     *     @type \Accounts\V1alpha1\CreateUserRequest $user
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,38 @@ class GetOneUserDexRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.CreateUserRequest user = 2 [json_name = "user"];</code>
+     * @return \Accounts\V1alpha1\CreateUserRequest|null
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    public function hasUser()
+    {
+        return isset($this->user);
+    }
+
+    public function clearUser()
+    {
+        unset($this->user);
+    }
+
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.CreateUserRequest user = 2 [json_name = "user"];</code>
+     * @param \Accounts\V1alpha1\CreateUserRequest $var
+     * @return $this
+     */
+    public function setUser($var)
+    {
+        GPBUtil::checkMessage($var, \Accounts\V1alpha1\CreateUserRequest::class);
+        $this->user = $var;
 
         return $this;
     }

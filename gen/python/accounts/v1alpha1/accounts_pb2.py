@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n accounts/v1alpha1/accounts.proto\x12\x11\x61\x63\x63ounts.v1alpha1\"\xe0\x02\n\x10\x43heckUserRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\x12\x41\n\x1dget_organization_from_project\x18\x03 \x01(\rR\x1agetOrganizationFromProject\x12\x1e\n\npermission\x18\x04 \x01(\tR\npermission\x12\x1e\n\x0buser_id_dex\x18\x05 \x01(\tR\tuserIdDex\x12\"\n\ruser_id_admin\x18\x06 \x01(\tR\x0buserIdAdmin\x12\x17\n\x07user_id\x18\x07 \x01(\rR\x06userId\x12\'\n\x0ftype_permission\x18\t \x01(\tR\x0etypePermission\x12\x1b\n\troles_ids\x18\n \x03(\rR\x08rolesIds\"F\n\x11\x43heckUserResponse\x12\x1b\n\tis_exists\x18\x01 \x01(\x08R\x08isExists\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"?\n\x08UsersDex\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1a\n\x08provider\x18\x02 \x01(\tR\x08provider\"<\n\x12\x43reateUserResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"<\n\x12UpdateUserResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"<\n\x12\x44\x65leteUserResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"Y\n\x0fListUserRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\"\x8e\x02\n\x11\x43reateUserRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x02 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x03 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\x12\x1b\n\tis_active\x18\x05 \x01(\x08R\x08isActive\x12\x1b\n\troles_ids\x18\x06 \x03(\rR\x08rolesIds\x12\'\n\x0fpermissions_ids\x18\x07 \x03(\rR\x0epermissionsIds\x12+\n\x11organizations_ids\x18\x08 \x03(\rR\x10organizationsIds\"f\n\x11UpdateUserRequest\x12\x17\n\x07\x61uth_id\x18\x01 \x01(\rR\x06\x61uthId\x12\x38\n\x04\x61uth\x18\x02 \x01(\x0b\x32$.accounts.v1alpha1.CreateUserRequestR\x04\x61uth\",\n\x11\x44\x65leteUserRequest\x12\x17\n\x07\x61uth_id\x18\x01 \x01(\rR\x06\x61uthId\"\xc6\x01\n\x08UserList\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x1d\n\nfirst_name\x18\x02 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x03 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\"\n\ris_super_user\x18\x07 \x01(\x08R\x0bisSuperUser\"#\n\x11GetOneUserRequest\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\"\xc4\x03\n\x12GetOneUserResponse\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x05 \x01(\tR\x05\x65mail\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\x1d\n\ncreated_at\x18\x07 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x08 \x01(\tR\tupdatedAt\x12,\n\x05roles\x18\t \x03(\x0b\x32\x16.accounts.v1alpha1.RolR\x05roles\x12?\n\x0bpermissions\x18\n \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\"\n\ris_super_user\x18\x0b \x01(\x08R\x0bisSuperUser\x12\x45\n\rorganizations\x18\x0c \x03(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\rorganizations\"E\n\x10ListUserResponse\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05users\"I\n\x19ListUserPaginationRequest\x12\x16\n\x06offset\x18\x01 \x01(\x05R\x06offset\x12\x14\n\x05limit\x18\x02 \x01(\x05R\x05limit\"e\n\x1aListUserPaginationResponse\x12\x14\n\x05\x63ount\x18\x01 \x01(\x03R\x05\x63ount\x12\x31\n\x05users\x18\x02 \x03(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05users\"\xb2\x01\n\x03Rol\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12?\n\x0bpermissions\x18\x05 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\"\xb8\x01\n\x11\x43reateRoleRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12%\n\x0epermission_ids\x18\x05 \x03(\rR\rpermissionIds\"b\n\x11UpdateRoleRequest\x12\x15\n\x06rol_id\x18\x01 \x01(\rR\x05rolId\x12\x36\n\x03rol\x18\x02 \x01(\x0b\x32$.accounts.v1alpha1.CreateRoleRequestR\x03rol\"*\n\x11GetOneRoleRequest\x12\x15\n\x06rol_id\x18\x01 \x01(\rR\x05rolId\"\xc1\x01\n\x12GetOneRoleResponse\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\'\n\x0forganization_id\x18\x03 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x04 \x01(\rR\tprojectId\x12?\n\x0bpermissions\x18\x05 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\"*\n\x11\x44\x65leteRoleRequest\x12\x15\n\x06rol_id\x18\x01 \x01(\rR\x05rolId\"Z\n\x10ListRolesRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\"A\n\x11ListRolesResponse\x12,\n\x05roles\x18\x01 \x03(\x0b\x32\x16.accounts.v1alpha1.RolR\x05roles\"<\n\x12\x43reateRoleResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"<\n\x12UpdateRoleResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"<\n\x12\x44\x65leteRoleResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xfa\x01\n\x07Project\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\x12,\n\x05roles\x18\x08 \x03(\x0b\x32\x16.accounts.v1alpha1.RolR\x05roles\"\x8b\x01\n\x14\x43reateProjectRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\"&\n\x14GetOneProjectRequest\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\"&\n\x14\x44\x65leteProjectRequest\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\"=\n\x12ListProjectRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"i\n\x14UpdateProjectRequest\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x41\n\x07project\x18\x02 \x01(\x0b\x32\'.accounts.v1alpha1.CreateProjectRequestR\x07project\"?\n\x15\x43reateProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"?\n\x15UpdateProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"?\n\x15\x44\x65leteProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xda\x01\n\x15GetOneProjectResponse\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\"M\n\x13ListProjectResponse\x12\x36\n\x08projects\x18\x01 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\"L\n\x1cListProjectPaginationRequest\x12\x16\n\x06offset\x18\x01 \x01(\x05R\x06offset\x12\x14\n\x05limit\x18\x02 \x01(\x05R\x05limit\"m\n\x1dListProjectPaginationResponse\x12\x36\n\x08projects\x18\x01 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\x12\x14\n\x05\x63ount\x18\x02 \x01(\x03R\x05\x63ount\"D\n\nPermission\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\"Y\n\x16ListPermissionResponse\x12?\n\x0bpermissions\x18\x01 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\"W\n\x17\x41ssignPermissionRequest\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12#\n\rpermission_id\x18\x02 \x01(\rR\x0cpermissionId\"+\n\x15ListPermissionRequest\x12\x12\n\x04type\x18\x01 \x01(\tR\x04type\"A\n\x17\x43reatePermissionRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n\x04type\x18\x02 \x01(\tR\x04type\"f\n\x17UpdatePermissionRequest\x12#\n\rpermission_id\x18\x01 \x01(\rR\x0cpermissionId\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\">\n\x17GetOnePermissionRequest\x12#\n\rpermission_id\x18\x01 \x01(\rR\x0cpermissionId\"R\n\x18GetOnePermissionResponse\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\">\n\x17\x44\x65letePermissionRequest\x12#\n\rpermission_id\x18\x01 \x01(\rR\x0cpermissionId\"B\n\x18UpdatePermissionResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"B\n\x18\x44\x65letePermissionResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"B\n\x18\x43reatePermissionResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x8a\x01\n\x06Member\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x1b\n\tis_active\x18\x05 \x01(\x08R\x08isActive\"O\n\x13ProjectOrganization\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\"H\n\x0cOrganization\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\"^\n\x19\x43reateOrganizationRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05image\x18\x02 \x01(\tR\x05image\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\"\x19\n\x17ListOrganizationRequest\"D\n\x19GetOneOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"n\n\x19UpdateOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x04 \x01(\tR\x05image\"D\n\x19\x44\x65leteOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"\xcf\x01\n\x1aGetOneOrganizationResponse\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\x42\n\x08projects\x18\x04 \x03(\x0b\x32&.accounts.v1alpha1.ProjectOrganizationR\x08projects\x12\x33\n\x07menbers\x18\x05 \x03(\x0b\x32\x19.accounts.v1alpha1.MemberR\x07menbers\"a\n\x18ListOrganizationResponse\x12\x45\n\rorganizations\x18\x01 \x03(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\rorganizations\"D\n\x1a\x43reateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"D\n\x1aUpdateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"D\n\x1a\x44\x65leteOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x17\n\x15GetListUserDexRequest\"R\n\x16GetListUserDexResponse\x12\x38\n\tusers_dex\x18\x01 \x03(\x0b\x32\x1b.accounts.v1alpha1.UsersDexR\x08usersDex\"/\n\x14GetOneUserDexRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\"\x80\x03\n\x15GetOneUserDexResponse\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x05 \x01(\tR\x05\x65mail\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\x1d\n\ncreated_at\x18\x07 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x08 \x01(\tR\tupdatedAt\x12,\n\x05roles\x18\t \x03(\x0b\x32\x16.accounts.v1alpha1.RolR\x05roles\x12?\n\x0bpermissions\x18\n \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\"\n\ris_super_user\x18\x0b \x01(\x08R\x0bisSuperUser2\xed\x16\n\x0e\x41\x63\x63ountService\x12Y\n\nCreateUser\x12$.accounts.v1alpha1.CreateUserRequest\x1a%.accounts.v1alpha1.CreateUserResponse\x12S\n\x08ListUser\x12\".accounts.v1alpha1.ListUserRequest\x1a#.accounts.v1alpha1.ListUserResponse\x12Y\n\nGetOneUser\x12$.accounts.v1alpha1.GetOneUserRequest\x1a%.accounts.v1alpha1.GetOneUserResponse\x12Y\n\nUpdateUser\x12$.accounts.v1alpha1.UpdateUserRequest\x1a%.accounts.v1alpha1.UpdateUserResponse\x12Y\n\nDeleteUser\x12$.accounts.v1alpha1.DeleteUserRequest\x1a%.accounts.v1alpha1.DeleteUserResponse\x12q\n\x12ListUserPagination\x12,.accounts.v1alpha1.ListUserPaginationRequest\x1a-.accounts.v1alpha1.ListUserPaginationResponse\x12k\n\x10\x43reatePermission\x12*.accounts.v1alpha1.CreatePermissionRequest\x1a+.accounts.v1alpha1.CreatePermissionResponse\x12\x65\n\x0eListPermission\x12(.accounts.v1alpha1.ListPermissionRequest\x1a).accounts.v1alpha1.ListPermissionResponse\x12k\n\x10GetOnePermission\x12*.accounts.v1alpha1.GetOnePermissionRequest\x1a+.accounts.v1alpha1.GetOnePermissionResponse\x12k\n\x10UpdatePermission\x12*.accounts.v1alpha1.UpdatePermissionRequest\x1a+.accounts.v1alpha1.UpdatePermissionResponse\x12k\n\x10\x44\x65letePermission\x12*.accounts.v1alpha1.DeletePermissionRequest\x1a+.accounts.v1alpha1.DeletePermissionResponse\x12q\n\x12\x43reateOrganization\x12,.accounts.v1alpha1.CreateOrganizationRequest\x1a-.accounts.v1alpha1.CreateOrganizationResponse\x12k\n\x10ListOrganization\x12*.accounts.v1alpha1.ListOrganizationRequest\x1a+.accounts.v1alpha1.ListOrganizationResponse\x12q\n\x12GetOneOrganization\x12,.accounts.v1alpha1.GetOneOrganizationRequest\x1a-.accounts.v1alpha1.GetOneOrganizationResponse\x12q\n\x12UpdateOrganization\x12,.accounts.v1alpha1.UpdateOrganizationRequest\x1a-.accounts.v1alpha1.UpdateOrganizationResponse\x12q\n\x12\x44\x65leteOrganization\x12,.accounts.v1alpha1.DeleteOrganizationRequest\x1a-.accounts.v1alpha1.DeleteOrganizationResponse\x12Y\n\nCreateRole\x12$.accounts.v1alpha1.CreateRoleRequest\x1a%.accounts.v1alpha1.CreateRoleResponse\x12V\n\tListRoles\x12#.accounts.v1alpha1.ListRolesRequest\x1a$.accounts.v1alpha1.ListRolesResponse\x12Y\n\nUpdateRole\x12$.accounts.v1alpha1.UpdateRoleRequest\x1a%.accounts.v1alpha1.UpdateRoleResponse\x12Y\n\nGetOneRole\x12$.accounts.v1alpha1.GetOneRoleRequest\x1a%.accounts.v1alpha1.GetOneRoleResponse\x12Y\n\nDeleteRole\x12$.accounts.v1alpha1.DeleteRoleRequest\x1a%.accounts.v1alpha1.DeleteRoleResponse\x12\x62\n\rCreateProject\x12\'.accounts.v1alpha1.CreateProjectRequest\x1a(.accounts.v1alpha1.CreateProjectResponse\x12\x62\n\rGetOneProject\x12\'.accounts.v1alpha1.GetOneProjectRequest\x1a(.accounts.v1alpha1.GetOneProjectResponse\x12\x62\n\rUpdateProject\x12\'.accounts.v1alpha1.UpdateProjectRequest\x1a(.accounts.v1alpha1.UpdateProjectResponse\x12\x62\n\rDeleteProject\x12\'.accounts.v1alpha1.DeleteProjectRequest\x1a(.accounts.v1alpha1.DeleteProjectResponse\x12\\\n\x0bListProject\x12%.accounts.v1alpha1.ListProjectRequest\x1a&.accounts.v1alpha1.ListProjectResponse\x12\x65\n\x0eGetListUserDex\x12(.accounts.v1alpha1.GetListUserDexRequest\x1a).accounts.v1alpha1.GetListUserDexResponse\x12\x62\n\rGetOneUserDex\x12\'.accounts.v1alpha1.GetOneUserDexRequest\x1a(.accounts.v1alpha1.GetOneUserDexResponse\x12V\n\tCheckUser\x12#.accounts.v1alpha1.CheckUserRequest\x1a$.accounts.v1alpha1.CheckUserResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1b\x06proto3'
+  serialized_pb=b'\n accounts/v1alpha1/accounts.proto\x12\x11\x61\x63\x63ounts.v1alpha1\"\xe0\x02\n\x10\x43heckUserRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\x12\x41\n\x1dget_organization_from_project\x18\x03 \x01(\rR\x1agetOrganizationFromProject\x12\x1e\n\npermission\x18\x04 \x01(\tR\npermission\x12\x1e\n\x0buser_id_dex\x18\x05 \x01(\tR\tuserIdDex\x12\"\n\ruser_id_admin\x18\x06 \x01(\tR\x0buserIdAdmin\x12\x17\n\x07user_id\x18\x07 \x01(\rR\x06userId\x12\'\n\x0ftype_permission\x18\t \x01(\tR\x0etypePermission\x12\x1b\n\troles_ids\x18\n \x03(\rR\x08rolesIds\"F\n\x11\x43heckUserResponse\x12\x1b\n\tis_exists\x18\x01 \x01(\x08R\x08isExists\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"?\n\x08UsersDex\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1a\n\x08provider\x18\x02 \x01(\tR\x08provider\"<\n\x12\x43reateUserResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"<\n\x12UpdateUserResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"<\n\x12\x44\x65leteUserResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"Y\n\x0fListUserRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\"\x8e\x02\n\x11\x43reateUserRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x02 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x03 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\x12\x1b\n\tis_active\x18\x05 \x01(\x08R\x08isActive\x12\x1b\n\troles_ids\x18\x06 \x03(\rR\x08rolesIds\x12\'\n\x0fpermissions_ids\x18\x07 \x03(\rR\x0epermissionsIds\x12+\n\x11organizations_ids\x18\x08 \x03(\rR\x10organizationsIds\"f\n\x11UpdateUserRequest\x12\x17\n\x07\x61uth_id\x18\x01 \x01(\rR\x06\x61uthId\x12\x38\n\x04\x61uth\x18\x02 \x01(\x0b\x32$.accounts.v1alpha1.CreateUserRequestR\x04\x61uth\",\n\x11\x44\x65leteUserRequest\x12\x17\n\x07\x61uth_id\x18\x01 \x01(\rR\x06\x61uthId\"\xc6\x01\n\x08UserList\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x1d\n\nfirst_name\x18\x02 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x03 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\"\n\ris_super_user\x18\x07 \x01(\x08R\x0bisSuperUser\"#\n\x11GetOneUserRequest\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\"\xc4\x03\n\x12GetOneUserResponse\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x05 \x01(\tR\x05\x65mail\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\x1d\n\ncreated_at\x18\x07 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x08 \x01(\tR\tupdatedAt\x12,\n\x05roles\x18\t \x03(\x0b\x32\x16.accounts.v1alpha1.RolR\x05roles\x12?\n\x0bpermissions\x18\n \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\"\n\ris_super_user\x18\x0b \x01(\x08R\x0bisSuperUser\x12\x45\n\rorganizations\x18\x0c \x03(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\rorganizations\"E\n\x10ListUserResponse\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05users\"I\n\x19ListUserPaginationRequest\x12\x16\n\x06offset\x18\x01 \x01(\x05R\x06offset\x12\x14\n\x05limit\x18\x02 \x01(\x05R\x05limit\"e\n\x1aListUserPaginationResponse\x12\x14\n\x05\x63ount\x18\x01 \x01(\x03R\x05\x63ount\x12\x31\n\x05users\x18\x02 \x03(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05users\"\xb2\x01\n\x03Rol\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12?\n\x0bpermissions\x18\x05 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\"\xe1\x01\n\x11\x43reateRoleRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12\'\n\x0ftype_permission\x18\x05 \x01(\tR\x0etypePermission\x12%\n\x0epermission_ids\x18\x06 \x03(\rR\rpermissionIds\"b\n\x11UpdateRoleRequest\x12\x15\n\x06rol_id\x18\x01 \x01(\rR\x05rolId\x12\x36\n\x03rol\x18\x02 \x01(\x0b\x32$.accounts.v1alpha1.CreateRoleRequestR\x03rol\"*\n\x11GetOneRoleRequest\x12\x15\n\x06rol_id\x18\x01 \x01(\rR\x05rolId\"\xc1\x01\n\x12GetOneRoleResponse\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\'\n\x0forganization_id\x18\x03 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x04 \x01(\rR\tprojectId\x12?\n\x0bpermissions\x18\x05 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\"*\n\x11\x44\x65leteRoleRequest\x12\x15\n\x06rol_id\x18\x01 \x01(\rR\x05rolId\"Z\n\x10ListRolesRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\"A\n\x11ListRolesResponse\x12,\n\x05roles\x18\x01 \x03(\x0b\x32\x16.accounts.v1alpha1.RolR\x05roles\"<\n\x12\x43reateRoleResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"<\n\x12UpdateRoleResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"<\n\x12\x44\x65leteRoleResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xfa\x01\n\x07Project\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\x12,\n\x05roles\x18\x08 \x03(\x0b\x32\x16.accounts.v1alpha1.RolR\x05roles\"\xa4\x01\n\x14\x43reateProjectRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\"&\n\x14GetOneProjectRequest\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\"&\n\x14\x44\x65leteProjectRequest\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\"=\n\x12ListProjectRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"i\n\x14UpdateProjectRequest\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x41\n\x07project\x18\x02 \x01(\x0b\x32\'.accounts.v1alpha1.CreateProjectRequestR\x07project\"?\n\x15\x43reateProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"?\n\x15UpdateProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"?\n\x15\x44\x65leteProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xda\x01\n\x15GetOneProjectResponse\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\"M\n\x13ListProjectResponse\x12\x36\n\x08projects\x18\x01 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\"L\n\x1cListProjectPaginationRequest\x12\x16\n\x06offset\x18\x01 \x01(\x05R\x06offset\x12\x14\n\x05limit\x18\x02 \x01(\x05R\x05limit\"m\n\x1dListProjectPaginationResponse\x12\x36\n\x08projects\x18\x01 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\x12\x14\n\x05\x63ount\x18\x02 \x01(\x03R\x05\x63ount\"D\n\nPermission\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\"Y\n\x16ListPermissionResponse\x12?\n\x0bpermissions\x18\x01 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\"W\n\x17\x41ssignPermissionRequest\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12#\n\rpermission_id\x18\x02 \x01(\rR\x0cpermissionId\"+\n\x15ListPermissionRequest\x12\x12\n\x04type\x18\x01 \x01(\tR\x04type\"A\n\x17\x43reatePermissionRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n\x04type\x18\x02 \x01(\tR\x04type\"f\n\x17UpdatePermissionRequest\x12#\n\rpermission_id\x18\x01 \x01(\rR\x0cpermissionId\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\">\n\x17GetOnePermissionRequest\x12#\n\rpermission_id\x18\x01 \x01(\rR\x0cpermissionId\"R\n\x18GetOnePermissionResponse\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\">\n\x17\x44\x65letePermissionRequest\x12#\n\rpermission_id\x18\x01 \x01(\rR\x0cpermissionId\"B\n\x18UpdatePermissionResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"B\n\x18\x44\x65letePermissionResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"B\n\x18\x43reatePermissionResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x8a\x01\n\x06Member\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x1b\n\tis_active\x18\x05 \x01(\x08R\x08isActive\"O\n\x13ProjectOrganization\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\"H\n\x0cOrganization\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\"^\n\x19\x43reateOrganizationRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05image\x18\x02 \x01(\tR\x05image\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\"\x19\n\x17ListOrganizationRequest\"D\n\x19GetOneOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"n\n\x19UpdateOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x04 \x01(\tR\x05image\"D\n\x19\x44\x65leteOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"\xcf\x01\n\x1aGetOneOrganizationResponse\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\x42\n\x08projects\x18\x04 \x03(\x0b\x32&.accounts.v1alpha1.ProjectOrganizationR\x08projects\x12\x33\n\x07menbers\x18\x05 \x03(\x0b\x32\x19.accounts.v1alpha1.MemberR\x07menbers\"a\n\x18ListOrganizationResponse\x12\x45\n\rorganizations\x18\x01 \x03(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\rorganizations\"v\n\x1a\x43reateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x30\n\x14role_id_organization\x18\x02 \x01(\tR\x12roleIdOrganization\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rror\"D\n\x1aUpdateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"D\n\x1a\x44\x65leteOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x17\n\x15GetListUserDexRequest\"R\n\x16GetListUserDexResponse\x12\x38\n\tusers_dex\x18\x01 \x03(\x0b\x32\x1b.accounts.v1alpha1.UsersDexR\x08usersDex\"i\n\x14GetOneUserDexRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x38\n\x04user\x18\x02 \x01(\x0b\x32$.accounts.v1alpha1.CreateUserRequestR\x04user\"\xd9\x03\n\x15GetOneUserDexResponse\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x05 \x01(\tR\x05\x65mail\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\x1d\n\ncreated_at\x18\x07 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x08 \x01(\tR\tupdatedAt\x12,\n\x05roles\x18\t \x03(\x0b\x32\x16.accounts.v1alpha1.RolR\x05roles\x12?\n\x0bpermissions\x18\n \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\"\n\ris_super_user\x18\x0b \x01(\x08R\x0bisSuperUser\x12\x45\n\rorganizations\x18\x0c \x03(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\rorganizations\x12\x10\n\x03msg\x18\r \x01(\tR\x03msg2\xed\x16\n\x0e\x41\x63\x63ountService\x12Y\n\nCreateUser\x12$.accounts.v1alpha1.CreateUserRequest\x1a%.accounts.v1alpha1.CreateUserResponse\x12S\n\x08ListUser\x12\".accounts.v1alpha1.ListUserRequest\x1a#.accounts.v1alpha1.ListUserResponse\x12Y\n\nGetOneUser\x12$.accounts.v1alpha1.GetOneUserRequest\x1a%.accounts.v1alpha1.GetOneUserResponse\x12Y\n\nUpdateUser\x12$.accounts.v1alpha1.UpdateUserRequest\x1a%.accounts.v1alpha1.UpdateUserResponse\x12Y\n\nDeleteUser\x12$.accounts.v1alpha1.DeleteUserRequest\x1a%.accounts.v1alpha1.DeleteUserResponse\x12q\n\x12ListUserPagination\x12,.accounts.v1alpha1.ListUserPaginationRequest\x1a-.accounts.v1alpha1.ListUserPaginationResponse\x12k\n\x10\x43reatePermission\x12*.accounts.v1alpha1.CreatePermissionRequest\x1a+.accounts.v1alpha1.CreatePermissionResponse\x12\x65\n\x0eListPermission\x12(.accounts.v1alpha1.ListPermissionRequest\x1a).accounts.v1alpha1.ListPermissionResponse\x12k\n\x10GetOnePermission\x12*.accounts.v1alpha1.GetOnePermissionRequest\x1a+.accounts.v1alpha1.GetOnePermissionResponse\x12k\n\x10UpdatePermission\x12*.accounts.v1alpha1.UpdatePermissionRequest\x1a+.accounts.v1alpha1.UpdatePermissionResponse\x12k\n\x10\x44\x65letePermission\x12*.accounts.v1alpha1.DeletePermissionRequest\x1a+.accounts.v1alpha1.DeletePermissionResponse\x12q\n\x12\x43reateOrganization\x12,.accounts.v1alpha1.CreateOrganizationRequest\x1a-.accounts.v1alpha1.CreateOrganizationResponse\x12k\n\x10ListOrganization\x12*.accounts.v1alpha1.ListOrganizationRequest\x1a+.accounts.v1alpha1.ListOrganizationResponse\x12q\n\x12GetOneOrganization\x12,.accounts.v1alpha1.GetOneOrganizationRequest\x1a-.accounts.v1alpha1.GetOneOrganizationResponse\x12q\n\x12UpdateOrganization\x12,.accounts.v1alpha1.UpdateOrganizationRequest\x1a-.accounts.v1alpha1.UpdateOrganizationResponse\x12q\n\x12\x44\x65leteOrganization\x12,.accounts.v1alpha1.DeleteOrganizationRequest\x1a-.accounts.v1alpha1.DeleteOrganizationResponse\x12Y\n\nCreateRole\x12$.accounts.v1alpha1.CreateRoleRequest\x1a%.accounts.v1alpha1.CreateRoleResponse\x12V\n\tListRoles\x12#.accounts.v1alpha1.ListRolesRequest\x1a$.accounts.v1alpha1.ListRolesResponse\x12Y\n\nUpdateRole\x12$.accounts.v1alpha1.UpdateRoleRequest\x1a%.accounts.v1alpha1.UpdateRoleResponse\x12Y\n\nGetOneRole\x12$.accounts.v1alpha1.GetOneRoleRequest\x1a%.accounts.v1alpha1.GetOneRoleResponse\x12Y\n\nDeleteRole\x12$.accounts.v1alpha1.DeleteRoleRequest\x1a%.accounts.v1alpha1.DeleteRoleResponse\x12\x62\n\rCreateProject\x12\'.accounts.v1alpha1.CreateProjectRequest\x1a(.accounts.v1alpha1.CreateProjectResponse\x12\x62\n\rGetOneProject\x12\'.accounts.v1alpha1.GetOneProjectRequest\x1a(.accounts.v1alpha1.GetOneProjectResponse\x12\x62\n\rUpdateProject\x12\'.accounts.v1alpha1.UpdateProjectRequest\x1a(.accounts.v1alpha1.UpdateProjectResponse\x12\x62\n\rDeleteProject\x12\'.accounts.v1alpha1.DeleteProjectRequest\x1a(.accounts.v1alpha1.DeleteProjectResponse\x12\\\n\x0bListProject\x12%.accounts.v1alpha1.ListProjectRequest\x1a&.accounts.v1alpha1.ListProjectResponse\x12\x65\n\x0eGetListUserDex\x12(.accounts.v1alpha1.GetListUserDexRequest\x1a).accounts.v1alpha1.GetListUserDexResponse\x12\x62\n\rGetOneUserDex\x12\'.accounts.v1alpha1.GetOneUserDexRequest\x1a(.accounts.v1alpha1.GetOneUserDexResponse\x12V\n\tCheckUser\x12#.accounts.v1alpha1.CheckUserRequest\x1a$.accounts.v1alpha1.CheckUserResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1b\x06proto3'
 )
 
 
@@ -921,8 +921,15 @@ _CREATEROLEREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='permission_ids', full_name='accounts.v1alpha1.CreateRoleRequest.permission_ids', index=4,
-      number=5, type=13, cpp_type=3, label=3,
+      name='type_permission', full_name='accounts.v1alpha1.CreateRoleRequest.type_permission', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='typePermission', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='permission_ids', full_name='accounts.v1alpha1.CreateRoleRequest.permission_ids', index=5,
+      number=6, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -940,7 +947,7 @@ _CREATEROLEREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2371,
-  serialized_end=2555,
+  serialized_end=2596,
 )
 
 
@@ -978,8 +985,8 @@ _UPDATEROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2557,
-  serialized_end=2655,
+  serialized_start=2598,
+  serialized_end=2696,
 )
 
 
@@ -1010,8 +1017,8 @@ _GETONEROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2657,
-  serialized_end=2699,
+  serialized_start=2698,
+  serialized_end=2740,
 )
 
 
@@ -1070,8 +1077,8 @@ _GETONEROLERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2702,
-  serialized_end=2895,
+  serialized_start=2743,
+  serialized_end=2936,
 )
 
 
@@ -1102,8 +1109,8 @@ _DELETEROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2897,
-  serialized_end=2939,
+  serialized_start=2938,
+  serialized_end=2980,
 )
 
 
@@ -1141,8 +1148,8 @@ _LISTROLESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2941,
-  serialized_end=3031,
+  serialized_start=2982,
+  serialized_end=3072,
 )
 
 
@@ -1173,8 +1180,8 @@ _LISTROLESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3033,
-  serialized_end=3098,
+  serialized_start=3074,
+  serialized_end=3139,
 )
 
 
@@ -1212,8 +1219,8 @@ _CREATEROLERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3100,
-  serialized_end=3160,
+  serialized_start=3141,
+  serialized_end=3201,
 )
 
 
@@ -1251,8 +1258,8 @@ _UPDATEROLERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3162,
-  serialized_end=3222,
+  serialized_start=3203,
+  serialized_end=3263,
 )
 
 
@@ -1290,8 +1297,8 @@ _DELETEROLERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3224,
-  serialized_end=3284,
+  serialized_start=3265,
+  serialized_end=3325,
 )
 
 
@@ -1371,8 +1378,8 @@ _PROJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3287,
-  serialized_end=3537,
+  serialized_start=3328,
+  serialized_end=3578,
 )
 
 
@@ -1412,6 +1419,13 @@ _CREATEPROJECTREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='accounts.v1alpha1.CreateProjectRequest.user_id', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='userId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1424,8 +1438,8 @@ _CREATEPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3540,
-  serialized_end=3679,
+  serialized_start=3581,
+  serialized_end=3745,
 )
 
 
@@ -1456,8 +1470,8 @@ _GETONEPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3681,
-  serialized_end=3719,
+  serialized_start=3747,
+  serialized_end=3785,
 )
 
 
@@ -1488,8 +1502,8 @@ _DELETEPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3721,
-  serialized_end=3759,
+  serialized_start=3787,
+  serialized_end=3825,
 )
 
 
@@ -1520,8 +1534,8 @@ _LISTPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3761,
-  serialized_end=3822,
+  serialized_start=3827,
+  serialized_end=3888,
 )
 
 
@@ -1559,8 +1573,8 @@ _UPDATEPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3824,
-  serialized_end=3929,
+  serialized_start=3890,
+  serialized_end=3995,
 )
 
 
@@ -1598,8 +1612,8 @@ _CREATEPROJECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3931,
-  serialized_end=3994,
+  serialized_start=3997,
+  serialized_end=4060,
 )
 
 
@@ -1637,8 +1651,8 @@ _UPDATEPROJECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3996,
-  serialized_end=4059,
+  serialized_start=4062,
+  serialized_end=4125,
 )
 
 
@@ -1676,8 +1690,8 @@ _DELETEPROJECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4061,
-  serialized_end=4124,
+  serialized_start=4127,
+  serialized_end=4190,
 )
 
 
@@ -1750,8 +1764,8 @@ _GETONEPROJECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4127,
-  serialized_end=4345,
+  serialized_start=4193,
+  serialized_end=4411,
 )
 
 
@@ -1782,8 +1796,8 @@ _LISTPROJECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4347,
-  serialized_end=4424,
+  serialized_start=4413,
+  serialized_end=4490,
 )
 
 
@@ -1821,8 +1835,8 @@ _LISTPROJECTPAGINATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4426,
-  serialized_end=4502,
+  serialized_start=4492,
+  serialized_end=4568,
 )
 
 
@@ -1860,8 +1874,8 @@ _LISTPROJECTPAGINATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4504,
-  serialized_end=4613,
+  serialized_start=4570,
+  serialized_end=4679,
 )
 
 
@@ -1906,8 +1920,8 @@ _PERMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4615,
-  serialized_end=4683,
+  serialized_start=4681,
+  serialized_end=4749,
 )
 
 
@@ -1938,8 +1952,8 @@ _LISTPERMISSIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4685,
-  serialized_end=4774,
+  serialized_start=4751,
+  serialized_end=4840,
 )
 
 
@@ -1977,8 +1991,8 @@ _ASSIGNPERMISSIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4776,
-  serialized_end=4863,
+  serialized_start=4842,
+  serialized_end=4929,
 )
 
 
@@ -2009,8 +2023,8 @@ _LISTPERMISSIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4865,
-  serialized_end=4908,
+  serialized_start=4931,
+  serialized_end=4974,
 )
 
 
@@ -2048,8 +2062,8 @@ _CREATEPERMISSIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4910,
-  serialized_end=4975,
+  serialized_start=4976,
+  serialized_end=5041,
 )
 
 
@@ -2094,8 +2108,8 @@ _UPDATEPERMISSIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4977,
-  serialized_end=5079,
+  serialized_start=5043,
+  serialized_end=5145,
 )
 
 
@@ -2126,8 +2140,8 @@ _GETONEPERMISSIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5081,
-  serialized_end=5143,
+  serialized_start=5147,
+  serialized_end=5209,
 )
 
 
@@ -2172,8 +2186,8 @@ _GETONEPERMISSIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5145,
-  serialized_end=5227,
+  serialized_start=5211,
+  serialized_end=5293,
 )
 
 
@@ -2204,8 +2218,8 @@ _DELETEPERMISSIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5229,
-  serialized_end=5291,
+  serialized_start=5295,
+  serialized_end=5357,
 )
 
 
@@ -2243,8 +2257,8 @@ _UPDATEPERMISSIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5293,
-  serialized_end=5359,
+  serialized_start=5359,
+  serialized_end=5425,
 )
 
 
@@ -2282,8 +2296,8 @@ _DELETEPERMISSIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5361,
-  serialized_end=5427,
+  serialized_start=5427,
+  serialized_end=5493,
 )
 
 
@@ -2321,8 +2335,8 @@ _CREATEPERMISSIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5429,
-  serialized_end=5495,
+  serialized_start=5495,
+  serialized_end=5561,
 )
 
 
@@ -2381,8 +2395,8 @@ _MEMBER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5498,
-  serialized_end=5636,
+  serialized_start=5564,
+  serialized_end=5702,
 )
 
 
@@ -2427,8 +2441,8 @@ _PROJECTORGANIZATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5638,
-  serialized_end=5717,
+  serialized_start=5704,
+  serialized_end=5783,
 )
 
 
@@ -2473,8 +2487,8 @@ _ORGANIZATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5719,
-  serialized_end=5791,
+  serialized_start=5785,
+  serialized_end=5857,
 )
 
 
@@ -2519,8 +2533,8 @@ _CREATEORGANIZATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5793,
-  serialized_end=5887,
+  serialized_start=5859,
+  serialized_end=5953,
 )
 
 
@@ -2544,8 +2558,8 @@ _LISTORGANIZATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5889,
-  serialized_end=5914,
+  serialized_start=5955,
+  serialized_end=5980,
 )
 
 
@@ -2576,8 +2590,8 @@ _GETONEORGANIZATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5916,
-  serialized_end=5984,
+  serialized_start=5982,
+  serialized_end=6050,
 )
 
 
@@ -2622,8 +2636,8 @@ _UPDATEORGANIZATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5986,
-  serialized_end=6096,
+  serialized_start=6052,
+  serialized_end=6162,
 )
 
 
@@ -2654,8 +2668,8 @@ _DELETEORGANIZATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6098,
-  serialized_end=6166,
+  serialized_start=6164,
+  serialized_end=6232,
 )
 
 
@@ -2714,8 +2728,8 @@ _GETONEORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6169,
-  serialized_end=6376,
+  serialized_start=6235,
+  serialized_end=6442,
 )
 
 
@@ -2746,8 +2760,8 @@ _LISTORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6378,
-  serialized_end=6475,
+  serialized_start=6444,
+  serialized_end=6541,
 )
 
 
@@ -2767,8 +2781,15 @@ _CREATEORGANIZATIONRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='msg', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='error', full_name='accounts.v1alpha1.CreateOrganizationResponse.error', index=1,
+      name='role_id_organization', full_name='accounts.v1alpha1.CreateOrganizationResponse.role_id_organization', index=1,
       number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='roleIdOrganization', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='error', full_name='accounts.v1alpha1.CreateOrganizationResponse.error', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -2785,8 +2806,8 @@ _CREATEORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6477,
-  serialized_end=6545,
+  serialized_start=6543,
+  serialized_end=6661,
 )
 
 
@@ -2824,8 +2845,8 @@ _UPDATEORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6547,
-  serialized_end=6615,
+  serialized_start=6663,
+  serialized_end=6731,
 )
 
 
@@ -2863,8 +2884,8 @@ _DELETEORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6617,
-  serialized_end=6685,
+  serialized_start=6733,
+  serialized_end=6801,
 )
 
 
@@ -2888,8 +2909,8 @@ _GETLISTUSERDEXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6687,
-  serialized_end=6710,
+  serialized_start=6803,
+  serialized_end=6826,
 )
 
 
@@ -2920,8 +2941,8 @@ _GETLISTUSERDEXRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6712,
-  serialized_end=6794,
+  serialized_start=6828,
+  serialized_end=6910,
 )
 
 
@@ -2940,6 +2961,13 @@ _GETONEUSERDEXREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='userId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user', full_name='accounts.v1alpha1.GetOneUserDexRequest.user', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='user', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2952,8 +2980,8 @@ _GETONEUSERDEXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6796,
-  serialized_end=6843,
+  serialized_start=6912,
+  serialized_end=7017,
 )
 
 
@@ -3042,6 +3070,20 @@ _GETONEUSERDEXRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='isSuperUser', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='organizations', full_name='accounts.v1alpha1.GetOneUserDexResponse.organizations', index=11,
+      number=12, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='organizations', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='msg', full_name='accounts.v1alpha1.GetOneUserDexResponse.msg', index=12,
+      number=13, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='msg', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -3054,8 +3096,8 @@ _GETONEUSERDEXRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6846,
-  serialized_end=7230,
+  serialized_start=7020,
+  serialized_end=7493,
 )
 
 _UPDATEUSERREQUEST.fields_by_name['auth'].message_type = _CREATEUSERREQUEST
@@ -3077,8 +3119,10 @@ _GETONEORGANIZATIONRESPONSE.fields_by_name['projects'].message_type = _PROJECTOR
 _GETONEORGANIZATIONRESPONSE.fields_by_name['menbers'].message_type = _MEMBER
 _LISTORGANIZATIONRESPONSE.fields_by_name['organizations'].message_type = _ORGANIZATION
 _GETLISTUSERDEXRESPONSE.fields_by_name['users_dex'].message_type = _USERSDEX
+_GETONEUSERDEXREQUEST.fields_by_name['user'].message_type = _CREATEUSERREQUEST
 _GETONEUSERDEXRESPONSE.fields_by_name['roles'].message_type = _ROL
 _GETONEUSERDEXRESPONSE.fields_by_name['permissions'].message_type = _PERMISSION
+_GETONEUSERDEXRESPONSE.fields_by_name['organizations'].message_type = _ORGANIZATION
 DESCRIPTOR.message_types_by_name['CheckUserRequest'] = _CHECKUSERREQUEST
 DESCRIPTOR.message_types_by_name['CheckUserResponse'] = _CHECKUSERRESPONSE
 DESCRIPTOR.message_types_by_name['UsersDex'] = _USERSDEX
@@ -3643,8 +3687,8 @@ _ACCOUNTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=7233,
-  serialized_end=10158,
+  serialized_start=7496,
+  serialized_end=10421,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateUser',

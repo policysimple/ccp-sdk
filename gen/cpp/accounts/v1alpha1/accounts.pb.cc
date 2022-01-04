@@ -277,6 +277,7 @@ constexpr CreateRoleRequest::CreateRoleRequest(
   , _permission_ids_cached_byte_size_(0)
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , type_permission_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , project_id_(0u)
   , organization_id_(0u){}
 struct CreateRoleRequestDefaultTypeInternal {
@@ -429,6 +430,7 @@ constexpr CreateProjectRequest::CreateProjectRequest(
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , organization_id_(0u){}
 struct CreateProjectRequestDefaultTypeInternal {
   constexpr CreateProjectRequestDefaultTypeInternal()
@@ -876,6 +878,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListOrganizationResponseDefault
 constexpr CreateOrganizationResponse::CreateOrganizationResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , role_id_organization_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct CreateOrganizationResponseDefaultTypeInternal {
   constexpr CreateOrganizationResponseDefaultTypeInternal()
@@ -937,7 +940,8 @@ struct GetListUserDexResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetListUserDexResponseDefaultTypeInternal _GetListUserDexResponse_default_instance_;
 constexpr GetOneUserDexRequest::GetOneUserDexRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_(nullptr){}
 struct GetOneUserDexRequestDefaultTypeInternal {
   constexpr GetOneUserDexRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -951,12 +955,14 @@ constexpr GetOneUserDexResponse::GetOneUserDexResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : roles_()
   , permissions_()
+  , organizations_()
   , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , first_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , last_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , id_(0u)
   , is_active_(false)
   , is_super_user_(false){}
@@ -1132,6 +1138,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2faccounts
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::CreateRoleRequest, description_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::CreateRoleRequest, project_id_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::CreateRoleRequest, organization_id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::CreateRoleRequest, type_permission_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::CreateRoleRequest, permission_ids_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UpdateRoleRequest, _internal_metadata_),
@@ -1218,6 +1225,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2faccounts
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::CreateProjectRequest, description_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::CreateProjectRequest, image_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::CreateProjectRequest, organization_id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::CreateProjectRequest, user_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::GetOneProjectRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1460,6 +1468,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2faccounts
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::CreateOrganizationResponse, msg_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::CreateOrganizationResponse, role_id_organization_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::CreateOrganizationResponse, error_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UpdateOrganizationResponse, _internal_metadata_),
@@ -1492,6 +1501,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2faccounts
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::GetOneUserDexRequest, user_id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::GetOneUserDexRequest, user_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::GetOneUserDexResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1508,6 +1518,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2faccounts
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::GetOneUserDexResponse, roles_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::GetOneUserDexResponse, permissions_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::GetOneUserDexResponse, is_super_user_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::GetOneUserDexResponse, organizations_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::GetOneUserDexResponse, msg_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::accounts::v1alpha1::CheckUserRequest)},
@@ -1528,57 +1540,57 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 130, -1, sizeof(::accounts::v1alpha1::ListUserPaginationResponse)},
   { 137, -1, sizeof(::accounts::v1alpha1::Rol)},
   { 147, -1, sizeof(::accounts::v1alpha1::CreateRoleRequest)},
-  { 157, -1, sizeof(::accounts::v1alpha1::UpdateRoleRequest)},
-  { 164, -1, sizeof(::accounts::v1alpha1::GetOneRoleRequest)},
-  { 170, -1, sizeof(::accounts::v1alpha1::GetOneRoleResponse)},
-  { 180, -1, sizeof(::accounts::v1alpha1::DeleteRoleRequest)},
-  { 186, -1, sizeof(::accounts::v1alpha1::ListRolesRequest)},
-  { 193, -1, sizeof(::accounts::v1alpha1::ListRolesResponse)},
-  { 199, -1, sizeof(::accounts::v1alpha1::CreateRoleResponse)},
-  { 206, -1, sizeof(::accounts::v1alpha1::UpdateRoleResponse)},
-  { 213, -1, sizeof(::accounts::v1alpha1::DeleteRoleResponse)},
-  { 220, -1, sizeof(::accounts::v1alpha1::Project)},
-  { 233, -1, sizeof(::accounts::v1alpha1::CreateProjectRequest)},
-  { 242, -1, sizeof(::accounts::v1alpha1::GetOneProjectRequest)},
-  { 248, -1, sizeof(::accounts::v1alpha1::DeleteProjectRequest)},
-  { 254, -1, sizeof(::accounts::v1alpha1::ListProjectRequest)},
-  { 260, -1, sizeof(::accounts::v1alpha1::UpdateProjectRequest)},
-  { 267, -1, sizeof(::accounts::v1alpha1::CreateProjectResponse)},
-  { 274, -1, sizeof(::accounts::v1alpha1::UpdateProjectResponse)},
-  { 281, -1, sizeof(::accounts::v1alpha1::DeleteProjectResponse)},
-  { 288, -1, sizeof(::accounts::v1alpha1::GetOneProjectResponse)},
-  { 300, -1, sizeof(::accounts::v1alpha1::ListProjectResponse)},
-  { 306, -1, sizeof(::accounts::v1alpha1::ListProjectPaginationRequest)},
-  { 313, -1, sizeof(::accounts::v1alpha1::ListProjectPaginationResponse)},
-  { 320, -1, sizeof(::accounts::v1alpha1::Permission)},
-  { 328, -1, sizeof(::accounts::v1alpha1::ListPermissionResponse)},
-  { 334, -1, sizeof(::accounts::v1alpha1::AssignPermissionRequest)},
-  { 341, -1, sizeof(::accounts::v1alpha1::ListPermissionRequest)},
-  { 347, -1, sizeof(::accounts::v1alpha1::CreatePermissionRequest)},
-  { 354, -1, sizeof(::accounts::v1alpha1::UpdatePermissionRequest)},
-  { 362, -1, sizeof(::accounts::v1alpha1::GetOnePermissionRequest)},
-  { 368, -1, sizeof(::accounts::v1alpha1::GetOnePermissionResponse)},
-  { 376, -1, sizeof(::accounts::v1alpha1::DeletePermissionRequest)},
-  { 382, -1, sizeof(::accounts::v1alpha1::UpdatePermissionResponse)},
-  { 389, -1, sizeof(::accounts::v1alpha1::DeletePermissionResponse)},
-  { 396, -1, sizeof(::accounts::v1alpha1::CreatePermissionResponse)},
-  { 403, -1, sizeof(::accounts::v1alpha1::Member)},
-  { 413, -1, sizeof(::accounts::v1alpha1::ProjectOrganization)},
-  { 421, -1, sizeof(::accounts::v1alpha1::Organization)},
-  { 429, -1, sizeof(::accounts::v1alpha1::CreateOrganizationRequest)},
-  { 437, -1, sizeof(::accounts::v1alpha1::ListOrganizationRequest)},
-  { 442, -1, sizeof(::accounts::v1alpha1::GetOneOrganizationRequest)},
-  { 448, -1, sizeof(::accounts::v1alpha1::UpdateOrganizationRequest)},
-  { 456, -1, sizeof(::accounts::v1alpha1::DeleteOrganizationRequest)},
-  { 462, -1, sizeof(::accounts::v1alpha1::GetOneOrganizationResponse)},
-  { 472, -1, sizeof(::accounts::v1alpha1::ListOrganizationResponse)},
-  { 478, -1, sizeof(::accounts::v1alpha1::CreateOrganizationResponse)},
-  { 485, -1, sizeof(::accounts::v1alpha1::UpdateOrganizationResponse)},
-  { 492, -1, sizeof(::accounts::v1alpha1::DeleteOrganizationResponse)},
-  { 499, -1, sizeof(::accounts::v1alpha1::GetListUserDexRequest)},
-  { 504, -1, sizeof(::accounts::v1alpha1::GetListUserDexResponse)},
-  { 510, -1, sizeof(::accounts::v1alpha1::GetOneUserDexRequest)},
-  { 516, -1, sizeof(::accounts::v1alpha1::GetOneUserDexResponse)},
+  { 158, -1, sizeof(::accounts::v1alpha1::UpdateRoleRequest)},
+  { 165, -1, sizeof(::accounts::v1alpha1::GetOneRoleRequest)},
+  { 171, -1, sizeof(::accounts::v1alpha1::GetOneRoleResponse)},
+  { 181, -1, sizeof(::accounts::v1alpha1::DeleteRoleRequest)},
+  { 187, -1, sizeof(::accounts::v1alpha1::ListRolesRequest)},
+  { 194, -1, sizeof(::accounts::v1alpha1::ListRolesResponse)},
+  { 200, -1, sizeof(::accounts::v1alpha1::CreateRoleResponse)},
+  { 207, -1, sizeof(::accounts::v1alpha1::UpdateRoleResponse)},
+  { 214, -1, sizeof(::accounts::v1alpha1::DeleteRoleResponse)},
+  { 221, -1, sizeof(::accounts::v1alpha1::Project)},
+  { 234, -1, sizeof(::accounts::v1alpha1::CreateProjectRequest)},
+  { 244, -1, sizeof(::accounts::v1alpha1::GetOneProjectRequest)},
+  { 250, -1, sizeof(::accounts::v1alpha1::DeleteProjectRequest)},
+  { 256, -1, sizeof(::accounts::v1alpha1::ListProjectRequest)},
+  { 262, -1, sizeof(::accounts::v1alpha1::UpdateProjectRequest)},
+  { 269, -1, sizeof(::accounts::v1alpha1::CreateProjectResponse)},
+  { 276, -1, sizeof(::accounts::v1alpha1::UpdateProjectResponse)},
+  { 283, -1, sizeof(::accounts::v1alpha1::DeleteProjectResponse)},
+  { 290, -1, sizeof(::accounts::v1alpha1::GetOneProjectResponse)},
+  { 302, -1, sizeof(::accounts::v1alpha1::ListProjectResponse)},
+  { 308, -1, sizeof(::accounts::v1alpha1::ListProjectPaginationRequest)},
+  { 315, -1, sizeof(::accounts::v1alpha1::ListProjectPaginationResponse)},
+  { 322, -1, sizeof(::accounts::v1alpha1::Permission)},
+  { 330, -1, sizeof(::accounts::v1alpha1::ListPermissionResponse)},
+  { 336, -1, sizeof(::accounts::v1alpha1::AssignPermissionRequest)},
+  { 343, -1, sizeof(::accounts::v1alpha1::ListPermissionRequest)},
+  { 349, -1, sizeof(::accounts::v1alpha1::CreatePermissionRequest)},
+  { 356, -1, sizeof(::accounts::v1alpha1::UpdatePermissionRequest)},
+  { 364, -1, sizeof(::accounts::v1alpha1::GetOnePermissionRequest)},
+  { 370, -1, sizeof(::accounts::v1alpha1::GetOnePermissionResponse)},
+  { 378, -1, sizeof(::accounts::v1alpha1::DeletePermissionRequest)},
+  { 384, -1, sizeof(::accounts::v1alpha1::UpdatePermissionResponse)},
+  { 391, -1, sizeof(::accounts::v1alpha1::DeletePermissionResponse)},
+  { 398, -1, sizeof(::accounts::v1alpha1::CreatePermissionResponse)},
+  { 405, -1, sizeof(::accounts::v1alpha1::Member)},
+  { 415, -1, sizeof(::accounts::v1alpha1::ProjectOrganization)},
+  { 423, -1, sizeof(::accounts::v1alpha1::Organization)},
+  { 431, -1, sizeof(::accounts::v1alpha1::CreateOrganizationRequest)},
+  { 439, -1, sizeof(::accounts::v1alpha1::ListOrganizationRequest)},
+  { 444, -1, sizeof(::accounts::v1alpha1::GetOneOrganizationRequest)},
+  { 450, -1, sizeof(::accounts::v1alpha1::UpdateOrganizationRequest)},
+  { 458, -1, sizeof(::accounts::v1alpha1::DeleteOrganizationRequest)},
+  { 464, -1, sizeof(::accounts::v1alpha1::GetOneOrganizationResponse)},
+  { 474, -1, sizeof(::accounts::v1alpha1::ListOrganizationResponse)},
+  { 480, -1, sizeof(::accounts::v1alpha1::CreateOrganizationResponse)},
+  { 488, -1, sizeof(::accounts::v1alpha1::UpdateOrganizationResponse)},
+  { 495, -1, sizeof(::accounts::v1alpha1::DeleteOrganizationResponse)},
+  { 502, -1, sizeof(::accounts::v1alpha1::GetListUserDexRequest)},
+  { 507, -1, sizeof(::accounts::v1alpha1::GetListUserDexResponse)},
+  { 513, -1, sizeof(::accounts::v1alpha1::GetOneUserDexRequest)},
+  { 520, -1, sizeof(::accounts::v1alpha1::GetOneUserDexResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1713,207 +1725,214 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto[] PR
   "ct_id\030\003 \001(\rR\tprojectId\022\'\n\017organization_i"
   "d\030\004 \001(\rR\016organizationId\022\?\n\013permissions\030\005"
   " \003(\0132\035.accounts.v1alpha1.PermissionR\013per"
-  "missions\"\270\001\n\021CreateRoleRequest\022\022\n\004name\030\001"
+  "missions\"\341\001\n\021CreateRoleRequest\022\022\n\004name\030\001"
   " \001(\tR\004name\022 \n\013description\030\002 \001(\tR\013descrip"
   "tion\022\035\n\nproject_id\030\003 \001(\rR\tprojectId\022\'\n\017o"
-  "rganization_id\030\004 \001(\rR\016organizationId\022%\n\016"
-  "permission_ids\030\005 \003(\rR\rpermissionIds\"b\n\021U"
-  "pdateRoleRequest\022\025\n\006rol_id\030\001 \001(\rR\005rolId\022"
-  "6\n\003rol\030\002 \001(\0132$.accounts.v1alpha1.CreateR"
-  "oleRequestR\003rol\"*\n\021GetOneRoleRequest\022\025\n\006"
-  "rol_id\030\001 \001(\rR\005rolId\"\301\001\n\022GetOneRoleRespon"
-  "se\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\'"
-  "\n\017organization_id\030\003 \001(\rR\016organizationId\022"
-  "\035\n\nproject_id\030\004 \001(\rR\tprojectId\022\?\n\013permis"
-  "sions\030\005 \003(\0132\035.accounts.v1alpha1.Permissi"
-  "onR\013permissions\"*\n\021DeleteRoleRequest\022\025\n\006"
-  "rol_id\030\001 \001(\rR\005rolId\"Z\n\020ListRolesRequest\022"
-  "\035\n\nproject_id\030\001 \001(\rR\tprojectId\022\'\n\017organi"
-  "zation_id\030\002 \001(\rR\016organizationId\"A\n\021ListR"
-  "olesResponse\022,\n\005roles\030\001 \003(\0132\026.accounts.v"
-  "1alpha1.RolR\005roles\"<\n\022CreateRoleResponse"
-  "\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error"
-  "\"<\n\022UpdateRoleResponse\022\020\n\003msg\030\001 \001(\tR\003msg"
-  "\022\024\n\005error\030\002 \001(\tR\005error\"<\n\022DeleteRoleResp"
-  "onse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005e"
-  "rror\"\372\001\n\007Project\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name"
+  "rganization_id\030\004 \001(\rR\016organizationId\022\'\n\017"
+  "type_permission\030\005 \001(\tR\016typePermission\022%\n"
+  "\016permission_ids\030\006 \003(\rR\rpermissionIds\"b\n\021"
+  "UpdateRoleRequest\022\025\n\006rol_id\030\001 \001(\rR\005rolId"
+  "\0226\n\003rol\030\002 \001(\0132$.accounts.v1alpha1.Create"
+  "RoleRequestR\003rol\"*\n\021GetOneRoleRequest\022\025\n"
+  "\006rol_id\030\001 \001(\rR\005rolId\"\301\001\n\022GetOneRoleRespo"
+  "nse\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022"
+  "\'\n\017organization_id\030\003 \001(\rR\016organizationId"
+  "\022\035\n\nproject_id\030\004 \001(\rR\tprojectId\022\?\n\013permi"
+  "ssions\030\005 \003(\0132\035.accounts.v1alpha1.Permiss"
+  "ionR\013permissions\"*\n\021DeleteRoleRequest\022\025\n"
+  "\006rol_id\030\001 \001(\rR\005rolId\"Z\n\020ListRolesRequest"
+  "\022\035\n\nproject_id\030\001 \001(\rR\tprojectId\022\'\n\017organ"
+  "ization_id\030\002 \001(\rR\016organizationId\"A\n\021List"
+  "RolesResponse\022,\n\005roles\030\001 \003(\0132\026.accounts."
+  "v1alpha1.RolR\005roles\"<\n\022CreateRoleRespons"
+  "e\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005erro"
+  "r\"<\n\022UpdateRoleResponse\022\020\n\003msg\030\001 \001(\tR\003ms"
+  "g\022\024\n\005error\030\002 \001(\tR\005error\"<\n\022DeleteRoleRes"
+  "ponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005"
+  "error\"\372\001\n\007Project\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004nam"
+  "e\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017o"
+  "rganization_id\030\004 \001(\rR\016organizationId\022 \n\013"
+  "description\030\005 \001(\tR\013description\022\035\n\ncreate"
+  "d_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001("
+  "\tR\tupdatedAt\022,\n\005roles\030\010 \003(\0132\026.accounts.v"
+  "1alpha1.RolR\005roles\"\244\001\n\024CreateProjectRequ"
+  "est\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013description\030\002"
+  " \001(\tR\013description\022\024\n\005image\030\003 \001(\tR\005image\022"
+  "\'\n\017organization_id\030\004 \001(\rR\016organizationId"
+  "\022\027\n\007user_id\030\005 \001(\tR\006userId\"&\n\024GetOneProje"
+  "ctRequest\022\016\n\002id\030\001 \001(\005R\002id\"&\n\024DeleteProje"
+  "ctRequest\022\016\n\002id\030\001 \001(\005R\002id\"=\n\022ListProject"
+  "Request\022\'\n\017organization_id\030\001 \001(\rR\016organi"
+  "zationId\"i\n\024UpdateProjectRequest\022\016\n\002id\030\001"
+  " \001(\005R\002id\022A\n\007project\030\002 \001(\0132\'.accounts.v1a"
+  "lpha1.CreateProjectRequestR\007project\"\?\n\025C"
+  "reateProjectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024"
+  "\n\005error\030\002 \001(\tR\005error\"\?\n\025UpdateProjectRes"
+  "ponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005"
+  "error\"\?\n\025DeleteProjectResponse\022\020\n\003msg\030\001 "
+  "\001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\332\001\n\025GetOn"
+  "eProjectResponse\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name"
   "\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017or"
   "ganization_id\030\004 \001(\rR\016organizationId\022 \n\013d"
   "escription\030\005 \001(\tR\013description\022\035\n\ncreated"
   "_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\t"
-  "R\tupdatedAt\022,\n\005roles\030\010 \003(\0132\026.accounts.v1"
-  "alpha1.RolR\005roles\"\213\001\n\024CreateProjectReque"
-  "st\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013description\030\002 "
-  "\001(\tR\013description\022\024\n\005image\030\003 \001(\tR\005image\022\'"
-  "\n\017organization_id\030\004 \001(\rR\016organizationId\""
-  "&\n\024GetOneProjectRequest\022\016\n\002id\030\001 \001(\005R\002id\""
-  "&\n\024DeleteProjectRequest\022\016\n\002id\030\001 \001(\005R\002id\""
-  "=\n\022ListProjectRequest\022\'\n\017organization_id"
-  "\030\001 \001(\rR\016organizationId\"i\n\024UpdateProjectR"
-  "equest\022\016\n\002id\030\001 \001(\005R\002id\022A\n\007project\030\002 \001(\0132"
-  "\'.accounts.v1alpha1.CreateProjectRequest"
-  "R\007project\"\?\n\025CreateProjectResponse\022\020\n\003ms"
-  "g\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\?\n\025Up"
-  "dateProjectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n"
-  "\005error\030\002 \001(\tR\005error\"\?\n\025DeleteProjectResp"
-  "onse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005e"
-  "rror\"\332\001\n\025GetOneProjectResponse\022\016\n\002id\030\001 \001"
-  "(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001("
-  "\tR\005image\022\'\n\017organization_id\030\004 \001(\rR\016organ"
-  "izationId\022 \n\013description\030\005 \001(\tR\013descript"
-  "ion\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nup"
-  "dated_at\030\007 \001(\tR\tupdatedAt\"M\n\023ListProject"
-  "Response\0226\n\010projects\030\001 \003(\0132\032.accounts.v1"
-  "alpha1.ProjectR\010projects\"L\n\034ListProjectP"
-  "aginationRequest\022\026\n\006offset\030\001 \001(\005R\006offset"
-  "\022\024\n\005limit\030\002 \001(\005R\005limit\"m\n\035ListProjectPag"
-  "inationResponse\0226\n\010projects\030\001 \003(\0132\032.acco"
-  "unts.v1alpha1.ProjectR\010projects\022\024\n\005count"
-  "\030\002 \001(\003R\005count\"D\n\nPermission\022\016\n\002id\030\001 \001(\rR"
-  "\002id\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004type\030\003 \001(\tR\004t"
-  "ype\"Y\n\026ListPermissionResponse\022\?\n\013permiss"
-  "ions\030\001 \003(\0132\035.accounts.v1alpha1.Permissio"
-  "nR\013permissions\"W\n\027AssignPermissionReques"
-  "t\022\027\n\007user_id\030\001 \001(\rR\006userId\022#\n\rpermission"
-  "_id\030\002 \001(\rR\014permissionId\"+\n\025ListPermissio"
-  "nRequest\022\022\n\004type\030\001 \001(\tR\004type\"A\n\027CreatePe"
-  "rmissionRequest\022\022\n\004name\030\001 \001(\tR\004name\022\022\n\004t"
-  "ype\030\002 \001(\tR\004type\"f\n\027UpdatePermissionReque"
-  "st\022#\n\rpermission_id\030\001 \001(\rR\014permissionId\022"
-  "\022\n\004name\030\002 \001(\tR\004name\022\022\n\004type\030\003 \001(\tR\004type\""
-  ">\n\027GetOnePermissionRequest\022#\n\rpermission"
-  "_id\030\001 \001(\rR\014permissionId\"R\n\030GetOnePermiss"
-  "ionResponse\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001("
-  "\tR\004name\022\022\n\004type\030\003 \001(\tR\004type\">\n\027DeletePer"
-  "missionRequest\022#\n\rpermission_id\030\001 \001(\rR\014p"
-  "ermissionId\"B\n\030UpdatePermissionResponse\022"
-  "\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\""
-  "B\n\030DeletePermissionResponse\022\020\n\003msg\030\001 \001(\t"
-  "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"B\n\030CreatePer"
-  "missionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005err"
-  "or\030\002 \001(\tR\005error\"\212\001\n\006Member\022\016\n\002id\030\001 \001(\rR\002"
-  "id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_nam"
-  "e\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010l"
-  "astName\022\033\n\tis_active\030\005 \001(\010R\010isActive\"O\n\023"
-  "ProjectOrganization\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004n"
-  "ame\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\"H\n"
-  "\014Organization\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 "
-  "\001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\"^\n\031Creat"
-  "eOrganizationRequest\022\022\n\004name\030\001 \001(\tR\004name"
-  "\022\024\n\005image\030\002 \001(\tR\005image\022\027\n\007user_id\030\003 \001(\tR"
-  "\006userId\"\031\n\027ListOrganizationRequest\"D\n\031Ge"
-  "tOneOrganizationRequest\022\'\n\017organization_"
-  "id\030\001 \001(\rR\016organizationId\"n\n\031UpdateOrgani"
-  "zationRequest\022\'\n\017organization_id\030\001 \001(\rR\016"
-  "organizationId\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005im"
-  "age\030\004 \001(\tR\005image\"D\n\031DeleteOrganizationRe"
-  "quest\022\'\n\017organization_id\030\001 \001(\rR\016organiza"
-  "tionId\"\317\001\n\032GetOneOrganizationResponse\022\016\n"
-  "\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005ima"
-  "ge\030\003 \001(\tR\005image\022B\n\010projects\030\004 \003(\0132&.acco"
-  "unts.v1alpha1.ProjectOrganizationR\010proje"
-  "cts\0223\n\007menbers\030\005 \003(\0132\031.accounts.v1alpha1"
-  ".MemberR\007menbers\"a\n\030ListOrganizationResp"
-  "onse\022E\n\rorganizations\030\001 \003(\0132\037.accounts.v"
-  "1alpha1.OrganizationR\rorganizations\"D\n\032C"
-  "reateOrganizationResponse\022\020\n\003msg\030\001 \001(\tR\003"
-  "msg\022\024\n\005error\030\002 \001(\tR\005error\"D\n\032UpdateOrgan"
-  "izationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005err"
-  "or\030\002 \001(\tR\005error\"D\n\032DeleteOrganizationRes"
-  "ponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005"
-  "error\"\027\n\025GetListUserDexRequest\"R\n\026GetLis"
-  "tUserDexResponse\0228\n\tusers_dex\030\001 \003(\0132\033.ac"
-  "counts.v1alpha1.UsersDexR\010usersDex\"/\n\024Ge"
-  "tOneUserDexRequest\022\027\n\007user_id\030\001 \001(\tR\006use"
-  "rId\"\200\003\n\025GetOneUserDexResponse\022\016\n\002id\030\001 \001("
-  "\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_"
-  "name\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\t"
-  "R\010lastName\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis_a"
-  "ctive\030\006 \001(\010R\010isActive\022\035\n\ncreated_at\030\007 \001("
-  "\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdate"
-  "dAt\022,\n\005roles\030\t \003(\0132\026.accounts.v1alpha1.R"
-  "olR\005roles\022\?\n\013permissions\030\n \003(\0132\035.account"
-  "s.v1alpha1.PermissionR\013permissions\022\"\n\ris"
-  "_super_user\030\013 \001(\010R\013isSuperUser2\355\026\n\016Accou"
-  "ntService\022Y\n\nCreateUser\022$.accounts.v1alp"
-  "ha1.CreateUserRequest\032%.accounts.v1alpha"
-  "1.CreateUserResponse\022S\n\010ListUser\022\".accou"
-  "nts.v1alpha1.ListUserRequest\032#.accounts."
-  "v1alpha1.ListUserResponse\022Y\n\nGetOneUser\022"
-  "$.accounts.v1alpha1.GetOneUserRequest\032%."
-  "accounts.v1alpha1.GetOneUserResponse\022Y\n\n"
-  "UpdateUser\022$.accounts.v1alpha1.UpdateUse"
-  "rRequest\032%.accounts.v1alpha1.UpdateUserR"
-  "esponse\022Y\n\nDeleteUser\022$.accounts.v1alpha"
-  "1.DeleteUserRequest\032%.accounts.v1alpha1."
-  "DeleteUserResponse\022q\n\022ListUserPagination"
-  "\022,.accounts.v1alpha1.ListUserPaginationR"
-  "equest\032-.accounts.v1alpha1.ListUserPagin"
-  "ationResponse\022k\n\020CreatePermission\022*.acco"
-  "unts.v1alpha1.CreatePermissionRequest\032+."
-  "accounts.v1alpha1.CreatePermissionRespon"
-  "se\022e\n\016ListPermission\022(.accounts.v1alpha1"
-  ".ListPermissionRequest\032).accounts.v1alph"
-  "a1.ListPermissionResponse\022k\n\020GetOnePermi"
-  "ssion\022*.accounts.v1alpha1.GetOnePermissi"
-  "onRequest\032+.accounts.v1alpha1.GetOnePerm"
-  "issionResponse\022k\n\020UpdatePermission\022*.acc"
-  "ounts.v1alpha1.UpdatePermissionRequest\032+"
-  ".accounts.v1alpha1.UpdatePermissionRespo"
-  "nse\022k\n\020DeletePermission\022*.accounts.v1alp"
-  "ha1.DeletePermissionRequest\032+.accounts.v"
-  "1alpha1.DeletePermissionResponse\022q\n\022Crea"
-  "teOrganization\022,.accounts.v1alpha1.Creat"
-  "eOrganizationRequest\032-.accounts.v1alpha1"
-  ".CreateOrganizationResponse\022k\n\020ListOrgan"
-  "ization\022*.accounts.v1alpha1.ListOrganiza"
-  "tionRequest\032+.accounts.v1alpha1.ListOrga"
-  "nizationResponse\022q\n\022GetOneOrganization\022,"
-  ".accounts.v1alpha1.GetOneOrganizationReq"
-  "uest\032-.accounts.v1alpha1.GetOneOrganizat"
-  "ionResponse\022q\n\022UpdateOrganization\022,.acco"
-  "unts.v1alpha1.UpdateOrganizationRequest\032"
-  "-.accounts.v1alpha1.UpdateOrganizationRe"
-  "sponse\022q\n\022DeleteOrganization\022,.accounts."
-  "v1alpha1.DeleteOrganizationRequest\032-.acc"
-  "ounts.v1alpha1.DeleteOrganizationRespons"
-  "e\022Y\n\nCreateRole\022$.accounts.v1alpha1.Crea"
-  "teRoleRequest\032%.accounts.v1alpha1.Create"
-  "RoleResponse\022V\n\tListRoles\022#.accounts.v1a"
-  "lpha1.ListRolesRequest\032$.accounts.v1alph"
-  "a1.ListRolesResponse\022Y\n\nUpdateRole\022$.acc"
-  "ounts.v1alpha1.UpdateRoleRequest\032%.accou"
-  "nts.v1alpha1.UpdateRoleResponse\022Y\n\nGetOn"
-  "eRole\022$.accounts.v1alpha1.GetOneRoleRequ"
-  "est\032%.accounts.v1alpha1.GetOneRoleRespon"
-  "se\022Y\n\nDeleteRole\022$.accounts.v1alpha1.Del"
-  "eteRoleRequest\032%.accounts.v1alpha1.Delet"
-  "eRoleResponse\022b\n\rCreateProject\022\'.account"
-  "s.v1alpha1.CreateProjectRequest\032(.accoun"
-  "ts.v1alpha1.CreateProjectResponse\022b\n\rGet"
-  "OneProject\022\'.accounts.v1alpha1.GetOnePro"
-  "jectRequest\032(.accounts.v1alpha1.GetOnePr"
-  "ojectResponse\022b\n\rUpdateProject\022\'.account"
-  "s.v1alpha1.UpdateProjectRequest\032(.accoun"
-  "ts.v1alpha1.UpdateProjectResponse\022b\n\rDel"
-  "eteProject\022\'.accounts.v1alpha1.DeletePro"
-  "jectRequest\032(.accounts.v1alpha1.DeletePr"
-  "ojectResponse\022\\\n\013ListProject\022%.accounts."
-  "v1alpha1.ListProjectRequest\032&.accounts.v"
-  "1alpha1.ListProjectResponse\022e\n\016GetListUs"
-  "erDex\022(.accounts.v1alpha1.GetListUserDex"
-  "Request\032).accounts.v1alpha1.GetListUserD"
-  "exResponse\022b\n\rGetOneUserDex\022\'.accounts.v"
-  "1alpha1.GetOneUserDexRequest\032(.accounts."
-  "v1alpha1.GetOneUserDexResponse\022V\n\tCheckU"
-  "ser\022#.accounts.v1alpha1.CheckUserRequest"
-  "\032$.accounts.v1alpha1.CheckUserResponseB4"
-  "Z2github.com/cuemby/ccp-sdk/gen/go/accou"
-  "nts/v1alpha1b\006proto3"
+  "R\tupdatedAt\"M\n\023ListProjectResponse\0226\n\010pr"
+  "ojects\030\001 \003(\0132\032.accounts.v1alpha1.Project"
+  "R\010projects\"L\n\034ListProjectPaginationReque"
+  "st\022\026\n\006offset\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001("
+  "\005R\005limit\"m\n\035ListProjectPaginationRespons"
+  "e\0226\n\010projects\030\001 \003(\0132\032.accounts.v1alpha1."
+  "ProjectR\010projects\022\024\n\005count\030\002 \001(\003R\005count\""
+  "D\n\nPermission\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 "
+  "\001(\tR\004name\022\022\n\004type\030\003 \001(\tR\004type\"Y\n\026ListPer"
+  "missionResponse\022\?\n\013permissions\030\001 \003(\0132\035.a"
+  "ccounts.v1alpha1.PermissionR\013permissions"
+  "\"W\n\027AssignPermissionRequest\022\027\n\007user_id\030\001"
+  " \001(\rR\006userId\022#\n\rpermission_id\030\002 \001(\rR\014per"
+  "missionId\"+\n\025ListPermissionRequest\022\022\n\004ty"
+  "pe\030\001 \001(\tR\004type\"A\n\027CreatePermissionReques"
+  "t\022\022\n\004name\030\001 \001(\tR\004name\022\022\n\004type\030\002 \001(\tR\004typ"
+  "e\"f\n\027UpdatePermissionRequest\022#\n\rpermissi"
+  "on_id\030\001 \001(\rR\014permissionId\022\022\n\004name\030\002 \001(\tR"
+  "\004name\022\022\n\004type\030\003 \001(\tR\004type\">\n\027GetOnePermi"
+  "ssionRequest\022#\n\rpermission_id\030\001 \001(\rR\014per"
+  "missionId\"R\n\030GetOnePermissionResponse\022\016\n"
+  "\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004typ"
+  "e\030\003 \001(\tR\004type\">\n\027DeletePermissionRequest"
+  "\022#\n\rpermission_id\030\001 \001(\rR\014permissionId\"B\n"
+  "\030UpdatePermissionResponse\022\020\n\003msg\030\001 \001(\tR\003"
+  "msg\022\024\n\005error\030\002 \001(\tR\005error\"B\n\030DeletePermi"
+  "ssionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error"
+  "\030\002 \001(\tR\005error\"B\n\030CreatePermissionRespons"
+  "e\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005erro"
+  "r\"\212\001\n\006Member\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030"
+  "\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirst"
+  "Name\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022\033\n\tis_"
+  "active\030\005 \001(\010R\010isActive\"O\n\023ProjectOrganiz"
+  "ation\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004nam"
+  "e\022\024\n\005image\030\003 \001(\tR\005image\"H\n\014Organization\022"
+  "\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005i"
+  "mage\030\003 \001(\tR\005image\"^\n\031CreateOrganizationR"
+  "equest\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005image\030\002 \001("
+  "\tR\005image\022\027\n\007user_id\030\003 \001(\tR\006userId\"\031\n\027Lis"
+  "tOrganizationRequest\"D\n\031GetOneOrganizati"
+  "onRequest\022\'\n\017organization_id\030\001 \001(\rR\016orga"
+  "nizationId\"n\n\031UpdateOrganizationRequest\022"
+  "\'\n\017organization_id\030\001 \001(\rR\016organizationId"
+  "\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\004 \001(\tR\005ima"
+  "ge\"D\n\031DeleteOrganizationRequest\022\'\n\017organ"
+  "ization_id\030\001 \001(\rR\016organizationId\"\317\001\n\032Get"
+  "OneOrganizationResponse\022\016\n\002id\030\001 \001(\rR\002id\022"
+  "\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005imag"
+  "e\022B\n\010projects\030\004 \003(\0132&.accounts.v1alpha1."
+  "ProjectOrganizationR\010projects\0223\n\007menbers"
+  "\030\005 \003(\0132\031.accounts.v1alpha1.MemberR\007menbe"
+  "rs\"a\n\030ListOrganizationResponse\022E\n\rorgani"
+  "zations\030\001 \003(\0132\037.accounts.v1alpha1.Organi"
+  "zationR\rorganizations\"v\n\032CreateOrganizat"
+  "ionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\0220\n\024role_id"
+  "_organization\030\002 \001(\tR\022roleIdOrganization\022"
+  "\024\n\005error\030\003 \001(\tR\005error\"D\n\032UpdateOrganizat"
+  "ionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002"
+  " \001(\tR\005error\"D\n\032DeleteOrganizationRespons"
+  "e\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005erro"
+  "r\"\027\n\025GetListUserDexRequest\"R\n\026GetListUse"
+  "rDexResponse\0228\n\tusers_dex\030\001 \003(\0132\033.accoun"
+  "ts.v1alpha1.UsersDexR\010usersDex\"i\n\024GetOne"
+  "UserDexRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\022"
+  "8\n\004user\030\002 \001(\0132$.accounts.v1alpha1.Create"
+  "UserRequestR\004user\"\331\003\n\025GetOneUserDexRespo"
+  "nse\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006us"
+  "erId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tl"
+  "ast_name\030\004 \001(\tR\010lastName\022\024\n\005email\030\005 \001(\tR"
+  "\005email\022\033\n\tis_active\030\006 \001(\010R\010isActive\022\035\n\nc"
+  "reated_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at"
+  "\030\010 \001(\tR\tupdatedAt\022,\n\005roles\030\t \003(\0132\026.accou"
+  "nts.v1alpha1.RolR\005roles\022\?\n\013permissions\030\n"
+  " \003(\0132\035.accounts.v1alpha1.PermissionR\013per"
+  "missions\022\"\n\ris_super_user\030\013 \001(\010R\013isSuper"
+  "User\022E\n\rorganizations\030\014 \003(\0132\037.accounts.v"
+  "1alpha1.OrganizationR\rorganizations\022\020\n\003m"
+  "sg\030\r \001(\tR\003msg2\355\026\n\016AccountService\022Y\n\nCrea"
+  "teUser\022$.accounts.v1alpha1.CreateUserReq"
+  "uest\032%.accounts.v1alpha1.CreateUserRespo"
+  "nse\022S\n\010ListUser\022\".accounts.v1alpha1.List"
+  "UserRequest\032#.accounts.v1alpha1.ListUser"
+  "Response\022Y\n\nGetOneUser\022$.accounts.v1alph"
+  "a1.GetOneUserRequest\032%.accounts.v1alpha1"
+  ".GetOneUserResponse\022Y\n\nUpdateUser\022$.acco"
+  "unts.v1alpha1.UpdateUserRequest\032%.accoun"
+  "ts.v1alpha1.UpdateUserResponse\022Y\n\nDelete"
+  "User\022$.accounts.v1alpha1.DeleteUserReque"
+  "st\032%.accounts.v1alpha1.DeleteUserRespons"
+  "e\022q\n\022ListUserPagination\022,.accounts.v1alp"
+  "ha1.ListUserPaginationRequest\032-.accounts"
+  ".v1alpha1.ListUserPaginationResponse\022k\n\020"
+  "CreatePermission\022*.accounts.v1alpha1.Cre"
+  "atePermissionRequest\032+.accounts.v1alpha1"
+  ".CreatePermissionResponse\022e\n\016ListPermiss"
+  "ion\022(.accounts.v1alpha1.ListPermissionRe"
+  "quest\032).accounts.v1alpha1.ListPermission"
+  "Response\022k\n\020GetOnePermission\022*.accounts."
+  "v1alpha1.GetOnePermissionRequest\032+.accou"
+  "nts.v1alpha1.GetOnePermissionResponse\022k\n"
+  "\020UpdatePermission\022*.accounts.v1alpha1.Up"
+  "datePermissionRequest\032+.accounts.v1alpha"
+  "1.UpdatePermissionResponse\022k\n\020DeletePerm"
+  "ission\022*.accounts.v1alpha1.DeletePermiss"
+  "ionRequest\032+.accounts.v1alpha1.DeletePer"
+  "missionResponse\022q\n\022CreateOrganization\022,."
+  "accounts.v1alpha1.CreateOrganizationRequ"
+  "est\032-.accounts.v1alpha1.CreateOrganizati"
+  "onResponse\022k\n\020ListOrganization\022*.account"
+  "s.v1alpha1.ListOrganizationRequest\032+.acc"
+  "ounts.v1alpha1.ListOrganizationResponse\022"
+  "q\n\022GetOneOrganization\022,.accounts.v1alpha"
+  "1.GetOneOrganizationRequest\032-.accounts.v"
+  "1alpha1.GetOneOrganizationResponse\022q\n\022Up"
+  "dateOrganization\022,.accounts.v1alpha1.Upd"
+  "ateOrganizationRequest\032-.accounts.v1alph"
+  "a1.UpdateOrganizationResponse\022q\n\022DeleteO"
+  "rganization\022,.accounts.v1alpha1.DeleteOr"
+  "ganizationRequest\032-.accounts.v1alpha1.De"
+  "leteOrganizationResponse\022Y\n\nCreateRole\022$"
+  ".accounts.v1alpha1.CreateRoleRequest\032%.a"
+  "ccounts.v1alpha1.CreateRoleResponse\022V\n\tL"
+  "istRoles\022#.accounts.v1alpha1.ListRolesRe"
+  "quest\032$.accounts.v1alpha1.ListRolesRespo"
+  "nse\022Y\n\nUpdateRole\022$.accounts.v1alpha1.Up"
+  "dateRoleRequest\032%.accounts.v1alpha1.Upda"
+  "teRoleResponse\022Y\n\nGetOneRole\022$.accounts."
+  "v1alpha1.GetOneRoleRequest\032%.accounts.v1"
+  "alpha1.GetOneRoleResponse\022Y\n\nDeleteRole\022"
+  "$.accounts.v1alpha1.DeleteRoleRequest\032%."
+  "accounts.v1alpha1.DeleteRoleResponse\022b\n\r"
+  "CreateProject\022\'.accounts.v1alpha1.Create"
+  "ProjectRequest\032(.accounts.v1alpha1.Creat"
+  "eProjectResponse\022b\n\rGetOneProject\022\'.acco"
+  "unts.v1alpha1.GetOneProjectRequest\032(.acc"
+  "ounts.v1alpha1.GetOneProjectResponse\022b\n\r"
+  "UpdateProject\022\'.accounts.v1alpha1.Update"
+  "ProjectRequest\032(.accounts.v1alpha1.Updat"
+  "eProjectResponse\022b\n\rDeleteProject\022\'.acco"
+  "unts.v1alpha1.DeleteProjectRequest\032(.acc"
+  "ounts.v1alpha1.DeleteProjectResponse\022\\\n\013"
+  "ListProject\022%.accounts.v1alpha1.ListProj"
+  "ectRequest\032&.accounts.v1alpha1.ListProje"
+  "ctResponse\022e\n\016GetListUserDex\022(.accounts."
+  "v1alpha1.GetListUserDexRequest\032).account"
+  "s.v1alpha1.GetListUserDexResponse\022b\n\rGet"
+  "OneUserDex\022\'.accounts.v1alpha1.GetOneUse"
+  "rDexRequest\032(.accounts.v1alpha1.GetOneUs"
+  "erDexResponse\022V\n\tCheckUser\022#.accounts.v1"
+  "alpha1.CheckUserRequest\032$.accounts.v1alp"
+  "ha1.CheckUserResponseB4Z2github.com/cuem"
+  "by/ccp-sdk/gen/go/accounts/v1alpha1b\006pro"
+  "to3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto = {
-  false, false, 10220, descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto, "accounts/v1alpha1/accounts.proto", 
+  false, false, 10483, descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto, "accounts/v1alpha1/accounts.proto", 
   &descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once, nullptr, 0, 69,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2faccounts_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2faccounts_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2faccounts_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2faccounts_2eproto,
@@ -6852,6 +6871,11 @@ CreateRoleRequest::CreateRoleRequest(const CreateRoleRequest& from)
     description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
       GetArenaForAllocation());
   }
+  type_permission_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_type_permission().empty()) {
+    type_permission_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_type_permission(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&project_id_, &from.project_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&organization_id_) -
     reinterpret_cast<char*>(&project_id_)) + sizeof(organization_id_));
@@ -6861,6 +6885,7 @@ CreateRoleRequest::CreateRoleRequest(const CreateRoleRequest& from)
 inline void CreateRoleRequest::SharedCtor() {
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+type_permission_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&project_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&organization_id_) -
@@ -6878,6 +6903,7 @@ inline void CreateRoleRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  type_permission_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void CreateRoleRequest::ArenaDtor(void* object) {
@@ -6899,6 +6925,7 @@ void CreateRoleRequest::Clear() {
   permission_ids_.Clear();
   name_.ClearToEmpty();
   description_.ClearToEmpty();
+  type_permission_.ClearToEmpty();
   ::memset(&project_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&organization_id_) -
       reinterpret_cast<char*>(&project_id_)) + sizeof(organization_id_));
@@ -6943,12 +6970,21 @@ const char* CreateRoleRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated uint32 permission_ids = 5 [json_name = "permissionIds"];
+      // string type_permission = 5 [json_name = "typePermission"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_type_permission();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.CreateRoleRequest.type_permission"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated uint32 permission_ids = 6 [json_name = "permissionIds"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_permission_ids(), ptr, ctx);
           CHK_(ptr);
-        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40) {
+        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48) {
           _internal_add_permission_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
@@ -7014,12 +7050,22 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_organization_id(), target);
   }
 
-  // repeated uint32 permission_ids = 5 [json_name = "permissionIds"];
+  // string type_permission = 5 [json_name = "typePermission"];
+  if (!this->_internal_type_permission().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_type_permission().data(), static_cast<int>(this->_internal_type_permission().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.CreateRoleRequest.type_permission");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_type_permission(), target);
+  }
+
+  // repeated uint32 permission_ids = 6 [json_name = "permissionIds"];
   {
     int byte_size = _permission_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteUInt32Packed(
-          5, _internal_permission_ids(), byte_size, target);
+          6, _internal_permission_ids(), byte_size, target);
     }
   }
 
@@ -7039,7 +7085,7 @@ size_t CreateRoleRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated uint32 permission_ids = 5 [json_name = "permissionIds"];
+  // repeated uint32 permission_ids = 6 [json_name = "permissionIds"];
   {
     size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       UInt32Size(this->permission_ids_);
@@ -7066,6 +7112,13 @@ size_t CreateRoleRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_description());
+  }
+
+  // string type_permission = 5 [json_name = "typePermission"];
+  if (!this->_internal_type_permission().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_type_permission());
   }
 
   // uint32 project_id = 3 [json_name = "projectId"];
@@ -7117,6 +7170,9 @@ void CreateRoleRequest::MergeFrom(const CreateRoleRequest& from) {
   if (!from._internal_description().empty()) {
     _internal_set_description(from._internal_description());
   }
+  if (!from._internal_type_permission().empty()) {
+    _internal_set_type_permission(from._internal_type_permission());
+  }
   if (from._internal_project_id() != 0) {
     _internal_set_project_id(from._internal_project_id());
   }
@@ -7150,6 +7206,11 @@ void CreateRoleRequest::InternalSwap(CreateRoleRequest* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &description_, GetArenaForAllocation(),
       &other->description_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &type_permission_, GetArenaForAllocation(),
+      &other->type_permission_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(CreateRoleRequest, organization_id_)
@@ -9716,6 +9777,11 @@ CreateProjectRequest::CreateProjectRequest(const CreateProjectRequest& from)
     image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_image(), 
       GetArenaForAllocation());
   }
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
+      GetArenaForAllocation());
+  }
   organization_id_ = from.organization_id_;
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.CreateProjectRequest)
 }
@@ -9724,6 +9790,7 @@ inline void CreateProjectRequest::SharedCtor() {
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 organization_id_ = 0u;
 }
 
@@ -9739,6 +9806,7 @@ inline void CreateProjectRequest::SharedDtor() {
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   image_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void CreateProjectRequest::ArenaDtor(void* object) {
@@ -9760,6 +9828,7 @@ void CreateProjectRequest::Clear() {
   name_.ClearToEmpty();
   description_.ClearToEmpty();
   image_.ClearToEmpty();
+  user_id_.ClearToEmpty();
   organization_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -9801,6 +9870,15 @@ const char* CreateProjectRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_id = 5 [json_name = "userId"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.CreateProjectRequest.user_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -9869,6 +9947,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_organization_id(), target);
   }
 
+  // string user_id = 5 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.CreateProjectRequest.user_id");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_user_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -9904,6 +9992,13 @@ size_t CreateProjectRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_image());
+  }
+
+  // string user_id = 5 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
   }
 
   // uint32 organization_id = 4 [json_name = "organizationId"];
@@ -9950,6 +10045,9 @@ void CreateProjectRequest::MergeFrom(const CreateProjectRequest& from) {
   if (!from._internal_image().empty()) {
     _internal_set_image(from._internal_image());
   }
+  if (!from._internal_user_id().empty()) {
+    _internal_set_user_id(from._internal_user_id());
+  }
   if (from._internal_organization_id() != 0) {
     _internal_set_organization_id(from._internal_organization_id());
   }
@@ -9984,6 +10082,11 @@ void CreateProjectRequest::InternalSwap(CreateProjectRequest* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &image_, GetArenaForAllocation(),
       &other->image_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_id_, GetArenaForAllocation(),
+      &other->user_id_, other->GetArenaForAllocation()
   );
   swap(organization_id_, other->organization_id_);
 }
@@ -17824,6 +17927,11 @@ CreateOrganizationResponse::CreateOrganizationResponse(const CreateOrganizationR
     msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
       GetArenaForAllocation());
   }
+  role_id_organization_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_role_id_organization().empty()) {
+    role_id_organization_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_role_id_organization(), 
+      GetArenaForAllocation());
+  }
   error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_error().empty()) {
     error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
@@ -17834,6 +17942,7 @@ CreateOrganizationResponse::CreateOrganizationResponse(const CreateOrganizationR
 
 inline void CreateOrganizationResponse::SharedCtor() {
 msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+role_id_organization_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -17847,6 +17956,7 @@ CreateOrganizationResponse::~CreateOrganizationResponse() {
 inline void CreateOrganizationResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  role_id_organization_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -17867,6 +17977,7 @@ void CreateOrganizationResponse::Clear() {
   (void) cached_has_bits;
 
   msg_.ClearToEmpty();
+  role_id_organization_.ClearToEmpty();
   error_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -17886,9 +17997,18 @@ const char* CreateOrganizationResponse::_InternalParse(const char* ptr, ::PROTOB
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string error = 2 [json_name = "error"];
+      // string role_id_organization = 2 [json_name = "roleIdOrganization"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_role_id_organization();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.CreateOrganizationResponse.role_id_organization"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string error = 3 [json_name = "error"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_error();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.CreateOrganizationResponse.error"));
@@ -17934,14 +18054,24 @@ failure:
         1, this->_internal_msg(), target);
   }
 
-  // string error = 2 [json_name = "error"];
+  // string role_id_organization = 2 [json_name = "roleIdOrganization"];
+  if (!this->_internal_role_id_organization().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_role_id_organization().data(), static_cast<int>(this->_internal_role_id_organization().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.CreateOrganizationResponse.role_id_organization");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_role_id_organization(), target);
+  }
+
+  // string error = 3 [json_name = "error"];
   if (!this->_internal_error().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "accounts.v1alpha1.CreateOrganizationResponse.error");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_error(), target);
+        3, this->_internal_error(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -17967,7 +18097,14 @@ size_t CreateOrganizationResponse::ByteSizeLong() const {
         this->_internal_msg());
   }
 
-  // string error = 2 [json_name = "error"];
+  // string role_id_organization = 2 [json_name = "roleIdOrganization"];
+  if (!this->_internal_role_id_organization().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_role_id_organization());
+  }
+
+  // string error = 3 [json_name = "error"];
   if (!this->_internal_error().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -18005,6 +18142,9 @@ void CreateOrganizationResponse::MergeFrom(const CreateOrganizationResponse& fro
   if (!from._internal_msg().empty()) {
     _internal_set_msg(from._internal_msg());
   }
+  if (!from._internal_role_id_organization().empty()) {
+    _internal_set_role_id_organization(from._internal_role_id_organization());
+  }
   if (!from._internal_error().empty()) {
     _internal_set_error(from._internal_error());
   }
@@ -18029,6 +18169,11 @@ void CreateOrganizationResponse::InternalSwap(CreateOrganizationResponse* other)
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &msg_, GetArenaForAllocation(),
       &other->msg_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &role_id_organization_, GetArenaForAllocation(),
+      &other->role_id_organization_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
@@ -18874,8 +19019,13 @@ void GetListUserDexResponse::InternalSwap(GetListUserDexResponse* other) {
 
 class GetOneUserDexRequest::_Internal {
  public:
+  static const ::accounts::v1alpha1::CreateUserRequest& user(const GetOneUserDexRequest* msg);
 };
 
+const ::accounts::v1alpha1::CreateUserRequest&
+GetOneUserDexRequest::_Internal::user(const GetOneUserDexRequest* msg) {
+  return *msg->user_;
+}
 GetOneUserDexRequest::GetOneUserDexRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -18893,11 +19043,17 @@ GetOneUserDexRequest::GetOneUserDexRequest(const GetOneUserDexRequest& from)
     user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
       GetArenaForAllocation());
   }
+  if (from._internal_has_user()) {
+    user_ = new ::accounts::v1alpha1::CreateUserRequest(*from.user_);
+  } else {
+    user_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.GetOneUserDexRequest)
 }
 
 inline void GetOneUserDexRequest::SharedCtor() {
 user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_ = nullptr;
 }
 
 GetOneUserDexRequest::~GetOneUserDexRequest() {
@@ -18910,6 +19066,7 @@ GetOneUserDexRequest::~GetOneUserDexRequest() {
 inline void GetOneUserDexRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete user_;
 }
 
 void GetOneUserDexRequest::ArenaDtor(void* object) {
@@ -18929,6 +19086,10 @@ void GetOneUserDexRequest::Clear() {
   (void) cached_has_bits;
 
   user_id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && user_ != nullptr) {
+    delete user_;
+  }
+  user_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -18944,6 +19105,13 @@ const char* GetOneUserDexRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           auto str = _internal_mutable_user_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.GetOneUserDexRequest.user_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .accounts.v1alpha1.CreateUserRequest user = 2 [json_name = "user"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_user(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -18986,6 +19154,14 @@ failure:
         1, this->_internal_user_id(), target);
   }
 
+  // .accounts.v1alpha1.CreateUserRequest user = 2 [json_name = "user"];
+  if (this->_internal_has_user()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::user(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -19007,6 +19183,13 @@ size_t GetOneUserDexRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_user_id());
+  }
+
+  // .accounts.v1alpha1.CreateUserRequest user = 2 [json_name = "user"];
+  if (this->_internal_has_user()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *user_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -19040,6 +19223,9 @@ void GetOneUserDexRequest::MergeFrom(const GetOneUserDexRequest& from) {
   if (!from._internal_user_id().empty()) {
     _internal_set_user_id(from._internal_user_id());
   }
+  if (from._internal_has_user()) {
+    _internal_mutable_user()->::accounts::v1alpha1::CreateUserRequest::MergeFrom(from._internal_user());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -19062,6 +19248,7 @@ void GetOneUserDexRequest::InternalSwap(GetOneUserDexRequest* other) {
       &user_id_, GetArenaForAllocation(),
       &other->user_id_, other->GetArenaForAllocation()
   );
+  swap(user_, other->user_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetOneUserDexRequest::GetMetadata() const {
@@ -19080,7 +19267,8 @@ GetOneUserDexResponse::GetOneUserDexResponse(::PROTOBUF_NAMESPACE_ID::Arena* are
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   roles_(arena),
-  permissions_(arena) {
+  permissions_(arena),
+  organizations_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -19090,7 +19278,8 @@ GetOneUserDexResponse::GetOneUserDexResponse(::PROTOBUF_NAMESPACE_ID::Arena* are
 GetOneUserDexResponse::GetOneUserDexResponse(const GetOneUserDexResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       roles_(from.roles_),
-      permissions_(from.permissions_) {
+      permissions_(from.permissions_),
+      organizations_(from.organizations_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_user_id().empty()) {
@@ -19122,6 +19311,11 @@ GetOneUserDexResponse::GetOneUserDexResponse(const GetOneUserDexResponse& from)
     updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_updated_at(), 
       GetArenaForAllocation());
   }
+  msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_msg().empty()) {
+    msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&is_super_user_) -
     reinterpret_cast<char*>(&id_)) + sizeof(is_super_user_));
@@ -19135,6 +19329,7 @@ last_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAl
 email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&is_super_user_) -
@@ -19156,6 +19351,7 @@ inline void GetOneUserDexResponse::SharedDtor() {
   email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetOneUserDexResponse::ArenaDtor(void* object) {
@@ -19176,12 +19372,14 @@ void GetOneUserDexResponse::Clear() {
 
   roles_.Clear();
   permissions_.Clear();
+  organizations_.Clear();
   user_id_.ClearToEmpty();
   first_name_.ClearToEmpty();
   last_name_.ClearToEmpty();
   email_.ClearToEmpty();
   created_at_.ClearToEmpty();
   updated_at_.ClearToEmpty();
+  msg_.ClearToEmpty();
   ::memset(&id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&is_super_user_) -
       reinterpret_cast<char*>(&id_)) + sizeof(is_super_user_));
@@ -19290,6 +19488,27 @@ const char* GetOneUserDexResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
           is_super_user_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_organizations(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // string msg = 13 [json_name = "msg"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+          auto str = _internal_mutable_msg();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.GetOneUserDexResponse.msg"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -19416,6 +19635,24 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(11, this->_internal_is_super_user(), target);
   }
 
+  // repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_organizations_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(12, this->_internal_organizations(i), target, stream);
+  }
+
+  // string msg = 13 [json_name = "msg"];
+  if (!this->_internal_msg().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_msg().data(), static_cast<int>(this->_internal_msg().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.GetOneUserDexResponse.msg");
+    target = stream->WriteStringMaybeAliased(
+        13, this->_internal_msg(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -19442,6 +19679,13 @@ size_t GetOneUserDexResponse::ByteSizeLong() const {
   // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
   total_size += 1UL * this->_internal_permissions_size();
   for (const auto& msg : this->permissions_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];
+  total_size += 1UL * this->_internal_organizations_size();
+  for (const auto& msg : this->organizations_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -19486,6 +19730,13 @@ size_t GetOneUserDexResponse::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_updated_at());
+  }
+
+  // string msg = 13 [json_name = "msg"];
+  if (!this->_internal_msg().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_msg());
   }
 
   // uint32 id = 1 [json_name = "id"];
@@ -19535,6 +19786,7 @@ void GetOneUserDexResponse::MergeFrom(const GetOneUserDexResponse& from) {
 
   roles_.MergeFrom(from.roles_);
   permissions_.MergeFrom(from.permissions_);
+  organizations_.MergeFrom(from.organizations_);
   if (!from._internal_user_id().empty()) {
     _internal_set_user_id(from._internal_user_id());
   }
@@ -19552,6 +19804,9 @@ void GetOneUserDexResponse::MergeFrom(const GetOneUserDexResponse& from) {
   }
   if (!from._internal_updated_at().empty()) {
     _internal_set_updated_at(from._internal_updated_at());
+  }
+  if (!from._internal_msg().empty()) {
+    _internal_set_msg(from._internal_msg());
   }
   if (from._internal_id() != 0) {
     _internal_set_id(from._internal_id());
@@ -19581,6 +19836,7 @@ void GetOneUserDexResponse::InternalSwap(GetOneUserDexResponse* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   roles_.InternalSwap(&other->roles_);
   permissions_.InternalSwap(&other->permissions_);
+  organizations_.InternalSwap(&other->organizations_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &user_id_, GetArenaForAllocation(),
@@ -19610,6 +19866,11 @@ void GetOneUserDexResponse::InternalSwap(GetOneUserDexResponse* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &updated_at_, GetArenaForAllocation(),
       &other->updated_at_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &msg_, GetArenaForAllocation(),
+      &other->msg_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GetOneUserDexResponse, is_super_user_)

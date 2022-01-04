@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-ÏO
+ÛQ
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"‡
 CheckUserRequest\'
 organization_id (RorganizationId
@@ -108,14 +108,15 @@ updated_at (	R	updatedAt,
 
 project_id (R	projectId\'
 organization_id (RorganizationId?
-permissions (2.accounts.v1alpha1.PermissionRpermissions"∏
+permissions (2.accounts.v1alpha1.PermissionRpermissions"·
 CreateRoleRequest
 name (	Rname 
 description (	Rdescription
 
 project_id (R	projectId\'
-organization_id (RorganizationId%
-permission_ids (RpermissionIds"b
+organization_id (RorganizationId\'
+type_permission (	RtypePermission%
+permission_ids (RpermissionIds"b
 UpdateRoleRequest
 rol_id (RrolId6
 rol (2$.accounts.v1alpha1.CreateRoleRequestRrol"*
@@ -155,12 +156,13 @@ project_id (R	projectId\'
 created_at (	R	createdAt
 
 updated_at (	R	updatedAt,
-roles (2.accounts.v1alpha1.RolRroles"ã
+roles (2.accounts.v1alpha1.RolRroles"§
 CreateProjectRequest
 name (	Rname 
 description (	Rdescription
 image (	Rimage\'
-organization_id (RorganizationId"&
+organization_id (RorganizationId
+user_id (	RuserId"&
 GetOneProjectRequest
 id (Rid"&
 DeleteProjectRequest
@@ -268,10 +270,11 @@ first_name (	R	firstName
 projects (2&.accounts.v1alpha1.ProjectOrganizationRprojects3
 menbers (2.accounts.v1alpha1.MemberRmenbers"a
 ListOrganizationResponseE
-organizations (2.accounts.v1alpha1.OrganizationRorganizations"D
+organizations (2.accounts.v1alpha1.OrganizationRorganizations"v
 CreateOrganizationResponse
-msg (	Rmsg
-error (	Rerror"D
+msg (	Rmsg0
+role_id_organization (	RroleIdOrganization
+error (	Rerror"D
 UpdateOrganizationResponse
 msg (	Rmsg
 error (	Rerror"D
@@ -280,9 +283,10 @@ first_name (	R	firstName
 error (	Rerror"
 GetListUserDexRequest"R
 GetListUserDexResponse8
-	users_dex (2.accounts.v1alpha1.UsersDexRusersDex"/
+	users_dex (2.accounts.v1alpha1.UsersDexRusersDex"i
 GetOneUserDexRequest
-user_id (	RuserId"Ä
+user_id (	RuserId8
+user (2$.accounts.v1alpha1.CreateUserRequestRuser"Ÿ
 GetOneUserDexResponse
 id (Rid
 user_id (	RuserId
@@ -298,7 +302,9 @@ updated_at (	R	updatedAt,
 roles	 (2.accounts.v1alpha1.RolRroles?
 permissions
  (2.accounts.v1alpha1.PermissionRpermissions"
-is_super_user (RisSuperUser2Ì
+is_super_user (RisSuperUserE
+organizations (2.accounts.v1alpha1.OrganizationRorganizations
+msg (	Rmsg2Ì
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS

@@ -32,7 +32,11 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
     /**
      *uint32 team_id = 3;
      *
-     * Generated from protobuf field <code>repeated uint32 permission_ids = 5 [json_name = "permissionIds"];</code>
+     * Generated from protobuf field <code>string type_permission = 5 [json_name = "typePermission"];</code>
+     */
+    protected $type_permission = '';
+    /**
+     * Generated from protobuf field <code>repeated uint32 permission_ids = 6 [json_name = "permissionIds"];</code>
      */
     private $permission_ids;
 
@@ -46,8 +50,9 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *     @type int $project_id
      *     @type int $organization_id
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $permission_ids
+     *     @type string $type_permission
      *          uint32 team_id = 3;
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $permission_ids
      * }
      */
     public function __construct($data = NULL) {
@@ -146,7 +151,31 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
     /**
      *uint32 team_id = 3;
      *
-     * Generated from protobuf field <code>repeated uint32 permission_ids = 5 [json_name = "permissionIds"];</code>
+     * Generated from protobuf field <code>string type_permission = 5 [json_name = "typePermission"];</code>
+     * @return string
+     */
+    public function getTypePermission()
+    {
+        return $this->type_permission;
+    }
+
+    /**
+     *uint32 team_id = 3;
+     *
+     * Generated from protobuf field <code>string type_permission = 5 [json_name = "typePermission"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTypePermission($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->type_permission = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated uint32 permission_ids = 6 [json_name = "permissionIds"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPermissionIds()
@@ -155,9 +184,7 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *uint32 team_id = 3;
-     *
-     * Generated from protobuf field <code>repeated uint32 permission_ids = 5 [json_name = "permissionIds"];</code>
+     * Generated from protobuf field <code>repeated uint32 permission_ids = 6 [json_name = "permissionIds"];</code>
      * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

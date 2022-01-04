@@ -57,6 +57,14 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_super_user = 11 [json_name = "isSuperUser"];</code>
      */
     protected $is_super_user = false;
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
+     */
+    private $organizations;
+    /**
+     * Generated from protobuf field <code>string msg = 13 [json_name = "msg"];</code>
+     */
+    protected $msg = '';
 
     /**
      * Constructor.
@@ -75,6 +83,8 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      *     @type \Accounts\V1alpha1\Rol[]|\Google\Protobuf\Internal\RepeatedField $roles
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
      *     @type bool $is_super_user
+     *     @type \Accounts\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $organizations
+     *     @type string $msg
      * }
      */
     public function __construct($data = NULL) {
@@ -320,6 +330,50 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_super_user = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOrganizations()
+    {
+        return $this->organizations;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
+     * @param \Accounts\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOrganizations($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Organization::class);
+        $this->organizations = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string msg = 13 [json_name = "msg"];</code>
+     * @return string
+     */
+    public function getMsg()
+    {
+        return $this->msg;
+    }
+
+    /**
+     * Generated from protobuf field <code>string msg = 13 [json_name = "msg"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMsg($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->msg = $var;
 
         return $this;
     }
