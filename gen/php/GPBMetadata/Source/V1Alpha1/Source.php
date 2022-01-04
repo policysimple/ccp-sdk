@@ -16,20 +16,20 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-˝
-source/v1alpha1/source.protosource.v1alpha1"ˆ
+≠
+source/v1alpha1/source.protosource.v1alpha1"Ü
 Integration
-id (	Rid
-user_id (	RuserId
+id (	Rid\'
+organization_id (RorganizationId
 name (	Rname5
 provider (2.source.v1alpha1.ProviderRprovider:
 data (2&.source.v1alpha1.Integration.DataEntryRdata7
 	DataEntry
 key (	Rkey
-value (	Rvalue:8"ê
+value (	Rvalue:8"†
 CreateIntegrationRequest
-id (	Rid
-user_id (	RuserId
+id (	Rid\'
+organization_id (RorganizationId
 name (	Rname5
 provider (2.source.v1alpha1.ProviderRproviderG
 data (23.source.v1alpha1.CreateIntegrationRequest.DataEntryRdata7
@@ -38,9 +38,9 @@ class Source
 value (	Rvalue:8"C
 CreateIntegrationResponse
 msg (	Rmsg
-error (	Rerror"2
-ListIntegrationsRequest
-user_id (	RuserId"\\
+error (	Rerror"B
+ListIntegrationsRequest\'
+organization_id (RorganizationId"\\
 ListIntegrationsResponse@
 integrations (2.source.v1alpha1.IntegrationRintegrations"\'
 GetIntegrationRequest

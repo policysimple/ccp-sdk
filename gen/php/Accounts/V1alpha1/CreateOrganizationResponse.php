@@ -18,7 +18,11 @@ class CreateOrganizationResponse extends \Google\Protobuf\Internal\Message
      */
     protected $msg = '';
     /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * Generated from protobuf field <code>string role_id_organization = 2 [json_name = "roleIdOrganization"];</code>
+     */
+    protected $role_id_organization = '';
+    /**
+     * Generated from protobuf field <code>string error = 3 [json_name = "error"];</code>
      */
     protected $error = '';
 
@@ -29,6 +33,7 @@ class CreateOrganizationResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $msg
+     *     @type string $role_id_organization
      *     @type string $error
      * }
      */
@@ -60,7 +65,29 @@ class CreateOrganizationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * Generated from protobuf field <code>string role_id_organization = 2 [json_name = "roleIdOrganization"];</code>
+     * @return string
+     */
+    public function getRoleIdOrganization()
+    {
+        return $this->role_id_organization;
+    }
+
+    /**
+     * Generated from protobuf field <code>string role_id_organization = 2 [json_name = "roleIdOrganization"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRoleIdOrganization($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->role_id_organization = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error = 3 [json_name = "error"];</code>
      * @return string
      */
     public function getError()
@@ -69,7 +96,7 @@ class CreateOrganizationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * Generated from protobuf field <code>string error = 3 [json_name = "error"];</code>
      * @param string $var
      * @return $this
      */

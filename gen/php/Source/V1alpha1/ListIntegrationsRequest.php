@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListIntegrationsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
      */
-    protected $user_id = '';
+    protected $organization_id = 0;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class ListIntegrationsRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $user_id
+     *     @type int $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class ListIntegrationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
-     * @return string
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @return int
      */
-    public function getUserId()
+    public function getOrganizationId()
     {
-        return $this->user_id;
+        return $this->organization_id;
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @param int $var
      * @return $this
      */
-    public function setUserId($var)
+    public function setOrganizationId($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->user_id = $var;
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
 
         return $this;
     }
