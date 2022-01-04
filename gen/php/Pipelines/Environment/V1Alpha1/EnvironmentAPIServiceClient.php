@@ -29,4 +29,30 @@ class EnvironmentAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Pipelines\Environment\V1Alpha1\ListEnvironmentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListEnvironment(\Pipelines\Environment\V1Alpha1\ListEnvironmentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.environment.v1alpha1.EnvironmentAPIService/ListEnvironment',
+        $argument,
+        ['\Pipelines\Environment\V1Alpha1\ListEnvironmentResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Pipelines\Environment\V1Alpha1\DeleteEnvironmentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DeleteEnvironment(\Pipelines\Environment\V1Alpha1\DeleteEnvironmentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.environment.v1alpha1.EnvironmentAPIService/DeleteEnvironment',
+        $argument,
+        ['\Pipelines\Environment\V1Alpha1\DeleteEnvironmentResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

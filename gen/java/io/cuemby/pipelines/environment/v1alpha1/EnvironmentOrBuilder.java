@@ -42,4 +42,21 @@ public interface EnvironmentOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <code>bool active = 4 [json_name = "active"];</code>
+   * @return The active.
+   */
+  boolean getActive();
+
+  /**
+   * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+   * @return The enum numeric value on the wire for statusType.
+   */
+  int getStatusTypeValue();
+  /**
+   * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+   * @return The statusType.
+   */
+  io.cuemby.pipelines.environment.v1alpha1.StatusType getStatusType();
 }

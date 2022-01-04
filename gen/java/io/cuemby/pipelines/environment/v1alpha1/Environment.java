@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     organizationId_ = "";
     projectId_ = "";
     name_ = "";
+    statusType_ = 0;
   }
 
   @java.lang.Override
@@ -71,6 +72,17 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             name_ = s;
+            break;
+          }
+          case 32: {
+
+            active_ = input.readBool();
+            break;
+          }
+          case 40: {
+            int rawValue = input.readEnum();
+
+            statusType_ = rawValue;
             break;
           }
           default: {
@@ -219,6 +231,36 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ACTIVE_FIELD_NUMBER = 4;
+  private boolean active_;
+  /**
+   * <code>bool active = 4 [json_name = "active"];</code>
+   * @return The active.
+   */
+  @java.lang.Override
+  public boolean getActive() {
+    return active_;
+  }
+
+  public static final int STATUS_TYPE_FIELD_NUMBER = 5;
+  private int statusType_;
+  /**
+   * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+   * @return The enum numeric value on the wire for statusType.
+   */
+  @java.lang.Override public int getStatusTypeValue() {
+    return statusType_;
+  }
+  /**
+   * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+   * @return The statusType.
+   */
+  @java.lang.Override public io.cuemby.pipelines.environment.v1alpha1.StatusType getStatusType() {
+    @SuppressWarnings("deprecation")
+    io.cuemby.pipelines.environment.v1alpha1.StatusType result = io.cuemby.pipelines.environment.v1alpha1.StatusType.valueOf(statusType_);
+    return result == null ? io.cuemby.pipelines.environment.v1alpha1.StatusType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -242,6 +284,12 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
+    if (active_ != false) {
+      output.writeBool(4, active_);
+    }
+    if (statusType_ != io.cuemby.pipelines.environment.v1alpha1.StatusType.STATUS_TYPE_PENDING_UNSPECIFIED.getNumber()) {
+      output.writeEnum(5, statusType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -259,6 +307,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+    }
+    if (active_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, active_);
+    }
+    if (statusType_ != io.cuemby.pipelines.environment.v1alpha1.StatusType.STATUS_TYPE_PENDING_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(5, statusType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -281,6 +337,9 @@ private static final long serialVersionUID = 0L;
         .equals(other.getProjectId())) return false;
     if (!getName()
         .equals(other.getName())) return false;
+    if (getActive()
+        != other.getActive()) return false;
+    if (statusType_ != other.statusType_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -298,6 +357,11 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getProjectId().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + ACTIVE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getActive());
+    hash = (37 * hash) + STATUS_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + statusType_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -441,6 +505,10 @@ private static final long serialVersionUID = 0L;
 
       name_ = "";
 
+      active_ = false;
+
+      statusType_ = 0;
+
       return this;
     }
 
@@ -470,6 +538,8 @@ private static final long serialVersionUID = 0L;
       result.organizationId_ = organizationId_;
       result.projectId_ = projectId_;
       result.name_ = name_;
+      result.active_ = active_;
+      result.statusType_ = statusType_;
       onBuilt();
       return result;
     }
@@ -529,6 +599,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getActive() != false) {
+        setActive(other.getActive());
+      }
+      if (other.statusType_ != 0) {
+        setStatusTypeValue(other.getStatusTypeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -783,6 +859,91 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean active_ ;
+    /**
+     * <code>bool active = 4 [json_name = "active"];</code>
+     * @return The active.
+     */
+    @java.lang.Override
+    public boolean getActive() {
+      return active_;
+    }
+    /**
+     * <code>bool active = 4 [json_name = "active"];</code>
+     * @param value The active to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActive(boolean value) {
+      
+      active_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool active = 4 [json_name = "active"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearActive() {
+      
+      active_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int statusType_ = 0;
+    /**
+     * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+     * @return The enum numeric value on the wire for statusType.
+     */
+    @java.lang.Override public int getStatusTypeValue() {
+      return statusType_;
+    }
+    /**
+     * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+     * @param value The enum numeric value on the wire for statusType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusTypeValue(int value) {
+      
+      statusType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+     * @return The statusType.
+     */
+    @java.lang.Override
+    public io.cuemby.pipelines.environment.v1alpha1.StatusType getStatusType() {
+      @SuppressWarnings("deprecation")
+      io.cuemby.pipelines.environment.v1alpha1.StatusType result = io.cuemby.pipelines.environment.v1alpha1.StatusType.valueOf(statusType_);
+      return result == null ? io.cuemby.pipelines.environment.v1alpha1.StatusType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+     * @param value The statusType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusType(io.cuemby.pipelines.environment.v1alpha1.StatusType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      statusType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatusType() {
+      
+      statusType_ = 0;
       onChanged();
       return this;
     }

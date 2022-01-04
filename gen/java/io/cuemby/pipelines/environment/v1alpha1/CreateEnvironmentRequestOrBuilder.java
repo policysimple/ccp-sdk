@@ -21,4 +21,16 @@ public interface CreateEnvironmentRequestOrBuilder extends
    * <code>.pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];</code>
    */
   io.cuemby.pipelines.environment.v1alpha1.EnvironmentOrBuilder getEnvironmentOrBuilder();
+
+  /**
+   * <code>string user_id = 2 [json_name = "userId"];</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <code>string user_id = 2 [json_name = "userId"];</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
 }

@@ -19,6 +19,16 @@ class EnvironmentAPIServiceStub(object):
         request_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateEnvironmentRequest.SerializeToString,
         response_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateEnvironmentResponse.FromString,
         )
+    self.ListEnvironment = channel.unary_unary(
+        '/pipelines.environment.v1alpha1.EnvironmentAPIService/ListEnvironment',
+        request_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.ListEnvironmentRequest.SerializeToString,
+        response_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.ListEnvironmentResponse.FromString,
+        )
+    self.DeleteEnvironment = channel.unary_unary(
+        '/pipelines.environment.v1alpha1.EnvironmentAPIService/DeleteEnvironment',
+        request_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.DeleteEnvironmentRequest.SerializeToString,
+        response_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.DeleteEnvironmentResponse.FromString,
+        )
 
 
 class EnvironmentAPIServiceServicer(object):
@@ -32,6 +42,20 @@ class EnvironmentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListEnvironment(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteEnvironment(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_EnvironmentAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -39,6 +63,16 @@ def add_EnvironmentAPIServiceServicer_to_server(servicer, server):
           servicer.CreateEnvironment,
           request_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateEnvironmentRequest.FromString,
           response_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateEnvironmentResponse.SerializeToString,
+      ),
+      'ListEnvironment': grpc.unary_unary_rpc_method_handler(
+          servicer.ListEnvironment,
+          request_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.ListEnvironmentRequest.FromString,
+          response_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.ListEnvironmentResponse.SerializeToString,
+      ),
+      'DeleteEnvironment': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteEnvironment,
+          request_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.DeleteEnvironmentRequest.FromString,
+          response_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.DeleteEnvironmentResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

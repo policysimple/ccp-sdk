@@ -15,4 +15,12 @@ message Environment {
     string organization_id = 1;
     string project_id = 2;
     string name = 3;
+    bool active = 4;
+    StatusType status_type = 5;
+}
+
+enum StatusType {
+    STATUS_TYPE_PENDING_UNSPECIFIED = 0;
+    STATUS_TYPE_OK = 1;
+    STATUS_TYPE_ERROR = 2;
 }

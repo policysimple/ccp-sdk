@@ -30,14 +30,19 @@ public final class EnvironmentProto {
     java.lang.String[] descriptorData = {
       "\n0pipelines/environment/v1alpha1/environ" +
       "ment.proto\022\036pipelines.environment.v1alph" +
-      "a1\"i\n\013Environment\022\'\n\017organization_id\030\001 \001" +
-      "(\tR\016organizationId\022\035\n\nproject_id\030\002 \001(\tR\t" +
-      "projectId\022\022\n\004name\030\003 \001(\tR\004nameB\307\001\n(io.cue" +
-      "mby.pipelines.environment.v1alpha1B\020Envi" +
-      "ronmentProtoP\001Z?github.com/cuemby/ccp-sd" +
-      "k/gen/go/pipelines/environment/v1alpha1\242" +
-      "\002\003PPX\252\002\036Pipelines.Environment.V1Alpha1\312\002" +
-      "\036Pipelines\\Environment\\V1Alpha1b\006proto3"
+      "a1\"\316\001\n\013Environment\022\'\n\017organization_id\030\001 " +
+      "\001(\tR\016organizationId\022\035\n\nproject_id\030\002 \001(\tR" +
+      "\tprojectId\022\022\n\004name\030\003 \001(\tR\004name\022\026\n\006active" +
+      "\030\004 \001(\010R\006active\022K\n\013status_type\030\005 \001(\0162*.pi" +
+      "pelines.environment.v1alpha1.StatusTypeR" +
+      "\nstatusType*\\\n\nStatusType\022#\n\037STATUS_TYPE" +
+      "_PENDING_UNSPECIFIED\020\000\022\022\n\016STATUS_TYPE_OK" +
+      "\020\001\022\025\n\021STATUS_TYPE_ERROR\020\002B\307\001\n(io.cuemby." +
+      "pipelines.environment.v1alpha1B\020Environm" +
+      "entProtoP\001Z?github.com/cuemby/ccp-sdk/ge" +
+      "n/go/pipelines/environment/v1alpha1\242\002\003PP" +
+      "X\252\002\036Pipelines.Environment.V1Alpha1\312\002\036Pip" +
+      "elines\\Environment\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -48,7 +53,7 @@ public final class EnvironmentProto {
     internal_static_pipelines_environment_v1alpha1_Environment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_environment_v1alpha1_Environment_descriptor,
-        new java.lang.String[] { "OrganizationId", "ProjectId", "Name", });
+        new java.lang.String[] { "OrganizationId", "ProjectId", "Name", "Active", "StatusType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

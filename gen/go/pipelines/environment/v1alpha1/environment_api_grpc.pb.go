@@ -19,6 +19,8 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type EnvironmentAPIServiceClient interface {
 	CreateEnvironment(ctx context.Context, in *CreateEnvironmentRequest, opts ...grpc.CallOption) (*CreateEnvironmentResponse, error)
+	ListEnvironment(ctx context.Context, in *ListEnvironmentRequest, opts ...grpc.CallOption) (*ListEnvironmentResponse, error)
+	DeleteEnvironment(ctx context.Context, in *DeleteEnvironmentRequest, opts ...grpc.CallOption) (*DeleteEnvironmentResponse, error)
 }
 
 type environmentAPIServiceClient struct {
@@ -38,11 +40,31 @@ func (c *environmentAPIServiceClient) CreateEnvironment(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *environmentAPIServiceClient) ListEnvironment(ctx context.Context, in *ListEnvironmentRequest, opts ...grpc.CallOption) (*ListEnvironmentResponse, error) {
+	out := new(ListEnvironmentResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.environment.v1alpha1.EnvironmentAPIService/ListEnvironment", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *environmentAPIServiceClient) DeleteEnvironment(ctx context.Context, in *DeleteEnvironmentRequest, opts ...grpc.CallOption) (*DeleteEnvironmentResponse, error) {
+	out := new(DeleteEnvironmentResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.environment.v1alpha1.EnvironmentAPIService/DeleteEnvironment", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EnvironmentAPIServiceServer is the server API for EnvironmentAPIService service.
 // All implementations should embed UnimplementedEnvironmentAPIServiceServer
 // for forward compatibility
 type EnvironmentAPIServiceServer interface {
 	CreateEnvironment(context.Context, *CreateEnvironmentRequest) (*CreateEnvironmentResponse, error)
+	ListEnvironment(context.Context, *ListEnvironmentRequest) (*ListEnvironmentResponse, error)
+	DeleteEnvironment(context.Context, *DeleteEnvironmentRequest) (*DeleteEnvironmentResponse, error)
 }
 
 // UnimplementedEnvironmentAPIServiceServer should be embedded to have forward compatible implementations.
@@ -51,6 +73,12 @@ type UnimplementedEnvironmentAPIServiceServer struct {
 
 func (UnimplementedEnvironmentAPIServiceServer) CreateEnvironment(context.Context, *CreateEnvironmentRequest) (*CreateEnvironmentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateEnvironment not implemented")
+}
+func (UnimplementedEnvironmentAPIServiceServer) ListEnvironment(context.Context, *ListEnvironmentRequest) (*ListEnvironmentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListEnvironment not implemented")
+}
+func (UnimplementedEnvironmentAPIServiceServer) DeleteEnvironment(context.Context, *DeleteEnvironmentRequest) (*DeleteEnvironmentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteEnvironment not implemented")
 }
 
 // UnsafeEnvironmentAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -82,6 +110,42 @@ func _EnvironmentAPIService_CreateEnvironment_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EnvironmentAPIService_ListEnvironment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListEnvironmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EnvironmentAPIServiceServer).ListEnvironment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.environment.v1alpha1.EnvironmentAPIService/ListEnvironment",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EnvironmentAPIServiceServer).ListEnvironment(ctx, req.(*ListEnvironmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EnvironmentAPIService_DeleteEnvironment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteEnvironmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EnvironmentAPIServiceServer).DeleteEnvironment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.environment.v1alpha1.EnvironmentAPIService/DeleteEnvironment",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EnvironmentAPIServiceServer).DeleteEnvironment(ctx, req.(*DeleteEnvironmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EnvironmentAPIService_ServiceDesc is the grpc.ServiceDesc for EnvironmentAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -92,6 +156,14 @@ var EnvironmentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateEnvironment",
 			Handler:    _EnvironmentAPIService_CreateEnvironment_Handler,
+		},
+		{
+			MethodName: "ListEnvironment",
+			Handler:    _EnvironmentAPIService_ListEnvironment_Handler,
+		},
+		{
+			MethodName: "DeleteEnvironment",
+			Handler:    _EnvironmentAPIService_DeleteEnvironment_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

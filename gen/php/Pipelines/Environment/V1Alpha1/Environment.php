@@ -27,6 +27,14 @@ class Environment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 3 [json_name = "name"];</code>
      */
     protected $name = '';
+    /**
+     * Generated from protobuf field <code>bool active = 4 [json_name = "active"];</code>
+     */
+    protected $active = false;
+    /**
+     * Generated from protobuf field <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+     */
+    protected $status_type = 0;
 
     /**
      * Constructor.
@@ -37,6 +45,8 @@ class Environment extends \Google\Protobuf\Internal\Message
      *     @type string $organization_id
      *     @type string $project_id
      *     @type string $name
+     *     @type bool $active
+     *     @type int $status_type
      * }
      */
     public function __construct($data = NULL) {
@@ -106,6 +116,50 @@ class Environment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool active = 4 [json_name = "active"];</code>
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool active = 4 [json_name = "active"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setActive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->active = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+     * @return int
+     */
+    public function getStatusType()
+    {
+        return $this->status_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatusType($var)
+    {
+        GPBUtil::checkEnum($var, \Pipelines\Environment\V1Alpha1\StatusType::class);
+        $this->status_type = $var;
 
         return $this;
     }

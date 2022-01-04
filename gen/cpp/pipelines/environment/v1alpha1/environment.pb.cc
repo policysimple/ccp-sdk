@@ -23,7 +23,10 @@ constexpr Environment::Environment(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , active_(false)
+  , status_type_(0)
+{}
 struct EnvironmentDefaultTypeInternal {
   constexpr EnvironmentDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -37,7 +40,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT EnvironmentDefaultTypeInternal 
 }  // namespace environment
 }  // namespace pipelines
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto = nullptr;
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -49,6 +52,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fenvironment_2fv1al
   PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::Environment, organization_id_),
   PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::Environment, project_id_),
   PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::Environment, name_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::Environment, active_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::Environment, status_type_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::pipelines::environment::v1alpha1::Environment)},
@@ -61,18 +66,23 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n0pipelines/environment/v1alpha1/environ"
   "ment.proto\022\036pipelines.environment.v1alph"
-  "a1\"i\n\013Environment\022\'\n\017organization_id\030\001 \001"
-  "(\tR\016organizationId\022\035\n\nproject_id\030\002 \001(\tR\t"
-  "projectId\022\022\n\004name\030\003 \001(\tR\004nameB\307\001\n(io.cue"
-  "mby.pipelines.environment.v1alpha1B\020Envi"
-  "ronmentProtoP\001Z\?github.com/cuemby/ccp-sd"
-  "k/gen/go/pipelines/environment/v1alpha1\242"
-  "\002\003PPX\252\002\036Pipelines.Environment.V1Alpha1\312\002"
-  "\036Pipelines\\Environment\\V1Alpha1b\006proto3"
+  "a1\"\316\001\n\013Environment\022\'\n\017organization_id\030\001 "
+  "\001(\tR\016organizationId\022\035\n\nproject_id\030\002 \001(\tR"
+  "\tprojectId\022\022\n\004name\030\003 \001(\tR\004name\022\026\n\006active"
+  "\030\004 \001(\010R\006active\022K\n\013status_type\030\005 \001(\0162*.pi"
+  "pelines.environment.v1alpha1.StatusTypeR"
+  "\nstatusType*\\\n\nStatusType\022#\n\037STATUS_TYPE"
+  "_PENDING_UNSPECIFIED\020\000\022\022\n\016STATUS_TYPE_OK"
+  "\020\001\022\025\n\021STATUS_TYPE_ERROR\020\002B\307\001\n(io.cuemby."
+  "pipelines.environment.v1alpha1B\020Environm"
+  "entProtoP\001Z\?github.com/cuemby/ccp-sdk/ge"
+  "n/go/pipelines/environment/v1alpha1\242\002\003PP"
+  "X\252\002\036Pipelines.Environment.V1Alpha1\312\002\036Pip"
+  "elines\\Environment\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto = {
-  false, false, 399, descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto, "pipelines/environment/v1alpha1/environment.proto", 
+  false, false, 595, descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto, "pipelines/environment/v1alpha1/environment.proto", 
   &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto::offsets,
   file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto, file_level_enum_descriptors_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto, file_level_service_descriptors_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto,
@@ -86,6 +96,21 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDe
 namespace pipelines {
 namespace environment {
 namespace v1alpha1 {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* StatusType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto);
+  return file_level_enum_descriptors_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto[0];
+}
+bool StatusType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 
@@ -120,6 +145,9 @@ Environment::Environment(const Environment& from)
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
+  ::memcpy(&active_, &from.active_,
+    static_cast<size_t>(reinterpret_cast<char*>(&status_type_) -
+    reinterpret_cast<char*>(&active_)) + sizeof(status_type_));
   // @@protoc_insertion_point(copy_constructor:pipelines.environment.v1alpha1.Environment)
 }
 
@@ -127,6 +155,10 @@ inline void Environment::SharedCtor() {
 organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&active_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&status_type_) -
+    reinterpret_cast<char*>(&active_)) + sizeof(status_type_));
 }
 
 Environment::~Environment() {
@@ -162,6 +194,9 @@ void Environment::Clear() {
   organization_id_.ClearToEmpty();
   project_id_.ClearToEmpty();
   name_.ClearToEmpty();
+  ::memset(&active_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&status_type_) -
+      reinterpret_cast<char*>(&active_)) + sizeof(status_type_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -196,6 +231,21 @@ const char* Environment::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.environment.v1alpha1.Environment.name"));
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool active = 4 [json_name = "active"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          active_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_status_type(static_cast<::pipelines::environment::v1alpha1::StatusType>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -257,6 +307,19 @@ failure:
         3, this->_internal_name(), target);
   }
 
+  // bool active = 4 [json_name = "active"];
+  if (this->_internal_active() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_active(), target);
+  }
+
+  // .pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];
+  if (this->_internal_status_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      5, this->_internal_status_type(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -292,6 +355,17 @@ size_t Environment::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
+  }
+
+  // bool active = 4 [json_name = "active"];
+  if (this->_internal_active() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // .pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];
+  if (this->_internal_status_type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status_type());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -331,6 +405,12 @@ void Environment::MergeFrom(const Environment& from) {
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
+  if (from._internal_active() != 0) {
+    _internal_set_active(from._internal_active());
+  }
+  if (from._internal_status_type() != 0) {
+    _internal_set_status_type(from._internal_status_type());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -363,6 +443,12 @@ void Environment::InternalSwap(Environment* other) {
       &name_, GetArenaForAllocation(),
       &other->name_, other->GetArenaForAllocation()
   );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Environment, status_type_)
+      + sizeof(Environment::status_type_)
+      - PROTOBUF_FIELD_OFFSET(Environment, active_)>(
+          reinterpret_cast<char*>(&active_),
+          reinterpret_cast<char*>(&other->active_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Environment::GetMetadata() const {
