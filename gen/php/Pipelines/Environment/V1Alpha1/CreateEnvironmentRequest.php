@@ -17,6 +17,10 @@ class CreateEnvironmentRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];</code>
      */
     protected $environment = null;
+    /**
+     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
+     */
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class CreateEnvironmentRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Pipelines\Environment\V1Alpha1\Environment $environment
+     *     @type string $user_id
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +65,28 @@ class CreateEnvironmentRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Pipelines\Environment\V1Alpha1\Environment::class);
         $this->environment = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }

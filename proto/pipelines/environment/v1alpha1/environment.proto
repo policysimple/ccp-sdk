@@ -3,7 +3,7 @@ syntax = "proto3";
 package pipelines.environment.v1alpha1;
 
 option csharp_namespace = "Pipelines.Environment.V1Alpha1";
-option go_package = "github.com/cuemby/ccp-pipelines-service/environmentv1alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1";
 option java_multiple_files = true;
 option java_outer_classname = "EnvironmentProto";
 option java_package = "io.cuemby.pipelines.environment.v1alpha1";
@@ -12,7 +12,15 @@ option php_namespace = "Pipelines\\Environment\\V1Alpha1";
 
 // Environment ...
 message Environment {
-    string account_id = 1;
-    string team_id = 2;
+    string organization_id = 1;
+    string project_id = 2;
     string name = 3;
+    bool active = 4;
+    StatusType status_type = 5;
+}
+
+enum StatusType {
+    STATUS_TYPE_PENDING_UNSPECIFIED = 0;
+    STATUS_TYPE_OK = 1;
+    STATUS_TYPE_ERROR = 2;
 }

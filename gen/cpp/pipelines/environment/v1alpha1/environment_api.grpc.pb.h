@@ -29,10 +29,10 @@ namespace pipelines {
 namespace environment {
 namespace v1alpha1 {
 
-class EnvinromentAPIService final {
+class EnvironmentAPIService final {
  public:
   static constexpr char const* service_full_name() {
-    return "pipelines.environment.v1alpha1.EnvinromentAPIService";
+    return "pipelines.environment.v1alpha1.EnvironmentAPIService";
   }
   class StubInterface {
    public:
@@ -44,15 +44,35 @@ class EnvinromentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>> PrepareAsyncCreateEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>>(PrepareAsyncCreateEnvironmentRaw(context, request, cq));
     }
+    virtual ::grpc::Status ListEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest& request, ::pipelines::environment::v1alpha1::ListEnvironmentResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::ListEnvironmentResponse>> AsyncListEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::ListEnvironmentResponse>>(AsyncListEnvironmentRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::ListEnvironmentResponse>> PrepareAsyncListEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::ListEnvironmentResponse>>(PrepareAsyncListEnvironmentRaw(context, request, cq));
+    }
+    virtual ::grpc::Status DeleteEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest& request, ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>> AsyncDeleteEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>>(AsyncDeleteEnvironmentRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>> PrepareAsyncDeleteEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>>(PrepareAsyncDeleteEnvironmentRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
       virtual void CreateEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest* request, ::pipelines::environment::v1alpha1::CreateEnvironmentResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ListEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest* request, ::pipelines::environment::v1alpha1::ListEnvironmentResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest* request, ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>* AsyncCreateEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>* PrepareAsyncCreateEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::ListEnvironmentResponse>* AsyncListEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::ListEnvironmentResponse>* PrepareAsyncListEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>* AsyncDeleteEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>* PrepareAsyncDeleteEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -64,10 +84,26 @@ class EnvinromentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>> PrepareAsyncCreateEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>>(PrepareAsyncCreateEnvironmentRaw(context, request, cq));
     }
+    ::grpc::Status ListEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest& request, ::pipelines::environment::v1alpha1::ListEnvironmentResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::ListEnvironmentResponse>> AsyncListEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::ListEnvironmentResponse>>(AsyncListEnvironmentRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::ListEnvironmentResponse>> PrepareAsyncListEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::ListEnvironmentResponse>>(PrepareAsyncListEnvironmentRaw(context, request, cq));
+    }
+    ::grpc::Status DeleteEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest& request, ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>> AsyncDeleteEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>>(AsyncDeleteEnvironmentRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>> PrepareAsyncDeleteEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>>(PrepareAsyncDeleteEnvironmentRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
       void CreateEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest* request, ::pipelines::environment::v1alpha1::CreateEnvironmentResponse* response, std::function<void(::grpc::Status)>) override;
+      void ListEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest* request, ::pipelines::environment::v1alpha1::ListEnvironmentResponse* response, std::function<void(::grpc::Status)>) override;
+      void DeleteEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest* request, ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -81,7 +117,13 @@ class EnvinromentAPIService final {
     class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>* AsyncCreateEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>* PrepareAsyncCreateEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::ListEnvironmentResponse>* AsyncListEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::ListEnvironmentResponse>* PrepareAsyncListEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>* AsyncDeleteEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>* PrepareAsyncDeleteEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateEnvironment_;
+    const ::grpc::internal::RpcMethod rpcmethod_ListEnvironment_;
+    const ::grpc::internal::RpcMethod rpcmethod_DeleteEnvironment_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -90,6 +132,8 @@ class EnvinromentAPIService final {
     Service();
     virtual ~Service();
     virtual ::grpc::Status CreateEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest* request, ::pipelines::environment::v1alpha1::CreateEnvironmentResponse* response);
+    virtual ::grpc::Status ListEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest* request, ::pipelines::environment::v1alpha1::ListEnvironmentResponse* response);
+    virtual ::grpc::Status DeleteEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest* request, ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateEnvironment : public BaseClass {
@@ -111,7 +155,47 @@ class EnvinromentAPIService final {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateEnvironment<Service > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_ListEnvironment : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_ListEnvironment() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_ListEnvironment() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest* request, ::pipelines::environment::v1alpha1::ListEnvironmentResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListEnvironment(::grpc::ServerContext* context, ::pipelines::environment::v1alpha1::ListEnvironmentRequest* request, ::grpc::ServerAsyncResponseWriter< ::pipelines::environment::v1alpha1::ListEnvironmentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DeleteEnvironment : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_DeleteEnvironment() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_DeleteEnvironment() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest* request, ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteEnvironment(::grpc::ServerContext* context, ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest* request, ::grpc::ServerAsyncResponseWriter< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateEnvironment<WithAsyncMethod_ListEnvironment<WithAsyncMethod_DeleteEnvironment<Service > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateEnvironment : public BaseClass {
    private:
@@ -125,6 +209,40 @@ class EnvinromentAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status CreateEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest* request, ::pipelines::environment::v1alpha1::CreateEnvironmentResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ListEnvironment : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_ListEnvironment() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_ListEnvironment() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest* request, ::pipelines::environment::v1alpha1::ListEnvironmentResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DeleteEnvironment : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_DeleteEnvironment() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_DeleteEnvironment() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest* request, ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -150,6 +268,46 @@ class EnvinromentAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_ListEnvironment : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_ListEnvironment() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_ListEnvironment() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest* request, ::pipelines::environment::v1alpha1::ListEnvironmentResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListEnvironment(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DeleteEnvironment : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_DeleteEnvironment() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_DeleteEnvironment() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest* request, ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteEnvironment(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateEnvironment : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -169,9 +327,49 @@ class EnvinromentAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedCreateEnvironment(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pipelines::environment::v1alpha1::CreateEnvironmentRequest,::pipelines::environment::v1alpha1::CreateEnvironmentResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateEnvironment<Service > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ListEnvironment : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_ListEnvironment() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler< ::pipelines::environment::v1alpha1::ListEnvironmentRequest, ::pipelines::environment::v1alpha1::ListEnvironmentResponse>(std::bind(&WithStreamedUnaryMethod_ListEnvironment<BaseClass>::StreamedListEnvironment, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_ListEnvironment() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ListEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest* request, ::pipelines::environment::v1alpha1::ListEnvironmentResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedListEnvironment(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pipelines::environment::v1alpha1::ListEnvironmentRequest,::pipelines::environment::v1alpha1::ListEnvironmentResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DeleteEnvironment : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_DeleteEnvironment() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler< ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest, ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>(std::bind(&WithStreamedUnaryMethod_DeleteEnvironment<BaseClass>::StreamedDeleteEnvironment, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_DeleteEnvironment() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DeleteEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest* request, ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDeleteEnvironment(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest,::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateEnvironment<WithStreamedUnaryMethod_ListEnvironment<WithStreamedUnaryMethod_DeleteEnvironment<Service > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateEnvironment<Service > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateEnvironment<WithStreamedUnaryMethod_ListEnvironment<WithStreamedUnaryMethod_DeleteEnvironment<Service > > > StreamedService;
 };
 
 }  // namespace v1alpha1

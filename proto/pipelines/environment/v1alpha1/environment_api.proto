@@ -3,7 +3,7 @@ syntax = "proto3";
 package pipelines.environment.v1alpha1;
 
 option csharp_namespace = "Pipelines.Environment.V1Alpha1";
-option go_package = "github.com/cuemby/ccp-pipelines-service/environmentv1alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1";
 option java_multiple_files = true;
 option java_outer_classname = "EnvironmentAPIProto";
 option java_package = "io.cuemby.pipelines.environment.v1alpha1";
@@ -12,17 +12,35 @@ option php_namespace = "Pipelines\\Environment\\V1Alpha1";
 
 import "pipelines/environment/v1alpha1/environment.proto";
 
-
-service EnvinromentAPIService{
-    rpc CreateEnvironment(CreateEnvironmentRequest) returns (CreateEnvironmentResponse) {};
+service EnvironmentAPIService{
+    rpc CreateEnvironment(CreateEnvironmentRequest) returns (CreateEnvironmentResponse);
+    rpc ListEnvironment(ListEnvironmentRequest) returns (ListEnvironmentResponse);
+    rpc DeleteEnvironment(DeleteEnvironmentRequest) returns (DeleteEnvironmentResponse);
 }
 
 message CreateEnvironmentRequest {
     pipelines.environment.v1alpha1.Environment environment = 1;
+    string user_id = 2;
 }
 
 message CreateEnvironmentResponse {
     pipelines.environment.v1alpha1.Environment environment = 1;
     string status = 2;
+}
+
+message ListEnvironmentRequest {
+    string project_id = 1; 
+}
+
+message ListEnvironmentResponse {
+    repeated pipelines.environment.v1alpha1.Environment environment = 1; 
+}
+
+message DeleteEnvironmentRequest {
+    string environment_id = 1; 
+}
+
+message DeleteEnvironmentResponse {
+    string status = 1; 
 }
 

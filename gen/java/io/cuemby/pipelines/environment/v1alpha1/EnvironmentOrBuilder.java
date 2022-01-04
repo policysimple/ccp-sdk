@@ -8,28 +8,28 @@ public interface EnvironmentOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string account_id = 1 [json_name = "accountId"];</code>
-   * @return The accountId.
+   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+   * @return The organizationId.
    */
-  java.lang.String getAccountId();
+  java.lang.String getOrganizationId();
   /**
-   * <code>string account_id = 1 [json_name = "accountId"];</code>
-   * @return The bytes for accountId.
+   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+   * @return The bytes for organizationId.
    */
   com.google.protobuf.ByteString
-      getAccountIdBytes();
+      getOrganizationIdBytes();
 
   /**
-   * <code>string team_id = 2 [json_name = "teamId"];</code>
-   * @return The teamId.
+   * <code>string project_id = 2 [json_name = "projectId"];</code>
+   * @return The projectId.
    */
-  java.lang.String getTeamId();
+  java.lang.String getProjectId();
   /**
-   * <code>string team_id = 2 [json_name = "teamId"];</code>
-   * @return The bytes for teamId.
+   * <code>string project_id = 2 [json_name = "projectId"];</code>
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString
-      getTeamIdBytes();
+      getProjectIdBytes();
 
   /**
    * <code>string name = 3 [json_name = "name"];</code>
@@ -42,4 +42,21 @@ public interface EnvironmentOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <code>bool active = 4 [json_name = "active"];</code>
+   * @return The active.
+   */
+  boolean getActive();
+
+  /**
+   * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+   * @return The enum numeric value on the wire for statusType.
+   */
+  int getStatusTypeValue();
+  /**
+   * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+   * @return The statusType.
+   */
+  io.cuemby.pipelines.environment.v1alpha1.StatusType getStatusType();
 }
