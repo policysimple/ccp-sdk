@@ -16,7 +16,7 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-≠
+ù
 source/v1alpha1/source.protosource.v1alpha1"Ü
 Integration
 id (	Rid\'
@@ -26,9 +26,8 @@ class Source
 data (2&.source.v1alpha1.Integration.DataEntryRdata7
 	DataEntry
 key (	Rkey
-value (	Rvalue:8"†
-CreateIntegrationRequest
-id (	Rid\'
+value (	Rvalue:8"ê
+CreateIntegrationRequest\'
 organization_id (RorganizationId
 name (	Rname5
 provider (2.source.v1alpha1.ProviderRproviderG

@@ -34,17 +34,17 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
      */
     protected $description = '';
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Member members = 6 [json_name = "members"];</code>
-     */
-    private $members;
-    /**
-     * Generated from protobuf field <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * Generated from protobuf field <code>string created_at = 6 [json_name = "createdAt"];</code>
      */
     protected $created_at = '';
     /**
-     * Generated from protobuf field <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * Generated from protobuf field <code>string updated_at = 7 [json_name = "updatedAt"];</code>
      */
     protected $updated_at = '';
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Member members = 8 [json_name = "members"];</code>
+     */
+    private $members;
 
     /**
      * Constructor.
@@ -57,9 +57,9 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
      *     @type string $image
      *     @type int $organization_id
      *     @type string $description
-     *     @type \Accounts\V1alpha1\Member[]|\Google\Protobuf\Internal\RepeatedField $members
      *     @type string $created_at
      *     @type string $updated_at
+     *     @type \Accounts\V1alpha1\Member[]|\Google\Protobuf\Internal\RepeatedField $members
      * }
      */
     public function __construct($data = NULL) {
@@ -178,29 +178,7 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Member members = 6 [json_name = "members"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getMembers()
-    {
-        return $this->members;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Member members = 6 [json_name = "members"];</code>
-     * @param \Accounts\V1alpha1\Member[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setMembers($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Member::class);
-        $this->members = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * Generated from protobuf field <code>string created_at = 6 [json_name = "createdAt"];</code>
      * @return string
      */
     public function getCreatedAt()
@@ -209,7 +187,7 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * Generated from protobuf field <code>string created_at = 6 [json_name = "createdAt"];</code>
      * @param string $var
      * @return $this
      */
@@ -222,7 +200,7 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * Generated from protobuf field <code>string updated_at = 7 [json_name = "updatedAt"];</code>
      * @return string
      */
     public function getUpdatedAt()
@@ -231,7 +209,7 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * Generated from protobuf field <code>string updated_at = 7 [json_name = "updatedAt"];</code>
      * @param string $var
      * @return $this
      */
@@ -239,6 +217,28 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Member members = 8 [json_name = "members"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getMembers()
+    {
+        return $this->members;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Member members = 8 [json_name = "members"];</code>
+     * @param \Accounts\V1alpha1\Member[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setMembers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Member::class);
+        $this->members = $arr;
 
         return $this;
     }

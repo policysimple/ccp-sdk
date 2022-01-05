@@ -8884,7 +8884,7 @@ proto.accounts.v1alpha1.DeleteProjectResponse.prototype.setError = function(valu
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.GetOneProjectResponse.repeatedFields_ = [6];
+proto.accounts.v1alpha1.GetOneProjectResponse.repeatedFields_ = [8];
 
 
 
@@ -8922,10 +8922,10 @@ proto.accounts.v1alpha1.GetOneProjectResponse.toObject = function(includeInstanc
     image: jspb.Message.getFieldWithDefault(msg, 3, ""),
     organizationId: jspb.Message.getFieldWithDefault(msg, 4, 0),
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    createdAt: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
     membersList: jspb.Message.toObjectList(msg.getMembersList(),
-    proto.accounts.v1alpha1.Member.toObject, includeInstance),
-    createdAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 8, "")
+    proto.accounts.v1alpha1.Member.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -8983,17 +8983,17 @@ proto.accounts.v1alpha1.GetOneProjectResponse.deserializeBinaryFromReader = func
       msg.setDescription(value);
       break;
     case 6:
-      var value = new proto.accounts.v1alpha1.Member;
-      reader.readMessage(value,proto.accounts.v1alpha1.Member.deserializeBinaryFromReader);
-      msg.addMembers(value);
-      break;
-    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setCreatedAt(value);
       break;
-    case 8:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setUpdatedAt(value);
+      break;
+    case 8:
+      var value = new proto.accounts.v1alpha1.Member;
+      reader.readMessage(value,proto.accounts.v1alpha1.Member.deserializeBinaryFromReader);
+      msg.addMembers(value);
       break;
     default:
       reader.skipField();
@@ -9059,26 +9059,26 @@ proto.accounts.v1alpha1.GetOneProjectResponse.serializeBinaryToWriter = function
       f
     );
   }
-  f = message.getMembersList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      6,
-      f,
-      proto.accounts.v1alpha1.Member.serializeBinaryToWriter
-    );
-  }
   f = message.getCreatedAt();
   if (f.length > 0) {
     writer.writeString(
-      7,
+      6,
       f
     );
   }
   f = message.getUpdatedAt();
   if (f.length > 0) {
     writer.writeString(
-      8,
+      7,
       f
+    );
+  }
+  f = message.getMembersList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      8,
+      f,
+      proto.accounts.v1alpha1.Member.serializeBinaryToWriter
     );
   }
 };
@@ -9175,12 +9175,48 @@ proto.accounts.v1alpha1.GetOneProjectResponse.prototype.setDescription = functio
 
 
 /**
- * repeated Member members = 6;
+ * optional string created_at = 6;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.GetOneProjectResponse.prototype.getCreatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.GetOneProjectResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneProjectResponse.prototype.setCreatedAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string updated_at = 7;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.GetOneProjectResponse.prototype.getUpdatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.GetOneProjectResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneProjectResponse.prototype.setUpdatedAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * repeated Member members = 8;
  * @return {!Array<!proto.accounts.v1alpha1.Member>}
  */
 proto.accounts.v1alpha1.GetOneProjectResponse.prototype.getMembersList = function() {
   return /** @type{!Array<!proto.accounts.v1alpha1.Member>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Member, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Member, 8));
 };
 
 
@@ -9189,7 +9225,7 @@ proto.accounts.v1alpha1.GetOneProjectResponse.prototype.getMembersList = functio
  * @return {!proto.accounts.v1alpha1.GetOneProjectResponse} returns this
 */
 proto.accounts.v1alpha1.GetOneProjectResponse.prototype.setMembersList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -9199,7 +9235,7 @@ proto.accounts.v1alpha1.GetOneProjectResponse.prototype.setMembersList = functio
  * @return {!proto.accounts.v1alpha1.Member}
  */
 proto.accounts.v1alpha1.GetOneProjectResponse.prototype.addMembers = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.accounts.v1alpha1.Member, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.accounts.v1alpha1.Member, opt_index);
 };
 
 
@@ -9209,42 +9245,6 @@ proto.accounts.v1alpha1.GetOneProjectResponse.prototype.addMembers = function(op
  */
 proto.accounts.v1alpha1.GetOneProjectResponse.prototype.clearMembersList = function() {
   return this.setMembersList([]);
-};
-
-
-/**
- * optional string created_at = 7;
- * @return {string}
- */
-proto.accounts.v1alpha1.GetOneProjectResponse.prototype.getCreatedAt = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.GetOneProjectResponse} returns this
- */
-proto.accounts.v1alpha1.GetOneProjectResponse.prototype.setCreatedAt = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
-};
-
-
-/**
- * optional string updated_at = 8;
- * @return {string}
- */
-proto.accounts.v1alpha1.GetOneProjectResponse.prototype.getUpdatedAt = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.GetOneProjectResponse} returns this
- */
-proto.accounts.v1alpha1.GetOneProjectResponse.prototype.setUpdatedAt = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -11962,7 +11962,8 @@ proto.accounts.v1alpha1.ProjectOrganization.toObject = function(includeInstance,
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    image: jspb.Message.getFieldWithDefault(msg, 3, "")
+    image: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -12011,6 +12012,10 @@ proto.accounts.v1alpha1.ProjectOrganization.deserializeBinaryFromReader = functi
       var value = /** @type {string} */ (reader.readString());
       msg.setImage(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -12058,6 +12063,13 @@ proto.accounts.v1alpha1.ProjectOrganization.serializeBinaryToWriter = function(m
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -12115,6 +12127,24 @@ proto.accounts.v1alpha1.ProjectOrganization.prototype.getImage = function() {
  */
 proto.accounts.v1alpha1.ProjectOrganization.prototype.setImage = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string description = 4;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.ProjectOrganization.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.ProjectOrganization} returns this
+ */
+proto.accounts.v1alpha1.ProjectOrganization.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

@@ -345,9 +345,9 @@ message GetOneProjectResponse {
     string image = 3;
     uint32 organization_id = 4;
     string description = 5;
-    repeated Member members = 6;
-    string created_at = 7;
-    string updated_at = 8;
+    string created_at = 6;
+    string updated_at = 7;
+    repeated Member members = 8;
 }
 
 
@@ -461,6 +461,7 @@ message ProjectOrganization {
     int32 id = 1;
     string name = 2;
     string image = 3;
+    string description = 4;
     //repeated Member members = 4;
 }
 
