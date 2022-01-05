@@ -805,7 +805,6 @@ proto.source.v1alpha1.CreateIntegrationRequest.prototype.toObject = function(opt
  */
 proto.source.v1alpha1.CreateIntegrationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     provider: (f = msg.getProvider()) && proto.source.v1alpha1.Provider.toObject(includeInstance, f),
@@ -846,10 +845,6 @@ proto.source.v1alpha1.CreateIntegrationRequest.deserializeBinaryFromReader = fun
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
     case 2:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setOrganizationId(value);
@@ -898,13 +893,6 @@ proto.source.v1alpha1.CreateIntegrationRequest.prototype.serializeBinary = funct
  */
 proto.source.v1alpha1.CreateIntegrationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getOrganizationId();
   if (f !== 0) {
     writer.writeUint32(
@@ -931,24 +919,6 @@ proto.source.v1alpha1.CreateIntegrationRequest.serializeBinaryToWriter = functio
   if (f && f.getLength() > 0) {
     f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-};
-
-
-/**
- * optional string id = 1;
- * @return {string}
- */
-proto.source.v1alpha1.CreateIntegrationRequest.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.source.v1alpha1.CreateIntegrationRequest} returns this
- */
-proto.source.v1alpha1.CreateIntegrationRequest.prototype.setId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

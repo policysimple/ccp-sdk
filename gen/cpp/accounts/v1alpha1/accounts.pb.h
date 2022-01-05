@@ -6716,16 +6716,16 @@ class GetOneProjectResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMembersFieldNumber = 6,
+    kMembersFieldNumber = 8,
     kNameFieldNumber = 2,
     kImageFieldNumber = 3,
     kDescriptionFieldNumber = 5,
-    kCreatedAtFieldNumber = 7,
-    kUpdatedAtFieldNumber = 8,
+    kCreatedAtFieldNumber = 6,
+    kUpdatedAtFieldNumber = 7,
     kIdFieldNumber = 1,
     kOrganizationIdFieldNumber = 4,
   };
-  // repeated .accounts.v1alpha1.Member members = 6 [json_name = "members"];
+  // repeated .accounts.v1alpha1.Member members = 8 [json_name = "members"];
   int members_size() const;
   private:
   int _internal_members_size() const;
@@ -6785,7 +6785,7 @@ class GetOneProjectResponse final :
   std::string* _internal_mutable_description();
   public:
 
-  // string created_at = 7 [json_name = "createdAt"];
+  // string created_at = 6 [json_name = "createdAt"];
   void clear_created_at();
   const std::string& created_at() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -6799,7 +6799,7 @@ class GetOneProjectResponse final :
   std::string* _internal_mutable_created_at();
   public:
 
-  // string updated_at = 8 [json_name = "updatedAt"];
+  // string updated_at = 7 [json_name = "updatedAt"];
   void clear_updated_at();
   const std::string& updated_at() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -9496,6 +9496,7 @@ class ProjectOrganization final :
   enum : int {
     kNameFieldNumber = 2,
     kImageFieldNumber = 3,
+    kDescriptionFieldNumber = 4,
     kIdFieldNumber = 1,
   };
   // string name = 2 [json_name = "name"];
@@ -9526,6 +9527,20 @@ class ProjectOrganization final :
   std::string* _internal_mutable_image();
   public:
 
+  // string description = 4 [json_name = "description"];
+  void clear_description();
+  const std::string& description() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_description(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_description();
+  PROTOBUF_MUST_USE_RESULT std::string* release_description();
+  void set_allocated_description(std::string* description);
+  private:
+  const std::string& _internal_description() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_description(const std::string& value);
+  std::string* _internal_mutable_description();
+  public:
+
   // int32 id = 1 [json_name = "id"];
   void clear_id();
   ::PROTOBUF_NAMESPACE_ID::int32 id() const;
@@ -9544,6 +9559,7 @@ class ProjectOrganization final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
   ::PROTOBUF_NAMESPACE_ID::int32 id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
@@ -16532,47 +16548,7 @@ inline void GetOneProjectResponse::set_allocated_description(std::string* descri
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneProjectResponse.description)
 }
 
-// repeated .accounts.v1alpha1.Member members = 6 [json_name = "members"];
-inline int GetOneProjectResponse::_internal_members_size() const {
-  return members_.size();
-}
-inline int GetOneProjectResponse::members_size() const {
-  return _internal_members_size();
-}
-inline void GetOneProjectResponse::clear_members() {
-  members_.Clear();
-}
-inline ::accounts::v1alpha1::Member* GetOneProjectResponse::mutable_members(int index) {
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneProjectResponse.members)
-  return members_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Member >*
-GetOneProjectResponse::mutable_members() {
-  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.GetOneProjectResponse.members)
-  return &members_;
-}
-inline const ::accounts::v1alpha1::Member& GetOneProjectResponse::_internal_members(int index) const {
-  return members_.Get(index);
-}
-inline const ::accounts::v1alpha1::Member& GetOneProjectResponse::members(int index) const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneProjectResponse.members)
-  return _internal_members(index);
-}
-inline ::accounts::v1alpha1::Member* GetOneProjectResponse::_internal_add_members() {
-  return members_.Add();
-}
-inline ::accounts::v1alpha1::Member* GetOneProjectResponse::add_members() {
-  ::accounts::v1alpha1::Member* _add = _internal_add_members();
-  // @@protoc_insertion_point(field_add:accounts.v1alpha1.GetOneProjectResponse.members)
-  return _add;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Member >&
-GetOneProjectResponse::members() const {
-  // @@protoc_insertion_point(field_list:accounts.v1alpha1.GetOneProjectResponse.members)
-  return members_;
-}
-
-// string created_at = 7 [json_name = "createdAt"];
+// string created_at = 6 [json_name = "createdAt"];
 inline void GetOneProjectResponse::clear_created_at() {
   created_at_.ClearToEmpty();
 }
@@ -16618,7 +16594,7 @@ inline void GetOneProjectResponse::set_allocated_created_at(std::string* created
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneProjectResponse.created_at)
 }
 
-// string updated_at = 8 [json_name = "updatedAt"];
+// string updated_at = 7 [json_name = "updatedAt"];
 inline void GetOneProjectResponse::clear_updated_at() {
   updated_at_.ClearToEmpty();
 }
@@ -16662,6 +16638,46 @@ inline void GetOneProjectResponse::set_allocated_updated_at(std::string* updated
   updated_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), updated_at,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneProjectResponse.updated_at)
+}
+
+// repeated .accounts.v1alpha1.Member members = 8 [json_name = "members"];
+inline int GetOneProjectResponse::_internal_members_size() const {
+  return members_.size();
+}
+inline int GetOneProjectResponse::members_size() const {
+  return _internal_members_size();
+}
+inline void GetOneProjectResponse::clear_members() {
+  members_.Clear();
+}
+inline ::accounts::v1alpha1::Member* GetOneProjectResponse::mutable_members(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneProjectResponse.members)
+  return members_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Member >*
+GetOneProjectResponse::mutable_members() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.GetOneProjectResponse.members)
+  return &members_;
+}
+inline const ::accounts::v1alpha1::Member& GetOneProjectResponse::_internal_members(int index) const {
+  return members_.Get(index);
+}
+inline const ::accounts::v1alpha1::Member& GetOneProjectResponse::members(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneProjectResponse.members)
+  return _internal_members(index);
+}
+inline ::accounts::v1alpha1::Member* GetOneProjectResponse::_internal_add_members() {
+  return members_.Add();
+}
+inline ::accounts::v1alpha1::Member* GetOneProjectResponse::add_members() {
+  ::accounts::v1alpha1::Member* _add = _internal_add_members();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.GetOneProjectResponse.members)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Member >&
+GetOneProjectResponse::members() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.GetOneProjectResponse.members)
+  return members_;
 }
 
 // -------------------------------------------------------------------
@@ -18030,6 +18046,52 @@ inline void ProjectOrganization::set_allocated_image(std::string* image) {
   image_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), image,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.ProjectOrganization.image)
+}
+
+// string description = 4 [json_name = "description"];
+inline void ProjectOrganization::clear_description() {
+  description_.ClearToEmpty();
+}
+inline const std::string& ProjectOrganization::description() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.ProjectOrganization.description)
+  return _internal_description();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ProjectOrganization::set_description(ArgT0&& arg0, ArgT... args) {
+ 
+ description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.ProjectOrganization.description)
+}
+inline std::string* ProjectOrganization::mutable_description() {
+  std::string* _s = _internal_mutable_description();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.ProjectOrganization.description)
+  return _s;
+}
+inline const std::string& ProjectOrganization::_internal_description() const {
+  return description_.Get();
+}
+inline void ProjectOrganization::_internal_set_description(const std::string& value) {
+  
+  description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ProjectOrganization::_internal_mutable_description() {
+  
+  return description_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ProjectOrganization::release_description() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.ProjectOrganization.description)
+  return description_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ProjectOrganization::set_allocated_description(std::string* description) {
+  if (description != nullptr) {
+    
+  } else {
+    
+  }
+  description_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.ProjectOrganization.description)
 }
 
 // -------------------------------------------------------------------

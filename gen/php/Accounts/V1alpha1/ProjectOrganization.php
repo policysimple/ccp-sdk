@@ -24,11 +24,15 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     *repeated Member members = 4;
-     *
      * Generated from protobuf field <code>string image = 3 [json_name = "image"];</code>
      */
     protected $image = '';
+    /**
+     *repeated Member members = 4;
+     *
+     * Generated from protobuf field <code>string description = 4 [json_name = "description"];</code>
+     */
+    protected $description = '';
 
     /**
      * Constructor.
@@ -39,6 +43,7 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
      *     @type int $id
      *     @type string $name
      *     @type string $image
+     *     @type string $description
      *          repeated Member members = 4;
      * }
      */
@@ -92,8 +97,6 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *repeated Member members = 4;
-     *
      * Generated from protobuf field <code>string image = 3 [json_name = "image"];</code>
      * @return string
      */
@@ -103,8 +106,6 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *repeated Member members = 4;
-     *
      * Generated from protobuf field <code>string image = 3 [json_name = "image"];</code>
      * @param string $var
      * @return $this
@@ -113,6 +114,32 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->image = $var;
+
+        return $this;
+    }
+
+    /**
+     *repeated Member members = 4;
+     *
+     * Generated from protobuf field <code>string description = 4 [json_name = "description"];</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     *repeated Member members = 4;
+     *
+     * Generated from protobuf field <code>string description = 4 [json_name = "description"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
 
         return $this;
     }

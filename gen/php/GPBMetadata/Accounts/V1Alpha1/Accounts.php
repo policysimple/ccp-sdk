@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-¨R
+ÊR
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"à
 CheckUserRequest\'
 organization_id (RorganizationId
@@ -186,12 +186,12 @@ updated_at (	R	updatedAt,
 name (	Rname
 image (	Rimage\'
 organization_id (RorganizationId 
-description (	Rdescription3
-members (2.accounts.v1alpha1.MemberRmembers
+description (	Rdescription
 
-created_at (	R	createdAt
+created_at (	R	createdAt
 
-updated_at (	R	updatedAt"M
+updated_at (	R	updatedAt3
+members (2.accounts.v1alpha1.MemberRmembers"M
 ListProjectResponse6
 projects (2.accounts.v1alpha1.ProjectRprojects"L
 ListProjectPaginationRequest
@@ -242,11 +242,12 @@ Permission
 
 first_name (	R	firstName
 	last_name (	RlastName
-	is_active (RisActive"O
+	is_active (RisActive"q
 ProjectOrganization
 id (Rid
 name (	Rname
-image (	Rimage"H
+image (	Rimage 
+description (	Rdescription"H
 Organization
 id (Rid
 name (	Rname

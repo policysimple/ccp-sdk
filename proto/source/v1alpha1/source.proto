@@ -45,7 +45,7 @@ message Integration {
 }
 
 message CreateIntegrationRequest {
-    string id = 1;
+    //string id = 1;
     uint32 organization_id = 2;
     string name = 3;
     Provider provider = 4;
