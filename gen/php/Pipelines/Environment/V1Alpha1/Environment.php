@@ -16,25 +16,29 @@ use Google\Protobuf\Internal\GPBUtil;
 class Environment extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     */
+    protected $id = '';
+    /**
+     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
      */
     protected $organization_id = '';
     /**
-     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string project_id = 3 [json_name = "projectId"];</code>
      */
     protected $project_id = '';
     /**
-     * Generated from protobuf field <code>string name = 3 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string name = 4 [json_name = "name"];</code>
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>bool active = 4 [json_name = "active"];</code>
+     * Generated from protobuf field <code>bool active = 5 [json_name = "active"];</code>
      */
     protected $active = false;
     /**
-     * Generated from protobuf field <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+     * Generated from protobuf field <code>string status_type = 6 [json_name = "statusType"];</code>
      */
-    protected $status_type = 0;
+    protected $status_type = '';
 
     /**
      * Constructor.
@@ -42,11 +46,12 @@ class Environment extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $id
      *     @type string $organization_id
      *     @type string $project_id
      *     @type string $name
      *     @type bool $active
-     *     @type int $status_type
+     *     @type string $status_type
      * }
      */
     public function __construct($data = NULL) {
@@ -55,7 +60,29 @@ class Environment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @return string
      */
     public function getOrganizationId()
@@ -64,7 +91,7 @@ class Environment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @param string $var
      * @return $this
      */
@@ -77,7 +104,7 @@ class Environment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string project_id = 3 [json_name = "projectId"];</code>
      * @return string
      */
     public function getProjectId()
@@ -86,7 +113,7 @@ class Environment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string project_id = 3 [json_name = "projectId"];</code>
      * @param string $var
      * @return $this
      */
@@ -99,7 +126,7 @@ class Environment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 3 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string name = 4 [json_name = "name"];</code>
      * @return string
      */
     public function getName()
@@ -108,7 +135,7 @@ class Environment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 3 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string name = 4 [json_name = "name"];</code>
      * @param string $var
      * @return $this
      */
@@ -121,7 +148,7 @@ class Environment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool active = 4 [json_name = "active"];</code>
+     * Generated from protobuf field <code>bool active = 5 [json_name = "active"];</code>
      * @return bool
      */
     public function getActive()
@@ -130,7 +157,7 @@ class Environment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool active = 4 [json_name = "active"];</code>
+     * Generated from protobuf field <code>bool active = 5 [json_name = "active"];</code>
      * @param bool $var
      * @return $this
      */
@@ -143,8 +170,8 @@ class Environment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
-     * @return int
+     * Generated from protobuf field <code>string status_type = 6 [json_name = "statusType"];</code>
+     * @return string
      */
     public function getStatusType()
     {
@@ -152,13 +179,13 @@ class Environment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string status_type = 6 [json_name = "statusType"];</code>
+     * @param string $var
      * @return $this
      */
     public function setStatusType($var)
     {
-        GPBUtil::checkEnum($var, \Pipelines\Environment\V1Alpha1\StatusType::class);
+        GPBUtil::checkString($var, True);
         $this->status_type = $var;
 
         return $this;

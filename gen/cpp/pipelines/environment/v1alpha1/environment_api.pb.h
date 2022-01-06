@@ -828,6 +828,7 @@ class DeleteEnvironmentRequest final :
 
   enum : int {
     kEnvironmentIdFieldNumber = 1,
+    kUserIdFieldNumber = 2,
   };
   // string environment_id = 1 [json_name = "environmentId"];
   void clear_environment_id();
@@ -843,6 +844,20 @@ class DeleteEnvironmentRequest final :
   std::string* _internal_mutable_environment_id();
   public:
 
+  // string user_id = 2 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.environment.v1alpha1.DeleteEnvironmentRequest)
  private:
   class _Internal;
@@ -851,6 +866,7 @@ class DeleteEnvironmentRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto;
 };
@@ -1416,6 +1432,52 @@ inline void DeleteEnvironmentRequest::set_allocated_environment_id(std::string* 
   environment_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), environment_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.DeleteEnvironmentRequest.environment_id)
+}
+
+// string user_id = 2 [json_name = "userId"];
+inline void DeleteEnvironmentRequest::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& DeleteEnvironmentRequest::user_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.DeleteEnvironmentRequest.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteEnvironmentRequest::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.environment.v1alpha1.DeleteEnvironmentRequest.user_id)
+}
+inline std::string* DeleteEnvironmentRequest::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.DeleteEnvironmentRequest.user_id)
+  return _s;
+}
+inline const std::string& DeleteEnvironmentRequest::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void DeleteEnvironmentRequest::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteEnvironmentRequest::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteEnvironmentRequest::release_user_id() {
+  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.DeleteEnvironmentRequest.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteEnvironmentRequest::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.DeleteEnvironmentRequest.user_id)
 }
 
 // -------------------------------------------------------------------

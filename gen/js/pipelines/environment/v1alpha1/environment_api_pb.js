@@ -833,7 +833,8 @@ proto.pipelines.environment.v1alpha1.DeleteEnvironmentRequest.prototype.toObject
  */
 proto.pipelines.environment.v1alpha1.DeleteEnvironmentRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    environmentId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    environmentId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -874,6 +875,10 @@ proto.pipelines.environment.v1alpha1.DeleteEnvironmentRequest.deserializeBinaryF
       var value = /** @type {string} */ (reader.readString());
       msg.setEnvironmentId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -910,6 +915,13 @@ proto.pipelines.environment.v1alpha1.DeleteEnvironmentRequest.serializeBinaryToW
       f
     );
   }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -928,6 +940,24 @@ proto.pipelines.environment.v1alpha1.DeleteEnvironmentRequest.prototype.getEnvir
  */
 proto.pipelines.environment.v1alpha1.DeleteEnvironmentRequest.prototype.setEnvironmentId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string user_id = 2;
+ * @return {string}
+ */
+proto.pipelines.environment.v1alpha1.DeleteEnvironmentRequest.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.environment.v1alpha1.DeleteEnvironmentRequest} returns this
+ */
+proto.pipelines.environment.v1alpha1.DeleteEnvironmentRequest.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

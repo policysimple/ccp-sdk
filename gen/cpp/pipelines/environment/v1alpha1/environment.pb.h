@@ -30,7 +30,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -70,32 +69,6 @@ namespace pipelines {
 namespace environment {
 namespace v1alpha1 {
 
-enum StatusType : int {
-  STATUS_TYPE_PENDING_UNSPECIFIED = 0,
-  STATUS_TYPE_OK = 1,
-  STATUS_TYPE_ERROR = 2,
-  StatusType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  StatusType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool StatusType_IsValid(int value);
-constexpr StatusType StatusType_MIN = STATUS_TYPE_PENDING_UNSPECIFIED;
-constexpr StatusType StatusType_MAX = STATUS_TYPE_ERROR;
-constexpr int StatusType_ARRAYSIZE = StatusType_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* StatusType_descriptor();
-template<typename T>
-inline const std::string& StatusType_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, StatusType>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function StatusType_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    StatusType_descriptor(), enum_t_value);
-}
-inline bool StatusType_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, StatusType* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<StatusType>(
-    StatusType_descriptor(), name, value);
-}
 // ===================================================================
 
 class Environment final :
@@ -213,13 +186,28 @@ class Environment final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOrganizationIdFieldNumber = 1,
-    kProjectIdFieldNumber = 2,
-    kNameFieldNumber = 3,
-    kActiveFieldNumber = 4,
-    kStatusTypeFieldNumber = 5,
+    kIdFieldNumber = 1,
+    kOrganizationIdFieldNumber = 2,
+    kProjectIdFieldNumber = 3,
+    kNameFieldNumber = 4,
+    kStatusTypeFieldNumber = 6,
+    kActiveFieldNumber = 5,
   };
-  // string organization_id = 1 [json_name = "organizationId"];
+  // string id = 1 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // string organization_id = 2 [json_name = "organizationId"];
   void clear_organization_id();
   const std::string& organization_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -233,7 +221,7 @@ class Environment final :
   std::string* _internal_mutable_organization_id();
   public:
 
-  // string project_id = 2 [json_name = "projectId"];
+  // string project_id = 3 [json_name = "projectId"];
   void clear_project_id();
   const std::string& project_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -247,7 +235,7 @@ class Environment final :
   std::string* _internal_mutable_project_id();
   public:
 
-  // string name = 3 [json_name = "name"];
+  // string name = 4 [json_name = "name"];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -261,22 +249,27 @@ class Environment final :
   std::string* _internal_mutable_name();
   public:
 
-  // bool active = 4 [json_name = "active"];
+  // string status_type = 6 [json_name = "statusType"];
+  void clear_status_type();
+  const std::string& status_type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status_type();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status_type();
+  void set_allocated_status_type(std::string* status_type);
+  private:
+  const std::string& _internal_status_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status_type(const std::string& value);
+  std::string* _internal_mutable_status_type();
+  public:
+
+  // bool active = 5 [json_name = "active"];
   void clear_active();
   bool active() const;
   void set_active(bool value);
   private:
   bool _internal_active() const;
   void _internal_set_active(bool value);
-  public:
-
-  // .pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];
-  void clear_status_type();
-  ::pipelines::environment::v1alpha1::StatusType status_type() const;
-  void set_status_type(::pipelines::environment::v1alpha1::StatusType value);
-  private:
-  ::pipelines::environment::v1alpha1::StatusType _internal_status_type() const;
-  void _internal_set_status_type(::pipelines::environment::v1alpha1::StatusType value);
   public:
 
   // @@protoc_insertion_point(class_scope:pipelines.environment.v1alpha1.Environment)
@@ -286,11 +279,12 @@ class Environment final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_type_;
   bool active_;
-  int status_type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto;
 };
@@ -305,7 +299,53 @@ class Environment final :
 #endif  // __GNUC__
 // Environment
 
-// string organization_id = 1 [json_name = "organizationId"];
+// string id = 1 [json_name = "id"];
+inline void Environment::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& Environment::id() const {
+  // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.Environment.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Environment::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.environment.v1alpha1.Environment.id)
+}
+inline std::string* Environment::mutable_id() {
+  std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.Environment.id)
+  return _s;
+}
+inline const std::string& Environment::_internal_id() const {
+  return id_.Get();
+}
+inline void Environment::_internal_set_id(const std::string& value) {
+  
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Environment::_internal_mutable_id() {
+  
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Environment::release_id() {
+  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.Environment.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Environment::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.Environment.id)
+}
+
+// string organization_id = 2 [json_name = "organizationId"];
 inline void Environment::clear_organization_id() {
   organization_id_.ClearToEmpty();
 }
@@ -351,7 +391,7 @@ inline void Environment::set_allocated_organization_id(std::string* organization
   // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.Environment.organization_id)
 }
 
-// string project_id = 2 [json_name = "projectId"];
+// string project_id = 3 [json_name = "projectId"];
 inline void Environment::clear_project_id() {
   project_id_.ClearToEmpty();
 }
@@ -397,7 +437,7 @@ inline void Environment::set_allocated_project_id(std::string* project_id) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.Environment.project_id)
 }
 
-// string name = 3 [json_name = "name"];
+// string name = 4 [json_name = "name"];
 inline void Environment::clear_name() {
   name_.ClearToEmpty();
 }
@@ -443,7 +483,7 @@ inline void Environment::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.Environment.name)
 }
 
-// bool active = 4 [json_name = "active"];
+// bool active = 5 [json_name = "active"];
 inline void Environment::clear_active() {
   active_ = false;
 }
@@ -463,24 +503,50 @@ inline void Environment::set_active(bool value) {
   // @@protoc_insertion_point(field_set:pipelines.environment.v1alpha1.Environment.active)
 }
 
-// .pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];
+// string status_type = 6 [json_name = "statusType"];
 inline void Environment::clear_status_type() {
-  status_type_ = 0;
+  status_type_.ClearToEmpty();
 }
-inline ::pipelines::environment::v1alpha1::StatusType Environment::_internal_status_type() const {
-  return static_cast< ::pipelines::environment::v1alpha1::StatusType >(status_type_);
-}
-inline ::pipelines::environment::v1alpha1::StatusType Environment::status_type() const {
+inline const std::string& Environment::status_type() const {
   // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.Environment.status_type)
   return _internal_status_type();
 }
-inline void Environment::_internal_set_status_type(::pipelines::environment::v1alpha1::StatusType value) {
-  
-  status_type_ = value;
-}
-inline void Environment::set_status_type(::pipelines::environment::v1alpha1::StatusType value) {
-  _internal_set_status_type(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Environment::set_status_type(ArgT0&& arg0, ArgT... args) {
+ 
+ status_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:pipelines.environment.v1alpha1.Environment.status_type)
+}
+inline std::string* Environment::mutable_status_type() {
+  std::string* _s = _internal_mutable_status_type();
+  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.Environment.status_type)
+  return _s;
+}
+inline const std::string& Environment::_internal_status_type() const {
+  return status_type_.Get();
+}
+inline void Environment::_internal_set_status_type(const std::string& value) {
+  
+  status_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Environment::_internal_mutable_status_type() {
+  
+  return status_type_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Environment::release_status_type() {
+  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.Environment.status_type)
+  return status_type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Environment::set_allocated_status_type(std::string* status_type) {
+  if (status_type != nullptr) {
+    
+  } else {
+    
+  }
+  status_type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status_type,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.Environment.status_type)
 }
 
 #ifdef __GNUC__
@@ -492,16 +558,6 @@ inline void Environment::set_status_type(::pipelines::environment::v1alpha1::Sta
 }  // namespace v1alpha1
 }  // namespace environment
 }  // namespace pipelines
-
-PROTOBUF_NAMESPACE_OPEN
-
-template <> struct is_proto_enum< ::pipelines::environment::v1alpha1::StatusType> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::pipelines::environment::v1alpha1::StatusType>() {
-  return ::pipelines::environment::v1alpha1::StatusType_descriptor();
-}
-
-PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

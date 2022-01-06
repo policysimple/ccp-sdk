@@ -37,7 +37,8 @@ message ListEnvironmentResponse {
 }
 
 message DeleteEnvironmentRequest {
-    string environment_id = 1; 
+    string environment_id = 1;
+    string user_id = 2;
 }
 
 message DeleteEnvironmentResponse {

@@ -18,4 +18,16 @@ public interface DeleteEnvironmentRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getEnvironmentIdBytes();
+
+  /**
+   * <code>string user_id = 2 [json_name = "userId"];</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <code>string user_id = 2 [json_name = "userId"];</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
 }
