@@ -17,7 +17,7 @@ class EnvironmentApi
         \GPBMetadata\Pipelines\Environment\V1Alpha1\Environment::initOnce();
         $pool->internalAddGeneratedFile(
             '
-…
+ž
 
 4pipelines/environment/v1alpha1/environment_api.protopipelines.environment.v1alpha1"‚
 CreateEnvironmentRequestM
@@ -30,9 +30,10 @@ class EnvironmentApi
 
 project_id (	R	projectId"h
 ListEnvironmentResponseM
-environment (2+.pipelines.environment.v1alpha1.EnvironmentRenvironment"A
+environment (2+.pipelines.environment.v1alpha1.EnvironmentRenvironment"Z
 DeleteEnvironmentRequest%
-environment_id (	RenvironmentId"3
+environment_id (	RenvironmentId
+user_id (	RuserId"3
 DeleteEnvironmentResponse
 status (	Rstatus2²
 EnvironmentAPIServiceˆ

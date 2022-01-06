@@ -8,55 +8,68 @@ public interface EnvironmentOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
+
+  /**
+   * <code>string organization_id = 2 [json_name = "organizationId"];</code>
    * @return The organizationId.
    */
   java.lang.String getOrganizationId();
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 2 [json_name = "organizationId"];</code>
    * @return The bytes for organizationId.
    */
   com.google.protobuf.ByteString
       getOrganizationIdBytes();
 
   /**
-   * <code>string project_id = 2 [json_name = "projectId"];</code>
+   * <code>string project_id = 3 [json_name = "projectId"];</code>
    * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
-   * <code>string project_id = 2 [json_name = "projectId"];</code>
+   * <code>string project_id = 3 [json_name = "projectId"];</code>
    * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString
       getProjectIdBytes();
 
   /**
-   * <code>string name = 3 [json_name = "name"];</code>
+   * <code>string name = 4 [json_name = "name"];</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
-   * <code>string name = 3 [json_name = "name"];</code>
+   * <code>string name = 4 [json_name = "name"];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
-   * <code>bool active = 4 [json_name = "active"];</code>
+   * <code>bool active = 5 [json_name = "active"];</code>
    * @return The active.
    */
   boolean getActive();
 
   /**
-   * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
-   * @return The enum numeric value on the wire for statusType.
-   */
-  int getStatusTypeValue();
-  /**
-   * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+   * <code>string status_type = 6 [json_name = "statusType"];</code>
    * @return The statusType.
    */
-  io.cuemby.pipelines.environment.v1alpha1.StatusType getStatusType();
+  java.lang.String getStatusType();
+  /**
+   * <code>string status_type = 6 [json_name = "statusType"];</code>
+   * @return The bytes for statusType.
+   */
+  com.google.protobuf.ByteString
+      getStatusTypeBytes();
 }

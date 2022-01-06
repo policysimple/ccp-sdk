@@ -12,15 +12,10 @@ option php_namespace = "Pipelines\\Environment\\V1Alpha1";
 
 // Environment ...
 message Environment {
-    string organization_id = 1;
-    string project_id = 2;
-    string name = 3;
-    bool active = 4;
-    StatusType status_type = 5;
-}
-
-enum StatusType {
-    STATUS_TYPE_PENDING_UNSPECIFIED = 0;
-    STATUS_TYPE_OK = 1;
-    STATUS_TYPE_ERROR = 2;
+    string id = 1;
+    string organization_id = 2;
+    string project_id = 3;
+    string name = 4;
+    bool active = 5;
+    string status_type= 6;
 }

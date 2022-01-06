@@ -20,10 +20,11 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Environment() {
+    id_ = "";
     organizationId_ = "";
     projectId_ = "";
     name_ = "";
-    statusType_ = 0;
+    statusType_ = "";
   }
 
   @java.lang.Override
@@ -59,30 +60,36 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            organizationId_ = s;
+            id_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            projectId_ = s;
+            organizationId_ = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
+            projectId_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
             name_ = s;
             break;
           }
-          case 32: {
+          case 40: {
 
             active_ = input.readBool();
             break;
           }
-          case 40: {
-            int rawValue = input.readEnum();
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            statusType_ = rawValue;
+            statusType_ = s;
             break;
           }
           default: {
@@ -117,10 +124,48 @@ private static final long serialVersionUID = 0L;
             io.cuemby.pipelines.environment.v1alpha1.Environment.class, io.cuemby.pipelines.environment.v1alpha1.Environment.Builder.class);
   }
 
-  public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
+  public static final int ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object id_;
+  /**
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The id.
+   */
+  @java.lang.Override
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The bytes for id.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIdBytes() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ORGANIZATION_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object organizationId_;
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 2 [json_name = "organizationId"];</code>
    * @return The organizationId.
    */
   @java.lang.Override
@@ -137,7 +182,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 2 [json_name = "organizationId"];</code>
    * @return The bytes for organizationId.
    */
   @java.lang.Override
@@ -155,10 +200,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PROJECT_ID_FIELD_NUMBER = 2;
+  public static final int PROJECT_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object projectId_;
   /**
-   * <code>string project_id = 2 [json_name = "projectId"];</code>
+   * <code>string project_id = 3 [json_name = "projectId"];</code>
    * @return The projectId.
    */
   @java.lang.Override
@@ -175,7 +220,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string project_id = 2 [json_name = "projectId"];</code>
+   * <code>string project_id = 3 [json_name = "projectId"];</code>
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -193,10 +238,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int NAME_FIELD_NUMBER = 3;
+  public static final int NAME_FIELD_NUMBER = 4;
   private volatile java.lang.Object name_;
   /**
-   * <code>string name = 3 [json_name = "name"];</code>
+   * <code>string name = 4 [json_name = "name"];</code>
    * @return The name.
    */
   @java.lang.Override
@@ -213,7 +258,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string name = 3 [json_name = "name"];</code>
+   * <code>string name = 4 [json_name = "name"];</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -231,10 +276,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ACTIVE_FIELD_NUMBER = 4;
+  public static final int ACTIVE_FIELD_NUMBER = 5;
   private boolean active_;
   /**
-   * <code>bool active = 4 [json_name = "active"];</code>
+   * <code>bool active = 5 [json_name = "active"];</code>
    * @return The active.
    */
   @java.lang.Override
@@ -242,23 +287,42 @@ private static final long serialVersionUID = 0L;
     return active_;
   }
 
-  public static final int STATUS_TYPE_FIELD_NUMBER = 5;
-  private int statusType_;
+  public static final int STATUS_TYPE_FIELD_NUMBER = 6;
+  private volatile java.lang.Object statusType_;
   /**
-   * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
-   * @return The enum numeric value on the wire for statusType.
-   */
-  @java.lang.Override public int getStatusTypeValue() {
-    return statusType_;
-  }
-  /**
-   * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+   * <code>string status_type = 6 [json_name = "statusType"];</code>
    * @return The statusType.
    */
-  @java.lang.Override public io.cuemby.pipelines.environment.v1alpha1.StatusType getStatusType() {
-    @SuppressWarnings("deprecation")
-    io.cuemby.pipelines.environment.v1alpha1.StatusType result = io.cuemby.pipelines.environment.v1alpha1.StatusType.valueOf(statusType_);
-    return result == null ? io.cuemby.pipelines.environment.v1alpha1.StatusType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public java.lang.String getStatusType() {
+    java.lang.Object ref = statusType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      statusType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string status_type = 6 [json_name = "statusType"];</code>
+   * @return The bytes for statusType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusTypeBytes() {
+    java.lang.Object ref = statusType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      statusType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -275,20 +339,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!getIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+    }
     if (!getOrganizationIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, organizationId_);
     }
     if (!getProjectIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, projectId_);
     }
     if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
     }
     if (active_ != false) {
-      output.writeBool(4, active_);
+      output.writeBool(5, active_);
     }
-    if (statusType_ != io.cuemby.pipelines.environment.v1alpha1.StatusType.STATUS_TYPE_PENDING_UNSPECIFIED.getNumber()) {
-      output.writeEnum(5, statusType_);
+    if (!getStatusTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, statusType_);
     }
     unknownFields.writeTo(output);
   }
@@ -299,22 +366,24 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!getIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+    }
     if (!getOrganizationIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, organizationId_);
     }
     if (!getProjectIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, projectId_);
     }
     if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
     }
     if (active_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(4, active_);
+        .computeBoolSize(5, active_);
     }
-    if (statusType_ != io.cuemby.pipelines.environment.v1alpha1.StatusType.STATUS_TYPE_PENDING_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(5, statusType_);
+    if (!getStatusTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, statusType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -331,6 +400,8 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.pipelines.environment.v1alpha1.Environment other = (io.cuemby.pipelines.environment.v1alpha1.Environment) obj;
 
+    if (!getId()
+        .equals(other.getId())) return false;
     if (!getOrganizationId()
         .equals(other.getOrganizationId())) return false;
     if (!getProjectId()
@@ -339,7 +410,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (getActive()
         != other.getActive()) return false;
-    if (statusType_ != other.statusType_) return false;
+    if (!getStatusType()
+        .equals(other.getStatusType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -351,6 +423,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getOrganizationId().hashCode();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
@@ -361,7 +435,7 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getActive());
     hash = (37 * hash) + STATUS_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + statusType_;
+    hash = (53 * hash) + getStatusType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -499,6 +573,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      id_ = "";
+
       organizationId_ = "";
 
       projectId_ = "";
@@ -507,7 +583,7 @@ private static final long serialVersionUID = 0L;
 
       active_ = false;
 
-      statusType_ = 0;
+      statusType_ = "";
 
       return this;
     }
@@ -535,6 +611,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.pipelines.environment.v1alpha1.Environment buildPartial() {
       io.cuemby.pipelines.environment.v1alpha1.Environment result = new io.cuemby.pipelines.environment.v1alpha1.Environment(this);
+      result.id_ = id_;
       result.organizationId_ = organizationId_;
       result.projectId_ = projectId_;
       result.name_ = name_;
@@ -588,6 +665,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.pipelines.environment.v1alpha1.Environment other) {
       if (other == io.cuemby.pipelines.environment.v1alpha1.Environment.getDefaultInstance()) return this;
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        onChanged();
+      }
       if (!other.getOrganizationId().isEmpty()) {
         organizationId_ = other.organizationId_;
         onChanged();
@@ -603,8 +684,9 @@ private static final long serialVersionUID = 0L;
       if (other.getActive() != false) {
         setActive(other.getActive());
       }
-      if (other.statusType_ != 0) {
-        setStatusTypeValue(other.getStatusTypeValue());
+      if (!other.getStatusType().isEmpty()) {
+        statusType_ = other.statusType_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -635,9 +717,85 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object id_ = "";
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      id_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      
+      id_ = getDefaultInstance().getId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      id_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object organizationId_ = "";
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     public java.lang.String getOrganizationId() {
@@ -653,7 +811,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @return The bytes for organizationId.
      */
     public com.google.protobuf.ByteString
@@ -670,7 +828,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @param value The organizationId to set.
      * @return This builder for chaining.
      */
@@ -685,7 +843,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearOrganizationId() {
@@ -695,7 +853,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @param value The bytes for organizationId to set.
      * @return This builder for chaining.
      */
@@ -713,7 +871,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object projectId_ = "";
     /**
-     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * <code>string project_id = 3 [json_name = "projectId"];</code>
      * @return The projectId.
      */
     public java.lang.String getProjectId() {
@@ -729,7 +887,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * <code>string project_id = 3 [json_name = "projectId"];</code>
      * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString
@@ -746,7 +904,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * <code>string project_id = 3 [json_name = "projectId"];</code>
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -761,7 +919,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * <code>string project_id = 3 [json_name = "projectId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
@@ -771,7 +929,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * <code>string project_id = 3 [json_name = "projectId"];</code>
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -789,7 +947,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
+     * <code>string name = 4 [json_name = "name"];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -805,7 +963,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
+     * <code>string name = 4 [json_name = "name"];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -822,7 +980,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
+     * <code>string name = 4 [json_name = "name"];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -837,7 +995,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
+     * <code>string name = 4 [json_name = "name"];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -847,7 +1005,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 3 [json_name = "name"];</code>
+     * <code>string name = 4 [json_name = "name"];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -865,7 +1023,7 @@ private static final long serialVersionUID = 0L;
 
     private boolean active_ ;
     /**
-     * <code>bool active = 4 [json_name = "active"];</code>
+     * <code>bool active = 5 [json_name = "active"];</code>
      * @return The active.
      */
     @java.lang.Override
@@ -873,7 +1031,7 @@ private static final long serialVersionUID = 0L;
       return active_;
     }
     /**
-     * <code>bool active = 4 [json_name = "active"];</code>
+     * <code>bool active = 5 [json_name = "active"];</code>
      * @param value The active to set.
      * @return This builder for chaining.
      */
@@ -884,7 +1042,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool active = 4 [json_name = "active"];</code>
+     * <code>bool active = 5 [json_name = "active"];</code>
      * @return This builder for chaining.
      */
     public Builder clearActive() {
@@ -894,56 +1052,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int statusType_ = 0;
+    private java.lang.Object statusType_ = "";
     /**
-     * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
-     * @return The enum numeric value on the wire for statusType.
+     * <code>string status_type = 6 [json_name = "statusType"];</code>
+     * @return The statusType.
      */
-    @java.lang.Override public int getStatusTypeValue() {
-      return statusType_;
+    public java.lang.String getStatusType() {
+      java.lang.Object ref = statusType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        statusType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
-     * @param value The enum numeric value on the wire for statusType to set.
+     * <code>string status_type = 6 [json_name = "statusType"];</code>
+     * @return The bytes for statusType.
+     */
+    public com.google.protobuf.ByteString
+        getStatusTypeBytes() {
+      java.lang.Object ref = statusType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        statusType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string status_type = 6 [json_name = "statusType"];</code>
+     * @param value The statusType to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusTypeValue(int value) {
-      
+    public Builder setStatusType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       statusType_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
-     * @return The statusType.
-     */
-    @java.lang.Override
-    public io.cuemby.pipelines.environment.v1alpha1.StatusType getStatusType() {
-      @SuppressWarnings("deprecation")
-      io.cuemby.pipelines.environment.v1alpha1.StatusType result = io.cuemby.pipelines.environment.v1alpha1.StatusType.valueOf(statusType_);
-      return result == null ? io.cuemby.pipelines.environment.v1alpha1.StatusType.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
-     * @param value The statusType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatusType(io.cuemby.pipelines.environment.v1alpha1.StatusType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      statusType_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.pipelines.environment.v1alpha1.StatusType status_type = 5 [json_name = "statusType"];</code>
+     * <code>string status_type = 6 [json_name = "statusType"];</code>
      * @return This builder for chaining.
      */
     public Builder clearStatusType() {
       
-      statusType_ = 0;
+      statusType_ = getDefaultInstance().getStatusType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status_type = 6 [json_name = "statusType"];</code>
+     * @param value The bytes for statusType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      statusType_ = value;
       onChanged();
       return this;
     }
