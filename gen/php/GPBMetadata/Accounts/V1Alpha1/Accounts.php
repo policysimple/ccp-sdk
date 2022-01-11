@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-ÊR
+‚S
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"à
 CheckUserRequest\'
 organization_id (RorganizationId
@@ -76,7 +76,7 @@ first_name (	R	firstName
 	is_active (RisActive"
 is_super_user (RisSuperUser"#
 GetOneUserRequest
-id (Rid"Ä
+id (Rid"ü
 GetOneUserResponse
 id (Rid
 user_id (	RuserId
@@ -93,7 +93,8 @@ updated_at (	R	updatedAt,
 permissions
  (2.accounts.v1alpha1.PermissionRpermissions"
 is_super_user (RisSuperUserE
-organizations (2.accounts.v1alpha1.OrganizationRorganizations"E
+organizations (2.accounts.v1alpha1.OrganizationRorganizations6
+projects (2.accounts.v1alpha1.ProjectRprojects"E
 ListUserResponse1
 users (2.accounts.v1alpha1.UserListRusers"I
 ListUserPaginationRequest

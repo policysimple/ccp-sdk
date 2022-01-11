@@ -172,6 +172,7 @@ message GetOneUserResponse {
     repeated Permission permissions = 10;
     bool is_super_user = 11;
     repeated Organization organizations = 12;
+    repeated Project projects = 13;
 }
 
 

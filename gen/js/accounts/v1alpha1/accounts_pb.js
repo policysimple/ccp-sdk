@@ -4058,7 +4058,7 @@ proto.accounts.v1alpha1.GetOneUserRequest.prototype.setId = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.GetOneUserResponse.repeatedFields_ = [9,10,12];
+proto.accounts.v1alpha1.GetOneUserResponse.repeatedFields_ = [9,10,12,13];
 
 
 
@@ -4105,7 +4105,9 @@ proto.accounts.v1alpha1.GetOneUserResponse.toObject = function(includeInstance, 
     proto.accounts.v1alpha1.Permission.toObject, includeInstance),
     isSuperUser: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     organizationsList: jspb.Message.toObjectList(msg.getOrganizationsList(),
-    proto.accounts.v1alpha1.Organization.toObject, includeInstance)
+    proto.accounts.v1alpha1.Organization.toObject, includeInstance),
+    projectsList: jspb.Message.toObjectList(msg.getProjectsList(),
+    proto.accounts.v1alpha1.Project.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -4192,6 +4194,11 @@ proto.accounts.v1alpha1.GetOneUserResponse.deserializeBinaryFromReader = functio
       var value = new proto.accounts.v1alpha1.Organization;
       reader.readMessage(value,proto.accounts.v1alpha1.Organization.deserializeBinaryFromReader);
       msg.addOrganizations(value);
+      break;
+    case 13:
+      var value = new proto.accounts.v1alpha1.Project;
+      reader.readMessage(value,proto.accounts.v1alpha1.Project.deserializeBinaryFromReader);
+      msg.addProjects(value);
       break;
     default:
       reader.skipField();
@@ -4307,6 +4314,14 @@ proto.accounts.v1alpha1.GetOneUserResponse.serializeBinaryToWriter = function(me
       12,
       f,
       proto.accounts.v1alpha1.Organization.serializeBinaryToWriter
+    );
+  }
+  f = message.getProjectsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      13,
+      f,
+      proto.accounts.v1alpha1.Project.serializeBinaryToWriter
     );
   }
 };
@@ -4585,6 +4600,44 @@ proto.accounts.v1alpha1.GetOneUserResponse.prototype.addOrganizations = function
  */
 proto.accounts.v1alpha1.GetOneUserResponse.prototype.clearOrganizationsList = function() {
   return this.setOrganizationsList([]);
+};
+
+
+/**
+ * repeated Project projects = 13;
+ * @return {!Array<!proto.accounts.v1alpha1.Project>}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getProjectsList = function() {
+  return /** @type{!Array<!proto.accounts.v1alpha1.Project>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Project, 13));
+};
+
+
+/**
+ * @param {!Array<!proto.accounts.v1alpha1.Project>} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+*/
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setProjectsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 13, value);
+};
+
+
+/**
+ * @param {!proto.accounts.v1alpha1.Project=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.accounts.v1alpha1.Project}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.addProjects = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.accounts.v1alpha1.Project, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.clearProjectsList = function() {
+  return this.setProjectsList([]);
 };
 
 
