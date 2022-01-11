@@ -31,6 +31,10 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> data = 5 [json_name = "data"];</code>
      */
     private $data;
+    /**
+     * Generated from protobuf field <code>map<string, string> metadata = 6 [json_name = "metadata"];</code>
+     */
+    private $metadata;
 
     /**
      * Constructor.
@@ -43,6 +47,7 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type \Source\V1alpha1\Provider $provider
      *     @type array|\Google\Protobuf\Internal\MapField $data
+     *     @type array|\Google\Protobuf\Internal\MapField $metadata
      * }
      */
     public function __construct($data = NULL) {
@@ -148,6 +153,28 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->data = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> metadata = 6 [json_name = "metadata"];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> metadata = 6 [json_name = "metadata"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->metadata = $arr;
 
         return $this;
     }

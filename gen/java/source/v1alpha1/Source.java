@@ -96,6 +96,40 @@ public final class Source {
 
     java.lang.String getDataOrThrow(
         java.lang.String key);
+
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    int getMetadataCount();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    boolean containsMetadata(
+        java.lang.String key);
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadata();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadataMap();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+
+    java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+
+    java.lang.String getMetadataOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code source.v1alpha1.Integration}
@@ -188,6 +222,19 @@ public final class Source {
                   data__.getKey(), data__.getValue());
               break;
             }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                metadata_ = com.google.protobuf.MapField.newMapField(
+                    MetadataDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              metadata__ = input.readMessage(
+                  MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              metadata_.getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -219,6 +266,8 @@ public final class Source {
       switch (number) {
         case 5:
           return internalGetData();
+        case 6:
+          return internalGetMetadata();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -426,6 +475,87 @@ public final class Source {
       return map.get(key);
     }
 
+    public static final int METADATA_FIELD_NUMBER = 6;
+    private static final class MetadataDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  source.v1alpha1.Source.internal_static_source_v1alpha1_Integration_MetadataEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> metadata_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
+      }
+      return metadata_;
+    }
+
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsMetadata(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetMetadata().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getMetadataOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -458,6 +588,12 @@ public final class Source {
           internalGetData(),
           DataDefaultEntryHolder.defaultEntry,
           5);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          6);
       unknownFields.writeTo(output);
     }
 
@@ -491,6 +627,16 @@ public final class Source {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(5, data__);
       }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetMetadata().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, metadata__);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -519,6 +665,8 @@ public final class Source {
       }
       if (!internalGetData().equals(
           other.internalGetData())) return false;
+      if (!internalGetMetadata().equals(
+          other.internalGetMetadata())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -543,6 +691,10 @@ public final class Source {
       if (!internalGetData().getMap().isEmpty()) {
         hash = (37 * hash) + DATA_FIELD_NUMBER;
         hash = (53 * hash) + internalGetData().hashCode();
+      }
+      if (!internalGetMetadata().getMap().isEmpty()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetMetadata().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -657,6 +809,8 @@ public final class Source {
         switch (number) {
           case 5:
             return internalGetData();
+          case 6:
+            return internalGetMetadata();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -668,6 +822,8 @@ public final class Source {
         switch (number) {
           case 5:
             return internalGetMutableData();
+          case 6:
+            return internalGetMutableMetadata();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -712,6 +868,7 @@ public final class Source {
           providerBuilder_ = null;
         }
         internalGetMutableData().clear();
+        internalGetMutableMetadata().clear();
         return this;
       }
 
@@ -749,6 +906,8 @@ public final class Source {
         }
         result.data_ = internalGetData();
         result.data_.makeImmutable();
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -813,6 +972,8 @@ public final class Source {
         }
         internalGetMutableData().mergeFrom(
             other.internalGetData());
+        internalGetMutableMetadata().mergeFrom(
+            other.internalGetMetadata());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1272,6 +1433,134 @@ public final class Source {
             .putAll(values);
         return this;
       }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> metadata_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMetadata() {
+        if (metadata_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        return metadata_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableMetadata() {
+        onChanged();;
+        if (metadata_ == null) {
+          metadata_ = com.google.protobuf.MapField.newMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        if (!metadata_.isMutable()) {
+          metadata_ = metadata_.copy();
+        }
+        return metadata_;
+      }
+
+      public int getMetadataCount() {
+        return internalGetMetadata().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+
+      @java.lang.Override
+      public boolean containsMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetMetadata().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getMetadataMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+        return getMetadataMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+        return internalGetMetadata().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getMetadataOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getMetadataOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearMetadata() {
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+
+      public Builder removeMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableMetadata() {
+        return internalGetMutableMetadata().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      public Builder putMetadata(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+
+      public Builder putAllMetadata(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableMetadata().getMutableMap()
+            .putAll(values);
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1320,6 +1609,1166 @@ public final class Source {
 
     @java.lang.Override
     public source.v1alpha1.Source.Integration getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RepositoryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:source.v1alpha1.Repository)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string name = 1 [json_name = "name"];</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 1 [json_name = "name"];</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>bool private = 2 [json_name = "private"];</code>
+     * @return The private.
+     */
+    boolean getPrivate();
+
+    /**
+     * <code>string fullname = 3 [json_name = "fullname"];</code>
+     * @return The fullname.
+     */
+    java.lang.String getFullname();
+    /**
+     * <code>string fullname = 3 [json_name = "fullname"];</code>
+     * @return The bytes for fullname.
+     */
+    com.google.protobuf.ByteString
+        getFullnameBytes();
+
+    /**
+     * <code>string description = 4 [json_name = "description"];</code>
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>string description = 4 [json_name = "description"];</code>
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <code>bool fork = 5 [json_name = "fork"];</code>
+     * @return The fork.
+     */
+    boolean getFork();
+
+    /**
+     * <code>string clone_url = 6 [json_name = "cloneUrl"];</code>
+     * @return The cloneUrl.
+     */
+    java.lang.String getCloneUrl();
+    /**
+     * <code>string clone_url = 6 [json_name = "cloneUrl"];</code>
+     * @return The bytes for cloneUrl.
+     */
+    com.google.protobuf.ByteString
+        getCloneUrlBytes();
+  }
+  /**
+   * Protobuf type {@code source.v1alpha1.Repository}
+   */
+  public static final class Repository extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:source.v1alpha1.Repository)
+      RepositoryOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Repository.newBuilder() to construct.
+    private Repository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Repository() {
+      name_ = "";
+      fullname_ = "";
+      description_ = "";
+      cloneUrl_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Repository();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Repository(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 16: {
+
+              private_ = input.readBool();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fullname_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 40: {
+
+              fork_ = input.readBool();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cloneUrl_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return source.v1alpha1.Source.internal_static_source_v1alpha1_Repository_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return source.v1alpha1.Source.internal_static_source_v1alpha1_Repository_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              source.v1alpha1.Source.Repository.class, source.v1alpha1.Source.Repository.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 1 [json_name = "name"];</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 1 [json_name = "name"];</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRIVATE_FIELD_NUMBER = 2;
+    private boolean private_;
+    /**
+     * <code>bool private = 2 [json_name = "private"];</code>
+     * @return The private.
+     */
+    @java.lang.Override
+    public boolean getPrivate() {
+      return private_;
+    }
+
+    public static final int FULLNAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object fullname_;
+    /**
+     * <code>string fullname = 3 [json_name = "fullname"];</code>
+     * @return The fullname.
+     */
+    @java.lang.Override
+    public java.lang.String getFullname() {
+      java.lang.Object ref = fullname_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fullname_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string fullname = 3 [json_name = "fullname"];</code>
+     * @return The bytes for fullname.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFullnameBytes() {
+      java.lang.Object ref = fullname_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fullname_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object description_;
+    /**
+     * <code>string description = 4 [json_name = "description"];</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string description = 4 [json_name = "description"];</code>
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FORK_FIELD_NUMBER = 5;
+    private boolean fork_;
+    /**
+     * <code>bool fork = 5 [json_name = "fork"];</code>
+     * @return The fork.
+     */
+    @java.lang.Override
+    public boolean getFork() {
+      return fork_;
+    }
+
+    public static final int CLONE_URL_FIELD_NUMBER = 6;
+    private volatile java.lang.Object cloneUrl_;
+    /**
+     * <code>string clone_url = 6 [json_name = "cloneUrl"];</code>
+     * @return The cloneUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getCloneUrl() {
+      java.lang.Object ref = cloneUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cloneUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string clone_url = 6 [json_name = "cloneUrl"];</code>
+     * @return The bytes for cloneUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCloneUrlBytes() {
+      java.lang.Object ref = cloneUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cloneUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (private_ != false) {
+        output.writeBool(2, private_);
+      }
+      if (!getFullnameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fullname_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+      }
+      if (fork_ != false) {
+        output.writeBool(5, fork_);
+      }
+      if (!getCloneUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, cloneUrl_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (private_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, private_);
+      }
+      if (!getFullnameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fullname_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
+      }
+      if (fork_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, fork_);
+      }
+      if (!getCloneUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, cloneUrl_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof source.v1alpha1.Source.Repository)) {
+        return super.equals(obj);
+      }
+      source.v1alpha1.Source.Repository other = (source.v1alpha1.Source.Repository) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (getPrivate()
+          != other.getPrivate()) return false;
+      if (!getFullname()
+          .equals(other.getFullname())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (getFork()
+          != other.getFork()) return false;
+      if (!getCloneUrl()
+          .equals(other.getCloneUrl())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + PRIVATE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPrivate());
+      hash = (37 * hash) + FULLNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getFullname().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + FORK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getFork());
+      hash = (37 * hash) + CLONE_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getCloneUrl().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static source.v1alpha1.Source.Repository parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static source.v1alpha1.Source.Repository parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static source.v1alpha1.Source.Repository parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static source.v1alpha1.Source.Repository parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static source.v1alpha1.Source.Repository parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static source.v1alpha1.Source.Repository parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static source.v1alpha1.Source.Repository parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static source.v1alpha1.Source.Repository parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static source.v1alpha1.Source.Repository parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static source.v1alpha1.Source.Repository parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static source.v1alpha1.Source.Repository parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static source.v1alpha1.Source.Repository parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(source.v1alpha1.Source.Repository prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code source.v1alpha1.Repository}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:source.v1alpha1.Repository)
+        source.v1alpha1.Source.RepositoryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return source.v1alpha1.Source.internal_static_source_v1alpha1_Repository_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return source.v1alpha1.Source.internal_static_source_v1alpha1_Repository_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                source.v1alpha1.Source.Repository.class, source.v1alpha1.Source.Repository.Builder.class);
+      }
+
+      // Construct using source.v1alpha1.Source.Repository.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        private_ = false;
+
+        fullname_ = "";
+
+        description_ = "";
+
+        fork_ = false;
+
+        cloneUrl_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return source.v1alpha1.Source.internal_static_source_v1alpha1_Repository_descriptor;
+      }
+
+      @java.lang.Override
+      public source.v1alpha1.Source.Repository getDefaultInstanceForType() {
+        return source.v1alpha1.Source.Repository.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public source.v1alpha1.Source.Repository build() {
+        source.v1alpha1.Source.Repository result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public source.v1alpha1.Source.Repository buildPartial() {
+        source.v1alpha1.Source.Repository result = new source.v1alpha1.Source.Repository(this);
+        result.name_ = name_;
+        result.private_ = private_;
+        result.fullname_ = fullname_;
+        result.description_ = description_;
+        result.fork_ = fork_;
+        result.cloneUrl_ = cloneUrl_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof source.v1alpha1.Source.Repository) {
+          return mergeFrom((source.v1alpha1.Source.Repository)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(source.v1alpha1.Source.Repository other) {
+        if (other == source.v1alpha1.Source.Repository.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.getPrivate() != false) {
+          setPrivate(other.getPrivate());
+        }
+        if (!other.getFullname().isEmpty()) {
+          fullname_ = other.fullname_;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
+        if (other.getFork() != false) {
+          setFork(other.getFork());
+        }
+        if (!other.getCloneUrl().isEmpty()) {
+          cloneUrl_ = other.cloneUrl_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        source.v1alpha1.Source.Repository parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (source.v1alpha1.Source.Repository) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean private_ ;
+      /**
+       * <code>bool private = 2 [json_name = "private"];</code>
+       * @return The private.
+       */
+      @java.lang.Override
+      public boolean getPrivate() {
+        return private_;
+      }
+      /**
+       * <code>bool private = 2 [json_name = "private"];</code>
+       * @param value The private to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrivate(boolean value) {
+        
+        private_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool private = 2 [json_name = "private"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrivate() {
+        
+        private_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object fullname_ = "";
+      /**
+       * <code>string fullname = 3 [json_name = "fullname"];</code>
+       * @return The fullname.
+       */
+      public java.lang.String getFullname() {
+        java.lang.Object ref = fullname_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fullname_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string fullname = 3 [json_name = "fullname"];</code>
+       * @return The bytes for fullname.
+       */
+      public com.google.protobuf.ByteString
+          getFullnameBytes() {
+        java.lang.Object ref = fullname_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fullname_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string fullname = 3 [json_name = "fullname"];</code>
+       * @param value The fullname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFullname(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        fullname_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string fullname = 3 [json_name = "fullname"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFullname() {
+        
+        fullname_ = getDefaultInstance().getFullname();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string fullname = 3 [json_name = "fullname"];</code>
+       * @param value The bytes for fullname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFullnameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        fullname_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <code>string description = 4 [json_name = "description"];</code>
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string description = 4 [json_name = "description"];</code>
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string description = 4 [json_name = "description"];</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 4 [json_name = "description"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 4 [json_name = "description"];</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean fork_ ;
+      /**
+       * <code>bool fork = 5 [json_name = "fork"];</code>
+       * @return The fork.
+       */
+      @java.lang.Override
+      public boolean getFork() {
+        return fork_;
+      }
+      /**
+       * <code>bool fork = 5 [json_name = "fork"];</code>
+       * @param value The fork to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFork(boolean value) {
+        
+        fork_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool fork = 5 [json_name = "fork"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFork() {
+        
+        fork_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object cloneUrl_ = "";
+      /**
+       * <code>string clone_url = 6 [json_name = "cloneUrl"];</code>
+       * @return The cloneUrl.
+       */
+      public java.lang.String getCloneUrl() {
+        java.lang.Object ref = cloneUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cloneUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string clone_url = 6 [json_name = "cloneUrl"];</code>
+       * @return The bytes for cloneUrl.
+       */
+      public com.google.protobuf.ByteString
+          getCloneUrlBytes() {
+        java.lang.Object ref = cloneUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cloneUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string clone_url = 6 [json_name = "cloneUrl"];</code>
+       * @param value The cloneUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCloneUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cloneUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string clone_url = 6 [json_name = "cloneUrl"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCloneUrl() {
+        
+        cloneUrl_ = getDefaultInstance().getCloneUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string clone_url = 6 [json_name = "cloneUrl"];</code>
+       * @param value The bytes for cloneUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCloneUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cloneUrl_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:source.v1alpha1.Repository)
+    }
+
+    // @@protoc_insertion_point(class_scope:source.v1alpha1.Repository)
+    private static final source.v1alpha1.Source.Repository DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new source.v1alpha1.Source.Repository();
+    }
+
+    public static source.v1alpha1.Source.Repository getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Repository>
+        PARSER = new com.google.protobuf.AbstractParser<Repository>() {
+      @java.lang.Override
+      public Repository parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Repository(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Repository> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Repository> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public source.v1alpha1.Source.Repository getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1398,6 +2847,40 @@ public final class Source {
      */
 
     java.lang.String getDataOrThrow(
+        java.lang.String key);
+
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    int getMetadataCount();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    boolean containsMetadata(
+        java.lang.String key);
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadata();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadataMap();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+
+    java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+
+    java.lang.String getMetadataOrThrow(
         java.lang.String key);
   }
   /**
@@ -1484,6 +2967,19 @@ public final class Source {
                   data__.getKey(), data__.getValue());
               break;
             }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                metadata_ = com.google.protobuf.MapField.newMapField(
+                    MetadataDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              metadata__ = input.readMessage(
+                  MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              metadata_.getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1515,6 +3011,8 @@ public final class Source {
       switch (number) {
         case 5:
           return internalGetData();
+        case 6:
+          return internalGetMetadata();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1688,6 +3186,87 @@ public final class Source {
       return map.get(key);
     }
 
+    public static final int METADATA_FIELD_NUMBER = 6;
+    private static final class MetadataDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  source.v1alpha1.Source.internal_static_source_v1alpha1_CreateIntegrationRequest_MetadataEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> metadata_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
+      }
+      return metadata_;
+    }
+
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsMetadata(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetMetadata().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getMetadataOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1717,6 +3296,12 @@ public final class Source {
           internalGetData(),
           DataDefaultEntryHolder.defaultEntry,
           5);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          6);
       unknownFields.writeTo(output);
     }
 
@@ -1747,6 +3332,16 @@ public final class Source {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(5, data__);
       }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetMetadata().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, metadata__);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1773,6 +3368,8 @@ public final class Source {
       }
       if (!internalGetData().equals(
           other.internalGetData())) return false;
+      if (!internalGetMetadata().equals(
+          other.internalGetMetadata())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1795,6 +3392,10 @@ public final class Source {
       if (!internalGetData().getMap().isEmpty()) {
         hash = (37 * hash) + DATA_FIELD_NUMBER;
         hash = (53 * hash) + internalGetData().hashCode();
+      }
+      if (!internalGetMetadata().getMap().isEmpty()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetMetadata().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1909,6 +3510,8 @@ public final class Source {
         switch (number) {
           case 5:
             return internalGetData();
+          case 6:
+            return internalGetMetadata();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1920,6 +3523,8 @@ public final class Source {
         switch (number) {
           case 5:
             return internalGetMutableData();
+          case 6:
+            return internalGetMutableMetadata();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1962,6 +3567,7 @@ public final class Source {
           providerBuilder_ = null;
         }
         internalGetMutableData().clear();
+        internalGetMutableMetadata().clear();
         return this;
       }
 
@@ -1998,6 +3604,8 @@ public final class Source {
         }
         result.data_ = internalGetData();
         result.data_.makeImmutable();
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -2058,6 +3666,8 @@ public final class Source {
         }
         internalGetMutableData().mergeFrom(
             other.internalGetData());
+        internalGetMutableMetadata().mergeFrom(
+            other.internalGetMetadata());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2450,6 +4060,134 @@ public final class Source {
       public Builder putAllData(
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableData().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> metadata_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMetadata() {
+        if (metadata_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        return metadata_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableMetadata() {
+        onChanged();;
+        if (metadata_ == null) {
+          metadata_ = com.google.protobuf.MapField.newMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        if (!metadata_.isMutable()) {
+          metadata_ = metadata_.copy();
+        }
+        return metadata_;
+      }
+
+      public int getMetadataCount() {
+        return internalGetMetadata().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+
+      @java.lang.Override
+      public boolean containsMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetMetadata().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getMetadataMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+        return getMetadataMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+        return internalGetMetadata().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getMetadataOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getMetadataOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearMetadata() {
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+
+      public Builder removeMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableMetadata() {
+        return internalGetMutableMetadata().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      public Builder putMetadata(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+
+      public Builder putAllMetadata(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableMetadata().getMutableMap()
             .putAll(values);
         return this;
       }
@@ -5091,6 +6829,30 @@ public final class Source {
      * <code>.source.v1alpha1.Integration integration = 1 [json_name = "integration"];</code>
      */
     source.v1alpha1.Source.IntegrationOrBuilder getIntegrationOrBuilder();
+
+    /**
+     * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+     */
+    java.util.List<source.v1alpha1.Source.Repository> 
+        getRepositoriesList();
+    /**
+     * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+     */
+    source.v1alpha1.Source.Repository getRepositories(int index);
+    /**
+     * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+     */
+    int getRepositoriesCount();
+    /**
+     * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+     */
+    java.util.List<? extends source.v1alpha1.Source.RepositoryOrBuilder> 
+        getRepositoriesOrBuilderList();
+    /**
+     * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+     */
+    source.v1alpha1.Source.RepositoryOrBuilder getRepositoriesOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code source.v1alpha1.GetIntegrationResponse}
@@ -5105,6 +6867,7 @@ public final class Source {
       super(builder);
     }
     private GetIntegrationResponse() {
+      repositories_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -5127,6 +6890,7 @@ public final class Source {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -5150,6 +6914,15 @@ public final class Source {
 
               break;
             }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                repositories_ = new java.util.ArrayList<source.v1alpha1.Source.Repository>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              repositories_.add(
+                  input.readMessage(source.v1alpha1.Source.Repository.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -5165,6 +6938,9 @@ public final class Source {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          repositories_ = java.util.Collections.unmodifiableList(repositories_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -5208,6 +6984,46 @@ public final class Source {
       return getIntegration();
     }
 
+    public static final int REPOSITORIES_FIELD_NUMBER = 2;
+    private java.util.List<source.v1alpha1.Source.Repository> repositories_;
+    /**
+     * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<source.v1alpha1.Source.Repository> getRepositoriesList() {
+      return repositories_;
+    }
+    /**
+     * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends source.v1alpha1.Source.RepositoryOrBuilder> 
+        getRepositoriesOrBuilderList() {
+      return repositories_;
+    }
+    /**
+     * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+     */
+    @java.lang.Override
+    public int getRepositoriesCount() {
+      return repositories_.size();
+    }
+    /**
+     * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+     */
+    @java.lang.Override
+    public source.v1alpha1.Source.Repository getRepositories(int index) {
+      return repositories_.get(index);
+    }
+    /**
+     * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+     */
+    @java.lang.Override
+    public source.v1alpha1.Source.RepositoryOrBuilder getRepositoriesOrBuilder(
+        int index) {
+      return repositories_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5225,6 +7041,9 @@ public final class Source {
       if (integration_ != null) {
         output.writeMessage(1, getIntegration());
       }
+      for (int i = 0; i < repositories_.size(); i++) {
+        output.writeMessage(2, repositories_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5237,6 +7056,10 @@ public final class Source {
       if (integration_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getIntegration());
+      }
+      for (int i = 0; i < repositories_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, repositories_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5258,6 +7081,8 @@ public final class Source {
         if (!getIntegration()
             .equals(other.getIntegration())) return false;
       }
+      if (!getRepositoriesList()
+          .equals(other.getRepositoriesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5272,6 +7097,10 @@ public final class Source {
       if (hasIntegration()) {
         hash = (37 * hash) + INTEGRATION_FIELD_NUMBER;
         hash = (53 * hash) + getIntegration().hashCode();
+      }
+      if (getRepositoriesCount() > 0) {
+        hash = (37 * hash) + REPOSITORIES_FIELD_NUMBER;
+        hash = (53 * hash) + getRepositoriesList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5401,6 +7230,7 @@ public final class Source {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getRepositoriesFieldBuilder();
         }
       }
       @java.lang.Override
@@ -5411,6 +7241,12 @@ public final class Source {
         } else {
           integration_ = null;
           integrationBuilder_ = null;
+        }
+        if (repositoriesBuilder_ == null) {
+          repositories_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          repositoriesBuilder_.clear();
         }
         return this;
       }
@@ -5438,10 +7274,20 @@ public final class Source {
       @java.lang.Override
       public source.v1alpha1.Source.GetIntegrationResponse buildPartial() {
         source.v1alpha1.Source.GetIntegrationResponse result = new source.v1alpha1.Source.GetIntegrationResponse(this);
+        int from_bitField0_ = bitField0_;
         if (integrationBuilder_ == null) {
           result.integration_ = integration_;
         } else {
           result.integration_ = integrationBuilder_.build();
+        }
+        if (repositoriesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            repositories_ = java.util.Collections.unmodifiableList(repositories_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.repositories_ = repositories_;
+        } else {
+          result.repositories_ = repositoriesBuilder_.build();
         }
         onBuilt();
         return result;
@@ -5494,6 +7340,32 @@ public final class Source {
         if (other.hasIntegration()) {
           mergeIntegration(other.getIntegration());
         }
+        if (repositoriesBuilder_ == null) {
+          if (!other.repositories_.isEmpty()) {
+            if (repositories_.isEmpty()) {
+              repositories_ = other.repositories_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRepositoriesIsMutable();
+              repositories_.addAll(other.repositories_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.repositories_.isEmpty()) {
+            if (repositoriesBuilder_.isEmpty()) {
+              repositoriesBuilder_.dispose();
+              repositoriesBuilder_ = null;
+              repositories_ = other.repositories_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              repositoriesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getRepositoriesFieldBuilder() : null;
+            } else {
+              repositoriesBuilder_.addAllMessages(other.repositories_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -5522,6 +7394,7 @@ public final class Source {
         }
         return this;
       }
+      private int bitField0_;
 
       private source.v1alpha1.Source.Integration integration_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5640,6 +7513,246 @@ public final class Source {
           integration_ = null;
         }
         return integrationBuilder_;
+      }
+
+      private java.util.List<source.v1alpha1.Source.Repository> repositories_ =
+        java.util.Collections.emptyList();
+      private void ensureRepositoriesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          repositories_ = new java.util.ArrayList<source.v1alpha1.Source.Repository>(repositories_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          source.v1alpha1.Source.Repository, source.v1alpha1.Source.Repository.Builder, source.v1alpha1.Source.RepositoryOrBuilder> repositoriesBuilder_;
+
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public java.util.List<source.v1alpha1.Source.Repository> getRepositoriesList() {
+        if (repositoriesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(repositories_);
+        } else {
+          return repositoriesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public int getRepositoriesCount() {
+        if (repositoriesBuilder_ == null) {
+          return repositories_.size();
+        } else {
+          return repositoriesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public source.v1alpha1.Source.Repository getRepositories(int index) {
+        if (repositoriesBuilder_ == null) {
+          return repositories_.get(index);
+        } else {
+          return repositoriesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public Builder setRepositories(
+          int index, source.v1alpha1.Source.Repository value) {
+        if (repositoriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRepositoriesIsMutable();
+          repositories_.set(index, value);
+          onChanged();
+        } else {
+          repositoriesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public Builder setRepositories(
+          int index, source.v1alpha1.Source.Repository.Builder builderForValue) {
+        if (repositoriesBuilder_ == null) {
+          ensureRepositoriesIsMutable();
+          repositories_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          repositoriesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public Builder addRepositories(source.v1alpha1.Source.Repository value) {
+        if (repositoriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRepositoriesIsMutable();
+          repositories_.add(value);
+          onChanged();
+        } else {
+          repositoriesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public Builder addRepositories(
+          int index, source.v1alpha1.Source.Repository value) {
+        if (repositoriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRepositoriesIsMutable();
+          repositories_.add(index, value);
+          onChanged();
+        } else {
+          repositoriesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public Builder addRepositories(
+          source.v1alpha1.Source.Repository.Builder builderForValue) {
+        if (repositoriesBuilder_ == null) {
+          ensureRepositoriesIsMutable();
+          repositories_.add(builderForValue.build());
+          onChanged();
+        } else {
+          repositoriesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public Builder addRepositories(
+          int index, source.v1alpha1.Source.Repository.Builder builderForValue) {
+        if (repositoriesBuilder_ == null) {
+          ensureRepositoriesIsMutable();
+          repositories_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          repositoriesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public Builder addAllRepositories(
+          java.lang.Iterable<? extends source.v1alpha1.Source.Repository> values) {
+        if (repositoriesBuilder_ == null) {
+          ensureRepositoriesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, repositories_);
+          onChanged();
+        } else {
+          repositoriesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public Builder clearRepositories() {
+        if (repositoriesBuilder_ == null) {
+          repositories_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          repositoriesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public Builder removeRepositories(int index) {
+        if (repositoriesBuilder_ == null) {
+          ensureRepositoriesIsMutable();
+          repositories_.remove(index);
+          onChanged();
+        } else {
+          repositoriesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public source.v1alpha1.Source.Repository.Builder getRepositoriesBuilder(
+          int index) {
+        return getRepositoriesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public source.v1alpha1.Source.RepositoryOrBuilder getRepositoriesOrBuilder(
+          int index) {
+        if (repositoriesBuilder_ == null) {
+          return repositories_.get(index);  } else {
+          return repositoriesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public java.util.List<? extends source.v1alpha1.Source.RepositoryOrBuilder> 
+           getRepositoriesOrBuilderList() {
+        if (repositoriesBuilder_ != null) {
+          return repositoriesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(repositories_);
+        }
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public source.v1alpha1.Source.Repository.Builder addRepositoriesBuilder() {
+        return getRepositoriesFieldBuilder().addBuilder(
+            source.v1alpha1.Source.Repository.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public source.v1alpha1.Source.Repository.Builder addRepositoriesBuilder(
+          int index) {
+        return getRepositoriesFieldBuilder().addBuilder(
+            index, source.v1alpha1.Source.Repository.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+       */
+      public java.util.List<source.v1alpha1.Source.Repository.Builder> 
+           getRepositoriesBuilderList() {
+        return getRepositoriesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          source.v1alpha1.Source.Repository, source.v1alpha1.Source.Repository.Builder, source.v1alpha1.Source.RepositoryOrBuilder> 
+          getRepositoriesFieldBuilder() {
+        if (repositoriesBuilder_ == null) {
+          repositoriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              source.v1alpha1.Source.Repository, source.v1alpha1.Source.Repository.Builder, source.v1alpha1.Source.RepositoryOrBuilder>(
+                  repositories_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          repositories_ = null;
+        }
+        return repositoriesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8554,6 +10667,40 @@ public final class Source {
 
     java.lang.String getDataOrThrow(
         java.lang.String key);
+
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    int getMetadataCount();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    boolean containsMetadata(
+        java.lang.String key);
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadata();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadataMap();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+
+    java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+
+    java.lang.String getMetadataOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code source.v1alpha1.Provider}
@@ -8642,6 +10789,19 @@ public final class Source {
                   data__.getKey(), data__.getValue());
               break;
             }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                metadata_ = com.google.protobuf.MapField.newMapField(
+                    MetadataDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              metadata__ = input.readMessage(
+                  MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              metadata_.getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -8673,6 +10833,8 @@ public final class Source {
       switch (number) {
         case 5:
           return internalGetData();
+        case 6:
+          return internalGetMetadata();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -8919,6 +11081,87 @@ public final class Source {
       return map.get(key);
     }
 
+    public static final int METADATA_FIELD_NUMBER = 6;
+    private static final class MetadataDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  source.v1alpha1.Source.internal_static_source_v1alpha1_Provider_MetadataEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> metadata_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
+      }
+      return metadata_;
+    }
+
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsMetadata(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetMetadata().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getMetadataOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8951,6 +11194,12 @@ public final class Source {
           internalGetData(),
           DataDefaultEntryHolder.defaultEntry,
           5);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          6);
       unknownFields.writeTo(output);
     }
 
@@ -8982,6 +11231,16 @@ public final class Source {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(5, data__);
       }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetMetadata().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, metadata__);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9007,6 +11266,8 @@ public final class Source {
           .equals(other.getLogo())) return false;
       if (!internalGetData().equals(
           other.internalGetData())) return false;
+      if (!internalGetMetadata().equals(
+          other.internalGetMetadata())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9029,6 +11290,10 @@ public final class Source {
       if (!internalGetData().getMap().isEmpty()) {
         hash = (37 * hash) + DATA_FIELD_NUMBER;
         hash = (53 * hash) + internalGetData().hashCode();
+      }
+      if (!internalGetMetadata().getMap().isEmpty()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetMetadata().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -9143,6 +11408,8 @@ public final class Source {
         switch (number) {
           case 5:
             return internalGetData();
+          case 6:
+            return internalGetMetadata();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -9154,6 +11421,8 @@ public final class Source {
         switch (number) {
           case 5:
             return internalGetMutableData();
+          case 6:
+            return internalGetMutableMetadata();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -9194,6 +11463,7 @@ public final class Source {
         logo_ = "";
 
         internalGetMutableData().clear();
+        internalGetMutableMetadata().clear();
         return this;
       }
 
@@ -9227,6 +11497,8 @@ public final class Source {
         result.logo_ = logo_;
         result.data_ = internalGetData();
         result.data_.makeImmutable();
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -9293,6 +11565,8 @@ public final class Source {
         }
         internalGetMutableData().mergeFrom(
             other.internalGetData());
+        internalGetMutableMetadata().mergeFrom(
+            other.internalGetMetadata());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -9751,6 +12025,134 @@ public final class Source {
       public Builder putAllData(
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableData().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> metadata_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMetadata() {
+        if (metadata_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        return metadata_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableMetadata() {
+        onChanged();;
+        if (metadata_ == null) {
+          metadata_ = com.google.protobuf.MapField.newMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        if (!metadata_.isMutable()) {
+          metadata_ = metadata_.copy();
+        }
+        return metadata_;
+      }
+
+      public int getMetadataCount() {
+        return internalGetMetadata().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+
+      @java.lang.Override
+      public boolean containsMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetMetadata().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getMetadataMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+        return getMetadataMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+        return internalGetMetadata().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getMetadataOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getMetadataOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearMetadata() {
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+
+      public Builder removeMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableMetadata() {
+        return internalGetMutableMetadata().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      public Builder putMetadata(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+
+      public Builder putAllMetadata(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableMetadata().getMutableMap()
             .putAll(values);
         return this;
       }
@@ -13844,6 +16246,40 @@ public final class Source {
 
     java.lang.String getDataOrThrow(
         java.lang.String key);
+
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    int getMetadataCount();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    boolean containsMetadata(
+        java.lang.String key);
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadata();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadataMap();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+
+    java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+
+    java.lang.String getMetadataOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code source.v1alpha1.CreateProviderRequest}
@@ -13925,6 +16361,19 @@ public final class Source {
                   data__.getKey(), data__.getValue());
               break;
             }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                metadata_ = com.google.protobuf.MapField.newMapField(
+                    MetadataDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              metadata__ = input.readMessage(
+                  MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              metadata_.getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -13956,6 +16405,8 @@ public final class Source {
       switch (number) {
         case 5:
           return internalGetData();
+        case 6:
+          return internalGetMetadata();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -14164,6 +16615,87 @@ public final class Source {
       return map.get(key);
     }
 
+    public static final int METADATA_FIELD_NUMBER = 6;
+    private static final class MetadataDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  source.v1alpha1.Source.internal_static_source_v1alpha1_CreateProviderRequest_MetadataEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> metadata_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
+      }
+      return metadata_;
+    }
+
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsMetadata(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetMetadata().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getMetadataOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -14193,6 +16725,12 @@ public final class Source {
           internalGetData(),
           DataDefaultEntryHolder.defaultEntry,
           5);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          6);
       unknownFields.writeTo(output);
     }
 
@@ -14221,6 +16759,16 @@ public final class Source {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(5, data__);
       }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetMetadata().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, metadata__);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -14244,6 +16792,8 @@ public final class Source {
           .equals(other.getLogo())) return false;
       if (!internalGetData().equals(
           other.internalGetData())) return false;
+      if (!internalGetMetadata().equals(
+          other.internalGetMetadata())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -14264,6 +16814,10 @@ public final class Source {
       if (!internalGetData().getMap().isEmpty()) {
         hash = (37 * hash) + DATA_FIELD_NUMBER;
         hash = (53 * hash) + internalGetData().hashCode();
+      }
+      if (!internalGetMetadata().getMap().isEmpty()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetMetadata().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -14378,6 +16932,8 @@ public final class Source {
         switch (number) {
           case 5:
             return internalGetData();
+          case 6:
+            return internalGetMetadata();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -14389,6 +16945,8 @@ public final class Source {
         switch (number) {
           case 5:
             return internalGetMutableData();
+          case 6:
+            return internalGetMutableMetadata();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -14427,6 +16985,7 @@ public final class Source {
         logo_ = "";
 
         internalGetMutableData().clear();
+        internalGetMutableMetadata().clear();
         return this;
       }
 
@@ -14459,6 +17018,8 @@ public final class Source {
         result.logo_ = logo_;
         result.data_ = internalGetData();
         result.data_.makeImmutable();
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -14521,6 +17082,8 @@ public final class Source {
         }
         internalGetMutableData().mergeFrom(
             other.internalGetData());
+        internalGetMutableMetadata().mergeFrom(
+            other.internalGetMetadata());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -14903,6 +17466,134 @@ public final class Source {
       public Builder putAllData(
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableData().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> metadata_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMetadata() {
+        if (metadata_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        return metadata_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableMetadata() {
+        onChanged();;
+        if (metadata_ == null) {
+          metadata_ = com.google.protobuf.MapField.newMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        if (!metadata_.isMutable()) {
+          metadata_ = metadata_.copy();
+        }
+        return metadata_;
+      }
+
+      public int getMetadataCount() {
+        return internalGetMetadata().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+
+      @java.lang.Override
+      public boolean containsMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetMetadata().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getMetadataMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+        return getMetadataMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+        return internalGetMetadata().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getMetadataOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getMetadataOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearMetadata() {
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+
+      public Builder removeMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableMetadata() {
+        return internalGetMutableMetadata().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+      public Builder putMetadata(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 6 [json_name = "metadata"];</code>
+       */
+
+      public Builder putAllMetadata(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableMetadata().getMutableMap()
             .putAll(values);
         return this;
       }
@@ -16899,6 +19590,16 @@ public final class Source {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_source_v1alpha1_Integration_DataEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_source_v1alpha1_Integration_MetadataEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_source_v1alpha1_Integration_MetadataEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_source_v1alpha1_Repository_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_source_v1alpha1_Repository_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_source_v1alpha1_CreateIntegrationRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -16908,6 +19609,11 @@ public final class Source {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_source_v1alpha1_CreateIntegrationRequest_DataEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_source_v1alpha1_CreateIntegrationRequest_MetadataEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_source_v1alpha1_CreateIntegrationRequest_MetadataEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_source_v1alpha1_CreateIntegrationResponse_descriptor;
   private static final 
@@ -16964,6 +19670,11 @@ public final class Source {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_source_v1alpha1_Provider_DataEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_source_v1alpha1_Provider_MetadataEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_source_v1alpha1_Provider_MetadataEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_source_v1alpha1_DeleteProviderRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -17004,6 +19715,11 @@ public final class Source {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_source_v1alpha1_CreateProviderRequest_DataEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_source_v1alpha1_CreateProviderRequest_MetadataEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_source_v1alpha1_CreateProviderRequest_MetadataEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_source_v1alpha1_CreateProviderResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -17028,89 +19744,109 @@ public final class Source {
   static {
     java.lang.String[] descriptorData = {
       "\n\034source/v1alpha1/source.proto\022\017source.v" +
-      "1alpha1\"\206\002\n\013Integration\022\016\n\002id\030\001 \001(\tR\002id\022" +
+      "1alpha1\"\213\003\n\013Integration\022\016\n\002id\030\001 \001(\tR\002id\022" +
       "\'\n\017organization_id\030\002 \001(\rR\016organizationId" +
       "\022\022\n\004name\030\003 \001(\tR\004name\0225\n\010provider\030\004 \001(\0132\031" +
       ".source.v1alpha1.ProviderR\010provider\022:\n\004d" +
       "ata\030\005 \003(\0132&.source.v1alpha1.Integration." +
-      "DataEntryR\004data\0327\n\tDataEntry\022\020\n\003key\030\001 \001(" +
-      "\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\220\002\n\030Cre" +
-      "ateIntegrationRequest\022\'\n\017organization_id" +
-      "\030\002 \001(\rR\016organizationId\022\022\n\004name\030\003 \001(\tR\004na" +
-      "me\0225\n\010provider\030\004 \001(\0132\031.source.v1alpha1.P" +
-      "roviderR\010provider\022G\n\004data\030\005 \003(\01323.source" +
-      ".v1alpha1.CreateIntegrationRequest.DataE" +
-      "ntryR\004data\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003ke" +
-      "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"C\n\031CreateInt" +
-      "egrationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005er" +
-      "ror\030\002 \001(\tR\005error\"B\n\027ListIntegrationsRequ" +
-      "est\022\'\n\017organization_id\030\001 \001(\rR\016organizati" +
-      "onId\"\\\n\030ListIntegrationsResponse\022@\n\014inte" +
-      "grations\030\001 \003(\0132\034.source.v1alpha1.Integra" +
-      "tionR\014integrations\"\'\n\025GetIntegrationRequ" +
-      "est\022\016\n\002id\030\001 \001(\tR\002id\"X\n\026GetIntegrationRes" +
-      "ponse\022>\n\013integration\030\001 \001(\0132\034.source.v1al" +
-      "pha1.IntegrationR\013integration\"y\n\030UpdateI" +
-      "ntegrationRequest\022\016\n\002id\030\001 \001(\tR\002id\022M\n\014int" +
-      "egrations\030\002 \001(\0132).source.v1alpha1.Create" +
-      "IntegrationRequestR\014integrations\"C\n\031Upda" +
-      "teIntegrationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022" +
-      "\024\n\005error\030\002 \001(\tR\005error\"*\n\030DeleteIntegrati" +
-      "onRequest\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteInteg" +
-      "rationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005erro" +
-      "r\030\002 \001(\tR\005error\"\326\001\n\010Provider\022\016\n\002id\030\001 \001(\tR" +
-      "\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013description\030\003" +
-      " \001(\tR\013description\022\022\n\004logo\030\004 \001(\tR\004logo\0227\n" +
-      "\004data\030\005 \003(\0132#.source.v1alpha1.Provider.D" +
-      "ataEntryR\004data\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\t" +
-      "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\'\n\025Delet" +
-      "eProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"@\n\026Dele" +
-      "teProviderResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005" +
-      "error\030\002 \001(\tR\005error\"k\n\025UpdateProviderRequ" +
-      "est\022\016\n\002id\030\001 \001(\tR\002id\022B\n\010provider\030\002 \001(\0132&." +
-      "source.v1alpha1.CreateProviderRequestR\010p" +
-      "rovider\"@\n\026UpdateProviderResponse\022\020\n\003msg" +
-      "\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"$\n\022Get" +
-      "ProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"L\n\023GetPr" +
-      "oviderResponse\0225\n\010provider\030\001 \001(\0132\031.sourc" +
-      "e.v1alpha1.ProviderR\010provider\"\340\001\n\025Create" +
-      "ProviderRequest\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013d" +
-      "escription\030\002 \001(\tR\013description\022\022\n\004logo\030\003 " +
-      "\001(\tR\004logo\022D\n\004data\030\005 \003(\01320.source.v1alpha" +
-      "1.CreateProviderRequest.DataEntryR\004data\032" +
-      "7\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030" +
-      "\002 \001(\tR\005value:\0028\001\"@\n\026CreateProviderRespon" +
-      "se\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005err" +
-      "or\"\026\n\024ListProvidersRequest\"P\n\025ListProvid" +
-      "ersResponse\0227\n\tproviders\030\001 \003(\0132\031.source." +
-      "v1alpha1.ProviderR\tproviders2\202\010\n\rSourceS" +
-      "ervice\022a\n\016CreateProvider\022&.source.v1alph" +
-      "a1.CreateProviderRequest\032\'.source.v1alph" +
-      "a1.CreateProviderResponse\022^\n\rListProvide" +
-      "rs\022%.source.v1alpha1.ListProvidersReques" +
-      "t\032&.source.v1alpha1.ListProvidersRespons" +
-      "e\022X\n\013GetProvider\022#.source.v1alpha1.GetPr" +
-      "oviderRequest\032$.source.v1alpha1.GetProvi" +
-      "derResponse\022a\n\016UpdateProvider\022&.source.v" +
-      "1alpha1.UpdateProviderRequest\032\'.source.v" +
-      "1alpha1.UpdateProviderResponse\022a\n\016Delete" +
-      "Provider\022&.source.v1alpha1.DeleteProvide" +
-      "rRequest\032\'.source.v1alpha1.DeleteProvide" +
-      "rResponse\022j\n\021CreateIntegration\022).source." +
-      "v1alpha1.CreateIntegrationRequest\032*.sour" +
-      "ce.v1alpha1.CreateIntegrationResponse\022g\n" +
-      "\020ListIntegrations\022(.source.v1alpha1.List" +
-      "IntegrationsRequest\032).source.v1alpha1.Li" +
-      "stIntegrationsResponse\022a\n\016GetIntegration" +
-      "\022&.source.v1alpha1.GetIntegrationRequest" +
-      "\032\'.source.v1alpha1.GetIntegrationRespons" +
-      "e\022j\n\021UpdateIntegration\022).source.v1alpha1" +
-      ".UpdateIntegrationRequest\032*.source.v1alp" +
-      "ha1.UpdateIntegrationResponse\022j\n\021DeleteI" +
-      "ntegration\022).source.v1alpha1.DeleteInteg" +
-      "rationRequest\032*.source.v1alpha1.DeleteIn" +
-      "tegrationResponseB2Z0github.com/cuemby/c" +
-      "cp-sdk/gen/go/source/v1alpha1b\006proto3"
+      "DataEntryR\004data\022F\n\010metadata\030\006 \003(\0132*.sour" +
+      "ce.v1alpha1.Integration.MetadataEntryR\010m" +
+      "etadata\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024" +
+      "\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataEntr" +
+      "y\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005valu" +
+      "e:\0028\001\"\251\001\n\nRepository\022\022\n\004name\030\001 \001(\tR\004name" +
+      "\022\030\n\007private\030\002 \001(\010R\007private\022\032\n\010fullname\030\003" +
+      " \001(\tR\010fullname\022 \n\013description\030\004 \001(\tR\013des" +
+      "cription\022\022\n\004fork\030\005 \001(\010R\004fork\022\033\n\tclone_ur" +
+      "l\030\006 \001(\tR\010cloneUrl\"\242\003\n\030CreateIntegrationR" +
+      "equest\022\'\n\017organization_id\030\002 \001(\rR\016organiz" +
+      "ationId\022\022\n\004name\030\003 \001(\tR\004name\0225\n\010provider\030" +
+      "\004 \001(\0132\031.source.v1alpha1.ProviderR\010provid" +
+      "er\022G\n\004data\030\005 \003(\01323.source.v1alpha1.Creat" +
+      "eIntegrationRequest.DataEntryR\004data\022S\n\010m" +
+      "etadata\030\006 \003(\01327.source.v1alpha1.CreateIn" +
+      "tegrationRequest.MetadataEntryR\010metadata" +
+      "\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value" +
+      "\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataEntry\022\020\n\003ke" +
+      "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"C" +
+      "\n\031CreateIntegrationResponse\022\020\n\003msg\030\001 \001(\t" +
+      "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"B\n\027ListInteg" +
+      "rationsRequest\022\'\n\017organization_id\030\001 \001(\rR" +
+      "\016organizationId\"\\\n\030ListIntegrationsRespo" +
+      "nse\022@\n\014integrations\030\001 \003(\0132\034.source.v1alp" +
+      "ha1.IntegrationR\014integrations\"\'\n\025GetInte" +
+      "grationRequest\022\016\n\002id\030\001 \001(\tR\002id\"\231\001\n\026GetIn" +
+      "tegrationResponse\022>\n\013integration\030\001 \001(\0132\034" +
+      ".source.v1alpha1.IntegrationR\013integratio" +
+      "n\022?\n\014repositories\030\002 \003(\0132\033.source.v1alpha" +
+      "1.RepositoryR\014repositories\"y\n\030UpdateInte" +
+      "grationRequest\022\016\n\002id\030\001 \001(\tR\002id\022M\n\014integr" +
+      "ations\030\002 \001(\0132).source.v1alpha1.CreateInt" +
+      "egrationRequestR\014integrations\"C\n\031UpdateI" +
+      "ntegrationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005" +
+      "error\030\002 \001(\tR\005error\"*\n\030DeleteIntegrationR" +
+      "equest\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteIntegrat" +
+      "ionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002" +
+      " \001(\tR\005error\"\330\002\n\010Provider\022\016\n\002id\030\001 \001(\tR\002id" +
+      "\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013description\030\003 \001(" +
+      "\tR\013description\022\022\n\004logo\030\004 \001(\tR\004logo\0227\n\004da" +
+      "ta\030\005 \003(\0132#.source.v1alpha1.Provider.Data" +
+      "EntryR\004data\022C\n\010metadata\030\006 \003(\0132\'.source.v" +
+      "1alpha1.Provider.MetadataEntryR\010metadata" +
+      "\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value" +
+      "\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataEntry\022\020\n\003ke" +
+      "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\'" +
+      "\n\025DeleteProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"" +
+      "@\n\026DeleteProviderResponse\022\020\n\003msg\030\001 \001(\tR\003" +
+      "msg\022\024\n\005error\030\002 \001(\tR\005error\"k\n\025UpdateProvi" +
+      "derRequest\022\016\n\002id\030\001 \001(\tR\002id\022B\n\010provider\030\002" +
+      " \001(\0132&.source.v1alpha1.CreateProviderReq" +
+      "uestR\010provider\"@\n\026UpdateProviderResponse" +
+      "\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error" +
+      "\"$\n\022GetProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"L" +
+      "\n\023GetProviderResponse\0225\n\010provider\030\001 \001(\0132" +
+      "\031.source.v1alpha1.ProviderR\010provider\"\357\002\n" +
+      "\025CreateProviderRequest\022\022\n\004name\030\001 \001(\tR\004na" +
+      "me\022 \n\013description\030\002 \001(\tR\013description\022\022\n\004" +
+      "logo\030\003 \001(\tR\004logo\022D\n\004data\030\005 \003(\01320.source." +
+      "v1alpha1.CreateProviderRequest.DataEntry" +
+      "R\004data\022P\n\010metadata\030\006 \003(\01324.source.v1alph" +
+      "a1.CreateProviderRequest.MetadataEntryR\010" +
+      "metadata\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022" +
+      "\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataEnt" +
+      "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val" +
+      "ue:\0028\001\"@\n\026CreateProviderResponse\022\020\n\003msg\030" +
+      "\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\026\n\024List" +
+      "ProvidersRequest\"P\n\025ListProvidersRespons" +
+      "e\0227\n\tproviders\030\001 \003(\0132\031.source.v1alpha1.P" +
+      "roviderR\tproviders2\202\010\n\rSourceService\022a\n\016" +
+      "CreateProvider\022&.source.v1alpha1.CreateP" +
+      "roviderRequest\032\'.source.v1alpha1.CreateP" +
+      "roviderResponse\022^\n\rListProviders\022%.sourc" +
+      "e.v1alpha1.ListProvidersRequest\032&.source" +
+      ".v1alpha1.ListProvidersResponse\022X\n\013GetPr" +
+      "ovider\022#.source.v1alpha1.GetProviderRequ" +
+      "est\032$.source.v1alpha1.GetProviderRespons" +
+      "e\022a\n\016UpdateProvider\022&.source.v1alpha1.Up" +
+      "dateProviderRequest\032\'.source.v1alpha1.Up" +
+      "dateProviderResponse\022a\n\016DeleteProvider\022&" +
+      ".source.v1alpha1.DeleteProviderRequest\032\'" +
+      ".source.v1alpha1.DeleteProviderResponse\022" +
+      "j\n\021CreateIntegration\022).source.v1alpha1.C" +
+      "reateIntegrationRequest\032*.source.v1alpha" +
+      "1.CreateIntegrationResponse\022g\n\020ListInteg" +
+      "rations\022(.source.v1alpha1.ListIntegratio" +
+      "nsRequest\032).source.v1alpha1.ListIntegrat" +
+      "ionsResponse\022a\n\016GetIntegration\022&.source." +
+      "v1alpha1.GetIntegrationRequest\032\'.source." +
+      "v1alpha1.GetIntegrationResponse\022j\n\021Updat" +
+      "eIntegration\022).source.v1alpha1.UpdateInt" +
+      "egrationRequest\032*.source.v1alpha1.Update" +
+      "IntegrationResponse\022j\n\021DeleteIntegration" +
+      "\022).source.v1alpha1.DeleteIntegrationRequ" +
+      "est\032*.source.v1alpha1.DeleteIntegrationR" +
+      "esponseB2Z0github.com/cuemby/ccp-sdk/gen" +
+      "/go/source/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -17121,153 +19857,183 @@ public final class Source {
     internal_static_source_v1alpha1_Integration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_Integration_descriptor,
-        new java.lang.String[] { "Id", "OrganizationId", "Name", "Provider", "Data", });
+        new java.lang.String[] { "Id", "OrganizationId", "Name", "Provider", "Data", "Metadata", });
     internal_static_source_v1alpha1_Integration_DataEntry_descriptor =
       internal_static_source_v1alpha1_Integration_descriptor.getNestedTypes().get(0);
     internal_static_source_v1alpha1_Integration_DataEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_Integration_DataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_source_v1alpha1_CreateIntegrationRequest_descriptor =
+    internal_static_source_v1alpha1_Integration_MetadataEntry_descriptor =
+      internal_static_source_v1alpha1_Integration_descriptor.getNestedTypes().get(1);
+    internal_static_source_v1alpha1_Integration_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_source_v1alpha1_Integration_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_source_v1alpha1_Repository_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_source_v1alpha1_Repository_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_source_v1alpha1_Repository_descriptor,
+        new java.lang.String[] { "Name", "Private", "Fullname", "Description", "Fork", "CloneUrl", });
+    internal_static_source_v1alpha1_CreateIntegrationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_source_v1alpha1_CreateIntegrationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_CreateIntegrationRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", "Name", "Provider", "Data", });
+        new java.lang.String[] { "OrganizationId", "Name", "Provider", "Data", "Metadata", });
     internal_static_source_v1alpha1_CreateIntegrationRequest_DataEntry_descriptor =
       internal_static_source_v1alpha1_CreateIntegrationRequest_descriptor.getNestedTypes().get(0);
     internal_static_source_v1alpha1_CreateIntegrationRequest_DataEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_CreateIntegrationRequest_DataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_source_v1alpha1_CreateIntegrationRequest_MetadataEntry_descriptor =
+      internal_static_source_v1alpha1_CreateIntegrationRequest_descriptor.getNestedTypes().get(1);
+    internal_static_source_v1alpha1_CreateIntegrationRequest_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_source_v1alpha1_CreateIntegrationRequest_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_source_v1alpha1_CreateIntegrationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_source_v1alpha1_CreateIntegrationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_CreateIntegrationResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_source_v1alpha1_ListIntegrationsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_source_v1alpha1_ListIntegrationsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_ListIntegrationsRequest_descriptor,
         new java.lang.String[] { "OrganizationId", });
     internal_static_source_v1alpha1_ListIntegrationsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_source_v1alpha1_ListIntegrationsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_ListIntegrationsResponse_descriptor,
         new java.lang.String[] { "Integrations", });
     internal_static_source_v1alpha1_GetIntegrationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_source_v1alpha1_GetIntegrationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_GetIntegrationRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_source_v1alpha1_GetIntegrationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_source_v1alpha1_GetIntegrationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_GetIntegrationResponse_descriptor,
-        new java.lang.String[] { "Integration", });
+        new java.lang.String[] { "Integration", "Repositories", });
     internal_static_source_v1alpha1_UpdateIntegrationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_source_v1alpha1_UpdateIntegrationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_UpdateIntegrationRequest_descriptor,
         new java.lang.String[] { "Id", "Integrations", });
     internal_static_source_v1alpha1_UpdateIntegrationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_source_v1alpha1_UpdateIntegrationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_UpdateIntegrationResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_source_v1alpha1_DeleteIntegrationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_source_v1alpha1_DeleteIntegrationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_DeleteIntegrationRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_source_v1alpha1_DeleteIntegrationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_source_v1alpha1_DeleteIntegrationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_DeleteIntegrationResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_source_v1alpha1_Provider_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_source_v1alpha1_Provider_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_Provider_descriptor,
-        new java.lang.String[] { "Id", "Name", "Description", "Logo", "Data", });
+        new java.lang.String[] { "Id", "Name", "Description", "Logo", "Data", "Metadata", });
     internal_static_source_v1alpha1_Provider_DataEntry_descriptor =
       internal_static_source_v1alpha1_Provider_descriptor.getNestedTypes().get(0);
     internal_static_source_v1alpha1_Provider_DataEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_Provider_DataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_source_v1alpha1_Provider_MetadataEntry_descriptor =
+      internal_static_source_v1alpha1_Provider_descriptor.getNestedTypes().get(1);
+    internal_static_source_v1alpha1_Provider_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_source_v1alpha1_Provider_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_source_v1alpha1_DeleteProviderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_source_v1alpha1_DeleteProviderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_DeleteProviderRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_source_v1alpha1_DeleteProviderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_source_v1alpha1_DeleteProviderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_DeleteProviderResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_source_v1alpha1_UpdateProviderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_source_v1alpha1_UpdateProviderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_UpdateProviderRequest_descriptor,
         new java.lang.String[] { "Id", "Provider", });
     internal_static_source_v1alpha1_UpdateProviderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_source_v1alpha1_UpdateProviderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_UpdateProviderResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_source_v1alpha1_GetProviderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_source_v1alpha1_GetProviderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_GetProviderRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_source_v1alpha1_GetProviderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_source_v1alpha1_GetProviderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_GetProviderResponse_descriptor,
         new java.lang.String[] { "Provider", });
     internal_static_source_v1alpha1_CreateProviderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_source_v1alpha1_CreateProviderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_CreateProviderRequest_descriptor,
-        new java.lang.String[] { "Name", "Description", "Logo", "Data", });
+        new java.lang.String[] { "Name", "Description", "Logo", "Data", "Metadata", });
     internal_static_source_v1alpha1_CreateProviderRequest_DataEntry_descriptor =
       internal_static_source_v1alpha1_CreateProviderRequest_descriptor.getNestedTypes().get(0);
     internal_static_source_v1alpha1_CreateProviderRequest_DataEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_CreateProviderRequest_DataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_source_v1alpha1_CreateProviderRequest_MetadataEntry_descriptor =
+      internal_static_source_v1alpha1_CreateProviderRequest_descriptor.getNestedTypes().get(1);
+    internal_static_source_v1alpha1_CreateProviderRequest_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_source_v1alpha1_CreateProviderRequest_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_source_v1alpha1_CreateProviderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_source_v1alpha1_CreateProviderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_CreateProviderResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_source_v1alpha1_ListProvidersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_source_v1alpha1_ListProvidersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_ListProvidersRequest_descriptor,
         new java.lang.String[] { });
     internal_static_source_v1alpha1_ListProvidersResponse_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_source_v1alpha1_ListProvidersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_ListProvidersResponse_descriptor,

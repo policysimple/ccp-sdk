@@ -29,9 +29,21 @@ struct Integration_DataEntry_DoNotUseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Integration_DataEntry_DoNotUseDefaultTypeInternal _Integration_DataEntry_DoNotUse_default_instance_;
+constexpr Integration_MetadataEntry_DoNotUse::Integration_MetadataEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct Integration_MetadataEntry_DoNotUseDefaultTypeInternal {
+  constexpr Integration_MetadataEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~Integration_MetadataEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    Integration_MetadataEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Integration_MetadataEntry_DoNotUseDefaultTypeInternal _Integration_MetadataEntry_DoNotUse_default_instance_;
 constexpr Integration::Integration(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : data_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
+  , metadata_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , provider_(nullptr)
@@ -45,6 +57,23 @@ struct IntegrationDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IntegrationDefaultTypeInternal _Integration_default_instance_;
+constexpr Repository::Repository(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , fullname_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , clone_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , private__(false)
+  , fork_(false){}
+struct RepositoryDefaultTypeInternal {
+  constexpr RepositoryDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RepositoryDefaultTypeInternal() {}
+  union {
+    Repository _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RepositoryDefaultTypeInternal _Repository_default_instance_;
 constexpr CreateIntegrationRequest_DataEntry_DoNotUse::CreateIntegrationRequest_DataEntry_DoNotUse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
 struct CreateIntegrationRequest_DataEntry_DoNotUseDefaultTypeInternal {
@@ -56,9 +85,21 @@ struct CreateIntegrationRequest_DataEntry_DoNotUseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateIntegrationRequest_DataEntry_DoNotUseDefaultTypeInternal _CreateIntegrationRequest_DataEntry_DoNotUse_default_instance_;
+constexpr CreateIntegrationRequest_MetadataEntry_DoNotUse::CreateIntegrationRequest_MetadataEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct CreateIntegrationRequest_MetadataEntry_DoNotUseDefaultTypeInternal {
+  constexpr CreateIntegrationRequest_MetadataEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CreateIntegrationRequest_MetadataEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    CreateIntegrationRequest_MetadataEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateIntegrationRequest_MetadataEntry_DoNotUseDefaultTypeInternal _CreateIntegrationRequest_MetadataEntry_DoNotUse_default_instance_;
 constexpr CreateIntegrationRequest::CreateIntegrationRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : data_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
+  , metadata_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , provider_(nullptr)
   , organization_id_(0u){}
@@ -122,7 +163,8 @@ struct GetIntegrationRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetIntegrationRequestDefaultTypeInternal _GetIntegrationRequest_default_instance_;
 constexpr GetIntegrationResponse::GetIntegrationResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : integration_(nullptr){}
+  : repositories_()
+  , integration_(nullptr){}
 struct GetIntegrationResponseDefaultTypeInternal {
   constexpr GetIntegrationResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -194,9 +236,21 @@ struct Provider_DataEntry_DoNotUseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Provider_DataEntry_DoNotUseDefaultTypeInternal _Provider_DataEntry_DoNotUse_default_instance_;
+constexpr Provider_MetadataEntry_DoNotUse::Provider_MetadataEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct Provider_MetadataEntry_DoNotUseDefaultTypeInternal {
+  constexpr Provider_MetadataEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~Provider_MetadataEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    Provider_MetadataEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Provider_MetadataEntry_DoNotUseDefaultTypeInternal _Provider_MetadataEntry_DoNotUse_default_instance_;
 constexpr Provider::Provider(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : data_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
+  , metadata_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -296,9 +350,21 @@ struct CreateProviderRequest_DataEntry_DoNotUseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateProviderRequest_DataEntry_DoNotUseDefaultTypeInternal _CreateProviderRequest_DataEntry_DoNotUse_default_instance_;
+constexpr CreateProviderRequest_MetadataEntry_DoNotUse::CreateProviderRequest_MetadataEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct CreateProviderRequest_MetadataEntry_DoNotUseDefaultTypeInternal {
+  constexpr CreateProviderRequest_MetadataEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CreateProviderRequest_MetadataEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    CreateProviderRequest_MetadataEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateProviderRequest_MetadataEntry_DoNotUseDefaultTypeInternal _CreateProviderRequest_MetadataEntry_DoNotUse_default_instance_;
 constexpr CreateProviderRequest::CreateProviderRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : data_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
+  , metadata_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , logo_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
@@ -349,7 +415,7 @@ struct ListProvidersResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListProvidersResponseDefaultTypeInternal _ListProvidersResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace source
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_source_2fv1alpha1_2fsource_2eproto[26];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_source_2fv1alpha1_2fsource_2eproto[31];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_source_2fv1alpha1_2fsource_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_source_2fv1alpha1_2fsource_2eproto = nullptr;
 
@@ -363,6 +429,15 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2ep
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration_DataEntry_DoNotUse, value_),
   0,
   1,
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration_MetadataEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration_MetadataEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration_MetadataEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration_MetadataEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -373,6 +448,18 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2ep
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration, name_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration, provider_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration, data_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Integration, metadata_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Repository, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Repository, name_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Repository, private__),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Repository, fullname_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Repository, description_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Repository, fork_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Repository, clone_url_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -380,6 +467,15 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2ep
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse, key_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest_MetadataEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest_MetadataEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest_MetadataEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest_MetadataEntry_DoNotUse, value_),
   0,
   1,
   ~0u,  // no _has_bits_
@@ -391,6 +487,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2ep
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest, name_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest, provider_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest, data_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationRequest, metadata_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateIntegrationResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -422,6 +519,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2ep
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::GetIntegrationResponse, integration_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::GetIntegrationResponse, repositories_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::UpdateIntegrationRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -458,6 +556,15 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2ep
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Provider_DataEntry_DoNotUse, value_),
   0,
   1,
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Provider_MetadataEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Provider_MetadataEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Provider_MetadataEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Provider_MetadataEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Provider, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -468,6 +575,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2ep
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Provider, description_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Provider, logo_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Provider, data_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::Provider, metadata_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::DeleteProviderRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -516,6 +624,15 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2ep
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateProviderRequest_DataEntry_DoNotUse, value_),
   0,
   1,
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateProviderRequest_MetadataEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateProviderRequest_MetadataEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateProviderRequest_MetadataEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateProviderRequest_MetadataEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateProviderRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -525,6 +642,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2ep
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateProviderRequest, description_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateProviderRequest, logo_),
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateProviderRequest, data_),
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateProviderRequest, metadata_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::CreateProviderResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -546,37 +664,45 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2ep
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 7, sizeof(::source::v1alpha1::Integration_DataEntry_DoNotUse)},
-  { 9, -1, sizeof(::source::v1alpha1::Integration)},
-  { 19, 26, sizeof(::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse)},
-  { 28, -1, sizeof(::source::v1alpha1::CreateIntegrationRequest)},
-  { 37, -1, sizeof(::source::v1alpha1::CreateIntegrationResponse)},
-  { 44, -1, sizeof(::source::v1alpha1::ListIntegrationsRequest)},
-  { 50, -1, sizeof(::source::v1alpha1::ListIntegrationsResponse)},
-  { 56, -1, sizeof(::source::v1alpha1::GetIntegrationRequest)},
-  { 62, -1, sizeof(::source::v1alpha1::GetIntegrationResponse)},
-  { 68, -1, sizeof(::source::v1alpha1::UpdateIntegrationRequest)},
-  { 75, -1, sizeof(::source::v1alpha1::UpdateIntegrationResponse)},
-  { 82, -1, sizeof(::source::v1alpha1::DeleteIntegrationRequest)},
-  { 88, -1, sizeof(::source::v1alpha1::DeleteIntegrationResponse)},
-  { 95, 102, sizeof(::source::v1alpha1::Provider_DataEntry_DoNotUse)},
-  { 104, -1, sizeof(::source::v1alpha1::Provider)},
-  { 114, -1, sizeof(::source::v1alpha1::DeleteProviderRequest)},
-  { 120, -1, sizeof(::source::v1alpha1::DeleteProviderResponse)},
-  { 127, -1, sizeof(::source::v1alpha1::UpdateProviderRequest)},
-  { 134, -1, sizeof(::source::v1alpha1::UpdateProviderResponse)},
-  { 141, -1, sizeof(::source::v1alpha1::GetProviderRequest)},
-  { 147, -1, sizeof(::source::v1alpha1::GetProviderResponse)},
-  { 153, 160, sizeof(::source::v1alpha1::CreateProviderRequest_DataEntry_DoNotUse)},
-  { 162, -1, sizeof(::source::v1alpha1::CreateProviderRequest)},
-  { 171, -1, sizeof(::source::v1alpha1::CreateProviderResponse)},
-  { 178, -1, sizeof(::source::v1alpha1::ListProvidersRequest)},
-  { 183, -1, sizeof(::source::v1alpha1::ListProvidersResponse)},
+  { 9, 16, sizeof(::source::v1alpha1::Integration_MetadataEntry_DoNotUse)},
+  { 18, -1, sizeof(::source::v1alpha1::Integration)},
+  { 29, -1, sizeof(::source::v1alpha1::Repository)},
+  { 40, 47, sizeof(::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse)},
+  { 49, 56, sizeof(::source::v1alpha1::CreateIntegrationRequest_MetadataEntry_DoNotUse)},
+  { 58, -1, sizeof(::source::v1alpha1::CreateIntegrationRequest)},
+  { 68, -1, sizeof(::source::v1alpha1::CreateIntegrationResponse)},
+  { 75, -1, sizeof(::source::v1alpha1::ListIntegrationsRequest)},
+  { 81, -1, sizeof(::source::v1alpha1::ListIntegrationsResponse)},
+  { 87, -1, sizeof(::source::v1alpha1::GetIntegrationRequest)},
+  { 93, -1, sizeof(::source::v1alpha1::GetIntegrationResponse)},
+  { 100, -1, sizeof(::source::v1alpha1::UpdateIntegrationRequest)},
+  { 107, -1, sizeof(::source::v1alpha1::UpdateIntegrationResponse)},
+  { 114, -1, sizeof(::source::v1alpha1::DeleteIntegrationRequest)},
+  { 120, -1, sizeof(::source::v1alpha1::DeleteIntegrationResponse)},
+  { 127, 134, sizeof(::source::v1alpha1::Provider_DataEntry_DoNotUse)},
+  { 136, 143, sizeof(::source::v1alpha1::Provider_MetadataEntry_DoNotUse)},
+  { 145, -1, sizeof(::source::v1alpha1::Provider)},
+  { 156, -1, sizeof(::source::v1alpha1::DeleteProviderRequest)},
+  { 162, -1, sizeof(::source::v1alpha1::DeleteProviderResponse)},
+  { 169, -1, sizeof(::source::v1alpha1::UpdateProviderRequest)},
+  { 176, -1, sizeof(::source::v1alpha1::UpdateProviderResponse)},
+  { 183, -1, sizeof(::source::v1alpha1::GetProviderRequest)},
+  { 189, -1, sizeof(::source::v1alpha1::GetProviderResponse)},
+  { 195, 202, sizeof(::source::v1alpha1::CreateProviderRequest_DataEntry_DoNotUse)},
+  { 204, 211, sizeof(::source::v1alpha1::CreateProviderRequest_MetadataEntry_DoNotUse)},
+  { 213, -1, sizeof(::source::v1alpha1::CreateProviderRequest)},
+  { 223, -1, sizeof(::source::v1alpha1::CreateProviderResponse)},
+  { 230, -1, sizeof(::source::v1alpha1::ListProvidersRequest)},
+  { 235, -1, sizeof(::source::v1alpha1::ListProvidersResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_Integration_DataEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_Integration_MetadataEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_Integration_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_Repository_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_CreateIntegrationRequest_DataEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_CreateIntegrationRequest_MetadataEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_CreateIntegrationRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_CreateIntegrationResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_ListIntegrationsRequest_default_instance_),
@@ -588,6 +714,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_DeleteIntegrationRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_DeleteIntegrationResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_Provider_DataEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_Provider_MetadataEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_Provider_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_DeleteProviderRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_DeleteProviderResponse_default_instance_),
@@ -596,6 +723,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_GetProviderRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_GetProviderResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_CreateProviderRequest_DataEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_CreateProviderRequest_MetadataEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_CreateProviderRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_CreateProviderResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_ListProvidersRequest_default_instance_),
@@ -604,94 +732,114 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_source_2fv1alpha1_2fsource_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\034source/v1alpha1/source.proto\022\017source.v"
-  "1alpha1\"\206\002\n\013Integration\022\016\n\002id\030\001 \001(\tR\002id\022"
+  "1alpha1\"\213\003\n\013Integration\022\016\n\002id\030\001 \001(\tR\002id\022"
   "\'\n\017organization_id\030\002 \001(\rR\016organizationId"
   "\022\022\n\004name\030\003 \001(\tR\004name\0225\n\010provider\030\004 \001(\0132\031"
   ".source.v1alpha1.ProviderR\010provider\022:\n\004d"
   "ata\030\005 \003(\0132&.source.v1alpha1.Integration."
-  "DataEntryR\004data\0327\n\tDataEntry\022\020\n\003key\030\001 \001("
-  "\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\220\002\n\030Cre"
-  "ateIntegrationRequest\022\'\n\017organization_id"
-  "\030\002 \001(\rR\016organizationId\022\022\n\004name\030\003 \001(\tR\004na"
-  "me\0225\n\010provider\030\004 \001(\0132\031.source.v1alpha1.P"
-  "roviderR\010provider\022G\n\004data\030\005 \003(\01323.source"
-  ".v1alpha1.CreateIntegrationRequest.DataE"
-  "ntryR\004data\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003ke"
-  "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"C\n\031CreateInt"
-  "egrationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005er"
-  "ror\030\002 \001(\tR\005error\"B\n\027ListIntegrationsRequ"
-  "est\022\'\n\017organization_id\030\001 \001(\rR\016organizati"
-  "onId\"\\\n\030ListIntegrationsResponse\022@\n\014inte"
-  "grations\030\001 \003(\0132\034.source.v1alpha1.Integra"
-  "tionR\014integrations\"\'\n\025GetIntegrationRequ"
-  "est\022\016\n\002id\030\001 \001(\tR\002id\"X\n\026GetIntegrationRes"
-  "ponse\022>\n\013integration\030\001 \001(\0132\034.source.v1al"
-  "pha1.IntegrationR\013integration\"y\n\030UpdateI"
-  "ntegrationRequest\022\016\n\002id\030\001 \001(\tR\002id\022M\n\014int"
-  "egrations\030\002 \001(\0132).source.v1alpha1.Create"
-  "IntegrationRequestR\014integrations\"C\n\031Upda"
-  "teIntegrationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022"
-  "\024\n\005error\030\002 \001(\tR\005error\"*\n\030DeleteIntegrati"
-  "onRequest\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteInteg"
-  "rationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005erro"
-  "r\030\002 \001(\tR\005error\"\326\001\n\010Provider\022\016\n\002id\030\001 \001(\tR"
-  "\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013description\030\003"
-  " \001(\tR\013description\022\022\n\004logo\030\004 \001(\tR\004logo\0227\n"
-  "\004data\030\005 \003(\0132#.source.v1alpha1.Provider.D"
-  "ataEntryR\004data\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\t"
-  "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\'\n\025Delet"
-  "eProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"@\n\026Dele"
-  "teProviderResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005"
-  "error\030\002 \001(\tR\005error\"k\n\025UpdateProviderRequ"
-  "est\022\016\n\002id\030\001 \001(\tR\002id\022B\n\010provider\030\002 \001(\0132&."
-  "source.v1alpha1.CreateProviderRequestR\010p"
-  "rovider\"@\n\026UpdateProviderResponse\022\020\n\003msg"
-  "\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"$\n\022Get"
-  "ProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"L\n\023GetPr"
-  "oviderResponse\0225\n\010provider\030\001 \001(\0132\031.sourc"
-  "e.v1alpha1.ProviderR\010provider\"\340\001\n\025Create"
-  "ProviderRequest\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013d"
-  "escription\030\002 \001(\tR\013description\022\022\n\004logo\030\003 "
-  "\001(\tR\004logo\022D\n\004data\030\005 \003(\01320.source.v1alpha"
-  "1.CreateProviderRequest.DataEntryR\004data\032"
-  "7\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030"
-  "\002 \001(\tR\005value:\0028\001\"@\n\026CreateProviderRespon"
-  "se\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005err"
-  "or\"\026\n\024ListProvidersRequest\"P\n\025ListProvid"
-  "ersResponse\0227\n\tproviders\030\001 \003(\0132\031.source."
-  "v1alpha1.ProviderR\tproviders2\202\010\n\rSourceS"
-  "ervice\022a\n\016CreateProvider\022&.source.v1alph"
-  "a1.CreateProviderRequest\032\'.source.v1alph"
-  "a1.CreateProviderResponse\022^\n\rListProvide"
-  "rs\022%.source.v1alpha1.ListProvidersReques"
-  "t\032&.source.v1alpha1.ListProvidersRespons"
-  "e\022X\n\013GetProvider\022#.source.v1alpha1.GetPr"
-  "oviderRequest\032$.source.v1alpha1.GetProvi"
-  "derResponse\022a\n\016UpdateProvider\022&.source.v"
-  "1alpha1.UpdateProviderRequest\032\'.source.v"
-  "1alpha1.UpdateProviderResponse\022a\n\016Delete"
-  "Provider\022&.source.v1alpha1.DeleteProvide"
-  "rRequest\032\'.source.v1alpha1.DeleteProvide"
-  "rResponse\022j\n\021CreateIntegration\022).source."
-  "v1alpha1.CreateIntegrationRequest\032*.sour"
-  "ce.v1alpha1.CreateIntegrationResponse\022g\n"
-  "\020ListIntegrations\022(.source.v1alpha1.List"
-  "IntegrationsRequest\032).source.v1alpha1.Li"
-  "stIntegrationsResponse\022a\n\016GetIntegration"
-  "\022&.source.v1alpha1.GetIntegrationRequest"
-  "\032\'.source.v1alpha1.GetIntegrationRespons"
-  "e\022j\n\021UpdateIntegration\022).source.v1alpha1"
-  ".UpdateIntegrationRequest\032*.source.v1alp"
-  "ha1.UpdateIntegrationResponse\022j\n\021DeleteI"
-  "ntegration\022).source.v1alpha1.DeleteInteg"
-  "rationRequest\032*.source.v1alpha1.DeleteIn"
-  "tegrationResponseB2Z0github.com/cuemby/c"
-  "cp-sdk/gen/go/source/v1alpha1b\006proto3"
+  "DataEntryR\004data\022F\n\010metadata\030\006 \003(\0132*.sour"
+  "ce.v1alpha1.Integration.MetadataEntryR\010m"
+  "etadata\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024"
+  "\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataEntr"
+  "y\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005valu"
+  "e:\0028\001\"\251\001\n\nRepository\022\022\n\004name\030\001 \001(\tR\004name"
+  "\022\030\n\007private\030\002 \001(\010R\007private\022\032\n\010fullname\030\003"
+  " \001(\tR\010fullname\022 \n\013description\030\004 \001(\tR\013des"
+  "cription\022\022\n\004fork\030\005 \001(\010R\004fork\022\033\n\tclone_ur"
+  "l\030\006 \001(\tR\010cloneUrl\"\242\003\n\030CreateIntegrationR"
+  "equest\022\'\n\017organization_id\030\002 \001(\rR\016organiz"
+  "ationId\022\022\n\004name\030\003 \001(\tR\004name\0225\n\010provider\030"
+  "\004 \001(\0132\031.source.v1alpha1.ProviderR\010provid"
+  "er\022G\n\004data\030\005 \003(\01323.source.v1alpha1.Creat"
+  "eIntegrationRequest.DataEntryR\004data\022S\n\010m"
+  "etadata\030\006 \003(\01327.source.v1alpha1.CreateIn"
+  "tegrationRequest.MetadataEntryR\010metadata"
+  "\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value"
+  "\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataEntry\022\020\n\003ke"
+  "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"C"
+  "\n\031CreateIntegrationResponse\022\020\n\003msg\030\001 \001(\t"
+  "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"B\n\027ListInteg"
+  "rationsRequest\022\'\n\017organization_id\030\001 \001(\rR"
+  "\016organizationId\"\\\n\030ListIntegrationsRespo"
+  "nse\022@\n\014integrations\030\001 \003(\0132\034.source.v1alp"
+  "ha1.IntegrationR\014integrations\"\'\n\025GetInte"
+  "grationRequest\022\016\n\002id\030\001 \001(\tR\002id\"\231\001\n\026GetIn"
+  "tegrationResponse\022>\n\013integration\030\001 \001(\0132\034"
+  ".source.v1alpha1.IntegrationR\013integratio"
+  "n\022\?\n\014repositories\030\002 \003(\0132\033.source.v1alpha"
+  "1.RepositoryR\014repositories\"y\n\030UpdateInte"
+  "grationRequest\022\016\n\002id\030\001 \001(\tR\002id\022M\n\014integr"
+  "ations\030\002 \001(\0132).source.v1alpha1.CreateInt"
+  "egrationRequestR\014integrations\"C\n\031UpdateI"
+  "ntegrationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005"
+  "error\030\002 \001(\tR\005error\"*\n\030DeleteIntegrationR"
+  "equest\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteIntegrat"
+  "ionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002"
+  " \001(\tR\005error\"\330\002\n\010Provider\022\016\n\002id\030\001 \001(\tR\002id"
+  "\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013description\030\003 \001("
+  "\tR\013description\022\022\n\004logo\030\004 \001(\tR\004logo\0227\n\004da"
+  "ta\030\005 \003(\0132#.source.v1alpha1.Provider.Data"
+  "EntryR\004data\022C\n\010metadata\030\006 \003(\0132\'.source.v"
+  "1alpha1.Provider.MetadataEntryR\010metadata"
+  "\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value"
+  "\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataEntry\022\020\n\003ke"
+  "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\'"
+  "\n\025DeleteProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\""
+  "@\n\026DeleteProviderResponse\022\020\n\003msg\030\001 \001(\tR\003"
+  "msg\022\024\n\005error\030\002 \001(\tR\005error\"k\n\025UpdateProvi"
+  "derRequest\022\016\n\002id\030\001 \001(\tR\002id\022B\n\010provider\030\002"
+  " \001(\0132&.source.v1alpha1.CreateProviderReq"
+  "uestR\010provider\"@\n\026UpdateProviderResponse"
+  "\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error"
+  "\"$\n\022GetProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"L"
+  "\n\023GetProviderResponse\0225\n\010provider\030\001 \001(\0132"
+  "\031.source.v1alpha1.ProviderR\010provider\"\357\002\n"
+  "\025CreateProviderRequest\022\022\n\004name\030\001 \001(\tR\004na"
+  "me\022 \n\013description\030\002 \001(\tR\013description\022\022\n\004"
+  "logo\030\003 \001(\tR\004logo\022D\n\004data\030\005 \003(\01320.source."
+  "v1alpha1.CreateProviderRequest.DataEntry"
+  "R\004data\022P\n\010metadata\030\006 \003(\01324.source.v1alph"
+  "a1.CreateProviderRequest.MetadataEntryR\010"
+  "metadata\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
+  "\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataEnt"
+  "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val"
+  "ue:\0028\001\"@\n\026CreateProviderResponse\022\020\n\003msg\030"
+  "\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\026\n\024List"
+  "ProvidersRequest\"P\n\025ListProvidersRespons"
+  "e\0227\n\tproviders\030\001 \003(\0132\031.source.v1alpha1.P"
+  "roviderR\tproviders2\202\010\n\rSourceService\022a\n\016"
+  "CreateProvider\022&.source.v1alpha1.CreateP"
+  "roviderRequest\032\'.source.v1alpha1.CreateP"
+  "roviderResponse\022^\n\rListProviders\022%.sourc"
+  "e.v1alpha1.ListProvidersRequest\032&.source"
+  ".v1alpha1.ListProvidersResponse\022X\n\013GetPr"
+  "ovider\022#.source.v1alpha1.GetProviderRequ"
+  "est\032$.source.v1alpha1.GetProviderRespons"
+  "e\022a\n\016UpdateProvider\022&.source.v1alpha1.Up"
+  "dateProviderRequest\032\'.source.v1alpha1.Up"
+  "dateProviderResponse\022a\n\016DeleteProvider\022&"
+  ".source.v1alpha1.DeleteProviderRequest\032\'"
+  ".source.v1alpha1.DeleteProviderResponse\022"
+  "j\n\021CreateIntegration\022).source.v1alpha1.C"
+  "reateIntegrationRequest\032*.source.v1alpha"
+  "1.CreateIntegrationResponse\022g\n\020ListInteg"
+  "rations\022(.source.v1alpha1.ListIntegratio"
+  "nsRequest\032).source.v1alpha1.ListIntegrat"
+  "ionsResponse\022a\n\016GetIntegration\022&.source."
+  "v1alpha1.GetIntegrationRequest\032\'.source."
+  "v1alpha1.GetIntegrationResponse\022j\n\021Updat"
+  "eIntegration\022).source.v1alpha1.UpdateInt"
+  "egrationRequest\032*.source.v1alpha1.Update"
+  "IntegrationResponse\022j\n\021DeleteIntegration"
+  "\022).source.v1alpha1.DeleteIntegrationRequ"
+  "est\032*.source.v1alpha1.DeleteIntegrationR"
+  "esponseB2Z0github.com/cuemby/ccp-sdk/gen"
+  "/go/source/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_source_2fv1alpha1_2fsource_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_source_2fv1alpha1_2fsource_2eproto = {
-  false, false, 3357, descriptor_table_protodef_source_2fv1alpha1_2fsource_2eproto, "source/v1alpha1/source.proto", 
-  &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once, nullptr, 0, 26,
+  false, false, 4147, descriptor_table_protodef_source_2fv1alpha1_2fsource_2eproto, "source/v1alpha1/source.proto", 
+  &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once, nullptr, 0, 31,
   schemas, file_default_instances, TableStruct_source_2fv1alpha1_2fsource_2eproto::offsets,
   file_level_metadata_source_2fv1alpha1_2fsource_2eproto, file_level_enum_descriptors_source_2fv1alpha1_2fsource_2eproto, file_level_service_descriptors_source_2fv1alpha1_2fsource_2eproto,
 };
@@ -720,6 +868,20 @@ void Integration_DataEntry_DoNotUse::MergeFrom(const Integration_DataEntry_DoNot
 
 // ===================================================================
 
+Integration_MetadataEntry_DoNotUse::Integration_MetadataEntry_DoNotUse() {}
+Integration_MetadataEntry_DoNotUse::Integration_MetadataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void Integration_MetadataEntry_DoNotUse::MergeFrom(const Integration_MetadataEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata Integration_MetadataEntry_DoNotUse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[1]);
+}
+
+// ===================================================================
+
 class Integration::_Internal {
  public:
   static const ::source::v1alpha1::Provider& provider(const Integration* msg);
@@ -732,7 +894,8 @@ Integration::_Internal::provider(const Integration* msg) {
 Integration::Integration(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  data_(arena) {
+  data_(arena),
+  metadata_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -743,6 +906,7 @@ Integration::Integration(const Integration& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   data_.MergeFrom(from.data_);
+  metadata_.MergeFrom(from.metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
@@ -789,6 +953,7 @@ void Integration::ArenaDtor(void* object) {
   Integration* _this = reinterpret_cast< Integration* >(object);
   (void)_this;
   _this->data_. ~MapField();
+  _this->metadata_. ~MapField();
 }
 inline void Integration::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
   if (arena != nullptr) {
@@ -806,6 +971,7 @@ void Integration::Clear() {
   (void) cached_has_bits;
 
   data_.Clear();
+  metadata_.Clear();
   id_.ClearToEmpty();
   name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && provider_ != nullptr) {
@@ -864,6 +1030,18 @@ const char* Integration::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // map<string, string> metadata = 6 [json_name = "metadata"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&metadata_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -975,6 +1153,52 @@ failure:
     }
   }
 
+  // map<string, string> metadata = 6 [json_name = "metadata"];
+  if (!this->_internal_metadata().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        (void)p;
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "source.v1alpha1.Integration.MetadataEntry.key");
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "source.v1alpha1.Integration.MetadataEntry.value");
+      }
+    };
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_metadata().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_metadata().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_metadata().begin();
+          it != this->_internal_metadata().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = Integration_MetadataEntry_DoNotUse::Funcs::InternalSerialize(6, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_metadata().begin();
+          it != this->_internal_metadata().end(); ++it) {
+        target = Integration_MetadataEntry_DoNotUse::Funcs::InternalSerialize(6, it->first, it->second, target, stream);
+        Utf8Check::Check(&(*it));
+      }
+    }
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -998,6 +1222,15 @@ size_t Integration::ByteSizeLong() const {
       it = this->_internal_data().begin();
       it != this->_internal_data().end(); ++it) {
     total_size += Integration_DataEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<string, string> metadata = 6 [json_name = "metadata"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_metadata_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      it = this->_internal_metadata().begin();
+      it != this->_internal_metadata().end(); ++it) {
+    total_size += Integration_MetadataEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
   // string id = 1 [json_name = "id"];
@@ -1057,6 +1290,7 @@ void Integration::MergeFrom(const Integration& from) {
   (void) cached_has_bits;
 
   data_.MergeFrom(from.data_);
+  metadata_.MergeFrom(from.metadata_);
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
@@ -1087,6 +1321,7 @@ void Integration::InternalSwap(Integration* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   data_.InternalSwap(&other->data_);
+  metadata_.InternalSwap(&other->metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),
@@ -1108,7 +1343,391 @@ void Integration::InternalSwap(Integration* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Integration::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[1]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[2]);
+}
+
+// ===================================================================
+
+class Repository::_Internal {
+ public:
+};
+
+Repository::Repository(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:source.v1alpha1.Repository)
+}
+Repository::Repository(const Repository& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
+  fullname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_fullname().empty()) {
+    fullname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_fullname(), 
+      GetArenaForAllocation());
+  }
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_description().empty()) {
+    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
+      GetArenaForAllocation());
+  }
+  clone_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_clone_url().empty()) {
+    clone_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_clone_url(), 
+      GetArenaForAllocation());
+  }
+  ::memcpy(&private__, &from.private__,
+    static_cast<size_t>(reinterpret_cast<char*>(&fork_) -
+    reinterpret_cast<char*>(&private__)) + sizeof(fork_));
+  // @@protoc_insertion_point(copy_constructor:source.v1alpha1.Repository)
+}
+
+inline void Repository::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+fullname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+clone_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&private__) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&fork_) -
+    reinterpret_cast<char*>(&private__)) + sizeof(fork_));
+}
+
+Repository::~Repository() {
+  // @@protoc_insertion_point(destructor:source.v1alpha1.Repository)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void Repository::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  fullname_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  clone_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void Repository::ArenaDtor(void* object) {
+  Repository* _this = reinterpret_cast< Repository* >(object);
+  (void)_this;
+}
+void Repository::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void Repository::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void Repository::Clear() {
+// @@protoc_insertion_point(message_clear_start:source.v1alpha1.Repository)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  name_.ClearToEmpty();
+  fullname_.ClearToEmpty();
+  description_.ClearToEmpty();
+  clone_url_.ClearToEmpty();
+  ::memset(&private__, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&fork_) -
+      reinterpret_cast<char*>(&private__)) + sizeof(fork_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Repository::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string name = 1 [json_name = "name"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "source.v1alpha1.Repository.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool private = 2 [json_name = "private"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          private__ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string fullname = 3 [json_name = "fullname"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_fullname();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "source.v1alpha1.Repository.fullname"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string description = 4 [json_name = "description"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_description();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "source.v1alpha1.Repository.description"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool fork = 5 [json_name = "fork"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          fork_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string clone_url = 6 [json_name = "cloneUrl"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_clone_url();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "source.v1alpha1.Repository.clone_url"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Repository::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:source.v1alpha1.Repository)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1 [json_name = "name"];
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "source.v1alpha1.Repository.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // bool private = 2 [json_name = "private"];
+  if (this->_internal_private_() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_private_(), target);
+  }
+
+  // string fullname = 3 [json_name = "fullname"];
+  if (!this->_internal_fullname().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_fullname().data(), static_cast<int>(this->_internal_fullname().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "source.v1alpha1.Repository.fullname");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_fullname(), target);
+  }
+
+  // string description = 4 [json_name = "description"];
+  if (!this->_internal_description().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "source.v1alpha1.Repository.description");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_description(), target);
+  }
+
+  // bool fork = 5 [json_name = "fork"];
+  if (this->_internal_fork() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_fork(), target);
+  }
+
+  // string clone_url = 6 [json_name = "cloneUrl"];
+  if (!this->_internal_clone_url().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_clone_url().data(), static_cast<int>(this->_internal_clone_url().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "source.v1alpha1.Repository.clone_url");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_clone_url(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:source.v1alpha1.Repository)
+  return target;
+}
+
+size_t Repository::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:source.v1alpha1.Repository)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 1 [json_name = "name"];
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string fullname = 3 [json_name = "fullname"];
+  if (!this->_internal_fullname().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_fullname());
+  }
+
+  // string description = 4 [json_name = "description"];
+  if (!this->_internal_description().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_description());
+  }
+
+  // string clone_url = 6 [json_name = "cloneUrl"];
+  if (!this->_internal_clone_url().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_clone_url());
+  }
+
+  // bool private = 2 [json_name = "private"];
+  if (this->_internal_private_() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // bool fork = 5 [json_name = "fork"];
+  if (this->_internal_fork() != 0) {
+    total_size += 1 + 1;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Repository::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Repository::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Repository::GetClassData() const { return &_class_data_; }
+
+void Repository::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<Repository *>(to)->MergeFrom(
+      static_cast<const Repository &>(from));
+}
+
+
+void Repository::MergeFrom(const Repository& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:source.v1alpha1.Repository)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
+  if (!from._internal_fullname().empty()) {
+    _internal_set_fullname(from._internal_fullname());
+  }
+  if (!from._internal_description().empty()) {
+    _internal_set_description(from._internal_description());
+  }
+  if (!from._internal_clone_url().empty()) {
+    _internal_set_clone_url(from._internal_clone_url());
+  }
+  if (from._internal_private_() != 0) {
+    _internal_set_private_(from._internal_private_());
+  }
+  if (from._internal_fork() != 0) {
+    _internal_set_fork(from._internal_fork());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Repository::CopyFrom(const Repository& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:source.v1alpha1.Repository)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Repository::IsInitialized() const {
+  return true;
+}
+
+void Repository::InternalSwap(Repository* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, GetArenaForAllocation(),
+      &other->name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &fullname_, GetArenaForAllocation(),
+      &other->fullname_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &description_, GetArenaForAllocation(),
+      &other->description_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &clone_url_, GetArenaForAllocation(),
+      &other->clone_url_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Repository, fork_)
+      + sizeof(Repository::fork_)
+      - PROTOBUF_FIELD_OFFSET(Repository, private__)>(
+          reinterpret_cast<char*>(&private__),
+          reinterpret_cast<char*>(&other->private__));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Repository::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[3]);
 }
 
 // ===================================================================
@@ -1122,7 +1741,21 @@ void CreateIntegrationRequest_DataEntry_DoNotUse::MergeFrom(const CreateIntegrat
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateIntegrationRequest_DataEntry_DoNotUse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[2]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[4]);
+}
+
+// ===================================================================
+
+CreateIntegrationRequest_MetadataEntry_DoNotUse::CreateIntegrationRequest_MetadataEntry_DoNotUse() {}
+CreateIntegrationRequest_MetadataEntry_DoNotUse::CreateIntegrationRequest_MetadataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void CreateIntegrationRequest_MetadataEntry_DoNotUse::MergeFrom(const CreateIntegrationRequest_MetadataEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata CreateIntegrationRequest_MetadataEntry_DoNotUse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[5]);
 }
 
 // ===================================================================
@@ -1139,7 +1772,8 @@ CreateIntegrationRequest::_Internal::provider(const CreateIntegrationRequest* ms
 CreateIntegrationRequest::CreateIntegrationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  data_(arena) {
+  data_(arena),
+  metadata_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -1150,6 +1784,7 @@ CreateIntegrationRequest::CreateIntegrationRequest(const CreateIntegrationReques
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   data_.MergeFrom(from.data_);
+  metadata_.MergeFrom(from.metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
@@ -1189,6 +1824,7 @@ void CreateIntegrationRequest::ArenaDtor(void* object) {
   CreateIntegrationRequest* _this = reinterpret_cast< CreateIntegrationRequest* >(object);
   (void)_this;
   _this->data_. ~MapField();
+  _this->metadata_. ~MapField();
 }
 inline void CreateIntegrationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
   if (arena != nullptr) {
@@ -1206,6 +1842,7 @@ void CreateIntegrationRequest::Clear() {
   (void) cached_has_bits;
 
   data_.Clear();
+  metadata_.Clear();
   name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && provider_ != nullptr) {
     delete provider_;
@@ -1254,6 +1891,18 @@ const char* CreateIntegrationRequest::_InternalParse(const char* ptr, ::PROTOBUF
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // map<string, string> metadata = 6 [json_name = "metadata"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&metadata_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -1355,6 +2004,52 @@ failure:
     }
   }
 
+  // map<string, string> metadata = 6 [json_name = "metadata"];
+  if (!this->_internal_metadata().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        (void)p;
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "source.v1alpha1.CreateIntegrationRequest.MetadataEntry.key");
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "source.v1alpha1.CreateIntegrationRequest.MetadataEntry.value");
+      }
+    };
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_metadata().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_metadata().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_metadata().begin();
+          it != this->_internal_metadata().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = CreateIntegrationRequest_MetadataEntry_DoNotUse::Funcs::InternalSerialize(6, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_metadata().begin();
+          it != this->_internal_metadata().end(); ++it) {
+        target = CreateIntegrationRequest_MetadataEntry_DoNotUse::Funcs::InternalSerialize(6, it->first, it->second, target, stream);
+        Utf8Check::Check(&(*it));
+      }
+    }
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1378,6 +2073,15 @@ size_t CreateIntegrationRequest::ByteSizeLong() const {
       it = this->_internal_data().begin();
       it != this->_internal_data().end(); ++it) {
     total_size += CreateIntegrationRequest_DataEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<string, string> metadata = 6 [json_name = "metadata"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_metadata_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      it = this->_internal_metadata().begin();
+      it != this->_internal_metadata().end(); ++it) {
+    total_size += CreateIntegrationRequest_MetadataEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
   // string name = 3 [json_name = "name"];
@@ -1430,6 +2134,7 @@ void CreateIntegrationRequest::MergeFrom(const CreateIntegrationRequest& from) {
   (void) cached_has_bits;
 
   data_.MergeFrom(from.data_);
+  metadata_.MergeFrom(from.metadata_);
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
@@ -1457,6 +2162,7 @@ void CreateIntegrationRequest::InternalSwap(CreateIntegrationRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   data_.InternalSwap(&other->data_);
+  metadata_.InternalSwap(&other->metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &name_, GetArenaForAllocation(),
@@ -1473,7 +2179,7 @@ void CreateIntegrationRequest::InternalSwap(CreateIntegrationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateIntegrationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[3]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[6]);
 }
 
 // ===================================================================
@@ -1715,7 +2421,7 @@ void CreateIntegrationResponse::InternalSwap(CreateIntegrationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateIntegrationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[4]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[7]);
 }
 
 // ===================================================================
@@ -1900,7 +2606,7 @@ void ListIntegrationsRequest::InternalSwap(ListIntegrationsRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListIntegrationsRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[5]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[8]);
 }
 
 // ===================================================================
@@ -2090,7 +2796,7 @@ void ListIntegrationsResponse::InternalSwap(ListIntegrationsResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListIntegrationsResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[6]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[9]);
 }
 
 // ===================================================================
@@ -2290,7 +2996,7 @@ void GetIntegrationRequest::InternalSwap(GetIntegrationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetIntegrationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[7]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[10]);
 }
 
 // ===================================================================
@@ -2306,7 +3012,8 @@ GetIntegrationResponse::_Internal::integration(const GetIntegrationResponse* msg
 }
 GetIntegrationResponse::GetIntegrationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  repositories_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -2314,7 +3021,8 @@ GetIntegrationResponse::GetIntegrationResponse(::PROTOBUF_NAMESPACE_ID::Arena* a
   // @@protoc_insertion_point(arena_constructor:source.v1alpha1.GetIntegrationResponse)
 }
 GetIntegrationResponse::GetIntegrationResponse(const GetIntegrationResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      repositories_(from.repositories_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_integration()) {
     integration_ = new ::source::v1alpha1::Integration(*from.integration_);
@@ -2356,6 +3064,7 @@ void GetIntegrationResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  repositories_.Clear();
   if (GetArenaForAllocation() == nullptr && integration_ != nullptr) {
     delete integration_;
   }
@@ -2374,6 +3083,18 @@ const char* GetIntegrationResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_integration(), ptr);
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_repositories(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -2413,6 +3134,14 @@ failure:
         1, _Internal::integration(this), target, stream);
   }
 
+  // repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_repositories_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, this->_internal_repositories(i), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2428,6 +3157,13 @@ size_t GetIntegrationResponse::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];
+  total_size += 1UL * this->_internal_repositories_size();
+  for (const auto& msg : this->repositories_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
 
   // .source.v1alpha1.Integration integration = 1 [json_name = "integration"];
   if (this->_internal_has_integration()) {
@@ -2464,6 +3200,7 @@ void GetIntegrationResponse::MergeFrom(const GetIntegrationResponse& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  repositories_.MergeFrom(from.repositories_);
   if (from._internal_has_integration()) {
     _internal_mutable_integration()->::source::v1alpha1::Integration::MergeFrom(from._internal_integration());
   }
@@ -2484,13 +3221,14 @@ bool GetIntegrationResponse::IsInitialized() const {
 void GetIntegrationResponse::InternalSwap(GetIntegrationResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  repositories_.InternalSwap(&other->repositories_);
   swap(integration_, other->integration_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetIntegrationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[8]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[11]);
 }
 
 // ===================================================================
@@ -2732,7 +3470,7 @@ void UpdateIntegrationRequest::InternalSwap(UpdateIntegrationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateIntegrationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[9]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[12]);
 }
 
 // ===================================================================
@@ -2974,7 +3712,7 @@ void UpdateIntegrationResponse::InternalSwap(UpdateIntegrationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateIntegrationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[10]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[13]);
 }
 
 // ===================================================================
@@ -3174,7 +3912,7 @@ void DeleteIntegrationRequest::InternalSwap(DeleteIntegrationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteIntegrationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[11]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[14]);
 }
 
 // ===================================================================
@@ -3416,7 +4154,7 @@ void DeleteIntegrationResponse::InternalSwap(DeleteIntegrationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteIntegrationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[12]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[15]);
 }
 
 // ===================================================================
@@ -3430,7 +4168,21 @@ void Provider_DataEntry_DoNotUse::MergeFrom(const Provider_DataEntry_DoNotUse& o
 ::PROTOBUF_NAMESPACE_ID::Metadata Provider_DataEntry_DoNotUse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[13]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[16]);
+}
+
+// ===================================================================
+
+Provider_MetadataEntry_DoNotUse::Provider_MetadataEntry_DoNotUse() {}
+Provider_MetadataEntry_DoNotUse::Provider_MetadataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void Provider_MetadataEntry_DoNotUse::MergeFrom(const Provider_MetadataEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata Provider_MetadataEntry_DoNotUse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[17]);
 }
 
 // ===================================================================
@@ -3442,7 +4194,8 @@ class Provider::_Internal {
 Provider::Provider(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  data_(arena) {
+  data_(arena),
+  metadata_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -3453,6 +4206,7 @@ Provider::Provider(const Provider& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   data_.MergeFrom(from.data_);
+  metadata_.MergeFrom(from.metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
@@ -3502,6 +4256,7 @@ void Provider::ArenaDtor(void* object) {
   Provider* _this = reinterpret_cast< Provider* >(object);
   (void)_this;
   _this->data_. ~MapField();
+  _this->metadata_. ~MapField();
 }
 inline void Provider::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
   if (arena != nullptr) {
@@ -3519,6 +4274,7 @@ void Provider::Clear() {
   (void) cached_has_bits;
 
   data_.Clear();
+  metadata_.Clear();
   id_.ClearToEmpty();
   name_.ClearToEmpty();
   description_.ClearToEmpty();
@@ -3578,6 +4334,18 @@ const char* Provider::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // map<string, string> metadata = 6 [json_name = "metadata"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&metadata_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -3695,6 +4463,52 @@ failure:
     }
   }
 
+  // map<string, string> metadata = 6 [json_name = "metadata"];
+  if (!this->_internal_metadata().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        (void)p;
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "source.v1alpha1.Provider.MetadataEntry.key");
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "source.v1alpha1.Provider.MetadataEntry.value");
+      }
+    };
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_metadata().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_metadata().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_metadata().begin();
+          it != this->_internal_metadata().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = Provider_MetadataEntry_DoNotUse::Funcs::InternalSerialize(6, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_metadata().begin();
+          it != this->_internal_metadata().end(); ++it) {
+        target = Provider_MetadataEntry_DoNotUse::Funcs::InternalSerialize(6, it->first, it->second, target, stream);
+        Utf8Check::Check(&(*it));
+      }
+    }
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3718,6 +4532,15 @@ size_t Provider::ByteSizeLong() const {
       it = this->_internal_data().begin();
       it != this->_internal_data().end(); ++it) {
     total_size += Provider_DataEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<string, string> metadata = 6 [json_name = "metadata"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_metadata_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      it = this->_internal_metadata().begin();
+      it != this->_internal_metadata().end(); ++it) {
+    total_size += Provider_MetadataEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
   // string id = 1 [json_name = "id"];
@@ -3777,6 +4600,7 @@ void Provider::MergeFrom(const Provider& from) {
   (void) cached_has_bits;
 
   data_.MergeFrom(from.data_);
+  metadata_.MergeFrom(from.metadata_);
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
@@ -3807,6 +4631,7 @@ void Provider::InternalSwap(Provider* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   data_.InternalSwap(&other->data_);
+  metadata_.InternalSwap(&other->metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),
@@ -3832,7 +4657,7 @@ void Provider::InternalSwap(Provider* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Provider::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[14]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[18]);
 }
 
 // ===================================================================
@@ -4032,7 +4857,7 @@ void DeleteProviderRequest::InternalSwap(DeleteProviderRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteProviderRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[15]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[19]);
 }
 
 // ===================================================================
@@ -4274,7 +5099,7 @@ void DeleteProviderResponse::InternalSwap(DeleteProviderResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteProviderResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[16]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[20]);
 }
 
 // ===================================================================
@@ -4516,7 +5341,7 @@ void UpdateProviderRequest::InternalSwap(UpdateProviderRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateProviderRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[17]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[21]);
 }
 
 // ===================================================================
@@ -4758,7 +5583,7 @@ void UpdateProviderResponse::InternalSwap(UpdateProviderResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateProviderResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[18]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[22]);
 }
 
 // ===================================================================
@@ -4958,7 +5783,7 @@ void GetProviderRequest::InternalSwap(GetProviderRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetProviderRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[19]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[23]);
 }
 
 // ===================================================================
@@ -5158,7 +5983,7 @@ void GetProviderResponse::InternalSwap(GetProviderResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetProviderResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[20]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[24]);
 }
 
 // ===================================================================
@@ -5172,7 +5997,21 @@ void CreateProviderRequest_DataEntry_DoNotUse::MergeFrom(const CreateProviderReq
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateProviderRequest_DataEntry_DoNotUse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[21]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[25]);
+}
+
+// ===================================================================
+
+CreateProviderRequest_MetadataEntry_DoNotUse::CreateProviderRequest_MetadataEntry_DoNotUse() {}
+CreateProviderRequest_MetadataEntry_DoNotUse::CreateProviderRequest_MetadataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void CreateProviderRequest_MetadataEntry_DoNotUse::MergeFrom(const CreateProviderRequest_MetadataEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata CreateProviderRequest_MetadataEntry_DoNotUse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[26]);
 }
 
 // ===================================================================
@@ -5184,7 +6023,8 @@ class CreateProviderRequest::_Internal {
 CreateProviderRequest::CreateProviderRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  data_(arena) {
+  data_(arena),
+  metadata_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -5195,6 +6035,7 @@ CreateProviderRequest::CreateProviderRequest(const CreateProviderRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   data_.MergeFrom(from.data_);
+  metadata_.MergeFrom(from.metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
@@ -5237,6 +6078,7 @@ void CreateProviderRequest::ArenaDtor(void* object) {
   CreateProviderRequest* _this = reinterpret_cast< CreateProviderRequest* >(object);
   (void)_this;
   _this->data_. ~MapField();
+  _this->metadata_. ~MapField();
 }
 inline void CreateProviderRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
   if (arena != nullptr) {
@@ -5254,6 +6096,7 @@ void CreateProviderRequest::Clear() {
   (void) cached_has_bits;
 
   data_.Clear();
+  metadata_.Clear();
   name_.ClearToEmpty();
   description_.ClearToEmpty();
   logo_.ClearToEmpty();
@@ -5303,6 +6146,18 @@ const char* CreateProviderRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // map<string, string> metadata = 6 [json_name = "metadata"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&metadata_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -5410,6 +6265,52 @@ failure:
     }
   }
 
+  // map<string, string> metadata = 6 [json_name = "metadata"];
+  if (!this->_internal_metadata().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        (void)p;
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "source.v1alpha1.CreateProviderRequest.MetadataEntry.key");
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "source.v1alpha1.CreateProviderRequest.MetadataEntry.value");
+      }
+    };
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_metadata().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_metadata().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_metadata().begin();
+          it != this->_internal_metadata().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = CreateProviderRequest_MetadataEntry_DoNotUse::Funcs::InternalSerialize(6, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_metadata().begin();
+          it != this->_internal_metadata().end(); ++it) {
+        target = CreateProviderRequest_MetadataEntry_DoNotUse::Funcs::InternalSerialize(6, it->first, it->second, target, stream);
+        Utf8Check::Check(&(*it));
+      }
+    }
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -5433,6 +6334,15 @@ size_t CreateProviderRequest::ByteSizeLong() const {
       it = this->_internal_data().begin();
       it != this->_internal_data().end(); ++it) {
     total_size += CreateProviderRequest_DataEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<string, string> metadata = 6 [json_name = "metadata"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_metadata_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      it = this->_internal_metadata().begin();
+      it != this->_internal_metadata().end(); ++it) {
+    total_size += CreateProviderRequest_MetadataEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
   // string name = 1 [json_name = "name"];
@@ -5485,6 +6395,7 @@ void CreateProviderRequest::MergeFrom(const CreateProviderRequest& from) {
   (void) cached_has_bits;
 
   data_.MergeFrom(from.data_);
+  metadata_.MergeFrom(from.metadata_);
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
@@ -5512,6 +6423,7 @@ void CreateProviderRequest::InternalSwap(CreateProviderRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   data_.InternalSwap(&other->data_);
+  metadata_.InternalSwap(&other->metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &name_, GetArenaForAllocation(),
@@ -5532,7 +6444,7 @@ void CreateProviderRequest::InternalSwap(CreateProviderRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateProviderRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[22]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[27]);
 }
 
 // ===================================================================
@@ -5774,7 +6686,7 @@ void CreateProviderResponse::InternalSwap(CreateProviderResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateProviderResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[23]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[28]);
 }
 
 // ===================================================================
@@ -5927,7 +6839,7 @@ void ListProvidersRequest::InternalSwap(ListProvidersRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListProvidersRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[24]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[29]);
 }
 
 // ===================================================================
@@ -6117,7 +7029,7 @@ void ListProvidersResponse::InternalSwap(ListProvidersResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListProvidersResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[25]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[30]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -6127,11 +7039,20 @@ PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::source::v1alpha1::Integration_DataEntry_DoNotUse* Arena::CreateMaybeMessage< ::source::v1alpha1::Integration_DataEntry_DoNotUse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::source::v1alpha1::Integration_DataEntry_DoNotUse >(arena);
 }
+template<> PROTOBUF_NOINLINE ::source::v1alpha1::Integration_MetadataEntry_DoNotUse* Arena::CreateMaybeMessage< ::source::v1alpha1::Integration_MetadataEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::source::v1alpha1::Integration_MetadataEntry_DoNotUse >(arena);
+}
 template<> PROTOBUF_NOINLINE ::source::v1alpha1::Integration* Arena::CreateMaybeMessage< ::source::v1alpha1::Integration >(Arena* arena) {
   return Arena::CreateMessageInternal< ::source::v1alpha1::Integration >(arena);
 }
+template<> PROTOBUF_NOINLINE ::source::v1alpha1::Repository* Arena::CreateMaybeMessage< ::source::v1alpha1::Repository >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::source::v1alpha1::Repository >(arena);
+}
 template<> PROTOBUF_NOINLINE ::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse* Arena::CreateMaybeMessage< ::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::source::v1alpha1::CreateIntegrationRequest_MetadataEntry_DoNotUse* Arena::CreateMaybeMessage< ::source::v1alpha1::CreateIntegrationRequest_MetadataEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::source::v1alpha1::CreateIntegrationRequest_MetadataEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::source::v1alpha1::CreateIntegrationRequest* Arena::CreateMaybeMessage< ::source::v1alpha1::CreateIntegrationRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::source::v1alpha1::CreateIntegrationRequest >(arena);
@@ -6166,6 +7087,9 @@ template<> PROTOBUF_NOINLINE ::source::v1alpha1::DeleteIntegrationResponse* Aren
 template<> PROTOBUF_NOINLINE ::source::v1alpha1::Provider_DataEntry_DoNotUse* Arena::CreateMaybeMessage< ::source::v1alpha1::Provider_DataEntry_DoNotUse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::source::v1alpha1::Provider_DataEntry_DoNotUse >(arena);
 }
+template<> PROTOBUF_NOINLINE ::source::v1alpha1::Provider_MetadataEntry_DoNotUse* Arena::CreateMaybeMessage< ::source::v1alpha1::Provider_MetadataEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::source::v1alpha1::Provider_MetadataEntry_DoNotUse >(arena);
+}
 template<> PROTOBUF_NOINLINE ::source::v1alpha1::Provider* Arena::CreateMaybeMessage< ::source::v1alpha1::Provider >(Arena* arena) {
   return Arena::CreateMessageInternal< ::source::v1alpha1::Provider >(arena);
 }
@@ -6189,6 +7113,9 @@ template<> PROTOBUF_NOINLINE ::source::v1alpha1::GetProviderResponse* Arena::Cre
 }
 template<> PROTOBUF_NOINLINE ::source::v1alpha1::CreateProviderRequest_DataEntry_DoNotUse* Arena::CreateMaybeMessage< ::source::v1alpha1::CreateProviderRequest_DataEntry_DoNotUse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::source::v1alpha1::CreateProviderRequest_DataEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::source::v1alpha1::CreateProviderRequest_MetadataEntry_DoNotUse* Arena::CreateMaybeMessage< ::source::v1alpha1::CreateProviderRequest_MetadataEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::source::v1alpha1::CreateProviderRequest_MetadataEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::source::v1alpha1::CreateProviderRequest* Arena::CreateMaybeMessage< ::source::v1alpha1::CreateProviderRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::source::v1alpha1::CreateProviderRequest >(arena);

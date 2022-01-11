@@ -17,6 +17,10 @@ class GetIntegrationResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.source.v1alpha1.Integration integration = 1 [json_name = "integration"];</code>
      */
     protected $integration = null;
+    /**
+     * Generated from protobuf field <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+     */
+    private $repositories;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class GetIntegrationResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Source\V1alpha1\Integration $integration
+     *     @type \Source\V1alpha1\Repository[]|\Google\Protobuf\Internal\RepeatedField $repositories
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +65,28 @@ class GetIntegrationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Source\V1alpha1\Integration::class);
         $this->integration = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRepositories()
+    {
+        return $this->repositories;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .source.v1alpha1.Repository repositories = 2 [json_name = "repositories"];</code>
+     * @param \Source\V1alpha1\Repository[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRepositories($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Source\V1alpha1\Repository::class);
+        $this->repositories = $arr;
 
         return $this;
     }

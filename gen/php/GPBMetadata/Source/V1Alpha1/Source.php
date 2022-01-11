@@ -16,23 +16,39 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-
-source/v1alpha1/source.protosource.v1alpha1"†
+³ 
+source/v1alpha1/source.protosource.v1alpha1"‹
 Integration
 id (	Rid\'
 organization_id (RorganizationId
 name (	Rname5
 provider (2.source.v1alpha1.ProviderRprovider:
-data (2&.source.v1alpha1.Integration.DataEntryRdata7
+data (2&.source.v1alpha1.Integration.DataEntryRdataF
+metadata (2*.source.v1alpha1.Integration.MetadataEntryRmetadata7
 	DataEntry
 key (	Rkey
-value (	Rvalue:8"
+value (	Rvalue:8;
+MetadataEntry
+key (	Rkey
+value (	Rvalue:8"©
+
+Repository
+name (	Rname
+private (Rprivate
+fullname (	Rfullname 
+description (	Rdescription
+fork (Rfork
+	clone_url (	RcloneUrl"¢
 CreateIntegrationRequest\'
 organization_id (RorganizationId
 name (	Rname5
 provider (2.source.v1alpha1.ProviderRproviderG
-data (23.source.v1alpha1.CreateIntegrationRequest.DataEntryRdata7
+data (23.source.v1alpha1.CreateIntegrationRequest.DataEntryRdataS
+metadata (27.source.v1alpha1.CreateIntegrationRequest.MetadataEntryRmetadata7
 	DataEntry
+key (	Rkey
+value (	Rvalue:8;
+MetadataEntry
 key (	Rkey
 value (	Rvalue:8"C
 CreateIntegrationResponse
@@ -43,9 +59,10 @@ class Source
 ListIntegrationsResponse@
 integrations (2.source.v1alpha1.IntegrationRintegrations"\'
 GetIntegrationRequest
-id (	Rid"X
+id (	Rid"™
 GetIntegrationResponse>
-integration (2.source.v1alpha1.IntegrationRintegration"y
+integration (2.source.v1alpha1.IntegrationRintegration?
+repositories (2.source.v1alpha1.RepositoryRrepositories"y
 UpdateIntegrationRequest
 id (	RidM
 integrations (2).source.v1alpha1.CreateIntegrationRequestRintegrations"C
@@ -56,14 +73,18 @@ class Source
 id (	Rid"C
 DeleteIntegrationResponse
 msg (	Rmsg
-error (	Rerror"Ö
+error (	Rerror"Ø
 Provider
 id (	Rid
 name (	Rname 
 description (	Rdescription
 logo (	Rlogo7
-data (2#.source.v1alpha1.Provider.DataEntryRdata7
+data (2#.source.v1alpha1.Provider.DataEntryRdataC
+metadata (2\'.source.v1alpha1.Provider.MetadataEntryRmetadata7
 	DataEntry
+key (	Rkey
+value (	Rvalue:8;
+MetadataEntry
 key (	Rkey
 value (	Rvalue:8"\'
 DeleteProviderRequest
@@ -80,13 +101,17 @@ class Source
 GetProviderRequest
 id (	Rid"L
 GetProviderResponse5
-provider (2.source.v1alpha1.ProviderRprovider"à
+provider (2.source.v1alpha1.ProviderRprovider"ï
 CreateProviderRequest
 name (	Rname 
 description (	Rdescription
 logo (	RlogoD
-data (20.source.v1alpha1.CreateProviderRequest.DataEntryRdata7
+data (20.source.v1alpha1.CreateProviderRequest.DataEntryRdataP
+metadata (24.source.v1alpha1.CreateProviderRequest.MetadataEntryRmetadata7
 	DataEntry
+key (	Rkey
+value (	Rvalue:8;
+MetadataEntry
 key (	Rkey
 value (	Rvalue:8"@
 CreateProviderResponse
