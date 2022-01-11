@@ -42,6 +42,17 @@ message Integration {
     string name = 3;
     Provider provider = 4;
     map<string, string> data = 5;
+    map<string, string> metadata = 6;
+
+}
+
+message Repository {
+    string name = 1;
+    bool private = 2;
+    string fullname = 3;
+    string description = 4;
+    bool fork = 5;
+    string clone_url = 6;
 }
 
 message CreateIntegrationRequest {
@@ -50,6 +61,7 @@ message CreateIntegrationRequest {
     string name = 3;
     Provider provider = 4;
     map<string, string> data = 5;
+    map<string, string> metadata = 6;
 }
 
 message CreateIntegrationResponse {
@@ -71,6 +83,7 @@ message GetIntegrationRequest {
 
 message GetIntegrationResponse {
     Integration integration = 1;
+    repeated Repository repositories = 2;
 }
 
 message UpdateIntegrationRequest {
@@ -103,6 +116,8 @@ message Provider{
     string description = 3;
     string logo = 4;
     map<string, string> data = 5;
+    map<string, string> metadata = 6;
+
 
 }
 
@@ -140,6 +155,8 @@ message CreateProviderRequest {
     string description = 2;
     string logo = 3;
     map<string, string> data = 5;
+    map<string, string> metadata = 6;
+
 
 }
 
