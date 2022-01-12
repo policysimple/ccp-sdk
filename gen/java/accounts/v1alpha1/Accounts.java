@@ -56052,6 +56052,30 @@ public final class Accounts {
      */
     com.google.protobuf.ByteString
         getMsgBytes();
+
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     */
+    java.util.List<accounts.v1alpha1.Accounts.Project> 
+        getProjectsList();
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     */
+    accounts.v1alpha1.Accounts.Project getProjects(int index);
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     */
+    int getProjectsCount();
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     */
+    java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+        getProjectsOrBuilderList();
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     */
+    accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.GetOneUserDexResponse}
@@ -56076,6 +56100,7 @@ public final class Accounts {
       permissions_ = java.util.Collections.emptyList();
       organizations_ = java.util.Collections.emptyList();
       msg_ = "";
+      projects_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -56193,6 +56218,15 @@ public final class Accounts {
               msg_ = s;
               break;
             }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              projects_.add(
+                  input.readMessage(accounts.v1alpha1.Accounts.Project.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -56216,6 +56250,9 @@ public final class Accounts {
         }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
           organizations_ = java.util.Collections.unmodifiableList(organizations_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          projects_ = java.util.Collections.unmodifiableList(projects_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -56653,6 +56690,46 @@ public final class Accounts {
       }
     }
 
+    public static final int PROJECTS_FIELD_NUMBER = 14;
+    private java.util.List<accounts.v1alpha1.Accounts.Project> projects_;
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
+      return projects_;
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+        getProjectsOrBuilderList() {
+      return projects_;
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public int getProjectsCount() {
+      return projects_.size();
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.Project getProjects(int index) {
+      return projects_.get(index);
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+        int index) {
+      return projects_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -56705,6 +56782,9 @@ public final class Accounts {
       }
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, msg_);
+      }
+      for (int i = 0; i < projects_.size(); i++) {
+        output.writeMessage(14, projects_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -56760,6 +56840,10 @@ public final class Accounts {
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, msg_);
       }
+      for (int i = 0; i < projects_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, projects_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -56801,6 +56885,8 @@ public final class Accounts {
           .equals(other.getOrganizationsList())) return false;
       if (!getMsg()
           .equals(other.getMsg())) return false;
+      if (!getProjectsList()
+          .equals(other.getProjectsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -56846,6 +56932,10 @@ public final class Accounts {
       }
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
+      if (getProjectsCount() > 0) {
+        hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getProjectsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -56977,6 +57067,7 @@ public final class Accounts {
           getRolesFieldBuilder();
           getPermissionsFieldBuilder();
           getOrganizationsFieldBuilder();
+          getProjectsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -57020,6 +57111,12 @@ public final class Accounts {
         }
         msg_ = "";
 
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          projectsBuilder_.clear();
+        }
         return this;
       }
 
@@ -57084,6 +57181,15 @@ public final class Accounts {
           result.organizations_ = organizationsBuilder_.build();
         }
         result.msg_ = msg_;
+        if (projectsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            projects_ = java.util.Collections.unmodifiableList(projects_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.projects_ = projects_;
+        } else {
+          result.projects_ = projectsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -57246,6 +57352,32 @@ public final class Accounts {
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
           onChanged();
+        }
+        if (projectsBuilder_ == null) {
+          if (!other.projects_.isEmpty()) {
+            if (projects_.isEmpty()) {
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureProjectsIsMutable();
+              projects_.addAll(other.projects_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.projects_.isEmpty()) {
+            if (projectsBuilder_.isEmpty()) {
+              projectsBuilder_.dispose();
+              projectsBuilder_ = null;
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              projectsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProjectsFieldBuilder() : null;
+            } else {
+              projectsBuilder_.addAllMessages(other.projects_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -58621,6 +58753,246 @@ public final class Accounts {
         onChanged();
         return this;
       }
+
+      private java.util.List<accounts.v1alpha1.Accounts.Project> projects_ =
+        java.util.Collections.emptyList();
+      private void ensureProjectsIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>(projects_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> projectsBuilder_;
+
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
+        if (projectsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(projects_);
+        } else {
+          return projectsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public int getProjectsCount() {
+        if (projectsBuilder_ == null) {
+          return projects_.size();
+        } else {
+          return projectsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project getProjects(int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);
+        } else {
+          return projectsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public Builder setProjects(
+          int index, accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.set(index, value);
+          onChanged();
+        } else {
+          projectsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public Builder setProjects(
+          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.add(value);
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(
+          int index, accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.add(index, value);
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(
+          accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(
+          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public Builder addAllProjects(
+          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Project> values) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, projects_);
+          onChanged();
+        } else {
+          projectsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public Builder clearProjects() {
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          projectsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public Builder removeProjects(int index) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.remove(index);
+          onChanged();
+        } else {
+          projectsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder getProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+          int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);  } else {
+          return projectsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+           getProjectsOrBuilderList() {
+        if (projectsBuilder_ != null) {
+          return projectsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(projects_);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder() {
+        return getProjectsFieldBuilder().addBuilder(
+            accounts.v1alpha1.Accounts.Project.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().addBuilder(
+            index, accounts.v1alpha1.Accounts.Project.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+       */
+      public java.util.List<accounts.v1alpha1.Accounts.Project.Builder> 
+           getProjectsBuilderList() {
+        return getProjectsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+          getProjectsFieldBuilder() {
+        if (projectsBuilder_ == null) {
+          projectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder>(
+                  projects_,
+                  ((bitField0_ & 0x00000008) != 0),
+                  getParentForChildren(),
+                  isClean());
+          projects_ = null;
+        }
+        return projectsBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -59207,7 +59579,7 @@ public final class Accounts {
       "DexR\010usersDex\"i\n\024GetOneUserDexRequest\022\027\n" +
       "\007user_id\030\001 \001(\tR\006userId\0228\n\004user\030\002 \001(\0132$.a" +
       "ccounts.v1alpha1.CreateUserRequestR\004user" +
-      "\"\331\003\n\025GetOneUserDexResponse\022\016\n\002id\030\001 \001(\rR\002" +
+      "\"\221\004\n\025GetOneUserDexResponse\022\016\n\002id\030\001 \001(\rR\002" +
       "id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_nam" +
       "e\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010l" +
       "astName\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis_acti" +
@@ -59218,82 +59590,84 @@ public final class Accounts {
       "1alpha1.PermissionR\013permissions\022\"\n\ris_su" +
       "per_user\030\013 \001(\010R\013isSuperUser\022E\n\rorganizat" +
       "ions\030\014 \003(\0132\037.accounts.v1alpha1.Organizat" +
-      "ionR\rorganizations\022\020\n\003msg\030\r \001(\tR\003msg2\355\026\n" +
-      "\016AccountService\022Y\n\nCreateUser\022$.accounts" +
-      ".v1alpha1.CreateUserRequest\032%.accounts.v" +
-      "1alpha1.CreateUserResponse\022S\n\010ListUser\022\"" +
-      ".accounts.v1alpha1.ListUserRequest\032#.acc" +
-      "ounts.v1alpha1.ListUserResponse\022Y\n\nGetOn" +
-      "eUser\022$.accounts.v1alpha1.GetOneUserRequ" +
-      "est\032%.accounts.v1alpha1.GetOneUserRespon" +
-      "se\022Y\n\nUpdateUser\022$.accounts.v1alpha1.Upd" +
-      "ateUserRequest\032%.accounts.v1alpha1.Updat" +
-      "eUserResponse\022Y\n\nDeleteUser\022$.accounts.v" +
-      "1alpha1.DeleteUserRequest\032%.accounts.v1a" +
-      "lpha1.DeleteUserResponse\022q\n\022ListUserPagi" +
-      "nation\022,.accounts.v1alpha1.ListUserPagin" +
-      "ationRequest\032-.accounts.v1alpha1.ListUse" +
-      "rPaginationResponse\022k\n\020CreatePermission\022" +
-      "*.accounts.v1alpha1.CreatePermissionRequ" +
-      "est\032+.accounts.v1alpha1.CreatePermission" +
-      "Response\022e\n\016ListPermission\022(.accounts.v1" +
-      "alpha1.ListPermissionRequest\032).accounts." +
-      "v1alpha1.ListPermissionResponse\022k\n\020GetOn" +
-      "ePermission\022*.accounts.v1alpha1.GetOnePe" +
-      "rmissionRequest\032+.accounts.v1alpha1.GetO" +
-      "nePermissionResponse\022k\n\020UpdatePermission" +
-      "\022*.accounts.v1alpha1.UpdatePermissionReq" +
-      "uest\032+.accounts.v1alpha1.UpdatePermissio" +
-      "nResponse\022k\n\020DeletePermission\022*.accounts" +
-      ".v1alpha1.DeletePermissionRequest\032+.acco" +
-      "unts.v1alpha1.DeletePermissionResponse\022q" +
-      "\n\022CreateOrganization\022,.accounts.v1alpha1" +
-      ".CreateOrganizationRequest\032-.accounts.v1" +
-      "alpha1.CreateOrganizationResponse\022k\n\020Lis" +
-      "tOrganization\022*.accounts.v1alpha1.ListOr" +
-      "ganizationRequest\032+.accounts.v1alpha1.Li" +
-      "stOrganizationResponse\022q\n\022GetOneOrganiza" +
-      "tion\022,.accounts.v1alpha1.GetOneOrganizat" +
-      "ionRequest\032-.accounts.v1alpha1.GetOneOrg" +
-      "anizationResponse\022q\n\022UpdateOrganization\022" +
-      ",.accounts.v1alpha1.UpdateOrganizationRe" +
-      "quest\032-.accounts.v1alpha1.UpdateOrganiza" +
-      "tionResponse\022q\n\022DeleteOrganization\022,.acc" +
-      "ounts.v1alpha1.DeleteOrganizationRequest" +
-      "\032-.accounts.v1alpha1.DeleteOrganizationR" +
-      "esponse\022Y\n\nCreateRole\022$.accounts.v1alpha" +
-      "1.CreateRoleRequest\032%.accounts.v1alpha1." +
-      "CreateRoleResponse\022V\n\tListRoles\022#.accoun" +
-      "ts.v1alpha1.ListRolesRequest\032$.accounts." +
-      "v1alpha1.ListRolesResponse\022Y\n\nUpdateRole" +
-      "\022$.accounts.v1alpha1.UpdateRoleRequest\032%" +
-      ".accounts.v1alpha1.UpdateRoleResponse\022Y\n" +
-      "\nGetOneRole\022$.accounts.v1alpha1.GetOneRo" +
-      "leRequest\032%.accounts.v1alpha1.GetOneRole" +
-      "Response\022Y\n\nDeleteRole\022$.accounts.v1alph" +
-      "a1.DeleteRoleRequest\032%.accounts.v1alpha1" +
-      ".DeleteRoleResponse\022b\n\rCreateProject\022\'.a" +
-      "ccounts.v1alpha1.CreateProjectRequest\032(." +
-      "accounts.v1alpha1.CreateProjectResponse\022" +
-      "b\n\rGetOneProject\022\'.accounts.v1alpha1.Get" +
-      "OneProjectRequest\032(.accounts.v1alpha1.Ge" +
-      "tOneProjectResponse\022b\n\rUpdateProject\022\'.a" +
-      "ccounts.v1alpha1.UpdateProjectRequest\032(." +
-      "accounts.v1alpha1.UpdateProjectResponse\022" +
-      "b\n\rDeleteProject\022\'.accounts.v1alpha1.Del" +
-      "eteProjectRequest\032(.accounts.v1alpha1.De" +
-      "leteProjectResponse\022\\\n\013ListProject\022%.acc" +
-      "ounts.v1alpha1.ListProjectRequest\032&.acco" +
-      "unts.v1alpha1.ListProjectResponse\022e\n\016Get" +
-      "ListUserDex\022(.accounts.v1alpha1.GetListU" +
-      "serDexRequest\032).accounts.v1alpha1.GetLis" +
-      "tUserDexResponse\022b\n\rGetOneUserDex\022\'.acco" +
-      "unts.v1alpha1.GetOneUserDexRequest\032(.acc" +
-      "ounts.v1alpha1.GetOneUserDexResponse\022V\n\t" +
-      "CheckUser\022#.accounts.v1alpha1.CheckUserR" +
-      "equest\032$.accounts.v1alpha1.CheckUserResp" +
-      "onseB4Z2github.com/cuemby/ccp-sdk/gen/go" +
-      "/accounts/v1alpha1b\006proto3"
+      "ionR\rorganizations\022\020\n\003msg\030\r \001(\tR\003msg\0226\n\010" +
+      "projects\030\016 \003(\0132\032.accounts.v1alpha1.Proje" +
+      "ctR\010projects2\355\026\n\016AccountService\022Y\n\nCreat" +
+      "eUser\022$.accounts.v1alpha1.CreateUserRequ" +
+      "est\032%.accounts.v1alpha1.CreateUserRespon" +
+      "se\022S\n\010ListUser\022\".accounts.v1alpha1.ListU" +
+      "serRequest\032#.accounts.v1alpha1.ListUserR" +
+      "esponse\022Y\n\nGetOneUser\022$.accounts.v1alpha" +
+      "1.GetOneUserRequest\032%.accounts.v1alpha1." +
+      "GetOneUserResponse\022Y\n\nUpdateUser\022$.accou" +
+      "nts.v1alpha1.UpdateUserRequest\032%.account" +
+      "s.v1alpha1.UpdateUserResponse\022Y\n\nDeleteU" +
+      "ser\022$.accounts.v1alpha1.DeleteUserReques" +
+      "t\032%.accounts.v1alpha1.DeleteUserResponse" +
+      "\022q\n\022ListUserPagination\022,.accounts.v1alph" +
+      "a1.ListUserPaginationRequest\032-.accounts." +
+      "v1alpha1.ListUserPaginationResponse\022k\n\020C" +
+      "reatePermission\022*.accounts.v1alpha1.Crea" +
+      "tePermissionRequest\032+.accounts.v1alpha1." +
+      "CreatePermissionResponse\022e\n\016ListPermissi" +
+      "on\022(.accounts.v1alpha1.ListPermissionReq" +
+      "uest\032).accounts.v1alpha1.ListPermissionR" +
+      "esponse\022k\n\020GetOnePermission\022*.accounts.v" +
+      "1alpha1.GetOnePermissionRequest\032+.accoun" +
+      "ts.v1alpha1.GetOnePermissionResponse\022k\n\020" +
+      "UpdatePermission\022*.accounts.v1alpha1.Upd" +
+      "atePermissionRequest\032+.accounts.v1alpha1" +
+      ".UpdatePermissionResponse\022k\n\020DeletePermi" +
+      "ssion\022*.accounts.v1alpha1.DeletePermissi" +
+      "onRequest\032+.accounts.v1alpha1.DeletePerm" +
+      "issionResponse\022q\n\022CreateOrganization\022,.a" +
+      "ccounts.v1alpha1.CreateOrganizationReque" +
+      "st\032-.accounts.v1alpha1.CreateOrganizatio" +
+      "nResponse\022k\n\020ListOrganization\022*.accounts" +
+      ".v1alpha1.ListOrganizationRequest\032+.acco" +
+      "unts.v1alpha1.ListOrganizationResponse\022q" +
+      "\n\022GetOneOrganization\022,.accounts.v1alpha1" +
+      ".GetOneOrganizationRequest\032-.accounts.v1" +
+      "alpha1.GetOneOrganizationResponse\022q\n\022Upd" +
+      "ateOrganization\022,.accounts.v1alpha1.Upda" +
+      "teOrganizationRequest\032-.accounts.v1alpha" +
+      "1.UpdateOrganizationResponse\022q\n\022DeleteOr" +
+      "ganization\022,.accounts.v1alpha1.DeleteOrg" +
+      "anizationRequest\032-.accounts.v1alpha1.Del" +
+      "eteOrganizationResponse\022Y\n\nCreateRole\022$." +
+      "accounts.v1alpha1.CreateRoleRequest\032%.ac" +
+      "counts.v1alpha1.CreateRoleResponse\022V\n\tLi" +
+      "stRoles\022#.accounts.v1alpha1.ListRolesReq" +
+      "uest\032$.accounts.v1alpha1.ListRolesRespon" +
+      "se\022Y\n\nUpdateRole\022$.accounts.v1alpha1.Upd" +
+      "ateRoleRequest\032%.accounts.v1alpha1.Updat" +
+      "eRoleResponse\022Y\n\nGetOneRole\022$.accounts.v" +
+      "1alpha1.GetOneRoleRequest\032%.accounts.v1a" +
+      "lpha1.GetOneRoleResponse\022Y\n\nDeleteRole\022$" +
+      ".accounts.v1alpha1.DeleteRoleRequest\032%.a" +
+      "ccounts.v1alpha1.DeleteRoleResponse\022b\n\rC" +
+      "reateProject\022\'.accounts.v1alpha1.CreateP" +
+      "rojectRequest\032(.accounts.v1alpha1.Create" +
+      "ProjectResponse\022b\n\rGetOneProject\022\'.accou" +
+      "nts.v1alpha1.GetOneProjectRequest\032(.acco" +
+      "unts.v1alpha1.GetOneProjectResponse\022b\n\rU" +
+      "pdateProject\022\'.accounts.v1alpha1.UpdateP" +
+      "rojectRequest\032(.accounts.v1alpha1.Update" +
+      "ProjectResponse\022b\n\rDeleteProject\022\'.accou" +
+      "nts.v1alpha1.DeleteProjectRequest\032(.acco" +
+      "unts.v1alpha1.DeleteProjectResponse\022\\\n\013L" +
+      "istProject\022%.accounts.v1alpha1.ListProje" +
+      "ctRequest\032&.accounts.v1alpha1.ListProjec" +
+      "tResponse\022e\n\016GetListUserDex\022(.accounts.v" +
+      "1alpha1.GetListUserDexRequest\032).accounts" +
+      ".v1alpha1.GetListUserDexResponse\022b\n\rGetO" +
+      "neUserDex\022\'.accounts.v1alpha1.GetOneUser" +
+      "DexRequest\032(.accounts.v1alpha1.GetOneUse" +
+      "rDexResponse\022V\n\tCheckUser\022#.accounts.v1a" +
+      "lpha1.CheckUserRequest\032$.accounts.v1alph" +
+      "a1.CheckUserResponseB4Z2github.com/cuemb" +
+      "y/ccp-sdk/gen/go/accounts/v1alpha1b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -59712,7 +60086,7 @@ public final class Accounts {
     internal_static_accounts_v1alpha1_GetOneUserDexResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetOneUserDexResponse_descriptor,
-        new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "Email", "IsActive", "CreatedAt", "UpdatedAt", "Roles", "Permissions", "IsSuperUser", "Organizations", "Msg", });
+        new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "Email", "IsActive", "CreatedAt", "UpdatedAt", "Roles", "Permissions", "IsSuperUser", "Organizations", "Msg", "Projects", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

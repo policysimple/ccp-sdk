@@ -567,4 +567,6 @@ message GetOneUserDexResponse {
     bool is_super_user = 11;
     repeated Organization organizations = 12;
     string msg = 13;
+    repeated Project projects = 14;
+
 }
