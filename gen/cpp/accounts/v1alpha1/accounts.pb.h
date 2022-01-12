@@ -11919,6 +11919,7 @@ class GetOneUserDexResponse final :
     kRolesFieldNumber = 9,
     kPermissionsFieldNumber = 10,
     kOrganizationsFieldNumber = 12,
+    kProjectsFieldNumber = 14,
     kUserIdFieldNumber = 2,
     kFirstNameFieldNumber = 3,
     kLastNameFieldNumber = 4,
@@ -11983,6 +11984,24 @@ class GetOneUserDexResponse final :
   ::accounts::v1alpha1::Organization* add_organizations();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Organization >&
       organizations() const;
+
+  // repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
+  int projects_size() const;
+  private:
+  int _internal_projects_size() const;
+  public:
+  void clear_projects();
+  ::accounts::v1alpha1::Project* mutable_projects(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >*
+      mutable_projects();
+  private:
+  const ::accounts::v1alpha1::Project& _internal_projects(int index) const;
+  ::accounts::v1alpha1::Project* _internal_add_projects();
+  public:
+  const ::accounts::v1alpha1::Project& projects(int index) const;
+  ::accounts::v1alpha1::Project* add_projects();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >&
+      projects() const;
 
   // string user_id = 2 [json_name = "userId"];
   void clear_user_id();
@@ -12119,6 +12138,7 @@ class GetOneUserDexResponse final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol > roles_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission > permissions_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Organization > organizations_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project > projects_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
@@ -19846,6 +19866,46 @@ inline void GetOneUserDexResponse::set_allocated_msg(std::string* msg) {
   msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserDexResponse.msg)
+}
+
+// repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
+inline int GetOneUserDexResponse::_internal_projects_size() const {
+  return projects_.size();
+}
+inline int GetOneUserDexResponse::projects_size() const {
+  return _internal_projects_size();
+}
+inline void GetOneUserDexResponse::clear_projects() {
+  projects_.Clear();
+}
+inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::mutable_projects(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return projects_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >*
+GetOneUserDexResponse::mutable_projects() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return &projects_;
+}
+inline const ::accounts::v1alpha1::Project& GetOneUserDexResponse::_internal_projects(int index) const {
+  return projects_.Get(index);
+}
+inline const ::accounts::v1alpha1::Project& GetOneUserDexResponse::projects(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return _internal_projects(index);
+}
+inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::_internal_add_projects() {
+  return projects_.Add();
+}
+inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::add_projects() {
+  ::accounts::v1alpha1::Project* _add = _internal_add_projects();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >&
+GetOneUserDexResponse::projects() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return projects_;
 }
 
 #ifdef __GNUC__
