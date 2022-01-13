@@ -19,10 +19,179 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z/github.com/cuemby/ccp-sdk/gen/go/vault/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1avault/v1alpha1/vault.proto\x12\x0evault.v1alpha1\">\n\x12WriteSecretRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value\"?\n\x13WriteSecretResponse\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value\"\'\n\x11ReadSecretRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\">\n\x12ReadSecretResponse\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value\")\n\x13\x44\x65leteSecretRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\"*\n\x14\x44\x65leteSecretResponse\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name2\x96\x02\n\x0cVaultService\x12V\n\x0bWriteSecret\x12\".vault.v1alpha1.WriteSecretRequest\x1a#.vault.v1alpha1.WriteSecretResponse\x12S\n\nReadSecret\x12!.vault.v1alpha1.ReadSecretRequest\x1a\".vault.v1alpha1.ReadSecretResponse\x12Y\n\x0c\x44\x65leteSecret\x12#.vault.v1alpha1.DeleteSecretRequest\x1a$.vault.v1alpha1.DeleteSecretResponseB1Z/github.com/cuemby/ccp-sdk/gen/go/vault/v1alpha1b\x06proto3'
+  serialized_pb=b'\n\x1avault/v1alpha1/vault.proto\x12\x0evault.v1alpha1\"\x7f\n\nSecretData\x12\x38\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32$.vault.v1alpha1.SecretData.DataEntryR\x04\x64\x61ta\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\",\n\x0eSecretWarnings\x12\x1a\n\x08warnings\x18\x01 \x03(\tR\x08warnings\"\xf3\x01\n\x06Secret\x12\x1d\n\nrequest_id\x18\x01 \x01(\tR\trequestId\x12\x19\n\x08lease_id\x18\x02 \x01(\tR\x07leaseId\x12%\n\x0elease_duration\x18\x03 \x01(\x03R\rleaseDuration\x12\x1c\n\trenewable\x18\x04 \x01(\x08R\trenewable\x12.\n\x04\x64\x61ta\x18\x05 \x01(\x0b\x32\x1a.vault.v1alpha1.SecretDataR\x04\x64\x61ta\x12:\n\x08warnings\x18\x06 \x01(\x0b\x32\x1e.vault.v1alpha1.SecretWarningsR\x08warnings\">\n\x12WriteSecretRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value\"g\n\x13WriteSecretResponse\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value\x12\x10\n\x03msg\x18\x03 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x04 \x01(\tR\x05\x65rror\"\'\n\x11ReadSecretRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\"\xc9\x01\n\x12ReadSecretResponse\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value\x12L\n\x08metadata\x18\x03 \x03(\x0b\x32\x30.vault.v1alpha1.ReadSecretResponse.MetadataEntryR\x08metadata\x1a;\n\rMetadataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\",\n\x12ListSecretsRequest\x12\x16\n\x06prefix\x18\x01 \x01(\tR\x06prefix\"E\n\x13ListSecretsResponse\x12.\n\x06secret\x18\x01 \x03(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\")\n\x13\x44\x65leteSecretRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\"*\n\x14\x44\x65leteSecretResponse\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name2\xee\x02\n\x0cVaultService\x12V\n\x0bWriteSecret\x12\".vault.v1alpha1.WriteSecretRequest\x1a#.vault.v1alpha1.WriteSecretResponse\x12S\n\nReadSecret\x12!.vault.v1alpha1.ReadSecretRequest\x1a\".vault.v1alpha1.ReadSecretResponse\x12Y\n\x0c\x44\x65leteSecret\x12#.vault.v1alpha1.DeleteSecretRequest\x1a$.vault.v1alpha1.DeleteSecretResponse\x12V\n\x0bListSecrets\x12\".vault.v1alpha1.ListSecretsRequest\x1a#.vault.v1alpha1.ListSecretsResponseB1Z/github.com/cuemby/ccp-sdk/gen/go/vault/v1alpha1b\x06proto3'
 )
 
 
+
+
+_SECRETDATA_DATAENTRY = _descriptor.Descriptor(
+  name='DataEntry',
+  full_name='vault.v1alpha1.SecretData.DataEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='vault.v1alpha1.SecretData.DataEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='key', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='vault.v1alpha1.SecretData.DataEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='value', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=118,
+  serialized_end=173,
+)
+
+_SECRETDATA = _descriptor.Descriptor(
+  name='SecretData',
+  full_name='vault.v1alpha1.SecretData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='data', full_name='vault.v1alpha1.SecretData.data', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='data', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_SECRETDATA_DATAENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=46,
+  serialized_end=173,
+)
+
+
+_SECRETWARNINGS = _descriptor.Descriptor(
+  name='SecretWarnings',
+  full_name='vault.v1alpha1.SecretWarnings',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='warnings', full_name='vault.v1alpha1.SecretWarnings.warnings', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='warnings', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=175,
+  serialized_end=219,
+)
+
+
+_SECRET = _descriptor.Descriptor(
+  name='Secret',
+  full_name='vault.v1alpha1.Secret',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='request_id', full_name='vault.v1alpha1.Secret.request_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='requestId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='lease_id', full_name='vault.v1alpha1.Secret.lease_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='leaseId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='lease_duration', full_name='vault.v1alpha1.Secret.lease_duration', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='leaseDuration', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='renewable', full_name='vault.v1alpha1.Secret.renewable', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='renewable', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='data', full_name='vault.v1alpha1.Secret.data', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='data', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='warnings', full_name='vault.v1alpha1.Secret.warnings', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='warnings', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=222,
+  serialized_end=465,
+)
 
 
 _WRITESECRETREQUEST = _descriptor.Descriptor(
@@ -59,8 +228,8 @@ _WRITESECRETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=46,
-  serialized_end=108,
+  serialized_start=467,
+  serialized_end=529,
 )
 
 
@@ -86,6 +255,20 @@ _WRITESECRETRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='value', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='msg', full_name='vault.v1alpha1.WriteSecretResponse.msg', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='msg', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='error', full_name='vault.v1alpha1.WriteSecretResponse.error', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='error', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -98,8 +281,8 @@ _WRITESECRETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=110,
-  serialized_end=173,
+  serialized_start=531,
+  serialized_end=634,
 )
 
 
@@ -130,10 +313,48 @@ _READSECRETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=175,
-  serialized_end=214,
+  serialized_start=636,
+  serialized_end=675,
 )
 
+
+_READSECRETRESPONSE_METADATAENTRY = _descriptor.Descriptor(
+  name='MetadataEntry',
+  full_name='vault.v1alpha1.ReadSecretResponse.MetadataEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='vault.v1alpha1.ReadSecretResponse.MetadataEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='key', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='vault.v1alpha1.ReadSecretResponse.MetadataEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='value', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=820,
+  serialized_end=879,
+)
 
 _READSECRETRESPONSE = _descriptor.Descriptor(
   name='ReadSecretResponse',
@@ -157,6 +378,45 @@ _READSECRETRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='value', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='metadata', full_name='vault.v1alpha1.ReadSecretResponse.metadata', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='metadata', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_READSECRETRESPONSE_METADATAENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=678,
+  serialized_end=879,
+)
+
+
+_LISTSECRETSREQUEST = _descriptor.Descriptor(
+  name='ListSecretsRequest',
+  full_name='vault.v1alpha1.ListSecretsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='prefix', full_name='vault.v1alpha1.ListSecretsRequest.prefix', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='prefix', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -169,8 +429,40 @@ _READSECRETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=216,
-  serialized_end=278,
+  serialized_start=881,
+  serialized_end=925,
+)
+
+
+_LISTSECRETSRESPONSE = _descriptor.Descriptor(
+  name='ListSecretsResponse',
+  full_name='vault.v1alpha1.ListSecretsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='secret', full_name='vault.v1alpha1.ListSecretsResponse.secret', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='secret', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=927,
+  serialized_end=996,
 )
 
 
@@ -201,8 +493,8 @@ _DELETESECRETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=280,
-  serialized_end=321,
+  serialized_start=998,
+  serialized_end=1039,
 )
 
 
@@ -233,17 +525,58 @@ _DELETESECRETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=323,
-  serialized_end=365,
+  serialized_start=1041,
+  serialized_end=1083,
 )
 
+_SECRETDATA_DATAENTRY.containing_type = _SECRETDATA
+_SECRETDATA.fields_by_name['data'].message_type = _SECRETDATA_DATAENTRY
+_SECRET.fields_by_name['data'].message_type = _SECRETDATA
+_SECRET.fields_by_name['warnings'].message_type = _SECRETWARNINGS
+_READSECRETRESPONSE_METADATAENTRY.containing_type = _READSECRETRESPONSE
+_READSECRETRESPONSE.fields_by_name['metadata'].message_type = _READSECRETRESPONSE_METADATAENTRY
+_LISTSECRETSRESPONSE.fields_by_name['secret'].message_type = _SECRET
+DESCRIPTOR.message_types_by_name['SecretData'] = _SECRETDATA
+DESCRIPTOR.message_types_by_name['SecretWarnings'] = _SECRETWARNINGS
+DESCRIPTOR.message_types_by_name['Secret'] = _SECRET
 DESCRIPTOR.message_types_by_name['WriteSecretRequest'] = _WRITESECRETREQUEST
 DESCRIPTOR.message_types_by_name['WriteSecretResponse'] = _WRITESECRETRESPONSE
 DESCRIPTOR.message_types_by_name['ReadSecretRequest'] = _READSECRETREQUEST
 DESCRIPTOR.message_types_by_name['ReadSecretResponse'] = _READSECRETRESPONSE
+DESCRIPTOR.message_types_by_name['ListSecretsRequest'] = _LISTSECRETSREQUEST
+DESCRIPTOR.message_types_by_name['ListSecretsResponse'] = _LISTSECRETSRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteSecretRequest'] = _DELETESECRETREQUEST
 DESCRIPTOR.message_types_by_name['DeleteSecretResponse'] = _DELETESECRETRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+SecretData = _reflection.GeneratedProtocolMessageType('SecretData', (_message.Message,), {
+
+  'DataEntry' : _reflection.GeneratedProtocolMessageType('DataEntry', (_message.Message,), {
+    'DESCRIPTOR' : _SECRETDATA_DATAENTRY,
+    '__module__' : 'vault.v1alpha1.vault_pb2'
+    # @@protoc_insertion_point(class_scope:vault.v1alpha1.SecretData.DataEntry)
+    })
+  ,
+  'DESCRIPTOR' : _SECRETDATA,
+  '__module__' : 'vault.v1alpha1.vault_pb2'
+  # @@protoc_insertion_point(class_scope:vault.v1alpha1.SecretData)
+  })
+_sym_db.RegisterMessage(SecretData)
+_sym_db.RegisterMessage(SecretData.DataEntry)
+
+SecretWarnings = _reflection.GeneratedProtocolMessageType('SecretWarnings', (_message.Message,), {
+  'DESCRIPTOR' : _SECRETWARNINGS,
+  '__module__' : 'vault.v1alpha1.vault_pb2'
+  # @@protoc_insertion_point(class_scope:vault.v1alpha1.SecretWarnings)
+  })
+_sym_db.RegisterMessage(SecretWarnings)
+
+Secret = _reflection.GeneratedProtocolMessageType('Secret', (_message.Message,), {
+  'DESCRIPTOR' : _SECRET,
+  '__module__' : 'vault.v1alpha1.vault_pb2'
+  # @@protoc_insertion_point(class_scope:vault.v1alpha1.Secret)
+  })
+_sym_db.RegisterMessage(Secret)
 
 WriteSecretRequest = _reflection.GeneratedProtocolMessageType('WriteSecretRequest', (_message.Message,), {
   'DESCRIPTOR' : _WRITESECRETREQUEST,
@@ -267,11 +600,33 @@ ReadSecretRequest = _reflection.GeneratedProtocolMessageType('ReadSecretRequest'
 _sym_db.RegisterMessage(ReadSecretRequest)
 
 ReadSecretResponse = _reflection.GeneratedProtocolMessageType('ReadSecretResponse', (_message.Message,), {
+
+  'MetadataEntry' : _reflection.GeneratedProtocolMessageType('MetadataEntry', (_message.Message,), {
+    'DESCRIPTOR' : _READSECRETRESPONSE_METADATAENTRY,
+    '__module__' : 'vault.v1alpha1.vault_pb2'
+    # @@protoc_insertion_point(class_scope:vault.v1alpha1.ReadSecretResponse.MetadataEntry)
+    })
+  ,
   'DESCRIPTOR' : _READSECRETRESPONSE,
   '__module__' : 'vault.v1alpha1.vault_pb2'
   # @@protoc_insertion_point(class_scope:vault.v1alpha1.ReadSecretResponse)
   })
 _sym_db.RegisterMessage(ReadSecretResponse)
+_sym_db.RegisterMessage(ReadSecretResponse.MetadataEntry)
+
+ListSecretsRequest = _reflection.GeneratedProtocolMessageType('ListSecretsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTSECRETSREQUEST,
+  '__module__' : 'vault.v1alpha1.vault_pb2'
+  # @@protoc_insertion_point(class_scope:vault.v1alpha1.ListSecretsRequest)
+  })
+_sym_db.RegisterMessage(ListSecretsRequest)
+
+ListSecretsResponse = _reflection.GeneratedProtocolMessageType('ListSecretsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTSECRETSRESPONSE,
+  '__module__' : 'vault.v1alpha1.vault_pb2'
+  # @@protoc_insertion_point(class_scope:vault.v1alpha1.ListSecretsResponse)
+  })
+_sym_db.RegisterMessage(ListSecretsResponse)
 
 DeleteSecretRequest = _reflection.GeneratedProtocolMessageType('DeleteSecretRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETESECRETREQUEST,
@@ -289,6 +644,8 @@ _sym_db.RegisterMessage(DeleteSecretResponse)
 
 
 DESCRIPTOR._options = None
+_SECRETDATA_DATAENTRY._options = None
+_READSECRETRESPONSE_METADATAENTRY._options = None
 
 _VAULTSERVICE = _descriptor.ServiceDescriptor(
   name='VaultService',
@@ -297,8 +654,8 @@ _VAULTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=368,
-  serialized_end=646,
+  serialized_start=1086,
+  serialized_end=1452,
   methods=[
   _descriptor.MethodDescriptor(
     name='WriteSecret',
@@ -327,6 +684,16 @@ _VAULTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETESECRETREQUEST,
     output_type=_DELETESECRETRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListSecrets',
+    full_name='vault.v1alpha1.VaultService.ListSecrets',
+    index=3,
+    containing_service=None,
+    input_type=_LISTSECRETSREQUEST,
+    output_type=_LISTSECRETSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

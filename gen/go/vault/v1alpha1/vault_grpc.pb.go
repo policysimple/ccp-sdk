@@ -26,6 +26,7 @@ type VaultServiceClient interface {
 	WriteSecret(ctx context.Context, in *WriteSecretRequest, opts ...grpc.CallOption) (*WriteSecretResponse, error)
 	ReadSecret(ctx context.Context, in *ReadSecretRequest, opts ...grpc.CallOption) (*ReadSecretResponse, error)
 	DeleteSecret(ctx context.Context, in *DeleteSecretRequest, opts ...grpc.CallOption) (*DeleteSecretResponse, error)
+	ListSecrets(ctx context.Context, in *ListSecretsRequest, opts ...grpc.CallOption) (*ListSecretsResponse, error)
 }
 
 type vaultServiceClient struct {
@@ -63,6 +64,15 @@ func (c *vaultServiceClient) DeleteSecret(ctx context.Context, in *DeleteSecretR
 	return out, nil
 }
 
+func (c *vaultServiceClient) ListSecrets(ctx context.Context, in *ListSecretsRequest, opts ...grpc.CallOption) (*ListSecretsResponse, error) {
+	out := new(ListSecretsResponse)
+	err := c.cc.Invoke(ctx, "/vault.v1alpha1.VaultService/ListSecrets", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultServiceServer is the server API for VaultService service.
 // All implementations should embed UnimplementedVaultServiceServer
 // for forward compatibility
@@ -71,6 +81,7 @@ type VaultServiceServer interface {
 	WriteSecret(context.Context, *WriteSecretRequest) (*WriteSecretResponse, error)
 	ReadSecret(context.Context, *ReadSecretRequest) (*ReadSecretResponse, error)
 	DeleteSecret(context.Context, *DeleteSecretRequest) (*DeleteSecretResponse, error)
+	ListSecrets(context.Context, *ListSecretsRequest) (*ListSecretsResponse, error)
 }
 
 // UnimplementedVaultServiceServer should be embedded to have forward compatible implementations.
@@ -85,6 +96,9 @@ func (UnimplementedVaultServiceServer) ReadSecret(context.Context, *ReadSecretRe
 }
 func (UnimplementedVaultServiceServer) DeleteSecret(context.Context, *DeleteSecretRequest) (*DeleteSecretResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteSecret not implemented")
+}
+func (UnimplementedVaultServiceServer) ListSecrets(context.Context, *ListSecretsRequest) (*ListSecretsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListSecrets not implemented")
 }
 
 // UnsafeVaultServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -152,6 +166,24 @@ func _VaultService_DeleteSecret_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultService_ListSecrets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSecretsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ListSecrets(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/vault.v1alpha1.VaultService/ListSecrets",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ListSecrets(ctx, req.(*ListSecretsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultService_ServiceDesc is the grpc.ServiceDesc for VaultService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -170,6 +202,10 @@ var VaultService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteSecret",
 			Handler:    _VaultService_DeleteSecret_Handler,
+		},
+		{
+			MethodName: "ListSecrets",
+			Handler:    _VaultService_ListSecrets_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

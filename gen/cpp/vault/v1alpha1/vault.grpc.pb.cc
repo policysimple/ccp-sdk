@@ -22,6 +22,7 @@ static const char* VaultService_method_names[] = {
   "/vault.v1alpha1.VaultService/WriteSecret",
   "/vault.v1alpha1.VaultService/ReadSecret",
   "/vault.v1alpha1.VaultService/DeleteSecret",
+  "/vault.v1alpha1.VaultService/ListSecrets",
 };
 
 std::unique_ptr< VaultService::Stub> VaultService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -34,6 +35,7 @@ VaultService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   : channel_(channel), rpcmethod_WriteSecret_(VaultService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ReadSecret_(VaultService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteSecret_(VaultService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListSecrets_(VaultService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status VaultService::Stub::WriteSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::WriteSecretRequest& request, ::vault::v1alpha1::WriteSecretResponse* response) {
@@ -84,6 +86,22 @@ void VaultService::Stub::experimental_async::DeleteSecret(::grpc::ClientContext*
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::DeleteSecretResponse>::Create(channel_.get(), cq, rpcmethod_DeleteSecret_, context, request, false);
 }
 
+::grpc::Status VaultService::Stub::ListSecrets(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest& request, ::vault::v1alpha1::ListSecretsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListSecrets_, context, request, response);
+}
+
+void VaultService::Stub::experimental_async::ListSecrets(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest* request, ::vault::v1alpha1::ListSecretsResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListSecrets_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretsResponse>* VaultService::Stub::AsyncListSecretsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::ListSecretsResponse>::Create(channel_.get(), cq, rpcmethod_ListSecrets_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretsResponse>* VaultService::Stub::PrepareAsyncListSecretsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::ListSecretsResponse>::Create(channel_.get(), cq, rpcmethod_ListSecrets_, context, request, false);
+}
+
 VaultService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       VaultService_method_names[0],
@@ -100,6 +118,11 @@ VaultService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< VaultService::Service, ::vault::v1alpha1::DeleteSecretRequest, ::vault::v1alpha1::DeleteSecretResponse>(
           std::mem_fn(&VaultService::Service::DeleteSecret), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      VaultService_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< VaultService::Service, ::vault::v1alpha1::ListSecretsRequest, ::vault::v1alpha1::ListSecretsResponse>(
+          std::mem_fn(&VaultService::Service::ListSecrets), this)));
 }
 
 VaultService::Service::~Service() {
@@ -120,6 +143,13 @@ VaultService::Service::~Service() {
 }
 
 ::grpc::Status VaultService::Service::DeleteSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::DeleteSecretRequest* request, ::vault::v1alpha1::DeleteSecretResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status VaultService::Service::ListSecrets(::grpc::ServerContext* context, const ::vault::v1alpha1::ListSecretsRequest* request, ::vault::v1alpha1::ListSecretsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -26,6 +26,28 @@ function deserialize_vault_v1alpha1_DeleteSecretResponse(buffer_arg) {
   return vault_v1alpha1_vault_pb.DeleteSecretResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_vault_v1alpha1_ListSecretsRequest(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_pb.ListSecretsRequest)) {
+    throw new Error('Expected argument of type vault.v1alpha1.ListSecretsRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_ListSecretsRequest(buffer_arg) {
+  return vault_v1alpha1_vault_pb.ListSecretsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vault_v1alpha1_ListSecretsResponse(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_pb.ListSecretsResponse)) {
+    throw new Error('Expected argument of type vault.v1alpha1.ListSecretsResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_ListSecretsResponse(buffer_arg) {
+  return vault_v1alpha1_vault_pb.ListSecretsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_vault_v1alpha1_ReadSecretRequest(arg) {
   if (!(arg instanceof vault_v1alpha1_vault_pb.ReadSecretRequest)) {
     throw new Error('Expected argument of type vault.v1alpha1.ReadSecretRequest');
@@ -105,6 +127,17 @@ var VaultServiceService = exports.VaultServiceService = {
     requestDeserialize: deserialize_vault_v1alpha1_DeleteSecretRequest,
     responseSerialize: serialize_vault_v1alpha1_DeleteSecretResponse,
     responseDeserialize: deserialize_vault_v1alpha1_DeleteSecretResponse,
+  },
+  listSecrets: {
+    path: '/vault.v1alpha1.VaultService/ListSecrets',
+    requestStream: false,
+    responseStream: false,
+    requestType: vault_v1alpha1_vault_pb.ListSecretsRequest,
+    responseType: vault_v1alpha1_vault_pb.ListSecretsResponse,
+    requestSerialize: serialize_vault_v1alpha1_ListSecretsRequest,
+    requestDeserialize: deserialize_vault_v1alpha1_ListSecretsRequest,
+    responseSerialize: serialize_vault_v1alpha1_ListSecretsResponse,
+    responseDeserialize: deserialize_vault_v1alpha1_ListSecretsResponse,
   },
 };
 

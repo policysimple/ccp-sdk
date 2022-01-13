@@ -14,6 +14,2648 @@ public final class Vault {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface SecretDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vault.v1alpha1.SecretData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     */
+    int getDataCount();
+    /**
+     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     */
+    boolean containsData(
+        java.lang.String key);
+    /**
+     * Use {@link #getDataMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getData();
+    /**
+     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getDataMap();
+    /**
+     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     */
+
+    java.lang.String getDataOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     */
+
+    java.lang.String getDataOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code vault.v1alpha1.SecretData}
+   */
+  public static final class SecretData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vault.v1alpha1.SecretData)
+      SecretDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SecretData.newBuilder() to construct.
+    private SecretData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SecretData() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SecretData();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SecretData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                data_ = com.google.protobuf.MapField.newMapField(
+                    DataDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              data__ = input.readMessage(
+                  DataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              data_.getMutableMap().put(
+                  data__.getKey(), data__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_SecretData_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetData();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_SecretData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              vault.v1alpha1.Vault.SecretData.class, vault.v1alpha1.Vault.SecretData.Builder.class);
+    }
+
+    public static final int DATA_FIELD_NUMBER = 1;
+    private static final class DataDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  vault.v1alpha1.Vault.internal_static_vault_v1alpha1_SecretData_DataEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> data_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetData() {
+      if (data_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            DataDefaultEntryHolder.defaultEntry);
+      }
+      return data_;
+    }
+
+    public int getDataCount() {
+      return internalGetData().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsData(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetData().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getDataMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getData() {
+      return getDataMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
+      return internalGetData().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getDataOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetData().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getDataOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetData().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetData(),
+          DataDefaultEntryHolder.defaultEntry,
+          1);
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetData().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        data__ = DataDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, data__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof vault.v1alpha1.Vault.SecretData)) {
+        return super.equals(obj);
+      }
+      vault.v1alpha1.Vault.SecretData other = (vault.v1alpha1.Vault.SecretData) obj;
+
+      if (!internalGetData().equals(
+          other.internalGetData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetData().getMap().isEmpty()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetData().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static vault.v1alpha1.Vault.SecretData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.SecretData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.SecretData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.SecretData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.SecretData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.SecretData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.SecretData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.SecretData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.SecretData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.SecretData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.SecretData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.SecretData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(vault.v1alpha1.Vault.SecretData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vault.v1alpha1.SecretData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vault.v1alpha1.SecretData)
+        vault.v1alpha1.Vault.SecretDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_SecretData_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetData();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableData();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_SecretData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                vault.v1alpha1.Vault.SecretData.class, vault.v1alpha1.Vault.SecretData.Builder.class);
+      }
+
+      // Construct using vault.v1alpha1.Vault.SecretData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        internalGetMutableData().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_SecretData_descriptor;
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.SecretData getDefaultInstanceForType() {
+        return vault.v1alpha1.Vault.SecretData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.SecretData build() {
+        vault.v1alpha1.Vault.SecretData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.SecretData buildPartial() {
+        vault.v1alpha1.Vault.SecretData result = new vault.v1alpha1.Vault.SecretData(this);
+        int from_bitField0_ = bitField0_;
+        result.data_ = internalGetData();
+        result.data_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof vault.v1alpha1.Vault.SecretData) {
+          return mergeFrom((vault.v1alpha1.Vault.SecretData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(vault.v1alpha1.Vault.SecretData other) {
+        if (other == vault.v1alpha1.Vault.SecretData.getDefaultInstance()) return this;
+        internalGetMutableData().mergeFrom(
+            other.internalGetData());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        vault.v1alpha1.Vault.SecretData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (vault.v1alpha1.Vault.SecretData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> data_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetData() {
+        if (data_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              DataDefaultEntryHolder.defaultEntry);
+        }
+        return data_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableData() {
+        onChanged();;
+        if (data_ == null) {
+          data_ = com.google.protobuf.MapField.newMapField(
+              DataDefaultEntryHolder.defaultEntry);
+        }
+        if (!data_.isMutable()) {
+          data_ = data_.copy();
+        }
+        return data_;
+      }
+
+      public int getDataCount() {
+        return internalGetData().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       */
+
+      @java.lang.Override
+      public boolean containsData(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetData().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getDataMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getData() {
+        return getDataMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
+        return internalGetData().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getDataOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetData().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getDataOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetData().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearData() {
+        internalGetMutableData().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       */
+
+      public Builder removeData(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableData().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableData() {
+        return internalGetMutableData().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       */
+      public Builder putData(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableData().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       */
+
+      public Builder putAllData(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableData().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vault.v1alpha1.SecretData)
+    }
+
+    // @@protoc_insertion_point(class_scope:vault.v1alpha1.SecretData)
+    private static final vault.v1alpha1.Vault.SecretData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new vault.v1alpha1.Vault.SecretData();
+    }
+
+    public static vault.v1alpha1.Vault.SecretData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SecretData>
+        PARSER = new com.google.protobuf.AbstractParser<SecretData>() {
+      @java.lang.Override
+      public SecretData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SecretData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SecretData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SecretData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public vault.v1alpha1.Vault.SecretData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SecretWarningsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vault.v1alpha1.SecretWarnings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+     * @return A list containing the warnings.
+     */
+    java.util.List<java.lang.String>
+        getWarningsList();
+    /**
+     * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+     * @return The count of warnings.
+     */
+    int getWarningsCount();
+    /**
+     * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+     * @param index The index of the element to return.
+     * @return The warnings at the given index.
+     */
+    java.lang.String getWarnings(int index);
+    /**
+     * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the warnings at the given index.
+     */
+    com.google.protobuf.ByteString
+        getWarningsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code vault.v1alpha1.SecretWarnings}
+   */
+  public static final class SecretWarnings extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vault.v1alpha1.SecretWarnings)
+      SecretWarningsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SecretWarnings.newBuilder() to construct.
+    private SecretWarnings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SecretWarnings() {
+      warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SecretWarnings();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SecretWarnings(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                warnings_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              warnings_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          warnings_ = warnings_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_SecretWarnings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_SecretWarnings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              vault.v1alpha1.Vault.SecretWarnings.class, vault.v1alpha1.Vault.SecretWarnings.Builder.class);
+    }
+
+    public static final int WARNINGS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList warnings_;
+    /**
+     * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+     * @return A list containing the warnings.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getWarningsList() {
+      return warnings_;
+    }
+    /**
+     * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+     * @return The count of warnings.
+     */
+    public int getWarningsCount() {
+      return warnings_.size();
+    }
+    /**
+     * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+     * @param index The index of the element to return.
+     * @return The warnings at the given index.
+     */
+    public java.lang.String getWarnings(int index) {
+      return warnings_.get(index);
+    }
+    /**
+     * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the warnings at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getWarningsBytes(int index) {
+      return warnings_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < warnings_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, warnings_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < warnings_.size(); i++) {
+          dataSize += computeStringSizeNoTag(warnings_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getWarningsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof vault.v1alpha1.Vault.SecretWarnings)) {
+        return super.equals(obj);
+      }
+      vault.v1alpha1.Vault.SecretWarnings other = (vault.v1alpha1.Vault.SecretWarnings) obj;
+
+      if (!getWarningsList()
+          .equals(other.getWarningsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getWarningsCount() > 0) {
+        hash = (37 * hash) + WARNINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getWarningsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static vault.v1alpha1.Vault.SecretWarnings parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.SecretWarnings parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.SecretWarnings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.SecretWarnings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.SecretWarnings parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.SecretWarnings parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.SecretWarnings parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.SecretWarnings parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.SecretWarnings parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.SecretWarnings parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.SecretWarnings parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.SecretWarnings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(vault.v1alpha1.Vault.SecretWarnings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vault.v1alpha1.SecretWarnings}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vault.v1alpha1.SecretWarnings)
+        vault.v1alpha1.Vault.SecretWarningsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_SecretWarnings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_SecretWarnings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                vault.v1alpha1.Vault.SecretWarnings.class, vault.v1alpha1.Vault.SecretWarnings.Builder.class);
+      }
+
+      // Construct using vault.v1alpha1.Vault.SecretWarnings.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_SecretWarnings_descriptor;
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.SecretWarnings getDefaultInstanceForType() {
+        return vault.v1alpha1.Vault.SecretWarnings.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.SecretWarnings build() {
+        vault.v1alpha1.Vault.SecretWarnings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.SecretWarnings buildPartial() {
+        vault.v1alpha1.Vault.SecretWarnings result = new vault.v1alpha1.Vault.SecretWarnings(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          warnings_ = warnings_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.warnings_ = warnings_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof vault.v1alpha1.Vault.SecretWarnings) {
+          return mergeFrom((vault.v1alpha1.Vault.SecretWarnings)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(vault.v1alpha1.Vault.SecretWarnings other) {
+        if (other == vault.v1alpha1.Vault.SecretWarnings.getDefaultInstance()) return this;
+        if (!other.warnings_.isEmpty()) {
+          if (warnings_.isEmpty()) {
+            warnings_ = other.warnings_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureWarningsIsMutable();
+            warnings_.addAll(other.warnings_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        vault.v1alpha1.Vault.SecretWarnings parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (vault.v1alpha1.Vault.SecretWarnings) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureWarningsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          warnings_ = new com.google.protobuf.LazyStringArrayList(warnings_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+       * @return A list containing the warnings.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getWarningsList() {
+        return warnings_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+       * @return The count of warnings.
+       */
+      public int getWarningsCount() {
+        return warnings_.size();
+      }
+      /**
+       * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+       * @param index The index of the element to return.
+       * @return The warnings at the given index.
+       */
+      public java.lang.String getWarnings(int index) {
+        return warnings_.get(index);
+      }
+      /**
+       * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the warnings at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getWarningsBytes(int index) {
+        return warnings_.getByteString(index);
+      }
+      /**
+       * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+       * @param index The index to set the value at.
+       * @param value The warnings to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWarnings(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureWarningsIsMutable();
+        warnings_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+       * @param value The warnings to add.
+       * @return This builder for chaining.
+       */
+      public Builder addWarnings(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureWarningsIsMutable();
+        warnings_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+       * @param values The warnings to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllWarnings(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureWarningsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, warnings_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWarnings() {
+        warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string warnings = 1 [json_name = "warnings"];</code>
+       * @param value The bytes of the warnings to add.
+       * @return This builder for chaining.
+       */
+      public Builder addWarningsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureWarningsIsMutable();
+        warnings_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vault.v1alpha1.SecretWarnings)
+    }
+
+    // @@protoc_insertion_point(class_scope:vault.v1alpha1.SecretWarnings)
+    private static final vault.v1alpha1.Vault.SecretWarnings DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new vault.v1alpha1.Vault.SecretWarnings();
+    }
+
+    public static vault.v1alpha1.Vault.SecretWarnings getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SecretWarnings>
+        PARSER = new com.google.protobuf.AbstractParser<SecretWarnings>() {
+      @java.lang.Override
+      public SecretWarnings parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SecretWarnings(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SecretWarnings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SecretWarnings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public vault.v1alpha1.Vault.SecretWarnings getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SecretOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vault.v1alpha1.Secret)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string request_id = 1 [json_name = "requestId"];</code>
+     * @return The requestId.
+     */
+    java.lang.String getRequestId();
+    /**
+     * <code>string request_id = 1 [json_name = "requestId"];</code>
+     * @return The bytes for requestId.
+     */
+    com.google.protobuf.ByteString
+        getRequestIdBytes();
+
+    /**
+     * <code>string lease_id = 2 [json_name = "leaseId"];</code>
+     * @return The leaseId.
+     */
+    java.lang.String getLeaseId();
+    /**
+     * <code>string lease_id = 2 [json_name = "leaseId"];</code>
+     * @return The bytes for leaseId.
+     */
+    com.google.protobuf.ByteString
+        getLeaseIdBytes();
+
+    /**
+     * <code>int64 lease_duration = 3 [json_name = "leaseDuration"];</code>
+     * @return The leaseDuration.
+     */
+    long getLeaseDuration();
+
+    /**
+     * <code>bool renewable = 4 [json_name = "renewable"];</code>
+     * @return The renewable.
+     */
+    boolean getRenewable();
+
+    /**
+     * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+     * @return The data.
+     */
+    vault.v1alpha1.Vault.SecretData getData();
+    /**
+     * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+     */
+    vault.v1alpha1.Vault.SecretDataOrBuilder getDataOrBuilder();
+
+    /**
+     * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+     * @return Whether the warnings field is set.
+     */
+    boolean hasWarnings();
+    /**
+     * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+     * @return The warnings.
+     */
+    vault.v1alpha1.Vault.SecretWarnings getWarnings();
+    /**
+     * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+     */
+    vault.v1alpha1.Vault.SecretWarningsOrBuilder getWarningsOrBuilder();
+  }
+  /**
+   * Protobuf type {@code vault.v1alpha1.Secret}
+   */
+  public static final class Secret extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vault.v1alpha1.Secret)
+      SecretOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Secret.newBuilder() to construct.
+    private Secret(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Secret() {
+      requestId_ = "";
+      leaseId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Secret();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Secret(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              leaseId_ = s;
+              break;
+            }
+            case 24: {
+
+              leaseDuration_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              renewable_ = input.readBool();
+              break;
+            }
+            case 42: {
+              vault.v1alpha1.Vault.SecretData.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
+              }
+              data_ = input.readMessage(vault.v1alpha1.Vault.SecretData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              vault.v1alpha1.Vault.SecretWarnings.Builder subBuilder = null;
+              if (warnings_ != null) {
+                subBuilder = warnings_.toBuilder();
+              }
+              warnings_ = input.readMessage(vault.v1alpha1.Vault.SecretWarnings.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(warnings_);
+                warnings_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_Secret_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_Secret_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              vault.v1alpha1.Vault.Secret.class, vault.v1alpha1.Vault.Secret.Builder.class);
+    }
+
+    public static final int REQUEST_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object requestId_;
+    /**
+     * <code>string request_id = 1 [json_name = "requestId"];</code>
+     * @return The requestId.
+     */
+    @java.lang.Override
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string request_id = 1 [json_name = "requestId"];</code>
+     * @return The bytes for requestId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LEASE_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object leaseId_;
+    /**
+     * <code>string lease_id = 2 [json_name = "leaseId"];</code>
+     * @return The leaseId.
+     */
+    @java.lang.Override
+    public java.lang.String getLeaseId() {
+      java.lang.Object ref = leaseId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        leaseId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string lease_id = 2 [json_name = "leaseId"];</code>
+     * @return The bytes for leaseId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLeaseIdBytes() {
+      java.lang.Object ref = leaseId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        leaseId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LEASE_DURATION_FIELD_NUMBER = 3;
+    private long leaseDuration_;
+    /**
+     * <code>int64 lease_duration = 3 [json_name = "leaseDuration"];</code>
+     * @return The leaseDuration.
+     */
+    @java.lang.Override
+    public long getLeaseDuration() {
+      return leaseDuration_;
+    }
+
+    public static final int RENEWABLE_FIELD_NUMBER = 4;
+    private boolean renewable_;
+    /**
+     * <code>bool renewable = 4 [json_name = "renewable"];</code>
+     * @return The renewable.
+     */
+    @java.lang.Override
+    public boolean getRenewable() {
+      return renewable_;
+    }
+
+    public static final int DATA_FIELD_NUMBER = 5;
+    private vault.v1alpha1.Vault.SecretData data_;
+    /**
+     * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return data_ != null;
+    }
+    /**
+     * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public vault.v1alpha1.Vault.SecretData getData() {
+      return data_ == null ? vault.v1alpha1.Vault.SecretData.getDefaultInstance() : data_;
+    }
+    /**
+     * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+     */
+    @java.lang.Override
+    public vault.v1alpha1.Vault.SecretDataOrBuilder getDataOrBuilder() {
+      return getData();
+    }
+
+    public static final int WARNINGS_FIELD_NUMBER = 6;
+    private vault.v1alpha1.Vault.SecretWarnings warnings_;
+    /**
+     * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+     * @return Whether the warnings field is set.
+     */
+    @java.lang.Override
+    public boolean hasWarnings() {
+      return warnings_ != null;
+    }
+    /**
+     * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+     * @return The warnings.
+     */
+    @java.lang.Override
+    public vault.v1alpha1.Vault.SecretWarnings getWarnings() {
+      return warnings_ == null ? vault.v1alpha1.Vault.SecretWarnings.getDefaultInstance() : warnings_;
+    }
+    /**
+     * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+     */
+    @java.lang.Override
+    public vault.v1alpha1.Vault.SecretWarningsOrBuilder getWarningsOrBuilder() {
+      return getWarnings();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getRequestIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
+      }
+      if (!getLeaseIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, leaseId_);
+      }
+      if (leaseDuration_ != 0L) {
+        output.writeInt64(3, leaseDuration_);
+      }
+      if (renewable_ != false) {
+        output.writeBool(4, renewable_);
+      }
+      if (data_ != null) {
+        output.writeMessage(5, getData());
+      }
+      if (warnings_ != null) {
+        output.writeMessage(6, getWarnings());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getRequestIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
+      }
+      if (!getLeaseIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, leaseId_);
+      }
+      if (leaseDuration_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, leaseDuration_);
+      }
+      if (renewable_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, renewable_);
+      }
+      if (data_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getData());
+      }
+      if (warnings_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getWarnings());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof vault.v1alpha1.Vault.Secret)) {
+        return super.equals(obj);
+      }
+      vault.v1alpha1.Vault.Secret other = (vault.v1alpha1.Vault.Secret) obj;
+
+      if (!getRequestId()
+          .equals(other.getRequestId())) return false;
+      if (!getLeaseId()
+          .equals(other.getLeaseId())) return false;
+      if (getLeaseDuration()
+          != other.getLeaseDuration()) return false;
+      if (getRenewable()
+          != other.getRenewable()) return false;
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData()
+            .equals(other.getData())) return false;
+      }
+      if (hasWarnings() != other.hasWarnings()) return false;
+      if (hasWarnings()) {
+        if (!getWarnings()
+            .equals(other.getWarnings())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+      hash = (37 * hash) + LEASE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLeaseId().hashCode();
+      hash = (37 * hash) + LEASE_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLeaseDuration());
+      hash = (37 * hash) + RENEWABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getRenewable());
+      if (hasData()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getData().hashCode();
+      }
+      if (hasWarnings()) {
+        hash = (37 * hash) + WARNINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getWarnings().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static vault.v1alpha1.Vault.Secret parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.Secret parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.Secret parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.Secret parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.Secret parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.Secret parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.Secret parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.Secret parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.Secret parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.Secret parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.Secret parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.Secret parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(vault.v1alpha1.Vault.Secret prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vault.v1alpha1.Secret}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vault.v1alpha1.Secret)
+        vault.v1alpha1.Vault.SecretOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_Secret_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_Secret_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                vault.v1alpha1.Vault.Secret.class, vault.v1alpha1.Vault.Secret.Builder.class);
+      }
+
+      // Construct using vault.v1alpha1.Vault.Secret.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        requestId_ = "";
+
+        leaseId_ = "";
+
+        leaseDuration_ = 0L;
+
+        renewable_ = false;
+
+        if (dataBuilder_ == null) {
+          data_ = null;
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+        if (warningsBuilder_ == null) {
+          warnings_ = null;
+        } else {
+          warnings_ = null;
+          warningsBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_Secret_descriptor;
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.Secret getDefaultInstanceForType() {
+        return vault.v1alpha1.Vault.Secret.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.Secret build() {
+        vault.v1alpha1.Vault.Secret result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.Secret buildPartial() {
+        vault.v1alpha1.Vault.Secret result = new vault.v1alpha1.Vault.Secret(this);
+        result.requestId_ = requestId_;
+        result.leaseId_ = leaseId_;
+        result.leaseDuration_ = leaseDuration_;
+        result.renewable_ = renewable_;
+        if (dataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
+        if (warningsBuilder_ == null) {
+          result.warnings_ = warnings_;
+        } else {
+          result.warnings_ = warningsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof vault.v1alpha1.Vault.Secret) {
+          return mergeFrom((vault.v1alpha1.Vault.Secret)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(vault.v1alpha1.Vault.Secret other) {
+        if (other == vault.v1alpha1.Vault.Secret.getDefaultInstance()) return this;
+        if (!other.getRequestId().isEmpty()) {
+          requestId_ = other.requestId_;
+          onChanged();
+        }
+        if (!other.getLeaseId().isEmpty()) {
+          leaseId_ = other.leaseId_;
+          onChanged();
+        }
+        if (other.getLeaseDuration() != 0L) {
+          setLeaseDuration(other.getLeaseDuration());
+        }
+        if (other.getRenewable() != false) {
+          setRenewable(other.getRenewable());
+        }
+        if (other.hasData()) {
+          mergeData(other.getData());
+        }
+        if (other.hasWarnings()) {
+          mergeWarnings(other.getWarnings());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        vault.v1alpha1.Vault.Secret parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (vault.v1alpha1.Vault.Secret) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object requestId_ = "";
+      /**
+       * <code>string request_id = 1 [json_name = "requestId"];</code>
+       * @return The requestId.
+       */
+      public java.lang.String getRequestId() {
+        java.lang.Object ref = requestId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          requestId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string request_id = 1 [json_name = "requestId"];</code>
+       * @return The bytes for requestId.
+       */
+      public com.google.protobuf.ByteString
+          getRequestIdBytes() {
+        java.lang.Object ref = requestId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          requestId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string request_id = 1 [json_name = "requestId"];</code>
+       * @param value The requestId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        requestId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string request_id = 1 [json_name = "requestId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRequestId() {
+        
+        requestId_ = getDefaultInstance().getRequestId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string request_id = 1 [json_name = "requestId"];</code>
+       * @param value The bytes for requestId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        requestId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object leaseId_ = "";
+      /**
+       * <code>string lease_id = 2 [json_name = "leaseId"];</code>
+       * @return The leaseId.
+       */
+      public java.lang.String getLeaseId() {
+        java.lang.Object ref = leaseId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          leaseId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string lease_id = 2 [json_name = "leaseId"];</code>
+       * @return The bytes for leaseId.
+       */
+      public com.google.protobuf.ByteString
+          getLeaseIdBytes() {
+        java.lang.Object ref = leaseId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          leaseId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string lease_id = 2 [json_name = "leaseId"];</code>
+       * @param value The leaseId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLeaseId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        leaseId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string lease_id = 2 [json_name = "leaseId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLeaseId() {
+        
+        leaseId_ = getDefaultInstance().getLeaseId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string lease_id = 2 [json_name = "leaseId"];</code>
+       * @param value The bytes for leaseId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLeaseIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        leaseId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long leaseDuration_ ;
+      /**
+       * <code>int64 lease_duration = 3 [json_name = "leaseDuration"];</code>
+       * @return The leaseDuration.
+       */
+      @java.lang.Override
+      public long getLeaseDuration() {
+        return leaseDuration_;
+      }
+      /**
+       * <code>int64 lease_duration = 3 [json_name = "leaseDuration"];</code>
+       * @param value The leaseDuration to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLeaseDuration(long value) {
+        
+        leaseDuration_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 lease_duration = 3 [json_name = "leaseDuration"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLeaseDuration() {
+        
+        leaseDuration_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean renewable_ ;
+      /**
+       * <code>bool renewable = 4 [json_name = "renewable"];</code>
+       * @return The renewable.
+       */
+      @java.lang.Override
+      public boolean getRenewable() {
+        return renewable_;
+      }
+      /**
+       * <code>bool renewable = 4 [json_name = "renewable"];</code>
+       * @param value The renewable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRenewable(boolean value) {
+        
+        renewable_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool renewable = 4 [json_name = "renewable"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRenewable() {
+        
+        renewable_ = false;
+        onChanged();
+        return this;
+      }
+
+      private vault.v1alpha1.Vault.SecretData data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          vault.v1alpha1.Vault.SecretData, vault.v1alpha1.Vault.SecretData.Builder, vault.v1alpha1.Vault.SecretDataOrBuilder> dataBuilder_;
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+       * @return Whether the data field is set.
+       */
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+       * @return The data.
+       */
+      public vault.v1alpha1.Vault.SecretData getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? vault.v1alpha1.Vault.SecretData.getDefaultInstance() : data_;
+        } else {
+          return dataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+       */
+      public Builder setData(vault.v1alpha1.Vault.SecretData value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+       */
+      public Builder setData(
+          vault.v1alpha1.Vault.SecretData.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+       */
+      public Builder mergeData(vault.v1alpha1.Vault.SecretData value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              vault.v1alpha1.Vault.SecretData.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          dataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+       */
+      public vault.v1alpha1.Vault.SecretData.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+       */
+      public vault.v1alpha1.Vault.SecretDataOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              vault.v1alpha1.Vault.SecretData.getDefaultInstance() : data_;
+        }
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          vault.v1alpha1.Vault.SecretData, vault.v1alpha1.Vault.SecretData.Builder, vault.v1alpha1.Vault.SecretDataOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              vault.v1alpha1.Vault.SecretData, vault.v1alpha1.Vault.SecretData.Builder, vault.v1alpha1.Vault.SecretDataOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
+      }
+
+      private vault.v1alpha1.Vault.SecretWarnings warnings_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          vault.v1alpha1.Vault.SecretWarnings, vault.v1alpha1.Vault.SecretWarnings.Builder, vault.v1alpha1.Vault.SecretWarningsOrBuilder> warningsBuilder_;
+      /**
+       * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+       * @return Whether the warnings field is set.
+       */
+      public boolean hasWarnings() {
+        return warningsBuilder_ != null || warnings_ != null;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+       * @return The warnings.
+       */
+      public vault.v1alpha1.Vault.SecretWarnings getWarnings() {
+        if (warningsBuilder_ == null) {
+          return warnings_ == null ? vault.v1alpha1.Vault.SecretWarnings.getDefaultInstance() : warnings_;
+        } else {
+          return warningsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+       */
+      public Builder setWarnings(vault.v1alpha1.Vault.SecretWarnings value) {
+        if (warningsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          warnings_ = value;
+          onChanged();
+        } else {
+          warningsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+       */
+      public Builder setWarnings(
+          vault.v1alpha1.Vault.SecretWarnings.Builder builderForValue) {
+        if (warningsBuilder_ == null) {
+          warnings_ = builderForValue.build();
+          onChanged();
+        } else {
+          warningsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+       */
+      public Builder mergeWarnings(vault.v1alpha1.Vault.SecretWarnings value) {
+        if (warningsBuilder_ == null) {
+          if (warnings_ != null) {
+            warnings_ =
+              vault.v1alpha1.Vault.SecretWarnings.newBuilder(warnings_).mergeFrom(value).buildPartial();
+          } else {
+            warnings_ = value;
+          }
+          onChanged();
+        } else {
+          warningsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+       */
+      public Builder clearWarnings() {
+        if (warningsBuilder_ == null) {
+          warnings_ = null;
+          onChanged();
+        } else {
+          warnings_ = null;
+          warningsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+       */
+      public vault.v1alpha1.Vault.SecretWarnings.Builder getWarningsBuilder() {
+        
+        onChanged();
+        return getWarningsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+       */
+      public vault.v1alpha1.Vault.SecretWarningsOrBuilder getWarningsOrBuilder() {
+        if (warningsBuilder_ != null) {
+          return warningsBuilder_.getMessageOrBuilder();
+        } else {
+          return warnings_ == null ?
+              vault.v1alpha1.Vault.SecretWarnings.getDefaultInstance() : warnings_;
+        }
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          vault.v1alpha1.Vault.SecretWarnings, vault.v1alpha1.Vault.SecretWarnings.Builder, vault.v1alpha1.Vault.SecretWarningsOrBuilder> 
+          getWarningsFieldBuilder() {
+        if (warningsBuilder_ == null) {
+          warningsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              vault.v1alpha1.Vault.SecretWarnings, vault.v1alpha1.Vault.SecretWarnings.Builder, vault.v1alpha1.Vault.SecretWarningsOrBuilder>(
+                  getWarnings(),
+                  getParentForChildren(),
+                  isClean());
+          warnings_ = null;
+        }
+        return warningsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vault.v1alpha1.Secret)
+    }
+
+    // @@protoc_insertion_point(class_scope:vault.v1alpha1.Secret)
+    private static final vault.v1alpha1.Vault.Secret DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new vault.v1alpha1.Vault.Secret();
+    }
+
+    public static vault.v1alpha1.Vault.Secret getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Secret>
+        PARSER = new com.google.protobuf.AbstractParser<Secret>() {
+      @java.lang.Override
+      public Secret parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Secret(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Secret> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Secret> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public vault.v1alpha1.Vault.Secret getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface WriteSecretRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:vault.v1alpha1.WriteSecretRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -759,6 +3401,30 @@ public final class Vault {
      */
     com.google.protobuf.ByteString
         getValueBytes();
+
+    /**
+     * <code>string msg = 3 [json_name = "msg"];</code>
+     * @return The msg.
+     */
+    java.lang.String getMsg();
+    /**
+     * <code>string msg = 3 [json_name = "msg"];</code>
+     * @return The bytes for msg.
+     */
+    com.google.protobuf.ByteString
+        getMsgBytes();
+
+    /**
+     * <code>string error = 4 [json_name = "error"];</code>
+     * @return The error.
+     */
+    java.lang.String getError();
+    /**
+     * <code>string error = 4 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
   }
   /**
    * Protobuf type {@code vault.v1alpha1.WriteSecretResponse}
@@ -775,6 +3441,8 @@ public final class Vault {
     private WriteSecretResponse() {
       name_ = "";
       value_ = "";
+      msg_ = "";
+      error_ = "";
     }
 
     @java.lang.Override
@@ -817,6 +3485,18 @@ public final class Vault {
               java.lang.String s = input.readStringRequireUtf8();
 
               value_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              msg_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              error_ = s;
               break;
             }
             default: {
@@ -927,6 +3607,82 @@ public final class Vault {
       }
     }
 
+    public static final int MSG_FIELD_NUMBER = 3;
+    private volatile java.lang.Object msg_;
+    /**
+     * <code>string msg = 3 [json_name = "msg"];</code>
+     * @return The msg.
+     */
+    @java.lang.Override
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string msg = 3 [json_name = "msg"];</code>
+     * @return The bytes for msg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 4;
+    private volatile java.lang.Object error_;
+    /**
+     * <code>string error = 4 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string error = 4 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -947,6 +3703,12 @@ public final class Vault {
       if (!getValueBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
       }
+      if (!getMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, msg_);
+      }
+      if (!getErrorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, error_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -961,6 +3723,12 @@ public final class Vault {
       }
       if (!getValueBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+      }
+      if (!getMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, msg_);
+      }
+      if (!getErrorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -981,6 +3749,10 @@ public final class Vault {
           .equals(other.getName())) return false;
       if (!getValue()
           .equals(other.getValue())) return false;
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!getError()
+          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -996,6 +3768,10 @@ public final class Vault {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getValue().hashCode();
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1133,6 +3909,10 @@ public final class Vault {
 
         value_ = "";
 
+        msg_ = "";
+
+        error_ = "";
+
         return this;
       }
 
@@ -1161,6 +3941,8 @@ public final class Vault {
         vault.v1alpha1.Vault.WriteSecretResponse result = new vault.v1alpha1.Vault.WriteSecretResponse(this);
         result.name_ = name_;
         result.value_ = value_;
+        result.msg_ = msg_;
+        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -1215,6 +3997,14 @@ public final class Vault {
         }
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
+          onChanged();
+        }
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
+          onChanged();
+        }
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1394,6 +4184,158 @@ public final class Vault {
   checkByteStringIsUtf8(value);
         
         value_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object msg_ = "";
+      /**
+       * <code>string msg = 3 [json_name = "msg"];</code>
+       * @return The msg.
+       */
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          msg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string msg = 3 [json_name = "msg"];</code>
+       * @return The bytes for msg.
+       */
+      public com.google.protobuf.ByteString
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string msg = 3 [json_name = "msg"];</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 3 [json_name = "msg"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMsg() {
+        
+        msg_ = getDefaultInstance().getMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 3 [json_name = "msg"];</code>
+       * @param value The bytes for msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <code>string error = 4 [json_name = "error"];</code>
+       * @return The error.
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string error = 4 [json_name = "error"];</code>
+       * @return The bytes for error.
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string error = 4 [json_name = "error"];</code>
+       * @param value The error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 4 [json_name = "error"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearError() {
+        
+        error_ = getDefaultInstance().getError();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 4 [json_name = "error"];</code>
+       * @param value The bytes for error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        error_ = value;
         onChanged();
         return this;
       }
@@ -2045,6 +4987,40 @@ public final class Vault {
      */
     com.google.protobuf.ByteString
         getValueBytes();
+
+    /**
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+     */
+    int getMetadataCount();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+     */
+    boolean containsMetadata(
+        java.lang.String key);
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadata();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadataMap();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+     */
+
+    java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+     */
+
+    java.lang.String getMetadataOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code vault.v1alpha1.ReadSecretResponse}
@@ -2083,6 +5059,7 @@ public final class Vault {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2103,6 +5080,19 @@ public final class Vault {
               java.lang.String s = input.readStringRequireUtf8();
 
               value_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                metadata_ = com.google.protobuf.MapField.newMapField(
+                    MetadataDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              metadata__ = input.readMessage(
+                  MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              metadata_.getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
               break;
             }
             default: {
@@ -2129,6 +5119,18 @@ public final class Vault {
       return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_ReadSecretResponse_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetMetadata();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -2213,6 +5215,87 @@ public final class Vault {
       }
     }
 
+    public static final int METADATA_FIELD_NUMBER = 3;
+    private static final class MetadataDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  vault.v1alpha1.Vault.internal_static_vault_v1alpha1_ReadSecretResponse_MetadataEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> metadata_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
+      }
+      return metadata_;
+    }
+
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsMetadata(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetMetadata().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getMetadataOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2233,6 +5316,12 @@ public final class Vault {
       if (!getValueBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          3);
       unknownFields.writeTo(output);
     }
 
@@ -2247,6 +5336,16 @@ public final class Vault {
       }
       if (!getValueBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetMetadata().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, metadata__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2267,6 +5366,8 @@ public final class Vault {
           .equals(other.getName())) return false;
       if (!getValue()
           .equals(other.getValue())) return false;
+      if (!internalGetMetadata().equals(
+          other.internalGetMetadata())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2282,6 +5383,10 @@ public final class Vault {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getValue().hashCode();
+      if (!internalGetMetadata().getMap().isEmpty()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetMetadata().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2389,6 +5494,28 @@ public final class Vault {
         return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_ReadSecretResponse_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetMetadata();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetMutableMetadata();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -2419,6 +5546,7 @@ public final class Vault {
 
         value_ = "";
 
+        internalGetMutableMetadata().clear();
         return this;
       }
 
@@ -2445,8 +5573,11 @@ public final class Vault {
       @java.lang.Override
       public vault.v1alpha1.Vault.ReadSecretResponse buildPartial() {
         vault.v1alpha1.Vault.ReadSecretResponse result = new vault.v1alpha1.Vault.ReadSecretResponse(this);
+        int from_bitField0_ = bitField0_;
         result.name_ = name_;
         result.value_ = value_;
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -2503,6 +5634,8 @@ public final class Vault {
           value_ = other.value_;
           onChanged();
         }
+        internalGetMutableMetadata().mergeFrom(
+            other.internalGetMetadata());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2531,6 +5664,7 @@ public final class Vault {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -2683,6 +5817,134 @@ public final class Vault {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> metadata_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMetadata() {
+        if (metadata_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        return metadata_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableMetadata() {
+        onChanged();;
+        if (metadata_ == null) {
+          metadata_ = com.google.protobuf.MapField.newMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        if (!metadata_.isMutable()) {
+          metadata_ = metadata_.copy();
+        }
+        return metadata_;
+      }
+
+      public int getMetadataCount() {
+        return internalGetMetadata().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+       */
+
+      @java.lang.Override
+      public boolean containsMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetMetadata().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getMetadataMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+        return getMetadataMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+        return internalGetMetadata().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getMetadataOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getMetadataOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearMetadata() {
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+       */
+
+      public Builder removeMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableMetadata() {
+        return internalGetMutableMetadata().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+       */
+      public Builder putMetadata(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata"];</code>
+       */
+
+      public Builder putAllMetadata(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableMetadata().getMutableMap()
+            .putAll(values);
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2731,6 +5993,1367 @@ public final class Vault {
 
     @java.lang.Override
     public vault.v1alpha1.Vault.ReadSecretResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListSecretsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vault.v1alpha1.ListSecretsRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string prefix = 1 [json_name = "prefix"];</code>
+     * @return The prefix.
+     */
+    java.lang.String getPrefix();
+    /**
+     * <code>string prefix = 1 [json_name = "prefix"];</code>
+     * @return The bytes for prefix.
+     */
+    com.google.protobuf.ByteString
+        getPrefixBytes();
+  }
+  /**
+   * Protobuf type {@code vault.v1alpha1.ListSecretsRequest}
+   */
+  public static final class ListSecretsRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vault.v1alpha1.ListSecretsRequest)
+      ListSecretsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListSecretsRequest.newBuilder() to construct.
+    private ListSecretsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListSecretsRequest() {
+      prefix_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListSecretsRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListSecretsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              prefix_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_ListSecretsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_ListSecretsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              vault.v1alpha1.Vault.ListSecretsRequest.class, vault.v1alpha1.Vault.ListSecretsRequest.Builder.class);
+    }
+
+    public static final int PREFIX_FIELD_NUMBER = 1;
+    private volatile java.lang.Object prefix_;
+    /**
+     * <code>string prefix = 1 [json_name = "prefix"];</code>
+     * @return The prefix.
+     */
+    @java.lang.Override
+    public java.lang.String getPrefix() {
+      java.lang.Object ref = prefix_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        prefix_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string prefix = 1 [json_name = "prefix"];</code>
+     * @return The bytes for prefix.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPrefixBytes() {
+      java.lang.Object ref = prefix_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        prefix_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getPrefixBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, prefix_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getPrefixBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, prefix_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof vault.v1alpha1.Vault.ListSecretsRequest)) {
+        return super.equals(obj);
+      }
+      vault.v1alpha1.Vault.ListSecretsRequest other = (vault.v1alpha1.Vault.ListSecretsRequest) obj;
+
+      if (!getPrefix()
+          .equals(other.getPrefix())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PREFIX_FIELD_NUMBER;
+      hash = (53 * hash) + getPrefix().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static vault.v1alpha1.Vault.ListSecretsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(vault.v1alpha1.Vault.ListSecretsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vault.v1alpha1.ListSecretsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vault.v1alpha1.ListSecretsRequest)
+        vault.v1alpha1.Vault.ListSecretsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_ListSecretsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_ListSecretsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                vault.v1alpha1.Vault.ListSecretsRequest.class, vault.v1alpha1.Vault.ListSecretsRequest.Builder.class);
+      }
+
+      // Construct using vault.v1alpha1.Vault.ListSecretsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        prefix_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_ListSecretsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.ListSecretsRequest getDefaultInstanceForType() {
+        return vault.v1alpha1.Vault.ListSecretsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.ListSecretsRequest build() {
+        vault.v1alpha1.Vault.ListSecretsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.ListSecretsRequest buildPartial() {
+        vault.v1alpha1.Vault.ListSecretsRequest result = new vault.v1alpha1.Vault.ListSecretsRequest(this);
+        result.prefix_ = prefix_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof vault.v1alpha1.Vault.ListSecretsRequest) {
+          return mergeFrom((vault.v1alpha1.Vault.ListSecretsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(vault.v1alpha1.Vault.ListSecretsRequest other) {
+        if (other == vault.v1alpha1.Vault.ListSecretsRequest.getDefaultInstance()) return this;
+        if (!other.getPrefix().isEmpty()) {
+          prefix_ = other.prefix_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        vault.v1alpha1.Vault.ListSecretsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (vault.v1alpha1.Vault.ListSecretsRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object prefix_ = "";
+      /**
+       * <code>string prefix = 1 [json_name = "prefix"];</code>
+       * @return The prefix.
+       */
+      public java.lang.String getPrefix() {
+        java.lang.Object ref = prefix_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          prefix_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string prefix = 1 [json_name = "prefix"];</code>
+       * @return The bytes for prefix.
+       */
+      public com.google.protobuf.ByteString
+          getPrefixBytes() {
+        java.lang.Object ref = prefix_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          prefix_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string prefix = 1 [json_name = "prefix"];</code>
+       * @param value The prefix to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrefix(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        prefix_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string prefix = 1 [json_name = "prefix"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrefix() {
+        
+        prefix_ = getDefaultInstance().getPrefix();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string prefix = 1 [json_name = "prefix"];</code>
+       * @param value The bytes for prefix to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrefixBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        prefix_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vault.v1alpha1.ListSecretsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:vault.v1alpha1.ListSecretsRequest)
+    private static final vault.v1alpha1.Vault.ListSecretsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new vault.v1alpha1.Vault.ListSecretsRequest();
+    }
+
+    public static vault.v1alpha1.Vault.ListSecretsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListSecretsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListSecretsRequest>() {
+      @java.lang.Override
+      public ListSecretsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListSecretsRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListSecretsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListSecretsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public vault.v1alpha1.Vault.ListSecretsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListSecretsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vault.v1alpha1.ListSecretsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+     */
+    java.util.List<vault.v1alpha1.Vault.Secret> 
+        getSecretList();
+    /**
+     * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+     */
+    vault.v1alpha1.Vault.Secret getSecret(int index);
+    /**
+     * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+     */
+    int getSecretCount();
+    /**
+     * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+     */
+    java.util.List<? extends vault.v1alpha1.Vault.SecretOrBuilder> 
+        getSecretOrBuilderList();
+    /**
+     * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+     */
+    vault.v1alpha1.Vault.SecretOrBuilder getSecretOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code vault.v1alpha1.ListSecretsResponse}
+   */
+  public static final class ListSecretsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vault.v1alpha1.ListSecretsResponse)
+      ListSecretsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListSecretsResponse.newBuilder() to construct.
+    private ListSecretsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListSecretsResponse() {
+      secret_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListSecretsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListSecretsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                secret_ = new java.util.ArrayList<vault.v1alpha1.Vault.Secret>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              secret_.add(
+                  input.readMessage(vault.v1alpha1.Vault.Secret.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          secret_ = java.util.Collections.unmodifiableList(secret_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_ListSecretsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_ListSecretsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              vault.v1alpha1.Vault.ListSecretsResponse.class, vault.v1alpha1.Vault.ListSecretsResponse.Builder.class);
+    }
+
+    public static final int SECRET_FIELD_NUMBER = 1;
+    private java.util.List<vault.v1alpha1.Vault.Secret> secret_;
+    /**
+     * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<vault.v1alpha1.Vault.Secret> getSecretList() {
+      return secret_;
+    }
+    /**
+     * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends vault.v1alpha1.Vault.SecretOrBuilder> 
+        getSecretOrBuilderList() {
+      return secret_;
+    }
+    /**
+     * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+     */
+    @java.lang.Override
+    public int getSecretCount() {
+      return secret_.size();
+    }
+    /**
+     * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+     */
+    @java.lang.Override
+    public vault.v1alpha1.Vault.Secret getSecret(int index) {
+      return secret_.get(index);
+    }
+    /**
+     * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+     */
+    @java.lang.Override
+    public vault.v1alpha1.Vault.SecretOrBuilder getSecretOrBuilder(
+        int index) {
+      return secret_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < secret_.size(); i++) {
+        output.writeMessage(1, secret_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < secret_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, secret_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof vault.v1alpha1.Vault.ListSecretsResponse)) {
+        return super.equals(obj);
+      }
+      vault.v1alpha1.Vault.ListSecretsResponse other = (vault.v1alpha1.Vault.ListSecretsResponse) obj;
+
+      if (!getSecretList()
+          .equals(other.getSecretList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getSecretCount() > 0) {
+        hash = (37 * hash) + SECRET_FIELD_NUMBER;
+        hash = (53 * hash) + getSecretList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static vault.v1alpha1.Vault.ListSecretsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static vault.v1alpha1.Vault.ListSecretsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(vault.v1alpha1.Vault.ListSecretsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vault.v1alpha1.ListSecretsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vault.v1alpha1.ListSecretsResponse)
+        vault.v1alpha1.Vault.ListSecretsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_ListSecretsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_ListSecretsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                vault.v1alpha1.Vault.ListSecretsResponse.class, vault.v1alpha1.Vault.ListSecretsResponse.Builder.class);
+      }
+
+      // Construct using vault.v1alpha1.Vault.ListSecretsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSecretFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (secretBuilder_ == null) {
+          secret_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          secretBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return vault.v1alpha1.Vault.internal_static_vault_v1alpha1_ListSecretsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.ListSecretsResponse getDefaultInstanceForType() {
+        return vault.v1alpha1.Vault.ListSecretsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.ListSecretsResponse build() {
+        vault.v1alpha1.Vault.ListSecretsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public vault.v1alpha1.Vault.ListSecretsResponse buildPartial() {
+        vault.v1alpha1.Vault.ListSecretsResponse result = new vault.v1alpha1.Vault.ListSecretsResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (secretBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            secret_ = java.util.Collections.unmodifiableList(secret_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.secret_ = secret_;
+        } else {
+          result.secret_ = secretBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof vault.v1alpha1.Vault.ListSecretsResponse) {
+          return mergeFrom((vault.v1alpha1.Vault.ListSecretsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(vault.v1alpha1.Vault.ListSecretsResponse other) {
+        if (other == vault.v1alpha1.Vault.ListSecretsResponse.getDefaultInstance()) return this;
+        if (secretBuilder_ == null) {
+          if (!other.secret_.isEmpty()) {
+            if (secret_.isEmpty()) {
+              secret_ = other.secret_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSecretIsMutable();
+              secret_.addAll(other.secret_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.secret_.isEmpty()) {
+            if (secretBuilder_.isEmpty()) {
+              secretBuilder_.dispose();
+              secretBuilder_ = null;
+              secret_ = other.secret_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              secretBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSecretFieldBuilder() : null;
+            } else {
+              secretBuilder_.addAllMessages(other.secret_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        vault.v1alpha1.Vault.ListSecretsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (vault.v1alpha1.Vault.ListSecretsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<vault.v1alpha1.Vault.Secret> secret_ =
+        java.util.Collections.emptyList();
+      private void ensureSecretIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          secret_ = new java.util.ArrayList<vault.v1alpha1.Vault.Secret>(secret_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          vault.v1alpha1.Vault.Secret, vault.v1alpha1.Vault.Secret.Builder, vault.v1alpha1.Vault.SecretOrBuilder> secretBuilder_;
+
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public java.util.List<vault.v1alpha1.Vault.Secret> getSecretList() {
+        if (secretBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(secret_);
+        } else {
+          return secretBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public int getSecretCount() {
+        if (secretBuilder_ == null) {
+          return secret_.size();
+        } else {
+          return secretBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public vault.v1alpha1.Vault.Secret getSecret(int index) {
+        if (secretBuilder_ == null) {
+          return secret_.get(index);
+        } else {
+          return secretBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public Builder setSecret(
+          int index, vault.v1alpha1.Vault.Secret value) {
+        if (secretBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSecretIsMutable();
+          secret_.set(index, value);
+          onChanged();
+        } else {
+          secretBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public Builder setSecret(
+          int index, vault.v1alpha1.Vault.Secret.Builder builderForValue) {
+        if (secretBuilder_ == null) {
+          ensureSecretIsMutable();
+          secret_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          secretBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public Builder addSecret(vault.v1alpha1.Vault.Secret value) {
+        if (secretBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSecretIsMutable();
+          secret_.add(value);
+          onChanged();
+        } else {
+          secretBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public Builder addSecret(
+          int index, vault.v1alpha1.Vault.Secret value) {
+        if (secretBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSecretIsMutable();
+          secret_.add(index, value);
+          onChanged();
+        } else {
+          secretBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public Builder addSecret(
+          vault.v1alpha1.Vault.Secret.Builder builderForValue) {
+        if (secretBuilder_ == null) {
+          ensureSecretIsMutable();
+          secret_.add(builderForValue.build());
+          onChanged();
+        } else {
+          secretBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public Builder addSecret(
+          int index, vault.v1alpha1.Vault.Secret.Builder builderForValue) {
+        if (secretBuilder_ == null) {
+          ensureSecretIsMutable();
+          secret_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          secretBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public Builder addAllSecret(
+          java.lang.Iterable<? extends vault.v1alpha1.Vault.Secret> values) {
+        if (secretBuilder_ == null) {
+          ensureSecretIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, secret_);
+          onChanged();
+        } else {
+          secretBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public Builder clearSecret() {
+        if (secretBuilder_ == null) {
+          secret_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          secretBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public Builder removeSecret(int index) {
+        if (secretBuilder_ == null) {
+          ensureSecretIsMutable();
+          secret_.remove(index);
+          onChanged();
+        } else {
+          secretBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public vault.v1alpha1.Vault.Secret.Builder getSecretBuilder(
+          int index) {
+        return getSecretFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public vault.v1alpha1.Vault.SecretOrBuilder getSecretOrBuilder(
+          int index) {
+        if (secretBuilder_ == null) {
+          return secret_.get(index);  } else {
+          return secretBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public java.util.List<? extends vault.v1alpha1.Vault.SecretOrBuilder> 
+           getSecretOrBuilderList() {
+        if (secretBuilder_ != null) {
+          return secretBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(secret_);
+        }
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public vault.v1alpha1.Vault.Secret.Builder addSecretBuilder() {
+        return getSecretFieldBuilder().addBuilder(
+            vault.v1alpha1.Vault.Secret.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public vault.v1alpha1.Vault.Secret.Builder addSecretBuilder(
+          int index) {
+        return getSecretFieldBuilder().addBuilder(
+            index, vault.v1alpha1.Vault.Secret.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];</code>
+       */
+      public java.util.List<vault.v1alpha1.Vault.Secret.Builder> 
+           getSecretBuilderList() {
+        return getSecretFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          vault.v1alpha1.Vault.Secret, vault.v1alpha1.Vault.Secret.Builder, vault.v1alpha1.Vault.SecretOrBuilder> 
+          getSecretFieldBuilder() {
+        if (secretBuilder_ == null) {
+          secretBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              vault.v1alpha1.Vault.Secret, vault.v1alpha1.Vault.Secret.Builder, vault.v1alpha1.Vault.SecretOrBuilder>(
+                  secret_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          secret_ = null;
+        }
+        return secretBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vault.v1alpha1.ListSecretsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:vault.v1alpha1.ListSecretsResponse)
+    private static final vault.v1alpha1.Vault.ListSecretsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new vault.v1alpha1.Vault.ListSecretsResponse();
+    }
+
+    public static vault.v1alpha1.Vault.ListSecretsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListSecretsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListSecretsResponse>() {
+      @java.lang.Override
+      public ListSecretsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListSecretsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListSecretsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListSecretsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public vault.v1alpha1.Vault.ListSecretsResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3873,6 +8496,26 @@ public final class Vault {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vault_v1alpha1_SecretData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vault_v1alpha1_SecretData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vault_v1alpha1_SecretData_DataEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vault_v1alpha1_SecretData_DataEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vault_v1alpha1_SecretWarnings_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vault_v1alpha1_SecretWarnings_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vault_v1alpha1_Secret_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vault_v1alpha1_Secret_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vault_v1alpha1_WriteSecretRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3893,6 +8536,21 @@ public final class Vault {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vault_v1alpha1_ReadSecretResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vault_v1alpha1_ReadSecretResponse_MetadataEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vault_v1alpha1_ReadSecretResponse_MetadataEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vault_v1alpha1_ListSecretsRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vault_v1alpha1_ListSecretsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vault_v1alpha1_ListSecretsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vault_v1alpha1_ListSecretsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vault_v1alpha1_DeleteSecretRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3912,60 +8570,122 @@ public final class Vault {
   static {
     java.lang.String[] descriptorData = {
       "\n\032vault/v1alpha1/vault.proto\022\016vault.v1al" +
-      "pha1\">\n\022WriteSecretRequest\022\022\n\004name\030\001 \001(\t" +
-      "R\004name\022\024\n\005value\030\002 \001(\tR\005value\"?\n\023WriteSec" +
-      "retResponse\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005value" +
-      "\030\002 \001(\tR\005value\"\'\n\021ReadSecretRequest\022\022\n\004na" +
-      "me\030\001 \001(\tR\004name\">\n\022ReadSecretResponse\022\022\n\004" +
-      "name\030\001 \001(\tR\004name\022\024\n\005value\030\002 \001(\tR\005value\")" +
-      "\n\023DeleteSecretRequest\022\022\n\004name\030\001 \001(\tR\004nam" +
-      "e\"*\n\024DeleteSecretResponse\022\022\n\004name\030\001 \001(\tR" +
-      "\004name2\226\002\n\014VaultService\022V\n\013WriteSecret\022\"." +
-      "vault.v1alpha1.WriteSecretRequest\032#.vaul" +
-      "t.v1alpha1.WriteSecretResponse\022S\n\nReadSe" +
-      "cret\022!.vault.v1alpha1.ReadSecretRequest\032" +
-      "\".vault.v1alpha1.ReadSecretResponse\022Y\n\014D" +
-      "eleteSecret\022#.vault.v1alpha1.DeleteSecre" +
-      "tRequest\032$.vault.v1alpha1.DeleteSecretRe" +
-      "sponseB1Z/github.com/cuemby/ccp-sdk/gen/" +
-      "go/vault/v1alpha1b\006proto3"
+      "pha1\"\177\n\nSecretData\0228\n\004data\030\001 \003(\0132$.vault" +
+      ".v1alpha1.SecretData.DataEntryR\004data\0327\n\t" +
+      "DataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001" +
+      "(\tR\005value:\0028\001\",\n\016SecretWarnings\022\032\n\010warni" +
+      "ngs\030\001 \003(\tR\010warnings\"\363\001\n\006Secret\022\035\n\nreques" +
+      "t_id\030\001 \001(\tR\trequestId\022\031\n\010lease_id\030\002 \001(\tR" +
+      "\007leaseId\022%\n\016lease_duration\030\003 \001(\003R\rleaseD" +
+      "uration\022\034\n\trenewable\030\004 \001(\010R\trenewable\022.\n" +
+      "\004data\030\005 \001(\0132\032.vault.v1alpha1.SecretDataR" +
+      "\004data\022:\n\010warnings\030\006 \001(\0132\036.vault.v1alpha1" +
+      ".SecretWarningsR\010warnings\">\n\022WriteSecret" +
+      "Request\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005value\030\002 \001" +
+      "(\tR\005value\"g\n\023WriteSecretResponse\022\022\n\004name" +
+      "\030\001 \001(\tR\004name\022\024\n\005value\030\002 \001(\tR\005value\022\020\n\003ms" +
+      "g\030\003 \001(\tR\003msg\022\024\n\005error\030\004 \001(\tR\005error\"\'\n\021Re" +
+      "adSecretRequest\022\022\n\004name\030\001 \001(\tR\004name\"\311\001\n\022" +
+      "ReadSecretResponse\022\022\n\004name\030\001 \001(\tR\004name\022\024" +
+      "\n\005value\030\002 \001(\tR\005value\022L\n\010metadata\030\003 \003(\01320" +
+      ".vault.v1alpha1.ReadSecretResponse.Metad" +
+      "ataEntryR\010metadata\032;\n\rMetadataEntry\022\020\n\003k" +
+      "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"" +
+      ",\n\022ListSecretsRequest\022\026\n\006prefix\030\001 \001(\tR\006p" +
+      "refix\"E\n\023ListSecretsResponse\022.\n\006secret\030\001" +
+      " \003(\0132\026.vault.v1alpha1.SecretR\006secret\")\n\023" +
+      "DeleteSecretRequest\022\022\n\004name\030\001 \001(\tR\004name\"" +
+      "*\n\024DeleteSecretResponse\022\022\n\004name\030\001 \001(\tR\004n" +
+      "ame2\356\002\n\014VaultService\022V\n\013WriteSecret\022\".va" +
+      "ult.v1alpha1.WriteSecretRequest\032#.vault." +
+      "v1alpha1.WriteSecretResponse\022S\n\nReadSecr" +
+      "et\022!.vault.v1alpha1.ReadSecretRequest\032\"." +
+      "vault.v1alpha1.ReadSecretResponse\022Y\n\014Del" +
+      "eteSecret\022#.vault.v1alpha1.DeleteSecretR" +
+      "equest\032$.vault.v1alpha1.DeleteSecretResp" +
+      "onse\022V\n\013ListSecrets\022\".vault.v1alpha1.Lis" +
+      "tSecretsRequest\032#.vault.v1alpha1.ListSec" +
+      "retsResponseB1Z/github.com/cuemby/ccp-sd" +
+      "k/gen/go/vault/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_vault_v1alpha1_WriteSecretRequest_descriptor =
+    internal_static_vault_v1alpha1_SecretData_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_vault_v1alpha1_SecretData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vault_v1alpha1_SecretData_descriptor,
+        new java.lang.String[] { "Data", });
+    internal_static_vault_v1alpha1_SecretData_DataEntry_descriptor =
+      internal_static_vault_v1alpha1_SecretData_descriptor.getNestedTypes().get(0);
+    internal_static_vault_v1alpha1_SecretData_DataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vault_v1alpha1_SecretData_DataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_vault_v1alpha1_SecretWarnings_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_vault_v1alpha1_SecretWarnings_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vault_v1alpha1_SecretWarnings_descriptor,
+        new java.lang.String[] { "Warnings", });
+    internal_static_vault_v1alpha1_Secret_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_vault_v1alpha1_Secret_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vault_v1alpha1_Secret_descriptor,
+        new java.lang.String[] { "RequestId", "LeaseId", "LeaseDuration", "Renewable", "Data", "Warnings", });
+    internal_static_vault_v1alpha1_WriteSecretRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_vault_v1alpha1_WriteSecretRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_WriteSecretRequest_descriptor,
         new java.lang.String[] { "Name", "Value", });
     internal_static_vault_v1alpha1_WriteSecretResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_vault_v1alpha1_WriteSecretResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_WriteSecretResponse_descriptor,
-        new java.lang.String[] { "Name", "Value", });
+        new java.lang.String[] { "Name", "Value", "Msg", "Error", });
     internal_static_vault_v1alpha1_ReadSecretRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_vault_v1alpha1_ReadSecretRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_ReadSecretRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_vault_v1alpha1_ReadSecretResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_vault_v1alpha1_ReadSecretResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_ReadSecretResponse_descriptor,
-        new java.lang.String[] { "Name", "Value", });
+        new java.lang.String[] { "Name", "Value", "Metadata", });
+    internal_static_vault_v1alpha1_ReadSecretResponse_MetadataEntry_descriptor =
+      internal_static_vault_v1alpha1_ReadSecretResponse_descriptor.getNestedTypes().get(0);
+    internal_static_vault_v1alpha1_ReadSecretResponse_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vault_v1alpha1_ReadSecretResponse_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_vault_v1alpha1_ListSecretsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_vault_v1alpha1_ListSecretsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vault_v1alpha1_ListSecretsRequest_descriptor,
+        new java.lang.String[] { "Prefix", });
+    internal_static_vault_v1alpha1_ListSecretsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_vault_v1alpha1_ListSecretsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vault_v1alpha1_ListSecretsResponse_descriptor,
+        new java.lang.String[] { "Secret", });
     internal_static_vault_v1alpha1_DeleteSecretRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_vault_v1alpha1_DeleteSecretRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_DeleteSecretRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_vault_v1alpha1_DeleteSecretResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_vault_v1alpha1_DeleteSecretResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_DeleteSecretResponse_descriptor,

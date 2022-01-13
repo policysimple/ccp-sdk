@@ -58,6 +58,13 @@ class VaultService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteSecretResponse>> PrepareAsyncDeleteSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteSecretRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteSecretResponse>>(PrepareAsyncDeleteSecretRaw(context, request, cq));
     }
+    virtual ::grpc::Status ListSecrets(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest& request, ::vault::v1alpha1::ListSecretsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::ListSecretsResponse>> AsyncListSecrets(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::ListSecretsResponse>>(AsyncListSecretsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::ListSecretsResponse>> PrepareAsyncListSecrets(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::ListSecretsResponse>>(PrepareAsyncListSecretsRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -65,6 +72,7 @@ class VaultService final {
       virtual void WriteSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::WriteSecretRequest* request, ::vault::v1alpha1::WriteSecretResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ReadSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::ReadSecretRequest* request, ::vault::v1alpha1::ReadSecretResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteSecretRequest* request, ::vault::v1alpha1::DeleteSecretResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ListSecrets(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest* request, ::vault::v1alpha1::ListSecretsResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -74,6 +82,8 @@ class VaultService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::ReadSecretResponse>* PrepareAsyncReadSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::ReadSecretRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteSecretResponse>* AsyncDeleteSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteSecretRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteSecretResponse>* PrepareAsyncDeleteSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteSecretRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::ListSecretsResponse>* AsyncListSecretsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::ListSecretsResponse>* PrepareAsyncListSecretsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -99,12 +109,20 @@ class VaultService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteSecretResponse>> PrepareAsyncDeleteSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteSecretRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteSecretResponse>>(PrepareAsyncDeleteSecretRaw(context, request, cq));
     }
+    ::grpc::Status ListSecrets(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest& request, ::vault::v1alpha1::ListSecretsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretsResponse>> AsyncListSecrets(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretsResponse>>(AsyncListSecretsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretsResponse>> PrepareAsyncListSecrets(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretsResponse>>(PrepareAsyncListSecretsRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
       void WriteSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::WriteSecretRequest* request, ::vault::v1alpha1::WriteSecretResponse* response, std::function<void(::grpc::Status)>) override;
       void ReadSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::ReadSecretRequest* request, ::vault::v1alpha1::ReadSecretResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteSecretRequest* request, ::vault::v1alpha1::DeleteSecretResponse* response, std::function<void(::grpc::Status)>) override;
+      void ListSecrets(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest* request, ::vault::v1alpha1::ListSecretsResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -122,9 +140,12 @@ class VaultService final {
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ReadSecretResponse>* PrepareAsyncReadSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::ReadSecretRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteSecretResponse>* AsyncDeleteSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteSecretRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteSecretResponse>* PrepareAsyncDeleteSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteSecretRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretsResponse>* AsyncListSecretsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretsResponse>* PrepareAsyncListSecretsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_WriteSecret_;
     const ::grpc::internal::RpcMethod rpcmethod_ReadSecret_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteSecret_;
+    const ::grpc::internal::RpcMethod rpcmethod_ListSecrets_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -136,6 +157,7 @@ class VaultService final {
     virtual ::grpc::Status WriteSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::WriteSecretRequest* request, ::vault::v1alpha1::WriteSecretResponse* response);
     virtual ::grpc::Status ReadSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::ReadSecretRequest* request, ::vault::v1alpha1::ReadSecretResponse* response);
     virtual ::grpc::Status DeleteSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::DeleteSecretRequest* request, ::vault::v1alpha1::DeleteSecretResponse* response);
+    virtual ::grpc::Status ListSecrets(::grpc::ServerContext* context, const ::vault::v1alpha1::ListSecretsRequest* request, ::vault::v1alpha1::ListSecretsResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_WriteSecret : public BaseClass {
@@ -197,7 +219,27 @@ class VaultService final {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_WriteSecret<WithAsyncMethod_ReadSecret<WithAsyncMethod_DeleteSecret<Service > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_ListSecrets : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_ListSecrets() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_ListSecrets() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListSecrets(::grpc::ServerContext* context, const ::vault::v1alpha1::ListSecretsRequest* request, ::vault::v1alpha1::ListSecretsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListSecrets(::grpc::ServerContext* context, ::vault::v1alpha1::ListSecretsRequest* request, ::grpc::ServerAsyncResponseWriter< ::vault::v1alpha1::ListSecretsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_WriteSecret<WithAsyncMethod_ReadSecret<WithAsyncMethod_DeleteSecret<WithAsyncMethod_ListSecrets<Service > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_WriteSecret : public BaseClass {
    private:
@@ -245,6 +287,23 @@ class VaultService final {
     }
     // disable synchronous version of this method
     ::grpc::Status DeleteSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::DeleteSecretRequest* request, ::vault::v1alpha1::DeleteSecretResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ListSecrets : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_ListSecrets() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_ListSecrets() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListSecrets(::grpc::ServerContext* context, const ::vault::v1alpha1::ListSecretsRequest* request, ::vault::v1alpha1::ListSecretsResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -310,6 +369,26 @@ class VaultService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_ListSecrets : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_ListSecrets() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_ListSecrets() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListSecrets(::grpc::ServerContext* context, const ::vault::v1alpha1::ListSecretsRequest* request, ::vault::v1alpha1::ListSecretsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListSecrets(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_WriteSecret : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -369,9 +448,29 @@ class VaultService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedDeleteSecret(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vault::v1alpha1::DeleteSecretRequest,::vault::v1alpha1::DeleteSecretResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_WriteSecret<WithStreamedUnaryMethod_ReadSecret<WithStreamedUnaryMethod_DeleteSecret<Service > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ListSecrets : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_ListSecrets() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler< ::vault::v1alpha1::ListSecretsRequest, ::vault::v1alpha1::ListSecretsResponse>(std::bind(&WithStreamedUnaryMethod_ListSecrets<BaseClass>::StreamedListSecrets, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_ListSecrets() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ListSecrets(::grpc::ServerContext* context, const ::vault::v1alpha1::ListSecretsRequest* request, ::vault::v1alpha1::ListSecretsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedListSecrets(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vault::v1alpha1::ListSecretsRequest,::vault::v1alpha1::ListSecretsResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_WriteSecret<WithStreamedUnaryMethod_ReadSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_ListSecrets<Service > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_WriteSecret<WithStreamedUnaryMethod_ReadSecret<WithStreamedUnaryMethod_DeleteSecret<Service > > > StreamedService;
+  typedef WithStreamedUnaryMethod_WriteSecret<WithStreamedUnaryMethod_ReadSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_ListSecrets<Service > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

@@ -21,6 +21,14 @@ class WriteSecretResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string value = 2 [json_name = "value"];</code>
      */
     protected $value = '';
+    /**
+     * Generated from protobuf field <code>string msg = 3 [json_name = "msg"];</code>
+     */
+    protected $msg = '';
+    /**
+     * Generated from protobuf field <code>string error = 4 [json_name = "error"];</code>
+     */
+    protected $error = '';
 
     /**
      * Constructor.
@@ -30,6 +38,8 @@ class WriteSecretResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *     @type string $value
+     *     @type string $msg
+     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +87,50 @@ class WriteSecretResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->value = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string msg = 3 [json_name = "msg"];</code>
+     * @return string
+     */
+    public function getMsg()
+    {
+        return $this->msg;
+    }
+
+    /**
+     * Generated from protobuf field <code>string msg = 3 [json_name = "msg"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMsg($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->msg = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error = 4 [json_name = "error"];</code>
+     * @return string
+     */
+    public function getError()
+    {
+        return $this->error;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error = 4 [json_name = "error"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setError($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->error = $var;
 
         return $this;
     }

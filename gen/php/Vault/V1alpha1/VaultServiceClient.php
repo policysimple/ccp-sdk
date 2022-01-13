@@ -56,4 +56,17 @@ class VaultServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Vault\V1alpha1\ListSecretsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListSecrets(\Vault\V1alpha1\ListSecretsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/vault.v1alpha1.VaultService/ListSecrets',
+        $argument,
+        ['\Vault\V1alpha1\ListSecretsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

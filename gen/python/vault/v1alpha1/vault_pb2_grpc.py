@@ -29,6 +29,11 @@ class VaultServiceStub(object):
         request_serializer=vault_dot_v1alpha1_dot_vault__pb2.DeleteSecretRequest.SerializeToString,
         response_deserializer=vault_dot_v1alpha1_dot_vault__pb2.DeleteSecretResponse.FromString,
         )
+    self.ListSecrets = channel.unary_unary(
+        '/vault.v1alpha1.VaultService/ListSecrets',
+        request_serializer=vault_dot_v1alpha1_dot_vault__pb2.ListSecretsRequest.SerializeToString,
+        response_deserializer=vault_dot_v1alpha1_dot_vault__pb2.ListSecretsResponse.FromString,
+        )
 
 
 class VaultServiceServicer(object):
@@ -56,6 +61,13 @@ class VaultServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListSecrets(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_VaultServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -73,6 +85,11 @@ def add_VaultServiceServicer_to_server(servicer, server):
           servicer.DeleteSecret,
           request_deserializer=vault_dot_v1alpha1_dot_vault__pb2.DeleteSecretRequest.FromString,
           response_serializer=vault_dot_v1alpha1_dot_vault__pb2.DeleteSecretResponse.SerializeToString,
+      ),
+      'ListSecrets': grpc.unary_unary_rpc_method_handler(
+          servicer.ListSecrets,
+          request_deserializer=vault_dot_v1alpha1_dot_vault__pb2.ListSecretsRequest.FromString,
+          response_serializer=vault_dot_v1alpha1_dot_vault__pb2.ListSecretsResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

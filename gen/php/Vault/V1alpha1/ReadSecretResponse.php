@@ -21,6 +21,10 @@ class ReadSecretResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string value = 2 [json_name = "value"];</code>
      */
     protected $value = '';
+    /**
+     * Generated from protobuf field <code>map<string, string> metadata = 3 [json_name = "metadata"];</code>
+     */
+    private $metadata;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class ReadSecretResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *     @type string $value
+     *     @type array|\Google\Protobuf\Internal\MapField $metadata
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class ReadSecretResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->value = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> metadata = 3 [json_name = "metadata"];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> metadata = 3 [json_name = "metadata"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->metadata = $arr;
 
         return $this;
     }
