@@ -130,6 +130,18 @@ public final class Source {
 
     java.lang.String getMetadataOrThrow(
         java.lang.String key);
+
+    /**
+     * <code>string user_id = 7 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string user_id = 7 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code source.v1alpha1.Integration}
@@ -146,6 +158,7 @@ public final class Source {
     private Integration() {
       id_ = "";
       name_ = "";
+      userId_ = "";
     }
 
     @java.lang.Override
@@ -233,6 +246,12 @@ public final class Source {
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               metadata_.getMutableMap().put(
                   metadata__.getKey(), metadata__.getValue());
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
               break;
             }
             default: {
@@ -556,6 +575,44 @@ public final class Source {
       return map.get(key);
     }
 
+    public static final int USER_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object userId_;
+    /**
+     * <code>string user_id = 7 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id = 7 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -594,6 +651,9 @@ public final class Source {
           internalGetMetadata(),
           MetadataDefaultEntryHolder.defaultEntry,
           6);
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, userId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -637,6 +697,9 @@ public final class Source {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(6, metadata__);
       }
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, userId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -667,6 +730,8 @@ public final class Source {
           other.internalGetData())) return false;
       if (!internalGetMetadata().equals(
           other.internalGetMetadata())) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -696,6 +761,8 @@ public final class Source {
         hash = (37 * hash) + METADATA_FIELD_NUMBER;
         hash = (53 * hash) + internalGetMetadata().hashCode();
       }
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -869,6 +936,8 @@ public final class Source {
         }
         internalGetMutableData().clear();
         internalGetMutableMetadata().clear();
+        userId_ = "";
+
         return this;
       }
 
@@ -908,6 +977,7 @@ public final class Source {
         result.data_.makeImmutable();
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
+        result.userId_ = userId_;
         onBuilt();
         return result;
       }
@@ -974,6 +1044,10 @@ public final class Source {
             other.internalGetData());
         internalGetMutableMetadata().mergeFrom(
             other.internalGetMetadata());
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1559,6 +1633,82 @@ public final class Source {
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableMetadata().getMutableMap()
             .putAll(values);
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string user_id = 7 [json_name = "userId"];</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 7 [json_name = "userId"];</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 7 [json_name = "userId"];</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 7 [json_name = "userId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 7 [json_name = "userId"];</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -2882,6 +3032,18 @@ public final class Source {
 
     java.lang.String getMetadataOrThrow(
         java.lang.String key);
+
+    /**
+     * <code>string user_id = 7 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string user_id = 7 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code source.v1alpha1.CreateIntegrationRequest}
@@ -2897,6 +3059,7 @@ public final class Source {
     }
     private CreateIntegrationRequest() {
       name_ = "";
+      userId_ = "";
     }
 
     @java.lang.Override
@@ -2978,6 +3141,12 @@ public final class Source {
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               metadata_.getMutableMap().put(
                   metadata__.getKey(), metadata__.getValue());
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
               break;
             }
             default: {
@@ -3267,6 +3436,44 @@ public final class Source {
       return map.get(key);
     }
 
+    public static final int USER_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object userId_;
+    /**
+     * <code>string user_id = 7 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id = 7 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3302,6 +3509,9 @@ public final class Source {
           internalGetMetadata(),
           MetadataDefaultEntryHolder.defaultEntry,
           6);
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, userId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3342,6 +3552,9 @@ public final class Source {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(6, metadata__);
       }
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, userId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3370,6 +3583,8 @@ public final class Source {
           other.internalGetData())) return false;
       if (!internalGetMetadata().equals(
           other.internalGetMetadata())) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3397,6 +3612,8 @@ public final class Source {
         hash = (37 * hash) + METADATA_FIELD_NUMBER;
         hash = (53 * hash) + internalGetMetadata().hashCode();
       }
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3568,6 +3785,8 @@ public final class Source {
         }
         internalGetMutableData().clear();
         internalGetMutableMetadata().clear();
+        userId_ = "";
+
         return this;
       }
 
@@ -3606,6 +3825,7 @@ public final class Source {
         result.data_.makeImmutable();
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
+        result.userId_ = userId_;
         onBuilt();
         return result;
       }
@@ -3668,6 +3888,10 @@ public final class Source {
             other.internalGetData());
         internalGetMutableMetadata().mergeFrom(
             other.internalGetMetadata());
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -4189,6 +4413,82 @@ public final class Source {
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableMetadata().getMutableMap()
             .putAll(values);
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string user_id = 7 [json_name = "userId"];</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 7 [json_name = "userId"];</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 7 [json_name = "userId"];</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 7 [json_name = "userId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 7 [json_name = "userId"];</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -4971,6 +5271,18 @@ public final class Source {
      * @return The organizationId.
      */
     int getOrganizationId();
+
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code source.v1alpha1.ListIntegrationsRequest}
@@ -4985,6 +5297,7 @@ public final class Source {
       super(builder);
     }
     private ListIntegrationsRequest() {
+      userId_ = "";
     }
 
     @java.lang.Override
@@ -5020,6 +5333,12 @@ public final class Source {
             case 8: {
 
               organizationId_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
               break;
             }
             default: {
@@ -5065,6 +5384,44 @@ public final class Source {
       return organizationId_;
     }
 
+    public static final int USER_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object userId_;
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5082,6 +5439,9 @@ public final class Source {
       if (organizationId_ != 0) {
         output.writeUInt32(1, organizationId_);
       }
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5094,6 +5454,9 @@ public final class Source {
       if (organizationId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, organizationId_);
+      }
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5112,6 +5475,8 @@ public final class Source {
 
       if (getOrganizationId()
           != other.getOrganizationId()) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5125,6 +5490,8 @@ public final class Source {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getOrganizationId();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5260,6 +5627,8 @@ public final class Source {
         super.clear();
         organizationId_ = 0;
 
+        userId_ = "";
+
         return this;
       }
 
@@ -5287,6 +5656,7 @@ public final class Source {
       public source.v1alpha1.Source.ListIntegrationsRequest buildPartial() {
         source.v1alpha1.Source.ListIntegrationsRequest result = new source.v1alpha1.Source.ListIntegrationsRequest(this);
         result.organizationId_ = organizationId_;
+        result.userId_ = userId_;
         onBuilt();
         return result;
       }
@@ -5337,6 +5707,10 @@ public final class Source {
         if (other == source.v1alpha1.Source.ListIntegrationsRequest.getDefaultInstance()) return this;
         if (other.getOrganizationId() != 0) {
           setOrganizationId(other.getOrganizationId());
+        }
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5394,6 +5768,82 @@ public final class Source {
       public Builder clearOrganizationId() {
         
         organizationId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -19744,109 +20194,111 @@ public final class Source {
   static {
     java.lang.String[] descriptorData = {
       "\n\034source/v1alpha1/source.proto\022\017source.v" +
-      "1alpha1\"\213\003\n\013Integration\022\016\n\002id\030\001 \001(\tR\002id\022" +
+      "1alpha1\"\244\003\n\013Integration\022\016\n\002id\030\001 \001(\tR\002id\022" +
       "\'\n\017organization_id\030\002 \001(\rR\016organizationId" +
       "\022\022\n\004name\030\003 \001(\tR\004name\0225\n\010provider\030\004 \001(\0132\031" +
       ".source.v1alpha1.ProviderR\010provider\022:\n\004d" +
       "ata\030\005 \003(\0132&.source.v1alpha1.Integration." +
       "DataEntryR\004data\022F\n\010metadata\030\006 \003(\0132*.sour" +
       "ce.v1alpha1.Integration.MetadataEntryR\010m" +
-      "etadata\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024" +
-      "\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataEntr" +
-      "y\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005valu" +
-      "e:\0028\001\"\251\001\n\nRepository\022\022\n\004name\030\001 \001(\tR\004name" +
-      "\022\030\n\007private\030\002 \001(\010R\007private\022\032\n\010fullname\030\003" +
-      " \001(\tR\010fullname\022 \n\013description\030\004 \001(\tR\013des" +
-      "cription\022\022\n\004fork\030\005 \001(\010R\004fork\022\033\n\tclone_ur" +
-      "l\030\006 \001(\tR\010cloneUrl\"\242\003\n\030CreateIntegrationR" +
-      "equest\022\'\n\017organization_id\030\002 \001(\rR\016organiz" +
-      "ationId\022\022\n\004name\030\003 \001(\tR\004name\0225\n\010provider\030" +
-      "\004 \001(\0132\031.source.v1alpha1.ProviderR\010provid" +
-      "er\022G\n\004data\030\005 \003(\01323.source.v1alpha1.Creat" +
-      "eIntegrationRequest.DataEntryR\004data\022S\n\010m" +
-      "etadata\030\006 \003(\01327.source.v1alpha1.CreateIn" +
-      "tegrationRequest.MetadataEntryR\010metadata" +
-      "\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value" +
-      "\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataEntry\022\020\n\003ke" +
-      "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"C" +
-      "\n\031CreateIntegrationResponse\022\020\n\003msg\030\001 \001(\t" +
-      "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"B\n\027ListInteg" +
-      "rationsRequest\022\'\n\017organization_id\030\001 \001(\rR" +
-      "\016organizationId\"\\\n\030ListIntegrationsRespo" +
-      "nse\022@\n\014integrations\030\001 \003(\0132\034.source.v1alp" +
-      "ha1.IntegrationR\014integrations\"\'\n\025GetInte" +
-      "grationRequest\022\016\n\002id\030\001 \001(\tR\002id\"\231\001\n\026GetIn" +
-      "tegrationResponse\022>\n\013integration\030\001 \001(\0132\034" +
-      ".source.v1alpha1.IntegrationR\013integratio" +
-      "n\022?\n\014repositories\030\002 \003(\0132\033.source.v1alpha" +
-      "1.RepositoryR\014repositories\"y\n\030UpdateInte" +
-      "grationRequest\022\016\n\002id\030\001 \001(\tR\002id\022M\n\014integr" +
-      "ations\030\002 \001(\0132).source.v1alpha1.CreateInt" +
-      "egrationRequestR\014integrations\"C\n\031UpdateI" +
-      "ntegrationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005" +
-      "error\030\002 \001(\tR\005error\"*\n\030DeleteIntegrationR" +
-      "equest\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteIntegrat" +
-      "ionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002" +
-      " \001(\tR\005error\"\330\002\n\010Provider\022\016\n\002id\030\001 \001(\tR\002id" +
-      "\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013description\030\003 \001(" +
-      "\tR\013description\022\022\n\004logo\030\004 \001(\tR\004logo\0227\n\004da" +
-      "ta\030\005 \003(\0132#.source.v1alpha1.Provider.Data" +
-      "EntryR\004data\022C\n\010metadata\030\006 \003(\0132\'.source.v" +
-      "1alpha1.Provider.MetadataEntryR\010metadata" +
-      "\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value" +
-      "\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataEntry\022\020\n\003ke" +
-      "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\'" +
-      "\n\025DeleteProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"" +
-      "@\n\026DeleteProviderResponse\022\020\n\003msg\030\001 \001(\tR\003" +
-      "msg\022\024\n\005error\030\002 \001(\tR\005error\"k\n\025UpdateProvi" +
-      "derRequest\022\016\n\002id\030\001 \001(\tR\002id\022B\n\010provider\030\002" +
-      " \001(\0132&.source.v1alpha1.CreateProviderReq" +
-      "uestR\010provider\"@\n\026UpdateProviderResponse" +
-      "\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error" +
-      "\"$\n\022GetProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"L" +
-      "\n\023GetProviderResponse\0225\n\010provider\030\001 \001(\0132" +
-      "\031.source.v1alpha1.ProviderR\010provider\"\357\002\n" +
-      "\025CreateProviderRequest\022\022\n\004name\030\001 \001(\tR\004na" +
-      "me\022 \n\013description\030\002 \001(\tR\013description\022\022\n\004" +
-      "logo\030\003 \001(\tR\004logo\022D\n\004data\030\005 \003(\01320.source." +
-      "v1alpha1.CreateProviderRequest.DataEntry" +
-      "R\004data\022P\n\010metadata\030\006 \003(\01324.source.v1alph" +
-      "a1.CreateProviderRequest.MetadataEntryR\010" +
-      "metadata\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022" +
-      "\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataEnt" +
-      "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val" +
-      "ue:\0028\001\"@\n\026CreateProviderResponse\022\020\n\003msg\030" +
-      "\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\026\n\024List" +
-      "ProvidersRequest\"P\n\025ListProvidersRespons" +
-      "e\0227\n\tproviders\030\001 \003(\0132\031.source.v1alpha1.P" +
-      "roviderR\tproviders2\202\010\n\rSourceService\022a\n\016" +
-      "CreateProvider\022&.source.v1alpha1.CreateP" +
-      "roviderRequest\032\'.source.v1alpha1.CreateP" +
-      "roviderResponse\022^\n\rListProviders\022%.sourc" +
-      "e.v1alpha1.ListProvidersRequest\032&.source" +
-      ".v1alpha1.ListProvidersResponse\022X\n\013GetPr" +
-      "ovider\022#.source.v1alpha1.GetProviderRequ" +
-      "est\032$.source.v1alpha1.GetProviderRespons" +
-      "e\022a\n\016UpdateProvider\022&.source.v1alpha1.Up" +
-      "dateProviderRequest\032\'.source.v1alpha1.Up" +
-      "dateProviderResponse\022a\n\016DeleteProvider\022&" +
-      ".source.v1alpha1.DeleteProviderRequest\032\'" +
-      ".source.v1alpha1.DeleteProviderResponse\022" +
-      "j\n\021CreateIntegration\022).source.v1alpha1.C" +
-      "reateIntegrationRequest\032*.source.v1alpha" +
-      "1.CreateIntegrationResponse\022g\n\020ListInteg" +
-      "rations\022(.source.v1alpha1.ListIntegratio" +
-      "nsRequest\032).source.v1alpha1.ListIntegrat" +
-      "ionsResponse\022a\n\016GetIntegration\022&.source." +
-      "v1alpha1.GetIntegrationRequest\032\'.source." +
-      "v1alpha1.GetIntegrationResponse\022j\n\021Updat" +
-      "eIntegration\022).source.v1alpha1.UpdateInt" +
-      "egrationRequest\032*.source.v1alpha1.Update" +
-      "IntegrationResponse\022j\n\021DeleteIntegration" +
-      "\022).source.v1alpha1.DeleteIntegrationRequ" +
-      "est\032*.source.v1alpha1.DeleteIntegrationR" +
-      "esponseB2Z0github.com/cuemby/ccp-sdk/gen" +
-      "/go/source/v1alpha1b\006proto3"
+      "etadata\022\027\n\007user_id\030\007 \001(\tR\006userId\0327\n\tData" +
+      "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005" +
+      "value:\0028\001\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR" +
+      "\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\251\001\n\nRepos" +
+      "itory\022\022\n\004name\030\001 \001(\tR\004name\022\030\n\007private\030\002 \001" +
+      "(\010R\007private\022\032\n\010fullname\030\003 \001(\tR\010fullname\022" +
+      " \n\013description\030\004 \001(\tR\013description\022\022\n\004for" +
+      "k\030\005 \001(\010R\004fork\022\033\n\tclone_url\030\006 \001(\tR\010cloneU" +
+      "rl\"\273\003\n\030CreateIntegrationRequest\022\'\n\017organ" +
+      "ization_id\030\002 \001(\rR\016organizationId\022\022\n\004name" +
+      "\030\003 \001(\tR\004name\0225\n\010provider\030\004 \001(\0132\031.source." +
+      "v1alpha1.ProviderR\010provider\022G\n\004data\030\005 \003(" +
+      "\01323.source.v1alpha1.CreateIntegrationReq" +
+      "uest.DataEntryR\004data\022S\n\010metadata\030\006 \003(\01327" +
+      ".source.v1alpha1.CreateIntegrationReques" +
+      "t.MetadataEntryR\010metadata\022\027\n\007user_id\030\007 \001" +
+      "(\tR\006userId\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003ke" +
+      "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataE" +
+      "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v" +
+      "alue:\0028\001\"C\n\031CreateIntegrationResponse\022\020\n" +
+      "\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"[\n" +
+      "\027ListIntegrationsRequest\022\'\n\017organization" +
+      "_id\030\001 \001(\rR\016organizationId\022\027\n\007user_id\030\002 \001" +
+      "(\tR\006userId\"\\\n\030ListIntegrationsResponse\022@" +
+      "\n\014integrations\030\001 \003(\0132\034.source.v1alpha1.I" +
+      "ntegrationR\014integrations\"\'\n\025GetIntegrati" +
+      "onRequest\022\016\n\002id\030\001 \001(\tR\002id\"\231\001\n\026GetIntegra" +
+      "tionResponse\022>\n\013integration\030\001 \001(\0132\034.sour" +
+      "ce.v1alpha1.IntegrationR\013integration\022?\n\014" +
+      "repositories\030\002 \003(\0132\033.source.v1alpha1.Rep" +
+      "ositoryR\014repositories\"y\n\030UpdateIntegrati" +
+      "onRequest\022\016\n\002id\030\001 \001(\tR\002id\022M\n\014integration" +
+      "s\030\002 \001(\0132).source.v1alpha1.CreateIntegrat" +
+      "ionRequestR\014integrations\"C\n\031UpdateIntegr" +
+      "ationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error" +
+      "\030\002 \001(\tR\005error\"*\n\030DeleteIntegrationReques" +
+      "t\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteIntegrationRe" +
+      "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR" +
+      "\005error\"\330\002\n\010Provider\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004n" +
+      "ame\030\002 \001(\tR\004name\022 \n\013description\030\003 \001(\tR\013de" +
+      "scription\022\022\n\004logo\030\004 \001(\tR\004logo\0227\n\004data\030\005 " +
+      "\003(\0132#.source.v1alpha1.Provider.DataEntry" +
+      "R\004data\022C\n\010metadata\030\006 \003(\0132\'.source.v1alph" +
+      "a1.Provider.MetadataEntryR\010metadata\0327\n\tD" +
+      "ataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(" +
+      "\tR\005value:\0028\001\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001" +
+      "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\'\n\025Del" +
+      "eteProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"@\n\026De" +
+      "leteProviderResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024" +
+      "\n\005error\030\002 \001(\tR\005error\"k\n\025UpdateProviderRe" +
+      "quest\022\016\n\002id\030\001 \001(\tR\002id\022B\n\010provider\030\002 \001(\0132" +
+      "&.source.v1alpha1.CreateProviderRequestR" +
+      "\010provider\"@\n\026UpdateProviderResponse\022\020\n\003m" +
+      "sg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"$\n\022G" +
+      "etProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"L\n\023Get" +
+      "ProviderResponse\0225\n\010provider\030\001 \001(\0132\031.sou" +
+      "rce.v1alpha1.ProviderR\010provider\"\357\002\n\025Crea" +
+      "teProviderRequest\022\022\n\004name\030\001 \001(\tR\004name\022 \n" +
+      "\013description\030\002 \001(\tR\013description\022\022\n\004logo\030" +
+      "\003 \001(\tR\004logo\022D\n\004data\030\005 \003(\01320.source.v1alp" +
+      "ha1.CreateProviderRequest.DataEntryR\004dat" +
+      "a\022P\n\010metadata\030\006 \003(\01324.source.v1alpha1.Cr" +
+      "eateProviderRequest.MetadataEntryR\010metad" +
+      "ata\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va" +
+      "lue\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataEntry\022\020\n" +
+      "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028" +
+      "\001\"@\n\026CreateProviderResponse\022\020\n\003msg\030\001 \001(\t" +
+      "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\026\n\024ListProvi" +
+      "dersRequest\"P\n\025ListProvidersResponse\0227\n\t" +
+      "providers\030\001 \003(\0132\031.source.v1alpha1.Provid" +
+      "erR\tproviders2\202\010\n\rSourceService\022a\n\016Creat" +
+      "eProvider\022&.source.v1alpha1.CreateProvid" +
+      "erRequest\032\'.source.v1alpha1.CreateProvid" +
+      "erResponse\022^\n\rListProviders\022%.source.v1a" +
+      "lpha1.ListProvidersRequest\032&.source.v1al" +
+      "pha1.ListProvidersResponse\022X\n\013GetProvide" +
+      "r\022#.source.v1alpha1.GetProviderRequest\032$" +
+      ".source.v1alpha1.GetProviderResponse\022a\n\016" +
+      "UpdateProvider\022&.source.v1alpha1.UpdateP" +
+      "roviderRequest\032\'.source.v1alpha1.UpdateP" +
+      "roviderResponse\022a\n\016DeleteProvider\022&.sour" +
+      "ce.v1alpha1.DeleteProviderRequest\032\'.sour" +
+      "ce.v1alpha1.DeleteProviderResponse\022j\n\021Cr" +
+      "eateIntegration\022).source.v1alpha1.Create" +
+      "IntegrationRequest\032*.source.v1alpha1.Cre" +
+      "ateIntegrationResponse\022g\n\020ListIntegratio" +
+      "ns\022(.source.v1alpha1.ListIntegrationsReq" +
+      "uest\032).source.v1alpha1.ListIntegrationsR" +
+      "esponse\022a\n\016GetIntegration\022&.source.v1alp" +
+      "ha1.GetIntegrationRequest\032\'.source.v1alp" +
+      "ha1.GetIntegrationResponse\022j\n\021UpdateInte" +
+      "gration\022).source.v1alpha1.UpdateIntegrat" +
+      "ionRequest\032*.source.v1alpha1.UpdateInteg" +
+      "rationResponse\022j\n\021DeleteIntegration\022).so" +
+      "urce.v1alpha1.DeleteIntegrationRequest\032*" +
+      ".source.v1alpha1.DeleteIntegrationRespon" +
+      "seB2Z0github.com/cuemby/ccp-sdk/gen/go/s" +
+      "ource/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19857,7 +20309,7 @@ public final class Source {
     internal_static_source_v1alpha1_Integration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_Integration_descriptor,
-        new java.lang.String[] { "Id", "OrganizationId", "Name", "Provider", "Data", "Metadata", });
+        new java.lang.String[] { "Id", "OrganizationId", "Name", "Provider", "Data", "Metadata", "UserId", });
     internal_static_source_v1alpha1_Integration_DataEntry_descriptor =
       internal_static_source_v1alpha1_Integration_descriptor.getNestedTypes().get(0);
     internal_static_source_v1alpha1_Integration_DataEntry_fieldAccessorTable = new
@@ -19881,7 +20333,7 @@ public final class Source {
     internal_static_source_v1alpha1_CreateIntegrationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_CreateIntegrationRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", "Name", "Provider", "Data", "Metadata", });
+        new java.lang.String[] { "OrganizationId", "Name", "Provider", "Data", "Metadata", "UserId", });
     internal_static_source_v1alpha1_CreateIntegrationRequest_DataEntry_descriptor =
       internal_static_source_v1alpha1_CreateIntegrationRequest_descriptor.getNestedTypes().get(0);
     internal_static_source_v1alpha1_CreateIntegrationRequest_DataEntry_fieldAccessorTable = new
@@ -19905,7 +20357,7 @@ public final class Source {
     internal_static_source_v1alpha1_ListIntegrationsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_source_v1alpha1_ListIntegrationsRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", });
+        new java.lang.String[] { "OrganizationId", "UserId", });
     internal_static_source_v1alpha1_ListIntegrationsResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_source_v1alpha1_ListIntegrationsResponse_fieldAccessorTable = new

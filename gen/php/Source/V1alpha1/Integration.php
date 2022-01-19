@@ -37,6 +37,10 @@ class Integration extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> metadata = 6 [json_name = "metadata"];</code>
      */
     private $metadata;
+    /**
+     * Generated from protobuf field <code>string user_id = 7 [json_name = "userId"];</code>
+     */
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -50,6 +54,7 @@ class Integration extends \Google\Protobuf\Internal\Message
      *     @type \Source\V1alpha1\Provider $provider
      *     @type array|\Google\Protobuf\Internal\MapField $data
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
+     *     @type string $user_id
      * }
      */
     public function __construct($data = NULL) {
@@ -195,6 +200,28 @@ class Integration extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->metadata = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 7 [json_name = "userId"];</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 7 [json_name = "userId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }

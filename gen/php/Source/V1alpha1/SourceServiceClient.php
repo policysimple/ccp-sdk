@@ -18,7 +18,6 @@ class SourceServiceClient extends \Grpc\BaseStub {
 
     /**
      * PROVIDERS
-     *
      * @param \Source\V1alpha1\CreateProviderRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -85,7 +84,6 @@ class SourceServiceClient extends \Grpc\BaseStub {
 
     /**
      * INTEGRATIONS
-     *
      * @param \Source\V1alpha1\CreateIntegrationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
