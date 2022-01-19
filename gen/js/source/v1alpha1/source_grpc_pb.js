@@ -227,7 +227,6 @@ function deserialize_source_v1alpha1_UpdateProviderResponse(buffer_arg) {
 
 var SourceServiceService = exports.SourceServiceService = {
   // PROVIDERS
-  //
   createProvider: {
     path: '/source.v1alpha1.SourceService/CreateProvider',
     requestStream: false,
@@ -284,7 +283,6 @@ var SourceServiceService = exports.SourceServiceService = {
     responseDeserialize: deserialize_source_v1alpha1_DeleteProviderResponse,
   },
   // INTEGRATIONS
-  //
   createIntegration: {
     path: '/source.v1alpha1.SourceService/CreateIntegration',
     requestStream: false,

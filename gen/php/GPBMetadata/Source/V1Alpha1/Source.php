@@ -16,15 +16,16 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-³ 
-source/v1alpha1/source.protosource.v1alpha1"‹
+þ 
+source/v1alpha1/source.protosource.v1alpha1"¤
 Integration
 id (	Rid\'
 organization_id (RorganizationId
 name (	Rname5
 provider (2.source.v1alpha1.ProviderRprovider:
 data (2&.source.v1alpha1.Integration.DataEntryRdataF
-metadata (2*.source.v1alpha1.Integration.MetadataEntryRmetadata7
+metadata (2*.source.v1alpha1.Integration.MetadataEntryRmetadata
+user_id (	RuserId7
 	DataEntry
 key (	Rkey
 value (	Rvalue:8;
@@ -38,13 +39,14 @@ Repository
 fullname (	Rfullname 
 description (	Rdescription
 fork (Rfork
-	clone_url (	RcloneUrl"¢
+	clone_url (	RcloneUrl"»
 CreateIntegrationRequest\'
 organization_id (RorganizationId
 name (	Rname5
 provider (2.source.v1alpha1.ProviderRproviderG
 data (23.source.v1alpha1.CreateIntegrationRequest.DataEntryRdataS
-metadata (27.source.v1alpha1.CreateIntegrationRequest.MetadataEntryRmetadata7
+metadata (27.source.v1alpha1.CreateIntegrationRequest.MetadataEntryRmetadata
+user_id (	RuserId7
 	DataEntry
 key (	Rkey
 value (	Rvalue:8;
@@ -53,9 +55,10 @@ Repository
 value (	Rvalue:8"C
 CreateIntegrationResponse
 msg (	Rmsg
-error (	Rerror"B
+error (	Rerror"[
 ListIntegrationsRequest\'
-organization_id (RorganizationId"\\
+organization_id (RorganizationId
+user_id (	RuserId"\\
 ListIntegrationsResponse@
 integrations (2.source.v1alpha1.IntegrationRintegrations"\'
 GetIntegrationRequest

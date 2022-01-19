@@ -558,7 +558,8 @@ proto.source.v1alpha1.Integration.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     provider: (f = msg.getProvider()) && proto.source.v1alpha1.Provider.toObject(includeInstance, f),
     dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, undefined) : [],
-    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : []
+    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
+    userId: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -623,6 +624,10 @@ proto.source.v1alpha1.Integration.deserializeBinaryFromReader = function(msg, re
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
       break;
     default:
       reader.skipField();
@@ -689,6 +694,13 @@ proto.source.v1alpha1.Integration.serializeBinaryToWriter = function(message, wr
   f = message.getMetadataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
   }
 };
 
@@ -826,6 +838,24 @@ proto.source.v1alpha1.Integration.prototype.getMetadataMap = function(opt_noLazy
 proto.source.v1alpha1.Integration.prototype.clearMetadataMap = function() {
   this.getMetadataMap().clear();
   return this;};
+
+
+/**
+ * optional string user_id = 7;
+ * @return {string}
+ */
+proto.source.v1alpha1.Integration.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.source.v1alpha1.Integration} returns this
+ */
+proto.source.v1alpha1.Integration.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
 
 
 
@@ -1144,7 +1174,8 @@ proto.source.v1alpha1.CreateIntegrationRequest.toObject = function(includeInstan
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     provider: (f = msg.getProvider()) && proto.source.v1alpha1.Provider.toObject(includeInstance, f),
     dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, undefined) : [],
-    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : []
+    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
+    userId: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -1206,6 +1237,10 @@ proto.source.v1alpha1.CreateIntegrationRequest.deserializeBinaryFromReader = fun
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1264,6 +1299,13 @@ proto.source.v1alpha1.CreateIntegrationRequest.serializeBinaryToWriter = functio
   f = message.getMetadataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
   }
 };
 
@@ -1383,6 +1425,24 @@ proto.source.v1alpha1.CreateIntegrationRequest.prototype.getMetadataMap = functi
 proto.source.v1alpha1.CreateIntegrationRequest.prototype.clearMetadataMap = function() {
   this.getMetadataMap().clear();
   return this;};
+
+
+/**
+ * optional string user_id = 7;
+ * @return {string}
+ */
+proto.source.v1alpha1.CreateIntegrationRequest.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.source.v1alpha1.CreateIntegrationRequest} returns this
+ */
+proto.source.v1alpha1.CreateIntegrationRequest.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
 
 
 
@@ -1577,7 +1637,8 @@ proto.source.v1alpha1.ListIntegrationsRequest.prototype.toObject = function(opt_
  */
 proto.source.v1alpha1.ListIntegrationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1618,6 +1679,10 @@ proto.source.v1alpha1.ListIntegrationsRequest.deserializeBinaryFromReader = func
       var value = /** @type {number} */ (reader.readUint32());
       msg.setOrganizationId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1654,6 +1719,13 @@ proto.source.v1alpha1.ListIntegrationsRequest.serializeBinaryToWriter = function
       f
     );
   }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -1672,6 +1744,24 @@ proto.source.v1alpha1.ListIntegrationsRequest.prototype.getOrganizationId = func
  */
 proto.source.v1alpha1.ListIntegrationsRequest.prototype.setOrganizationId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string user_id = 2;
+ * @return {string}
+ */
+proto.source.v1alpha1.ListIntegrationsRequest.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.source.v1alpha1.ListIntegrationsRequest} returns this
+ */
+proto.source.v1alpha1.ListIntegrationsRequest.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

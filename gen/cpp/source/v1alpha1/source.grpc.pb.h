@@ -37,7 +37,6 @@ class SourceService final {
    public:
     virtual ~StubInterface() {}
     // PROVIDERS
-    //
     virtual ::grpc::Status CreateProvider(::grpc::ClientContext* context, const ::source::v1alpha1::CreateProviderRequest& request, ::source::v1alpha1::CreateProviderResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::CreateProviderResponse>> AsyncCreateProvider(::grpc::ClientContext* context, const ::source::v1alpha1::CreateProviderRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::CreateProviderResponse>>(AsyncCreateProviderRaw(context, request, cq));
@@ -74,7 +73,6 @@ class SourceService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::DeleteProviderResponse>>(PrepareAsyncDeleteProviderRaw(context, request, cq));
     }
     // INTEGRATIONS
-    //
     virtual ::grpc::Status CreateIntegration(::grpc::ClientContext* context, const ::source::v1alpha1::CreateIntegrationRequest& request, ::source::v1alpha1::CreateIntegrationResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::CreateIntegrationResponse>> AsyncCreateIntegration(::grpc::ClientContext* context, const ::source::v1alpha1::CreateIntegrationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::CreateIntegrationResponse>>(AsyncCreateIntegrationRaw(context, request, cq));
@@ -114,14 +112,12 @@ class SourceService final {
      public:
       virtual ~experimental_async_interface() {}
       // PROVIDERS
-      //
       virtual void CreateProvider(::grpc::ClientContext* context, const ::source::v1alpha1::CreateProviderRequest* request, ::source::v1alpha1::CreateProviderResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListProviders(::grpc::ClientContext* context, const ::source::v1alpha1::ListProvidersRequest* request, ::source::v1alpha1::ListProvidersResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetProvider(::grpc::ClientContext* context, const ::source::v1alpha1::GetProviderRequest* request, ::source::v1alpha1::GetProviderResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateProvider(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateProviderRequest* request, ::source::v1alpha1::UpdateProviderResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteProvider(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteProviderRequest* request, ::source::v1alpha1::DeleteProviderResponse* response, std::function<void(::grpc::Status)>) = 0;
       // INTEGRATIONS
-      //
       virtual void CreateIntegration(::grpc::ClientContext* context, const ::source::v1alpha1::CreateIntegrationRequest* request, ::source::v1alpha1::CreateIntegrationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListIntegrations(::grpc::ClientContext* context, const ::source::v1alpha1::ListIntegrationsRequest* request, ::source::v1alpha1::ListIntegrationsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetIntegration(::grpc::ClientContext* context, const ::source::v1alpha1::GetIntegrationRequest* request, ::source::v1alpha1::GetIntegrationResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -286,14 +282,12 @@ class SourceService final {
     Service();
     virtual ~Service();
     // PROVIDERS
-    //
     virtual ::grpc::Status CreateProvider(::grpc::ServerContext* context, const ::source::v1alpha1::CreateProviderRequest* request, ::source::v1alpha1::CreateProviderResponse* response);
     virtual ::grpc::Status ListProviders(::grpc::ServerContext* context, const ::source::v1alpha1::ListProvidersRequest* request, ::source::v1alpha1::ListProvidersResponse* response);
     virtual ::grpc::Status GetProvider(::grpc::ServerContext* context, const ::source::v1alpha1::GetProviderRequest* request, ::source::v1alpha1::GetProviderResponse* response);
     virtual ::grpc::Status UpdateProvider(::grpc::ServerContext* context, const ::source::v1alpha1::UpdateProviderRequest* request, ::source::v1alpha1::UpdateProviderResponse* response);
     virtual ::grpc::Status DeleteProvider(::grpc::ServerContext* context, const ::source::v1alpha1::DeleteProviderRequest* request, ::source::v1alpha1::DeleteProviderResponse* response);
     // INTEGRATIONS
-    //
     virtual ::grpc::Status CreateIntegration(::grpc::ServerContext* context, const ::source::v1alpha1::CreateIntegrationRequest* request, ::source::v1alpha1::CreateIntegrationResponse* response);
     virtual ::grpc::Status ListIntegrations(::grpc::ServerContext* context, const ::source::v1alpha1::ListIntegrationsRequest* request, ::source::v1alpha1::ListIntegrationsResponse* response);
     virtual ::grpc::Status GetIntegration(::grpc::ServerContext* context, const ::source::v1alpha1::GetIntegrationRequest* request, ::source::v1alpha1::GetIntegrationResponse* response);

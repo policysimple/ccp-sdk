@@ -8,7 +8,6 @@ package source.v1alpha1;
 service SourceService {
 
     //PROVIDERS
-
     rpc CreateProvider(CreateProviderRequest) returns (CreateProviderResponse);
     rpc ListProviders(ListProvidersRequest) returns (ListProvidersResponse);
     rpc GetProvider(GetProviderRequest) returns (GetProviderResponse);
@@ -16,7 +15,6 @@ service SourceService {
     rpc DeleteProvider(DeleteProviderRequest) returns (DeleteProviderResponse);
 
     //INTEGRATIONS
-
     rpc CreateIntegration(CreateIntegrationRequest) returns (CreateIntegrationResponse);
     rpc ListIntegrations(ListIntegrationsRequest) returns (ListIntegrationsResponse);
     rpc GetIntegration(GetIntegrationRequest) returns (GetIntegrationResponse);
@@ -43,7 +41,7 @@ message Integration {
     Provider provider = 4;
     map<string, string> data = 5;
     map<string, string> metadata = 6;
-
+    string user_id = 7;
 }
 
 message Repository {
@@ -62,6 +60,7 @@ message CreateIntegrationRequest {
     Provider provider = 4;
     map<string, string> data = 5;
     map<string, string> metadata = 6;
+    string user_id = 7;
 }
 
 message CreateIntegrationResponse {
@@ -71,6 +70,7 @@ message CreateIntegrationResponse {
 
 message ListIntegrationsRequest {
     uint32 organization_id = 1;
+    string user_id = 2;
 }
 
 message ListIntegrationsResponse{
