@@ -20,6 +20,643 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type DetailRepository struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id             string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name           string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Private        bool   `protobuf:"varint,3,opt,name=private,proto3" json:"private,omitempty"`
+	Fullname       string `protobuf:"bytes,4,opt,name=fullname,proto3" json:"fullname,omitempty"`
+	Description    string `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
+	Fork           bool   `protobuf:"varint,6,opt,name=fork,proto3" json:"fork,omitempty"`
+	CloneUrl       string `protobuf:"bytes,7,opt,name=clone_url,json=cloneUrl,proto3" json:"clone_url,omitempty"`
+	ProjectId      uint32 `protobuf:"varint,8,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
+	OrganizationId uint32 `protobuf:"varint,9,opt,name=organization_id,json=organizationId,proto3" json:"organization_id,omitempty"`
+}
+
+func (x *DetailRepository) Reset() {
+	*x = DetailRepository{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_source_v1alpha1_source_proto_msgTypes[0]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DetailRepository) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DetailRepository) ProtoMessage() {}
+
+func (x *DetailRepository) ProtoReflect() protoreflect.Message {
+	mi := &file_source_v1alpha1_source_proto_msgTypes[0]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DetailRepository.ProtoReflect.Descriptor instead.
+func (*DetailRepository) Descriptor() ([]byte, []int) {
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *DetailRepository) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DetailRepository) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *DetailRepository) GetPrivate() bool {
+	if x != nil {
+		return x.Private
+	}
+	return false
+}
+
+func (x *DetailRepository) GetFullname() string {
+	if x != nil {
+		return x.Fullname
+	}
+	return ""
+}
+
+func (x *DetailRepository) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *DetailRepository) GetFork() bool {
+	if x != nil {
+		return x.Fork
+	}
+	return false
+}
+
+func (x *DetailRepository) GetCloneUrl() string {
+	if x != nil {
+		return x.CloneUrl
+	}
+	return ""
+}
+
+func (x *DetailRepository) GetProjectId() uint32 {
+	if x != nil {
+		return x.ProjectId
+	}
+	return 0
+}
+
+func (x *DetailRepository) GetOrganizationId() uint32 {
+	if x != nil {
+		return x.OrganizationId
+	}
+	return 0
+}
+
+type CreateRepositoryRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Repository     *DetailRepository `protobuf:"bytes,1,opt,name=repository,proto3" json:"repository,omitempty"`
+	ProjectId      uint32            `protobuf:"varint,2,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
+	OrganizationId uint32            `protobuf:"varint,3,opt,name=organization_id,json=organizationId,proto3" json:"organization_id,omitempty"`
+}
+
+func (x *CreateRepositoryRequest) Reset() {
+	*x = CreateRepositoryRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_source_v1alpha1_source_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateRepositoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateRepositoryRequest) ProtoMessage() {}
+
+func (x *CreateRepositoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_source_v1alpha1_source_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateRepositoryRequest.ProtoReflect.Descriptor instead.
+func (*CreateRepositoryRequest) Descriptor() ([]byte, []int) {
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *CreateRepositoryRequest) GetRepository() *DetailRepository {
+	if x != nil {
+		return x.Repository
+	}
+	return nil
+}
+
+func (x *CreateRepositoryRequest) GetProjectId() uint32 {
+	if x != nil {
+		return x.ProjectId
+	}
+	return 0
+}
+
+func (x *CreateRepositoryRequest) GetOrganizationId() uint32 {
+	if x != nil {
+		return x.OrganizationId
+	}
+	return 0
+}
+
+type CreateRepositoryResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Msg   string `protobuf:"bytes,1,opt,name=msg,proto3" json:"msg,omitempty"`
+	Error string `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+}
+
+func (x *CreateRepositoryResponse) Reset() {
+	*x = CreateRepositoryResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_source_v1alpha1_source_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateRepositoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateRepositoryResponse) ProtoMessage() {}
+
+func (x *CreateRepositoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_source_v1alpha1_source_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateRepositoryResponse.ProtoReflect.Descriptor instead.
+func (*CreateRepositoryResponse) Descriptor() ([]byte, []int) {
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *CreateRepositoryResponse) GetMsg() string {
+	if x != nil {
+		return x.Msg
+	}
+	return ""
+}
+
+func (x *CreateRepositoryResponse) GetError() string {
+	if x != nil {
+		return x.Error
+	}
+	return ""
+}
+
+type ListRepositoriesRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ProjectId      uint32 `protobuf:"varint,1,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
+	OrganizationId uint32 `protobuf:"varint,2,opt,name=organization_id,json=organizationId,proto3" json:"organization_id,omitempty"`
+}
+
+func (x *ListRepositoriesRequest) Reset() {
+	*x = ListRepositoriesRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_source_v1alpha1_source_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListRepositoriesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListRepositoriesRequest) ProtoMessage() {}
+
+func (x *ListRepositoriesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_source_v1alpha1_source_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListRepositoriesRequest.ProtoReflect.Descriptor instead.
+func (*ListRepositoriesRequest) Descriptor() ([]byte, []int) {
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ListRepositoriesRequest) GetProjectId() uint32 {
+	if x != nil {
+		return x.ProjectId
+	}
+	return 0
+}
+
+func (x *ListRepositoriesRequest) GetOrganizationId() uint32 {
+	if x != nil {
+		return x.OrganizationId
+	}
+	return 0
+}
+
+type ListRepositoriesResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Repositories []*DetailRepository `protobuf:"bytes,1,rep,name=repositories,proto3" json:"repositories,omitempty"`
+}
+
+func (x *ListRepositoriesResponse) Reset() {
+	*x = ListRepositoriesResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_source_v1alpha1_source_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListRepositoriesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListRepositoriesResponse) ProtoMessage() {}
+
+func (x *ListRepositoriesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_source_v1alpha1_source_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListRepositoriesResponse.ProtoReflect.Descriptor instead.
+func (*ListRepositoriesResponse) Descriptor() ([]byte, []int) {
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ListRepositoriesResponse) GetRepositories() []*DetailRepository {
+	if x != nil {
+		return x.Repositories
+	}
+	return nil
+}
+
+type GetRepositoryRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RepositoryId string `protobuf:"bytes,1,opt,name=repository_id,json=repositoryId,proto3" json:"repository_id,omitempty"`
+}
+
+func (x *GetRepositoryRequest) Reset() {
+	*x = GetRepositoryRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_source_v1alpha1_source_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetRepositoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRepositoryRequest) ProtoMessage() {}
+
+func (x *GetRepositoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_source_v1alpha1_source_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetRepositoryRequest.ProtoReflect.Descriptor instead.
+func (*GetRepositoryRequest) Descriptor() ([]byte, []int) {
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *GetRepositoryRequest) GetRepositoryId() string {
+	if x != nil {
+		return x.RepositoryId
+	}
+	return ""
+}
+
+type GetRepositoryResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Repository *DetailRepository `protobuf:"bytes,1,opt,name=repository,proto3" json:"repository,omitempty"`
+}
+
+func (x *GetRepositoryResponse) Reset() {
+	*x = GetRepositoryResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_source_v1alpha1_source_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetRepositoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRepositoryResponse) ProtoMessage() {}
+
+func (x *GetRepositoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_source_v1alpha1_source_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetRepositoryResponse.ProtoReflect.Descriptor instead.
+func (*GetRepositoryResponse) Descriptor() ([]byte, []int) {
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *GetRepositoryResponse) GetRepository() *DetailRepository {
+	if x != nil {
+		return x.Repository
+	}
+	return nil
+}
+
+type DeleteRepositoryRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RepositoryId string `protobuf:"bytes,1,opt,name=repository_id,json=repositoryId,proto3" json:"repository_id,omitempty"`
+}
+
+func (x *DeleteRepositoryRequest) Reset() {
+	*x = DeleteRepositoryRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_source_v1alpha1_source_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteRepositoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteRepositoryRequest) ProtoMessage() {}
+
+func (x *DeleteRepositoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_source_v1alpha1_source_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteRepositoryRequest.ProtoReflect.Descriptor instead.
+func (*DeleteRepositoryRequest) Descriptor() ([]byte, []int) {
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *DeleteRepositoryRequest) GetRepositoryId() string {
+	if x != nil {
+		return x.RepositoryId
+	}
+	return ""
+}
+
+type DeleteRepositoryResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Msg   string `protobuf:"bytes,1,opt,name=msg,proto3" json:"msg,omitempty"`
+	Error string `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+}
+
+func (x *DeleteRepositoryResponse) Reset() {
+	*x = DeleteRepositoryResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_source_v1alpha1_source_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteRepositoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteRepositoryResponse) ProtoMessage() {}
+
+func (x *DeleteRepositoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_source_v1alpha1_source_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteRepositoryResponse.ProtoReflect.Descriptor instead.
+func (*DeleteRepositoryResponse) Descriptor() ([]byte, []int) {
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *DeleteRepositoryResponse) GetMsg() string {
+	if x != nil {
+		return x.Msg
+	}
+	return ""
+}
+
+func (x *DeleteRepositoryResponse) GetError() string {
+	if x != nil {
+		return x.Error
+	}
+	return ""
+}
+
+type UpdateRepositoryRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RepositoryId string            `protobuf:"bytes,1,opt,name=repository_id,json=repositoryId,proto3" json:"repository_id,omitempty"`
+	Repository   *DetailRepository `protobuf:"bytes,2,opt,name=repository,proto3" json:"repository,omitempty"`
+}
+
+func (x *UpdateRepositoryRequest) Reset() {
+	*x = UpdateRepositoryRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_source_v1alpha1_source_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateRepositoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateRepositoryRequest) ProtoMessage() {}
+
+func (x *UpdateRepositoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_source_v1alpha1_source_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateRepositoryRequest.ProtoReflect.Descriptor instead.
+func (*UpdateRepositoryRequest) Descriptor() ([]byte, []int) {
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *UpdateRepositoryRequest) GetRepositoryId() string {
+	if x != nil {
+		return x.RepositoryId
+	}
+	return ""
+}
+
+func (x *UpdateRepositoryRequest) GetRepository() *DetailRepository {
+	if x != nil {
+		return x.Repository
+	}
+	return nil
+}
+
+type UpdateRepositoryResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Msg   string `protobuf:"bytes,1,opt,name=msg,proto3" json:"msg,omitempty"`
+	Error string `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+}
+
+func (x *UpdateRepositoryResponse) Reset() {
+	*x = UpdateRepositoryResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_source_v1alpha1_source_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateRepositoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateRepositoryResponse) ProtoMessage() {}
+
+func (x *UpdateRepositoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_source_v1alpha1_source_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateRepositoryResponse.ProtoReflect.Descriptor instead.
+func (*UpdateRepositoryResponse) Descriptor() ([]byte, []int) {
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *UpdateRepositoryResponse) GetMsg() string {
+	if x != nil {
+		return x.Msg
+	}
+	return ""
+}
+
+func (x *UpdateRepositoryResponse) GetError() string {
+	if x != nil {
+		return x.Error
+	}
+	return ""
+}
+
 type Integration struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -37,7 +674,7 @@ type Integration struct {
 func (x *Integration) Reset() {
 	*x = Integration{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[0]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -50,7 +687,7 @@ func (x *Integration) String() string {
 func (*Integration) ProtoMessage() {}
 
 func (x *Integration) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[0]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -63,7 +700,7 @@ func (x *Integration) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Integration.ProtoReflect.Descriptor instead.
 func (*Integration) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{0}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *Integration) GetId() string {
@@ -131,7 +768,7 @@ type Repository struct {
 func (x *Repository) Reset() {
 	*x = Repository{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[1]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -144,7 +781,7 @@ func (x *Repository) String() string {
 func (*Repository) ProtoMessage() {}
 
 func (x *Repository) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[1]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -157,7 +794,7 @@ func (x *Repository) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Repository.ProtoReflect.Descriptor instead.
 func (*Repository) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{1}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *Repository) GetName() string {
@@ -219,7 +856,7 @@ type CreateIntegrationRequest struct {
 func (x *CreateIntegrationRequest) Reset() {
 	*x = CreateIntegrationRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[2]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -232,7 +869,7 @@ func (x *CreateIntegrationRequest) String() string {
 func (*CreateIntegrationRequest) ProtoMessage() {}
 
 func (x *CreateIntegrationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[2]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -245,7 +882,7 @@ func (x *CreateIntegrationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateIntegrationRequest.ProtoReflect.Descriptor instead.
 func (*CreateIntegrationRequest) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{2}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *CreateIntegrationRequest) GetOrganizationId() uint32 {
@@ -302,7 +939,7 @@ type CreateIntegrationResponse struct {
 func (x *CreateIntegrationResponse) Reset() {
 	*x = CreateIntegrationResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[3]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -315,7 +952,7 @@ func (x *CreateIntegrationResponse) String() string {
 func (*CreateIntegrationResponse) ProtoMessage() {}
 
 func (x *CreateIntegrationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[3]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -328,7 +965,7 @@ func (x *CreateIntegrationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateIntegrationResponse.ProtoReflect.Descriptor instead.
 func (*CreateIntegrationResponse) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{3}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *CreateIntegrationResponse) GetMsg() string {
@@ -357,7 +994,7 @@ type ListIntegrationsRequest struct {
 func (x *ListIntegrationsRequest) Reset() {
 	*x = ListIntegrationsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[4]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -370,7 +1007,7 @@ func (x *ListIntegrationsRequest) String() string {
 func (*ListIntegrationsRequest) ProtoMessage() {}
 
 func (x *ListIntegrationsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[4]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -383,7 +1020,7 @@ func (x *ListIntegrationsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListIntegrationsRequest.ProtoReflect.Descriptor instead.
 func (*ListIntegrationsRequest) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{4}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ListIntegrationsRequest) GetOrganizationId() uint32 {
@@ -411,7 +1048,7 @@ type ListIntegrationsResponse struct {
 func (x *ListIntegrationsResponse) Reset() {
 	*x = ListIntegrationsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[5]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -424,7 +1061,7 @@ func (x *ListIntegrationsResponse) String() string {
 func (*ListIntegrationsResponse) ProtoMessage() {}
 
 func (x *ListIntegrationsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[5]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -437,7 +1074,7 @@ func (x *ListIntegrationsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListIntegrationsResponse.ProtoReflect.Descriptor instead.
 func (*ListIntegrationsResponse) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{5}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ListIntegrationsResponse) GetIntegrations() []*Integration {
@@ -458,7 +1095,7 @@ type GetIntegrationRequest struct {
 func (x *GetIntegrationRequest) Reset() {
 	*x = GetIntegrationRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[6]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -471,7 +1108,7 @@ func (x *GetIntegrationRequest) String() string {
 func (*GetIntegrationRequest) ProtoMessage() {}
 
 func (x *GetIntegrationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[6]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -484,7 +1121,7 @@ func (x *GetIntegrationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetIntegrationRequest.ProtoReflect.Descriptor instead.
 func (*GetIntegrationRequest) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{6}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *GetIntegrationRequest) GetId() string {
@@ -506,7 +1143,7 @@ type GetIntegrationResponse struct {
 func (x *GetIntegrationResponse) Reset() {
 	*x = GetIntegrationResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[7]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -519,7 +1156,7 @@ func (x *GetIntegrationResponse) String() string {
 func (*GetIntegrationResponse) ProtoMessage() {}
 
 func (x *GetIntegrationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[7]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -532,7 +1169,7 @@ func (x *GetIntegrationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetIntegrationResponse.ProtoReflect.Descriptor instead.
 func (*GetIntegrationResponse) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{7}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *GetIntegrationResponse) GetIntegration() *Integration {
@@ -561,7 +1198,7 @@ type UpdateIntegrationRequest struct {
 func (x *UpdateIntegrationRequest) Reset() {
 	*x = UpdateIntegrationRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[8]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -574,7 +1211,7 @@ func (x *UpdateIntegrationRequest) String() string {
 func (*UpdateIntegrationRequest) ProtoMessage() {}
 
 func (x *UpdateIntegrationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[8]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -587,7 +1224,7 @@ func (x *UpdateIntegrationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateIntegrationRequest.ProtoReflect.Descriptor instead.
 func (*UpdateIntegrationRequest) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{8}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *UpdateIntegrationRequest) GetId() string {
@@ -616,7 +1253,7 @@ type UpdateIntegrationResponse struct {
 func (x *UpdateIntegrationResponse) Reset() {
 	*x = UpdateIntegrationResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[9]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -629,7 +1266,7 @@ func (x *UpdateIntegrationResponse) String() string {
 func (*UpdateIntegrationResponse) ProtoMessage() {}
 
 func (x *UpdateIntegrationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[9]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -642,7 +1279,7 @@ func (x *UpdateIntegrationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateIntegrationResponse.ProtoReflect.Descriptor instead.
 func (*UpdateIntegrationResponse) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{9}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *UpdateIntegrationResponse) GetMsg() string {
@@ -670,7 +1307,7 @@ type DeleteIntegrationRequest struct {
 func (x *DeleteIntegrationRequest) Reset() {
 	*x = DeleteIntegrationRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[10]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -683,7 +1320,7 @@ func (x *DeleteIntegrationRequest) String() string {
 func (*DeleteIntegrationRequest) ProtoMessage() {}
 
 func (x *DeleteIntegrationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[10]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -696,7 +1333,7 @@ func (x *DeleteIntegrationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteIntegrationRequest.ProtoReflect.Descriptor instead.
 func (*DeleteIntegrationRequest) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{10}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *DeleteIntegrationRequest) GetId() string {
@@ -718,7 +1355,7 @@ type DeleteIntegrationResponse struct {
 func (x *DeleteIntegrationResponse) Reset() {
 	*x = DeleteIntegrationResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[11]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -731,7 +1368,7 @@ func (x *DeleteIntegrationResponse) String() string {
 func (*DeleteIntegrationResponse) ProtoMessage() {}
 
 func (x *DeleteIntegrationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[11]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -744,7 +1381,7 @@ func (x *DeleteIntegrationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteIntegrationResponse.ProtoReflect.Descriptor instead.
 func (*DeleteIntegrationResponse) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{11}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *DeleteIntegrationResponse) GetMsg() string {
@@ -777,7 +1414,7 @@ type Provider struct {
 func (x *Provider) Reset() {
 	*x = Provider{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[12]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -790,7 +1427,7 @@ func (x *Provider) String() string {
 func (*Provider) ProtoMessage() {}
 
 func (x *Provider) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[12]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -803,7 +1440,7 @@ func (x *Provider) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Provider.ProtoReflect.Descriptor instead.
 func (*Provider) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{12}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *Provider) GetId() string {
@@ -859,7 +1496,7 @@ type DeleteProviderRequest struct {
 func (x *DeleteProviderRequest) Reset() {
 	*x = DeleteProviderRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[13]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -872,7 +1509,7 @@ func (x *DeleteProviderRequest) String() string {
 func (*DeleteProviderRequest) ProtoMessage() {}
 
 func (x *DeleteProviderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[13]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -885,7 +1522,7 @@ func (x *DeleteProviderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteProviderRequest.ProtoReflect.Descriptor instead.
 func (*DeleteProviderRequest) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{13}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *DeleteProviderRequest) GetId() string {
@@ -907,7 +1544,7 @@ type DeleteProviderResponse struct {
 func (x *DeleteProviderResponse) Reset() {
 	*x = DeleteProviderResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[14]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -920,7 +1557,7 @@ func (x *DeleteProviderResponse) String() string {
 func (*DeleteProviderResponse) ProtoMessage() {}
 
 func (x *DeleteProviderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[14]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -933,7 +1570,7 @@ func (x *DeleteProviderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteProviderResponse.ProtoReflect.Descriptor instead.
 func (*DeleteProviderResponse) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{14}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *DeleteProviderResponse) GetMsg() string {
@@ -962,7 +1599,7 @@ type UpdateProviderRequest struct {
 func (x *UpdateProviderRequest) Reset() {
 	*x = UpdateProviderRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[15]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -975,7 +1612,7 @@ func (x *UpdateProviderRequest) String() string {
 func (*UpdateProviderRequest) ProtoMessage() {}
 
 func (x *UpdateProviderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[15]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -988,7 +1625,7 @@ func (x *UpdateProviderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateProviderRequest.ProtoReflect.Descriptor instead.
 func (*UpdateProviderRequest) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{15}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *UpdateProviderRequest) GetId() string {
@@ -1017,7 +1654,7 @@ type UpdateProviderResponse struct {
 func (x *UpdateProviderResponse) Reset() {
 	*x = UpdateProviderResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[16]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1030,7 +1667,7 @@ func (x *UpdateProviderResponse) String() string {
 func (*UpdateProviderResponse) ProtoMessage() {}
 
 func (x *UpdateProviderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[16]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1043,7 +1680,7 @@ func (x *UpdateProviderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateProviderResponse.ProtoReflect.Descriptor instead.
 func (*UpdateProviderResponse) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{16}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *UpdateProviderResponse) GetMsg() string {
@@ -1071,7 +1708,7 @@ type GetProviderRequest struct {
 func (x *GetProviderRequest) Reset() {
 	*x = GetProviderRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[17]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1084,7 +1721,7 @@ func (x *GetProviderRequest) String() string {
 func (*GetProviderRequest) ProtoMessage() {}
 
 func (x *GetProviderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[17]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1097,7 +1734,7 @@ func (x *GetProviderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetProviderRequest.ProtoReflect.Descriptor instead.
 func (*GetProviderRequest) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{17}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *GetProviderRequest) GetId() string {
@@ -1118,7 +1755,7 @@ type GetProviderResponse struct {
 func (x *GetProviderResponse) Reset() {
 	*x = GetProviderResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[18]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1131,7 +1768,7 @@ func (x *GetProviderResponse) String() string {
 func (*GetProviderResponse) ProtoMessage() {}
 
 func (x *GetProviderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[18]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1144,7 +1781,7 @@ func (x *GetProviderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetProviderResponse.ProtoReflect.Descriptor instead.
 func (*GetProviderResponse) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{18}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *GetProviderResponse) GetProvider() *Provider {
@@ -1169,7 +1806,7 @@ type CreateProviderRequest struct {
 func (x *CreateProviderRequest) Reset() {
 	*x = CreateProviderRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[19]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1182,7 +1819,7 @@ func (x *CreateProviderRequest) String() string {
 func (*CreateProviderRequest) ProtoMessage() {}
 
 func (x *CreateProviderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[19]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1195,7 +1832,7 @@ func (x *CreateProviderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateProviderRequest.ProtoReflect.Descriptor instead.
 func (*CreateProviderRequest) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{19}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *CreateProviderRequest) GetName() string {
@@ -1245,7 +1882,7 @@ type CreateProviderResponse struct {
 func (x *CreateProviderResponse) Reset() {
 	*x = CreateProviderResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[20]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1258,7 +1895,7 @@ func (x *CreateProviderResponse) String() string {
 func (*CreateProviderResponse) ProtoMessage() {}
 
 func (x *CreateProviderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[20]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1271,7 +1908,7 @@ func (x *CreateProviderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateProviderResponse.ProtoReflect.Descriptor instead.
 func (*CreateProviderResponse) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{20}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *CreateProviderResponse) GetMsg() string {
@@ -1297,7 +1934,7 @@ type ListProvidersRequest struct {
 func (x *ListProvidersRequest) Reset() {
 	*x = ListProvidersRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[21]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1310,7 +1947,7 @@ func (x *ListProvidersRequest) String() string {
 func (*ListProvidersRequest) ProtoMessage() {}
 
 func (x *ListProvidersRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[21]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1323,7 +1960,7 @@ func (x *ListProvidersRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListProvidersRequest.ProtoReflect.Descriptor instead.
 func (*ListProvidersRequest) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{21}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{32}
 }
 
 type ListProvidersResponse struct {
@@ -1337,7 +1974,7 @@ type ListProvidersResponse struct {
 func (x *ListProvidersResponse) Reset() {
 	*x = ListProvidersResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_source_v1alpha1_source_proto_msgTypes[22]
+		mi := &file_source_v1alpha1_source_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1350,7 +1987,7 @@ func (x *ListProvidersResponse) String() string {
 func (*ListProvidersResponse) ProtoMessage() {}
 
 func (x *ListProvidersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_source_v1alpha1_source_proto_msgTypes[22]
+	mi := &file_source_v1alpha1_source_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1363,7 +2000,7 @@ func (x *ListProvidersResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListProvidersResponse.ProtoReflect.Descriptor instead.
 func (*ListProvidersResponse) Descriptor() ([]byte, []int) {
-	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{22}
+	return file_source_v1alpha1_source_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *ListProvidersResponse) GetProviders() []*Provider {
@@ -1379,6 +2016,80 @@ var file_source_v1alpha1_source_proto_rawDesc = []byte{
 	0x0a, 0x1c, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61,
 	0x31, 0x2f, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0f,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x22,
+	0x87, 0x02, 0x0a, 0x10, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69,
+	0x74, 0x6f, 0x72, 0x79, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x70, 0x72, 0x69, 0x76,
+	0x61, 0x74, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x70, 0x72, 0x69, 0x76, 0x61,
+	0x74, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x66, 0x75, 0x6c, 0x6c, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x66, 0x75, 0x6c, 0x6c, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x20,
+	0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x05, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e,
+	0x12, 0x12, 0x0a, 0x04, 0x66, 0x6f, 0x72, 0x6b, 0x18, 0x06, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04,
+	0x66, 0x6f, 0x72, 0x6b, 0x12, 0x1b, 0x0a, 0x09, 0x63, 0x6c, 0x6f, 0x6e, 0x65, 0x5f, 0x75, 0x72,
+	0x6c, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x63, 0x6c, 0x6f, 0x6e, 0x65, 0x55, 0x72,
+	0x6c, 0x12, 0x1d, 0x0a, 0x0a, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x5f, 0x69, 0x64, 0x18,
+	0x08, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x49, 0x64,
+	0x12, 0x27, 0x0a, 0x0f, 0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x5f, 0x69, 0x64, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x0e, 0x6f, 0x72, 0x67, 0x61, 0x6e,
+	0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0xa4, 0x01, 0x0a, 0x17, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x41, 0x0a, 0x0a, 0x72, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74,
+	0x6f, 0x72, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x73, 0x6f, 0x75, 0x72,
+	0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x44, 0x65, 0x74, 0x61,
+	0x69, 0x6c, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x0a, 0x72, 0x65,
+	0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x12, 0x1d, 0x0a, 0x0a, 0x70, 0x72, 0x6f, 0x6a,
+	0x65, 0x63, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x09, 0x70, 0x72,
+	0x6f, 0x6a, 0x65, 0x63, 0x74, 0x49, 0x64, 0x12, 0x27, 0x0a, 0x0f, 0x6f, 0x72, 0x67, 0x61, 0x6e,
+	0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0d,
+	0x52, 0x0e, 0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64,
+	0x22, 0x42, 0x0a, 0x18, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69,
+	0x74, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x10, 0x0a, 0x03,
+	0x6d, 0x73, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x12, 0x14,
+	0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65,
+	0x72, 0x72, 0x6f, 0x72, 0x22, 0x61, 0x0a, 0x17, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x70, 0x6f,
+	0x73, 0x69, 0x74, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x1d, 0x0a, 0x0a, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0d, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x49, 0x64, 0x12, 0x27,
+	0x0a, 0x0f, 0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69,
+	0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x0e, 0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x61, 0x0a, 0x18, 0x4c, 0x69, 0x73, 0x74, 0x52,
+	0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x45, 0x0a, 0x0c, 0x72, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72,
+	0x69, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x73, 0x6f, 0x75, 0x72,
+	0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x44, 0x65, 0x74, 0x61,
+	0x69, 0x6c, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x0c, 0x72, 0x65,
+	0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x22, 0x3b, 0x0a, 0x14, 0x47, 0x65,
+	0x74, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x23, 0x0a, 0x0d, 0x72, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x72, 0x65, 0x70, 0x6f, 0x73,
+	0x69, 0x74, 0x6f, 0x72, 0x79, 0x49, 0x64, 0x22, 0x5a, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x52, 0x65,
+	0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x41, 0x0a, 0x0a, 0x72, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e, 0x76, 0x31,
+	0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x70,
+	0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x0a, 0x72, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74,
+	0x6f, 0x72, 0x79, 0x22, 0x3e, 0x0a, 0x17, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x70,
+	0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x23,
+	0x0a, 0x0d, 0x72, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x72, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72,
+	0x79, 0x49, 0x64, 0x22, 0x42, 0x0a, 0x18, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x70,
+	0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73,
+	0x67, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x22, 0x81, 0x01, 0x0a, 0x17, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x23, 0x0a, 0x0d, 0x72, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72,
+	0x79, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x72, 0x65, 0x70, 0x6f,
+	0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x49, 0x64, 0x12, 0x41, 0x0a, 0x0a, 0x72, 0x65, 0x70, 0x6f,
+	0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x73,
+	0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x44,
+	0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52,
+	0x0a, 0x72, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x22, 0x42, 0x0a, 0x18, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x72, 0x72,
+	0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x22,
 	0xa4, 0x03, 0x0a, 0x0b, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12,
 	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12,
 	0x27, 0x0a, 0x0f, 0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
@@ -1571,7 +2282,7 @@ var file_source_v1alpha1_source_proto_rawDesc = []byte{
 	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x37, 0x0a, 0x09, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72,
 	0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x76, 0x69, 0x64,
-	0x65, 0x72, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x73, 0x32, 0x82, 0x08,
+	0x65, 0x72, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x73, 0x32, 0x86, 0x0c,
 	0x0a, 0x0d, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12,
 	0x61, 0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65,
 	0x72, 0x12, 0x26, 0x2e, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70,
@@ -1636,10 +2347,43 @@ var file_source_v1alpha1_source_proto_rawDesc = []byte{
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e,
 	0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x49,
 	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x42, 0x32, 0x5a, 0x30, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2f, 0x63, 0x63, 0x70, 0x2d, 0x73, 0x64, 0x6b, 0x2f,
-	0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2f, 0x76, 0x31,
-	0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x65, 0x12, 0x67, 0x0a, 0x10, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x70, 0x6f,
+	0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x12, 0x28, 0x2e, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e,
+	0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52,
+	0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x29, 0x2e, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68,
+	0x61, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74,
+	0x6f, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x67, 0x0a, 0x10, 0x4c,
+	0x69, 0x73, 0x74, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x12,
+	0x28, 0x2e, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61,
+	0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x69,
+	0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x29, 0x2e, 0x73, 0x6f, 0x75, 0x72,
+	0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74,
+	0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5e, 0x0a, 0x0d, 0x47, 0x65, 0x74, 0x52, 0x65, 0x70, 0x6f, 0x73,
+	0x69, 0x74, 0x6f, 0x72, 0x79, 0x12, 0x25, 0x2e, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e, 0x76,
+	0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x70, 0x6f, 0x73,
+	0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x26, 0x2e, 0x73,
+	0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x47,
+	0x65, 0x74, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x67, 0x0a, 0x10, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65,
+	0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x12, 0x28, 0x2e, 0x73, 0x6f, 0x75, 0x72, 0x63,
+	0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74,
+	0x65, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x29, 0x2e, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c,
+	0x70, 0x68, 0x61, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x70, 0x6f, 0x73,
+	0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x67, 0x0a,
+	0x10, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72,
+	0x79, 0x12, 0x28, 0x2e, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70,
+	0x68, 0x61, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69,
+	0x74, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x29, 0x2e, 0x73, 0x6f,
+	0x75, 0x72, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x6f, 0x72, 0x79, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x32, 0x5a, 0x30, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2f, 0x63, 0x63, 0x70, 0x2d,
+	0x73, 0x64, 0x6b, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x73, 0x6f, 0x75, 0x72, 0x63,
+	0x65, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -1654,83 +2398,108 @@ func file_source_v1alpha1_source_proto_rawDescGZIP() []byte {
 	return file_source_v1alpha1_source_proto_rawDescData
 }
 
-var file_source_v1alpha1_source_proto_msgTypes = make([]protoimpl.MessageInfo, 31)
+var file_source_v1alpha1_source_proto_msgTypes = make([]protoimpl.MessageInfo, 42)
 var file_source_v1alpha1_source_proto_goTypes = []interface{}{
-	(*Integration)(nil),               // 0: source.v1alpha1.Integration
-	(*Repository)(nil),                // 1: source.v1alpha1.Repository
-	(*CreateIntegrationRequest)(nil),  // 2: source.v1alpha1.CreateIntegrationRequest
-	(*CreateIntegrationResponse)(nil), // 3: source.v1alpha1.CreateIntegrationResponse
-	(*ListIntegrationsRequest)(nil),   // 4: source.v1alpha1.ListIntegrationsRequest
-	(*ListIntegrationsResponse)(nil),  // 5: source.v1alpha1.ListIntegrationsResponse
-	(*GetIntegrationRequest)(nil),     // 6: source.v1alpha1.GetIntegrationRequest
-	(*GetIntegrationResponse)(nil),    // 7: source.v1alpha1.GetIntegrationResponse
-	(*UpdateIntegrationRequest)(nil),  // 8: source.v1alpha1.UpdateIntegrationRequest
-	(*UpdateIntegrationResponse)(nil), // 9: source.v1alpha1.UpdateIntegrationResponse
-	(*DeleteIntegrationRequest)(nil),  // 10: source.v1alpha1.DeleteIntegrationRequest
-	(*DeleteIntegrationResponse)(nil), // 11: source.v1alpha1.DeleteIntegrationResponse
-	(*Provider)(nil),                  // 12: source.v1alpha1.Provider
-	(*DeleteProviderRequest)(nil),     // 13: source.v1alpha1.DeleteProviderRequest
-	(*DeleteProviderResponse)(nil),    // 14: source.v1alpha1.DeleteProviderResponse
-	(*UpdateProviderRequest)(nil),     // 15: source.v1alpha1.UpdateProviderRequest
-	(*UpdateProviderResponse)(nil),    // 16: source.v1alpha1.UpdateProviderResponse
-	(*GetProviderRequest)(nil),        // 17: source.v1alpha1.GetProviderRequest
-	(*GetProviderResponse)(nil),       // 18: source.v1alpha1.GetProviderResponse
-	(*CreateProviderRequest)(nil),     // 19: source.v1alpha1.CreateProviderRequest
-	(*CreateProviderResponse)(nil),    // 20: source.v1alpha1.CreateProviderResponse
-	(*ListProvidersRequest)(nil),      // 21: source.v1alpha1.ListProvidersRequest
-	(*ListProvidersResponse)(nil),     // 22: source.v1alpha1.ListProvidersResponse
-	nil,                               // 23: source.v1alpha1.Integration.DataEntry
-	nil,                               // 24: source.v1alpha1.Integration.MetadataEntry
-	nil,                               // 25: source.v1alpha1.CreateIntegrationRequest.DataEntry
-	nil,                               // 26: source.v1alpha1.CreateIntegrationRequest.MetadataEntry
-	nil,                               // 27: source.v1alpha1.Provider.DataEntry
-	nil,                               // 28: source.v1alpha1.Provider.MetadataEntry
-	nil,                               // 29: source.v1alpha1.CreateProviderRequest.DataEntry
-	nil,                               // 30: source.v1alpha1.CreateProviderRequest.MetadataEntry
+	(*DetailRepository)(nil),          // 0: source.v1alpha1.DetailRepository
+	(*CreateRepositoryRequest)(nil),   // 1: source.v1alpha1.CreateRepositoryRequest
+	(*CreateRepositoryResponse)(nil),  // 2: source.v1alpha1.CreateRepositoryResponse
+	(*ListRepositoriesRequest)(nil),   // 3: source.v1alpha1.ListRepositoriesRequest
+	(*ListRepositoriesResponse)(nil),  // 4: source.v1alpha1.ListRepositoriesResponse
+	(*GetRepositoryRequest)(nil),      // 5: source.v1alpha1.GetRepositoryRequest
+	(*GetRepositoryResponse)(nil),     // 6: source.v1alpha1.GetRepositoryResponse
+	(*DeleteRepositoryRequest)(nil),   // 7: source.v1alpha1.DeleteRepositoryRequest
+	(*DeleteRepositoryResponse)(nil),  // 8: source.v1alpha1.DeleteRepositoryResponse
+	(*UpdateRepositoryRequest)(nil),   // 9: source.v1alpha1.UpdateRepositoryRequest
+	(*UpdateRepositoryResponse)(nil),  // 10: source.v1alpha1.UpdateRepositoryResponse
+	(*Integration)(nil),               // 11: source.v1alpha1.Integration
+	(*Repository)(nil),                // 12: source.v1alpha1.Repository
+	(*CreateIntegrationRequest)(nil),  // 13: source.v1alpha1.CreateIntegrationRequest
+	(*CreateIntegrationResponse)(nil), // 14: source.v1alpha1.CreateIntegrationResponse
+	(*ListIntegrationsRequest)(nil),   // 15: source.v1alpha1.ListIntegrationsRequest
+	(*ListIntegrationsResponse)(nil),  // 16: source.v1alpha1.ListIntegrationsResponse
+	(*GetIntegrationRequest)(nil),     // 17: source.v1alpha1.GetIntegrationRequest
+	(*GetIntegrationResponse)(nil),    // 18: source.v1alpha1.GetIntegrationResponse
+	(*UpdateIntegrationRequest)(nil),  // 19: source.v1alpha1.UpdateIntegrationRequest
+	(*UpdateIntegrationResponse)(nil), // 20: source.v1alpha1.UpdateIntegrationResponse
+	(*DeleteIntegrationRequest)(nil),  // 21: source.v1alpha1.DeleteIntegrationRequest
+	(*DeleteIntegrationResponse)(nil), // 22: source.v1alpha1.DeleteIntegrationResponse
+	(*Provider)(nil),                  // 23: source.v1alpha1.Provider
+	(*DeleteProviderRequest)(nil),     // 24: source.v1alpha1.DeleteProviderRequest
+	(*DeleteProviderResponse)(nil),    // 25: source.v1alpha1.DeleteProviderResponse
+	(*UpdateProviderRequest)(nil),     // 26: source.v1alpha1.UpdateProviderRequest
+	(*UpdateProviderResponse)(nil),    // 27: source.v1alpha1.UpdateProviderResponse
+	(*GetProviderRequest)(nil),        // 28: source.v1alpha1.GetProviderRequest
+	(*GetProviderResponse)(nil),       // 29: source.v1alpha1.GetProviderResponse
+	(*CreateProviderRequest)(nil),     // 30: source.v1alpha1.CreateProviderRequest
+	(*CreateProviderResponse)(nil),    // 31: source.v1alpha1.CreateProviderResponse
+	(*ListProvidersRequest)(nil),      // 32: source.v1alpha1.ListProvidersRequest
+	(*ListProvidersResponse)(nil),     // 33: source.v1alpha1.ListProvidersResponse
+	nil,                               // 34: source.v1alpha1.Integration.DataEntry
+	nil,                               // 35: source.v1alpha1.Integration.MetadataEntry
+	nil,                               // 36: source.v1alpha1.CreateIntegrationRequest.DataEntry
+	nil,                               // 37: source.v1alpha1.CreateIntegrationRequest.MetadataEntry
+	nil,                               // 38: source.v1alpha1.Provider.DataEntry
+	nil,                               // 39: source.v1alpha1.Provider.MetadataEntry
+	nil,                               // 40: source.v1alpha1.CreateProviderRequest.DataEntry
+	nil,                               // 41: source.v1alpha1.CreateProviderRequest.MetadataEntry
 }
 var file_source_v1alpha1_source_proto_depIdxs = []int32{
-	12, // 0: source.v1alpha1.Integration.provider:type_name -> source.v1alpha1.Provider
-	23, // 1: source.v1alpha1.Integration.data:type_name -> source.v1alpha1.Integration.DataEntry
-	24, // 2: source.v1alpha1.Integration.metadata:type_name -> source.v1alpha1.Integration.MetadataEntry
-	12, // 3: source.v1alpha1.CreateIntegrationRequest.provider:type_name -> source.v1alpha1.Provider
-	25, // 4: source.v1alpha1.CreateIntegrationRequest.data:type_name -> source.v1alpha1.CreateIntegrationRequest.DataEntry
-	26, // 5: source.v1alpha1.CreateIntegrationRequest.metadata:type_name -> source.v1alpha1.CreateIntegrationRequest.MetadataEntry
-	0,  // 6: source.v1alpha1.ListIntegrationsResponse.integrations:type_name -> source.v1alpha1.Integration
-	0,  // 7: source.v1alpha1.GetIntegrationResponse.integration:type_name -> source.v1alpha1.Integration
-	1,  // 8: source.v1alpha1.GetIntegrationResponse.repositories:type_name -> source.v1alpha1.Repository
-	2,  // 9: source.v1alpha1.UpdateIntegrationRequest.integrations:type_name -> source.v1alpha1.CreateIntegrationRequest
-	27, // 10: source.v1alpha1.Provider.data:type_name -> source.v1alpha1.Provider.DataEntry
-	28, // 11: source.v1alpha1.Provider.metadata:type_name -> source.v1alpha1.Provider.MetadataEntry
-	19, // 12: source.v1alpha1.UpdateProviderRequest.provider:type_name -> source.v1alpha1.CreateProviderRequest
-	12, // 13: source.v1alpha1.GetProviderResponse.provider:type_name -> source.v1alpha1.Provider
-	29, // 14: source.v1alpha1.CreateProviderRequest.data:type_name -> source.v1alpha1.CreateProviderRequest.DataEntry
-	30, // 15: source.v1alpha1.CreateProviderRequest.metadata:type_name -> source.v1alpha1.CreateProviderRequest.MetadataEntry
-	12, // 16: source.v1alpha1.ListProvidersResponse.providers:type_name -> source.v1alpha1.Provider
-	19, // 17: source.v1alpha1.SourceService.CreateProvider:input_type -> source.v1alpha1.CreateProviderRequest
-	21, // 18: source.v1alpha1.SourceService.ListProviders:input_type -> source.v1alpha1.ListProvidersRequest
-	17, // 19: source.v1alpha1.SourceService.GetProvider:input_type -> source.v1alpha1.GetProviderRequest
-	15, // 20: source.v1alpha1.SourceService.UpdateProvider:input_type -> source.v1alpha1.UpdateProviderRequest
-	13, // 21: source.v1alpha1.SourceService.DeleteProvider:input_type -> source.v1alpha1.DeleteProviderRequest
-	2,  // 22: source.v1alpha1.SourceService.CreateIntegration:input_type -> source.v1alpha1.CreateIntegrationRequest
-	4,  // 23: source.v1alpha1.SourceService.ListIntegrations:input_type -> source.v1alpha1.ListIntegrationsRequest
-	6,  // 24: source.v1alpha1.SourceService.GetIntegration:input_type -> source.v1alpha1.GetIntegrationRequest
-	8,  // 25: source.v1alpha1.SourceService.UpdateIntegration:input_type -> source.v1alpha1.UpdateIntegrationRequest
-	10, // 26: source.v1alpha1.SourceService.DeleteIntegration:input_type -> source.v1alpha1.DeleteIntegrationRequest
-	20, // 27: source.v1alpha1.SourceService.CreateProvider:output_type -> source.v1alpha1.CreateProviderResponse
-	22, // 28: source.v1alpha1.SourceService.ListProviders:output_type -> source.v1alpha1.ListProvidersResponse
-	18, // 29: source.v1alpha1.SourceService.GetProvider:output_type -> source.v1alpha1.GetProviderResponse
-	16, // 30: source.v1alpha1.SourceService.UpdateProvider:output_type -> source.v1alpha1.UpdateProviderResponse
-	14, // 31: source.v1alpha1.SourceService.DeleteProvider:output_type -> source.v1alpha1.DeleteProviderResponse
-	3,  // 32: source.v1alpha1.SourceService.CreateIntegration:output_type -> source.v1alpha1.CreateIntegrationResponse
-	5,  // 33: source.v1alpha1.SourceService.ListIntegrations:output_type -> source.v1alpha1.ListIntegrationsResponse
-	7,  // 34: source.v1alpha1.SourceService.GetIntegration:output_type -> source.v1alpha1.GetIntegrationResponse
-	9,  // 35: source.v1alpha1.SourceService.UpdateIntegration:output_type -> source.v1alpha1.UpdateIntegrationResponse
-	11, // 36: source.v1alpha1.SourceService.DeleteIntegration:output_type -> source.v1alpha1.DeleteIntegrationResponse
-	27, // [27:37] is the sub-list for method output_type
-	17, // [17:27] is the sub-list for method input_type
-	17, // [17:17] is the sub-list for extension type_name
-	17, // [17:17] is the sub-list for extension extendee
-	0,  // [0:17] is the sub-list for field type_name
+	0,  // 0: source.v1alpha1.CreateRepositoryRequest.repository:type_name -> source.v1alpha1.DetailRepository
+	0,  // 1: source.v1alpha1.ListRepositoriesResponse.repositories:type_name -> source.v1alpha1.DetailRepository
+	0,  // 2: source.v1alpha1.GetRepositoryResponse.repository:type_name -> source.v1alpha1.DetailRepository
+	0,  // 3: source.v1alpha1.UpdateRepositoryRequest.repository:type_name -> source.v1alpha1.DetailRepository
+	23, // 4: source.v1alpha1.Integration.provider:type_name -> source.v1alpha1.Provider
+	34, // 5: source.v1alpha1.Integration.data:type_name -> source.v1alpha1.Integration.DataEntry
+	35, // 6: source.v1alpha1.Integration.metadata:type_name -> source.v1alpha1.Integration.MetadataEntry
+	23, // 7: source.v1alpha1.CreateIntegrationRequest.provider:type_name -> source.v1alpha1.Provider
+	36, // 8: source.v1alpha1.CreateIntegrationRequest.data:type_name -> source.v1alpha1.CreateIntegrationRequest.DataEntry
+	37, // 9: source.v1alpha1.CreateIntegrationRequest.metadata:type_name -> source.v1alpha1.CreateIntegrationRequest.MetadataEntry
+	11, // 10: source.v1alpha1.ListIntegrationsResponse.integrations:type_name -> source.v1alpha1.Integration
+	11, // 11: source.v1alpha1.GetIntegrationResponse.integration:type_name -> source.v1alpha1.Integration
+	12, // 12: source.v1alpha1.GetIntegrationResponse.repositories:type_name -> source.v1alpha1.Repository
+	13, // 13: source.v1alpha1.UpdateIntegrationRequest.integrations:type_name -> source.v1alpha1.CreateIntegrationRequest
+	38, // 14: source.v1alpha1.Provider.data:type_name -> source.v1alpha1.Provider.DataEntry
+	39, // 15: source.v1alpha1.Provider.metadata:type_name -> source.v1alpha1.Provider.MetadataEntry
+	30, // 16: source.v1alpha1.UpdateProviderRequest.provider:type_name -> source.v1alpha1.CreateProviderRequest
+	23, // 17: source.v1alpha1.GetProviderResponse.provider:type_name -> source.v1alpha1.Provider
+	40, // 18: source.v1alpha1.CreateProviderRequest.data:type_name -> source.v1alpha1.CreateProviderRequest.DataEntry
+	41, // 19: source.v1alpha1.CreateProviderRequest.metadata:type_name -> source.v1alpha1.CreateProviderRequest.MetadataEntry
+	23, // 20: source.v1alpha1.ListProvidersResponse.providers:type_name -> source.v1alpha1.Provider
+	30, // 21: source.v1alpha1.SourceService.CreateProvider:input_type -> source.v1alpha1.CreateProviderRequest
+	32, // 22: source.v1alpha1.SourceService.ListProviders:input_type -> source.v1alpha1.ListProvidersRequest
+	28, // 23: source.v1alpha1.SourceService.GetProvider:input_type -> source.v1alpha1.GetProviderRequest
+	26, // 24: source.v1alpha1.SourceService.UpdateProvider:input_type -> source.v1alpha1.UpdateProviderRequest
+	24, // 25: source.v1alpha1.SourceService.DeleteProvider:input_type -> source.v1alpha1.DeleteProviderRequest
+	13, // 26: source.v1alpha1.SourceService.CreateIntegration:input_type -> source.v1alpha1.CreateIntegrationRequest
+	15, // 27: source.v1alpha1.SourceService.ListIntegrations:input_type -> source.v1alpha1.ListIntegrationsRequest
+	17, // 28: source.v1alpha1.SourceService.GetIntegration:input_type -> source.v1alpha1.GetIntegrationRequest
+	19, // 29: source.v1alpha1.SourceService.UpdateIntegration:input_type -> source.v1alpha1.UpdateIntegrationRequest
+	21, // 30: source.v1alpha1.SourceService.DeleteIntegration:input_type -> source.v1alpha1.DeleteIntegrationRequest
+	1,  // 31: source.v1alpha1.SourceService.CreateRepository:input_type -> source.v1alpha1.CreateRepositoryRequest
+	3,  // 32: source.v1alpha1.SourceService.ListRepositories:input_type -> source.v1alpha1.ListRepositoriesRequest
+	5,  // 33: source.v1alpha1.SourceService.GetRepository:input_type -> source.v1alpha1.GetRepositoryRequest
+	7,  // 34: source.v1alpha1.SourceService.DeleteRepository:input_type -> source.v1alpha1.DeleteRepositoryRequest
+	9,  // 35: source.v1alpha1.SourceService.UpdateRepository:input_type -> source.v1alpha1.UpdateRepositoryRequest
+	31, // 36: source.v1alpha1.SourceService.CreateProvider:output_type -> source.v1alpha1.CreateProviderResponse
+	33, // 37: source.v1alpha1.SourceService.ListProviders:output_type -> source.v1alpha1.ListProvidersResponse
+	29, // 38: source.v1alpha1.SourceService.GetProvider:output_type -> source.v1alpha1.GetProviderResponse
+	27, // 39: source.v1alpha1.SourceService.UpdateProvider:output_type -> source.v1alpha1.UpdateProviderResponse
+	25, // 40: source.v1alpha1.SourceService.DeleteProvider:output_type -> source.v1alpha1.DeleteProviderResponse
+	14, // 41: source.v1alpha1.SourceService.CreateIntegration:output_type -> source.v1alpha1.CreateIntegrationResponse
+	16, // 42: source.v1alpha1.SourceService.ListIntegrations:output_type -> source.v1alpha1.ListIntegrationsResponse
+	18, // 43: source.v1alpha1.SourceService.GetIntegration:output_type -> source.v1alpha1.GetIntegrationResponse
+	20, // 44: source.v1alpha1.SourceService.UpdateIntegration:output_type -> source.v1alpha1.UpdateIntegrationResponse
+	22, // 45: source.v1alpha1.SourceService.DeleteIntegration:output_type -> source.v1alpha1.DeleteIntegrationResponse
+	2,  // 46: source.v1alpha1.SourceService.CreateRepository:output_type -> source.v1alpha1.CreateRepositoryResponse
+	4,  // 47: source.v1alpha1.SourceService.ListRepositories:output_type -> source.v1alpha1.ListRepositoriesResponse
+	6,  // 48: source.v1alpha1.SourceService.GetRepository:output_type -> source.v1alpha1.GetRepositoryResponse
+	8,  // 49: source.v1alpha1.SourceService.DeleteRepository:output_type -> source.v1alpha1.DeleteRepositoryResponse
+	10, // 50: source.v1alpha1.SourceService.UpdateRepository:output_type -> source.v1alpha1.UpdateRepositoryResponse
+	36, // [36:51] is the sub-list for method output_type
+	21, // [21:36] is the sub-list for method input_type
+	21, // [21:21] is the sub-list for extension type_name
+	21, // [21:21] is the sub-list for extension extendee
+	0,  // [0:21] is the sub-list for field type_name
 }
 
 func init() { file_source_v1alpha1_source_proto_init() }
@@ -1740,7 +2509,7 @@ func file_source_v1alpha1_source_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_source_v1alpha1_source_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Integration); i {
+			switch v := v.(*DetailRepository); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1752,7 +2521,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Repository); i {
+			switch v := v.(*CreateRepositoryRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1764,7 +2533,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateIntegrationRequest); i {
+			switch v := v.(*CreateRepositoryResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1776,7 +2545,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateIntegrationResponse); i {
+			switch v := v.(*ListRepositoriesRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1788,7 +2557,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListIntegrationsRequest); i {
+			switch v := v.(*ListRepositoriesResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1800,7 +2569,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListIntegrationsResponse); i {
+			switch v := v.(*GetRepositoryRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1812,7 +2581,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetIntegrationRequest); i {
+			switch v := v.(*GetRepositoryResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1824,7 +2593,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetIntegrationResponse); i {
+			switch v := v.(*DeleteRepositoryRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1836,7 +2605,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateIntegrationRequest); i {
+			switch v := v.(*DeleteRepositoryResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1848,7 +2617,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateIntegrationResponse); i {
+			switch v := v.(*UpdateRepositoryRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1860,7 +2629,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteIntegrationRequest); i {
+			switch v := v.(*UpdateRepositoryResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1872,7 +2641,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteIntegrationResponse); i {
+			switch v := v.(*Integration); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1884,7 +2653,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Provider); i {
+			switch v := v.(*Repository); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1896,7 +2665,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteProviderRequest); i {
+			switch v := v.(*CreateIntegrationRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1908,7 +2677,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteProviderResponse); i {
+			switch v := v.(*CreateIntegrationResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1920,7 +2689,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateProviderRequest); i {
+			switch v := v.(*ListIntegrationsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1932,7 +2701,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateProviderResponse); i {
+			switch v := v.(*ListIntegrationsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1944,7 +2713,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetProviderRequest); i {
+			switch v := v.(*GetIntegrationRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1956,7 +2725,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetProviderResponse); i {
+			switch v := v.(*GetIntegrationResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1968,7 +2737,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateProviderRequest); i {
+			switch v := v.(*UpdateIntegrationRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1980,7 +2749,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateProviderResponse); i {
+			switch v := v.(*UpdateIntegrationResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1992,7 +2761,7 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListProvidersRequest); i {
+			switch v := v.(*DeleteIntegrationRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2004,6 +2773,138 @@ func file_source_v1alpha1_source_proto_init() {
 			}
 		}
 		file_source_v1alpha1_source_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteIntegrationResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_source_v1alpha1_source_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Provider); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_source_v1alpha1_source_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteProviderRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_source_v1alpha1_source_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteProviderResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_source_v1alpha1_source_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateProviderRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_source_v1alpha1_source_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateProviderResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_source_v1alpha1_source_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetProviderRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_source_v1alpha1_source_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetProviderResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_source_v1alpha1_source_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateProviderRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_source_v1alpha1_source_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateProviderResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_source_v1alpha1_source_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListProvidersRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_source_v1alpha1_source_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListProvidersResponse); i {
 			case 0:
 				return &v.state
@@ -2022,7 +2923,7 @@ func file_source_v1alpha1_source_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_source_v1alpha1_source_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   31,
+			NumMessages:   42,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -148,4 +148,70 @@ class SourceServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * REPOSITORIES
+     * @param \Source\V1alpha1\CreateRepositoryRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function CreateRepository(\Source\V1alpha1\CreateRepositoryRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/source.v1alpha1.SourceService/CreateRepository',
+        $argument,
+        ['\Source\V1alpha1\CreateRepositoryResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Source\V1alpha1\ListRepositoriesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListRepositories(\Source\V1alpha1\ListRepositoriesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/source.v1alpha1.SourceService/ListRepositories',
+        $argument,
+        ['\Source\V1alpha1\ListRepositoriesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Source\V1alpha1\GetRepositoryRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetRepository(\Source\V1alpha1\GetRepositoryRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/source.v1alpha1.SourceService/GetRepository',
+        $argument,
+        ['\Source\V1alpha1\GetRepositoryResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Source\V1alpha1\DeleteRepositoryRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DeleteRepository(\Source\V1alpha1\DeleteRepositoryRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/source.v1alpha1.SourceService/DeleteRepository',
+        $argument,
+        ['\Source\V1alpha1\DeleteRepositoryResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Source\V1alpha1\UpdateRepositoryRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function UpdateRepository(\Source\V1alpha1\UpdateRepositoryRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/source.v1alpha1.SourceService/UpdateRepository',
+        $argument,
+        ['\Source\V1alpha1\UpdateRepositoryResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

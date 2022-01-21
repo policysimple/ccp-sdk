@@ -81,7 +81,7 @@ message Application {
     string integration = 3;
     Repository repository = 4;
     Configuration configuration = 5;
-    uint32 organization_id = 6;
+    uint32 project_id = 6;
 }
 
 message CreateApplicationRequest {
@@ -89,7 +89,7 @@ message CreateApplicationRequest {
     string integration = 2;
     Repository repository = 3;
     Configuration configuration = 4;
-    uint32 organization_id = 5;
+    uint32 project_id = 5;
 }
 
 message CreateApplicationResponse {
@@ -106,7 +106,7 @@ message CreateApplicationResponse {
 
 
 message ListApplicationRequest {
-    uint32 organization_id = 1;
+    uint32 project_id = 1;
 }
     
 message ListApplicationResponse {

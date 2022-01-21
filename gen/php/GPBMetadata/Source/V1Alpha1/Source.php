@@ -16,8 +16,54 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-˛ 
-source/v1alpha1/source.protosource.v1alpha1"§
+¢.
+source/v1alpha1/source.protosource.v1alpha1"á
+DetailRepository
+id (	Rid
+name (	Rname
+private (Rprivate
+fullname (	Rfullname 
+description (	Rdescription
+fork (Rfork
+	clone_url (	RcloneUrl
+
+project_id (R	projectId\'
+organization_id	 (RorganizationId"§
+CreateRepositoryRequestA
+
+repository (2!.source.v1alpha1.DetailRepositoryR
+repository
+
+project_id (R	projectId\'
+organization_id (RorganizationId"B
+CreateRepositoryResponse
+msg (	Rmsg
+error (	Rerror"a
+ListRepositoriesRequest
+
+project_id (R	projectId\'
+organization_id (RorganizationId"a
+ListRepositoriesResponseE
+repositories (2!.source.v1alpha1.DetailRepositoryRrepositories";
+GetRepositoryRequest#
+repository_id (	RrepositoryId"Z
+GetRepositoryResponseA
+
+repository (2!.source.v1alpha1.DetailRepositoryR
+repository">
+DeleteRepositoryRequest#
+repository_id (	RrepositoryId"B
+DeleteRepositoryResponse
+msg (	Rmsg
+error (	Rerror"Å
+UpdateRepositoryRequest#
+repository_id (	RrepositoryIdA
+
+repository (2!.source.v1alpha1.DetailRepositoryR
+repository"B
+UpdateRepositoryResponse
+msg (	Rmsg
+error (	Rerror"§
 Integration
 id (	Rid\'
 organization_id (RorganizationId
@@ -122,7 +168,7 @@ Repository
 error (	Rerror"
 ListProvidersRequest"P
 ListProvidersResponse7
-	providers (2.source.v1alpha1.ProviderR	providers2Ç
+	providers (2.source.v1alpha1.ProviderR	providers2Ü
 SourceServicea
 CreateProvider&.source.v1alpha1.CreateProviderRequest\'.source.v1alpha1.CreateProviderResponse^
 ListProviders%.source.v1alpha1.ListProvidersRequest&.source.v1alpha1.ListProvidersResponseX
@@ -133,7 +179,12 @@ Repository
 ListIntegrations(.source.v1alpha1.ListIntegrationsRequest).source.v1alpha1.ListIntegrationsResponsea
 GetIntegration&.source.v1alpha1.GetIntegrationRequest\'.source.v1alpha1.GetIntegrationResponsej
 UpdateIntegration).source.v1alpha1.UpdateIntegrationRequest*.source.v1alpha1.UpdateIntegrationResponsej
-DeleteIntegration).source.v1alpha1.DeleteIntegrationRequest*.source.v1alpha1.DeleteIntegrationResponseB2Z0github.com/cuemby/ccp-sdk/gen/go/source/v1alpha1bproto3'
+DeleteIntegration).source.v1alpha1.DeleteIntegrationRequest*.source.v1alpha1.DeleteIntegrationResponseg
+CreateRepository(.source.v1alpha1.CreateRepositoryRequest).source.v1alpha1.CreateRepositoryResponseg
+ListRepositories(.source.v1alpha1.ListRepositoriesRequest).source.v1alpha1.ListRepositoriesResponse^
+GetRepository%.source.v1alpha1.GetRepositoryRequest&.source.v1alpha1.GetRepositoryResponseg
+DeleteRepository(.source.v1alpha1.DeleteRepositoryRequest).source.v1alpha1.DeleteRepositoryResponseg
+UpdateRepository(.source.v1alpha1.UpdateRepositoryRequest).source.v1alpha1.UpdateRepositoryResponseB2Z0github.com/cuemby/ccp-sdk/gen/go/source/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

@@ -64,6 +64,31 @@ class SourceServiceStub(object):
         request_serializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationRequest.SerializeToString,
         response_deserializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationResponse.FromString,
         )
+    self.CreateRepository = channel.unary_unary(
+        '/source.v1alpha1.SourceService/CreateRepository',
+        request_serializer=source_dot_v1alpha1_dot_source__pb2.CreateRepositoryRequest.SerializeToString,
+        response_deserializer=source_dot_v1alpha1_dot_source__pb2.CreateRepositoryResponse.FromString,
+        )
+    self.ListRepositories = channel.unary_unary(
+        '/source.v1alpha1.SourceService/ListRepositories',
+        request_serializer=source_dot_v1alpha1_dot_source__pb2.ListRepositoriesRequest.SerializeToString,
+        response_deserializer=source_dot_v1alpha1_dot_source__pb2.ListRepositoriesResponse.FromString,
+        )
+    self.GetRepository = channel.unary_unary(
+        '/source.v1alpha1.SourceService/GetRepository',
+        request_serializer=source_dot_v1alpha1_dot_source__pb2.GetRepositoryRequest.SerializeToString,
+        response_deserializer=source_dot_v1alpha1_dot_source__pb2.GetRepositoryResponse.FromString,
+        )
+    self.DeleteRepository = channel.unary_unary(
+        '/source.v1alpha1.SourceService/DeleteRepository',
+        request_serializer=source_dot_v1alpha1_dot_source__pb2.DeleteRepositoryRequest.SerializeToString,
+        response_deserializer=source_dot_v1alpha1_dot_source__pb2.DeleteRepositoryResponse.FromString,
+        )
+    self.UpdateRepository = channel.unary_unary(
+        '/source.v1alpha1.SourceService/UpdateRepository',
+        request_serializer=source_dot_v1alpha1_dot_source__pb2.UpdateRepositoryRequest.SerializeToString,
+        response_deserializer=source_dot_v1alpha1_dot_source__pb2.UpdateRepositoryResponse.FromString,
+        )
 
 
 class SourceServiceServicer(object):
@@ -140,6 +165,41 @@ class SourceServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateRepository(self, request, context):
+    """REPOSITORIES
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListRepositories(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetRepository(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteRepository(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdateRepository(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_SourceServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -192,6 +252,31 @@ def add_SourceServiceServicer_to_server(servicer, server):
           servicer.DeleteIntegration,
           request_deserializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationRequest.FromString,
           response_serializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationResponse.SerializeToString,
+      ),
+      'CreateRepository': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateRepository,
+          request_deserializer=source_dot_v1alpha1_dot_source__pb2.CreateRepositoryRequest.FromString,
+          response_serializer=source_dot_v1alpha1_dot_source__pb2.CreateRepositoryResponse.SerializeToString,
+      ),
+      'ListRepositories': grpc.unary_unary_rpc_method_handler(
+          servicer.ListRepositories,
+          request_deserializer=source_dot_v1alpha1_dot_source__pb2.ListRepositoriesRequest.FromString,
+          response_serializer=source_dot_v1alpha1_dot_source__pb2.ListRepositoriesResponse.SerializeToString,
+      ),
+      'GetRepository': grpc.unary_unary_rpc_method_handler(
+          servicer.GetRepository,
+          request_deserializer=source_dot_v1alpha1_dot_source__pb2.GetRepositoryRequest.FromString,
+          response_serializer=source_dot_v1alpha1_dot_source__pb2.GetRepositoryResponse.SerializeToString,
+      ),
+      'DeleteRepository': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteRepository,
+          request_deserializer=source_dot_v1alpha1_dot_source__pb2.DeleteRepositoryRequest.FromString,
+          response_serializer=source_dot_v1alpha1_dot_source__pb2.DeleteRepositoryResponse.SerializeToString,
+      ),
+      'UpdateRepository': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateRepository,
+          request_deserializer=source_dot_v1alpha1_dot_source__pb2.UpdateRepositoryRequest.FromString,
+          response_serializer=source_dot_v1alpha1_dot_source__pb2.UpdateRepositoryResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

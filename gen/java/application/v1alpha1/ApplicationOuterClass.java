@@ -3987,10 +3987,10 @@ public final class ApplicationOuterClass {
     application.v1alpha1.ApplicationOuterClass.ConfigurationOrBuilder getConfigurationOrBuilder();
 
     /**
-     * <code>uint32 organization_id = 6 [json_name = "organizationId"];</code>
-     * @return The organizationId.
+     * <code>uint32 project_id = 6 [json_name = "projectId"];</code>
+     * @return The projectId.
      */
-    int getOrganizationId();
+    int getProjectId();
   }
   /**
    * Protobuf type {@code application.v1alpha1.Application}
@@ -4086,7 +4086,7 @@ public final class ApplicationOuterClass {
             }
             case 48: {
 
-              organizationId_ = input.readUInt32();
+              projectId_ = input.readUInt32();
               break;
             }
             default: {
@@ -4287,15 +4287,15 @@ public final class ApplicationOuterClass {
       return getConfiguration();
     }
 
-    public static final int ORGANIZATION_ID_FIELD_NUMBER = 6;
-    private int organizationId_;
+    public static final int PROJECT_ID_FIELD_NUMBER = 6;
+    private int projectId_;
     /**
-     * <code>uint32 organization_id = 6 [json_name = "organizationId"];</code>
-     * @return The organizationId.
+     * <code>uint32 project_id = 6 [json_name = "projectId"];</code>
+     * @return The projectId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public int getProjectId() {
+      return projectId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4327,8 +4327,8 @@ public final class ApplicationOuterClass {
       if (configuration_ != null) {
         output.writeMessage(5, getConfiguration());
       }
-      if (organizationId_ != 0) {
-        output.writeUInt32(6, organizationId_);
+      if (projectId_ != 0) {
+        output.writeUInt32(6, projectId_);
       }
       unknownFields.writeTo(output);
     }
@@ -4356,9 +4356,9 @@ public final class ApplicationOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getConfiguration());
       }
-      if (organizationId_ != 0) {
+      if (projectId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, organizationId_);
+          .computeUInt32Size(6, projectId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4391,8 +4391,8 @@ public final class ApplicationOuterClass {
         if (!getConfiguration()
             .equals(other.getConfiguration())) return false;
       }
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
+      if (getProjectId()
+          != other.getProjectId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4418,8 +4418,8 @@ public final class ApplicationOuterClass {
         hash = (37 * hash) + CONFIGURATION_FIELD_NUMBER;
         hash = (53 * hash) + getConfiguration().hashCode();
       }
-      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4571,7 +4571,7 @@ public final class ApplicationOuterClass {
           configuration_ = null;
           configurationBuilder_ = null;
         }
-        organizationId_ = 0;
+        projectId_ = 0;
 
         return this;
       }
@@ -4612,7 +4612,7 @@ public final class ApplicationOuterClass {
         } else {
           result.configuration_ = configurationBuilder_.build();
         }
-        result.organizationId_ = organizationId_;
+        result.projectId_ = projectId_;
         onBuilt();
         return result;
       }
@@ -4679,8 +4679,8 @@ public final class ApplicationOuterClass {
         if (other.hasConfiguration()) {
           mergeConfiguration(other.getConfiguration());
         }
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (other.getProjectId() != 0) {
+          setProjectId(other.getProjectId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5177,33 +5177,33 @@ public final class ApplicationOuterClass {
         return configurationBuilder_;
       }
 
-      private int organizationId_ ;
+      private int projectId_ ;
       /**
-       * <code>uint32 organization_id = 6 [json_name = "organizationId"];</code>
-       * @return The organizationId.
+       * <code>uint32 project_id = 6 [json_name = "projectId"];</code>
+       * @return The projectId.
        */
       @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public int getProjectId() {
+        return projectId_;
       }
       /**
-       * <code>uint32 organization_id = 6 [json_name = "organizationId"];</code>
-       * @param value The organizationId to set.
+       * <code>uint32 project_id = 6 [json_name = "projectId"];</code>
+       * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
+      public Builder setProjectId(int value) {
         
-        organizationId_ = value;
+        projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 6 [json_name = "organizationId"];</code>
+       * <code>uint32 project_id = 6 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearOrganizationId() {
+      public Builder clearProjectId() {
         
-        organizationId_ = 0;
+        projectId_ = 0;
         onChanged();
         return this;
       }
@@ -5319,10 +5319,10 @@ public final class ApplicationOuterClass {
     application.v1alpha1.ApplicationOuterClass.ConfigurationOrBuilder getConfigurationOrBuilder();
 
     /**
-     * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
-     * @return The organizationId.
+     * <code>uint32 project_id = 5 [json_name = "projectId"];</code>
+     * @return The projectId.
      */
-    int getOrganizationId();
+    int getProjectId();
   }
   /**
    * Protobuf type {@code application.v1alpha1.CreateApplicationRequest}
@@ -5411,7 +5411,7 @@ public final class ApplicationOuterClass {
             }
             case 40: {
 
-              organizationId_ = input.readUInt32();
+              projectId_ = input.readUInt32();
               break;
             }
             default: {
@@ -5574,15 +5574,15 @@ public final class ApplicationOuterClass {
       return getConfiguration();
     }
 
-    public static final int ORGANIZATION_ID_FIELD_NUMBER = 5;
-    private int organizationId_;
+    public static final int PROJECT_ID_FIELD_NUMBER = 5;
+    private int projectId_;
     /**
-     * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
-     * @return The organizationId.
+     * <code>uint32 project_id = 5 [json_name = "projectId"];</code>
+     * @return The projectId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public int getProjectId() {
+      return projectId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5611,8 +5611,8 @@ public final class ApplicationOuterClass {
       if (configuration_ != null) {
         output.writeMessage(4, getConfiguration());
       }
-      if (organizationId_ != 0) {
-        output.writeUInt32(5, organizationId_);
+      if (projectId_ != 0) {
+        output.writeUInt32(5, projectId_);
       }
       unknownFields.writeTo(output);
     }
@@ -5637,9 +5637,9 @@ public final class ApplicationOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getConfiguration());
       }
-      if (organizationId_ != 0) {
+      if (projectId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, organizationId_);
+          .computeUInt32Size(5, projectId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5670,8 +5670,8 @@ public final class ApplicationOuterClass {
         if (!getConfiguration()
             .equals(other.getConfiguration())) return false;
       }
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
+      if (getProjectId()
+          != other.getProjectId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5695,8 +5695,8 @@ public final class ApplicationOuterClass {
         hash = (37 * hash) + CONFIGURATION_FIELD_NUMBER;
         hash = (53 * hash) + getConfiguration().hashCode();
       }
-      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5846,7 +5846,7 @@ public final class ApplicationOuterClass {
           configuration_ = null;
           configurationBuilder_ = null;
         }
-        organizationId_ = 0;
+        projectId_ = 0;
 
         return this;
       }
@@ -5886,7 +5886,7 @@ public final class ApplicationOuterClass {
         } else {
           result.configuration_ = configurationBuilder_.build();
         }
-        result.organizationId_ = organizationId_;
+        result.projectId_ = projectId_;
         onBuilt();
         return result;
       }
@@ -5949,8 +5949,8 @@ public final class ApplicationOuterClass {
         if (other.hasConfiguration()) {
           mergeConfiguration(other.getConfiguration());
         }
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (other.getProjectId() != 0) {
+          setProjectId(other.getProjectId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6371,33 +6371,33 @@ public final class ApplicationOuterClass {
         return configurationBuilder_;
       }
 
-      private int organizationId_ ;
+      private int projectId_ ;
       /**
-       * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
-       * @return The organizationId.
+       * <code>uint32 project_id = 5 [json_name = "projectId"];</code>
+       * @return The projectId.
        */
       @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public int getProjectId() {
+        return projectId_;
       }
       /**
-       * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
-       * @param value The organizationId to set.
+       * <code>uint32 project_id = 5 [json_name = "projectId"];</code>
+       * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
+      public Builder setProjectId(int value) {
         
-        organizationId_ = value;
+        projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+       * <code>uint32 project_id = 5 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearOrganizationId() {
+      public Builder clearProjectId() {
         
-        organizationId_ = 0;
+        projectId_ = 0;
         onChanged();
         return this;
       }
@@ -7177,10 +7177,10 @@ public final class ApplicationOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
-     * @return The organizationId.
+     * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * @return The projectId.
      */
-    int getOrganizationId();
+    int getProjectId();
   }
   /**
    * Protobuf type {@code application.v1alpha1.ListApplicationRequest}
@@ -7229,7 +7229,7 @@ public final class ApplicationOuterClass {
               break;
             case 8: {
 
-              organizationId_ = input.readUInt32();
+              projectId_ = input.readUInt32();
               break;
             }
             default: {
@@ -7264,15 +7264,15 @@ public final class ApplicationOuterClass {
               application.v1alpha1.ApplicationOuterClass.ListApplicationRequest.class, application.v1alpha1.ApplicationOuterClass.ListApplicationRequest.Builder.class);
     }
 
-    public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
-    private int organizationId_;
+    public static final int PROJECT_ID_FIELD_NUMBER = 1;
+    private int projectId_;
     /**
-     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
-     * @return The organizationId.
+     * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * @return The projectId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public int getProjectId() {
+      return projectId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7289,8 +7289,8 @@ public final class ApplicationOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (organizationId_ != 0) {
-        output.writeUInt32(1, organizationId_);
+      if (projectId_ != 0) {
+        output.writeUInt32(1, projectId_);
       }
       unknownFields.writeTo(output);
     }
@@ -7301,9 +7301,9 @@ public final class ApplicationOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (organizationId_ != 0) {
+      if (projectId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, organizationId_);
+          .computeUInt32Size(1, projectId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7320,8 +7320,8 @@ public final class ApplicationOuterClass {
       }
       application.v1alpha1.ApplicationOuterClass.ListApplicationRequest other = (application.v1alpha1.ApplicationOuterClass.ListApplicationRequest) obj;
 
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
+      if (getProjectId()
+          != other.getProjectId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7333,8 +7333,8 @@ public final class ApplicationOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7468,7 +7468,7 @@ public final class ApplicationOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        organizationId_ = 0;
+        projectId_ = 0;
 
         return this;
       }
@@ -7496,7 +7496,7 @@ public final class ApplicationOuterClass {
       @java.lang.Override
       public application.v1alpha1.ApplicationOuterClass.ListApplicationRequest buildPartial() {
         application.v1alpha1.ApplicationOuterClass.ListApplicationRequest result = new application.v1alpha1.ApplicationOuterClass.ListApplicationRequest(this);
-        result.organizationId_ = organizationId_;
+        result.projectId_ = projectId_;
         onBuilt();
         return result;
       }
@@ -7545,8 +7545,8 @@ public final class ApplicationOuterClass {
 
       public Builder mergeFrom(application.v1alpha1.ApplicationOuterClass.ListApplicationRequest other) {
         if (other == application.v1alpha1.ApplicationOuterClass.ListApplicationRequest.getDefaultInstance()) return this;
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (other.getProjectId() != 0) {
+          setProjectId(other.getProjectId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7577,33 +7577,33 @@ public final class ApplicationOuterClass {
         return this;
       }
 
-      private int organizationId_ ;
+      private int projectId_ ;
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
-       * @return The organizationId.
+       * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+       * @return The projectId.
        */
       @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public int getProjectId() {
+        return projectId_;
       }
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
-       * @param value The organizationId to set.
+       * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+       * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
+      public Builder setProjectId(int value) {
         
-        organizationId_ = value;
+        projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearOrganizationId() {
+      public Builder clearProjectId() {
         
-        organizationId_ = 0;
+        projectId_ = 0;
         onChanged();
         return this;
       }
@@ -12513,54 +12513,53 @@ public final class ApplicationOuterClass {
       "d\"\215\001\n\rConfiguration\022-\n\004envs\030\001 \003(\0132\031.appl" +
       "ication.v1alpha1.EnvR\004envs\0229\n\010commands\030\002" +
       " \003(\0132\035.application.v1alpha1.CommandR\010com" +
-      "mands\022\022\n\004port\030\003 \001(\005R\004port\"\211\002\n\013Applicatio" +
+      "mands\022\022\n\004port\030\003 \001(\005R\004port\"\377\001\n\013Applicatio" +
       "n\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n" +
       "\013integration\030\003 \001(\tR\013integration\022@\n\nrepos" +
       "itory\030\004 \001(\0132 .application.v1alpha1.Repos" +
       "itoryR\nrepository\022I\n\rconfiguration\030\005 \001(\013" +
       "2#.application.v1alpha1.ConfigurationR\rc" +
-      "onfiguration\022\'\n\017organization_id\030\006 \001(\rR\016o" +
-      "rganizationId\"\206\002\n\030CreateApplicationReque" +
-      "st\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013integration\030\002 " +
-      "\001(\tR\013integration\022@\n\nrepository\030\003 \001(\0132 .a" +
-      "pplication.v1alpha1.RepositoryR\nreposito" +
-      "ry\022I\n\rconfiguration\030\004 \001(\0132#.application." +
-      "v1alpha1.ConfigurationR\rconfiguration\022\'\n" +
-      "\017organization_id\030\005 \001(\rR\016organizationId\"C" +
-      "\n\031CreateApplicationResponse\022\020\n\003msg\030\001 \001(\t" +
-      "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"A\n\026ListAppli" +
-      "cationRequest\022\'\n\017organization_id\030\001 \001(\rR\016" +
-      "organizationId\"`\n\027ListApplicationRespons" +
-      "e\022E\n\014applications\030\001 \003(\0132!.application.v1" +
-      "alpha1.ApplicationR\014applications\"\'\n\025GetA" +
-      "pplicationRequest\022\016\n\002id\030\001 \001(\tR\002id\"]\n\026Get" +
-      "ApplicationResponse\022C\n\013application\030\001 \001(\013" +
-      "2!.application.v1alpha1.ApplicationR\013app" +
-      "lication\"*\n\030DeleteApplicationRequest\022\016\n\002" +
-      "id\030\001 \001(\tR\002id\"C\n\031DeleteApplicationRespons" +
-      "e\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005erro" +
-      "r\"|\n\030UpdateApplicationRequest\022\016\n\002id\030\001 \001(" +
-      "\tR\002id\022P\n\013application\030\002 \001(\0132..application" +
-      ".v1alpha1.CreateApplicationRequestR\013appl" +
-      "ication\"C\n\031UpdateApplicationResponse\022\020\n\003" +
-      "msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error2\323\004\n" +
-      "\022ApplicationService\022t\n\021CreateApplication" +
-      "\022..application.v1alpha1.CreateApplicatio" +
-      "nRequest\032/.application.v1alpha1.CreateAp" +
-      "plicationResponse\022n\n\017ListApplication\022,.a" +
-      "pplication.v1alpha1.ListApplicationReque" +
-      "st\032-.application.v1alpha1.ListApplicatio" +
-      "nResponse\022k\n\016GetApplication\022+.applicatio" +
-      "n.v1alpha1.GetApplicationRequest\032,.appli" +
-      "cation.v1alpha1.GetApplicationResponse\022t" +
-      "\n\021DeleteApplication\022..application.v1alph" +
-      "a1.DeleteApplicationRequest\032/.applicatio" +
-      "n.v1alpha1.DeleteApplicationResponse\022t\n\021" +
-      "UpdateApplication\022..application.v1alpha1" +
-      ".UpdateApplicationRequest\032/.application." +
-      "v1alpha1.UpdateApplicationResponseB7Z5gi" +
-      "thub.com/cuemby/ccp-sdk/gen/go/applicati" +
-      "on/v1alpha1b\006proto3"
+      "onfiguration\022\035\n\nproject_id\030\006 \001(\rR\tprojec" +
+      "tId\"\374\001\n\030CreateApplicationRequest\022\022\n\004name" +
+      "\030\001 \001(\tR\004name\022 \n\013integration\030\002 \001(\tR\013integ" +
+      "ration\022@\n\nrepository\030\003 \001(\0132 .application" +
+      ".v1alpha1.RepositoryR\nrepository\022I\n\rconf" +
+      "iguration\030\004 \001(\0132#.application.v1alpha1.C" +
+      "onfigurationR\rconfiguration\022\035\n\nproject_i" +
+      "d\030\005 \001(\rR\tprojectId\"C\n\031CreateApplicationR" +
+      "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\t" +
+      "R\005error\"7\n\026ListApplicationRequest\022\035\n\npro" +
+      "ject_id\030\001 \001(\rR\tprojectId\"`\n\027ListApplicat" +
+      "ionResponse\022E\n\014applications\030\001 \003(\0132!.appl" +
+      "ication.v1alpha1.ApplicationR\014applicatio" +
+      "ns\"\'\n\025GetApplicationRequest\022\016\n\002id\030\001 \001(\tR" +
+      "\002id\"]\n\026GetApplicationResponse\022C\n\013applica" +
+      "tion\030\001 \001(\0132!.application.v1alpha1.Applic" +
+      "ationR\013application\"*\n\030DeleteApplicationR" +
+      "equest\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteApplicat" +
+      "ionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002" +
+      " \001(\tR\005error\"|\n\030UpdateApplicationRequest\022" +
+      "\016\n\002id\030\001 \001(\tR\002id\022P\n\013application\030\002 \001(\0132..a" +
+      "pplication.v1alpha1.CreateApplicationReq" +
+      "uestR\013application\"C\n\031UpdateApplicationRe" +
+      "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR" +
+      "\005error2\323\004\n\022ApplicationService\022t\n\021CreateA" +
+      "pplication\022..application.v1alpha1.Create" +
+      "ApplicationRequest\032/.application.v1alpha" +
+      "1.CreateApplicationResponse\022n\n\017ListAppli" +
+      "cation\022,.application.v1alpha1.ListApplic" +
+      "ationRequest\032-.application.v1alpha1.List" +
+      "ApplicationResponse\022k\n\016GetApplication\022+." +
+      "application.v1alpha1.GetApplicationReque" +
+      "st\032,.application.v1alpha1.GetApplication" +
+      "Response\022t\n\021DeleteApplication\022..applicat" +
+      "ion.v1alpha1.DeleteApplicationRequest\032/." +
+      "application.v1alpha1.DeleteApplicationRe" +
+      "sponse\022t\n\021UpdateApplication\022..applicatio" +
+      "n.v1alpha1.UpdateApplicationRequest\032/.ap" +
+      "plication.v1alpha1.UpdateApplicationResp" +
+      "onseB7Z5github.com/cuemby/ccp-sdk/gen/go" +
+      "/application/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12595,13 +12594,13 @@ public final class ApplicationOuterClass {
     internal_static_application_v1alpha1_Application_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Application_descriptor,
-        new java.lang.String[] { "Id", "Name", "Integration", "Repository", "Configuration", "OrganizationId", });
+        new java.lang.String[] { "Id", "Name", "Integration", "Repository", "Configuration", "ProjectId", });
     internal_static_application_v1alpha1_CreateApplicationRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_application_v1alpha1_CreateApplicationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_CreateApplicationRequest_descriptor,
-        new java.lang.String[] { "Name", "Integration", "Repository", "Configuration", "OrganizationId", });
+        new java.lang.String[] { "Name", "Integration", "Repository", "Configuration", "ProjectId", });
     internal_static_application_v1alpha1_CreateApplicationResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_application_v1alpha1_CreateApplicationResponse_fieldAccessorTable = new
@@ -12613,7 +12612,7 @@ public final class ApplicationOuterClass {
     internal_static_application_v1alpha1_ListApplicationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_ListApplicationRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", });
+        new java.lang.String[] { "ProjectId", });
     internal_static_application_v1alpha1_ListApplicationResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_application_v1alpha1_ListApplicationResponse_fieldAccessorTable = new
