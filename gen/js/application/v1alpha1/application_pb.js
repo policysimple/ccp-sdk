@@ -1255,7 +1255,7 @@ proto.application.v1alpha1.Application.toObject = function(includeInstance, msg)
     integration: jspb.Message.getFieldWithDefault(msg, 3, ""),
     repository: (f = msg.getRepository()) && proto.application.v1alpha1.Repository.toObject(includeInstance, f),
     configuration: (f = msg.getConfiguration()) && proto.application.v1alpha1.Configuration.toObject(includeInstance, f),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 6, 0)
+    projectId: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -1316,7 +1316,7 @@ proto.application.v1alpha1.Application.deserializeBinaryFromReader = function(ms
       break;
     case 6:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setOrganizationId(value);
+      msg.setProjectId(value);
       break;
     default:
       reader.skipField();
@@ -1384,7 +1384,7 @@ proto.application.v1alpha1.Application.serializeBinaryToWriter = function(messag
       proto.application.v1alpha1.Configuration.serializeBinaryToWriter
     );
   }
-  f = message.getOrganizationId();
+  f = message.getProjectId();
   if (f !== 0) {
     writer.writeUint32(
       6,
@@ -1523,10 +1523,10 @@ proto.application.v1alpha1.Application.prototype.hasConfiguration = function() {
 
 
 /**
- * optional uint32 organization_id = 6;
+ * optional uint32 project_id = 6;
  * @return {number}
  */
-proto.application.v1alpha1.Application.prototype.getOrganizationId = function() {
+proto.application.v1alpha1.Application.prototype.getProjectId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
@@ -1535,7 +1535,7 @@ proto.application.v1alpha1.Application.prototype.getOrganizationId = function() 
  * @param {number} value
  * @return {!proto.application.v1alpha1.Application} returns this
  */
-proto.application.v1alpha1.Application.prototype.setOrganizationId = function(value) {
+proto.application.v1alpha1.Application.prototype.setProjectId = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
 };
 
@@ -1576,7 +1576,7 @@ proto.application.v1alpha1.CreateApplicationRequest.toObject = function(includeI
     integration: jspb.Message.getFieldWithDefault(msg, 2, ""),
     repository: (f = msg.getRepository()) && proto.application.v1alpha1.Repository.toObject(includeInstance, f),
     configuration: (f = msg.getConfiguration()) && proto.application.v1alpha1.Configuration.toObject(includeInstance, f),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    projectId: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -1633,7 +1633,7 @@ proto.application.v1alpha1.CreateApplicationRequest.deserializeBinaryFromReader 
       break;
     case 5:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setOrganizationId(value);
+      msg.setProjectId(value);
       break;
     default:
       reader.skipField();
@@ -1694,7 +1694,7 @@ proto.application.v1alpha1.CreateApplicationRequest.serializeBinaryToWriter = fu
       proto.application.v1alpha1.Configuration.serializeBinaryToWriter
     );
   }
-  f = message.getOrganizationId();
+  f = message.getProjectId();
   if (f !== 0) {
     writer.writeUint32(
       5,
@@ -1815,10 +1815,10 @@ proto.application.v1alpha1.CreateApplicationRequest.prototype.hasConfiguration =
 
 
 /**
- * optional uint32 organization_id = 5;
+ * optional uint32 project_id = 5;
  * @return {number}
  */
-proto.application.v1alpha1.CreateApplicationRequest.prototype.getOrganizationId = function() {
+proto.application.v1alpha1.CreateApplicationRequest.prototype.getProjectId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -1827,7 +1827,7 @@ proto.application.v1alpha1.CreateApplicationRequest.prototype.getOrganizationId 
  * @param {number} value
  * @return {!proto.application.v1alpha1.CreateApplicationRequest} returns this
  */
-proto.application.v1alpha1.CreateApplicationRequest.prototype.setOrganizationId = function(value) {
+proto.application.v1alpha1.CreateApplicationRequest.prototype.setProjectId = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -2024,7 +2024,7 @@ proto.application.v1alpha1.ListApplicationRequest.prototype.toObject = function(
  */
 proto.application.v1alpha1.ListApplicationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    projectId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -2063,7 +2063,7 @@ proto.application.v1alpha1.ListApplicationRequest.deserializeBinaryFromReader = 
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setOrganizationId(value);
+      msg.setProjectId(value);
       break;
     default:
       reader.skipField();
@@ -2094,7 +2094,7 @@ proto.application.v1alpha1.ListApplicationRequest.prototype.serializeBinary = fu
  */
 proto.application.v1alpha1.ListApplicationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrganizationId();
+  f = message.getProjectId();
   if (f !== 0) {
     writer.writeUint32(
       1,
@@ -2105,10 +2105,10 @@ proto.application.v1alpha1.ListApplicationRequest.serializeBinaryToWriter = func
 
 
 /**
- * optional uint32 organization_id = 1;
+ * optional uint32 project_id = 1;
  * @return {number}
  */
-proto.application.v1alpha1.ListApplicationRequest.prototype.getOrganizationId = function() {
+proto.application.v1alpha1.ListApplicationRequest.prototype.getProjectId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -2117,7 +2117,7 @@ proto.application.v1alpha1.ListApplicationRequest.prototype.getOrganizationId = 
  * @param {number} value
  * @return {!proto.application.v1alpha1.ListApplicationRequest} returns this
  */
-proto.application.v1alpha1.ListApplicationRequest.prototype.setOrganizationId = function(value) {
+proto.application.v1alpha1.ListApplicationRequest.prototype.setProjectId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 

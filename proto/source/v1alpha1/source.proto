@@ -20,8 +20,86 @@ service SourceService {
     rpc GetIntegration(GetIntegrationRequest) returns (GetIntegrationResponse);
     rpc UpdateIntegration(UpdateIntegrationRequest) returns (UpdateIntegrationResponse);
     rpc DeleteIntegration(DeleteIntegrationRequest) returns (DeleteIntegrationResponse);
+
+    //REPOSITORIES
+    rpc CreateRepository(CreateRepositoryRequest) returns (CreateRepositoryResponse);
+    rpc ListRepositories(ListRepositoriesRequest) returns (ListRepositoriesResponse);
+    rpc GetRepository(GetRepositoryRequest) returns (GetRepositoryResponse);
+    rpc DeleteRepository(DeleteRepositoryRequest) returns (DeleteRepositoryResponse);
+    rpc UpdateRepository(UpdateRepositoryRequest) returns (UpdateRepositoryResponse);
 }
 
+/*
+    REPOSITORIES
+
+*/
+
+message DetailRepository {
+    string id = 1;
+    string name = 2;
+    bool private = 3;
+    string fullname = 4;
+    string description = 5;
+    bool fork = 6;
+    string clone_url = 7;
+
+    uint32 project_id = 8;
+    uint32 organization_id = 9;
+}
+
+message CreateRepositoryRequest {
+    DetailRepository repository = 1;
+    uint32 project_id = 2;
+    uint32 organization_id = 3;
+}
+
+message CreateRepositoryResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message ListRepositoriesRequest {
+    uint32 project_id = 1;
+    uint32 organization_id = 2;
+}
+
+message ListRepositoriesResponse {
+    repeated DetailRepository repositories = 1;
+}
+
+
+message GetRepositoryRequest {
+    string repository_id = 1;
+}
+
+message  GetRepositoryResponse {
+    DetailRepository repository = 1;
+    
+}
+
+message DeleteRepositoryRequest {
+    string repository_id = 1;
+}
+
+message DeleteRepositoryResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message UpdateRepositoryRequest {
+    string repository_id = 1;
+    DetailRepository repository = 2;
+}
+
+message UpdateRepositoryResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+/*
+    END
+
+*/
 /*
     Integration
 

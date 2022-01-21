@@ -30,6 +30,12 @@ type SourceServiceClient interface {
 	GetIntegration(ctx context.Context, in *GetIntegrationRequest, opts ...grpc.CallOption) (*GetIntegrationResponse, error)
 	UpdateIntegration(ctx context.Context, in *UpdateIntegrationRequest, opts ...grpc.CallOption) (*UpdateIntegrationResponse, error)
 	DeleteIntegration(ctx context.Context, in *DeleteIntegrationRequest, opts ...grpc.CallOption) (*DeleteIntegrationResponse, error)
+	//REPOSITORIES
+	CreateRepository(ctx context.Context, in *CreateRepositoryRequest, opts ...grpc.CallOption) (*CreateRepositoryResponse, error)
+	ListRepositories(ctx context.Context, in *ListRepositoriesRequest, opts ...grpc.CallOption) (*ListRepositoriesResponse, error)
+	GetRepository(ctx context.Context, in *GetRepositoryRequest, opts ...grpc.CallOption) (*GetRepositoryResponse, error)
+	DeleteRepository(ctx context.Context, in *DeleteRepositoryRequest, opts ...grpc.CallOption) (*DeleteRepositoryResponse, error)
+	UpdateRepository(ctx context.Context, in *UpdateRepositoryRequest, opts ...grpc.CallOption) (*UpdateRepositoryResponse, error)
 }
 
 type sourceServiceClient struct {
@@ -130,6 +136,51 @@ func (c *sourceServiceClient) DeleteIntegration(ctx context.Context, in *DeleteI
 	return out, nil
 }
 
+func (c *sourceServiceClient) CreateRepository(ctx context.Context, in *CreateRepositoryRequest, opts ...grpc.CallOption) (*CreateRepositoryResponse, error) {
+	out := new(CreateRepositoryResponse)
+	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/CreateRepository", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sourceServiceClient) ListRepositories(ctx context.Context, in *ListRepositoriesRequest, opts ...grpc.CallOption) (*ListRepositoriesResponse, error) {
+	out := new(ListRepositoriesResponse)
+	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/ListRepositories", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sourceServiceClient) GetRepository(ctx context.Context, in *GetRepositoryRequest, opts ...grpc.CallOption) (*GetRepositoryResponse, error) {
+	out := new(GetRepositoryResponse)
+	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/GetRepository", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sourceServiceClient) DeleteRepository(ctx context.Context, in *DeleteRepositoryRequest, opts ...grpc.CallOption) (*DeleteRepositoryResponse, error) {
+	out := new(DeleteRepositoryResponse)
+	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/DeleteRepository", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sourceServiceClient) UpdateRepository(ctx context.Context, in *UpdateRepositoryRequest, opts ...grpc.CallOption) (*UpdateRepositoryResponse, error) {
+	out := new(UpdateRepositoryResponse)
+	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/UpdateRepository", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SourceServiceServer is the server API for SourceService service.
 // All implementations should embed UnimplementedSourceServiceServer
 // for forward compatibility
@@ -146,6 +197,12 @@ type SourceServiceServer interface {
 	GetIntegration(context.Context, *GetIntegrationRequest) (*GetIntegrationResponse, error)
 	UpdateIntegration(context.Context, *UpdateIntegrationRequest) (*UpdateIntegrationResponse, error)
 	DeleteIntegration(context.Context, *DeleteIntegrationRequest) (*DeleteIntegrationResponse, error)
+	//REPOSITORIES
+	CreateRepository(context.Context, *CreateRepositoryRequest) (*CreateRepositoryResponse, error)
+	ListRepositories(context.Context, *ListRepositoriesRequest) (*ListRepositoriesResponse, error)
+	GetRepository(context.Context, *GetRepositoryRequest) (*GetRepositoryResponse, error)
+	DeleteRepository(context.Context, *DeleteRepositoryRequest) (*DeleteRepositoryResponse, error)
+	UpdateRepository(context.Context, *UpdateRepositoryRequest) (*UpdateRepositoryResponse, error)
 }
 
 // UnimplementedSourceServiceServer should be embedded to have forward compatible implementations.
@@ -181,6 +238,21 @@ func (UnimplementedSourceServiceServer) UpdateIntegration(context.Context, *Upda
 }
 func (UnimplementedSourceServiceServer) DeleteIntegration(context.Context, *DeleteIntegrationRequest) (*DeleteIntegrationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteIntegration not implemented")
+}
+func (UnimplementedSourceServiceServer) CreateRepository(context.Context, *CreateRepositoryRequest) (*CreateRepositoryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateRepository not implemented")
+}
+func (UnimplementedSourceServiceServer) ListRepositories(context.Context, *ListRepositoriesRequest) (*ListRepositoriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListRepositories not implemented")
+}
+func (UnimplementedSourceServiceServer) GetRepository(context.Context, *GetRepositoryRequest) (*GetRepositoryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRepository not implemented")
+}
+func (UnimplementedSourceServiceServer) DeleteRepository(context.Context, *DeleteRepositoryRequest) (*DeleteRepositoryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteRepository not implemented")
+}
+func (UnimplementedSourceServiceServer) UpdateRepository(context.Context, *UpdateRepositoryRequest) (*UpdateRepositoryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateRepository not implemented")
 }
 
 // UnsafeSourceServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -374,6 +446,96 @@ func _SourceService_DeleteIntegration_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SourceService_CreateRepository_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateRepositoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourceServiceServer).CreateRepository(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/source.v1alpha1.SourceService/CreateRepository",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourceServiceServer).CreateRepository(ctx, req.(*CreateRepositoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SourceService_ListRepositories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRepositoriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourceServiceServer).ListRepositories(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/source.v1alpha1.SourceService/ListRepositories",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourceServiceServer).ListRepositories(ctx, req.(*ListRepositoriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SourceService_GetRepository_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRepositoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourceServiceServer).GetRepository(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/source.v1alpha1.SourceService/GetRepository",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourceServiceServer).GetRepository(ctx, req.(*GetRepositoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SourceService_DeleteRepository_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteRepositoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourceServiceServer).DeleteRepository(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/source.v1alpha1.SourceService/DeleteRepository",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourceServiceServer).DeleteRepository(ctx, req.(*DeleteRepositoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SourceService_UpdateRepository_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateRepositoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourceServiceServer).UpdateRepository(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/source.v1alpha1.SourceService/UpdateRepository",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourceServiceServer).UpdateRepository(ctx, req.(*UpdateRepositoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // SourceService_ServiceDesc is the grpc.ServiceDesc for SourceService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -420,6 +582,26 @@ var SourceService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteIntegration",
 			Handler:    _SourceService_DeleteIntegration_Handler,
+		},
+		{
+			MethodName: "CreateRepository",
+			Handler:    _SourceService_CreateRepository_Handler,
+		},
+		{
+			MethodName: "ListRepositories",
+			Handler:    _SourceService_ListRepositories_Handler,
+		},
+		{
+			MethodName: "GetRepository",
+			Handler:    _SourceService_GetRepository_Handler,
+		},
+		{
+			MethodName: "DeleteRepository",
+			Handler:    _SourceService_DeleteRepository_Handler,
+		},
+		{
+			MethodName: "UpdateRepository",
+			Handler:    _SourceService_UpdateRepository_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -108,6 +108,42 @@ class SourceService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::DeleteIntegrationResponse>> PrepareAsyncDeleteIntegration(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteIntegrationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::DeleteIntegrationResponse>>(PrepareAsyncDeleteIntegrationRaw(context, request, cq));
     }
+    // REPOSITORIES
+    virtual ::grpc::Status CreateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest& request, ::source::v1alpha1::CreateRepositoryResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::CreateRepositoryResponse>> AsyncCreateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::CreateRepositoryResponse>>(AsyncCreateRepositoryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::CreateRepositoryResponse>> PrepareAsyncCreateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::CreateRepositoryResponse>>(PrepareAsyncCreateRepositoryRaw(context, request, cq));
+    }
+    virtual ::grpc::Status ListRepositories(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest& request, ::source::v1alpha1::ListRepositoriesResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::ListRepositoriesResponse>> AsyncListRepositories(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::ListRepositoriesResponse>>(AsyncListRepositoriesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::ListRepositoriesResponse>> PrepareAsyncListRepositories(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::ListRepositoriesResponse>>(PrepareAsyncListRepositoriesRaw(context, request, cq));
+    }
+    virtual ::grpc::Status GetRepository(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest& request, ::source::v1alpha1::GetRepositoryResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::GetRepositoryResponse>> AsyncGetRepository(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::GetRepositoryResponse>>(AsyncGetRepositoryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::GetRepositoryResponse>> PrepareAsyncGetRepository(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::GetRepositoryResponse>>(PrepareAsyncGetRepositoryRaw(context, request, cq));
+    }
+    virtual ::grpc::Status DeleteRepository(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest& request, ::source::v1alpha1::DeleteRepositoryResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::DeleteRepositoryResponse>> AsyncDeleteRepository(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::DeleteRepositoryResponse>>(AsyncDeleteRepositoryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::DeleteRepositoryResponse>> PrepareAsyncDeleteRepository(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::DeleteRepositoryResponse>>(PrepareAsyncDeleteRepositoryRaw(context, request, cq));
+    }
+    virtual ::grpc::Status UpdateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest& request, ::source::v1alpha1::UpdateRepositoryResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::UpdateRepositoryResponse>> AsyncUpdateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::UpdateRepositoryResponse>>(AsyncUpdateRepositoryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::UpdateRepositoryResponse>> PrepareAsyncUpdateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::UpdateRepositoryResponse>>(PrepareAsyncUpdateRepositoryRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -123,6 +159,12 @@ class SourceService final {
       virtual void GetIntegration(::grpc::ClientContext* context, const ::source::v1alpha1::GetIntegrationRequest* request, ::source::v1alpha1::GetIntegrationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateIntegration(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateIntegrationRequest* request, ::source::v1alpha1::UpdateIntegrationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteIntegration(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteIntegrationRequest* request, ::source::v1alpha1::DeleteIntegrationResponse* response, std::function<void(::grpc::Status)>) = 0;
+      // REPOSITORIES
+      virtual void CreateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest* request, ::source::v1alpha1::CreateRepositoryResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ListRepositories(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest* request, ::source::v1alpha1::ListRepositoriesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetRepository(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest* request, ::source::v1alpha1::GetRepositoryResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteRepository(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest* request, ::source::v1alpha1::DeleteRepositoryResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest* request, ::source::v1alpha1::UpdateRepositoryResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -146,6 +188,16 @@ class SourceService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::UpdateIntegrationResponse>* PrepareAsyncUpdateIntegrationRaw(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateIntegrationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::DeleteIntegrationResponse>* AsyncDeleteIntegrationRaw(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteIntegrationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::DeleteIntegrationResponse>* PrepareAsyncDeleteIntegrationRaw(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteIntegrationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::CreateRepositoryResponse>* AsyncCreateRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::CreateRepositoryResponse>* PrepareAsyncCreateRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::ListRepositoriesResponse>* AsyncListRepositoriesRaw(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::ListRepositoriesResponse>* PrepareAsyncListRepositoriesRaw(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::GetRepositoryResponse>* AsyncGetRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::GetRepositoryResponse>* PrepareAsyncGetRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::DeleteRepositoryResponse>* AsyncDeleteRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::DeleteRepositoryResponse>* PrepareAsyncDeleteRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::UpdateRepositoryResponse>* AsyncUpdateRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::source::v1alpha1::UpdateRepositoryResponse>* PrepareAsyncUpdateRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -220,6 +272,41 @@ class SourceService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::DeleteIntegrationResponse>> PrepareAsyncDeleteIntegration(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteIntegrationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::DeleteIntegrationResponse>>(PrepareAsyncDeleteIntegrationRaw(context, request, cq));
     }
+    ::grpc::Status CreateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest& request, ::source::v1alpha1::CreateRepositoryResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::CreateRepositoryResponse>> AsyncCreateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::CreateRepositoryResponse>>(AsyncCreateRepositoryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::CreateRepositoryResponse>> PrepareAsyncCreateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::CreateRepositoryResponse>>(PrepareAsyncCreateRepositoryRaw(context, request, cq));
+    }
+    ::grpc::Status ListRepositories(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest& request, ::source::v1alpha1::ListRepositoriesResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::ListRepositoriesResponse>> AsyncListRepositories(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::ListRepositoriesResponse>>(AsyncListRepositoriesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::ListRepositoriesResponse>> PrepareAsyncListRepositories(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::ListRepositoriesResponse>>(PrepareAsyncListRepositoriesRaw(context, request, cq));
+    }
+    ::grpc::Status GetRepository(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest& request, ::source::v1alpha1::GetRepositoryResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::GetRepositoryResponse>> AsyncGetRepository(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::GetRepositoryResponse>>(AsyncGetRepositoryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::GetRepositoryResponse>> PrepareAsyncGetRepository(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::GetRepositoryResponse>>(PrepareAsyncGetRepositoryRaw(context, request, cq));
+    }
+    ::grpc::Status DeleteRepository(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest& request, ::source::v1alpha1::DeleteRepositoryResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::DeleteRepositoryResponse>> AsyncDeleteRepository(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::DeleteRepositoryResponse>>(AsyncDeleteRepositoryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::DeleteRepositoryResponse>> PrepareAsyncDeleteRepository(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::DeleteRepositoryResponse>>(PrepareAsyncDeleteRepositoryRaw(context, request, cq));
+    }
+    ::grpc::Status UpdateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest& request, ::source::v1alpha1::UpdateRepositoryResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::UpdateRepositoryResponse>> AsyncUpdateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::UpdateRepositoryResponse>>(AsyncUpdateRepositoryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::UpdateRepositoryResponse>> PrepareAsyncUpdateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::UpdateRepositoryResponse>>(PrepareAsyncUpdateRepositoryRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -233,6 +320,11 @@ class SourceService final {
       void GetIntegration(::grpc::ClientContext* context, const ::source::v1alpha1::GetIntegrationRequest* request, ::source::v1alpha1::GetIntegrationResponse* response, std::function<void(::grpc::Status)>) override;
       void UpdateIntegration(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateIntegrationRequest* request, ::source::v1alpha1::UpdateIntegrationResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteIntegration(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteIntegrationRequest* request, ::source::v1alpha1::DeleteIntegrationResponse* response, std::function<void(::grpc::Status)>) override;
+      void CreateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest* request, ::source::v1alpha1::CreateRepositoryResponse* response, std::function<void(::grpc::Status)>) override;
+      void ListRepositories(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest* request, ::source::v1alpha1::ListRepositoriesResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetRepository(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest* request, ::source::v1alpha1::GetRepositoryResponse* response, std::function<void(::grpc::Status)>) override;
+      void DeleteRepository(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest* request, ::source::v1alpha1::DeleteRepositoryResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest* request, ::source::v1alpha1::UpdateRepositoryResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -264,6 +356,16 @@ class SourceService final {
     ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::UpdateIntegrationResponse>* PrepareAsyncUpdateIntegrationRaw(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateIntegrationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::DeleteIntegrationResponse>* AsyncDeleteIntegrationRaw(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteIntegrationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::DeleteIntegrationResponse>* PrepareAsyncDeleteIntegrationRaw(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteIntegrationRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::CreateRepositoryResponse>* AsyncCreateRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::CreateRepositoryResponse>* PrepareAsyncCreateRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::ListRepositoriesResponse>* AsyncListRepositoriesRaw(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::ListRepositoriesResponse>* PrepareAsyncListRepositoriesRaw(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::GetRepositoryResponse>* AsyncGetRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::GetRepositoryResponse>* PrepareAsyncGetRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::DeleteRepositoryResponse>* AsyncDeleteRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::DeleteRepositoryResponse>* PrepareAsyncDeleteRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::UpdateRepositoryResponse>* AsyncUpdateRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::source::v1alpha1::UpdateRepositoryResponse>* PrepareAsyncUpdateRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateProvider_;
     const ::grpc::internal::RpcMethod rpcmethod_ListProviders_;
     const ::grpc::internal::RpcMethod rpcmethod_GetProvider_;
@@ -274,6 +376,11 @@ class SourceService final {
     const ::grpc::internal::RpcMethod rpcmethod_GetIntegration_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateIntegration_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteIntegration_;
+    const ::grpc::internal::RpcMethod rpcmethod_CreateRepository_;
+    const ::grpc::internal::RpcMethod rpcmethod_ListRepositories_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetRepository_;
+    const ::grpc::internal::RpcMethod rpcmethod_DeleteRepository_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateRepository_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -293,6 +400,12 @@ class SourceService final {
     virtual ::grpc::Status GetIntegration(::grpc::ServerContext* context, const ::source::v1alpha1::GetIntegrationRequest* request, ::source::v1alpha1::GetIntegrationResponse* response);
     virtual ::grpc::Status UpdateIntegration(::grpc::ServerContext* context, const ::source::v1alpha1::UpdateIntegrationRequest* request, ::source::v1alpha1::UpdateIntegrationResponse* response);
     virtual ::grpc::Status DeleteIntegration(::grpc::ServerContext* context, const ::source::v1alpha1::DeleteIntegrationRequest* request, ::source::v1alpha1::DeleteIntegrationResponse* response);
+    // REPOSITORIES
+    virtual ::grpc::Status CreateRepository(::grpc::ServerContext* context, const ::source::v1alpha1::CreateRepositoryRequest* request, ::source::v1alpha1::CreateRepositoryResponse* response);
+    virtual ::grpc::Status ListRepositories(::grpc::ServerContext* context, const ::source::v1alpha1::ListRepositoriesRequest* request, ::source::v1alpha1::ListRepositoriesResponse* response);
+    virtual ::grpc::Status GetRepository(::grpc::ServerContext* context, const ::source::v1alpha1::GetRepositoryRequest* request, ::source::v1alpha1::GetRepositoryResponse* response);
+    virtual ::grpc::Status DeleteRepository(::grpc::ServerContext* context, const ::source::v1alpha1::DeleteRepositoryRequest* request, ::source::v1alpha1::DeleteRepositoryResponse* response);
+    virtual ::grpc::Status UpdateRepository(::grpc::ServerContext* context, const ::source::v1alpha1::UpdateRepositoryRequest* request, ::source::v1alpha1::UpdateRepositoryResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateProvider : public BaseClass {
@@ -494,7 +607,107 @@ class SourceService final {
       ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateProvider<WithAsyncMethod_ListProviders<WithAsyncMethod_GetProvider<WithAsyncMethod_UpdateProvider<WithAsyncMethod_DeleteProvider<WithAsyncMethod_CreateIntegration<WithAsyncMethod_ListIntegrations<WithAsyncMethod_GetIntegration<WithAsyncMethod_UpdateIntegration<WithAsyncMethod_DeleteIntegration<Service > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_CreateRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_CreateRepository() {
+      ::grpc::Service::MarkMethodAsync(10);
+    }
+    ~WithAsyncMethod_CreateRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateRepository(::grpc::ServerContext* context, const ::source::v1alpha1::CreateRepositoryRequest* request, ::source::v1alpha1::CreateRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCreateRepository(::grpc::ServerContext* context, ::source::v1alpha1::CreateRepositoryRequest* request, ::grpc::ServerAsyncResponseWriter< ::source::v1alpha1::CreateRepositoryResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_ListRepositories : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_ListRepositories() {
+      ::grpc::Service::MarkMethodAsync(11);
+    }
+    ~WithAsyncMethod_ListRepositories() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListRepositories(::grpc::ServerContext* context, const ::source::v1alpha1::ListRepositoriesRequest* request, ::source::v1alpha1::ListRepositoriesResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListRepositories(::grpc::ServerContext* context, ::source::v1alpha1::ListRepositoriesRequest* request, ::grpc::ServerAsyncResponseWriter< ::source::v1alpha1::ListRepositoriesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetRepository() {
+      ::grpc::Service::MarkMethodAsync(12);
+    }
+    ~WithAsyncMethod_GetRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRepository(::grpc::ServerContext* context, const ::source::v1alpha1::GetRepositoryRequest* request, ::source::v1alpha1::GetRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetRepository(::grpc::ServerContext* context, ::source::v1alpha1::GetRepositoryRequest* request, ::grpc::ServerAsyncResponseWriter< ::source::v1alpha1::GetRepositoryResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DeleteRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_DeleteRepository() {
+      ::grpc::Service::MarkMethodAsync(13);
+    }
+    ~WithAsyncMethod_DeleteRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteRepository(::grpc::ServerContext* context, const ::source::v1alpha1::DeleteRepositoryRequest* request, ::source::v1alpha1::DeleteRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteRepository(::grpc::ServerContext* context, ::source::v1alpha1::DeleteRepositoryRequest* request, ::grpc::ServerAsyncResponseWriter< ::source::v1alpha1::DeleteRepositoryResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_UpdateRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_UpdateRepository() {
+      ::grpc::Service::MarkMethodAsync(14);
+    }
+    ~WithAsyncMethod_UpdateRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateRepository(::grpc::ServerContext* context, const ::source::v1alpha1::UpdateRepositoryRequest* request, ::source::v1alpha1::UpdateRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateRepository(::grpc::ServerContext* context, ::source::v1alpha1::UpdateRepositoryRequest* request, ::grpc::ServerAsyncResponseWriter< ::source::v1alpha1::UpdateRepositoryResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateProvider<WithAsyncMethod_ListProviders<WithAsyncMethod_GetProvider<WithAsyncMethod_UpdateProvider<WithAsyncMethod_DeleteProvider<WithAsyncMethod_CreateIntegration<WithAsyncMethod_ListIntegrations<WithAsyncMethod_GetIntegration<WithAsyncMethod_UpdateIntegration<WithAsyncMethod_DeleteIntegration<WithAsyncMethod_CreateRepository<WithAsyncMethod_ListRepositories<WithAsyncMethod_GetRepository<WithAsyncMethod_DeleteRepository<WithAsyncMethod_UpdateRepository<Service > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateProvider : public BaseClass {
    private:
@@ -661,6 +874,91 @@ class SourceService final {
     }
     // disable synchronous version of this method
     ::grpc::Status DeleteIntegration(::grpc::ServerContext* context, const ::source::v1alpha1::DeleteIntegrationRequest* request, ::source::v1alpha1::DeleteIntegrationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_CreateRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_CreateRepository() {
+      ::grpc::Service::MarkMethodGeneric(10);
+    }
+    ~WithGenericMethod_CreateRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateRepository(::grpc::ServerContext* context, const ::source::v1alpha1::CreateRepositoryRequest* request, ::source::v1alpha1::CreateRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ListRepositories : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_ListRepositories() {
+      ::grpc::Service::MarkMethodGeneric(11);
+    }
+    ~WithGenericMethod_ListRepositories() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListRepositories(::grpc::ServerContext* context, const ::source::v1alpha1::ListRepositoriesRequest* request, ::source::v1alpha1::ListRepositoriesResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetRepository() {
+      ::grpc::Service::MarkMethodGeneric(12);
+    }
+    ~WithGenericMethod_GetRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRepository(::grpc::ServerContext* context, const ::source::v1alpha1::GetRepositoryRequest* request, ::source::v1alpha1::GetRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DeleteRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_DeleteRepository() {
+      ::grpc::Service::MarkMethodGeneric(13);
+    }
+    ~WithGenericMethod_DeleteRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteRepository(::grpc::ServerContext* context, const ::source::v1alpha1::DeleteRepositoryRequest* request, ::source::v1alpha1::DeleteRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UpdateRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_UpdateRepository() {
+      ::grpc::Service::MarkMethodGeneric(14);
+    }
+    ~WithGenericMethod_UpdateRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateRepository(::grpc::ServerContext* context, const ::source::v1alpha1::UpdateRepositoryRequest* request, ::source::v1alpha1::UpdateRepositoryResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -866,6 +1164,106 @@ class SourceService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_CreateRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_CreateRepository() {
+      ::grpc::Service::MarkMethodRaw(10);
+    }
+    ~WithRawMethod_CreateRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateRepository(::grpc::ServerContext* context, const ::source::v1alpha1::CreateRepositoryRequest* request, ::source::v1alpha1::CreateRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCreateRepository(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_ListRepositories : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_ListRepositories() {
+      ::grpc::Service::MarkMethodRaw(11);
+    }
+    ~WithRawMethod_ListRepositories() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListRepositories(::grpc::ServerContext* context, const ::source::v1alpha1::ListRepositoriesRequest* request, ::source::v1alpha1::ListRepositoriesResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListRepositories(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetRepository() {
+      ::grpc::Service::MarkMethodRaw(12);
+    }
+    ~WithRawMethod_GetRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRepository(::grpc::ServerContext* context, const ::source::v1alpha1::GetRepositoryRequest* request, ::source::v1alpha1::GetRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetRepository(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DeleteRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_DeleteRepository() {
+      ::grpc::Service::MarkMethodRaw(13);
+    }
+    ~WithRawMethod_DeleteRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteRepository(::grpc::ServerContext* context, const ::source::v1alpha1::DeleteRepositoryRequest* request, ::source::v1alpha1::DeleteRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteRepository(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_UpdateRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_UpdateRepository() {
+      ::grpc::Service::MarkMethodRaw(14);
+    }
+    ~WithRawMethod_UpdateRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateRepository(::grpc::ServerContext* context, const ::source::v1alpha1::UpdateRepositoryRequest* request, ::source::v1alpha1::UpdateRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateRepository(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateProvider : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -1065,9 +1463,109 @@ class SourceService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedDeleteIntegration(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::source::v1alpha1::DeleteIntegrationRequest,::source::v1alpha1::DeleteIntegrationResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateProvider<WithStreamedUnaryMethod_ListProviders<WithStreamedUnaryMethod_GetProvider<WithStreamedUnaryMethod_UpdateProvider<WithStreamedUnaryMethod_DeleteProvider<WithStreamedUnaryMethod_CreateIntegration<WithStreamedUnaryMethod_ListIntegrations<WithStreamedUnaryMethod_GetIntegration<WithStreamedUnaryMethod_UpdateIntegration<WithStreamedUnaryMethod_DeleteIntegration<Service > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_CreateRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_CreateRepository() {
+      ::grpc::Service::MarkMethodStreamed(10,
+        new ::grpc::internal::StreamedUnaryHandler< ::source::v1alpha1::CreateRepositoryRequest, ::source::v1alpha1::CreateRepositoryResponse>(std::bind(&WithStreamedUnaryMethod_CreateRepository<BaseClass>::StreamedCreateRepository, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_CreateRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status CreateRepository(::grpc::ServerContext* context, const ::source::v1alpha1::CreateRepositoryRequest* request, ::source::v1alpha1::CreateRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedCreateRepository(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::source::v1alpha1::CreateRepositoryRequest,::source::v1alpha1::CreateRepositoryResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ListRepositories : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_ListRepositories() {
+      ::grpc::Service::MarkMethodStreamed(11,
+        new ::grpc::internal::StreamedUnaryHandler< ::source::v1alpha1::ListRepositoriesRequest, ::source::v1alpha1::ListRepositoriesResponse>(std::bind(&WithStreamedUnaryMethod_ListRepositories<BaseClass>::StreamedListRepositories, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_ListRepositories() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ListRepositories(::grpc::ServerContext* context, const ::source::v1alpha1::ListRepositoriesRequest* request, ::source::v1alpha1::ListRepositoriesResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedListRepositories(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::source::v1alpha1::ListRepositoriesRequest,::source::v1alpha1::ListRepositoriesResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetRepository() {
+      ::grpc::Service::MarkMethodStreamed(12,
+        new ::grpc::internal::StreamedUnaryHandler< ::source::v1alpha1::GetRepositoryRequest, ::source::v1alpha1::GetRepositoryResponse>(std::bind(&WithStreamedUnaryMethod_GetRepository<BaseClass>::StreamedGetRepository, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetRepository(::grpc::ServerContext* context, const ::source::v1alpha1::GetRepositoryRequest* request, ::source::v1alpha1::GetRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetRepository(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::source::v1alpha1::GetRepositoryRequest,::source::v1alpha1::GetRepositoryResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DeleteRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_DeleteRepository() {
+      ::grpc::Service::MarkMethodStreamed(13,
+        new ::grpc::internal::StreamedUnaryHandler< ::source::v1alpha1::DeleteRepositoryRequest, ::source::v1alpha1::DeleteRepositoryResponse>(std::bind(&WithStreamedUnaryMethod_DeleteRepository<BaseClass>::StreamedDeleteRepository, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_DeleteRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DeleteRepository(::grpc::ServerContext* context, const ::source::v1alpha1::DeleteRepositoryRequest* request, ::source::v1alpha1::DeleteRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDeleteRepository(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::source::v1alpha1::DeleteRepositoryRequest,::source::v1alpha1::DeleteRepositoryResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_UpdateRepository : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_UpdateRepository() {
+      ::grpc::Service::MarkMethodStreamed(14,
+        new ::grpc::internal::StreamedUnaryHandler< ::source::v1alpha1::UpdateRepositoryRequest, ::source::v1alpha1::UpdateRepositoryResponse>(std::bind(&WithStreamedUnaryMethod_UpdateRepository<BaseClass>::StreamedUpdateRepository, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_UpdateRepository() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UpdateRepository(::grpc::ServerContext* context, const ::source::v1alpha1::UpdateRepositoryRequest* request, ::source::v1alpha1::UpdateRepositoryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedUpdateRepository(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::source::v1alpha1::UpdateRepositoryRequest,::source::v1alpha1::UpdateRepositoryResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateProvider<WithStreamedUnaryMethod_ListProviders<WithStreamedUnaryMethod_GetProvider<WithStreamedUnaryMethod_UpdateProvider<WithStreamedUnaryMethod_DeleteProvider<WithStreamedUnaryMethod_CreateIntegration<WithStreamedUnaryMethod_ListIntegrations<WithStreamedUnaryMethod_GetIntegration<WithStreamedUnaryMethod_UpdateIntegration<WithStreamedUnaryMethod_DeleteIntegration<WithStreamedUnaryMethod_CreateRepository<WithStreamedUnaryMethod_ListRepositories<WithStreamedUnaryMethod_GetRepository<WithStreamedUnaryMethod_DeleteRepository<WithStreamedUnaryMethod_UpdateRepository<Service > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateProvider<WithStreamedUnaryMethod_ListProviders<WithStreamedUnaryMethod_GetProvider<WithStreamedUnaryMethod_UpdateProvider<WithStreamedUnaryMethod_DeleteProvider<WithStreamedUnaryMethod_CreateIntegration<WithStreamedUnaryMethod_ListIntegrations<WithStreamedUnaryMethod_GetIntegration<WithStreamedUnaryMethod_UpdateIntegration<WithStreamedUnaryMethod_DeleteIntegration<Service > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateProvider<WithStreamedUnaryMethod_ListProviders<WithStreamedUnaryMethod_GetProvider<WithStreamedUnaryMethod_UpdateProvider<WithStreamedUnaryMethod_DeleteProvider<WithStreamedUnaryMethod_CreateIntegration<WithStreamedUnaryMethod_ListIntegrations<WithStreamedUnaryMethod_GetIntegration<WithStreamedUnaryMethod_UpdateIntegration<WithStreamedUnaryMethod_DeleteIntegration<WithStreamedUnaryMethod_CreateRepository<WithStreamedUnaryMethod_ListRepositories<WithStreamedUnaryMethod_GetRepository<WithStreamedUnaryMethod_DeleteRepository<WithStreamedUnaryMethod_UpdateRepository<Service > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

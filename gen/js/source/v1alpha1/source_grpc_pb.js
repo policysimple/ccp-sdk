@@ -48,6 +48,28 @@ function deserialize_source_v1alpha1_CreateProviderResponse(buffer_arg) {
   return source_v1alpha1_source_pb.CreateProviderResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_source_v1alpha1_CreateRepositoryRequest(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.CreateRepositoryRequest)) {
+    throw new Error('Expected argument of type source.v1alpha1.CreateRepositoryRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_CreateRepositoryRequest(buffer_arg) {
+  return source_v1alpha1_source_pb.CreateRepositoryRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_source_v1alpha1_CreateRepositoryResponse(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.CreateRepositoryResponse)) {
+    throw new Error('Expected argument of type source.v1alpha1.CreateRepositoryResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_CreateRepositoryResponse(buffer_arg) {
+  return source_v1alpha1_source_pb.CreateRepositoryResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_source_v1alpha1_DeleteIntegrationRequest(arg) {
   if (!(arg instanceof source_v1alpha1_source_pb.DeleteIntegrationRequest)) {
     throw new Error('Expected argument of type source.v1alpha1.DeleteIntegrationRequest');
@@ -90,6 +112,28 @@ function serialize_source_v1alpha1_DeleteProviderResponse(arg) {
 
 function deserialize_source_v1alpha1_DeleteProviderResponse(buffer_arg) {
   return source_v1alpha1_source_pb.DeleteProviderResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_source_v1alpha1_DeleteRepositoryRequest(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.DeleteRepositoryRequest)) {
+    throw new Error('Expected argument of type source.v1alpha1.DeleteRepositoryRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_DeleteRepositoryRequest(buffer_arg) {
+  return source_v1alpha1_source_pb.DeleteRepositoryRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_source_v1alpha1_DeleteRepositoryResponse(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.DeleteRepositoryResponse)) {
+    throw new Error('Expected argument of type source.v1alpha1.DeleteRepositoryResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_DeleteRepositoryResponse(buffer_arg) {
+  return source_v1alpha1_source_pb.DeleteRepositoryResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_source_v1alpha1_GetIntegrationRequest(arg) {
@@ -136,6 +180,28 @@ function deserialize_source_v1alpha1_GetProviderResponse(buffer_arg) {
   return source_v1alpha1_source_pb.GetProviderResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_source_v1alpha1_GetRepositoryRequest(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.GetRepositoryRequest)) {
+    throw new Error('Expected argument of type source.v1alpha1.GetRepositoryRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_GetRepositoryRequest(buffer_arg) {
+  return source_v1alpha1_source_pb.GetRepositoryRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_source_v1alpha1_GetRepositoryResponse(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.GetRepositoryResponse)) {
+    throw new Error('Expected argument of type source.v1alpha1.GetRepositoryResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_GetRepositoryResponse(buffer_arg) {
+  return source_v1alpha1_source_pb.GetRepositoryResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_source_v1alpha1_ListIntegrationsRequest(arg) {
   if (!(arg instanceof source_v1alpha1_source_pb.ListIntegrationsRequest)) {
     throw new Error('Expected argument of type source.v1alpha1.ListIntegrationsRequest');
@@ -180,6 +246,28 @@ function deserialize_source_v1alpha1_ListProvidersResponse(buffer_arg) {
   return source_v1alpha1_source_pb.ListProvidersResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_source_v1alpha1_ListRepositoriesRequest(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.ListRepositoriesRequest)) {
+    throw new Error('Expected argument of type source.v1alpha1.ListRepositoriesRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_ListRepositoriesRequest(buffer_arg) {
+  return source_v1alpha1_source_pb.ListRepositoriesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_source_v1alpha1_ListRepositoriesResponse(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.ListRepositoriesResponse)) {
+    throw new Error('Expected argument of type source.v1alpha1.ListRepositoriesResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_ListRepositoriesResponse(buffer_arg) {
+  return source_v1alpha1_source_pb.ListRepositoriesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_source_v1alpha1_UpdateIntegrationRequest(arg) {
   if (!(arg instanceof source_v1alpha1_source_pb.UpdateIntegrationRequest)) {
     throw new Error('Expected argument of type source.v1alpha1.UpdateIntegrationRequest');
@@ -222,6 +310,28 @@ function serialize_source_v1alpha1_UpdateProviderResponse(arg) {
 
 function deserialize_source_v1alpha1_UpdateProviderResponse(buffer_arg) {
   return source_v1alpha1_source_pb.UpdateProviderResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_source_v1alpha1_UpdateRepositoryRequest(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.UpdateRepositoryRequest)) {
+    throw new Error('Expected argument of type source.v1alpha1.UpdateRepositoryRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_UpdateRepositoryRequest(buffer_arg) {
+  return source_v1alpha1_source_pb.UpdateRepositoryRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_source_v1alpha1_UpdateRepositoryResponse(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.UpdateRepositoryResponse)) {
+    throw new Error('Expected argument of type source.v1alpha1.UpdateRepositoryResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_UpdateRepositoryResponse(buffer_arg) {
+  return source_v1alpha1_source_pb.UpdateRepositoryResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 
@@ -337,6 +447,62 @@ var SourceServiceService = exports.SourceServiceService = {
     requestDeserialize: deserialize_source_v1alpha1_DeleteIntegrationRequest,
     responseSerialize: serialize_source_v1alpha1_DeleteIntegrationResponse,
     responseDeserialize: deserialize_source_v1alpha1_DeleteIntegrationResponse,
+  },
+  // REPOSITORIES
+  createRepository: {
+    path: '/source.v1alpha1.SourceService/CreateRepository',
+    requestStream: false,
+    responseStream: false,
+    requestType: source_v1alpha1_source_pb.CreateRepositoryRequest,
+    responseType: source_v1alpha1_source_pb.CreateRepositoryResponse,
+    requestSerialize: serialize_source_v1alpha1_CreateRepositoryRequest,
+    requestDeserialize: deserialize_source_v1alpha1_CreateRepositoryRequest,
+    responseSerialize: serialize_source_v1alpha1_CreateRepositoryResponse,
+    responseDeserialize: deserialize_source_v1alpha1_CreateRepositoryResponse,
+  },
+  listRepositories: {
+    path: '/source.v1alpha1.SourceService/ListRepositories',
+    requestStream: false,
+    responseStream: false,
+    requestType: source_v1alpha1_source_pb.ListRepositoriesRequest,
+    responseType: source_v1alpha1_source_pb.ListRepositoriesResponse,
+    requestSerialize: serialize_source_v1alpha1_ListRepositoriesRequest,
+    requestDeserialize: deserialize_source_v1alpha1_ListRepositoriesRequest,
+    responseSerialize: serialize_source_v1alpha1_ListRepositoriesResponse,
+    responseDeserialize: deserialize_source_v1alpha1_ListRepositoriesResponse,
+  },
+  getRepository: {
+    path: '/source.v1alpha1.SourceService/GetRepository',
+    requestStream: false,
+    responseStream: false,
+    requestType: source_v1alpha1_source_pb.GetRepositoryRequest,
+    responseType: source_v1alpha1_source_pb.GetRepositoryResponse,
+    requestSerialize: serialize_source_v1alpha1_GetRepositoryRequest,
+    requestDeserialize: deserialize_source_v1alpha1_GetRepositoryRequest,
+    responseSerialize: serialize_source_v1alpha1_GetRepositoryResponse,
+    responseDeserialize: deserialize_source_v1alpha1_GetRepositoryResponse,
+  },
+  deleteRepository: {
+    path: '/source.v1alpha1.SourceService/DeleteRepository',
+    requestStream: false,
+    responseStream: false,
+    requestType: source_v1alpha1_source_pb.DeleteRepositoryRequest,
+    responseType: source_v1alpha1_source_pb.DeleteRepositoryResponse,
+    requestSerialize: serialize_source_v1alpha1_DeleteRepositoryRequest,
+    requestDeserialize: deserialize_source_v1alpha1_DeleteRepositoryRequest,
+    responseSerialize: serialize_source_v1alpha1_DeleteRepositoryResponse,
+    responseDeserialize: deserialize_source_v1alpha1_DeleteRepositoryResponse,
+  },
+  updateRepository: {
+    path: '/source.v1alpha1.SourceService/UpdateRepository',
+    requestStream: false,
+    responseStream: false,
+    requestType: source_v1alpha1_source_pb.UpdateRepositoryRequest,
+    responseType: source_v1alpha1_source_pb.UpdateRepositoryResponse,
+    requestSerialize: serialize_source_v1alpha1_UpdateRepositoryRequest,
+    requestDeserialize: deserialize_source_v1alpha1_UpdateRepositoryRequest,
+    responseSerialize: serialize_source_v1alpha1_UpdateRepositoryResponse,
+    responseDeserialize: deserialize_source_v1alpha1_UpdateRepositoryResponse,
   },
 };
 

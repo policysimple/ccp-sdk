@@ -49,7 +49,7 @@ struct TableStruct_source_2fv1alpha1_2fsource_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[31]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[42]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -82,6 +82,12 @@ extern CreateProviderRequest_MetadataEntry_DoNotUseDefaultTypeInternal _CreatePr
 class CreateProviderResponse;
 struct CreateProviderResponseDefaultTypeInternal;
 extern CreateProviderResponseDefaultTypeInternal _CreateProviderResponse_default_instance_;
+class CreateRepositoryRequest;
+struct CreateRepositoryRequestDefaultTypeInternal;
+extern CreateRepositoryRequestDefaultTypeInternal _CreateRepositoryRequest_default_instance_;
+class CreateRepositoryResponse;
+struct CreateRepositoryResponseDefaultTypeInternal;
+extern CreateRepositoryResponseDefaultTypeInternal _CreateRepositoryResponse_default_instance_;
 class DeleteIntegrationRequest;
 struct DeleteIntegrationRequestDefaultTypeInternal;
 extern DeleteIntegrationRequestDefaultTypeInternal _DeleteIntegrationRequest_default_instance_;
@@ -94,6 +100,15 @@ extern DeleteProviderRequestDefaultTypeInternal _DeleteProviderRequest_default_i
 class DeleteProviderResponse;
 struct DeleteProviderResponseDefaultTypeInternal;
 extern DeleteProviderResponseDefaultTypeInternal _DeleteProviderResponse_default_instance_;
+class DeleteRepositoryRequest;
+struct DeleteRepositoryRequestDefaultTypeInternal;
+extern DeleteRepositoryRequestDefaultTypeInternal _DeleteRepositoryRequest_default_instance_;
+class DeleteRepositoryResponse;
+struct DeleteRepositoryResponseDefaultTypeInternal;
+extern DeleteRepositoryResponseDefaultTypeInternal _DeleteRepositoryResponse_default_instance_;
+class DetailRepository;
+struct DetailRepositoryDefaultTypeInternal;
+extern DetailRepositoryDefaultTypeInternal _DetailRepository_default_instance_;
 class GetIntegrationRequest;
 struct GetIntegrationRequestDefaultTypeInternal;
 extern GetIntegrationRequestDefaultTypeInternal _GetIntegrationRequest_default_instance_;
@@ -106,6 +121,12 @@ extern GetProviderRequestDefaultTypeInternal _GetProviderRequest_default_instanc
 class GetProviderResponse;
 struct GetProviderResponseDefaultTypeInternal;
 extern GetProviderResponseDefaultTypeInternal _GetProviderResponse_default_instance_;
+class GetRepositoryRequest;
+struct GetRepositoryRequestDefaultTypeInternal;
+extern GetRepositoryRequestDefaultTypeInternal _GetRepositoryRequest_default_instance_;
+class GetRepositoryResponse;
+struct GetRepositoryResponseDefaultTypeInternal;
+extern GetRepositoryResponseDefaultTypeInternal _GetRepositoryResponse_default_instance_;
 class Integration;
 struct IntegrationDefaultTypeInternal;
 extern IntegrationDefaultTypeInternal _Integration_default_instance_;
@@ -127,6 +148,12 @@ extern ListProvidersRequestDefaultTypeInternal _ListProvidersRequest_default_ins
 class ListProvidersResponse;
 struct ListProvidersResponseDefaultTypeInternal;
 extern ListProvidersResponseDefaultTypeInternal _ListProvidersResponse_default_instance_;
+class ListRepositoriesRequest;
+struct ListRepositoriesRequestDefaultTypeInternal;
+extern ListRepositoriesRequestDefaultTypeInternal _ListRepositoriesRequest_default_instance_;
+class ListRepositoriesResponse;
+struct ListRepositoriesResponseDefaultTypeInternal;
+extern ListRepositoriesResponseDefaultTypeInternal _ListRepositoriesResponse_default_instance_;
 class Provider;
 struct ProviderDefaultTypeInternal;
 extern ProviderDefaultTypeInternal _Provider_default_instance_;
@@ -151,6 +178,12 @@ extern UpdateProviderRequestDefaultTypeInternal _UpdateProviderRequest_default_i
 class UpdateProviderResponse;
 struct UpdateProviderResponseDefaultTypeInternal;
 extern UpdateProviderResponseDefaultTypeInternal _UpdateProviderResponse_default_instance_;
+class UpdateRepositoryRequest;
+struct UpdateRepositoryRequestDefaultTypeInternal;
+extern UpdateRepositoryRequestDefaultTypeInternal _UpdateRepositoryRequest_default_instance_;
+class UpdateRepositoryResponse;
+struct UpdateRepositoryResponseDefaultTypeInternal;
+extern UpdateRepositoryResponseDefaultTypeInternal _UpdateRepositoryResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace source
 PROTOBUF_NAMESPACE_OPEN
@@ -162,14 +195,21 @@ template<> ::source::v1alpha1::CreateProviderRequest* Arena::CreateMaybeMessage<
 template<> ::source::v1alpha1::CreateProviderRequest_DataEntry_DoNotUse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateProviderRequest_DataEntry_DoNotUse>(Arena*);
 template<> ::source::v1alpha1::CreateProviderRequest_MetadataEntry_DoNotUse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateProviderRequest_MetadataEntry_DoNotUse>(Arena*);
 template<> ::source::v1alpha1::CreateProviderResponse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateProviderResponse>(Arena*);
+template<> ::source::v1alpha1::CreateRepositoryRequest* Arena::CreateMaybeMessage<::source::v1alpha1::CreateRepositoryRequest>(Arena*);
+template<> ::source::v1alpha1::CreateRepositoryResponse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateRepositoryResponse>(Arena*);
 template<> ::source::v1alpha1::DeleteIntegrationRequest* Arena::CreateMaybeMessage<::source::v1alpha1::DeleteIntegrationRequest>(Arena*);
 template<> ::source::v1alpha1::DeleteIntegrationResponse* Arena::CreateMaybeMessage<::source::v1alpha1::DeleteIntegrationResponse>(Arena*);
 template<> ::source::v1alpha1::DeleteProviderRequest* Arena::CreateMaybeMessage<::source::v1alpha1::DeleteProviderRequest>(Arena*);
 template<> ::source::v1alpha1::DeleteProviderResponse* Arena::CreateMaybeMessage<::source::v1alpha1::DeleteProviderResponse>(Arena*);
+template<> ::source::v1alpha1::DeleteRepositoryRequest* Arena::CreateMaybeMessage<::source::v1alpha1::DeleteRepositoryRequest>(Arena*);
+template<> ::source::v1alpha1::DeleteRepositoryResponse* Arena::CreateMaybeMessage<::source::v1alpha1::DeleteRepositoryResponse>(Arena*);
+template<> ::source::v1alpha1::DetailRepository* Arena::CreateMaybeMessage<::source::v1alpha1::DetailRepository>(Arena*);
 template<> ::source::v1alpha1::GetIntegrationRequest* Arena::CreateMaybeMessage<::source::v1alpha1::GetIntegrationRequest>(Arena*);
 template<> ::source::v1alpha1::GetIntegrationResponse* Arena::CreateMaybeMessage<::source::v1alpha1::GetIntegrationResponse>(Arena*);
 template<> ::source::v1alpha1::GetProviderRequest* Arena::CreateMaybeMessage<::source::v1alpha1::GetProviderRequest>(Arena*);
 template<> ::source::v1alpha1::GetProviderResponse* Arena::CreateMaybeMessage<::source::v1alpha1::GetProviderResponse>(Arena*);
+template<> ::source::v1alpha1::GetRepositoryRequest* Arena::CreateMaybeMessage<::source::v1alpha1::GetRepositoryRequest>(Arena*);
+template<> ::source::v1alpha1::GetRepositoryResponse* Arena::CreateMaybeMessage<::source::v1alpha1::GetRepositoryResponse>(Arena*);
 template<> ::source::v1alpha1::Integration* Arena::CreateMaybeMessage<::source::v1alpha1::Integration>(Arena*);
 template<> ::source::v1alpha1::Integration_DataEntry_DoNotUse* Arena::CreateMaybeMessage<::source::v1alpha1::Integration_DataEntry_DoNotUse>(Arena*);
 template<> ::source::v1alpha1::Integration_MetadataEntry_DoNotUse* Arena::CreateMaybeMessage<::source::v1alpha1::Integration_MetadataEntry_DoNotUse>(Arena*);
@@ -177,6 +217,8 @@ template<> ::source::v1alpha1::ListIntegrationsRequest* Arena::CreateMaybeMessag
 template<> ::source::v1alpha1::ListIntegrationsResponse* Arena::CreateMaybeMessage<::source::v1alpha1::ListIntegrationsResponse>(Arena*);
 template<> ::source::v1alpha1::ListProvidersRequest* Arena::CreateMaybeMessage<::source::v1alpha1::ListProvidersRequest>(Arena*);
 template<> ::source::v1alpha1::ListProvidersResponse* Arena::CreateMaybeMessage<::source::v1alpha1::ListProvidersResponse>(Arena*);
+template<> ::source::v1alpha1::ListRepositoriesRequest* Arena::CreateMaybeMessage<::source::v1alpha1::ListRepositoriesRequest>(Arena*);
+template<> ::source::v1alpha1::ListRepositoriesResponse* Arena::CreateMaybeMessage<::source::v1alpha1::ListRepositoriesResponse>(Arena*);
 template<> ::source::v1alpha1::Provider* Arena::CreateMaybeMessage<::source::v1alpha1::Provider>(Arena*);
 template<> ::source::v1alpha1::Provider_DataEntry_DoNotUse* Arena::CreateMaybeMessage<::source::v1alpha1::Provider_DataEntry_DoNotUse>(Arena*);
 template<> ::source::v1alpha1::Provider_MetadataEntry_DoNotUse* Arena::CreateMaybeMessage<::source::v1alpha1::Provider_MetadataEntry_DoNotUse>(Arena*);
@@ -185,11 +227,1813 @@ template<> ::source::v1alpha1::UpdateIntegrationRequest* Arena::CreateMaybeMessa
 template<> ::source::v1alpha1::UpdateIntegrationResponse* Arena::CreateMaybeMessage<::source::v1alpha1::UpdateIntegrationResponse>(Arena*);
 template<> ::source::v1alpha1::UpdateProviderRequest* Arena::CreateMaybeMessage<::source::v1alpha1::UpdateProviderRequest>(Arena*);
 template<> ::source::v1alpha1::UpdateProviderResponse* Arena::CreateMaybeMessage<::source::v1alpha1::UpdateProviderResponse>(Arena*);
+template<> ::source::v1alpha1::UpdateRepositoryRequest* Arena::CreateMaybeMessage<::source::v1alpha1::UpdateRepositoryRequest>(Arena*);
+template<> ::source::v1alpha1::UpdateRepositoryResponse* Arena::CreateMaybeMessage<::source::v1alpha1::UpdateRepositoryResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace source {
 namespace v1alpha1 {
 
 // ===================================================================
+
+class DetailRepository final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:source.v1alpha1.DetailRepository) */ {
+ public:
+  inline DetailRepository() : DetailRepository(nullptr) {}
+  ~DetailRepository() override;
+  explicit constexpr DetailRepository(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DetailRepository(const DetailRepository& from);
+  DetailRepository(DetailRepository&& from) noexcept
+    : DetailRepository() {
+    *this = ::std::move(from);
+  }
+
+  inline DetailRepository& operator=(const DetailRepository& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DetailRepository& operator=(DetailRepository&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DetailRepository& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DetailRepository* internal_default_instance() {
+    return reinterpret_cast<const DetailRepository*>(
+               &_DetailRepository_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(DetailRepository& a, DetailRepository& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DetailRepository* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DetailRepository* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DetailRepository* New() const final {
+    return new DetailRepository();
+  }
+
+  DetailRepository* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DetailRepository>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DetailRepository& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const DetailRepository& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DetailRepository* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "source.v1alpha1.DetailRepository";
+  }
+  protected:
+  explicit DetailRepository(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+    kNameFieldNumber = 2,
+    kFullnameFieldNumber = 4,
+    kDescriptionFieldNumber = 5,
+    kCloneUrlFieldNumber = 7,
+    kPrivateFieldNumber = 3,
+    kForkFieldNumber = 6,
+    kProjectIdFieldNumber = 8,
+    kOrganizationIdFieldNumber = 9,
+  };
+  // string id = 1 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // string name = 2 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string fullname = 4 [json_name = "fullname"];
+  void clear_fullname();
+  const std::string& fullname() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_fullname(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_fullname();
+  PROTOBUF_MUST_USE_RESULT std::string* release_fullname();
+  void set_allocated_fullname(std::string* fullname);
+  private:
+  const std::string& _internal_fullname() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_fullname(const std::string& value);
+  std::string* _internal_mutable_fullname();
+  public:
+
+  // string description = 5 [json_name = "description"];
+  void clear_description();
+  const std::string& description() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_description(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_description();
+  PROTOBUF_MUST_USE_RESULT std::string* release_description();
+  void set_allocated_description(std::string* description);
+  private:
+  const std::string& _internal_description() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_description(const std::string& value);
+  std::string* _internal_mutable_description();
+  public:
+
+  // string clone_url = 7 [json_name = "cloneUrl"];
+  void clear_clone_url();
+  const std::string& clone_url() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_clone_url(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clone_url();
+  PROTOBUF_MUST_USE_RESULT std::string* release_clone_url();
+  void set_allocated_clone_url(std::string* clone_url);
+  private:
+  const std::string& _internal_clone_url() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clone_url(const std::string& value);
+  std::string* _internal_mutable_clone_url();
+  public:
+
+  // bool private = 3 [json_name = "private"];
+  void clear_private_();
+  bool private_() const;
+  void set_private_(bool value);
+  private:
+  bool _internal_private_() const;
+  void _internal_set_private_(bool value);
+  public:
+
+  // bool fork = 6 [json_name = "fork"];
+  void clear_fork();
+  bool fork() const;
+  void set_fork(bool value);
+  private:
+  bool _internal_fork() const;
+  void _internal_set_fork(bool value);
+  public:
+
+  // uint32 project_id = 8 [json_name = "projectId"];
+  void clear_project_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
+  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
+  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 organization_id = 9 [json_name = "organizationId"];
+  void clear_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:source.v1alpha1.DetailRepository)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fullname_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clone_url_;
+  bool private__;
+  bool fork_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreateRepositoryRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:source.v1alpha1.CreateRepositoryRequest) */ {
+ public:
+  inline CreateRepositoryRequest() : CreateRepositoryRequest(nullptr) {}
+  ~CreateRepositoryRequest() override;
+  explicit constexpr CreateRepositoryRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CreateRepositoryRequest(const CreateRepositoryRequest& from);
+  CreateRepositoryRequest(CreateRepositoryRequest&& from) noexcept
+    : CreateRepositoryRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateRepositoryRequest& operator=(const CreateRepositoryRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateRepositoryRequest& operator=(CreateRepositoryRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreateRepositoryRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreateRepositoryRequest* internal_default_instance() {
+    return reinterpret_cast<const CreateRepositoryRequest*>(
+               &_CreateRepositoryRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(CreateRepositoryRequest& a, CreateRepositoryRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateRepositoryRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateRepositoryRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateRepositoryRequest* New() const final {
+    return new CreateRepositoryRequest();
+  }
+
+  CreateRepositoryRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateRepositoryRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CreateRepositoryRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CreateRepositoryRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateRepositoryRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "source.v1alpha1.CreateRepositoryRequest";
+  }
+  protected:
+  explicit CreateRepositoryRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRepositoryFieldNumber = 1,
+    kProjectIdFieldNumber = 2,
+    kOrganizationIdFieldNumber = 3,
+  };
+  // .source.v1alpha1.DetailRepository repository = 1 [json_name = "repository"];
+  bool has_repository() const;
+  private:
+  bool _internal_has_repository() const;
+  public:
+  void clear_repository();
+  const ::source::v1alpha1::DetailRepository& repository() const;
+  PROTOBUF_MUST_USE_RESULT ::source::v1alpha1::DetailRepository* release_repository();
+  ::source::v1alpha1::DetailRepository* mutable_repository();
+  void set_allocated_repository(::source::v1alpha1::DetailRepository* repository);
+  private:
+  const ::source::v1alpha1::DetailRepository& _internal_repository() const;
+  ::source::v1alpha1::DetailRepository* _internal_mutable_repository();
+  public:
+  void unsafe_arena_set_allocated_repository(
+      ::source::v1alpha1::DetailRepository* repository);
+  ::source::v1alpha1::DetailRepository* unsafe_arena_release_repository();
+
+  // uint32 project_id = 2 [json_name = "projectId"];
+  void clear_project_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
+  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
+  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 organization_id = 3 [json_name = "organizationId"];
+  void clear_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:source.v1alpha1.CreateRepositoryRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::source::v1alpha1::DetailRepository* repository_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreateRepositoryResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:source.v1alpha1.CreateRepositoryResponse) */ {
+ public:
+  inline CreateRepositoryResponse() : CreateRepositoryResponse(nullptr) {}
+  ~CreateRepositoryResponse() override;
+  explicit constexpr CreateRepositoryResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CreateRepositoryResponse(const CreateRepositoryResponse& from);
+  CreateRepositoryResponse(CreateRepositoryResponse&& from) noexcept
+    : CreateRepositoryResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateRepositoryResponse& operator=(const CreateRepositoryResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateRepositoryResponse& operator=(CreateRepositoryResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreateRepositoryResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreateRepositoryResponse* internal_default_instance() {
+    return reinterpret_cast<const CreateRepositoryResponse*>(
+               &_CreateRepositoryResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(CreateRepositoryResponse& a, CreateRepositoryResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateRepositoryResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateRepositoryResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateRepositoryResponse* New() const final {
+    return new CreateRepositoryResponse();
+  }
+
+  CreateRepositoryResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateRepositoryResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CreateRepositoryResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CreateRepositoryResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateRepositoryResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "source.v1alpha1.CreateRepositoryResponse";
+  }
+  protected:
+  explicit CreateRepositoryResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMsgFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // string msg = 1 [json_name = "msg"];
+  void clear_msg();
+  const std::string& msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // @@protoc_insertion_point(class_scope:source.v1alpha1.CreateRepositoryResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListRepositoriesRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:source.v1alpha1.ListRepositoriesRequest) */ {
+ public:
+  inline ListRepositoriesRequest() : ListRepositoriesRequest(nullptr) {}
+  ~ListRepositoriesRequest() override;
+  explicit constexpr ListRepositoriesRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ListRepositoriesRequest(const ListRepositoriesRequest& from);
+  ListRepositoriesRequest(ListRepositoriesRequest&& from) noexcept
+    : ListRepositoriesRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ListRepositoriesRequest& operator=(const ListRepositoriesRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListRepositoriesRequest& operator=(ListRepositoriesRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ListRepositoriesRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ListRepositoriesRequest* internal_default_instance() {
+    return reinterpret_cast<const ListRepositoriesRequest*>(
+               &_ListRepositoriesRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(ListRepositoriesRequest& a, ListRepositoriesRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListRepositoriesRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListRepositoriesRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListRepositoriesRequest* New() const final {
+    return new ListRepositoriesRequest();
+  }
+
+  ListRepositoriesRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListRepositoriesRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ListRepositoriesRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ListRepositoriesRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListRepositoriesRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "source.v1alpha1.ListRepositoriesRequest";
+  }
+  protected:
+  explicit ListRepositoriesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kProjectIdFieldNumber = 1,
+    kOrganizationIdFieldNumber = 2,
+  };
+  // uint32 project_id = 1 [json_name = "projectId"];
+  void clear_project_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
+  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
+  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 organization_id = 2 [json_name = "organizationId"];
+  void clear_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:source.v1alpha1.ListRepositoriesRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListRepositoriesResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:source.v1alpha1.ListRepositoriesResponse) */ {
+ public:
+  inline ListRepositoriesResponse() : ListRepositoriesResponse(nullptr) {}
+  ~ListRepositoriesResponse() override;
+  explicit constexpr ListRepositoriesResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ListRepositoriesResponse(const ListRepositoriesResponse& from);
+  ListRepositoriesResponse(ListRepositoriesResponse&& from) noexcept
+    : ListRepositoriesResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ListRepositoriesResponse& operator=(const ListRepositoriesResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListRepositoriesResponse& operator=(ListRepositoriesResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ListRepositoriesResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ListRepositoriesResponse* internal_default_instance() {
+    return reinterpret_cast<const ListRepositoriesResponse*>(
+               &_ListRepositoriesResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(ListRepositoriesResponse& a, ListRepositoriesResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListRepositoriesResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListRepositoriesResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListRepositoriesResponse* New() const final {
+    return new ListRepositoriesResponse();
+  }
+
+  ListRepositoriesResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListRepositoriesResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ListRepositoriesResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ListRepositoriesResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListRepositoriesResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "source.v1alpha1.ListRepositoriesResponse";
+  }
+  protected:
+  explicit ListRepositoriesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRepositoriesFieldNumber = 1,
+  };
+  // repeated .source.v1alpha1.DetailRepository repositories = 1 [json_name = "repositories"];
+  int repositories_size() const;
+  private:
+  int _internal_repositories_size() const;
+  public:
+  void clear_repositories();
+  ::source::v1alpha1::DetailRepository* mutable_repositories(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::DetailRepository >*
+      mutable_repositories();
+  private:
+  const ::source::v1alpha1::DetailRepository& _internal_repositories(int index) const;
+  ::source::v1alpha1::DetailRepository* _internal_add_repositories();
+  public:
+  const ::source::v1alpha1::DetailRepository& repositories(int index) const;
+  ::source::v1alpha1::DetailRepository* add_repositories();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::DetailRepository >&
+      repositories() const;
+
+  // @@protoc_insertion_point(class_scope:source.v1alpha1.ListRepositoriesResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::DetailRepository > repositories_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetRepositoryRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:source.v1alpha1.GetRepositoryRequest) */ {
+ public:
+  inline GetRepositoryRequest() : GetRepositoryRequest(nullptr) {}
+  ~GetRepositoryRequest() override;
+  explicit constexpr GetRepositoryRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetRepositoryRequest(const GetRepositoryRequest& from);
+  GetRepositoryRequest(GetRepositoryRequest&& from) noexcept
+    : GetRepositoryRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetRepositoryRequest& operator=(const GetRepositoryRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetRepositoryRequest& operator=(GetRepositoryRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetRepositoryRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetRepositoryRequest* internal_default_instance() {
+    return reinterpret_cast<const GetRepositoryRequest*>(
+               &_GetRepositoryRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(GetRepositoryRequest& a, GetRepositoryRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetRepositoryRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetRepositoryRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetRepositoryRequest* New() const final {
+    return new GetRepositoryRequest();
+  }
+
+  GetRepositoryRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetRepositoryRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetRepositoryRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetRepositoryRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetRepositoryRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "source.v1alpha1.GetRepositoryRequest";
+  }
+  protected:
+  explicit GetRepositoryRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRepositoryIdFieldNumber = 1,
+  };
+  // string repository_id = 1 [json_name = "repositoryId"];
+  void clear_repository_id();
+  const std::string& repository_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_repository_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_repository_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_repository_id();
+  void set_allocated_repository_id(std::string* repository_id);
+  private:
+  const std::string& _internal_repository_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_repository_id(const std::string& value);
+  std::string* _internal_mutable_repository_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:source.v1alpha1.GetRepositoryRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr repository_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetRepositoryResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:source.v1alpha1.GetRepositoryResponse) */ {
+ public:
+  inline GetRepositoryResponse() : GetRepositoryResponse(nullptr) {}
+  ~GetRepositoryResponse() override;
+  explicit constexpr GetRepositoryResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetRepositoryResponse(const GetRepositoryResponse& from);
+  GetRepositoryResponse(GetRepositoryResponse&& from) noexcept
+    : GetRepositoryResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetRepositoryResponse& operator=(const GetRepositoryResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetRepositoryResponse& operator=(GetRepositoryResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetRepositoryResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetRepositoryResponse* internal_default_instance() {
+    return reinterpret_cast<const GetRepositoryResponse*>(
+               &_GetRepositoryResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(GetRepositoryResponse& a, GetRepositoryResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetRepositoryResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetRepositoryResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetRepositoryResponse* New() const final {
+    return new GetRepositoryResponse();
+  }
+
+  GetRepositoryResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetRepositoryResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetRepositoryResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetRepositoryResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetRepositoryResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "source.v1alpha1.GetRepositoryResponse";
+  }
+  protected:
+  explicit GetRepositoryResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRepositoryFieldNumber = 1,
+  };
+  // .source.v1alpha1.DetailRepository repository = 1 [json_name = "repository"];
+  bool has_repository() const;
+  private:
+  bool _internal_has_repository() const;
+  public:
+  void clear_repository();
+  const ::source::v1alpha1::DetailRepository& repository() const;
+  PROTOBUF_MUST_USE_RESULT ::source::v1alpha1::DetailRepository* release_repository();
+  ::source::v1alpha1::DetailRepository* mutable_repository();
+  void set_allocated_repository(::source::v1alpha1::DetailRepository* repository);
+  private:
+  const ::source::v1alpha1::DetailRepository& _internal_repository() const;
+  ::source::v1alpha1::DetailRepository* _internal_mutable_repository();
+  public:
+  void unsafe_arena_set_allocated_repository(
+      ::source::v1alpha1::DetailRepository* repository);
+  ::source::v1alpha1::DetailRepository* unsafe_arena_release_repository();
+
+  // @@protoc_insertion_point(class_scope:source.v1alpha1.GetRepositoryResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::source::v1alpha1::DetailRepository* repository_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DeleteRepositoryRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:source.v1alpha1.DeleteRepositoryRequest) */ {
+ public:
+  inline DeleteRepositoryRequest() : DeleteRepositoryRequest(nullptr) {}
+  ~DeleteRepositoryRequest() override;
+  explicit constexpr DeleteRepositoryRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DeleteRepositoryRequest(const DeleteRepositoryRequest& from);
+  DeleteRepositoryRequest(DeleteRepositoryRequest&& from) noexcept
+    : DeleteRepositoryRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteRepositoryRequest& operator=(const DeleteRepositoryRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DeleteRepositoryRequest& operator=(DeleteRepositoryRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DeleteRepositoryRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DeleteRepositoryRequest* internal_default_instance() {
+    return reinterpret_cast<const DeleteRepositoryRequest*>(
+               &_DeleteRepositoryRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(DeleteRepositoryRequest& a, DeleteRepositoryRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DeleteRepositoryRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DeleteRepositoryRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DeleteRepositoryRequest* New() const final {
+    return new DeleteRepositoryRequest();
+  }
+
+  DeleteRepositoryRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteRepositoryRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DeleteRepositoryRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const DeleteRepositoryRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteRepositoryRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "source.v1alpha1.DeleteRepositoryRequest";
+  }
+  protected:
+  explicit DeleteRepositoryRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRepositoryIdFieldNumber = 1,
+  };
+  // string repository_id = 1 [json_name = "repositoryId"];
+  void clear_repository_id();
+  const std::string& repository_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_repository_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_repository_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_repository_id();
+  void set_allocated_repository_id(std::string* repository_id);
+  private:
+  const std::string& _internal_repository_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_repository_id(const std::string& value);
+  std::string* _internal_mutable_repository_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:source.v1alpha1.DeleteRepositoryRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr repository_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DeleteRepositoryResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:source.v1alpha1.DeleteRepositoryResponse) */ {
+ public:
+  inline DeleteRepositoryResponse() : DeleteRepositoryResponse(nullptr) {}
+  ~DeleteRepositoryResponse() override;
+  explicit constexpr DeleteRepositoryResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DeleteRepositoryResponse(const DeleteRepositoryResponse& from);
+  DeleteRepositoryResponse(DeleteRepositoryResponse&& from) noexcept
+    : DeleteRepositoryResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteRepositoryResponse& operator=(const DeleteRepositoryResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DeleteRepositoryResponse& operator=(DeleteRepositoryResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DeleteRepositoryResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DeleteRepositoryResponse* internal_default_instance() {
+    return reinterpret_cast<const DeleteRepositoryResponse*>(
+               &_DeleteRepositoryResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(DeleteRepositoryResponse& a, DeleteRepositoryResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DeleteRepositoryResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DeleteRepositoryResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DeleteRepositoryResponse* New() const final {
+    return new DeleteRepositoryResponse();
+  }
+
+  DeleteRepositoryResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteRepositoryResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DeleteRepositoryResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const DeleteRepositoryResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteRepositoryResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "source.v1alpha1.DeleteRepositoryResponse";
+  }
+  protected:
+  explicit DeleteRepositoryResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMsgFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // string msg = 1 [json_name = "msg"];
+  void clear_msg();
+  const std::string& msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // @@protoc_insertion_point(class_scope:source.v1alpha1.DeleteRepositoryResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateRepositoryRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:source.v1alpha1.UpdateRepositoryRequest) */ {
+ public:
+  inline UpdateRepositoryRequest() : UpdateRepositoryRequest(nullptr) {}
+  ~UpdateRepositoryRequest() override;
+  explicit constexpr UpdateRepositoryRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateRepositoryRequest(const UpdateRepositoryRequest& from);
+  UpdateRepositoryRequest(UpdateRepositoryRequest&& from) noexcept
+    : UpdateRepositoryRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateRepositoryRequest& operator=(const UpdateRepositoryRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateRepositoryRequest& operator=(UpdateRepositoryRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateRepositoryRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateRepositoryRequest* internal_default_instance() {
+    return reinterpret_cast<const UpdateRepositoryRequest*>(
+               &_UpdateRepositoryRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(UpdateRepositoryRequest& a, UpdateRepositoryRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateRepositoryRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateRepositoryRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateRepositoryRequest* New() const final {
+    return new UpdateRepositoryRequest();
+  }
+
+  UpdateRepositoryRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateRepositoryRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateRepositoryRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateRepositoryRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateRepositoryRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "source.v1alpha1.UpdateRepositoryRequest";
+  }
+  protected:
+  explicit UpdateRepositoryRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRepositoryIdFieldNumber = 1,
+    kRepositoryFieldNumber = 2,
+  };
+  // string repository_id = 1 [json_name = "repositoryId"];
+  void clear_repository_id();
+  const std::string& repository_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_repository_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_repository_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_repository_id();
+  void set_allocated_repository_id(std::string* repository_id);
+  private:
+  const std::string& _internal_repository_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_repository_id(const std::string& value);
+  std::string* _internal_mutable_repository_id();
+  public:
+
+  // .source.v1alpha1.DetailRepository repository = 2 [json_name = "repository"];
+  bool has_repository() const;
+  private:
+  bool _internal_has_repository() const;
+  public:
+  void clear_repository();
+  const ::source::v1alpha1::DetailRepository& repository() const;
+  PROTOBUF_MUST_USE_RESULT ::source::v1alpha1::DetailRepository* release_repository();
+  ::source::v1alpha1::DetailRepository* mutable_repository();
+  void set_allocated_repository(::source::v1alpha1::DetailRepository* repository);
+  private:
+  const ::source::v1alpha1::DetailRepository& _internal_repository() const;
+  ::source::v1alpha1::DetailRepository* _internal_mutable_repository();
+  public:
+  void unsafe_arena_set_allocated_repository(
+      ::source::v1alpha1::DetailRepository* repository);
+  ::source::v1alpha1::DetailRepository* unsafe_arena_release_repository();
+
+  // @@protoc_insertion_point(class_scope:source.v1alpha1.UpdateRepositoryRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr repository_id_;
+  ::source::v1alpha1::DetailRepository* repository_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateRepositoryResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:source.v1alpha1.UpdateRepositoryResponse) */ {
+ public:
+  inline UpdateRepositoryResponse() : UpdateRepositoryResponse(nullptr) {}
+  ~UpdateRepositoryResponse() override;
+  explicit constexpr UpdateRepositoryResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateRepositoryResponse(const UpdateRepositoryResponse& from);
+  UpdateRepositoryResponse(UpdateRepositoryResponse&& from) noexcept
+    : UpdateRepositoryResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateRepositoryResponse& operator=(const UpdateRepositoryResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateRepositoryResponse& operator=(UpdateRepositoryResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateRepositoryResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateRepositoryResponse* internal_default_instance() {
+    return reinterpret_cast<const UpdateRepositoryResponse*>(
+               &_UpdateRepositoryResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(UpdateRepositoryResponse& a, UpdateRepositoryResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateRepositoryResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateRepositoryResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateRepositoryResponse* New() const final {
+    return new UpdateRepositoryResponse();
+  }
+
+  UpdateRepositoryResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateRepositoryResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateRepositoryResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateRepositoryResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateRepositoryResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "source.v1alpha1.UpdateRepositoryResponse";
+  }
+  protected:
+  explicit UpdateRepositoryResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMsgFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // string msg = 1 [json_name = "msg"];
+  void clear_msg();
+  const std::string& msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // @@protoc_insertion_point(class_scope:source.v1alpha1.UpdateRepositoryResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
+};
+// -------------------------------------------------------------------
 
 class Integration_DataEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Integration_DataEntry_DoNotUse, 
     std::string, std::string,
@@ -289,7 +2133,7 @@ class Integration final :
                &_Integration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    13;
 
   friend void swap(Integration& a, Integration& b) {
     a.Swap(&b);
@@ -543,7 +2387,7 @@ class Repository final :
                &_Repository_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    14;
 
   friend void swap(Repository& a, Repository& b) {
     a.Swap(&b);
@@ -811,7 +2655,7 @@ class CreateIntegrationRequest final :
                &_CreateIntegrationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    17;
 
   friend void swap(CreateIntegrationRequest& a, CreateIntegrationRequest& b) {
     a.Swap(&b);
@@ -1049,7 +2893,7 @@ class CreateIntegrationResponse final :
                &_CreateIntegrationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    18;
 
   friend void swap(CreateIntegrationResponse& a, CreateIntegrationResponse& b) {
     a.Swap(&b);
@@ -1209,7 +3053,7 @@ class ListIntegrationsRequest final :
                &_ListIntegrationsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    19;
 
   friend void swap(ListIntegrationsRequest& a, ListIntegrationsRequest& b) {
     a.Swap(&b);
@@ -1364,7 +3208,7 @@ class ListIntegrationsResponse final :
                &_ListIntegrationsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    20;
 
   friend void swap(ListIntegrationsResponse& a, ListIntegrationsResponse& b) {
     a.Swap(&b);
@@ -1512,7 +3356,7 @@ class GetIntegrationRequest final :
                &_GetIntegrationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    21;
 
   friend void swap(GetIntegrationRequest& a, GetIntegrationRequest& b) {
     a.Swap(&b);
@@ -1656,7 +3500,7 @@ class GetIntegrationResponse final :
                &_GetIntegrationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    22;
 
   friend void swap(GetIntegrationResponse& a, GetIntegrationResponse& b) {
     a.Swap(&b);
@@ -1824,7 +3668,7 @@ class UpdateIntegrationRequest final :
                &_UpdateIntegrationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    23;
 
   friend void swap(UpdateIntegrationRequest& a, UpdateIntegrationRequest& b) {
     a.Swap(&b);
@@ -1988,7 +3832,7 @@ class UpdateIntegrationResponse final :
                &_UpdateIntegrationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    24;
 
   friend void swap(UpdateIntegrationResponse& a, UpdateIntegrationResponse& b) {
     a.Swap(&b);
@@ -2148,7 +3992,7 @@ class DeleteIntegrationRequest final :
                &_DeleteIntegrationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    25;
 
   friend void swap(DeleteIntegrationRequest& a, DeleteIntegrationRequest& b) {
     a.Swap(&b);
@@ -2292,7 +4136,7 @@ class DeleteIntegrationResponse final :
                &_DeleteIntegrationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    26;
 
   friend void swap(DeleteIntegrationResponse& a, DeleteIntegrationResponse& b) {
     a.Swap(&b);
@@ -2506,7 +4350,7 @@ class Provider final :
                &_Provider_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    29;
 
   friend void swap(Provider& a, Provider& b) {
     a.Swap(&b);
@@ -2745,7 +4589,7 @@ class DeleteProviderRequest final :
                &_DeleteProviderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    30;
 
   friend void swap(DeleteProviderRequest& a, DeleteProviderRequest& b) {
     a.Swap(&b);
@@ -2889,7 +4733,7 @@ class DeleteProviderResponse final :
                &_DeleteProviderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    31;
 
   friend void swap(DeleteProviderResponse& a, DeleteProviderResponse& b) {
     a.Swap(&b);
@@ -3049,7 +4893,7 @@ class UpdateProviderRequest final :
                &_UpdateProviderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    32;
 
   friend void swap(UpdateProviderRequest& a, UpdateProviderRequest& b) {
     a.Swap(&b);
@@ -3213,7 +5057,7 @@ class UpdateProviderResponse final :
                &_UpdateProviderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    33;
 
   friend void swap(UpdateProviderResponse& a, UpdateProviderResponse& b) {
     a.Swap(&b);
@@ -3373,7 +5217,7 @@ class GetProviderRequest final :
                &_GetProviderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    34;
 
   friend void swap(GetProviderRequest& a, GetProviderRequest& b) {
     a.Swap(&b);
@@ -3517,7 +5361,7 @@ class GetProviderResponse final :
                &_GetProviderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    35;
 
   friend void swap(GetProviderResponse& a, GetProviderResponse& b) {
     a.Swap(&b);
@@ -3719,7 +5563,7 @@ class CreateProviderRequest final :
                &_CreateProviderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    38;
 
   friend void swap(CreateProviderRequest& a, CreateProviderRequest& b) {
     a.Swap(&b);
@@ -3942,7 +5786,7 @@ class CreateProviderResponse final :
                &_CreateProviderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    39;
 
   friend void swap(CreateProviderResponse& a, CreateProviderResponse& b) {
     a.Swap(&b);
@@ -4102,7 +5946,7 @@ class ListProvidersRequest final :
                &_ListProvidersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    40;
 
   friend void swap(ListProvidersRequest& a, ListProvidersRequest& b) {
     a.Swap(&b);
@@ -4228,7 +6072,7 @@ class ListProvidersResponse final :
                &_ListProvidersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    41;
 
   friend void swap(ListProvidersResponse& a, ListProvidersResponse& b) {
     a.Swap(&b);
@@ -4339,6 +6183,1164 @@ class ListProvidersResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// DetailRepository
+
+// string id = 1 [json_name = "id"];
+inline void DetailRepository::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& DetailRepository::id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.DetailRepository.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DetailRepository::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.DetailRepository.id)
+}
+inline std::string* DetailRepository::mutable_id() {
+  std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.DetailRepository.id)
+  return _s;
+}
+inline const std::string& DetailRepository::_internal_id() const {
+  return id_.Get();
+}
+inline void DetailRepository::_internal_set_id(const std::string& value) {
+  
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DetailRepository::_internal_mutable_id() {
+  
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DetailRepository::release_id() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.DetailRepository.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DetailRepository::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.DetailRepository.id)
+}
+
+// string name = 2 [json_name = "name"];
+inline void DetailRepository::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& DetailRepository::name() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.DetailRepository.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DetailRepository::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.DetailRepository.name)
+}
+inline std::string* DetailRepository::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.DetailRepository.name)
+  return _s;
+}
+inline const std::string& DetailRepository::_internal_name() const {
+  return name_.Get();
+}
+inline void DetailRepository::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DetailRepository::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DetailRepository::release_name() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.DetailRepository.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DetailRepository::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.DetailRepository.name)
+}
+
+// bool private = 3 [json_name = "private"];
+inline void DetailRepository::clear_private_() {
+  private__ = false;
+}
+inline bool DetailRepository::_internal_private_() const {
+  return private__;
+}
+inline bool DetailRepository::private_() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.DetailRepository.private)
+  return _internal_private_();
+}
+inline void DetailRepository::_internal_set_private_(bool value) {
+  
+  private__ = value;
+}
+inline void DetailRepository::set_private_(bool value) {
+  _internal_set_private_(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.DetailRepository.private)
+}
+
+// string fullname = 4 [json_name = "fullname"];
+inline void DetailRepository::clear_fullname() {
+  fullname_.ClearToEmpty();
+}
+inline const std::string& DetailRepository::fullname() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.DetailRepository.fullname)
+  return _internal_fullname();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DetailRepository::set_fullname(ArgT0&& arg0, ArgT... args) {
+ 
+ fullname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.DetailRepository.fullname)
+}
+inline std::string* DetailRepository::mutable_fullname() {
+  std::string* _s = _internal_mutable_fullname();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.DetailRepository.fullname)
+  return _s;
+}
+inline const std::string& DetailRepository::_internal_fullname() const {
+  return fullname_.Get();
+}
+inline void DetailRepository::_internal_set_fullname(const std::string& value) {
+  
+  fullname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DetailRepository::_internal_mutable_fullname() {
+  
+  return fullname_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DetailRepository::release_fullname() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.DetailRepository.fullname)
+  return fullname_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DetailRepository::set_allocated_fullname(std::string* fullname) {
+  if (fullname != nullptr) {
+    
+  } else {
+    
+  }
+  fullname_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), fullname,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.DetailRepository.fullname)
+}
+
+// string description = 5 [json_name = "description"];
+inline void DetailRepository::clear_description() {
+  description_.ClearToEmpty();
+}
+inline const std::string& DetailRepository::description() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.DetailRepository.description)
+  return _internal_description();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DetailRepository::set_description(ArgT0&& arg0, ArgT... args) {
+ 
+ description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.DetailRepository.description)
+}
+inline std::string* DetailRepository::mutable_description() {
+  std::string* _s = _internal_mutable_description();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.DetailRepository.description)
+  return _s;
+}
+inline const std::string& DetailRepository::_internal_description() const {
+  return description_.Get();
+}
+inline void DetailRepository::_internal_set_description(const std::string& value) {
+  
+  description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DetailRepository::_internal_mutable_description() {
+  
+  return description_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DetailRepository::release_description() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.DetailRepository.description)
+  return description_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DetailRepository::set_allocated_description(std::string* description) {
+  if (description != nullptr) {
+    
+  } else {
+    
+  }
+  description_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.DetailRepository.description)
+}
+
+// bool fork = 6 [json_name = "fork"];
+inline void DetailRepository::clear_fork() {
+  fork_ = false;
+}
+inline bool DetailRepository::_internal_fork() const {
+  return fork_;
+}
+inline bool DetailRepository::fork() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.DetailRepository.fork)
+  return _internal_fork();
+}
+inline void DetailRepository::_internal_set_fork(bool value) {
+  
+  fork_ = value;
+}
+inline void DetailRepository::set_fork(bool value) {
+  _internal_set_fork(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.DetailRepository.fork)
+}
+
+// string clone_url = 7 [json_name = "cloneUrl"];
+inline void DetailRepository::clear_clone_url() {
+  clone_url_.ClearToEmpty();
+}
+inline const std::string& DetailRepository::clone_url() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.DetailRepository.clone_url)
+  return _internal_clone_url();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DetailRepository::set_clone_url(ArgT0&& arg0, ArgT... args) {
+ 
+ clone_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.DetailRepository.clone_url)
+}
+inline std::string* DetailRepository::mutable_clone_url() {
+  std::string* _s = _internal_mutable_clone_url();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.DetailRepository.clone_url)
+  return _s;
+}
+inline const std::string& DetailRepository::_internal_clone_url() const {
+  return clone_url_.Get();
+}
+inline void DetailRepository::_internal_set_clone_url(const std::string& value) {
+  
+  clone_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DetailRepository::_internal_mutable_clone_url() {
+  
+  return clone_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DetailRepository::release_clone_url() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.DetailRepository.clone_url)
+  return clone_url_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DetailRepository::set_allocated_clone_url(std::string* clone_url) {
+  if (clone_url != nullptr) {
+    
+  } else {
+    
+  }
+  clone_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), clone_url,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.DetailRepository.clone_url)
+}
+
+// uint32 project_id = 8 [json_name = "projectId"];
+inline void DetailRepository::clear_project_id() {
+  project_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DetailRepository::_internal_project_id() const {
+  return project_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DetailRepository::project_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.DetailRepository.project_id)
+  return _internal_project_id();
+}
+inline void DetailRepository::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  project_id_ = value;
+}
+inline void DetailRepository::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_project_id(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.DetailRepository.project_id)
+}
+
+// uint32 organization_id = 9 [json_name = "organizationId"];
+inline void DetailRepository::clear_organization_id() {
+  organization_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DetailRepository::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DetailRepository::organization_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.DetailRepository.organization_id)
+  return _internal_organization_id();
+}
+inline void DetailRepository::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void DetailRepository::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.DetailRepository.organization_id)
+}
+
+// -------------------------------------------------------------------
+
+// CreateRepositoryRequest
+
+// .source.v1alpha1.DetailRepository repository = 1 [json_name = "repository"];
+inline bool CreateRepositoryRequest::_internal_has_repository() const {
+  return this != internal_default_instance() && repository_ != nullptr;
+}
+inline bool CreateRepositoryRequest::has_repository() const {
+  return _internal_has_repository();
+}
+inline void CreateRepositoryRequest::clear_repository() {
+  if (GetArenaForAllocation() == nullptr && repository_ != nullptr) {
+    delete repository_;
+  }
+  repository_ = nullptr;
+}
+inline const ::source::v1alpha1::DetailRepository& CreateRepositoryRequest::_internal_repository() const {
+  const ::source::v1alpha1::DetailRepository* p = repository_;
+  return p != nullptr ? *p : reinterpret_cast<const ::source::v1alpha1::DetailRepository&>(
+      ::source::v1alpha1::_DetailRepository_default_instance_);
+}
+inline const ::source::v1alpha1::DetailRepository& CreateRepositoryRequest::repository() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateRepositoryRequest.repository)
+  return _internal_repository();
+}
+inline void CreateRepositoryRequest::unsafe_arena_set_allocated_repository(
+    ::source::v1alpha1::DetailRepository* repository) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(repository_);
+  }
+  repository_ = repository;
+  if (repository) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:source.v1alpha1.CreateRepositoryRequest.repository)
+}
+inline ::source::v1alpha1::DetailRepository* CreateRepositoryRequest::release_repository() {
+  
+  ::source::v1alpha1::DetailRepository* temp = repository_;
+  repository_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::source::v1alpha1::DetailRepository* CreateRepositoryRequest::unsafe_arena_release_repository() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.CreateRepositoryRequest.repository)
+  
+  ::source::v1alpha1::DetailRepository* temp = repository_;
+  repository_ = nullptr;
+  return temp;
+}
+inline ::source::v1alpha1::DetailRepository* CreateRepositoryRequest::_internal_mutable_repository() {
+  
+  if (repository_ == nullptr) {
+    auto* p = CreateMaybeMessage<::source::v1alpha1::DetailRepository>(GetArenaForAllocation());
+    repository_ = p;
+  }
+  return repository_;
+}
+inline ::source::v1alpha1::DetailRepository* CreateRepositoryRequest::mutable_repository() {
+  ::source::v1alpha1::DetailRepository* _msg = _internal_mutable_repository();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.CreateRepositoryRequest.repository)
+  return _msg;
+}
+inline void CreateRepositoryRequest::set_allocated_repository(::source::v1alpha1::DetailRepository* repository) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete repository_;
+  }
+  if (repository) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::source::v1alpha1::DetailRepository>::GetOwningArena(repository);
+    if (message_arena != submessage_arena) {
+      repository = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, repository, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  repository_ = repository;
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateRepositoryRequest.repository)
+}
+
+// uint32 project_id = 2 [json_name = "projectId"];
+inline void CreateRepositoryRequest::clear_project_id() {
+  project_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateRepositoryRequest::_internal_project_id() const {
+  return project_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateRepositoryRequest::project_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateRepositoryRequest.project_id)
+  return _internal_project_id();
+}
+inline void CreateRepositoryRequest::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  project_id_ = value;
+}
+inline void CreateRepositoryRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_project_id(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.CreateRepositoryRequest.project_id)
+}
+
+// uint32 organization_id = 3 [json_name = "organizationId"];
+inline void CreateRepositoryRequest::clear_organization_id() {
+  organization_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateRepositoryRequest::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateRepositoryRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateRepositoryRequest.organization_id)
+  return _internal_organization_id();
+}
+inline void CreateRepositoryRequest::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void CreateRepositoryRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.CreateRepositoryRequest.organization_id)
+}
+
+// -------------------------------------------------------------------
+
+// CreateRepositoryResponse
+
+// string msg = 1 [json_name = "msg"];
+inline void CreateRepositoryResponse::clear_msg() {
+  msg_.ClearToEmpty();
+}
+inline const std::string& CreateRepositoryResponse::msg() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateRepositoryResponse.msg)
+  return _internal_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateRepositoryResponse::set_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.CreateRepositoryResponse.msg)
+}
+inline std::string* CreateRepositoryResponse::mutable_msg() {
+  std::string* _s = _internal_mutable_msg();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.CreateRepositoryResponse.msg)
+  return _s;
+}
+inline const std::string& CreateRepositoryResponse::_internal_msg() const {
+  return msg_.Get();
+}
+inline void CreateRepositoryResponse::_internal_set_msg(const std::string& value) {
+  
+  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateRepositoryResponse::_internal_mutable_msg() {
+  
+  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateRepositoryResponse::release_msg() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.CreateRepositoryResponse.msg)
+  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateRepositoryResponse::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateRepositoryResponse.msg)
+}
+
+// string error = 2 [json_name = "error"];
+inline void CreateRepositoryResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& CreateRepositoryResponse::error() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateRepositoryResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateRepositoryResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.CreateRepositoryResponse.error)
+}
+inline std::string* CreateRepositoryResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.CreateRepositoryResponse.error)
+  return _s;
+}
+inline const std::string& CreateRepositoryResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void CreateRepositoryResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateRepositoryResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateRepositoryResponse::release_error() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.CreateRepositoryResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateRepositoryResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateRepositoryResponse.error)
+}
+
+// -------------------------------------------------------------------
+
+// ListRepositoriesRequest
+
+// uint32 project_id = 1 [json_name = "projectId"];
+inline void ListRepositoriesRequest::clear_project_id() {
+  project_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListRepositoriesRequest::_internal_project_id() const {
+  return project_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListRepositoriesRequest::project_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.ListRepositoriesRequest.project_id)
+  return _internal_project_id();
+}
+inline void ListRepositoriesRequest::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  project_id_ = value;
+}
+inline void ListRepositoriesRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_project_id(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.ListRepositoriesRequest.project_id)
+}
+
+// uint32 organization_id = 2 [json_name = "organizationId"];
+inline void ListRepositoriesRequest::clear_organization_id() {
+  organization_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListRepositoriesRequest::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListRepositoriesRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.ListRepositoriesRequest.organization_id)
+  return _internal_organization_id();
+}
+inline void ListRepositoriesRequest::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void ListRepositoriesRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.ListRepositoriesRequest.organization_id)
+}
+
+// -------------------------------------------------------------------
+
+// ListRepositoriesResponse
+
+// repeated .source.v1alpha1.DetailRepository repositories = 1 [json_name = "repositories"];
+inline int ListRepositoriesResponse::_internal_repositories_size() const {
+  return repositories_.size();
+}
+inline int ListRepositoriesResponse::repositories_size() const {
+  return _internal_repositories_size();
+}
+inline void ListRepositoriesResponse::clear_repositories() {
+  repositories_.Clear();
+}
+inline ::source::v1alpha1::DetailRepository* ListRepositoriesResponse::mutable_repositories(int index) {
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.ListRepositoriesResponse.repositories)
+  return repositories_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::DetailRepository >*
+ListRepositoriesResponse::mutable_repositories() {
+  // @@protoc_insertion_point(field_mutable_list:source.v1alpha1.ListRepositoriesResponse.repositories)
+  return &repositories_;
+}
+inline const ::source::v1alpha1::DetailRepository& ListRepositoriesResponse::_internal_repositories(int index) const {
+  return repositories_.Get(index);
+}
+inline const ::source::v1alpha1::DetailRepository& ListRepositoriesResponse::repositories(int index) const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.ListRepositoriesResponse.repositories)
+  return _internal_repositories(index);
+}
+inline ::source::v1alpha1::DetailRepository* ListRepositoriesResponse::_internal_add_repositories() {
+  return repositories_.Add();
+}
+inline ::source::v1alpha1::DetailRepository* ListRepositoriesResponse::add_repositories() {
+  ::source::v1alpha1::DetailRepository* _add = _internal_add_repositories();
+  // @@protoc_insertion_point(field_add:source.v1alpha1.ListRepositoriesResponse.repositories)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::DetailRepository >&
+ListRepositoriesResponse::repositories() const {
+  // @@protoc_insertion_point(field_list:source.v1alpha1.ListRepositoriesResponse.repositories)
+  return repositories_;
+}
+
+// -------------------------------------------------------------------
+
+// GetRepositoryRequest
+
+// string repository_id = 1 [json_name = "repositoryId"];
+inline void GetRepositoryRequest::clear_repository_id() {
+  repository_id_.ClearToEmpty();
+}
+inline const std::string& GetRepositoryRequest::repository_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.GetRepositoryRequest.repository_id)
+  return _internal_repository_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetRepositoryRequest::set_repository_id(ArgT0&& arg0, ArgT... args) {
+ 
+ repository_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.GetRepositoryRequest.repository_id)
+}
+inline std::string* GetRepositoryRequest::mutable_repository_id() {
+  std::string* _s = _internal_mutable_repository_id();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.GetRepositoryRequest.repository_id)
+  return _s;
+}
+inline const std::string& GetRepositoryRequest::_internal_repository_id() const {
+  return repository_id_.Get();
+}
+inline void GetRepositoryRequest::_internal_set_repository_id(const std::string& value) {
+  
+  repository_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetRepositoryRequest::_internal_mutable_repository_id() {
+  
+  return repository_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetRepositoryRequest::release_repository_id() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.GetRepositoryRequest.repository_id)
+  return repository_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetRepositoryRequest::set_allocated_repository_id(std::string* repository_id) {
+  if (repository_id != nullptr) {
+    
+  } else {
+    
+  }
+  repository_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), repository_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.GetRepositoryRequest.repository_id)
+}
+
+// -------------------------------------------------------------------
+
+// GetRepositoryResponse
+
+// .source.v1alpha1.DetailRepository repository = 1 [json_name = "repository"];
+inline bool GetRepositoryResponse::_internal_has_repository() const {
+  return this != internal_default_instance() && repository_ != nullptr;
+}
+inline bool GetRepositoryResponse::has_repository() const {
+  return _internal_has_repository();
+}
+inline void GetRepositoryResponse::clear_repository() {
+  if (GetArenaForAllocation() == nullptr && repository_ != nullptr) {
+    delete repository_;
+  }
+  repository_ = nullptr;
+}
+inline const ::source::v1alpha1::DetailRepository& GetRepositoryResponse::_internal_repository() const {
+  const ::source::v1alpha1::DetailRepository* p = repository_;
+  return p != nullptr ? *p : reinterpret_cast<const ::source::v1alpha1::DetailRepository&>(
+      ::source::v1alpha1::_DetailRepository_default_instance_);
+}
+inline const ::source::v1alpha1::DetailRepository& GetRepositoryResponse::repository() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.GetRepositoryResponse.repository)
+  return _internal_repository();
+}
+inline void GetRepositoryResponse::unsafe_arena_set_allocated_repository(
+    ::source::v1alpha1::DetailRepository* repository) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(repository_);
+  }
+  repository_ = repository;
+  if (repository) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:source.v1alpha1.GetRepositoryResponse.repository)
+}
+inline ::source::v1alpha1::DetailRepository* GetRepositoryResponse::release_repository() {
+  
+  ::source::v1alpha1::DetailRepository* temp = repository_;
+  repository_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::source::v1alpha1::DetailRepository* GetRepositoryResponse::unsafe_arena_release_repository() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.GetRepositoryResponse.repository)
+  
+  ::source::v1alpha1::DetailRepository* temp = repository_;
+  repository_ = nullptr;
+  return temp;
+}
+inline ::source::v1alpha1::DetailRepository* GetRepositoryResponse::_internal_mutable_repository() {
+  
+  if (repository_ == nullptr) {
+    auto* p = CreateMaybeMessage<::source::v1alpha1::DetailRepository>(GetArenaForAllocation());
+    repository_ = p;
+  }
+  return repository_;
+}
+inline ::source::v1alpha1::DetailRepository* GetRepositoryResponse::mutable_repository() {
+  ::source::v1alpha1::DetailRepository* _msg = _internal_mutable_repository();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.GetRepositoryResponse.repository)
+  return _msg;
+}
+inline void GetRepositoryResponse::set_allocated_repository(::source::v1alpha1::DetailRepository* repository) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete repository_;
+  }
+  if (repository) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::source::v1alpha1::DetailRepository>::GetOwningArena(repository);
+    if (message_arena != submessage_arena) {
+      repository = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, repository, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  repository_ = repository;
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.GetRepositoryResponse.repository)
+}
+
+// -------------------------------------------------------------------
+
+// DeleteRepositoryRequest
+
+// string repository_id = 1 [json_name = "repositoryId"];
+inline void DeleteRepositoryRequest::clear_repository_id() {
+  repository_id_.ClearToEmpty();
+}
+inline const std::string& DeleteRepositoryRequest::repository_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.DeleteRepositoryRequest.repository_id)
+  return _internal_repository_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRepositoryRequest::set_repository_id(ArgT0&& arg0, ArgT... args) {
+ 
+ repository_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.DeleteRepositoryRequest.repository_id)
+}
+inline std::string* DeleteRepositoryRequest::mutable_repository_id() {
+  std::string* _s = _internal_mutable_repository_id();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.DeleteRepositoryRequest.repository_id)
+  return _s;
+}
+inline const std::string& DeleteRepositoryRequest::_internal_repository_id() const {
+  return repository_id_.Get();
+}
+inline void DeleteRepositoryRequest::_internal_set_repository_id(const std::string& value) {
+  
+  repository_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRepositoryRequest::_internal_mutable_repository_id() {
+  
+  return repository_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRepositoryRequest::release_repository_id() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.DeleteRepositoryRequest.repository_id)
+  return repository_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRepositoryRequest::set_allocated_repository_id(std::string* repository_id) {
+  if (repository_id != nullptr) {
+    
+  } else {
+    
+  }
+  repository_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), repository_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.DeleteRepositoryRequest.repository_id)
+}
+
+// -------------------------------------------------------------------
+
+// DeleteRepositoryResponse
+
+// string msg = 1 [json_name = "msg"];
+inline void DeleteRepositoryResponse::clear_msg() {
+  msg_.ClearToEmpty();
+}
+inline const std::string& DeleteRepositoryResponse::msg() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.DeleteRepositoryResponse.msg)
+  return _internal_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRepositoryResponse::set_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.DeleteRepositoryResponse.msg)
+}
+inline std::string* DeleteRepositoryResponse::mutable_msg() {
+  std::string* _s = _internal_mutable_msg();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.DeleteRepositoryResponse.msg)
+  return _s;
+}
+inline const std::string& DeleteRepositoryResponse::_internal_msg() const {
+  return msg_.Get();
+}
+inline void DeleteRepositoryResponse::_internal_set_msg(const std::string& value) {
+  
+  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRepositoryResponse::_internal_mutable_msg() {
+  
+  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRepositoryResponse::release_msg() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.DeleteRepositoryResponse.msg)
+  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRepositoryResponse::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.DeleteRepositoryResponse.msg)
+}
+
+// string error = 2 [json_name = "error"];
+inline void DeleteRepositoryResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& DeleteRepositoryResponse::error() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.DeleteRepositoryResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRepositoryResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.DeleteRepositoryResponse.error)
+}
+inline std::string* DeleteRepositoryResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.DeleteRepositoryResponse.error)
+  return _s;
+}
+inline const std::string& DeleteRepositoryResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void DeleteRepositoryResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRepositoryResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRepositoryResponse::release_error() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.DeleteRepositoryResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRepositoryResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.DeleteRepositoryResponse.error)
+}
+
+// -------------------------------------------------------------------
+
+// UpdateRepositoryRequest
+
+// string repository_id = 1 [json_name = "repositoryId"];
+inline void UpdateRepositoryRequest::clear_repository_id() {
+  repository_id_.ClearToEmpty();
+}
+inline const std::string& UpdateRepositoryRequest::repository_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.UpdateRepositoryRequest.repository_id)
+  return _internal_repository_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateRepositoryRequest::set_repository_id(ArgT0&& arg0, ArgT... args) {
+ 
+ repository_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.UpdateRepositoryRequest.repository_id)
+}
+inline std::string* UpdateRepositoryRequest::mutable_repository_id() {
+  std::string* _s = _internal_mutable_repository_id();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.UpdateRepositoryRequest.repository_id)
+  return _s;
+}
+inline const std::string& UpdateRepositoryRequest::_internal_repository_id() const {
+  return repository_id_.Get();
+}
+inline void UpdateRepositoryRequest::_internal_set_repository_id(const std::string& value) {
+  
+  repository_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateRepositoryRequest::_internal_mutable_repository_id() {
+  
+  return repository_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateRepositoryRequest::release_repository_id() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.UpdateRepositoryRequest.repository_id)
+  return repository_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateRepositoryRequest::set_allocated_repository_id(std::string* repository_id) {
+  if (repository_id != nullptr) {
+    
+  } else {
+    
+  }
+  repository_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), repository_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.UpdateRepositoryRequest.repository_id)
+}
+
+// .source.v1alpha1.DetailRepository repository = 2 [json_name = "repository"];
+inline bool UpdateRepositoryRequest::_internal_has_repository() const {
+  return this != internal_default_instance() && repository_ != nullptr;
+}
+inline bool UpdateRepositoryRequest::has_repository() const {
+  return _internal_has_repository();
+}
+inline void UpdateRepositoryRequest::clear_repository() {
+  if (GetArenaForAllocation() == nullptr && repository_ != nullptr) {
+    delete repository_;
+  }
+  repository_ = nullptr;
+}
+inline const ::source::v1alpha1::DetailRepository& UpdateRepositoryRequest::_internal_repository() const {
+  const ::source::v1alpha1::DetailRepository* p = repository_;
+  return p != nullptr ? *p : reinterpret_cast<const ::source::v1alpha1::DetailRepository&>(
+      ::source::v1alpha1::_DetailRepository_default_instance_);
+}
+inline const ::source::v1alpha1::DetailRepository& UpdateRepositoryRequest::repository() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.UpdateRepositoryRequest.repository)
+  return _internal_repository();
+}
+inline void UpdateRepositoryRequest::unsafe_arena_set_allocated_repository(
+    ::source::v1alpha1::DetailRepository* repository) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(repository_);
+  }
+  repository_ = repository;
+  if (repository) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:source.v1alpha1.UpdateRepositoryRequest.repository)
+}
+inline ::source::v1alpha1::DetailRepository* UpdateRepositoryRequest::release_repository() {
+  
+  ::source::v1alpha1::DetailRepository* temp = repository_;
+  repository_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::source::v1alpha1::DetailRepository* UpdateRepositoryRequest::unsafe_arena_release_repository() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.UpdateRepositoryRequest.repository)
+  
+  ::source::v1alpha1::DetailRepository* temp = repository_;
+  repository_ = nullptr;
+  return temp;
+}
+inline ::source::v1alpha1::DetailRepository* UpdateRepositoryRequest::_internal_mutable_repository() {
+  
+  if (repository_ == nullptr) {
+    auto* p = CreateMaybeMessage<::source::v1alpha1::DetailRepository>(GetArenaForAllocation());
+    repository_ = p;
+  }
+  return repository_;
+}
+inline ::source::v1alpha1::DetailRepository* UpdateRepositoryRequest::mutable_repository() {
+  ::source::v1alpha1::DetailRepository* _msg = _internal_mutable_repository();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.UpdateRepositoryRequest.repository)
+  return _msg;
+}
+inline void UpdateRepositoryRequest::set_allocated_repository(::source::v1alpha1::DetailRepository* repository) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete repository_;
+  }
+  if (repository) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::source::v1alpha1::DetailRepository>::GetOwningArena(repository);
+    if (message_arena != submessage_arena) {
+      repository = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, repository, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  repository_ = repository;
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.UpdateRepositoryRequest.repository)
+}
+
+// -------------------------------------------------------------------
+
+// UpdateRepositoryResponse
+
+// string msg = 1 [json_name = "msg"];
+inline void UpdateRepositoryResponse::clear_msg() {
+  msg_.ClearToEmpty();
+}
+inline const std::string& UpdateRepositoryResponse::msg() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.UpdateRepositoryResponse.msg)
+  return _internal_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateRepositoryResponse::set_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.UpdateRepositoryResponse.msg)
+}
+inline std::string* UpdateRepositoryResponse::mutable_msg() {
+  std::string* _s = _internal_mutable_msg();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.UpdateRepositoryResponse.msg)
+  return _s;
+}
+inline const std::string& UpdateRepositoryResponse::_internal_msg() const {
+  return msg_.Get();
+}
+inline void UpdateRepositoryResponse::_internal_set_msg(const std::string& value) {
+  
+  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateRepositoryResponse::_internal_mutable_msg() {
+  
+  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateRepositoryResponse::release_msg() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.UpdateRepositoryResponse.msg)
+  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateRepositoryResponse::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.UpdateRepositoryResponse.msg)
+}
+
+// string error = 2 [json_name = "error"];
+inline void UpdateRepositoryResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& UpdateRepositoryResponse::error() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.UpdateRepositoryResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateRepositoryResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.UpdateRepositoryResponse.error)
+}
+inline std::string* UpdateRepositoryResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.UpdateRepositoryResponse.error)
+  return _s;
+}
+inline const std::string& UpdateRepositoryResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void UpdateRepositoryResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateRepositoryResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateRepositoryResponse::release_error() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.UpdateRepositoryResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateRepositoryResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.UpdateRepositoryResponse.error)
+}
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -7050,6 +10052,28 @@ ListProvidersResponse::providers() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

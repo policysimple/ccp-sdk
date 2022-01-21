@@ -29,6 +29,11 @@ static const char* SourceService_method_names[] = {
   "/source.v1alpha1.SourceService/GetIntegration",
   "/source.v1alpha1.SourceService/UpdateIntegration",
   "/source.v1alpha1.SourceService/DeleteIntegration",
+  "/source.v1alpha1.SourceService/CreateRepository",
+  "/source.v1alpha1.SourceService/ListRepositories",
+  "/source.v1alpha1.SourceService/GetRepository",
+  "/source.v1alpha1.SourceService/DeleteRepository",
+  "/source.v1alpha1.SourceService/UpdateRepository",
 };
 
 std::unique_ptr< SourceService::Stub> SourceService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -48,6 +53,11 @@ SourceService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chan
   , rpcmethod_GetIntegration_(SourceService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateIntegration_(SourceService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteIntegration_(SourceService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateRepository_(SourceService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListRepositories_(SourceService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetRepository_(SourceService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteRepository_(SourceService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateRepository_(SourceService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status SourceService::Stub::CreateProvider(::grpc::ClientContext* context, const ::source::v1alpha1::CreateProviderRequest& request, ::source::v1alpha1::CreateProviderResponse* response) {
@@ -210,6 +220,86 @@ void SourceService::Stub::experimental_async::DeleteIntegration(::grpc::ClientCo
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::source::v1alpha1::DeleteIntegrationResponse>::Create(channel_.get(), cq, rpcmethod_DeleteIntegration_, context, request, false);
 }
 
+::grpc::Status SourceService::Stub::CreateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest& request, ::source::v1alpha1::CreateRepositoryResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateRepository_, context, request, response);
+}
+
+void SourceService::Stub::experimental_async::CreateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest* request, ::source::v1alpha1::CreateRepositoryResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateRepository_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::source::v1alpha1::CreateRepositoryResponse>* SourceService::Stub::AsyncCreateRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::source::v1alpha1::CreateRepositoryResponse>::Create(channel_.get(), cq, rpcmethod_CreateRepository_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::source::v1alpha1::CreateRepositoryResponse>* SourceService::Stub::PrepareAsyncCreateRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::CreateRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::source::v1alpha1::CreateRepositoryResponse>::Create(channel_.get(), cq, rpcmethod_CreateRepository_, context, request, false);
+}
+
+::grpc::Status SourceService::Stub::ListRepositories(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest& request, ::source::v1alpha1::ListRepositoriesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListRepositories_, context, request, response);
+}
+
+void SourceService::Stub::experimental_async::ListRepositories(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest* request, ::source::v1alpha1::ListRepositoriesResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListRepositories_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::source::v1alpha1::ListRepositoriesResponse>* SourceService::Stub::AsyncListRepositoriesRaw(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::source::v1alpha1::ListRepositoriesResponse>::Create(channel_.get(), cq, rpcmethod_ListRepositories_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::source::v1alpha1::ListRepositoriesResponse>* SourceService::Stub::PrepareAsyncListRepositoriesRaw(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::source::v1alpha1::ListRepositoriesResponse>::Create(channel_.get(), cq, rpcmethod_ListRepositories_, context, request, false);
+}
+
+::grpc::Status SourceService::Stub::GetRepository(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest& request, ::source::v1alpha1::GetRepositoryResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetRepository_, context, request, response);
+}
+
+void SourceService::Stub::experimental_async::GetRepository(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest* request, ::source::v1alpha1::GetRepositoryResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetRepository_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::source::v1alpha1::GetRepositoryResponse>* SourceService::Stub::AsyncGetRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::source::v1alpha1::GetRepositoryResponse>::Create(channel_.get(), cq, rpcmethod_GetRepository_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::source::v1alpha1::GetRepositoryResponse>* SourceService::Stub::PrepareAsyncGetRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::GetRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::source::v1alpha1::GetRepositoryResponse>::Create(channel_.get(), cq, rpcmethod_GetRepository_, context, request, false);
+}
+
+::grpc::Status SourceService::Stub::DeleteRepository(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest& request, ::source::v1alpha1::DeleteRepositoryResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteRepository_, context, request, response);
+}
+
+void SourceService::Stub::experimental_async::DeleteRepository(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest* request, ::source::v1alpha1::DeleteRepositoryResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteRepository_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::source::v1alpha1::DeleteRepositoryResponse>* SourceService::Stub::AsyncDeleteRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::source::v1alpha1::DeleteRepositoryResponse>::Create(channel_.get(), cq, rpcmethod_DeleteRepository_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::source::v1alpha1::DeleteRepositoryResponse>* SourceService::Stub::PrepareAsyncDeleteRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::source::v1alpha1::DeleteRepositoryResponse>::Create(channel_.get(), cq, rpcmethod_DeleteRepository_, context, request, false);
+}
+
+::grpc::Status SourceService::Stub::UpdateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest& request, ::source::v1alpha1::UpdateRepositoryResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateRepository_, context, request, response);
+}
+
+void SourceService::Stub::experimental_async::UpdateRepository(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest* request, ::source::v1alpha1::UpdateRepositoryResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateRepository_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::source::v1alpha1::UpdateRepositoryResponse>* SourceService::Stub::AsyncUpdateRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::source::v1alpha1::UpdateRepositoryResponse>::Create(channel_.get(), cq, rpcmethod_UpdateRepository_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::source::v1alpha1::UpdateRepositoryResponse>* SourceService::Stub::PrepareAsyncUpdateRepositoryRaw(::grpc::ClientContext* context, const ::source::v1alpha1::UpdateRepositoryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::source::v1alpha1::UpdateRepositoryResponse>::Create(channel_.get(), cq, rpcmethod_UpdateRepository_, context, request, false);
+}
+
 SourceService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       SourceService_method_names[0],
@@ -261,6 +351,31 @@ SourceService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< SourceService::Service, ::source::v1alpha1::DeleteIntegrationRequest, ::source::v1alpha1::DeleteIntegrationResponse>(
           std::mem_fn(&SourceService::Service::DeleteIntegration), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      SourceService_method_names[10],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< SourceService::Service, ::source::v1alpha1::CreateRepositoryRequest, ::source::v1alpha1::CreateRepositoryResponse>(
+          std::mem_fn(&SourceService::Service::CreateRepository), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      SourceService_method_names[11],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< SourceService::Service, ::source::v1alpha1::ListRepositoriesRequest, ::source::v1alpha1::ListRepositoriesResponse>(
+          std::mem_fn(&SourceService::Service::ListRepositories), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      SourceService_method_names[12],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< SourceService::Service, ::source::v1alpha1::GetRepositoryRequest, ::source::v1alpha1::GetRepositoryResponse>(
+          std::mem_fn(&SourceService::Service::GetRepository), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      SourceService_method_names[13],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< SourceService::Service, ::source::v1alpha1::DeleteRepositoryRequest, ::source::v1alpha1::DeleteRepositoryResponse>(
+          std::mem_fn(&SourceService::Service::DeleteRepository), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      SourceService_method_names[14],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< SourceService::Service, ::source::v1alpha1::UpdateRepositoryRequest, ::source::v1alpha1::UpdateRepositoryResponse>(
+          std::mem_fn(&SourceService::Service::UpdateRepository), this)));
 }
 
 SourceService::Service::~Service() {
@@ -330,6 +445,41 @@ SourceService::Service::~Service() {
 }
 
 ::grpc::Status SourceService::Service::DeleteIntegration(::grpc::ServerContext* context, const ::source::v1alpha1::DeleteIntegrationRequest* request, ::source::v1alpha1::DeleteIntegrationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status SourceService::Service::CreateRepository(::grpc::ServerContext* context, const ::source::v1alpha1::CreateRepositoryRequest* request, ::source::v1alpha1::CreateRepositoryResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status SourceService::Service::ListRepositories(::grpc::ServerContext* context, const ::source::v1alpha1::ListRepositoriesRequest* request, ::source::v1alpha1::ListRepositoriesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status SourceService::Service::GetRepository(::grpc::ServerContext* context, const ::source::v1alpha1::GetRepositoryRequest* request, ::source::v1alpha1::GetRepositoryResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status SourceService::Service::DeleteRepository(::grpc::ServerContext* context, const ::source::v1alpha1::DeleteRepositoryRequest* request, ::source::v1alpha1::DeleteRepositoryResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status SourceService::Service::UpdateRepository(::grpc::ServerContext* context, const ::source::v1alpha1::UpdateRepositoryRequest* request, ::source::v1alpha1::UpdateRepositoryResponse* response) {
   (void) context;
   (void) request;
   (void) response;

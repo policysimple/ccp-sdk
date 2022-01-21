@@ -30,9 +30,9 @@ class CreateApplicationRequest extends \Google\Protobuf\Internal\Message
      */
     protected $configuration = null;
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 5 [json_name = "projectId"];</code>
      */
-    protected $organization_id = 0;
+    protected $project_id = 0;
 
     /**
      * Constructor.
@@ -44,7 +44,7 @@ class CreateApplicationRequest extends \Google\Protobuf\Internal\Message
      *     @type string $integration
      *     @type \Application\V1alpha1\Repository $repository
      *     @type \Application\V1alpha1\Configuration $configuration
-     *     @type int $organization_id
+     *     @type int $project_id
      * }
      */
     public function __construct($data = NULL) {
@@ -161,23 +161,23 @@ class CreateApplicationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 5 [json_name = "projectId"];</code>
      * @return int
      */
-    public function getOrganizationId()
+    public function getProjectId()
     {
-        return $this->organization_id;
+        return $this->project_id;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 5 [json_name = "projectId"];</code>
      * @param int $var
      * @return $this
      */
-    public function setOrganizationId($var)
+    public function setProjectId($var)
     {
         GPBUtil::checkUint32($var);
-        $this->organization_id = $var;
+        $this->project_id = $var;
 
         return $this;
     }
