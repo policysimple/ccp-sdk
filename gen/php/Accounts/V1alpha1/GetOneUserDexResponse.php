@@ -65,6 +65,10 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string msg = 13 [json_name = "msg"];</code>
      */
     protected $msg = '';
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     */
+    private $projects;
 
     /**
      * Constructor.
@@ -85,6 +89,7 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      *     @type bool $is_super_user
      *     @type \Accounts\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $organizations
      *     @type string $msg
+     *     @type \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
      * }
      */
     public function __construct($data = NULL) {
@@ -374,6 +379,28 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->msg = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getProjects()
+    {
+        return $this->projects;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     * @param \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProjects($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Project::class);
+        $this->projects = $arr;
 
         return $this;
     }

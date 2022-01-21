@@ -72,7 +72,6 @@ class SourceServiceServicer(object):
 
   def CreateProvider(self, request, context):
     """PROVIDERS
-
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -108,7 +107,6 @@ class SourceServiceServicer(object):
 
   def CreateIntegration(self, request, context):
     """INTEGRATIONS
-
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
