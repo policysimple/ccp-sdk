@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>vault.v1alpha1.DeleteSecretResponse</code>
+ * Generated from protobuf message <code>vault.v1alpha1.ListSecretResponse</code>
  */
-class DeleteSecretResponse extends \Google\Protobuf\Internal\Message
+class ListSecretResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
+     * Generated from protobuf field <code>repeated .vault.v1alpha1.Secret secrets = 1 [json_name = "secrets"];</code>
      */
-    protected $msg = '';
+    private $secrets;
     /**
      * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      */
@@ -28,7 +28,7 @@ class DeleteSecretResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $msg
+     *     @type \Vault\V1alpha1\Secret[]|\Google\Protobuf\Internal\RepeatedField $secrets
      *     @type string $error
      * }
      */
@@ -38,23 +38,23 @@ class DeleteSecretResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
-     * @return string
+     * Generated from protobuf field <code>repeated .vault.v1alpha1.Secret secrets = 1 [json_name = "secrets"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getMsg()
+    public function getSecrets()
     {
-        return $this->msg;
+        return $this->secrets;
     }
 
     /**
-     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated .vault.v1alpha1.Secret secrets = 1 [json_name = "secrets"];</code>
+     * @param \Vault\V1alpha1\Secret[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setMsg($var)
+    public function setSecrets($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->msg = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Vault\V1alpha1\Secret::class);
+        $this->secrets = $arr;
 
         return $this;
     }

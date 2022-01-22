@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>vault.v1alpha1.DeleteSecretResponse</code>
+ * Generated from protobuf message <code>vault.v1alpha1.UpdateSecretResponse</code>
  */
-class DeleteSecretResponse extends \Google\Protobuf\Internal\Message
+class UpdateSecretResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
