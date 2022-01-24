@@ -79,6 +79,27 @@ class AccountService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListUserPaginationResponse>> PrepareAsyncListUserPagination(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListUserPaginationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListUserPaginationResponse>>(PrepareAsyncListUserPaginationRaw(context, request, cq));
     }
+    virtual ::grpc::Status SendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest& request, ::accounts::v1alpha1::SendInvitationUserResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::SendInvitationUserResponse>> AsyncSendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::SendInvitationUserResponse>>(AsyncSendInvitationUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::SendInvitationUserResponse>> PrepareAsyncSendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::SendInvitationUserResponse>>(PrepareAsyncSendInvitationUserRaw(context, request, cq));
+    }
+    virtual ::grpc::Status GetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest& request, ::accounts::v1alpha1::GetInvitationUserResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetInvitationUserResponse>> AsyncGetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetInvitationUserResponse>>(AsyncGetInvitationUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetInvitationUserResponse>> PrepareAsyncGetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetInvitationUserResponse>>(PrepareAsyncGetInvitationUserRaw(context, request, cq));
+    }
+    virtual ::grpc::Status AgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest& request, ::accounts::v1alpha1::AgreeInvitationUserResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::AgreeInvitationUserResponse>> AsyncAgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::AgreeInvitationUserResponse>>(AsyncAgreeInvitationUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::AgreeInvitationUserResponse>> PrepareAsyncAgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::AgreeInvitationUserResponse>>(PrepareAsyncAgreeInvitationUserRaw(context, request, cq));
+    }
     // /PERMISSION
     virtual ::grpc::Status CreatePermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreatePermissionRequest& request, ::accounts::v1alpha1::CreatePermissionResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CreatePermissionResponse>> AsyncCreatePermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreatePermissionRequest& request, ::grpc::CompletionQueue* cq) {
@@ -260,6 +281,9 @@ class AccountService final {
       virtual void UpdateUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateUserRequest* request, ::accounts::v1alpha1::UpdateUserResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserRequest* request, ::accounts::v1alpha1::DeleteUserResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListUserPagination(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListUserPaginationRequest* request, ::accounts::v1alpha1::ListUserPaginationResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest* request, ::accounts::v1alpha1::SendInvitationUserResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest* request, ::accounts::v1alpha1::GetInvitationUserResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::AgreeInvitationUserResponse* response, std::function<void(::grpc::Status)>) = 0;
       // /PERMISSION
       virtual void CreatePermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreatePermissionRequest* request, ::accounts::v1alpha1::CreatePermissionResponse* response, std::function<void(::grpc::Status)>) = 0;
       // rpc AssignPermission(AssignPermissionRequest) returns (MsgResponse);
@@ -308,6 +332,12 @@ class AccountService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::DeleteUserResponse>* PrepareAsyncDeleteUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListUserPaginationResponse>* AsyncListUserPaginationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListUserPaginationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListUserPaginationResponse>* PrepareAsyncListUserPaginationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListUserPaginationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::SendInvitationUserResponse>* AsyncSendInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::SendInvitationUserResponse>* PrepareAsyncSendInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetInvitationUserResponse>* AsyncGetInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetInvitationUserResponse>* PrepareAsyncGetInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::AgreeInvitationUserResponse>* AsyncAgreeInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::AgreeInvitationUserResponse>* PrepareAsyncAgreeInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CreatePermissionResponse>* AsyncCreatePermissionRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreatePermissionRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CreatePermissionResponse>* PrepareAsyncCreatePermissionRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreatePermissionRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListPermissionResponse>* AsyncListPermissionRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListPermissionRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -399,6 +429,27 @@ class AccountService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListUserPaginationResponse>> PrepareAsyncListUserPagination(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListUserPaginationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListUserPaginationResponse>>(PrepareAsyncListUserPaginationRaw(context, request, cq));
+    }
+    ::grpc::Status SendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest& request, ::accounts::v1alpha1::SendInvitationUserResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::SendInvitationUserResponse>> AsyncSendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::SendInvitationUserResponse>>(AsyncSendInvitationUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::SendInvitationUserResponse>> PrepareAsyncSendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::SendInvitationUserResponse>>(PrepareAsyncSendInvitationUserRaw(context, request, cq));
+    }
+    ::grpc::Status GetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest& request, ::accounts::v1alpha1::GetInvitationUserResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetInvitationUserResponse>> AsyncGetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetInvitationUserResponse>>(AsyncGetInvitationUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetInvitationUserResponse>> PrepareAsyncGetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetInvitationUserResponse>>(PrepareAsyncGetInvitationUserRaw(context, request, cq));
+    }
+    ::grpc::Status AgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest& request, ::accounts::v1alpha1::AgreeInvitationUserResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::AgreeInvitationUserResponse>> AsyncAgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::AgreeInvitationUserResponse>>(AsyncAgreeInvitationUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::AgreeInvitationUserResponse>> PrepareAsyncAgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::AgreeInvitationUserResponse>>(PrepareAsyncAgreeInvitationUserRaw(context, request, cq));
     }
     ::grpc::Status CreatePermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreatePermissionRequest& request, ::accounts::v1alpha1::CreatePermissionResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CreatePermissionResponse>> AsyncCreatePermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreatePermissionRequest& request, ::grpc::CompletionQueue* cq) {
@@ -570,6 +621,9 @@ class AccountService final {
       void UpdateUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateUserRequest* request, ::accounts::v1alpha1::UpdateUserResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserRequest* request, ::accounts::v1alpha1::DeleteUserResponse* response, std::function<void(::grpc::Status)>) override;
       void ListUserPagination(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListUserPaginationRequest* request, ::accounts::v1alpha1::ListUserPaginationResponse* response, std::function<void(::grpc::Status)>) override;
+      void SendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest* request, ::accounts::v1alpha1::SendInvitationUserResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest* request, ::accounts::v1alpha1::GetInvitationUserResponse* response, std::function<void(::grpc::Status)>) override;
+      void AgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::AgreeInvitationUserResponse* response, std::function<void(::grpc::Status)>) override;
       void CreatePermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreatePermissionRequest* request, ::accounts::v1alpha1::CreatePermissionResponse* response, std::function<void(::grpc::Status)>) override;
       void ListPermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListPermissionRequest* request, ::accounts::v1alpha1::ListPermissionResponse* response, std::function<void(::grpc::Status)>) override;
       void GetOnePermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOnePermissionRequest* request, ::accounts::v1alpha1::GetOnePermissionResponse* response, std::function<void(::grpc::Status)>) override;
@@ -616,6 +670,12 @@ class AccountService final {
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteUserResponse>* PrepareAsyncDeleteUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListUserPaginationResponse>* AsyncListUserPaginationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListUserPaginationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListUserPaginationResponse>* PrepareAsyncListUserPaginationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListUserPaginationRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::SendInvitationUserResponse>* AsyncSendInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::SendInvitationUserResponse>* PrepareAsyncSendInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetInvitationUserResponse>* AsyncGetInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetInvitationUserResponse>* PrepareAsyncGetInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::AgreeInvitationUserResponse>* AsyncAgreeInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::AgreeInvitationUserResponse>* PrepareAsyncAgreeInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CreatePermissionResponse>* AsyncCreatePermissionRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreatePermissionRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CreatePermissionResponse>* PrepareAsyncCreatePermissionRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreatePermissionRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListPermissionResponse>* AsyncListPermissionRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListPermissionRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -668,6 +728,9 @@ class AccountService final {
     const ::grpc::internal::RpcMethod rpcmethod_UpdateUser_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteUser_;
     const ::grpc::internal::RpcMethod rpcmethod_ListUserPagination_;
+    const ::grpc::internal::RpcMethod rpcmethod_SendInvitationUser_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetInvitationUser_;
+    const ::grpc::internal::RpcMethod rpcmethod_AgreeInvitationUser_;
     const ::grpc::internal::RpcMethod rpcmethod_CreatePermission_;
     const ::grpc::internal::RpcMethod rpcmethod_ListPermission_;
     const ::grpc::internal::RpcMethod rpcmethod_GetOnePermission_;
@@ -705,6 +768,9 @@ class AccountService final {
     virtual ::grpc::Status UpdateUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::UpdateUserRequest* request, ::accounts::v1alpha1::UpdateUserResponse* response);
     virtual ::grpc::Status DeleteUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::DeleteUserRequest* request, ::accounts::v1alpha1::DeleteUserResponse* response);
     virtual ::grpc::Status ListUserPagination(::grpc::ServerContext* context, const ::accounts::v1alpha1::ListUserPaginationRequest* request, ::accounts::v1alpha1::ListUserPaginationResponse* response);
+    virtual ::grpc::Status SendInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest* request, ::accounts::v1alpha1::SendInvitationUserResponse* response);
+    virtual ::grpc::Status GetInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest* request, ::accounts::v1alpha1::GetInvitationUserResponse* response);
+    virtual ::grpc::Status AgreeInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::AgreeInvitationUserResponse* response);
     // /PERMISSION
     virtual ::grpc::Status CreatePermission(::grpc::ServerContext* context, const ::accounts::v1alpha1::CreatePermissionRequest* request, ::accounts::v1alpha1::CreatePermissionResponse* response);
     // rpc AssignPermission(AssignPermissionRequest) returns (MsgResponse);
@@ -860,12 +926,72 @@ class AccountService final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_SendInvitationUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_SendInvitationUser() {
+      ::grpc::Service::MarkMethodAsync(6);
+    }
+    ~WithAsyncMethod_SendInvitationUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest* request, ::accounts::v1alpha1::SendInvitationUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSendInvitationUser(::grpc::ServerContext* context, ::accounts::v1alpha1::SendInvitationUserRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::SendInvitationUserResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetInvitationUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetInvitationUser() {
+      ::grpc::Service::MarkMethodAsync(7);
+    }
+    ~WithAsyncMethod_GetInvitationUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest* request, ::accounts::v1alpha1::GetInvitationUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetInvitationUser(::grpc::ServerContext* context, ::accounts::v1alpha1::GetInvitationUserRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::GetInvitationUserResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_AgreeInvitationUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_AgreeInvitationUser() {
+      ::grpc::Service::MarkMethodAsync(8);
+    }
+    ~WithAsyncMethod_AgreeInvitationUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AgreeInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::AgreeInvitationUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAgreeInvitationUser(::grpc::ServerContext* context, ::accounts::v1alpha1::AgreeInvitationUserRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::AgreeInvitationUserResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_CreatePermission : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_CreatePermission() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(9);
     }
     ~WithAsyncMethod_CreatePermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -876,7 +1002,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreatePermission(::grpc::ServerContext* context, ::accounts::v1alpha1::CreatePermissionRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::CreatePermissionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -885,7 +1011,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_ListPermission() {
-      ::grpc::Service::MarkMethodAsync(7);
+      ::grpc::Service::MarkMethodAsync(10);
     }
     ~WithAsyncMethod_ListPermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -896,7 +1022,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListPermission(::grpc::ServerContext* context, ::accounts::v1alpha1::ListPermissionRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::ListPermissionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -905,7 +1031,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetOnePermission() {
-      ::grpc::Service::MarkMethodAsync(8);
+      ::grpc::Service::MarkMethodAsync(11);
     }
     ~WithAsyncMethod_GetOnePermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -916,7 +1042,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOnePermission(::grpc::ServerContext* context, ::accounts::v1alpha1::GetOnePermissionRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::GetOnePermissionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -925,7 +1051,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_UpdatePermission() {
-      ::grpc::Service::MarkMethodAsync(9);
+      ::grpc::Service::MarkMethodAsync(12);
     }
     ~WithAsyncMethod_UpdatePermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -936,7 +1062,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdatePermission(::grpc::ServerContext* context, ::accounts::v1alpha1::UpdatePermissionRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::UpdatePermissionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -945,7 +1071,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_DeletePermission() {
-      ::grpc::Service::MarkMethodAsync(10);
+      ::grpc::Service::MarkMethodAsync(13);
     }
     ~WithAsyncMethod_DeletePermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -956,7 +1082,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeletePermission(::grpc::ServerContext* context, ::accounts::v1alpha1::DeletePermissionRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::DeletePermissionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -965,7 +1091,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_CreateOrganization() {
-      ::grpc::Service::MarkMethodAsync(11);
+      ::grpc::Service::MarkMethodAsync(14);
     }
     ~WithAsyncMethod_CreateOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -976,7 +1102,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateOrganization(::grpc::ServerContext* context, ::accounts::v1alpha1::CreateOrganizationRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::CreateOrganizationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -985,7 +1111,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_ListOrganization() {
-      ::grpc::Service::MarkMethodAsync(12);
+      ::grpc::Service::MarkMethodAsync(15);
     }
     ~WithAsyncMethod_ListOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -996,7 +1122,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListOrganization(::grpc::ServerContext* context, ::accounts::v1alpha1::ListOrganizationRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::ListOrganizationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1005,7 +1131,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetOneOrganization() {
-      ::grpc::Service::MarkMethodAsync(13);
+      ::grpc::Service::MarkMethodAsync(16);
     }
     ~WithAsyncMethod_GetOneOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1016,7 +1142,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOneOrganization(::grpc::ServerContext* context, ::accounts::v1alpha1::GetOneOrganizationRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::GetOneOrganizationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1025,7 +1151,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_UpdateOrganization() {
-      ::grpc::Service::MarkMethodAsync(14);
+      ::grpc::Service::MarkMethodAsync(17);
     }
     ~WithAsyncMethod_UpdateOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1036,7 +1162,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateOrganization(::grpc::ServerContext* context, ::accounts::v1alpha1::UpdateOrganizationRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::UpdateOrganizationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1045,7 +1171,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_DeleteOrganization() {
-      ::grpc::Service::MarkMethodAsync(15);
+      ::grpc::Service::MarkMethodAsync(18);
     }
     ~WithAsyncMethod_DeleteOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1056,7 +1182,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteOrganization(::grpc::ServerContext* context, ::accounts::v1alpha1::DeleteOrganizationRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::DeleteOrganizationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1065,7 +1191,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_CreateRole() {
-      ::grpc::Service::MarkMethodAsync(16);
+      ::grpc::Service::MarkMethodAsync(19);
     }
     ~WithAsyncMethod_CreateRole() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1076,7 +1202,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateRole(::grpc::ServerContext* context, ::accounts::v1alpha1::CreateRoleRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::CreateRoleResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1085,7 +1211,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_ListRoles() {
-      ::grpc::Service::MarkMethodAsync(17);
+      ::grpc::Service::MarkMethodAsync(20);
     }
     ~WithAsyncMethod_ListRoles() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1096,7 +1222,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListRoles(::grpc::ServerContext* context, ::accounts::v1alpha1::ListRolesRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::ListRolesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1105,7 +1231,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_UpdateRole() {
-      ::grpc::Service::MarkMethodAsync(18);
+      ::grpc::Service::MarkMethodAsync(21);
     }
     ~WithAsyncMethod_UpdateRole() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1116,7 +1242,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateRole(::grpc::ServerContext* context, ::accounts::v1alpha1::UpdateRoleRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::UpdateRoleResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1125,7 +1251,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetOneRole() {
-      ::grpc::Service::MarkMethodAsync(19);
+      ::grpc::Service::MarkMethodAsync(22);
     }
     ~WithAsyncMethod_GetOneRole() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1136,7 +1262,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOneRole(::grpc::ServerContext* context, ::accounts::v1alpha1::GetOneRoleRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::GetOneRoleResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1145,7 +1271,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_DeleteRole() {
-      ::grpc::Service::MarkMethodAsync(20);
+      ::grpc::Service::MarkMethodAsync(23);
     }
     ~WithAsyncMethod_DeleteRole() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1156,7 +1282,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteRole(::grpc::ServerContext* context, ::accounts::v1alpha1::DeleteRoleRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::DeleteRoleResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1165,7 +1291,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_CreateProject() {
-      ::grpc::Service::MarkMethodAsync(21);
+      ::grpc::Service::MarkMethodAsync(24);
     }
     ~WithAsyncMethod_CreateProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1176,7 +1302,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateProject(::grpc::ServerContext* context, ::accounts::v1alpha1::CreateProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::CreateProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1185,7 +1311,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetOneProject() {
-      ::grpc::Service::MarkMethodAsync(22);
+      ::grpc::Service::MarkMethodAsync(25);
     }
     ~WithAsyncMethod_GetOneProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1196,7 +1322,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOneProject(::grpc::ServerContext* context, ::accounts::v1alpha1::GetOneProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::GetOneProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1205,7 +1331,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_UpdateProject() {
-      ::grpc::Service::MarkMethodAsync(23);
+      ::grpc::Service::MarkMethodAsync(26);
     }
     ~WithAsyncMethod_UpdateProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1216,7 +1342,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateProject(::grpc::ServerContext* context, ::accounts::v1alpha1::UpdateProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::UpdateProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1225,7 +1351,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_DeleteProject() {
-      ::grpc::Service::MarkMethodAsync(24);
+      ::grpc::Service::MarkMethodAsync(27);
     }
     ~WithAsyncMethod_DeleteProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1236,7 +1362,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteProject(::grpc::ServerContext* context, ::accounts::v1alpha1::DeleteProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::DeleteProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1245,7 +1371,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_ListProject() {
-      ::grpc::Service::MarkMethodAsync(25);
+      ::grpc::Service::MarkMethodAsync(28);
     }
     ~WithAsyncMethod_ListProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1256,7 +1382,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListProject(::grpc::ServerContext* context, ::accounts::v1alpha1::ListProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::ListProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1265,7 +1391,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetListUserDex() {
-      ::grpc::Service::MarkMethodAsync(26);
+      ::grpc::Service::MarkMethodAsync(29);
     }
     ~WithAsyncMethod_GetListUserDex() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1276,7 +1402,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetListUserDex(::grpc::ServerContext* context, ::accounts::v1alpha1::GetListUserDexRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::GetListUserDexResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1285,7 +1411,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetOneUserDex() {
-      ::grpc::Service::MarkMethodAsync(27);
+      ::grpc::Service::MarkMethodAsync(30);
     }
     ~WithAsyncMethod_GetOneUserDex() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1296,7 +1422,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOneUserDex(::grpc::ServerContext* context, ::accounts::v1alpha1::GetOneUserDexRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::GetOneUserDexResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1305,7 +1431,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_CheckUser() {
-      ::grpc::Service::MarkMethodAsync(28);
+      ::grpc::Service::MarkMethodAsync(31);
     }
     ~WithAsyncMethod_CheckUser() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1316,10 +1442,10 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCheckUser(::grpc::ServerContext* context, ::accounts::v1alpha1::CheckUserRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::CheckUserResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateUser<WithAsyncMethod_ListUser<WithAsyncMethod_GetOneUser<WithAsyncMethod_UpdateUser<WithAsyncMethod_DeleteUser<WithAsyncMethod_ListUserPagination<WithAsyncMethod_CreatePermission<WithAsyncMethod_ListPermission<WithAsyncMethod_GetOnePermission<WithAsyncMethod_UpdatePermission<WithAsyncMethod_DeletePermission<WithAsyncMethod_CreateOrganization<WithAsyncMethod_ListOrganization<WithAsyncMethod_GetOneOrganization<WithAsyncMethod_UpdateOrganization<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_CreateRole<WithAsyncMethod_ListRoles<WithAsyncMethod_UpdateRole<WithAsyncMethod_GetOneRole<WithAsyncMethod_DeleteRole<WithAsyncMethod_CreateProject<WithAsyncMethod_GetOneProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_DeleteProject<WithAsyncMethod_ListProject<WithAsyncMethod_GetListUserDex<WithAsyncMethod_GetOneUserDex<WithAsyncMethod_CheckUser<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateUser<WithAsyncMethod_ListUser<WithAsyncMethod_GetOneUser<WithAsyncMethod_UpdateUser<WithAsyncMethod_DeleteUser<WithAsyncMethod_ListUserPagination<WithAsyncMethod_SendInvitationUser<WithAsyncMethod_GetInvitationUser<WithAsyncMethod_AgreeInvitationUser<WithAsyncMethod_CreatePermission<WithAsyncMethod_ListPermission<WithAsyncMethod_GetOnePermission<WithAsyncMethod_UpdatePermission<WithAsyncMethod_DeletePermission<WithAsyncMethod_CreateOrganization<WithAsyncMethod_ListOrganization<WithAsyncMethod_GetOneOrganization<WithAsyncMethod_UpdateOrganization<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_CreateRole<WithAsyncMethod_ListRoles<WithAsyncMethod_UpdateRole<WithAsyncMethod_GetOneRole<WithAsyncMethod_DeleteRole<WithAsyncMethod_CreateProject<WithAsyncMethod_GetOneProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_DeleteProject<WithAsyncMethod_ListProject<WithAsyncMethod_GetListUserDex<WithAsyncMethod_GetOneUserDex<WithAsyncMethod_CheckUser<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateUser : public BaseClass {
    private:
@@ -1423,12 +1549,63 @@ class AccountService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_SendInvitationUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_SendInvitationUser() {
+      ::grpc::Service::MarkMethodGeneric(6);
+    }
+    ~WithGenericMethod_SendInvitationUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest* request, ::accounts::v1alpha1::SendInvitationUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetInvitationUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetInvitationUser() {
+      ::grpc::Service::MarkMethodGeneric(7);
+    }
+    ~WithGenericMethod_GetInvitationUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest* request, ::accounts::v1alpha1::GetInvitationUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_AgreeInvitationUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_AgreeInvitationUser() {
+      ::grpc::Service::MarkMethodGeneric(8);
+    }
+    ~WithGenericMethod_AgreeInvitationUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AgreeInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::AgreeInvitationUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_CreatePermission : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_CreatePermission() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(9);
     }
     ~WithGenericMethod_CreatePermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1445,7 +1622,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_ListPermission() {
-      ::grpc::Service::MarkMethodGeneric(7);
+      ::grpc::Service::MarkMethodGeneric(10);
     }
     ~WithGenericMethod_ListPermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1462,7 +1639,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetOnePermission() {
-      ::grpc::Service::MarkMethodGeneric(8);
+      ::grpc::Service::MarkMethodGeneric(11);
     }
     ~WithGenericMethod_GetOnePermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1479,7 +1656,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_UpdatePermission() {
-      ::grpc::Service::MarkMethodGeneric(9);
+      ::grpc::Service::MarkMethodGeneric(12);
     }
     ~WithGenericMethod_UpdatePermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1496,7 +1673,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_DeletePermission() {
-      ::grpc::Service::MarkMethodGeneric(10);
+      ::grpc::Service::MarkMethodGeneric(13);
     }
     ~WithGenericMethod_DeletePermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1513,7 +1690,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_CreateOrganization() {
-      ::grpc::Service::MarkMethodGeneric(11);
+      ::grpc::Service::MarkMethodGeneric(14);
     }
     ~WithGenericMethod_CreateOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1530,7 +1707,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_ListOrganization() {
-      ::grpc::Service::MarkMethodGeneric(12);
+      ::grpc::Service::MarkMethodGeneric(15);
     }
     ~WithGenericMethod_ListOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1547,7 +1724,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetOneOrganization() {
-      ::grpc::Service::MarkMethodGeneric(13);
+      ::grpc::Service::MarkMethodGeneric(16);
     }
     ~WithGenericMethod_GetOneOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1564,7 +1741,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_UpdateOrganization() {
-      ::grpc::Service::MarkMethodGeneric(14);
+      ::grpc::Service::MarkMethodGeneric(17);
     }
     ~WithGenericMethod_UpdateOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1581,7 +1758,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_DeleteOrganization() {
-      ::grpc::Service::MarkMethodGeneric(15);
+      ::grpc::Service::MarkMethodGeneric(18);
     }
     ~WithGenericMethod_DeleteOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1598,7 +1775,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_CreateRole() {
-      ::grpc::Service::MarkMethodGeneric(16);
+      ::grpc::Service::MarkMethodGeneric(19);
     }
     ~WithGenericMethod_CreateRole() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1615,7 +1792,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_ListRoles() {
-      ::grpc::Service::MarkMethodGeneric(17);
+      ::grpc::Service::MarkMethodGeneric(20);
     }
     ~WithGenericMethod_ListRoles() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1632,7 +1809,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_UpdateRole() {
-      ::grpc::Service::MarkMethodGeneric(18);
+      ::grpc::Service::MarkMethodGeneric(21);
     }
     ~WithGenericMethod_UpdateRole() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1649,7 +1826,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetOneRole() {
-      ::grpc::Service::MarkMethodGeneric(19);
+      ::grpc::Service::MarkMethodGeneric(22);
     }
     ~WithGenericMethod_GetOneRole() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1666,7 +1843,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_DeleteRole() {
-      ::grpc::Service::MarkMethodGeneric(20);
+      ::grpc::Service::MarkMethodGeneric(23);
     }
     ~WithGenericMethod_DeleteRole() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1683,7 +1860,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_CreateProject() {
-      ::grpc::Service::MarkMethodGeneric(21);
+      ::grpc::Service::MarkMethodGeneric(24);
     }
     ~WithGenericMethod_CreateProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1700,7 +1877,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetOneProject() {
-      ::grpc::Service::MarkMethodGeneric(22);
+      ::grpc::Service::MarkMethodGeneric(25);
     }
     ~WithGenericMethod_GetOneProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1717,7 +1894,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_UpdateProject() {
-      ::grpc::Service::MarkMethodGeneric(23);
+      ::grpc::Service::MarkMethodGeneric(26);
     }
     ~WithGenericMethod_UpdateProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1734,7 +1911,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_DeleteProject() {
-      ::grpc::Service::MarkMethodGeneric(24);
+      ::grpc::Service::MarkMethodGeneric(27);
     }
     ~WithGenericMethod_DeleteProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1751,7 +1928,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_ListProject() {
-      ::grpc::Service::MarkMethodGeneric(25);
+      ::grpc::Service::MarkMethodGeneric(28);
     }
     ~WithGenericMethod_ListProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1768,7 +1945,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetListUserDex() {
-      ::grpc::Service::MarkMethodGeneric(26);
+      ::grpc::Service::MarkMethodGeneric(29);
     }
     ~WithGenericMethod_GetListUserDex() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1785,7 +1962,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetOneUserDex() {
-      ::grpc::Service::MarkMethodGeneric(27);
+      ::grpc::Service::MarkMethodGeneric(30);
     }
     ~WithGenericMethod_GetOneUserDex() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1802,7 +1979,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_CheckUser() {
-      ::grpc::Service::MarkMethodGeneric(28);
+      ::grpc::Service::MarkMethodGeneric(31);
     }
     ~WithGenericMethod_CheckUser() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1934,12 +2111,72 @@ class AccountService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_SendInvitationUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_SendInvitationUser() {
+      ::grpc::Service::MarkMethodRaw(6);
+    }
+    ~WithRawMethod_SendInvitationUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest* request, ::accounts::v1alpha1::SendInvitationUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSendInvitationUser(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetInvitationUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetInvitationUser() {
+      ::grpc::Service::MarkMethodRaw(7);
+    }
+    ~WithRawMethod_GetInvitationUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest* request, ::accounts::v1alpha1::GetInvitationUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetInvitationUser(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_AgreeInvitationUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_AgreeInvitationUser() {
+      ::grpc::Service::MarkMethodRaw(8);
+    }
+    ~WithRawMethod_AgreeInvitationUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AgreeInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::AgreeInvitationUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAgreeInvitationUser(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_CreatePermission : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_CreatePermission() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(9);
     }
     ~WithRawMethod_CreatePermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1950,7 +2187,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreatePermission(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1959,7 +2196,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_ListPermission() {
-      ::grpc::Service::MarkMethodRaw(7);
+      ::grpc::Service::MarkMethodRaw(10);
     }
     ~WithRawMethod_ListPermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1970,7 +2207,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListPermission(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1979,7 +2216,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetOnePermission() {
-      ::grpc::Service::MarkMethodRaw(8);
+      ::grpc::Service::MarkMethodRaw(11);
     }
     ~WithRawMethod_GetOnePermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1990,7 +2227,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOnePermission(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1999,7 +2236,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_UpdatePermission() {
-      ::grpc::Service::MarkMethodRaw(9);
+      ::grpc::Service::MarkMethodRaw(12);
     }
     ~WithRawMethod_UpdatePermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2010,7 +2247,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdatePermission(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2019,7 +2256,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_DeletePermission() {
-      ::grpc::Service::MarkMethodRaw(10);
+      ::grpc::Service::MarkMethodRaw(13);
     }
     ~WithRawMethod_DeletePermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2030,7 +2267,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeletePermission(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2039,7 +2276,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_CreateOrganization() {
-      ::grpc::Service::MarkMethodRaw(11);
+      ::grpc::Service::MarkMethodRaw(14);
     }
     ~WithRawMethod_CreateOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2050,7 +2287,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateOrganization(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2059,7 +2296,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_ListOrganization() {
-      ::grpc::Service::MarkMethodRaw(12);
+      ::grpc::Service::MarkMethodRaw(15);
     }
     ~WithRawMethod_ListOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2070,7 +2307,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListOrganization(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2079,7 +2316,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetOneOrganization() {
-      ::grpc::Service::MarkMethodRaw(13);
+      ::grpc::Service::MarkMethodRaw(16);
     }
     ~WithRawMethod_GetOneOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2090,7 +2327,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOneOrganization(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2099,7 +2336,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_UpdateOrganization() {
-      ::grpc::Service::MarkMethodRaw(14);
+      ::grpc::Service::MarkMethodRaw(17);
     }
     ~WithRawMethod_UpdateOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2110,7 +2347,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateOrganization(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2119,7 +2356,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_DeleteOrganization() {
-      ::grpc::Service::MarkMethodRaw(15);
+      ::grpc::Service::MarkMethodRaw(18);
     }
     ~WithRawMethod_DeleteOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2130,7 +2367,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteOrganization(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2139,7 +2376,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_CreateRole() {
-      ::grpc::Service::MarkMethodRaw(16);
+      ::grpc::Service::MarkMethodRaw(19);
     }
     ~WithRawMethod_CreateRole() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2150,7 +2387,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateRole(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2159,7 +2396,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_ListRoles() {
-      ::grpc::Service::MarkMethodRaw(17);
+      ::grpc::Service::MarkMethodRaw(20);
     }
     ~WithRawMethod_ListRoles() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2170,7 +2407,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListRoles(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2179,7 +2416,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_UpdateRole() {
-      ::grpc::Service::MarkMethodRaw(18);
+      ::grpc::Service::MarkMethodRaw(21);
     }
     ~WithRawMethod_UpdateRole() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2190,7 +2427,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateRole(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2199,7 +2436,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetOneRole() {
-      ::grpc::Service::MarkMethodRaw(19);
+      ::grpc::Service::MarkMethodRaw(22);
     }
     ~WithRawMethod_GetOneRole() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2210,7 +2447,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOneRole(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2219,7 +2456,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_DeleteRole() {
-      ::grpc::Service::MarkMethodRaw(20);
+      ::grpc::Service::MarkMethodRaw(23);
     }
     ~WithRawMethod_DeleteRole() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2230,7 +2467,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteRole(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2239,7 +2476,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_CreateProject() {
-      ::grpc::Service::MarkMethodRaw(21);
+      ::grpc::Service::MarkMethodRaw(24);
     }
     ~WithRawMethod_CreateProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2250,7 +2487,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2259,7 +2496,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetOneProject() {
-      ::grpc::Service::MarkMethodRaw(22);
+      ::grpc::Service::MarkMethodRaw(25);
     }
     ~WithRawMethod_GetOneProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2270,7 +2507,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOneProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2279,7 +2516,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_UpdateProject() {
-      ::grpc::Service::MarkMethodRaw(23);
+      ::grpc::Service::MarkMethodRaw(26);
     }
     ~WithRawMethod_UpdateProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2290,7 +2527,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2299,7 +2536,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_DeleteProject() {
-      ::grpc::Service::MarkMethodRaw(24);
+      ::grpc::Service::MarkMethodRaw(27);
     }
     ~WithRawMethod_DeleteProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2310,7 +2547,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2319,7 +2556,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_ListProject() {
-      ::grpc::Service::MarkMethodRaw(25);
+      ::grpc::Service::MarkMethodRaw(28);
     }
     ~WithRawMethod_ListProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2330,7 +2567,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2339,7 +2576,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetListUserDex() {
-      ::grpc::Service::MarkMethodRaw(26);
+      ::grpc::Service::MarkMethodRaw(29);
     }
     ~WithRawMethod_GetListUserDex() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2350,7 +2587,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetListUserDex(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2359,7 +2596,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetOneUserDex() {
-      ::grpc::Service::MarkMethodRaw(27);
+      ::grpc::Service::MarkMethodRaw(30);
     }
     ~WithRawMethod_GetOneUserDex() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2370,7 +2607,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOneUserDex(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2379,7 +2616,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_CheckUser() {
-      ::grpc::Service::MarkMethodRaw(28);
+      ::grpc::Service::MarkMethodRaw(31);
     }
     ~WithRawMethod_CheckUser() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2390,7 +2627,7 @@ class AccountService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCheckUser(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2514,12 +2751,72 @@ class AccountService final {
     virtual ::grpc::Status StreamedListUserPagination(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::ListUserPaginationRequest,::accounts::v1alpha1::ListUserPaginationResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_SendInvitationUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_SendInvitationUser() {
+      ::grpc::Service::MarkMethodStreamed(6,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::SendInvitationUserRequest, ::accounts::v1alpha1::SendInvitationUserResponse>(std::bind(&WithStreamedUnaryMethod_SendInvitationUser<BaseClass>::StreamedSendInvitationUser, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_SendInvitationUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SendInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::SendInvitationUserRequest* request, ::accounts::v1alpha1::SendInvitationUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedSendInvitationUser(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::SendInvitationUserRequest,::accounts::v1alpha1::SendInvitationUserResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetInvitationUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetInvitationUser() {
+      ::grpc::Service::MarkMethodStreamed(7,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::GetInvitationUserRequest, ::accounts::v1alpha1::GetInvitationUserResponse>(std::bind(&WithStreamedUnaryMethod_GetInvitationUser<BaseClass>::StreamedGetInvitationUser, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetInvitationUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetInvitationUserRequest* request, ::accounts::v1alpha1::GetInvitationUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetInvitationUser(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::GetInvitationUserRequest,::accounts::v1alpha1::GetInvitationUserResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AgreeInvitationUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_AgreeInvitationUser() {
+      ::grpc::Service::MarkMethodStreamed(8,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::AgreeInvitationUserRequest, ::accounts::v1alpha1::AgreeInvitationUserResponse>(std::bind(&WithStreamedUnaryMethod_AgreeInvitationUser<BaseClass>::StreamedAgreeInvitationUser, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_AgreeInvitationUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AgreeInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::AgreeInvitationUserResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAgreeInvitationUser(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::AgreeInvitationUserRequest,::accounts::v1alpha1::AgreeInvitationUserResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreatePermission : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_CreatePermission() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::CreatePermissionRequest, ::accounts::v1alpha1::CreatePermissionResponse>(std::bind(&WithStreamedUnaryMethod_CreatePermission<BaseClass>::StreamedCreatePermission, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_CreatePermission() override {
@@ -2539,7 +2836,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_ListPermission() {
-      ::grpc::Service::MarkMethodStreamed(7,
+      ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::ListPermissionRequest, ::accounts::v1alpha1::ListPermissionResponse>(std::bind(&WithStreamedUnaryMethod_ListPermission<BaseClass>::StreamedListPermission, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_ListPermission() override {
@@ -2559,7 +2856,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetOnePermission() {
-      ::grpc::Service::MarkMethodStreamed(8,
+      ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::GetOnePermissionRequest, ::accounts::v1alpha1::GetOnePermissionResponse>(std::bind(&WithStreamedUnaryMethod_GetOnePermission<BaseClass>::StreamedGetOnePermission, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetOnePermission() override {
@@ -2579,7 +2876,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_UpdatePermission() {
-      ::grpc::Service::MarkMethodStreamed(9,
+      ::grpc::Service::MarkMethodStreamed(12,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::UpdatePermissionRequest, ::accounts::v1alpha1::UpdatePermissionResponse>(std::bind(&WithStreamedUnaryMethod_UpdatePermission<BaseClass>::StreamedUpdatePermission, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_UpdatePermission() override {
@@ -2599,7 +2896,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_DeletePermission() {
-      ::grpc::Service::MarkMethodStreamed(10,
+      ::grpc::Service::MarkMethodStreamed(13,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::DeletePermissionRequest, ::accounts::v1alpha1::DeletePermissionResponse>(std::bind(&WithStreamedUnaryMethod_DeletePermission<BaseClass>::StreamedDeletePermission, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_DeletePermission() override {
@@ -2619,7 +2916,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_CreateOrganization() {
-      ::grpc::Service::MarkMethodStreamed(11,
+      ::grpc::Service::MarkMethodStreamed(14,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::CreateOrganizationRequest, ::accounts::v1alpha1::CreateOrganizationResponse>(std::bind(&WithStreamedUnaryMethod_CreateOrganization<BaseClass>::StreamedCreateOrganization, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_CreateOrganization() override {
@@ -2639,7 +2936,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_ListOrganization() {
-      ::grpc::Service::MarkMethodStreamed(12,
+      ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::ListOrganizationRequest, ::accounts::v1alpha1::ListOrganizationResponse>(std::bind(&WithStreamedUnaryMethod_ListOrganization<BaseClass>::StreamedListOrganization, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_ListOrganization() override {
@@ -2659,7 +2956,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetOneOrganization() {
-      ::grpc::Service::MarkMethodStreamed(13,
+      ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::GetOneOrganizationRequest, ::accounts::v1alpha1::GetOneOrganizationResponse>(std::bind(&WithStreamedUnaryMethod_GetOneOrganization<BaseClass>::StreamedGetOneOrganization, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetOneOrganization() override {
@@ -2679,7 +2976,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_UpdateOrganization() {
-      ::grpc::Service::MarkMethodStreamed(14,
+      ::grpc::Service::MarkMethodStreamed(17,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::UpdateOrganizationRequest, ::accounts::v1alpha1::UpdateOrganizationResponse>(std::bind(&WithStreamedUnaryMethod_UpdateOrganization<BaseClass>::StreamedUpdateOrganization, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_UpdateOrganization() override {
@@ -2699,7 +2996,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_DeleteOrganization() {
-      ::grpc::Service::MarkMethodStreamed(15,
+      ::grpc::Service::MarkMethodStreamed(18,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::DeleteOrganizationRequest, ::accounts::v1alpha1::DeleteOrganizationResponse>(std::bind(&WithStreamedUnaryMethod_DeleteOrganization<BaseClass>::StreamedDeleteOrganization, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_DeleteOrganization() override {
@@ -2719,7 +3016,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_CreateRole() {
-      ::grpc::Service::MarkMethodStreamed(16,
+      ::grpc::Service::MarkMethodStreamed(19,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::CreateRoleRequest, ::accounts::v1alpha1::CreateRoleResponse>(std::bind(&WithStreamedUnaryMethod_CreateRole<BaseClass>::StreamedCreateRole, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_CreateRole() override {
@@ -2739,7 +3036,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_ListRoles() {
-      ::grpc::Service::MarkMethodStreamed(17,
+      ::grpc::Service::MarkMethodStreamed(20,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::ListRolesRequest, ::accounts::v1alpha1::ListRolesResponse>(std::bind(&WithStreamedUnaryMethod_ListRoles<BaseClass>::StreamedListRoles, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_ListRoles() override {
@@ -2759,7 +3056,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_UpdateRole() {
-      ::grpc::Service::MarkMethodStreamed(18,
+      ::grpc::Service::MarkMethodStreamed(21,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::UpdateRoleRequest, ::accounts::v1alpha1::UpdateRoleResponse>(std::bind(&WithStreamedUnaryMethod_UpdateRole<BaseClass>::StreamedUpdateRole, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_UpdateRole() override {
@@ -2779,7 +3076,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetOneRole() {
-      ::grpc::Service::MarkMethodStreamed(19,
+      ::grpc::Service::MarkMethodStreamed(22,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::GetOneRoleRequest, ::accounts::v1alpha1::GetOneRoleResponse>(std::bind(&WithStreamedUnaryMethod_GetOneRole<BaseClass>::StreamedGetOneRole, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetOneRole() override {
@@ -2799,7 +3096,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_DeleteRole() {
-      ::grpc::Service::MarkMethodStreamed(20,
+      ::grpc::Service::MarkMethodStreamed(23,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::DeleteRoleRequest, ::accounts::v1alpha1::DeleteRoleResponse>(std::bind(&WithStreamedUnaryMethod_DeleteRole<BaseClass>::StreamedDeleteRole, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_DeleteRole() override {
@@ -2819,7 +3116,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_CreateProject() {
-      ::grpc::Service::MarkMethodStreamed(21,
+      ::grpc::Service::MarkMethodStreamed(24,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::CreateProjectRequest, ::accounts::v1alpha1::CreateProjectResponse>(std::bind(&WithStreamedUnaryMethod_CreateProject<BaseClass>::StreamedCreateProject, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_CreateProject() override {
@@ -2839,7 +3136,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetOneProject() {
-      ::grpc::Service::MarkMethodStreamed(22,
+      ::grpc::Service::MarkMethodStreamed(25,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::GetOneProjectRequest, ::accounts::v1alpha1::GetOneProjectResponse>(std::bind(&WithStreamedUnaryMethod_GetOneProject<BaseClass>::StreamedGetOneProject, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetOneProject() override {
@@ -2859,7 +3156,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_UpdateProject() {
-      ::grpc::Service::MarkMethodStreamed(23,
+      ::grpc::Service::MarkMethodStreamed(26,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::UpdateProjectRequest, ::accounts::v1alpha1::UpdateProjectResponse>(std::bind(&WithStreamedUnaryMethod_UpdateProject<BaseClass>::StreamedUpdateProject, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_UpdateProject() override {
@@ -2879,7 +3176,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_DeleteProject() {
-      ::grpc::Service::MarkMethodStreamed(24,
+      ::grpc::Service::MarkMethodStreamed(27,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::DeleteProjectRequest, ::accounts::v1alpha1::DeleteProjectResponse>(std::bind(&WithStreamedUnaryMethod_DeleteProject<BaseClass>::StreamedDeleteProject, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_DeleteProject() override {
@@ -2899,7 +3196,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_ListProject() {
-      ::grpc::Service::MarkMethodStreamed(25,
+      ::grpc::Service::MarkMethodStreamed(28,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::ListProjectRequest, ::accounts::v1alpha1::ListProjectResponse>(std::bind(&WithStreamedUnaryMethod_ListProject<BaseClass>::StreamedListProject, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_ListProject() override {
@@ -2919,7 +3216,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetListUserDex() {
-      ::grpc::Service::MarkMethodStreamed(26,
+      ::grpc::Service::MarkMethodStreamed(29,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::GetListUserDexRequest, ::accounts::v1alpha1::GetListUserDexResponse>(std::bind(&WithStreamedUnaryMethod_GetListUserDex<BaseClass>::StreamedGetListUserDex, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetListUserDex() override {
@@ -2939,7 +3236,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetOneUserDex() {
-      ::grpc::Service::MarkMethodStreamed(27,
+      ::grpc::Service::MarkMethodStreamed(30,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::GetOneUserDexRequest, ::accounts::v1alpha1::GetOneUserDexResponse>(std::bind(&WithStreamedUnaryMethod_GetOneUserDex<BaseClass>::StreamedGetOneUserDex, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetOneUserDex() override {
@@ -2959,7 +3256,7 @@ class AccountService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_CheckUser() {
-      ::grpc::Service::MarkMethodStreamed(28,
+      ::grpc::Service::MarkMethodStreamed(31,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::CheckUserRequest, ::accounts::v1alpha1::CheckUserResponse>(std::bind(&WithStreamedUnaryMethod_CheckUser<BaseClass>::StreamedCheckUser, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_CheckUser() override {
@@ -2973,9 +3270,9 @@ class AccountService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedCheckUser(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::CheckUserRequest,::accounts::v1alpha1::CheckUserResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

@@ -25,6 +25,9 @@ type AccountServiceClient interface {
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
 	DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error)
 	ListUserPagination(ctx context.Context, in *ListUserPaginationRequest, opts ...grpc.CallOption) (*ListUserPaginationResponse, error)
+	SendInvitationUser(ctx context.Context, in *SendInvitationUserRequest, opts ...grpc.CallOption) (*SendInvitationUserResponse, error)
+	GetInvitationUser(ctx context.Context, in *GetInvitationUserRequest, opts ...grpc.CallOption) (*GetInvitationUserResponse, error)
+	AgreeInvitationUser(ctx context.Context, in *AgreeInvitationUserRequest, opts ...grpc.CallOption) (*AgreeInvitationUserResponse, error)
 	///PERMISSION
 	CreatePermission(ctx context.Context, in *CreatePermissionRequest, opts ...grpc.CallOption) (*CreatePermissionResponse, error)
 	//rpc AssignPermission(AssignPermissionRequest) returns (MsgResponse);
@@ -112,6 +115,33 @@ func (c *accountServiceClient) DeleteUser(ctx context.Context, in *DeleteUserReq
 func (c *accountServiceClient) ListUserPagination(ctx context.Context, in *ListUserPaginationRequest, opts ...grpc.CallOption) (*ListUserPaginationResponse, error) {
 	out := new(ListUserPaginationResponse)
 	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/ListUserPagination", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountServiceClient) SendInvitationUser(ctx context.Context, in *SendInvitationUserRequest, opts ...grpc.CallOption) (*SendInvitationUserResponse, error) {
+	out := new(SendInvitationUserResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/SendInvitationUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountServiceClient) GetInvitationUser(ctx context.Context, in *GetInvitationUserRequest, opts ...grpc.CallOption) (*GetInvitationUserResponse, error) {
+	out := new(GetInvitationUserResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/GetInvitationUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountServiceClient) AgreeInvitationUser(ctx context.Context, in *AgreeInvitationUserRequest, opts ...grpc.CallOption) (*AgreeInvitationUserResponse, error) {
+	out := new(AgreeInvitationUserResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/AgreeInvitationUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -336,6 +366,9 @@ type AccountServiceServer interface {
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
 	DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error)
 	ListUserPagination(context.Context, *ListUserPaginationRequest) (*ListUserPaginationResponse, error)
+	SendInvitationUser(context.Context, *SendInvitationUserRequest) (*SendInvitationUserResponse, error)
+	GetInvitationUser(context.Context, *GetInvitationUserRequest) (*GetInvitationUserResponse, error)
+	AgreeInvitationUser(context.Context, *AgreeInvitationUserRequest) (*AgreeInvitationUserResponse, error)
 	///PERMISSION
 	CreatePermission(context.Context, *CreatePermissionRequest) (*CreatePermissionResponse, error)
 	//rpc AssignPermission(AssignPermissionRequest) returns (MsgResponse);
@@ -388,6 +421,15 @@ func (UnimplementedAccountServiceServer) DeleteUser(context.Context, *DeleteUser
 }
 func (UnimplementedAccountServiceServer) ListUserPagination(context.Context, *ListUserPaginationRequest) (*ListUserPaginationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListUserPagination not implemented")
+}
+func (UnimplementedAccountServiceServer) SendInvitationUser(context.Context, *SendInvitationUserRequest) (*SendInvitationUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SendInvitationUser not implemented")
+}
+func (UnimplementedAccountServiceServer) GetInvitationUser(context.Context, *GetInvitationUserRequest) (*GetInvitationUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetInvitationUser not implemented")
+}
+func (UnimplementedAccountServiceServer) AgreeInvitationUser(context.Context, *AgreeInvitationUserRequest) (*AgreeInvitationUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AgreeInvitationUser not implemented")
 }
 func (UnimplementedAccountServiceServer) CreatePermission(context.Context, *CreatePermissionRequest) (*CreatePermissionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePermission not implemented")
@@ -574,6 +616,60 @@ func _AccountService_ListUserPagination_Handler(srv interface{}, ctx context.Con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).ListUserPagination(ctx, req.(*ListUserPaginationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountService_SendInvitationUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SendInvitationUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).SendInvitationUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/SendInvitationUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).SendInvitationUser(ctx, req.(*SendInvitationUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountService_GetInvitationUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetInvitationUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).GetInvitationUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/GetInvitationUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).GetInvitationUser(ctx, req.(*GetInvitationUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountService_AgreeInvitationUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AgreeInvitationUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).AgreeInvitationUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/AgreeInvitationUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).AgreeInvitationUser(ctx, req.(*AgreeInvitationUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1022,6 +1118,18 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListUserPagination",
 			Handler:    _AccountService_ListUserPagination_Handler,
+		},
+		{
+			MethodName: "SendInvitationUser",
+			Handler:    _AccountService_SendInvitationUser_Handler,
+		},
+		{
+			MethodName: "GetInvitationUser",
+			Handler:    _AccountService_GetInvitationUser_Handler,
+		},
+		{
+			MethodName: "AgreeInvitationUser",
+			Handler:    _AccountService_AgreeInvitationUser_Handler,
 		},
 		{
 			MethodName: "CreatePermission",
