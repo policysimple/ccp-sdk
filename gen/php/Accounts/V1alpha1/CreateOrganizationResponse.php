@@ -18,13 +18,17 @@ class CreateOrganizationResponse extends \Google\Protobuf\Internal\Message
      */
     protected $msg = '';
     /**
-     * Generated from protobuf field <code>string role_id_organization = 2 [json_name = "roleIdOrganization"];</code>
+     * Generated from protobuf field <code>uint32 role_id_organization = 2 [json_name = "roleIdOrganization"];</code>
      */
-    protected $role_id_organization = '';
+    protected $role_id_organization = 0;
     /**
      * Generated from protobuf field <code>string error = 3 [json_name = "error"];</code>
      */
     protected $error = '';
+    /**
+     * Generated from protobuf field <code>uint32 id = 4 [json_name = "id"];</code>
+     */
+    protected $id = 0;
 
     /**
      * Constructor.
@@ -33,8 +37,9 @@ class CreateOrganizationResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $msg
-     *     @type string $role_id_organization
+     *     @type int $role_id_organization
      *     @type string $error
+     *     @type int $id
      * }
      */
     public function __construct($data = NULL) {
@@ -65,8 +70,8 @@ class CreateOrganizationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string role_id_organization = 2 [json_name = "roleIdOrganization"];</code>
-     * @return string
+     * Generated from protobuf field <code>uint32 role_id_organization = 2 [json_name = "roleIdOrganization"];</code>
+     * @return int
      */
     public function getRoleIdOrganization()
     {
@@ -74,13 +79,13 @@ class CreateOrganizationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string role_id_organization = 2 [json_name = "roleIdOrganization"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint32 role_id_organization = 2 [json_name = "roleIdOrganization"];</code>
+     * @param int $var
      * @return $this
      */
     public function setRoleIdOrganization($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkUint32($var);
         $this->role_id_organization = $var;
 
         return $this;
@@ -104,6 +109,28 @@ class CreateOrganizationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->error = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 id = 4 [json_name = "id"];</code>
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 id = 4 [json_name = "id"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->id = $var;
 
         return $this;
     }
