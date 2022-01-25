@@ -4,6 +4,28 @@
 var grpc = require('grpc');
 var accounts_v1alpha1_accounts_pb = require('../../accounts/v1alpha1/accounts_pb.js');
 
+function serialize_accounts_v1alpha1_AgreeInvitationUserRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.AgreeInvitationUserRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.AgreeInvitationUserRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_AgreeInvitationUserRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.AgreeInvitationUserRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_AgreeInvitationUserResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.AgreeInvitationUserResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.AgreeInvitationUserResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_AgreeInvitationUserResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.AgreeInvitationUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_CheckUserRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.CheckUserRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.CheckUserRequest');
@@ -244,6 +266,28 @@ function serialize_accounts_v1alpha1_DeleteUserResponse(arg) {
 
 function deserialize_accounts_v1alpha1_DeleteUserResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.DeleteUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_GetInvitationUserRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetInvitationUserRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetInvitationUserRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetInvitationUserRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetInvitationUserRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_GetInvitationUserResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetInvitationUserResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetInvitationUserResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetInvitationUserResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetInvitationUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_accounts_v1alpha1_GetListUserDexRequest(arg) {
@@ -532,6 +576,28 @@ function deserialize_accounts_v1alpha1_ListUserResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.ListUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_SendInvitationUserRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.SendInvitationUserRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.SendInvitationUserRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_SendInvitationUserRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.SendInvitationUserRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_SendInvitationUserResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.SendInvitationUserResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.SendInvitationUserResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_SendInvitationUserResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.SendInvitationUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_UpdateOrganizationRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.UpdateOrganizationRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.UpdateOrganizationRequest');
@@ -710,6 +776,39 @@ var AccountServiceService = exports.AccountServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_ListUserPaginationRequest,
     responseSerialize: serialize_accounts_v1alpha1_ListUserPaginationResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_ListUserPaginationResponse,
+  },
+  sendInvitationUser: {
+    path: '/accounts.v1alpha1.AccountService/SendInvitationUser',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.SendInvitationUserRequest,
+    responseType: accounts_v1alpha1_accounts_pb.SendInvitationUserResponse,
+    requestSerialize: serialize_accounts_v1alpha1_SendInvitationUserRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_SendInvitationUserRequest,
+    responseSerialize: serialize_accounts_v1alpha1_SendInvitationUserResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_SendInvitationUserResponse,
+  },
+  getInvitationUser: {
+    path: '/accounts.v1alpha1.AccountService/GetInvitationUser',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.GetInvitationUserRequest,
+    responseType: accounts_v1alpha1_accounts_pb.GetInvitationUserResponse,
+    requestSerialize: serialize_accounts_v1alpha1_GetInvitationUserRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_GetInvitationUserRequest,
+    responseSerialize: serialize_accounts_v1alpha1_GetInvitationUserResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_GetInvitationUserResponse,
+  },
+  agreeInvitationUser: {
+    path: '/accounts.v1alpha1.AccountService/AgreeInvitationUser',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.AgreeInvitationUserRequest,
+    responseType: accounts_v1alpha1_accounts_pb.AgreeInvitationUserResponse,
+    requestSerialize: serialize_accounts_v1alpha1_AgreeInvitationUserRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_AgreeInvitationUserRequest,
+    responseSerialize: serialize_accounts_v1alpha1_AgreeInvitationUserResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_AgreeInvitationUserResponse,
   },
   // /PERMISSION
   createPermission: {

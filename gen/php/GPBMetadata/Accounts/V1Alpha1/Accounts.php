@@ -16,7 +16,11 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
+<<<<<<< HEAD
+Ì\\
+=======
 ÛS
+>>>>>>> 767f9d4bc8aee0fffa0bbe1b1262c10a94cd60b1
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"à
 CheckUserRequest\'
 organization_id (RorganizationId
@@ -102,7 +106,29 @@ updated_at (	R	updatedAt,
 limit (Rlimit"e
 ListUserPaginationResponse
 count (Rcount1
-users (2.accounts.v1alpha1.UserListRusers"²
+users (2.accounts.v1alpha1.UserListRusers"ˆ
+SendInvitationUserRequest
+name (	Rname
+email (	Remail
+
+project_id (R	projectId"
+user_id_admin (RuserIdAdmin"U
+SendInvitationUserResponse
+html_result (	R
+htmlResult
+result (	Rresult"C
+GetInvitationUserRequest\'
+invitation_code (	RinvitationCode"®
+GetInvitationUserResponseC
+organization (2.accounts.v1alpha1.OrganizationRorganization4
+project (2.accounts.v1alpha1.ProjectRproject
+result (	Rresult"Á
+AgreeInvitationUserRequest\'
+invitation_code (	RinvitationCode"
+guest_user_id (RguestUserIdV
+invitation_response (2%.accounts.v1alpha1.InvitationResponseRinvitationResponse"5
+AgreeInvitationUserResponse
+result (	Rresult"²
 Rol
 id (Rid
 name (	Rname
@@ -310,7 +336,10 @@ updated_at (	R	updatedAt,
 is_super_user (RisSuperUserE
 organizations (2.accounts.v1alpha1.OrganizationRorganizations
 msg (	Rmsg6
-projects (2.accounts.v1alpha1.ProjectRprojects2í
+projects (2.accounts.v1alpha1.ProjectRprojects*d
+InvitationResponse,
+(INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED  
+INVITATION_RESPONSE_REJECTED2Æ
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
@@ -321,7 +350,10 @@ GetOneUser$.accounts.v1alpha1.GetOneUserRequest%.accounts.v1alpha1.GetOneUserR
 UpdateUser$.accounts.v1alpha1.UpdateUserRequest%.accounts.v1alpha1.UpdateUserResponseY
 
 DeleteUser$.accounts.v1alpha1.DeleteUserRequest%.accounts.v1alpha1.DeleteUserResponseq
-ListUserPagination,.accounts.v1alpha1.ListUserPaginationRequest-.accounts.v1alpha1.ListUserPaginationResponsek
+ListUserPagination,.accounts.v1alpha1.ListUserPaginationRequest-.accounts.v1alpha1.ListUserPaginationResponseq
+SendInvitationUser,.accounts.v1alpha1.SendInvitationUserRequest-.accounts.v1alpha1.SendInvitationUserResponsen
+GetInvitationUser+.accounts.v1alpha1.GetInvitationUserRequest,.accounts.v1alpha1.GetInvitationUserResponset
+AgreeInvitationUser-.accounts.v1alpha1.AgreeInvitationUserRequest..accounts.v1alpha1.AgreeInvitationUserResponsek
 CreatePermission*.accounts.v1alpha1.CreatePermissionRequest+.accounts.v1alpha1.CreatePermissionResponsee
 ListPermission(.accounts.v1alpha1.ListPermissionRequest).accounts.v1alpha1.ListPermissionResponsek
 GetOnePermission*.accounts.v1alpha1.GetOnePermissionRequest+.accounts.v1alpha1.GetOnePermissionResponsek
