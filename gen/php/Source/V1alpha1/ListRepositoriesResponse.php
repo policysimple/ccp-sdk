@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListRepositoriesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .source.v1alpha1.DetailRepository repositories = 1 [json_name = "repositories"];</code>
+     * Generated from protobuf field <code>repeated .source.v1alpha1.ListRepository repositories = 1 [json_name = "repositories"];</code>
      */
     private $repositories;
 
@@ -24,7 +24,7 @@ class ListRepositoriesResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Source\V1alpha1\DetailRepository[]|\Google\Protobuf\Internal\RepeatedField $repositories
+     *     @type \Source\V1alpha1\ListRepository[]|\Google\Protobuf\Internal\RepeatedField $repositories
      * }
      */
     public function __construct($data = NULL) {
@@ -33,7 +33,7 @@ class ListRepositoriesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .source.v1alpha1.DetailRepository repositories = 1 [json_name = "repositories"];</code>
+     * Generated from protobuf field <code>repeated .source.v1alpha1.ListRepository repositories = 1 [json_name = "repositories"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRepositories()
@@ -42,13 +42,13 @@ class ListRepositoriesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .source.v1alpha1.DetailRepository repositories = 1 [json_name = "repositories"];</code>
-     * @param \Source\V1alpha1\DetailRepository[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .source.v1alpha1.ListRepository repositories = 1 [json_name = "repositories"];</code>
+     * @param \Source\V1alpha1\ListRepository[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRepositories($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Source\V1alpha1\DetailRepository::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Source\V1alpha1\ListRepository::class);
         $this->repositories = $arr;
 
         return $this;

@@ -45,10 +45,41 @@ message DetailRepository {
 
     uint32 project_id = 8;
     uint32 organization_id = 9;
+
+    repeated string branchs = 10;
+    string integration_id = 11;
+
 }
 
+message ListRepository{
+    string id = 1;
+    string name = 2;
+    bool private = 3;
+    string fullname = 4;
+    string description = 5;
+    string clone_url = 7;
+    uint32 project_id = 8;
+    uint32 organization_id = 9;
+    string integration_id = 11;
+}
+
+
+message CreateDetailRepository {
+    string name = 1;
+    bool private = 2;
+    string fullname = 3;
+    string description = 4;
+    bool fork = 5;
+    string clone_url = 6;
+
+    uint32 project_id = 7;
+    uint32 organization_id = 8;
+    string integration_id = 9;
+}
+
+
 message CreateRepositoryRequest {
-    DetailRepository repository = 1;
+    CreateDetailRepository repository = 1;
     uint32 project_id = 2;
     uint32 organization_id = 3;
 }
@@ -64,7 +95,7 @@ message ListRepositoriesRequest {
 }
 
 message ListRepositoriesResponse {
-    repeated DetailRepository repositories = 1;
+    repeated ListRepository repositories = 1;
 }
 
 

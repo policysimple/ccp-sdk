@@ -16,8 +16,8 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-¢.
-source/v1alpha1/source.protosource.v1alpha1"‡
+©3
+source/v1alpha1/source.protosource.v1alpha1"È
 DetailRepository
 id (	Rid
 name (	Rname
@@ -28,10 +28,35 @@ class Source
 	clone_url (	RcloneUrl
 
 project_id (R	projectId\'
-organization_id	 (RorganizationId"¤
-CreateRepositoryRequestA
+organization_id	 (RorganizationId
+branchs
+ (	Rbranchs%
+integration_id (	RintegrationId"˜
+ListRepository
+id (	Rid
+name (	Rname
+private (Rprivate
+fullname (	Rfullname 
+description (	Rdescription
+	clone_url (	RcloneUrl
 
-repository (2!.source.v1alpha1.DetailRepositoryR
+project_id (R	projectId\'
+organization_id	 (RorganizationId%
+integration_id (	RintegrationId"¤
+CreateDetailRepository
+name (	Rname
+private (Rprivate
+fullname (	Rfullname 
+description (	Rdescription
+fork (Rfork
+	clone_url (	RcloneUrl
+
+project_id (R	projectId\'
+organization_id (RorganizationId%
+integration_id	 (	RintegrationId"ª
+CreateRepositoryRequestG
+
+repository (2\'.source.v1alpha1.CreateDetailRepositoryR
 repository
 
 project_id (R	projectId\'
@@ -42,9 +67,9 @@ project_id (R	projectId\'
 ListRepositoriesRequest
 
 project_id (R	projectId\'
-organization_id (RorganizationId"a
-ListRepositoriesResponseE
-repositories (2!.source.v1alpha1.DetailRepositoryRrepositories";
+organization_id (RorganizationId"_
+ListRepositoriesResponseC
+repositories (2.source.v1alpha1.ListRepositoryRrepositories";
 GetRepositoryRequest#
 repository_id (	RrepositoryId"Z
 GetRepositoryResponseA
