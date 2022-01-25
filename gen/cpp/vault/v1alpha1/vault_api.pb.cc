@@ -88,8 +88,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecretDefaultTypeInternal _Secr
 constexpr CreateSecretRequest::CreateSecretRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : environment_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , data_(nullptr){}
 struct CreateSecretRequestDefaultTypeInternal {
   constexpr CreateSecretRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -278,8 +277,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_5fapi
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::CreateSecretRequest, environment_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::CreateSecretRequest, name_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::CreateSecretRequest, value_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::CreateSecretRequest, data_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::CreateSecretResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -357,16 +355,16 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 26, -1, sizeof(::vault::v1alpha1::SecretWarnings)},
   { 32, -1, sizeof(::vault::v1alpha1::Secret)},
   { 41, -1, sizeof(::vault::v1alpha1::CreateSecretRequest)},
-  { 49, -1, sizeof(::vault::v1alpha1::CreateSecretResponse)},
-  { 56, -1, sizeof(::vault::v1alpha1::UpdateSecretRequest)},
-  { 63, -1, sizeof(::vault::v1alpha1::UpdateSecretResponse)},
-  { 70, -1, sizeof(::vault::v1alpha1::DeleteSecretRequest)},
-  { 76, -1, sizeof(::vault::v1alpha1::DeleteSecretResponse)},
-  { 83, -1, sizeof(::vault::v1alpha1::GetSecretRequest)},
-  { 89, 96, sizeof(::vault::v1alpha1::GetSecretResponse_DataEntry_DoNotUse)},
-  { 98, -1, sizeof(::vault::v1alpha1::GetSecretResponse)},
-  { 105, -1, sizeof(::vault::v1alpha1::ListSecretRequest)},
-  { 111, -1, sizeof(::vault::v1alpha1::ListSecretResponse)},
+  { 48, -1, sizeof(::vault::v1alpha1::CreateSecretResponse)},
+  { 55, -1, sizeof(::vault::v1alpha1::UpdateSecretRequest)},
+  { 62, -1, sizeof(::vault::v1alpha1::UpdateSecretResponse)},
+  { 69, -1, sizeof(::vault::v1alpha1::DeleteSecretRequest)},
+  { 75, -1, sizeof(::vault::v1alpha1::DeleteSecretResponse)},
+  { 82, -1, sizeof(::vault::v1alpha1::GetSecretRequest)},
+  { 88, 95, sizeof(::vault::v1alpha1::GetSecretResponse_DataEntry_DoNotUse)},
+  { 97, -1, sizeof(::vault::v1alpha1::GetSecretResponse)},
+  { 104, -1, sizeof(::vault::v1alpha1::ListSecretRequest)},
+  { 110, -1, sizeof(::vault::v1alpha1::ListSecretResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -404,44 +402,44 @@ const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto[] PR
   "metadata\022 \n\013environment\030\002 \001(\tR\013environme"
   "nt\022.\n\004data\030\003 \001(\0132\032.vault.v1alpha1.Secret"
   "DataR\004data\022:\n\010warnings\030\004 \001(\0132\036.vault.v1a"
-  "lpha1.SecretWarningsR\010warnings\"a\n\023Create"
+  "lpha1.SecretWarningsR\010warnings\"g\n\023Create"
   "SecretRequest\022 \n\013environment\030\001 \001(\tR\013envi"
-  "ronment\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005value\030\003 \001"
-  "(\tR\005value\">\n\024CreateSecretResponse\022\024\n\005err"
-  "or\030\001 \001(\tR\005error\022\020\n\003msg\030\002 \001(\tR\003msg\"\?\n\023Upd"
-  "ateSecretRequest\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005"
-  "value\030\003 \001(\tR\005value\">\n\024UpdateSecretRespon"
-  "se\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005err"
-  "or\")\n\023DeleteSecretRequest\022\022\n\004name\030\001 \001(\tR"
-  "\004name\">\n\024DeleteSecretResponse\022\020\n\003msg\030\001 \001"
-  "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"4\n\020GetSecr"
-  "etRequest\022 \n\013environment\030\001 \001(\tR\013environm"
-  "ent\"\243\001\n\021GetSecretResponse\022\?\n\004data\030\001 \003(\0132"
-  "+.vault.v1alpha1.GetSecretResponse.DataE"
-  "ntryR\004data\022\024\n\005error\030\002 \001(\tR\005error\0327\n\tData"
-  "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005"
-  "value:\0028\001\"5\n\021ListSecretRequest\022 \n\013enviro"
-  "nment\030\001 \001(\tR\013environment\"\\\n\022ListSecretRe"
-  "sponse\0220\n\007secrets\030\001 \003(\0132\026.vault.v1alpha1"
-  ".SecretR\007secrets\022\024\n\005error\030\002 \001(\tR\005error2\323"
-  "\003\n\017VaultAPIService\022[\n\014CreateSecret\022#.vau"
-  "lt.v1alpha1.CreateSecretRequest\032$.vault."
-  "v1alpha1.CreateSecretResponse\"\000\022[\n\014Updat"
-  "eSecret\022#.vault.v1alpha1.UpdateSecretReq"
-  "uest\032$.vault.v1alpha1.UpdateSecretRespon"
-  "se\"\000\022[\n\014DeleteSecret\022#.vault.v1alpha1.De"
-  "leteSecretRequest\032$.vault.v1alpha1.Delet"
-  "eSecretResponse\"\000\022R\n\tGetSecret\022 .vault.v"
-  "1alpha1.GetSecretRequest\032!.vault.v1alpha"
-  "1.GetSecretResponse\"\000\022U\n\nListSecret\022!.va"
-  "ult.v1alpha1.ListSecretRequest\032\".vault.v"
-  "1alpha1.ListSecretResponse\"\000B1Z/github.c"
-  "om/cuemby/ccp-sdk/gen/go/vault/v1alpha1b"
-  "\006proto3"
+  "ronment\022.\n\004data\030\002 \001(\0132\032.vault.v1alpha1.S"
+  "ecretDataR\004data\">\n\024CreateSecretResponse\022"
+  "\024\n\005error\030\001 \001(\tR\005error\022\020\n\003msg\030\002 \001(\tR\003msg\""
+  "\?\n\023UpdateSecretRequest\022\022\n\004name\030\002 \001(\tR\004na"
+  "me\022\024\n\005value\030\003 \001(\tR\005value\">\n\024UpdateSecret"
+  "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001("
+  "\tR\005error\")\n\023DeleteSecretRequest\022\022\n\004name\030"
+  "\001 \001(\tR\004name\">\n\024DeleteSecretResponse\022\020\n\003m"
+  "sg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"4\n\020G"
+  "etSecretRequest\022 \n\013environment\030\001 \001(\tR\013en"
+  "vironment\"\243\001\n\021GetSecretResponse\022\?\n\004data\030"
+  "\001 \003(\0132+.vault.v1alpha1.GetSecretResponse"
+  ".DataEntryR\004data\022\024\n\005error\030\002 \001(\tR\005error\0327"
+  "\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002"
+  " \001(\tR\005value:\0028\001\"5\n\021ListSecretRequest\022 \n\013"
+  "environment\030\001 \001(\tR\013environment\"\\\n\022ListSe"
+  "cretResponse\0220\n\007secrets\030\001 \003(\0132\026.vault.v1"
+  "alpha1.SecretR\007secrets\022\024\n\005error\030\002 \001(\tR\005e"
+  "rror2\323\003\n\017VaultAPIService\022[\n\014CreateSecret"
+  "\022#.vault.v1alpha1.CreateSecretRequest\032$."
+  "vault.v1alpha1.CreateSecretResponse\"\000\022[\n"
+  "\014UpdateSecret\022#.vault.v1alpha1.UpdateSec"
+  "retRequest\032$.vault.v1alpha1.UpdateSecret"
+  "Response\"\000\022[\n\014DeleteSecret\022#.vault.v1alp"
+  "ha1.DeleteSecretRequest\032$.vault.v1alpha1"
+  ".DeleteSecretResponse\"\000\022R\n\tGetSecret\022 .v"
+  "ault.v1alpha1.GetSecretRequest\032!.vault.v"
+  "1alpha1.GetSecretResponse\"\000\022U\n\nListSecre"
+  "t\022!.vault.v1alpha1.ListSecretRequest\032\".v"
+  "ault.v1alpha1.ListSecretResponse\"\000B1Z/gi"
+  "thub.com/cuemby/ccp-sdk/gen/go/vault/v1a"
+  "lpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto = {
-  false, false, 1927, descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto, "vault/v1alpha1/vault_api.proto", 
+  false, false, 1933, descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto, "vault/v1alpha1/vault_api.proto", 
   &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once, nullptr, 0, 16,
   schemas, file_default_instances, TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto::offsets,
   file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto, file_level_enum_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto, file_level_service_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto,
@@ -1618,8 +1616,13 @@ void Secret::InternalSwap(Secret* other) {
 
 class CreateSecretRequest::_Internal {
  public:
+  static const ::vault::v1alpha1::SecretData& data(const CreateSecretRequest* msg);
 };
 
+const ::vault::v1alpha1::SecretData&
+CreateSecretRequest::_Internal::data(const CreateSecretRequest* msg) {
+  return *msg->data_;
+}
 CreateSecretRequest::CreateSecretRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -1637,23 +1640,17 @@ CreateSecretRequest::CreateSecretRequest(const CreateSecretRequest& from)
     environment_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_environment(), 
       GetArenaForAllocation());
   }
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
-  }
-  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_value().empty()) {
-    value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_value(), 
-      GetArenaForAllocation());
+  if (from._internal_has_data()) {
+    data_ = new ::vault::v1alpha1::SecretData(*from.data_);
+  } else {
+    data_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.CreateSecretRequest)
 }
 
 inline void CreateSecretRequest::SharedCtor() {
 environment_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+data_ = nullptr;
 }
 
 CreateSecretRequest::~CreateSecretRequest() {
@@ -1666,8 +1663,7 @@ CreateSecretRequest::~CreateSecretRequest() {
 inline void CreateSecretRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   environment_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete data_;
 }
 
 void CreateSecretRequest::ArenaDtor(void* object) {
@@ -1687,8 +1683,10 @@ void CreateSecretRequest::Clear() {
   (void) cached_has_bits;
 
   environment_.ClearToEmpty();
-  name_.ClearToEmpty();
-  value_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && data_ != nullptr) {
+    delete data_;
+  }
+  data_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1707,21 +1705,10 @@ const char* CreateSecretRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string name = 2 [json_name = "name"];
+      // .vault.v1alpha1.SecretData data = 2 [json_name = "data"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.CreateSecretRequest.name"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string value = 3 [json_name = "value"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_value();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.CreateSecretRequest.value"));
+          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1764,24 +1751,12 @@ failure:
         1, this->_internal_environment(), target);
   }
 
-  // string name = 2 [json_name = "name"];
-  if (!this->_internal_name().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vault.v1alpha1.CreateSecretRequest.name");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_name(), target);
-  }
-
-  // string value = 3 [json_name = "value"];
-  if (!this->_internal_value().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vault.v1alpha1.CreateSecretRequest.value");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_value(), target);
+  // .vault.v1alpha1.SecretData data = 2 [json_name = "data"];
+  if (this->_internal_has_data()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::data(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1807,18 +1782,11 @@ size_t CreateSecretRequest::ByteSizeLong() const {
         this->_internal_environment());
   }
 
-  // string name = 2 [json_name = "name"];
-  if (!this->_internal_name().empty()) {
+  // .vault.v1alpha1.SecretData data = 2 [json_name = "data"];
+  if (this->_internal_has_data()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_name());
-  }
-
-  // string value = 3 [json_name = "value"];
-  if (!this->_internal_value().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_value());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *data_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1852,11 +1820,8 @@ void CreateSecretRequest::MergeFrom(const CreateSecretRequest& from) {
   if (!from._internal_environment().empty()) {
     _internal_set_environment(from._internal_environment());
   }
-  if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
-  }
-  if (!from._internal_value().empty()) {
-    _internal_set_value(from._internal_value());
+  if (from._internal_has_data()) {
+    _internal_mutable_data()->::vault::v1alpha1::SecretData::MergeFrom(from._internal_data());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1880,16 +1845,7 @@ void CreateSecretRequest::InternalSwap(CreateSecretRequest* other) {
       &environment_, GetArenaForAllocation(),
       &other->environment_, other->GetArenaForAllocation()
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, GetArenaForAllocation(),
-      &other->name_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &value_, GetArenaForAllocation(),
-      &other->value_, other->GetArenaForAllocation()
-  );
+  swap(data_, other->data_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateSecretRequest::GetMetadata() const {

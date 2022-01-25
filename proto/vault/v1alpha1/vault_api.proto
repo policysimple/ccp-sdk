@@ -55,8 +55,7 @@ message Secret {
 
 message CreateSecretRequest {
     string environment = 1;
-    string name = 2;
-    string value = 3;
+    SecretData data = 2;
 }
 
 message CreateSecretResponse {
