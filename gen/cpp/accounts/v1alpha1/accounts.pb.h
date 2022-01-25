@@ -6257,6 +6257,7 @@ class Project final :
   // accessors -------------------------------------------------------
 
   enum : int {
+<<<<<<< HEAD
     kRolesFieldNumber = 8,
     kNameFieldNumber = 2,
     kImageFieldNumber = 3,
@@ -6265,6 +6266,11 @@ class Project final :
     kUpdatedAtFieldNumber = 7,
     kIdFieldNumber = 1,
     kOrganizationIdFieldNumber = 4,
+=======
+    kMsgFieldNumber = 1,
+    kErrorFieldNumber = 2,
+    kIdFieldNumber = 3,
+>>>>>>> 767f9d4bc8aee0fffa0bbe1b1262c10a94cd60b1
   };
   // repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];
   int roles_size() const;
@@ -6312,6 +6318,7 @@ class Project final :
   std::string* _internal_mutable_image();
   public:
 
+<<<<<<< HEAD
   // string description = 5 [json_name = "description"];
   void clear_description();
   const std::string& description() const;
@@ -6373,12 +6380,25 @@ class Project final :
   public:
 
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.Project)
+=======
+  // uint32 id = 3 [json_name = "id"];
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.CreateProjectResponse)
+>>>>>>> 767f9d4bc8aee0fffa0bbe1b1262c10a94cd60b1
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+<<<<<<< HEAD
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol > roles_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
@@ -6387,6 +6407,11 @@ class Project final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
   ::PROTOBUF_NAMESPACE_ID::int32 id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
+=======
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
+>>>>>>> 767f9d4bc8aee0fffa0bbe1b1262c10a94cd60b1
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -11077,13 +11102,76 @@ class ListOrganizationRequest final :
 
   // accessors -------------------------------------------------------
 
+<<<<<<< HEAD
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.ListOrganizationRequest)
+=======
+  enum : int {
+    kMsgFieldNumber = 1,
+    kErrorFieldNumber = 3,
+    kRoleIdOrganizationFieldNumber = 2,
+    kIdFieldNumber = 4,
+  };
+  // string msg = 1 [json_name = "msg"];
+  void clear_msg();
+  const std::string& msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // string error = 3 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // uint32 role_id_organization = 2 [json_name = "roleIdOrganization"];
+  void clear_role_id_organization();
+  ::PROTOBUF_NAMESPACE_ID::uint32 role_id_organization() const;
+  void set_role_id_organization(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_role_id_organization() const;
+  void _internal_set_role_id_organization(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 id = 4 [json_name = "id"];
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.CreateOrganizationResponse)
+>>>>>>> 767f9d4bc8aee0fffa0bbe1b1262c10a94cd60b1
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+<<<<<<< HEAD
+=======
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 role_id_organization_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
+>>>>>>> 767f9d4bc8aee0fffa0bbe1b1262c10a94cd60b1
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -17936,6 +18024,26 @@ inline void CreateProjectResponse::set_allocated_error(std::string* error) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.CreateProjectResponse.error)
 }
 
+// uint32 id = 3 [json_name = "id"];
+inline void CreateProjectResponse::clear_id() {
+  id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateProjectResponse::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateProjectResponse::id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateProjectResponse.id)
+  return _internal_id();
+}
+inline void CreateProjectResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  id_ = value;
+}
+inline void CreateProjectResponse::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateProjectResponse.id)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateProjectResponse
@@ -20572,50 +20680,24 @@ inline void CreateOrganizationResponse::set_allocated_msg(std::string* msg) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.CreateOrganizationResponse.msg)
 }
 
-// string role_id_organization = 2 [json_name = "roleIdOrganization"];
+// uint32 role_id_organization = 2 [json_name = "roleIdOrganization"];
 inline void CreateOrganizationResponse::clear_role_id_organization() {
-  role_id_organization_.ClearToEmpty();
+  role_id_organization_ = 0u;
 }
-inline const std::string& CreateOrganizationResponse::role_id_organization() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateOrganizationResponse::_internal_role_id_organization() const {
+  return role_id_organization_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateOrganizationResponse::role_id_organization() const {
   // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateOrganizationResponse.role_id_organization)
   return _internal_role_id_organization();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateOrganizationResponse::set_role_id_organization(ArgT0&& arg0, ArgT... args) {
- 
- role_id_organization_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void CreateOrganizationResponse::_internal_set_role_id_organization(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  role_id_organization_ = value;
+}
+inline void CreateOrganizationResponse::set_role_id_organization(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_role_id_organization(value);
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateOrganizationResponse.role_id_organization)
-}
-inline std::string* CreateOrganizationResponse::mutable_role_id_organization() {
-  std::string* _s = _internal_mutable_role_id_organization();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.CreateOrganizationResponse.role_id_organization)
-  return _s;
-}
-inline const std::string& CreateOrganizationResponse::_internal_role_id_organization() const {
-  return role_id_organization_.Get();
-}
-inline void CreateOrganizationResponse::_internal_set_role_id_organization(const std::string& value) {
-  
-  role_id_organization_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateOrganizationResponse::_internal_mutable_role_id_organization() {
-  
-  return role_id_organization_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateOrganizationResponse::release_role_id_organization() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.CreateOrganizationResponse.role_id_organization)
-  return role_id_organization_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateOrganizationResponse::set_allocated_role_id_organization(std::string* role_id_organization) {
-  if (role_id_organization != nullptr) {
-    
-  } else {
-    
-  }
-  role_id_organization_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), role_id_organization,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.CreateOrganizationResponse.role_id_organization)
 }
 
 // string error = 3 [json_name = "error"];
@@ -20662,6 +20744,26 @@ inline void CreateOrganizationResponse::set_allocated_error(std::string* error) 
   error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.CreateOrganizationResponse.error)
+}
+
+// uint32 id = 4 [json_name = "id"];
+inline void CreateOrganizationResponse::clear_id() {
+  id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateOrganizationResponse::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateOrganizationResponse::id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateOrganizationResponse.id)
+  return _internal_id();
+}
+inline void CreateOrganizationResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  id_ = value;
+}
+inline void CreateOrganizationResponse::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateOrganizationResponse.id)
 }
 
 // -------------------------------------------------------------------

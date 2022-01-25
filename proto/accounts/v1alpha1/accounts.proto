@@ -367,6 +367,7 @@ message UpdateProjectRequest {
 message CreateProjectResponse {
     string msg = 1;
     string error = 2;
+    uint32 id = 3;
 }
 
 message UpdateProjectResponse{
@@ -562,8 +563,9 @@ message ListOrganizationResponse {
 
 message CreateOrganizationResponse {
     string msg = 1;
-    string role_id_organization = 2;
+    uint32 role_id_organization = 2;
     string error = 3;
+    uint32 id = 4;
 }
 
 message UpdateOrganizationResponse {
