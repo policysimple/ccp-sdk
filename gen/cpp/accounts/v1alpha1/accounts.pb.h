@@ -6257,7 +6257,6 @@ class Project final :
   // accessors -------------------------------------------------------
 
   enum : int {
-<<<<<<< HEAD
     kRolesFieldNumber = 8,
     kNameFieldNumber = 2,
     kImageFieldNumber = 3,
@@ -6266,11 +6265,6 @@ class Project final :
     kUpdatedAtFieldNumber = 7,
     kIdFieldNumber = 1,
     kOrganizationIdFieldNumber = 4,
-=======
-    kMsgFieldNumber = 1,
-    kErrorFieldNumber = 2,
-    kIdFieldNumber = 3,
->>>>>>> 767f9d4bc8aee0fffa0bbe1b1262c10a94cd60b1
   };
   // repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];
   int roles_size() const;
@@ -6318,7 +6312,6 @@ class Project final :
   std::string* _internal_mutable_image();
   public:
 
-<<<<<<< HEAD
   // string description = 5 [json_name = "description"];
   void clear_description();
   const std::string& description() const;
@@ -6380,25 +6373,12 @@ class Project final :
   public:
 
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.Project)
-=======
-  // uint32 id = 3 [json_name = "id"];
-  void clear_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
-  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.CreateProjectResponse)
->>>>>>> 767f9d4bc8aee0fffa0bbe1b1262c10a94cd60b1
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-<<<<<<< HEAD
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol > roles_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
@@ -6407,11 +6387,6 @@ class Project final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
   ::PROTOBUF_NAMESPACE_ID::int32 id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
-=======
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
->>>>>>> 767f9d4bc8aee0fffa0bbe1b1262c10a94cd60b1
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -7313,6 +7288,7 @@ class CreateProjectResponse final :
   enum : int {
     kMsgFieldNumber = 1,
     kErrorFieldNumber = 2,
+    kIdFieldNumber = 3,
   };
   // string msg = 1 [json_name = "msg"];
   void clear_msg();
@@ -7342,6 +7318,15 @@ class CreateProjectResponse final :
   std::string* _internal_mutable_error();
   public:
 
+  // uint32 id = 3 [json_name = "id"];
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.CreateProjectResponse)
  private:
   class _Internal;
@@ -7351,6 +7336,7 @@ class CreateProjectResponse final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -11102,76 +11088,13 @@ class ListOrganizationRequest final :
 
   // accessors -------------------------------------------------------
 
-<<<<<<< HEAD
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.ListOrganizationRequest)
-=======
-  enum : int {
-    kMsgFieldNumber = 1,
-    kErrorFieldNumber = 3,
-    kRoleIdOrganizationFieldNumber = 2,
-    kIdFieldNumber = 4,
-  };
-  // string msg = 1 [json_name = "msg"];
-  void clear_msg();
-  const std::string& msg() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_msg(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_msg();
-  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
-  void set_allocated_msg(std::string* msg);
-  private:
-  const std::string& _internal_msg() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
-  std::string* _internal_mutable_msg();
-  public:
-
-  // string error = 3 [json_name = "error"];
-  void clear_error();
-  const std::string& error() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_error(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_error();
-  PROTOBUF_MUST_USE_RESULT std::string* release_error();
-  void set_allocated_error(std::string* error);
-  private:
-  const std::string& _internal_error() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
-  std::string* _internal_mutable_error();
-  public:
-
-  // uint32 role_id_organization = 2 [json_name = "roleIdOrganization"];
-  void clear_role_id_organization();
-  ::PROTOBUF_NAMESPACE_ID::uint32 role_id_organization() const;
-  void set_role_id_organization(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_role_id_organization() const;
-  void _internal_set_role_id_organization(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // uint32 id = 4 [json_name = "id"];
-  void clear_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
-  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.CreateOrganizationResponse)
->>>>>>> 767f9d4bc8aee0fffa0bbe1b1262c10a94cd60b1
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-<<<<<<< HEAD
-=======
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 role_id_organization_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
->>>>>>> 767f9d4bc8aee0fffa0bbe1b1262c10a94cd60b1
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -12101,8 +12024,9 @@ class CreateOrganizationResponse final :
 
   enum : int {
     kMsgFieldNumber = 1,
-    kRoleIdOrganizationFieldNumber = 2,
     kErrorFieldNumber = 3,
+    kRoleIdOrganizationFieldNumber = 2,
+    kIdFieldNumber = 4,
   };
   // string msg = 1 [json_name = "msg"];
   void clear_msg();
@@ -12116,20 +12040,6 @@ class CreateOrganizationResponse final :
   const std::string& _internal_msg() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
   std::string* _internal_mutable_msg();
-  public:
-
-  // string role_id_organization = 2 [json_name = "roleIdOrganization"];
-  void clear_role_id_organization();
-  const std::string& role_id_organization() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_role_id_organization(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_role_id_organization();
-  PROTOBUF_MUST_USE_RESULT std::string* release_role_id_organization();
-  void set_allocated_role_id_organization(std::string* role_id_organization);
-  private:
-  const std::string& _internal_role_id_organization() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_role_id_organization(const std::string& value);
-  std::string* _internal_mutable_role_id_organization();
   public:
 
   // string error = 3 [json_name = "error"];
@@ -12146,6 +12056,24 @@ class CreateOrganizationResponse final :
   std::string* _internal_mutable_error();
   public:
 
+  // uint32 role_id_organization = 2 [json_name = "roleIdOrganization"];
+  void clear_role_id_organization();
+  ::PROTOBUF_NAMESPACE_ID::uint32 role_id_organization() const;
+  void set_role_id_organization(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_role_id_organization() const;
+  void _internal_set_role_id_organization(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 id = 4 [json_name = "id"];
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.CreateOrganizationResponse)
  private:
   class _Internal;
@@ -12154,8 +12082,9 @@ class CreateOrganizationResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr role_id_organization_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 role_id_organization_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
