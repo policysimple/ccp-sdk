@@ -16,11 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-<<<<<<< HEAD
-Ì\\
-=======
-ÛS
->>>>>>> 767f9d4bc8aee0fffa0bbe1b1262c10a94cd60b1
+í\\
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"à
 CheckUserRequest\'
 organization_id (RorganizationId
