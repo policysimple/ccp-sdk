@@ -199,44 +199,43 @@ message ListUserPaginationResponse {
 
 // Invitation
 
+enum InvitationResponse {
+    INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED = 0;
+    INVITATION_RESPONSE_REJECTED = 1;
+}
+
+
 message SendInvitationUserRequest {
-    string email = 1;
-    uint32 organization_id = 2;
-    uint32 project_id = 3;
-    string user_id = 4;
+    string name=1;
+    string email=2;
+    uint32 project_id=3;
+    uint32 user_id_admin=4;
 }
 
 message SendInvitationUserResponse {
-    string invitation_code = 1;
-    Organization organization = 2;
-    Project project = 3;
-    string html_result = 4;
-    string result = 5;
+    string html_result=1;
+    string result=2;
 }
 
 message GetInvitationUserRequest {
-    string invitation_code = 1;
+    string invitation_code=1;
 }
 
 message GetInvitationUserResponse {
-    Organization organization = 1;
-    Project project = 2;
-    string result = 3;
+    Organization organization=1;
+    Project project=2;
+    string result=3;
 }
 
 message AgreeInvitationUserRequest {
-    string invitation_code = 1;
-    string user_id = 2;
-    bool invitation_response = 3;
+    string invitation_code=1;
+    uint32 guest_user_id=2;
+    InvitationResponse invitation_response=3;
 }
 
 message AgreeInvitationUserResponse {
-    string result = 1;
+    string result=1;
 }
-
-
-
-
 
 /*
     ROLES

@@ -56,6 +56,7 @@ goog.exportSymbol('proto.accounts.v1alpha1.GetOneUserDexRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetOneUserDexResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetOneUserRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetOneUserResponse', null, global);
+goog.exportSymbol('proto.accounts.v1alpha1.InvitationResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.ListOrganizationRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.ListOrganizationResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.ListPermissionRequest', null, global);
@@ -5315,10 +5316,10 @@ proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.toObject = function(
  */
 proto.accounts.v1alpha1.SendInvitationUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    email: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    email: jspb.Message.getFieldWithDefault(msg, 2, ""),
     projectId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 4, "")
+    userIdAdmin: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -5357,19 +5358,19 @@ proto.accounts.v1alpha1.SendInvitationUserRequest.deserializeBinaryFromReader = 
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEmail(value);
+      msg.setName(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setOrganizationId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEmail(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setProjectId(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUserId(value);
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setUserIdAdmin(value);
       break;
     default:
       reader.skipField();
@@ -5400,16 +5401,16 @@ proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.serializeBinary = fu
  */
 proto.accounts.v1alpha1.SendInvitationUserRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getEmail();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getEmail();
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -5421,9 +5422,9 @@ proto.accounts.v1alpha1.SendInvitationUserRequest.serializeBinaryToWriter = func
       f
     );
   }
-  f = message.getUserId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getUserIdAdmin();
+  if (f !== 0) {
+    writer.writeUint32(
       4,
       f
     );
@@ -5432,10 +5433,10 @@ proto.accounts.v1alpha1.SendInvitationUserRequest.serializeBinaryToWriter = func
 
 
 /**
- * optional string email = 1;
+ * optional string name = 1;
  * @return {string}
  */
-proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.getEmail = function() {
+proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -5444,26 +5445,26 @@ proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.getEmail = function(
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.SendInvitationUserRequest} returns this
  */
-proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.setEmail = function(value) {
+proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint32 organization_id = 2;
- * @return {number}
+ * optional string email = 2;
+ * @return {string}
  */
-proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.getEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.SendInvitationUserRequest} returns this
  */
-proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.setEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -5486,20 +5487,20 @@ proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.setProjectId = funct
 
 
 /**
- * optional string user_id = 4;
- * @return {string}
+ * optional uint32 user_id_admin = 4;
+ * @return {number}
  */
-proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.getUserIdAdmin = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.accounts.v1alpha1.SendInvitationUserRequest} returns this
  */
-proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.setUserId = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.setUserIdAdmin = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -5535,11 +5536,8 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.toObject = function
  */
 proto.accounts.v1alpha1.SendInvitationUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invitationCode: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    organization: (f = msg.getOrganization()) && proto.accounts.v1alpha1.Organization.toObject(includeInstance, f),
-    project: (f = msg.getProject()) && proto.accounts.v1alpha1.Project.toObject(includeInstance, f),
-    htmlResult: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    result: jspb.Message.getFieldWithDefault(msg, 5, "")
+    htmlResult: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    result: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -5578,23 +5576,9 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.deserializeBinaryFromReader =
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setInvitationCode(value);
-      break;
-    case 2:
-      var value = new proto.accounts.v1alpha1.Organization;
-      reader.readMessage(value,proto.accounts.v1alpha1.Organization.deserializeBinaryFromReader);
-      msg.setOrganization(value);
-      break;
-    case 3:
-      var value = new proto.accounts.v1alpha1.Project;
-      reader.readMessage(value,proto.accounts.v1alpha1.Project.deserializeBinaryFromReader);
-      msg.setProject(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
       msg.setHtmlResult(value);
       break;
-    case 5:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setResult(value);
       break;
@@ -5627,40 +5611,17 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.serializeBinary = f
  */
 proto.accounts.v1alpha1.SendInvitationUserResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getInvitationCode();
+  f = message.getHtmlResult();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getOrganization();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      proto.accounts.v1alpha1.Organization.serializeBinaryToWriter
-    );
-  }
-  f = message.getProject();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      proto.accounts.v1alpha1.Project.serializeBinaryToWriter
-    );
-  }
-  f = message.getHtmlResult();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
   f = message.getResult();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      2,
       f
     );
   }
@@ -5668,10 +5629,10 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.serializeBinaryToWriter = fun
 
 
 /**
- * optional string invitation_code = 1;
+ * optional string html_result = 1;
  * @return {string}
  */
-proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.getInvitationCode = function() {
+proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.getHtmlResult = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -5680,109 +5641,17 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.getInvitationCode =
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.SendInvitationUserResponse} returns this
  */
-proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.setInvitationCode = function(value) {
+proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.setHtmlResult = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional Organization organization = 2;
- * @return {?proto.accounts.v1alpha1.Organization}
- */
-proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.getOrganization = function() {
-  return /** @type{?proto.accounts.v1alpha1.Organization} */ (
-    jspb.Message.getWrapperField(this, proto.accounts.v1alpha1.Organization, 2));
-};
-
-
-/**
- * @param {?proto.accounts.v1alpha1.Organization|undefined} value
- * @return {!proto.accounts.v1alpha1.SendInvitationUserResponse} returns this
-*/
-proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.setOrganization = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.accounts.v1alpha1.SendInvitationUserResponse} returns this
- */
-proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.clearOrganization = function() {
-  return this.setOrganization(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.hasOrganization = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional Project project = 3;
- * @return {?proto.accounts.v1alpha1.Project}
- */
-proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.getProject = function() {
-  return /** @type{?proto.accounts.v1alpha1.Project} */ (
-    jspb.Message.getWrapperField(this, proto.accounts.v1alpha1.Project, 3));
-};
-
-
-/**
- * @param {?proto.accounts.v1alpha1.Project|undefined} value
- * @return {!proto.accounts.v1alpha1.SendInvitationUserResponse} returns this
-*/
-proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.setProject = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.accounts.v1alpha1.SendInvitationUserResponse} returns this
- */
-proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.clearProject = function() {
-  return this.setProject(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.hasProject = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string html_result = 4;
- * @return {string}
- */
-proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.getHtmlResult = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.SendInvitationUserResponse} returns this
- */
-proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.setHtmlResult = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string result = 5;
+ * optional string result = 2;
  * @return {string}
  */
 proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.getResult = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -5791,7 +5660,7 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.getResult = functio
  * @return {!proto.accounts.v1alpha1.SendInvitationUserResponse} returns this
  */
 proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.setResult = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -6190,8 +6059,8 @@ proto.accounts.v1alpha1.AgreeInvitationUserRequest.prototype.toObject = function
 proto.accounts.v1alpha1.AgreeInvitationUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     invitationCode: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    invitationResponse: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+    guestUserId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    invitationResponse: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -6233,11 +6102,11 @@ proto.accounts.v1alpha1.AgreeInvitationUserRequest.deserializeBinaryFromReader =
       msg.setInvitationCode(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUserId(value);
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setGuestUserId(value);
       break;
     case 3:
-      var value = /** @type {boolean} */ (reader.readBool());
+      var value = /** @type {!proto.accounts.v1alpha1.InvitationResponse} */ (reader.readEnum());
       msg.setInvitationResponse(value);
       break;
     default:
@@ -6276,16 +6145,16 @@ proto.accounts.v1alpha1.AgreeInvitationUserRequest.serializeBinaryToWriter = fun
       f
     );
   }
-  f = message.getUserId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getGuestUserId();
+  if (f !== 0) {
+    writer.writeUint32(
       2,
       f
     );
   }
   f = message.getInvitationResponse();
-  if (f) {
-    writer.writeBool(
+  if (f !== 0.0) {
+    writer.writeEnum(
       3,
       f
     );
@@ -6312,38 +6181,38 @@ proto.accounts.v1alpha1.AgreeInvitationUserRequest.prototype.setInvitationCode =
 
 
 /**
- * optional string user_id = 2;
- * @return {string}
+ * optional uint32 guest_user_id = 2;
+ * @return {number}
  */
-proto.accounts.v1alpha1.AgreeInvitationUserRequest.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.accounts.v1alpha1.AgreeInvitationUserRequest.prototype.getGuestUserId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.accounts.v1alpha1.AgreeInvitationUserRequest} returns this
  */
-proto.accounts.v1alpha1.AgreeInvitationUserRequest.prototype.setUserId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.accounts.v1alpha1.AgreeInvitationUserRequest.prototype.setGuestUserId = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional bool invitation_response = 3;
- * @return {boolean}
+ * optional InvitationResponse invitation_response = 3;
+ * @return {!proto.accounts.v1alpha1.InvitationResponse}
  */
 proto.accounts.v1alpha1.AgreeInvitationUserRequest.prototype.getInvitationResponse = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+  return /** @type {!proto.accounts.v1alpha1.InvitationResponse} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {!proto.accounts.v1alpha1.InvitationResponse} value
  * @return {!proto.accounts.v1alpha1.AgreeInvitationUserRequest} returns this
  */
 proto.accounts.v1alpha1.AgreeInvitationUserRequest.prototype.setInvitationResponse = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -16491,5 +16360,13 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.clearProjectsList = func
   return this.setProjectsList([]);
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.accounts.v1alpha1.InvitationResponse = {
+  INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED: 0,
+  INVITATION_RESPONSE_REJECTED: 1
+};
 
 goog.object.extend(exports, proto.accounts.v1alpha1);

@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-„\\
+Ã\\
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"‡
 CheckUserRequest\'
 organization_id (RorganizationId
@@ -102,30 +102,27 @@ updated_at (	R	updatedAt,
 limit (Rlimit"e
 ListUserPaginationResponse
 count (Rcount1
-users (2.accounts.v1alpha1.UserListRusers"í
-SendInvitationUserRequest
-email (	Remail\'
-organization_id (RorganizationId
+users (2.accounts.v1alpha1.UserListRusers"à
+SendInvitationUserRequest
+name (	Rname
+email (	Remail
 
-project_id (R	projectId
-user_id (	RuserId"˘
-SendInvitationUserResponse\'
-invitation_code (	RinvitationCodeC
-organization (2.accounts.v1alpha1.OrganizationRorganization4
-project (2.accounts.v1alpha1.ProjectRproject
-html_result (	R
+project_id (R	projectId"
+user_id_admin (RuserIdAdmin"U
+SendInvitationUserResponse
+html_result (	R
 htmlResult
-result (	Rresult"C
+result (	Rresult"C
 GetInvitationUserRequest\'
 invitation_code (	RinvitationCode"Æ
 GetInvitationUserResponseC
 organization (2.accounts.v1alpha1.OrganizationRorganization4
 project (2.accounts.v1alpha1.ProjectRproject
-result (	Rresult"è
+result (	Rresult"¡
 AgreeInvitationUserRequest\'
-invitation_code (	RinvitationCode
-user_id (	RuserId/
-invitation_response (RinvitationResponse"5
+invitation_code (	RinvitationCode"
+guest_user_id (RguestUserIdV
+invitation_response (2%.accounts.v1alpha1.InvitationResponseRinvitationResponse"5
 AgreeInvitationUserResponse
 result (	Rresult"≤
 Rol
@@ -333,7 +330,10 @@ updated_at (	R	updatedAt,
 is_super_user (RisSuperUserE
 organizations (2.accounts.v1alpha1.OrganizationRorganizations
 msg (	Rmsg6
-projects (2.accounts.v1alpha1.ProjectRprojects2∆
+projects (2.accounts.v1alpha1.ProjectRprojects*d
+InvitationResponse,
+(INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED  
+INVITATION_RESPONSE_REJECTED2∆
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
