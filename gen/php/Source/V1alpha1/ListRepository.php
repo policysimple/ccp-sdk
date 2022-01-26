@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>source.v1alpha1.DetailRepository</code>
+ * Generated from protobuf message <code>source.v1alpha1.ListRepository</code>
  */
-class DetailRepository extends \Google\Protobuf\Internal\Message
+class ListRepository extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
@@ -34,10 +34,6 @@ class DetailRepository extends \Google\Protobuf\Internal\Message
      */
     protected $description = '';
     /**
-     * Generated from protobuf field <code>bool fork = 6 [json_name = "fork"];</code>
-     */
-    protected $fork = false;
-    /**
      * Generated from protobuf field <code>string clone_url = 7 [json_name = "cloneUrl"];</code>
      */
     protected $clone_url = '';
@@ -49,10 +45,6 @@ class DetailRepository extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 organization_id = 9 [json_name = "organizationId"];</code>
      */
     protected $organization_id = 0;
-    /**
-     * Generated from protobuf field <code>repeated string branchs = 10 [json_name = "branchs"];</code>
-     */
-    private $branchs;
     /**
      * Generated from protobuf field <code>string integration_id = 11 [json_name = "integrationId"];</code>
      */
@@ -69,11 +61,9 @@ class DetailRepository extends \Google\Protobuf\Internal\Message
      *     @type bool $private
      *     @type string $fullname
      *     @type string $description
-     *     @type bool $fork
      *     @type string $clone_url
      *     @type int $project_id
      *     @type int $organization_id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $branchs
      *     @type string $integration_id
      * }
      */
@@ -193,28 +183,6 @@ class DetailRepository extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool fork = 6 [json_name = "fork"];</code>
-     * @return bool
-     */
-    public function getFork()
-    {
-        return $this->fork;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool fork = 6 [json_name = "fork"];</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setFork($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->fork = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string clone_url = 7 [json_name = "cloneUrl"];</code>
      * @return string
      */
@@ -276,28 +244,6 @@ class DetailRepository extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->organization_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string branchs = 10 [json_name = "branchs"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getBranchs()
-    {
-        return $this->branchs;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string branchs = 10 [json_name = "branchs"];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setBranchs($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->branchs = $arr;
 
         return $this;
     }

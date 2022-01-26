@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateRepositoryRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.source.v1alpha1.DetailRepository repository = 1 [json_name = "repository"];</code>
+     * Generated from protobuf field <code>.source.v1alpha1.CreateDetailRepository repository = 1 [json_name = "repository"];</code>
      */
     protected $repository = null;
     /**
@@ -32,7 +32,7 @@ class CreateRepositoryRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Source\V1alpha1\DetailRepository $repository
+     *     @type \Source\V1alpha1\CreateDetailRepository $repository
      *     @type int $project_id
      *     @type int $organization_id
      * }
@@ -43,8 +43,8 @@ class CreateRepositoryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.source.v1alpha1.DetailRepository repository = 1 [json_name = "repository"];</code>
-     * @return \Source\V1alpha1\DetailRepository|null
+     * Generated from protobuf field <code>.source.v1alpha1.CreateDetailRepository repository = 1 [json_name = "repository"];</code>
+     * @return \Source\V1alpha1\CreateDetailRepository|null
      */
     public function getRepository()
     {
@@ -62,13 +62,13 @@ class CreateRepositoryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.source.v1alpha1.DetailRepository repository = 1 [json_name = "repository"];</code>
-     * @param \Source\V1alpha1\DetailRepository $var
+     * Generated from protobuf field <code>.source.v1alpha1.CreateDetailRepository repository = 1 [json_name = "repository"];</code>
+     * @param \Source\V1alpha1\CreateDetailRepository $var
      * @return $this
      */
     public function setRepository($var)
     {
-        GPBUtil::checkMessage($var, \Source\V1alpha1\DetailRepository::class);
+        GPBUtil::checkMessage($var, \Source\V1alpha1\CreateDetailRepository::class);
         $this->repository = $var;
 
         return $this;
