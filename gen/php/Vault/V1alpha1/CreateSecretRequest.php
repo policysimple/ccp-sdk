@@ -18,13 +18,9 @@ class CreateSecretRequest extends \Google\Protobuf\Internal\Message
      */
     protected $environment = '';
     /**
-     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
      */
-    protected $name = '';
-    /**
-     * Generated from protobuf field <code>string value = 3 [json_name = "value"];</code>
-     */
-    protected $value = '';
+    protected $data = null;
 
     /**
      * Constructor.
@@ -33,8 +29,7 @@ class CreateSecretRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $environment
-     *     @type string $name
-     *     @type string $value
+     *     @type \Vault\V1alpha1\SecretData $data
      * }
      */
     public function __construct($data = NULL) {
@@ -65,45 +60,33 @@ class CreateSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
-     * @return string
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     * @return \Vault\V1alpha1\SecretData|null
      */
-    public function getName()
+    public function getData()
     {
-        return $this->name;
+        return $this->data;
+    }
+
+    public function hasData()
+    {
+        return isset($this->data);
+    }
+
+    public function clearData()
+    {
+        unset($this->data);
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     * @param \Vault\V1alpha1\SecretData $var
      * @return $this
      */
-    public function setName($var)
+    public function setData($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string value = 3 [json_name = "value"];</code>
-     * @return string
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
-
-    /**
-     * Generated from protobuf field <code>string value = 3 [json_name = "value"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setValue($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->value = $var;
+        GPBUtil::checkMessage($var, \Vault\V1alpha1\SecretData::class);
+        $this->data = $var;
 
         return $this;
     }
