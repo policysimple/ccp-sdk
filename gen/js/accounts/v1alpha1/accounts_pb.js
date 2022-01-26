@@ -5319,7 +5319,7 @@ proto.accounts.v1alpha1.SendInvitationUserRequest.toObject = function(includeIns
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     email: jspb.Message.getFieldWithDefault(msg, 2, ""),
     projectId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    userIdAdmin: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    userIdAdmin: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -5369,7 +5369,7 @@ proto.accounts.v1alpha1.SendInvitationUserRequest.deserializeBinaryFromReader = 
       msg.setProjectId(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setUserIdAdmin(value);
       break;
     default:
@@ -5423,8 +5423,8 @@ proto.accounts.v1alpha1.SendInvitationUserRequest.serializeBinaryToWriter = func
     );
   }
   f = message.getUserIdAdmin();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -5487,20 +5487,20 @@ proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.setProjectId = funct
 
 
 /**
- * optional uint32 user_id_admin = 4;
- * @return {number}
+ * optional string user_id_admin = 4;
+ * @return {string}
  */
 proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.getUserIdAdmin = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.SendInvitationUserRequest} returns this
  */
 proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.setUserIdAdmin = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

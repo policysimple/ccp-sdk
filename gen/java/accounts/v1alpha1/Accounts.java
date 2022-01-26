@@ -15663,10 +15663,16 @@ public final class Accounts {
     int getProjectId();
 
     /**
-     * <code>uint32 user_id_admin = 4 [json_name = "userIdAdmin"];</code>
+     * <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
      * @return The userIdAdmin.
      */
-    int getUserIdAdmin();
+    java.lang.String getUserIdAdmin();
+    /**
+     * <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
+     * @return The bytes for userIdAdmin.
+     */
+    com.google.protobuf.ByteString
+        getUserIdAdminBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.SendInvitationUserRequest}
@@ -15683,6 +15689,7 @@ public final class Accounts {
     private SendInvitationUserRequest() {
       name_ = "";
       email_ = "";
+      userIdAdmin_ = "";
     }
 
     @java.lang.Override
@@ -15732,9 +15739,10 @@ public final class Accounts {
               projectId_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              userIdAdmin_ = input.readUInt32();
+              userIdAdmin_ = s;
               break;
             }
             default: {
@@ -15857,14 +15865,41 @@ public final class Accounts {
     }
 
     public static final int USER_ID_ADMIN_FIELD_NUMBER = 4;
-    private int userIdAdmin_;
+    private volatile java.lang.Object userIdAdmin_;
     /**
-     * <code>uint32 user_id_admin = 4 [json_name = "userIdAdmin"];</code>
+     * <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
      * @return The userIdAdmin.
      */
     @java.lang.Override
-    public int getUserIdAdmin() {
-      return userIdAdmin_;
+    public java.lang.String getUserIdAdmin() {
+      java.lang.Object ref = userIdAdmin_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userIdAdmin_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
+     * @return The bytes for userIdAdmin.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdAdminBytes() {
+      java.lang.Object ref = userIdAdmin_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userIdAdmin_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -15890,8 +15925,8 @@ public final class Accounts {
       if (projectId_ != 0) {
         output.writeUInt32(3, projectId_);
       }
-      if (userIdAdmin_ != 0) {
-        output.writeUInt32(4, userIdAdmin_);
+      if (!getUserIdAdminBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userIdAdmin_);
       }
       unknownFields.writeTo(output);
     }
@@ -15912,9 +15947,8 @@ public final class Accounts {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, projectId_);
       }
-      if (userIdAdmin_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, userIdAdmin_);
+      if (!getUserIdAdminBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userIdAdmin_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -15937,8 +15971,8 @@ public final class Accounts {
           .equals(other.getEmail())) return false;
       if (getProjectId()
           != other.getProjectId()) return false;
-      if (getUserIdAdmin()
-          != other.getUserIdAdmin()) return false;
+      if (!getUserIdAdmin()
+          .equals(other.getUserIdAdmin())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -15957,7 +15991,7 @@ public final class Accounts {
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getProjectId();
       hash = (37 * hash) + USER_ID_ADMIN_FIELD_NUMBER;
-      hash = (53 * hash) + getUserIdAdmin();
+      hash = (53 * hash) + getUserIdAdmin().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -16097,7 +16131,7 @@ public final class Accounts {
 
         projectId_ = 0;
 
-        userIdAdmin_ = 0;
+        userIdAdmin_ = "";
 
         return this;
       }
@@ -16188,8 +16222,9 @@ public final class Accounts {
         if (other.getProjectId() != 0) {
           setProjectId(other.getProjectId());
         }
-        if (other.getUserIdAdmin() != 0) {
-          setUserIdAdmin(other.getUserIdAdmin());
+        if (!other.getUserIdAdmin().isEmpty()) {
+          userIdAdmin_ = other.userIdAdmin_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -16403,33 +16438,78 @@ public final class Accounts {
         return this;
       }
 
-      private int userIdAdmin_ ;
+      private java.lang.Object userIdAdmin_ = "";
       /**
-       * <code>uint32 user_id_admin = 4 [json_name = "userIdAdmin"];</code>
+       * <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
        * @return The userIdAdmin.
        */
-      @java.lang.Override
-      public int getUserIdAdmin() {
-        return userIdAdmin_;
+      public java.lang.String getUserIdAdmin() {
+        java.lang.Object ref = userIdAdmin_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userIdAdmin_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 user_id_admin = 4 [json_name = "userIdAdmin"];</code>
+       * <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
+       * @return The bytes for userIdAdmin.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdAdminBytes() {
+        java.lang.Object ref = userIdAdmin_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userIdAdmin_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
        * @param value The userIdAdmin to set.
        * @return This builder for chaining.
        */
-      public Builder setUserIdAdmin(int value) {
-        
+      public Builder setUserIdAdmin(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         userIdAdmin_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 user_id_admin = 4 [json_name = "userIdAdmin"];</code>
+       * <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUserIdAdmin() {
         
-        userIdAdmin_ = 0;
+        userIdAdmin_ = getDefaultInstance().getUserIdAdmin();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
+       * @param value The bytes for userIdAdmin to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdAdminBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userIdAdmin_ = value;
         onChanged();
         return this;
       }
@@ -64468,7 +64548,7 @@ public final class Accounts {
       "ers\"\210\001\n\031SendInvitationUserRequest\022\022\n\004nam" +
       "e\030\001 \001(\tR\004name\022\024\n\005email\030\002 \001(\tR\005email\022\035\n\np" +
       "roject_id\030\003 \001(\rR\tprojectId\022\"\n\ruser_id_ad" +
-      "min\030\004 \001(\rR\013userIdAdmin\"U\n\032SendInvitation" +
+      "min\030\004 \001(\tR\013userIdAdmin\"U\n\032SendInvitation" +
       "UserResponse\022\037\n\013html_result\030\001 \001(\tR\nhtmlR" +
       "esult\022\026\n\006result\030\002 \001(\tR\006result\"Y\n\030GetInvi" +
       "tationUserRequest\022\'\n\017invitation_code\030\001 \001" +

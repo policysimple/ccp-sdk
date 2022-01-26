@@ -108,7 +108,7 @@ updated_at (	R	updatedAt,
 email (	Remail
 
 project_id (R	projectId"
-user_id_admin (RuserIdAdmin"U
+user_id_admin (	RuserIdAdmin"U
 SendInvitationUserResponse
 html_result (	R
 htmlResult

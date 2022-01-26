@@ -260,8 +260,8 @@ constexpr SendInvitationUserRequest::SendInvitationUserRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , project_id_(0u)
-  , user_id_admin_(0u){}
+  , user_id_admin_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_id_(0u){}
 struct SendInvitationUserRequestDefaultTypeInternal {
   constexpr SendInvitationUserRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1878,7 +1878,7 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto[] PR
   "ers\"\210\001\n\031SendInvitationUserRequest\022\022\n\004nam"
   "e\030\001 \001(\tR\004name\022\024\n\005email\030\002 \001(\tR\005email\022\035\n\np"
   "roject_id\030\003 \001(\rR\tprojectId\022\"\n\ruser_id_ad"
-  "min\030\004 \001(\rR\013userIdAdmin\"U\n\032SendInvitation"
+  "min\030\004 \001(\tR\013userIdAdmin\"U\n\032SendInvitation"
   "UserResponse\022\037\n\013html_result\030\001 \001(\tR\nhtmlR"
   "esult\022\026\n\006result\030\002 \001(\tR\006result\"Y\n\030GetInvi"
   "tationUserRequest\022\'\n\017invitation_code\030\001 \001"
@@ -6787,19 +6787,20 @@ SendInvitationUserRequest::SendInvitationUserRequest(const SendInvitationUserReq
     email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_email(), 
       GetArenaForAllocation());
   }
-  ::memcpy(&project_id_, &from.project_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&user_id_admin_) -
-    reinterpret_cast<char*>(&project_id_)) + sizeof(user_id_admin_));
+  user_id_admin_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id_admin().empty()) {
+    user_id_admin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id_admin(), 
+      GetArenaForAllocation());
+  }
+  project_id_ = from.project_id_;
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.SendInvitationUserRequest)
 }
 
 inline void SendInvitationUserRequest::SharedCtor() {
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&project_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&user_id_admin_) -
-    reinterpret_cast<char*>(&project_id_)) + sizeof(user_id_admin_));
+user_id_admin_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_id_ = 0u;
 }
 
 SendInvitationUserRequest::~SendInvitationUserRequest() {
@@ -6813,6 +6814,7 @@ inline void SendInvitationUserRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_id_admin_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void SendInvitationUserRequest::ArenaDtor(void* object) {
@@ -6833,9 +6835,8 @@ void SendInvitationUserRequest::Clear() {
 
   name_.ClearToEmpty();
   email_.ClearToEmpty();
-  ::memset(&project_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&user_id_admin_) -
-      reinterpret_cast<char*>(&project_id_)) + sizeof(user_id_admin_));
+  user_id_admin_.ClearToEmpty();
+  project_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6870,10 +6871,12 @@ const char* SendInvitationUserRequest::_InternalParse(const char* ptr, ::PROTOBU
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 user_id_admin = 4 [json_name = "userIdAdmin"];
+      // string user_id_admin = 4 [json_name = "userIdAdmin"];
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          user_id_admin_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_user_id_admin();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.SendInvitationUserRequest.user_id_admin"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6932,10 +6935,14 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_project_id(), target);
   }
 
-  // uint32 user_id_admin = 4 [json_name = "userIdAdmin"];
-  if (this->_internal_user_id_admin() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_user_id_admin(), target);
+  // string user_id_admin = 4 [json_name = "userIdAdmin"];
+  if (!this->_internal_user_id_admin().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id_admin().data(), static_cast<int>(this->_internal_user_id_admin().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.SendInvitationUserRequest.user_id_admin");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_user_id_admin(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6968,18 +6975,18 @@ size_t SendInvitationUserRequest::ByteSizeLong() const {
         this->_internal_email());
   }
 
+  // string user_id_admin = 4 [json_name = "userIdAdmin"];
+  if (!this->_internal_user_id_admin().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id_admin());
+  }
+
   // uint32 project_id = 3 [json_name = "projectId"];
   if (this->_internal_project_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_project_id());
-  }
-
-  // uint32 user_id_admin = 4 [json_name = "userIdAdmin"];
-  if (this->_internal_user_id_admin() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_user_id_admin());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7016,11 +7023,11 @@ void SendInvitationUserRequest::MergeFrom(const SendInvitationUserRequest& from)
   if (!from._internal_email().empty()) {
     _internal_set_email(from._internal_email());
   }
+  if (!from._internal_user_id_admin().empty()) {
+    _internal_set_user_id_admin(from._internal_user_id_admin());
+  }
   if (from._internal_project_id() != 0) {
     _internal_set_project_id(from._internal_project_id());
-  }
-  if (from._internal_user_id_admin() != 0) {
-    _internal_set_user_id_admin(from._internal_user_id_admin());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -7049,12 +7056,12 @@ void SendInvitationUserRequest::InternalSwap(SendInvitationUserRequest* other) {
       &email_, GetArenaForAllocation(),
       &other->email_, other->GetArenaForAllocation()
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(SendInvitationUserRequest, user_id_admin_)
-      + sizeof(SendInvitationUserRequest::user_id_admin_)
-      - PROTOBUF_FIELD_OFFSET(SendInvitationUserRequest, project_id_)>(
-          reinterpret_cast<char*>(&project_id_),
-          reinterpret_cast<char*>(&other->project_id_));
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_id_admin_, GetArenaForAllocation(),
+      &other->user_id_admin_, other->GetArenaForAllocation()
+  );
+  swap(project_id_, other->project_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SendInvitationUserRequest::GetMetadata() const {
