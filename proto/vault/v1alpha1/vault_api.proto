@@ -1,0 +1,102 @@
+syntax = "proto3";
+
+package vault.v1alpha1;
+
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/vault/v1alpha1";
+
+
+// ======= Metadata =======
+// Key                Value
+// ---                -----
+// created_time       2022-01-21T16:44:14.254178235Z
+// custom_metadata    <nil>
+// deletion_time      n/a
+// destroyed          false
+// version            1
+
+// ====== Data ======
+// Key         Value
+// ---         -----
+// password    static-password
+// username    static-user
+
+
+service VaultAPIService{
+    rpc CreateSecret(CreateSecretRequest) returns (CreateSecretResponse) {};
+    rpc UpdateSecret(UpdateSecretRequest) returns (UpdateSecretResponse) {};
+    rpc DeleteSecret(DeleteSecretRequest) returns (DeleteSecretResponse) {};
+    rpc GetSecret(GetSecretRequest) returns (GetSecretResponse) {};
+    rpc ListSecret(ListSecretRequest) returns (ListSecretResponse) {};
+}
+
+message Metadata {
+    string key = 1;
+    string created_time = 2;
+    string custom_metadata = 3;
+    string deletion_time = 4;
+    bool destroyed = 5;
+    int32 version = 6;
+}
+
+message SecretData {
+    map<string, string> data = 1;
+}
+
+message SecretWarnings {
+    repeated string warnings = 1;
+}
+
+message Secret {
+    Metadata metadata = 1;
+    string environment = 2;
+    SecretData data = 3;
+    SecretWarnings warnings = 4;
+}
+
+message CreateSecretRequest {
+    string environment = 1;
+    string name = 2;
+    string value = 3;
+}
+
+message CreateSecretResponse {
+    string error = 1;
+    string msg = 2;
+}
+
+message UpdateSecretRequest {
+    string name = 2;
+    string value = 3;
+}
+
+message UpdateSecretResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message DeleteSecretRequest {
+    string name = 1;
+}
+
+message DeleteSecretResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message GetSecretRequest {
+    string environment = 1;
+}
+
+message GetSecretResponse {
+    map<string, string> data = 1;
+    string error = 2;
+}
+
+message ListSecretRequest {
+    string environment = 1;
+}
+
+message ListSecretResponse {
+    repeated Secret secrets = 1;
+    string error = 2;
+}
