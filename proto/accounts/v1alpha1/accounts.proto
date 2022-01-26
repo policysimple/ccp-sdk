@@ -219,6 +219,7 @@ message SendInvitationUserResponse {
 
 message GetInvitationUserRequest {
     string invitation_code=1;
+    string email=2;
 }
 
 message GetInvitationUserResponse {
@@ -229,8 +230,9 @@ message GetInvitationUserResponse {
 
 message AgreeInvitationUserRequest {
     string invitation_code=1;
-    uint32 guest_user_id=2;
-    InvitationResponse invitation_response=3;
+    string email=2;
+    string guest_user_id=3;
+    InvitationResponse invitation_response=4;
 }
 
 message AgreeInvitationUserResponse {
