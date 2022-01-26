@@ -1208,8 +1208,7 @@ proto.vault.v1alpha1.CreateSecretRequest.prototype.toObject = function(opt_inclu
 proto.vault.v1alpha1.CreateSecretRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     environment: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 3, "")
+    data: (f = msg.getData()) && proto.vault.v1alpha1.SecretData.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1251,12 +1250,9 @@ proto.vault.v1alpha1.CreateSecretRequest.deserializeBinaryFromReader = function(
       msg.setEnvironment(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setValue(value);
+      var value = new proto.vault.v1alpha1.SecretData;
+      reader.readMessage(value,proto.vault.v1alpha1.SecretData.deserializeBinaryFromReader);
+      msg.setData(value);
       break;
     default:
       reader.skipField();
@@ -1294,18 +1290,12 @@ proto.vault.v1alpha1.CreateSecretRequest.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
-    );
-  }
-  f = message.getValue();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
+      f,
+      proto.vault.v1alpha1.SecretData.serializeBinaryToWriter
     );
   }
 };
@@ -1330,38 +1320,39 @@ proto.vault.v1alpha1.CreateSecretRequest.prototype.setEnvironment = function(val
 
 
 /**
- * optional string name = 2;
- * @return {string}
+ * optional SecretData data = 2;
+ * @return {?proto.vault.v1alpha1.SecretData}
  */
-proto.vault.v1alpha1.CreateSecretRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.vault.v1alpha1.CreateSecretRequest.prototype.getData = function() {
+  return /** @type{?proto.vault.v1alpha1.SecretData} */ (
+    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.SecretData, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.vault.v1alpha1.SecretData|undefined} value
+ * @return {!proto.vault.v1alpha1.CreateSecretRequest} returns this
+*/
+proto.vault.v1alpha1.CreateSecretRequest.prototype.setData = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.vault.v1alpha1.CreateSecretRequest} returns this
  */
-proto.vault.v1alpha1.CreateSecretRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.vault.v1alpha1.CreateSecretRequest.prototype.clearData = function() {
+  return this.setData(undefined);
 };
 
 
 /**
- * optional string value = 3;
- * @return {string}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.vault.v1alpha1.CreateSecretRequest.prototype.getValue = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.vault.v1alpha1.CreateSecretRequest} returns this
- */
-proto.vault.v1alpha1.CreateSecretRequest.prototype.setValue = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+proto.vault.v1alpha1.CreateSecretRequest.prototype.hasData = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

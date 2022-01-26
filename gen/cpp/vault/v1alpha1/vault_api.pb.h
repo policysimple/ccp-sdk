@@ -998,8 +998,7 @@ class CreateSecretRequest final :
 
   enum : int {
     kEnvironmentFieldNumber = 1,
-    kNameFieldNumber = 2,
-    kValueFieldNumber = 3,
+    kDataFieldNumber = 2,
   };
   // string environment = 1 [json_name = "environment"];
   void clear_environment();
@@ -1015,33 +1014,23 @@ class CreateSecretRequest final :
   std::string* _internal_mutable_environment();
   public:
 
-  // string name = 2 [json_name = "name"];
-  void clear_name();
-  const std::string& name() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_name();
-  PROTOBUF_MUST_USE_RESULT std::string* release_name();
-  void set_allocated_name(std::string* name);
+  // .vault.v1alpha1.SecretData data = 2 [json_name = "data"];
+  bool has_data() const;
   private:
-  const std::string& _internal_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
+  bool _internal_has_data() const;
   public:
-
-  // string value = 3 [json_name = "value"];
-  void clear_value();
-  const std::string& value() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_value(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_value();
-  PROTOBUF_MUST_USE_RESULT std::string* release_value();
-  void set_allocated_value(std::string* value);
+  void clear_data();
+  const ::vault::v1alpha1::SecretData& data() const;
+  PROTOBUF_MUST_USE_RESULT ::vault::v1alpha1::SecretData* release_data();
+  ::vault::v1alpha1::SecretData* mutable_data();
+  void set_allocated_data(::vault::v1alpha1::SecretData* data);
   private:
-  const std::string& _internal_value() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_value(const std::string& value);
-  std::string* _internal_mutable_value();
+  const ::vault::v1alpha1::SecretData& _internal_data() const;
+  ::vault::v1alpha1::SecretData* _internal_mutable_data();
   public:
+  void unsafe_arena_set_allocated_data(
+      ::vault::v1alpha1::SecretData* data);
+  ::vault::v1alpha1::SecretData* unsafe_arena_release_data();
 
   // @@protoc_insertion_point(class_scope:vault.v1alpha1.CreateSecretRequest)
  private:
@@ -1051,8 +1040,7 @@ class CreateSecretRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
+  ::vault::v1alpha1::SecretData* data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
 };
@@ -3206,96 +3194,94 @@ inline void CreateSecretRequest::set_allocated_environment(std::string* environm
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.CreateSecretRequest.environment)
 }
 
-// string name = 2 [json_name = "name"];
-inline void CreateSecretRequest::clear_name() {
-  name_.ClearToEmpty();
+// .vault.v1alpha1.SecretData data = 2 [json_name = "data"];
+inline bool CreateSecretRequest::_internal_has_data() const {
+  return this != internal_default_instance() && data_ != nullptr;
 }
-inline const std::string& CreateSecretRequest::name() const {
-  // @@protoc_insertion_point(field_get:vault.v1alpha1.CreateSecretRequest.name)
-  return _internal_name();
+inline bool CreateSecretRequest::has_data() const {
+  return _internal_has_data();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateSecretRequest::set_name(ArgT0&& arg0, ArgT... args) {
- 
- name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:vault.v1alpha1.CreateSecretRequest.name)
+inline void CreateSecretRequest::clear_data() {
+  if (GetArenaForAllocation() == nullptr && data_ != nullptr) {
+    delete data_;
+  }
+  data_ = nullptr;
 }
-inline std::string* CreateSecretRequest::mutable_name() {
-  std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.CreateSecretRequest.name)
-  return _s;
+inline const ::vault::v1alpha1::SecretData& CreateSecretRequest::_internal_data() const {
+  const ::vault::v1alpha1::SecretData* p = data_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vault::v1alpha1::SecretData&>(
+      ::vault::v1alpha1::_SecretData_default_instance_);
 }
-inline const std::string& CreateSecretRequest::_internal_name() const {
-  return name_.Get();
+inline const ::vault::v1alpha1::SecretData& CreateSecretRequest::data() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.CreateSecretRequest.data)
+  return _internal_data();
 }
-inline void CreateSecretRequest::_internal_set_name(const std::string& value) {
-  
-  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateSecretRequest::_internal_mutable_name() {
-  
-  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateSecretRequest::release_name() {
-  // @@protoc_insertion_point(field_release:vault.v1alpha1.CreateSecretRequest.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateSecretRequest::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
+inline void CreateSecretRequest::unsafe_arena_set_allocated_data(
+    ::vault::v1alpha1::SecretData* data) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(data_);
+  }
+  data_ = data;
+  if (data) {
     
   } else {
     
   }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.CreateSecretRequest.name)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vault.v1alpha1.CreateSecretRequest.data)
 }
-
-// string value = 3 [json_name = "value"];
-inline void CreateSecretRequest::clear_value() {
-  value_.ClearToEmpty();
-}
-inline const std::string& CreateSecretRequest::value() const {
-  // @@protoc_insertion_point(field_get:vault.v1alpha1.CreateSecretRequest.value)
-  return _internal_value();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateSecretRequest::set_value(ArgT0&& arg0, ArgT... args) {
- 
- value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:vault.v1alpha1.CreateSecretRequest.value)
-}
-inline std::string* CreateSecretRequest::mutable_value() {
-  std::string* _s = _internal_mutable_value();
-  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.CreateSecretRequest.value)
-  return _s;
-}
-inline const std::string& CreateSecretRequest::_internal_value() const {
-  return value_.Get();
-}
-inline void CreateSecretRequest::_internal_set_value(const std::string& value) {
+inline ::vault::v1alpha1::SecretData* CreateSecretRequest::release_data() {
   
-  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  ::vault::v1alpha1::SecretData* temp = data_;
+  data_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
 }
-inline std::string* CreateSecretRequest::_internal_mutable_value() {
+inline ::vault::v1alpha1::SecretData* CreateSecretRequest::unsafe_arena_release_data() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.CreateSecretRequest.data)
   
-  return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  ::vault::v1alpha1::SecretData* temp = data_;
+  data_ = nullptr;
+  return temp;
 }
-inline std::string* CreateSecretRequest::release_value() {
-  // @@protoc_insertion_point(field_release:vault.v1alpha1.CreateSecretRequest.value)
-  return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline ::vault::v1alpha1::SecretData* CreateSecretRequest::_internal_mutable_data() {
+  
+  if (data_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vault::v1alpha1::SecretData>(GetArenaForAllocation());
+    data_ = p;
+  }
+  return data_;
 }
-inline void CreateSecretRequest::set_allocated_value(std::string* value) {
-  if (value != nullptr) {
+inline ::vault::v1alpha1::SecretData* CreateSecretRequest::mutable_data() {
+  ::vault::v1alpha1::SecretData* _msg = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.CreateSecretRequest.data)
+  return _msg;
+}
+inline void CreateSecretRequest::set_allocated_data(::vault::v1alpha1::SecretData* data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete data_;
+  }
+  if (data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::vault::v1alpha1::SecretData>::GetOwningArena(data);
+    if (message_arena != submessage_arena) {
+      data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, data, submessage_arena);
+    }
     
   } else {
     
   }
-  value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.CreateSecretRequest.value)
+  data_ = data;
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.CreateSecretRequest.data)
 }
 
 // -------------------------------------------------------------------
