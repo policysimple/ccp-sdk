@@ -64,8 +64,8 @@ message CreateSecretResponse {
 }
 
 message UpdateSecretRequest {
-    string name = 2;
-    string value = 3;
+    string environment = 1;
+    SecretData data = 2;
 }
 
 message UpdateSecretResponse {
@@ -74,7 +74,7 @@ message UpdateSecretResponse {
 }
 
 message DeleteSecretRequest {
-    string name = 1;
+    string environment = 1;
 }
 
 message DeleteSecretResponse {
@@ -87,7 +87,7 @@ message GetSecretRequest {
 }
 
 message GetSecretResponse {
-    map<string, string> data = 1;
+    SecretData data = 1;
     string error = 2;
 }
 
