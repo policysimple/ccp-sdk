@@ -5220,28 +5220,31 @@ public final class VaultApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
-     * @return The name.
+     * <code>string environment = 1 [json_name = "environment"];</code>
+     * @return The environment.
      */
-    java.lang.String getName();
+    java.lang.String getEnvironment();
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string environment = 1 [json_name = "environment"];</code>
+     * @return The bytes for environment.
      */
     com.google.protobuf.ByteString
-        getNameBytes();
+        getEnvironmentBytes();
 
     /**
-     * <code>string value = 3 [json_name = "value"];</code>
-     * @return The value.
+     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     * @return Whether the data field is set.
      */
-    java.lang.String getValue();
+    boolean hasData();
     /**
-     * <code>string value = 3 [json_name = "value"];</code>
-     * @return The bytes for value.
+     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     * @return The data.
      */
-    com.google.protobuf.ByteString
-        getValueBytes();
+    vault.v1alpha1.VaultApi.SecretData getData();
+    /**
+     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     */
+    vault.v1alpha1.VaultApi.SecretDataOrBuilder getDataOrBuilder();
   }
   /**
    * Protobuf type {@code vault.v1alpha1.UpdateSecretRequest}
@@ -5256,8 +5259,7 @@ public final class VaultApi {
       super(builder);
     }
     private UpdateSecretRequest() {
-      name_ = "";
-      value_ = "";
+      environment_ = "";
     }
 
     @java.lang.Override
@@ -5290,16 +5292,23 @@ public final class VaultApi {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              environment_ = s;
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 18: {
+              vault.v1alpha1.VaultApi.SecretData.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
+              }
+              data_ = input.readMessage(vault.v1alpha1.VaultApi.SecretData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
 
-              value_ = s;
               break;
             }
             default: {
@@ -5334,80 +5343,68 @@ public final class VaultApi {
               vault.v1alpha1.VaultApi.UpdateSecretRequest.class, vault.v1alpha1.VaultApi.UpdateSecretRequest.Builder.class);
     }
 
-    public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
+    public static final int ENVIRONMENT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object environment_;
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
-     * @return The name.
+     * <code>string environment = 1 [json_name = "environment"];</code>
+     * @return The environment.
      */
     @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getEnvironment() {
+      java.lang.Object ref = environment_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        environment_ = s;
         return s;
       }
     }
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string environment = 1 [json_name = "environment"];</code>
+     * @return The bytes for environment.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getEnvironmentBytes() {
+      java.lang.Object ref = environment_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        environment_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int VALUE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object value_;
+    public static final int DATA_FIELD_NUMBER = 2;
+    private vault.v1alpha1.VaultApi.SecretData data_;
     /**
-     * <code>string value = 3 [json_name = "value"];</code>
-     * @return The value.
+     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     * @return Whether the data field is set.
      */
     @java.lang.Override
-    public java.lang.String getValue() {
-      java.lang.Object ref = value_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        value_ = s;
-        return s;
-      }
+    public boolean hasData() {
+      return data_ != null;
     }
     /**
-     * <code>string value = 3 [json_name = "value"];</code>
-     * @return The bytes for value.
+     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     * @return The data.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getValueBytes() {
-      java.lang.Object ref = value_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        value_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public vault.v1alpha1.VaultApi.SecretData getData() {
+      return data_ == null ? vault.v1alpha1.VaultApi.SecretData.getDefaultInstance() : data_;
+    }
+    /**
+     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     */
+    @java.lang.Override
+    public vault.v1alpha1.VaultApi.SecretDataOrBuilder getDataOrBuilder() {
+      return getData();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5424,11 +5421,11 @@ public final class VaultApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+      if (!getEnvironmentBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, environment_);
       }
-      if (!getValueBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, value_);
+      if (data_ != null) {
+        output.writeMessage(2, getData());
       }
       unknownFields.writeTo(output);
     }
@@ -5439,11 +5436,12 @@ public final class VaultApi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      if (!getEnvironmentBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, environment_);
       }
-      if (!getValueBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, value_);
+      if (data_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5460,10 +5458,13 @@ public final class VaultApi {
       }
       vault.v1alpha1.VaultApi.UpdateSecretRequest other = (vault.v1alpha1.VaultApi.UpdateSecretRequest) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!getValue()
-          .equals(other.getValue())) return false;
+      if (!getEnvironment()
+          .equals(other.getEnvironment())) return false;
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData()
+            .equals(other.getData())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5475,10 +5476,12 @@ public final class VaultApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getValue().hashCode();
+      hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getEnvironment().hashCode();
+      if (hasData()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getData().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5612,10 +5615,14 @@ public final class VaultApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        name_ = "";
+        environment_ = "";
 
-        value_ = "";
-
+        if (dataBuilder_ == null) {
+          data_ = null;
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
         return this;
       }
 
@@ -5642,8 +5649,12 @@ public final class VaultApi {
       @java.lang.Override
       public vault.v1alpha1.VaultApi.UpdateSecretRequest buildPartial() {
         vault.v1alpha1.VaultApi.UpdateSecretRequest result = new vault.v1alpha1.VaultApi.UpdateSecretRequest(this);
-        result.name_ = name_;
-        result.value_ = value_;
+        result.environment_ = environment_;
+        if (dataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -5692,13 +5703,12 @@ public final class VaultApi {
 
       public Builder mergeFrom(vault.v1alpha1.VaultApi.UpdateSecretRequest other) {
         if (other == vault.v1alpha1.VaultApi.UpdateSecretRequest.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
+        if (!other.getEnvironment().isEmpty()) {
+          environment_ = other.environment_;
           onChanged();
         }
-        if (!other.getValue().isEmpty()) {
-          value_ = other.value_;
-          onChanged();
+        if (other.hasData()) {
+          mergeData(other.getData());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5729,156 +5739,199 @@ public final class VaultApi {
         return this;
       }
 
-      private java.lang.Object name_ = "";
+      private java.lang.Object environment_ = "";
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
-       * @return The name.
+       * <code>string environment = 1 [json_name = "environment"];</code>
+       * @return The environment.
        */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
+      public java.lang.String getEnvironment() {
+        java.lang.Object ref = environment_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          name_ = s;
+          environment_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
-       * @return The bytes for name.
+       * <code>string environment = 1 [json_name = "environment"];</code>
+       * @return The bytes for environment.
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
+          getEnvironmentBytes() {
+        java.lang.Object ref = environment_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          name_ = b;
+          environment_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
-       * @param value The name to set.
+       * <code>string environment = 1 [json_name = "environment"];</code>
+       * @param value The environment to set.
        * @return This builder for chaining.
        */
-      public Builder setName(
+      public Builder setEnvironment(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        name_ = value;
+        environment_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>string environment = 1 [json_name = "environment"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearName() {
+      public Builder clearEnvironment() {
         
-        name_ = getDefaultInstance().getName();
+        environment_ = getDefaultInstance().getEnvironment();
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
-       * @param value The bytes for name to set.
+       * <code>string environment = 1 [json_name = "environment"];</code>
+       * @param value The bytes for environment to set.
        * @return This builder for chaining.
        */
-      public Builder setNameBytes(
+      public Builder setEnvironmentBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        name_ = value;
+        environment_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object value_ = "";
+      private vault.v1alpha1.VaultApi.SecretData data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          vault.v1alpha1.VaultApi.SecretData, vault.v1alpha1.VaultApi.SecretData.Builder, vault.v1alpha1.VaultApi.SecretDataOrBuilder> dataBuilder_;
       /**
-       * <code>string value = 3 [json_name = "value"];</code>
-       * @return The value.
+       * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+       * @return Whether the data field is set.
        */
-      public java.lang.String getValue() {
-        java.lang.Object ref = value_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          value_ = s;
-          return s;
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+       * @return The data.
+       */
+      public vault.v1alpha1.VaultApi.SecretData getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? vault.v1alpha1.VaultApi.SecretData.getDefaultInstance() : data_;
         } else {
-          return (java.lang.String) ref;
+          return dataBuilder_.getMessage();
         }
       }
       /**
-       * <code>string value = 3 [json_name = "value"];</code>
-       * @return The bytes for value.
+       * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
        */
-      public com.google.protobuf.ByteString
-          getValueBytes() {
-        java.lang.Object ref = value_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          value_ = b;
-          return b;
+      public Builder setData(vault.v1alpha1.VaultApi.SecretData value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          dataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+       */
+      public Builder setData(
+          vault.v1alpha1.VaultApi.SecretData.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+       */
+      public Builder mergeData(vault.v1alpha1.VaultApi.SecretData value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              vault.v1alpha1.VaultApi.SecretData.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          dataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+       */
+      public vault.v1alpha1.VaultApi.SecretData.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+       */
+      public vault.v1alpha1.VaultApi.SecretDataOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              vault.v1alpha1.VaultApi.SecretData.getDefaultInstance() : data_;
         }
       }
       /**
-       * <code>string value = 3 [json_name = "value"];</code>
-       * @param value The value to set.
-       * @return This builder for chaining.
+       * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
        */
-      public Builder setValue(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        value_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string value = 3 [json_name = "value"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearValue() {
-        
-        value_ = getDefaultInstance().getValue();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string value = 3 [json_name = "value"];</code>
-       * @param value The bytes for value to set.
-       * @return This builder for chaining.
-       */
-      public Builder setValueBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        value_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          vault.v1alpha1.VaultApi.SecretData, vault.v1alpha1.VaultApi.SecretData.Builder, vault.v1alpha1.VaultApi.SecretDataOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              vault.v1alpha1.VaultApi.SecretData, vault.v1alpha1.VaultApi.SecretData.Builder, vault.v1alpha1.VaultApi.SecretDataOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6656,16 +6709,16 @@ public final class VaultApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The name.
+     * <code>string environment = 1 [json_name = "environment"];</code>
+     * @return The environment.
      */
-    java.lang.String getName();
+    java.lang.String getEnvironment();
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string environment = 1 [json_name = "environment"];</code>
+     * @return The bytes for environment.
      */
     com.google.protobuf.ByteString
-        getNameBytes();
+        getEnvironmentBytes();
   }
   /**
    * Protobuf type {@code vault.v1alpha1.DeleteSecretRequest}
@@ -6680,7 +6733,7 @@ public final class VaultApi {
       super(builder);
     }
     private DeleteSecretRequest() {
-      name_ = "";
+      environment_ = "";
     }
 
     @java.lang.Override
@@ -6716,7 +6769,7 @@ public final class VaultApi {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              environment_ = s;
               break;
             }
             default: {
@@ -6751,38 +6804,38 @@ public final class VaultApi {
               vault.v1alpha1.VaultApi.DeleteSecretRequest.class, vault.v1alpha1.VaultApi.DeleteSecretRequest.Builder.class);
     }
 
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+    public static final int ENVIRONMENT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object environment_;
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The name.
+     * <code>string environment = 1 [json_name = "environment"];</code>
+     * @return The environment.
      */
     @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getEnvironment() {
+      java.lang.Object ref = environment_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        environment_ = s;
         return s;
       }
     }
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string environment = 1 [json_name = "environment"];</code>
+     * @return The bytes for environment.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getEnvironmentBytes() {
+      java.lang.Object ref = environment_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        environment_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -6803,8 +6856,8 @@ public final class VaultApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      if (!getEnvironmentBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, environment_);
       }
       unknownFields.writeTo(output);
     }
@@ -6815,8 +6868,8 @@ public final class VaultApi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      if (!getEnvironmentBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, environment_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6833,8 +6886,8 @@ public final class VaultApi {
       }
       vault.v1alpha1.VaultApi.DeleteSecretRequest other = (vault.v1alpha1.VaultApi.DeleteSecretRequest) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
+      if (!getEnvironment()
+          .equals(other.getEnvironment())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6846,8 +6899,8 @@ public final class VaultApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getEnvironment().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6981,7 +7034,7 @@ public final class VaultApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        name_ = "";
+        environment_ = "";
 
         return this;
       }
@@ -7009,7 +7062,7 @@ public final class VaultApi {
       @java.lang.Override
       public vault.v1alpha1.VaultApi.DeleteSecretRequest buildPartial() {
         vault.v1alpha1.VaultApi.DeleteSecretRequest result = new vault.v1alpha1.VaultApi.DeleteSecretRequest(this);
-        result.name_ = name_;
+        result.environment_ = environment_;
         onBuilt();
         return result;
       }
@@ -7058,8 +7111,8 @@ public final class VaultApi {
 
       public Builder mergeFrom(vault.v1alpha1.VaultApi.DeleteSecretRequest other) {
         if (other == vault.v1alpha1.VaultApi.DeleteSecretRequest.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
+        if (!other.getEnvironment().isEmpty()) {
+          environment_ = other.environment_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -7091,78 +7144,78 @@ public final class VaultApi {
         return this;
       }
 
-      private java.lang.Object name_ = "";
+      private java.lang.Object environment_ = "";
       /**
-       * <code>string name = 1 [json_name = "name"];</code>
-       * @return The name.
+       * <code>string environment = 1 [json_name = "environment"];</code>
+       * @return The environment.
        */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
+      public java.lang.String getEnvironment() {
+        java.lang.Object ref = environment_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          name_ = s;
+          environment_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string name = 1 [json_name = "name"];</code>
-       * @return The bytes for name.
+       * <code>string environment = 1 [json_name = "environment"];</code>
+       * @return The bytes for environment.
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
+          getEnvironmentBytes() {
+        java.lang.Object ref = environment_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          name_ = b;
+          environment_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string name = 1 [json_name = "name"];</code>
-       * @param value The name to set.
+       * <code>string environment = 1 [json_name = "environment"];</code>
+       * @param value The environment to set.
        * @return This builder for chaining.
        */
-      public Builder setName(
+      public Builder setEnvironment(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        name_ = value;
+        environment_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 1 [json_name = "name"];</code>
+       * <code>string environment = 1 [json_name = "environment"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearName() {
+      public Builder clearEnvironment() {
         
-        name_ = getDefaultInstance().getName();
+        environment_ = getDefaultInstance().getEnvironment();
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 1 [json_name = "name"];</code>
-       * @param value The bytes for name to set.
+       * <code>string environment = 1 [json_name = "environment"];</code>
+       * @param value The bytes for environment to set.
        * @return This builder for chaining.
        */
-      public Builder setNameBytes(
+      public Builder setEnvironmentBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        name_ = value;
+        environment_ = value;
         onChanged();
         return this;
       }
@@ -8510,38 +8563,19 @@ public final class VaultApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
      */
-    int getDataCount();
+    boolean hasData();
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
+     * @return The data.
      */
-    boolean containsData(
-        java.lang.String key);
+    vault.v1alpha1.VaultApi.SecretData getData();
     /**
-     * Use {@link #getDataMap()} instead.
+     * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
      */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getData();
-    /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getDataMap();
-    /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-     */
-
-    java.lang.String getDataOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-     */
-
-    java.lang.String getDataOrThrow(
-        java.lang.String key);
+    vault.v1alpha1.VaultApi.SecretDataOrBuilder getDataOrBuilder();
 
     /**
      * <code>string error = 2 [json_name = "error"];</code>
@@ -8591,7 +8625,6 @@ public final class VaultApi {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -8603,16 +8636,16 @@ public final class VaultApi {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                data_ = com.google.protobuf.MapField.newMapField(
-                    DataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+              vault.v1alpha1.VaultApi.SecretData.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
               }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              data__ = input.readMessage(
-                  DataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              data_.getMutableMap().put(
-                  data__.getKey(), data__.getValue());
+              data_ = input.readMessage(vault.v1alpha1.VaultApi.SecretData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             case 18: {
@@ -8645,18 +8678,6 @@ public final class VaultApi {
       return vault.v1alpha1.VaultApi.internal_static_vault_v1alpha1_GetSecretResponse_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetData();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -8666,84 +8687,29 @@ public final class VaultApi {
     }
 
     public static final int DATA_FIELD_NUMBER = 1;
-    private static final class DataDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  vault.v1alpha1.VaultApi.internal_static_vault_v1alpha1_GetSecretResponse_DataEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> data_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetData() {
-      if (data_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            DataDefaultEntryHolder.defaultEntry);
-      }
-      return data_;
-    }
-
-    public int getDataCount() {
-      return internalGetData().getMap().size();
-    }
+    private vault.v1alpha1.VaultApi.SecretData data_;
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-     */
-
-    @java.lang.Override
-    public boolean containsData(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetData().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getDataMap()} instead.
+     * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
      */
     @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getData() {
-      return getDataMap();
+    public boolean hasData() {
+      return data_ != null;
     }
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
+     * @return The data.
      */
     @java.lang.Override
-
-    public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
-      return internalGetData().getMap();
+    public vault.v1alpha1.VaultApi.SecretData getData() {
+      return data_ == null ? vault.v1alpha1.VaultApi.SecretData.getDefaultInstance() : data_;
     }
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
      */
     @java.lang.Override
-
-    public java.lang.String getDataOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetData().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-     */
-    @java.lang.Override
-
-    public java.lang.String getDataOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetData().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public vault.v1alpha1.VaultApi.SecretDataOrBuilder getDataOrBuilder() {
+      return getData();
     }
 
     public static final int ERROR_FIELD_NUMBER = 2;
@@ -8798,12 +8764,9 @@ public final class VaultApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetData(),
-          DataDefaultEntryHolder.defaultEntry,
-          1);
+      if (data_ != null) {
+        output.writeMessage(1, getData());
+      }
       if (!getErrorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
       }
@@ -8816,15 +8779,9 @@ public final class VaultApi {
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetData().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        data__ = DataDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      if (data_ != null) {
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, data__);
+          .computeMessageSize(1, getData());
       }
       if (!getErrorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
@@ -8844,8 +8801,11 @@ public final class VaultApi {
       }
       vault.v1alpha1.VaultApi.GetSecretResponse other = (vault.v1alpha1.VaultApi.GetSecretResponse) obj;
 
-      if (!internalGetData().equals(
-          other.internalGetData())) return false;
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData()
+            .equals(other.getData())) return false;
+      }
       if (!getError()
           .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -8859,9 +8819,9 @@ public final class VaultApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetData().getMap().isEmpty()) {
+      if (hasData()) {
         hash = (37 * hash) + DATA_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetData().hashCode();
+        hash = (53 * hash) + getData().hashCode();
       }
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
@@ -8972,28 +8932,6 @@ public final class VaultApi {
         return vault.v1alpha1.VaultApi.internal_static_vault_v1alpha1_GetSecretResponse_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetData();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetMutableData();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -9020,7 +8958,12 @@ public final class VaultApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableData().clear();
+        if (dataBuilder_ == null) {
+          data_ = null;
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
         error_ = "";
 
         return this;
@@ -9049,9 +8992,11 @@ public final class VaultApi {
       @java.lang.Override
       public vault.v1alpha1.VaultApi.GetSecretResponse buildPartial() {
         vault.v1alpha1.VaultApi.GetSecretResponse result = new vault.v1alpha1.VaultApi.GetSecretResponse(this);
-        int from_bitField0_ = bitField0_;
-        result.data_ = internalGetData();
-        result.data_.makeImmutable();
+        if (dataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
         result.error_ = error_;
         onBuilt();
         return result;
@@ -9101,8 +9046,9 @@ public final class VaultApi {
 
       public Builder mergeFrom(vault.v1alpha1.VaultApi.GetSecretResponse other) {
         if (other == vault.v1alpha1.VaultApi.GetSecretResponse.getDefaultInstance()) return this;
-        internalGetMutableData().mergeFrom(
-            other.internalGetData());
+        if (other.hasData()) {
+          mergeData(other.getData());
+        }
         if (!other.getError().isEmpty()) {
           error_ = other.error_;
           onChanged();
@@ -9135,134 +9081,124 @@ public final class VaultApi {
         }
         return this;
       }
-      private int bitField0_;
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> data_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetData() {
-        if (data_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              DataDefaultEntryHolder.defaultEntry);
+      private vault.v1alpha1.VaultApi.SecretData data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          vault.v1alpha1.VaultApi.SecretData, vault.v1alpha1.VaultApi.SecretData.Builder, vault.v1alpha1.VaultApi.SecretDataOrBuilder> dataBuilder_;
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
+       * @return Whether the data field is set.
+       */
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
+       * @return The data.
+       */
+      public vault.v1alpha1.VaultApi.SecretData getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? vault.v1alpha1.VaultApi.SecretData.getDefaultInstance() : data_;
+        } else {
+          return dataBuilder_.getMessage();
         }
-        return data_;
       }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableData() {
-        onChanged();;
-        if (data_ == null) {
-          data_ = com.google.protobuf.MapField.newMapField(
-              DataDefaultEntryHolder.defaultEntry);
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(vault.v1alpha1.VaultApi.SecretData value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
         }
-        if (!data_.isMutable()) {
-          data_ = data_.copy();
+
+        return this;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(
+          vault.v1alpha1.VaultApi.SecretData.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
         }
-        return data_;
-      }
 
-      public int getDataCount() {
-        return internalGetData().getMap().size();
+        return this;
       }
       /**
-       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
        */
-
-      @java.lang.Override
-      public boolean containsData(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetData().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getDataMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getData() {
-        return getDataMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
-        return internalGetData().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-       */
-      @java.lang.Override
-
-      public java.lang.String getDataOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetData().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-       */
-      @java.lang.Override
-
-      public java.lang.String getDataOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetData().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+      public Builder mergeData(vault.v1alpha1.VaultApi.SecretData value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              vault.v1alpha1.VaultApi.SecretData.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          dataBuilder_.mergeFrom(value);
         }
-        return map.get(key);
-      }
 
+        return this;
+      }
+      /**
+       * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
+       */
       public Builder clearData() {
-        internalGetMutableData().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-       */
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
 
-      public Builder removeData(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableData().getMutableMap()
-            .remove(key);
         return this;
       }
       /**
-       * Use alternate mutation accessors instead.
+       * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
        */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableData() {
-        return internalGetMutableData().getMutableMap();
+      public vault.v1alpha1.VaultApi.SecretData.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
        */
-      public Builder putData(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableData().getMutableMap()
-            .put(key, value);
-        return this;
+      public vault.v1alpha1.VaultApi.SecretDataOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              vault.v1alpha1.VaultApi.SecretData.getDefaultInstance() : data_;
+        }
       }
       /**
-       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
        */
-
-      public Builder putAllData(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableData().getMutableMap()
-            .putAll(values);
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          vault.v1alpha1.VaultApi.SecretData, vault.v1alpha1.VaultApi.SecretData.Builder, vault.v1alpha1.VaultApi.SecretDataOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              vault.v1alpha1.VaultApi.SecretData, vault.v1alpha1.VaultApi.SecretData.Builder, vault.v1alpha1.VaultApi.SecretDataOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
       }
 
       private java.lang.Object error_ = "";
@@ -10970,11 +10906,6 @@ public final class VaultApi {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vault_v1alpha1_GetSecretResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vault_v1alpha1_GetSecretResponse_DataEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vault_v1alpha1_GetSecretResponse_DataEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vault_v1alpha1_ListSecretRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -11013,35 +10944,34 @@ public final class VaultApi {
       "ronment\022.\n\004data\030\002 \001(\0132\032.vault.v1alpha1.S" +
       "ecretDataR\004data\">\n\024CreateSecretResponse\022" +
       "\024\n\005error\030\001 \001(\tR\005error\022\020\n\003msg\030\002 \001(\tR\003msg\"" +
-      "?\n\023UpdateSecretRequest\022\022\n\004name\030\002 \001(\tR\004na" +
-      "me\022\024\n\005value\030\003 \001(\tR\005value\">\n\024UpdateSecret" +
+      "g\n\023UpdateSecretRequest\022 \n\013environment\030\001 " +
+      "\001(\tR\013environment\022.\n\004data\030\002 \001(\0132\032.vault.v" +
+      "1alpha1.SecretDataR\004data\">\n\024UpdateSecret" +
       "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(" +
-      "\tR\005error\")\n\023DeleteSecretRequest\022\022\n\004name\030" +
-      "\001 \001(\tR\004name\">\n\024DeleteSecretResponse\022\020\n\003m" +
-      "sg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"4\n\020G" +
-      "etSecretRequest\022 \n\013environment\030\001 \001(\tR\013en" +
-      "vironment\"\243\001\n\021GetSecretResponse\022?\n\004data\030" +
-      "\001 \003(\0132+.vault.v1alpha1.GetSecretResponse" +
-      ".DataEntryR\004data\022\024\n\005error\030\002 \001(\tR\005error\0327" +
-      "\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002" +
-      " \001(\tR\005value:\0028\001\"5\n\021ListSecretRequest\022 \n\013" +
-      "environment\030\001 \001(\tR\013environment\"\\\n\022ListSe" +
-      "cretResponse\0220\n\007secrets\030\001 \003(\0132\026.vault.v1" +
-      "alpha1.SecretR\007secrets\022\024\n\005error\030\002 \001(\tR\005e" +
-      "rror2\323\003\n\017VaultAPIService\022[\n\014CreateSecret" +
-      "\022#.vault.v1alpha1.CreateSecretRequest\032$." +
-      "vault.v1alpha1.CreateSecretResponse\"\000\022[\n" +
-      "\014UpdateSecret\022#.vault.v1alpha1.UpdateSec" +
-      "retRequest\032$.vault.v1alpha1.UpdateSecret" +
-      "Response\"\000\022[\n\014DeleteSecret\022#.vault.v1alp" +
-      "ha1.DeleteSecretRequest\032$.vault.v1alpha1" +
-      ".DeleteSecretResponse\"\000\022R\n\tGetSecret\022 .v" +
-      "ault.v1alpha1.GetSecretRequest\032!.vault.v" +
-      "1alpha1.GetSecretResponse\"\000\022U\n\nListSecre" +
-      "t\022!.vault.v1alpha1.ListSecretRequest\032\".v" +
-      "ault.v1alpha1.ListSecretResponse\"\000B1Z/gi" +
-      "thub.com/cuemby/ccp-sdk/gen/go/vault/v1a" +
-      "lpha1b\006proto3"
+      "\tR\005error\"7\n\023DeleteSecretRequest\022 \n\013envir" +
+      "onment\030\001 \001(\tR\013environment\">\n\024DeleteSecre" +
+      "tResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001" +
+      "(\tR\005error\"4\n\020GetSecretRequest\022 \n\013environ" +
+      "ment\030\001 \001(\tR\013environment\"Y\n\021GetSecretResp" +
+      "onse\022.\n\004data\030\001 \001(\0132\032.vault.v1alpha1.Secr" +
+      "etDataR\004data\022\024\n\005error\030\002 \001(\tR\005error\"5\n\021Li" +
+      "stSecretRequest\022 \n\013environment\030\001 \001(\tR\013en" +
+      "vironment\"\\\n\022ListSecretResponse\0220\n\007secre" +
+      "ts\030\001 \003(\0132\026.vault.v1alpha1.SecretR\007secret" +
+      "s\022\024\n\005error\030\002 \001(\tR\005error2\323\003\n\017VaultAPIServ" +
+      "ice\022[\n\014CreateSecret\022#.vault.v1alpha1.Cre" +
+      "ateSecretRequest\032$.vault.v1alpha1.Create" +
+      "SecretResponse\"\000\022[\n\014UpdateSecret\022#.vault" +
+      ".v1alpha1.UpdateSecretRequest\032$.vault.v1" +
+      "alpha1.UpdateSecretResponse\"\000\022[\n\014DeleteS" +
+      "ecret\022#.vault.v1alpha1.DeleteSecretReque" +
+      "st\032$.vault.v1alpha1.DeleteSecretResponse" +
+      "\"\000\022R\n\tGetSecret\022 .vault.v1alpha1.GetSecr" +
+      "etRequest\032!.vault.v1alpha1.GetSecretResp" +
+      "onse\"\000\022U\n\nListSecret\022!.vault.v1alpha1.Li" +
+      "stSecretRequest\032\".vault.v1alpha1.ListSec" +
+      "retResponse\"\000B1Z/github.com/cuemby/ccp-s" +
+      "dk/gen/go/vault/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11094,7 +11024,7 @@ public final class VaultApi {
     internal_static_vault_v1alpha1_UpdateSecretRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_UpdateSecretRequest_descriptor,
-        new java.lang.String[] { "Name", "Value", });
+        new java.lang.String[] { "Environment", "Data", });
     internal_static_vault_v1alpha1_UpdateSecretResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_vault_v1alpha1_UpdateSecretResponse_fieldAccessorTable = new
@@ -11106,7 +11036,7 @@ public final class VaultApi {
     internal_static_vault_v1alpha1_DeleteSecretRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_DeleteSecretRequest_descriptor,
-        new java.lang.String[] { "Name", });
+        new java.lang.String[] { "Environment", });
     internal_static_vault_v1alpha1_DeleteSecretResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_vault_v1alpha1_DeleteSecretResponse_fieldAccessorTable = new
@@ -11125,12 +11055,6 @@ public final class VaultApi {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_GetSecretResponse_descriptor,
         new java.lang.String[] { "Data", "Error", });
-    internal_static_vault_v1alpha1_GetSecretResponse_DataEntry_descriptor =
-      internal_static_vault_v1alpha1_GetSecretResponse_descriptor.getNestedTypes().get(0);
-    internal_static_vault_v1alpha1_GetSecretResponse_DataEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vault_v1alpha1_GetSecretResponse_DataEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     internal_static_vault_v1alpha1_ListSecretRequest_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_vault_v1alpha1_ListSecretRequest_fieldAccessorTable = new

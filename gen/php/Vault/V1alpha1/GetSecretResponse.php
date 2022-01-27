@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetSecretResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>map<string, string> data = 1 [json_name = "data"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
      */
-    private $data;
+    protected $data = null;
     /**
      * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      */
@@ -28,7 +28,7 @@ class GetSecretResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array|\Google\Protobuf\Internal\MapField $data
+     *     @type \Vault\V1alpha1\SecretData $data
      *     @type string $error
      * }
      */
@@ -38,23 +38,33 @@ class GetSecretResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> data = 1 [json_name = "data"];</code>
-     * @return \Google\Protobuf\Internal\MapField
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
+     * @return \Vault\V1alpha1\SecretData|null
      */
     public function getData()
     {
         return $this->data;
     }
 
+    public function hasData()
+    {
+        return isset($this->data);
+    }
+
+    public function clearData()
+    {
+        unset($this->data);
+    }
+
     /**
-     * Generated from protobuf field <code>map<string, string> data = 1 [json_name = "data"];</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
+     * @param \Vault\V1alpha1\SecretData $var
      * @return $this
      */
     public function setData($var)
     {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->data = $arr;
+        GPBUtil::checkMessage($var, \Vault\V1alpha1\SecretData::class);
+        $this->data = $var;
 
         return $this;
     }
