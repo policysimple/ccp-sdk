@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteSecretRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string environment = 1 [json_name = "environment"];</code>
      */
-    protected $name = '';
+    protected $environment = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DeleteSecretRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $name
+     *     @type string $environment
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class DeleteSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string environment = 1 [json_name = "environment"];</code>
      * @return string
      */
-    public function getName()
+    public function getEnvironment()
     {
-        return $this->name;
+        return $this->environment;
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string environment = 1 [json_name = "environment"];</code>
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setEnvironment($var)
     {
         GPBUtil::checkString($var, True);
-        $this->name = $var;
+        $this->environment = $var;
 
         return $this;
     }
