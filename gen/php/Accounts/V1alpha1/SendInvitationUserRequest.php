@@ -26,9 +26,9 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
      */
     protected $project_id = 0;
     /**
-     * Generated from protobuf field <code>uint32 user_id_admin = 4 [json_name = "userIdAdmin"];</code>
+     * Generated from protobuf field <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
      */
-    protected $user_id_admin = 0;
+    protected $user_id_admin = '';
 
     /**
      * Constructor.
@@ -39,7 +39,7 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $email
      *     @type int $project_id
-     *     @type int $user_id_admin
+     *     @type string $user_id_admin
      * }
      */
     public function __construct($data = NULL) {
@@ -114,8 +114,8 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 user_id_admin = 4 [json_name = "userIdAdmin"];</code>
-     * @return int
+     * Generated from protobuf field <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
+     * @return string
      */
     public function getUserIdAdmin()
     {
@@ -123,13 +123,13 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 user_id_admin = 4 [json_name = "userIdAdmin"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
+     * @param string $var
      * @return $this
      */
     public function setUserIdAdmin($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->user_id_admin = $var;
 
         return $this;

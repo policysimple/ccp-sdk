@@ -18,11 +18,15 @@ class AgreeInvitationUserRequest extends \Google\Protobuf\Internal\Message
      */
     protected $invitation_code = '';
     /**
-     * Generated from protobuf field <code>uint32 guest_user_id = 2 [json_name = "guestUserId"];</code>
+     * Generated from protobuf field <code>string email = 2 [json_name = "email"];</code>
      */
-    protected $guest_user_id = 0;
+    protected $email = '';
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.InvitationResponse invitation_response = 3 [json_name = "invitationResponse"];</code>
+     * Generated from protobuf field <code>string guest_user_id = 3 [json_name = "guestUserId"];</code>
+     */
+    protected $guest_user_id = '';
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.InvitationResponse invitation_response = 4 [json_name = "invitationResponse"];</code>
      */
     protected $invitation_response = 0;
 
@@ -33,7 +37,8 @@ class AgreeInvitationUserRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $invitation_code
-     *     @type int $guest_user_id
+     *     @type string $email
+     *     @type string $guest_user_id
      *     @type int $invitation_response
      * }
      */
@@ -65,8 +70,30 @@ class AgreeInvitationUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 guest_user_id = 2 [json_name = "guestUserId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string email = 2 [json_name = "email"];</code>
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 2 [json_name = "email"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string guest_user_id = 3 [json_name = "guestUserId"];</code>
+     * @return string
      */
     public function getGuestUserId()
     {
@@ -74,20 +101,20 @@ class AgreeInvitationUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 guest_user_id = 2 [json_name = "guestUserId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string guest_user_id = 3 [json_name = "guestUserId"];</code>
+     * @param string $var
      * @return $this
      */
     public function setGuestUserId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->guest_user_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.InvitationResponse invitation_response = 3 [json_name = "invitationResponse"];</code>
+     * Generated from protobuf field <code>.accounts.v1alpha1.InvitationResponse invitation_response = 4 [json_name = "invitationResponse"];</code>
      * @return int
      */
     public function getInvitationResponse()
@@ -96,7 +123,7 @@ class AgreeInvitationUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.InvitationResponse invitation_response = 3 [json_name = "invitationResponse"];</code>
+     * Generated from protobuf field <code>.accounts.v1alpha1.InvitationResponse invitation_response = 4 [json_name = "invitationResponse"];</code>
      * @param int $var
      * @return $this
      */

@@ -17,6 +17,10 @@ class GetInvitationUserRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string invitation_code = 1 [json_name = "invitationCode"];</code>
      */
     protected $invitation_code = '';
+    /**
+     * Generated from protobuf field <code>string email = 2 [json_name = "email"];</code>
+     */
+    protected $email = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class GetInvitationUserRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $invitation_code
+     *     @type string $email
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class GetInvitationUserRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->invitation_code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 2 [json_name = "email"];</code>
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 2 [json_name = "email"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email = $var;
 
         return $this;
     }

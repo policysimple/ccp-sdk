@@ -64,7 +64,7 @@ public final class EnvironmentAPIProto {
       "2+.pipelines.environment.v1alpha1.Enviro" +
       "nmentR\013environment\022\026\n\006status\030\002 \001(\tR\006stat" +
       "us\"7\n\026ListEnvironmentRequest\022\035\n\nproject_" +
-      "id\030\001 \001(\tR\tprojectId\"h\n\027ListEnvironmentRe" +
+      "id\030\001 \001(\rR\tprojectId\"h\n\027ListEnvironmentRe" +
       "sponse\022M\n\013environment\030\001 \003(\0132+.pipelines." +
       "environment.v1alpha1.EnvironmentR\013enviro" +
       "nment\"Z\n\030DeleteEnvironmentRequest\022%\n\016env" +
