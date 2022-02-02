@@ -29,7 +29,7 @@ message CreateEnvironmentResponse {
 }
 
 message ListEnvironmentRequest {
-    string project_id = 1; 
+    uint32 project_id = 1; 
 }
 
 message ListEnvironmentResponse {

@@ -8,14 +8,8 @@ public interface ListEnvironmentRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string project_id = 1 [json_name = "projectId"];</code>
+   * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
    * @return The projectId.
    */
-  java.lang.String getProjectId();
-  /**
-   * <code>string project_id = 1 [json_name = "projectId"];</code>
-   * @return The bytes for projectId.
-   */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  int getProjectId();
 }
