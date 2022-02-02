@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type EnvironmentAPIServiceClient interface {
 	CreateEnvironment(ctx context.Context, in *CreateEnvironmentRequest, opts ...grpc.CallOption) (*CreateEnvironmentResponse, error)
+	GetOneEnvironment(ctx context.Context, in *GetOneEnvironmentRequest, opts ...grpc.CallOption) (*GetOneEnvironmentResponse, error)
 	ListEnvironment(ctx context.Context, in *ListEnvironmentRequest, opts ...grpc.CallOption) (*ListEnvironmentResponse, error)
 	DeleteEnvironment(ctx context.Context, in *DeleteEnvironmentRequest, opts ...grpc.CallOption) (*DeleteEnvironmentResponse, error)
 }
@@ -38,6 +39,15 @@ func NewEnvironmentAPIServiceClient(cc grpc.ClientConnInterface) EnvironmentAPIS
 func (c *environmentAPIServiceClient) CreateEnvironment(ctx context.Context, in *CreateEnvironmentRequest, opts ...grpc.CallOption) (*CreateEnvironmentResponse, error) {
 	out := new(CreateEnvironmentResponse)
 	err := c.cc.Invoke(ctx, "/pipelines.environment.v1alpha1.EnvironmentAPIService/CreateEnvironment", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *environmentAPIServiceClient) GetOneEnvironment(ctx context.Context, in *GetOneEnvironmentRequest, opts ...grpc.CallOption) (*GetOneEnvironmentResponse, error) {
+	out := new(GetOneEnvironmentResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.environment.v1alpha1.EnvironmentAPIService/GetOneEnvironment", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -67,6 +77,7 @@ func (c *environmentAPIServiceClient) DeleteEnvironment(ctx context.Context, in 
 // for forward compatibility
 type EnvironmentAPIServiceServer interface {
 	CreateEnvironment(context.Context, *CreateEnvironmentRequest) (*CreateEnvironmentResponse, error)
+	GetOneEnvironment(context.Context, *GetOneEnvironmentRequest) (*GetOneEnvironmentResponse, error)
 	ListEnvironment(context.Context, *ListEnvironmentRequest) (*ListEnvironmentResponse, error)
 	DeleteEnvironment(context.Context, *DeleteEnvironmentRequest) (*DeleteEnvironmentResponse, error)
 }
@@ -77,6 +88,9 @@ type UnimplementedEnvironmentAPIServiceServer struct {
 
 func (UnimplementedEnvironmentAPIServiceServer) CreateEnvironment(context.Context, *CreateEnvironmentRequest) (*CreateEnvironmentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateEnvironment not implemented")
+}
+func (UnimplementedEnvironmentAPIServiceServer) GetOneEnvironment(context.Context, *GetOneEnvironmentRequest) (*GetOneEnvironmentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOneEnvironment not implemented")
 }
 func (UnimplementedEnvironmentAPIServiceServer) ListEnvironment(context.Context, *ListEnvironmentRequest) (*ListEnvironmentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListEnvironment not implemented")
@@ -110,6 +124,24 @@ func _EnvironmentAPIService_CreateEnvironment_Handler(srv interface{}, ctx conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(EnvironmentAPIServiceServer).CreateEnvironment(ctx, req.(*CreateEnvironmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EnvironmentAPIService_GetOneEnvironment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOneEnvironmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EnvironmentAPIServiceServer).GetOneEnvironment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.environment.v1alpha1.EnvironmentAPIService/GetOneEnvironment",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EnvironmentAPIServiceServer).GetOneEnvironment(ctx, req.(*GetOneEnvironmentRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -160,6 +192,10 @@ var EnvironmentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateEnvironment",
 			Handler:    _EnvironmentAPIService_CreateEnvironment_Handler,
+		},
+		{
+			MethodName: "GetOneEnvironment",
+			Handler:    _EnvironmentAPIService_GetOneEnvironment_Handler,
 		},
 		{
 			MethodName: "ListEnvironment",

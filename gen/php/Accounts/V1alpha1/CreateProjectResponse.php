@@ -9,7 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *
  * Responses
  *
  * Generated from protobuf message <code>accounts.v1alpha1.CreateProjectResponse</code>

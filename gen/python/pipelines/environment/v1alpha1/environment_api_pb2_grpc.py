@@ -19,6 +19,11 @@ class EnvironmentAPIServiceStub(object):
         request_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateEnvironmentRequest.SerializeToString,
         response_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateEnvironmentResponse.FromString,
         )
+    self.GetOneEnvironment = channel.unary_unary(
+        '/pipelines.environment.v1alpha1.EnvironmentAPIService/GetOneEnvironment',
+        request_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.GetOneEnvironmentRequest.SerializeToString,
+        response_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.GetOneEnvironmentResponse.FromString,
+        )
     self.ListEnvironment = channel.unary_unary(
         '/pipelines.environment.v1alpha1.EnvironmentAPIService/ListEnvironment',
         request_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.ListEnvironmentRequest.SerializeToString,
@@ -36,6 +41,13 @@ class EnvironmentAPIServiceServicer(object):
   pass
 
   def CreateEnvironment(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetOneEnvironment(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -63,6 +75,11 @@ def add_EnvironmentAPIServiceServicer_to_server(servicer, server):
           servicer.CreateEnvironment,
           request_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateEnvironmentRequest.FromString,
           response_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateEnvironmentResponse.SerializeToString,
+      ),
+      'GetOneEnvironment': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOneEnvironment,
+          request_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.GetOneEnvironmentRequest.FromString,
+          response_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.GetOneEnvironmentResponse.SerializeToString,
       ),
       'ListEnvironment': grpc.unary_unary_rpc_method_handler(
           servicer.ListEnvironment,
