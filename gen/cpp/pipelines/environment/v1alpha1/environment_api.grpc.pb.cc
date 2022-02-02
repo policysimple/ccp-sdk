@@ -21,6 +21,7 @@ namespace v1alpha1 {
 
 static const char* EnvironmentAPIService_method_names[] = {
   "/pipelines.environment.v1alpha1.EnvironmentAPIService/CreateEnvironment",
+  "/pipelines.environment.v1alpha1.EnvironmentAPIService/GetOneEnvironment",
   "/pipelines.environment.v1alpha1.EnvironmentAPIService/ListEnvironment",
   "/pipelines.environment.v1alpha1.EnvironmentAPIService/DeleteEnvironment",
 };
@@ -33,8 +34,9 @@ std::unique_ptr< EnvironmentAPIService::Stub> EnvironmentAPIService::NewStub(con
 
 EnvironmentAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_CreateEnvironment_(EnvironmentAPIService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListEnvironment_(EnvironmentAPIService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteEnvironment_(EnvironmentAPIService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOneEnvironment_(EnvironmentAPIService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListEnvironment_(EnvironmentAPIService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteEnvironment_(EnvironmentAPIService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status EnvironmentAPIService::Stub::CreateEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest& request, ::pipelines::environment::v1alpha1::CreateEnvironmentResponse* response) {
@@ -51,6 +53,22 @@ void EnvironmentAPIService::Stub::experimental_async::CreateEnvironment(::grpc::
 
 ::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>* EnvironmentAPIService::Stub::PrepareAsyncCreateEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::environment::v1alpha1::CreateEnvironmentResponse>::Create(channel_.get(), cq, rpcmethod_CreateEnvironment_, context, request, false);
+}
+
+::grpc::Status EnvironmentAPIService::Stub::GetOneEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::GetOneEnvironmentRequest& request, ::pipelines::environment::v1alpha1::GetOneEnvironmentResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetOneEnvironment_, context, request, response);
+}
+
+void EnvironmentAPIService::Stub::experimental_async::GetOneEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::GetOneEnvironmentRequest* request, ::pipelines::environment::v1alpha1::GetOneEnvironmentResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOneEnvironment_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::GetOneEnvironmentResponse>* EnvironmentAPIService::Stub::AsyncGetOneEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::GetOneEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::environment::v1alpha1::GetOneEnvironmentResponse>::Create(channel_.get(), cq, rpcmethod_GetOneEnvironment_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::environment::v1alpha1::GetOneEnvironmentResponse>* EnvironmentAPIService::Stub::PrepareAsyncGetOneEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::GetOneEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::environment::v1alpha1::GetOneEnvironmentResponse>::Create(channel_.get(), cq, rpcmethod_GetOneEnvironment_, context, request, false);
 }
 
 ::grpc::Status EnvironmentAPIService::Stub::ListEnvironment(::grpc::ClientContext* context, const ::pipelines::environment::v1alpha1::ListEnvironmentRequest& request, ::pipelines::environment::v1alpha1::ListEnvironmentResponse* response) {
@@ -94,10 +112,15 @@ EnvironmentAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       EnvironmentAPIService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< EnvironmentAPIService::Service, ::pipelines::environment::v1alpha1::GetOneEnvironmentRequest, ::pipelines::environment::v1alpha1::GetOneEnvironmentResponse>(
+          std::mem_fn(&EnvironmentAPIService::Service::GetOneEnvironment), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      EnvironmentAPIService_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< EnvironmentAPIService::Service, ::pipelines::environment::v1alpha1::ListEnvironmentRequest, ::pipelines::environment::v1alpha1::ListEnvironmentResponse>(
           std::mem_fn(&EnvironmentAPIService::Service::ListEnvironment), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      EnvironmentAPIService_method_names[2],
+      EnvironmentAPIService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< EnvironmentAPIService::Service, ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest, ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>(
           std::mem_fn(&EnvironmentAPIService::Service::DeleteEnvironment), this)));
@@ -107,6 +130,13 @@ EnvironmentAPIService::Service::~Service() {
 }
 
 ::grpc::Status EnvironmentAPIService::Service::CreateEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::CreateEnvironmentRequest* request, ::pipelines::environment::v1alpha1::CreateEnvironmentResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status EnvironmentAPIService::Service::GetOneEnvironment(::grpc::ServerContext* context, const ::pipelines::environment::v1alpha1::GetOneEnvironmentRequest* request, ::pipelines::environment::v1alpha1::GetOneEnvironmentResponse* response) {
   (void) context;
   (void) request;
   (void) response;

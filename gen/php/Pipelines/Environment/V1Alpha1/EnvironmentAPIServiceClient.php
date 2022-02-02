@@ -30,6 +30,19 @@ class EnvironmentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Pipelines\Environment\V1Alpha1\GetOneEnvironmentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetOneEnvironment(\Pipelines\Environment\V1Alpha1\GetOneEnvironmentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.environment.v1alpha1.EnvironmentAPIService/GetOneEnvironment',
+        $argument,
+        ['\Pipelines\Environment\V1Alpha1\GetOneEnvironmentResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Pipelines\Environment\V1Alpha1\ListEnvironmentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

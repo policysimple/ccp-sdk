@@ -14,6 +14,7 @@ import "pipelines/environment/v1alpha1/environment.proto";
 
 service EnvironmentAPIService{
     rpc CreateEnvironment(CreateEnvironmentRequest) returns (CreateEnvironmentResponse);
+    rpc GetOneEnvironment(GetOneEnvironmentRequest) returns (GetOneEnvironmentResponse);
     rpc ListEnvironment(ListEnvironmentRequest) returns (ListEnvironmentResponse);
     rpc DeleteEnvironment(DeleteEnvironmentRequest) returns (DeleteEnvironmentResponse);
 }
@@ -24,6 +25,15 @@ message CreateEnvironmentRequest {
 }
 
 message CreateEnvironmentResponse {
+    pipelines.environment.v1alpha1.Environment environment = 1;
+    string status = 2;
+}
+
+message GetOneEnvironmentRequest {
+    string environment_id = 1; 
+}
+
+message GetOneEnvironmentResponse {
     pipelines.environment.v1alpha1.Environment environment = 1;
     string status = 2;
 }
