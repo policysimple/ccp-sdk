@@ -4140,6 +4140,7 @@ class AgreeInvitationUserRequest final :
     kEmailFieldNumber = 2,
     kGuestUserIdFieldNumber = 3,
     kInvitationResponseFieldNumber = 4,
+    kProjectIdFieldNumber = 5,
   };
   // string invitation_code = 1 [json_name = "invitationCode"];
   void clear_invitation_code();
@@ -4192,6 +4193,15 @@ class AgreeInvitationUserRequest final :
   void _internal_set_invitation_response(::accounts::v1alpha1::InvitationResponse value);
   public:
 
+  // uint32 project_id = 5 [json_name = "projectId"];
+  void clear_project_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
+  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
+  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.AgreeInvitationUserRequest)
  private:
   class _Internal;
@@ -4203,6 +4213,7 @@ class AgreeInvitationUserRequest final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr guest_user_id_;
   int invitation_response_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -16216,6 +16227,26 @@ inline void AgreeInvitationUserRequest::_internal_set_invitation_response(::acco
 inline void AgreeInvitationUserRequest::set_invitation_response(::accounts::v1alpha1::InvitationResponse value) {
   _internal_set_invitation_response(value);
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.AgreeInvitationUserRequest.invitation_response)
+}
+
+// uint32 project_id = 5 [json_name = "projectId"];
+inline void AgreeInvitationUserRequest::clear_project_id() {
+  project_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AgreeInvitationUserRequest::_internal_project_id() const {
+  return project_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AgreeInvitationUserRequest::project_id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.AgreeInvitationUserRequest.project_id)
+  return _internal_project_id();
+}
+inline void AgreeInvitationUserRequest::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  project_id_ = value;
+}
+inline void AgreeInvitationUserRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_project_id(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.AgreeInvitationUserRequest.project_id)
 }
 
 // -------------------------------------------------------------------

@@ -233,6 +233,7 @@ message AgreeInvitationUserRequest {
     string email=2;
     string guest_user_id=3;
     InvitationResponse invitation_response=4;
+    uint32 project_id=5;
 }
 
 message AgreeInvitationUserResponse {
