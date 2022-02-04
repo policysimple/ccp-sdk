@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-™]
+¸]
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"à
 CheckUserRequest\'
 organization_id (RorganizationId
@@ -119,12 +119,14 @@ htmlResult
 GetInvitationUserResponseC
 organization (2.accounts.v1alpha1.OrganizationRorganization4
 project (2.accounts.v1alpha1.ProjectRproject
-result (	Rresult"×
+result (	Rresult"ö
 AgreeInvitationUserRequest\'
 invitation_code (	RinvitationCode
 email (	Remail"
 guest_user_id (	RguestUserIdV
-invitation_response (2%.accounts.v1alpha1.InvitationResponseRinvitationResponse"5
+invitation_response (2%.accounts.v1alpha1.InvitationResponseRinvitationResponse
+
+project_id (R	projectId"5
 AgreeInvitationUserResponse
 result (	Rresult"²
 Rol

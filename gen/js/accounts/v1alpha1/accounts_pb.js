@@ -6091,7 +6091,8 @@ proto.accounts.v1alpha1.AgreeInvitationUserRequest.toObject = function(includeIn
     invitationCode: jspb.Message.getFieldWithDefault(msg, 1, ""),
     email: jspb.Message.getFieldWithDefault(msg, 2, ""),
     guestUserId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    invitationResponse: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    invitationResponse: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    projectId: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -6143,6 +6144,10 @@ proto.accounts.v1alpha1.AgreeInvitationUserRequest.deserializeBinaryFromReader =
     case 4:
       var value = /** @type {!proto.accounts.v1alpha1.InvitationResponse} */ (reader.readEnum());
       msg.setInvitationResponse(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setProjectId(value);
       break;
     default:
       reader.skipField();
@@ -6198,6 +6203,13 @@ proto.accounts.v1alpha1.AgreeInvitationUserRequest.serializeBinaryToWriter = fun
   if (f !== 0.0) {
     writer.writeEnum(
       4,
+      f
+    );
+  }
+  f = message.getProjectId();
+  if (f !== 0) {
+    writer.writeUint32(
+      5,
       f
     );
   }
@@ -6273,6 +6285,24 @@ proto.accounts.v1alpha1.AgreeInvitationUserRequest.prototype.getInvitationRespon
  */
 proto.accounts.v1alpha1.AgreeInvitationUserRequest.prototype.setInvitationResponse = function(value) {
   return jspb.Message.setProto3EnumField(this, 4, value);
+};
+
+
+/**
+ * optional uint32 project_id = 5;
+ * @return {number}
+ */
+proto.accounts.v1alpha1.AgreeInvitationUserRequest.prototype.getProjectId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.accounts.v1alpha1.AgreeInvitationUserRequest} returns this
+ */
+proto.accounts.v1alpha1.AgreeInvitationUserRequest.prototype.setProjectId = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 

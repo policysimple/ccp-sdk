@@ -29,6 +29,10 @@ class AgreeInvitationUserRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.accounts.v1alpha1.InvitationResponse invitation_response = 4 [json_name = "invitationResponse"];</code>
      */
     protected $invitation_response = 0;
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 5 [json_name = "projectId"];</code>
+     */
+    protected $project_id = 0;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class AgreeInvitationUserRequest extends \Google\Protobuf\Internal\Message
      *     @type string $email
      *     @type string $guest_user_id
      *     @type int $invitation_response
+     *     @type int $project_id
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class AgreeInvitationUserRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Accounts\V1alpha1\InvitationResponse::class);
         $this->invitation_response = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 5 [json_name = "projectId"];</code>
+     * @return int
+     */
+    public function getProjectId()
+    {
+        return $this->project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 5 [json_name = "projectId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setProjectId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->project_id = $var;
 
         return $this;
     }
