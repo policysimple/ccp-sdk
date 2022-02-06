@@ -65,6 +65,32 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
      */
     private $projects;
+    /**
+     * details
+     *
+     * Generated from protobuf field <code>string phone_number = 14 [json_name = "phoneNumber"];</code>
+     */
+    protected $phone_number = '';
+    /**
+     * Generated from protobuf field <code>string country = 15 [json_name = "country"];</code>
+     */
+    protected $country = '';
+    /**
+     * Generated from protobuf field <code>string city = 16 [json_name = "city"];</code>
+     */
+    protected $city = '';
+    /**
+     * Generated from protobuf field <code>string code = 17 [json_name = "code"];</code>
+     */
+    protected $code = '';
+    /**
+     * Generated from protobuf field <code>string address = 18 [json_name = "address"];</code>
+     */
+    protected $address = '';
+    /**
+     * Generated from protobuf field <code>string state = 19 [json_name = "state"];</code>
+     */
+    protected $state = '';
 
     /**
      * Constructor.
@@ -85,6 +111,13 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
      *     @type bool $is_super_user
      *     @type \Accounts\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $organizations
      *     @type \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
+     *     @type string $phone_number
+     *           details
+     *     @type string $country
+     *     @type string $city
+     *     @type string $code
+     *     @type string $address
+     *     @type string $state
      * }
      */
     public function __construct($data = NULL) {
@@ -374,6 +407,142 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Project::class);
         $this->projects = $arr;
+
+        return $this;
+    }
+
+    /**
+     * details
+     *
+     * Generated from protobuf field <code>string phone_number = 14 [json_name = "phoneNumber"];</code>
+     * @return string
+     */
+    public function getPhoneNumber()
+    {
+        return $this->phone_number;
+    }
+
+    /**
+     * details
+     *
+     * Generated from protobuf field <code>string phone_number = 14 [json_name = "phoneNumber"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPhoneNumber($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->phone_number = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string country = 15 [json_name = "country"];</code>
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Generated from protobuf field <code>string country = 15 [json_name = "country"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCountry($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->country = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string city = 16 [json_name = "city"];</code>
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Generated from protobuf field <code>string city = 16 [json_name = "city"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCity($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->city = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string code = 17 [json_name = "code"];</code>
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * Generated from protobuf field <code>string code = 17 [json_name = "code"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string address = 18 [json_name = "address"];</code>
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Generated from protobuf field <code>string address = 18 [json_name = "address"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAddress($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->address = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string state = 19 [json_name = "state"];</code>
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Generated from protobuf field <code>string state = 19 [json_name = "state"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setState($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->state = $var;
 
         return $this;
     }

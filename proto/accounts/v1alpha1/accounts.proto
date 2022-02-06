@@ -58,7 +58,36 @@ service AccountService {
     rpc GetOneUserDex(GetOneUserDexRequest) returns (GetOneUserDexResponse);
 
     rpc CheckUser(CheckUserRequest) returns (CheckUserResponse);
+
+    rpc SendVerificationEmail(SendVerificationEmailRequest) returns (SendVerificationEmailResponse);
+    rpc VerifyEmail(VerifyEmailRequest) returns (VerifyEmailResponse);
 }
+
+/*
+
+    VERIFICATION EMAIL
+
+*/
+
+message SendVerificationEmailRequest {
+    string email = 1;
+    string name = 2;
+}
+
+message SendVerificationEmailResponse {
+    string html_result=1;
+    string error = 2;
+}
+
+message VerifyEmailRequest {
+    string token = 1;
+}
+
+message VerifyEmailResponse {
+    string msg = 1;
+    string error = 2;
+}
+
 
 message CheckUserRequest {
     uint32 organization_id = 1;
@@ -130,6 +159,15 @@ message CreateUserRequest {
     repeated uint32 permissions_ids = 7;
     repeated uint32 organizations_ids = 8;
 
+    // details
+    string phone_number = 9;
+    uint32 country_id = 10;
+    uint32 city_id = 11;
+    string zip_code = 12;
+    string address = 13;
+    string state = 14;
+
+
 }
 
 //Update
@@ -176,6 +214,14 @@ message GetOneUserResponse {
     bool is_super_user = 11;
     repeated Organization organizations = 12;
     repeated Project projects = 13;
+
+        // details
+    string phone_number = 14;
+    string country = 15;
+    string city = 16;
+    string code = 17;
+    string address = 18;
+    string state = 19;
 }
 
 
@@ -612,5 +658,14 @@ message GetOneUserDexResponse {
     repeated Organization organizations = 12;
     string msg = 13;
     repeated Project projects = 14;
+
+    // details
+
+    string phone_number = 15;
+    string country = 16;
+    string city = 17;
+    string code = 18;
+    string address = 19;
+    string state = 20;
 
 }

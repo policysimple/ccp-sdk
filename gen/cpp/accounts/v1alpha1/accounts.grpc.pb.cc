@@ -51,6 +51,8 @@ static const char* AccountService_method_names[] = {
   "/accounts.v1alpha1.AccountService/GetListUserDex",
   "/accounts.v1alpha1.AccountService/GetOneUserDex",
   "/accounts.v1alpha1.AccountService/CheckUser",
+  "/accounts.v1alpha1.AccountService/SendVerificationEmail",
+  "/accounts.v1alpha1.AccountService/VerifyEmail",
 };
 
 std::unique_ptr< AccountService::Stub> AccountService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -92,6 +94,8 @@ AccountService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& cha
   , rpcmethod_GetListUserDex_(AccountService_method_names[29], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetOneUserDex_(AccountService_method_names[30], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_CheckUser_(AccountService_method_names[31], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SendVerificationEmail_(AccountService_method_names[32], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_VerifyEmail_(AccountService_method_names[33], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status AccountService::Stub::CreateUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateUserRequest& request, ::accounts::v1alpha1::CreateUserResponse* response) {
@@ -606,6 +610,38 @@ void AccountService::Stub::experimental_async::CheckUser(::grpc::ClientContext* 
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::CheckUserResponse>::Create(channel_.get(), cq, rpcmethod_CheckUser_, context, request, false);
 }
 
+::grpc::Status AccountService::Stub::SendVerificationEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendVerificationEmailRequest& request, ::accounts::v1alpha1::SendVerificationEmailResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SendVerificationEmail_, context, request, response);
+}
+
+void AccountService::Stub::experimental_async::SendVerificationEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendVerificationEmailRequest* request, ::accounts::v1alpha1::SendVerificationEmailResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SendVerificationEmail_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::SendVerificationEmailResponse>* AccountService::Stub::AsyncSendVerificationEmailRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendVerificationEmailRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::SendVerificationEmailResponse>::Create(channel_.get(), cq, rpcmethod_SendVerificationEmail_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::SendVerificationEmailResponse>* AccountService::Stub::PrepareAsyncSendVerificationEmailRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendVerificationEmailRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::SendVerificationEmailResponse>::Create(channel_.get(), cq, rpcmethod_SendVerificationEmail_, context, request, false);
+}
+
+::grpc::Status AccountService::Stub::VerifyEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::VerifyEmailRequest& request, ::accounts::v1alpha1::VerifyEmailResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_VerifyEmail_, context, request, response);
+}
+
+void AccountService::Stub::experimental_async::VerifyEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::VerifyEmailRequest* request, ::accounts::v1alpha1::VerifyEmailResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_VerifyEmail_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::VerifyEmailResponse>* AccountService::Stub::AsyncVerifyEmailRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::VerifyEmailRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::VerifyEmailResponse>::Create(channel_.get(), cq, rpcmethod_VerifyEmail_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::VerifyEmailResponse>* AccountService::Stub::PrepareAsyncVerifyEmailRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::VerifyEmailRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::VerifyEmailResponse>::Create(channel_.get(), cq, rpcmethod_VerifyEmail_, context, request, false);
+}
+
 AccountService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AccountService_method_names[0],
@@ -767,6 +803,16 @@ AccountService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::CheckUserRequest, ::accounts::v1alpha1::CheckUserResponse>(
           std::mem_fn(&AccountService::Service::CheckUser), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AccountService_method_names[32],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::SendVerificationEmailRequest, ::accounts::v1alpha1::SendVerificationEmailResponse>(
+          std::mem_fn(&AccountService::Service::SendVerificationEmail), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AccountService_method_names[33],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::VerifyEmailRequest, ::accounts::v1alpha1::VerifyEmailResponse>(
+          std::mem_fn(&AccountService::Service::VerifyEmail), this)));
 }
 
 AccountService::Service::~Service() {
@@ -990,6 +1036,20 @@ AccountService::Service::~Service() {
 }
 
 ::grpc::Status AccountService::Service::CheckUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AccountService::Service::SendVerificationEmail(::grpc::ServerContext* context, const ::accounts::v1alpha1::SendVerificationEmailRequest* request, ::accounts::v1alpha1::SendVerificationEmailResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AccountService::Service::VerifyEmail(::grpc::ServerContext* context, const ::accounts::v1alpha1::VerifyEmailRequest* request, ::accounts::v1alpha1::VerifyEmailResponse* response) {
   (void) context;
   (void) request;
   (void) response;

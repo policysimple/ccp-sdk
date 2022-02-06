@@ -442,4 +442,30 @@ class AccountServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Accounts\V1alpha1\SendVerificationEmailRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function SendVerificationEmail(\Accounts\V1alpha1\SendVerificationEmailRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/SendVerificationEmail',
+        $argument,
+        ['\Accounts\V1alpha1\SendVerificationEmailResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\VerifyEmailRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function VerifyEmail(\Accounts\V1alpha1\VerifyEmailRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/VerifyEmail',
+        $argument,
+        ['\Accounts\V1alpha1\VerifyEmailResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

@@ -598,6 +598,28 @@ function deserialize_accounts_v1alpha1_SendInvitationUserResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.SendInvitationUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_SendVerificationEmailRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.SendVerificationEmailRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.SendVerificationEmailRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_SendVerificationEmailRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.SendVerificationEmailRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_SendVerificationEmailResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.SendVerificationEmailResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.SendVerificationEmailResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_SendVerificationEmailResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.SendVerificationEmailResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_UpdateOrganizationRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.UpdateOrganizationRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.UpdateOrganizationRequest');
@@ -706,6 +728,28 @@ function serialize_accounts_v1alpha1_UpdateUserResponse(arg) {
 
 function deserialize_accounts_v1alpha1_UpdateUserResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.UpdateUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_VerifyEmailRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.VerifyEmailRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.VerifyEmailRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_VerifyEmailRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.VerifyEmailRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_VerifyEmailResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.VerifyEmailResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.VerifyEmailResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_VerifyEmailResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.VerifyEmailResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 
@@ -1072,6 +1116,28 @@ var AccountServiceService = exports.AccountServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_CheckUserRequest,
     responseSerialize: serialize_accounts_v1alpha1_CheckUserResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_CheckUserResponse,
+  },
+  sendVerificationEmail: {
+    path: '/accounts.v1alpha1.AccountService/SendVerificationEmail',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.SendVerificationEmailRequest,
+    responseType: accounts_v1alpha1_accounts_pb.SendVerificationEmailResponse,
+    requestSerialize: serialize_accounts_v1alpha1_SendVerificationEmailRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_SendVerificationEmailRequest,
+    responseSerialize: serialize_accounts_v1alpha1_SendVerificationEmailResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_SendVerificationEmailResponse,
+  },
+  verifyEmail: {
+    path: '/accounts.v1alpha1.AccountService/VerifyEmail',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.VerifyEmailRequest,
+    responseType: accounts_v1alpha1_accounts_pb.VerifyEmailResponse,
+    requestSerialize: serialize_accounts_v1alpha1_VerifyEmailRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_VerifyEmailRequest,
+    responseSerialize: serialize_accounts_v1alpha1_VerifyEmailResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_VerifyEmailResponse,
   },
 };
 
