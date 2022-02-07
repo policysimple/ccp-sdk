@@ -22,7 +22,11 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
      */
     protected $project = null;
     /**
-     * Generated from protobuf field <code>string result = 3 [json_name = "result"];</code>
+     * Generated from protobuf field <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
+     */
+    protected $invitation_code = '';
+    /**
+     * Generated from protobuf field <code>string result = 4 [json_name = "result"];</code>
      */
     protected $result = '';
 
@@ -34,6 +38,7 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Accounts\V1alpha1\Organization $organization
      *     @type \Accounts\V1alpha1\Project $project
+     *     @type string $invitation_code
      *     @type string $result
      * }
      */
@@ -107,7 +112,29 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string result = 3 [json_name = "result"];</code>
+     * Generated from protobuf field <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
+     * @return string
+     */
+    public function getInvitationCode()
+    {
+        return $this->invitation_code;
+    }
+
+    /**
+     * Generated from protobuf field <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInvitationCode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->invitation_code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string result = 4 [json_name = "result"];</code>
      * @return string
      */
     public function getResult()
@@ -116,7 +143,7 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string result = 3 [json_name = "result"];</code>
+     * Generated from protobuf field <code>string result = 4 [json_name = "result"];</code>
      * @param string $var
      * @return $this
      */

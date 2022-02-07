@@ -6596,7 +6596,8 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.toObject = function(includeIn
   var f, obj = {
     organization: (f = msg.getOrganization()) && proto.accounts.v1alpha1.Organization.toObject(includeInstance, f),
     project: (f = msg.getProject()) && proto.accounts.v1alpha1.Project.toObject(includeInstance, f),
-    result: jspb.Message.getFieldWithDefault(msg, 3, "")
+    invitationCode: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    result: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -6645,6 +6646,10 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.deserializeBinaryFromReader =
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
+      msg.setInvitationCode(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
       msg.setResult(value);
       break;
     default:
@@ -6692,10 +6697,17 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.serializeBinaryToWriter = fun
       proto.accounts.v1alpha1.Project.serializeBinaryToWriter
     );
   }
-  f = message.getResult();
+  f = message.getInvitationCode();
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getResult();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -6777,10 +6789,10 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.hasProject = functi
 
 
 /**
- * optional string result = 3;
+ * optional string invitation_code = 3;
  * @return {string}
  */
-proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.getResult = function() {
+proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.getInvitationCode = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -6789,8 +6801,26 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.getResult = functio
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.SendInvitationUserResponse} returns this
  */
-proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.setResult = function(value) {
+proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.setInvitationCode = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string result = 4;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.getResult = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.SendInvitationUserResponse} returns this
+ */
+proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.setResult = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

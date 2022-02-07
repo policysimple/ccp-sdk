@@ -4454,11 +4454,26 @@ class SendInvitationUserResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 3,
+    kInvitationCodeFieldNumber = 3,
+    kResultFieldNumber = 4,
     kOrganizationFieldNumber = 1,
     kProjectFieldNumber = 2,
   };
-  // string result = 3 [json_name = "result"];
+  // string invitation_code = 3 [json_name = "invitationCode"];
+  void clear_invitation_code();
+  const std::string& invitation_code() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_invitation_code(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_invitation_code();
+  PROTOBUF_MUST_USE_RESULT std::string* release_invitation_code();
+  void set_allocated_invitation_code(std::string* invitation_code);
+  private:
+  const std::string& _internal_invitation_code() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_invitation_code(const std::string& value);
+  std::string* _internal_mutable_invitation_code();
+  public:
+
+  // string result = 4 [json_name = "result"];
   void clear_result();
   const std::string& result() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -4515,6 +4530,7 @@ class SendInvitationUserResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invitation_code_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr result_;
   ::accounts::v1alpha1::Organization* organization_;
   ::accounts::v1alpha1::Project* project_;
@@ -17609,7 +17625,53 @@ inline void SendInvitationUserResponse::set_allocated_project(::accounts::v1alph
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.SendInvitationUserResponse.project)
 }
 
-// string result = 3 [json_name = "result"];
+// string invitation_code = 3 [json_name = "invitationCode"];
+inline void SendInvitationUserResponse::clear_invitation_code() {
+  invitation_code_.ClearToEmpty();
+}
+inline const std::string& SendInvitationUserResponse::invitation_code() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.SendInvitationUserResponse.invitation_code)
+  return _internal_invitation_code();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SendInvitationUserResponse::set_invitation_code(ArgT0&& arg0, ArgT... args) {
+ 
+ invitation_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.SendInvitationUserResponse.invitation_code)
+}
+inline std::string* SendInvitationUserResponse::mutable_invitation_code() {
+  std::string* _s = _internal_mutable_invitation_code();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.SendInvitationUserResponse.invitation_code)
+  return _s;
+}
+inline const std::string& SendInvitationUserResponse::_internal_invitation_code() const {
+  return invitation_code_.Get();
+}
+inline void SendInvitationUserResponse::_internal_set_invitation_code(const std::string& value) {
+  
+  invitation_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SendInvitationUserResponse::_internal_mutable_invitation_code() {
+  
+  return invitation_code_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SendInvitationUserResponse::release_invitation_code() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.SendInvitationUserResponse.invitation_code)
+  return invitation_code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SendInvitationUserResponse::set_allocated_invitation_code(std::string* invitation_code) {
+  if (invitation_code != nullptr) {
+    
+  } else {
+    
+  }
+  invitation_code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), invitation_code,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.SendInvitationUserResponse.invitation_code)
+}
+
+// string result = 4 [json_name = "result"];
 inline void SendInvitationUserResponse::clear_result() {
   result_.ClearToEmpty();
 }
