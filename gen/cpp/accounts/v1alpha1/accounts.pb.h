@@ -4454,24 +4454,26 @@ class SendInvitationUserResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kHtmlResultFieldNumber = 1,
-    kResultFieldNumber = 2,
+    kInvitationCodeFieldNumber = 3,
+    kResultFieldNumber = 4,
+    kOrganizationFieldNumber = 1,
+    kProjectFieldNumber = 2,
   };
-  // string html_result = 1 [json_name = "htmlResult"];
-  void clear_html_result();
-  const std::string& html_result() const;
+  // string invitation_code = 3 [json_name = "invitationCode"];
+  void clear_invitation_code();
+  const std::string& invitation_code() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_html_result(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_html_result();
-  PROTOBUF_MUST_USE_RESULT std::string* release_html_result();
-  void set_allocated_html_result(std::string* html_result);
+  void set_invitation_code(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_invitation_code();
+  PROTOBUF_MUST_USE_RESULT std::string* release_invitation_code();
+  void set_allocated_invitation_code(std::string* invitation_code);
   private:
-  const std::string& _internal_html_result() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_html_result(const std::string& value);
-  std::string* _internal_mutable_html_result();
+  const std::string& _internal_invitation_code() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_invitation_code(const std::string& value);
+  std::string* _internal_mutable_invitation_code();
   public:
 
-  // string result = 2 [json_name = "result"];
+  // string result = 4 [json_name = "result"];
   void clear_result();
   const std::string& result() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -4485,6 +4487,42 @@ class SendInvitationUserResponse final :
   std::string* _internal_mutable_result();
   public:
 
+  // .accounts.v1alpha1.Organization organization = 1 [json_name = "organization"];
+  bool has_organization() const;
+  private:
+  bool _internal_has_organization() const;
+  public:
+  void clear_organization();
+  const ::accounts::v1alpha1::Organization& organization() const;
+  PROTOBUF_MUST_USE_RESULT ::accounts::v1alpha1::Organization* release_organization();
+  ::accounts::v1alpha1::Organization* mutable_organization();
+  void set_allocated_organization(::accounts::v1alpha1::Organization* organization);
+  private:
+  const ::accounts::v1alpha1::Organization& _internal_organization() const;
+  ::accounts::v1alpha1::Organization* _internal_mutable_organization();
+  public:
+  void unsafe_arena_set_allocated_organization(
+      ::accounts::v1alpha1::Organization* organization);
+  ::accounts::v1alpha1::Organization* unsafe_arena_release_organization();
+
+  // .accounts.v1alpha1.Project project = 2 [json_name = "project"];
+  bool has_project() const;
+  private:
+  bool _internal_has_project() const;
+  public:
+  void clear_project();
+  const ::accounts::v1alpha1::Project& project() const;
+  PROTOBUF_MUST_USE_RESULT ::accounts::v1alpha1::Project* release_project();
+  ::accounts::v1alpha1::Project* mutable_project();
+  void set_allocated_project(::accounts::v1alpha1::Project* project);
+  private:
+  const ::accounts::v1alpha1::Project& _internal_project() const;
+  ::accounts::v1alpha1::Project* _internal_mutable_project();
+  public:
+  void unsafe_arena_set_allocated_project(
+      ::accounts::v1alpha1::Project* project);
+  ::accounts::v1alpha1::Project* unsafe_arena_release_project();
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.SendInvitationUserResponse)
  private:
   class _Internal;
@@ -4492,8 +4530,10 @@ class SendInvitationUserResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr html_result_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invitation_code_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr result_;
+  ::accounts::v1alpha1::Organization* organization_;
+  ::accounts::v1alpha1::Project* project_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -17405,53 +17445,233 @@ inline void SendInvitationUserRequest::set_allocated_user_id_admin(std::string* 
 
 // SendInvitationUserResponse
 
-// string html_result = 1 [json_name = "htmlResult"];
-inline void SendInvitationUserResponse::clear_html_result() {
-  html_result_.ClearToEmpty();
+// .accounts.v1alpha1.Organization organization = 1 [json_name = "organization"];
+inline bool SendInvitationUserResponse::_internal_has_organization() const {
+  return this != internal_default_instance() && organization_ != nullptr;
 }
-inline const std::string& SendInvitationUserResponse::html_result() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.SendInvitationUserResponse.html_result)
-  return _internal_html_result();
+inline bool SendInvitationUserResponse::has_organization() const {
+  return _internal_has_organization();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void SendInvitationUserResponse::set_html_result(ArgT0&& arg0, ArgT... args) {
- 
- html_result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.SendInvitationUserResponse.html_result)
+inline void SendInvitationUserResponse::clear_organization() {
+  if (GetArenaForAllocation() == nullptr && organization_ != nullptr) {
+    delete organization_;
+  }
+  organization_ = nullptr;
 }
-inline std::string* SendInvitationUserResponse::mutable_html_result() {
-  std::string* _s = _internal_mutable_html_result();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.SendInvitationUserResponse.html_result)
-  return _s;
+inline const ::accounts::v1alpha1::Organization& SendInvitationUserResponse::_internal_organization() const {
+  const ::accounts::v1alpha1::Organization* p = organization_;
+  return p != nullptr ? *p : reinterpret_cast<const ::accounts::v1alpha1::Organization&>(
+      ::accounts::v1alpha1::_Organization_default_instance_);
 }
-inline const std::string& SendInvitationUserResponse::_internal_html_result() const {
-  return html_result_.Get();
+inline const ::accounts::v1alpha1::Organization& SendInvitationUserResponse::organization() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.SendInvitationUserResponse.organization)
+  return _internal_organization();
 }
-inline void SendInvitationUserResponse::_internal_set_html_result(const std::string& value) {
-  
-  html_result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* SendInvitationUserResponse::_internal_mutable_html_result() {
-  
-  return html_result_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* SendInvitationUserResponse::release_html_result() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.SendInvitationUserResponse.html_result)
-  return html_result_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void SendInvitationUserResponse::set_allocated_html_result(std::string* html_result) {
-  if (html_result != nullptr) {
+inline void SendInvitationUserResponse::unsafe_arena_set_allocated_organization(
+    ::accounts::v1alpha1::Organization* organization) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
+  }
+  organization_ = organization;
+  if (organization) {
     
   } else {
     
   }
-  html_result_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), html_result,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.SendInvitationUserResponse.html_result)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:accounts.v1alpha1.SendInvitationUserResponse.organization)
+}
+inline ::accounts::v1alpha1::Organization* SendInvitationUserResponse::release_organization() {
+  
+  ::accounts::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::accounts::v1alpha1::Organization* SendInvitationUserResponse::unsafe_arena_release_organization() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.SendInvitationUserResponse.organization)
+  
+  ::accounts::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
+  return temp;
+}
+inline ::accounts::v1alpha1::Organization* SendInvitationUserResponse::_internal_mutable_organization() {
+  
+  if (organization_ == nullptr) {
+    auto* p = CreateMaybeMessage<::accounts::v1alpha1::Organization>(GetArenaForAllocation());
+    organization_ = p;
+  }
+  return organization_;
+}
+inline ::accounts::v1alpha1::Organization* SendInvitationUserResponse::mutable_organization() {
+  ::accounts::v1alpha1::Organization* _msg = _internal_mutable_organization();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.SendInvitationUserResponse.organization)
+  return _msg;
+}
+inline void SendInvitationUserResponse::set_allocated_organization(::accounts::v1alpha1::Organization* organization) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete organization_;
+  }
+  if (organization) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::accounts::v1alpha1::Organization>::GetOwningArena(organization);
+    if (message_arena != submessage_arena) {
+      organization = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, organization, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  organization_ = organization;
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.SendInvitationUserResponse.organization)
 }
 
-// string result = 2 [json_name = "result"];
+// .accounts.v1alpha1.Project project = 2 [json_name = "project"];
+inline bool SendInvitationUserResponse::_internal_has_project() const {
+  return this != internal_default_instance() && project_ != nullptr;
+}
+inline bool SendInvitationUserResponse::has_project() const {
+  return _internal_has_project();
+}
+inline void SendInvitationUserResponse::clear_project() {
+  if (GetArenaForAllocation() == nullptr && project_ != nullptr) {
+    delete project_;
+  }
+  project_ = nullptr;
+}
+inline const ::accounts::v1alpha1::Project& SendInvitationUserResponse::_internal_project() const {
+  const ::accounts::v1alpha1::Project* p = project_;
+  return p != nullptr ? *p : reinterpret_cast<const ::accounts::v1alpha1::Project&>(
+      ::accounts::v1alpha1::_Project_default_instance_);
+}
+inline const ::accounts::v1alpha1::Project& SendInvitationUserResponse::project() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.SendInvitationUserResponse.project)
+  return _internal_project();
+}
+inline void SendInvitationUserResponse::unsafe_arena_set_allocated_project(
+    ::accounts::v1alpha1::Project* project) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_);
+  }
+  project_ = project;
+  if (project) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:accounts.v1alpha1.SendInvitationUserResponse.project)
+}
+inline ::accounts::v1alpha1::Project* SendInvitationUserResponse::release_project() {
+  
+  ::accounts::v1alpha1::Project* temp = project_;
+  project_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::accounts::v1alpha1::Project* SendInvitationUserResponse::unsafe_arena_release_project() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.SendInvitationUserResponse.project)
+  
+  ::accounts::v1alpha1::Project* temp = project_;
+  project_ = nullptr;
+  return temp;
+}
+inline ::accounts::v1alpha1::Project* SendInvitationUserResponse::_internal_mutable_project() {
+  
+  if (project_ == nullptr) {
+    auto* p = CreateMaybeMessage<::accounts::v1alpha1::Project>(GetArenaForAllocation());
+    project_ = p;
+  }
+  return project_;
+}
+inline ::accounts::v1alpha1::Project* SendInvitationUserResponse::mutable_project() {
+  ::accounts::v1alpha1::Project* _msg = _internal_mutable_project();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.SendInvitationUserResponse.project)
+  return _msg;
+}
+inline void SendInvitationUserResponse::set_allocated_project(::accounts::v1alpha1::Project* project) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete project_;
+  }
+  if (project) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::accounts::v1alpha1::Project>::GetOwningArena(project);
+    if (message_arena != submessage_arena) {
+      project = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, project, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  project_ = project;
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.SendInvitationUserResponse.project)
+}
+
+// string invitation_code = 3 [json_name = "invitationCode"];
+inline void SendInvitationUserResponse::clear_invitation_code() {
+  invitation_code_.ClearToEmpty();
+}
+inline const std::string& SendInvitationUserResponse::invitation_code() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.SendInvitationUserResponse.invitation_code)
+  return _internal_invitation_code();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SendInvitationUserResponse::set_invitation_code(ArgT0&& arg0, ArgT... args) {
+ 
+ invitation_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.SendInvitationUserResponse.invitation_code)
+}
+inline std::string* SendInvitationUserResponse::mutable_invitation_code() {
+  std::string* _s = _internal_mutable_invitation_code();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.SendInvitationUserResponse.invitation_code)
+  return _s;
+}
+inline const std::string& SendInvitationUserResponse::_internal_invitation_code() const {
+  return invitation_code_.Get();
+}
+inline void SendInvitationUserResponse::_internal_set_invitation_code(const std::string& value) {
+  
+  invitation_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SendInvitationUserResponse::_internal_mutable_invitation_code() {
+  
+  return invitation_code_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SendInvitationUserResponse::release_invitation_code() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.SendInvitationUserResponse.invitation_code)
+  return invitation_code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SendInvitationUserResponse::set_allocated_invitation_code(std::string* invitation_code) {
+  if (invitation_code != nullptr) {
+    
+  } else {
+    
+  }
+  invitation_code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), invitation_code,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.SendInvitationUserResponse.invitation_code)
+}
+
+// string result = 4 [json_name = "result"];
 inline void SendInvitationUserResponse::clear_result() {
   result_.ClearToEmpty();
 }
