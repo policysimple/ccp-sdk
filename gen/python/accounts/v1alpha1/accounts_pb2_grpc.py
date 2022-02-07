@@ -174,6 +174,16 @@ class AccountServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CheckUserRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.CheckUserResponse.FromString,
         )
+    self.SendVerificationEmail = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/SendVerificationEmail',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.SendVerificationEmailRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.SendVerificationEmailResponse.FromString,
+        )
+    self.VerifyEmail = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/VerifyEmail',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.VerifyEmailRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.VerifyEmailResponse.FromString,
+        )
 
 
 class AccountServiceServicer(object):
@@ -407,6 +417,20 @@ class AccountServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def SendVerificationEmail(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def VerifyEmail(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AccountServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -569,6 +593,16 @@ def add_AccountServiceServicer_to_server(servicer, server):
           servicer.CheckUser,
           request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.CheckUserRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CheckUserResponse.SerializeToString,
+      ),
+      'SendVerificationEmail': grpc.unary_unary_rpc_method_handler(
+          servicer.SendVerificationEmail,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.SendVerificationEmailRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.SendVerificationEmailResponse.SerializeToString,
+      ),
+      'VerifyEmail': grpc.unary_unary_rpc_method_handler(
+          servicer.VerifyEmail,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.VerifyEmailRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.VerifyEmailResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

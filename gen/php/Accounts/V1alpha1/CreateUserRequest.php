@@ -47,6 +47,32 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
      */
     private $organizations_ids;
+    /**
+     * details
+     *
+     * Generated from protobuf field <code>string phone_number = 9 [json_name = "phoneNumber"];</code>
+     */
+    protected $phone_number = '';
+    /**
+     * Generated from protobuf field <code>uint32 country_id = 10 [json_name = "countryId"];</code>
+     */
+    protected $country_id = 0;
+    /**
+     * Generated from protobuf field <code>uint32 city_id = 11 [json_name = "cityId"];</code>
+     */
+    protected $city_id = 0;
+    /**
+     * Generated from protobuf field <code>string zip_code = 12 [json_name = "zipCode"];</code>
+     */
+    protected $zip_code = '';
+    /**
+     * Generated from protobuf field <code>string address = 13 [json_name = "address"];</code>
+     */
+    protected $address = '';
+    /**
+     * Generated from protobuf field <code>string state = 14 [json_name = "state"];</code>
+     */
+    protected $state = '';
 
     /**
      * Constructor.
@@ -62,6 +88,13 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $roles_ids
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $permissions_ids
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $organizations_ids
+     *     @type string $phone_number
+     *           details
+     *     @type int $country_id
+     *     @type int $city_id
+     *     @type string $zip_code
+     *     @type string $address
+     *     @type string $state
      * }
      */
     public function __construct($data = NULL) {
@@ -241,6 +274,142 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
         $this->organizations_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * details
+     *
+     * Generated from protobuf field <code>string phone_number = 9 [json_name = "phoneNumber"];</code>
+     * @return string
+     */
+    public function getPhoneNumber()
+    {
+        return $this->phone_number;
+    }
+
+    /**
+     * details
+     *
+     * Generated from protobuf field <code>string phone_number = 9 [json_name = "phoneNumber"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPhoneNumber($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->phone_number = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 country_id = 10 [json_name = "countryId"];</code>
+     * @return int
+     */
+    public function getCountryId()
+    {
+        return $this->country_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 country_id = 10 [json_name = "countryId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCountryId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->country_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 city_id = 11 [json_name = "cityId"];</code>
+     * @return int
+     */
+    public function getCityId()
+    {
+        return $this->city_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 city_id = 11 [json_name = "cityId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCityId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->city_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string zip_code = 12 [json_name = "zipCode"];</code>
+     * @return string
+     */
+    public function getZipCode()
+    {
+        return $this->zip_code;
+    }
+
+    /**
+     * Generated from protobuf field <code>string zip_code = 12 [json_name = "zipCode"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setZipCode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->zip_code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string address = 13 [json_name = "address"];</code>
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Generated from protobuf field <code>string address = 13 [json_name = "address"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAddress($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->address = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string state = 14 [json_name = "state"];</code>
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Generated from protobuf field <code>string state = 14 [json_name = "state"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setState($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->state = $var;
 
         return $this;
     }

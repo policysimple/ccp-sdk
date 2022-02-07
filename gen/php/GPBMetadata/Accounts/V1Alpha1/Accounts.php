@@ -16,8 +16,20 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-¸]
- accounts/v1alpha1/accounts.protoaccounts.v1alpha1"à
+ïd
+ accounts/v1alpha1/accounts.protoaccounts.v1alpha1"H
+SendVerificationEmailRequest
+email (	Remail
+name (	Rname"V
+SendVerificationEmailResponse
+html_result (	R
+htmlResult
+error (	Rerror"*
+VerifyEmailRequest
+token (	Rtoken"=
+VerifyEmailResponse
+msg (	Rmsg
+error (	Rerror"à
 CheckUserRequest\'
 organization_id (RorganizationId
 
@@ -50,7 +62,7 @@ permission
 ListUserRequest\'
 organization_id (RorganizationId
 
-project_id (R	projectId"Ž
+project_id (R	projectId"´
 CreateUserRequest
 user_id (	RuserId
 
@@ -60,7 +72,15 @@ first_name (	R	firstName
 	is_active (RisActive
 	roles_ids (RrolesIds\'
 permissions_ids (RpermissionsIds+
-organizations_ids (RorganizationsIds"f
+organizations_ids (RorganizationsIds!
+phone_number	 (	RphoneNumber
+
+country_id
+ (R	countryId
+city_id (RcityId
+zip_code (	RzipCode
+address (	Raddress
+state (	Rstate"f
 UpdateUserRequest
 auth_id (RauthId8
 auth (2$.accounts.v1alpha1.CreateUserRequestRauth",
@@ -76,7 +96,7 @@ first_name (	R	firstName
 	is_active (RisActive"
 is_super_user (RisSuperUser"#
 GetOneUserRequest
-id (Rid"ü
+id (Rid"‘
 GetOneUserResponse
 id (Rid
 user_id (	RuserId
@@ -94,7 +114,13 @@ updated_at (	R	updatedAt,
  (2.accounts.v1alpha1.PermissionRpermissions"
 is_super_user (RisSuperUserE
 organizations (2.accounts.v1alpha1.OrganizationRorganizations6
-projects (2.accounts.v1alpha1.ProjectRprojects"E
+projects (2.accounts.v1alpha1.ProjectRprojects!
+phone_number (	RphoneNumber
+country (	Rcountry
+city (	Rcity
+code (	Rcode
+address (	Raddress
+state (	Rstate"E
 ListUserResponse1
 users (2.accounts.v1alpha1.UserListRusers"I
 ListUserPaginationRequest
@@ -317,7 +343,7 @@ first_name (	R	firstName
 	users_dex (2.accounts.v1alpha1.UsersDexRusersDex"i
 GetOneUserDexRequest
 user_id (	RuserId8
-user (2$.accounts.v1alpha1.CreateUserRequestRuser"‘
+user (2$.accounts.v1alpha1.CreateUserRequestRuser"¦
 GetOneUserDexResponse
 id (Rid
 user_id (	RuserId
@@ -336,10 +362,16 @@ updated_at (	R	updatedAt,
 is_super_user (RisSuperUserE
 organizations (2.accounts.v1alpha1.OrganizationRorganizations
 msg (	Rmsg6
-projects (2.accounts.v1alpha1.ProjectRprojects*d
+projects (2.accounts.v1alpha1.ProjectRprojects!
+phone_number (	RphoneNumber
+country (	Rcountry
+city (	Rcity
+code (	Rcode
+address (	Raddress
+state (	Rstate*d
 InvitationResponse,
 (INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED  
-INVITATION_RESPONSE_REJECTED2Æ
+INVITATION_RESPONSE_REJECTED2 
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
@@ -380,7 +412,9 @@ DeleteRole$.accounts.v1alpha1.DeleteRoleRequest%.accounts.v1alpha1.DeleteRoleR
 ListProject%.accounts.v1alpha1.ListProjectRequest&.accounts.v1alpha1.ListProjectResponsee
 GetListUserDex(.accounts.v1alpha1.GetListUserDexRequest).accounts.v1alpha1.GetListUserDexResponseb
 GetOneUserDex\'.accounts.v1alpha1.GetOneUserDexRequest(.accounts.v1alpha1.GetOneUserDexResponseV
-	CheckUser#.accounts.v1alpha1.CheckUserRequest$.accounts.v1alpha1.CheckUserResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
+	CheckUser#.accounts.v1alpha1.CheckUserRequest$.accounts.v1alpha1.CheckUserResponsez
+SendVerificationEmail/.accounts.v1alpha1.SendVerificationEmailRequest0.accounts.v1alpha1.SendVerificationEmailResponse\\
+VerifyEmail%.accounts.v1alpha1.VerifyEmailRequest&.accounts.v1alpha1.VerifyEmailResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;
