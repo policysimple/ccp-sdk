@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-ïd
+Êe
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"H
 SendVerificationEmailRequest
 email (	Remail
@@ -134,11 +134,11 @@ updated_at (	R	updatedAt,
 email (	Remail
 
 project_id (R	projectId"
-user_id_admin (	RuserIdAdmin"U
-SendInvitationUserResponse
-html_result (	R
-htmlResult
-result (	Rresult"Y
+user_id_admin (	RuserIdAdmin"¯
+SendInvitationUserResponseC
+organization (2.accounts.v1alpha1.OrganizationRorganization4
+project (2.accounts.v1alpha1.ProjectRproject
+result (	Rresult"Y
 GetInvitationUserRequest\'
 invitation_code (	RinvitationCode
 email (	Remail"®
