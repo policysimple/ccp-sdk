@@ -70,8 +70,8 @@ proto.pipelines.environment.v1alpha1.Environment.prototype.toObject = function(o
 proto.pipelines.environment.v1alpha1.Environment.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    projectId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    projectId: jspb.Message.getFieldWithDefault(msg, 3, 0),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     active: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     statusType: jspb.Message.getFieldWithDefault(msg, 6, "")
@@ -116,11 +116,11 @@ proto.pipelines.environment.v1alpha1.Environment.deserializeBinaryFromReader = f
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setOrganizationId(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setProjectId(value);
       break;
     case 4:
@@ -172,15 +172,15 @@ proto.pipelines.environment.v1alpha1.Environment.serializeBinaryToWriter = funct
     );
   }
   f = message.getOrganizationId();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeUint32(
       2,
       f
     );
   }
   f = message.getProjectId();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeUint32(
       3,
       f
     );
@@ -228,38 +228,38 @@ proto.pipelines.environment.v1alpha1.Environment.prototype.setId = function(valu
 
 
 /**
- * optional string organization_id = 2;
- * @return {string}
+ * optional uint32 organization_id = 2;
+ * @return {number}
  */
 proto.pipelines.environment.v1alpha1.Environment.prototype.getOrganizationId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.pipelines.environment.v1alpha1.Environment} returns this
  */
 proto.pipelines.environment.v1alpha1.Environment.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional string project_id = 3;
- * @return {string}
+ * optional uint32 project_id = 3;
+ * @return {number}
  */
 proto.pipelines.environment.v1alpha1.Environment.prototype.getProjectId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.pipelines.environment.v1alpha1.Environment} returns this
  */
 proto.pipelines.environment.v1alpha1.Environment.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
