@@ -20,28 +20,16 @@ public interface EnvironmentOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+   * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
    * @return The organizationId.
    */
-  java.lang.String getOrganizationId();
-  /**
-   * <code>string organization_id = 2 [json_name = "organizationId"];</code>
-   * @return The bytes for organizationId.
-   */
-  com.google.protobuf.ByteString
-      getOrganizationIdBytes();
+  int getOrganizationId();
 
   /**
-   * <code>string project_id = 3 [json_name = "projectId"];</code>
+   * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
    * @return The projectId.
    */
-  java.lang.String getProjectId();
-  /**
-   * <code>string project_id = 3 [json_name = "projectId"];</code>
-   * @return The bytes for projectId.
-   */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  int getProjectId();
 
   /**
    * <code>string name = 4 [json_name = "name"];</code>

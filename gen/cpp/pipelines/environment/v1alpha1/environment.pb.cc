@@ -22,10 +22,10 @@ namespace v1alpha1 {
 constexpr Environment::Environment(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , organization_id_(0u)
+  , project_id_(0u)
   , active_(false){}
 struct EnvironmentDefaultTypeInternal {
   constexpr EnvironmentDefaultTypeInternal()
@@ -68,8 +68,8 @@ const char descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenviro
   "\n0pipelines/environment/v1alpha1/environ"
   "ment.proto\022\036pipelines.environment.v1alph"
   "a1\"\262\001\n\013Environment\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017or"
-  "ganization_id\030\002 \001(\tR\016organizationId\022\035\n\np"
-  "roject_id\030\003 \001(\tR\tprojectId\022\022\n\004name\030\004 \001(\t"
+  "ganization_id\030\002 \001(\rR\016organizationId\022\035\n\np"
+  "roject_id\030\003 \001(\rR\tprojectId\022\022\n\004name\030\004 \001(\t"
   "R\004name\022\026\n\006active\030\005 \001(\010R\006active\022\037\n\013status"
   "_type\030\006 \001(\tR\nstatusTypeB\307\001\n(io.cuemby.pi"
   "pelines.environment.v1alpha1B\020Environmen"
@@ -118,16 +118,6 @@ Environment::Environment(const Environment& from)
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArenaForAllocation());
   }
-  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_organization_id().empty()) {
-    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
-      GetArenaForAllocation());
-  }
-  project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_project_id().empty()) {
-    project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_id(), 
-      GetArenaForAllocation());
-  }
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
@@ -138,17 +128,20 @@ Environment::Environment(const Environment& from)
     status_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status_type(), 
       GetArenaForAllocation());
   }
-  active_ = from.active_;
+  ::memcpy(&organization_id_, &from.organization_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&active_) -
+    reinterpret_cast<char*>(&organization_id_)) + sizeof(active_));
   // @@protoc_insertion_point(copy_constructor:pipelines.environment.v1alpha1.Environment)
 }
 
 inline void Environment::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 status_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-active_ = false;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&organization_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&active_) -
+    reinterpret_cast<char*>(&organization_id_)) + sizeof(active_));
 }
 
 Environment::~Environment() {
@@ -161,8 +154,6 @@ Environment::~Environment() {
 inline void Environment::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   status_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -184,11 +175,11 @@ void Environment::Clear() {
   (void) cached_has_bits;
 
   id_.ClearToEmpty();
-  organization_id_.ClearToEmpty();
-  project_id_.ClearToEmpty();
   name_.ClearToEmpty();
   status_type_.ClearToEmpty();
-  active_ = false;
+  ::memset(&organization_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&active_) -
+      reinterpret_cast<char*>(&organization_id_)) + sizeof(active_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -207,21 +198,17 @@ const char* Environment::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string organization_id = 2 [json_name = "organizationId"];
+      // uint32 organization_id = 2 [json_name = "organizationId"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_organization_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.environment.v1alpha1.Environment.organization_id"));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string project_id = 3 [json_name = "projectId"];
+      // uint32 project_id = 3 [json_name = "projectId"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_project_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.environment.v1alpha1.Environment.project_id"));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -289,24 +276,16 @@ failure:
         1, this->_internal_id(), target);
   }
 
-  // string organization_id = 2 [json_name = "organizationId"];
-  if (!this->_internal_organization_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pipelines.environment.v1alpha1.Environment.organization_id");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_organization_id(), target);
+  // uint32 organization_id = 2 [json_name = "organizationId"];
+  if (this->_internal_organization_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_organization_id(), target);
   }
 
-  // string project_id = 3 [json_name = "projectId"];
-  if (!this->_internal_project_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_project_id().data(), static_cast<int>(this->_internal_project_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pipelines.environment.v1alpha1.Environment.project_id");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_project_id(), target);
+  // uint32 project_id = 3 [json_name = "projectId"];
+  if (this->_internal_project_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_project_id(), target);
   }
 
   // string name = 4 [json_name = "name"];
@@ -358,20 +337,6 @@ size_t Environment::ByteSizeLong() const {
         this->_internal_id());
   }
 
-  // string organization_id = 2 [json_name = "organizationId"];
-  if (!this->_internal_organization_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_organization_id());
-  }
-
-  // string project_id = 3 [json_name = "projectId"];
-  if (!this->_internal_project_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_project_id());
-  }
-
   // string name = 4 [json_name = "name"];
   if (!this->_internal_name().empty()) {
     total_size += 1 +
@@ -384,6 +349,20 @@ size_t Environment::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_status_type());
+  }
+
+  // uint32 organization_id = 2 [json_name = "organizationId"];
+  if (this->_internal_organization_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_organization_id());
+  }
+
+  // uint32 project_id = 3 [json_name = "projectId"];
+  if (this->_internal_project_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_project_id());
   }
 
   // bool active = 5 [json_name = "active"];
@@ -422,17 +401,17 @@ void Environment::MergeFrom(const Environment& from) {
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
-  if (!from._internal_organization_id().empty()) {
-    _internal_set_organization_id(from._internal_organization_id());
-  }
-  if (!from._internal_project_id().empty()) {
-    _internal_set_project_id(from._internal_project_id());
-  }
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
   if (!from._internal_status_type().empty()) {
     _internal_set_status_type(from._internal_status_type());
+  }
+  if (from._internal_organization_id() != 0) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
+  if (from._internal_project_id() != 0) {
+    _internal_set_project_id(from._internal_project_id());
   }
   if (from._internal_active() != 0) {
     _internal_set_active(from._internal_active());
@@ -461,16 +440,6 @@ void Environment::InternalSwap(Environment* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &organization_id_, GetArenaForAllocation(),
-      &other->organization_id_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &project_id_, GetArenaForAllocation(),
-      &other->project_id_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &name_, GetArenaForAllocation(),
       &other->name_, other->GetArenaForAllocation()
   );
@@ -479,7 +448,12 @@ void Environment::InternalSwap(Environment* other) {
       &status_type_, GetArenaForAllocation(),
       &other->status_type_, other->GetArenaForAllocation()
   );
-  swap(active_, other->active_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Environment, active_)
+      + sizeof(Environment::active_)
+      - PROTOBUF_FIELD_OFFSET(Environment, organization_id_)>(
+          reinterpret_cast<char*>(&organization_id_),
+          reinterpret_cast<char*>(&other->organization_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Environment::GetMetadata() const {
