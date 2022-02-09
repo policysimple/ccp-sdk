@@ -50,7 +50,7 @@ struct CommandDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CommandDefaultTypeInternal _Command_default_instance_;
 constexpr Env::Env(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , encrypted_(false){}
 struct EnvDefaultTypeInternal {
@@ -251,7 +251,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fappli
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Env, name_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Env, value_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Env, key_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Env, encrypted_),
   ~0u,  // no _has_bits_
@@ -386,62 +386,62 @@ const char descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eprot
   "\022\022\n\004fork\030\004 \001(\010R\004fork\022\033\n\tclone_url\030\005 \001(\tR"
   "\010cloneUrl\022\030\n\007private\030\006 \001(\010R\007private\"1\n\007C"
   "ommand\022\024\n\005build\030\001 \001(\tR\005build\022\020\n\003run\030\002 \001("
-  "\tR\003run\"I\n\003Env\022\022\n\004name\030\001 \001(\tR\004name\022\020\n\003key"
-  "\030\002 \001(\tR\003key\022\034\n\tencrypted\030\003 \001(\010R\tencrypte"
-  "d\"\215\001\n\rConfiguration\022-\n\004envs\030\001 \003(\0132\031.appl"
-  "ication.v1alpha1.EnvR\004envs\0229\n\010commands\030\002"
-  " \003(\0132\035.application.v1alpha1.CommandR\010com"
-  "mands\022\022\n\004port\030\003 \001(\005R\004port\"\377\001\n\013Applicatio"
-  "n\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n"
-  "\013integration\030\003 \001(\tR\013integration\022@\n\nrepos"
-  "itory\030\004 \001(\0132 .application.v1alpha1.Repos"
-  "itoryR\nrepository\022I\n\rconfiguration\030\005 \001(\013"
-  "2#.application.v1alpha1.ConfigurationR\rc"
-  "onfiguration\022\035\n\nproject_id\030\006 \001(\rR\tprojec"
-  "tId\"\374\001\n\030CreateApplicationRequest\022\022\n\004name"
-  "\030\001 \001(\tR\004name\022 \n\013integration\030\002 \001(\tR\013integ"
-  "ration\022@\n\nrepository\030\003 \001(\0132 .application"
-  ".v1alpha1.RepositoryR\nrepository\022I\n\rconf"
-  "iguration\030\004 \001(\0132#.application.v1alpha1.C"
-  "onfigurationR\rconfiguration\022\035\n\nproject_i"
-  "d\030\005 \001(\rR\tprojectId\"C\n\031CreateApplicationR"
-  "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\t"
-  "R\005error\"7\n\026ListApplicationRequest\022\035\n\npro"
-  "ject_id\030\001 \001(\rR\tprojectId\"`\n\027ListApplicat"
-  "ionResponse\022E\n\014applications\030\001 \003(\0132!.appl"
-  "ication.v1alpha1.ApplicationR\014applicatio"
-  "ns\"\'\n\025GetApplicationRequest\022\016\n\002id\030\001 \001(\tR"
-  "\002id\"]\n\026GetApplicationResponse\022C\n\013applica"
-  "tion\030\001 \001(\0132!.application.v1alpha1.Applic"
-  "ationR\013application\"*\n\030DeleteApplicationR"
-  "equest\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteApplicat"
-  "ionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002"
-  " \001(\tR\005error\"|\n\030UpdateApplicationRequest\022"
-  "\016\n\002id\030\001 \001(\tR\002id\022P\n\013application\030\002 \001(\0132..a"
-  "pplication.v1alpha1.CreateApplicationReq"
-  "uestR\013application\"C\n\031UpdateApplicationRe"
-  "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR"
-  "\005error2\323\004\n\022ApplicationService\022t\n\021CreateA"
-  "pplication\022..application.v1alpha1.Create"
-  "ApplicationRequest\032/.application.v1alpha"
-  "1.CreateApplicationResponse\022n\n\017ListAppli"
-  "cation\022,.application.v1alpha1.ListApplic"
-  "ationRequest\032-.application.v1alpha1.List"
-  "ApplicationResponse\022k\n\016GetApplication\022+."
-  "application.v1alpha1.GetApplicationReque"
-  "st\032,.application.v1alpha1.GetApplication"
-  "Response\022t\n\021DeleteApplication\022..applicat"
-  "ion.v1alpha1.DeleteApplicationRequest\032/."
-  "application.v1alpha1.DeleteApplicationRe"
-  "sponse\022t\n\021UpdateApplication\022..applicatio"
-  "n.v1alpha1.UpdateApplicationRequest\032/.ap"
-  "plication.v1alpha1.UpdateApplicationResp"
-  "onseB7Z5github.com/cuemby/ccp-sdk/gen/go"
-  "/application/v1alpha1b\006proto3"
+  "\tR\003run\"K\n\003Env\022\024\n\005value\030\001 \001(\tR\005value\022\020\n\003k"
+  "ey\030\002 \001(\tR\003key\022\034\n\tencrypted\030\003 \001(\010R\tencryp"
+  "ted\"\215\001\n\rConfiguration\022-\n\004envs\030\001 \003(\0132\031.ap"
+  "plication.v1alpha1.EnvR\004envs\0229\n\010commands"
+  "\030\002 \003(\0132\035.application.v1alpha1.CommandR\010c"
+  "ommands\022\022\n\004port\030\003 \001(\005R\004port\"\377\001\n\013Applicat"
+  "ion\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022"
+  " \n\013integration\030\003 \001(\tR\013integration\022@\n\nrep"
+  "ository\030\004 \001(\0132 .application.v1alpha1.Rep"
+  "ositoryR\nrepository\022I\n\rconfiguration\030\005 \001"
+  "(\0132#.application.v1alpha1.ConfigurationR"
+  "\rconfiguration\022\035\n\nproject_id\030\006 \001(\rR\tproj"
+  "ectId\"\374\001\n\030CreateApplicationRequest\022\022\n\004na"
+  "me\030\001 \001(\tR\004name\022 \n\013integration\030\002 \001(\tR\013int"
+  "egration\022@\n\nrepository\030\003 \001(\0132 .applicati"
+  "on.v1alpha1.RepositoryR\nrepository\022I\n\rco"
+  "nfiguration\030\004 \001(\0132#.application.v1alpha1"
+  ".ConfigurationR\rconfiguration\022\035\n\nproject"
+  "_id\030\005 \001(\rR\tprojectId\"C\n\031CreateApplicatio"
+  "nResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001"
+  "(\tR\005error\"7\n\026ListApplicationRequest\022\035\n\np"
+  "roject_id\030\001 \001(\rR\tprojectId\"`\n\027ListApplic"
+  "ationResponse\022E\n\014applications\030\001 \003(\0132!.ap"
+  "plication.v1alpha1.ApplicationR\014applicat"
+  "ions\"\'\n\025GetApplicationRequest\022\016\n\002id\030\001 \001("
+  "\tR\002id\"]\n\026GetApplicationResponse\022C\n\013appli"
+  "cation\030\001 \001(\0132!.application.v1alpha1.Appl"
+  "icationR\013application\"*\n\030DeleteApplicatio"
+  "nRequest\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteApplic"
+  "ationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error"
+  "\030\002 \001(\tR\005error\"|\n\030UpdateApplicationReques"
+  "t\022\016\n\002id\030\001 \001(\tR\002id\022P\n\013application\030\002 \001(\0132."
+  ".application.v1alpha1.CreateApplicationR"
+  "equestR\013application\"C\n\031UpdateApplication"
+  "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001("
+  "\tR\005error2\323\004\n\022ApplicationService\022t\n\021Creat"
+  "eApplication\022..application.v1alpha1.Crea"
+  "teApplicationRequest\032/.application.v1alp"
+  "ha1.CreateApplicationResponse\022n\n\017ListApp"
+  "lication\022,.application.v1alpha1.ListAppl"
+  "icationRequest\032-.application.v1alpha1.Li"
+  "stApplicationResponse\022k\n\016GetApplication\022"
+  "+.application.v1alpha1.GetApplicationReq"
+  "uest\032,.application.v1alpha1.GetApplicati"
+  "onResponse\022t\n\021DeleteApplication\022..applic"
+  "ation.v1alpha1.DeleteApplicationRequest\032"
+  "/.application.v1alpha1.DeleteApplication"
+  "Response\022t\n\021UpdateApplication\022..applicat"
+  "ion.v1alpha1.UpdateApplicationRequest\032/."
+  "application.v1alpha1.UpdateApplicationRe"
+  "sponseB7Z5github.com/cuemby/ccp-sdk/gen/"
+  "go/application/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_application_2fv1alpha1_2fapplication_2eproto = {
-  false, false, 2349, descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto, "application/v1alpha1/application.proto", 
+  false, false, 2351, descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto, "application/v1alpha1/application.proto", 
   &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once, nullptr, 0, 15,
   schemas, file_default_instances, TableStruct_application_2fv1alpha1_2fapplication_2eproto::offsets,
   file_level_metadata_application_2fv1alpha1_2fapplication_2eproto, file_level_enum_descriptors_application_2fv1alpha1_2fapplication_2eproto, file_level_service_descriptors_application_2fv1alpha1_2fapplication_2eproto,
@@ -1099,9 +1099,9 @@ Env::Env(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 Env::Env(const Env& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_value().empty()) {
+    value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_value(), 
       GetArenaForAllocation());
   }
   key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1114,7 +1114,7 @@ Env::Env(const Env& from)
 }
 
 inline void Env::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 encrypted_ = false;
 }
@@ -1128,7 +1128,7 @@ Env::~Env() {
 
 inline void Env::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1148,7 +1148,7 @@ void Env::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
+  value_.ClearToEmpty();
   key_.ClearToEmpty();
   encrypted_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1160,12 +1160,12 @@ const char* Env::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::intern
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string name = 1 [json_name = "name"];
+      // string value = 1 [json_name = "value"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_name();
+          auto str = _internal_mutable_value();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Env.name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Env.value"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1214,14 +1214,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 1 [json_name = "name"];
-  if (!this->_internal_name().empty()) {
+  // string value = 1 [json_name = "value"];
+  if (!this->_internal_value().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "application.v1alpha1.Env.name");
+      "application.v1alpha1.Env.value");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_name(), target);
+        1, this->_internal_value(), target);
   }
 
   // string key = 2 [json_name = "key"];
@@ -1256,11 +1256,11 @@ size_t Env::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string name = 1 [json_name = "name"];
-  if (!this->_internal_name().empty()) {
+  // string value = 1 [json_name = "value"];
+  if (!this->_internal_value().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_name());
+        this->_internal_value());
   }
 
   // string key = 2 [json_name = "key"];
@@ -1303,8 +1303,8 @@ void Env::MergeFrom(const Env& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
+  if (!from._internal_value().empty()) {
+    _internal_set_value(from._internal_value());
   }
   if (!from._internal_key().empty()) {
     _internal_set_key(from._internal_key());
@@ -1331,8 +1331,8 @@ void Env::InternalSwap(Env* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, GetArenaForAllocation(),
-      &other->name_, other->GetArenaForAllocation()
+      &value_, GetArenaForAllocation(),
+      &other->value_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
