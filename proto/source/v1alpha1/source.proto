@@ -131,17 +131,7 @@ message UpdateRepositoryResponse {
     END
 
 */
-/*
-    Integration
 
-    type Integrations struct {
-	ID           primitive.ObjectID `bson:"_id"`
-	Name         string             `bson:"text"`
-	Provider     *Providers         `bson:"provider"`
-	ProviderData map[string]string  `bson:"provider_data,omitempty"`
-    }
-
-*/
 
 message Integration {
     string id = 1;
