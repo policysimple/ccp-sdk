@@ -3525,6 +3525,7 @@ class CreateIntegrationResponse final :
   enum : int {
     kMsgFieldNumber = 1,
     kErrorFieldNumber = 2,
+    kIntegrationIdFieldNumber = 3,
   };
   // string msg = 1 [json_name = "msg"];
   void clear_msg();
@@ -3554,6 +3555,20 @@ class CreateIntegrationResponse final :
   std::string* _internal_mutable_error();
   public:
 
+  // string integration_id = 3 [json_name = "integrationId"];
+  void clear_integration_id();
+  const std::string& integration_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_integration_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_integration_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_integration_id();
+  void set_allocated_integration_id(std::string* integration_id);
+  private:
+  const std::string& _internal_integration_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_integration_id(const std::string& value);
+  std::string* _internal_mutable_integration_id();
+  public:
+
   // @@protoc_insertion_point(class_scope:source.v1alpha1.CreateIntegrationResponse)
  private:
   class _Internal;
@@ -3563,6 +3578,7 @@ class CreateIntegrationResponse final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
 };
@@ -9577,6 +9593,52 @@ inline void CreateIntegrationResponse::set_allocated_error(std::string* error) {
   error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateIntegrationResponse.error)
+}
+
+// string integration_id = 3 [json_name = "integrationId"];
+inline void CreateIntegrationResponse::clear_integration_id() {
+  integration_id_.ClearToEmpty();
+}
+inline const std::string& CreateIntegrationResponse::integration_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateIntegrationResponse.integration_id)
+  return _internal_integration_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateIntegrationResponse::set_integration_id(ArgT0&& arg0, ArgT... args) {
+ 
+ integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.CreateIntegrationResponse.integration_id)
+}
+inline std::string* CreateIntegrationResponse::mutable_integration_id() {
+  std::string* _s = _internal_mutable_integration_id();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.CreateIntegrationResponse.integration_id)
+  return _s;
+}
+inline const std::string& CreateIntegrationResponse::_internal_integration_id() const {
+  return integration_id_.Get();
+}
+inline void CreateIntegrationResponse::_internal_set_integration_id(const std::string& value) {
+  
+  integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateIntegrationResponse::_internal_mutable_integration_id() {
+  
+  return integration_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateIntegrationResponse::release_integration_id() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.CreateIntegrationResponse.integration_id)
+  return integration_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateIntegrationResponse::set_allocated_integration_id(std::string* integration_id) {
+  if (integration_id != nullptr) {
+    
+  } else {
+    
+  }
+  integration_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateIntegrationResponse.integration_id)
 }
 
 // -------------------------------------------------------------------

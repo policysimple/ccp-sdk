@@ -175,6 +175,7 @@ message CreateIntegrationRequest {
 message CreateIntegrationResponse {
     string msg = 1;
     string error = 2;
+    string integration_id = 3;
 }
 
 message ListIntegrationsRequest {
