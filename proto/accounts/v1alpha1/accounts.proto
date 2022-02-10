@@ -259,8 +259,10 @@ message SendInvitationUserRequest {
 }
 
 message SendInvitationUserResponse {
-    string html_result=1;
-    string result=2;
+    Organization organization=1;
+    Project project=2;
+    string invitation_code=3;
+    string result=4;
 }
 
 message GetInvitationUserRequest {
