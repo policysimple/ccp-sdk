@@ -64,6 +64,28 @@ func CreateEnvironment(organizationId uint32, projectId uint32, name string, use
 	return response, nil
 }
 
+func ListEnvironment(projectId uint32) (response *environmentpkgv1.ListEnvironmentResponse, err error) {
+	d, err := time.ParseDuration(environmentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ListEnvironment(ctx, &environmentpkgv1.ListEnvironmentRequest{
+		ProjectId: projectId,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error list environment", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error list environment", err),
+		)
+	}
+	return response, nil
+}
+
 func DeleteEnvironment(environmentId string, userId string) (response *environmentpkgv1.DeleteEnvironmentResponse, err error) {
 	d, err := time.ParseDuration(environmentServiceTimeout)
 	if err != nil {
