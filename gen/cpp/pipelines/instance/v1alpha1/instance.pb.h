@@ -223,11 +223,26 @@ class TypeGitProvider final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSshUrlFieldNumber = 1,
-    kBranchFieldNumber = 2,
-    kSshPrivateKeyFieldNumber = 3,
+    kNameProviderFieldNumber = 1,
+    kSshUrlFieldNumber = 2,
+    kBranchFieldNumber = 3,
+    kSshPrivateKeyFieldNumber = 4,
   };
-  // string ssh_url = 1 [json_name = "sshUrl"];
+  // string name_provider = 1 [json_name = "nameProvider"];
+  void clear_name_provider();
+  const std::string& name_provider() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name_provider(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name_provider();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name_provider();
+  void set_allocated_name_provider(std::string* name_provider);
+  private:
+  const std::string& _internal_name_provider() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name_provider(const std::string& value);
+  std::string* _internal_mutable_name_provider();
+  public:
+
+  // string ssh_url = 2 [json_name = "sshUrl"];
   void clear_ssh_url();
   const std::string& ssh_url() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -241,7 +256,7 @@ class TypeGitProvider final :
   std::string* _internal_mutable_ssh_url();
   public:
 
-  // string branch = 2 [json_name = "branch"];
+  // string branch = 3 [json_name = "branch"];
   void clear_branch();
   const std::string& branch() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -255,7 +270,7 @@ class TypeGitProvider final :
   std::string* _internal_mutable_branch();
   public:
 
-  // string ssh_private_key = 3 [json_name = "sshPrivateKey"];
+  // string ssh_private_key = 4 [json_name = "sshPrivateKey"];
   void clear_ssh_private_key();
   const std::string& ssh_private_key() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -276,6 +291,7 @@ class TypeGitProvider final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_provider_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ssh_url_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr branch_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ssh_private_key_;
@@ -535,7 +551,53 @@ class Instance final :
 #endif  // __GNUC__
 // TypeGitProvider
 
-// string ssh_url = 1 [json_name = "sshUrl"];
+// string name_provider = 1 [json_name = "nameProvider"];
+inline void TypeGitProvider::clear_name_provider() {
+  name_provider_.ClearToEmpty();
+}
+inline const std::string& TypeGitProvider::name_provider() const {
+  // @@protoc_insertion_point(field_get:pipelines.instance.v1alpha1.TypeGitProvider.name_provider)
+  return _internal_name_provider();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TypeGitProvider::set_name_provider(ArgT0&& arg0, ArgT... args) {
+ 
+ name_provider_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.instance.v1alpha1.TypeGitProvider.name_provider)
+}
+inline std::string* TypeGitProvider::mutable_name_provider() {
+  std::string* _s = _internal_mutable_name_provider();
+  // @@protoc_insertion_point(field_mutable:pipelines.instance.v1alpha1.TypeGitProvider.name_provider)
+  return _s;
+}
+inline const std::string& TypeGitProvider::_internal_name_provider() const {
+  return name_provider_.Get();
+}
+inline void TypeGitProvider::_internal_set_name_provider(const std::string& value) {
+  
+  name_provider_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TypeGitProvider::_internal_mutable_name_provider() {
+  
+  return name_provider_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TypeGitProvider::release_name_provider() {
+  // @@protoc_insertion_point(field_release:pipelines.instance.v1alpha1.TypeGitProvider.name_provider)
+  return name_provider_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TypeGitProvider::set_allocated_name_provider(std::string* name_provider) {
+  if (name_provider != nullptr) {
+    
+  } else {
+    
+  }
+  name_provider_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name_provider,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.instance.v1alpha1.TypeGitProvider.name_provider)
+}
+
+// string ssh_url = 2 [json_name = "sshUrl"];
 inline void TypeGitProvider::clear_ssh_url() {
   ssh_url_.ClearToEmpty();
 }
@@ -581,7 +643,7 @@ inline void TypeGitProvider::set_allocated_ssh_url(std::string* ssh_url) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.instance.v1alpha1.TypeGitProvider.ssh_url)
 }
 
-// string branch = 2 [json_name = "branch"];
+// string branch = 3 [json_name = "branch"];
 inline void TypeGitProvider::clear_branch() {
   branch_.ClearToEmpty();
 }
@@ -627,7 +689,7 @@ inline void TypeGitProvider::set_allocated_branch(std::string* branch) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.instance.v1alpha1.TypeGitProvider.branch)
 }
 
-// string ssh_private_key = 3 [json_name = "sshPrivateKey"];
+// string ssh_private_key = 4 [json_name = "sshPrivateKey"];
 inline void TypeGitProvider::clear_ssh_private_key() {
   ssh_private_key_.ClearToEmpty();
 }

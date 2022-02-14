@@ -16,15 +16,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class TypeGitProvider extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string ssh_url = 1 [json_name = "sshUrl"];</code>
+     * Generated from protobuf field <code>string name_provider = 1 [json_name = "nameProvider"];</code>
+     */
+    protected $name_provider = '';
+    /**
+     * Generated from protobuf field <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
      */
     protected $ssh_url = '';
     /**
-     * Generated from protobuf field <code>string branch = 2 [json_name = "branch"];</code>
+     * Generated from protobuf field <code>string branch = 3 [json_name = "branch"];</code>
      */
     protected $branch = '';
     /**
-     * Generated from protobuf field <code>string ssh_private_key = 3 [json_name = "sshPrivateKey"];</code>
+     * Generated from protobuf field <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
      */
     protected $ssh_private_key = '';
 
@@ -34,6 +38,7 @@ class TypeGitProvider extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name_provider
      *     @type string $ssh_url
      *     @type string $branch
      *     @type string $ssh_private_key
@@ -45,7 +50,29 @@ class TypeGitProvider extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string ssh_url = 1 [json_name = "sshUrl"];</code>
+     * Generated from protobuf field <code>string name_provider = 1 [json_name = "nameProvider"];</code>
+     * @return string
+     */
+    public function getNameProvider()
+    {
+        return $this->name_provider;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name_provider = 1 [json_name = "nameProvider"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNameProvider($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name_provider = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
      * @return string
      */
     public function getSshUrl()
@@ -54,7 +81,7 @@ class TypeGitProvider extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string ssh_url = 1 [json_name = "sshUrl"];</code>
+     * Generated from protobuf field <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
      * @param string $var
      * @return $this
      */
@@ -67,7 +94,7 @@ class TypeGitProvider extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string branch = 2 [json_name = "branch"];</code>
+     * Generated from protobuf field <code>string branch = 3 [json_name = "branch"];</code>
      * @return string
      */
     public function getBranch()
@@ -76,7 +103,7 @@ class TypeGitProvider extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string branch = 2 [json_name = "branch"];</code>
+     * Generated from protobuf field <code>string branch = 3 [json_name = "branch"];</code>
      * @param string $var
      * @return $this
      */
@@ -89,7 +116,7 @@ class TypeGitProvider extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string ssh_private_key = 3 [json_name = "sshPrivateKey"];</code>
+     * Generated from protobuf field <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
      * @return string
      */
     public function getSshPrivateKey()
@@ -98,7 +125,7 @@ class TypeGitProvider extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string ssh_private_key = 3 [json_name = "sshPrivateKey"];</code>
+     * Generated from protobuf field <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
      * @param string $var
      * @return $this
      */

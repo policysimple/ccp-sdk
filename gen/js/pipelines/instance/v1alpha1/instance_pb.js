@@ -92,9 +92,10 @@ proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.toObject = function(
  */
 proto.pipelines.instance.v1alpha1.TypeGitProvider.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sshUrl: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    branch: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    sshPrivateKey: jspb.Message.getFieldWithDefault(msg, 3, "")
+    nameProvider: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    sshUrl: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    branch: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    sshPrivateKey: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -133,13 +134,17 @@ proto.pipelines.instance.v1alpha1.TypeGitProvider.deserializeBinaryFromReader = 
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSshUrl(value);
+      msg.setNameProvider(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBranch(value);
+      msg.setSshUrl(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBranch(value);
+      break;
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setSshPrivateKey(value);
       break;
@@ -172,24 +177,31 @@ proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.serializeBinary = fu
  */
 proto.pipelines.instance.v1alpha1.TypeGitProvider.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSshUrl();
+  f = message.getNameProvider();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getBranch();
+  f = message.getSshUrl();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getSshPrivateKey();
+  f = message.getBranch();
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getSshPrivateKey();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -197,10 +209,10 @@ proto.pipelines.instance.v1alpha1.TypeGitProvider.serializeBinaryToWriter = func
 
 
 /**
- * optional string ssh_url = 1;
+ * optional string name_provider = 1;
  * @return {string}
  */
-proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.getSshUrl = function() {
+proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.getNameProvider = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -209,16 +221,16 @@ proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.getSshUrl = function
  * @param {string} value
  * @return {!proto.pipelines.instance.v1alpha1.TypeGitProvider} returns this
  */
-proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.setSshUrl = function(value) {
+proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.setNameProvider = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string branch = 2;
+ * optional string ssh_url = 2;
  * @return {string}
  */
-proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.getBranch = function() {
+proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.getSshUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -227,16 +239,16 @@ proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.getBranch = function
  * @param {string} value
  * @return {!proto.pipelines.instance.v1alpha1.TypeGitProvider} returns this
  */
-proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.setBranch = function(value) {
+proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.setSshUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string ssh_private_key = 3;
+ * optional string branch = 3;
  * @return {string}
  */
-proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.getSshPrivateKey = function() {
+proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.getBranch = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -245,8 +257,26 @@ proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.getSshPrivateKey = f
  * @param {string} value
  * @return {!proto.pipelines.instance.v1alpha1.TypeGitProvider} returns this
  */
-proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.setSshPrivateKey = function(value) {
+proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.setBranch = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string ssh_private_key = 4;
+ * @return {string}
+ */
+proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.getSshPrivateKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.instance.v1alpha1.TypeGitProvider} returns this
+ */
+proto.pipelines.instance.v1alpha1.TypeGitProvider.prototype.setSshPrivateKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

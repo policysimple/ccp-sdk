@@ -18,9 +18,10 @@ enum InstanceType {
 
 // TypeGitProvider ...
 message TypeGitProvider {
-  string ssh_url = 1;
-  string branch = 2;
-  string ssh_private_key = 3;
+  string name_provider = 1;
+  string ssh_url = 2;
+  string branch =   3;
+  string ssh_private_key = 4;
 }
 
 // Instance ...

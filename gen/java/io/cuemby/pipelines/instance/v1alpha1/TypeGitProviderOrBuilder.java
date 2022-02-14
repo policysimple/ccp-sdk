@@ -8,36 +8,48 @@ public interface TypeGitProviderOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string ssh_url = 1 [json_name = "sshUrl"];</code>
+   * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
+   * @return The nameProvider.
+   */
+  java.lang.String getNameProvider();
+  /**
+   * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
+   * @return The bytes for nameProvider.
+   */
+  com.google.protobuf.ByteString
+      getNameProviderBytes();
+
+  /**
+   * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
    * @return The sshUrl.
    */
   java.lang.String getSshUrl();
   /**
-   * <code>string ssh_url = 1 [json_name = "sshUrl"];</code>
+   * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
    * @return The bytes for sshUrl.
    */
   com.google.protobuf.ByteString
       getSshUrlBytes();
 
   /**
-   * <code>string branch = 2 [json_name = "branch"];</code>
+   * <code>string branch = 3 [json_name = "branch"];</code>
    * @return The branch.
    */
   java.lang.String getBranch();
   /**
-   * <code>string branch = 2 [json_name = "branch"];</code>
+   * <code>string branch = 3 [json_name = "branch"];</code>
    * @return The bytes for branch.
    */
   com.google.protobuf.ByteString
       getBranchBytes();
 
   /**
-   * <code>string ssh_private_key = 3 [json_name = "sshPrivateKey"];</code>
+   * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
    * @return The sshPrivateKey.
    */
   java.lang.String getSshPrivateKey();
   /**
-   * <code>string ssh_private_key = 3 [json_name = "sshPrivateKey"];</code>
+   * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
    * @return The bytes for sshPrivateKey.
    */
   com.google.protobuf.ByteString

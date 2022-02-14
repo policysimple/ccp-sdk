@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TypeGitProvider() {
+    nameProvider_ = "";
     sshUrl_ = "";
     branch_ = "";
     sshPrivateKey_ = "";
@@ -58,16 +59,22 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            sshUrl_ = s;
+            nameProvider_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            branch_ = s;
+            sshUrl_ = s;
             break;
           }
           case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            branch_ = s;
+            break;
+          }
+          case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
             sshPrivateKey_ = s;
@@ -105,10 +112,48 @@ private static final long serialVersionUID = 0L;
             io.cuemby.pipelines.instance.v1alpha1.TypeGitProvider.class, io.cuemby.pipelines.instance.v1alpha1.TypeGitProvider.Builder.class);
   }
 
-  public static final int SSH_URL_FIELD_NUMBER = 1;
+  public static final int NAME_PROVIDER_FIELD_NUMBER = 1;
+  private volatile java.lang.Object nameProvider_;
+  /**
+   * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
+   * @return The nameProvider.
+   */
+  @java.lang.Override
+  public java.lang.String getNameProvider() {
+    java.lang.Object ref = nameProvider_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nameProvider_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
+   * @return The bytes for nameProvider.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameProviderBytes() {
+    java.lang.Object ref = nameProvider_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nameProvider_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SSH_URL_FIELD_NUMBER = 2;
   private volatile java.lang.Object sshUrl_;
   /**
-   * <code>string ssh_url = 1 [json_name = "sshUrl"];</code>
+   * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
    * @return The sshUrl.
    */
   @java.lang.Override
@@ -125,7 +170,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string ssh_url = 1 [json_name = "sshUrl"];</code>
+   * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
    * @return The bytes for sshUrl.
    */
   @java.lang.Override
@@ -143,10 +188,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int BRANCH_FIELD_NUMBER = 2;
+  public static final int BRANCH_FIELD_NUMBER = 3;
   private volatile java.lang.Object branch_;
   /**
-   * <code>string branch = 2 [json_name = "branch"];</code>
+   * <code>string branch = 3 [json_name = "branch"];</code>
    * @return The branch.
    */
   @java.lang.Override
@@ -163,7 +208,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string branch = 2 [json_name = "branch"];</code>
+   * <code>string branch = 3 [json_name = "branch"];</code>
    * @return The bytes for branch.
    */
   @java.lang.Override
@@ -181,10 +226,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SSH_PRIVATE_KEY_FIELD_NUMBER = 3;
+  public static final int SSH_PRIVATE_KEY_FIELD_NUMBER = 4;
   private volatile java.lang.Object sshPrivateKey_;
   /**
-   * <code>string ssh_private_key = 3 [json_name = "sshPrivateKey"];</code>
+   * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
    * @return The sshPrivateKey.
    */
   @java.lang.Override
@@ -201,7 +246,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string ssh_private_key = 3 [json_name = "sshPrivateKey"];</code>
+   * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
    * @return The bytes for sshPrivateKey.
    */
   @java.lang.Override
@@ -233,14 +278,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!getNameProviderBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nameProvider_);
+    }
     if (!getSshUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sshUrl_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sshUrl_);
     }
     if (!getBranchBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, branch_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, branch_);
     }
     if (!getSshPrivateKeyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sshPrivateKey_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sshPrivateKey_);
     }
     unknownFields.writeTo(output);
   }
@@ -251,14 +299,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!getNameProviderBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nameProvider_);
+    }
     if (!getSshUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sshUrl_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sshUrl_);
     }
     if (!getBranchBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, branch_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, branch_);
     }
     if (!getSshPrivateKeyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sshPrivateKey_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sshPrivateKey_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -275,6 +326,8 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.pipelines.instance.v1alpha1.TypeGitProvider other = (io.cuemby.pipelines.instance.v1alpha1.TypeGitProvider) obj;
 
+    if (!getNameProvider()
+        .equals(other.getNameProvider())) return false;
     if (!getSshUrl()
         .equals(other.getSshUrl())) return false;
     if (!getBranch()
@@ -292,6 +345,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_PROVIDER_FIELD_NUMBER;
+    hash = (53 * hash) + getNameProvider().hashCode();
     hash = (37 * hash) + SSH_URL_FIELD_NUMBER;
     hash = (53 * hash) + getSshUrl().hashCode();
     hash = (37 * hash) + BRANCH_FIELD_NUMBER;
@@ -435,6 +490,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      nameProvider_ = "";
+
       sshUrl_ = "";
 
       branch_ = "";
@@ -467,6 +524,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.pipelines.instance.v1alpha1.TypeGitProvider buildPartial() {
       io.cuemby.pipelines.instance.v1alpha1.TypeGitProvider result = new io.cuemby.pipelines.instance.v1alpha1.TypeGitProvider(this);
+      result.nameProvider_ = nameProvider_;
       result.sshUrl_ = sshUrl_;
       result.branch_ = branch_;
       result.sshPrivateKey_ = sshPrivateKey_;
@@ -518,6 +576,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.pipelines.instance.v1alpha1.TypeGitProvider other) {
       if (other == io.cuemby.pipelines.instance.v1alpha1.TypeGitProvider.getDefaultInstance()) return this;
+      if (!other.getNameProvider().isEmpty()) {
+        nameProvider_ = other.nameProvider_;
+        onChanged();
+      }
       if (!other.getSshUrl().isEmpty()) {
         sshUrl_ = other.sshUrl_;
         onChanged();
@@ -559,9 +621,85 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object nameProvider_ = "";
+    /**
+     * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
+     * @return The nameProvider.
+     */
+    public java.lang.String getNameProvider() {
+      java.lang.Object ref = nameProvider_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nameProvider_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
+     * @return The bytes for nameProvider.
+     */
+    public com.google.protobuf.ByteString
+        getNameProviderBytes() {
+      java.lang.Object ref = nameProvider_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nameProvider_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
+     * @param value The nameProvider to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameProvider(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nameProvider_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNameProvider() {
+      
+      nameProvider_ = getDefaultInstance().getNameProvider();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
+     * @param value The bytes for nameProvider to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameProviderBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nameProvider_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object sshUrl_ = "";
     /**
-     * <code>string ssh_url = 1 [json_name = "sshUrl"];</code>
+     * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
      * @return The sshUrl.
      */
     public java.lang.String getSshUrl() {
@@ -577,7 +715,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string ssh_url = 1 [json_name = "sshUrl"];</code>
+     * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
      * @return The bytes for sshUrl.
      */
     public com.google.protobuf.ByteString
@@ -594,7 +732,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string ssh_url = 1 [json_name = "sshUrl"];</code>
+     * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
      * @param value The sshUrl to set.
      * @return This builder for chaining.
      */
@@ -609,7 +747,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string ssh_url = 1 [json_name = "sshUrl"];</code>
+     * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
      * @return This builder for chaining.
      */
     public Builder clearSshUrl() {
@@ -619,7 +757,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string ssh_url = 1 [json_name = "sshUrl"];</code>
+     * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
      * @param value The bytes for sshUrl to set.
      * @return This builder for chaining.
      */
@@ -637,7 +775,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object branch_ = "";
     /**
-     * <code>string branch = 2 [json_name = "branch"];</code>
+     * <code>string branch = 3 [json_name = "branch"];</code>
      * @return The branch.
      */
     public java.lang.String getBranch() {
@@ -653,7 +791,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string branch = 2 [json_name = "branch"];</code>
+     * <code>string branch = 3 [json_name = "branch"];</code>
      * @return The bytes for branch.
      */
     public com.google.protobuf.ByteString
@@ -670,7 +808,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string branch = 2 [json_name = "branch"];</code>
+     * <code>string branch = 3 [json_name = "branch"];</code>
      * @param value The branch to set.
      * @return This builder for chaining.
      */
@@ -685,7 +823,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string branch = 2 [json_name = "branch"];</code>
+     * <code>string branch = 3 [json_name = "branch"];</code>
      * @return This builder for chaining.
      */
     public Builder clearBranch() {
@@ -695,7 +833,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string branch = 2 [json_name = "branch"];</code>
+     * <code>string branch = 3 [json_name = "branch"];</code>
      * @param value The bytes for branch to set.
      * @return This builder for chaining.
      */
@@ -713,7 +851,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object sshPrivateKey_ = "";
     /**
-     * <code>string ssh_private_key = 3 [json_name = "sshPrivateKey"];</code>
+     * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
      * @return The sshPrivateKey.
      */
     public java.lang.String getSshPrivateKey() {
@@ -729,7 +867,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string ssh_private_key = 3 [json_name = "sshPrivateKey"];</code>
+     * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
      * @return The bytes for sshPrivateKey.
      */
     public com.google.protobuf.ByteString
@@ -746,7 +884,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string ssh_private_key = 3 [json_name = "sshPrivateKey"];</code>
+     * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
      * @param value The sshPrivateKey to set.
      * @return This builder for chaining.
      */
@@ -761,7 +899,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string ssh_private_key = 3 [json_name = "sshPrivateKey"];</code>
+     * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
      * @return This builder for chaining.
      */
     public Builder clearSshPrivateKey() {
@@ -771,7 +909,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string ssh_private_key = 3 [json_name = "sshPrivateKey"];</code>
+     * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
      * @param value The bytes for sshPrivateKey to set.
      * @return This builder for chaining.
      */

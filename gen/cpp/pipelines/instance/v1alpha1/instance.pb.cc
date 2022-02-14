@@ -21,7 +21,8 @@ namespace instance {
 namespace v1alpha1 {
 constexpr TypeGitProvider::TypeGitProvider(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : ssh_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_provider_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , ssh_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , branch_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , ssh_private_key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct TypeGitProviderDefaultTypeInternal {
@@ -74,6 +75,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2finstance_2fv1alpha
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pipelines::instance::v1alpha1::TypeGitProvider, name_provider_),
   PROTOBUF_FIELD_OFFSET(::pipelines::instance::v1alpha1::TypeGitProvider, ssh_url_),
   PROTOBUF_FIELD_OFFSET(::pipelines::instance::v1alpha1::TypeGitProvider, branch_),
   PROTOBUF_FIELD_OFFSET(::pipelines::instance::v1alpha1::TypeGitProvider, ssh_private_key_),
@@ -99,8 +101,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2finstance_2fv1alpha
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::pipelines::instance::v1alpha1::TypeGitProvider)},
-  { 8, 15, sizeof(::pipelines::instance::v1alpha1::Instance_EnvVariablesEntry_DoNotUse)},
-  { 17, -1, sizeof(::pipelines::instance::v1alpha1::Instance)},
+  { 9, 16, sizeof(::pipelines::instance::v1alpha1::Instance_EnvVariablesEntry_DoNotUse)},
+  { 18, -1, sizeof(::pipelines::instance::v1alpha1::Instance)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -111,30 +113,31 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_pipelines_2finstance_2fv1alpha1_2finstance_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n*pipelines/instance/v1alpha1/instance.p"
-  "roto\022\033pipelines.instance.v1alpha1\"j\n\017Typ"
-  "eGitProvider\022\027\n\007ssh_url\030\001 \001(\tR\006sshUrl\022\026\n"
-  "\006branch\030\002 \001(\tR\006branch\022&\n\017ssh_private_key"
-  "\030\003 \001(\tR\rsshPrivateKey\"\370\002\n\010Instance\022\022\n\004na"
-  "me\030\001 \001(\tR\004name\022\034\n\tnamespace\030\002 \001(\tR\tnames"
-  "pace\022J\n\013type_source\030\003 \001(\0162).pipelines.in"
-  "stance.v1alpha1.InstanceTypeR\ntypeSource"
-  "\022O\n\014git_provider\030\004 \001(\0132,.pipelines.insta"
-  "nce.v1alpha1.TypeGitProviderR\013gitProvide"
-  "r\022\\\n\renv_variables\030\005 \003(\01327.pipelines.ins"
-  "tance.v1alpha1.Instance.EnvVariablesEntr"
-  "yR\014envVariables\032\?\n\021EnvVariablesEntry\022\020\n\003"
-  "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001"
-  "*D\n\014InstanceType\022\035\n\031INSTANCE_TYPE_UNSPEC"
-  "IFIED\020\000\022\025\n\021INSTANCE_TYPE_GIT\020\001B\264\001\n%io.cu"
-  "emby.pipelines.instance.v1alpha1B\rInstan"
-  "ceProtoP\001Z8github.com/cuemby/ccp-pipelin"
-  "es-service/instancev1alpha1\242\002\003PPX\252\002\033Pipe"
-  "lines.Instance.V1Alpha1\312\002\033Pipelines\\Inst"
-  "ance\\V1Alpha1b\006proto3"
+  "roto\022\033pipelines.instance.v1alpha1\"\217\001\n\017Ty"
+  "peGitProvider\022#\n\rname_provider\030\001 \001(\tR\014na"
+  "meProvider\022\027\n\007ssh_url\030\002 \001(\tR\006sshUrl\022\026\n\006b"
+  "ranch\030\003 \001(\tR\006branch\022&\n\017ssh_private_key\030\004"
+  " \001(\tR\rsshPrivateKey\"\370\002\n\010Instance\022\022\n\004name"
+  "\030\001 \001(\tR\004name\022\034\n\tnamespace\030\002 \001(\tR\tnamespa"
+  "ce\022J\n\013type_source\030\003 \001(\0162).pipelines.inst"
+  "ance.v1alpha1.InstanceTypeR\ntypeSource\022O"
+  "\n\014git_provider\030\004 \001(\0132,.pipelines.instanc"
+  "e.v1alpha1.TypeGitProviderR\013gitProvider\022"
+  "\\\n\renv_variables\030\005 \003(\01327.pipelines.insta"
+  "nce.v1alpha1.Instance.EnvVariablesEntryR"
+  "\014envVariables\032\?\n\021EnvVariablesEntry\022\020\n\003ke"
+  "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001*D"
+  "\n\014InstanceType\022\035\n\031INSTANCE_TYPE_UNSPECIF"
+  "IED\020\000\022\025\n\021INSTANCE_TYPE_GIT\020\001B\264\001\n%io.cuem"
+  "by.pipelines.instance.v1alpha1B\rInstance"
+  "ProtoP\001Z8github.com/cuemby/ccp-pipelines"
+  "-service/instancev1alpha1\242\002\003PPX\252\002\033Pipeli"
+  "nes.Instance.V1Alpha1\312\002\033Pipelines\\Instan"
+  "ce\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2finstance_2fv1alpha1_2finstance_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2finstance_2fv1alpha1_2finstance_2eproto = {
-  false, false, 821, descriptor_table_protodef_pipelines_2finstance_2fv1alpha1_2finstance_2eproto, "pipelines/instance/v1alpha1/instance.proto", 
+  false, false, 859, descriptor_table_protodef_pipelines_2finstance_2fv1alpha1_2finstance_2eproto, "pipelines/instance/v1alpha1/instance.proto", 
   &descriptor_table_pipelines_2finstance_2fv1alpha1_2finstance_2eproto_once, nullptr, 0, 3,
   schemas, file_default_instances, TableStruct_pipelines_2finstance_2fv1alpha1_2finstance_2eproto::offsets,
   file_level_metadata_pipelines_2finstance_2fv1alpha1_2finstance_2eproto, file_level_enum_descriptors_pipelines_2finstance_2fv1alpha1_2finstance_2eproto, file_level_service_descriptors_pipelines_2finstance_2fv1alpha1_2finstance_2eproto,
@@ -181,6 +184,11 @@ TypeGitProvider::TypeGitProvider(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 TypeGitProvider::TypeGitProvider(const TypeGitProvider& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_provider_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name_provider().empty()) {
+    name_provider_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name_provider(), 
+      GetArenaForAllocation());
+  }
   ssh_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_ssh_url().empty()) {
     ssh_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ssh_url(), 
@@ -200,6 +208,7 @@ TypeGitProvider::TypeGitProvider(const TypeGitProvider& from)
 }
 
 inline void TypeGitProvider::SharedCtor() {
+name_provider_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ssh_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 branch_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ssh_private_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -214,6 +223,7 @@ TypeGitProvider::~TypeGitProvider() {
 
 inline void TypeGitProvider::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_provider_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ssh_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   branch_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ssh_private_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -235,6 +245,7 @@ void TypeGitProvider::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_provider_.ClearToEmpty();
   ssh_url_.ClearToEmpty();
   branch_.ClearToEmpty();
   ssh_private_key_.ClearToEmpty();
@@ -247,27 +258,36 @@ const char* TypeGitProvider::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string ssh_url = 1 [json_name = "sshUrl"];
+      // string name_provider = 1 [json_name = "nameProvider"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_name_provider();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.instance.v1alpha1.TypeGitProvider.name_provider"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string ssh_url = 2 [json_name = "sshUrl"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_ssh_url();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.instance.v1alpha1.TypeGitProvider.ssh_url"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string branch = 2 [json_name = "branch"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // string branch = 3 [json_name = "branch"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_branch();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.instance.v1alpha1.TypeGitProvider.branch"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string ssh_private_key = 3 [json_name = "sshPrivateKey"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // string ssh_private_key = 4 [json_name = "sshPrivateKey"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_ssh_private_key();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.instance.v1alpha1.TypeGitProvider.ssh_private_key"));
@@ -303,34 +323,44 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string ssh_url = 1 [json_name = "sshUrl"];
+  // string name_provider = 1 [json_name = "nameProvider"];
+  if (!this->_internal_name_provider().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name_provider().data(), static_cast<int>(this->_internal_name_provider().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.instance.v1alpha1.TypeGitProvider.name_provider");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name_provider(), target);
+  }
+
+  // string ssh_url = 2 [json_name = "sshUrl"];
   if (!this->_internal_ssh_url().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_ssh_url().data(), static_cast<int>(this->_internal_ssh_url().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "pipelines.instance.v1alpha1.TypeGitProvider.ssh_url");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_ssh_url(), target);
+        2, this->_internal_ssh_url(), target);
   }
 
-  // string branch = 2 [json_name = "branch"];
+  // string branch = 3 [json_name = "branch"];
   if (!this->_internal_branch().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_branch().data(), static_cast<int>(this->_internal_branch().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "pipelines.instance.v1alpha1.TypeGitProvider.branch");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_branch(), target);
+        3, this->_internal_branch(), target);
   }
 
-  // string ssh_private_key = 3 [json_name = "sshPrivateKey"];
+  // string ssh_private_key = 4 [json_name = "sshPrivateKey"];
   if (!this->_internal_ssh_private_key().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_ssh_private_key().data(), static_cast<int>(this->_internal_ssh_private_key().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "pipelines.instance.v1alpha1.TypeGitProvider.ssh_private_key");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_ssh_private_key(), target);
+        4, this->_internal_ssh_private_key(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -349,21 +379,28 @@ size_t TypeGitProvider::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string ssh_url = 1 [json_name = "sshUrl"];
+  // string name_provider = 1 [json_name = "nameProvider"];
+  if (!this->_internal_name_provider().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name_provider());
+  }
+
+  // string ssh_url = 2 [json_name = "sshUrl"];
   if (!this->_internal_ssh_url().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_ssh_url());
   }
 
-  // string branch = 2 [json_name = "branch"];
+  // string branch = 3 [json_name = "branch"];
   if (!this->_internal_branch().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_branch());
   }
 
-  // string ssh_private_key = 3 [json_name = "sshPrivateKey"];
+  // string ssh_private_key = 4 [json_name = "sshPrivateKey"];
   if (!this->_internal_ssh_private_key().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -398,6 +435,9 @@ void TypeGitProvider::MergeFrom(const TypeGitProvider& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_name_provider().empty()) {
+    _internal_set_name_provider(from._internal_name_provider());
+  }
   if (!from._internal_ssh_url().empty()) {
     _internal_set_ssh_url(from._internal_ssh_url());
   }
@@ -424,6 +464,11 @@ bool TypeGitProvider::IsInitialized() const {
 void TypeGitProvider::InternalSwap(TypeGitProvider* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_provider_, GetArenaForAllocation(),
+      &other->name_provider_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &ssh_url_, GetArenaForAllocation(),

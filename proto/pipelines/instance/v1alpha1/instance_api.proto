@@ -11,6 +11,7 @@ option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Instance\\V1Alpha1";
 
 import "pipelines/instance/v1alpha1/instance.proto";
+//import "instance.proto";
 
 
 service InstanceAPIService{

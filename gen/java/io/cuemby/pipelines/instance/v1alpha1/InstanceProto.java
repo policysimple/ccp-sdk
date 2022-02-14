@@ -39,26 +39,27 @@ public final class InstanceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n*pipelines/instance/v1alpha1/instance.p" +
-      "roto\022\033pipelines.instance.v1alpha1\"j\n\017Typ" +
-      "eGitProvider\022\027\n\007ssh_url\030\001 \001(\tR\006sshUrl\022\026\n" +
-      "\006branch\030\002 \001(\tR\006branch\022&\n\017ssh_private_key" +
-      "\030\003 \001(\tR\rsshPrivateKey\"\370\002\n\010Instance\022\022\n\004na" +
-      "me\030\001 \001(\tR\004name\022\034\n\tnamespace\030\002 \001(\tR\tnames" +
-      "pace\022J\n\013type_source\030\003 \001(\0162).pipelines.in" +
-      "stance.v1alpha1.InstanceTypeR\ntypeSource" +
-      "\022O\n\014git_provider\030\004 \001(\0132,.pipelines.insta" +
-      "nce.v1alpha1.TypeGitProviderR\013gitProvide" +
-      "r\022\\\n\renv_variables\030\005 \003(\01327.pipelines.ins" +
-      "tance.v1alpha1.Instance.EnvVariablesEntr" +
-      "yR\014envVariables\032?\n\021EnvVariablesEntry\022\020\n\003" +
-      "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001" +
-      "*D\n\014InstanceType\022\035\n\031INSTANCE_TYPE_UNSPEC" +
-      "IFIED\020\000\022\025\n\021INSTANCE_TYPE_GIT\020\001B\264\001\n%io.cu" +
-      "emby.pipelines.instance.v1alpha1B\rInstan" +
-      "ceProtoP\001Z8github.com/cuemby/ccp-pipelin" +
-      "es-service/instancev1alpha1\242\002\003PPX\252\002\033Pipe" +
-      "lines.Instance.V1Alpha1\312\002\033Pipelines\\Inst" +
-      "ance\\V1Alpha1b\006proto3"
+      "roto\022\033pipelines.instance.v1alpha1\"\217\001\n\017Ty" +
+      "peGitProvider\022#\n\rname_provider\030\001 \001(\tR\014na" +
+      "meProvider\022\027\n\007ssh_url\030\002 \001(\tR\006sshUrl\022\026\n\006b" +
+      "ranch\030\003 \001(\tR\006branch\022&\n\017ssh_private_key\030\004" +
+      " \001(\tR\rsshPrivateKey\"\370\002\n\010Instance\022\022\n\004name" +
+      "\030\001 \001(\tR\004name\022\034\n\tnamespace\030\002 \001(\tR\tnamespa" +
+      "ce\022J\n\013type_source\030\003 \001(\0162).pipelines.inst" +
+      "ance.v1alpha1.InstanceTypeR\ntypeSource\022O" +
+      "\n\014git_provider\030\004 \001(\0132,.pipelines.instanc" +
+      "e.v1alpha1.TypeGitProviderR\013gitProvider\022" +
+      "\\\n\renv_variables\030\005 \003(\01327.pipelines.insta" +
+      "nce.v1alpha1.Instance.EnvVariablesEntryR" +
+      "\014envVariables\032?\n\021EnvVariablesEntry\022\020\n\003ke" +
+      "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001*D" +
+      "\n\014InstanceType\022\035\n\031INSTANCE_TYPE_UNSPECIF" +
+      "IED\020\000\022\025\n\021INSTANCE_TYPE_GIT\020\001B\264\001\n%io.cuem" +
+      "by.pipelines.instance.v1alpha1B\rInstance" +
+      "ProtoP\001Z8github.com/cuemby/ccp-pipelines" +
+      "-service/instancev1alpha1\242\002\003PPX\252\002\033Pipeli" +
+      "nes.Instance.V1Alpha1\312\002\033Pipelines\\Instan" +
+      "ce\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -69,7 +70,7 @@ public final class InstanceProto {
     internal_static_pipelines_instance_v1alpha1_TypeGitProvider_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_instance_v1alpha1_TypeGitProvider_descriptor,
-        new java.lang.String[] { "SshUrl", "Branch", "SshPrivateKey", });
+        new java.lang.String[] { "NameProvider", "SshUrl", "Branch", "SshPrivateKey", });
     internal_static_pipelines_instance_v1alpha1_Instance_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_pipelines_instance_v1alpha1_Instance_fieldAccessorTable = new
