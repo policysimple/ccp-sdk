@@ -54,13 +54,13 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      */
     protected $phone_number = '';
     /**
-     * Generated from protobuf field <code>uint32 country_id = 10 [json_name = "countryId"];</code>
+     * Generated from protobuf field <code>string country = 10 [json_name = "country"];</code>
      */
-    protected $country_id = 0;
+    protected $country = '';
     /**
-     * Generated from protobuf field <code>uint32 city_id = 11 [json_name = "cityId"];</code>
+     * Generated from protobuf field <code>string city = 11 [json_name = "city"];</code>
      */
-    protected $city_id = 0;
+    protected $city = '';
     /**
      * Generated from protobuf field <code>string zip_code = 12 [json_name = "zipCode"];</code>
      */
@@ -73,6 +73,10 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string state = 14 [json_name = "state"];</code>
      */
     protected $state = '';
+    /**
+     * Generated from protobuf field <code>string emoji_country = 15 [json_name = "emojiCountry"];</code>
+     */
+    protected $emoji_country = '';
 
     /**
      * Constructor.
@@ -90,11 +94,12 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $organizations_ids
      *     @type string $phone_number
      *           details
-     *     @type int $country_id
-     *     @type int $city_id
+     *     @type string $country
+     *     @type string $city
      *     @type string $zip_code
      *     @type string $address
      *     @type string $state
+     *     @type string $emoji_country
      * }
      */
     public function __construct($data = NULL) {
@@ -305,45 +310,45 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 country_id = 10 [json_name = "countryId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string country = 10 [json_name = "country"];</code>
+     * @return string
      */
-    public function getCountryId()
+    public function getCountry()
     {
-        return $this->country_id;
+        return $this->country;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 country_id = 10 [json_name = "countryId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string country = 10 [json_name = "country"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setCountryId($var)
+    public function setCountry($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->country_id = $var;
+        GPBUtil::checkString($var, True);
+        $this->country = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 city_id = 11 [json_name = "cityId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string city = 11 [json_name = "city"];</code>
+     * @return string
      */
-    public function getCityId()
+    public function getCity()
     {
-        return $this->city_id;
+        return $this->city;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 city_id = 11 [json_name = "cityId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string city = 11 [json_name = "city"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setCityId($var)
+    public function setCity($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->city_id = $var;
+        GPBUtil::checkString($var, True);
+        $this->city = $var;
 
         return $this;
     }
@@ -410,6 +415,28 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->state = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string emoji_country = 15 [json_name = "emojiCountry"];</code>
+     * @return string
+     */
+    public function getEmojiCountry()
+    {
+        return $this->emoji_country;
+    }
+
+    /**
+     * Generated from protobuf field <code>string emoji_country = 15 [json_name = "emojiCountry"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmojiCountry($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->emoji_country = $var;
 
         return $this;
     }

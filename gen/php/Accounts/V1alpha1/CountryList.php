@@ -9,11 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * PERMISSIONS
- *
- * Generated from protobuf message <code>accounts.v1alpha1.Permission</code>
+ * Generated from protobuf message <code>accounts.v1alpha1.CountryList</code>
  */
-class Permission extends \Google\Protobuf\Internal\Message
+class CountryList extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
@@ -24,9 +22,17 @@ class Permission extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
+     * Generated from protobuf field <code>string code = 3 [json_name = "code"];</code>
      */
-    protected $type = '';
+    protected $code = '';
+    /**
+     * Generated from protobuf field <code>string phone_code = 4 [json_name = "phoneCode"];</code>
+     */
+    protected $phone_code = '';
+    /**
+     * Generated from protobuf field <code>string emoji = 5 [json_name = "emoji"];</code>
+     */
+    protected $emoji = '';
 
     /**
      * Constructor.
@@ -36,7 +42,9 @@ class Permission extends \Google\Protobuf\Internal\Message
      *
      *     @type int $id
      *     @type string $name
-     *     @type string $type
+     *     @type string $code
+     *     @type string $phone_code
+     *     @type string $emoji
      * }
      */
     public function __construct($data = NULL) {
@@ -89,23 +97,67 @@ class Permission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
+     * Generated from protobuf field <code>string code = 3 [json_name = "code"];</code>
      * @return string
      */
-    public function getType()
+    public function getCode()
     {
-        return $this->type;
+        return $this->code;
     }
 
     /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
+     * Generated from protobuf field <code>string code = 3 [json_name = "code"];</code>
      * @param string $var
      * @return $this
      */
-    public function setType($var)
+    public function setCode($var)
     {
         GPBUtil::checkString($var, True);
-        $this->type = $var;
+        $this->code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string phone_code = 4 [json_name = "phoneCode"];</code>
+     * @return string
+     */
+    public function getPhoneCode()
+    {
+        return $this->phone_code;
+    }
+
+    /**
+     * Generated from protobuf field <code>string phone_code = 4 [json_name = "phoneCode"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPhoneCode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->phone_code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string emoji = 5 [json_name = "emoji"];</code>
+     * @return string
+     */
+    public function getEmoji()
+    {
+        return $this->emoji;
+    }
+
+    /**
+     * Generated from protobuf field <code>string emoji = 5 [json_name = "emoji"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmoji($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->emoji = $var;
 
         return $this;
     }

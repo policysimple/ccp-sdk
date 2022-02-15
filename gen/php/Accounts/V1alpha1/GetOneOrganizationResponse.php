@@ -33,6 +33,10 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.Member menbers = 5 [json_name = "menbers"];</code>
      */
     private $menbers;
+    /**
+     * Generated from protobuf field <code>string description = 6 [json_name = "description"];</code>
+     */
+    protected $description = '';
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
      *     @type string $image
      *     @type \Accounts\V1alpha1\ProjectOrganization[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type \Accounts\V1alpha1\Member[]|\Google\Protobuf\Internal\RepeatedField $menbers
+     *     @type string $description
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Member::class);
         $this->menbers = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 6 [json_name = "description"];</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 6 [json_name = "description"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
 
         return $this;
     }

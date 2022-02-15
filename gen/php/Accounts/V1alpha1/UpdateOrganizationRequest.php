@@ -22,8 +22,10 @@ class UpdateOrganizationRequest extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     *repeated uint32 team_ids = 3;
-     *
+     * Generated from protobuf field <code>string description = 3 [json_name = "description"];</code>
+     */
+    protected $description = '';
+    /**
      * Generated from protobuf field <code>string image = 4 [json_name = "image"];</code>
      */
     protected $image = '';
@@ -36,8 +38,8 @@ class UpdateOrganizationRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int $organization_id
      *     @type string $name
+     *     @type string $description
      *     @type string $image
-     *          repeated uint32 team_ids = 3;
      * }
      */
     public function __construct($data = NULL) {
@@ -90,8 +92,28 @@ class UpdateOrganizationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *repeated uint32 team_ids = 3;
-     *
+     * Generated from protobuf field <code>string description = 3 [json_name = "description"];</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 3 [json_name = "description"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string image = 4 [json_name = "image"];</code>
      * @return string
      */
@@ -101,8 +123,6 @@ class UpdateOrganizationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *repeated uint32 team_ids = 3;
-     *
      * Generated from protobuf field <code>string image = 4 [json_name = "image"];</code>
      * @param string $var
      * @return $this

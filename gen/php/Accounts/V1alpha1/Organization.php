@@ -25,6 +25,10 @@ class Organization extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string image = 3 [json_name = "image"];</code>
      */
     protected $image = '';
+    /**
+     * Generated from protobuf field <code>string description = 4 [json_name = "description"];</code>
+     */
+    protected $description = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class Organization extends \Google\Protobuf\Internal\Message
      *     @type int $id
      *     @type string $name
      *     @type string $image
+     *     @type string $description
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class Organization extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->image = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 4 [json_name = "description"];</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 4 [json_name = "description"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
 
         return $this;
     }

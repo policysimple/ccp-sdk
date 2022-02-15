@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ORGANIZATIONS
+ *
  * Generated from protobuf message <code>accounts.v1alpha1.Member</code>
  */
 class Member extends \Google\Protobuf\Internal\Message

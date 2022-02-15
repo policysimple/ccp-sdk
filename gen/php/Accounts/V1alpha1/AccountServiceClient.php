@@ -149,7 +149,6 @@ class AccountServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * rpc AssignPermission(AssignPermissionRequest) returns (MsgResponse);
      * @param \Accounts\V1alpha1\ListPermissionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -334,9 +333,6 @@ class AccountServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * filter group by teamid
-     * rpc ListRolesByTeamId(ListRolesByTeamIdRequest) returns (ListRolesResponse);
-     *
      * CRUD Project
      * @param \Accounts\V1alpha1\CreateProjectRequest $argument input argument
      * @param array $metadata metadata
@@ -465,6 +461,33 @@ class AccountServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/accounts.v1alpha1.AccountService/VerifyEmail',
         $argument,
         ['\Accounts\V1alpha1\VerifyEmailResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     *  Countries
+     * @param \Accounts\V1alpha1\ListCountriesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListCountries(\Accounts\V1alpha1\ListCountriesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/ListCountries',
+        $argument,
+        ['\Accounts\V1alpha1\ListCountriesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\GetOneCountryRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetOneCountry(\Accounts\V1alpha1\GetOneCountryRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/GetOneCountry',
+        $argument,
+        ['\Accounts\V1alpha1\GetOneCountryResponse', 'decode'],
         $metadata, $options);
     }
 

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Responses
+ *
  * Generated from protobuf message <code>accounts.v1alpha1.ListRolesResponse</code>
  */
 class ListRolesResponse extends \Google\Protobuf\Internal\Message

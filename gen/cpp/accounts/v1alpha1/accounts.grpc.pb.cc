@@ -53,6 +53,8 @@ static const char* AccountService_method_names[] = {
   "/accounts.v1alpha1.AccountService/CheckUser",
   "/accounts.v1alpha1.AccountService/SendVerificationEmail",
   "/accounts.v1alpha1.AccountService/VerifyEmail",
+  "/accounts.v1alpha1.AccountService/ListCountries",
+  "/accounts.v1alpha1.AccountService/GetOneCountry",
 };
 
 std::unique_ptr< AccountService::Stub> AccountService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -96,6 +98,8 @@ AccountService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& cha
   , rpcmethod_CheckUser_(AccountService_method_names[31], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SendVerificationEmail_(AccountService_method_names[32], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_VerifyEmail_(AccountService_method_names[33], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListCountries_(AccountService_method_names[34], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOneCountry_(AccountService_method_names[35], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status AccountService::Stub::CreateUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateUserRequest& request, ::accounts::v1alpha1::CreateUserResponse* response) {
@@ -642,6 +646,38 @@ void AccountService::Stub::experimental_async::VerifyEmail(::grpc::ClientContext
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::VerifyEmailResponse>::Create(channel_.get(), cq, rpcmethod_VerifyEmail_, context, request, false);
 }
 
+::grpc::Status AccountService::Stub::ListCountries(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest& request, ::accounts::v1alpha1::ListCountriesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListCountries_, context, request, response);
+}
+
+void AccountService::Stub::experimental_async::ListCountries(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest* request, ::accounts::v1alpha1::ListCountriesResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListCountries_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListCountriesResponse>* AccountService::Stub::AsyncListCountriesRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::ListCountriesResponse>::Create(channel_.get(), cq, rpcmethod_ListCountries_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListCountriesResponse>* AccountService::Stub::PrepareAsyncListCountriesRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::ListCountriesResponse>::Create(channel_.get(), cq, rpcmethod_ListCountries_, context, request, false);
+}
+
+::grpc::Status AccountService::Stub::GetOneCountry(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest& request, ::accounts::v1alpha1::GetOneCountryResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetOneCountry_, context, request, response);
+}
+
+void AccountService::Stub::experimental_async::GetOneCountry(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest* request, ::accounts::v1alpha1::GetOneCountryResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOneCountry_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneCountryResponse>* AccountService::Stub::AsyncGetOneCountryRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::GetOneCountryResponse>::Create(channel_.get(), cq, rpcmethod_GetOneCountry_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneCountryResponse>* AccountService::Stub::PrepareAsyncGetOneCountryRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::GetOneCountryResponse>::Create(channel_.get(), cq, rpcmethod_GetOneCountry_, context, request, false);
+}
+
 AccountService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AccountService_method_names[0],
@@ -813,6 +849,16 @@ AccountService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::VerifyEmailRequest, ::accounts::v1alpha1::VerifyEmailResponse>(
           std::mem_fn(&AccountService::Service::VerifyEmail), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AccountService_method_names[34],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::ListCountriesRequest, ::accounts::v1alpha1::ListCountriesResponse>(
+          std::mem_fn(&AccountService::Service::ListCountries), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AccountService_method_names[35],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::GetOneCountryRequest, ::accounts::v1alpha1::GetOneCountryResponse>(
+          std::mem_fn(&AccountService::Service::GetOneCountry), this)));
 }
 
 AccountService::Service::~Service() {
@@ -1050,6 +1096,20 @@ AccountService::Service::~Service() {
 }
 
 ::grpc::Status AccountService::Service::VerifyEmail(::grpc::ServerContext* context, const ::accounts::v1alpha1::VerifyEmailRequest* request, ::accounts::v1alpha1::VerifyEmailResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AccountService::Service::ListCountries(::grpc::ServerContext* context, const ::accounts::v1alpha1::ListCountriesRequest* request, ::accounts::v1alpha1::ListCountriesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AccountService::Service::GetOneCountry(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneCountryRequest* request, ::accounts::v1alpha1::GetOneCountryResponse* response) {
   (void) context;
   (void) request;
   (void) response;
