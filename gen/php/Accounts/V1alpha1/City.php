@@ -9,14 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *Project Organization
- *
- * Generated from protobuf message <code>accounts.v1alpha1.ProjectOrganization</code>
+ * Generated from protobuf message <code>accounts.v1alpha1.City</code>
  */
-class ProjectOrganization extends \Google\Protobuf\Internal\Message
+class City extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
      */
     protected $id = 0;
     /**
@@ -24,13 +22,13 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string image = 3 [json_name = "image"];</code>
+     * Generated from protobuf field <code>string latitude = 3 [json_name = "latitude"];</code>
      */
-    protected $image = '';
+    protected $latitude = '';
     /**
-     * Generated from protobuf field <code>string description = 4 [json_name = "description"];</code>
+     * Generated from protobuf field <code>string longitude = 4 [json_name = "longitude"];</code>
      */
-    protected $description = '';
+    protected $longitude = '';
 
     /**
      * Constructor.
@@ -40,8 +38,8 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
      *
      *     @type int $id
      *     @type string $name
-     *     @type string $image
-     *     @type string $description
+     *     @type string $latitude
+     *     @type string $longitude
      * }
      */
     public function __construct($data = NULL) {
@@ -50,7 +48,7 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
      * @return int
      */
     public function getId()
@@ -59,13 +57,13 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
      * @param int $var
      * @return $this
      */
     public function setId($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkUint32($var);
         $this->id = $var;
 
         return $this;
@@ -94,45 +92,45 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string image = 3 [json_name = "image"];</code>
+     * Generated from protobuf field <code>string latitude = 3 [json_name = "latitude"];</code>
      * @return string
      */
-    public function getImage()
+    public function getLatitude()
     {
-        return $this->image;
+        return $this->latitude;
     }
 
     /**
-     * Generated from protobuf field <code>string image = 3 [json_name = "image"];</code>
+     * Generated from protobuf field <code>string latitude = 3 [json_name = "latitude"];</code>
      * @param string $var
      * @return $this
      */
-    public function setImage($var)
+    public function setLatitude($var)
     {
         GPBUtil::checkString($var, True);
-        $this->image = $var;
+        $this->latitude = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string description = 4 [json_name = "description"];</code>
+     * Generated from protobuf field <code>string longitude = 4 [json_name = "longitude"];</code>
      * @return string
      */
-    public function getDescription()
+    public function getLongitude()
     {
-        return $this->description;
+        return $this->longitude;
     }
 
     /**
-     * Generated from protobuf field <code>string description = 4 [json_name = "description"];</code>
+     * Generated from protobuf field <code>string longitude = 4 [json_name = "longitude"];</code>
      * @param string $var
      * @return $this
      */
-    public function setDescription($var)
+    public function setLongitude($var)
     {
         GPBUtil::checkString($var, True);
-        $this->description = $var;
+        $this->longitude = $var;
 
         return $this;
     }

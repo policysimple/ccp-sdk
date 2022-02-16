@@ -30,8 +30,6 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
      */
     protected $organization_id = 0;
     /**
-     *uint32 team_id = 3;
-     *
      * Generated from protobuf field <code>string type_permission = 5 [json_name = "typePermission"];</code>
      */
     protected $type_permission = '';
@@ -51,7 +49,6 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
      *     @type int $project_id
      *     @type int $organization_id
      *     @type string $type_permission
-     *          uint32 team_id = 3;
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $permission_ids
      * }
      */
@@ -149,8 +146,6 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *uint32 team_id = 3;
-     *
      * Generated from protobuf field <code>string type_permission = 5 [json_name = "typePermission"];</code>
      * @return string
      */
@@ -160,8 +155,6 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *uint32 team_id = 3;
-     *
      * Generated from protobuf field <code>string type_permission = 5 [json_name = "typePermission"];</code>
      * @param string $var
      * @return $this

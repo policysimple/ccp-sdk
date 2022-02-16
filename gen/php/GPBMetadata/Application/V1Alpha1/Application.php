@@ -16,7 +16,7 @@ class Application
         }
         $pool->internalAddGeneratedFile(
             '
-≠
+Ø
 &application/v1alpha1/application.protoapplication.v1alpha1"™
 
 Repository
@@ -28,9 +28,9 @@ Repository
 private (Rprivate"1
 Command
 build (	Rbuild
-run (	Rrun"I
-Env
-name (	Rname
+run (	Rrun"K
+Env
+value (	Rvalue
 key (	Rkey
 	encrypted (R	encrypted"ç
 Configuration-

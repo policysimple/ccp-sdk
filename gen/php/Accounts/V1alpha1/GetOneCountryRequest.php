@@ -9,24 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * PERMISSIONS
- *
- * Generated from protobuf message <code>accounts.v1alpha1.Permission</code>
+ * Generated from protobuf message <code>accounts.v1alpha1.GetOneCountryRequest</code>
  */
-class Permission extends \Google\Protobuf\Internal\Message
+class GetOneCountryRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>uint32 country_id = 1 [json_name = "countryId"];</code>
      */
-    protected $id = 0;
+    protected $country_id = 0;
     /**
      * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      */
     protected $name = '';
-    /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
-     */
-    protected $type = '';
 
     /**
      * Constructor.
@@ -34,9 +28,8 @@ class Permission extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
+     *     @type int $country_id
      *     @type string $name
-     *     @type string $type
      * }
      */
     public function __construct($data = NULL) {
@@ -45,23 +38,23 @@ class Permission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>uint32 country_id = 1 [json_name = "countryId"];</code>
      * @return int
      */
-    public function getId()
+    public function getCountryId()
     {
-        return $this->id;
+        return $this->country_id;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>uint32 country_id = 1 [json_name = "countryId"];</code>
      * @param int $var
      * @return $this
      */
-    public function setId($var)
+    public function setCountryId($var)
     {
         GPBUtil::checkUint32($var);
-        $this->id = $var;
+        $this->country_id = $var;
 
         return $this;
     }
@@ -84,28 +77,6 @@ class Permission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->type = $var;
 
         return $this;
     }

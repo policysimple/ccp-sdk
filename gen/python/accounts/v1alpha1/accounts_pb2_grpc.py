@@ -184,6 +184,16 @@ class AccountServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.VerifyEmailRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.VerifyEmailResponse.FromString,
         )
+    self.ListCountries = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/ListCountries',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListCountriesRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListCountriesResponse.FromString,
+        )
+    self.GetOneCountry = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/GetOneCountry',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryResponse.FromString,
+        )
 
 
 class AccountServiceServicer(object):
@@ -261,8 +271,8 @@ class AccountServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def ListPermission(self, request, context):
-    """rpc AssignPermission(AssignPermissionRequest) returns (MsgResponse);
-    """
+    # missing associated documentation comment in .proto file
+    pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
@@ -359,10 +369,7 @@ class AccountServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def CreateProject(self, request, context):
-    """filter group by teamid
-    rpc ListRolesByTeamId(ListRolesByTeamIdRequest) returns (ListRolesResponse);
-
-    CRUD Project
+    """CRUD Project
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -390,8 +397,8 @@ class AccountServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def ListProject(self, request, context):
-    """rpc ListProjectPagination(ListProjectPaginationRequest) returns (ListProjectPaginationResponse);    
-    """
+    # missing associated documentation comment in .proto file
+    pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
@@ -425,6 +432,20 @@ class AccountServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def VerifyEmail(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListCountries(self, request, context):
+    """Countries
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetOneCountry(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -603,6 +624,16 @@ def add_AccountServiceServicer_to_server(servicer, server):
           servicer.VerifyEmail,
           request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.VerifyEmailRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.VerifyEmailResponse.SerializeToString,
+      ),
+      'ListCountries': grpc.unary_unary_rpc_method_handler(
+          servicer.ListCountries,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListCountriesRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListCountriesResponse.SerializeToString,
+      ),
+      'GetOneCountry': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOneCountry,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

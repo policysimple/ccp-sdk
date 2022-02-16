@@ -70,6 +70,8 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      */
     private $projects;
     /**
+     * details
+     *
      * Generated from protobuf field <code>string phone_number = 15 [json_name = "phoneNumber"];</code>
      */
     protected $phone_number = '';
@@ -82,9 +84,9 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      */
     protected $city = '';
     /**
-     * Generated from protobuf field <code>string code = 18 [json_name = "code"];</code>
+     * Generated from protobuf field <code>string zip_code = 18 [json_name = "zipCode"];</code>
      */
-    protected $code = '';
+    protected $zip_code = '';
     /**
      * Generated from protobuf field <code>string address = 19 [json_name = "address"];</code>
      */
@@ -93,6 +95,10 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string state = 20 [json_name = "state"];</code>
      */
     protected $state = '';
+    /**
+     * Generated from protobuf field <code>string emoji_country = 21 [json_name = "emojiCountry"];</code>
+     */
+    protected $emoji_country = '';
 
     /**
      * Constructor.
@@ -115,11 +121,13 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      *     @type string $msg
      *     @type \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type string $phone_number
+     *           details
      *     @type string $country
      *     @type string $city
-     *     @type string $code
+     *     @type string $zip_code
      *     @type string $address
      *     @type string $state
+     *     @type string $emoji_country
      * }
      */
     public function __construct($data = NULL) {
@@ -436,6 +444,8 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * details
+     *
      * Generated from protobuf field <code>string phone_number = 15 [json_name = "phoneNumber"];</code>
      * @return string
      */
@@ -445,6 +455,8 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * details
+     *
      * Generated from protobuf field <code>string phone_number = 15 [json_name = "phoneNumber"];</code>
      * @param string $var
      * @return $this
@@ -502,23 +514,23 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string code = 18 [json_name = "code"];</code>
+     * Generated from protobuf field <code>string zip_code = 18 [json_name = "zipCode"];</code>
      * @return string
      */
-    public function getCode()
+    public function getZipCode()
     {
-        return $this->code;
+        return $this->zip_code;
     }
 
     /**
-     * Generated from protobuf field <code>string code = 18 [json_name = "code"];</code>
+     * Generated from protobuf field <code>string zip_code = 18 [json_name = "zipCode"];</code>
      * @param string $var
      * @return $this
      */
-    public function setCode($var)
+    public function setZipCode($var)
     {
         GPBUtil::checkString($var, True);
-        $this->code = $var;
+        $this->zip_code = $var;
 
         return $this;
     }
@@ -563,6 +575,28 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->state = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string emoji_country = 21 [json_name = "emojiCountry"];</code>
+     * @return string
+     */
+    public function getEmojiCountry()
+    {
+        return $this->emoji_country;
+    }
+
+    /**
+     * Generated from protobuf field <code>string emoji_country = 21 [json_name = "emojiCountry"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmojiCountry($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->emoji_country = $var;
 
         return $this;
     }

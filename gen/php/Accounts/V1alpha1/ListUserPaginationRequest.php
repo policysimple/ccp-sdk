@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ *pagination
+ *
  * Generated from protobuf message <code>accounts.v1alpha1.ListUserPaginationRequest</code>
  */
 class ListUserPaginationRequest extends \Google\Protobuf\Internal\Message

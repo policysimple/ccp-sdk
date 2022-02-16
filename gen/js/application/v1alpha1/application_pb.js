@@ -817,7 +817,7 @@ proto.application.v1alpha1.Env.prototype.toObject = function(opt_includeInstance
  */
 proto.application.v1alpha1.Env.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    value: jspb.Message.getFieldWithDefault(msg, 1, ""),
     key: jspb.Message.getFieldWithDefault(msg, 2, ""),
     encrypted: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
@@ -858,7 +858,7 @@ proto.application.v1alpha1.Env.deserializeBinaryFromReader = function(msg, reade
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setValue(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -897,7 +897,7 @@ proto.application.v1alpha1.Env.prototype.serializeBinary = function() {
  */
 proto.application.v1alpha1.Env.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getName();
+  f = message.getValue();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -922,10 +922,10 @@ proto.application.v1alpha1.Env.serializeBinaryToWriter = function(message, write
 
 
 /**
- * optional string name = 1;
+ * optional string value = 1;
  * @return {string}
  */
-proto.application.v1alpha1.Env.prototype.getName = function() {
+proto.application.v1alpha1.Env.prototype.getValue = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -934,7 +934,7 @@ proto.application.v1alpha1.Env.prototype.getName = function() {
  * @param {string} value
  * @return {!proto.application.v1alpha1.Env} returns this
  */
-proto.application.v1alpha1.Env.prototype.setName = function(value) {
+proto.application.v1alpha1.Env.prototype.setValue = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

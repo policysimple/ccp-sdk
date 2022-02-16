@@ -22,8 +22,6 @@ class Rol extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     *uint32 TeamId = 4;
-     *
      * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
      */
     protected $project_id = 0;
@@ -45,7 +43,6 @@ class Rol extends \Google\Protobuf\Internal\Message
      *     @type int $id
      *     @type string $name
      *     @type int $project_id
-     *          uint32 TeamId = 4;
      *     @type int $organization_id
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
      * }
@@ -100,8 +97,6 @@ class Rol extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *uint32 TeamId = 4;
-     *
      * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
      * @return int
      */
@@ -111,8 +106,6 @@ class Rol extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *uint32 TeamId = 4;
-     *
      * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
      * @param int $var
      * @return $this

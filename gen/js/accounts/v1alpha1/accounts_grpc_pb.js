@@ -312,6 +312,28 @@ function deserialize_accounts_v1alpha1_GetListUserDexResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.GetListUserDexResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_GetOneCountryRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneCountryRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetOneCountryRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetOneCountryRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetOneCountryRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_GetOneCountryResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneCountryResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetOneCountryResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetOneCountryResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetOneCountryResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_GetOneOrganizationRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneOrganizationRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.GetOneOrganizationRequest');
@@ -442,6 +464,28 @@ function serialize_accounts_v1alpha1_GetOneUserResponse(arg) {
 
 function deserialize_accounts_v1alpha1_GetOneUserResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.GetOneUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_ListCountriesRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.ListCountriesRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.ListCountriesRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_ListCountriesRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.ListCountriesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_ListCountriesResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.ListCountriesResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.ListCountriesResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_ListCountriesResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.ListCountriesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_accounts_v1alpha1_ListOrganizationRequest(arg) {
@@ -866,7 +910,6 @@ var AccountServiceService = exports.AccountServiceService = {
     responseSerialize: serialize_accounts_v1alpha1_CreatePermissionResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_CreatePermissionResponse,
   },
-  // rpc AssignPermission(AssignPermissionRequest) returns (MsgResponse);
   listPermission: {
     path: '/accounts.v1alpha1.AccountService/ListPermission',
     requestStream: false,
@@ -1023,9 +1066,6 @@ var AccountServiceService = exports.AccountServiceService = {
     responseSerialize: serialize_accounts_v1alpha1_DeleteRoleResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_DeleteRoleResponse,
   },
-  // filter group by teamid
-  // rpc ListRolesByTeamId(ListRolesByTeamIdRequest) returns (ListRolesResponse);
-  //
   // CRUD Project
   createProject: {
     path: '/accounts.v1alpha1.AccountService/CreateProject',
@@ -1082,7 +1122,6 @@ var AccountServiceService = exports.AccountServiceService = {
     responseSerialize: serialize_accounts_v1alpha1_ListProjectResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_ListProjectResponse,
   },
-  // rpc ListProjectPagination(ListProjectPaginationRequest) returns (ListProjectPaginationResponse);    
   // Get Users Dex
   getListUserDex: {
     path: '/accounts.v1alpha1.AccountService/GetListUserDex',
@@ -1138,6 +1177,29 @@ var AccountServiceService = exports.AccountServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_VerifyEmailRequest,
     responseSerialize: serialize_accounts_v1alpha1_VerifyEmailResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_VerifyEmailResponse,
+  },
+  //  Countries
+  listCountries: {
+    path: '/accounts.v1alpha1.AccountService/ListCountries',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.ListCountriesRequest,
+    responseType: accounts_v1alpha1_accounts_pb.ListCountriesResponse,
+    requestSerialize: serialize_accounts_v1alpha1_ListCountriesRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_ListCountriesRequest,
+    responseSerialize: serialize_accounts_v1alpha1_ListCountriesResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_ListCountriesResponse,
+  },
+  getOneCountry: {
+    path: '/accounts.v1alpha1.AccountService/GetOneCountry',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.GetOneCountryRequest,
+    responseType: accounts_v1alpha1_accounts_pb.GetOneCountryResponse,
+    requestSerialize: serialize_accounts_v1alpha1_GetOneCountryRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_GetOneCountryRequest,
+    responseSerialize: serialize_accounts_v1alpha1_GetOneCountryResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_GetOneCountryResponse,
   },
 };
 
