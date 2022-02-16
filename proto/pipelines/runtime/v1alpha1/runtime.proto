@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package pipelines.runtime.v1alpha1;
+
+option csharp_namespace = "Pipelines.Runtime.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-runtime-service/runtimev1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "RuntimeProto";
+option java_package = "io.cuemby.pipelines.runtime.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Pipelines\\Runtime\\V1Alpha1";
+
+// RuntimeType ...
+enum RuntimeType {
+    RUNTIME_TYPE_UNSPECIFIED = 0;
+    RUNTIME_TYPE_GIT = 1;
+}
+
+// TypeGitProvider ...
+message TypeGitProvider {
+  string name_provider = 1;
+  string ssh_url = 2;
+  string branch =   3;
+  string ssh_private_key = 4;
+}
+
+// Runtime ...
+message Runtime {
+  string name = 1;
+  string namespace = 2;
+  RuntimeType type_source = 3;
+  TypeGitProvider git_provider = 4;
+  map<string, string> env_variables = 5;
+}
