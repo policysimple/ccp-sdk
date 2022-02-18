@@ -4,33 +4,28 @@
 package io.cuemby.pipelines.runtime.v1alpha1;
 
 /**
- * <pre>
- * TypeGitProvider ...
- * </pre>
- *
- * Protobuf type {@code pipelines.runtime.v1alpha1.TypeGitProvider}
+ * Protobuf type {@code pipelines.runtime.v1alpha1.Commands}
  */
-public final class TypeGitProvider extends
+public final class Commands extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pipelines.runtime.v1alpha1.TypeGitProvider)
-    TypeGitProviderOrBuilder {
+    // @@protoc_insertion_point(message_implements:pipelines.runtime.v1alpha1.Commands)
+    CommandsOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use TypeGitProvider.newBuilder() to construct.
-  private TypeGitProvider(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Commands.newBuilder() to construct.
+  private Commands(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private TypeGitProvider() {
-    nameProvider_ = "";
-    sshUrl_ = "";
-    branch_ = "";
-    sshPrivateKey_ = "";
+  private Commands() {
+    buildCommand_ = "";
+    runCommand_ = "";
+    port_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new TypeGitProvider();
+    return new Commands();
   }
 
   @java.lang.Override
@@ -38,7 +33,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private TypeGitProvider(
+  private Commands(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -59,25 +54,19 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            nameProvider_ = s;
+            buildCommand_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            sshUrl_ = s;
+            runCommand_ = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            branch_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            sshPrivateKey_ = s;
+            port_ = s;
             break;
           }
           default: {
@@ -101,163 +90,125 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_TypeGitProvider_descriptor;
+    return io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_Commands_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_TypeGitProvider_fieldAccessorTable
+    return io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_Commands_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.class, io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.Builder.class);
+            io.cuemby.pipelines.runtime.v1alpha1.Commands.class, io.cuemby.pipelines.runtime.v1alpha1.Commands.Builder.class);
   }
 
-  public static final int NAME_PROVIDER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object nameProvider_;
+  public static final int BUILD_COMMAND_FIELD_NUMBER = 1;
+  private volatile java.lang.Object buildCommand_;
   /**
-   * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
-   * @return The nameProvider.
+   * <code>string build_command = 1 [json_name = "buildCommand"];</code>
+   * @return The buildCommand.
    */
   @java.lang.Override
-  public java.lang.String getNameProvider() {
-    java.lang.Object ref = nameProvider_;
+  public java.lang.String getBuildCommand() {
+    java.lang.Object ref = buildCommand_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      nameProvider_ = s;
+      buildCommand_ = s;
       return s;
     }
   }
   /**
-   * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
-   * @return The bytes for nameProvider.
+   * <code>string build_command = 1 [json_name = "buildCommand"];</code>
+   * @return The bytes for buildCommand.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameProviderBytes() {
-    java.lang.Object ref = nameProvider_;
+      getBuildCommandBytes() {
+    java.lang.Object ref = buildCommand_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      nameProvider_ = b;
+      buildCommand_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int SSH_URL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object sshUrl_;
+  public static final int RUN_COMMAND_FIELD_NUMBER = 2;
+  private volatile java.lang.Object runCommand_;
   /**
-   * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
-   * @return The sshUrl.
+   * <code>string run_command = 2 [json_name = "runCommand"];</code>
+   * @return The runCommand.
    */
   @java.lang.Override
-  public java.lang.String getSshUrl() {
-    java.lang.Object ref = sshUrl_;
+  public java.lang.String getRunCommand() {
+    java.lang.Object ref = runCommand_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      sshUrl_ = s;
+      runCommand_ = s;
       return s;
     }
   }
   /**
-   * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
-   * @return The bytes for sshUrl.
+   * <code>string run_command = 2 [json_name = "runCommand"];</code>
+   * @return The bytes for runCommand.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getSshUrlBytes() {
-    java.lang.Object ref = sshUrl_;
+      getRunCommandBytes() {
+    java.lang.Object ref = runCommand_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      sshUrl_ = b;
+      runCommand_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int BRANCH_FIELD_NUMBER = 3;
-  private volatile java.lang.Object branch_;
+  public static final int PORT_FIELD_NUMBER = 3;
+  private volatile java.lang.Object port_;
   /**
-   * <code>string branch = 3 [json_name = "branch"];</code>
-   * @return The branch.
+   * <code>string port = 3 [json_name = "port"];</code>
+   * @return The port.
    */
   @java.lang.Override
-  public java.lang.String getBranch() {
-    java.lang.Object ref = branch_;
+  public java.lang.String getPort() {
+    java.lang.Object ref = port_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      branch_ = s;
+      port_ = s;
       return s;
     }
   }
   /**
-   * <code>string branch = 3 [json_name = "branch"];</code>
-   * @return The bytes for branch.
+   * <code>string port = 3 [json_name = "port"];</code>
+   * @return The bytes for port.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getBranchBytes() {
-    java.lang.Object ref = branch_;
+      getPortBytes() {
+    java.lang.Object ref = port_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      branch_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SSH_PRIVATE_KEY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object sshPrivateKey_;
-  /**
-   * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
-   * @return The sshPrivateKey.
-   */
-  @java.lang.Override
-  public java.lang.String getSshPrivateKey() {
-    java.lang.Object ref = sshPrivateKey_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      sshPrivateKey_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
-   * @return The bytes for sshPrivateKey.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSshPrivateKeyBytes() {
-    java.lang.Object ref = sshPrivateKey_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      sshPrivateKey_ = b;
+      port_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -278,17 +229,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameProviderBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nameProvider_);
+    if (!getBuildCommandBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, buildCommand_);
     }
-    if (!getSshUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sshUrl_);
+    if (!getRunCommandBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, runCommand_);
     }
-    if (!getBranchBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, branch_);
-    }
-    if (!getSshPrivateKeyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sshPrivateKey_);
+    if (!getPortBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, port_);
     }
     unknownFields.writeTo(output);
   }
@@ -299,17 +247,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameProviderBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nameProvider_);
+    if (!getBuildCommandBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, buildCommand_);
     }
-    if (!getSshUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sshUrl_);
+    if (!getRunCommandBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, runCommand_);
     }
-    if (!getBranchBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, branch_);
-    }
-    if (!getSshPrivateKeyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sshPrivateKey_);
+    if (!getPortBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, port_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -321,19 +266,17 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider)) {
+    if (!(obj instanceof io.cuemby.pipelines.runtime.v1alpha1.Commands)) {
       return super.equals(obj);
     }
-    io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider other = (io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider) obj;
+    io.cuemby.pipelines.runtime.v1alpha1.Commands other = (io.cuemby.pipelines.runtime.v1alpha1.Commands) obj;
 
-    if (!getNameProvider()
-        .equals(other.getNameProvider())) return false;
-    if (!getSshUrl()
-        .equals(other.getSshUrl())) return false;
-    if (!getBranch()
-        .equals(other.getBranch())) return false;
-    if (!getSshPrivateKey()
-        .equals(other.getSshPrivateKey())) return false;
+    if (!getBuildCommand()
+        .equals(other.getBuildCommand())) return false;
+    if (!getRunCommand()
+        .equals(other.getRunCommand())) return false;
+    if (!getPort()
+        .equals(other.getPort())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -345,82 +288,80 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_PROVIDER_FIELD_NUMBER;
-    hash = (53 * hash) + getNameProvider().hashCode();
-    hash = (37 * hash) + SSH_URL_FIELD_NUMBER;
-    hash = (53 * hash) + getSshUrl().hashCode();
-    hash = (37 * hash) + BRANCH_FIELD_NUMBER;
-    hash = (53 * hash) + getBranch().hashCode();
-    hash = (37 * hash) + SSH_PRIVATE_KEY_FIELD_NUMBER;
-    hash = (53 * hash) + getSshPrivateKey().hashCode();
+    hash = (37 * hash) + BUILD_COMMAND_FIELD_NUMBER;
+    hash = (53 * hash) + getBuildCommand().hashCode();
+    hash = (37 * hash) + RUN_COMMAND_FIELD_NUMBER;
+    hash = (53 * hash) + getRunCommand().hashCode();
+    hash = (37 * hash) + PORT_FIELD_NUMBER;
+    hash = (53 * hash) + getPort().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider parseFrom(
+  public static io.cuemby.pipelines.runtime.v1alpha1.Commands parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider parseFrom(
+  public static io.cuemby.pipelines.runtime.v1alpha1.Commands parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider parseFrom(
+  public static io.cuemby.pipelines.runtime.v1alpha1.Commands parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider parseFrom(
+  public static io.cuemby.pipelines.runtime.v1alpha1.Commands parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider parseFrom(byte[] data)
+  public static io.cuemby.pipelines.runtime.v1alpha1.Commands parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider parseFrom(
+  public static io.cuemby.pipelines.runtime.v1alpha1.Commands parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider parseFrom(java.io.InputStream input)
+  public static io.cuemby.pipelines.runtime.v1alpha1.Commands parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider parseFrom(
+  public static io.cuemby.pipelines.runtime.v1alpha1.Commands parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider parseDelimitedFrom(java.io.InputStream input)
+  public static io.cuemby.pipelines.runtime.v1alpha1.Commands parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider parseDelimitedFrom(
+  public static io.cuemby.pipelines.runtime.v1alpha1.Commands parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider parseFrom(
+  public static io.cuemby.pipelines.runtime.v1alpha1.Commands parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider parseFrom(
+  public static io.cuemby.pipelines.runtime.v1alpha1.Commands parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -433,7 +374,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider prototype) {
+  public static Builder newBuilder(io.cuemby.pipelines.runtime.v1alpha1.Commands prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -449,30 +390,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * TypeGitProvider ...
-   * </pre>
-   *
-   * Protobuf type {@code pipelines.runtime.v1alpha1.TypeGitProvider}
+   * Protobuf type {@code pipelines.runtime.v1alpha1.Commands}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pipelines.runtime.v1alpha1.TypeGitProvider)
-      io.cuemby.pipelines.runtime.v1alpha1.TypeGitProviderOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pipelines.runtime.v1alpha1.Commands)
+      io.cuemby.pipelines.runtime.v1alpha1.CommandsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_TypeGitProvider_descriptor;
+      return io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_Commands_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_TypeGitProvider_fieldAccessorTable
+      return io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_Commands_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.class, io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.Builder.class);
+              io.cuemby.pipelines.runtime.v1alpha1.Commands.class, io.cuemby.pipelines.runtime.v1alpha1.Commands.Builder.class);
     }
 
-    // Construct using io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.newBuilder()
+    // Construct using io.cuemby.pipelines.runtime.v1alpha1.Commands.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -490,13 +427,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      nameProvider_ = "";
+      buildCommand_ = "";
 
-      sshUrl_ = "";
+      runCommand_ = "";
 
-      branch_ = "";
-
-      sshPrivateKey_ = "";
+      port_ = "";
 
       return this;
     }
@@ -504,17 +439,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_TypeGitProvider_descriptor;
+      return io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_Commands_descriptor;
     }
 
     @java.lang.Override
-    public io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider getDefaultInstanceForType() {
-      return io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.getDefaultInstance();
+    public io.cuemby.pipelines.runtime.v1alpha1.Commands getDefaultInstanceForType() {
+      return io.cuemby.pipelines.runtime.v1alpha1.Commands.getDefaultInstance();
     }
 
     @java.lang.Override
-    public io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider build() {
-      io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider result = buildPartial();
+    public io.cuemby.pipelines.runtime.v1alpha1.Commands build() {
+      io.cuemby.pipelines.runtime.v1alpha1.Commands result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -522,12 +457,11 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider buildPartial() {
-      io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider result = new io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider(this);
-      result.nameProvider_ = nameProvider_;
-      result.sshUrl_ = sshUrl_;
-      result.branch_ = branch_;
-      result.sshPrivateKey_ = sshPrivateKey_;
+    public io.cuemby.pipelines.runtime.v1alpha1.Commands buildPartial() {
+      io.cuemby.pipelines.runtime.v1alpha1.Commands result = new io.cuemby.pipelines.runtime.v1alpha1.Commands(this);
+      result.buildCommand_ = buildCommand_;
+      result.runCommand_ = runCommand_;
+      result.port_ = port_;
       onBuilt();
       return result;
     }
@@ -566,30 +500,26 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider) {
-        return mergeFrom((io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider)other);
+      if (other instanceof io.cuemby.pipelines.runtime.v1alpha1.Commands) {
+        return mergeFrom((io.cuemby.pipelines.runtime.v1alpha1.Commands)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider other) {
-      if (other == io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.getDefaultInstance()) return this;
-      if (!other.getNameProvider().isEmpty()) {
-        nameProvider_ = other.nameProvider_;
+    public Builder mergeFrom(io.cuemby.pipelines.runtime.v1alpha1.Commands other) {
+      if (other == io.cuemby.pipelines.runtime.v1alpha1.Commands.getDefaultInstance()) return this;
+      if (!other.getBuildCommand().isEmpty()) {
+        buildCommand_ = other.buildCommand_;
         onChanged();
       }
-      if (!other.getSshUrl().isEmpty()) {
-        sshUrl_ = other.sshUrl_;
+      if (!other.getRunCommand().isEmpty()) {
+        runCommand_ = other.runCommand_;
         onChanged();
       }
-      if (!other.getBranch().isEmpty()) {
-        branch_ = other.branch_;
-        onChanged();
-      }
-      if (!other.getSshPrivateKey().isEmpty()) {
-        sshPrivateKey_ = other.sshPrivateKey_;
+      if (!other.getPort().isEmpty()) {
+        port_ = other.port_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -607,11 +537,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider parsedMessage = null;
+      io.cuemby.pipelines.runtime.v1alpha1.Commands parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider) e.getUnfinishedMessage();
+        parsedMessage = (io.cuemby.pipelines.runtime.v1alpha1.Commands) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -621,306 +551,230 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object nameProvider_ = "";
+    private java.lang.Object buildCommand_ = "";
     /**
-     * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
-     * @return The nameProvider.
+     * <code>string build_command = 1 [json_name = "buildCommand"];</code>
+     * @return The buildCommand.
      */
-    public java.lang.String getNameProvider() {
-      java.lang.Object ref = nameProvider_;
+    public java.lang.String getBuildCommand() {
+      java.lang.Object ref = buildCommand_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        nameProvider_ = s;
+        buildCommand_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
-     * @return The bytes for nameProvider.
+     * <code>string build_command = 1 [json_name = "buildCommand"];</code>
+     * @return The bytes for buildCommand.
      */
     public com.google.protobuf.ByteString
-        getNameProviderBytes() {
-      java.lang.Object ref = nameProvider_;
+        getBuildCommandBytes() {
+      java.lang.Object ref = buildCommand_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        nameProvider_ = b;
+        buildCommand_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
-     * @param value The nameProvider to set.
+     * <code>string build_command = 1 [json_name = "buildCommand"];</code>
+     * @param value The buildCommand to set.
      * @return This builder for chaining.
      */
-    public Builder setNameProvider(
+    public Builder setBuildCommand(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      nameProvider_ = value;
+      buildCommand_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
+     * <code>string build_command = 1 [json_name = "buildCommand"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearNameProvider() {
+    public Builder clearBuildCommand() {
       
-      nameProvider_ = getDefaultInstance().getNameProvider();
+      buildCommand_ = getDefaultInstance().getBuildCommand();
       onChanged();
       return this;
     }
     /**
-     * <code>string name_provider = 1 [json_name = "nameProvider"];</code>
-     * @param value The bytes for nameProvider to set.
+     * <code>string build_command = 1 [json_name = "buildCommand"];</code>
+     * @param value The bytes for buildCommand to set.
      * @return This builder for chaining.
      */
-    public Builder setNameProviderBytes(
+    public Builder setBuildCommandBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      nameProvider_ = value;
+      buildCommand_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object sshUrl_ = "";
+    private java.lang.Object runCommand_ = "";
     /**
-     * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
-     * @return The sshUrl.
+     * <code>string run_command = 2 [json_name = "runCommand"];</code>
+     * @return The runCommand.
      */
-    public java.lang.String getSshUrl() {
-      java.lang.Object ref = sshUrl_;
+    public java.lang.String getRunCommand() {
+      java.lang.Object ref = runCommand_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        sshUrl_ = s;
+        runCommand_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
-     * @return The bytes for sshUrl.
+     * <code>string run_command = 2 [json_name = "runCommand"];</code>
+     * @return The bytes for runCommand.
      */
     public com.google.protobuf.ByteString
-        getSshUrlBytes() {
-      java.lang.Object ref = sshUrl_;
+        getRunCommandBytes() {
+      java.lang.Object ref = runCommand_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        sshUrl_ = b;
+        runCommand_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
-     * @param value The sshUrl to set.
+     * <code>string run_command = 2 [json_name = "runCommand"];</code>
+     * @param value The runCommand to set.
      * @return This builder for chaining.
      */
-    public Builder setSshUrl(
+    public Builder setRunCommand(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      sshUrl_ = value;
+      runCommand_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
+     * <code>string run_command = 2 [json_name = "runCommand"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearSshUrl() {
+    public Builder clearRunCommand() {
       
-      sshUrl_ = getDefaultInstance().getSshUrl();
+      runCommand_ = getDefaultInstance().getRunCommand();
       onChanged();
       return this;
     }
     /**
-     * <code>string ssh_url = 2 [json_name = "sshUrl"];</code>
-     * @param value The bytes for sshUrl to set.
+     * <code>string run_command = 2 [json_name = "runCommand"];</code>
+     * @param value The bytes for runCommand to set.
      * @return This builder for chaining.
      */
-    public Builder setSshUrlBytes(
+    public Builder setRunCommandBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      sshUrl_ = value;
+      runCommand_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object branch_ = "";
+    private java.lang.Object port_ = "";
     /**
-     * <code>string branch = 3 [json_name = "branch"];</code>
-     * @return The branch.
+     * <code>string port = 3 [json_name = "port"];</code>
+     * @return The port.
      */
-    public java.lang.String getBranch() {
-      java.lang.Object ref = branch_;
+    public java.lang.String getPort() {
+      java.lang.Object ref = port_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        branch_ = s;
+        port_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string branch = 3 [json_name = "branch"];</code>
-     * @return The bytes for branch.
+     * <code>string port = 3 [json_name = "port"];</code>
+     * @return The bytes for port.
      */
     public com.google.protobuf.ByteString
-        getBranchBytes() {
-      java.lang.Object ref = branch_;
+        getPortBytes() {
+      java.lang.Object ref = port_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        branch_ = b;
+        port_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string branch = 3 [json_name = "branch"];</code>
-     * @param value The branch to set.
+     * <code>string port = 3 [json_name = "port"];</code>
+     * @param value The port to set.
      * @return This builder for chaining.
      */
-    public Builder setBranch(
+    public Builder setPort(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      branch_ = value;
+      port_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string branch = 3 [json_name = "branch"];</code>
+     * <code>string port = 3 [json_name = "port"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearBranch() {
+    public Builder clearPort() {
       
-      branch_ = getDefaultInstance().getBranch();
+      port_ = getDefaultInstance().getPort();
       onChanged();
       return this;
     }
     /**
-     * <code>string branch = 3 [json_name = "branch"];</code>
-     * @param value The bytes for branch to set.
+     * <code>string port = 3 [json_name = "port"];</code>
+     * @param value The bytes for port to set.
      * @return This builder for chaining.
      */
-    public Builder setBranchBytes(
+    public Builder setPortBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      branch_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object sshPrivateKey_ = "";
-    /**
-     * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
-     * @return The sshPrivateKey.
-     */
-    public java.lang.String getSshPrivateKey() {
-      java.lang.Object ref = sshPrivateKey_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sshPrivateKey_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
-     * @return The bytes for sshPrivateKey.
-     */
-    public com.google.protobuf.ByteString
-        getSshPrivateKeyBytes() {
-      java.lang.Object ref = sshPrivateKey_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sshPrivateKey_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
-     * @param value The sshPrivateKey to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSshPrivateKey(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      sshPrivateKey_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSshPrivateKey() {
-      
-      sshPrivateKey_ = getDefaultInstance().getSshPrivateKey();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string ssh_private_key = 4 [json_name = "sshPrivateKey"];</code>
-     * @param value The bytes for sshPrivateKey to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSshPrivateKeyBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      sshPrivateKey_ = value;
+      port_ = value;
       onChanged();
       return this;
     }
@@ -937,41 +791,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pipelines.runtime.v1alpha1.TypeGitProvider)
+    // @@protoc_insertion_point(builder_scope:pipelines.runtime.v1alpha1.Commands)
   }
 
-  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.TypeGitProvider)
-  private static final io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Commands)
+  private static final io.cuemby.pipelines.runtime.v1alpha1.Commands DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider();
+    DEFAULT_INSTANCE = new io.cuemby.pipelines.runtime.v1alpha1.Commands();
   }
 
-  public static io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider getDefaultInstance() {
+  public static io.cuemby.pipelines.runtime.v1alpha1.Commands getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TypeGitProvider>
-      PARSER = new com.google.protobuf.AbstractParser<TypeGitProvider>() {
+  private static final com.google.protobuf.Parser<Commands>
+      PARSER = new com.google.protobuf.AbstractParser<Commands>() {
     @java.lang.Override
-    public TypeGitProvider parsePartialFrom(
+    public Commands parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new TypeGitProvider(input, extensionRegistry);
+      return new Commands(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<TypeGitProvider> parser() {
+  public static com.google.protobuf.Parser<Commands> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<TypeGitProvider> getParserForType() {
+  public com.google.protobuf.Parser<Commands> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider getDefaultInstanceForType() {
+  public io.cuemby.pipelines.runtime.v1alpha1.Commands getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

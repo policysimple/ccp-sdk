@@ -10,25 +10,22 @@ option java_package = "io.cuemby.pipelines.runtime.v1alpha1";
 option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Runtime\\V1Alpha1";
 
-// RuntimeType ...
-enum RuntimeType {
-    RUNTIME_TYPE_UNSPECIFIED = 0;
-    RUNTIME_TYPE_GIT = 1;
+message Integration{
+  string integration_name = 1;
+  string repository_url = 2;
 }
 
-// TypeGitProvider ...
-message TypeGitProvider {
-  string name_provider = 1;
-  string ssh_url = 2;
-  string branch =   3;
-  string ssh_private_key = 4;
+message Commands{
+  string build_command = 1;
+  string run_command = 2;
+  string port = 3;
 }
 
 // Runtime ...
 message Runtime {
   string name = 1;
   string namespace = 2;
-  RuntimeType type_source = 3;
-  TypeGitProvider git_provider = 4;
-  map<string, string> env_variables = 5;
+  Integration integration = 3;
+  map<string, string> env_variables = 4;
+  Commands commands = 5;
 }

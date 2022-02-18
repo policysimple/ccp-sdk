@@ -19,21 +19,33 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace pipelines {
 namespace runtime {
 namespace v1alpha1 {
-constexpr TypeGitProvider::TypeGitProvider(
+constexpr Integration::Integration(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_provider_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , ssh_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , branch_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , ssh_private_key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
-struct TypeGitProviderDefaultTypeInternal {
-  constexpr TypeGitProviderDefaultTypeInternal()
+  : integration_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , repository_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct IntegrationDefaultTypeInternal {
+  constexpr IntegrationDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~TypeGitProviderDefaultTypeInternal() {}
+  ~IntegrationDefaultTypeInternal() {}
   union {
-    TypeGitProvider _instance;
+    Integration _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TypeGitProviderDefaultTypeInternal _TypeGitProvider_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IntegrationDefaultTypeInternal _Integration_default_instance_;
+constexpr Commands::Commands(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : build_command_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , run_command_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , port_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct CommandsDefaultTypeInternal {
+  constexpr CommandsDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CommandsDefaultTypeInternal() {}
+  union {
+    Commands _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CommandsDefaultTypeInternal _Commands_default_instance_;
 constexpr Runtime_EnvVariablesEntry_DoNotUse::Runtime_EnvVariablesEntry_DoNotUse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
 struct Runtime_EnvVariablesEntry_DoNotUseDefaultTypeInternal {
@@ -50,9 +62,8 @@ constexpr Runtime::Runtime(
   : env_variables_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , git_provider_(nullptr)
-  , type_source_(0)
-{}
+  , integration_(nullptr)
+  , commands_(nullptr){}
 struct RuntimeDefaultTypeInternal {
   constexpr RuntimeDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -65,20 +76,26 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RuntimeDefaultTypeInternal _Run
 }  // namespace v1alpha1
 }  // namespace runtime
 }  // namespace pipelines
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[3];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[1];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[4];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::TypeGitProvider, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Integration, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::TypeGitProvider, name_provider_),
-  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::TypeGitProvider, ssh_url_),
-  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::TypeGitProvider, branch_),
-  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::TypeGitProvider, ssh_private_key_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Integration, integration_name_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Integration, repository_url_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Commands, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Commands, build_command_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Commands, run_command_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Commands, port_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime_EnvVariablesEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime_EnvVariablesEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -95,49 +112,51 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, name_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, namespace__),
-  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, type_source_),
-  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, git_provider_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, integration_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, env_variables_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, commands_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::pipelines::runtime::v1alpha1::TypeGitProvider)},
-  { 9, 16, sizeof(::pipelines::runtime::v1alpha1::Runtime_EnvVariablesEntry_DoNotUse)},
-  { 18, -1, sizeof(::pipelines::runtime::v1alpha1::Runtime)},
+  { 0, -1, sizeof(::pipelines::runtime::v1alpha1::Integration)},
+  { 7, -1, sizeof(::pipelines::runtime::v1alpha1::Commands)},
+  { 15, 22, sizeof(::pipelines::runtime::v1alpha1::Runtime_EnvVariablesEntry_DoNotUse)},
+  { 24, -1, sizeof(::pipelines::runtime::v1alpha1::Runtime)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_TypeGitProvider_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_Integration_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_Commands_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_Runtime_EnvVariablesEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_Runtime_default_instance_),
 };
 
 const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n(pipelines/runtime/v1alpha1/runtime.pro"
-  "to\022\032pipelines.runtime.v1alpha1\"\217\001\n\017TypeG"
-  "itProvider\022#\n\rname_provider\030\001 \001(\tR\014nameP"
-  "rovider\022\027\n\007ssh_url\030\002 \001(\tR\006sshUrl\022\026\n\006bran"
-  "ch\030\003 \001(\tR\006branch\022&\n\017ssh_private_key\030\004 \001("
-  "\tR\rsshPrivateKey\"\362\002\n\007Runtime\022\022\n\004name\030\001 \001"
-  "(\tR\004name\022\034\n\tnamespace\030\002 \001(\tR\tnamespace\022H"
-  "\n\013type_source\030\003 \001(\0162\'.pipelines.runtime."
-  "v1alpha1.RuntimeTypeR\ntypeSource\022N\n\014git_"
-  "provider\030\004 \001(\0132+.pipelines.runtime.v1alp"
-  "ha1.TypeGitProviderR\013gitProvider\022Z\n\renv_"
-  "variables\030\005 \003(\01325.pipelines.runtime.v1al"
-  "pha1.Runtime.EnvVariablesEntryR\014envVaria"
-  "bles\032\?\n\021EnvVariablesEntry\022\020\n\003key\030\001 \001(\tR\003"
-  "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001*A\n\013Runtime"
-  "Type\022\034\n\030RUNTIME_TYPE_UNSPECIFIED\020\000\022\024\n\020RU"
-  "NTIME_TYPE_GIT\020\001B\255\001\n$io.cuemby.pipelines"
-  ".runtime.v1alpha1B\014RuntimeProtoP\001Z5githu"
-  "b.com/cuemby/ccp-runtime-service/runtime"
-  "v1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alp"
-  "ha1\312\002\032Pipelines\\Runtime\\V1Alpha1b\006proto3"
+  "to\022\032pipelines.runtime.v1alpha1\"_\n\013Integr"
+  "ation\022)\n\020integration_name\030\001 \001(\tR\017integra"
+  "tionName\022%\n\016repository_url\030\002 \001(\tR\rreposi"
+  "toryUrl\"d\n\010Commands\022#\n\rbuild_command\030\001 \001"
+  "(\tR\014buildCommand\022\037\n\013run_command\030\002 \001(\tR\nr"
+  "unCommand\022\022\n\004port\030\003 \001(\tR\004port\"\345\002\n\007Runtim"
+  "e\022\022\n\004name\030\001 \001(\tR\004name\022\034\n\tnamespace\030\002 \001(\t"
+  "R\tnamespace\022I\n\013integration\030\003 \001(\0132\'.pipel"
+  "ines.runtime.v1alpha1.IntegrationR\013integ"
+  "ration\022Z\n\renv_variables\030\004 \003(\01325.pipeline"
+  "s.runtime.v1alpha1.Runtime.EnvVariablesE"
+  "ntryR\014envVariables\022@\n\010commands\030\005 \001(\0132$.p"
+  "ipelines.runtime.v1alpha1.CommandsR\010comm"
+  "ands\032\?\n\021EnvVariablesEntry\022\020\n\003key\030\001 \001(\tR\003"
+  "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\255\001\n$io.cue"
+  "mby.pipelines.runtime.v1alpha1B\014RuntimeP"
+  "rotoP\001Z5github.com/cuemby/ccp-runtime-se"
+  "rvice/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines."
+  "Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1A"
+  "lpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto = {
-  false, false, 840, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, "pipelines/runtime/v1alpha1/runtime.proto", 
-  &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once, nullptr, 0, 3,
+  false, false, 813, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, "pipelines/runtime/v1alpha1/runtime.proto", 
+  &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once, nullptr, 0, 4,
   schemas, file_default_instances, TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto::offsets,
   file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto,
 };
@@ -150,146 +169,98 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDe
 namespace pipelines {
 namespace runtime {
 namespace v1alpha1 {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RuntimeType_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto);
-  return file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[0];
-}
-bool RuntimeType_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-      return true;
-    default:
-      return false;
-  }
-}
-
 
 // ===================================================================
 
-class TypeGitProvider::_Internal {
+class Integration::_Internal {
  public:
 };
 
-TypeGitProvider::TypeGitProvider(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+Integration::Integration(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
   }
-  // @@protoc_insertion_point(arena_constructor:pipelines.runtime.v1alpha1.TypeGitProvider)
+  // @@protoc_insertion_point(arena_constructor:pipelines.runtime.v1alpha1.Integration)
 }
-TypeGitProvider::TypeGitProvider(const TypeGitProvider& from)
+Integration::Integration(const Integration& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_provider_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_name_provider().empty()) {
-    name_provider_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name_provider(), 
+  integration_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_integration_name().empty()) {
+    integration_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_integration_name(), 
       GetArenaForAllocation());
   }
-  ssh_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_ssh_url().empty()) {
-    ssh_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ssh_url(), 
+  repository_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_repository_url().empty()) {
+    repository_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_repository_url(), 
       GetArenaForAllocation());
   }
-  branch_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_branch().empty()) {
-    branch_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_branch(), 
-      GetArenaForAllocation());
-  }
-  ssh_private_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_ssh_private_key().empty()) {
-    ssh_private_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ssh_private_key(), 
-      GetArenaForAllocation());
-  }
-  // @@protoc_insertion_point(copy_constructor:pipelines.runtime.v1alpha1.TypeGitProvider)
+  // @@protoc_insertion_point(copy_constructor:pipelines.runtime.v1alpha1.Integration)
 }
 
-inline void TypeGitProvider::SharedCtor() {
-name_provider_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-ssh_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-branch_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-ssh_private_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void Integration::SharedCtor() {
+integration_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+repository_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-TypeGitProvider::~TypeGitProvider() {
-  // @@protoc_insertion_point(destructor:pipelines.runtime.v1alpha1.TypeGitProvider)
+Integration::~Integration() {
+  // @@protoc_insertion_point(destructor:pipelines.runtime.v1alpha1.Integration)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void TypeGitProvider::SharedDtor() {
+inline void Integration::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_provider_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ssh_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  branch_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ssh_private_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  integration_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  repository_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void TypeGitProvider::ArenaDtor(void* object) {
-  TypeGitProvider* _this = reinterpret_cast< TypeGitProvider* >(object);
+void Integration::ArenaDtor(void* object) {
+  Integration* _this = reinterpret_cast< Integration* >(object);
   (void)_this;
 }
-void TypeGitProvider::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void Integration::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void TypeGitProvider::SetCachedSize(int size) const {
+void Integration::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void TypeGitProvider::Clear() {
-// @@protoc_insertion_point(message_clear_start:pipelines.runtime.v1alpha1.TypeGitProvider)
+void Integration::Clear() {
+// @@protoc_insertion_point(message_clear_start:pipelines.runtime.v1alpha1.Integration)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_provider_.ClearToEmpty();
-  ssh_url_.ClearToEmpty();
-  branch_.ClearToEmpty();
-  ssh_private_key_.ClearToEmpty();
+  integration_name_.ClearToEmpty();
+  repository_url_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* TypeGitProvider::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Integration::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string name_provider = 1 [json_name = "nameProvider"];
+      // string integration_name = 1 [json_name = "integrationName"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_name_provider();
+          auto str = _internal_mutable_integration_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.TypeGitProvider.name_provider"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.Integration.integration_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string ssh_url = 2 [json_name = "sshUrl"];
+      // string repository_url = 2 [json_name = "repositoryUrl"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_ssh_url();
+          auto str = _internal_mutable_repository_url();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.TypeGitProvider.ssh_url"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string branch = 3 [json_name = "branch"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_branch();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.TypeGitProvider.branch"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string ssh_private_key = 4 [json_name = "sshPrivateKey"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_ssh_private_key();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.TypeGitProvider.ssh_private_key"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.Integration.repository_url"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -316,94 +287,60 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* TypeGitProvider::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* Integration::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pipelines.runtime.v1alpha1.TypeGitProvider)
+  // @@protoc_insertion_point(serialize_to_array_start:pipelines.runtime.v1alpha1.Integration)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name_provider = 1 [json_name = "nameProvider"];
-  if (!this->_internal_name_provider().empty()) {
+  // string integration_name = 1 [json_name = "integrationName"];
+  if (!this->_internal_integration_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_name_provider().data(), static_cast<int>(this->_internal_name_provider().length()),
+      this->_internal_integration_name().data(), static_cast<int>(this->_internal_integration_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pipelines.runtime.v1alpha1.TypeGitProvider.name_provider");
+      "pipelines.runtime.v1alpha1.Integration.integration_name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_name_provider(), target);
+        1, this->_internal_integration_name(), target);
   }
 
-  // string ssh_url = 2 [json_name = "sshUrl"];
-  if (!this->_internal_ssh_url().empty()) {
+  // string repository_url = 2 [json_name = "repositoryUrl"];
+  if (!this->_internal_repository_url().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_ssh_url().data(), static_cast<int>(this->_internal_ssh_url().length()),
+      this->_internal_repository_url().data(), static_cast<int>(this->_internal_repository_url().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pipelines.runtime.v1alpha1.TypeGitProvider.ssh_url");
+      "pipelines.runtime.v1alpha1.Integration.repository_url");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_ssh_url(), target);
-  }
-
-  // string branch = 3 [json_name = "branch"];
-  if (!this->_internal_branch().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_branch().data(), static_cast<int>(this->_internal_branch().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pipelines.runtime.v1alpha1.TypeGitProvider.branch");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_branch(), target);
-  }
-
-  // string ssh_private_key = 4 [json_name = "sshPrivateKey"];
-  if (!this->_internal_ssh_private_key().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_ssh_private_key().data(), static_cast<int>(this->_internal_ssh_private_key().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pipelines.runtime.v1alpha1.TypeGitProvider.ssh_private_key");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_ssh_private_key(), target);
+        2, this->_internal_repository_url(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pipelines.runtime.v1alpha1.TypeGitProvider)
+  // @@protoc_insertion_point(serialize_to_array_end:pipelines.runtime.v1alpha1.Integration)
   return target;
 }
 
-size_t TypeGitProvider::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pipelines.runtime.v1alpha1.TypeGitProvider)
+size_t Integration::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pipelines.runtime.v1alpha1.Integration)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string name_provider = 1 [json_name = "nameProvider"];
-  if (!this->_internal_name_provider().empty()) {
+  // string integration_name = 1 [json_name = "integrationName"];
+  if (!this->_internal_integration_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_name_provider());
+        this->_internal_integration_name());
   }
 
-  // string ssh_url = 2 [json_name = "sshUrl"];
-  if (!this->_internal_ssh_url().empty()) {
+  // string repository_url = 2 [json_name = "repositoryUrl"];
+  if (!this->_internal_repository_url().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_ssh_url());
-  }
-
-  // string branch = 3 [json_name = "branch"];
-  if (!this->_internal_branch().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_branch());
-  }
-
-  // string ssh_private_key = 4 [json_name = "sshPrivateKey"];
-  if (!this->_internal_ssh_private_key().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_ssh_private_key());
+        this->_internal_repository_url());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -415,80 +352,348 @@ size_t TypeGitProvider::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TypeGitProvider::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Integration::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    TypeGitProvider::MergeImpl
+    Integration::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TypeGitProvider::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Integration::GetClassData() const { return &_class_data_; }
 
-void TypeGitProvider::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+void Integration::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
                       const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<TypeGitProvider *>(to)->MergeFrom(
-      static_cast<const TypeGitProvider &>(from));
+  static_cast<Integration *>(to)->MergeFrom(
+      static_cast<const Integration &>(from));
 }
 
 
-void TypeGitProvider::MergeFrom(const TypeGitProvider& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pipelines.runtime.v1alpha1.TypeGitProvider)
+void Integration::MergeFrom(const Integration& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pipelines.runtime.v1alpha1.Integration)
   GOOGLE_DCHECK_NE(&from, this);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_name_provider().empty()) {
-    _internal_set_name_provider(from._internal_name_provider());
+  if (!from._internal_integration_name().empty()) {
+    _internal_set_integration_name(from._internal_integration_name());
   }
-  if (!from._internal_ssh_url().empty()) {
-    _internal_set_ssh_url(from._internal_ssh_url());
-  }
-  if (!from._internal_branch().empty()) {
-    _internal_set_branch(from._internal_branch());
-  }
-  if (!from._internal_ssh_private_key().empty()) {
-    _internal_set_ssh_private_key(from._internal_ssh_private_key());
+  if (!from._internal_repository_url().empty()) {
+    _internal_set_repository_url(from._internal_repository_url());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void TypeGitProvider::CopyFrom(const TypeGitProvider& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pipelines.runtime.v1alpha1.TypeGitProvider)
+void Integration::CopyFrom(const Integration& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pipelines.runtime.v1alpha1.Integration)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool TypeGitProvider::IsInitialized() const {
+bool Integration::IsInitialized() const {
   return true;
 }
 
-void TypeGitProvider::InternalSwap(TypeGitProvider* other) {
+void Integration::InternalSwap(Integration* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_provider_, GetArenaForAllocation(),
-      &other->name_provider_, other->GetArenaForAllocation()
+      &integration_name_, GetArenaForAllocation(),
+      &other->integration_name_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &ssh_url_, GetArenaForAllocation(),
-      &other->ssh_url_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &branch_, GetArenaForAllocation(),
-      &other->branch_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &ssh_private_key_, GetArenaForAllocation(),
-      &other->ssh_private_key_, other->GetArenaForAllocation()
+      &repository_url_, GetArenaForAllocation(),
+      &other->repository_url_, other->GetArenaForAllocation()
   );
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata TypeGitProvider::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Integration::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_getter, &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once,
       file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[0]);
+}
+
+// ===================================================================
+
+class Commands::_Internal {
+ public:
+};
+
+Commands::Commands(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:pipelines.runtime.v1alpha1.Commands)
+}
+Commands::Commands(const Commands& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  build_command_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_build_command().empty()) {
+    build_command_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_build_command(), 
+      GetArenaForAllocation());
+  }
+  run_command_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_run_command().empty()) {
+    run_command_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_run_command(), 
+      GetArenaForAllocation());
+  }
+  port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_port().empty()) {
+    port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_port(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:pipelines.runtime.v1alpha1.Commands)
+}
+
+inline void Commands::SharedCtor() {
+build_command_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+run_command_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+Commands::~Commands() {
+  // @@protoc_insertion_point(destructor:pipelines.runtime.v1alpha1.Commands)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void Commands::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  build_command_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  run_command_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  port_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void Commands::ArenaDtor(void* object) {
+  Commands* _this = reinterpret_cast< Commands* >(object);
+  (void)_this;
+}
+void Commands::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void Commands::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void Commands::Clear() {
+// @@protoc_insertion_point(message_clear_start:pipelines.runtime.v1alpha1.Commands)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  build_command_.ClearToEmpty();
+  run_command_.ClearToEmpty();
+  port_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Commands::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string build_command = 1 [json_name = "buildCommand"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_build_command();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.Commands.build_command"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string run_command = 2 [json_name = "runCommand"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_run_command();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.Commands.run_command"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string port = 3 [json_name = "port"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_port();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.Commands.port"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Commands::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pipelines.runtime.v1alpha1.Commands)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string build_command = 1 [json_name = "buildCommand"];
+  if (!this->_internal_build_command().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_build_command().data(), static_cast<int>(this->_internal_build_command().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.Commands.build_command");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_build_command(), target);
+  }
+
+  // string run_command = 2 [json_name = "runCommand"];
+  if (!this->_internal_run_command().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_run_command().data(), static_cast<int>(this->_internal_run_command().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.Commands.run_command");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_run_command(), target);
+  }
+
+  // string port = 3 [json_name = "port"];
+  if (!this->_internal_port().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_port().data(), static_cast<int>(this->_internal_port().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.Commands.port");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_port(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pipelines.runtime.v1alpha1.Commands)
+  return target;
+}
+
+size_t Commands::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pipelines.runtime.v1alpha1.Commands)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string build_command = 1 [json_name = "buildCommand"];
+  if (!this->_internal_build_command().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_build_command());
+  }
+
+  // string run_command = 2 [json_name = "runCommand"];
+  if (!this->_internal_run_command().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_run_command());
+  }
+
+  // string port = 3 [json_name = "port"];
+  if (!this->_internal_port().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_port());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Commands::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Commands::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Commands::GetClassData() const { return &_class_data_; }
+
+void Commands::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<Commands *>(to)->MergeFrom(
+      static_cast<const Commands &>(from));
+}
+
+
+void Commands::MergeFrom(const Commands& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pipelines.runtime.v1alpha1.Commands)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_build_command().empty()) {
+    _internal_set_build_command(from._internal_build_command());
+  }
+  if (!from._internal_run_command().empty()) {
+    _internal_set_run_command(from._internal_run_command());
+  }
+  if (!from._internal_port().empty()) {
+    _internal_set_port(from._internal_port());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Commands::CopyFrom(const Commands& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pipelines.runtime.v1alpha1.Commands)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Commands::IsInitialized() const {
+  return true;
+}
+
+void Commands::InternalSwap(Commands* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &build_command_, GetArenaForAllocation(),
+      &other->build_command_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &run_command_, GetArenaForAllocation(),
+      &other->run_command_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &port_, GetArenaForAllocation(),
+      &other->port_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Commands::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_getter, &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once,
+      file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[1]);
 }
 
 // ===================================================================
@@ -502,19 +707,24 @@ void Runtime_EnvVariablesEntry_DoNotUse::MergeFrom(const Runtime_EnvVariablesEnt
 ::PROTOBUF_NAMESPACE_ID::Metadata Runtime_EnvVariablesEntry_DoNotUse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_getter, &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once,
-      file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[1]);
+      file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[2]);
 }
 
 // ===================================================================
 
 class Runtime::_Internal {
  public:
-  static const ::pipelines::runtime::v1alpha1::TypeGitProvider& git_provider(const Runtime* msg);
+  static const ::pipelines::runtime::v1alpha1::Integration& integration(const Runtime* msg);
+  static const ::pipelines::runtime::v1alpha1::Commands& commands(const Runtime* msg);
 };
 
-const ::pipelines::runtime::v1alpha1::TypeGitProvider&
-Runtime::_Internal::git_provider(const Runtime* msg) {
-  return *msg->git_provider_;
+const ::pipelines::runtime::v1alpha1::Integration&
+Runtime::_Internal::integration(const Runtime* msg) {
+  return *msg->integration_;
+}
+const ::pipelines::runtime::v1alpha1::Commands&
+Runtime::_Internal::commands(const Runtime* msg) {
+  return *msg->commands_;
 }
 Runtime::Runtime(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -540,12 +750,16 @@ Runtime::Runtime(const Runtime& from)
     namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_namespace_(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_git_provider()) {
-    git_provider_ = new ::pipelines::runtime::v1alpha1::TypeGitProvider(*from.git_provider_);
+  if (from._internal_has_integration()) {
+    integration_ = new ::pipelines::runtime::v1alpha1::Integration(*from.integration_);
   } else {
-    git_provider_ = nullptr;
+    integration_ = nullptr;
   }
-  type_source_ = from.type_source_;
+  if (from._internal_has_commands()) {
+    commands_ = new ::pipelines::runtime::v1alpha1::Commands(*from.commands_);
+  } else {
+    commands_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:pipelines.runtime.v1alpha1.Runtime)
 }
 
@@ -553,9 +767,9 @@ inline void Runtime::SharedCtor() {
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&git_provider_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&type_source_) -
-    reinterpret_cast<char*>(&git_provider_)) + sizeof(type_source_));
+    reinterpret_cast<char*>(&integration_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&commands_) -
+    reinterpret_cast<char*>(&integration_)) + sizeof(commands_));
 }
 
 Runtime::~Runtime() {
@@ -569,7 +783,8 @@ inline void Runtime::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   namespace__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete git_provider_;
+  if (this != internal_default_instance()) delete integration_;
+  if (this != internal_default_instance()) delete commands_;
 }
 
 void Runtime::ArenaDtor(void* object) {
@@ -595,11 +810,14 @@ void Runtime::Clear() {
   env_variables_.Clear();
   name_.ClearToEmpty();
   namespace__.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && git_provider_ != nullptr) {
-    delete git_provider_;
+  if (GetArenaForAllocation() == nullptr && integration_ != nullptr) {
+    delete integration_;
   }
-  git_provider_ = nullptr;
-  type_source_ = 0;
+  integration_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && commands_ != nullptr) {
+    delete commands_;
+  }
+  commands_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -627,31 +845,30 @@ const char* Runtime::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];
+      // .pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_integration(), ptr);
           CHK_(ptr);
-          _internal_set_type_source(static_cast<::pipelines::runtime::v1alpha1::RuntimeType>(val));
         } else goto handle_unusual;
         continue;
-      // .pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];
+      // map<string, string> env_variables = 4 [json_name = "envVariables"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_git_provider(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // map<string, string> env_variables = 5 [json_name = "envVariables"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(&env_variables_, ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // .pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          ptr = ctx->ParseMessage(_internal_mutable_commands(), ptr);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -703,22 +920,15 @@ failure:
         2, this->_internal_namespace_(), target);
   }
 
-  // .pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];
-  if (this->_internal_type_source() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      3, this->_internal_type_source(), target);
-  }
-
-  // .pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];
-  if (this->_internal_has_git_provider()) {
+  // .pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];
+  if (this->_internal_has_integration()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::git_provider(this), target, stream);
+        3, _Internal::integration(this), target, stream);
   }
 
-  // map<string, string> env_variables = 5 [json_name = "envVariables"];
+  // map<string, string> env_variables = 4 [json_name = "envVariables"];
   if (!this->_internal_env_variables().empty()) {
     typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
         ConstPtr;
@@ -751,17 +961,25 @@ failure:
       }
       ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       for (size_type i = 0; i < n; i++) {
-        target = Runtime_EnvVariablesEntry_DoNotUse::Funcs::InternalSerialize(5, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        target = Runtime_EnvVariablesEntry_DoNotUse::Funcs::InternalSerialize(4, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
         Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
       }
     } else {
       for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
           it = this->_internal_env_variables().begin();
           it != this->_internal_env_variables().end(); ++it) {
-        target = Runtime_EnvVariablesEntry_DoNotUse::Funcs::InternalSerialize(5, it->first, it->second, target, stream);
+        target = Runtime_EnvVariablesEntry_DoNotUse::Funcs::InternalSerialize(4, it->first, it->second, target, stream);
         Utf8Check::Check(&(*it));
       }
     }
+  }
+
+  // .pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];
+  if (this->_internal_has_commands()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        5, _Internal::commands(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -780,7 +998,7 @@ size_t Runtime::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<string, string> env_variables = 5 [json_name = "envVariables"];
+  // map<string, string> env_variables = 4 [json_name = "envVariables"];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_env_variables_size());
   for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
@@ -803,17 +1021,18 @@ size_t Runtime::ByteSizeLong() const {
         this->_internal_namespace_());
   }
 
-  // .pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];
-  if (this->_internal_has_git_provider()) {
+  // .pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];
+  if (this->_internal_has_integration()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *git_provider_);
+        *integration_);
   }
 
-  // .pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];
-  if (this->_internal_type_source() != 0) {
+  // .pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];
+  if (this->_internal_has_commands()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type_source());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *commands_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -851,11 +1070,11 @@ void Runtime::MergeFrom(const Runtime& from) {
   if (!from._internal_namespace_().empty()) {
     _internal_set_namespace_(from._internal_namespace_());
   }
-  if (from._internal_has_git_provider()) {
-    _internal_mutable_git_provider()->::pipelines::runtime::v1alpha1::TypeGitProvider::MergeFrom(from._internal_git_provider());
+  if (from._internal_has_integration()) {
+    _internal_mutable_integration()->::pipelines::runtime::v1alpha1::Integration::MergeFrom(from._internal_integration());
   }
-  if (from._internal_type_source() != 0) {
-    _internal_set_type_source(from._internal_type_source());
+  if (from._internal_has_commands()) {
+    _internal_mutable_commands()->::pipelines::runtime::v1alpha1::Commands::MergeFrom(from._internal_commands());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -886,17 +1105,17 @@ void Runtime::InternalSwap(Runtime* other) {
       &other->namespace__, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Runtime, type_source_)
-      + sizeof(Runtime::type_source_)
-      - PROTOBUF_FIELD_OFFSET(Runtime, git_provider_)>(
-          reinterpret_cast<char*>(&git_provider_),
-          reinterpret_cast<char*>(&other->git_provider_));
+      PROTOBUF_FIELD_OFFSET(Runtime, commands_)
+      + sizeof(Runtime::commands_)
+      - PROTOBUF_FIELD_OFFSET(Runtime, integration_)>(
+          reinterpret_cast<char*>(&integration_),
+          reinterpret_cast<char*>(&other->integration_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Runtime::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_getter, &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once,
-      file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[2]);
+      file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[3]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -904,8 +1123,11 @@ void Runtime::InternalSwap(Runtime* other) {
 }  // namespace runtime
 }  // namespace pipelines
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::pipelines::runtime::v1alpha1::TypeGitProvider* Arena::CreateMaybeMessage< ::pipelines::runtime::v1alpha1::TypeGitProvider >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pipelines::runtime::v1alpha1::TypeGitProvider >(arena);
+template<> PROTOBUF_NOINLINE ::pipelines::runtime::v1alpha1::Integration* Arena::CreateMaybeMessage< ::pipelines::runtime::v1alpha1::Integration >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pipelines::runtime::v1alpha1::Integration >(arena);
+}
+template<> PROTOBUF_NOINLINE ::pipelines::runtime::v1alpha1::Commands* Arena::CreateMaybeMessage< ::pipelines::runtime::v1alpha1::Commands >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pipelines::runtime::v1alpha1::Commands >(arena);
 }
 template<> PROTOBUF_NOINLINE ::pipelines::runtime::v1alpha1::Runtime_EnvVariablesEntry_DoNotUse* Arena::CreateMaybeMessage< ::pipelines::runtime::v1alpha1::Runtime_EnvVariablesEntry_DoNotUse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::pipelines::runtime::v1alpha1::Runtime_EnvVariablesEntry_DoNotUse >(arena);

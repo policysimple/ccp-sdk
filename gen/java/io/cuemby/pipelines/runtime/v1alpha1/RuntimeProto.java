@@ -15,10 +15,15 @@ public final class RuntimeProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pipelines_runtime_v1alpha1_TypeGitProvider_descriptor;
+    internal_static_pipelines_runtime_v1alpha1_Integration_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pipelines_runtime_v1alpha1_TypeGitProvider_fieldAccessorTable;
+      internal_static_pipelines_runtime_v1alpha1_Integration_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_runtime_v1alpha1_Commands_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_runtime_v1alpha1_Commands_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor;
   static final 
@@ -39,43 +44,49 @@ public final class RuntimeProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(pipelines/runtime/v1alpha1/runtime.pro" +
-      "to\022\032pipelines.runtime.v1alpha1\"\217\001\n\017TypeG" +
-      "itProvider\022#\n\rname_provider\030\001 \001(\tR\014nameP" +
-      "rovider\022\027\n\007ssh_url\030\002 \001(\tR\006sshUrl\022\026\n\006bran" +
-      "ch\030\003 \001(\tR\006branch\022&\n\017ssh_private_key\030\004 \001(" +
-      "\tR\rsshPrivateKey\"\362\002\n\007Runtime\022\022\n\004name\030\001 \001" +
-      "(\tR\004name\022\034\n\tnamespace\030\002 \001(\tR\tnamespace\022H" +
-      "\n\013type_source\030\003 \001(\0162\'.pipelines.runtime." +
-      "v1alpha1.RuntimeTypeR\ntypeSource\022N\n\014git_" +
-      "provider\030\004 \001(\0132+.pipelines.runtime.v1alp" +
-      "ha1.TypeGitProviderR\013gitProvider\022Z\n\renv_" +
-      "variables\030\005 \003(\01325.pipelines.runtime.v1al" +
-      "pha1.Runtime.EnvVariablesEntryR\014envVaria" +
-      "bles\032?\n\021EnvVariablesEntry\022\020\n\003key\030\001 \001(\tR\003" +
-      "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001*A\n\013Runtime" +
-      "Type\022\034\n\030RUNTIME_TYPE_UNSPECIFIED\020\000\022\024\n\020RU" +
-      "NTIME_TYPE_GIT\020\001B\255\001\n$io.cuemby.pipelines" +
-      ".runtime.v1alpha1B\014RuntimeProtoP\001Z5githu" +
-      "b.com/cuemby/ccp-runtime-service/runtime" +
-      "v1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alp" +
-      "ha1\312\002\032Pipelines\\Runtime\\V1Alpha1b\006proto3"
+      "to\022\032pipelines.runtime.v1alpha1\"_\n\013Integr" +
+      "ation\022)\n\020integration_name\030\001 \001(\tR\017integra" +
+      "tionName\022%\n\016repository_url\030\002 \001(\tR\rreposi" +
+      "toryUrl\"d\n\010Commands\022#\n\rbuild_command\030\001 \001" +
+      "(\tR\014buildCommand\022\037\n\013run_command\030\002 \001(\tR\nr" +
+      "unCommand\022\022\n\004port\030\003 \001(\tR\004port\"\345\002\n\007Runtim" +
+      "e\022\022\n\004name\030\001 \001(\tR\004name\022\034\n\tnamespace\030\002 \001(\t" +
+      "R\tnamespace\022I\n\013integration\030\003 \001(\0132\'.pipel" +
+      "ines.runtime.v1alpha1.IntegrationR\013integ" +
+      "ration\022Z\n\renv_variables\030\004 \003(\01325.pipeline" +
+      "s.runtime.v1alpha1.Runtime.EnvVariablesE" +
+      "ntryR\014envVariables\022@\n\010commands\030\005 \001(\0132$.p" +
+      "ipelines.runtime.v1alpha1.CommandsR\010comm" +
+      "ands\032?\n\021EnvVariablesEntry\022\020\n\003key\030\001 \001(\tR\003" +
+      "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\255\001\n$io.cue" +
+      "mby.pipelines.runtime.v1alpha1B\014RuntimeP" +
+      "rotoP\001Z5github.com/cuemby/ccp-runtime-se" +
+      "rvice/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines." +
+      "Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1A" +
+      "lpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_pipelines_runtime_v1alpha1_TypeGitProvider_descriptor =
+    internal_static_pipelines_runtime_v1alpha1_Integration_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_pipelines_runtime_v1alpha1_TypeGitProvider_fieldAccessorTable = new
+    internal_static_pipelines_runtime_v1alpha1_Integration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pipelines_runtime_v1alpha1_TypeGitProvider_descriptor,
-        new java.lang.String[] { "NameProvider", "SshUrl", "Branch", "SshPrivateKey", });
-    internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor =
+        internal_static_pipelines_runtime_v1alpha1_Integration_descriptor,
+        new java.lang.String[] { "IntegrationName", "RepositoryUrl", });
+    internal_static_pipelines_runtime_v1alpha1_Commands_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_pipelines_runtime_v1alpha1_Commands_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_runtime_v1alpha1_Commands_descriptor,
+        new java.lang.String[] { "BuildCommand", "RunCommand", "Port", });
+    internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_pipelines_runtime_v1alpha1_Runtime_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor,
-        new java.lang.String[] { "Name", "Namespace", "TypeSource", "GitProvider", "EnvVariables", });
+        new java.lang.String[] { "Name", "Namespace", "Integration", "EnvVariables", "Commands", });
     internal_static_pipelines_runtime_v1alpha1_Runtime_EnvVariablesEntry_descriptor =
       internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor.getNestedTypes().get(0);
     internal_static_pipelines_runtime_v1alpha1_Runtime_EnvVariablesEntry_fieldAccessorTable = new

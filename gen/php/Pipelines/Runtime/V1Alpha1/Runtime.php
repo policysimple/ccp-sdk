@@ -24,17 +24,17 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     protected $namespace = '';
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];</code>
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
      */
-    protected $type_source = 0;
+    protected $integration = null;
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
-     */
-    protected $git_provider = null;
-    /**
-     * Generated from protobuf field <code>map<string, string> env_variables = 5 [json_name = "envVariables"];</code>
+     * Generated from protobuf field <code>map<string, string> env_variables = 4 [json_name = "envVariables"];</code>
      */
     private $env_variables;
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+     */
+    protected $commands = null;
 
     /**
      * Constructor.
@@ -44,9 +44,9 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *     @type string $namespace
-     *     @type int $type_source
-     *     @type \Pipelines\Runtime\V1Alpha1\TypeGitProvider $git_provider
+     *     @type \Pipelines\Runtime\V1Alpha1\Integration $integration
      *     @type array|\Google\Protobuf\Internal\MapField $env_variables
+     *     @type \Pipelines\Runtime\V1Alpha1\Commands $commands
      * }
      */
     public function __construct($data = NULL) {
@@ -99,61 +99,39 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];</code>
-     * @return int
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
+     * @return \Pipelines\Runtime\V1Alpha1\Integration|null
      */
-    public function getTypeSource()
+    public function getIntegration()
     {
-        return $this->type_source;
+        return $this->integration;
+    }
+
+    public function hasIntegration()
+    {
+        return isset($this->integration);
+    }
+
+    public function clearIntegration()
+    {
+        unset($this->integration);
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
+     * @param \Pipelines\Runtime\V1Alpha1\Integration $var
      * @return $this
      */
-    public function setTypeSource($var)
+    public function setIntegration($var)
     {
-        GPBUtil::checkEnum($var, \Pipelines\Runtime\V1Alpha1\RuntimeType::class);
-        $this->type_source = $var;
+        GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\Integration::class);
+        $this->integration = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
-     * @return \Pipelines\Runtime\V1Alpha1\TypeGitProvider|null
-     */
-    public function getGitProvider()
-    {
-        return $this->git_provider;
-    }
-
-    public function hasGitProvider()
-    {
-        return isset($this->git_provider);
-    }
-
-    public function clearGitProvider()
-    {
-        unset($this->git_provider);
-    }
-
-    /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
-     * @param \Pipelines\Runtime\V1Alpha1\TypeGitProvider $var
-     * @return $this
-     */
-    public function setGitProvider($var)
-    {
-        GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\TypeGitProvider::class);
-        $this->git_provider = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>map<string, string> env_variables = 5 [json_name = "envVariables"];</code>
+     * Generated from protobuf field <code>map<string, string> env_variables = 4 [json_name = "envVariables"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getEnvVariables()
@@ -162,7 +140,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> env_variables = 5 [json_name = "envVariables"];</code>
+     * Generated from protobuf field <code>map<string, string> env_variables = 4 [json_name = "envVariables"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -170,6 +148,38 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->env_variables = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+     * @return \Pipelines\Runtime\V1Alpha1\Commands|null
+     */
+    public function getCommands()
+    {
+        return $this->commands;
+    }
+
+    public function hasCommands()
+    {
+        return isset($this->commands);
+    }
+
+    public function clearCommands()
+    {
+        unset($this->commands);
+    }
+
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+     * @param \Pipelines\Runtime\V1Alpha1\Commands $var
+     * @return $this
+     */
+    public function setCommands($var)
+    {
+        GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\Commands::class);
+        $this->commands = $var;
 
         return $this;
     }

@@ -22,7 +22,6 @@ private static final long serialVersionUID = 0L;
   private Runtime() {
     name_ = "";
     namespace_ = "";
-    typeSource_ = 0;
   }
 
   @java.lang.Override
@@ -68,26 +67,20 @@ private static final long serialVersionUID = 0L;
             namespace_ = s;
             break;
           }
-          case 24: {
-            int rawValue = input.readEnum();
+          case 26: {
+            io.cuemby.pipelines.runtime.v1alpha1.Integration.Builder subBuilder = null;
+            if (integration_ != null) {
+              subBuilder = integration_.toBuilder();
+            }
+            integration_ = input.readMessage(io.cuemby.pipelines.runtime.v1alpha1.Integration.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(integration_);
+              integration_ = subBuilder.buildPartial();
+            }
 
-            typeSource_ = rawValue;
             break;
           }
           case 34: {
-            io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.Builder subBuilder = null;
-            if (gitProvider_ != null) {
-              subBuilder = gitProvider_.toBuilder();
-            }
-            gitProvider_ = input.readMessage(io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(gitProvider_);
-              gitProvider_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 42: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               envVariables_ = com.google.protobuf.MapField.newMapField(
                   EnvVariablesDefaultEntryHolder.defaultEntry);
@@ -98,6 +91,19 @@ private static final long serialVersionUID = 0L;
                 EnvVariablesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             envVariables_.getMutableMap().put(
                 envVariables__.getKey(), envVariables__.getValue());
+            break;
+          }
+          case 42: {
+            io.cuemby.pipelines.runtime.v1alpha1.Commands.Builder subBuilder = null;
+            if (commands_ != null) {
+              subBuilder = commands_.toBuilder();
+            }
+            commands_ = input.readMessage(io.cuemby.pipelines.runtime.v1alpha1.Commands.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(commands_);
+              commands_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -129,7 +135,7 @@ private static final long serialVersionUID = 0L;
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
-      case 5:
+      case 4:
         return internalGetEnvVariables();
       default:
         throw new RuntimeException(
@@ -220,52 +226,33 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TYPE_SOURCE_FIELD_NUMBER = 3;
-  private int typeSource_;
+  public static final int INTEGRATION_FIELD_NUMBER = 3;
+  private io.cuemby.pipelines.runtime.v1alpha1.Integration integration_;
   /**
-   * <code>.pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];</code>
-   * @return The enum numeric value on the wire for typeSource.
+   * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
+   * @return Whether the integration field is set.
    */
-  @java.lang.Override public int getTypeSourceValue() {
-    return typeSource_;
+  @java.lang.Override
+  public boolean hasIntegration() {
+    return integration_ != null;
   }
   /**
-   * <code>.pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];</code>
-   * @return The typeSource.
+   * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
+   * @return The integration.
    */
-  @java.lang.Override public io.cuemby.pipelines.runtime.v1alpha1.RuntimeType getTypeSource() {
-    @SuppressWarnings("deprecation")
-    io.cuemby.pipelines.runtime.v1alpha1.RuntimeType result = io.cuemby.pipelines.runtime.v1alpha1.RuntimeType.valueOf(typeSource_);
-    return result == null ? io.cuemby.pipelines.runtime.v1alpha1.RuntimeType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public io.cuemby.pipelines.runtime.v1alpha1.Integration getIntegration() {
+    return integration_ == null ? io.cuemby.pipelines.runtime.v1alpha1.Integration.getDefaultInstance() : integration_;
+  }
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.runtime.v1alpha1.IntegrationOrBuilder getIntegrationOrBuilder() {
+    return getIntegration();
   }
 
-  public static final int GIT_PROVIDER_FIELD_NUMBER = 4;
-  private io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider gitProvider_;
-  /**
-   * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
-   * @return Whether the gitProvider field is set.
-   */
-  @java.lang.Override
-  public boolean hasGitProvider() {
-    return gitProvider_ != null;
-  }
-  /**
-   * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
-   * @return The gitProvider.
-   */
-  @java.lang.Override
-  public io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider getGitProvider() {
-    return gitProvider_ == null ? io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.getDefaultInstance() : gitProvider_;
-  }
-  /**
-   * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
-   */
-  @java.lang.Override
-  public io.cuemby.pipelines.runtime.v1alpha1.TypeGitProviderOrBuilder getGitProviderOrBuilder() {
-    return getGitProvider();
-  }
-
-  public static final int ENV_VARIABLES_FIELD_NUMBER = 5;
+  public static final int ENV_VARIABLES_FIELD_NUMBER = 4;
   private static final class EnvVariablesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.String> defaultEntry =
@@ -292,7 +279,7 @@ private static final long serialVersionUID = 0L;
     return internalGetEnvVariables().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
    */
 
   @java.lang.Override
@@ -310,7 +297,7 @@ private static final long serialVersionUID = 0L;
     return getEnvVariablesMap();
   }
   /**
-   * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
    */
   @java.lang.Override
 
@@ -318,7 +305,7 @@ private static final long serialVersionUID = 0L;
     return internalGetEnvVariables().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
    */
   @java.lang.Override
 
@@ -331,7 +318,7 @@ private static final long serialVersionUID = 0L;
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
    */
   @java.lang.Override
 
@@ -344,6 +331,32 @@ private static final long serialVersionUID = 0L;
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int COMMANDS_FIELD_NUMBER = 5;
+  private io.cuemby.pipelines.runtime.v1alpha1.Commands commands_;
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+   * @return Whether the commands field is set.
+   */
+  @java.lang.Override
+  public boolean hasCommands() {
+    return commands_ != null;
+  }
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+   * @return The commands.
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.runtime.v1alpha1.Commands getCommands() {
+    return commands_ == null ? io.cuemby.pipelines.runtime.v1alpha1.Commands.getDefaultInstance() : commands_;
+  }
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.runtime.v1alpha1.CommandsOrBuilder getCommandsOrBuilder() {
+    return getCommands();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -366,18 +379,18 @@ private static final long serialVersionUID = 0L;
     if (!getNamespaceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, namespace_);
     }
-    if (typeSource_ != io.cuemby.pipelines.runtime.v1alpha1.RuntimeType.RUNTIME_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(3, typeSource_);
-    }
-    if (gitProvider_ != null) {
-      output.writeMessage(4, getGitProvider());
+    if (integration_ != null) {
+      output.writeMessage(3, getIntegration());
     }
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetEnvVariables(),
         EnvVariablesDefaultEntryHolder.defaultEntry,
-        5);
+        4);
+    if (commands_ != null) {
+      output.writeMessage(5, getCommands());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -393,13 +406,9 @@ private static final long serialVersionUID = 0L;
     if (!getNamespaceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, namespace_);
     }
-    if (typeSource_ != io.cuemby.pipelines.runtime.v1alpha1.RuntimeType.RUNTIME_TYPE_UNSPECIFIED.getNumber()) {
+    if (integration_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, typeSource_);
-    }
-    if (gitProvider_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getGitProvider());
+        .computeMessageSize(3, getIntegration());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetEnvVariables().getMap().entrySet()) {
@@ -409,7 +418,11 @@ private static final long serialVersionUID = 0L;
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, envVariables__);
+          .computeMessageSize(4, envVariables__);
+    }
+    if (commands_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getCommands());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -430,14 +443,18 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getNamespace()
         .equals(other.getNamespace())) return false;
-    if (typeSource_ != other.typeSource_) return false;
-    if (hasGitProvider() != other.hasGitProvider()) return false;
-    if (hasGitProvider()) {
-      if (!getGitProvider()
-          .equals(other.getGitProvider())) return false;
+    if (hasIntegration() != other.hasIntegration()) return false;
+    if (hasIntegration()) {
+      if (!getIntegration()
+          .equals(other.getIntegration())) return false;
     }
     if (!internalGetEnvVariables().equals(
         other.internalGetEnvVariables())) return false;
+    if (hasCommands() != other.hasCommands()) return false;
+    if (hasCommands()) {
+      if (!getCommands()
+          .equals(other.getCommands())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -453,15 +470,17 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
     hash = (53 * hash) + getNamespace().hashCode();
-    hash = (37 * hash) + TYPE_SOURCE_FIELD_NUMBER;
-    hash = (53 * hash) + typeSource_;
-    if (hasGitProvider()) {
-      hash = (37 * hash) + GIT_PROVIDER_FIELD_NUMBER;
-      hash = (53 * hash) + getGitProvider().hashCode();
+    if (hasIntegration()) {
+      hash = (37 * hash) + INTEGRATION_FIELD_NUMBER;
+      hash = (53 * hash) + getIntegration().hashCode();
     }
     if (!internalGetEnvVariables().getMap().isEmpty()) {
       hash = (37 * hash) + ENV_VARIABLES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetEnvVariables().hashCode();
+    }
+    if (hasCommands()) {
+      hash = (37 * hash) + COMMANDS_FIELD_NUMBER;
+      hash = (53 * hash) + getCommands().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -578,7 +597,7 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 5:
+        case 4:
           return internalGetEnvVariables();
         default:
           throw new RuntimeException(
@@ -589,7 +608,7 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMutableMapField(
         int number) {
       switch (number) {
-        case 5:
+        case 4:
           return internalGetMutableEnvVariables();
         default:
           throw new RuntimeException(
@@ -626,15 +645,19 @@ private static final long serialVersionUID = 0L;
 
       namespace_ = "";
 
-      typeSource_ = 0;
-
-      if (gitProviderBuilder_ == null) {
-        gitProvider_ = null;
+      if (integrationBuilder_ == null) {
+        integration_ = null;
       } else {
-        gitProvider_ = null;
-        gitProviderBuilder_ = null;
+        integration_ = null;
+        integrationBuilder_ = null;
       }
       internalGetMutableEnvVariables().clear();
+      if (commandsBuilder_ == null) {
+        commands_ = null;
+      } else {
+        commands_ = null;
+        commandsBuilder_ = null;
+      }
       return this;
     }
 
@@ -664,14 +687,18 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.namespace_ = namespace_;
-      result.typeSource_ = typeSource_;
-      if (gitProviderBuilder_ == null) {
-        result.gitProvider_ = gitProvider_;
+      if (integrationBuilder_ == null) {
+        result.integration_ = integration_;
       } else {
-        result.gitProvider_ = gitProviderBuilder_.build();
+        result.integration_ = integrationBuilder_.build();
       }
       result.envVariables_ = internalGetEnvVariables();
       result.envVariables_.makeImmutable();
+      if (commandsBuilder_ == null) {
+        result.commands_ = commands_;
+      } else {
+        result.commands_ = commandsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -728,14 +755,14 @@ private static final long serialVersionUID = 0L;
         namespace_ = other.namespace_;
         onChanged();
       }
-      if (other.typeSource_ != 0) {
-        setTypeSourceValue(other.getTypeSourceValue());
-      }
-      if (other.hasGitProvider()) {
-        mergeGitProvider(other.getGitProvider());
+      if (other.hasIntegration()) {
+        mergeIntegration(other.getIntegration());
       }
       internalGetMutableEnvVariables().mergeFrom(
           other.internalGetEnvVariables());
+      if (other.hasCommands()) {
+        mergeCommands(other.getCommands());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -918,177 +945,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int typeSource_ = 0;
-    /**
-     * <code>.pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];</code>
-     * @return The enum numeric value on the wire for typeSource.
-     */
-    @java.lang.Override public int getTypeSourceValue() {
-      return typeSource_;
-    }
-    /**
-     * <code>.pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];</code>
-     * @param value The enum numeric value on the wire for typeSource to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeSourceValue(int value) {
-      
-      typeSource_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];</code>
-     * @return The typeSource.
-     */
-    @java.lang.Override
-    public io.cuemby.pipelines.runtime.v1alpha1.RuntimeType getTypeSource() {
-      @SuppressWarnings("deprecation")
-      io.cuemby.pipelines.runtime.v1alpha1.RuntimeType result = io.cuemby.pipelines.runtime.v1alpha1.RuntimeType.valueOf(typeSource_);
-      return result == null ? io.cuemby.pipelines.runtime.v1alpha1.RuntimeType.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];</code>
-     * @param value The typeSource to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeSource(io.cuemby.pipelines.runtime.v1alpha1.RuntimeType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      typeSource_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTypeSource() {
-      
-      typeSource_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider gitProvider_;
+    private io.cuemby.pipelines.runtime.v1alpha1.Integration integration_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider, io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.Builder, io.cuemby.pipelines.runtime.v1alpha1.TypeGitProviderOrBuilder> gitProviderBuilder_;
+        io.cuemby.pipelines.runtime.v1alpha1.Integration, io.cuemby.pipelines.runtime.v1alpha1.Integration.Builder, io.cuemby.pipelines.runtime.v1alpha1.IntegrationOrBuilder> integrationBuilder_;
     /**
-     * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
-     * @return Whether the gitProvider field is set.
+     * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
+     * @return Whether the integration field is set.
      */
-    public boolean hasGitProvider() {
-      return gitProviderBuilder_ != null || gitProvider_ != null;
+    public boolean hasIntegration() {
+      return integrationBuilder_ != null || integration_ != null;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
-     * @return The gitProvider.
+     * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
+     * @return The integration.
      */
-    public io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider getGitProvider() {
-      if (gitProviderBuilder_ == null) {
-        return gitProvider_ == null ? io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.getDefaultInstance() : gitProvider_;
+    public io.cuemby.pipelines.runtime.v1alpha1.Integration getIntegration() {
+      if (integrationBuilder_ == null) {
+        return integration_ == null ? io.cuemby.pipelines.runtime.v1alpha1.Integration.getDefaultInstance() : integration_;
       } else {
-        return gitProviderBuilder_.getMessage();
+        return integrationBuilder_.getMessage();
       }
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
+     * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
      */
-    public Builder setGitProvider(io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider value) {
-      if (gitProviderBuilder_ == null) {
+    public Builder setIntegration(io.cuemby.pipelines.runtime.v1alpha1.Integration value) {
+      if (integrationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        gitProvider_ = value;
+        integration_ = value;
         onChanged();
       } else {
-        gitProviderBuilder_.setMessage(value);
+        integrationBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
+     * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
      */
-    public Builder setGitProvider(
-        io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.Builder builderForValue) {
-      if (gitProviderBuilder_ == null) {
-        gitProvider_ = builderForValue.build();
+    public Builder setIntegration(
+        io.cuemby.pipelines.runtime.v1alpha1.Integration.Builder builderForValue) {
+      if (integrationBuilder_ == null) {
+        integration_ = builderForValue.build();
         onChanged();
       } else {
-        gitProviderBuilder_.setMessage(builderForValue.build());
+        integrationBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
+     * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
      */
-    public Builder mergeGitProvider(io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider value) {
-      if (gitProviderBuilder_ == null) {
-        if (gitProvider_ != null) {
-          gitProvider_ =
-            io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.newBuilder(gitProvider_).mergeFrom(value).buildPartial();
+    public Builder mergeIntegration(io.cuemby.pipelines.runtime.v1alpha1.Integration value) {
+      if (integrationBuilder_ == null) {
+        if (integration_ != null) {
+          integration_ =
+            io.cuemby.pipelines.runtime.v1alpha1.Integration.newBuilder(integration_).mergeFrom(value).buildPartial();
         } else {
-          gitProvider_ = value;
+          integration_ = value;
         }
         onChanged();
       } else {
-        gitProviderBuilder_.mergeFrom(value);
+        integrationBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
+     * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
      */
-    public Builder clearGitProvider() {
-      if (gitProviderBuilder_ == null) {
-        gitProvider_ = null;
+    public Builder clearIntegration() {
+      if (integrationBuilder_ == null) {
+        integration_ = null;
         onChanged();
       } else {
-        gitProvider_ = null;
-        gitProviderBuilder_ = null;
+        integration_ = null;
+        integrationBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
+     * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
      */
-    public io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.Builder getGitProviderBuilder() {
+    public io.cuemby.pipelines.runtime.v1alpha1.Integration.Builder getIntegrationBuilder() {
       
       onChanged();
-      return getGitProviderFieldBuilder().getBuilder();
+      return getIntegrationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
+     * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
      */
-    public io.cuemby.pipelines.runtime.v1alpha1.TypeGitProviderOrBuilder getGitProviderOrBuilder() {
-      if (gitProviderBuilder_ != null) {
-        return gitProviderBuilder_.getMessageOrBuilder();
+    public io.cuemby.pipelines.runtime.v1alpha1.IntegrationOrBuilder getIntegrationOrBuilder() {
+      if (integrationBuilder_ != null) {
+        return integrationBuilder_.getMessageOrBuilder();
       } else {
-        return gitProvider_ == null ?
-            io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.getDefaultInstance() : gitProvider_;
+        return integration_ == null ?
+            io.cuemby.pipelines.runtime.v1alpha1.Integration.getDefaultInstance() : integration_;
       }
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
+     * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider, io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.Builder, io.cuemby.pipelines.runtime.v1alpha1.TypeGitProviderOrBuilder> 
-        getGitProviderFieldBuilder() {
-      if (gitProviderBuilder_ == null) {
-        gitProviderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider, io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider.Builder, io.cuemby.pipelines.runtime.v1alpha1.TypeGitProviderOrBuilder>(
-                getGitProvider(),
+        io.cuemby.pipelines.runtime.v1alpha1.Integration, io.cuemby.pipelines.runtime.v1alpha1.Integration.Builder, io.cuemby.pipelines.runtime.v1alpha1.IntegrationOrBuilder> 
+        getIntegrationFieldBuilder() {
+      if (integrationBuilder_ == null) {
+        integrationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.cuemby.pipelines.runtime.v1alpha1.Integration, io.cuemby.pipelines.runtime.v1alpha1.Integration.Builder, io.cuemby.pipelines.runtime.v1alpha1.IntegrationOrBuilder>(
+                getIntegration(),
                 getParentForChildren(),
                 isClean());
-        gitProvider_ = null;
+        integration_ = null;
       }
-      return gitProviderBuilder_;
+      return integrationBuilder_;
     }
 
     private com.google.protobuf.MapField<
@@ -1118,7 +1091,7 @@ private static final long serialVersionUID = 0L;
       return internalGetEnvVariables().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+     * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
      */
 
     @java.lang.Override
@@ -1136,7 +1109,7 @@ private static final long serialVersionUID = 0L;
       return getEnvVariablesMap();
     }
     /**
-     * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+     * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
      */
     @java.lang.Override
 
@@ -1144,7 +1117,7 @@ private static final long serialVersionUID = 0L;
       return internalGetEnvVariables().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+     * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
      */
     @java.lang.Override
 
@@ -1157,7 +1130,7 @@ private static final long serialVersionUID = 0L;
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+     * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
      */
     @java.lang.Override
 
@@ -1178,7 +1151,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+     * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
      */
 
     public Builder removeEnvVariables(
@@ -1197,7 +1170,7 @@ private static final long serialVersionUID = 0L;
       return internalGetMutableEnvVariables().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+     * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
      */
     public Builder putEnvVariables(
         java.lang.String key,
@@ -1209,7 +1182,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+     * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
      */
 
     public Builder putAllEnvVariables(
@@ -1217,6 +1190,125 @@ private static final long serialVersionUID = 0L;
       internalGetMutableEnvVariables().getMutableMap()
           .putAll(values);
       return this;
+    }
+
+    private io.cuemby.pipelines.runtime.v1alpha1.Commands commands_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.cuemby.pipelines.runtime.v1alpha1.Commands, io.cuemby.pipelines.runtime.v1alpha1.Commands.Builder, io.cuemby.pipelines.runtime.v1alpha1.CommandsOrBuilder> commandsBuilder_;
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+     * @return Whether the commands field is set.
+     */
+    public boolean hasCommands() {
+      return commandsBuilder_ != null || commands_ != null;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+     * @return The commands.
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.Commands getCommands() {
+      if (commandsBuilder_ == null) {
+        return commands_ == null ? io.cuemby.pipelines.runtime.v1alpha1.Commands.getDefaultInstance() : commands_;
+      } else {
+        return commandsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+     */
+    public Builder setCommands(io.cuemby.pipelines.runtime.v1alpha1.Commands value) {
+      if (commandsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        commands_ = value;
+        onChanged();
+      } else {
+        commandsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+     */
+    public Builder setCommands(
+        io.cuemby.pipelines.runtime.v1alpha1.Commands.Builder builderForValue) {
+      if (commandsBuilder_ == null) {
+        commands_ = builderForValue.build();
+        onChanged();
+      } else {
+        commandsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+     */
+    public Builder mergeCommands(io.cuemby.pipelines.runtime.v1alpha1.Commands value) {
+      if (commandsBuilder_ == null) {
+        if (commands_ != null) {
+          commands_ =
+            io.cuemby.pipelines.runtime.v1alpha1.Commands.newBuilder(commands_).mergeFrom(value).buildPartial();
+        } else {
+          commands_ = value;
+        }
+        onChanged();
+      } else {
+        commandsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+     */
+    public Builder clearCommands() {
+      if (commandsBuilder_ == null) {
+        commands_ = null;
+        onChanged();
+      } else {
+        commands_ = null;
+        commandsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.Commands.Builder getCommandsBuilder() {
+      
+      onChanged();
+      return getCommandsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.CommandsOrBuilder getCommandsOrBuilder() {
+      if (commandsBuilder_ != null) {
+        return commandsBuilder_.getMessageOrBuilder();
+      } else {
+        return commands_ == null ?
+            io.cuemby.pipelines.runtime.v1alpha1.Commands.getDefaultInstance() : commands_;
+      }
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.cuemby.pipelines.runtime.v1alpha1.Commands, io.cuemby.pipelines.runtime.v1alpha1.Commands.Builder, io.cuemby.pipelines.runtime.v1alpha1.CommandsOrBuilder> 
+        getCommandsFieldBuilder() {
+      if (commandsBuilder_ == null) {
+        commandsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.cuemby.pipelines.runtime.v1alpha1.Commands, io.cuemby.pipelines.runtime.v1alpha1.Commands.Builder, io.cuemby.pipelines.runtime.v1alpha1.CommandsOrBuilder>(
+                getCommands(),
+                getParentForChildren(),
+                isClean());
+        commands_ = null;
+      }
+      return commandsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

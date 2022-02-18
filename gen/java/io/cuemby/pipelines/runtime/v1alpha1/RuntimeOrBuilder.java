@@ -32,37 +32,26 @@ public interface RuntimeOrBuilder extends
       getNamespaceBytes();
 
   /**
-   * <code>.pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];</code>
-   * @return The enum numeric value on the wire for typeSource.
+   * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
+   * @return Whether the integration field is set.
    */
-  int getTypeSourceValue();
+  boolean hasIntegration();
   /**
-   * <code>.pipelines.runtime.v1alpha1.RuntimeType type_source = 3 [json_name = "typeSource"];</code>
-   * @return The typeSource.
+   * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
+   * @return The integration.
    */
-  io.cuemby.pipelines.runtime.v1alpha1.RuntimeType getTypeSource();
+  io.cuemby.pipelines.runtime.v1alpha1.Integration getIntegration();
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.IntegrationOrBuilder getIntegrationOrBuilder();
 
   /**
-   * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
-   * @return Whether the gitProvider field is set.
-   */
-  boolean hasGitProvider();
-  /**
-   * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
-   * @return The gitProvider.
-   */
-  io.cuemby.pipelines.runtime.v1alpha1.TypeGitProvider getGitProvider();
-  /**
-   * <code>.pipelines.runtime.v1alpha1.TypeGitProvider git_provider = 4 [json_name = "gitProvider"];</code>
-   */
-  io.cuemby.pipelines.runtime.v1alpha1.TypeGitProviderOrBuilder getGitProviderOrBuilder();
-
-  /**
-   * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
    */
   int getEnvVariablesCount();
   /**
-   * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
    */
   boolean containsEnvVariables(
       java.lang.String key);
@@ -73,21 +62,36 @@ public interface RuntimeOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getEnvVariables();
   /**
-   * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getEnvVariablesMap();
   /**
-   * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
    */
 
   java.lang.String getEnvVariablesOrDefault(
       java.lang.String key,
       java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; env_variables = 5 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
    */
 
   java.lang.String getEnvVariablesOrThrow(
       java.lang.String key);
+
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+   * @return Whether the commands field is set.
+   */
+  boolean hasCommands();
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+   * @return The commands.
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.Commands getCommands();
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.CommandsOrBuilder getCommandsOrBuilder();
 }
