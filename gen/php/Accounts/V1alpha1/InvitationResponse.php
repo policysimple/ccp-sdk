@@ -7,6 +7,8 @@ namespace Accounts\V1alpha1;
 use UnexpectedValueException;
 
 /**
+ * Invitation
+ *
  * Protobuf type <code>accounts.v1alpha1.InvitationResponse</code>
  */
 class InvitationResponse

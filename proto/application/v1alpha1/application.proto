@@ -16,38 +16,6 @@ service ApplicationService {
 }
 
 
-/*
-{
-    name: <string>,
-    ingeration: <string>,
-    repository: <string>,
-    configuration: {
-        envs: [{
-            name: <string>,
-            key: <string>,
-            encrypted: <boolean>
-        }],
-        commands: {
-            build: <string>,
-            run: <string>
-        },
-        port: <integer>
-    }
-}
-
-*/
-
-/*
-type Repository struct {
-	ID          primitive.ObjectID `bson:"_id"`
-	Name        string             `bson:"name"`
-	Private     bool               `bson:"private"`
-	FullName    string             `bson:"full_name"`
-	Description string             `bson:"description"`
-	Fork        bool               `bson:"fork"`
-	CloneURL    string             `bson:"clone_url"`
-}
-*/
 
 message Repository {
     string name = 1;
@@ -64,7 +32,7 @@ message  Command {
 }
 
 message Env {
-    string name = 1;
+    string value = 1;
     string key = 2;
     bool encrypted = 3;
 }

@@ -108,7 +108,6 @@ class AccountService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CreatePermissionResponse>> PrepareAsyncCreatePermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreatePermissionRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CreatePermissionResponse>>(PrepareAsyncCreatePermissionRaw(context, request, cq));
     }
-    // rpc AssignPermission(AssignPermissionRequest) returns (MsgResponse);
     virtual ::grpc::Status ListPermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListPermissionRequest& request, ::accounts::v1alpha1::ListPermissionResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListPermissionResponse>> AsyncListPermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListPermissionRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListPermissionResponse>>(AsyncListPermissionRaw(context, request, cq));
@@ -209,9 +208,6 @@ class AccountService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::DeleteRoleResponse>> PrepareAsyncDeleteRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteRoleRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::DeleteRoleResponse>>(PrepareAsyncDeleteRoleRaw(context, request, cq));
     }
-    // filter group by teamid
-    // rpc ListRolesByTeamId(ListRolesByTeamIdRequest) returns (ListRolesResponse);
-    //
     // CRUD Project
     virtual ::grpc::Status CreateProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateProjectRequest& request, ::accounts::v1alpha1::CreateProjectResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CreateProjectResponse>> AsyncCreateProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) {
@@ -248,7 +244,6 @@ class AccountService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListProjectResponse>> PrepareAsyncListProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListProjectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListProjectResponse>>(PrepareAsyncListProjectRaw(context, request, cq));
     }
-    // rpc ListProjectPagination(ListProjectPaginationRequest) returns (ListProjectPaginationResponse);    
     // Get Users Dex
     virtual ::grpc::Status GetListUserDex(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetListUserDexRequest& request, ::accounts::v1alpha1::GetListUserDexResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetListUserDexResponse>> AsyncGetListUserDex(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetListUserDexRequest& request, ::grpc::CompletionQueue* cq) {
@@ -285,6 +280,21 @@ class AccountService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::VerifyEmailResponse>> PrepareAsyncVerifyEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::VerifyEmailRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::VerifyEmailResponse>>(PrepareAsyncVerifyEmailRaw(context, request, cq));
     }
+    //  Countries
+    virtual ::grpc::Status ListCountries(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest& request, ::accounts::v1alpha1::ListCountriesResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListCountriesResponse>> AsyncListCountries(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListCountriesResponse>>(AsyncListCountriesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListCountriesResponse>> PrepareAsyncListCountries(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListCountriesResponse>>(PrepareAsyncListCountriesRaw(context, request, cq));
+    }
+    virtual ::grpc::Status GetOneCountry(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest& request, ::accounts::v1alpha1::GetOneCountryResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneCountryResponse>> AsyncGetOneCountry(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneCountryResponse>>(AsyncGetOneCountryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneCountryResponse>> PrepareAsyncGetOneCountry(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneCountryResponse>>(PrepareAsyncGetOneCountryRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -300,7 +310,6 @@ class AccountService final {
       virtual void AgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::AgreeInvitationUserResponse* response, std::function<void(::grpc::Status)>) = 0;
       // /PERMISSION
       virtual void CreatePermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreatePermissionRequest* request, ::accounts::v1alpha1::CreatePermissionResponse* response, std::function<void(::grpc::Status)>) = 0;
-      // rpc AssignPermission(AssignPermissionRequest) returns (MsgResponse);
       virtual void ListPermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListPermissionRequest* request, ::accounts::v1alpha1::ListPermissionResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetOnePermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOnePermissionRequest* request, ::accounts::v1alpha1::GetOnePermissionResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdatePermission(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdatePermissionRequest* request, ::accounts::v1alpha1::UpdatePermissionResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -317,22 +326,21 @@ class AccountService final {
       virtual void UpdateRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateRoleRequest* request, ::accounts::v1alpha1::UpdateRoleResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetOneRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneRoleRequest* request, ::accounts::v1alpha1::GetOneRoleResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteRoleRequest* request, ::accounts::v1alpha1::DeleteRoleResponse* response, std::function<void(::grpc::Status)>) = 0;
-      // filter group by teamid
-      // rpc ListRolesByTeamId(ListRolesByTeamIdRequest) returns (ListRolesResponse);
-      //
       // CRUD Project
       virtual void CreateProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateProjectRequest* request, ::accounts::v1alpha1::CreateProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetOneProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneProjectRequest* request, ::accounts::v1alpha1::GetOneProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateProjectRequest* request, ::accounts::v1alpha1::UpdateProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteProjectRequest* request, ::accounts::v1alpha1::DeleteProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListProjectRequest* request, ::accounts::v1alpha1::ListProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      // rpc ListProjectPagination(ListProjectPaginationRequest) returns (ListProjectPaginationResponse);    
       // Get Users Dex
       virtual void GetListUserDex(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetListUserDexRequest* request, ::accounts::v1alpha1::GetListUserDexResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetOneUserDex(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest* request, ::accounts::v1alpha1::GetOneUserDexResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SendVerificationEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendVerificationEmailRequest* request, ::accounts::v1alpha1::SendVerificationEmailResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void VerifyEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::VerifyEmailRequest* request, ::accounts::v1alpha1::VerifyEmailResponse* response, std::function<void(::grpc::Status)>) = 0;
+      //  Countries
+      virtual void ListCountries(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest* request, ::accounts::v1alpha1::ListCountriesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetOneCountry(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest* request, ::accounts::v1alpha1::GetOneCountryResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -404,6 +412,10 @@ class AccountService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::SendVerificationEmailResponse>* PrepareAsyncSendVerificationEmailRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendVerificationEmailRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::VerifyEmailResponse>* AsyncVerifyEmailRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::VerifyEmailRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::VerifyEmailResponse>* PrepareAsyncVerifyEmailRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::VerifyEmailRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListCountriesResponse>* AsyncListCountriesRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::ListCountriesResponse>* PrepareAsyncListCountriesRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneCountryResponse>* AsyncGetOneCountryRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneCountryResponse>* PrepareAsyncGetOneCountryRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -646,6 +658,20 @@ class AccountService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::VerifyEmailResponse>> PrepareAsyncVerifyEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::VerifyEmailRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::VerifyEmailResponse>>(PrepareAsyncVerifyEmailRaw(context, request, cq));
     }
+    ::grpc::Status ListCountries(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest& request, ::accounts::v1alpha1::ListCountriesResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListCountriesResponse>> AsyncListCountries(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListCountriesResponse>>(AsyncListCountriesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListCountriesResponse>> PrepareAsyncListCountries(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListCountriesResponse>>(PrepareAsyncListCountriesRaw(context, request, cq));
+    }
+    ::grpc::Status GetOneCountry(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest& request, ::accounts::v1alpha1::GetOneCountryResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneCountryResponse>> AsyncGetOneCountry(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneCountryResponse>>(AsyncGetOneCountryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneCountryResponse>> PrepareAsyncGetOneCountry(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneCountryResponse>>(PrepareAsyncGetOneCountryRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -683,6 +709,8 @@ class AccountService final {
       void CheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response, std::function<void(::grpc::Status)>) override;
       void SendVerificationEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendVerificationEmailRequest* request, ::accounts::v1alpha1::SendVerificationEmailResponse* response, std::function<void(::grpc::Status)>) override;
       void VerifyEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::VerifyEmailRequest* request, ::accounts::v1alpha1::VerifyEmailResponse* response, std::function<void(::grpc::Status)>) override;
+      void ListCountries(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest* request, ::accounts::v1alpha1::ListCountriesResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetOneCountry(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest* request, ::accounts::v1alpha1::GetOneCountryResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -762,6 +790,10 @@ class AccountService final {
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::SendVerificationEmailResponse>* PrepareAsyncSendVerificationEmailRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendVerificationEmailRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::VerifyEmailResponse>* AsyncVerifyEmailRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::VerifyEmailRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::VerifyEmailResponse>* PrepareAsyncVerifyEmailRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::VerifyEmailRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListCountriesResponse>* AsyncListCountriesRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListCountriesResponse>* PrepareAsyncListCountriesRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneCountryResponse>* AsyncGetOneCountryRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneCountryResponse>* PrepareAsyncGetOneCountryRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateUser_;
     const ::grpc::internal::RpcMethod rpcmethod_ListUser_;
     const ::grpc::internal::RpcMethod rpcmethod_GetOneUser_;
@@ -796,6 +828,8 @@ class AccountService final {
     const ::grpc::internal::RpcMethod rpcmethod_CheckUser_;
     const ::grpc::internal::RpcMethod rpcmethod_SendVerificationEmail_;
     const ::grpc::internal::RpcMethod rpcmethod_VerifyEmail_;
+    const ::grpc::internal::RpcMethod rpcmethod_ListCountries_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetOneCountry_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -815,7 +849,6 @@ class AccountService final {
     virtual ::grpc::Status AgreeInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::AgreeInvitationUserResponse* response);
     // /PERMISSION
     virtual ::grpc::Status CreatePermission(::grpc::ServerContext* context, const ::accounts::v1alpha1::CreatePermissionRequest* request, ::accounts::v1alpha1::CreatePermissionResponse* response);
-    // rpc AssignPermission(AssignPermissionRequest) returns (MsgResponse);
     virtual ::grpc::Status ListPermission(::grpc::ServerContext* context, const ::accounts::v1alpha1::ListPermissionRequest* request, ::accounts::v1alpha1::ListPermissionResponse* response);
     virtual ::grpc::Status GetOnePermission(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOnePermissionRequest* request, ::accounts::v1alpha1::GetOnePermissionResponse* response);
     virtual ::grpc::Status UpdatePermission(::grpc::ServerContext* context, const ::accounts::v1alpha1::UpdatePermissionRequest* request, ::accounts::v1alpha1::UpdatePermissionResponse* response);
@@ -832,22 +865,21 @@ class AccountService final {
     virtual ::grpc::Status UpdateRole(::grpc::ServerContext* context, const ::accounts::v1alpha1::UpdateRoleRequest* request, ::accounts::v1alpha1::UpdateRoleResponse* response);
     virtual ::grpc::Status GetOneRole(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneRoleRequest* request, ::accounts::v1alpha1::GetOneRoleResponse* response);
     virtual ::grpc::Status DeleteRole(::grpc::ServerContext* context, const ::accounts::v1alpha1::DeleteRoleRequest* request, ::accounts::v1alpha1::DeleteRoleResponse* response);
-    // filter group by teamid
-    // rpc ListRolesByTeamId(ListRolesByTeamIdRequest) returns (ListRolesResponse);
-    //
     // CRUD Project
     virtual ::grpc::Status CreateProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::CreateProjectRequest* request, ::accounts::v1alpha1::CreateProjectResponse* response);
     virtual ::grpc::Status GetOneProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneProjectRequest* request, ::accounts::v1alpha1::GetOneProjectResponse* response);
     virtual ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::UpdateProjectRequest* request, ::accounts::v1alpha1::UpdateProjectResponse* response);
     virtual ::grpc::Status DeleteProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::DeleteProjectRequest* request, ::accounts::v1alpha1::DeleteProjectResponse* response);
     virtual ::grpc::Status ListProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::ListProjectRequest* request, ::accounts::v1alpha1::ListProjectResponse* response);
-    // rpc ListProjectPagination(ListProjectPaginationRequest) returns (ListProjectPaginationResponse);    
     // Get Users Dex
     virtual ::grpc::Status GetListUserDex(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetListUserDexRequest* request, ::accounts::v1alpha1::GetListUserDexResponse* response);
     virtual ::grpc::Status GetOneUserDex(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest* request, ::accounts::v1alpha1::GetOneUserDexResponse* response);
     virtual ::grpc::Status CheckUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response);
     virtual ::grpc::Status SendVerificationEmail(::grpc::ServerContext* context, const ::accounts::v1alpha1::SendVerificationEmailRequest* request, ::accounts::v1alpha1::SendVerificationEmailResponse* response);
     virtual ::grpc::Status VerifyEmail(::grpc::ServerContext* context, const ::accounts::v1alpha1::VerifyEmailRequest* request, ::accounts::v1alpha1::VerifyEmailResponse* response);
+    //  Countries
+    virtual ::grpc::Status ListCountries(::grpc::ServerContext* context, const ::accounts::v1alpha1::ListCountriesRequest* request, ::accounts::v1alpha1::ListCountriesResponse* response);
+    virtual ::grpc::Status GetOneCountry(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneCountryRequest* request, ::accounts::v1alpha1::GetOneCountryResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateUser : public BaseClass {
@@ -1529,7 +1561,47 @@ class AccountService final {
       ::grpc::Service::RequestAsyncUnary(33, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateUser<WithAsyncMethod_ListUser<WithAsyncMethod_GetOneUser<WithAsyncMethod_UpdateUser<WithAsyncMethod_DeleteUser<WithAsyncMethod_ListUserPagination<WithAsyncMethod_SendInvitationUser<WithAsyncMethod_GetInvitationUser<WithAsyncMethod_AgreeInvitationUser<WithAsyncMethod_CreatePermission<WithAsyncMethod_ListPermission<WithAsyncMethod_GetOnePermission<WithAsyncMethod_UpdatePermission<WithAsyncMethod_DeletePermission<WithAsyncMethod_CreateOrganization<WithAsyncMethod_ListOrganization<WithAsyncMethod_GetOneOrganization<WithAsyncMethod_UpdateOrganization<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_CreateRole<WithAsyncMethod_ListRoles<WithAsyncMethod_UpdateRole<WithAsyncMethod_GetOneRole<WithAsyncMethod_DeleteRole<WithAsyncMethod_CreateProject<WithAsyncMethod_GetOneProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_DeleteProject<WithAsyncMethod_ListProject<WithAsyncMethod_GetListUserDex<WithAsyncMethod_GetOneUserDex<WithAsyncMethod_CheckUser<WithAsyncMethod_SendVerificationEmail<WithAsyncMethod_VerifyEmail<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_ListCountries : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_ListCountries() {
+      ::grpc::Service::MarkMethodAsync(34);
+    }
+    ~WithAsyncMethod_ListCountries() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListCountries(::grpc::ServerContext* context, const ::accounts::v1alpha1::ListCountriesRequest* request, ::accounts::v1alpha1::ListCountriesResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListCountries(::grpc::ServerContext* context, ::accounts::v1alpha1::ListCountriesRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::ListCountriesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(34, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetOneCountry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetOneCountry() {
+      ::grpc::Service::MarkMethodAsync(35);
+    }
+    ~WithAsyncMethod_GetOneCountry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOneCountry(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneCountryRequest* request, ::accounts::v1alpha1::GetOneCountryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetOneCountry(::grpc::ServerContext* context, ::accounts::v1alpha1::GetOneCountryRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::GetOneCountryResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(35, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateUser<WithAsyncMethod_ListUser<WithAsyncMethod_GetOneUser<WithAsyncMethod_UpdateUser<WithAsyncMethod_DeleteUser<WithAsyncMethod_ListUserPagination<WithAsyncMethod_SendInvitationUser<WithAsyncMethod_GetInvitationUser<WithAsyncMethod_AgreeInvitationUser<WithAsyncMethod_CreatePermission<WithAsyncMethod_ListPermission<WithAsyncMethod_GetOnePermission<WithAsyncMethod_UpdatePermission<WithAsyncMethod_DeletePermission<WithAsyncMethod_CreateOrganization<WithAsyncMethod_ListOrganization<WithAsyncMethod_GetOneOrganization<WithAsyncMethod_UpdateOrganization<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_CreateRole<WithAsyncMethod_ListRoles<WithAsyncMethod_UpdateRole<WithAsyncMethod_GetOneRole<WithAsyncMethod_DeleteRole<WithAsyncMethod_CreateProject<WithAsyncMethod_GetOneProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_DeleteProject<WithAsyncMethod_ListProject<WithAsyncMethod_GetListUserDex<WithAsyncMethod_GetOneUserDex<WithAsyncMethod_CheckUser<WithAsyncMethod_SendVerificationEmail<WithAsyncMethod_VerifyEmail<WithAsyncMethod_ListCountries<WithAsyncMethod_GetOneCountry<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateUser : public BaseClass {
    private:
@@ -2104,6 +2176,40 @@ class AccountService final {
     }
     // disable synchronous version of this method
     ::grpc::Status VerifyEmail(::grpc::ServerContext* context, const ::accounts::v1alpha1::VerifyEmailRequest* request, ::accounts::v1alpha1::VerifyEmailResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ListCountries : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_ListCountries() {
+      ::grpc::Service::MarkMethodGeneric(34);
+    }
+    ~WithGenericMethod_ListCountries() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListCountries(::grpc::ServerContext* context, const ::accounts::v1alpha1::ListCountriesRequest* request, ::accounts::v1alpha1::ListCountriesResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetOneCountry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetOneCountry() {
+      ::grpc::Service::MarkMethodGeneric(35);
+    }
+    ~WithGenericMethod_GetOneCountry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOneCountry(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneCountryRequest* request, ::accounts::v1alpha1::GetOneCountryResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2789,6 +2895,46 @@ class AccountService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_ListCountries : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_ListCountries() {
+      ::grpc::Service::MarkMethodRaw(34);
+    }
+    ~WithRawMethod_ListCountries() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListCountries(::grpc::ServerContext* context, const ::accounts::v1alpha1::ListCountriesRequest* request, ::accounts::v1alpha1::ListCountriesResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListCountries(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(34, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetOneCountry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetOneCountry() {
+      ::grpc::Service::MarkMethodRaw(35);
+    }
+    ~WithRawMethod_GetOneCountry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOneCountry(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneCountryRequest* request, ::accounts::v1alpha1::GetOneCountryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetOneCountry(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(35, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateUser : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -3468,9 +3614,49 @@ class AccountService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedVerifyEmail(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::VerifyEmailRequest,::accounts::v1alpha1::VerifyEmailResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ListCountries : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_ListCountries() {
+      ::grpc::Service::MarkMethodStreamed(34,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::ListCountriesRequest, ::accounts::v1alpha1::ListCountriesResponse>(std::bind(&WithStreamedUnaryMethod_ListCountries<BaseClass>::StreamedListCountries, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_ListCountries() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ListCountries(::grpc::ServerContext* context, const ::accounts::v1alpha1::ListCountriesRequest* request, ::accounts::v1alpha1::ListCountriesResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedListCountries(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::ListCountriesRequest,::accounts::v1alpha1::ListCountriesResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetOneCountry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetOneCountry() {
+      ::grpc::Service::MarkMethodStreamed(35,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::GetOneCountryRequest, ::accounts::v1alpha1::GetOneCountryResponse>(std::bind(&WithStreamedUnaryMethod_GetOneCountry<BaseClass>::StreamedGetOneCountry, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetOneCountry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetOneCountry(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneCountryRequest* request, ::accounts::v1alpha1::GetOneCountryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetOneCountry(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::GetOneCountryRequest,::accounts::v1alpha1::GetOneCountryResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<WithStreamedUnaryMethod_ListCountries<WithStreamedUnaryMethod_GetOneCountry<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<WithStreamedUnaryMethod_ListCountries<WithStreamedUnaryMethod_GetOneCountry<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Env extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string value = 1 [json_name = "value"];</code>
      */
-    protected $name = '';
+    protected $value = '';
     /**
      * Generated from protobuf field <code>string key = 2 [json_name = "key"];</code>
      */
@@ -32,7 +32,7 @@ class Env extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $name
+     *     @type string $value
      *     @type string $key
      *     @type bool $encrypted
      * }
@@ -43,23 +43,23 @@ class Env extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string value = 1 [json_name = "value"];</code>
      * @return string
      */
-    public function getName()
+    public function getValue()
     {
-        return $this->name;
+        return $this->value;
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string value = 1 [json_name = "value"];</code>
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setValue($var)
     {
         GPBUtil::checkString($var, True);
-        $this->name = $var;
+        $this->value = $var;
 
         return $this;
     }

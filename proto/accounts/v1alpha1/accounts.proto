@@ -6,7 +6,6 @@ option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1";
 package accounts.v1alpha1;
 
 service AccountService {
-    
     ///AUTH
     rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
     rpc ListUser(ListUserRequest) returns (ListUserResponse);
@@ -17,51 +16,92 @@ service AccountService {
     rpc SendInvitationUser(SendInvitationUserRequest) returns (SendInvitationUserResponse);
     rpc GetInvitationUser(GetInvitationUserRequest) returns (GetInvitationUserResponse);
     rpc AgreeInvitationUser(AgreeInvitationUserRequest) returns (AgreeInvitationUserResponse);
-
     ///PERMISSION
     rpc CreatePermission(CreatePermissionRequest) returns (CreatePermissionResponse);
-    //rpc AssignPermission(AssignPermissionRequest) returns (MsgResponse);
     rpc ListPermission(ListPermissionRequest) returns (ListPermissionResponse);
     rpc GetOnePermission(GetOnePermissionRequest) returns (GetOnePermissionResponse);
     rpc UpdatePermission(UpdatePermissionRequest) returns (UpdatePermissionResponse);
     rpc DeletePermission(DeletePermissionRequest) returns (DeletePermissionResponse);
-
     ///Organization
     rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse);
     rpc ListOrganization(ListOrganizationRequest) returns (ListOrganizationResponse);
     rpc GetOneOrganization(GetOneOrganizationRequest) returns (GetOneOrganizationResponse);
     rpc UpdateOrganization(UpdateOrganizationRequest) returns (UpdateOrganizationResponse);
     rpc DeleteOrganization(DeleteOrganizationRequest) returns (DeleteOrganizationResponse);
-
-
     //Roles 
     rpc CreateRole(CreateRoleRequest) returns (CreateRoleResponse);
     rpc ListRoles(ListRolesRequest) returns (ListRolesResponse);
     rpc UpdateRole(UpdateRoleRequest) returns (UpdateRoleResponse);
     rpc GetOneRole(GetOneRoleRequest) returns (GetOneRoleResponse);
     rpc DeleteRole(DeleteRoleRequest) returns (DeleteRoleResponse);
-
-    //filter group by teamid
-    //rpc ListRolesByTeamId(ListRolesByTeamIdRequest) returns (ListRolesResponse);
-
     //CRUD Project
     rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse);
     rpc GetOneProject(GetOneProjectRequest) returns (GetOneProjectResponse);
     rpc UpdateProject(UpdateProjectRequest) returns (UpdateProjectResponse);
     rpc DeleteProject(DeleteProjectRequest) returns (DeleteProjectResponse);
     rpc ListProject(ListProjectRequest) returns (ListProjectResponse);
-    //rpc ListProjectPagination(ListProjectPaginationRequest) returns (ListProjectPaginationResponse);    
-
-
     // Get Users Dex
     rpc GetListUserDex(GetListUserDexRequest) returns (GetListUserDexResponse);
     rpc GetOneUserDex(GetOneUserDexRequest) returns (GetOneUserDexResponse);
-
     rpc CheckUser(CheckUserRequest) returns (CheckUserResponse);
 
     rpc SendVerificationEmail(SendVerificationEmailRequest) returns (SendVerificationEmailResponse);
     rpc VerifyEmail(VerifyEmailRequest) returns (VerifyEmailResponse);
+    //  Countries
+    rpc ListCountries(ListCountriesRequest) returns (ListCountriesResponse);
+    rpc GetOneCountry(GetOneCountryRequest) returns (GetOneCountryResponse);
+    
 }
+
+/*
+
+    Requests Countries
+
+*/
+
+message City {
+    uint32 id = 1;
+    string name = 2;
+    string latitude = 3;
+    string longitude = 4;
+}
+
+message State {
+    uint32 id = 1;
+    string name = 2;
+    repeated City cities = 3;
+}
+
+message CountryList {
+    uint32 id = 1;
+    string name = 2;
+    string code = 3;
+    string phone_code = 4;
+    string emoji = 5;
+}
+
+message ListCountriesRequest {
+
+}
+
+message ListCountriesResponse {
+    repeated CountryList countries = 1;
+}
+
+message GetOneCountryRequest {
+     uint32 country_id = 1;
+     string name = 2;
+}
+
+message GetOneCountryResponse {
+    uint32 id = 1;
+    string name = 2;
+    string code = 3;
+    string phone_code = 4;
+    string emoji = 5;
+    repeated State states = 6;
+}
+
 
 /*
 
@@ -72,6 +112,7 @@ service AccountService {
 message SendVerificationEmailRequest {
     string email = 1;
     string name = 2;
+    string url = 3;
 }
 
 message SendVerificationEmailResponse {
@@ -98,10 +139,7 @@ message CheckUserRequest {
     string user_id_dex = 5;
     string user_id_admin = 6;
     uint32 user_id = 7;
-    // get organization or project with roles
-    //type permission
     string type_permission = 9;
-
     repeated uint32 roles_ids = 10;
 }
 
@@ -117,9 +155,7 @@ message UsersDex {
 
 /*
 
-
 USERS
-
 
 */
 
@@ -139,14 +175,11 @@ message DeleteUserResponse {
     string error = 2;
 }
 
-
-
 //ListUser
 message ListUserRequest {
     uint32 organization_id = 1;
     uint32 project_id = 2;
 }
-
 
 //Create
 message CreateUserRequest {
@@ -161,12 +194,12 @@ message CreateUserRequest {
 
     // details
     string phone_number = 9;
-    uint32 country_id = 10;
-    uint32 city_id = 11;
+    string country = 10;
+    string city = 11;
     string zip_code = 12;
     string address = 13;
     string state = 14;
-
+    string emoji_country = 15;
 
 }
 
@@ -215,13 +248,14 @@ message GetOneUserResponse {
     repeated Organization organizations = 12;
     repeated Project projects = 13;
 
-        // details
+    // details
     string phone_number = 14;
     string country = 15;
     string city = 16;
-    string code = 17;
+    string zip_code = 17;
     string address = 18;
     string state = 19;
+    string emoji_country = 20;
 }
 
 
@@ -232,7 +266,6 @@ message ListUserResponse {
 
 
 //pagination
-
 message ListUserPaginationRequest{
     int32 offset = 1;
     int32 limit = 2;
@@ -244,12 +277,10 @@ message ListUserPaginationResponse {
 }
 
 // Invitation
-
 enum InvitationResponse {
     INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED = 0;
     INVITATION_RESPONSE_REJECTED = 1;
 }
-
 
 message SendInvitationUserRequest {
     string name=1;
@@ -295,7 +326,6 @@ message AgreeInvitationUserResponse {
 message Rol {
     uint32 id = 1;
     string name = 2;
-    //uint32 TeamId = 4;
     uint32 project_id = 3;
     uint32 organization_id = 4;
     repeated Permission permissions = 5;
@@ -306,7 +336,6 @@ message CreateRoleRequest {
     string description = 2;
     uint32 project_id = 3;
     uint32 organization_id = 4;
-    //uint32 team_id = 3;
     string type_permission = 5;
     repeated uint32 permission_ids = 6;
 }
@@ -324,7 +353,6 @@ message GetOneRoleRequest {
 message GetOneRoleResponse{
     uint32 id = 1;
     string name = 2;
-    //uint32 TeamId = 4;
     uint32 organization_id = 3;
     uint32 project_id = 4;
     repeated Permission permissions = 5;
@@ -338,13 +366,9 @@ message ListRolesRequest {
     uint32 project_id = 1;
     uint32 organization_id = 2;
 }   
-
-//
-
 /* 
     Responses
 */
-
 message ListRolesResponse {
     repeated Rol roles = 1;
 }
@@ -363,12 +387,9 @@ message DeleteRoleResponse {
     string msg = 1;
     string error = 2;
 }
-
 /*
     PROJECTS
-
 */
-
 message Project {
     int32 id = 1;
     string name = 2;
@@ -381,11 +402,9 @@ message Project {
 
     repeated Rol roles = 8;
 }
-
 /*
     Requests
 */  
-
 message CreateProjectRequest {
     string name = 1;
     string description = 2;
@@ -410,8 +429,6 @@ message UpdateProjectRequest {
     int32 id = 1;
     CreateProjectRequest project = 2;
 }
-
-
 /*
     Responses
 */
@@ -456,14 +473,9 @@ message ListProjectPaginationResponse {
     repeated Project projects = 1;
     int64 count = 2;
 }
-
-
-
-
 /*
     PERMISSIONS
 */
-
 message Permission {
     uint32 id = 1;
     string name = 2;
@@ -478,12 +490,9 @@ message AssignPermissionRequest {
     uint32 user_id = 1;
     uint32 permission_id = 2;
 }
-
-
 /*
     Requests
 */
-
 message ListPermissionRequest{
     string type = 1;
 }
@@ -512,12 +521,9 @@ message GetOnePermissionResponse {
 message DeletePermissionRequest {
     uint32 permission_id = 1;
 }
-
-
 /*
     Responses
 */
-
 message UpdatePermissionResponse {
     string msg = 1;
     string error = 2;
@@ -532,14 +538,9 @@ message CreatePermissionResponse {
     string msg = 1;
     string error = 2;
 }
-
-
 /*
     ORGANIZATIONS
 */
-
-
-
 message Member {
     uint32 id = 1;
     string user_id = 2;
@@ -554,7 +555,6 @@ message ProjectOrganization {
     string name = 2;
     string image = 3;
     string description = 4;
-    //repeated Member members = 4;
 }
 
 
@@ -562,18 +562,16 @@ message Organization {
     uint32 id = 1;
     string name = 2;
     string image = 3;
+    string description = 4;
 }
-
 /*
-
 Requests
-
 */
-
 message CreateOrganizationRequest {
     string name = 1;
     string image = 2;
     string user_id = 3;
+    string description = 4;
 }
 
 message ListOrganizationRequest {
@@ -586,7 +584,7 @@ message GetOneOrganizationRequest {
 message UpdateOrganizationRequest {
     uint32 organization_id = 1;
     string name = 2;
-    //repeated uint32 team_ids = 3;
+    string description = 3;
     string image = 4;
 }
 
@@ -605,6 +603,7 @@ message GetOneOrganizationResponse{
     string image = 3;
     repeated ProjectOrganization projects = 4;
     repeated Member menbers = 5;
+    string description = 6;
 }
 
 
@@ -662,12 +661,12 @@ message GetOneUserDexResponse {
     repeated Project projects = 14;
 
     // details
-
     string phone_number = 15;
     string country = 16;
     string city = 17;
-    string code = 18;
+    string zip_code = 18;
     string address = 19;
     string state = 20;
-
+    string emoji_country = 21;
+	
 }

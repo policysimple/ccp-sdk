@@ -4563,7 +4563,8 @@ proto.source.v1alpha1.CreateIntegrationResponse.prototype.toObject = function(op
 proto.source.v1alpha1.CreateIntegrationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 2, "")
+    error: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    integrationId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -4608,6 +4609,10 @@ proto.source.v1alpha1.CreateIntegrationResponse.deserializeBinaryFromReader = fu
       var value = /** @type {string} */ (reader.readString());
       msg.setError(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIntegrationId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4651,6 +4656,13 @@ proto.source.v1alpha1.CreateIntegrationResponse.serializeBinaryToWriter = functi
       f
     );
   }
+  f = message.getIntegrationId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -4687,6 +4699,24 @@ proto.source.v1alpha1.CreateIntegrationResponse.prototype.getError = function() 
  */
 proto.source.v1alpha1.CreateIntegrationResponse.prototype.setError = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string integration_id = 3;
+ * @return {string}
+ */
+proto.source.v1alpha1.CreateIntegrationResponse.prototype.getIntegrationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.source.v1alpha1.CreateIntegrationResponse} returns this
+ */
+proto.source.v1alpha1.CreateIntegrationResponse.prototype.setIntegrationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

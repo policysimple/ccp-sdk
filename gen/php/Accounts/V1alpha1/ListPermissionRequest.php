@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Requests
+ *
  * Generated from protobuf message <code>accounts.v1alpha1.ListPermissionRequest</code>
  */
 class ListPermissionRequest extends \Google\Protobuf\Internal\Message

@@ -21,6 +21,10 @@ class CreateIntegrationResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      */
     protected $error = '';
+    /**
+     * Generated from protobuf field <code>string integration_id = 3 [json_name = "integrationId"];</code>
+     */
+    protected $integration_id = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class CreateIntegrationResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type string $msg
      *     @type string $error
+     *     @type string $integration_id
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class CreateIntegrationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->error = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string integration_id = 3 [json_name = "integrationId"];</code>
+     * @return string
+     */
+    public function getIntegrationId()
+    {
+        return $this->integration_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string integration_id = 3 [json_name = "integrationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIntegrationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->integration_id = $var;
 
         return $this;
     }

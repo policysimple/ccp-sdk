@@ -16,7 +16,7 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-©3
+Ð3
 source/v1alpha1/source.protosource.v1alpha1"È
 DetailRepository
 id (	Rid
@@ -123,10 +123,11 @@ Repository
 value (	Rvalue:8;
 MetadataEntry
 key (	Rkey
-value (	Rvalue:8"C
+value (	Rvalue:8"j
 CreateIntegrationResponse
 msg (	Rmsg
-error (	Rerror"[
+error (	Rerror%
+integration_id (	RintegrationId"[
 ListIntegrationsRequest\'
 organization_id (RorganizationId
 user_id (	RuserId"\\

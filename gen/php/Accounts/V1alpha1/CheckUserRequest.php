@@ -44,9 +44,6 @@ class CheckUserRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_id = 0;
     /**
-     * get organization or project with roles
-     *type permission
-     *
      * Generated from protobuf field <code>string type_permission = 9 [json_name = "typePermission"];</code>
      */
     protected $type_permission = '';
@@ -70,8 +67,6 @@ class CheckUserRequest extends \Google\Protobuf\Internal\Message
      *     @type string $user_id_admin
      *     @type int $user_id
      *     @type string $type_permission
-     *           get organization or project with roles
-     *          type permission
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $roles_ids
      * }
      */
@@ -239,9 +234,6 @@ class CheckUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * get organization or project with roles
-     *type permission
-     *
      * Generated from protobuf field <code>string type_permission = 9 [json_name = "typePermission"];</code>
      * @return string
      */
@@ -251,9 +243,6 @@ class CheckUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * get organization or project with roles
-     *type permission
-     *
      * Generated from protobuf field <code>string type_permission = 9 [json_name = "typePermission"];</code>
      * @param string $var
      * @return $this

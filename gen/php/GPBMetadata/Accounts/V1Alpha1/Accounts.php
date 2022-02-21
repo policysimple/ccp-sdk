@@ -16,11 +16,43 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-óe
- accounts/v1alpha1/accounts.protoaccounts.v1alpha1"H
+ýn
+ accounts/v1alpha1/accounts.protoaccounts.v1alpha1"d
+City
+id (Rid
+name (	Rname
+latitude (	Rlatitude
+	longitude (	R	longitude"\\
+State
+id (Rid
+name (	Rname/
+cities (2.accounts.v1alpha1.CityRcities"z
+CountryList
+id (Rid
+name (	Rname
+code (	Rcode
+
+phone_code (	R	phoneCode
+emoji (	Remoji"
+ListCountriesRequest"U
+ListCountriesResponse<
+	countries (2.accounts.v1alpha1.CountryListR	countries"I
+GetOneCountryRequest
+
+country_id (R	countryId
+name (	Rname"¶
+GetOneCountryResponse
+id (Rid
+name (	Rname
+code (	Rcode
+
+phone_code (	R	phoneCode
+emoji (	Remoji0
+states (2.accounts.v1alpha1.StateRstates"Z
 SendVerificationEmailRequest
 email (	Remail
-name (	Rname"V
+name (	Rname
+url (	Rurl"V
 SendVerificationEmailResponse
 html_result (	R
 htmlResult
@@ -62,7 +94,7 @@ permission
 ListUserRequest\'
 organization_id (RorganizationId
 
-project_id (R	projectId"´
+project_id (R	projectId"Ï
 CreateUserRequest
 user_id (	RuserId
 
@@ -73,14 +105,14 @@ first_name (	R	firstName
 	roles_ids (RrolesIds\'
 permissions_ids (RpermissionsIds+
 organizations_ids (RorganizationsIds!
-phone_number	 (	RphoneNumber
-
-country_id
- (R	countryId
-city_id (RcityId
+phone_number	 (	RphoneNumber
+country
+ (	Rcountry
+city (	Rcity
 zip_code (	RzipCode
 address (	Raddress
-state (	Rstate"f
+state (	Rstate#
+emoji_country (	RemojiCountry"f
 UpdateUserRequest
 auth_id (RauthId8
 auth (2$.accounts.v1alpha1.CreateUserRequestRauth",
@@ -96,7 +128,7 @@ first_name (	R	firstName
 	is_active (RisActive"
 is_super_user (RisSuperUser"#
 GetOneUserRequest
-id (Rid"‘
+id (Rid"½
 GetOneUserResponse
 id (Rid
 user_id (	RuserId
@@ -117,10 +149,11 @@ updated_at (	R	updatedAt,
 projects (2.accounts.v1alpha1.ProjectRprojects!
 phone_number (	RphoneNumber
 country (	Rcountry
-city (	Rcity
-code (	Rcode
+city (	Rcity
+zip_code (	RzipCode
 address (	Raddress
-state (	Rstate"E
+state (	Rstate#
+emoji_country (	RemojiCountry"E
 ListUserResponse1
 users (2.accounts.v1alpha1.UserListRusers"I
 ListUserPaginationRequest
@@ -302,30 +335,34 @@ first_name (	R	firstName
 id (Rid
 name (	Rname
 image (	Rimage 
-description (	Rdescription"H
+description (	Rdescription"j
 Organization
 id (Rid
 name (	Rname
-image (	Rimage"^
+image (	Rimage 
+description (	Rdescription"€
 CreateOrganizationRequest
 name (	Rname
 image (	Rimage
-user_id (	RuserId"
+user_id (	RuserId 
+description (	Rdescription"
 ListOrganizationRequest"D
 GetOneOrganizationRequest\'
-organization_id (RorganizationId"n
+organization_id (RorganizationId"
 UpdateOrganizationRequest\'
 organization_id (RorganizationId
-name (	Rname
+name (	Rname 
+description (	Rdescription
 image (	Rimage"D
 DeleteOrganizationRequest\'
-organization_id (RorganizationId"Ï
+organization_id (RorganizationId"ñ
 GetOneOrganizationResponse
 id (Rid
 name (	Rname
 image (	RimageB
 projects (2&.accounts.v1alpha1.ProjectOrganizationRprojects3
-menbers (2.accounts.v1alpha1.MemberRmenbers"a
+menbers (2.accounts.v1alpha1.MemberRmenbers 
+description (	Rdescription"a
 ListOrganizationResponseE
 organizations (2.accounts.v1alpha1.OrganizationRorganizations"†
 CreateOrganizationResponse
@@ -344,7 +381,7 @@ first_name (	R	firstName
 	users_dex (2.accounts.v1alpha1.UsersDexRusersDex"i
 GetOneUserDexRequest
 user_id (	RuserId8
-user (2$.accounts.v1alpha1.CreateUserRequestRuser"¦
+user (2$.accounts.v1alpha1.CreateUserRequestRuser"Ò
 GetOneUserDexResponse
 id (Rid
 user_id (	RuserId
@@ -366,13 +403,14 @@ updated_at (	R	updatedAt,
 projects (2.accounts.v1alpha1.ProjectRprojects!
 phone_number (	RphoneNumber
 country (	Rcountry
-city (	Rcity
-code (	Rcode
+city (	Rcity
+zip_code (	RzipCode
 address (	Raddress
-state (	Rstate*d
+state (	Rstate#
+emoji_country (	RemojiCountry*d
 InvitationResponse,
 (INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED  
-INVITATION_RESPONSE_REJECTED2 
+INVITATION_RESPONSE_REJECTED2è
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
@@ -415,7 +453,9 @@ DeleteRole$.accounts.v1alpha1.DeleteRoleRequest%.accounts.v1alpha1.DeleteRoleR
 GetOneUserDex\'.accounts.v1alpha1.GetOneUserDexRequest(.accounts.v1alpha1.GetOneUserDexResponseV
 	CheckUser#.accounts.v1alpha1.CheckUserRequest$.accounts.v1alpha1.CheckUserResponsez
 SendVerificationEmail/.accounts.v1alpha1.SendVerificationEmailRequest0.accounts.v1alpha1.SendVerificationEmailResponse\\
-VerifyEmail%.accounts.v1alpha1.VerifyEmailRequest&.accounts.v1alpha1.VerifyEmailResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
+VerifyEmail%.accounts.v1alpha1.VerifyEmailRequest&.accounts.v1alpha1.VerifyEmailResponseb
+ListCountries\'.accounts.v1alpha1.ListCountriesRequest(.accounts.v1alpha1.ListCountriesResponseb
+GetOneCountry\'.accounts.v1alpha1.GetOneCountryRequest(.accounts.v1alpha1.GetOneCountryResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

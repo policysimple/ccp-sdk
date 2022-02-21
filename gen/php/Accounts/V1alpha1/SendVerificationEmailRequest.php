@@ -21,6 +21,10 @@ class SendVerificationEmailRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      */
     protected $name = '';
+    /**
+     * Generated from protobuf field <code>string url = 3 [json_name = "url"];</code>
+     */
+    protected $url = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class SendVerificationEmailRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $email
      *     @type string $name
+     *     @type string $url
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class SendVerificationEmailRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 3 [json_name = "url"];</code>
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 3 [json_name = "url"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->url = $var;
 
         return $this;
     }

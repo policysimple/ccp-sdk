@@ -1897,16 +1897,16 @@ public final class ApplicationOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The name.
+     * <code>string value = 1 [json_name = "value"];</code>
+     * @return The value.
      */
-    java.lang.String getName();
+    java.lang.String getValue();
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string value = 1 [json_name = "value"];</code>
+     * @return The bytes for value.
      */
     com.google.protobuf.ByteString
-        getNameBytes();
+        getValueBytes();
 
     /**
      * <code>string key = 2 [json_name = "key"];</code>
@@ -1939,7 +1939,7 @@ public final class ApplicationOuterClass {
       super(builder);
     }
     private Env() {
-      name_ = "";
+      value_ = "";
       key_ = "";
     }
 
@@ -1976,7 +1976,7 @@ public final class ApplicationOuterClass {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              value_ = s;
               break;
             }
             case 18: {
@@ -2022,38 +2022,38 @@ public final class ApplicationOuterClass {
               application.v1alpha1.ApplicationOuterClass.Env.class, application.v1alpha1.ApplicationOuterClass.Env.Builder.class);
     }
 
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+    public static final int VALUE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object value_;
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The name.
+     * <code>string value = 1 [json_name = "value"];</code>
+     * @return The value.
      */
     @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        value_ = s;
         return s;
       }
     }
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string value = 1 [json_name = "value"];</code>
+     * @return The bytes for value.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getValueBytes() {
+      java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        value_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2123,8 +2123,8 @@ public final class ApplicationOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      if (!getValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, value_);
       }
       if (!getKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, key_);
@@ -2141,8 +2141,8 @@ public final class ApplicationOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      if (!getValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, value_);
       }
       if (!getKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, key_);
@@ -2166,8 +2166,8 @@ public final class ApplicationOuterClass {
       }
       application.v1alpha1.ApplicationOuterClass.Env other = (application.v1alpha1.ApplicationOuterClass.Env) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
       if (!getKey()
           .equals(other.getKey())) return false;
       if (getEncrypted()
@@ -2183,8 +2183,8 @@ public final class ApplicationOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + ENCRYPTED_FIELD_NUMBER;
@@ -2323,7 +2323,7 @@ public final class ApplicationOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        name_ = "";
+        value_ = "";
 
         key_ = "";
 
@@ -2355,7 +2355,7 @@ public final class ApplicationOuterClass {
       @java.lang.Override
       public application.v1alpha1.ApplicationOuterClass.Env buildPartial() {
         application.v1alpha1.ApplicationOuterClass.Env result = new application.v1alpha1.ApplicationOuterClass.Env(this);
-        result.name_ = name_;
+        result.value_ = value_;
         result.key_ = key_;
         result.encrypted_ = encrypted_;
         onBuilt();
@@ -2406,8 +2406,8 @@ public final class ApplicationOuterClass {
 
       public Builder mergeFrom(application.v1alpha1.ApplicationOuterClass.Env other) {
         if (other == application.v1alpha1.ApplicationOuterClass.Env.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
           onChanged();
         }
         if (!other.getKey().isEmpty()) {
@@ -2446,78 +2446,78 @@ public final class ApplicationOuterClass {
         return this;
       }
 
-      private java.lang.Object name_ = "";
+      private java.lang.Object value_ = "";
       /**
-       * <code>string name = 1 [json_name = "name"];</code>
-       * @return The name.
+       * <code>string value = 1 [json_name = "value"];</code>
+       * @return The value.
        */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          name_ = s;
+          value_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string name = 1 [json_name = "name"];</code>
-       * @return The bytes for name.
+       * <code>string value = 1 [json_name = "value"];</code>
+       * @return The bytes for value.
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
+          getValueBytes() {
+        java.lang.Object ref = value_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          name_ = b;
+          value_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string name = 1 [json_name = "name"];</code>
-       * @param value The name to set.
+       * <code>string value = 1 [json_name = "value"];</code>
+       * @param value The value to set.
        * @return This builder for chaining.
        */
-      public Builder setName(
+      public Builder setValue(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        name_ = value;
+        value_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 1 [json_name = "name"];</code>
+       * <code>string value = 1 [json_name = "value"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearName() {
+      public Builder clearValue() {
         
-        name_ = getDefaultInstance().getName();
+        value_ = getDefaultInstance().getValue();
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 1 [json_name = "name"];</code>
-       * @param value The bytes for name to set.
+       * <code>string value = 1 [json_name = "value"];</code>
+       * @param value The bytes for value to set.
        * @return This builder for chaining.
        */
-      public Builder setNameBytes(
+      public Builder setValueBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        name_ = value;
+        value_ = value;
         onChanged();
         return this;
       }
@@ -12508,58 +12508,58 @@ public final class ApplicationOuterClass {
       "\022\022\n\004fork\030\004 \001(\010R\004fork\022\033\n\tclone_url\030\005 \001(\tR" +
       "\010cloneUrl\022\030\n\007private\030\006 \001(\010R\007private\"1\n\007C" +
       "ommand\022\024\n\005build\030\001 \001(\tR\005build\022\020\n\003run\030\002 \001(" +
-      "\tR\003run\"I\n\003Env\022\022\n\004name\030\001 \001(\tR\004name\022\020\n\003key" +
-      "\030\002 \001(\tR\003key\022\034\n\tencrypted\030\003 \001(\010R\tencrypte" +
-      "d\"\215\001\n\rConfiguration\022-\n\004envs\030\001 \003(\0132\031.appl" +
-      "ication.v1alpha1.EnvR\004envs\0229\n\010commands\030\002" +
-      " \003(\0132\035.application.v1alpha1.CommandR\010com" +
-      "mands\022\022\n\004port\030\003 \001(\005R\004port\"\377\001\n\013Applicatio" +
-      "n\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n" +
-      "\013integration\030\003 \001(\tR\013integration\022@\n\nrepos" +
-      "itory\030\004 \001(\0132 .application.v1alpha1.Repos" +
-      "itoryR\nrepository\022I\n\rconfiguration\030\005 \001(\013" +
-      "2#.application.v1alpha1.ConfigurationR\rc" +
-      "onfiguration\022\035\n\nproject_id\030\006 \001(\rR\tprojec" +
-      "tId\"\374\001\n\030CreateApplicationRequest\022\022\n\004name" +
-      "\030\001 \001(\tR\004name\022 \n\013integration\030\002 \001(\tR\013integ" +
-      "ration\022@\n\nrepository\030\003 \001(\0132 .application" +
-      ".v1alpha1.RepositoryR\nrepository\022I\n\rconf" +
-      "iguration\030\004 \001(\0132#.application.v1alpha1.C" +
-      "onfigurationR\rconfiguration\022\035\n\nproject_i" +
-      "d\030\005 \001(\rR\tprojectId\"C\n\031CreateApplicationR" +
-      "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\t" +
-      "R\005error\"7\n\026ListApplicationRequest\022\035\n\npro" +
-      "ject_id\030\001 \001(\rR\tprojectId\"`\n\027ListApplicat" +
-      "ionResponse\022E\n\014applications\030\001 \003(\0132!.appl" +
-      "ication.v1alpha1.ApplicationR\014applicatio" +
-      "ns\"\'\n\025GetApplicationRequest\022\016\n\002id\030\001 \001(\tR" +
-      "\002id\"]\n\026GetApplicationResponse\022C\n\013applica" +
-      "tion\030\001 \001(\0132!.application.v1alpha1.Applic" +
-      "ationR\013application\"*\n\030DeleteApplicationR" +
-      "equest\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteApplicat" +
-      "ionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002" +
-      " \001(\tR\005error\"|\n\030UpdateApplicationRequest\022" +
-      "\016\n\002id\030\001 \001(\tR\002id\022P\n\013application\030\002 \001(\0132..a" +
-      "pplication.v1alpha1.CreateApplicationReq" +
-      "uestR\013application\"C\n\031UpdateApplicationRe" +
-      "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR" +
-      "\005error2\323\004\n\022ApplicationService\022t\n\021CreateA" +
-      "pplication\022..application.v1alpha1.Create" +
-      "ApplicationRequest\032/.application.v1alpha" +
-      "1.CreateApplicationResponse\022n\n\017ListAppli" +
-      "cation\022,.application.v1alpha1.ListApplic" +
-      "ationRequest\032-.application.v1alpha1.List" +
-      "ApplicationResponse\022k\n\016GetApplication\022+." +
-      "application.v1alpha1.GetApplicationReque" +
-      "st\032,.application.v1alpha1.GetApplication" +
-      "Response\022t\n\021DeleteApplication\022..applicat" +
-      "ion.v1alpha1.DeleteApplicationRequest\032/." +
-      "application.v1alpha1.DeleteApplicationRe" +
-      "sponse\022t\n\021UpdateApplication\022..applicatio" +
-      "n.v1alpha1.UpdateApplicationRequest\032/.ap" +
-      "plication.v1alpha1.UpdateApplicationResp" +
-      "onseB7Z5github.com/cuemby/ccp-sdk/gen/go" +
-      "/application/v1alpha1b\006proto3"
+      "\tR\003run\"K\n\003Env\022\024\n\005value\030\001 \001(\tR\005value\022\020\n\003k" +
+      "ey\030\002 \001(\tR\003key\022\034\n\tencrypted\030\003 \001(\010R\tencryp" +
+      "ted\"\215\001\n\rConfiguration\022-\n\004envs\030\001 \003(\0132\031.ap" +
+      "plication.v1alpha1.EnvR\004envs\0229\n\010commands" +
+      "\030\002 \003(\0132\035.application.v1alpha1.CommandR\010c" +
+      "ommands\022\022\n\004port\030\003 \001(\005R\004port\"\377\001\n\013Applicat" +
+      "ion\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022" +
+      " \n\013integration\030\003 \001(\tR\013integration\022@\n\nrep" +
+      "ository\030\004 \001(\0132 .application.v1alpha1.Rep" +
+      "ositoryR\nrepository\022I\n\rconfiguration\030\005 \001" +
+      "(\0132#.application.v1alpha1.ConfigurationR" +
+      "\rconfiguration\022\035\n\nproject_id\030\006 \001(\rR\tproj" +
+      "ectId\"\374\001\n\030CreateApplicationRequest\022\022\n\004na" +
+      "me\030\001 \001(\tR\004name\022 \n\013integration\030\002 \001(\tR\013int" +
+      "egration\022@\n\nrepository\030\003 \001(\0132 .applicati" +
+      "on.v1alpha1.RepositoryR\nrepository\022I\n\rco" +
+      "nfiguration\030\004 \001(\0132#.application.v1alpha1" +
+      ".ConfigurationR\rconfiguration\022\035\n\nproject" +
+      "_id\030\005 \001(\rR\tprojectId\"C\n\031CreateApplicatio" +
+      "nResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001" +
+      "(\tR\005error\"7\n\026ListApplicationRequest\022\035\n\np" +
+      "roject_id\030\001 \001(\rR\tprojectId\"`\n\027ListApplic" +
+      "ationResponse\022E\n\014applications\030\001 \003(\0132!.ap" +
+      "plication.v1alpha1.ApplicationR\014applicat" +
+      "ions\"\'\n\025GetApplicationRequest\022\016\n\002id\030\001 \001(" +
+      "\tR\002id\"]\n\026GetApplicationResponse\022C\n\013appli" +
+      "cation\030\001 \001(\0132!.application.v1alpha1.Appl" +
+      "icationR\013application\"*\n\030DeleteApplicatio" +
+      "nRequest\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteApplic" +
+      "ationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error" +
+      "\030\002 \001(\tR\005error\"|\n\030UpdateApplicationReques" +
+      "t\022\016\n\002id\030\001 \001(\tR\002id\022P\n\013application\030\002 \001(\0132." +
+      ".application.v1alpha1.CreateApplicationR" +
+      "equestR\013application\"C\n\031UpdateApplication" +
+      "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(" +
+      "\tR\005error2\323\004\n\022ApplicationService\022t\n\021Creat" +
+      "eApplication\022..application.v1alpha1.Crea" +
+      "teApplicationRequest\032/.application.v1alp" +
+      "ha1.CreateApplicationResponse\022n\n\017ListApp" +
+      "lication\022,.application.v1alpha1.ListAppl" +
+      "icationRequest\032-.application.v1alpha1.Li" +
+      "stApplicationResponse\022k\n\016GetApplication\022" +
+      "+.application.v1alpha1.GetApplicationReq" +
+      "uest\032,.application.v1alpha1.GetApplicati" +
+      "onResponse\022t\n\021DeleteApplication\022..applic" +
+      "ation.v1alpha1.DeleteApplicationRequest\032" +
+      "/.application.v1alpha1.DeleteApplication" +
+      "Response\022t\n\021UpdateApplication\022..applicat" +
+      "ion.v1alpha1.UpdateApplicationRequest\032/." +
+      "application.v1alpha1.UpdateApplicationRe" +
+      "sponseB7Z5github.com/cuemby/ccp-sdk/gen/" +
+      "go/application/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12582,7 +12582,7 @@ public final class ApplicationOuterClass {
     internal_static_application_v1alpha1_Env_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Env_descriptor,
-        new java.lang.String[] { "Name", "Key", "Encrypted", });
+        new java.lang.String[] { "Value", "Key", "Encrypted", });
     internal_static_application_v1alpha1_Configuration_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_application_v1alpha1_Configuration_fieldAccessorTable = new

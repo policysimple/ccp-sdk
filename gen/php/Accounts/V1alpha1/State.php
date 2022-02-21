@@ -9,11 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * PERMISSIONS
- *
- * Generated from protobuf message <code>accounts.v1alpha1.Permission</code>
+ * Generated from protobuf message <code>accounts.v1alpha1.State</code>
  */
-class Permission extends \Google\Protobuf\Internal\Message
+class State extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
@@ -24,9 +22,9 @@ class Permission extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.City cities = 3 [json_name = "cities"];</code>
      */
-    protected $type = '';
+    private $cities;
 
     /**
      * Constructor.
@@ -36,7 +34,7 @@ class Permission extends \Google\Protobuf\Internal\Message
      *
      *     @type int $id
      *     @type string $name
-     *     @type string $type
+     *     @type \Accounts\V1alpha1\City[]|\Google\Protobuf\Internal\RepeatedField $cities
      * }
      */
     public function __construct($data = NULL) {
@@ -89,23 +87,23 @@ class Permission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
-     * @return string
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.City cities = 3 [json_name = "cities"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getType()
+    public function getCities()
     {
-        return $this->type;
+        return $this->cities;
     }
 
     /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.City cities = 3 [json_name = "cities"];</code>
+     * @param \Accounts\V1alpha1\City[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setType($var)
+    public function setCities($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->type = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\City::class);
+        $this->cities = $arr;
 
         return $this;
     }
