@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package pipelines.runtime.v1alpha1;
+
+option csharp_namespace = "Pipelines.Runtime.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-runtime-service/runtimev1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "RuntimeAPIProto";
+option java_package = "io.cuemby.pipelines.runtime.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Pipelines\\Runtime\\V1Alpha1";
+
+import "pipelines/runtime/v1alpha1/runtime.proto";
+//import "runtime.proto";
+
+
+service RuntimeAPIService{
+    rpc CreateRuntime(CreateRuntimeRequest) returns (CreateRuntimeResponse) {};
+    rpc UpdateRuntime(UpdateRuntimeRequest) returns (UpdateRuntimeResponse) {};
+    rpc DeleteRuntime(DeleteRuntimeRequest) returns (DeleteRuntimeResponse) {};
+}
+
+message CreateRuntimeRequest {
+    pipelines.runtime.v1alpha1.Runtime runtime = 1;
+}
+
+message CreateRuntimeResponse {
+    pipelines.runtime.v1alpha1.Runtime runtime = 1;
+    string status = 2;
+}
+
+message UpdateRuntimeRequest {
+    pipelines.runtime.v1alpha1.Runtime runtime = 1;
+}
+
+message UpdateRuntimeResponse {
+    pipelines.runtime.v1alpha1.Runtime runtime = 1;
+    string status = 2;
+}
+
+message DeleteRuntimeRequest {
+    string runtime_id = 1;
+}
+
+message DeleteRuntimeResponse {
+    string status = 1;
+}
