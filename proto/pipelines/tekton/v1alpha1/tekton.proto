@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package pipelines.tekton.v1alpha1;
+
+option csharp_namespace = "Pipelines.Tekton.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "TektonProto";
+option java_package = "io.cuemby.pipelines.tekton.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Pipelines\\Tekton\\V1Alpha1";
+
+enum TaskType {
+    TASK_TYPE_ACCEPTED_TASK_UNSPECIFIED = 0;
+    TASK_TYPE_ACCEPTED_CLUSTER_TASK = 1;
+}
+
+message TaskParams {
+    string name = 1;
+    string value = 2;
+}
+
+message Task {
+    string id = 1;
+    string name = 2;
+    string task_ref_name = 3;
+    string workspace_name = 4;
+    TaskType task_type = 5;
+    repeated TaskParams task_params = 6;
+}
+
+
+// Pipeline ...
+message Pipeline {
+    string id = 1;
+    uint32 organization_id = 2;
+    uint32 project_id = 3;
+    string name = 4;
+    string workspaces = 5;
+    bool active = 6;
+    string status_type= 7;
+    repeated Task tasks = 8;
+}
+
+
+
