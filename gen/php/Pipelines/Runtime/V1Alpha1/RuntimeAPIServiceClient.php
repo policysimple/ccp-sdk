@@ -17,6 +17,19 @@ class RuntimeAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Pipelines\Runtime\V1Alpha1\GetRuntimeRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetRuntime(\Pipelines\Runtime\V1Alpha1\GetRuntimeRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntime',
+        $argument,
+        ['\Pipelines\Runtime\V1Alpha1\GetRuntimeResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Pipelines\Runtime\V1Alpha1\CreateRuntimeRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

@@ -463,8 +463,12 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.toObject = function(opt_inclu
  */
 proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    namespace: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    applicationId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    workspaceId: jspb.Message.getFieldWithDefault(msg, 6, ""),
     integration: (f = msg.getIntegration()) && proto.pipelines.runtime.v1alpha1.Integration.toObject(includeInstance, f),
     envVariablesMap: (f = msg.getEnvVariablesMap()) ? f.toObject(includeInstance, undefined) : [],
     commands: (f = msg.getCommands()) && proto.pipelines.runtime.v1alpha1.Commands.toObject(includeInstance, f)
@@ -506,24 +510,40 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
+      msg.setName(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setProjectId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApplicationId(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWorkspaceId(value);
+      break;
+    case 7:
       var value = new proto.pipelines.runtime.v1alpha1.Integration;
       reader.readMessage(value,proto.pipelines.runtime.v1alpha1.Integration.deserializeBinaryFromReader);
       msg.setIntegration(value);
       break;
-    case 4:
+    case 8:
       var value = msg.getEnvVariablesMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 5:
+    case 9:
       var value = new proto.pipelines.runtime.v1alpha1.Commands;
       reader.readMessage(value,proto.pipelines.runtime.v1alpha1.Commands.deserializeBinaryFromReader);
       msg.setCommands(value);
@@ -557,36 +577,64 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.serializeBinary = function() 
  */
 proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getName();
+  f = message.getId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getNamespace();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getProjectId();
+  if (f !== 0) {
+    writer.writeUint32(
+      4,
+      f
+    );
+  }
+  f = message.getApplicationId();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getWorkspaceId();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
   f = message.getIntegration();
   if (f != null) {
     writer.writeMessage(
-      3,
+      7,
       f,
       proto.pipelines.runtime.v1alpha1.Integration.serializeBinaryToWriter
     );
   }
   f = message.getEnvVariablesMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getCommands();
   if (f != null) {
     writer.writeMessage(
-      5,
+      9,
       f,
       proto.pipelines.runtime.v1alpha1.Commands.serializeBinaryToWriter
     );
@@ -595,10 +643,10 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
 
 
 /**
- * optional string name = 1;
+ * optional string id = 1;
  * @return {string}
  */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.getName = function() {
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -607,16 +655,16 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getName = function() {
  * @param {string} value
  * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
  */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.setName = function(value) {
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string namespace = 2;
+ * optional string name = 2;
  * @return {string}
  */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.getNamespace = function() {
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -625,18 +673,90 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getNamespace = function() {
  * @param {string} value
  * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
  */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.setNamespace = function(value) {
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional Integration integration = 3;
+ * optional string namespace = 3;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional uint32 project_id = 4;
+ * @return {number}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getProjectId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setProjectId = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional string application_id = 5;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getApplicationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setApplicationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string workspace_id = 6;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getWorkspaceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setWorkspaceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional Integration integration = 7;
  * @return {?proto.pipelines.runtime.v1alpha1.Integration}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getIntegration = function() {
   return /** @type{?proto.pipelines.runtime.v1alpha1.Integration} */ (
-    jspb.Message.getWrapperField(this, proto.pipelines.runtime.v1alpha1.Integration, 3));
+    jspb.Message.getWrapperField(this, proto.pipelines.runtime.v1alpha1.Integration, 7));
 };
 
 
@@ -645,7 +765,7 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getIntegration = function() {
  * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
 */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setIntegration = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -663,19 +783,19 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearIntegration = function()
  * @return {boolean}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.hasIntegration = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * map<string, string> env_variables = 4;
+ * map<string, string> env_variables = 8;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getEnvVariablesMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 8, opt_noLazyCreate,
       null));
 };
 
@@ -690,12 +810,12 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearEnvVariablesMap = functi
 
 
 /**
- * optional Commands commands = 5;
+ * optional Commands commands = 9;
  * @return {?proto.pipelines.runtime.v1alpha1.Commands}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getCommands = function() {
   return /** @type{?proto.pipelines.runtime.v1alpha1.Commands} */ (
-    jspb.Message.getWrapperField(this, proto.pipelines.runtime.v1alpha1.Commands, 5));
+    jspb.Message.getWrapperField(this, proto.pipelines.runtime.v1alpha1.Commands, 9));
 };
 
 
@@ -704,7 +824,7 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getCommands = function() {
  * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
 */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setCommands = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -722,7 +842,7 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearCommands = function() {
  * @return {boolean}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.hasCommands = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

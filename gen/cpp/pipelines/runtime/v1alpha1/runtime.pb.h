@@ -565,13 +565,17 @@ class Runtime final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kEnvVariablesFieldNumber = 4,
-    kNameFieldNumber = 1,
-    kNamespaceFieldNumber = 2,
-    kIntegrationFieldNumber = 3,
-    kCommandsFieldNumber = 5,
+    kEnvVariablesFieldNumber = 8,
+    kIdFieldNumber = 1,
+    kNameFieldNumber = 2,
+    kNamespaceFieldNumber = 3,
+    kApplicationIdFieldNumber = 5,
+    kWorkspaceIdFieldNumber = 6,
+    kIntegrationFieldNumber = 7,
+    kCommandsFieldNumber = 9,
+    kProjectIdFieldNumber = 4,
   };
-  // map<string, string> env_variables = 4 [json_name = "envVariables"];
+  // map<string, string> env_variables = 8 [json_name = "envVariables"];
   int env_variables_size() const;
   private:
   int _internal_env_variables_size() const;
@@ -588,7 +592,21 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_env_variables();
 
-  // string name = 1 [json_name = "name"];
+  // string id = 1 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // string name = 2 [json_name = "name"];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -602,7 +620,7 @@ class Runtime final :
   std::string* _internal_mutable_name();
   public:
 
-  // string namespace = 2 [json_name = "namespace"];
+  // string namespace = 3 [json_name = "namespace"];
   void clear_namespace_();
   const std::string& namespace_() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -616,7 +634,35 @@ class Runtime final :
   std::string* _internal_mutable_namespace_();
   public:
 
-  // .pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];
+  // string application_id = 5 [json_name = "applicationId"];
+  void clear_application_id();
+  const std::string& application_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_application_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_application_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_application_id();
+  void set_allocated_application_id(std::string* application_id);
+  private:
+  const std::string& _internal_application_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_application_id(const std::string& value);
+  std::string* _internal_mutable_application_id();
+  public:
+
+  // string workspace_id = 6 [json_name = "workspaceId"];
+  void clear_workspace_id();
+  const std::string& workspace_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_workspace_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_workspace_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_workspace_id();
+  void set_allocated_workspace_id(std::string* workspace_id);
+  private:
+  const std::string& _internal_workspace_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_workspace_id(const std::string& value);
+  std::string* _internal_mutable_workspace_id();
+  public:
+
+  // .pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];
   bool has_integration() const;
   private:
   bool _internal_has_integration() const;
@@ -634,7 +680,7 @@ class Runtime final :
       ::pipelines::runtime::v1alpha1::Integration* integration);
   ::pipelines::runtime::v1alpha1::Integration* unsafe_arena_release_integration();
 
-  // .pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];
+  // .pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];
   bool has_commands() const;
   private:
   bool _internal_has_commands() const;
@@ -652,6 +698,15 @@ class Runtime final :
       ::pipelines::runtime::v1alpha1::Commands* commands);
   ::pipelines::runtime::v1alpha1::Commands* unsafe_arena_release_commands();
 
+  // uint32 project_id = 4 [json_name = "projectId"];
+  void clear_project_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
+  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
+  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Runtime)
  private:
   class _Internal;
@@ -664,10 +719,14 @@ class Runtime final :
       std::string, std::string,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> env_variables_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr workspace_id_;
   ::pipelines::runtime::v1alpha1::Integration* integration_;
   ::pipelines::runtime::v1alpha1::Commands* commands_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto;
 };
@@ -922,7 +981,53 @@ inline void Commands::set_allocated_port(std::string* port) {
 
 // Runtime
 
-// string name = 1 [json_name = "name"];
+// string id = 1 [json_name = "id"];
+inline void Runtime::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& Runtime::id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.id)
+}
+inline std::string* Runtime::mutable_id() {
+  std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.id)
+  return _s;
+}
+inline const std::string& Runtime::_internal_id() const {
+  return id_.Get();
+}
+inline void Runtime::_internal_set_id(const std::string& value) {
+  
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_id() {
+  
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.id)
+}
+
+// string name = 2 [json_name = "name"];
 inline void Runtime::clear_name() {
   name_.ClearToEmpty();
 }
@@ -968,7 +1073,7 @@ inline void Runtime::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.name)
 }
 
-// string namespace = 2 [json_name = "namespace"];
+// string namespace = 3 [json_name = "namespace"];
 inline void Runtime::clear_namespace_() {
   namespace__.ClearToEmpty();
 }
@@ -1014,7 +1119,119 @@ inline void Runtime::set_allocated_namespace_(std::string* namespace_) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.namespace)
 }
 
-// .pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];
+// uint32 project_id = 4 [json_name = "projectId"];
+inline void Runtime::clear_project_id() {
+  project_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Runtime::_internal_project_id() const {
+  return project_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Runtime::project_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.project_id)
+  return _internal_project_id();
+}
+inline void Runtime::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  project_id_ = value;
+}
+inline void Runtime::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_project_id(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.project_id)
+}
+
+// string application_id = 5 [json_name = "applicationId"];
+inline void Runtime::clear_application_id() {
+  application_id_.ClearToEmpty();
+}
+inline const std::string& Runtime::application_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.application_id)
+  return _internal_application_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_application_id(ArgT0&& arg0, ArgT... args) {
+ 
+ application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.application_id)
+}
+inline std::string* Runtime::mutable_application_id() {
+  std::string* _s = _internal_mutable_application_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.application_id)
+  return _s;
+}
+inline const std::string& Runtime::_internal_application_id() const {
+  return application_id_.Get();
+}
+inline void Runtime::_internal_set_application_id(const std::string& value) {
+  
+  application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_application_id() {
+  
+  return application_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_application_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.application_id)
+  return application_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_application_id(std::string* application_id) {
+  if (application_id != nullptr) {
+    
+  } else {
+    
+  }
+  application_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), application_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.application_id)
+}
+
+// string workspace_id = 6 [json_name = "workspaceId"];
+inline void Runtime::clear_workspace_id() {
+  workspace_id_.ClearToEmpty();
+}
+inline const std::string& Runtime::workspace_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.workspace_id)
+  return _internal_workspace_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_workspace_id(ArgT0&& arg0, ArgT... args) {
+ 
+ workspace_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.workspace_id)
+}
+inline std::string* Runtime::mutable_workspace_id() {
+  std::string* _s = _internal_mutable_workspace_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.workspace_id)
+  return _s;
+}
+inline const std::string& Runtime::_internal_workspace_id() const {
+  return workspace_id_.Get();
+}
+inline void Runtime::_internal_set_workspace_id(const std::string& value) {
+  
+  workspace_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_workspace_id() {
+  
+  return workspace_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_workspace_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.workspace_id)
+  return workspace_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_workspace_id(std::string* workspace_id) {
+  if (workspace_id != nullptr) {
+    
+  } else {
+    
+  }
+  workspace_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), workspace_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.workspace_id)
+}
+
+// .pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];
 inline bool Runtime::_internal_has_integration() const {
   return this != internal_default_instance() && integration_ != nullptr;
 }
@@ -1104,7 +1321,7 @@ inline void Runtime::set_allocated_integration(::pipelines::runtime::v1alpha1::I
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.integration)
 }
 
-// map<string, string> env_variables = 4 [json_name = "envVariables"];
+// map<string, string> env_variables = 8 [json_name = "envVariables"];
 inline int Runtime::_internal_env_variables_size() const {
   return env_variables_.size();
 }
@@ -1133,7 +1350,7 @@ Runtime::mutable_env_variables() {
   return _internal_mutable_env_variables();
 }
 
-// .pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];
+// .pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];
 inline bool Runtime::_internal_has_commands() const {
   return this != internal_default_instance() && commands_ != nullptr;
 }

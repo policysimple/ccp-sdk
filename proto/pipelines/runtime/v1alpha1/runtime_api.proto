@@ -15,6 +15,7 @@ import "pipelines/runtime/v1alpha1/runtime.proto";
 
 
 service RuntimeAPIService{
+    rpc GetRuntime(GetRuntimeRequest) returns (GetRuntimeResponse) {};
     rpc CreateRuntime(CreateRuntimeRequest) returns (CreateRuntimeResponse) {};
     rpc UpdateRuntime(UpdateRuntimeRequest) returns (UpdateRuntimeResponse) {};
     rpc DeleteRuntime(DeleteRuntimeRequest) returns (DeleteRuntimeResponse) {};
@@ -44,4 +45,13 @@ message DeleteRuntimeRequest {
 
 message DeleteRuntimeResponse {
     string status = 1;
+}
+
+message GetRuntimeRequest {
+    string runtime_id = 1;
+}
+
+message GetRuntimeResponse {
+    pipelines.runtime.v1alpha1.Runtime runtime = 1;
+    string status = 2;
 }

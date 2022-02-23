@@ -8,50 +8,92 @@ public interface RuntimeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string name = 1 [json_name = "name"];</code>
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
+
+  /**
+   * <code>string name = 2 [json_name = "name"];</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
-   * <code>string name = 1 [json_name = "name"];</code>
+   * <code>string name = 2 [json_name = "name"];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
-   * <code>string namespace = 2 [json_name = "namespace"];</code>
+   * <code>string namespace = 3 [json_name = "namespace"];</code>
    * @return The namespace.
    */
   java.lang.String getNamespace();
   /**
-   * <code>string namespace = 2 [json_name = "namespace"];</code>
+   * <code>string namespace = 3 [json_name = "namespace"];</code>
    * @return The bytes for namespace.
    */
   com.google.protobuf.ByteString
       getNamespaceBytes();
 
   /**
-   * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
+   * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+   * @return The projectId.
+   */
+  int getProjectId();
+
+  /**
+   * <code>string application_id = 5 [json_name = "applicationId"];</code>
+   * @return The applicationId.
+   */
+  java.lang.String getApplicationId();
+  /**
+   * <code>string application_id = 5 [json_name = "applicationId"];</code>
+   * @return The bytes for applicationId.
+   */
+  com.google.protobuf.ByteString
+      getApplicationIdBytes();
+
+  /**
+   * <code>string workspace_id = 6 [json_name = "workspaceId"];</code>
+   * @return The workspaceId.
+   */
+  java.lang.String getWorkspaceId();
+  /**
+   * <code>string workspace_id = 6 [json_name = "workspaceId"];</code>
+   * @return The bytes for workspaceId.
+   */
+  com.google.protobuf.ByteString
+      getWorkspaceIdBytes();
+
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
    * @return Whether the integration field is set.
    */
   boolean hasIntegration();
   /**
-   * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
+   * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
    * @return The integration.
    */
   io.cuemby.pipelines.runtime.v1alpha1.Integration getIntegration();
   /**
-   * <code>.pipelines.runtime.v1alpha1.Integration integration = 3 [json_name = "integration"];</code>
+   * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
    */
   io.cuemby.pipelines.runtime.v1alpha1.IntegrationOrBuilder getIntegrationOrBuilder();
 
   /**
-   * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
    */
   int getEnvVariablesCount();
   /**
-   * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
    */
   boolean containsEnvVariables(
       java.lang.String key);
@@ -62,36 +104,36 @@ public interface RuntimeOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getEnvVariables();
   /**
-   * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getEnvVariablesMap();
   /**
-   * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
    */
 
   java.lang.String getEnvVariablesOrDefault(
       java.lang.String key,
       java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; env_variables = 4 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
    */
 
   java.lang.String getEnvVariablesOrThrow(
       java.lang.String key);
 
   /**
-   * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+   * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
    * @return Whether the commands field is set.
    */
   boolean hasCommands();
   /**
-   * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+   * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
    * @return The commands.
    */
   io.cuemby.pipelines.runtime.v1alpha1.Commands getCommands();
   /**
-   * <code>.pipelines.runtime.v1alpha1.Commands commands = 5 [json_name = "commands"];</code>
+   * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
    */
   io.cuemby.pipelines.runtime.v1alpha1.CommandsOrBuilder getCommandsOrBuilder();
 }

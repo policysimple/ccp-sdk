@@ -22,6 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type RuntimeAPIServiceClient interface {
+	GetRuntime(ctx context.Context, in *GetRuntimeRequest, opts ...grpc.CallOption) (*GetRuntimeResponse, error)
 	CreateRuntime(ctx context.Context, in *CreateRuntimeRequest, opts ...grpc.CallOption) (*CreateRuntimeResponse, error)
 	UpdateRuntime(ctx context.Context, in *UpdateRuntimeRequest, opts ...grpc.CallOption) (*UpdateRuntimeResponse, error)
 	DeleteRuntime(ctx context.Context, in *DeleteRuntimeRequest, opts ...grpc.CallOption) (*DeleteRuntimeResponse, error)
@@ -33,6 +34,15 @@ type runtimeAPIServiceClient struct {
 
 func NewRuntimeAPIServiceClient(cc grpc.ClientConnInterface) RuntimeAPIServiceClient {
 	return &runtimeAPIServiceClient{cc}
+}
+
+func (c *runtimeAPIServiceClient) GetRuntime(ctx context.Context, in *GetRuntimeRequest, opts ...grpc.CallOption) (*GetRuntimeResponse, error) {
+	out := new(GetRuntimeResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntime", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *runtimeAPIServiceClient) CreateRuntime(ctx context.Context, in *CreateRuntimeRequest, opts ...grpc.CallOption) (*CreateRuntimeResponse, error) {
@@ -66,6 +76,7 @@ func (c *runtimeAPIServiceClient) DeleteRuntime(ctx context.Context, in *DeleteR
 // All implementations should embed UnimplementedRuntimeAPIServiceServer
 // for forward compatibility
 type RuntimeAPIServiceServer interface {
+	GetRuntime(context.Context, *GetRuntimeRequest) (*GetRuntimeResponse, error)
 	CreateRuntime(context.Context, *CreateRuntimeRequest) (*CreateRuntimeResponse, error)
 	UpdateRuntime(context.Context, *UpdateRuntimeRequest) (*UpdateRuntimeResponse, error)
 	DeleteRuntime(context.Context, *DeleteRuntimeRequest) (*DeleteRuntimeResponse, error)
@@ -75,6 +86,9 @@ type RuntimeAPIServiceServer interface {
 type UnimplementedRuntimeAPIServiceServer struct {
 }
 
+func (UnimplementedRuntimeAPIServiceServer) GetRuntime(context.Context, *GetRuntimeRequest) (*GetRuntimeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRuntime not implemented")
+}
 func (UnimplementedRuntimeAPIServiceServer) CreateRuntime(context.Context, *CreateRuntimeRequest) (*CreateRuntimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateRuntime not implemented")
 }
@@ -94,6 +108,24 @@ type UnsafeRuntimeAPIServiceServer interface {
 
 func RegisterRuntimeAPIServiceServer(s grpc.ServiceRegistrar, srv RuntimeAPIServiceServer) {
 	s.RegisterService(&RuntimeAPIService_ServiceDesc, srv)
+}
+
+func _RuntimeAPIService_GetRuntime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRuntimeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RuntimeAPIServiceServer).GetRuntime(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntime",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RuntimeAPIServiceServer).GetRuntime(ctx, req.(*GetRuntimeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _RuntimeAPIService_CreateRuntime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -157,6 +189,10 @@ var RuntimeAPIService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "pipelines.runtime.v1alpha1.RuntimeAPIService",
 	HandlerType: (*RuntimeAPIServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "GetRuntime",
+			Handler:    _RuntimeAPIService_GetRuntime_Handler,
+		},
 		{
 			MethodName: "CreateRuntime",
 			Handler:    _RuntimeAPIService_CreateRuntime_Handler,

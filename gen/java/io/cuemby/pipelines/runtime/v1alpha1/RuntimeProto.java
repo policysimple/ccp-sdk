@@ -49,21 +49,24 @@ public final class RuntimeProto {
       "tionName\022%\n\016repository_url\030\002 \001(\tR\rreposi" +
       "toryUrl\"d\n\010Commands\022#\n\rbuild_command\030\001 \001" +
       "(\tR\014buildCommand\022\037\n\013run_command\030\002 \001(\tR\nr" +
-      "unCommand\022\022\n\004port\030\003 \001(\tR\004port\"\345\002\n\007Runtim" +
-      "e\022\022\n\004name\030\001 \001(\tR\004name\022\034\n\tnamespace\030\002 \001(\t" +
-      "R\tnamespace\022I\n\013integration\030\003 \001(\0132\'.pipel" +
-      "ines.runtime.v1alpha1.IntegrationR\013integ" +
-      "ration\022Z\n\renv_variables\030\004 \003(\01325.pipeline" +
-      "s.runtime.v1alpha1.Runtime.EnvVariablesE" +
-      "ntryR\014envVariables\022@\n\010commands\030\005 \001(\0132$.p" +
-      "ipelines.runtime.v1alpha1.CommandsR\010comm" +
-      "ands\032?\n\021EnvVariablesEntry\022\020\n\003key\030\001 \001(\tR\003" +
-      "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\255\001\n$io.cue" +
-      "mby.pipelines.runtime.v1alpha1B\014RuntimeP" +
-      "rotoP\001Z5github.com/cuemby/ccp-runtime-se" +
-      "rvice/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines." +
-      "Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1A" +
-      "lpha1b\006proto3"
+      "unCommand\022\022\n\004port\030\003 \001(\tR\004port\"\336\003\n\007Runtim" +
+      "e\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\034\n" +
+      "\tnamespace\030\003 \001(\tR\tnamespace\022\035\n\nproject_i" +
+      "d\030\004 \001(\rR\tprojectId\022%\n\016application_id\030\005 \001" +
+      "(\tR\rapplicationId\022!\n\014workspace_id\030\006 \001(\tR" +
+      "\013workspaceId\022I\n\013integration\030\007 \001(\0132\'.pipe" +
+      "lines.runtime.v1alpha1.IntegrationR\013inte" +
+      "gration\022Z\n\renv_variables\030\010 \003(\01325.pipelin" +
+      "es.runtime.v1alpha1.Runtime.EnvVariables" +
+      "EntryR\014envVariables\022@\n\010commands\030\t \001(\0132$." +
+      "pipelines.runtime.v1alpha1.CommandsR\010com" +
+      "mands\032?\n\021EnvVariablesEntry\022\020\n\003key\030\001 \001(\tR" +
+      "\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\255\001\n$io.cu" +
+      "emby.pipelines.runtime.v1alpha1B\014Runtime" +
+      "ProtoP\001Z5github.com/cuemby/ccp-runtime-s" +
+      "ervice/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines" +
+      ".Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1" +
+      "Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -86,7 +89,7 @@ public final class RuntimeProto {
     internal_static_pipelines_runtime_v1alpha1_Runtime_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor,
-        new java.lang.String[] { "Name", "Namespace", "Integration", "EnvVariables", "Commands", });
+        new java.lang.String[] { "Id", "Name", "Namespace", "ProjectId", "ApplicationId", "WorkspaceId", "Integration", "EnvVariables", "Commands", });
     internal_static_pipelines_runtime_v1alpha1_Runtime_EnvVariablesEntry_descriptor =
       internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor.getNestedTypes().get(0);
     internal_static_pipelines_runtime_v1alpha1_Runtime_EnvVariablesEntry_fieldAccessorTable = new
