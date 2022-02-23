@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package pipelines.tekton.v1alpha1;
+
+option csharp_namespace = "Pipelines.Tekton.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "TektonAPIProto";
+option java_package = "io.cuemby.pipelines.tekton.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Pipelines\\Tekton\\V1Alpha1";
+
+import "pipelines/tekton/v1alpha1/tekton.proto";
+
+service TektonPipelineAPIService{
+    rpc CreateTektonPipeline(CreateTektonPipelineRequest) returns (CreateTektonPipelineResponse);
+    rpc GetOneTektonPipeline(GetOneTektonPipelineRequest) returns (GetOneTektonPipelineResponse);
+    rpc ListTektonPipeline(ListTektonPipelineRequest) returns (ListTektonPipelineResponse);
+    rpc DeleteTektonPipeline(DeleteTektonPipelineRequest) returns (DeleteTektonPipelineResponse);
+
+    rpc ListTektonTask(ListTektonTaskRequest) returns (ListTektonTaskResponse);
+}
+
+message CreateTektonPipelineRequest {
+    pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1;
+    string user_id = 2;
+}
+
+message CreateTektonPipelineResponse {
+    pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1;
+    string status = 2;
+}
+
+message GetOneTektonPipelineRequest {
+    string tekton_pipeline_id = 1; 
+}
+
+message GetOneTektonPipelineResponse {
+    pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1;
+    string status = 2;
+}
+
+message ListTektonPipelineRequest {
+    uint32 project_id = 1; 
+}
+
+message ListTektonPipelineResponse {
+    repeated pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1; 
+}
+
+message DeleteTektonPipelineRequest {
+    string tekton_pipeline_id = 1;
+    string user_id = 2;
+}
+
+message DeleteTektonPipelineResponse {
+    string status = 1; 
+}
+
+message ListTektonTaskRequest {}
+
+message ListTektonTaskResponse {
+    repeated pipelines.tekton.v1alpha1.Task tasks = 1;
+    string status = 2;
+}
