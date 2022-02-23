@@ -49,6 +49,28 @@ function deserialize_pipelines_runtime_v1alpha1_DeleteRuntimeResponse(buffer_arg
   return pipelines_runtime_v1alpha1_runtime_api_pb.DeleteRuntimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_pipelines_runtime_v1alpha1_GetRuntimeRequest(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimeRequest)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.GetRuntimeRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_GetRuntimeRequest(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_runtime_v1alpha1_GetRuntimeResponse(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimeResponse)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.GetRuntimeResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_GetRuntimeResponse(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_runtime_v1alpha1_UpdateRuntimeRequest(arg) {
   if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.UpdateRuntimeRequest)) {
     throw new Error('Expected argument of type pipelines.runtime.v1alpha1.UpdateRuntimeRequest');
@@ -73,6 +95,17 @@ function deserialize_pipelines_runtime_v1alpha1_UpdateRuntimeResponse(buffer_arg
 
 
 var RuntimeAPIServiceService = exports.RuntimeAPIServiceService = {
+  getRuntime: {
+    path: '/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntime',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimeRequest,
+    responseType: pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimeResponse,
+    requestSerialize: serialize_pipelines_runtime_v1alpha1_GetRuntimeRequest,
+    requestDeserialize: deserialize_pipelines_runtime_v1alpha1_GetRuntimeRequest,
+    responseSerialize: serialize_pipelines_runtime_v1alpha1_GetRuntimeResponse,
+    responseDeserialize: deserialize_pipelines_runtime_v1alpha1_GetRuntimeResponse,
+  },
   createRuntime: {
     path: '/pipelines.runtime.v1alpha1.RuntimeAPIService/CreateRuntime',
     requestStream: false,

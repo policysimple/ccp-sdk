@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$io.cuemby.pipelines.runtime.v1alpha1B\014RuntimeProtoP\001Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(pipelines/runtime/v1alpha1/runtime.proto\x12\x1apipelines.runtime.v1alpha1\"_\n\x0bIntegration\x12)\n\x10integration_name\x18\x01 \x01(\tR\x0fintegrationName\x12%\n\x0erepository_url\x18\x02 \x01(\tR\rrepositoryUrl\"d\n\x08\x43ommands\x12#\n\rbuild_command\x18\x01 \x01(\tR\x0c\x62uildCommand\x12\x1f\n\x0brun_command\x18\x02 \x01(\tR\nrunCommand\x12\x12\n\x04port\x18\x03 \x01(\tR\x04port\"\xe5\x02\n\x07Runtime\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1c\n\tnamespace\x18\x02 \x01(\tR\tnamespace\x12I\n\x0bintegration\x18\x03 \x01(\x0b\x32\'.pipelines.runtime.v1alpha1.IntegrationR\x0bintegration\x12Z\n\renv_variables\x18\x04 \x03(\x0b\x32\x35.pipelines.runtime.v1alpha1.Runtime.EnvVariablesEntryR\x0c\x65nvVariables\x12@\n\x08\x63ommands\x18\x05 \x01(\x0b\x32$.pipelines.runtime.v1alpha1.CommandsR\x08\x63ommands\x1a?\n\x11\x45nvVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\xad\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0cRuntimeProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n(pipelines/runtime/v1alpha1/runtime.proto\x12\x1apipelines.runtime.v1alpha1\"_\n\x0bIntegration\x12)\n\x10integration_name\x18\x01 \x01(\tR\x0fintegrationName\x12%\n\x0erepository_url\x18\x02 \x01(\tR\rrepositoryUrl\"d\n\x08\x43ommands\x12#\n\rbuild_command\x18\x01 \x01(\tR\x0c\x62uildCommand\x12\x1f\n\x0brun_command\x18\x02 \x01(\tR\nrunCommand\x12\x12\n\x04port\x18\x03 \x01(\tR\x04port\"\xde\x03\n\x07Runtime\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\x12\x1d\n\nproject_id\x18\x04 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\tR\rapplicationId\x12!\n\x0cworkspace_id\x18\x06 \x01(\tR\x0bworkspaceId\x12I\n\x0bintegration\x18\x07 \x01(\x0b\x32\'.pipelines.runtime.v1alpha1.IntegrationR\x0bintegration\x12Z\n\renv_variables\x18\x08 \x03(\x0b\x32\x35.pipelines.runtime.v1alpha1.Runtime.EnvVariablesEntryR\x0c\x65nvVariables\x12@\n\x08\x63ommands\x18\t \x01(\x0b\x32$.pipelines.runtime.v1alpha1.CommandsR\x08\x63ommands\x1a?\n\x11\x45nvVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\xad\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0cRuntimeProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
 )
 
 
@@ -144,8 +144,8 @@ _RUNTIME_ENVVARIABLESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=566,
-  serialized_end=629,
+  serialized_start=687,
+  serialized_end=750,
 )
 
 _RUNTIME = _descriptor.Descriptor(
@@ -157,36 +157,64 @@ _RUNTIME = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='pipelines.runtime.v1alpha1.Runtime.name', index=0,
+      name='id', full_name='pipelines.runtime.v1alpha1.Runtime.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='pipelines.runtime.v1alpha1.Runtime.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='pipelines.runtime.v1alpha1.Runtime.namespace', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      name='namespace', full_name='pipelines.runtime.v1alpha1.Runtime.namespace', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='namespace', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='integration', full_name='pipelines.runtime.v1alpha1.Runtime.integration', index=2,
-      number=3, type=11, cpp_type=10, label=1,
+      name='project_id', full_name='pipelines.runtime.v1alpha1.Runtime.project_id', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='projectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='application_id', full_name='pipelines.runtime.v1alpha1.Runtime.application_id', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='applicationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='workspace_id', full_name='pipelines.runtime.v1alpha1.Runtime.workspace_id', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='workspaceId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='integration', full_name='pipelines.runtime.v1alpha1.Runtime.integration', index=6,
+      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='integration', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='env_variables', full_name='pipelines.runtime.v1alpha1.Runtime.env_variables', index=3,
-      number=4, type=11, cpp_type=10, label=3,
+      name='env_variables', full_name='pipelines.runtime.v1alpha1.Runtime.env_variables', index=7,
+      number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='envVariables', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='commands', full_name='pipelines.runtime.v1alpha1.Runtime.commands', index=4,
-      number=5, type=11, cpp_type=10, label=1,
+      name='commands', full_name='pipelines.runtime.v1alpha1.Runtime.commands', index=8,
+      number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -204,7 +232,7 @@ _RUNTIME = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=272,
-  serialized_end=629,
+  serialized_end=750,
 )
 
 _RUNTIME_ENVVARIABLESENTRY.containing_type = _RUNTIME

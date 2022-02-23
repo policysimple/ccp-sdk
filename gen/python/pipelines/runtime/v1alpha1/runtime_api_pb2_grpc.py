@@ -14,6 +14,11 @@ class RuntimeAPIServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
+    self.GetRuntime = channel.unary_unary(
+        '/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntime',
+        request_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.GetRuntimeRequest.SerializeToString,
+        response_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.GetRuntimeResponse.FromString,
+        )
     self.CreateRuntime = channel.unary_unary(
         '/pipelines.runtime.v1alpha1.RuntimeAPIService/CreateRuntime',
         request_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.CreateRuntimeRequest.SerializeToString,
@@ -34,6 +39,13 @@ class RuntimeAPIServiceStub(object):
 class RuntimeAPIServiceServicer(object):
   # missing associated documentation comment in .proto file
   pass
+
+  def GetRuntime(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
 
   def CreateRuntime(self, request, context):
     # missing associated documentation comment in .proto file
@@ -59,6 +71,11 @@ class RuntimeAPIServiceServicer(object):
 
 def add_RuntimeAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
+      'GetRuntime': grpc.unary_unary_rpc_method_handler(
+          servicer.GetRuntime,
+          request_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.GetRuntimeRequest.FromString,
+          response_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.GetRuntimeResponse.SerializeToString,
+      ),
       'CreateRuntime': grpc.unary_unary_rpc_method_handler(
           servicer.CreateRuntime,
           request_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.CreateRuntimeRequest.FromString,

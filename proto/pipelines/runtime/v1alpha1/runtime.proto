@@ -23,9 +23,13 @@ message Commands{
 
 // Runtime ...
 message Runtime {
-  string name = 1;
-  string namespace = 2;
-  Integration integration = 3;
-  map<string, string> env_variables = 4;
-  Commands commands = 5;
+  string id = 1;
+  string name = 2;
+  string namespace = 3;
+  uint32 project_id = 4;
+  string application_id = 5;
+  string workspace_id = 6;
+  Integration integration = 7;
+  map<string, string> env_variables = 8;
+  Commands commands = 9;
 }
