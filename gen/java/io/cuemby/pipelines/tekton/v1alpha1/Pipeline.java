@@ -21,10 +21,14 @@ private static final long serialVersionUID = 0L;
   }
   private Pipeline() {
     id_ = "";
-    name_ = "";
-    workspaces_ = "";
-    statusType_ = "";
+    typeMetaKind_ = "";
+    typeMetaApiVersion_ = "";
+    objectMetaName_ = "";
+    objectMetaNamespace_ = "";
+    specWorkspacesName_ = "";
+    params_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     tasks_ = java.util.Collections.emptyList();
+    statusType_ = "";
   }
 
   @java.lang.Override
@@ -77,33 +81,60 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
+            typeMetaKind_ = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            workspaces_ = s;
+            typeMetaApiVersion_ = s;
             break;
           }
-          case 48: {
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            active_ = input.readBool();
+            objectMetaName_ = s;
             break;
           }
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            statusType_ = s;
+            objectMetaNamespace_ = s;
             break;
           }
           case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            specWorkspacesName_ = s;
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              tasks_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Task>();
+              params_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
+            }
+            params_.add(s);
+            break;
+          }
+          case 82: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              tasks_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Task>();
+              mutable_bitField0_ |= 0x00000002;
             }
             tasks_.add(
                 input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Task.parser(), extensionRegistry));
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            statusType_ = s;
+            break;
+          }
+          case 96: {
+
+            active_ = input.readBool();
             break;
           }
           default: {
@@ -122,6 +153,9 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        params_ = params_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         tasks_ = java.util.Collections.unmodifiableList(tasks_);
       }
       this.unknownFields = unknownFields.build();
@@ -201,97 +235,275 @@ private static final long serialVersionUID = 0L;
     return projectId_;
   }
 
-  public static final int NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object name_;
+  public static final int TYPE_META_KIND_FIELD_NUMBER = 4;
+  private volatile java.lang.Object typeMetaKind_;
   /**
-   * <code>string name = 4 [json_name = "name"];</code>
-   * @return The name.
+   * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
+   * @return The typeMetaKind.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getTypeMetaKind() {
+    java.lang.Object ref = typeMetaKind_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      typeMetaKind_ = s;
       return s;
     }
   }
   /**
-   * <code>string name = 4 [json_name = "name"];</code>
-   * @return The bytes for name.
+   * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
+   * @return The bytes for typeMetaKind.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
+      getTypeMetaKindBytes() {
+    java.lang.Object ref = typeMetaKind_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      typeMetaKind_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int WORKSPACES_FIELD_NUMBER = 5;
-  private volatile java.lang.Object workspaces_;
+  public static final int TYPE_META_API_VERSION_FIELD_NUMBER = 5;
+  private volatile java.lang.Object typeMetaApiVersion_;
   /**
-   * <code>string workspaces = 5 [json_name = "workspaces"];</code>
-   * @return The workspaces.
+   * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
+   * @return The typeMetaApiVersion.
    */
   @java.lang.Override
-  public java.lang.String getWorkspaces() {
-    java.lang.Object ref = workspaces_;
+  public java.lang.String getTypeMetaApiVersion() {
+    java.lang.Object ref = typeMetaApiVersion_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      workspaces_ = s;
+      typeMetaApiVersion_ = s;
       return s;
     }
   }
   /**
-   * <code>string workspaces = 5 [json_name = "workspaces"];</code>
-   * @return The bytes for workspaces.
+   * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
+   * @return The bytes for typeMetaApiVersion.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getWorkspacesBytes() {
-    java.lang.Object ref = workspaces_;
+      getTypeMetaApiVersionBytes() {
+    java.lang.Object ref = typeMetaApiVersion_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      workspaces_ = b;
+      typeMetaApiVersion_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int ACTIVE_FIELD_NUMBER = 6;
-  private boolean active_;
+  public static final int OBJECT_META_NAME_FIELD_NUMBER = 6;
+  private volatile java.lang.Object objectMetaName_;
   /**
-   * <code>bool active = 6 [json_name = "active"];</code>
-   * @return The active.
+   * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+   * @return The objectMetaName.
    */
   @java.lang.Override
-  public boolean getActive() {
-    return active_;
+  public java.lang.String getObjectMetaName() {
+    java.lang.Object ref = objectMetaName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      objectMetaName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+   * @return The bytes for objectMetaName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getObjectMetaNameBytes() {
+    java.lang.Object ref = objectMetaName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      objectMetaName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int STATUS_TYPE_FIELD_NUMBER = 7;
+  public static final int OBJECT_META_NAMESPACE_FIELD_NUMBER = 7;
+  private volatile java.lang.Object objectMetaNamespace_;
+  /**
+   * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+   * @return The objectMetaNamespace.
+   */
+  @java.lang.Override
+  public java.lang.String getObjectMetaNamespace() {
+    java.lang.Object ref = objectMetaNamespace_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      objectMetaNamespace_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+   * @return The bytes for objectMetaNamespace.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getObjectMetaNamespaceBytes() {
+    java.lang.Object ref = objectMetaNamespace_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      objectMetaNamespace_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SPEC_WORKSPACES_NAME_FIELD_NUMBER = 8;
+  private volatile java.lang.Object specWorkspacesName_;
+  /**
+   * <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
+   * @return The specWorkspacesName.
+   */
+  @java.lang.Override
+  public java.lang.String getSpecWorkspacesName() {
+    java.lang.Object ref = specWorkspacesName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      specWorkspacesName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
+   * @return The bytes for specWorkspacesName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSpecWorkspacesNameBytes() {
+    java.lang.Object ref = specWorkspacesName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      specWorkspacesName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PARAMS_FIELD_NUMBER = 9;
+  private com.google.protobuf.LazyStringList params_;
+  /**
+   * <code>repeated string params = 9 [json_name = "params"];</code>
+   * @return A list containing the params.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getParamsList() {
+    return params_;
+  }
+  /**
+   * <code>repeated string params = 9 [json_name = "params"];</code>
+   * @return The count of params.
+   */
+  public int getParamsCount() {
+    return params_.size();
+  }
+  /**
+   * <code>repeated string params = 9 [json_name = "params"];</code>
+   * @param index The index of the element to return.
+   * @return The params at the given index.
+   */
+  public java.lang.String getParams(int index) {
+    return params_.get(index);
+  }
+  /**
+   * <code>repeated string params = 9 [json_name = "params"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the params at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getParamsBytes(int index) {
+    return params_.getByteString(index);
+  }
+
+  public static final int TASKS_FIELD_NUMBER = 10;
+  private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> tasks_;
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   */
+  @java.lang.Override
+  public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> getTasksList() {
+    return tasks_;
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+      getTasksOrBuilderList() {
+    return tasks_;
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   */
+  @java.lang.Override
+  public int getTasksCount() {
+    return tasks_.size();
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.Task getTasks(int index) {
+    return tasks_.get(index);
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTasksOrBuilder(
+      int index) {
+    return tasks_.get(index);
+  }
+
+  public static final int STATUS_TYPE_FIELD_NUMBER = 11;
   private volatile java.lang.Object statusType_;
   /**
-   * <code>string status_type = 7 [json_name = "statusType"];</code>
+   * <code>string status_type = 11 [json_name = "statusType"];</code>
    * @return The statusType.
    */
   @java.lang.Override
@@ -308,7 +520,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string status_type = 7 [json_name = "statusType"];</code>
+   * <code>string status_type = 11 [json_name = "statusType"];</code>
    * @return The bytes for statusType.
    */
   @java.lang.Override
@@ -326,44 +538,15 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TASKS_FIELD_NUMBER = 8;
-  private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> tasks_;
+  public static final int ACTIVE_FIELD_NUMBER = 12;
+  private boolean active_;
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+   * <code>bool active = 12 [json_name = "active"];</code>
+   * @return The active.
    */
   @java.lang.Override
-  public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> getTasksList() {
-    return tasks_;
-  }
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
-      getTasksOrBuilderList() {
-    return tasks_;
-  }
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
-   */
-  @java.lang.Override
-  public int getTasksCount() {
-    return tasks_.size();
-  }
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
-   */
-  @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.Task getTasks(int index) {
-    return tasks_.get(index);
-  }
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
-   */
-  @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTasksOrBuilder(
-      int index) {
-    return tasks_.get(index);
+  public boolean getActive() {
+    return active_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -389,20 +572,32 @@ private static final long serialVersionUID = 0L;
     if (projectId_ != 0) {
       output.writeUInt32(3, projectId_);
     }
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+    if (!getTypeMetaKindBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, typeMetaKind_);
     }
-    if (!getWorkspacesBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, workspaces_);
+    if (!getTypeMetaApiVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, typeMetaApiVersion_);
     }
-    if (active_ != false) {
-      output.writeBool(6, active_);
+    if (!getObjectMetaNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, objectMetaName_);
     }
-    if (!getStatusTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, statusType_);
+    if (!getObjectMetaNamespaceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, objectMetaNamespace_);
+    }
+    if (!getSpecWorkspacesNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, specWorkspacesName_);
+    }
+    for (int i = 0; i < params_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, params_.getRaw(i));
     }
     for (int i = 0; i < tasks_.size(); i++) {
-      output.writeMessage(8, tasks_.get(i));
+      output.writeMessage(10, tasks_.get(i));
+    }
+    if (!getStatusTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, statusType_);
+    }
+    if (active_ != false) {
+      output.writeBool(12, active_);
     }
     unknownFields.writeTo(output);
   }
@@ -424,22 +619,39 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, projectId_);
     }
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+    if (!getTypeMetaKindBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, typeMetaKind_);
     }
-    if (!getWorkspacesBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, workspaces_);
+    if (!getTypeMetaApiVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, typeMetaApiVersion_);
     }
-    if (active_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(6, active_);
+    if (!getObjectMetaNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, objectMetaName_);
     }
-    if (!getStatusTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, statusType_);
+    if (!getObjectMetaNamespaceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, objectMetaNamespace_);
+    }
+    if (!getSpecWorkspacesNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, specWorkspacesName_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < params_.size(); i++) {
+        dataSize += computeStringSizeNoTag(params_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getParamsList().size();
     }
     for (int i = 0; i < tasks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, tasks_.get(i));
+        .computeMessageSize(10, tasks_.get(i));
+    }
+    if (!getStatusTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, statusType_);
+    }
+    if (active_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, active_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -462,16 +674,24 @@ private static final long serialVersionUID = 0L;
         != other.getOrganizationId()) return false;
     if (getProjectId()
         != other.getProjectId()) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (!getWorkspaces()
-        .equals(other.getWorkspaces())) return false;
-    if (getActive()
-        != other.getActive()) return false;
-    if (!getStatusType()
-        .equals(other.getStatusType())) return false;
+    if (!getTypeMetaKind()
+        .equals(other.getTypeMetaKind())) return false;
+    if (!getTypeMetaApiVersion()
+        .equals(other.getTypeMetaApiVersion())) return false;
+    if (!getObjectMetaName()
+        .equals(other.getObjectMetaName())) return false;
+    if (!getObjectMetaNamespace()
+        .equals(other.getObjectMetaNamespace())) return false;
+    if (!getSpecWorkspacesName()
+        .equals(other.getSpecWorkspacesName())) return false;
+    if (!getParamsList()
+        .equals(other.getParamsList())) return false;
     if (!getTasksList()
         .equals(other.getTasksList())) return false;
+    if (!getStatusType()
+        .equals(other.getStatusType())) return false;
+    if (getActive()
+        != other.getActive()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -489,19 +709,29 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getOrganizationId();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + WORKSPACES_FIELD_NUMBER;
-    hash = (53 * hash) + getWorkspaces().hashCode();
-    hash = (37 * hash) + ACTIVE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getActive());
-    hash = (37 * hash) + STATUS_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getStatusType().hashCode();
+    hash = (37 * hash) + TYPE_META_KIND_FIELD_NUMBER;
+    hash = (53 * hash) + getTypeMetaKind().hashCode();
+    hash = (37 * hash) + TYPE_META_API_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getTypeMetaApiVersion().hashCode();
+    hash = (37 * hash) + OBJECT_META_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getObjectMetaName().hashCode();
+    hash = (37 * hash) + OBJECT_META_NAMESPACE_FIELD_NUMBER;
+    hash = (53 * hash) + getObjectMetaNamespace().hashCode();
+    hash = (37 * hash) + SPEC_WORKSPACES_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getSpecWorkspacesName().hashCode();
+    if (getParamsCount() > 0) {
+      hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getParamsList().hashCode();
+    }
     if (getTasksCount() > 0) {
       hash = (37 * hash) + TASKS_FIELD_NUMBER;
       hash = (53 * hash) + getTasksList().hashCode();
     }
+    hash = (37 * hash) + STATUS_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getStatusType().hashCode();
+    hash = (37 * hash) + ACTIVE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getActive());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -646,20 +876,28 @@ private static final long serialVersionUID = 0L;
 
       projectId_ = 0;
 
-      name_ = "";
+      typeMetaKind_ = "";
 
-      workspaces_ = "";
+      typeMetaApiVersion_ = "";
 
-      active_ = false;
+      objectMetaName_ = "";
 
-      statusType_ = "";
+      objectMetaNamespace_ = "";
 
+      specWorkspacesName_ = "";
+
+      params_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (tasksBuilder_ == null) {
         tasks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         tasksBuilder_.clear();
       }
+      statusType_ = "";
+
+      active_ = false;
+
       return this;
     }
 
@@ -690,19 +928,27 @@ private static final long serialVersionUID = 0L;
       result.id_ = id_;
       result.organizationId_ = organizationId_;
       result.projectId_ = projectId_;
-      result.name_ = name_;
-      result.workspaces_ = workspaces_;
-      result.active_ = active_;
-      result.statusType_ = statusType_;
+      result.typeMetaKind_ = typeMetaKind_;
+      result.typeMetaApiVersion_ = typeMetaApiVersion_;
+      result.objectMetaName_ = objectMetaName_;
+      result.objectMetaNamespace_ = objectMetaNamespace_;
+      result.specWorkspacesName_ = specWorkspacesName_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        params_ = params_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.params_ = params_;
       if (tasksBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           tasks_ = java.util.Collections.unmodifiableList(tasks_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.tasks_ = tasks_;
       } else {
         result.tasks_ = tasksBuilder_.build();
       }
+      result.statusType_ = statusType_;
+      result.active_ = active_;
       onBuilt();
       return result;
     }
@@ -761,26 +1007,41 @@ private static final long serialVersionUID = 0L;
       if (other.getProjectId() != 0) {
         setProjectId(other.getProjectId());
       }
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getTypeMetaKind().isEmpty()) {
+        typeMetaKind_ = other.typeMetaKind_;
         onChanged();
       }
-      if (!other.getWorkspaces().isEmpty()) {
-        workspaces_ = other.workspaces_;
+      if (!other.getTypeMetaApiVersion().isEmpty()) {
+        typeMetaApiVersion_ = other.typeMetaApiVersion_;
         onChanged();
       }
-      if (other.getActive() != false) {
-        setActive(other.getActive());
+      if (!other.getObjectMetaName().isEmpty()) {
+        objectMetaName_ = other.objectMetaName_;
+        onChanged();
       }
-      if (!other.getStatusType().isEmpty()) {
-        statusType_ = other.statusType_;
+      if (!other.getObjectMetaNamespace().isEmpty()) {
+        objectMetaNamespace_ = other.objectMetaNamespace_;
+        onChanged();
+      }
+      if (!other.getSpecWorkspacesName().isEmpty()) {
+        specWorkspacesName_ = other.specWorkspacesName_;
+        onChanged();
+      }
+      if (!other.params_.isEmpty()) {
+        if (params_.isEmpty()) {
+          params_ = other.params_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureParamsIsMutable();
+          params_.addAll(other.params_);
+        }
         onChanged();
       }
       if (tasksBuilder_ == null) {
         if (!other.tasks_.isEmpty()) {
           if (tasks_.isEmpty()) {
             tasks_ = other.tasks_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureTasksIsMutable();
             tasks_.addAll(other.tasks_);
@@ -793,7 +1054,7 @@ private static final long serialVersionUID = 0L;
             tasksBuilder_.dispose();
             tasksBuilder_ = null;
             tasks_ = other.tasks_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             tasksBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTasksFieldBuilder() : null;
@@ -801,6 +1062,13 @@ private static final long serialVersionUID = 0L;
             tasksBuilder_.addAllMessages(other.tasks_);
           }
         }
+      }
+      if (!other.getStatusType().isEmpty()) {
+        statusType_ = other.statusType_;
+        onChanged();
+      }
+      if (other.getActive() != false) {
+        setActive(other.getActive());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -970,261 +1238,492 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object typeMetaKind_ = "";
     /**
-     * <code>string name = 4 [json_name = "name"];</code>
-     * @return The name.
+     * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
+     * @return The typeMetaKind.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getTypeMetaKind() {
+      java.lang.Object ref = typeMetaKind_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        typeMetaKind_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string name = 4 [json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
+     * @return The bytes for typeMetaKind.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getTypeMetaKindBytes() {
+      java.lang.Object ref = typeMetaKind_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        typeMetaKind_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string name = 4 [json_name = "name"];</code>
-     * @param value The name to set.
+     * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
+     * @param value The typeMetaKind to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setTypeMetaKind(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name_ = value;
+      typeMetaKind_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 4 [json_name = "name"];</code>
+     * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearTypeMetaKind() {
       
-      name_ = getDefaultInstance().getName();
+      typeMetaKind_ = getDefaultInstance().getTypeMetaKind();
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 4 [json_name = "name"];</code>
-     * @param value The bytes for name to set.
+     * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
+     * @param value The bytes for typeMetaKind to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setTypeMetaKindBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name_ = value;
+      typeMetaKind_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object workspaces_ = "";
+    private java.lang.Object typeMetaApiVersion_ = "";
     /**
-     * <code>string workspaces = 5 [json_name = "workspaces"];</code>
-     * @return The workspaces.
+     * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
+     * @return The typeMetaApiVersion.
      */
-    public java.lang.String getWorkspaces() {
-      java.lang.Object ref = workspaces_;
+    public java.lang.String getTypeMetaApiVersion() {
+      java.lang.Object ref = typeMetaApiVersion_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        workspaces_ = s;
+        typeMetaApiVersion_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string workspaces = 5 [json_name = "workspaces"];</code>
-     * @return The bytes for workspaces.
+     * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
+     * @return The bytes for typeMetaApiVersion.
      */
     public com.google.protobuf.ByteString
-        getWorkspacesBytes() {
-      java.lang.Object ref = workspaces_;
+        getTypeMetaApiVersionBytes() {
+      java.lang.Object ref = typeMetaApiVersion_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        workspaces_ = b;
+        typeMetaApiVersion_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string workspaces = 5 [json_name = "workspaces"];</code>
-     * @param value The workspaces to set.
+     * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
+     * @param value The typeMetaApiVersion to set.
      * @return This builder for chaining.
      */
-    public Builder setWorkspaces(
+    public Builder setTypeMetaApiVersion(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      workspaces_ = value;
+      typeMetaApiVersion_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string workspaces = 5 [json_name = "workspaces"];</code>
+     * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearWorkspaces() {
+    public Builder clearTypeMetaApiVersion() {
       
-      workspaces_ = getDefaultInstance().getWorkspaces();
+      typeMetaApiVersion_ = getDefaultInstance().getTypeMetaApiVersion();
       onChanged();
       return this;
     }
     /**
-     * <code>string workspaces = 5 [json_name = "workspaces"];</code>
-     * @param value The bytes for workspaces to set.
+     * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
+     * @param value The bytes for typeMetaApiVersion to set.
      * @return This builder for chaining.
      */
-    public Builder setWorkspacesBytes(
+    public Builder setTypeMetaApiVersionBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      workspaces_ = value;
+      typeMetaApiVersion_ = value;
       onChanged();
       return this;
     }
 
-    private boolean active_ ;
+    private java.lang.Object objectMetaName_ = "";
     /**
-     * <code>bool active = 6 [json_name = "active"];</code>
-     * @return The active.
+     * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+     * @return The objectMetaName.
      */
-    @java.lang.Override
-    public boolean getActive() {
-      return active_;
-    }
-    /**
-     * <code>bool active = 6 [json_name = "active"];</code>
-     * @param value The active to set.
-     * @return This builder for chaining.
-     */
-    public Builder setActive(boolean value) {
-      
-      active_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>bool active = 6 [json_name = "active"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearActive() {
-      
-      active_ = false;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object statusType_ = "";
-    /**
-     * <code>string status_type = 7 [json_name = "statusType"];</code>
-     * @return The statusType.
-     */
-    public java.lang.String getStatusType() {
-      java.lang.Object ref = statusType_;
+    public java.lang.String getObjectMetaName() {
+      java.lang.Object ref = objectMetaName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        statusType_ = s;
+        objectMetaName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string status_type = 7 [json_name = "statusType"];</code>
-     * @return The bytes for statusType.
+     * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+     * @return The bytes for objectMetaName.
      */
     public com.google.protobuf.ByteString
-        getStatusTypeBytes() {
-      java.lang.Object ref = statusType_;
+        getObjectMetaNameBytes() {
+      java.lang.Object ref = objectMetaName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        statusType_ = b;
+        objectMetaName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string status_type = 7 [json_name = "statusType"];</code>
-     * @param value The statusType to set.
+     * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+     * @param value The objectMetaName to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusType(
+    public Builder setObjectMetaName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      statusType_ = value;
+      objectMetaName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string status_type = 7 [json_name = "statusType"];</code>
+     * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearStatusType() {
+    public Builder clearObjectMetaName() {
       
-      statusType_ = getDefaultInstance().getStatusType();
+      objectMetaName_ = getDefaultInstance().getObjectMetaName();
       onChanged();
       return this;
     }
     /**
-     * <code>string status_type = 7 [json_name = "statusType"];</code>
-     * @param value The bytes for statusType to set.
+     * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+     * @param value The bytes for objectMetaName to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusTypeBytes(
+    public Builder setObjectMetaNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      statusType_ = value;
+      objectMetaName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object objectMetaNamespace_ = "";
+    /**
+     * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+     * @return The objectMetaNamespace.
+     */
+    public java.lang.String getObjectMetaNamespace() {
+      java.lang.Object ref = objectMetaNamespace_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        objectMetaNamespace_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+     * @return The bytes for objectMetaNamespace.
+     */
+    public com.google.protobuf.ByteString
+        getObjectMetaNamespaceBytes() {
+      java.lang.Object ref = objectMetaNamespace_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        objectMetaNamespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+     * @param value The objectMetaNamespace to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObjectMetaNamespace(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      objectMetaNamespace_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearObjectMetaNamespace() {
+      
+      objectMetaNamespace_ = getDefaultInstance().getObjectMetaNamespace();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+     * @param value The bytes for objectMetaNamespace to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObjectMetaNamespaceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      objectMetaNamespace_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object specWorkspacesName_ = "";
+    /**
+     * <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
+     * @return The specWorkspacesName.
+     */
+    public java.lang.String getSpecWorkspacesName() {
+      java.lang.Object ref = specWorkspacesName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        specWorkspacesName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
+     * @return The bytes for specWorkspacesName.
+     */
+    public com.google.protobuf.ByteString
+        getSpecWorkspacesNameBytes() {
+      java.lang.Object ref = specWorkspacesName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        specWorkspacesName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
+     * @param value The specWorkspacesName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpecWorkspacesName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      specWorkspacesName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSpecWorkspacesName() {
+      
+      specWorkspacesName_ = getDefaultInstance().getSpecWorkspacesName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
+     * @param value The bytes for specWorkspacesName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpecWorkspacesNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      specWorkspacesName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList params_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureParamsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        params_ = new com.google.protobuf.LazyStringArrayList(params_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <code>repeated string params = 9 [json_name = "params"];</code>
+     * @return A list containing the params.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getParamsList() {
+      return params_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string params = 9 [json_name = "params"];</code>
+     * @return The count of params.
+     */
+    public int getParamsCount() {
+      return params_.size();
+    }
+    /**
+     * <code>repeated string params = 9 [json_name = "params"];</code>
+     * @param index The index of the element to return.
+     * @return The params at the given index.
+     */
+    public java.lang.String getParams(int index) {
+      return params_.get(index);
+    }
+    /**
+     * <code>repeated string params = 9 [json_name = "params"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the params at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getParamsBytes(int index) {
+      return params_.getByteString(index);
+    }
+    /**
+     * <code>repeated string params = 9 [json_name = "params"];</code>
+     * @param index The index to set the value at.
+     * @param value The params to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParams(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureParamsIsMutable();
+      params_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string params = 9 [json_name = "params"];</code>
+     * @param value The params to add.
+     * @return This builder for chaining.
+     */
+    public Builder addParams(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureParamsIsMutable();
+      params_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string params = 9 [json_name = "params"];</code>
+     * @param values The params to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllParams(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureParamsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, params_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string params = 9 [json_name = "params"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParams() {
+      params_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string params = 9 [json_name = "params"];</code>
+     * @param value The bytes of the params to add.
+     * @return This builder for chaining.
+     */
+    public Builder addParamsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureParamsIsMutable();
+      params_.add(value);
       onChanged();
       return this;
     }
@@ -1232,9 +1731,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> tasks_ =
       java.util.Collections.emptyList();
     private void ensureTasksIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         tasks_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Task>(tasks_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -1242,7 +1741,7 @@ private static final long serialVersionUID = 0L;
         io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> tasksBuilder_;
 
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> getTasksList() {
       if (tasksBuilder_ == null) {
@@ -1252,7 +1751,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public int getTasksCount() {
       if (tasksBuilder_ == null) {
@@ -1262,7 +1761,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.Task getTasks(int index) {
       if (tasksBuilder_ == null) {
@@ -1272,7 +1771,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public Builder setTasks(
         int index, io.cuemby.pipelines.tekton.v1alpha1.Task value) {
@@ -1289,7 +1788,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public Builder setTasks(
         int index, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
@@ -1303,7 +1802,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public Builder addTasks(io.cuemby.pipelines.tekton.v1alpha1.Task value) {
       if (tasksBuilder_ == null) {
@@ -1319,7 +1818,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public Builder addTasks(
         int index, io.cuemby.pipelines.tekton.v1alpha1.Task value) {
@@ -1336,7 +1835,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public Builder addTasks(
         io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
@@ -1350,7 +1849,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public Builder addTasks(
         int index, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
@@ -1364,7 +1863,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public Builder addAllTasks(
         java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.Task> values) {
@@ -1379,12 +1878,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public Builder clearTasks() {
       if (tasksBuilder_ == null) {
         tasks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         tasksBuilder_.clear();
@@ -1392,7 +1891,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public Builder removeTasks(int index) {
       if (tasksBuilder_ == null) {
@@ -1405,14 +1904,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder getTasksBuilder(
         int index) {
       return getTasksFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTasksOrBuilder(
         int index) {
@@ -1422,7 +1921,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
          getTasksOrBuilderList() {
@@ -1433,14 +1932,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder addTasksBuilder() {
       return getTasksFieldBuilder().addBuilder(
           io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance());
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder addTasksBuilder(
         int index) {
@@ -1448,7 +1947,7 @@ private static final long serialVersionUID = 0L;
           index, io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance());
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
      */
     public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task.Builder> 
          getTasksBuilderList() {
@@ -1461,12 +1960,119 @@ private static final long serialVersionUID = 0L;
         tasksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder>(
                 tasks_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         tasks_ = null;
       }
       return tasksBuilder_;
+    }
+
+    private java.lang.Object statusType_ = "";
+    /**
+     * <code>string status_type = 11 [json_name = "statusType"];</code>
+     * @return The statusType.
+     */
+    public java.lang.String getStatusType() {
+      java.lang.Object ref = statusType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        statusType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string status_type = 11 [json_name = "statusType"];</code>
+     * @return The bytes for statusType.
+     */
+    public com.google.protobuf.ByteString
+        getStatusTypeBytes() {
+      java.lang.Object ref = statusType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        statusType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string status_type = 11 [json_name = "statusType"];</code>
+     * @param value The statusType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      statusType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status_type = 11 [json_name = "statusType"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatusType() {
+      
+      statusType_ = getDefaultInstance().getStatusType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status_type = 11 [json_name = "statusType"];</code>
+     * @param value The bytes for statusType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      statusType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean active_ ;
+    /**
+     * <code>bool active = 12 [json_name = "active"];</code>
+     * @return The active.
+     */
+    @java.lang.Override
+    public boolean getActive() {
+      return active_;
+    }
+    /**
+     * <code>bool active = 12 [json_name = "active"];</code>
+     * @param value The active to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActive(boolean value) {
+      
+      active_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool active = 12 [json_name = "active"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearActive() {
+      
+      active_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

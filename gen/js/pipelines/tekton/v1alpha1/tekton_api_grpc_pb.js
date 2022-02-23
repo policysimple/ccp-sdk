@@ -93,6 +93,28 @@ function deserialize_pipelines_tekton_v1alpha1_ListTektonPipelineResponse(buffer
   return pipelines_tekton_v1alpha1_tekton_api_pb.ListTektonPipelineResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_pipelines_tekton_v1alpha1_ListTektonTaskRequest(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.ListTektonTaskRequest)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.ListTektonTaskRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_ListTektonTaskRequest(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.ListTektonTaskRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_tekton_v1alpha1_ListTektonTaskResponse(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.ListTektonTaskResponse)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.ListTektonTaskResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_ListTektonTaskResponse(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.ListTektonTaskResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 
 var TektonPipelineAPIServiceService = exports.TektonPipelineAPIServiceService = {
   createTektonPipeline: {
@@ -138,6 +160,17 @@ var TektonPipelineAPIServiceService = exports.TektonPipelineAPIServiceService = 
     requestDeserialize: deserialize_pipelines_tekton_v1alpha1_DeleteTektonPipelineRequest,
     responseSerialize: serialize_pipelines_tekton_v1alpha1_DeleteTektonPipelineResponse,
     responseDeserialize: deserialize_pipelines_tekton_v1alpha1_DeleteTektonPipelineResponse,
+  },
+  listTektonTask: {
+    path: '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListTektonTask',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_tekton_v1alpha1_tekton_api_pb.ListTektonTaskRequest,
+    responseType: pipelines_tekton_v1alpha1_tekton_api_pb.ListTektonTaskResponse,
+    requestSerialize: serialize_pipelines_tekton_v1alpha1_ListTektonTaskRequest,
+    requestDeserialize: deserialize_pipelines_tekton_v1alpha1_ListTektonTaskRequest,
+    responseSerialize: serialize_pipelines_tekton_v1alpha1_ListTektonTaskResponse,
+    responseDeserialize: deserialize_pipelines_tekton_v1alpha1_ListTektonTaskResponse,
   },
 };
 

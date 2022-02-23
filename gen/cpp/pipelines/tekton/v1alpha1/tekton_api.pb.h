@@ -47,7 +47,7 @@ struct TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[10]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -81,6 +81,12 @@ extern ListTektonPipelineRequestDefaultTypeInternal _ListTektonPipelineRequest_d
 class ListTektonPipelineResponse;
 struct ListTektonPipelineResponseDefaultTypeInternal;
 extern ListTektonPipelineResponseDefaultTypeInternal _ListTektonPipelineResponse_default_instance_;
+class ListTektonTaskRequest;
+struct ListTektonTaskRequestDefaultTypeInternal;
+extern ListTektonTaskRequestDefaultTypeInternal _ListTektonTaskRequest_default_instance_;
+class ListTektonTaskResponse;
+struct ListTektonTaskResponseDefaultTypeInternal;
+extern ListTektonTaskResponseDefaultTypeInternal _ListTektonTaskResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace tekton
 }  // namespace pipelines
@@ -93,6 +99,8 @@ template<> ::pipelines::tekton::v1alpha1::GetOneTektonPipelineRequest* Arena::Cr
 template<> ::pipelines::tekton::v1alpha1::GetOneTektonPipelineResponse* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::GetOneTektonPipelineResponse>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::ListTektonPipelineRequest* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::ListTektonPipelineRequest>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::ListTektonPipelineResponse* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::ListTektonPipelineResponse>(Arena*);
+template<> ::pipelines::tekton::v1alpha1::ListTektonTaskRequest* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::ListTektonTaskRequest>(Arena*);
+template<> ::pipelines::tekton::v1alpha1::ListTektonTaskResponse* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::ListTektonTaskResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace pipelines {
 namespace tekton {
@@ -1325,6 +1333,296 @@ class DeleteTektonPipelineResponse final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ListTektonTaskRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.tekton.v1alpha1.ListTektonTaskRequest) */ {
+ public:
+  inline ListTektonTaskRequest() : ListTektonTaskRequest(nullptr) {}
+  ~ListTektonTaskRequest() override;
+  explicit constexpr ListTektonTaskRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ListTektonTaskRequest(const ListTektonTaskRequest& from);
+  ListTektonTaskRequest(ListTektonTaskRequest&& from) noexcept
+    : ListTektonTaskRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ListTektonTaskRequest& operator=(const ListTektonTaskRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListTektonTaskRequest& operator=(ListTektonTaskRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ListTektonTaskRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ListTektonTaskRequest* internal_default_instance() {
+    return reinterpret_cast<const ListTektonTaskRequest*>(
+               &_ListTektonTaskRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(ListTektonTaskRequest& a, ListTektonTaskRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListTektonTaskRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListTektonTaskRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListTektonTaskRequest* New() const final {
+    return new ListTektonTaskRequest();
+  }
+
+  ListTektonTaskRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListTektonTaskRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ListTektonTaskRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ListTektonTaskRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListTektonTaskRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.tekton.v1alpha1.ListTektonTaskRequest";
+  }
+  protected:
+  explicit ListTektonTaskRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.ListTektonTaskRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListTektonTaskResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.tekton.v1alpha1.ListTektonTaskResponse) */ {
+ public:
+  inline ListTektonTaskResponse() : ListTektonTaskResponse(nullptr) {}
+  ~ListTektonTaskResponse() override;
+  explicit constexpr ListTektonTaskResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ListTektonTaskResponse(const ListTektonTaskResponse& from);
+  ListTektonTaskResponse(ListTektonTaskResponse&& from) noexcept
+    : ListTektonTaskResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ListTektonTaskResponse& operator=(const ListTektonTaskResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListTektonTaskResponse& operator=(ListTektonTaskResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ListTektonTaskResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ListTektonTaskResponse* internal_default_instance() {
+    return reinterpret_cast<const ListTektonTaskResponse*>(
+               &_ListTektonTaskResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(ListTektonTaskResponse& a, ListTektonTaskResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListTektonTaskResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListTektonTaskResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListTektonTaskResponse* New() const final {
+    return new ListTektonTaskResponse();
+  }
+
+  ListTektonTaskResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListTektonTaskResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ListTektonTaskResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ListTektonTaskResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListTektonTaskResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.tekton.v1alpha1.ListTektonTaskResponse";
+  }
+  protected:
+  explicit ListTektonTaskResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTasksFieldNumber = 1,
+    kStatusFieldNumber = 2,
+  };
+  // repeated .pipelines.tekton.v1alpha1.Task tasks = 1 [json_name = "tasks"];
+  int tasks_size() const;
+  private:
+  int _internal_tasks_size() const;
+  public:
+  void clear_tasks();
+  ::pipelines::tekton::v1alpha1::Task* mutable_tasks(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >*
+      mutable_tasks();
+  private:
+  const ::pipelines::tekton::v1alpha1::Task& _internal_tasks(int index) const;
+  ::pipelines::tekton::v1alpha1::Task* _internal_add_tasks();
+  public:
+  const ::pipelines::tekton::v1alpha1::Task& tasks(int index) const;
+  ::pipelines::tekton::v1alpha1::Task* add_tasks();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
+      tasks() const;
+
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.ListTektonTaskResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task > tasks_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto;
+};
 // ===================================================================
 
 
@@ -2001,9 +2299,104 @@ inline void DeleteTektonPipelineResponse::set_allocated_status(std::string* stat
   // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.DeleteTektonPipelineResponse.status)
 }
 
+// -------------------------------------------------------------------
+
+// ListTektonTaskRequest
+
+// -------------------------------------------------------------------
+
+// ListTektonTaskResponse
+
+// repeated .pipelines.tekton.v1alpha1.Task tasks = 1 [json_name = "tasks"];
+inline int ListTektonTaskResponse::_internal_tasks_size() const {
+  return tasks_.size();
+}
+inline int ListTektonTaskResponse::tasks_size() const {
+  return _internal_tasks_size();
+}
+inline ::pipelines::tekton::v1alpha1::Task* ListTektonTaskResponse::mutable_tasks(int index) {
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.ListTektonTaskResponse.tasks)
+  return tasks_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >*
+ListTektonTaskResponse::mutable_tasks() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.tekton.v1alpha1.ListTektonTaskResponse.tasks)
+  return &tasks_;
+}
+inline const ::pipelines::tekton::v1alpha1::Task& ListTektonTaskResponse::_internal_tasks(int index) const {
+  return tasks_.Get(index);
+}
+inline const ::pipelines::tekton::v1alpha1::Task& ListTektonTaskResponse::tasks(int index) const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.ListTektonTaskResponse.tasks)
+  return _internal_tasks(index);
+}
+inline ::pipelines::tekton::v1alpha1::Task* ListTektonTaskResponse::_internal_add_tasks() {
+  return tasks_.Add();
+}
+inline ::pipelines::tekton::v1alpha1::Task* ListTektonTaskResponse::add_tasks() {
+  ::pipelines::tekton::v1alpha1::Task* _add = _internal_add_tasks();
+  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.ListTektonTaskResponse.tasks)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
+ListTektonTaskResponse::tasks() const {
+  // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.ListTektonTaskResponse.tasks)
+  return tasks_;
+}
+
+// string status = 2 [json_name = "status"];
+inline void ListTektonTaskResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& ListTektonTaskResponse::status() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.ListTektonTaskResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListTektonTaskResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.ListTektonTaskResponse.status)
+}
+inline std::string* ListTektonTaskResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.ListTektonTaskResponse.status)
+  return _s;
+}
+inline const std::string& ListTektonTaskResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void ListTektonTaskResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListTektonTaskResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListTektonTaskResponse::release_status() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.ListTektonTaskResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListTektonTaskResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.ListTektonTaskResponse.status)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

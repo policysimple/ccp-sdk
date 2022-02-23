@@ -16,8 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TaskParams() {
-    name_ = "";
-    value_ = "";
+    paramName_ = "";
+    paramValueType_ = "";
+    paramValue_ = "";
   }
 
   @java.lang.Override
@@ -53,13 +54,19 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
+            paramName_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            value_ = s;
+            paramValueType_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            paramValue_ = s;
             break;
           }
           default: {
@@ -94,76 +101,114 @@ private static final long serialVersionUID = 0L;
             io.cuemby.pipelines.tekton.v1alpha1.TaskParams.class, io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int PARAM_NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object paramName_;
   /**
-   * <code>string name = 1 [json_name = "name"];</code>
-   * @return The name.
+   * <code>string param_name = 1 [json_name = "paramName"];</code>
+   * @return The paramName.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getParamName() {
+    java.lang.Object ref = paramName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      paramName_ = s;
       return s;
     }
   }
   /**
-   * <code>string name = 1 [json_name = "name"];</code>
-   * @return The bytes for name.
+   * <code>string param_name = 1 [json_name = "paramName"];</code>
+   * @return The bytes for paramName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
+      getParamNameBytes() {
+    java.lang.Object ref = paramName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      paramName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int VALUE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object value_;
+  public static final int PARAM_VALUE_TYPE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object paramValueType_;
   /**
-   * <code>string value = 2 [json_name = "value"];</code>
-   * @return The value.
+   * <code>string param_value_type = 2 [json_name = "paramValueType"];</code>
+   * @return The paramValueType.
    */
   @java.lang.Override
-  public java.lang.String getValue() {
-    java.lang.Object ref = value_;
+  public java.lang.String getParamValueType() {
+    java.lang.Object ref = paramValueType_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      value_ = s;
+      paramValueType_ = s;
       return s;
     }
   }
   /**
-   * <code>string value = 2 [json_name = "value"];</code>
-   * @return The bytes for value.
+   * <code>string param_value_type = 2 [json_name = "paramValueType"];</code>
+   * @return The bytes for paramValueType.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getValueBytes() {
-    java.lang.Object ref = value_;
+      getParamValueTypeBytes() {
+    java.lang.Object ref = paramValueType_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      value_ = b;
+      paramValueType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PARAM_VALUE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object paramValue_;
+  /**
+   * <code>string param_value = 3 [json_name = "paramValue"];</code>
+   * @return The paramValue.
+   */
+  @java.lang.Override
+  public java.lang.String getParamValue() {
+    java.lang.Object ref = paramValue_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      paramValue_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string param_value = 3 [json_name = "paramValue"];</code>
+   * @return The bytes for paramValue.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getParamValueBytes() {
+    java.lang.Object ref = paramValue_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      paramValue_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -184,11 +229,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!getParamNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, paramName_);
     }
-    if (!getValueBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
+    if (!getParamValueTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, paramValueType_);
+    }
+    if (!getParamValueBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, paramValue_);
     }
     unknownFields.writeTo(output);
   }
@@ -199,11 +247,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!getParamNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, paramName_);
     }
-    if (!getValueBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+    if (!getParamValueTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, paramValueType_);
+    }
+    if (!getParamValueBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, paramValue_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -220,10 +271,12 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.pipelines.tekton.v1alpha1.TaskParams other = (io.cuemby.pipelines.tekton.v1alpha1.TaskParams) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (!getValue()
-        .equals(other.getValue())) return false;
+    if (!getParamName()
+        .equals(other.getParamName())) return false;
+    if (!getParamValueType()
+        .equals(other.getParamValueType())) return false;
+    if (!getParamValue()
+        .equals(other.getParamValue())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -235,10 +288,12 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + VALUE_FIELD_NUMBER;
-    hash = (53 * hash) + getValue().hashCode();
+    hash = (37 * hash) + PARAM_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getParamName().hashCode();
+    hash = (37 * hash) + PARAM_VALUE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getParamValueType().hashCode();
+    hash = (37 * hash) + PARAM_VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + getParamValue().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -372,9 +427,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      paramName_ = "";
 
-      value_ = "";
+      paramValueType_ = "";
+
+      paramValue_ = "";
 
       return this;
     }
@@ -402,8 +459,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.pipelines.tekton.v1alpha1.TaskParams buildPartial() {
       io.cuemby.pipelines.tekton.v1alpha1.TaskParams result = new io.cuemby.pipelines.tekton.v1alpha1.TaskParams(this);
-      result.name_ = name_;
-      result.value_ = value_;
+      result.paramName_ = paramName_;
+      result.paramValueType_ = paramValueType_;
+      result.paramValue_ = paramValue_;
       onBuilt();
       return result;
     }
@@ -452,12 +510,16 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.pipelines.tekton.v1alpha1.TaskParams other) {
       if (other == io.cuemby.pipelines.tekton.v1alpha1.TaskParams.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getParamName().isEmpty()) {
+        paramName_ = other.paramName_;
         onChanged();
       }
-      if (!other.getValue().isEmpty()) {
-        value_ = other.value_;
+      if (!other.getParamValueType().isEmpty()) {
+        paramValueType_ = other.paramValueType_;
+        onChanged();
+      }
+      if (!other.getParamValue().isEmpty()) {
+        paramValue_ = other.paramValue_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -489,154 +551,230 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object paramName_ = "";
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The name.
+     * <code>string param_name = 1 [json_name = "paramName"];</code>
+     * @return The paramName.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getParamName() {
+      java.lang.Object ref = paramName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        paramName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string param_name = 1 [json_name = "paramName"];</code>
+     * @return The bytes for paramName.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getParamNameBytes() {
+      java.lang.Object ref = paramName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        paramName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @param value The name to set.
+     * <code>string param_name = 1 [json_name = "paramName"];</code>
+     * @param value The paramName to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setParamName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name_ = value;
+      paramName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
+     * <code>string param_name = 1 [json_name = "paramName"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearParamName() {
       
-      name_ = getDefaultInstance().getName();
+      paramName_ = getDefaultInstance().getParamName();
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @param value The bytes for name to set.
+     * <code>string param_name = 1 [json_name = "paramName"];</code>
+     * @param value The bytes for paramName to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setParamNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name_ = value;
+      paramName_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object value_ = "";
+    private java.lang.Object paramValueType_ = "";
     /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The value.
+     * <code>string param_value_type = 2 [json_name = "paramValueType"];</code>
+     * @return The paramValueType.
      */
-    public java.lang.String getValue() {
-      java.lang.Object ref = value_;
+    public java.lang.String getParamValueType() {
+      java.lang.Object ref = paramValueType_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        value_ = s;
+        paramValueType_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The bytes for value.
+     * <code>string param_value_type = 2 [json_name = "paramValueType"];</code>
+     * @return The bytes for paramValueType.
      */
     public com.google.protobuf.ByteString
-        getValueBytes() {
-      java.lang.Object ref = value_;
+        getParamValueTypeBytes() {
+      java.lang.Object ref = paramValueType_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        value_ = b;
+        paramValueType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @param value The value to set.
+     * <code>string param_value_type = 2 [json_name = "paramValueType"];</code>
+     * @param value The paramValueType to set.
      * @return This builder for chaining.
      */
-    public Builder setValue(
+    public Builder setParamValueType(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      value_ = value;
+      paramValueType_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string value = 2 [json_name = "value"];</code>
+     * <code>string param_value_type = 2 [json_name = "paramValueType"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearValue() {
+    public Builder clearParamValueType() {
       
-      value_ = getDefaultInstance().getValue();
+      paramValueType_ = getDefaultInstance().getParamValueType();
       onChanged();
       return this;
     }
     /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @param value The bytes for value to set.
+     * <code>string param_value_type = 2 [json_name = "paramValueType"];</code>
+     * @param value The bytes for paramValueType to set.
      * @return This builder for chaining.
      */
-    public Builder setValueBytes(
+    public Builder setParamValueTypeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      value_ = value;
+      paramValueType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object paramValue_ = "";
+    /**
+     * <code>string param_value = 3 [json_name = "paramValue"];</code>
+     * @return The paramValue.
+     */
+    public java.lang.String getParamValue() {
+      java.lang.Object ref = paramValue_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        paramValue_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string param_value = 3 [json_name = "paramValue"];</code>
+     * @return The bytes for paramValue.
+     */
+    public com.google.protobuf.ByteString
+        getParamValueBytes() {
+      java.lang.Object ref = paramValue_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        paramValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string param_value = 3 [json_name = "paramValue"];</code>
+     * @param value The paramValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParamValue(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      paramValue_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string param_value = 3 [json_name = "paramValue"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParamValue() {
+      
+      paramValue_ = getDefaultInstance().getParamValue();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string param_value = 3 [json_name = "paramValue"];</code>
+     * @param value The bytes for paramValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParamValueBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      paramValue_ = value;
       onChanged();
       return this;
     }

@@ -26,6 +26,7 @@ type TektonPipelineAPIServiceClient interface {
 	GetOneTektonPipeline(ctx context.Context, in *GetOneTektonPipelineRequest, opts ...grpc.CallOption) (*GetOneTektonPipelineResponse, error)
 	ListTektonPipeline(ctx context.Context, in *ListTektonPipelineRequest, opts ...grpc.CallOption) (*ListTektonPipelineResponse, error)
 	DeleteTektonPipeline(ctx context.Context, in *DeleteTektonPipelineRequest, opts ...grpc.CallOption) (*DeleteTektonPipelineResponse, error)
+	ListTektonTask(ctx context.Context, in *ListTektonTaskRequest, opts ...grpc.CallOption) (*ListTektonTaskResponse, error)
 }
 
 type tektonPipelineAPIServiceClient struct {
@@ -72,6 +73,15 @@ func (c *tektonPipelineAPIServiceClient) DeleteTektonPipeline(ctx context.Contex
 	return out, nil
 }
 
+func (c *tektonPipelineAPIServiceClient) ListTektonTask(ctx context.Context, in *ListTektonTaskRequest, opts ...grpc.CallOption) (*ListTektonTaskResponse, error) {
+	out := new(ListTektonTaskResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListTektonTask", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TektonPipelineAPIServiceServer is the server API for TektonPipelineAPIService service.
 // All implementations should embed UnimplementedTektonPipelineAPIServiceServer
 // for forward compatibility
@@ -80,6 +90,7 @@ type TektonPipelineAPIServiceServer interface {
 	GetOneTektonPipeline(context.Context, *GetOneTektonPipelineRequest) (*GetOneTektonPipelineResponse, error)
 	ListTektonPipeline(context.Context, *ListTektonPipelineRequest) (*ListTektonPipelineResponse, error)
 	DeleteTektonPipeline(context.Context, *DeleteTektonPipelineRequest) (*DeleteTektonPipelineResponse, error)
+	ListTektonTask(context.Context, *ListTektonTaskRequest) (*ListTektonTaskResponse, error)
 }
 
 // UnimplementedTektonPipelineAPIServiceServer should be embedded to have forward compatible implementations.
@@ -97,6 +108,9 @@ func (UnimplementedTektonPipelineAPIServiceServer) ListTektonPipeline(context.Co
 }
 func (UnimplementedTektonPipelineAPIServiceServer) DeleteTektonPipeline(context.Context, *DeleteTektonPipelineRequest) (*DeleteTektonPipelineResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTektonPipeline not implemented")
+}
+func (UnimplementedTektonPipelineAPIServiceServer) ListTektonTask(context.Context, *ListTektonTaskRequest) (*ListTektonTaskResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListTektonTask not implemented")
 }
 
 // UnsafeTektonPipelineAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -182,6 +196,24 @@ func _TektonPipelineAPIService_DeleteTektonPipeline_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TektonPipelineAPIService_ListTektonTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListTektonTaskRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TektonPipelineAPIServiceServer).ListTektonTask(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListTektonTask",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TektonPipelineAPIServiceServer).ListTektonTask(ctx, req.(*ListTektonTaskRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // TektonPipelineAPIService_ServiceDesc is the grpc.ServiceDesc for TektonPipelineAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -204,6 +236,10 @@ var TektonPipelineAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteTektonPipeline",
 			Handler:    _TektonPipelineAPIService_DeleteTektonPipeline_Handler,
+		},
+		{
+			MethodName: "ListTektonTask",
+			Handler:    _TektonPipelineAPIService_ListTektonTask_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

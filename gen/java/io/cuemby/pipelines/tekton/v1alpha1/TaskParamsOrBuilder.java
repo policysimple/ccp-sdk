@@ -8,26 +8,38 @@ public interface TaskParamsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string name = 1 [json_name = "name"];</code>
-   * @return The name.
+   * <code>string param_name = 1 [json_name = "paramName"];</code>
+   * @return The paramName.
    */
-  java.lang.String getName();
+  java.lang.String getParamName();
   /**
-   * <code>string name = 1 [json_name = "name"];</code>
-   * @return The bytes for name.
+   * <code>string param_name = 1 [json_name = "paramName"];</code>
+   * @return The bytes for paramName.
    */
   com.google.protobuf.ByteString
-      getNameBytes();
+      getParamNameBytes();
 
   /**
-   * <code>string value = 2 [json_name = "value"];</code>
-   * @return The value.
+   * <code>string param_value_type = 2 [json_name = "paramValueType"];</code>
+   * @return The paramValueType.
    */
-  java.lang.String getValue();
+  java.lang.String getParamValueType();
   /**
-   * <code>string value = 2 [json_name = "value"];</code>
-   * @return The bytes for value.
+   * <code>string param_value_type = 2 [json_name = "paramValueType"];</code>
+   * @return The bytes for paramValueType.
    */
   com.google.protobuf.ByteString
-      getValueBytes();
+      getParamValueTypeBytes();
+
+  /**
+   * <code>string param_value = 3 [json_name = "paramValue"];</code>
+   * @return The paramValue.
+   */
+  java.lang.String getParamValue();
+  /**
+   * <code>string param_value = 3 [json_name = "paramValue"];</code>
+   * @return The bytes for paramValue.
+   */
+  com.google.protobuf.ByteString
+      getParamValueBytes();
 }

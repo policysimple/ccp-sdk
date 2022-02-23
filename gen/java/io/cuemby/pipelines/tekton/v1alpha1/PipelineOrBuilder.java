@@ -32,68 +32,129 @@ public interface PipelineOrBuilder extends
   int getProjectId();
 
   /**
-   * <code>string name = 4 [json_name = "name"];</code>
-   * @return The name.
+   * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
+   * @return The typeMetaKind.
    */
-  java.lang.String getName();
+  java.lang.String getTypeMetaKind();
   /**
-   * <code>string name = 4 [json_name = "name"];</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
-   * <code>string workspaces = 5 [json_name = "workspaces"];</code>
-   * @return The workspaces.
-   */
-  java.lang.String getWorkspaces();
-  /**
-   * <code>string workspaces = 5 [json_name = "workspaces"];</code>
-   * @return The bytes for workspaces.
+   * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
+   * @return The bytes for typeMetaKind.
    */
   com.google.protobuf.ByteString
-      getWorkspacesBytes();
+      getTypeMetaKindBytes();
 
   /**
-   * <code>bool active = 6 [json_name = "active"];</code>
-   * @return The active.
+   * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
+   * @return The typeMetaApiVersion.
    */
-  boolean getActive();
+  java.lang.String getTypeMetaApiVersion();
+  /**
+   * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
+   * @return The bytes for typeMetaApiVersion.
+   */
+  com.google.protobuf.ByteString
+      getTypeMetaApiVersionBytes();
 
   /**
-   * <code>string status_type = 7 [json_name = "statusType"];</code>
+   * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+   * @return The objectMetaName.
+   */
+  java.lang.String getObjectMetaName();
+  /**
+   * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+   * @return The bytes for objectMetaName.
+   */
+  com.google.protobuf.ByteString
+      getObjectMetaNameBytes();
+
+  /**
+   * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+   * @return The objectMetaNamespace.
+   */
+  java.lang.String getObjectMetaNamespace();
+  /**
+   * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+   * @return The bytes for objectMetaNamespace.
+   */
+  com.google.protobuf.ByteString
+      getObjectMetaNamespaceBytes();
+
+  /**
+   * <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
+   * @return The specWorkspacesName.
+   */
+  java.lang.String getSpecWorkspacesName();
+  /**
+   * <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
+   * @return The bytes for specWorkspacesName.
+   */
+  com.google.protobuf.ByteString
+      getSpecWorkspacesNameBytes();
+
+  /**
+   * <code>repeated string params = 9 [json_name = "params"];</code>
+   * @return A list containing the params.
+   */
+  java.util.List<java.lang.String>
+      getParamsList();
+  /**
+   * <code>repeated string params = 9 [json_name = "params"];</code>
+   * @return The count of params.
+   */
+  int getParamsCount();
+  /**
+   * <code>repeated string params = 9 [json_name = "params"];</code>
+   * @param index The index of the element to return.
+   * @return The params at the given index.
+   */
+  java.lang.String getParams(int index);
+  /**
+   * <code>repeated string params = 9 [json_name = "params"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the params at the given index.
+   */
+  com.google.protobuf.ByteString
+      getParamsBytes(int index);
+
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   */
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> 
+      getTasksList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.Task getTasks(int index);
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   */
+  int getTasksCount();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   */
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+      getTasksOrBuilderList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTasksOrBuilder(
+      int index);
+
+  /**
+   * <code>string status_type = 11 [json_name = "statusType"];</code>
    * @return The statusType.
    */
   java.lang.String getStatusType();
   /**
-   * <code>string status_type = 7 [json_name = "statusType"];</code>
+   * <code>string status_type = 11 [json_name = "statusType"];</code>
    * @return The bytes for statusType.
    */
   com.google.protobuf.ByteString
       getStatusTypeBytes();
 
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+   * <code>bool active = 12 [json_name = "active"];</code>
+   * @return The active.
    */
-  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> 
-      getTasksList();
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
-   */
-  io.cuemby.pipelines.tekton.v1alpha1.Task getTasks(int index);
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
-   */
-  int getTasksCount();
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
-   */
-  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
-      getTasksOrBuilderList();
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
-   */
-  io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTasksOrBuilder(
-      int index);
+  boolean getActive();
 }

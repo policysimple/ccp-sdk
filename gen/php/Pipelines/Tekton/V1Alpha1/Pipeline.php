@@ -28,25 +28,41 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      */
     protected $project_id = 0;
     /**
-     * Generated from protobuf field <code>string name = 4 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
      */
-    protected $name = '';
+    protected $type_meta_kind = '';
     /**
-     * Generated from protobuf field <code>string workspaces = 5 [json_name = "workspaces"];</code>
+     * Generated from protobuf field <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
      */
-    protected $workspaces = '';
+    protected $type_meta_api_version = '';
     /**
-     * Generated from protobuf field <code>bool active = 6 [json_name = "active"];</code>
+     * Generated from protobuf field <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
      */
-    protected $active = false;
+    protected $object_meta_name = '';
     /**
-     * Generated from protobuf field <code>string status_type = 7 [json_name = "statusType"];</code>
+     * Generated from protobuf field <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+     */
+    protected $object_meta_namespace = '';
+    /**
+     * Generated from protobuf field <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
+     */
+    protected $spec_workspaces_name = '';
+    /**
+     * Generated from protobuf field <code>repeated string params = 9 [json_name = "params"];</code>
+     */
+    private $params;
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+     */
+    private $tasks;
+    /**
+     * Generated from protobuf field <code>string status_type = 11 [json_name = "statusType"];</code>
      */
     protected $status_type = '';
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
+     * Generated from protobuf field <code>bool active = 12 [json_name = "active"];</code>
      */
-    private $tasks;
+    protected $active = false;
 
     /**
      * Constructor.
@@ -57,11 +73,15 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type int $organization_id
      *     @type int $project_id
-     *     @type string $name
-     *     @type string $workspaces
-     *     @type bool $active
-     *     @type string $status_type
+     *     @type string $type_meta_kind
+     *     @type string $type_meta_api_version
+     *     @type string $object_meta_name
+     *     @type string $object_meta_namespace
+     *     @type string $spec_workspaces_name
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $params
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $tasks
+     *     @type string $status_type
+     *     @type bool $active
      * }
      */
     public function __construct($data = NULL) {
@@ -136,73 +156,161 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 4 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
      * @return string
      */
-    public function getName()
+    public function getTypeMetaKind()
     {
-        return $this->name;
+        return $this->type_meta_kind;
     }
 
     /**
-     * Generated from protobuf field <code>string name = 4 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setTypeMetaKind($var)
     {
         GPBUtil::checkString($var, True);
-        $this->name = $var;
+        $this->type_meta_kind = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string workspaces = 5 [json_name = "workspaces"];</code>
+     * Generated from protobuf field <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
      * @return string
      */
-    public function getWorkspaces()
+    public function getTypeMetaApiVersion()
     {
-        return $this->workspaces;
+        return $this->type_meta_api_version;
     }
 
     /**
-     * Generated from protobuf field <code>string workspaces = 5 [json_name = "workspaces"];</code>
+     * Generated from protobuf field <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
      * @param string $var
      * @return $this
      */
-    public function setWorkspaces($var)
+    public function setTypeMetaApiVersion($var)
     {
         GPBUtil::checkString($var, True);
-        $this->workspaces = $var;
+        $this->type_meta_api_version = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>bool active = 6 [json_name = "active"];</code>
-     * @return bool
+     * Generated from protobuf field <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+     * @return string
      */
-    public function getActive()
+    public function getObjectMetaName()
     {
-        return $this->active;
+        return $this->object_meta_name;
     }
 
     /**
-     * Generated from protobuf field <code>bool active = 6 [json_name = "active"];</code>
-     * @param bool $var
+     * Generated from protobuf field <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setActive($var)
+    public function setObjectMetaName($var)
     {
-        GPBUtil::checkBool($var);
-        $this->active = $var;
+        GPBUtil::checkString($var, True);
+        $this->object_meta_name = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string status_type = 7 [json_name = "statusType"];</code>
+     * Generated from protobuf field <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+     * @return string
+     */
+    public function getObjectMetaNamespace()
+    {
+        return $this->object_meta_namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setObjectMetaNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->object_meta_namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
+     * @return string
+     */
+    public function getSpecWorkspacesName()
+    {
+        return $this->spec_workspaces_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSpecWorkspacesName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->spec_workspaces_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string params = 9 [json_name = "params"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getParams()
+    {
+        return $this->params;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string params = 9 [json_name = "params"];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setParams($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->params = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTasks()
+    {
+        return $this->tasks;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTasks($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Task::class);
+        $this->tasks = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status_type = 11 [json_name = "statusType"];</code>
      * @return string
      */
     public function getStatusType()
@@ -211,7 +319,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status_type = 7 [json_name = "statusType"];</code>
+     * Generated from protobuf field <code>string status_type = 11 [json_name = "statusType"];</code>
      * @param string $var
      * @return $this
      */
@@ -224,23 +332,23 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>bool active = 12 [json_name = "active"];</code>
+     * @return bool
      */
-    public function getTasks()
+    public function getActive()
     {
-        return $this->tasks;
+        return $this->active;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 8 [json_name = "tasks"];</code>
-     * @param \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>bool active = 12 [json_name = "active"];</code>
+     * @param bool $var
      * @return $this
      */
-    public function setTasks($var)
+    public function setActive($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Task::class);
-        $this->tasks = $arr;
+        GPBUtil::checkBool($var);
+        $this->active = $var;
 
         return $this;
     }

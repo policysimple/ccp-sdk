@@ -68,4 +68,17 @@ class TektonPipelineAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Pipelines\Tekton\V1Alpha1\ListTektonTaskRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListTektonTask(\Pipelines\Tekton\V1Alpha1\ListTektonTaskRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListTektonTask',
+        $argument,
+        ['\Pipelines\Tekton\V1Alpha1\ListTektonTaskResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

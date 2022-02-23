@@ -38,21 +38,25 @@ func init() {
 }
 
 type TaskParamsStruct struct {
-	Name  string
-	Value string
+	ParamName      string
+	ParamValueType string
+	ParamValue     string
 }
 
 type TaskStruct struct {
-	Id            string
-	Name          string
-	TaskRefName   string
-	WorkspaceName string
-	TaskType      int8
-	TaskParams    []TaskParamsStruct
+	Id                 string
+	TaskName           string
+	TaskRefName        string
+	TaskKind           string
+	TaskRunAfter       []string
+	TaskWorkspacesName string
+	TaskWorkspacesMain string
+	TaskParams         []TaskParamsStruct
+	Description        string
 }
 
 func CreateTektonPipeline(
-	organizationId uint32, projectId uint32, name string, workspaces string, tasks []TaskStruct, userId string,
+	organizationId uint32, projectId uint32, name string, namespace string, workspace string, params []string, tasks []TaskStruct, userId string,
 ) (response *tektonPipelinepkgv1.CreateTektonPipelineResponse, err error) {
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
@@ -76,27 +80,35 @@ func CreateTektonPipeline(
 
 		for _, itemDetail := range item.TaskParams {
 			arrayTaskParameters = append(arrayTaskParameters, &tektonPipelinepkgv1.TaskParams{
-				Name:  itemDetail.Name,
-				Value: itemDetail.Value,
+				ParamName:      itemDetail.ParamName,
+				ParamValueType: itemDetail.ParamValueType,
+				ParamValue:     itemDetail.ParamValue,
 			})
 		}
 
 		arrayTasks = append(arrayTasks, &tektonPipelinepkgv1.Task{
-			Name:          item.Name,
-			TaskRefName:   item.TaskRefName,
-			WorkspaceName: item.WorkspaceName,
-			TaskType:      tektonPipelinepkgv1.TaskType(item.TaskType),
-			TaskParams:    arrayTaskParameters,
+			TaskName:           item.TaskName,
+			TaskRefName:        item.TaskRefName,
+			TaskKind:           item.TaskKind,
+			TaskRunAfter:       item.TaskRunAfter,
+			TaskWorkspacesName: item.TaskWorkspacesName,
+			TaskWorkspacesMain: item.TaskWorkspacesMain,
+			TaskParams:         arrayTaskParameters,
+			Description:        item.Description,
 		})
 	}
 
 	response, err = client.CreateTektonPipeline(ctx, &tektonPipelinepkgv1.CreateTektonPipelineRequest{
 		TektonPipeline: &tektonPipelinepkgv1.Pipeline{
-			OrganizationId: organizationId,
-			ProjectId:      projectId,
-			Name:           name,
-			Workspaces:     workspaces,
-			Tasks:          arrayTasks,
+			OrganizationId:      organizationId,
+			ProjectId:           projectId,
+			TypeMetaKind:        "Pipeline",
+			TypeMetaApiVersion:  "tekton.dev/v1beta1",
+			ObjectMetaName:      name,
+			ObjectMetaNamespace: namespace,
+			SpecWorkspacesName:  workspace,
+			Params:              params,
+			Tasks:               arrayTasks,
 		},
 		UserId: userId,
 	})
@@ -151,6 +163,26 @@ func DeleteTektonPipeline(tektonPipelineId string, userId string) (response *tek
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: %v", "Error delete tekton pipeline", err),
+		)
+	}
+	return response, nil
+}
+
+func ListTektonTask() (response *tektonPipelinepkgv1.ListTektonTaskResponse, err error) {
+	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ListTektonTask(ctx, &tektonPipelinepkgv1.ListTektonTaskRequest{})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error list tekton task", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error list tekton task", err),
 		)
 	}
 	return response, nil

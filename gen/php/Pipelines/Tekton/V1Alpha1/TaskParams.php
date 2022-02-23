@@ -14,13 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class TaskParams extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string param_name = 1 [json_name = "paramName"];</code>
      */
-    protected $name = '';
+    protected $param_name = '';
     /**
-     * Generated from protobuf field <code>string value = 2 [json_name = "value"];</code>
+     * Generated from protobuf field <code>string param_value_type = 2 [json_name = "paramValueType"];</code>
      */
-    protected $value = '';
+    protected $param_value_type = '';
+    /**
+     * Generated from protobuf field <code>string param_value = 3 [json_name = "paramValue"];</code>
+     */
+    protected $param_value = '';
 
     /**
      * Constructor.
@@ -28,8 +32,9 @@ class TaskParams extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $name
-     *     @type string $value
+     *     @type string $param_name
+     *     @type string $param_value_type
+     *     @type string $param_value
      * }
      */
     public function __construct($data = NULL) {
@@ -38,45 +43,67 @@ class TaskParams extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string param_name = 1 [json_name = "paramName"];</code>
      * @return string
      */
-    public function getName()
+    public function getParamName()
     {
-        return $this->name;
+        return $this->param_name;
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string param_name = 1 [json_name = "paramName"];</code>
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setParamName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->name = $var;
+        $this->param_name = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string value = 2 [json_name = "value"];</code>
+     * Generated from protobuf field <code>string param_value_type = 2 [json_name = "paramValueType"];</code>
      * @return string
      */
-    public function getValue()
+    public function getParamValueType()
     {
-        return $this->value;
+        return $this->param_value_type;
     }
 
     /**
-     * Generated from protobuf field <code>string value = 2 [json_name = "value"];</code>
+     * Generated from protobuf field <code>string param_value_type = 2 [json_name = "paramValueType"];</code>
      * @param string $var
      * @return $this
      */
-    public function setValue($var)
+    public function setParamValueType($var)
     {
         GPBUtil::checkString($var, True);
-        $this->value = $var;
+        $this->param_value_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string param_value = 3 [json_name = "paramValue"];</code>
+     * @return string
+     */
+    public function getParamValue()
+    {
+        return $this->param_value;
+    }
+
+    /**
+     * Generated from protobuf field <code>string param_value = 3 [json_name = "paramValue"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setParamValue($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->param_value = $var;
 
         return $this;
     }

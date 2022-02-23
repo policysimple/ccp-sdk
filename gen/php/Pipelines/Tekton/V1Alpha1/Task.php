@@ -18,25 +18,37 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string task_name = 2 [json_name = "taskName"];</code>
      */
-    protected $name = '';
+    protected $task_name = '';
     /**
      * Generated from protobuf field <code>string task_ref_name = 3 [json_name = "taskRefName"];</code>
      */
     protected $task_ref_name = '';
     /**
-     * Generated from protobuf field <code>string workspace_name = 4 [json_name = "workspaceName"];</code>
+     * Generated from protobuf field <code>string task_kind = 4 [json_name = "taskKind"];</code>
      */
-    protected $workspace_name = '';
+    protected $task_kind = '';
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.TaskType task_type = 5 [json_name = "taskType"];</code>
+     * Generated from protobuf field <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
      */
-    protected $task_type = 0;
+    private $task_run_after;
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * Generated from protobuf field <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
+     */
+    protected $task_workspaces_name = '';
+    /**
+     * Generated from protobuf field <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
+     */
+    protected $task_workspaces_main = '';
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     private $task_params;
+    /**
+     * Generated from protobuf field <code>string description = 9 [json_name = "description"];</code>
+     */
+    protected $description = '';
 
     /**
      * Constructor.
@@ -45,11 +57,14 @@ class Task extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $name
+     *     @type string $task_name
      *     @type string $task_ref_name
-     *     @type string $workspace_name
-     *     @type int $task_type
+     *     @type string $task_kind
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $task_run_after
+     *     @type string $task_workspaces_name
+     *     @type string $task_workspaces_main
      *     @type \Pipelines\Tekton\V1Alpha1\TaskParams[]|\Google\Protobuf\Internal\RepeatedField $task_params
+     *     @type string $description
      * }
      */
     public function __construct($data = NULL) {
@@ -80,23 +95,23 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string task_name = 2 [json_name = "taskName"];</code>
      * @return string
      */
-    public function getName()
+    public function getTaskName()
     {
-        return $this->name;
+        return $this->task_name;
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string task_name = 2 [json_name = "taskName"];</code>
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setTaskName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->name = $var;
+        $this->task_name = $var;
 
         return $this;
     }
@@ -124,51 +139,95 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string workspace_name = 4 [json_name = "workspaceName"];</code>
+     * Generated from protobuf field <code>string task_kind = 4 [json_name = "taskKind"];</code>
      * @return string
      */
-    public function getWorkspaceName()
+    public function getTaskKind()
     {
-        return $this->workspace_name;
+        return $this->task_kind;
     }
 
     /**
-     * Generated from protobuf field <code>string workspace_name = 4 [json_name = "workspaceName"];</code>
+     * Generated from protobuf field <code>string task_kind = 4 [json_name = "taskKind"];</code>
      * @param string $var
      * @return $this
      */
-    public function setWorkspaceName($var)
+    public function setTaskKind($var)
     {
         GPBUtil::checkString($var, True);
-        $this->workspace_name = $var;
+        $this->task_kind = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.TaskType task_type = 5 [json_name = "taskType"];</code>
-     * @return int
+     * Generated from protobuf field <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getTaskType()
+    public function getTaskRunAfter()
     {
-        return $this->task_type;
+        return $this->task_run_after;
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.TaskType task_type = 5 [json_name = "taskType"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setTaskType($var)
+    public function setTaskRunAfter($var)
     {
-        GPBUtil::checkEnum($var, \Pipelines\Tekton\V1Alpha1\TaskType::class);
-        $this->task_type = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->task_run_after = $arr;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * Generated from protobuf field <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
+     * @return string
+     */
+    public function getTaskWorkspacesName()
+    {
+        return $this->task_workspaces_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaskWorkspacesName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->task_workspaces_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
+     * @return string
+     */
+    public function getTaskWorkspacesMain()
+    {
+        return $this->task_workspaces_main;
+    }
+
+    /**
+     * Generated from protobuf field <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaskWorkspacesMain($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->task_workspaces_main = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTaskParams()
@@ -177,7 +236,7 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      * @param \Pipelines\Tekton\V1Alpha1\TaskParams[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -185,6 +244,28 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\TaskParams::class);
         $this->task_params = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 9 [json_name = "description"];</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 9 [json_name = "description"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
 
         return $this;
     }

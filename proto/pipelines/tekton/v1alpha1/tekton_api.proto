@@ -17,6 +17,8 @@ service TektonPipelineAPIService{
     rpc GetOneTektonPipeline(GetOneTektonPipelineRequest) returns (GetOneTektonPipelineResponse);
     rpc ListTektonPipeline(ListTektonPipelineRequest) returns (ListTektonPipelineResponse);
     rpc DeleteTektonPipeline(DeleteTektonPipelineRequest) returns (DeleteTektonPipelineResponse);
+
+    rpc ListTektonTask(ListTektonTaskRequest) returns (ListTektonTaskResponse);
 }
 
 message CreateTektonPipelineRequest {
@@ -55,3 +57,9 @@ message DeleteTektonPipelineResponse {
     string status = 1; 
 }
 
+message ListTektonTaskRequest {}
+
+message ListTektonTaskResponse {
+    repeated pipelines.tekton.v1alpha1.Task tasks = 1;
+    string status = 2;
+}

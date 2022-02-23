@@ -17,11 +17,14 @@ private static final long serialVersionUID = 0L;
   }
   private Task() {
     id_ = "";
-    name_ = "";
+    taskName_ = "";
     taskRefName_ = "";
-    workspaceName_ = "";
-    taskType_ = 0;
+    taskKind_ = "";
+    taskRunAfter_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    taskWorkspacesName_ = "";
+    taskWorkspacesMain_ = "";
     taskParams_ = java.util.Collections.emptyList();
+    description_ = "";
   }
 
   @java.lang.Override
@@ -64,7 +67,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
+            taskName_ = s;
             break;
           }
           case 26: {
@@ -76,22 +79,43 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            workspaceName_ = s;
+            taskKind_ = s;
             break;
           }
-          case 40: {
-            int rawValue = input.readEnum();
-
-            taskType_ = rawValue;
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              taskRunAfter_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            taskRunAfter_.add(s);
             break;
           }
           case 50: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            taskWorkspacesName_ = s;
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            taskWorkspacesMain_ = s;
+            break;
+          }
+          case 66: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               taskParams_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.TaskParams>();
-              mutable_bitField0_ |= 0x00000001;
+              mutable_bitField0_ |= 0x00000002;
             }
             taskParams_.add(
                 input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.TaskParams.parser(), extensionRegistry));
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            description_ = s;
             break;
           }
           default: {
@@ -110,6 +134,9 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        taskRunAfter_ = taskRunAfter_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         taskParams_ = java.util.Collections.unmodifiableList(taskParams_);
       }
       this.unknownFields = unknownFields.build();
@@ -167,38 +194,38 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+  public static final int TASK_NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object taskName_;
   /**
-   * <code>string name = 2 [json_name = "name"];</code>
-   * @return The name.
+   * <code>string task_name = 2 [json_name = "taskName"];</code>
+   * @return The taskName.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getTaskName() {
+    java.lang.Object ref = taskName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      taskName_ = s;
       return s;
     }
   }
   /**
-   * <code>string name = 2 [json_name = "name"];</code>
-   * @return The bytes for name.
+   * <code>string task_name = 2 [json_name = "taskName"];</code>
+   * @return The bytes for taskName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
+      getTaskNameBytes() {
+    java.lang.Object ref = taskName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      taskName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -243,74 +270,166 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int WORKSPACE_NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object workspaceName_;
+  public static final int TASK_KIND_FIELD_NUMBER = 4;
+  private volatile java.lang.Object taskKind_;
   /**
-   * <code>string workspace_name = 4 [json_name = "workspaceName"];</code>
-   * @return The workspaceName.
+   * <code>string task_kind = 4 [json_name = "taskKind"];</code>
+   * @return The taskKind.
    */
   @java.lang.Override
-  public java.lang.String getWorkspaceName() {
-    java.lang.Object ref = workspaceName_;
+  public java.lang.String getTaskKind() {
+    java.lang.Object ref = taskKind_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      workspaceName_ = s;
+      taskKind_ = s;
       return s;
     }
   }
   /**
-   * <code>string workspace_name = 4 [json_name = "workspaceName"];</code>
-   * @return The bytes for workspaceName.
+   * <code>string task_kind = 4 [json_name = "taskKind"];</code>
+   * @return The bytes for taskKind.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getWorkspaceNameBytes() {
-    java.lang.Object ref = workspaceName_;
+      getTaskKindBytes() {
+    java.lang.Object ref = taskKind_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      workspaceName_ = b;
+      taskKind_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int TASK_TYPE_FIELD_NUMBER = 5;
-  private int taskType_;
+  public static final int TASK_RUN_AFTER_FIELD_NUMBER = 5;
+  private com.google.protobuf.LazyStringList taskRunAfter_;
   /**
-   * <code>.pipelines.tekton.v1alpha1.TaskType task_type = 5 [json_name = "taskType"];</code>
-   * @return The enum numeric value on the wire for taskType.
+   * <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+   * @return A list containing the taskRunAfter.
    */
-  @java.lang.Override public int getTaskTypeValue() {
-    return taskType_;
+  public com.google.protobuf.ProtocolStringList
+      getTaskRunAfterList() {
+    return taskRunAfter_;
   }
   /**
-   * <code>.pipelines.tekton.v1alpha1.TaskType task_type = 5 [json_name = "taskType"];</code>
-   * @return The taskType.
+   * <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+   * @return The count of taskRunAfter.
    */
-  @java.lang.Override public io.cuemby.pipelines.tekton.v1alpha1.TaskType getTaskType() {
-    @SuppressWarnings("deprecation")
-    io.cuemby.pipelines.tekton.v1alpha1.TaskType result = io.cuemby.pipelines.tekton.v1alpha1.TaskType.valueOf(taskType_);
-    return result == null ? io.cuemby.pipelines.tekton.v1alpha1.TaskType.UNRECOGNIZED : result;
+  public int getTaskRunAfterCount() {
+    return taskRunAfter_.size();
+  }
+  /**
+   * <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+   * @param index The index of the element to return.
+   * @return The taskRunAfter at the given index.
+   */
+  public java.lang.String getTaskRunAfter(int index) {
+    return taskRunAfter_.get(index);
+  }
+  /**
+   * <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the taskRunAfter at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getTaskRunAfterBytes(int index) {
+    return taskRunAfter_.getByteString(index);
   }
 
-  public static final int TASK_PARAMS_FIELD_NUMBER = 6;
+  public static final int TASK_WORKSPACES_NAME_FIELD_NUMBER = 6;
+  private volatile java.lang.Object taskWorkspacesName_;
+  /**
+   * <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
+   * @return The taskWorkspacesName.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskWorkspacesName() {
+    java.lang.Object ref = taskWorkspacesName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskWorkspacesName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
+   * @return The bytes for taskWorkspacesName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskWorkspacesNameBytes() {
+    java.lang.Object ref = taskWorkspacesName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskWorkspacesName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TASK_WORKSPACES_MAIN_FIELD_NUMBER = 7;
+  private volatile java.lang.Object taskWorkspacesMain_;
+  /**
+   * <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
+   * @return The taskWorkspacesMain.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskWorkspacesMain() {
+    java.lang.Object ref = taskWorkspacesMain_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskWorkspacesMain_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
+   * @return The bytes for taskWorkspacesMain.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskWorkspacesMainBytes() {
+    java.lang.Object ref = taskWorkspacesMain_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskWorkspacesMain_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TASK_PARAMS_FIELD_NUMBER = 8;
   private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskParams> taskParams_;
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
    */
   @java.lang.Override
   public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskParams> getTaskParamsList() {
     return taskParams_;
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder> 
@@ -318,26 +437,64 @@ private static final long serialVersionUID = 0L;
     return taskParams_;
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
    */
   @java.lang.Override
   public int getTaskParamsCount() {
     return taskParams_.size();
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
    */
   @java.lang.Override
   public io.cuemby.pipelines.tekton.v1alpha1.TaskParams getTaskParams(int index) {
     return taskParams_.get(index);
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
    */
   @java.lang.Override
   public io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder getTaskParamsOrBuilder(
       int index) {
     return taskParams_.get(index);
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 9;
+  private volatile java.lang.Object description_;
+  /**
+   * <code>string description = 9 [json_name = "description"];</code>
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string description = 9 [json_name = "description"];</code>
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -357,20 +514,29 @@ private static final long serialVersionUID = 0L;
     if (!getIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+    if (!getTaskNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskName_);
     }
     if (!getTaskRefNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, taskRefName_);
     }
-    if (!getWorkspaceNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, workspaceName_);
+    if (!getTaskKindBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, taskKind_);
     }
-    if (taskType_ != io.cuemby.pipelines.tekton.v1alpha1.TaskType.TASK_TYPE_ACCEPTED_TASK_UNSPECIFIED.getNumber()) {
-      output.writeEnum(5, taskType_);
+    for (int i = 0; i < taskRunAfter_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, taskRunAfter_.getRaw(i));
+    }
+    if (!getTaskWorkspacesNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, taskWorkspacesName_);
+    }
+    if (!getTaskWorkspacesMainBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, taskWorkspacesMain_);
     }
     for (int i = 0; i < taskParams_.size(); i++) {
-      output.writeMessage(6, taskParams_.get(i));
+      output.writeMessage(8, taskParams_.get(i));
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, description_);
     }
     unknownFields.writeTo(output);
   }
@@ -384,22 +550,35 @@ private static final long serialVersionUID = 0L;
     if (!getIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+    if (!getTaskNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskName_);
     }
     if (!getTaskRefNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, taskRefName_);
     }
-    if (!getWorkspaceNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, workspaceName_);
+    if (!getTaskKindBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, taskKind_);
     }
-    if (taskType_ != io.cuemby.pipelines.tekton.v1alpha1.TaskType.TASK_TYPE_ACCEPTED_TASK_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(5, taskType_);
+    {
+      int dataSize = 0;
+      for (int i = 0; i < taskRunAfter_.size(); i++) {
+        dataSize += computeStringSizeNoTag(taskRunAfter_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTaskRunAfterList().size();
+    }
+    if (!getTaskWorkspacesNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, taskWorkspacesName_);
+    }
+    if (!getTaskWorkspacesMainBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, taskWorkspacesMain_);
     }
     for (int i = 0; i < taskParams_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, taskParams_.get(i));
+        .computeMessageSize(8, taskParams_.get(i));
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, description_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -418,15 +597,22 @@ private static final long serialVersionUID = 0L;
 
     if (!getId()
         .equals(other.getId())) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
+    if (!getTaskName()
+        .equals(other.getTaskName())) return false;
     if (!getTaskRefName()
         .equals(other.getTaskRefName())) return false;
-    if (!getWorkspaceName()
-        .equals(other.getWorkspaceName())) return false;
-    if (taskType_ != other.taskType_) return false;
+    if (!getTaskKind()
+        .equals(other.getTaskKind())) return false;
+    if (!getTaskRunAfterList()
+        .equals(other.getTaskRunAfterList())) return false;
+    if (!getTaskWorkspacesName()
+        .equals(other.getTaskWorkspacesName())) return false;
+    if (!getTaskWorkspacesMain()
+        .equals(other.getTaskWorkspacesMain())) return false;
     if (!getTaskParamsList()
         .equals(other.getTaskParamsList())) return false;
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -440,18 +626,26 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + TASK_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskName().hashCode();
     hash = (37 * hash) + TASK_REF_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getTaskRefName().hashCode();
-    hash = (37 * hash) + WORKSPACE_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getWorkspaceName().hashCode();
-    hash = (37 * hash) + TASK_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + taskType_;
+    hash = (37 * hash) + TASK_KIND_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskKind().hashCode();
+    if (getTaskRunAfterCount() > 0) {
+      hash = (37 * hash) + TASK_RUN_AFTER_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskRunAfterList().hashCode();
+    }
+    hash = (37 * hash) + TASK_WORKSPACES_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskWorkspacesName().hashCode();
+    hash = (37 * hash) + TASK_WORKSPACES_MAIN_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskWorkspacesMain().hashCode();
     if (getTaskParamsCount() > 0) {
       hash = (37 * hash) + TASK_PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getTaskParamsList().hashCode();
     }
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -588,20 +782,26 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
-      name_ = "";
+      taskName_ = "";
 
       taskRefName_ = "";
 
-      workspaceName_ = "";
+      taskKind_ = "";
 
-      taskType_ = 0;
+      taskRunAfter_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      taskWorkspacesName_ = "";
+
+      taskWorkspacesMain_ = "";
 
       if (taskParamsBuilder_ == null) {
         taskParams_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         taskParamsBuilder_.clear();
       }
+      description_ = "";
+
       return this;
     }
 
@@ -630,19 +830,26 @@ private static final long serialVersionUID = 0L;
       io.cuemby.pipelines.tekton.v1alpha1.Task result = new io.cuemby.pipelines.tekton.v1alpha1.Task(this);
       int from_bitField0_ = bitField0_;
       result.id_ = id_;
-      result.name_ = name_;
+      result.taskName_ = taskName_;
       result.taskRefName_ = taskRefName_;
-      result.workspaceName_ = workspaceName_;
-      result.taskType_ = taskType_;
+      result.taskKind_ = taskKind_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        taskRunAfter_ = taskRunAfter_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.taskRunAfter_ = taskRunAfter_;
+      result.taskWorkspacesName_ = taskWorkspacesName_;
+      result.taskWorkspacesMain_ = taskWorkspacesMain_;
       if (taskParamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           taskParams_ = java.util.Collections.unmodifiableList(taskParams_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.taskParams_ = taskParams_;
       } else {
         result.taskParams_ = taskParamsBuilder_.build();
       }
+      result.description_ = description_;
       onBuilt();
       return result;
     }
@@ -695,26 +902,41 @@ private static final long serialVersionUID = 0L;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getTaskName().isEmpty()) {
+        taskName_ = other.taskName_;
         onChanged();
       }
       if (!other.getTaskRefName().isEmpty()) {
         taskRefName_ = other.taskRefName_;
         onChanged();
       }
-      if (!other.getWorkspaceName().isEmpty()) {
-        workspaceName_ = other.workspaceName_;
+      if (!other.getTaskKind().isEmpty()) {
+        taskKind_ = other.taskKind_;
         onChanged();
       }
-      if (other.taskType_ != 0) {
-        setTaskTypeValue(other.getTaskTypeValue());
+      if (!other.taskRunAfter_.isEmpty()) {
+        if (taskRunAfter_.isEmpty()) {
+          taskRunAfter_ = other.taskRunAfter_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureTaskRunAfterIsMutable();
+          taskRunAfter_.addAll(other.taskRunAfter_);
+        }
+        onChanged();
+      }
+      if (!other.getTaskWorkspacesName().isEmpty()) {
+        taskWorkspacesName_ = other.taskWorkspacesName_;
+        onChanged();
+      }
+      if (!other.getTaskWorkspacesMain().isEmpty()) {
+        taskWorkspacesMain_ = other.taskWorkspacesMain_;
+        onChanged();
       }
       if (taskParamsBuilder_ == null) {
         if (!other.taskParams_.isEmpty()) {
           if (taskParams_.isEmpty()) {
             taskParams_ = other.taskParams_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureTaskParamsIsMutable();
             taskParams_.addAll(other.taskParams_);
@@ -727,7 +949,7 @@ private static final long serialVersionUID = 0L;
             taskParamsBuilder_.dispose();
             taskParamsBuilder_ = null;
             taskParams_ = other.taskParams_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             taskParamsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTaskParamsFieldBuilder() : null;
@@ -735,6 +957,10 @@ private static final long serialVersionUID = 0L;
             taskParamsBuilder_.addAllMessages(other.taskParams_);
           }
         }
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -842,78 +1068,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object taskName_ = "";
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
-     * @return The name.
+     * <code>string task_name = 2 [json_name = "taskName"];</code>
+     * @return The taskName.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getTaskName() {
+      java.lang.Object ref = taskName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        taskName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string task_name = 2 [json_name = "taskName"];</code>
+     * @return The bytes for taskName.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getTaskNameBytes() {
+      java.lang.Object ref = taskName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        taskName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
-     * @param value The name to set.
+     * <code>string task_name = 2 [json_name = "taskName"];</code>
+     * @param value The taskName to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setTaskName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name_ = value;
+      taskName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
+     * <code>string task_name = 2 [json_name = "taskName"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearTaskName() {
       
-      name_ = getDefaultInstance().getName();
+      taskName_ = getDefaultInstance().getTaskName();
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
-     * @param value The bytes for name to set.
+     * <code>string task_name = 2 [json_name = "taskName"];</code>
+     * @param value The bytes for taskName to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setTaskNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name_ = value;
+      taskName_ = value;
       onChanged();
       return this;
     }
@@ -994,132 +1220,340 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object workspaceName_ = "";
+    private java.lang.Object taskKind_ = "";
     /**
-     * <code>string workspace_name = 4 [json_name = "workspaceName"];</code>
-     * @return The workspaceName.
+     * <code>string task_kind = 4 [json_name = "taskKind"];</code>
+     * @return The taskKind.
      */
-    public java.lang.String getWorkspaceName() {
-      java.lang.Object ref = workspaceName_;
+    public java.lang.String getTaskKind() {
+      java.lang.Object ref = taskKind_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        workspaceName_ = s;
+        taskKind_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string workspace_name = 4 [json_name = "workspaceName"];</code>
-     * @return The bytes for workspaceName.
+     * <code>string task_kind = 4 [json_name = "taskKind"];</code>
+     * @return The bytes for taskKind.
      */
     public com.google.protobuf.ByteString
-        getWorkspaceNameBytes() {
-      java.lang.Object ref = workspaceName_;
+        getTaskKindBytes() {
+      java.lang.Object ref = taskKind_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        workspaceName_ = b;
+        taskKind_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string workspace_name = 4 [json_name = "workspaceName"];</code>
-     * @param value The workspaceName to set.
+     * <code>string task_kind = 4 [json_name = "taskKind"];</code>
+     * @param value The taskKind to set.
      * @return This builder for chaining.
      */
-    public Builder setWorkspaceName(
+    public Builder setTaskKind(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      workspaceName_ = value;
+      taskKind_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string workspace_name = 4 [json_name = "workspaceName"];</code>
+     * <code>string task_kind = 4 [json_name = "taskKind"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearWorkspaceName() {
+    public Builder clearTaskKind() {
       
-      workspaceName_ = getDefaultInstance().getWorkspaceName();
+      taskKind_ = getDefaultInstance().getTaskKind();
       onChanged();
       return this;
     }
     /**
-     * <code>string workspace_name = 4 [json_name = "workspaceName"];</code>
-     * @param value The bytes for workspaceName to set.
+     * <code>string task_kind = 4 [json_name = "taskKind"];</code>
+     * @param value The bytes for taskKind to set.
      * @return This builder for chaining.
      */
-    public Builder setWorkspaceNameBytes(
+    public Builder setTaskKindBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      workspaceName_ = value;
+      taskKind_ = value;
       onChanged();
       return this;
     }
 
-    private int taskType_ = 0;
-    /**
-     * <code>.pipelines.tekton.v1alpha1.TaskType task_type = 5 [json_name = "taskType"];</code>
-     * @return The enum numeric value on the wire for taskType.
-     */
-    @java.lang.Override public int getTaskTypeValue() {
-      return taskType_;
+    private com.google.protobuf.LazyStringList taskRunAfter_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureTaskRunAfterIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        taskRunAfter_ = new com.google.protobuf.LazyStringArrayList(taskRunAfter_);
+        bitField0_ |= 0x00000001;
+       }
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.TaskType task_type = 5 [json_name = "taskType"];</code>
-     * @param value The enum numeric value on the wire for taskType to set.
+     * <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+     * @return A list containing the taskRunAfter.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTaskRunAfterList() {
+      return taskRunAfter_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+     * @return The count of taskRunAfter.
+     */
+    public int getTaskRunAfterCount() {
+      return taskRunAfter_.size();
+    }
+    /**
+     * <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+     * @param index The index of the element to return.
+     * @return The taskRunAfter at the given index.
+     */
+    public java.lang.String getTaskRunAfter(int index) {
+      return taskRunAfter_.get(index);
+    }
+    /**
+     * <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the taskRunAfter at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTaskRunAfterBytes(int index) {
+      return taskRunAfter_.getByteString(index);
+    }
+    /**
+     * <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+     * @param index The index to set the value at.
+     * @param value The taskRunAfter to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskTypeValue(int value) {
-      
-      taskType_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.pipelines.tekton.v1alpha1.TaskType task_type = 5 [json_name = "taskType"];</code>
-     * @return The taskType.
-     */
-    @java.lang.Override
-    public io.cuemby.pipelines.tekton.v1alpha1.TaskType getTaskType() {
-      @SuppressWarnings("deprecation")
-      io.cuemby.pipelines.tekton.v1alpha1.TaskType result = io.cuemby.pipelines.tekton.v1alpha1.TaskType.valueOf(taskType_);
-      return result == null ? io.cuemby.pipelines.tekton.v1alpha1.TaskType.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.pipelines.tekton.v1alpha1.TaskType task_type = 5 [json_name = "taskType"];</code>
-     * @param value The taskType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskType(io.cuemby.pipelines.tekton.v1alpha1.TaskType value) {
+    public Builder setTaskRunAfter(
+        int index, java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      taskType_ = value.getNumber();
+    throw new NullPointerException();
+  }
+  ensureTaskRunAfterIsMutable();
+      taskRunAfter_.set(index, value);
       onChanged();
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.TaskType task_type = 5 [json_name = "taskType"];</code>
+     * <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+     * @param value The taskRunAfter to add.
      * @return This builder for chaining.
      */
-    public Builder clearTaskType() {
+    public Builder addTaskRunAfter(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTaskRunAfterIsMutable();
+      taskRunAfter_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+     * @param values The taskRunAfter to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTaskRunAfter(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureTaskRunAfterIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, taskRunAfter_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskRunAfter() {
+      taskRunAfter_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string task_run_after = 5 [json_name = "taskRunAfter"];</code>
+     * @param value The bytes of the taskRunAfter to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTaskRunAfterBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureTaskRunAfterIsMutable();
+      taskRunAfter_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object taskWorkspacesName_ = "";
+    /**
+     * <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
+     * @return The taskWorkspacesName.
+     */
+    public java.lang.String getTaskWorkspacesName() {
+      java.lang.Object ref = taskWorkspacesName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskWorkspacesName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
+     * @return The bytes for taskWorkspacesName.
+     */
+    public com.google.protobuf.ByteString
+        getTaskWorkspacesNameBytes() {
+      java.lang.Object ref = taskWorkspacesName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskWorkspacesName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
+     * @param value The taskWorkspacesName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskWorkspacesName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskWorkspacesName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskWorkspacesName() {
       
-      taskType_ = 0;
+      taskWorkspacesName_ = getDefaultInstance().getTaskWorkspacesName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
+     * @param value The bytes for taskWorkspacesName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskWorkspacesNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskWorkspacesName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object taskWorkspacesMain_ = "";
+    /**
+     * <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
+     * @return The taskWorkspacesMain.
+     */
+    public java.lang.String getTaskWorkspacesMain() {
+      java.lang.Object ref = taskWorkspacesMain_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskWorkspacesMain_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
+     * @return The bytes for taskWorkspacesMain.
+     */
+    public com.google.protobuf.ByteString
+        getTaskWorkspacesMainBytes() {
+      java.lang.Object ref = taskWorkspacesMain_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskWorkspacesMain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
+     * @param value The taskWorkspacesMain to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskWorkspacesMain(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskWorkspacesMain_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskWorkspacesMain() {
+      
+      taskWorkspacesMain_ = getDefaultInstance().getTaskWorkspacesMain();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
+     * @param value The bytes for taskWorkspacesMain to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskWorkspacesMainBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskWorkspacesMain_ = value;
       onChanged();
       return this;
     }
@@ -1127,9 +1561,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskParams> taskParams_ =
       java.util.Collections.emptyList();
     private void ensureTaskParamsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         taskParams_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.TaskParams>(taskParams_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -1137,7 +1571,7 @@ private static final long serialVersionUID = 0L;
         io.cuemby.pipelines.tekton.v1alpha1.TaskParams, io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder> taskParamsBuilder_;
 
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskParams> getTaskParamsList() {
       if (taskParamsBuilder_ == null) {
@@ -1147,7 +1581,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public int getTaskParamsCount() {
       if (taskParamsBuilder_ == null) {
@@ -1157,7 +1591,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.TaskParams getTaskParams(int index) {
       if (taskParamsBuilder_ == null) {
@@ -1167,7 +1601,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public Builder setTaskParams(
         int index, io.cuemby.pipelines.tekton.v1alpha1.TaskParams value) {
@@ -1184,7 +1618,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public Builder setTaskParams(
         int index, io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder builderForValue) {
@@ -1198,7 +1632,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public Builder addTaskParams(io.cuemby.pipelines.tekton.v1alpha1.TaskParams value) {
       if (taskParamsBuilder_ == null) {
@@ -1214,7 +1648,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public Builder addTaskParams(
         int index, io.cuemby.pipelines.tekton.v1alpha1.TaskParams value) {
@@ -1231,7 +1665,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public Builder addTaskParams(
         io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder builderForValue) {
@@ -1245,7 +1679,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public Builder addTaskParams(
         int index, io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder builderForValue) {
@@ -1259,7 +1693,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public Builder addAllTaskParams(
         java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskParams> values) {
@@ -1274,12 +1708,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public Builder clearTaskParams() {
       if (taskParamsBuilder_ == null) {
         taskParams_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         taskParamsBuilder_.clear();
@@ -1287,7 +1721,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public Builder removeTaskParams(int index) {
       if (taskParamsBuilder_ == null) {
@@ -1300,14 +1734,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder getTaskParamsBuilder(
         int index) {
       return getTaskParamsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder getTaskParamsOrBuilder(
         int index) {
@@ -1317,7 +1751,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder> 
          getTaskParamsOrBuilderList() {
@@ -1328,14 +1762,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder addTaskParamsBuilder() {
       return getTaskParamsFieldBuilder().addBuilder(
           io.cuemby.pipelines.tekton.v1alpha1.TaskParams.getDefaultInstance());
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder addTaskParamsBuilder(
         int index) {
@@ -1343,7 +1777,7 @@ private static final long serialVersionUID = 0L;
           index, io.cuemby.pipelines.tekton.v1alpha1.TaskParams.getDefaultInstance());
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 6 [json_name = "taskParams"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
      */
     public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder> 
          getTaskParamsBuilderList() {
@@ -1356,12 +1790,88 @@ private static final long serialVersionUID = 0L;
         taskParamsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.cuemby.pipelines.tekton.v1alpha1.TaskParams, io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder>(
                 taskParams_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         taskParams_ = null;
       }
       return taskParamsBuilder_;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     * <code>string description = 9 [json_name = "description"];</code>
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string description = 9 [json_name = "description"];</code>
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string description = 9 [json_name = "description"];</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string description = 9 [json_name = "description"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string description = 9 [json_name = "description"];</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      description_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
