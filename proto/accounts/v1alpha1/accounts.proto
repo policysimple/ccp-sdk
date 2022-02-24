@@ -244,7 +244,7 @@ message CheckUserRequest {
     string type_permission = 9;
     repeated uint32 roles_ids = 10;
 
-    string token_id = 11;
+    string api_key_value = 11;
 
 }
 

@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-¥}
+®}
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"ˆ
 CreateApiKeyRequest
 name (	Rname
@@ -112,7 +112,7 @@ htmlResult
 token (	Rtoken"=
 VerifyEmailResponse
 msg (	Rmsg
-error (	Rerror"û
+error (	Rerror"„
 CheckUserRequest\'
 organization_id (RorganizationId
 
@@ -126,8 +126,8 @@ permission
 user_id (RuserId\'
 type_permission	 (	RtypePermission
 	roles_ids
- (RrolesIds
-token_id (	RtokenId"F
+ (RrolesIds"
+api_key_value (	RapiKeyValue"F
 CheckUserResponse
 	is_exists (RisExists
 error (	Rerror"?
