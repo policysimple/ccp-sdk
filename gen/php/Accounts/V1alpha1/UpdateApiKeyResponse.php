@@ -9,22 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>accounts.v1alpha1.CreateRoleResponse</code>
+ * Generated from protobuf message <code>accounts.v1alpha1.UpdateApiKeyResponse</code>
  */
-class CreateRoleResponse extends \Google\Protobuf\Internal\Message
+class UpdateApiKeyResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
      */
     protected $msg = '';
     /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * Generated from protobuf field <code>string api_key = 2 [json_name = "apiKey"];</code>
+     */
+    protected $api_key = '';
+    /**
+     * Generated from protobuf field <code>string error = 3 [json_name = "error"];</code>
      */
     protected $error = '';
-    /**
-     * Generated from protobuf field <code>uint32 id = 3 [json_name = "id"];</code>
-     */
-    protected $id = 0;
 
     /**
      * Constructor.
@@ -33,8 +33,8 @@ class CreateRoleResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $msg
+     *     @type string $api_key
      *     @type string $error
-     *     @type int $id
      * }
      */
     public function __construct($data = NULL) {
@@ -65,7 +65,29 @@ class CreateRoleResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * Generated from protobuf field <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return string
+     */
+    public function getApiKey()
+    {
+        return $this->api_key;
+    }
+
+    /**
+     * Generated from protobuf field <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setApiKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->api_key = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error = 3 [json_name = "error"];</code>
      * @return string
      */
     public function getError()
@@ -74,7 +96,7 @@ class CreateRoleResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * Generated from protobuf field <code>string error = 3 [json_name = "error"];</code>
      * @param string $var
      * @return $this
      */
@@ -82,28 +104,6 @@ class CreateRoleResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->error = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 id = 3 [json_name = "id"];</code>
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 id = 3 [json_name = "id"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setId($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->id = $var;
 
         return $this;
     }
