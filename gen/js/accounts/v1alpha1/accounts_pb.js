@@ -6855,7 +6855,7 @@ proto.accounts.v1alpha1.CheckUserRequest.toObject = function(includeInstance, ms
     userId: jspb.Message.getFieldWithDefault(msg, 7, 0),
     typePermission: jspb.Message.getFieldWithDefault(msg, 9, ""),
     rolesIdsList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
-    tokenId: jspb.Message.getFieldWithDefault(msg, 11, "")
+    apiKeyValue: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -6932,7 +6932,7 @@ proto.accounts.v1alpha1.CheckUserRequest.deserializeBinaryFromReader = function(
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTokenId(value);
+      msg.setApiKeyValue(value);
       break;
     default:
       reader.skipField();
@@ -7026,7 +7026,7 @@ proto.accounts.v1alpha1.CheckUserRequest.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getTokenId();
+  f = message.getApiKeyValue();
   if (f.length > 0) {
     writer.writeString(
       11,
@@ -7218,10 +7218,10 @@ proto.accounts.v1alpha1.CheckUserRequest.prototype.clearRolesIdsList = function(
 
 
 /**
- * optional string token_id = 11;
+ * optional string api_key_value = 11;
  * @return {string}
  */
-proto.accounts.v1alpha1.CheckUserRequest.prototype.getTokenId = function() {
+proto.accounts.v1alpha1.CheckUserRequest.prototype.getApiKeyValue = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
@@ -7230,7 +7230,7 @@ proto.accounts.v1alpha1.CheckUserRequest.prototype.getTokenId = function() {
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.CheckUserRequest} returns this
  */
-proto.accounts.v1alpha1.CheckUserRequest.prototype.setTokenId = function(value) {
+proto.accounts.v1alpha1.CheckUserRequest.prototype.setApiKeyValue = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
 };
 

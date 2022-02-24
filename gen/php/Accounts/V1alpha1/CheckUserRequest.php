@@ -52,9 +52,9 @@ class CheckUserRequest extends \Google\Protobuf\Internal\Message
      */
     private $roles_ids;
     /**
-     * Generated from protobuf field <code>string token_id = 11 [json_name = "tokenId"];</code>
+     * Generated from protobuf field <code>string api_key_value = 11 [json_name = "apiKeyValue"];</code>
      */
-    protected $token_id = '';
+    protected $api_key_value = '';
 
     /**
      * Constructor.
@@ -72,7 +72,7 @@ class CheckUserRequest extends \Google\Protobuf\Internal\Message
      *     @type int $user_id
      *     @type string $type_permission
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $roles_ids
-     *     @type string $token_id
+     *     @type string $api_key_value
      * }
      */
     public function __construct($data = NULL) {
@@ -283,23 +283,23 @@ class CheckUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string token_id = 11 [json_name = "tokenId"];</code>
+     * Generated from protobuf field <code>string api_key_value = 11 [json_name = "apiKeyValue"];</code>
      * @return string
      */
-    public function getTokenId()
+    public function getApiKeyValue()
     {
-        return $this->token_id;
+        return $this->api_key_value;
     }
 
     /**
-     * Generated from protobuf field <code>string token_id = 11 [json_name = "tokenId"];</code>
+     * Generated from protobuf field <code>string api_key_value = 11 [json_name = "apiKeyValue"];</code>
      * @param string $var
      * @return $this
      */
-    public function setTokenId($var)
+    public function setApiKeyValue($var)
     {
         GPBUtil::checkString($var, True);
-        $this->token_id = $var;
+        $this->api_key_value = $var;
 
         return $this;
     }
