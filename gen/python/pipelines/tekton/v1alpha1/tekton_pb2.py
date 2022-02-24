@@ -19,10 +19,63 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#io.cuemby.pipelines.tekton.v1alpha1B\013TektonProtoP\001Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipelines\\Tekton\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&pipelines/tekton/v1alpha1/tekton.proto\x12\x19pipelines.tekton.v1alpha1\"v\n\nTaskParams\x12\x1d\n\nparam_name\x18\x01 \x01(\tR\tparamName\x12(\n\x10param_value_type\x18\x02 \x01(\tR\x0eparamValueType\x12\x1f\n\x0bparam_value\x18\x03 \x01(\tR\nparamValue\"\xe8\x02\n\x04Task\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n\ttask_name\x18\x02 \x01(\tR\x08taskName\x12\"\n\rtask_ref_name\x18\x03 \x01(\tR\x0btaskRefName\x12\x1b\n\ttask_kind\x18\x04 \x01(\tR\x08taskKind\x12$\n\x0etask_run_after\x18\x05 \x03(\tR\x0ctaskRunAfter\x12\x30\n\x14task_workspaces_name\x18\x06 \x01(\tR\x12taskWorkspacesName\x12\x30\n\x14task_workspaces_main\x18\x07 \x01(\tR\x12taskWorkspacesMain\x12\x46\n\x0btask_params\x18\x08 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.TaskParamsR\ntaskParams\x12 \n\x0b\x64\x65scription\x18\t \x01(\tR\x0b\x64\x65scription\"\xd3\x03\n\x08Pipeline\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12$\n\x0etype_meta_kind\x18\x04 \x01(\tR\x0ctypeMetaKind\x12\x31\n\x15type_meta_api_version\x18\x05 \x01(\tR\x12typeMetaApiVersion\x12(\n\x10object_meta_name\x18\x06 \x01(\tR\x0eobjectMetaName\x12\x32\n\x15object_meta_namespace\x18\x07 \x01(\tR\x13objectMetaNamespace\x12\x30\n\x14spec_workspaces_name\x18\x08 \x01(\tR\x12specWorkspacesName\x12\x16\n\x06params\x18\t \x03(\tR\x06params\x12\x35\n\x05tasks\x18\n \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x05tasks\x12\x1f\n\x0bstatus_type\x18\x0b \x01(\tR\nstatusType\x12\x16\n\x06\x61\x63tive\x18\x0c \x01(\x08R\x06\x61\x63tiveB\xae\x01\n#io.cuemby.pipelines.tekton.v1alpha1B\x0bTektonProtoP\x01Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19Pipelines.Tekton.V1Alpha1\xca\x02\x19Pipelines\\Tekton\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n&pipelines/tekton/v1alpha1/tekton.proto\x12\x19pipelines.tekton.v1alpha1\"\x7f\n\x06Params\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12!\n\x0cvalue_string\x18\x02 \x01(\tR\x0bvalueString\x12\x1f\n\x0bvalue_array\x18\x03 \x03(\tR\nvalueArray\x12\x1d\n\nvalue_type\x18\x04 \x01(\tR\tvalueType\"v\n\nTaskParams\x12\x1d\n\nparam_name\x18\x01 \x01(\tR\tparamName\x12(\n\x10param_value_type\x18\x02 \x01(\tR\x0eparamValueType\x12\x1f\n\x0bparam_value\x18\x03 \x01(\tR\nparamValue\"\xe8\x02\n\x04Task\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n\ttask_name\x18\x02 \x01(\tR\x08taskName\x12\"\n\rtask_ref_name\x18\x03 \x01(\tR\x0btaskRefName\x12\x1b\n\ttask_kind\x18\x04 \x01(\tR\x08taskKind\x12$\n\x0etask_run_after\x18\x05 \x03(\tR\x0ctaskRunAfter\x12\x30\n\x14task_workspaces_name\x18\x06 \x01(\tR\x12taskWorkspacesName\x12\x30\n\x14task_workspaces_main\x18\x07 \x01(\tR\x12taskWorkspacesMain\x12\x46\n\x0btask_params\x18\x08 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.TaskParamsR\ntaskParams\x12 \n\x0b\x64\x65scription\x18\t \x01(\tR\x0b\x64\x65scription\"\xf6\x03\n\x08Pipeline\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12$\n\x0etype_meta_kind\x18\x04 \x01(\tR\x0ctypeMetaKind\x12\x31\n\x15type_meta_api_version\x18\x05 \x01(\tR\x12typeMetaApiVersion\x12(\n\x10object_meta_name\x18\x06 \x01(\tR\x0eobjectMetaName\x12\x32\n\x15object_meta_namespace\x18\x07 \x01(\tR\x13objectMetaNamespace\x12\x30\n\x14spec_workspaces_name\x18\x08 \x01(\tR\x12specWorkspacesName\x12\x39\n\x06params\x18\t \x03(\x0b\x32!.pipelines.tekton.v1alpha1.ParamsR\x06params\x12\x35\n\x05tasks\x18\n \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x05tasks\x12\x1f\n\x0bstatus_type\x18\x0b \x01(\tR\nstatusType\x12\x16\n\x06\x61\x63tive\x18\x0c \x01(\x08R\x06\x61\x63tiveB\xae\x01\n#io.cuemby.pipelines.tekton.v1alpha1B\x0bTektonProtoP\x01Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19Pipelines.Tekton.V1Alpha1\xca\x02\x19Pipelines\\Tekton\\V1Alpha1b\x06proto3'
 )
 
 
+
+
+_PARAMS = _descriptor.Descriptor(
+  name='Params',
+  full_name='pipelines.tekton.v1alpha1.Params',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='pipelines.tekton.v1alpha1.Params.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value_string', full_name='pipelines.tekton.v1alpha1.Params.value_string', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='valueString', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value_array', full_name='pipelines.tekton.v1alpha1.Params.value_array', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='valueArray', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value_type', full_name='pipelines.tekton.v1alpha1.Params.value_type', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='valueType', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=69,
+  serialized_end=196,
+)
 
 
 _TASKPARAMS = _descriptor.Descriptor(
@@ -66,8 +119,8 @@ _TASKPARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=69,
-  serialized_end=187,
+  serialized_start=198,
+  serialized_end=316,
 )
 
 
@@ -154,8 +207,8 @@ _TASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=190,
-  serialized_end=550,
+  serialized_start=319,
+  serialized_end=679,
 )
 
 
@@ -225,7 +278,7 @@ _PIPELINE = _descriptor.Descriptor(
       serialized_options=None, json_name='specWorkspacesName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='params', full_name='pipelines.tekton.v1alpha1.Pipeline.params', index=8,
-      number=9, type=9, cpp_type=9, label=3,
+      number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -263,16 +316,25 @@ _PIPELINE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=553,
-  serialized_end=1020,
+  serialized_start=682,
+  serialized_end=1184,
 )
 
 _TASK.fields_by_name['task_params'].message_type = _TASKPARAMS
+_PIPELINE.fields_by_name['params'].message_type = _PARAMS
 _PIPELINE.fields_by_name['tasks'].message_type = _TASK
+DESCRIPTOR.message_types_by_name['Params'] = _PARAMS
 DESCRIPTOR.message_types_by_name['TaskParams'] = _TASKPARAMS
 DESCRIPTOR.message_types_by_name['Task'] = _TASK
 DESCRIPTOR.message_types_by_name['Pipeline'] = _PIPELINE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+Params = _reflection.GeneratedProtocolMessageType('Params', (_message.Message,), {
+  'DESCRIPTOR' : _PARAMS,
+  '__module__' : 'pipelines.tekton.v1alpha1.tekton_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.Params)
+  })
+_sym_db.RegisterMessage(Params)
 
 TaskParams = _reflection.GeneratedProtocolMessageType('TaskParams', (_message.Message,), {
   'DESCRIPTOR' : _TASKPARAMS,

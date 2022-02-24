@@ -92,29 +92,28 @@ public interface PipelineOrBuilder extends
       getSpecWorkspacesNameBytes();
 
   /**
-   * <code>repeated string params = 9 [json_name = "params"];</code>
-   * @return A list containing the params.
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> 
       getParamsList();
   /**
-   * <code>repeated string params = 9 [json_name = "params"];</code>
-   * @return The count of params.
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.Params getParams(int index);
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
    */
   int getParamsCount();
   /**
-   * <code>repeated string params = 9 [json_name = "params"];</code>
-   * @param index The index of the element to return.
-   * @return The params at the given index.
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
    */
-  java.lang.String getParams(int index);
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
+      getParamsOrBuilderList();
   /**
-   * <code>repeated string params = 9 [json_name = "params"];</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the params at the given index.
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
    */
-  com.google.protobuf.ByteString
-      getParamsBytes(int index);
+  io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder(
+      int index);
 
   /**
    * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
