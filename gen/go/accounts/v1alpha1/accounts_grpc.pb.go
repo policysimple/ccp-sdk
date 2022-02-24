@@ -62,11 +62,11 @@ type AccountServiceClient interface {
 	ListCountries(ctx context.Context, in *ListCountriesRequest, opts ...grpc.CallOption) (*ListCountriesResponse, error)
 	GetOneCountry(ctx context.Context, in *GetOneCountryRequest, opts ...grpc.CallOption) (*GetOneCountryResponse, error)
 	// Tokens
-	CreateToken(ctx context.Context, in *CreateTokenRequest, opts ...grpc.CallOption) (*CreateTokenResponse, error)
-	GetOneToken(ctx context.Context, in *GetOneTokenRequest, opts ...grpc.CallOption) (*GetOneTokenResponse, error)
-	ListToken(ctx context.Context, in *ListTokenRequest, opts ...grpc.CallOption) (*ListTokenResponse, error)
-	UpdateToken(ctx context.Context, in *UpdateTokenRequest, opts ...grpc.CallOption) (*UpdateTokenResponse, error)
-	DeleteToken(ctx context.Context, in *DeleteTokenRequest, opts ...grpc.CallOption) (*DeleteTokenResponse, error)
+	CreateApiKey(ctx context.Context, in *CreateApiKeyRequest, opts ...grpc.CallOption) (*CreateApiKeyResponse, error)
+	GetOneApiKey(ctx context.Context, in *GetOneApiKeyRequest, opts ...grpc.CallOption) (*GetOneApiKeyResponse, error)
+	ListApiKey(ctx context.Context, in *ListApiKeyRequest, opts ...grpc.CallOption) (*ListApiKeyResponse, error)
+	UpdateApiKey(ctx context.Context, in *UpdateApiKeyRequest, opts ...grpc.CallOption) (*UpdateApiKeyResponse, error)
+	DeleteApiKey(ctx context.Context, in *DeleteApiKeyRequest, opts ...grpc.CallOption) (*DeleteApiKeyResponse, error)
 }
 
 type accountServiceClient struct {
@@ -401,45 +401,45 @@ func (c *accountServiceClient) GetOneCountry(ctx context.Context, in *GetOneCoun
 	return out, nil
 }
 
-func (c *accountServiceClient) CreateToken(ctx context.Context, in *CreateTokenRequest, opts ...grpc.CallOption) (*CreateTokenResponse, error) {
-	out := new(CreateTokenResponse)
-	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/CreateToken", in, out, opts...)
+func (c *accountServiceClient) CreateApiKey(ctx context.Context, in *CreateApiKeyRequest, opts ...grpc.CallOption) (*CreateApiKeyResponse, error) {
+	out := new(CreateApiKeyResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/CreateApiKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *accountServiceClient) GetOneToken(ctx context.Context, in *GetOneTokenRequest, opts ...grpc.CallOption) (*GetOneTokenResponse, error) {
-	out := new(GetOneTokenResponse)
-	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/GetOneToken", in, out, opts...)
+func (c *accountServiceClient) GetOneApiKey(ctx context.Context, in *GetOneApiKeyRequest, opts ...grpc.CallOption) (*GetOneApiKeyResponse, error) {
+	out := new(GetOneApiKeyResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/GetOneApiKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *accountServiceClient) ListToken(ctx context.Context, in *ListTokenRequest, opts ...grpc.CallOption) (*ListTokenResponse, error) {
-	out := new(ListTokenResponse)
-	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/ListToken", in, out, opts...)
+func (c *accountServiceClient) ListApiKey(ctx context.Context, in *ListApiKeyRequest, opts ...grpc.CallOption) (*ListApiKeyResponse, error) {
+	out := new(ListApiKeyResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/ListApiKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *accountServiceClient) UpdateToken(ctx context.Context, in *UpdateTokenRequest, opts ...grpc.CallOption) (*UpdateTokenResponse, error) {
-	out := new(UpdateTokenResponse)
-	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/UpdateToken", in, out, opts...)
+func (c *accountServiceClient) UpdateApiKey(ctx context.Context, in *UpdateApiKeyRequest, opts ...grpc.CallOption) (*UpdateApiKeyResponse, error) {
+	out := new(UpdateApiKeyResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/UpdateApiKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *accountServiceClient) DeleteToken(ctx context.Context, in *DeleteTokenRequest, opts ...grpc.CallOption) (*DeleteTokenResponse, error) {
-	out := new(DeleteTokenResponse)
-	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/DeleteToken", in, out, opts...)
+func (c *accountServiceClient) DeleteApiKey(ctx context.Context, in *DeleteApiKeyRequest, opts ...grpc.CallOption) (*DeleteApiKeyResponse, error) {
+	out := new(DeleteApiKeyResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/DeleteApiKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -494,11 +494,11 @@ type AccountServiceServer interface {
 	ListCountries(context.Context, *ListCountriesRequest) (*ListCountriesResponse, error)
 	GetOneCountry(context.Context, *GetOneCountryRequest) (*GetOneCountryResponse, error)
 	// Tokens
-	CreateToken(context.Context, *CreateTokenRequest) (*CreateTokenResponse, error)
-	GetOneToken(context.Context, *GetOneTokenRequest) (*GetOneTokenResponse, error)
-	ListToken(context.Context, *ListTokenRequest) (*ListTokenResponse, error)
-	UpdateToken(context.Context, *UpdateTokenRequest) (*UpdateTokenResponse, error)
-	DeleteToken(context.Context, *DeleteTokenRequest) (*DeleteTokenResponse, error)
+	CreateApiKey(context.Context, *CreateApiKeyRequest) (*CreateApiKeyResponse, error)
+	GetOneApiKey(context.Context, *GetOneApiKeyRequest) (*GetOneApiKeyResponse, error)
+	ListApiKey(context.Context, *ListApiKeyRequest) (*ListApiKeyResponse, error)
+	UpdateApiKey(context.Context, *UpdateApiKeyRequest) (*UpdateApiKeyResponse, error)
+	DeleteApiKey(context.Context, *DeleteApiKeyRequest) (*DeleteApiKeyResponse, error)
 }
 
 // UnimplementedAccountServiceServer should be embedded to have forward compatible implementations.
@@ -613,20 +613,20 @@ func (UnimplementedAccountServiceServer) ListCountries(context.Context, *ListCou
 func (UnimplementedAccountServiceServer) GetOneCountry(context.Context, *GetOneCountryRequest) (*GetOneCountryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOneCountry not implemented")
 }
-func (UnimplementedAccountServiceServer) CreateToken(context.Context, *CreateTokenRequest) (*CreateTokenResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateToken not implemented")
+func (UnimplementedAccountServiceServer) CreateApiKey(context.Context, *CreateApiKeyRequest) (*CreateApiKeyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateApiKey not implemented")
 }
-func (UnimplementedAccountServiceServer) GetOneToken(context.Context, *GetOneTokenRequest) (*GetOneTokenResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetOneToken not implemented")
+func (UnimplementedAccountServiceServer) GetOneApiKey(context.Context, *GetOneApiKeyRequest) (*GetOneApiKeyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOneApiKey not implemented")
 }
-func (UnimplementedAccountServiceServer) ListToken(context.Context, *ListTokenRequest) (*ListTokenResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListToken not implemented")
+func (UnimplementedAccountServiceServer) ListApiKey(context.Context, *ListApiKeyRequest) (*ListApiKeyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListApiKey not implemented")
 }
-func (UnimplementedAccountServiceServer) UpdateToken(context.Context, *UpdateTokenRequest) (*UpdateTokenResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateToken not implemented")
+func (UnimplementedAccountServiceServer) UpdateApiKey(context.Context, *UpdateApiKeyRequest) (*UpdateApiKeyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateApiKey not implemented")
 }
-func (UnimplementedAccountServiceServer) DeleteToken(context.Context, *DeleteTokenRequest) (*DeleteTokenResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteToken not implemented")
+func (UnimplementedAccountServiceServer) DeleteApiKey(context.Context, *DeleteApiKeyRequest) (*DeleteApiKeyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteApiKey not implemented")
 }
 
 // UnsafeAccountServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -1288,92 +1288,92 @@ func _AccountService_GetOneCountry_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AccountService_CreateToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateTokenRequest)
+func _AccountService_CreateApiKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateApiKeyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AccountServiceServer).CreateToken(ctx, in)
+		return srv.(AccountServiceServer).CreateApiKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/accounts.v1alpha1.AccountService/CreateToken",
+		FullMethod: "/accounts.v1alpha1.AccountService/CreateApiKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AccountServiceServer).CreateToken(ctx, req.(*CreateTokenRequest))
+		return srv.(AccountServiceServer).CreateApiKey(ctx, req.(*CreateApiKeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AccountService_GetOneToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetOneTokenRequest)
+func _AccountService_GetOneApiKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOneApiKeyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AccountServiceServer).GetOneToken(ctx, in)
+		return srv.(AccountServiceServer).GetOneApiKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/accounts.v1alpha1.AccountService/GetOneToken",
+		FullMethod: "/accounts.v1alpha1.AccountService/GetOneApiKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AccountServiceServer).GetOneToken(ctx, req.(*GetOneTokenRequest))
+		return srv.(AccountServiceServer).GetOneApiKey(ctx, req.(*GetOneApiKeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AccountService_ListToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListTokenRequest)
+func _AccountService_ListApiKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListApiKeyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AccountServiceServer).ListToken(ctx, in)
+		return srv.(AccountServiceServer).ListApiKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/accounts.v1alpha1.AccountService/ListToken",
+		FullMethod: "/accounts.v1alpha1.AccountService/ListApiKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AccountServiceServer).ListToken(ctx, req.(*ListTokenRequest))
+		return srv.(AccountServiceServer).ListApiKey(ctx, req.(*ListApiKeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AccountService_UpdateToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateTokenRequest)
+func _AccountService_UpdateApiKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateApiKeyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AccountServiceServer).UpdateToken(ctx, in)
+		return srv.(AccountServiceServer).UpdateApiKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/accounts.v1alpha1.AccountService/UpdateToken",
+		FullMethod: "/accounts.v1alpha1.AccountService/UpdateApiKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AccountServiceServer).UpdateToken(ctx, req.(*UpdateTokenRequest))
+		return srv.(AccountServiceServer).UpdateApiKey(ctx, req.(*UpdateApiKeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AccountService_DeleteToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteTokenRequest)
+func _AccountService_DeleteApiKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteApiKeyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AccountServiceServer).DeleteToken(ctx, in)
+		return srv.(AccountServiceServer).DeleteApiKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/accounts.v1alpha1.AccountService/DeleteToken",
+		FullMethod: "/accounts.v1alpha1.AccountService/DeleteApiKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AccountServiceServer).DeleteToken(ctx, req.(*DeleteTokenRequest))
+		return srv.(AccountServiceServer).DeleteApiKey(ctx, req.(*DeleteApiKeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1530,24 +1530,24 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AccountService_GetOneCountry_Handler,
 		},
 		{
-			MethodName: "CreateToken",
-			Handler:    _AccountService_CreateToken_Handler,
+			MethodName: "CreateApiKey",
+			Handler:    _AccountService_CreateApiKey_Handler,
 		},
 		{
-			MethodName: "GetOneToken",
-			Handler:    _AccountService_GetOneToken_Handler,
+			MethodName: "GetOneApiKey",
+			Handler:    _AccountService_GetOneApiKey_Handler,
 		},
 		{
-			MethodName: "ListToken",
-			Handler:    _AccountService_ListToken_Handler,
+			MethodName: "ListApiKey",
+			Handler:    _AccountService_ListApiKey_Handler,
 		},
 		{
-			MethodName: "UpdateToken",
-			Handler:    _AccountService_UpdateToken_Handler,
+			MethodName: "UpdateApiKey",
+			Handler:    _AccountService_UpdateApiKey_Handler,
 		},
 		{
-			MethodName: "DeleteToken",
-			Handler:    _AccountService_DeleteToken_Handler,
+			MethodName: "DeleteApiKey",
+			Handler:    _AccountService_DeleteApiKey_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -53,11 +53,11 @@ service AccountService {
 
     
     // Tokens
-    rpc CreateToken(CreateTokenRequest) returns (CreateTokenResponse);
-    rpc GetOneToken(GetOneTokenRequest) returns (GetOneTokenResponse);
-    rpc ListToken(ListTokenRequest) returns (ListTokenResponse);
-    rpc UpdateToken(UpdateTokenRequest) returns (UpdateTokenResponse);
-    rpc DeleteToken(DeleteTokenRequest) returns (DeleteTokenResponse);
+    rpc CreateApiKey(CreateApiKeyRequest) returns (CreateApiKeyResponse);
+    rpc GetOneApiKey(GetOneApiKeyRequest) returns (GetOneApiKeyResponse);
+    rpc ListApiKey(ListApiKeyRequest) returns (ListApiKeyResponse);
+    rpc UpdateApiKey(UpdateApiKeyRequest) returns (UpdateApiKeyResponse);
+    rpc DeleteApiKey(DeleteApiKeyRequest) returns (DeleteApiKeyResponse);
     
 }
 
@@ -65,14 +65,14 @@ service AccountService {
     Tokens Create
 */
 
-message CreateTokenRequest {
+message CreateApiKeyRequest {
     string name = 1;
     string user_id =2;
     repeated uint32 roles_ids = 3;
     repeated uint32 permissions_ids = 4;
 }
 
-message Token {
+message ApiKey {
     string id = 1;
     string name = 2;
     string user_id = 3;
@@ -80,9 +80,9 @@ message Token {
     repeated Permission permissions = 5;
 }
 
-message CreateTokenResponse {
+message CreateApiKeyResponse {
     string msg = 1;
-    string token = 2;
+    string api_key = 2;
     uint32 access_point_id = 4;
     string error = 5;
 }
@@ -91,13 +91,13 @@ message CreateTokenResponse {
     Tokens Get One
 */
 
-message GetOneTokenRequest {
+message GetOneApiKeyRequest {
     uint32 id = 1;
 }
 
-message GetOneTokenResponse {
+message GetOneApiKeyResponse {
     uint32 id = 1;
-    string token = 2;
+    string api_key = 2;
     string name = 3;
     string user_id =4;
     repeated Rol roles = 5;
@@ -108,26 +108,26 @@ message GetOneTokenResponse {
     Tokens List
 */
 
-message ListTokenRequest {
+message ListApiKeyRequest {
     string user_id = 1;
 }
 
-message TokenList {
+message ApiKeyList {
     uint32  id = 1;
-    string token = 2;
+    string api_key = 2;
     string name = 3;
     string user_id = 4;
 }
 
-message ListTokenResponse {
-    repeated TokenList tokens = 1;
+message ListApiKeyResponse {
+    repeated ApiKeyList api_keys = 1;
 }
 
 /*
     Tokens Update
 */
 
-message UpdateTokenRequest {
+message UpdateApiKeyRequest {
     uint32 id = 1;
     string name = 2;
     repeated uint32 roles_ids = 3;
@@ -135,9 +135,9 @@ message UpdateTokenRequest {
     bool is_active = 5;
 }
 
-message UpdateTokenResponse {
+message UpdateApiKeyResponse {
     string msg = 1;
-    string token = 2;
+    string api_key = 2;
     string error = 3;
 }
 
@@ -145,13 +145,13 @@ message UpdateTokenResponse {
     Tokens Delete   
 */
 
-message DeleteTokenRequest {
+message DeleteApiKeyRequest {
     uint32 id = 1;
 }
 
-message DeleteTokenResponse {
+message DeleteApiKeyResponse {
     string msg = 1;
-    string token = 2;
+    string api_key = 2;
     string error = 3;
 }
 

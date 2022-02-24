@@ -16,57 +16,58 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-÷|
- accounts/v1alpha1/accounts.protoaccounts.v1alpha1"‡
-CreateTokenRequest
+¥}
+ accounts/v1alpha1/accounts.protoaccounts.v1alpha1"ˆ
+CreateApiKeyRequest
 name (	Rname
 user_id (	RuserId
 	roles_ids (RrolesIds\'
-permissions_ids (RpermissionsIds"¯
-Token
+permissions_ids (RpermissionsIds"°
+ApiKey
 id (	Rid
 name (	Rname
 user_id (	RuserId(
 rol (2.accounts.v1alpha1.RolRrol?
-permissions (2.accounts.v1alpha1.PermissionRpermissions"{
-CreateTokenResponse
-msg (	Rmsg
-token (	Rtoken&
+permissions (2.accounts.v1alpha1.PermissionRpermissions"
+CreateApiKeyResponse
+msg (	Rmsg
+api_key (	RapiKey&
 access_point_id (RaccessPointId
-error (	Rerror"$
-GetOneTokenRequest
-id (Rid"×
-GetOneTokenResponse
-id (Rid
-token (	Rtoken
+error (	Rerror"%
+GetOneApiKeyRequest
+id (Rid"Û
+GetOneApiKeyResponse
+id (Rid
+api_key (	RapiKey
 name (	Rname
 user_id (	RuserId,
 roles (2.accounts.v1alpha1.RolRroles?
-permissions (2.accounts.v1alpha1.PermissionRpermissions"+
-ListTokenRequest
-user_id (	RuserId"^
-	TokenList
-id (Rid
-token (	Rtoken
+permissions (2.accounts.v1alpha1.PermissionRpermissions",
+ListApiKeyRequest
+user_id (	RuserId"b
+
+ApiKeyList
+id (Rid
+api_key (	RapiKey
 name (	Rname
-user_id (	RuserId"I
-ListTokenResponse4
-tokens (2.accounts.v1alpha1.TokenListRtokens"›
-UpdateTokenRequest
+user_id (	RuserId"N
+ListApiKeyResponse8
+api_keys (2.accounts.v1alpha1.ApiKeyListRapiKeys"œ
+UpdateApiKeyRequest
 id (Rid
 name (	Rname
 	roles_ids (RrolesIds\'
 permissions_ids (RpermissionsIds
-	is_active (RisActive"S
-UpdateTokenResponse
-msg (	Rmsg
-token (	Rtoken
-error (	Rerror"$
-DeleteTokenRequest
-id (Rid"S
-DeleteTokenResponse
-msg (	Rmsg
-token (	Rtoken
+	is_active (RisActive"W
+UpdateApiKeyResponse
+msg (	Rmsg
+api_key (	RapiKey
+error (	Rerror"%
+DeleteApiKeyRequest
+id (Rid"W
+DeleteApiKeyResponse
+msg (	Rmsg
+api_key (	RapiKey
 error (	Rerror"d
 City
 id (Rid
@@ -462,7 +463,7 @@ updated_at (	R	updatedAt,
 emoji_country (	RemojiCountry*d
 InvitationResponse,
 (INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED  
-INVITATION_RESPONSE_REJECTED2¸ 
+INVITATION_RESPONSE_REJECTED2Ç 
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
@@ -507,12 +508,13 @@ DeleteRole$.accounts.v1alpha1.DeleteRoleRequest%.accounts.v1alpha1.DeleteRoleR
 SendVerificationEmail/.accounts.v1alpha1.SendVerificationEmailRequest0.accounts.v1alpha1.SendVerificationEmailResponse\\
 VerifyEmail%.accounts.v1alpha1.VerifyEmailRequest&.accounts.v1alpha1.VerifyEmailResponseb
 ListCountries\'.accounts.v1alpha1.ListCountriesRequest(.accounts.v1alpha1.ListCountriesResponseb
-GetOneCountry\'.accounts.v1alpha1.GetOneCountryRequest(.accounts.v1alpha1.GetOneCountryResponse\\
-CreateToken%.accounts.v1alpha1.CreateTokenRequest&.accounts.v1alpha1.CreateTokenResponse\\
-GetOneToken%.accounts.v1alpha1.GetOneTokenRequest&.accounts.v1alpha1.GetOneTokenResponseV
-	ListToken#.accounts.v1alpha1.ListTokenRequest$.accounts.v1alpha1.ListTokenResponse\\
-UpdateToken%.accounts.v1alpha1.UpdateTokenRequest&.accounts.v1alpha1.UpdateTokenResponse\\
-DeleteToken%.accounts.v1alpha1.DeleteTokenRequest&.accounts.v1alpha1.DeleteTokenResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
+GetOneCountry\'.accounts.v1alpha1.GetOneCountryRequest(.accounts.v1alpha1.GetOneCountryResponse_
+CreateApiKey&.accounts.v1alpha1.CreateApiKeyRequest\'.accounts.v1alpha1.CreateApiKeyResponse_
+GetOneApiKey&.accounts.v1alpha1.GetOneApiKeyRequest\'.accounts.v1alpha1.GetOneApiKeyResponseY
+
+ListApiKey$.accounts.v1alpha1.ListApiKeyRequest%.accounts.v1alpha1.ListApiKeyResponse_
+UpdateApiKey&.accounts.v1alpha1.UpdateApiKeyRequest\'.accounts.v1alpha1.UpdateApiKeyResponse_
+DeleteApiKey&.accounts.v1alpha1.DeleteApiKeyRequest\'.accounts.v1alpha1.DeleteApiKeyResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

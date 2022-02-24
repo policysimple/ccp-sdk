@@ -194,30 +194,30 @@ class AccountServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryResponse.FromString,
         )
-    self.CreateToken = channel.unary_unary(
-        '/accounts.v1alpha1.AccountService/CreateToken',
-        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateTokenRequest.SerializeToString,
-        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateTokenResponse.FromString,
+    self.CreateApiKey = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/CreateApiKey',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateApiKeyRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateApiKeyResponse.FromString,
         )
-    self.GetOneToken = channel.unary_unary(
-        '/accounts.v1alpha1.AccountService/GetOneToken',
-        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenRequest.SerializeToString,
-        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenResponse.FromString,
+    self.GetOneApiKey = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/GetOneApiKey',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneApiKeyRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneApiKeyResponse.FromString,
         )
-    self.ListToken = channel.unary_unary(
-        '/accounts.v1alpha1.AccountService/ListToken',
-        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListTokenRequest.SerializeToString,
-        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListTokenResponse.FromString,
+    self.ListApiKey = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/ListApiKey',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListApiKeyRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListApiKeyResponse.FromString,
         )
-    self.UpdateToken = channel.unary_unary(
-        '/accounts.v1alpha1.AccountService/UpdateToken',
-        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateTokenRequest.SerializeToString,
-        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateTokenResponse.FromString,
+    self.UpdateApiKey = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/UpdateApiKey',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateApiKeyRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateApiKeyResponse.FromString,
         )
-    self.DeleteToken = channel.unary_unary(
-        '/accounts.v1alpha1.AccountService/DeleteToken',
-        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteTokenRequest.SerializeToString,
-        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteTokenResponse.FromString,
+    self.DeleteApiKey = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/DeleteApiKey',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteApiKeyRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteApiKeyResponse.FromString,
         )
 
 
@@ -477,35 +477,35 @@ class AccountServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def CreateToken(self, request, context):
+  def CreateApiKey(self, request, context):
     """Tokens
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetOneToken(self, request, context):
+  def GetOneApiKey(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def ListToken(self, request, context):
+  def ListApiKey(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def UpdateToken(self, request, context):
+  def UpdateApiKey(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def DeleteToken(self, request, context):
+  def DeleteApiKey(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -695,30 +695,30 @@ def add_AccountServiceServicer_to_server(servicer, server):
           request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryResponse.SerializeToString,
       ),
-      'CreateToken': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateToken,
-          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateTokenRequest.FromString,
-          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateTokenResponse.SerializeToString,
+      'CreateApiKey': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateApiKey,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateApiKeyRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateApiKeyResponse.SerializeToString,
       ),
-      'GetOneToken': grpc.unary_unary_rpc_method_handler(
-          servicer.GetOneToken,
-          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenRequest.FromString,
-          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenResponse.SerializeToString,
+      'GetOneApiKey': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOneApiKey,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneApiKeyRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneApiKeyResponse.SerializeToString,
       ),
-      'ListToken': grpc.unary_unary_rpc_method_handler(
-          servicer.ListToken,
-          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListTokenRequest.FromString,
-          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListTokenResponse.SerializeToString,
+      'ListApiKey': grpc.unary_unary_rpc_method_handler(
+          servicer.ListApiKey,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListApiKeyRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListApiKeyResponse.SerializeToString,
       ),
-      'UpdateToken': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateToken,
-          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateTokenRequest.FromString,
-          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateTokenResponse.SerializeToString,
+      'UpdateApiKey': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateApiKey,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateApiKeyRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateApiKeyResponse.SerializeToString,
       ),
-      'DeleteToken': grpc.unary_unary_rpc_method_handler(
-          servicer.DeleteToken,
-          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteTokenRequest.FromString,
-          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteTokenResponse.SerializeToString,
+      'DeleteApiKey': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteApiKey,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteApiKeyRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteApiKeyResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

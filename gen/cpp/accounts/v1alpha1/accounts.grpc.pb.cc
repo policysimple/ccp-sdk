@@ -55,11 +55,11 @@ static const char* AccountService_method_names[] = {
   "/accounts.v1alpha1.AccountService/VerifyEmail",
   "/accounts.v1alpha1.AccountService/ListCountries",
   "/accounts.v1alpha1.AccountService/GetOneCountry",
-  "/accounts.v1alpha1.AccountService/CreateToken",
-  "/accounts.v1alpha1.AccountService/GetOneToken",
-  "/accounts.v1alpha1.AccountService/ListToken",
-  "/accounts.v1alpha1.AccountService/UpdateToken",
-  "/accounts.v1alpha1.AccountService/DeleteToken",
+  "/accounts.v1alpha1.AccountService/CreateApiKey",
+  "/accounts.v1alpha1.AccountService/GetOneApiKey",
+  "/accounts.v1alpha1.AccountService/ListApiKey",
+  "/accounts.v1alpha1.AccountService/UpdateApiKey",
+  "/accounts.v1alpha1.AccountService/DeleteApiKey",
 };
 
 std::unique_ptr< AccountService::Stub> AccountService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -105,11 +105,11 @@ AccountService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& cha
   , rpcmethod_VerifyEmail_(AccountService_method_names[33], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListCountries_(AccountService_method_names[34], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetOneCountry_(AccountService_method_names[35], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateToken_(AccountService_method_names[36], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetOneToken_(AccountService_method_names[37], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListToken_(AccountService_method_names[38], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateToken_(AccountService_method_names[39], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteToken_(AccountService_method_names[40], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateApiKey_(AccountService_method_names[36], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOneApiKey_(AccountService_method_names[37], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListApiKey_(AccountService_method_names[38], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateApiKey_(AccountService_method_names[39], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteApiKey_(AccountService_method_names[40], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status AccountService::Stub::CreateUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateUserRequest& request, ::accounts::v1alpha1::CreateUserResponse* response) {
@@ -688,84 +688,84 @@ void AccountService::Stub::experimental_async::GetOneCountry(::grpc::ClientConte
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::GetOneCountryResponse>::Create(channel_.get(), cq, rpcmethod_GetOneCountry_, context, request, false);
 }
 
-::grpc::Status AccountService::Stub::CreateToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenRequest& request, ::accounts::v1alpha1::CreateTokenResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateToken_, context, request, response);
+::grpc::Status AccountService::Stub::CreateApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateApiKeyRequest& request, ::accounts::v1alpha1::CreateApiKeyResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateApiKey_, context, request, response);
 }
 
-void AccountService::Stub::experimental_async::CreateToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenRequest* request, ::accounts::v1alpha1::CreateTokenResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateToken_, context, request, response, std::move(f));
+void AccountService::Stub::experimental_async::CreateApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateApiKeyRequest* request, ::accounts::v1alpha1::CreateApiKeyResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateApiKey_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CreateTokenResponse>* AccountService::Stub::AsyncCreateTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::CreateTokenResponse>::Create(channel_.get(), cq, rpcmethod_CreateToken_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CreateApiKeyResponse>* AccountService::Stub::AsyncCreateApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateApiKeyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::CreateApiKeyResponse>::Create(channel_.get(), cq, rpcmethod_CreateApiKey_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CreateTokenResponse>* AccountService::Stub::PrepareAsyncCreateTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::CreateTokenResponse>::Create(channel_.get(), cq, rpcmethod_CreateToken_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CreateApiKeyResponse>* AccountService::Stub::PrepareAsyncCreateApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateApiKeyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::CreateApiKeyResponse>::Create(channel_.get(), cq, rpcmethod_CreateApiKey_, context, request, false);
 }
 
-::grpc::Status AccountService::Stub::GetOneToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenRequest& request, ::accounts::v1alpha1::GetOneTokenResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetOneToken_, context, request, response);
+::grpc::Status AccountService::Stub::GetOneApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneApiKeyRequest& request, ::accounts::v1alpha1::GetOneApiKeyResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetOneApiKey_, context, request, response);
 }
 
-void AccountService::Stub::experimental_async::GetOneToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenRequest* request, ::accounts::v1alpha1::GetOneTokenResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOneToken_, context, request, response, std::move(f));
+void AccountService::Stub::experimental_async::GetOneApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneApiKeyRequest* request, ::accounts::v1alpha1::GetOneApiKeyResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOneApiKey_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneTokenResponse>* AccountService::Stub::AsyncGetOneTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::GetOneTokenResponse>::Create(channel_.get(), cq, rpcmethod_GetOneToken_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneApiKeyResponse>* AccountService::Stub::AsyncGetOneApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneApiKeyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::GetOneApiKeyResponse>::Create(channel_.get(), cq, rpcmethod_GetOneApiKey_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneTokenResponse>* AccountService::Stub::PrepareAsyncGetOneTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::GetOneTokenResponse>::Create(channel_.get(), cq, rpcmethod_GetOneToken_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneApiKeyResponse>* AccountService::Stub::PrepareAsyncGetOneApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneApiKeyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::GetOneApiKeyResponse>::Create(channel_.get(), cq, rpcmethod_GetOneApiKey_, context, request, false);
 }
 
-::grpc::Status AccountService::Stub::ListToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListTokenRequest& request, ::accounts::v1alpha1::ListTokenResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListToken_, context, request, response);
+::grpc::Status AccountService::Stub::ListApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListApiKeyRequest& request, ::accounts::v1alpha1::ListApiKeyResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListApiKey_, context, request, response);
 }
 
-void AccountService::Stub::experimental_async::ListToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListTokenRequest* request, ::accounts::v1alpha1::ListTokenResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListToken_, context, request, response, std::move(f));
+void AccountService::Stub::experimental_async::ListApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListApiKeyRequest* request, ::accounts::v1alpha1::ListApiKeyResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListApiKey_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListTokenResponse>* AccountService::Stub::AsyncListTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListTokenRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::ListTokenResponse>::Create(channel_.get(), cq, rpcmethod_ListToken_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListApiKeyResponse>* AccountService::Stub::AsyncListApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListApiKeyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::ListApiKeyResponse>::Create(channel_.get(), cq, rpcmethod_ListApiKey_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListTokenResponse>* AccountService::Stub::PrepareAsyncListTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListTokenRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::ListTokenResponse>::Create(channel_.get(), cq, rpcmethod_ListToken_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::ListApiKeyResponse>* AccountService::Stub::PrepareAsyncListApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListApiKeyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::ListApiKeyResponse>::Create(channel_.get(), cq, rpcmethod_ListApiKey_, context, request, false);
 }
 
-::grpc::Status AccountService::Stub::UpdateToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateTokenRequest& request, ::accounts::v1alpha1::UpdateTokenResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateToken_, context, request, response);
+::grpc::Status AccountService::Stub::UpdateApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateApiKeyRequest& request, ::accounts::v1alpha1::UpdateApiKeyResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateApiKey_, context, request, response);
 }
 
-void AccountService::Stub::experimental_async::UpdateToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateTokenRequest* request, ::accounts::v1alpha1::UpdateTokenResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateToken_, context, request, response, std::move(f));
+void AccountService::Stub::experimental_async::UpdateApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateApiKeyRequest* request, ::accounts::v1alpha1::UpdateApiKeyResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateApiKey_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::UpdateTokenResponse>* AccountService::Stub::AsyncUpdateTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateTokenRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::UpdateTokenResponse>::Create(channel_.get(), cq, rpcmethod_UpdateToken_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::UpdateApiKeyResponse>* AccountService::Stub::AsyncUpdateApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateApiKeyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::UpdateApiKeyResponse>::Create(channel_.get(), cq, rpcmethod_UpdateApiKey_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::UpdateTokenResponse>* AccountService::Stub::PrepareAsyncUpdateTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateTokenRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::UpdateTokenResponse>::Create(channel_.get(), cq, rpcmethod_UpdateToken_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::UpdateApiKeyResponse>* AccountService::Stub::PrepareAsyncUpdateApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateApiKeyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::UpdateApiKeyResponse>::Create(channel_.get(), cq, rpcmethod_UpdateApiKey_, context, request, false);
 }
 
-::grpc::Status AccountService::Stub::DeleteToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteTokenRequest& request, ::accounts::v1alpha1::DeleteTokenResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteToken_, context, request, response);
+::grpc::Status AccountService::Stub::DeleteApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest& request, ::accounts::v1alpha1::DeleteApiKeyResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteApiKey_, context, request, response);
 }
 
-void AccountService::Stub::experimental_async::DeleteToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteTokenRequest* request, ::accounts::v1alpha1::DeleteTokenResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteToken_, context, request, response, std::move(f));
+void AccountService::Stub::experimental_async::DeleteApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest* request, ::accounts::v1alpha1::DeleteApiKeyResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteApiKey_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteTokenResponse>* AccountService::Stub::AsyncDeleteTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteTokenRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::DeleteTokenResponse>::Create(channel_.get(), cq, rpcmethod_DeleteToken_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteApiKeyResponse>* AccountService::Stub::AsyncDeleteApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::DeleteApiKeyResponse>::Create(channel_.get(), cq, rpcmethod_DeleteApiKey_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteTokenResponse>* AccountService::Stub::PrepareAsyncDeleteTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteTokenRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::DeleteTokenResponse>::Create(channel_.get(), cq, rpcmethod_DeleteToken_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteApiKeyResponse>* AccountService::Stub::PrepareAsyncDeleteApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::DeleteApiKeyResponse>::Create(channel_.get(), cq, rpcmethod_DeleteApiKey_, context, request, false);
 }
 
 AccountService::Service::Service() {
@@ -952,28 +952,28 @@ AccountService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AccountService_method_names[36],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::CreateTokenRequest, ::accounts::v1alpha1::CreateTokenResponse>(
-          std::mem_fn(&AccountService::Service::CreateToken), this)));
+      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::CreateApiKeyRequest, ::accounts::v1alpha1::CreateApiKeyResponse>(
+          std::mem_fn(&AccountService::Service::CreateApiKey), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AccountService_method_names[37],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::GetOneTokenRequest, ::accounts::v1alpha1::GetOneTokenResponse>(
-          std::mem_fn(&AccountService::Service::GetOneToken), this)));
+      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::GetOneApiKeyRequest, ::accounts::v1alpha1::GetOneApiKeyResponse>(
+          std::mem_fn(&AccountService::Service::GetOneApiKey), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AccountService_method_names[38],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::ListTokenRequest, ::accounts::v1alpha1::ListTokenResponse>(
-          std::mem_fn(&AccountService::Service::ListToken), this)));
+      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::ListApiKeyRequest, ::accounts::v1alpha1::ListApiKeyResponse>(
+          std::mem_fn(&AccountService::Service::ListApiKey), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AccountService_method_names[39],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::UpdateTokenRequest, ::accounts::v1alpha1::UpdateTokenResponse>(
-          std::mem_fn(&AccountService::Service::UpdateToken), this)));
+      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::UpdateApiKeyRequest, ::accounts::v1alpha1::UpdateApiKeyResponse>(
+          std::mem_fn(&AccountService::Service::UpdateApiKey), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AccountService_method_names[40],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::DeleteTokenRequest, ::accounts::v1alpha1::DeleteTokenResponse>(
-          std::mem_fn(&AccountService::Service::DeleteToken), this)));
+      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::DeleteApiKeyRequest, ::accounts::v1alpha1::DeleteApiKeyResponse>(
+          std::mem_fn(&AccountService::Service::DeleteApiKey), this)));
 }
 
 AccountService::Service::~Service() {
@@ -1231,35 +1231,35 @@ AccountService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status AccountService::Service::CreateToken(::grpc::ServerContext* context, const ::accounts::v1alpha1::CreateTokenRequest* request, ::accounts::v1alpha1::CreateTokenResponse* response) {
+::grpc::Status AccountService::Service::CreateApiKey(::grpc::ServerContext* context, const ::accounts::v1alpha1::CreateApiKeyRequest* request, ::accounts::v1alpha1::CreateApiKeyResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status AccountService::Service::GetOneToken(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneTokenRequest* request, ::accounts::v1alpha1::GetOneTokenResponse* response) {
+::grpc::Status AccountService::Service::GetOneApiKey(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneApiKeyRequest* request, ::accounts::v1alpha1::GetOneApiKeyResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status AccountService::Service::ListToken(::grpc::ServerContext* context, const ::accounts::v1alpha1::ListTokenRequest* request, ::accounts::v1alpha1::ListTokenResponse* response) {
+::grpc::Status AccountService::Service::ListApiKey(::grpc::ServerContext* context, const ::accounts::v1alpha1::ListApiKeyRequest* request, ::accounts::v1alpha1::ListApiKeyResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status AccountService::Service::UpdateToken(::grpc::ServerContext* context, const ::accounts::v1alpha1::UpdateTokenRequest* request, ::accounts::v1alpha1::UpdateTokenResponse* response) {
+::grpc::Status AccountService::Service::UpdateApiKey(::grpc::ServerContext* context, const ::accounts::v1alpha1::UpdateApiKeyRequest* request, ::accounts::v1alpha1::UpdateApiKeyResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status AccountService::Service::DeleteToken(::grpc::ServerContext* context, const ::accounts::v1alpha1::DeleteTokenRequest* request, ::accounts::v1alpha1::DeleteTokenResponse* response) {
+::grpc::Status AccountService::Service::DeleteApiKey(::grpc::ServerContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest* request, ::accounts::v1alpha1::DeleteApiKeyResponse* response) {
   (void) context;
   (void) request;
   (void) response;

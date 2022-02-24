@@ -17,11 +17,15 @@ var global = Function('return this')();
 
 goog.exportSymbol('proto.accounts.v1alpha1.AgreeInvitationUserRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.AgreeInvitationUserResponse', null, global);
+goog.exportSymbol('proto.accounts.v1alpha1.ApiKey', null, global);
+goog.exportSymbol('proto.accounts.v1alpha1.ApiKeyList', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.AssignPermissionRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.CheckUserRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.CheckUserResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.City', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.CountryList', null, global);
+goog.exportSymbol('proto.accounts.v1alpha1.CreateApiKeyRequest', null, global);
+goog.exportSymbol('proto.accounts.v1alpha1.CreateApiKeyResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.CreateOrganizationRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.CreateOrganizationResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.CreatePermissionRequest', null, global);
@@ -30,10 +34,10 @@ goog.exportSymbol('proto.accounts.v1alpha1.CreateProjectRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.CreateProjectResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.CreateRoleRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.CreateRoleResponse', null, global);
-goog.exportSymbol('proto.accounts.v1alpha1.CreateTokenRequest', null, global);
-goog.exportSymbol('proto.accounts.v1alpha1.CreateTokenResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.CreateUserRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.CreateUserResponse', null, global);
+goog.exportSymbol('proto.accounts.v1alpha1.DeleteApiKeyRequest', null, global);
+goog.exportSymbol('proto.accounts.v1alpha1.DeleteApiKeyResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.DeleteOrganizationRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.DeleteOrganizationResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.DeletePermissionRequest', null, global);
@@ -42,14 +46,14 @@ goog.exportSymbol('proto.accounts.v1alpha1.DeleteProjectRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.DeleteProjectResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.DeleteRoleRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.DeleteRoleResponse', null, global);
-goog.exportSymbol('proto.accounts.v1alpha1.DeleteTokenRequest', null, global);
-goog.exportSymbol('proto.accounts.v1alpha1.DeleteTokenResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.DeleteUserRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.DeleteUserResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetInvitationUserRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetInvitationUserResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetListUserDexRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetListUserDexResponse', null, global);
+goog.exportSymbol('proto.accounts.v1alpha1.GetOneApiKeyRequest', null, global);
+goog.exportSymbol('proto.accounts.v1alpha1.GetOneApiKeyResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetOneCountryRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetOneCountryResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetOneOrganizationRequest', null, global);
@@ -60,13 +64,13 @@ goog.exportSymbol('proto.accounts.v1alpha1.GetOneProjectRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetOneProjectResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetOneRoleRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetOneRoleResponse', null, global);
-goog.exportSymbol('proto.accounts.v1alpha1.GetOneTokenRequest', null, global);
-goog.exportSymbol('proto.accounts.v1alpha1.GetOneTokenResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetOneUserDexRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetOneUserDexResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetOneUserRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.GetOneUserResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.InvitationResponse', null, global);
+goog.exportSymbol('proto.accounts.v1alpha1.ListApiKeyRequest', null, global);
+goog.exportSymbol('proto.accounts.v1alpha1.ListApiKeyResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.ListCountriesRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.ListCountriesResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.ListOrganizationRequest', null, global);
@@ -79,8 +83,6 @@ goog.exportSymbol('proto.accounts.v1alpha1.ListProjectRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.ListProjectResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.ListRolesRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.ListRolesResponse', null, global);
-goog.exportSymbol('proto.accounts.v1alpha1.ListTokenRequest', null, global);
-goog.exportSymbol('proto.accounts.v1alpha1.ListTokenResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.ListUserPaginationRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.ListUserPaginationResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.ListUserRequest', null, global);
@@ -96,8 +98,8 @@ goog.exportSymbol('proto.accounts.v1alpha1.SendInvitationUserResponse', null, gl
 goog.exportSymbol('proto.accounts.v1alpha1.SendVerificationEmailRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.SendVerificationEmailResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.State', null, global);
-goog.exportSymbol('proto.accounts.v1alpha1.Token', null, global);
-goog.exportSymbol('proto.accounts.v1alpha1.TokenList', null, global);
+goog.exportSymbol('proto.accounts.v1alpha1.UpdateApiKeyRequest', null, global);
+goog.exportSymbol('proto.accounts.v1alpha1.UpdateApiKeyResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.UpdateOrganizationRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.UpdateOrganizationResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.UpdatePermissionRequest', null, global);
@@ -106,8 +108,6 @@ goog.exportSymbol('proto.accounts.v1alpha1.UpdateProjectRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.UpdateProjectResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.UpdateRoleRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.UpdateRoleResponse', null, global);
-goog.exportSymbol('proto.accounts.v1alpha1.UpdateTokenRequest', null, global);
-goog.exportSymbol('proto.accounts.v1alpha1.UpdateTokenResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.UpdateUserRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.UpdateUserResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.UserList', null, global);
@@ -124,16 +124,16 @@ goog.exportSymbol('proto.accounts.v1alpha1.VerifyEmailResponse', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.accounts.v1alpha1.CreateTokenRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.CreateTokenRequest.repeatedFields_, null);
+proto.accounts.v1alpha1.CreateApiKeyRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.CreateApiKeyRequest.repeatedFields_, null);
 };
-goog.inherits(proto.accounts.v1alpha1.CreateTokenRequest, jspb.Message);
+goog.inherits(proto.accounts.v1alpha1.CreateApiKeyRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.accounts.v1alpha1.CreateTokenRequest.displayName = 'proto.accounts.v1alpha1.CreateTokenRequest';
+  proto.accounts.v1alpha1.CreateApiKeyRequest.displayName = 'proto.accounts.v1alpha1.CreateApiKeyRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -145,16 +145,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.accounts.v1alpha1.Token = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.Token.repeatedFields_, null);
+proto.accounts.v1alpha1.ApiKey = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.ApiKey.repeatedFields_, null);
 };
-goog.inherits(proto.accounts.v1alpha1.Token, jspb.Message);
+goog.inherits(proto.accounts.v1alpha1.ApiKey, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.accounts.v1alpha1.Token.displayName = 'proto.accounts.v1alpha1.Token';
+  proto.accounts.v1alpha1.ApiKey.displayName = 'proto.accounts.v1alpha1.ApiKey';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -166,16 +166,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.accounts.v1alpha1.CreateTokenResponse = function(opt_data) {
+proto.accounts.v1alpha1.CreateApiKeyResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.accounts.v1alpha1.CreateTokenResponse, jspb.Message);
+goog.inherits(proto.accounts.v1alpha1.CreateApiKeyResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.accounts.v1alpha1.CreateTokenResponse.displayName = 'proto.accounts.v1alpha1.CreateTokenResponse';
+  proto.accounts.v1alpha1.CreateApiKeyResponse.displayName = 'proto.accounts.v1alpha1.CreateApiKeyResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -187,16 +187,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.accounts.v1alpha1.GetOneTokenRequest = function(opt_data) {
+proto.accounts.v1alpha1.GetOneApiKeyRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.accounts.v1alpha1.GetOneTokenRequest, jspb.Message);
+goog.inherits(proto.accounts.v1alpha1.GetOneApiKeyRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.accounts.v1alpha1.GetOneTokenRequest.displayName = 'proto.accounts.v1alpha1.GetOneTokenRequest';
+  proto.accounts.v1alpha1.GetOneApiKeyRequest.displayName = 'proto.accounts.v1alpha1.GetOneApiKeyRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -208,16 +208,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.accounts.v1alpha1.GetOneTokenResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.GetOneTokenResponse.repeatedFields_, null);
+proto.accounts.v1alpha1.GetOneApiKeyResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.GetOneApiKeyResponse.repeatedFields_, null);
 };
-goog.inherits(proto.accounts.v1alpha1.GetOneTokenResponse, jspb.Message);
+goog.inherits(proto.accounts.v1alpha1.GetOneApiKeyResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.accounts.v1alpha1.GetOneTokenResponse.displayName = 'proto.accounts.v1alpha1.GetOneTokenResponse';
+  proto.accounts.v1alpha1.GetOneApiKeyResponse.displayName = 'proto.accounts.v1alpha1.GetOneApiKeyResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -229,16 +229,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.accounts.v1alpha1.ListTokenRequest = function(opt_data) {
+proto.accounts.v1alpha1.ListApiKeyRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.accounts.v1alpha1.ListTokenRequest, jspb.Message);
+goog.inherits(proto.accounts.v1alpha1.ListApiKeyRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.accounts.v1alpha1.ListTokenRequest.displayName = 'proto.accounts.v1alpha1.ListTokenRequest';
+  proto.accounts.v1alpha1.ListApiKeyRequest.displayName = 'proto.accounts.v1alpha1.ListApiKeyRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -250,16 +250,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.accounts.v1alpha1.TokenList = function(opt_data) {
+proto.accounts.v1alpha1.ApiKeyList = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.accounts.v1alpha1.TokenList, jspb.Message);
+goog.inherits(proto.accounts.v1alpha1.ApiKeyList, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.accounts.v1alpha1.TokenList.displayName = 'proto.accounts.v1alpha1.TokenList';
+  proto.accounts.v1alpha1.ApiKeyList.displayName = 'proto.accounts.v1alpha1.ApiKeyList';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -271,16 +271,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.accounts.v1alpha1.ListTokenResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.ListTokenResponse.repeatedFields_, null);
+proto.accounts.v1alpha1.ListApiKeyResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.ListApiKeyResponse.repeatedFields_, null);
 };
-goog.inherits(proto.accounts.v1alpha1.ListTokenResponse, jspb.Message);
+goog.inherits(proto.accounts.v1alpha1.ListApiKeyResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.accounts.v1alpha1.ListTokenResponse.displayName = 'proto.accounts.v1alpha1.ListTokenResponse';
+  proto.accounts.v1alpha1.ListApiKeyResponse.displayName = 'proto.accounts.v1alpha1.ListApiKeyResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -292,16 +292,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.accounts.v1alpha1.UpdateTokenRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.UpdateTokenRequest.repeatedFields_, null);
+proto.accounts.v1alpha1.UpdateApiKeyRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.UpdateApiKeyRequest.repeatedFields_, null);
 };
-goog.inherits(proto.accounts.v1alpha1.UpdateTokenRequest, jspb.Message);
+goog.inherits(proto.accounts.v1alpha1.UpdateApiKeyRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.accounts.v1alpha1.UpdateTokenRequest.displayName = 'proto.accounts.v1alpha1.UpdateTokenRequest';
+  proto.accounts.v1alpha1.UpdateApiKeyRequest.displayName = 'proto.accounts.v1alpha1.UpdateApiKeyRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -313,16 +313,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.accounts.v1alpha1.UpdateTokenResponse = function(opt_data) {
+proto.accounts.v1alpha1.UpdateApiKeyResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.accounts.v1alpha1.UpdateTokenResponse, jspb.Message);
+goog.inherits(proto.accounts.v1alpha1.UpdateApiKeyResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.accounts.v1alpha1.UpdateTokenResponse.displayName = 'proto.accounts.v1alpha1.UpdateTokenResponse';
+  proto.accounts.v1alpha1.UpdateApiKeyResponse.displayName = 'proto.accounts.v1alpha1.UpdateApiKeyResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -334,16 +334,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.accounts.v1alpha1.DeleteTokenRequest = function(opt_data) {
+proto.accounts.v1alpha1.DeleteApiKeyRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.accounts.v1alpha1.DeleteTokenRequest, jspb.Message);
+goog.inherits(proto.accounts.v1alpha1.DeleteApiKeyRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.accounts.v1alpha1.DeleteTokenRequest.displayName = 'proto.accounts.v1alpha1.DeleteTokenRequest';
+  proto.accounts.v1alpha1.DeleteApiKeyRequest.displayName = 'proto.accounts.v1alpha1.DeleteApiKeyRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -355,16 +355,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.accounts.v1alpha1.DeleteTokenResponse = function(opt_data) {
+proto.accounts.v1alpha1.DeleteApiKeyResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.accounts.v1alpha1.DeleteTokenResponse, jspb.Message);
+goog.inherits(proto.accounts.v1alpha1.DeleteApiKeyResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.accounts.v1alpha1.DeleteTokenResponse.displayName = 'proto.accounts.v1alpha1.DeleteTokenResponse';
+  proto.accounts.v1alpha1.DeleteApiKeyResponse.displayName = 'proto.accounts.v1alpha1.DeleteApiKeyResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2178,7 +2178,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.CreateTokenRequest.repeatedFields_ = [3,4];
+proto.accounts.v1alpha1.CreateApiKeyRequest.repeatedFields_ = [3,4];
 
 
 
@@ -2195,8 +2195,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.accounts.v1alpha1.CreateTokenRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.accounts.v1alpha1.CreateTokenRequest.toObject(opt_includeInstance, this);
+proto.accounts.v1alpha1.CreateApiKeyRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.accounts.v1alpha1.CreateApiKeyRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2205,11 +2205,11 @@ proto.accounts.v1alpha1.CreateTokenRequest.prototype.toObject = function(opt_inc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.accounts.v1alpha1.CreateTokenRequest} msg The msg instance to transform.
+ * @param {!proto.accounts.v1alpha1.CreateApiKeyRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.CreateTokenRequest.toObject = function(includeInstance, msg) {
+proto.accounts.v1alpha1.CreateApiKeyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -2228,23 +2228,23 @@ proto.accounts.v1alpha1.CreateTokenRequest.toObject = function(includeInstance, 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.accounts.v1alpha1.CreateTokenRequest}
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyRequest}
  */
-proto.accounts.v1alpha1.CreateTokenRequest.deserializeBinary = function(bytes) {
+proto.accounts.v1alpha1.CreateApiKeyRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.accounts.v1alpha1.CreateTokenRequest;
-  return proto.accounts.v1alpha1.CreateTokenRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.accounts.v1alpha1.CreateApiKeyRequest;
+  return proto.accounts.v1alpha1.CreateApiKeyRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.accounts.v1alpha1.CreateTokenRequest} msg The message object to deserialize into.
+ * @param {!proto.accounts.v1alpha1.CreateApiKeyRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.accounts.v1alpha1.CreateTokenRequest}
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyRequest}
  */
-proto.accounts.v1alpha1.CreateTokenRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.accounts.v1alpha1.CreateApiKeyRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2284,9 +2284,9 @@ proto.accounts.v1alpha1.CreateTokenRequest.deserializeBinaryFromReader = functio
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.accounts.v1alpha1.CreateTokenRequest.prototype.serializeBinary = function() {
+proto.accounts.v1alpha1.CreateApiKeyRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.accounts.v1alpha1.CreateTokenRequest.serializeBinaryToWriter(this, writer);
+  proto.accounts.v1alpha1.CreateApiKeyRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2294,11 +2294,11 @@ proto.accounts.v1alpha1.CreateTokenRequest.prototype.serializeBinary = function(
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.accounts.v1alpha1.CreateTokenRequest} message
+ * @param {!proto.accounts.v1alpha1.CreateApiKeyRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.CreateTokenRequest.serializeBinaryToWriter = function(message, writer) {
+proto.accounts.v1alpha1.CreateApiKeyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -2335,16 +2335,16 @@ proto.accounts.v1alpha1.CreateTokenRequest.serializeBinaryToWriter = function(me
  * optional string name = 1;
  * @return {string}
  */
-proto.accounts.v1alpha1.CreateTokenRequest.prototype.getName = function() {
+proto.accounts.v1alpha1.CreateApiKeyRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.CreateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.CreateTokenRequest.prototype.setName = function(value) {
+proto.accounts.v1alpha1.CreateApiKeyRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2353,16 +2353,16 @@ proto.accounts.v1alpha1.CreateTokenRequest.prototype.setName = function(value) {
  * optional string user_id = 2;
  * @return {string}
  */
-proto.accounts.v1alpha1.CreateTokenRequest.prototype.getUserId = function() {
+proto.accounts.v1alpha1.CreateApiKeyRequest.prototype.getUserId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.CreateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.CreateTokenRequest.prototype.setUserId = function(value) {
+proto.accounts.v1alpha1.CreateApiKeyRequest.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2371,16 +2371,16 @@ proto.accounts.v1alpha1.CreateTokenRequest.prototype.setUserId = function(value)
  * repeated uint32 roles_ids = 3;
  * @return {!Array<number>}
  */
-proto.accounts.v1alpha1.CreateTokenRequest.prototype.getRolesIdsList = function() {
+proto.accounts.v1alpha1.CreateApiKeyRequest.prototype.getRolesIdsList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
 /**
  * @param {!Array<number>} value
- * @return {!proto.accounts.v1alpha1.CreateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.CreateTokenRequest.prototype.setRolesIdsList = function(value) {
+proto.accounts.v1alpha1.CreateApiKeyRequest.prototype.setRolesIdsList = function(value) {
   return jspb.Message.setField(this, 3, value || []);
 };
 
@@ -2388,18 +2388,18 @@ proto.accounts.v1alpha1.CreateTokenRequest.prototype.setRolesIdsList = function(
 /**
  * @param {number} value
  * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.CreateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.CreateTokenRequest.prototype.addRolesIds = function(value, opt_index) {
+proto.accounts.v1alpha1.CreateApiKeyRequest.prototype.addRolesIds = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.CreateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.CreateTokenRequest.prototype.clearRolesIdsList = function() {
+proto.accounts.v1alpha1.CreateApiKeyRequest.prototype.clearRolesIdsList = function() {
   return this.setRolesIdsList([]);
 };
 
@@ -2408,16 +2408,16 @@ proto.accounts.v1alpha1.CreateTokenRequest.prototype.clearRolesIdsList = functio
  * repeated uint32 permissions_ids = 4;
  * @return {!Array<number>}
  */
-proto.accounts.v1alpha1.CreateTokenRequest.prototype.getPermissionsIdsList = function() {
+proto.accounts.v1alpha1.CreateApiKeyRequest.prototype.getPermissionsIdsList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 4));
 };
 
 
 /**
  * @param {!Array<number>} value
- * @return {!proto.accounts.v1alpha1.CreateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.CreateTokenRequest.prototype.setPermissionsIdsList = function(value) {
+proto.accounts.v1alpha1.CreateApiKeyRequest.prototype.setPermissionsIdsList = function(value) {
   return jspb.Message.setField(this, 4, value || []);
 };
 
@@ -2425,18 +2425,18 @@ proto.accounts.v1alpha1.CreateTokenRequest.prototype.setPermissionsIdsList = fun
 /**
  * @param {number} value
  * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.CreateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.CreateTokenRequest.prototype.addPermissionsIds = function(value, opt_index) {
+proto.accounts.v1alpha1.CreateApiKeyRequest.prototype.addPermissionsIds = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.CreateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.CreateTokenRequest.prototype.clearPermissionsIdsList = function() {
+proto.accounts.v1alpha1.CreateApiKeyRequest.prototype.clearPermissionsIdsList = function() {
   return this.setPermissionsIdsList([]);
 };
 
@@ -2447,7 +2447,7 @@ proto.accounts.v1alpha1.CreateTokenRequest.prototype.clearPermissionsIdsList = f
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.Token.repeatedFields_ = [4,5];
+proto.accounts.v1alpha1.ApiKey.repeatedFields_ = [4,5];
 
 
 
@@ -2464,8 +2464,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.accounts.v1alpha1.Token.prototype.toObject = function(opt_includeInstance) {
-  return proto.accounts.v1alpha1.Token.toObject(opt_includeInstance, this);
+proto.accounts.v1alpha1.ApiKey.prototype.toObject = function(opt_includeInstance) {
+  return proto.accounts.v1alpha1.ApiKey.toObject(opt_includeInstance, this);
 };
 
 
@@ -2474,11 +2474,11 @@ proto.accounts.v1alpha1.Token.prototype.toObject = function(opt_includeInstance)
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.accounts.v1alpha1.Token} msg The msg instance to transform.
+ * @param {!proto.accounts.v1alpha1.ApiKey} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.Token.toObject = function(includeInstance, msg) {
+proto.accounts.v1alpha1.ApiKey.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -2500,23 +2500,23 @@ proto.accounts.v1alpha1.Token.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.accounts.v1alpha1.Token}
+ * @return {!proto.accounts.v1alpha1.ApiKey}
  */
-proto.accounts.v1alpha1.Token.deserializeBinary = function(bytes) {
+proto.accounts.v1alpha1.ApiKey.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.accounts.v1alpha1.Token;
-  return proto.accounts.v1alpha1.Token.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.accounts.v1alpha1.ApiKey;
+  return proto.accounts.v1alpha1.ApiKey.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.accounts.v1alpha1.Token} msg The message object to deserialize into.
+ * @param {!proto.accounts.v1alpha1.ApiKey} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.accounts.v1alpha1.Token}
+ * @return {!proto.accounts.v1alpha1.ApiKey}
  */
-proto.accounts.v1alpha1.Token.deserializeBinaryFromReader = function(msg, reader) {
+proto.accounts.v1alpha1.ApiKey.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2558,9 +2558,9 @@ proto.accounts.v1alpha1.Token.deserializeBinaryFromReader = function(msg, reader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.accounts.v1alpha1.Token.prototype.serializeBinary = function() {
+proto.accounts.v1alpha1.ApiKey.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.accounts.v1alpha1.Token.serializeBinaryToWriter(this, writer);
+  proto.accounts.v1alpha1.ApiKey.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2568,11 +2568,11 @@ proto.accounts.v1alpha1.Token.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.accounts.v1alpha1.Token} message
+ * @param {!proto.accounts.v1alpha1.ApiKey} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.Token.serializeBinaryToWriter = function(message, writer) {
+proto.accounts.v1alpha1.ApiKey.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
   if (f.length > 0) {
@@ -2618,16 +2618,16 @@ proto.accounts.v1alpha1.Token.serializeBinaryToWriter = function(message, writer
  * optional string id = 1;
  * @return {string}
  */
-proto.accounts.v1alpha1.Token.prototype.getId = function() {
+proto.accounts.v1alpha1.ApiKey.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.Token} returns this
+ * @return {!proto.accounts.v1alpha1.ApiKey} returns this
  */
-proto.accounts.v1alpha1.Token.prototype.setId = function(value) {
+proto.accounts.v1alpha1.ApiKey.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2636,16 +2636,16 @@ proto.accounts.v1alpha1.Token.prototype.setId = function(value) {
  * optional string name = 2;
  * @return {string}
  */
-proto.accounts.v1alpha1.Token.prototype.getName = function() {
+proto.accounts.v1alpha1.ApiKey.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.Token} returns this
+ * @return {!proto.accounts.v1alpha1.ApiKey} returns this
  */
-proto.accounts.v1alpha1.Token.prototype.setName = function(value) {
+proto.accounts.v1alpha1.ApiKey.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2654,16 +2654,16 @@ proto.accounts.v1alpha1.Token.prototype.setName = function(value) {
  * optional string user_id = 3;
  * @return {string}
  */
-proto.accounts.v1alpha1.Token.prototype.getUserId = function() {
+proto.accounts.v1alpha1.ApiKey.prototype.getUserId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.Token} returns this
+ * @return {!proto.accounts.v1alpha1.ApiKey} returns this
  */
-proto.accounts.v1alpha1.Token.prototype.setUserId = function(value) {
+proto.accounts.v1alpha1.ApiKey.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -2672,7 +2672,7 @@ proto.accounts.v1alpha1.Token.prototype.setUserId = function(value) {
  * repeated Rol rol = 4;
  * @return {!Array<!proto.accounts.v1alpha1.Rol>}
  */
-proto.accounts.v1alpha1.Token.prototype.getRolList = function() {
+proto.accounts.v1alpha1.ApiKey.prototype.getRolList = function() {
   return /** @type{!Array<!proto.accounts.v1alpha1.Rol>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Rol, 4));
 };
@@ -2680,9 +2680,9 @@ proto.accounts.v1alpha1.Token.prototype.getRolList = function() {
 
 /**
  * @param {!Array<!proto.accounts.v1alpha1.Rol>} value
- * @return {!proto.accounts.v1alpha1.Token} returns this
+ * @return {!proto.accounts.v1alpha1.ApiKey} returns this
 */
-proto.accounts.v1alpha1.Token.prototype.setRolList = function(value) {
+proto.accounts.v1alpha1.ApiKey.prototype.setRolList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
@@ -2692,16 +2692,16 @@ proto.accounts.v1alpha1.Token.prototype.setRolList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.accounts.v1alpha1.Rol}
  */
-proto.accounts.v1alpha1.Token.prototype.addRol = function(opt_value, opt_index) {
+proto.accounts.v1alpha1.ApiKey.prototype.addRol = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.accounts.v1alpha1.Rol, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.Token} returns this
+ * @return {!proto.accounts.v1alpha1.ApiKey} returns this
  */
-proto.accounts.v1alpha1.Token.prototype.clearRolList = function() {
+proto.accounts.v1alpha1.ApiKey.prototype.clearRolList = function() {
   return this.setRolList([]);
 };
 
@@ -2710,7 +2710,7 @@ proto.accounts.v1alpha1.Token.prototype.clearRolList = function() {
  * repeated Permission permissions = 5;
  * @return {!Array<!proto.accounts.v1alpha1.Permission>}
  */
-proto.accounts.v1alpha1.Token.prototype.getPermissionsList = function() {
+proto.accounts.v1alpha1.ApiKey.prototype.getPermissionsList = function() {
   return /** @type{!Array<!proto.accounts.v1alpha1.Permission>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Permission, 5));
 };
@@ -2718,9 +2718,9 @@ proto.accounts.v1alpha1.Token.prototype.getPermissionsList = function() {
 
 /**
  * @param {!Array<!proto.accounts.v1alpha1.Permission>} value
- * @return {!proto.accounts.v1alpha1.Token} returns this
+ * @return {!proto.accounts.v1alpha1.ApiKey} returns this
 */
-proto.accounts.v1alpha1.Token.prototype.setPermissionsList = function(value) {
+proto.accounts.v1alpha1.ApiKey.prototype.setPermissionsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
@@ -2730,16 +2730,16 @@ proto.accounts.v1alpha1.Token.prototype.setPermissionsList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.accounts.v1alpha1.Permission}
  */
-proto.accounts.v1alpha1.Token.prototype.addPermissions = function(opt_value, opt_index) {
+proto.accounts.v1alpha1.ApiKey.prototype.addPermissions = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.accounts.v1alpha1.Permission, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.Token} returns this
+ * @return {!proto.accounts.v1alpha1.ApiKey} returns this
  */
-proto.accounts.v1alpha1.Token.prototype.clearPermissionsList = function() {
+proto.accounts.v1alpha1.ApiKey.prototype.clearPermissionsList = function() {
   return this.setPermissionsList([]);
 };
 
@@ -2760,8 +2760,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.accounts.v1alpha1.CreateTokenResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.accounts.v1alpha1.CreateTokenResponse.toObject(opt_includeInstance, this);
+proto.accounts.v1alpha1.CreateApiKeyResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.accounts.v1alpha1.CreateApiKeyResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2770,14 +2770,14 @@ proto.accounts.v1alpha1.CreateTokenResponse.prototype.toObject = function(opt_in
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.accounts.v1alpha1.CreateTokenResponse} msg The msg instance to transform.
+ * @param {!proto.accounts.v1alpha1.CreateApiKeyResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.CreateTokenResponse.toObject = function(includeInstance, msg) {
+proto.accounts.v1alpha1.CreateApiKeyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    token: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
     accessPointId: jspb.Message.getFieldWithDefault(msg, 4, 0),
     error: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
@@ -2793,23 +2793,23 @@ proto.accounts.v1alpha1.CreateTokenResponse.toObject = function(includeInstance,
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.accounts.v1alpha1.CreateTokenResponse}
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyResponse}
  */
-proto.accounts.v1alpha1.CreateTokenResponse.deserializeBinary = function(bytes) {
+proto.accounts.v1alpha1.CreateApiKeyResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.accounts.v1alpha1.CreateTokenResponse;
-  return proto.accounts.v1alpha1.CreateTokenResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.accounts.v1alpha1.CreateApiKeyResponse;
+  return proto.accounts.v1alpha1.CreateApiKeyResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.accounts.v1alpha1.CreateTokenResponse} msg The message object to deserialize into.
+ * @param {!proto.accounts.v1alpha1.CreateApiKeyResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.accounts.v1alpha1.CreateTokenResponse}
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyResponse}
  */
-proto.accounts.v1alpha1.CreateTokenResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.accounts.v1alpha1.CreateApiKeyResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2822,7 +2822,7 @@ proto.accounts.v1alpha1.CreateTokenResponse.deserializeBinaryFromReader = functi
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setToken(value);
+      msg.setApiKey(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint32());
@@ -2845,9 +2845,9 @@ proto.accounts.v1alpha1.CreateTokenResponse.deserializeBinaryFromReader = functi
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.accounts.v1alpha1.CreateTokenResponse.prototype.serializeBinary = function() {
+proto.accounts.v1alpha1.CreateApiKeyResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.accounts.v1alpha1.CreateTokenResponse.serializeBinaryToWriter(this, writer);
+  proto.accounts.v1alpha1.CreateApiKeyResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2855,11 +2855,11 @@ proto.accounts.v1alpha1.CreateTokenResponse.prototype.serializeBinary = function
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.accounts.v1alpha1.CreateTokenResponse} message
+ * @param {!proto.accounts.v1alpha1.CreateApiKeyResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.CreateTokenResponse.serializeBinaryToWriter = function(message, writer) {
+proto.accounts.v1alpha1.CreateApiKeyResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMsg();
   if (f.length > 0) {
@@ -2868,7 +2868,7 @@ proto.accounts.v1alpha1.CreateTokenResponse.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getToken();
+  f = message.getApiKey();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -2896,34 +2896,34 @@ proto.accounts.v1alpha1.CreateTokenResponse.serializeBinaryToWriter = function(m
  * optional string msg = 1;
  * @return {string}
  */
-proto.accounts.v1alpha1.CreateTokenResponse.prototype.getMsg = function() {
+proto.accounts.v1alpha1.CreateApiKeyResponse.prototype.getMsg = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.CreateTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.CreateTokenResponse.prototype.setMsg = function(value) {
+proto.accounts.v1alpha1.CreateApiKeyResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string token = 2;
+ * optional string api_key = 2;
  * @return {string}
  */
-proto.accounts.v1alpha1.CreateTokenResponse.prototype.getToken = function() {
+proto.accounts.v1alpha1.CreateApiKeyResponse.prototype.getApiKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.CreateTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.CreateTokenResponse.prototype.setToken = function(value) {
+proto.accounts.v1alpha1.CreateApiKeyResponse.prototype.setApiKey = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2932,16 +2932,16 @@ proto.accounts.v1alpha1.CreateTokenResponse.prototype.setToken = function(value)
  * optional uint32 access_point_id = 4;
  * @return {number}
  */
-proto.accounts.v1alpha1.CreateTokenResponse.prototype.getAccessPointId = function() {
+proto.accounts.v1alpha1.CreateApiKeyResponse.prototype.getAccessPointId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.accounts.v1alpha1.CreateTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.CreateTokenResponse.prototype.setAccessPointId = function(value) {
+proto.accounts.v1alpha1.CreateApiKeyResponse.prototype.setAccessPointId = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
@@ -2950,16 +2950,16 @@ proto.accounts.v1alpha1.CreateTokenResponse.prototype.setAccessPointId = functio
  * optional string error = 5;
  * @return {string}
  */
-proto.accounts.v1alpha1.CreateTokenResponse.prototype.getError = function() {
+proto.accounts.v1alpha1.CreateApiKeyResponse.prototype.getError = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.CreateTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.CreateApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.CreateTokenResponse.prototype.setError = function(value) {
+proto.accounts.v1alpha1.CreateApiKeyResponse.prototype.setError = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
@@ -2980,8 +2980,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.accounts.v1alpha1.GetOneTokenRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.accounts.v1alpha1.GetOneTokenRequest.toObject(opt_includeInstance, this);
+proto.accounts.v1alpha1.GetOneApiKeyRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.accounts.v1alpha1.GetOneApiKeyRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2990,11 +2990,11 @@ proto.accounts.v1alpha1.GetOneTokenRequest.prototype.toObject = function(opt_inc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.accounts.v1alpha1.GetOneTokenRequest} msg The msg instance to transform.
+ * @param {!proto.accounts.v1alpha1.GetOneApiKeyRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.GetOneTokenRequest.toObject = function(includeInstance, msg) {
+proto.accounts.v1alpha1.GetOneApiKeyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
@@ -3010,23 +3010,23 @@ proto.accounts.v1alpha1.GetOneTokenRequest.toObject = function(includeInstance, 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.accounts.v1alpha1.GetOneTokenRequest}
+ * @return {!proto.accounts.v1alpha1.GetOneApiKeyRequest}
  */
-proto.accounts.v1alpha1.GetOneTokenRequest.deserializeBinary = function(bytes) {
+proto.accounts.v1alpha1.GetOneApiKeyRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.accounts.v1alpha1.GetOneTokenRequest;
-  return proto.accounts.v1alpha1.GetOneTokenRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.accounts.v1alpha1.GetOneApiKeyRequest;
+  return proto.accounts.v1alpha1.GetOneApiKeyRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.accounts.v1alpha1.GetOneTokenRequest} msg The message object to deserialize into.
+ * @param {!proto.accounts.v1alpha1.GetOneApiKeyRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.accounts.v1alpha1.GetOneTokenRequest}
+ * @return {!proto.accounts.v1alpha1.GetOneApiKeyRequest}
  */
-proto.accounts.v1alpha1.GetOneTokenRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.accounts.v1alpha1.GetOneApiKeyRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3050,9 +3050,9 @@ proto.accounts.v1alpha1.GetOneTokenRequest.deserializeBinaryFromReader = functio
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.accounts.v1alpha1.GetOneTokenRequest.prototype.serializeBinary = function() {
+proto.accounts.v1alpha1.GetOneApiKeyRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.accounts.v1alpha1.GetOneTokenRequest.serializeBinaryToWriter(this, writer);
+  proto.accounts.v1alpha1.GetOneApiKeyRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3060,11 +3060,11 @@ proto.accounts.v1alpha1.GetOneTokenRequest.prototype.serializeBinary = function(
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.accounts.v1alpha1.GetOneTokenRequest} message
+ * @param {!proto.accounts.v1alpha1.GetOneApiKeyRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.GetOneTokenRequest.serializeBinaryToWriter = function(message, writer) {
+proto.accounts.v1alpha1.GetOneApiKeyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
   if (f !== 0) {
@@ -3080,16 +3080,16 @@ proto.accounts.v1alpha1.GetOneTokenRequest.serializeBinaryToWriter = function(me
  * optional uint32 id = 1;
  * @return {number}
  */
-proto.accounts.v1alpha1.GetOneTokenRequest.prototype.getId = function() {
+proto.accounts.v1alpha1.GetOneApiKeyRequest.prototype.getId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.accounts.v1alpha1.GetOneTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.GetOneApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.GetOneTokenRequest.prototype.setId = function(value) {
+proto.accounts.v1alpha1.GetOneApiKeyRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -3100,7 +3100,7 @@ proto.accounts.v1alpha1.GetOneTokenRequest.prototype.setId = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.repeatedFields_ = [5,6];
+proto.accounts.v1alpha1.GetOneApiKeyResponse.repeatedFields_ = [5,6];
 
 
 
@@ -3117,8 +3117,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.accounts.v1alpha1.GetOneTokenResponse.toObject(opt_includeInstance, this);
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.accounts.v1alpha1.GetOneApiKeyResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -3127,14 +3127,14 @@ proto.accounts.v1alpha1.GetOneTokenResponse.prototype.toObject = function(opt_in
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.accounts.v1alpha1.GetOneTokenResponse} msg The msg instance to transform.
+ * @param {!proto.accounts.v1alpha1.GetOneApiKeyResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.toObject = function(includeInstance, msg) {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    token: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     rolesList: jspb.Message.toObjectList(msg.getRolesList(),
@@ -3154,23 +3154,23 @@ proto.accounts.v1alpha1.GetOneTokenResponse.toObject = function(includeInstance,
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.accounts.v1alpha1.GetOneTokenResponse}
+ * @return {!proto.accounts.v1alpha1.GetOneApiKeyResponse}
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.deserializeBinary = function(bytes) {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.accounts.v1alpha1.GetOneTokenResponse;
-  return proto.accounts.v1alpha1.GetOneTokenResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.accounts.v1alpha1.GetOneApiKeyResponse;
+  return proto.accounts.v1alpha1.GetOneApiKeyResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.accounts.v1alpha1.GetOneTokenResponse} msg The message object to deserialize into.
+ * @param {!proto.accounts.v1alpha1.GetOneApiKeyResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.accounts.v1alpha1.GetOneTokenResponse}
+ * @return {!proto.accounts.v1alpha1.GetOneApiKeyResponse}
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3183,7 +3183,7 @@ proto.accounts.v1alpha1.GetOneTokenResponse.deserializeBinaryFromReader = functi
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setToken(value);
+      msg.setApiKey(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -3216,9 +3216,9 @@ proto.accounts.v1alpha1.GetOneTokenResponse.deserializeBinaryFromReader = functi
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.serializeBinary = function() {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.accounts.v1alpha1.GetOneTokenResponse.serializeBinaryToWriter(this, writer);
+  proto.accounts.v1alpha1.GetOneApiKeyResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3226,11 +3226,11 @@ proto.accounts.v1alpha1.GetOneTokenResponse.prototype.serializeBinary = function
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.accounts.v1alpha1.GetOneTokenResponse} message
+ * @param {!proto.accounts.v1alpha1.GetOneApiKeyResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.serializeBinaryToWriter = function(message, writer) {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
   if (f !== 0) {
@@ -3239,7 +3239,7 @@ proto.accounts.v1alpha1.GetOneTokenResponse.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getToken();
+  f = message.getApiKey();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -3283,34 +3283,34 @@ proto.accounts.v1alpha1.GetOneTokenResponse.serializeBinaryToWriter = function(m
  * optional uint32 id = 1;
  * @return {number}
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.getId = function() {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.getId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.accounts.v1alpha1.GetOneTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.GetOneApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.setId = function(value) {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.setId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional string token = 2;
+ * optional string api_key = 2;
  * @return {string}
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.getToken = function() {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.getApiKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.GetOneTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.GetOneApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.setToken = function(value) {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.setApiKey = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -3319,16 +3319,16 @@ proto.accounts.v1alpha1.GetOneTokenResponse.prototype.setToken = function(value)
  * optional string name = 3;
  * @return {string}
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.getName = function() {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.GetOneTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.GetOneApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.setName = function(value) {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -3337,16 +3337,16 @@ proto.accounts.v1alpha1.GetOneTokenResponse.prototype.setName = function(value) 
  * optional string user_id = 4;
  * @return {string}
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.getUserId = function() {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.getUserId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.GetOneTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.GetOneApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.setUserId = function(value) {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -3355,7 +3355,7 @@ proto.accounts.v1alpha1.GetOneTokenResponse.prototype.setUserId = function(value
  * repeated Rol roles = 5;
  * @return {!Array<!proto.accounts.v1alpha1.Rol>}
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.getRolesList = function() {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.getRolesList = function() {
   return /** @type{!Array<!proto.accounts.v1alpha1.Rol>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Rol, 5));
 };
@@ -3363,9 +3363,9 @@ proto.accounts.v1alpha1.GetOneTokenResponse.prototype.getRolesList = function() 
 
 /**
  * @param {!Array<!proto.accounts.v1alpha1.Rol>} value
- * @return {!proto.accounts.v1alpha1.GetOneTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.GetOneApiKeyResponse} returns this
 */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.setRolesList = function(value) {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.setRolesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
@@ -3375,16 +3375,16 @@ proto.accounts.v1alpha1.GetOneTokenResponse.prototype.setRolesList = function(va
  * @param {number=} opt_index
  * @return {!proto.accounts.v1alpha1.Rol}
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.addRoles = function(opt_value, opt_index) {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.addRoles = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.accounts.v1alpha1.Rol, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.GetOneTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.GetOneApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.clearRolesList = function() {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.clearRolesList = function() {
   return this.setRolesList([]);
 };
 
@@ -3393,7 +3393,7 @@ proto.accounts.v1alpha1.GetOneTokenResponse.prototype.clearRolesList = function(
  * repeated Permission permissions = 6;
  * @return {!Array<!proto.accounts.v1alpha1.Permission>}
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.getPermissionsList = function() {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.getPermissionsList = function() {
   return /** @type{!Array<!proto.accounts.v1alpha1.Permission>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Permission, 6));
 };
@@ -3401,9 +3401,9 @@ proto.accounts.v1alpha1.GetOneTokenResponse.prototype.getPermissionsList = funct
 
 /**
  * @param {!Array<!proto.accounts.v1alpha1.Permission>} value
- * @return {!proto.accounts.v1alpha1.GetOneTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.GetOneApiKeyResponse} returns this
 */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.setPermissionsList = function(value) {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.setPermissionsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
@@ -3413,16 +3413,16 @@ proto.accounts.v1alpha1.GetOneTokenResponse.prototype.setPermissionsList = funct
  * @param {number=} opt_index
  * @return {!proto.accounts.v1alpha1.Permission}
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.addPermissions = function(opt_value, opt_index) {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.addPermissions = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.accounts.v1alpha1.Permission, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.GetOneTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.GetOneApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.GetOneTokenResponse.prototype.clearPermissionsList = function() {
+proto.accounts.v1alpha1.GetOneApiKeyResponse.prototype.clearPermissionsList = function() {
   return this.setPermissionsList([]);
 };
 
@@ -3443,8 +3443,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.accounts.v1alpha1.ListTokenRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.accounts.v1alpha1.ListTokenRequest.toObject(opt_includeInstance, this);
+proto.accounts.v1alpha1.ListApiKeyRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.accounts.v1alpha1.ListApiKeyRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3453,11 +3453,11 @@ proto.accounts.v1alpha1.ListTokenRequest.prototype.toObject = function(opt_inclu
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.accounts.v1alpha1.ListTokenRequest} msg The msg instance to transform.
+ * @param {!proto.accounts.v1alpha1.ListApiKeyRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.ListTokenRequest.toObject = function(includeInstance, msg) {
+proto.accounts.v1alpha1.ListApiKeyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     userId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -3473,23 +3473,23 @@ proto.accounts.v1alpha1.ListTokenRequest.toObject = function(includeInstance, ms
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.accounts.v1alpha1.ListTokenRequest}
+ * @return {!proto.accounts.v1alpha1.ListApiKeyRequest}
  */
-proto.accounts.v1alpha1.ListTokenRequest.deserializeBinary = function(bytes) {
+proto.accounts.v1alpha1.ListApiKeyRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.accounts.v1alpha1.ListTokenRequest;
-  return proto.accounts.v1alpha1.ListTokenRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.accounts.v1alpha1.ListApiKeyRequest;
+  return proto.accounts.v1alpha1.ListApiKeyRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.accounts.v1alpha1.ListTokenRequest} msg The message object to deserialize into.
+ * @param {!proto.accounts.v1alpha1.ListApiKeyRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.accounts.v1alpha1.ListTokenRequest}
+ * @return {!proto.accounts.v1alpha1.ListApiKeyRequest}
  */
-proto.accounts.v1alpha1.ListTokenRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.accounts.v1alpha1.ListApiKeyRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3513,9 +3513,9 @@ proto.accounts.v1alpha1.ListTokenRequest.deserializeBinaryFromReader = function(
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.accounts.v1alpha1.ListTokenRequest.prototype.serializeBinary = function() {
+proto.accounts.v1alpha1.ListApiKeyRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.accounts.v1alpha1.ListTokenRequest.serializeBinaryToWriter(this, writer);
+  proto.accounts.v1alpha1.ListApiKeyRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3523,11 +3523,11 @@ proto.accounts.v1alpha1.ListTokenRequest.prototype.serializeBinary = function() 
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.accounts.v1alpha1.ListTokenRequest} message
+ * @param {!proto.accounts.v1alpha1.ListApiKeyRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.ListTokenRequest.serializeBinaryToWriter = function(message, writer) {
+proto.accounts.v1alpha1.ListApiKeyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getUserId();
   if (f.length > 0) {
@@ -3543,16 +3543,16 @@ proto.accounts.v1alpha1.ListTokenRequest.serializeBinaryToWriter = function(mess
  * optional string user_id = 1;
  * @return {string}
  */
-proto.accounts.v1alpha1.ListTokenRequest.prototype.getUserId = function() {
+proto.accounts.v1alpha1.ListApiKeyRequest.prototype.getUserId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.ListTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.ListApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.ListTokenRequest.prototype.setUserId = function(value) {
+proto.accounts.v1alpha1.ListApiKeyRequest.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3573,8 +3573,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.accounts.v1alpha1.TokenList.prototype.toObject = function(opt_includeInstance) {
-  return proto.accounts.v1alpha1.TokenList.toObject(opt_includeInstance, this);
+proto.accounts.v1alpha1.ApiKeyList.prototype.toObject = function(opt_includeInstance) {
+  return proto.accounts.v1alpha1.ApiKeyList.toObject(opt_includeInstance, this);
 };
 
 
@@ -3583,14 +3583,14 @@ proto.accounts.v1alpha1.TokenList.prototype.toObject = function(opt_includeInsta
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.accounts.v1alpha1.TokenList} msg The msg instance to transform.
+ * @param {!proto.accounts.v1alpha1.ApiKeyList} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.TokenList.toObject = function(includeInstance, msg) {
+proto.accounts.v1alpha1.ApiKeyList.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    token: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
@@ -3606,23 +3606,23 @@ proto.accounts.v1alpha1.TokenList.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.accounts.v1alpha1.TokenList}
+ * @return {!proto.accounts.v1alpha1.ApiKeyList}
  */
-proto.accounts.v1alpha1.TokenList.deserializeBinary = function(bytes) {
+proto.accounts.v1alpha1.ApiKeyList.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.accounts.v1alpha1.TokenList;
-  return proto.accounts.v1alpha1.TokenList.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.accounts.v1alpha1.ApiKeyList;
+  return proto.accounts.v1alpha1.ApiKeyList.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.accounts.v1alpha1.TokenList} msg The message object to deserialize into.
+ * @param {!proto.accounts.v1alpha1.ApiKeyList} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.accounts.v1alpha1.TokenList}
+ * @return {!proto.accounts.v1alpha1.ApiKeyList}
  */
-proto.accounts.v1alpha1.TokenList.deserializeBinaryFromReader = function(msg, reader) {
+proto.accounts.v1alpha1.ApiKeyList.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3635,7 +3635,7 @@ proto.accounts.v1alpha1.TokenList.deserializeBinaryFromReader = function(msg, re
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setToken(value);
+      msg.setApiKey(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -3658,9 +3658,9 @@ proto.accounts.v1alpha1.TokenList.deserializeBinaryFromReader = function(msg, re
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.accounts.v1alpha1.TokenList.prototype.serializeBinary = function() {
+proto.accounts.v1alpha1.ApiKeyList.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.accounts.v1alpha1.TokenList.serializeBinaryToWriter(this, writer);
+  proto.accounts.v1alpha1.ApiKeyList.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3668,11 +3668,11 @@ proto.accounts.v1alpha1.TokenList.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.accounts.v1alpha1.TokenList} message
+ * @param {!proto.accounts.v1alpha1.ApiKeyList} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.TokenList.serializeBinaryToWriter = function(message, writer) {
+proto.accounts.v1alpha1.ApiKeyList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
   if (f !== 0) {
@@ -3681,7 +3681,7 @@ proto.accounts.v1alpha1.TokenList.serializeBinaryToWriter = function(message, wr
       f
     );
   }
-  f = message.getToken();
+  f = message.getApiKey();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -3709,34 +3709,34 @@ proto.accounts.v1alpha1.TokenList.serializeBinaryToWriter = function(message, wr
  * optional uint32 id = 1;
  * @return {number}
  */
-proto.accounts.v1alpha1.TokenList.prototype.getId = function() {
+proto.accounts.v1alpha1.ApiKeyList.prototype.getId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.accounts.v1alpha1.TokenList} returns this
+ * @return {!proto.accounts.v1alpha1.ApiKeyList} returns this
  */
-proto.accounts.v1alpha1.TokenList.prototype.setId = function(value) {
+proto.accounts.v1alpha1.ApiKeyList.prototype.setId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional string token = 2;
+ * optional string api_key = 2;
  * @return {string}
  */
-proto.accounts.v1alpha1.TokenList.prototype.getToken = function() {
+proto.accounts.v1alpha1.ApiKeyList.prototype.getApiKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.TokenList} returns this
+ * @return {!proto.accounts.v1alpha1.ApiKeyList} returns this
  */
-proto.accounts.v1alpha1.TokenList.prototype.setToken = function(value) {
+proto.accounts.v1alpha1.ApiKeyList.prototype.setApiKey = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -3745,16 +3745,16 @@ proto.accounts.v1alpha1.TokenList.prototype.setToken = function(value) {
  * optional string name = 3;
  * @return {string}
  */
-proto.accounts.v1alpha1.TokenList.prototype.getName = function() {
+proto.accounts.v1alpha1.ApiKeyList.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.TokenList} returns this
+ * @return {!proto.accounts.v1alpha1.ApiKeyList} returns this
  */
-proto.accounts.v1alpha1.TokenList.prototype.setName = function(value) {
+proto.accounts.v1alpha1.ApiKeyList.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -3763,16 +3763,16 @@ proto.accounts.v1alpha1.TokenList.prototype.setName = function(value) {
  * optional string user_id = 4;
  * @return {string}
  */
-proto.accounts.v1alpha1.TokenList.prototype.getUserId = function() {
+proto.accounts.v1alpha1.ApiKeyList.prototype.getUserId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.TokenList} returns this
+ * @return {!proto.accounts.v1alpha1.ApiKeyList} returns this
  */
-proto.accounts.v1alpha1.TokenList.prototype.setUserId = function(value) {
+proto.accounts.v1alpha1.ApiKeyList.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -3783,7 +3783,7 @@ proto.accounts.v1alpha1.TokenList.prototype.setUserId = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.ListTokenResponse.repeatedFields_ = [1];
+proto.accounts.v1alpha1.ListApiKeyResponse.repeatedFields_ = [1];
 
 
 
@@ -3800,8 +3800,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.accounts.v1alpha1.ListTokenResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.accounts.v1alpha1.ListTokenResponse.toObject(opt_includeInstance, this);
+proto.accounts.v1alpha1.ListApiKeyResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.accounts.v1alpha1.ListApiKeyResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -3810,14 +3810,14 @@ proto.accounts.v1alpha1.ListTokenResponse.prototype.toObject = function(opt_incl
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.accounts.v1alpha1.ListTokenResponse} msg The msg instance to transform.
+ * @param {!proto.accounts.v1alpha1.ListApiKeyResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.ListTokenResponse.toObject = function(includeInstance, msg) {
+proto.accounts.v1alpha1.ListApiKeyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tokensList: jspb.Message.toObjectList(msg.getTokensList(),
-    proto.accounts.v1alpha1.TokenList.toObject, includeInstance)
+    apiKeysList: jspb.Message.toObjectList(msg.getApiKeysList(),
+    proto.accounts.v1alpha1.ApiKeyList.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3831,23 +3831,23 @@ proto.accounts.v1alpha1.ListTokenResponse.toObject = function(includeInstance, m
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.accounts.v1alpha1.ListTokenResponse}
+ * @return {!proto.accounts.v1alpha1.ListApiKeyResponse}
  */
-proto.accounts.v1alpha1.ListTokenResponse.deserializeBinary = function(bytes) {
+proto.accounts.v1alpha1.ListApiKeyResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.accounts.v1alpha1.ListTokenResponse;
-  return proto.accounts.v1alpha1.ListTokenResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.accounts.v1alpha1.ListApiKeyResponse;
+  return proto.accounts.v1alpha1.ListApiKeyResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.accounts.v1alpha1.ListTokenResponse} msg The message object to deserialize into.
+ * @param {!proto.accounts.v1alpha1.ListApiKeyResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.accounts.v1alpha1.ListTokenResponse}
+ * @return {!proto.accounts.v1alpha1.ListApiKeyResponse}
  */
-proto.accounts.v1alpha1.ListTokenResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.accounts.v1alpha1.ListApiKeyResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3855,9 +3855,9 @@ proto.accounts.v1alpha1.ListTokenResponse.deserializeBinaryFromReader = function
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.accounts.v1alpha1.TokenList;
-      reader.readMessage(value,proto.accounts.v1alpha1.TokenList.deserializeBinaryFromReader);
-      msg.addTokens(value);
+      var value = new proto.accounts.v1alpha1.ApiKeyList;
+      reader.readMessage(value,proto.accounts.v1alpha1.ApiKeyList.deserializeBinaryFromReader);
+      msg.addApiKeys(value);
       break;
     default:
       reader.skipField();
@@ -3872,9 +3872,9 @@ proto.accounts.v1alpha1.ListTokenResponse.deserializeBinaryFromReader = function
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.accounts.v1alpha1.ListTokenResponse.prototype.serializeBinary = function() {
+proto.accounts.v1alpha1.ListApiKeyResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.accounts.v1alpha1.ListTokenResponse.serializeBinaryToWriter(this, writer);
+  proto.accounts.v1alpha1.ListApiKeyResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3882,58 +3882,58 @@ proto.accounts.v1alpha1.ListTokenResponse.prototype.serializeBinary = function()
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.accounts.v1alpha1.ListTokenResponse} message
+ * @param {!proto.accounts.v1alpha1.ListApiKeyResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.ListTokenResponse.serializeBinaryToWriter = function(message, writer) {
+proto.accounts.v1alpha1.ListApiKeyResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTokensList();
+  f = message.getApiKeysList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.accounts.v1alpha1.TokenList.serializeBinaryToWriter
+      proto.accounts.v1alpha1.ApiKeyList.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated TokenList tokens = 1;
- * @return {!Array<!proto.accounts.v1alpha1.TokenList>}
+ * repeated ApiKeyList api_keys = 1;
+ * @return {!Array<!proto.accounts.v1alpha1.ApiKeyList>}
  */
-proto.accounts.v1alpha1.ListTokenResponse.prototype.getTokensList = function() {
-  return /** @type{!Array<!proto.accounts.v1alpha1.TokenList>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.TokenList, 1));
+proto.accounts.v1alpha1.ListApiKeyResponse.prototype.getApiKeysList = function() {
+  return /** @type{!Array<!proto.accounts.v1alpha1.ApiKeyList>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.ApiKeyList, 1));
 };
 
 
 /**
- * @param {!Array<!proto.accounts.v1alpha1.TokenList>} value
- * @return {!proto.accounts.v1alpha1.ListTokenResponse} returns this
+ * @param {!Array<!proto.accounts.v1alpha1.ApiKeyList>} value
+ * @return {!proto.accounts.v1alpha1.ListApiKeyResponse} returns this
 */
-proto.accounts.v1alpha1.ListTokenResponse.prototype.setTokensList = function(value) {
+proto.accounts.v1alpha1.ListApiKeyResponse.prototype.setApiKeysList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.accounts.v1alpha1.TokenList=} opt_value
+ * @param {!proto.accounts.v1alpha1.ApiKeyList=} opt_value
  * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.TokenList}
+ * @return {!proto.accounts.v1alpha1.ApiKeyList}
  */
-proto.accounts.v1alpha1.ListTokenResponse.prototype.addTokens = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.accounts.v1alpha1.TokenList, opt_index);
+proto.accounts.v1alpha1.ListApiKeyResponse.prototype.addApiKeys = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.accounts.v1alpha1.ApiKeyList, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.ListTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.ListApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.ListTokenResponse.prototype.clearTokensList = function() {
-  return this.setTokensList([]);
+proto.accounts.v1alpha1.ListApiKeyResponse.prototype.clearApiKeysList = function() {
+  return this.setApiKeysList([]);
 };
 
 
@@ -3943,7 +3943,7 @@ proto.accounts.v1alpha1.ListTokenResponse.prototype.clearTokensList = function()
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.repeatedFields_ = [3,4];
+proto.accounts.v1alpha1.UpdateApiKeyRequest.repeatedFields_ = [3,4];
 
 
 
@@ -3960,8 +3960,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.accounts.v1alpha1.UpdateTokenRequest.toObject(opt_includeInstance, this);
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.accounts.v1alpha1.UpdateApiKeyRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3970,11 +3970,11 @@ proto.accounts.v1alpha1.UpdateTokenRequest.prototype.toObject = function(opt_inc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.accounts.v1alpha1.UpdateTokenRequest} msg The msg instance to transform.
+ * @param {!proto.accounts.v1alpha1.UpdateApiKeyRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.toObject = function(includeInstance, msg) {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -3994,23 +3994,23 @@ proto.accounts.v1alpha1.UpdateTokenRequest.toObject = function(includeInstance, 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.accounts.v1alpha1.UpdateTokenRequest}
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyRequest}
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.deserializeBinary = function(bytes) {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.accounts.v1alpha1.UpdateTokenRequest;
-  return proto.accounts.v1alpha1.UpdateTokenRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.accounts.v1alpha1.UpdateApiKeyRequest;
+  return proto.accounts.v1alpha1.UpdateApiKeyRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.accounts.v1alpha1.UpdateTokenRequest} msg The message object to deserialize into.
+ * @param {!proto.accounts.v1alpha1.UpdateApiKeyRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.accounts.v1alpha1.UpdateTokenRequest}
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyRequest}
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4054,9 +4054,9 @@ proto.accounts.v1alpha1.UpdateTokenRequest.deserializeBinaryFromReader = functio
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.serializeBinary = function() {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.accounts.v1alpha1.UpdateTokenRequest.serializeBinaryToWriter(this, writer);
+  proto.accounts.v1alpha1.UpdateApiKeyRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4064,11 +4064,11 @@ proto.accounts.v1alpha1.UpdateTokenRequest.prototype.serializeBinary = function(
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.accounts.v1alpha1.UpdateTokenRequest} message
+ * @param {!proto.accounts.v1alpha1.UpdateApiKeyRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.serializeBinaryToWriter = function(message, writer) {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
   if (f !== 0) {
@@ -4112,16 +4112,16 @@ proto.accounts.v1alpha1.UpdateTokenRequest.serializeBinaryToWriter = function(me
  * optional uint32 id = 1;
  * @return {number}
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.getId = function() {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.getId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.accounts.v1alpha1.UpdateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.setId = function(value) {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -4130,16 +4130,16 @@ proto.accounts.v1alpha1.UpdateTokenRequest.prototype.setId = function(value) {
  * optional string name = 2;
  * @return {string}
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.getName = function() {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.UpdateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.setName = function(value) {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -4148,16 +4148,16 @@ proto.accounts.v1alpha1.UpdateTokenRequest.prototype.setName = function(value) {
  * repeated uint32 roles_ids = 3;
  * @return {!Array<number>}
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.getRolesIdsList = function() {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.getRolesIdsList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
 /**
  * @param {!Array<number>} value
- * @return {!proto.accounts.v1alpha1.UpdateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.setRolesIdsList = function(value) {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.setRolesIdsList = function(value) {
   return jspb.Message.setField(this, 3, value || []);
 };
 
@@ -4165,18 +4165,18 @@ proto.accounts.v1alpha1.UpdateTokenRequest.prototype.setRolesIdsList = function(
 /**
  * @param {number} value
  * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.UpdateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.addRolesIds = function(value, opt_index) {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.addRolesIds = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.UpdateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.clearRolesIdsList = function() {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.clearRolesIdsList = function() {
   return this.setRolesIdsList([]);
 };
 
@@ -4185,16 +4185,16 @@ proto.accounts.v1alpha1.UpdateTokenRequest.prototype.clearRolesIdsList = functio
  * repeated uint32 permissions_ids = 4;
  * @return {!Array<number>}
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.getPermissionsIdsList = function() {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.getPermissionsIdsList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 4));
 };
 
 
 /**
  * @param {!Array<number>} value
- * @return {!proto.accounts.v1alpha1.UpdateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.setPermissionsIdsList = function(value) {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.setPermissionsIdsList = function(value) {
   return jspb.Message.setField(this, 4, value || []);
 };
 
@@ -4202,18 +4202,18 @@ proto.accounts.v1alpha1.UpdateTokenRequest.prototype.setPermissionsIdsList = fun
 /**
  * @param {number} value
  * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.UpdateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.addPermissionsIds = function(value, opt_index) {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.addPermissionsIds = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.UpdateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.clearPermissionsIdsList = function() {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.clearPermissionsIdsList = function() {
   return this.setPermissionsIdsList([]);
 };
 
@@ -4222,16 +4222,16 @@ proto.accounts.v1alpha1.UpdateTokenRequest.prototype.clearPermissionsIdsList = f
  * optional bool is_active = 5;
  * @return {boolean}
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.getIsActive = function() {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.getIsActive = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.UpdateTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.UpdateTokenRequest.prototype.setIsActive = function(value) {
+proto.accounts.v1alpha1.UpdateApiKeyRequest.prototype.setIsActive = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
@@ -4252,8 +4252,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.accounts.v1alpha1.UpdateTokenResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.accounts.v1alpha1.UpdateTokenResponse.toObject(opt_includeInstance, this);
+proto.accounts.v1alpha1.UpdateApiKeyResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.accounts.v1alpha1.UpdateApiKeyResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -4262,14 +4262,14 @@ proto.accounts.v1alpha1.UpdateTokenResponse.prototype.toObject = function(opt_in
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.accounts.v1alpha1.UpdateTokenResponse} msg The msg instance to transform.
+ * @param {!proto.accounts.v1alpha1.UpdateApiKeyResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.UpdateTokenResponse.toObject = function(includeInstance, msg) {
+proto.accounts.v1alpha1.UpdateApiKeyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    token: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
     error: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
@@ -4284,23 +4284,23 @@ proto.accounts.v1alpha1.UpdateTokenResponse.toObject = function(includeInstance,
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.accounts.v1alpha1.UpdateTokenResponse}
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyResponse}
  */
-proto.accounts.v1alpha1.UpdateTokenResponse.deserializeBinary = function(bytes) {
+proto.accounts.v1alpha1.UpdateApiKeyResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.accounts.v1alpha1.UpdateTokenResponse;
-  return proto.accounts.v1alpha1.UpdateTokenResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.accounts.v1alpha1.UpdateApiKeyResponse;
+  return proto.accounts.v1alpha1.UpdateApiKeyResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.accounts.v1alpha1.UpdateTokenResponse} msg The message object to deserialize into.
+ * @param {!proto.accounts.v1alpha1.UpdateApiKeyResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.accounts.v1alpha1.UpdateTokenResponse}
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyResponse}
  */
-proto.accounts.v1alpha1.UpdateTokenResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.accounts.v1alpha1.UpdateApiKeyResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4313,7 +4313,7 @@ proto.accounts.v1alpha1.UpdateTokenResponse.deserializeBinaryFromReader = functi
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setToken(value);
+      msg.setApiKey(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -4332,9 +4332,9 @@ proto.accounts.v1alpha1.UpdateTokenResponse.deserializeBinaryFromReader = functi
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.accounts.v1alpha1.UpdateTokenResponse.prototype.serializeBinary = function() {
+proto.accounts.v1alpha1.UpdateApiKeyResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.accounts.v1alpha1.UpdateTokenResponse.serializeBinaryToWriter(this, writer);
+  proto.accounts.v1alpha1.UpdateApiKeyResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4342,11 +4342,11 @@ proto.accounts.v1alpha1.UpdateTokenResponse.prototype.serializeBinary = function
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.accounts.v1alpha1.UpdateTokenResponse} message
+ * @param {!proto.accounts.v1alpha1.UpdateApiKeyResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.UpdateTokenResponse.serializeBinaryToWriter = function(message, writer) {
+proto.accounts.v1alpha1.UpdateApiKeyResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMsg();
   if (f.length > 0) {
@@ -4355,7 +4355,7 @@ proto.accounts.v1alpha1.UpdateTokenResponse.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getToken();
+  f = message.getApiKey();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -4376,34 +4376,34 @@ proto.accounts.v1alpha1.UpdateTokenResponse.serializeBinaryToWriter = function(m
  * optional string msg = 1;
  * @return {string}
  */
-proto.accounts.v1alpha1.UpdateTokenResponse.prototype.getMsg = function() {
+proto.accounts.v1alpha1.UpdateApiKeyResponse.prototype.getMsg = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.UpdateTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.UpdateTokenResponse.prototype.setMsg = function(value) {
+proto.accounts.v1alpha1.UpdateApiKeyResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string token = 2;
+ * optional string api_key = 2;
  * @return {string}
  */
-proto.accounts.v1alpha1.UpdateTokenResponse.prototype.getToken = function() {
+proto.accounts.v1alpha1.UpdateApiKeyResponse.prototype.getApiKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.UpdateTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.UpdateTokenResponse.prototype.setToken = function(value) {
+proto.accounts.v1alpha1.UpdateApiKeyResponse.prototype.setApiKey = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -4412,16 +4412,16 @@ proto.accounts.v1alpha1.UpdateTokenResponse.prototype.setToken = function(value)
  * optional string error = 3;
  * @return {string}
  */
-proto.accounts.v1alpha1.UpdateTokenResponse.prototype.getError = function() {
+proto.accounts.v1alpha1.UpdateApiKeyResponse.prototype.getError = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.UpdateTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.UpdateApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.UpdateTokenResponse.prototype.setError = function(value) {
+proto.accounts.v1alpha1.UpdateApiKeyResponse.prototype.setError = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -4442,8 +4442,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.accounts.v1alpha1.DeleteTokenRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.accounts.v1alpha1.DeleteTokenRequest.toObject(opt_includeInstance, this);
+proto.accounts.v1alpha1.DeleteApiKeyRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.accounts.v1alpha1.DeleteApiKeyRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -4452,11 +4452,11 @@ proto.accounts.v1alpha1.DeleteTokenRequest.prototype.toObject = function(opt_inc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.accounts.v1alpha1.DeleteTokenRequest} msg The msg instance to transform.
+ * @param {!proto.accounts.v1alpha1.DeleteApiKeyRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.DeleteTokenRequest.toObject = function(includeInstance, msg) {
+proto.accounts.v1alpha1.DeleteApiKeyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
@@ -4472,23 +4472,23 @@ proto.accounts.v1alpha1.DeleteTokenRequest.toObject = function(includeInstance, 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.accounts.v1alpha1.DeleteTokenRequest}
+ * @return {!proto.accounts.v1alpha1.DeleteApiKeyRequest}
  */
-proto.accounts.v1alpha1.DeleteTokenRequest.deserializeBinary = function(bytes) {
+proto.accounts.v1alpha1.DeleteApiKeyRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.accounts.v1alpha1.DeleteTokenRequest;
-  return proto.accounts.v1alpha1.DeleteTokenRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.accounts.v1alpha1.DeleteApiKeyRequest;
+  return proto.accounts.v1alpha1.DeleteApiKeyRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.accounts.v1alpha1.DeleteTokenRequest} msg The message object to deserialize into.
+ * @param {!proto.accounts.v1alpha1.DeleteApiKeyRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.accounts.v1alpha1.DeleteTokenRequest}
+ * @return {!proto.accounts.v1alpha1.DeleteApiKeyRequest}
  */
-proto.accounts.v1alpha1.DeleteTokenRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.accounts.v1alpha1.DeleteApiKeyRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4512,9 +4512,9 @@ proto.accounts.v1alpha1.DeleteTokenRequest.deserializeBinaryFromReader = functio
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.accounts.v1alpha1.DeleteTokenRequest.prototype.serializeBinary = function() {
+proto.accounts.v1alpha1.DeleteApiKeyRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.accounts.v1alpha1.DeleteTokenRequest.serializeBinaryToWriter(this, writer);
+  proto.accounts.v1alpha1.DeleteApiKeyRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4522,11 +4522,11 @@ proto.accounts.v1alpha1.DeleteTokenRequest.prototype.serializeBinary = function(
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.accounts.v1alpha1.DeleteTokenRequest} message
+ * @param {!proto.accounts.v1alpha1.DeleteApiKeyRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.DeleteTokenRequest.serializeBinaryToWriter = function(message, writer) {
+proto.accounts.v1alpha1.DeleteApiKeyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
   if (f !== 0) {
@@ -4542,16 +4542,16 @@ proto.accounts.v1alpha1.DeleteTokenRequest.serializeBinaryToWriter = function(me
  * optional uint32 id = 1;
  * @return {number}
  */
-proto.accounts.v1alpha1.DeleteTokenRequest.prototype.getId = function() {
+proto.accounts.v1alpha1.DeleteApiKeyRequest.prototype.getId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.accounts.v1alpha1.DeleteTokenRequest} returns this
+ * @return {!proto.accounts.v1alpha1.DeleteApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.DeleteTokenRequest.prototype.setId = function(value) {
+proto.accounts.v1alpha1.DeleteApiKeyRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -4572,8 +4572,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.accounts.v1alpha1.DeleteTokenResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.accounts.v1alpha1.DeleteTokenResponse.toObject(opt_includeInstance, this);
+proto.accounts.v1alpha1.DeleteApiKeyResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.accounts.v1alpha1.DeleteApiKeyResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -4582,14 +4582,14 @@ proto.accounts.v1alpha1.DeleteTokenResponse.prototype.toObject = function(opt_in
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.accounts.v1alpha1.DeleteTokenResponse} msg The msg instance to transform.
+ * @param {!proto.accounts.v1alpha1.DeleteApiKeyResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.DeleteTokenResponse.toObject = function(includeInstance, msg) {
+proto.accounts.v1alpha1.DeleteApiKeyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    token: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
     error: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
@@ -4604,23 +4604,23 @@ proto.accounts.v1alpha1.DeleteTokenResponse.toObject = function(includeInstance,
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.accounts.v1alpha1.DeleteTokenResponse}
+ * @return {!proto.accounts.v1alpha1.DeleteApiKeyResponse}
  */
-proto.accounts.v1alpha1.DeleteTokenResponse.deserializeBinary = function(bytes) {
+proto.accounts.v1alpha1.DeleteApiKeyResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.accounts.v1alpha1.DeleteTokenResponse;
-  return proto.accounts.v1alpha1.DeleteTokenResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.accounts.v1alpha1.DeleteApiKeyResponse;
+  return proto.accounts.v1alpha1.DeleteApiKeyResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.accounts.v1alpha1.DeleteTokenResponse} msg The message object to deserialize into.
+ * @param {!proto.accounts.v1alpha1.DeleteApiKeyResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.accounts.v1alpha1.DeleteTokenResponse}
+ * @return {!proto.accounts.v1alpha1.DeleteApiKeyResponse}
  */
-proto.accounts.v1alpha1.DeleteTokenResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.accounts.v1alpha1.DeleteApiKeyResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4633,7 +4633,7 @@ proto.accounts.v1alpha1.DeleteTokenResponse.deserializeBinaryFromReader = functi
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setToken(value);
+      msg.setApiKey(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -4652,9 +4652,9 @@ proto.accounts.v1alpha1.DeleteTokenResponse.deserializeBinaryFromReader = functi
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.accounts.v1alpha1.DeleteTokenResponse.prototype.serializeBinary = function() {
+proto.accounts.v1alpha1.DeleteApiKeyResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.accounts.v1alpha1.DeleteTokenResponse.serializeBinaryToWriter(this, writer);
+  proto.accounts.v1alpha1.DeleteApiKeyResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4662,11 +4662,11 @@ proto.accounts.v1alpha1.DeleteTokenResponse.prototype.serializeBinary = function
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.accounts.v1alpha1.DeleteTokenResponse} message
+ * @param {!proto.accounts.v1alpha1.DeleteApiKeyResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.DeleteTokenResponse.serializeBinaryToWriter = function(message, writer) {
+proto.accounts.v1alpha1.DeleteApiKeyResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMsg();
   if (f.length > 0) {
@@ -4675,7 +4675,7 @@ proto.accounts.v1alpha1.DeleteTokenResponse.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getToken();
+  f = message.getApiKey();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -4696,34 +4696,34 @@ proto.accounts.v1alpha1.DeleteTokenResponse.serializeBinaryToWriter = function(m
  * optional string msg = 1;
  * @return {string}
  */
-proto.accounts.v1alpha1.DeleteTokenResponse.prototype.getMsg = function() {
+proto.accounts.v1alpha1.DeleteApiKeyResponse.prototype.getMsg = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.DeleteTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.DeleteApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.DeleteTokenResponse.prototype.setMsg = function(value) {
+proto.accounts.v1alpha1.DeleteApiKeyResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string token = 2;
+ * optional string api_key = 2;
  * @return {string}
  */
-proto.accounts.v1alpha1.DeleteTokenResponse.prototype.getToken = function() {
+proto.accounts.v1alpha1.DeleteApiKeyResponse.prototype.getApiKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.DeleteTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.DeleteApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.DeleteTokenResponse.prototype.setToken = function(value) {
+proto.accounts.v1alpha1.DeleteApiKeyResponse.prototype.setApiKey = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -4732,16 +4732,16 @@ proto.accounts.v1alpha1.DeleteTokenResponse.prototype.setToken = function(value)
  * optional string error = 3;
  * @return {string}
  */
-proto.accounts.v1alpha1.DeleteTokenResponse.prototype.getError = function() {
+proto.accounts.v1alpha1.DeleteApiKeyResponse.prototype.getError = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.DeleteTokenResponse} returns this
+ * @return {!proto.accounts.v1alpha1.DeleteApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.DeleteTokenResponse.prototype.setError = function(value) {
+proto.accounts.v1alpha1.DeleteApiKeyResponse.prototype.setError = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 

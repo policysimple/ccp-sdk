@@ -126,8 +126,8 @@ public final class Accounts {
     // @@protoc_insertion_point(enum_scope:accounts.v1alpha1.InvitationResponse)
   }
 
-  public interface CreateTokenRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.CreateTokenRequest)
+  public interface CreateApiKeyRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.CreateApiKeyRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -189,18 +189,18 @@ public final class Accounts {
     int getPermissionsIds(int index);
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.CreateTokenRequest}
+   * Protobuf type {@code accounts.v1alpha1.CreateApiKeyRequest}
    */
-  public static final class CreateTokenRequest extends
+  public static final class CreateApiKeyRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.CreateTokenRequest)
-      CreateTokenRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.CreateApiKeyRequest)
+      CreateApiKeyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CreateTokenRequest.newBuilder() to construct.
-    private CreateTokenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CreateApiKeyRequest.newBuilder() to construct.
+    private CreateApiKeyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CreateTokenRequest() {
+    private CreateApiKeyRequest() {
       name_ = "";
       userId_ = "";
       rolesIds_ = emptyIntList();
@@ -211,7 +211,7 @@ public final class Accounts {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new CreateTokenRequest();
+      return new CreateApiKeyRequest();
     }
 
     @java.lang.Override
@@ -219,7 +219,7 @@ public final class Accounts {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CreateTokenRequest(
+    private CreateApiKeyRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -319,15 +319,15 @@ public final class Accounts {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateTokenRequest_descriptor;
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateApiKeyRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateTokenRequest_fieldAccessorTable
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateApiKeyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.Accounts.CreateTokenRequest.class, accounts.v1alpha1.Accounts.CreateTokenRequest.Builder.class);
+              accounts.v1alpha1.Accounts.CreateApiKeyRequest.class, accounts.v1alpha1.Accounts.CreateApiKeyRequest.Builder.class);
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
@@ -550,10 +550,10 @@ public final class Accounts {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.Accounts.CreateTokenRequest)) {
+      if (!(obj instanceof accounts.v1alpha1.Accounts.CreateApiKeyRequest)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.Accounts.CreateTokenRequest other = (accounts.v1alpha1.Accounts.CreateTokenRequest) obj;
+      accounts.v1alpha1.Accounts.CreateApiKeyRequest other = (accounts.v1alpha1.Accounts.CreateApiKeyRequest) obj;
 
       if (!getName()
           .equals(other.getName())) return false;
@@ -591,69 +591,69 @@ public final class Accounts {
       return hash;
     }
 
-    public static accounts.v1alpha1.Accounts.CreateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenRequest parseFrom(byte[] data)
+    public static accounts.v1alpha1.Accounts.CreateApiKeyRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenRequest parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.CreateApiKeyRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenRequest parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.CreateApiKeyRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenRequest parseDelimitedFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -666,7 +666,7 @@ public final class Accounts {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.Accounts.CreateTokenRequest prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.Accounts.CreateApiKeyRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -682,26 +682,26 @@ public final class Accounts {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.CreateTokenRequest}
+     * Protobuf type {@code accounts.v1alpha1.CreateApiKeyRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.CreateTokenRequest)
-        accounts.v1alpha1.Accounts.CreateTokenRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.CreateApiKeyRequest)
+        accounts.v1alpha1.Accounts.CreateApiKeyRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateTokenRequest_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateApiKeyRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateTokenRequest_fieldAccessorTable
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateApiKeyRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.Accounts.CreateTokenRequest.class, accounts.v1alpha1.Accounts.CreateTokenRequest.Builder.class);
+                accounts.v1alpha1.Accounts.CreateApiKeyRequest.class, accounts.v1alpha1.Accounts.CreateApiKeyRequest.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.Accounts.CreateTokenRequest.newBuilder()
+      // Construct using accounts.v1alpha1.Accounts.CreateApiKeyRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -733,17 +733,17 @@ public final class Accounts {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateTokenRequest_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateApiKeyRequest_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.CreateTokenRequest getDefaultInstanceForType() {
-        return accounts.v1alpha1.Accounts.CreateTokenRequest.getDefaultInstance();
+      public accounts.v1alpha1.Accounts.CreateApiKeyRequest getDefaultInstanceForType() {
+        return accounts.v1alpha1.Accounts.CreateApiKeyRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.CreateTokenRequest build() {
-        accounts.v1alpha1.Accounts.CreateTokenRequest result = buildPartial();
+      public accounts.v1alpha1.Accounts.CreateApiKeyRequest build() {
+        accounts.v1alpha1.Accounts.CreateApiKeyRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -751,8 +751,8 @@ public final class Accounts {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.CreateTokenRequest buildPartial() {
-        accounts.v1alpha1.Accounts.CreateTokenRequest result = new accounts.v1alpha1.Accounts.CreateTokenRequest(this);
+      public accounts.v1alpha1.Accounts.CreateApiKeyRequest buildPartial() {
+        accounts.v1alpha1.Accounts.CreateApiKeyRequest result = new accounts.v1alpha1.Accounts.CreateApiKeyRequest(this);
         int from_bitField0_ = bitField0_;
         result.name_ = name_;
         result.userId_ = userId_;
@@ -804,16 +804,16 @@ public final class Accounts {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.Accounts.CreateTokenRequest) {
-          return mergeFrom((accounts.v1alpha1.Accounts.CreateTokenRequest)other);
+        if (other instanceof accounts.v1alpha1.Accounts.CreateApiKeyRequest) {
+          return mergeFrom((accounts.v1alpha1.Accounts.CreateApiKeyRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.Accounts.CreateTokenRequest other) {
-        if (other == accounts.v1alpha1.Accounts.CreateTokenRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.Accounts.CreateApiKeyRequest other) {
+        if (other == accounts.v1alpha1.Accounts.CreateApiKeyRequest.getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
@@ -857,11 +857,11 @@ public final class Accounts {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.Accounts.CreateTokenRequest parsedMessage = null;
+        accounts.v1alpha1.Accounts.CreateApiKeyRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.Accounts.CreateTokenRequest) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.Accounts.CreateApiKeyRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1194,48 +1194,48 @@ public final class Accounts {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.CreateTokenRequest)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.CreateApiKeyRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.CreateTokenRequest)
-    private static final accounts.v1alpha1.Accounts.CreateTokenRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.CreateApiKeyRequest)
+    private static final accounts.v1alpha1.Accounts.CreateApiKeyRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.CreateTokenRequest();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.CreateApiKeyRequest();
     }
 
-    public static accounts.v1alpha1.Accounts.CreateTokenRequest getDefaultInstance() {
+    public static accounts.v1alpha1.Accounts.CreateApiKeyRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CreateTokenRequest>
-        PARSER = new com.google.protobuf.AbstractParser<CreateTokenRequest>() {
+    private static final com.google.protobuf.Parser<CreateApiKeyRequest>
+        PARSER = new com.google.protobuf.AbstractParser<CreateApiKeyRequest>() {
       @java.lang.Override
-      public CreateTokenRequest parsePartialFrom(
+      public CreateApiKeyRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateTokenRequest(input, extensionRegistry);
+        return new CreateApiKeyRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CreateTokenRequest> parser() {
+    public static com.google.protobuf.Parser<CreateApiKeyRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CreateTokenRequest> getParserForType() {
+    public com.google.protobuf.Parser<CreateApiKeyRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.CreateTokenRequest getDefaultInstanceForType() {
+    public accounts.v1alpha1.Accounts.CreateApiKeyRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface TokenOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.Token)
+  public interface ApiKeyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.ApiKey)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1323,18 +1323,18 @@ public final class Accounts {
         int index);
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.Token}
+   * Protobuf type {@code accounts.v1alpha1.ApiKey}
    */
-  public static final class Token extends
+  public static final class ApiKey extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.Token)
-      TokenOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.ApiKey)
+      ApiKeyOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use Token.newBuilder() to construct.
-    private Token(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ApiKey.newBuilder() to construct.
+    private ApiKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Token() {
+    private ApiKey() {
       id_ = "";
       name_ = "";
       userId_ = "";
@@ -1346,7 +1346,7 @@ public final class Accounts {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new Token();
+      return new ApiKey();
     }
 
     @java.lang.Override
@@ -1354,7 +1354,7 @@ public final class Accounts {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Token(
+    private ApiKey(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1436,15 +1436,15 @@ public final class Accounts {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_Token_descriptor;
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ApiKey_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_Token_fieldAccessorTable
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ApiKey_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.Accounts.Token.class, accounts.v1alpha1.Accounts.Token.Builder.class);
+              accounts.v1alpha1.Accounts.ApiKey.class, accounts.v1alpha1.Accounts.ApiKey.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -1706,10 +1706,10 @@ public final class Accounts {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.Accounts.Token)) {
+      if (!(obj instanceof accounts.v1alpha1.Accounts.ApiKey)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.Accounts.Token other = (accounts.v1alpha1.Accounts.Token) obj;
+      accounts.v1alpha1.Accounts.ApiKey other = (accounts.v1alpha1.Accounts.ApiKey) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -1751,69 +1751,69 @@ public final class Accounts {
       return hash;
     }
 
-    public static accounts.v1alpha1.Accounts.Token parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKey parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.Token parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKey parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.Token parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKey parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.Token parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKey parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.Token parseFrom(byte[] data)
+    public static accounts.v1alpha1.Accounts.ApiKey parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.Token parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKey parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.Token parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.ApiKey parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.Token parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKey parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.Token parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.ApiKey parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.Token parseDelimitedFrom(
+    public static accounts.v1alpha1.Accounts.ApiKey parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.Token parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKey parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.Token parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKey parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1826,7 +1826,7 @@ public final class Accounts {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.Accounts.Token prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.Accounts.ApiKey prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1842,26 +1842,26 @@ public final class Accounts {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.Token}
+     * Protobuf type {@code accounts.v1alpha1.ApiKey}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.Token)
-        accounts.v1alpha1.Accounts.TokenOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.ApiKey)
+        accounts.v1alpha1.Accounts.ApiKeyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_Token_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ApiKey_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_Token_fieldAccessorTable
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ApiKey_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.Accounts.Token.class, accounts.v1alpha1.Accounts.Token.Builder.class);
+                accounts.v1alpha1.Accounts.ApiKey.class, accounts.v1alpha1.Accounts.ApiKey.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.Accounts.Token.newBuilder()
+      // Construct using accounts.v1alpha1.Accounts.ApiKey.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1905,17 +1905,17 @@ public final class Accounts {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_Token_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ApiKey_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.Token getDefaultInstanceForType() {
-        return accounts.v1alpha1.Accounts.Token.getDefaultInstance();
+      public accounts.v1alpha1.Accounts.ApiKey getDefaultInstanceForType() {
+        return accounts.v1alpha1.Accounts.ApiKey.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.Token build() {
-        accounts.v1alpha1.Accounts.Token result = buildPartial();
+      public accounts.v1alpha1.Accounts.ApiKey build() {
+        accounts.v1alpha1.Accounts.ApiKey result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1923,8 +1923,8 @@ public final class Accounts {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.Token buildPartial() {
-        accounts.v1alpha1.Accounts.Token result = new accounts.v1alpha1.Accounts.Token(this);
+      public accounts.v1alpha1.Accounts.ApiKey buildPartial() {
+        accounts.v1alpha1.Accounts.ApiKey result = new accounts.v1alpha1.Accounts.ApiKey(this);
         int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.name_ = name_;
@@ -1985,16 +1985,16 @@ public final class Accounts {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.Accounts.Token) {
-          return mergeFrom((accounts.v1alpha1.Accounts.Token)other);
+        if (other instanceof accounts.v1alpha1.Accounts.ApiKey) {
+          return mergeFrom((accounts.v1alpha1.Accounts.ApiKey)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.Accounts.Token other) {
-        if (other == accounts.v1alpha1.Accounts.Token.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.Accounts.ApiKey other) {
+        if (other == accounts.v1alpha1.Accounts.ApiKey.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -2074,11 +2074,11 @@ public final class Accounts {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.Accounts.Token parsedMessage = null;
+        accounts.v1alpha1.Accounts.ApiKey parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.Accounts.Token) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.Accounts.ApiKey) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2809,48 +2809,48 @@ public final class Accounts {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.Token)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.ApiKey)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.Token)
-    private static final accounts.v1alpha1.Accounts.Token DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.ApiKey)
+    private static final accounts.v1alpha1.Accounts.ApiKey DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.Token();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.ApiKey();
     }
 
-    public static accounts.v1alpha1.Accounts.Token getDefaultInstance() {
+    public static accounts.v1alpha1.Accounts.ApiKey getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Token>
-        PARSER = new com.google.protobuf.AbstractParser<Token>() {
+    private static final com.google.protobuf.Parser<ApiKey>
+        PARSER = new com.google.protobuf.AbstractParser<ApiKey>() {
       @java.lang.Override
-      public Token parsePartialFrom(
+      public ApiKey parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Token(input, extensionRegistry);
+        return new ApiKey(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Token> parser() {
+    public static com.google.protobuf.Parser<ApiKey> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Token> getParserForType() {
+    public com.google.protobuf.Parser<ApiKey> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.Token getDefaultInstanceForType() {
+    public accounts.v1alpha1.Accounts.ApiKey getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface CreateTokenResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.CreateTokenResponse)
+  public interface CreateApiKeyResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.CreateApiKeyResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2866,16 +2866,16 @@ public final class Accounts {
         getMsgBytes();
 
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The apiKey.
      */
-    java.lang.String getToken();
+    java.lang.String getApiKey();
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The bytes for token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The bytes for apiKey.
      */
     com.google.protobuf.ByteString
-        getTokenBytes();
+        getApiKeyBytes();
 
     /**
      * <code>uint32 access_point_id = 4 [json_name = "accessPointId"];</code>
@@ -2896,20 +2896,20 @@ public final class Accounts {
         getErrorBytes();
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.CreateTokenResponse}
+   * Protobuf type {@code accounts.v1alpha1.CreateApiKeyResponse}
    */
-  public static final class CreateTokenResponse extends
+  public static final class CreateApiKeyResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.CreateTokenResponse)
-      CreateTokenResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.CreateApiKeyResponse)
+      CreateApiKeyResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CreateTokenResponse.newBuilder() to construct.
-    private CreateTokenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CreateApiKeyResponse.newBuilder() to construct.
+    private CreateApiKeyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CreateTokenResponse() {
+    private CreateApiKeyResponse() {
       msg_ = "";
-      token_ = "";
+      apiKey_ = "";
       error_ = "";
     }
 
@@ -2917,7 +2917,7 @@ public final class Accounts {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new CreateTokenResponse();
+      return new CreateApiKeyResponse();
     }
 
     @java.lang.Override
@@ -2925,7 +2925,7 @@ public final class Accounts {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CreateTokenResponse(
+    private CreateApiKeyResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2952,7 +2952,7 @@ public final class Accounts {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              token_ = s;
+              apiKey_ = s;
               break;
             }
             case 32: {
@@ -2987,15 +2987,15 @@ public final class Accounts {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateTokenResponse_descriptor;
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateApiKeyResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateTokenResponse_fieldAccessorTable
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateApiKeyResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.Accounts.CreateTokenResponse.class, accounts.v1alpha1.Accounts.CreateTokenResponse.Builder.class);
+              accounts.v1alpha1.Accounts.CreateApiKeyResponse.class, accounts.v1alpha1.Accounts.CreateApiKeyResponse.Builder.class);
     }
 
     public static final int MSG_FIELD_NUMBER = 1;
@@ -3036,38 +3036,38 @@ public final class Accounts {
       }
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object token_;
+    public static final int API_KEY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object apiKey_;
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The apiKey.
      */
     @java.lang.Override
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
+    public java.lang.String getApiKey() {
+      java.lang.Object ref = apiKey_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        token_ = s;
+        apiKey_ = s;
         return s;
       }
     }
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The bytes for token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The bytes for apiKey.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
+        getApiKeyBytes() {
+      java.lang.Object ref = apiKey_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        token_ = b;
+        apiKey_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3140,8 +3140,8 @@ public final class Accounts {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
+      if (!getApiKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiKey_);
       }
       if (accessPointId_ != 0) {
         output.writeUInt32(4, accessPointId_);
@@ -3161,8 +3161,8 @@ public final class Accounts {
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
       }
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+      if (!getApiKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiKey_);
       }
       if (accessPointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -3181,15 +3181,15 @@ public final class Accounts {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.Accounts.CreateTokenResponse)) {
+      if (!(obj instanceof accounts.v1alpha1.Accounts.CreateApiKeyResponse)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.Accounts.CreateTokenResponse other = (accounts.v1alpha1.Accounts.CreateTokenResponse) obj;
+      accounts.v1alpha1.Accounts.CreateApiKeyResponse other = (accounts.v1alpha1.Accounts.CreateApiKeyResponse) obj;
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (!getApiKey()
+          .equals(other.getApiKey())) return false;
       if (getAccessPointId()
           != other.getAccessPointId()) return false;
       if (!getError()
@@ -3207,8 +3207,8 @@ public final class Accounts {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + API_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getApiKey().hashCode();
       hash = (37 * hash) + ACCESS_POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAccessPointId();
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
@@ -3218,69 +3218,69 @@ public final class Accounts {
       return hash;
     }
 
-    public static accounts.v1alpha1.Accounts.CreateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenResponse parseFrom(byte[] data)
+    public static accounts.v1alpha1.Accounts.CreateApiKeyResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenResponse parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.CreateApiKeyResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenResponse parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.CreateApiKeyResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenResponse parseDelimitedFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.CreateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.CreateApiKeyResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3293,7 +3293,7 @@ public final class Accounts {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.Accounts.CreateTokenResponse prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.Accounts.CreateApiKeyResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3309,26 +3309,26 @@ public final class Accounts {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.CreateTokenResponse}
+     * Protobuf type {@code accounts.v1alpha1.CreateApiKeyResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.CreateTokenResponse)
-        accounts.v1alpha1.Accounts.CreateTokenResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.CreateApiKeyResponse)
+        accounts.v1alpha1.Accounts.CreateApiKeyResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateTokenResponse_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateApiKeyResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateTokenResponse_fieldAccessorTable
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateApiKeyResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.Accounts.CreateTokenResponse.class, accounts.v1alpha1.Accounts.CreateTokenResponse.Builder.class);
+                accounts.v1alpha1.Accounts.CreateApiKeyResponse.class, accounts.v1alpha1.Accounts.CreateApiKeyResponse.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.Accounts.CreateTokenResponse.newBuilder()
+      // Construct using accounts.v1alpha1.Accounts.CreateApiKeyResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3348,7 +3348,7 @@ public final class Accounts {
         super.clear();
         msg_ = "";
 
-        token_ = "";
+        apiKey_ = "";
 
         accessPointId_ = 0;
 
@@ -3360,17 +3360,17 @@ public final class Accounts {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateTokenResponse_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_CreateApiKeyResponse_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.CreateTokenResponse getDefaultInstanceForType() {
-        return accounts.v1alpha1.Accounts.CreateTokenResponse.getDefaultInstance();
+      public accounts.v1alpha1.Accounts.CreateApiKeyResponse getDefaultInstanceForType() {
+        return accounts.v1alpha1.Accounts.CreateApiKeyResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.CreateTokenResponse build() {
-        accounts.v1alpha1.Accounts.CreateTokenResponse result = buildPartial();
+      public accounts.v1alpha1.Accounts.CreateApiKeyResponse build() {
+        accounts.v1alpha1.Accounts.CreateApiKeyResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3378,10 +3378,10 @@ public final class Accounts {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.CreateTokenResponse buildPartial() {
-        accounts.v1alpha1.Accounts.CreateTokenResponse result = new accounts.v1alpha1.Accounts.CreateTokenResponse(this);
+      public accounts.v1alpha1.Accounts.CreateApiKeyResponse buildPartial() {
+        accounts.v1alpha1.Accounts.CreateApiKeyResponse result = new accounts.v1alpha1.Accounts.CreateApiKeyResponse(this);
         result.msg_ = msg_;
-        result.token_ = token_;
+        result.apiKey_ = apiKey_;
         result.accessPointId_ = accessPointId_;
         result.error_ = error_;
         onBuilt();
@@ -3422,22 +3422,22 @@ public final class Accounts {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.Accounts.CreateTokenResponse) {
-          return mergeFrom((accounts.v1alpha1.Accounts.CreateTokenResponse)other);
+        if (other instanceof accounts.v1alpha1.Accounts.CreateApiKeyResponse) {
+          return mergeFrom((accounts.v1alpha1.Accounts.CreateApiKeyResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.Accounts.CreateTokenResponse other) {
-        if (other == accounts.v1alpha1.Accounts.CreateTokenResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.Accounts.CreateApiKeyResponse other) {
+        if (other == accounts.v1alpha1.Accounts.CreateApiKeyResponse.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
           onChanged();
         }
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
+        if (!other.getApiKey().isEmpty()) {
+          apiKey_ = other.apiKey_;
           onChanged();
         }
         if (other.getAccessPointId() != 0) {
@@ -3462,11 +3462,11 @@ public final class Accounts {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.Accounts.CreateTokenResponse parsedMessage = null;
+        accounts.v1alpha1.Accounts.CreateApiKeyResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.Accounts.CreateTokenResponse) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.Accounts.CreateApiKeyResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3552,78 +3552,78 @@ public final class Accounts {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private java.lang.Object apiKey_ = "";
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @return The token.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @return The apiKey.
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
+      public java.lang.String getApiKey() {
+        java.lang.Object ref = apiKey_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          token_ = s;
+          apiKey_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @return The bytes for token.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @return The bytes for apiKey.
        */
       public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
+          getApiKeyBytes() {
+        java.lang.Object ref = apiKey_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          token_ = b;
+          apiKey_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @param value The token to set.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @param value The apiKey to set.
        * @return This builder for chaining.
        */
-      public Builder setToken(
+      public Builder setApiKey(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        token_ = value;
+        apiKey_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearToken() {
+      public Builder clearApiKey() {
         
-        token_ = getDefaultInstance().getToken();
+        apiKey_ = getDefaultInstance().getApiKey();
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @param value The bytes for token to set.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @param value The bytes for apiKey to set.
        * @return This builder for chaining.
        */
-      public Builder setTokenBytes(
+      public Builder setApiKeyBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        token_ = value;
+        apiKey_ = value;
         onChanged();
         return this;
       }
@@ -3747,48 +3747,48 @@ public final class Accounts {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.CreateTokenResponse)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.CreateApiKeyResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.CreateTokenResponse)
-    private static final accounts.v1alpha1.Accounts.CreateTokenResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.CreateApiKeyResponse)
+    private static final accounts.v1alpha1.Accounts.CreateApiKeyResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.CreateTokenResponse();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.CreateApiKeyResponse();
     }
 
-    public static accounts.v1alpha1.Accounts.CreateTokenResponse getDefaultInstance() {
+    public static accounts.v1alpha1.Accounts.CreateApiKeyResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CreateTokenResponse>
-        PARSER = new com.google.protobuf.AbstractParser<CreateTokenResponse>() {
+    private static final com.google.protobuf.Parser<CreateApiKeyResponse>
+        PARSER = new com.google.protobuf.AbstractParser<CreateApiKeyResponse>() {
       @java.lang.Override
-      public CreateTokenResponse parsePartialFrom(
+      public CreateApiKeyResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateTokenResponse(input, extensionRegistry);
+        return new CreateApiKeyResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CreateTokenResponse> parser() {
+    public static com.google.protobuf.Parser<CreateApiKeyResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CreateTokenResponse> getParserForType() {
+    public com.google.protobuf.Parser<CreateApiKeyResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.CreateTokenResponse getDefaultInstanceForType() {
+    public accounts.v1alpha1.Accounts.CreateApiKeyResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface GetOneTokenRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.GetOneTokenRequest)
+  public interface GetOneApiKeyRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.GetOneApiKeyRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3798,25 +3798,25 @@ public final class Accounts {
     int getId();
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.GetOneTokenRequest}
+   * Protobuf type {@code accounts.v1alpha1.GetOneApiKeyRequest}
    */
-  public static final class GetOneTokenRequest extends
+  public static final class GetOneApiKeyRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.GetOneTokenRequest)
-      GetOneTokenRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.GetOneApiKeyRequest)
+      GetOneApiKeyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use GetOneTokenRequest.newBuilder() to construct.
-    private GetOneTokenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use GetOneApiKeyRequest.newBuilder() to construct.
+    private GetOneApiKeyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GetOneTokenRequest() {
+    private GetOneApiKeyRequest() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new GetOneTokenRequest();
+      return new GetOneApiKeyRequest();
     }
 
     @java.lang.Override
@@ -3824,7 +3824,7 @@ public final class Accounts {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetOneTokenRequest(
+    private GetOneApiKeyRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3868,15 +3868,15 @@ public final class Accounts {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneTokenRequest_descriptor;
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneApiKeyRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneTokenRequest_fieldAccessorTable
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneApiKeyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.Accounts.GetOneTokenRequest.class, accounts.v1alpha1.Accounts.GetOneTokenRequest.Builder.class);
+              accounts.v1alpha1.Accounts.GetOneApiKeyRequest.class, accounts.v1alpha1.Accounts.GetOneApiKeyRequest.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -3930,10 +3930,10 @@ public final class Accounts {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.Accounts.GetOneTokenRequest)) {
+      if (!(obj instanceof accounts.v1alpha1.Accounts.GetOneApiKeyRequest)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.Accounts.GetOneTokenRequest other = (accounts.v1alpha1.Accounts.GetOneTokenRequest) obj;
+      accounts.v1alpha1.Accounts.GetOneApiKeyRequest other = (accounts.v1alpha1.Accounts.GetOneApiKeyRequest) obj;
 
       if (getId()
           != other.getId()) return false;
@@ -3955,69 +3955,69 @@ public final class Accounts {
       return hash;
     }
 
-    public static accounts.v1alpha1.Accounts.GetOneTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenRequest parseFrom(byte[] data)
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenRequest parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenRequest parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenRequest parseDelimitedFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4030,7 +4030,7 @@ public final class Accounts {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.Accounts.GetOneTokenRequest prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.Accounts.GetOneApiKeyRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4046,26 +4046,26 @@ public final class Accounts {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.GetOneTokenRequest}
+     * Protobuf type {@code accounts.v1alpha1.GetOneApiKeyRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.GetOneTokenRequest)
-        accounts.v1alpha1.Accounts.GetOneTokenRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.GetOneApiKeyRequest)
+        accounts.v1alpha1.Accounts.GetOneApiKeyRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneTokenRequest_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneApiKeyRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneTokenRequest_fieldAccessorTable
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneApiKeyRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.Accounts.GetOneTokenRequest.class, accounts.v1alpha1.Accounts.GetOneTokenRequest.Builder.class);
+                accounts.v1alpha1.Accounts.GetOneApiKeyRequest.class, accounts.v1alpha1.Accounts.GetOneApiKeyRequest.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.Accounts.GetOneTokenRequest.newBuilder()
+      // Construct using accounts.v1alpha1.Accounts.GetOneApiKeyRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4091,17 +4091,17 @@ public final class Accounts {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneTokenRequest_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneApiKeyRequest_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.GetOneTokenRequest getDefaultInstanceForType() {
-        return accounts.v1alpha1.Accounts.GetOneTokenRequest.getDefaultInstance();
+      public accounts.v1alpha1.Accounts.GetOneApiKeyRequest getDefaultInstanceForType() {
+        return accounts.v1alpha1.Accounts.GetOneApiKeyRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.GetOneTokenRequest build() {
-        accounts.v1alpha1.Accounts.GetOneTokenRequest result = buildPartial();
+      public accounts.v1alpha1.Accounts.GetOneApiKeyRequest build() {
+        accounts.v1alpha1.Accounts.GetOneApiKeyRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4109,8 +4109,8 @@ public final class Accounts {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.GetOneTokenRequest buildPartial() {
-        accounts.v1alpha1.Accounts.GetOneTokenRequest result = new accounts.v1alpha1.Accounts.GetOneTokenRequest(this);
+      public accounts.v1alpha1.Accounts.GetOneApiKeyRequest buildPartial() {
+        accounts.v1alpha1.Accounts.GetOneApiKeyRequest result = new accounts.v1alpha1.Accounts.GetOneApiKeyRequest(this);
         result.id_ = id_;
         onBuilt();
         return result;
@@ -4150,16 +4150,16 @@ public final class Accounts {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.Accounts.GetOneTokenRequest) {
-          return mergeFrom((accounts.v1alpha1.Accounts.GetOneTokenRequest)other);
+        if (other instanceof accounts.v1alpha1.Accounts.GetOneApiKeyRequest) {
+          return mergeFrom((accounts.v1alpha1.Accounts.GetOneApiKeyRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.Accounts.GetOneTokenRequest other) {
-        if (other == accounts.v1alpha1.Accounts.GetOneTokenRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.Accounts.GetOneApiKeyRequest other) {
+        if (other == accounts.v1alpha1.Accounts.GetOneApiKeyRequest.getDefaultInstance()) return this;
         if (other.getId() != 0) {
           setId(other.getId());
         }
@@ -4178,11 +4178,11 @@ public final class Accounts {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.Accounts.GetOneTokenRequest parsedMessage = null;
+        accounts.v1alpha1.Accounts.GetOneApiKeyRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.Accounts.GetOneTokenRequest) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.Accounts.GetOneApiKeyRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4235,48 +4235,48 @@ public final class Accounts {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.GetOneTokenRequest)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.GetOneApiKeyRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.GetOneTokenRequest)
-    private static final accounts.v1alpha1.Accounts.GetOneTokenRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.GetOneApiKeyRequest)
+    private static final accounts.v1alpha1.Accounts.GetOneApiKeyRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.GetOneTokenRequest();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.GetOneApiKeyRequest();
     }
 
-    public static accounts.v1alpha1.Accounts.GetOneTokenRequest getDefaultInstance() {
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GetOneTokenRequest>
-        PARSER = new com.google.protobuf.AbstractParser<GetOneTokenRequest>() {
+    private static final com.google.protobuf.Parser<GetOneApiKeyRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetOneApiKeyRequest>() {
       @java.lang.Override
-      public GetOneTokenRequest parsePartialFrom(
+      public GetOneApiKeyRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetOneTokenRequest(input, extensionRegistry);
+        return new GetOneApiKeyRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GetOneTokenRequest> parser() {
+    public static com.google.protobuf.Parser<GetOneApiKeyRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GetOneTokenRequest> getParserForType() {
+    public com.google.protobuf.Parser<GetOneApiKeyRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.GetOneTokenRequest getDefaultInstanceForType() {
+    public accounts.v1alpha1.Accounts.GetOneApiKeyRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface GetOneTokenResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.GetOneTokenResponse)
+  public interface GetOneApiKeyResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.GetOneApiKeyResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -4286,16 +4286,16 @@ public final class Accounts {
     int getId();
 
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The apiKey.
      */
-    java.lang.String getToken();
+    java.lang.String getApiKey();
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The bytes for token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The bytes for apiKey.
      */
     com.google.protobuf.ByteString
-        getTokenBytes();
+        getApiKeyBytes();
 
     /**
      * <code>string name = 3 [json_name = "name"];</code>
@@ -4370,19 +4370,19 @@ public final class Accounts {
         int index);
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.GetOneTokenResponse}
+   * Protobuf type {@code accounts.v1alpha1.GetOneApiKeyResponse}
    */
-  public static final class GetOneTokenResponse extends
+  public static final class GetOneApiKeyResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.GetOneTokenResponse)
-      GetOneTokenResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.GetOneApiKeyResponse)
+      GetOneApiKeyResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use GetOneTokenResponse.newBuilder() to construct.
-    private GetOneTokenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use GetOneApiKeyResponse.newBuilder() to construct.
+    private GetOneApiKeyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GetOneTokenResponse() {
-      token_ = "";
+    private GetOneApiKeyResponse() {
+      apiKey_ = "";
       name_ = "";
       userId_ = "";
       roles_ = java.util.Collections.emptyList();
@@ -4393,7 +4393,7 @@ public final class Accounts {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new GetOneTokenResponse();
+      return new GetOneApiKeyResponse();
     }
 
     @java.lang.Override
@@ -4401,7 +4401,7 @@ public final class Accounts {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetOneTokenResponse(
+    private GetOneApiKeyResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4428,7 +4428,7 @@ public final class Accounts {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              token_ = s;
+              apiKey_ = s;
               break;
             }
             case 26: {
@@ -4488,15 +4488,15 @@ public final class Accounts {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneTokenResponse_descriptor;
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneApiKeyResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneTokenResponse_fieldAccessorTable
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneApiKeyResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.Accounts.GetOneTokenResponse.class, accounts.v1alpha1.Accounts.GetOneTokenResponse.Builder.class);
+              accounts.v1alpha1.Accounts.GetOneApiKeyResponse.class, accounts.v1alpha1.Accounts.GetOneApiKeyResponse.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -4510,38 +4510,38 @@ public final class Accounts {
       return id_;
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object token_;
+    public static final int API_KEY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object apiKey_;
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The apiKey.
      */
     @java.lang.Override
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
+    public java.lang.String getApiKey() {
+      java.lang.Object ref = apiKey_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        token_ = s;
+        apiKey_ = s;
         return s;
       }
     }
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The bytes for token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The bytes for apiKey.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
+        getApiKeyBytes() {
+      java.lang.Object ref = apiKey_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        token_ = b;
+        apiKey_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -4721,8 +4721,8 @@ public final class Accounts {
       if (id_ != 0) {
         output.writeUInt32(1, id_);
       }
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
+      if (!getApiKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiKey_);
       }
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
@@ -4749,8 +4749,8 @@ public final class Accounts {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, id_);
       }
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+      if (!getApiKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiKey_);
       }
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
@@ -4776,15 +4776,15 @@ public final class Accounts {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.Accounts.GetOneTokenResponse)) {
+      if (!(obj instanceof accounts.v1alpha1.Accounts.GetOneApiKeyResponse)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.Accounts.GetOneTokenResponse other = (accounts.v1alpha1.Accounts.GetOneTokenResponse) obj;
+      accounts.v1alpha1.Accounts.GetOneApiKeyResponse other = (accounts.v1alpha1.Accounts.GetOneApiKeyResponse) obj;
 
       if (getId()
           != other.getId()) return false;
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (!getApiKey()
+          .equals(other.getApiKey())) return false;
       if (!getName()
           .equals(other.getName())) return false;
       if (!getUserId()
@@ -4806,8 +4806,8 @@ public final class Accounts {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + API_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getApiKey().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
@@ -4825,69 +4825,69 @@ public final class Accounts {
       return hash;
     }
 
-    public static accounts.v1alpha1.Accounts.GetOneTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenResponse parseFrom(byte[] data)
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenResponse parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenResponse parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenResponse parseDelimitedFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.GetOneTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4900,7 +4900,7 @@ public final class Accounts {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.Accounts.GetOneTokenResponse prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.Accounts.GetOneApiKeyResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4916,26 +4916,26 @@ public final class Accounts {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.GetOneTokenResponse}
+     * Protobuf type {@code accounts.v1alpha1.GetOneApiKeyResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.GetOneTokenResponse)
-        accounts.v1alpha1.Accounts.GetOneTokenResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.GetOneApiKeyResponse)
+        accounts.v1alpha1.Accounts.GetOneApiKeyResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneTokenResponse_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneApiKeyResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneTokenResponse_fieldAccessorTable
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneApiKeyResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.Accounts.GetOneTokenResponse.class, accounts.v1alpha1.Accounts.GetOneTokenResponse.Builder.class);
+                accounts.v1alpha1.Accounts.GetOneApiKeyResponse.class, accounts.v1alpha1.Accounts.GetOneApiKeyResponse.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.Accounts.GetOneTokenResponse.newBuilder()
+      // Construct using accounts.v1alpha1.Accounts.GetOneApiKeyResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4957,7 +4957,7 @@ public final class Accounts {
         super.clear();
         id_ = 0;
 
-        token_ = "";
+        apiKey_ = "";
 
         name_ = "";
 
@@ -4981,17 +4981,17 @@ public final class Accounts {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneTokenResponse_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_GetOneApiKeyResponse_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.GetOneTokenResponse getDefaultInstanceForType() {
-        return accounts.v1alpha1.Accounts.GetOneTokenResponse.getDefaultInstance();
+      public accounts.v1alpha1.Accounts.GetOneApiKeyResponse getDefaultInstanceForType() {
+        return accounts.v1alpha1.Accounts.GetOneApiKeyResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.GetOneTokenResponse build() {
-        accounts.v1alpha1.Accounts.GetOneTokenResponse result = buildPartial();
+      public accounts.v1alpha1.Accounts.GetOneApiKeyResponse build() {
+        accounts.v1alpha1.Accounts.GetOneApiKeyResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4999,11 +4999,11 @@ public final class Accounts {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.GetOneTokenResponse buildPartial() {
-        accounts.v1alpha1.Accounts.GetOneTokenResponse result = new accounts.v1alpha1.Accounts.GetOneTokenResponse(this);
+      public accounts.v1alpha1.Accounts.GetOneApiKeyResponse buildPartial() {
+        accounts.v1alpha1.Accounts.GetOneApiKeyResponse result = new accounts.v1alpha1.Accounts.GetOneApiKeyResponse(this);
         int from_bitField0_ = bitField0_;
         result.id_ = id_;
-        result.token_ = token_;
+        result.apiKey_ = apiKey_;
         result.name_ = name_;
         result.userId_ = userId_;
         if (rolesBuilder_ == null) {
@@ -5062,21 +5062,21 @@ public final class Accounts {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.Accounts.GetOneTokenResponse) {
-          return mergeFrom((accounts.v1alpha1.Accounts.GetOneTokenResponse)other);
+        if (other instanceof accounts.v1alpha1.Accounts.GetOneApiKeyResponse) {
+          return mergeFrom((accounts.v1alpha1.Accounts.GetOneApiKeyResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.Accounts.GetOneTokenResponse other) {
-        if (other == accounts.v1alpha1.Accounts.GetOneTokenResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.Accounts.GetOneApiKeyResponse other) {
+        if (other == accounts.v1alpha1.Accounts.GetOneApiKeyResponse.getDefaultInstance()) return this;
         if (other.getId() != 0) {
           setId(other.getId());
         }
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
+        if (!other.getApiKey().isEmpty()) {
+          apiKey_ = other.apiKey_;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
@@ -5154,11 +5154,11 @@ public final class Accounts {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.Accounts.GetOneTokenResponse parsedMessage = null;
+        accounts.v1alpha1.Accounts.GetOneApiKeyResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.Accounts.GetOneTokenResponse) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.Accounts.GetOneApiKeyResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5200,78 +5200,78 @@ public final class Accounts {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private java.lang.Object apiKey_ = "";
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @return The token.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @return The apiKey.
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
+      public java.lang.String getApiKey() {
+        java.lang.Object ref = apiKey_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          token_ = s;
+          apiKey_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @return The bytes for token.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @return The bytes for apiKey.
        */
       public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
+          getApiKeyBytes() {
+        java.lang.Object ref = apiKey_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          token_ = b;
+          apiKey_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @param value The token to set.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @param value The apiKey to set.
        * @return This builder for chaining.
        */
-      public Builder setToken(
+      public Builder setApiKey(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        token_ = value;
+        apiKey_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearToken() {
+      public Builder clearApiKey() {
         
-        token_ = getDefaultInstance().getToken();
+        apiKey_ = getDefaultInstance().getApiKey();
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @param value The bytes for token to set.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @param value The bytes for apiKey to set.
        * @return This builder for chaining.
        */
-      public Builder setTokenBytes(
+      public Builder setApiKeyBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        token_ = value;
+        apiKey_ = value;
         onChanged();
         return this;
       }
@@ -5920,48 +5920,48 @@ public final class Accounts {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.GetOneTokenResponse)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.GetOneApiKeyResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.GetOneTokenResponse)
-    private static final accounts.v1alpha1.Accounts.GetOneTokenResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.GetOneApiKeyResponse)
+    private static final accounts.v1alpha1.Accounts.GetOneApiKeyResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.GetOneTokenResponse();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.GetOneApiKeyResponse();
     }
 
-    public static accounts.v1alpha1.Accounts.GetOneTokenResponse getDefaultInstance() {
+    public static accounts.v1alpha1.Accounts.GetOneApiKeyResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GetOneTokenResponse>
-        PARSER = new com.google.protobuf.AbstractParser<GetOneTokenResponse>() {
+    private static final com.google.protobuf.Parser<GetOneApiKeyResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetOneApiKeyResponse>() {
       @java.lang.Override
-      public GetOneTokenResponse parsePartialFrom(
+      public GetOneApiKeyResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetOneTokenResponse(input, extensionRegistry);
+        return new GetOneApiKeyResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GetOneTokenResponse> parser() {
+    public static com.google.protobuf.Parser<GetOneApiKeyResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GetOneTokenResponse> getParserForType() {
+    public com.google.protobuf.Parser<GetOneApiKeyResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.GetOneTokenResponse getDefaultInstanceForType() {
+    public accounts.v1alpha1.Accounts.GetOneApiKeyResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ListTokenRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.ListTokenRequest)
+  public interface ListApiKeyRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.ListApiKeyRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5977,18 +5977,18 @@ public final class Accounts {
         getUserIdBytes();
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.ListTokenRequest}
+   * Protobuf type {@code accounts.v1alpha1.ListApiKeyRequest}
    */
-  public static final class ListTokenRequest extends
+  public static final class ListApiKeyRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.ListTokenRequest)
-      ListTokenRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.ListApiKeyRequest)
+      ListApiKeyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ListTokenRequest.newBuilder() to construct.
-    private ListTokenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ListApiKeyRequest.newBuilder() to construct.
+    private ListApiKeyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ListTokenRequest() {
+    private ListApiKeyRequest() {
       userId_ = "";
     }
 
@@ -5996,7 +5996,7 @@ public final class Accounts {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ListTokenRequest();
+      return new ListApiKeyRequest();
     }
 
     @java.lang.Override
@@ -6004,7 +6004,7 @@ public final class Accounts {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ListTokenRequest(
+    private ListApiKeyRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6049,15 +6049,15 @@ public final class Accounts {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListTokenRequest_descriptor;
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListApiKeyRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListTokenRequest_fieldAccessorTable
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListApiKeyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.Accounts.ListTokenRequest.class, accounts.v1alpha1.Accounts.ListTokenRequest.Builder.class);
+              accounts.v1alpha1.Accounts.ListApiKeyRequest.class, accounts.v1alpha1.Accounts.ListApiKeyRequest.Builder.class);
     }
 
     public static final int USER_ID_FIELD_NUMBER = 1;
@@ -6137,10 +6137,10 @@ public final class Accounts {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.Accounts.ListTokenRequest)) {
+      if (!(obj instanceof accounts.v1alpha1.Accounts.ListApiKeyRequest)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.Accounts.ListTokenRequest other = (accounts.v1alpha1.Accounts.ListTokenRequest) obj;
+      accounts.v1alpha1.Accounts.ListApiKeyRequest other = (accounts.v1alpha1.Accounts.ListApiKeyRequest) obj;
 
       if (!getUserId()
           .equals(other.getUserId())) return false;
@@ -6162,69 +6162,69 @@ public final class Accounts {
       return hash;
     }
 
-    public static accounts.v1alpha1.Accounts.ListTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenRequest parseFrom(byte[] data)
+    public static accounts.v1alpha1.Accounts.ListApiKeyRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenRequest parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.ListApiKeyRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenRequest parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.ListApiKeyRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenRequest parseDelimitedFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6237,7 +6237,7 @@ public final class Accounts {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.Accounts.ListTokenRequest prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.Accounts.ListApiKeyRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6253,26 +6253,26 @@ public final class Accounts {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.ListTokenRequest}
+     * Protobuf type {@code accounts.v1alpha1.ListApiKeyRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.ListTokenRequest)
-        accounts.v1alpha1.Accounts.ListTokenRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.ListApiKeyRequest)
+        accounts.v1alpha1.Accounts.ListApiKeyRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListTokenRequest_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListApiKeyRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListTokenRequest_fieldAccessorTable
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListApiKeyRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.Accounts.ListTokenRequest.class, accounts.v1alpha1.Accounts.ListTokenRequest.Builder.class);
+                accounts.v1alpha1.Accounts.ListApiKeyRequest.class, accounts.v1alpha1.Accounts.ListApiKeyRequest.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.Accounts.ListTokenRequest.newBuilder()
+      // Construct using accounts.v1alpha1.Accounts.ListApiKeyRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6298,17 +6298,17 @@ public final class Accounts {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListTokenRequest_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListApiKeyRequest_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.ListTokenRequest getDefaultInstanceForType() {
-        return accounts.v1alpha1.Accounts.ListTokenRequest.getDefaultInstance();
+      public accounts.v1alpha1.Accounts.ListApiKeyRequest getDefaultInstanceForType() {
+        return accounts.v1alpha1.Accounts.ListApiKeyRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.ListTokenRequest build() {
-        accounts.v1alpha1.Accounts.ListTokenRequest result = buildPartial();
+      public accounts.v1alpha1.Accounts.ListApiKeyRequest build() {
+        accounts.v1alpha1.Accounts.ListApiKeyRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6316,8 +6316,8 @@ public final class Accounts {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.ListTokenRequest buildPartial() {
-        accounts.v1alpha1.Accounts.ListTokenRequest result = new accounts.v1alpha1.Accounts.ListTokenRequest(this);
+      public accounts.v1alpha1.Accounts.ListApiKeyRequest buildPartial() {
+        accounts.v1alpha1.Accounts.ListApiKeyRequest result = new accounts.v1alpha1.Accounts.ListApiKeyRequest(this);
         result.userId_ = userId_;
         onBuilt();
         return result;
@@ -6357,16 +6357,16 @@ public final class Accounts {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.Accounts.ListTokenRequest) {
-          return mergeFrom((accounts.v1alpha1.Accounts.ListTokenRequest)other);
+        if (other instanceof accounts.v1alpha1.Accounts.ListApiKeyRequest) {
+          return mergeFrom((accounts.v1alpha1.Accounts.ListApiKeyRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.Accounts.ListTokenRequest other) {
-        if (other == accounts.v1alpha1.Accounts.ListTokenRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.Accounts.ListApiKeyRequest other) {
+        if (other == accounts.v1alpha1.Accounts.ListApiKeyRequest.getDefaultInstance()) return this;
         if (!other.getUserId().isEmpty()) {
           userId_ = other.userId_;
           onChanged();
@@ -6386,11 +6386,11 @@ public final class Accounts {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.Accounts.ListTokenRequest parsedMessage = null;
+        accounts.v1alpha1.Accounts.ListApiKeyRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.Accounts.ListTokenRequest) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.Accounts.ListApiKeyRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6488,48 +6488,48 @@ public final class Accounts {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.ListTokenRequest)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.ListApiKeyRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.ListTokenRequest)
-    private static final accounts.v1alpha1.Accounts.ListTokenRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.ListApiKeyRequest)
+    private static final accounts.v1alpha1.Accounts.ListApiKeyRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.ListTokenRequest();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.ListApiKeyRequest();
     }
 
-    public static accounts.v1alpha1.Accounts.ListTokenRequest getDefaultInstance() {
+    public static accounts.v1alpha1.Accounts.ListApiKeyRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ListTokenRequest>
-        PARSER = new com.google.protobuf.AbstractParser<ListTokenRequest>() {
+    private static final com.google.protobuf.Parser<ListApiKeyRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListApiKeyRequest>() {
       @java.lang.Override
-      public ListTokenRequest parsePartialFrom(
+      public ListApiKeyRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListTokenRequest(input, extensionRegistry);
+        return new ListApiKeyRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ListTokenRequest> parser() {
+    public static com.google.protobuf.Parser<ListApiKeyRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ListTokenRequest> getParserForType() {
+    public com.google.protobuf.Parser<ListApiKeyRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.ListTokenRequest getDefaultInstanceForType() {
+    public accounts.v1alpha1.Accounts.ListApiKeyRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface TokenListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.TokenList)
+  public interface ApiKeyListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.ApiKeyList)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -6539,16 +6539,16 @@ public final class Accounts {
     int getId();
 
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The apiKey.
      */
-    java.lang.String getToken();
+    java.lang.String getApiKey();
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The bytes for token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The bytes for apiKey.
      */
     com.google.protobuf.ByteString
-        getTokenBytes();
+        getApiKeyBytes();
 
     /**
      * <code>string name = 3 [json_name = "name"];</code>
@@ -6575,19 +6575,19 @@ public final class Accounts {
         getUserIdBytes();
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.TokenList}
+   * Protobuf type {@code accounts.v1alpha1.ApiKeyList}
    */
-  public static final class TokenList extends
+  public static final class ApiKeyList extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.TokenList)
-      TokenListOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.ApiKeyList)
+      ApiKeyListOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use TokenList.newBuilder() to construct.
-    private TokenList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ApiKeyList.newBuilder() to construct.
+    private ApiKeyList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private TokenList() {
-      token_ = "";
+    private ApiKeyList() {
+      apiKey_ = "";
       name_ = "";
       userId_ = "";
     }
@@ -6596,7 +6596,7 @@ public final class Accounts {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new TokenList();
+      return new ApiKeyList();
     }
 
     @java.lang.Override
@@ -6604,7 +6604,7 @@ public final class Accounts {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TokenList(
+    private ApiKeyList(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6630,7 +6630,7 @@ public final class Accounts {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              token_ = s;
+              apiKey_ = s;
               break;
             }
             case 26: {
@@ -6666,15 +6666,15 @@ public final class Accounts {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_TokenList_descriptor;
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ApiKeyList_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_TokenList_fieldAccessorTable
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ApiKeyList_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.Accounts.TokenList.class, accounts.v1alpha1.Accounts.TokenList.Builder.class);
+              accounts.v1alpha1.Accounts.ApiKeyList.class, accounts.v1alpha1.Accounts.ApiKeyList.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -6688,38 +6688,38 @@ public final class Accounts {
       return id_;
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object token_;
+    public static final int API_KEY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object apiKey_;
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The apiKey.
      */
     @java.lang.Override
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
+    public java.lang.String getApiKey() {
+      java.lang.Object ref = apiKey_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        token_ = s;
+        apiKey_ = s;
         return s;
       }
     }
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The bytes for token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The bytes for apiKey.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
+        getApiKeyBytes() {
+      java.lang.Object ref = apiKey_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        token_ = b;
+        apiKey_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -6819,8 +6819,8 @@ public final class Accounts {
       if (id_ != 0) {
         output.writeUInt32(1, id_);
       }
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
+      if (!getApiKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiKey_);
       }
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
@@ -6841,8 +6841,8 @@ public final class Accounts {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, id_);
       }
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+      if (!getApiKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiKey_);
       }
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
@@ -6860,15 +6860,15 @@ public final class Accounts {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.Accounts.TokenList)) {
+      if (!(obj instanceof accounts.v1alpha1.Accounts.ApiKeyList)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.Accounts.TokenList other = (accounts.v1alpha1.Accounts.TokenList) obj;
+      accounts.v1alpha1.Accounts.ApiKeyList other = (accounts.v1alpha1.Accounts.ApiKeyList) obj;
 
       if (getId()
           != other.getId()) return false;
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (!getApiKey()
+          .equals(other.getApiKey())) return false;
       if (!getName()
           .equals(other.getName())) return false;
       if (!getUserId()
@@ -6886,8 +6886,8 @@ public final class Accounts {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + API_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getApiKey().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
@@ -6897,69 +6897,69 @@ public final class Accounts {
       return hash;
     }
 
-    public static accounts.v1alpha1.Accounts.TokenList parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKeyList parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.TokenList parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKeyList parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.TokenList parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKeyList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.TokenList parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKeyList parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.TokenList parseFrom(byte[] data)
+    public static accounts.v1alpha1.Accounts.ApiKeyList parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.TokenList parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKeyList parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.TokenList parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.ApiKeyList parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.TokenList parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKeyList parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.TokenList parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.ApiKeyList parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.TokenList parseDelimitedFrom(
+    public static accounts.v1alpha1.Accounts.ApiKeyList parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.TokenList parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKeyList parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.TokenList parseFrom(
+    public static accounts.v1alpha1.Accounts.ApiKeyList parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6972,7 +6972,7 @@ public final class Accounts {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.Accounts.TokenList prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.Accounts.ApiKeyList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6988,26 +6988,26 @@ public final class Accounts {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.TokenList}
+     * Protobuf type {@code accounts.v1alpha1.ApiKeyList}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.TokenList)
-        accounts.v1alpha1.Accounts.TokenListOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.ApiKeyList)
+        accounts.v1alpha1.Accounts.ApiKeyListOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_TokenList_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ApiKeyList_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_TokenList_fieldAccessorTable
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ApiKeyList_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.Accounts.TokenList.class, accounts.v1alpha1.Accounts.TokenList.Builder.class);
+                accounts.v1alpha1.Accounts.ApiKeyList.class, accounts.v1alpha1.Accounts.ApiKeyList.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.Accounts.TokenList.newBuilder()
+      // Construct using accounts.v1alpha1.Accounts.ApiKeyList.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -7027,7 +7027,7 @@ public final class Accounts {
         super.clear();
         id_ = 0;
 
-        token_ = "";
+        apiKey_ = "";
 
         name_ = "";
 
@@ -7039,17 +7039,17 @@ public final class Accounts {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_TokenList_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ApiKeyList_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.TokenList getDefaultInstanceForType() {
-        return accounts.v1alpha1.Accounts.TokenList.getDefaultInstance();
+      public accounts.v1alpha1.Accounts.ApiKeyList getDefaultInstanceForType() {
+        return accounts.v1alpha1.Accounts.ApiKeyList.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.TokenList build() {
-        accounts.v1alpha1.Accounts.TokenList result = buildPartial();
+      public accounts.v1alpha1.Accounts.ApiKeyList build() {
+        accounts.v1alpha1.Accounts.ApiKeyList result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -7057,10 +7057,10 @@ public final class Accounts {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.TokenList buildPartial() {
-        accounts.v1alpha1.Accounts.TokenList result = new accounts.v1alpha1.Accounts.TokenList(this);
+      public accounts.v1alpha1.Accounts.ApiKeyList buildPartial() {
+        accounts.v1alpha1.Accounts.ApiKeyList result = new accounts.v1alpha1.Accounts.ApiKeyList(this);
         result.id_ = id_;
-        result.token_ = token_;
+        result.apiKey_ = apiKey_;
         result.name_ = name_;
         result.userId_ = userId_;
         onBuilt();
@@ -7101,21 +7101,21 @@ public final class Accounts {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.Accounts.TokenList) {
-          return mergeFrom((accounts.v1alpha1.Accounts.TokenList)other);
+        if (other instanceof accounts.v1alpha1.Accounts.ApiKeyList) {
+          return mergeFrom((accounts.v1alpha1.Accounts.ApiKeyList)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.Accounts.TokenList other) {
-        if (other == accounts.v1alpha1.Accounts.TokenList.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.Accounts.ApiKeyList other) {
+        if (other == accounts.v1alpha1.Accounts.ApiKeyList.getDefaultInstance()) return this;
         if (other.getId() != 0) {
           setId(other.getId());
         }
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
+        if (!other.getApiKey().isEmpty()) {
+          apiKey_ = other.apiKey_;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
@@ -7141,11 +7141,11 @@ public final class Accounts {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.Accounts.TokenList parsedMessage = null;
+        accounts.v1alpha1.Accounts.ApiKeyList parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.Accounts.TokenList) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.Accounts.ApiKeyList) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7186,78 +7186,78 @@ public final class Accounts {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private java.lang.Object apiKey_ = "";
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @return The token.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @return The apiKey.
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
+      public java.lang.String getApiKey() {
+        java.lang.Object ref = apiKey_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          token_ = s;
+          apiKey_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @return The bytes for token.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @return The bytes for apiKey.
        */
       public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
+          getApiKeyBytes() {
+        java.lang.Object ref = apiKey_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          token_ = b;
+          apiKey_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @param value The token to set.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @param value The apiKey to set.
        * @return This builder for chaining.
        */
-      public Builder setToken(
+      public Builder setApiKey(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        token_ = value;
+        apiKey_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearToken() {
+      public Builder clearApiKey() {
         
-        token_ = getDefaultInstance().getToken();
+        apiKey_ = getDefaultInstance().getApiKey();
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @param value The bytes for token to set.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @param value The bytes for apiKey to set.
        * @return This builder for chaining.
        */
-      public Builder setTokenBytes(
+      public Builder setApiKeyBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        token_ = value;
+        apiKey_ = value;
         onChanged();
         return this;
       }
@@ -7426,95 +7426,95 @@ public final class Accounts {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.TokenList)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.ApiKeyList)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.TokenList)
-    private static final accounts.v1alpha1.Accounts.TokenList DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.ApiKeyList)
+    private static final accounts.v1alpha1.Accounts.ApiKeyList DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.TokenList();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.ApiKeyList();
     }
 
-    public static accounts.v1alpha1.Accounts.TokenList getDefaultInstance() {
+    public static accounts.v1alpha1.Accounts.ApiKeyList getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<TokenList>
-        PARSER = new com.google.protobuf.AbstractParser<TokenList>() {
+    private static final com.google.protobuf.Parser<ApiKeyList>
+        PARSER = new com.google.protobuf.AbstractParser<ApiKeyList>() {
       @java.lang.Override
-      public TokenList parsePartialFrom(
+      public ApiKeyList parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TokenList(input, extensionRegistry);
+        return new ApiKeyList(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<TokenList> parser() {
+    public static com.google.protobuf.Parser<ApiKeyList> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<TokenList> getParserForType() {
+    public com.google.protobuf.Parser<ApiKeyList> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.TokenList getDefaultInstanceForType() {
+    public accounts.v1alpha1.Accounts.ApiKeyList getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ListTokenResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.ListTokenResponse)
+  public interface ListApiKeyResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.ListApiKeyResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+     * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
      */
-    java.util.List<accounts.v1alpha1.Accounts.TokenList> 
-        getTokensList();
+    java.util.List<accounts.v1alpha1.Accounts.ApiKeyList> 
+        getApiKeysList();
     /**
-     * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+     * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
      */
-    accounts.v1alpha1.Accounts.TokenList getTokens(int index);
+    accounts.v1alpha1.Accounts.ApiKeyList getApiKeys(int index);
     /**
-     * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+     * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
      */
-    int getTokensCount();
+    int getApiKeysCount();
     /**
-     * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+     * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
      */
-    java.util.List<? extends accounts.v1alpha1.Accounts.TokenListOrBuilder> 
-        getTokensOrBuilderList();
+    java.util.List<? extends accounts.v1alpha1.Accounts.ApiKeyListOrBuilder> 
+        getApiKeysOrBuilderList();
     /**
-     * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+     * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
      */
-    accounts.v1alpha1.Accounts.TokenListOrBuilder getTokensOrBuilder(
+    accounts.v1alpha1.Accounts.ApiKeyListOrBuilder getApiKeysOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.ListTokenResponse}
+   * Protobuf type {@code accounts.v1alpha1.ListApiKeyResponse}
    */
-  public static final class ListTokenResponse extends
+  public static final class ListApiKeyResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.ListTokenResponse)
-      ListTokenResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.ListApiKeyResponse)
+      ListApiKeyResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ListTokenResponse.newBuilder() to construct.
-    private ListTokenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ListApiKeyResponse.newBuilder() to construct.
+    private ListApiKeyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ListTokenResponse() {
-      tokens_ = java.util.Collections.emptyList();
+    private ListApiKeyResponse() {
+      apiKeys_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ListTokenResponse();
+      return new ListApiKeyResponse();
     }
 
     @java.lang.Override
@@ -7522,7 +7522,7 @@ public final class Accounts {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ListTokenResponse(
+    private ListApiKeyResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7543,11 +7543,11 @@ public final class Accounts {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                tokens_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.TokenList>();
+                apiKeys_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.ApiKeyList>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              tokens_.add(
-                  input.readMessage(accounts.v1alpha1.Accounts.TokenList.parser(), extensionRegistry));
+              apiKeys_.add(
+                  input.readMessage(accounts.v1alpha1.Accounts.ApiKeyList.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -7566,7 +7566,7 @@ public final class Accounts {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          tokens_ = java.util.Collections.unmodifiableList(tokens_);
+          apiKeys_ = java.util.Collections.unmodifiableList(apiKeys_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -7574,55 +7574,55 @@ public final class Accounts {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListTokenResponse_descriptor;
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListApiKeyResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListTokenResponse_fieldAccessorTable
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListApiKeyResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.Accounts.ListTokenResponse.class, accounts.v1alpha1.Accounts.ListTokenResponse.Builder.class);
+              accounts.v1alpha1.Accounts.ListApiKeyResponse.class, accounts.v1alpha1.Accounts.ListApiKeyResponse.Builder.class);
     }
 
-    public static final int TOKENS_FIELD_NUMBER = 1;
-    private java.util.List<accounts.v1alpha1.Accounts.TokenList> tokens_;
+    public static final int API_KEYS_FIELD_NUMBER = 1;
+    private java.util.List<accounts.v1alpha1.Accounts.ApiKeyList> apiKeys_;
     /**
-     * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+     * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
      */
     @java.lang.Override
-    public java.util.List<accounts.v1alpha1.Accounts.TokenList> getTokensList() {
-      return tokens_;
+    public java.util.List<accounts.v1alpha1.Accounts.ApiKeyList> getApiKeysList() {
+      return apiKeys_;
     }
     /**
-     * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+     * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends accounts.v1alpha1.Accounts.TokenListOrBuilder> 
-        getTokensOrBuilderList() {
-      return tokens_;
+    public java.util.List<? extends accounts.v1alpha1.Accounts.ApiKeyListOrBuilder> 
+        getApiKeysOrBuilderList() {
+      return apiKeys_;
     }
     /**
-     * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+     * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
      */
     @java.lang.Override
-    public int getTokensCount() {
-      return tokens_.size();
+    public int getApiKeysCount() {
+      return apiKeys_.size();
     }
     /**
-     * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+     * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
      */
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.TokenList getTokens(int index) {
-      return tokens_.get(index);
+    public accounts.v1alpha1.Accounts.ApiKeyList getApiKeys(int index) {
+      return apiKeys_.get(index);
     }
     /**
-     * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+     * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
      */
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.TokenListOrBuilder getTokensOrBuilder(
+    public accounts.v1alpha1.Accounts.ApiKeyListOrBuilder getApiKeysOrBuilder(
         int index) {
-      return tokens_.get(index);
+      return apiKeys_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7639,8 +7639,8 @@ public final class Accounts {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < tokens_.size(); i++) {
-        output.writeMessage(1, tokens_.get(i));
+      for (int i = 0; i < apiKeys_.size(); i++) {
+        output.writeMessage(1, apiKeys_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -7651,9 +7651,9 @@ public final class Accounts {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < tokens_.size(); i++) {
+      for (int i = 0; i < apiKeys_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, tokens_.get(i));
+          .computeMessageSize(1, apiKeys_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7665,13 +7665,13 @@ public final class Accounts {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.Accounts.ListTokenResponse)) {
+      if (!(obj instanceof accounts.v1alpha1.Accounts.ListApiKeyResponse)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.Accounts.ListTokenResponse other = (accounts.v1alpha1.Accounts.ListTokenResponse) obj;
+      accounts.v1alpha1.Accounts.ListApiKeyResponse other = (accounts.v1alpha1.Accounts.ListApiKeyResponse) obj;
 
-      if (!getTokensList()
-          .equals(other.getTokensList())) return false;
+      if (!getApiKeysList()
+          .equals(other.getApiKeysList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7683,78 +7683,78 @@ public final class Accounts {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getTokensCount() > 0) {
-        hash = (37 * hash) + TOKENS_FIELD_NUMBER;
-        hash = (53 * hash) + getTokensList().hashCode();
+      if (getApiKeysCount() > 0) {
+        hash = (37 * hash) + API_KEYS_FIELD_NUMBER;
+        hash = (53 * hash) + getApiKeysList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static accounts.v1alpha1.Accounts.ListTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenResponse parseFrom(byte[] data)
+    public static accounts.v1alpha1.Accounts.ListApiKeyResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenResponse parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.ListApiKeyResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenResponse parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.ListApiKeyResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenResponse parseDelimitedFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.ListTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.ListApiKeyResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7767,7 +7767,7 @@ public final class Accounts {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.Accounts.ListTokenResponse prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.Accounts.ListApiKeyResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -7783,26 +7783,26 @@ public final class Accounts {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.ListTokenResponse}
+     * Protobuf type {@code accounts.v1alpha1.ListApiKeyResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.ListTokenResponse)
-        accounts.v1alpha1.Accounts.ListTokenResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.ListApiKeyResponse)
+        accounts.v1alpha1.Accounts.ListApiKeyResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListTokenResponse_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListApiKeyResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListTokenResponse_fieldAccessorTable
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListApiKeyResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.Accounts.ListTokenResponse.class, accounts.v1alpha1.Accounts.ListTokenResponse.Builder.class);
+                accounts.v1alpha1.Accounts.ListApiKeyResponse.class, accounts.v1alpha1.Accounts.ListApiKeyResponse.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.Accounts.ListTokenResponse.newBuilder()
+      // Construct using accounts.v1alpha1.Accounts.ListApiKeyResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -7815,17 +7815,17 @@ public final class Accounts {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getTokensFieldBuilder();
+          getApiKeysFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (tokensBuilder_ == null) {
-          tokens_ = java.util.Collections.emptyList();
+        if (apiKeysBuilder_ == null) {
+          apiKeys_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          tokensBuilder_.clear();
+          apiKeysBuilder_.clear();
         }
         return this;
       }
@@ -7833,17 +7833,17 @@ public final class Accounts {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListTokenResponse_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ListApiKeyResponse_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.ListTokenResponse getDefaultInstanceForType() {
-        return accounts.v1alpha1.Accounts.ListTokenResponse.getDefaultInstance();
+      public accounts.v1alpha1.Accounts.ListApiKeyResponse getDefaultInstanceForType() {
+        return accounts.v1alpha1.Accounts.ListApiKeyResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.ListTokenResponse build() {
-        accounts.v1alpha1.Accounts.ListTokenResponse result = buildPartial();
+      public accounts.v1alpha1.Accounts.ListApiKeyResponse build() {
+        accounts.v1alpha1.Accounts.ListApiKeyResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -7851,17 +7851,17 @@ public final class Accounts {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.ListTokenResponse buildPartial() {
-        accounts.v1alpha1.Accounts.ListTokenResponse result = new accounts.v1alpha1.Accounts.ListTokenResponse(this);
+      public accounts.v1alpha1.Accounts.ListApiKeyResponse buildPartial() {
+        accounts.v1alpha1.Accounts.ListApiKeyResponse result = new accounts.v1alpha1.Accounts.ListApiKeyResponse(this);
         int from_bitField0_ = bitField0_;
-        if (tokensBuilder_ == null) {
+        if (apiKeysBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            tokens_ = java.util.Collections.unmodifiableList(tokens_);
+            apiKeys_ = java.util.Collections.unmodifiableList(apiKeys_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.tokens_ = tokens_;
+          result.apiKeys_ = apiKeys_;
         } else {
-          result.tokens_ = tokensBuilder_.build();
+          result.apiKeys_ = apiKeysBuilder_.build();
         }
         onBuilt();
         return result;
@@ -7901,39 +7901,39 @@ public final class Accounts {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.Accounts.ListTokenResponse) {
-          return mergeFrom((accounts.v1alpha1.Accounts.ListTokenResponse)other);
+        if (other instanceof accounts.v1alpha1.Accounts.ListApiKeyResponse) {
+          return mergeFrom((accounts.v1alpha1.Accounts.ListApiKeyResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.Accounts.ListTokenResponse other) {
-        if (other == accounts.v1alpha1.Accounts.ListTokenResponse.getDefaultInstance()) return this;
-        if (tokensBuilder_ == null) {
-          if (!other.tokens_.isEmpty()) {
-            if (tokens_.isEmpty()) {
-              tokens_ = other.tokens_;
+      public Builder mergeFrom(accounts.v1alpha1.Accounts.ListApiKeyResponse other) {
+        if (other == accounts.v1alpha1.Accounts.ListApiKeyResponse.getDefaultInstance()) return this;
+        if (apiKeysBuilder_ == null) {
+          if (!other.apiKeys_.isEmpty()) {
+            if (apiKeys_.isEmpty()) {
+              apiKeys_ = other.apiKeys_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureTokensIsMutable();
-              tokens_.addAll(other.tokens_);
+              ensureApiKeysIsMutable();
+              apiKeys_.addAll(other.apiKeys_);
             }
             onChanged();
           }
         } else {
-          if (!other.tokens_.isEmpty()) {
-            if (tokensBuilder_.isEmpty()) {
-              tokensBuilder_.dispose();
-              tokensBuilder_ = null;
-              tokens_ = other.tokens_;
+          if (!other.apiKeys_.isEmpty()) {
+            if (apiKeysBuilder_.isEmpty()) {
+              apiKeysBuilder_.dispose();
+              apiKeysBuilder_ = null;
+              apiKeys_ = other.apiKeys_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              tokensBuilder_ = 
+              apiKeysBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getTokensFieldBuilder() : null;
+                   getApiKeysFieldBuilder() : null;
             } else {
-              tokensBuilder_.addAllMessages(other.tokens_);
+              apiKeysBuilder_.addAllMessages(other.apiKeys_);
             }
           }
         }
@@ -7952,11 +7952,11 @@ public final class Accounts {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.Accounts.ListTokenResponse parsedMessage = null;
+        accounts.v1alpha1.Accounts.ListApiKeyResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.Accounts.ListTokenResponse) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.Accounts.ListApiKeyResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7967,244 +7967,244 @@ public final class Accounts {
       }
       private int bitField0_;
 
-      private java.util.List<accounts.v1alpha1.Accounts.TokenList> tokens_ =
+      private java.util.List<accounts.v1alpha1.Accounts.ApiKeyList> apiKeys_ =
         java.util.Collections.emptyList();
-      private void ensureTokensIsMutable() {
+      private void ensureApiKeysIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          tokens_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.TokenList>(tokens_);
+          apiKeys_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.ApiKeyList>(apiKeys_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.TokenList, accounts.v1alpha1.Accounts.TokenList.Builder, accounts.v1alpha1.Accounts.TokenListOrBuilder> tokensBuilder_;
+          accounts.v1alpha1.Accounts.ApiKeyList, accounts.v1alpha1.Accounts.ApiKeyList.Builder, accounts.v1alpha1.Accounts.ApiKeyListOrBuilder> apiKeysBuilder_;
 
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public java.util.List<accounts.v1alpha1.Accounts.TokenList> getTokensList() {
-        if (tokensBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(tokens_);
+      public java.util.List<accounts.v1alpha1.Accounts.ApiKeyList> getApiKeysList() {
+        if (apiKeysBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(apiKeys_);
         } else {
-          return tokensBuilder_.getMessageList();
+          return apiKeysBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public int getTokensCount() {
-        if (tokensBuilder_ == null) {
-          return tokens_.size();
+      public int getApiKeysCount() {
+        if (apiKeysBuilder_ == null) {
+          return apiKeys_.size();
         } else {
-          return tokensBuilder_.getCount();
+          return apiKeysBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public accounts.v1alpha1.Accounts.TokenList getTokens(int index) {
-        if (tokensBuilder_ == null) {
-          return tokens_.get(index);
+      public accounts.v1alpha1.Accounts.ApiKeyList getApiKeys(int index) {
+        if (apiKeysBuilder_ == null) {
+          return apiKeys_.get(index);
         } else {
-          return tokensBuilder_.getMessage(index);
+          return apiKeysBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public Builder setTokens(
-          int index, accounts.v1alpha1.Accounts.TokenList value) {
-        if (tokensBuilder_ == null) {
+      public Builder setApiKeys(
+          int index, accounts.v1alpha1.Accounts.ApiKeyList value) {
+        if (apiKeysBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureTokensIsMutable();
-          tokens_.set(index, value);
+          ensureApiKeysIsMutable();
+          apiKeys_.set(index, value);
           onChanged();
         } else {
-          tokensBuilder_.setMessage(index, value);
+          apiKeysBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public Builder setTokens(
-          int index, accounts.v1alpha1.Accounts.TokenList.Builder builderForValue) {
-        if (tokensBuilder_ == null) {
-          ensureTokensIsMutable();
-          tokens_.set(index, builderForValue.build());
+      public Builder setApiKeys(
+          int index, accounts.v1alpha1.Accounts.ApiKeyList.Builder builderForValue) {
+        if (apiKeysBuilder_ == null) {
+          ensureApiKeysIsMutable();
+          apiKeys_.set(index, builderForValue.build());
           onChanged();
         } else {
-          tokensBuilder_.setMessage(index, builderForValue.build());
+          apiKeysBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public Builder addTokens(accounts.v1alpha1.Accounts.TokenList value) {
-        if (tokensBuilder_ == null) {
+      public Builder addApiKeys(accounts.v1alpha1.Accounts.ApiKeyList value) {
+        if (apiKeysBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureTokensIsMutable();
-          tokens_.add(value);
+          ensureApiKeysIsMutable();
+          apiKeys_.add(value);
           onChanged();
         } else {
-          tokensBuilder_.addMessage(value);
+          apiKeysBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public Builder addTokens(
-          int index, accounts.v1alpha1.Accounts.TokenList value) {
-        if (tokensBuilder_ == null) {
+      public Builder addApiKeys(
+          int index, accounts.v1alpha1.Accounts.ApiKeyList value) {
+        if (apiKeysBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureTokensIsMutable();
-          tokens_.add(index, value);
+          ensureApiKeysIsMutable();
+          apiKeys_.add(index, value);
           onChanged();
         } else {
-          tokensBuilder_.addMessage(index, value);
+          apiKeysBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public Builder addTokens(
-          accounts.v1alpha1.Accounts.TokenList.Builder builderForValue) {
-        if (tokensBuilder_ == null) {
-          ensureTokensIsMutable();
-          tokens_.add(builderForValue.build());
+      public Builder addApiKeys(
+          accounts.v1alpha1.Accounts.ApiKeyList.Builder builderForValue) {
+        if (apiKeysBuilder_ == null) {
+          ensureApiKeysIsMutable();
+          apiKeys_.add(builderForValue.build());
           onChanged();
         } else {
-          tokensBuilder_.addMessage(builderForValue.build());
+          apiKeysBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public Builder addTokens(
-          int index, accounts.v1alpha1.Accounts.TokenList.Builder builderForValue) {
-        if (tokensBuilder_ == null) {
-          ensureTokensIsMutable();
-          tokens_.add(index, builderForValue.build());
+      public Builder addApiKeys(
+          int index, accounts.v1alpha1.Accounts.ApiKeyList.Builder builderForValue) {
+        if (apiKeysBuilder_ == null) {
+          ensureApiKeysIsMutable();
+          apiKeys_.add(index, builderForValue.build());
           onChanged();
         } else {
-          tokensBuilder_.addMessage(index, builderForValue.build());
+          apiKeysBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public Builder addAllTokens(
-          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.TokenList> values) {
-        if (tokensBuilder_ == null) {
-          ensureTokensIsMutable();
+      public Builder addAllApiKeys(
+          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.ApiKeyList> values) {
+        if (apiKeysBuilder_ == null) {
+          ensureApiKeysIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, tokens_);
+              values, apiKeys_);
           onChanged();
         } else {
-          tokensBuilder_.addAllMessages(values);
+          apiKeysBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public Builder clearTokens() {
-        if (tokensBuilder_ == null) {
-          tokens_ = java.util.Collections.emptyList();
+      public Builder clearApiKeys() {
+        if (apiKeysBuilder_ == null) {
+          apiKeys_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          tokensBuilder_.clear();
+          apiKeysBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public Builder removeTokens(int index) {
-        if (tokensBuilder_ == null) {
-          ensureTokensIsMutable();
-          tokens_.remove(index);
+      public Builder removeApiKeys(int index) {
+        if (apiKeysBuilder_ == null) {
+          ensureApiKeysIsMutable();
+          apiKeys_.remove(index);
           onChanged();
         } else {
-          tokensBuilder_.remove(index);
+          apiKeysBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public accounts.v1alpha1.Accounts.TokenList.Builder getTokensBuilder(
+      public accounts.v1alpha1.Accounts.ApiKeyList.Builder getApiKeysBuilder(
           int index) {
-        return getTokensFieldBuilder().getBuilder(index);
+        return getApiKeysFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public accounts.v1alpha1.Accounts.TokenListOrBuilder getTokensOrBuilder(
+      public accounts.v1alpha1.Accounts.ApiKeyListOrBuilder getApiKeysOrBuilder(
           int index) {
-        if (tokensBuilder_ == null) {
-          return tokens_.get(index);  } else {
-          return tokensBuilder_.getMessageOrBuilder(index);
+        if (apiKeysBuilder_ == null) {
+          return apiKeys_.get(index);  } else {
+          return apiKeysBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public java.util.List<? extends accounts.v1alpha1.Accounts.TokenListOrBuilder> 
-           getTokensOrBuilderList() {
-        if (tokensBuilder_ != null) {
-          return tokensBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends accounts.v1alpha1.Accounts.ApiKeyListOrBuilder> 
+           getApiKeysOrBuilderList() {
+        if (apiKeysBuilder_ != null) {
+          return apiKeysBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(tokens_);
+          return java.util.Collections.unmodifiableList(apiKeys_);
         }
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public accounts.v1alpha1.Accounts.TokenList.Builder addTokensBuilder() {
-        return getTokensFieldBuilder().addBuilder(
-            accounts.v1alpha1.Accounts.TokenList.getDefaultInstance());
+      public accounts.v1alpha1.Accounts.ApiKeyList.Builder addApiKeysBuilder() {
+        return getApiKeysFieldBuilder().addBuilder(
+            accounts.v1alpha1.Accounts.ApiKeyList.getDefaultInstance());
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public accounts.v1alpha1.Accounts.TokenList.Builder addTokensBuilder(
+      public accounts.v1alpha1.Accounts.ApiKeyList.Builder addApiKeysBuilder(
           int index) {
-        return getTokensFieldBuilder().addBuilder(
-            index, accounts.v1alpha1.Accounts.TokenList.getDefaultInstance());
+        return getApiKeysFieldBuilder().addBuilder(
+            index, accounts.v1alpha1.Accounts.ApiKeyList.getDefaultInstance());
       }
       /**
-       * <code>repeated .accounts.v1alpha1.TokenList tokens = 1 [json_name = "tokens"];</code>
+       * <code>repeated .accounts.v1alpha1.ApiKeyList api_keys = 1 [json_name = "apiKeys"];</code>
        */
-      public java.util.List<accounts.v1alpha1.Accounts.TokenList.Builder> 
-           getTokensBuilderList() {
-        return getTokensFieldBuilder().getBuilderList();
+      public java.util.List<accounts.v1alpha1.Accounts.ApiKeyList.Builder> 
+           getApiKeysBuilderList() {
+        return getApiKeysFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.TokenList, accounts.v1alpha1.Accounts.TokenList.Builder, accounts.v1alpha1.Accounts.TokenListOrBuilder> 
-          getTokensFieldBuilder() {
-        if (tokensBuilder_ == null) {
-          tokensBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              accounts.v1alpha1.Accounts.TokenList, accounts.v1alpha1.Accounts.TokenList.Builder, accounts.v1alpha1.Accounts.TokenListOrBuilder>(
-                  tokens_,
+          accounts.v1alpha1.Accounts.ApiKeyList, accounts.v1alpha1.Accounts.ApiKeyList.Builder, accounts.v1alpha1.Accounts.ApiKeyListOrBuilder> 
+          getApiKeysFieldBuilder() {
+        if (apiKeysBuilder_ == null) {
+          apiKeysBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              accounts.v1alpha1.Accounts.ApiKeyList, accounts.v1alpha1.Accounts.ApiKeyList.Builder, accounts.v1alpha1.Accounts.ApiKeyListOrBuilder>(
+                  apiKeys_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          tokens_ = null;
+          apiKeys_ = null;
         }
-        return tokensBuilder_;
+        return apiKeysBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8219,48 +8219,48 @@ public final class Accounts {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.ListTokenResponse)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.ListApiKeyResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.ListTokenResponse)
-    private static final accounts.v1alpha1.Accounts.ListTokenResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.ListApiKeyResponse)
+    private static final accounts.v1alpha1.Accounts.ListApiKeyResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.ListTokenResponse();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.ListApiKeyResponse();
     }
 
-    public static accounts.v1alpha1.Accounts.ListTokenResponse getDefaultInstance() {
+    public static accounts.v1alpha1.Accounts.ListApiKeyResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ListTokenResponse>
-        PARSER = new com.google.protobuf.AbstractParser<ListTokenResponse>() {
+    private static final com.google.protobuf.Parser<ListApiKeyResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListApiKeyResponse>() {
       @java.lang.Override
-      public ListTokenResponse parsePartialFrom(
+      public ListApiKeyResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListTokenResponse(input, extensionRegistry);
+        return new ListApiKeyResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ListTokenResponse> parser() {
+    public static com.google.protobuf.Parser<ListApiKeyResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ListTokenResponse> getParserForType() {
+    public com.google.protobuf.Parser<ListApiKeyResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.ListTokenResponse getDefaultInstanceForType() {
+    public accounts.v1alpha1.Accounts.ListApiKeyResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UpdateTokenRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.UpdateTokenRequest)
+  public interface UpdateApiKeyRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.UpdateApiKeyRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -8322,18 +8322,18 @@ public final class Accounts {
     boolean getIsActive();
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.UpdateTokenRequest}
+   * Protobuf type {@code accounts.v1alpha1.UpdateApiKeyRequest}
    */
-  public static final class UpdateTokenRequest extends
+  public static final class UpdateApiKeyRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.UpdateTokenRequest)
-      UpdateTokenRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.UpdateApiKeyRequest)
+      UpdateApiKeyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UpdateTokenRequest.newBuilder() to construct.
-    private UpdateTokenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UpdateApiKeyRequest.newBuilder() to construct.
+    private UpdateApiKeyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UpdateTokenRequest() {
+    private UpdateApiKeyRequest() {
       name_ = "";
       rolesIds_ = emptyIntList();
       permissionsIds_ = emptyIntList();
@@ -8343,7 +8343,7 @@ public final class Accounts {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new UpdateTokenRequest();
+      return new UpdateApiKeyRequest();
     }
 
     @java.lang.Override
@@ -8351,7 +8351,7 @@ public final class Accounts {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UpdateTokenRequest(
+    private UpdateApiKeyRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8455,15 +8455,15 @@ public final class Accounts {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateTokenRequest_descriptor;
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateApiKeyRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateTokenRequest_fieldAccessorTable
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateApiKeyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.Accounts.UpdateTokenRequest.class, accounts.v1alpha1.Accounts.UpdateTokenRequest.Builder.class);
+              accounts.v1alpha1.Accounts.UpdateApiKeyRequest.class, accounts.v1alpha1.Accounts.UpdateApiKeyRequest.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -8678,10 +8678,10 @@ public final class Accounts {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.Accounts.UpdateTokenRequest)) {
+      if (!(obj instanceof accounts.v1alpha1.Accounts.UpdateApiKeyRequest)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.Accounts.UpdateTokenRequest other = (accounts.v1alpha1.Accounts.UpdateTokenRequest) obj;
+      accounts.v1alpha1.Accounts.UpdateApiKeyRequest other = (accounts.v1alpha1.Accounts.UpdateApiKeyRequest) obj;
 
       if (getId()
           != other.getId()) return false;
@@ -8724,69 +8724,69 @@ public final class Accounts {
       return hash;
     }
 
-    public static accounts.v1alpha1.Accounts.UpdateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenRequest parseFrom(byte[] data)
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenRequest parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenRequest parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenRequest parseDelimitedFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8799,7 +8799,7 @@ public final class Accounts {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.Accounts.UpdateTokenRequest prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.Accounts.UpdateApiKeyRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8815,26 +8815,26 @@ public final class Accounts {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.UpdateTokenRequest}
+     * Protobuf type {@code accounts.v1alpha1.UpdateApiKeyRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.UpdateTokenRequest)
-        accounts.v1alpha1.Accounts.UpdateTokenRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.UpdateApiKeyRequest)
+        accounts.v1alpha1.Accounts.UpdateApiKeyRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateTokenRequest_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateApiKeyRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateTokenRequest_fieldAccessorTable
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateApiKeyRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.Accounts.UpdateTokenRequest.class, accounts.v1alpha1.Accounts.UpdateTokenRequest.Builder.class);
+                accounts.v1alpha1.Accounts.UpdateApiKeyRequest.class, accounts.v1alpha1.Accounts.UpdateApiKeyRequest.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.Accounts.UpdateTokenRequest.newBuilder()
+      // Construct using accounts.v1alpha1.Accounts.UpdateApiKeyRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8868,17 +8868,17 @@ public final class Accounts {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateTokenRequest_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateApiKeyRequest_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.UpdateTokenRequest getDefaultInstanceForType() {
-        return accounts.v1alpha1.Accounts.UpdateTokenRequest.getDefaultInstance();
+      public accounts.v1alpha1.Accounts.UpdateApiKeyRequest getDefaultInstanceForType() {
+        return accounts.v1alpha1.Accounts.UpdateApiKeyRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.UpdateTokenRequest build() {
-        accounts.v1alpha1.Accounts.UpdateTokenRequest result = buildPartial();
+      public accounts.v1alpha1.Accounts.UpdateApiKeyRequest build() {
+        accounts.v1alpha1.Accounts.UpdateApiKeyRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -8886,8 +8886,8 @@ public final class Accounts {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.UpdateTokenRequest buildPartial() {
-        accounts.v1alpha1.Accounts.UpdateTokenRequest result = new accounts.v1alpha1.Accounts.UpdateTokenRequest(this);
+      public accounts.v1alpha1.Accounts.UpdateApiKeyRequest buildPartial() {
+        accounts.v1alpha1.Accounts.UpdateApiKeyRequest result = new accounts.v1alpha1.Accounts.UpdateApiKeyRequest(this);
         int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.name_ = name_;
@@ -8940,16 +8940,16 @@ public final class Accounts {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.Accounts.UpdateTokenRequest) {
-          return mergeFrom((accounts.v1alpha1.Accounts.UpdateTokenRequest)other);
+        if (other instanceof accounts.v1alpha1.Accounts.UpdateApiKeyRequest) {
+          return mergeFrom((accounts.v1alpha1.Accounts.UpdateApiKeyRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.Accounts.UpdateTokenRequest other) {
-        if (other == accounts.v1alpha1.Accounts.UpdateTokenRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.Accounts.UpdateApiKeyRequest other) {
+        if (other == accounts.v1alpha1.Accounts.UpdateApiKeyRequest.getDefaultInstance()) return this;
         if (other.getId() != 0) {
           setId(other.getId());
         }
@@ -8995,11 +8995,11 @@ public final class Accounts {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.Accounts.UpdateTokenRequest parsedMessage = null;
+        accounts.v1alpha1.Accounts.UpdateApiKeyRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.Accounts.UpdateTokenRequest) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.Accounts.UpdateApiKeyRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9318,48 +9318,48 @@ public final class Accounts {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.UpdateTokenRequest)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.UpdateApiKeyRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.UpdateTokenRequest)
-    private static final accounts.v1alpha1.Accounts.UpdateTokenRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.UpdateApiKeyRequest)
+    private static final accounts.v1alpha1.Accounts.UpdateApiKeyRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.UpdateTokenRequest();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.UpdateApiKeyRequest();
     }
 
-    public static accounts.v1alpha1.Accounts.UpdateTokenRequest getDefaultInstance() {
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UpdateTokenRequest>
-        PARSER = new com.google.protobuf.AbstractParser<UpdateTokenRequest>() {
+    private static final com.google.protobuf.Parser<UpdateApiKeyRequest>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateApiKeyRequest>() {
       @java.lang.Override
-      public UpdateTokenRequest parsePartialFrom(
+      public UpdateApiKeyRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdateTokenRequest(input, extensionRegistry);
+        return new UpdateApiKeyRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UpdateTokenRequest> parser() {
+    public static com.google.protobuf.Parser<UpdateApiKeyRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UpdateTokenRequest> getParserForType() {
+    public com.google.protobuf.Parser<UpdateApiKeyRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.UpdateTokenRequest getDefaultInstanceForType() {
+    public accounts.v1alpha1.Accounts.UpdateApiKeyRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UpdateTokenResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.UpdateTokenResponse)
+  public interface UpdateApiKeyResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.UpdateApiKeyResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -9375,16 +9375,16 @@ public final class Accounts {
         getMsgBytes();
 
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The apiKey.
      */
-    java.lang.String getToken();
+    java.lang.String getApiKey();
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The bytes for token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The bytes for apiKey.
      */
     com.google.protobuf.ByteString
-        getTokenBytes();
+        getApiKeyBytes();
 
     /**
      * <code>string error = 3 [json_name = "error"];</code>
@@ -9399,20 +9399,20 @@ public final class Accounts {
         getErrorBytes();
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.UpdateTokenResponse}
+   * Protobuf type {@code accounts.v1alpha1.UpdateApiKeyResponse}
    */
-  public static final class UpdateTokenResponse extends
+  public static final class UpdateApiKeyResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.UpdateTokenResponse)
-      UpdateTokenResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.UpdateApiKeyResponse)
+      UpdateApiKeyResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UpdateTokenResponse.newBuilder() to construct.
-    private UpdateTokenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UpdateApiKeyResponse.newBuilder() to construct.
+    private UpdateApiKeyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UpdateTokenResponse() {
+    private UpdateApiKeyResponse() {
       msg_ = "";
-      token_ = "";
+      apiKey_ = "";
       error_ = "";
     }
 
@@ -9420,7 +9420,7 @@ public final class Accounts {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new UpdateTokenResponse();
+      return new UpdateApiKeyResponse();
     }
 
     @java.lang.Override
@@ -9428,7 +9428,7 @@ public final class Accounts {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UpdateTokenResponse(
+    private UpdateApiKeyResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9455,7 +9455,7 @@ public final class Accounts {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              token_ = s;
+              apiKey_ = s;
               break;
             }
             case 26: {
@@ -9485,15 +9485,15 @@ public final class Accounts {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateTokenResponse_descriptor;
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateApiKeyResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateTokenResponse_fieldAccessorTable
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateApiKeyResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.Accounts.UpdateTokenResponse.class, accounts.v1alpha1.Accounts.UpdateTokenResponse.Builder.class);
+              accounts.v1alpha1.Accounts.UpdateApiKeyResponse.class, accounts.v1alpha1.Accounts.UpdateApiKeyResponse.Builder.class);
     }
 
     public static final int MSG_FIELD_NUMBER = 1;
@@ -9534,38 +9534,38 @@ public final class Accounts {
       }
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object token_;
+    public static final int API_KEY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object apiKey_;
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The apiKey.
      */
     @java.lang.Override
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
+    public java.lang.String getApiKey() {
+      java.lang.Object ref = apiKey_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        token_ = s;
+        apiKey_ = s;
         return s;
       }
     }
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The bytes for token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The bytes for apiKey.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
+        getApiKeyBytes() {
+      java.lang.Object ref = apiKey_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        token_ = b;
+        apiKey_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -9627,8 +9627,8 @@ public final class Accounts {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
+      if (!getApiKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiKey_);
       }
       if (!getErrorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
@@ -9645,8 +9645,8 @@ public final class Accounts {
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
       }
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+      if (!getApiKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiKey_);
       }
       if (!getErrorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
@@ -9661,15 +9661,15 @@ public final class Accounts {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.Accounts.UpdateTokenResponse)) {
+      if (!(obj instanceof accounts.v1alpha1.Accounts.UpdateApiKeyResponse)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.Accounts.UpdateTokenResponse other = (accounts.v1alpha1.Accounts.UpdateTokenResponse) obj;
+      accounts.v1alpha1.Accounts.UpdateApiKeyResponse other = (accounts.v1alpha1.Accounts.UpdateApiKeyResponse) obj;
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (!getApiKey()
+          .equals(other.getApiKey())) return false;
       if (!getError()
           .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -9685,8 +9685,8 @@ public final class Accounts {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + API_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getApiKey().hashCode();
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -9694,69 +9694,69 @@ public final class Accounts {
       return hash;
     }
 
-    public static accounts.v1alpha1.Accounts.UpdateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenResponse parseFrom(byte[] data)
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenResponse parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenResponse parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenResponse parseDelimitedFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.UpdateTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9769,7 +9769,7 @@ public final class Accounts {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.Accounts.UpdateTokenResponse prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.Accounts.UpdateApiKeyResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -9785,26 +9785,26 @@ public final class Accounts {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.UpdateTokenResponse}
+     * Protobuf type {@code accounts.v1alpha1.UpdateApiKeyResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.UpdateTokenResponse)
-        accounts.v1alpha1.Accounts.UpdateTokenResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.UpdateApiKeyResponse)
+        accounts.v1alpha1.Accounts.UpdateApiKeyResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateTokenResponse_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateApiKeyResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateTokenResponse_fieldAccessorTable
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateApiKeyResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.Accounts.UpdateTokenResponse.class, accounts.v1alpha1.Accounts.UpdateTokenResponse.Builder.class);
+                accounts.v1alpha1.Accounts.UpdateApiKeyResponse.class, accounts.v1alpha1.Accounts.UpdateApiKeyResponse.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.Accounts.UpdateTokenResponse.newBuilder()
+      // Construct using accounts.v1alpha1.Accounts.UpdateApiKeyResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9824,7 +9824,7 @@ public final class Accounts {
         super.clear();
         msg_ = "";
 
-        token_ = "";
+        apiKey_ = "";
 
         error_ = "";
 
@@ -9834,17 +9834,17 @@ public final class Accounts {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateTokenResponse_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_UpdateApiKeyResponse_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.UpdateTokenResponse getDefaultInstanceForType() {
-        return accounts.v1alpha1.Accounts.UpdateTokenResponse.getDefaultInstance();
+      public accounts.v1alpha1.Accounts.UpdateApiKeyResponse getDefaultInstanceForType() {
+        return accounts.v1alpha1.Accounts.UpdateApiKeyResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.UpdateTokenResponse build() {
-        accounts.v1alpha1.Accounts.UpdateTokenResponse result = buildPartial();
+      public accounts.v1alpha1.Accounts.UpdateApiKeyResponse build() {
+        accounts.v1alpha1.Accounts.UpdateApiKeyResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9852,10 +9852,10 @@ public final class Accounts {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.UpdateTokenResponse buildPartial() {
-        accounts.v1alpha1.Accounts.UpdateTokenResponse result = new accounts.v1alpha1.Accounts.UpdateTokenResponse(this);
+      public accounts.v1alpha1.Accounts.UpdateApiKeyResponse buildPartial() {
+        accounts.v1alpha1.Accounts.UpdateApiKeyResponse result = new accounts.v1alpha1.Accounts.UpdateApiKeyResponse(this);
         result.msg_ = msg_;
-        result.token_ = token_;
+        result.apiKey_ = apiKey_;
         result.error_ = error_;
         onBuilt();
         return result;
@@ -9895,22 +9895,22 @@ public final class Accounts {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.Accounts.UpdateTokenResponse) {
-          return mergeFrom((accounts.v1alpha1.Accounts.UpdateTokenResponse)other);
+        if (other instanceof accounts.v1alpha1.Accounts.UpdateApiKeyResponse) {
+          return mergeFrom((accounts.v1alpha1.Accounts.UpdateApiKeyResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.Accounts.UpdateTokenResponse other) {
-        if (other == accounts.v1alpha1.Accounts.UpdateTokenResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.Accounts.UpdateApiKeyResponse other) {
+        if (other == accounts.v1alpha1.Accounts.UpdateApiKeyResponse.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
           onChanged();
         }
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
+        if (!other.getApiKey().isEmpty()) {
+          apiKey_ = other.apiKey_;
           onChanged();
         }
         if (!other.getError().isEmpty()) {
@@ -9932,11 +9932,11 @@ public final class Accounts {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.Accounts.UpdateTokenResponse parsedMessage = null;
+        accounts.v1alpha1.Accounts.UpdateApiKeyResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.Accounts.UpdateTokenResponse) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.Accounts.UpdateApiKeyResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -10022,78 +10022,78 @@ public final class Accounts {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private java.lang.Object apiKey_ = "";
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @return The token.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @return The apiKey.
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
+      public java.lang.String getApiKey() {
+        java.lang.Object ref = apiKey_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          token_ = s;
+          apiKey_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @return The bytes for token.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @return The bytes for apiKey.
        */
       public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
+          getApiKeyBytes() {
+        java.lang.Object ref = apiKey_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          token_ = b;
+          apiKey_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @param value The token to set.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @param value The apiKey to set.
        * @return This builder for chaining.
        */
-      public Builder setToken(
+      public Builder setApiKey(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        token_ = value;
+        apiKey_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearToken() {
+      public Builder clearApiKey() {
         
-        token_ = getDefaultInstance().getToken();
+        apiKey_ = getDefaultInstance().getApiKey();
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @param value The bytes for token to set.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @param value The bytes for apiKey to set.
        * @return This builder for chaining.
        */
-      public Builder setTokenBytes(
+      public Builder setApiKeyBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        token_ = value;
+        apiKey_ = value;
         onChanged();
         return this;
       }
@@ -10186,48 +10186,48 @@ public final class Accounts {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.UpdateTokenResponse)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.UpdateApiKeyResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.UpdateTokenResponse)
-    private static final accounts.v1alpha1.Accounts.UpdateTokenResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.UpdateApiKeyResponse)
+    private static final accounts.v1alpha1.Accounts.UpdateApiKeyResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.UpdateTokenResponse();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.UpdateApiKeyResponse();
     }
 
-    public static accounts.v1alpha1.Accounts.UpdateTokenResponse getDefaultInstance() {
+    public static accounts.v1alpha1.Accounts.UpdateApiKeyResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UpdateTokenResponse>
-        PARSER = new com.google.protobuf.AbstractParser<UpdateTokenResponse>() {
+    private static final com.google.protobuf.Parser<UpdateApiKeyResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateApiKeyResponse>() {
       @java.lang.Override
-      public UpdateTokenResponse parsePartialFrom(
+      public UpdateApiKeyResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdateTokenResponse(input, extensionRegistry);
+        return new UpdateApiKeyResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UpdateTokenResponse> parser() {
+    public static com.google.protobuf.Parser<UpdateApiKeyResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UpdateTokenResponse> getParserForType() {
+    public com.google.protobuf.Parser<UpdateApiKeyResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.UpdateTokenResponse getDefaultInstanceForType() {
+    public accounts.v1alpha1.Accounts.UpdateApiKeyResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface DeleteTokenRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.DeleteTokenRequest)
+  public interface DeleteApiKeyRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.DeleteApiKeyRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -10237,25 +10237,25 @@ public final class Accounts {
     int getId();
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.DeleteTokenRequest}
+   * Protobuf type {@code accounts.v1alpha1.DeleteApiKeyRequest}
    */
-  public static final class DeleteTokenRequest extends
+  public static final class DeleteApiKeyRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.DeleteTokenRequest)
-      DeleteTokenRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.DeleteApiKeyRequest)
+      DeleteApiKeyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DeleteTokenRequest.newBuilder() to construct.
-    private DeleteTokenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DeleteApiKeyRequest.newBuilder() to construct.
+    private DeleteApiKeyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DeleteTokenRequest() {
+    private DeleteApiKeyRequest() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new DeleteTokenRequest();
+      return new DeleteApiKeyRequest();
     }
 
     @java.lang.Override
@@ -10263,7 +10263,7 @@ public final class Accounts {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DeleteTokenRequest(
+    private DeleteApiKeyRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10307,15 +10307,15 @@ public final class Accounts {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteTokenRequest_descriptor;
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteApiKeyRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteTokenRequest_fieldAccessorTable
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteApiKeyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.Accounts.DeleteTokenRequest.class, accounts.v1alpha1.Accounts.DeleteTokenRequest.Builder.class);
+              accounts.v1alpha1.Accounts.DeleteApiKeyRequest.class, accounts.v1alpha1.Accounts.DeleteApiKeyRequest.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -10369,10 +10369,10 @@ public final class Accounts {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.Accounts.DeleteTokenRequest)) {
+      if (!(obj instanceof accounts.v1alpha1.Accounts.DeleteApiKeyRequest)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.Accounts.DeleteTokenRequest other = (accounts.v1alpha1.Accounts.DeleteTokenRequest) obj;
+      accounts.v1alpha1.Accounts.DeleteApiKeyRequest other = (accounts.v1alpha1.Accounts.DeleteApiKeyRequest) obj;
 
       if (getId()
           != other.getId()) return false;
@@ -10394,69 +10394,69 @@ public final class Accounts {
       return hash;
     }
 
-    public static accounts.v1alpha1.Accounts.DeleteTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenRequest parseFrom(byte[] data)
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenRequest parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenRequest parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenRequest parseDelimitedFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenRequest parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10469,7 +10469,7 @@ public final class Accounts {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.Accounts.DeleteTokenRequest prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.Accounts.DeleteApiKeyRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -10485,26 +10485,26 @@ public final class Accounts {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.DeleteTokenRequest}
+     * Protobuf type {@code accounts.v1alpha1.DeleteApiKeyRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.DeleteTokenRequest)
-        accounts.v1alpha1.Accounts.DeleteTokenRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.DeleteApiKeyRequest)
+        accounts.v1alpha1.Accounts.DeleteApiKeyRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteTokenRequest_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteApiKeyRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteTokenRequest_fieldAccessorTable
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteApiKeyRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.Accounts.DeleteTokenRequest.class, accounts.v1alpha1.Accounts.DeleteTokenRequest.Builder.class);
+                accounts.v1alpha1.Accounts.DeleteApiKeyRequest.class, accounts.v1alpha1.Accounts.DeleteApiKeyRequest.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.Accounts.DeleteTokenRequest.newBuilder()
+      // Construct using accounts.v1alpha1.Accounts.DeleteApiKeyRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -10530,17 +10530,17 @@ public final class Accounts {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteTokenRequest_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteApiKeyRequest_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.DeleteTokenRequest getDefaultInstanceForType() {
-        return accounts.v1alpha1.Accounts.DeleteTokenRequest.getDefaultInstance();
+      public accounts.v1alpha1.Accounts.DeleteApiKeyRequest getDefaultInstanceForType() {
+        return accounts.v1alpha1.Accounts.DeleteApiKeyRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.DeleteTokenRequest build() {
-        accounts.v1alpha1.Accounts.DeleteTokenRequest result = buildPartial();
+      public accounts.v1alpha1.Accounts.DeleteApiKeyRequest build() {
+        accounts.v1alpha1.Accounts.DeleteApiKeyRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -10548,8 +10548,8 @@ public final class Accounts {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.DeleteTokenRequest buildPartial() {
-        accounts.v1alpha1.Accounts.DeleteTokenRequest result = new accounts.v1alpha1.Accounts.DeleteTokenRequest(this);
+      public accounts.v1alpha1.Accounts.DeleteApiKeyRequest buildPartial() {
+        accounts.v1alpha1.Accounts.DeleteApiKeyRequest result = new accounts.v1alpha1.Accounts.DeleteApiKeyRequest(this);
         result.id_ = id_;
         onBuilt();
         return result;
@@ -10589,16 +10589,16 @@ public final class Accounts {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.Accounts.DeleteTokenRequest) {
-          return mergeFrom((accounts.v1alpha1.Accounts.DeleteTokenRequest)other);
+        if (other instanceof accounts.v1alpha1.Accounts.DeleteApiKeyRequest) {
+          return mergeFrom((accounts.v1alpha1.Accounts.DeleteApiKeyRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.Accounts.DeleteTokenRequest other) {
-        if (other == accounts.v1alpha1.Accounts.DeleteTokenRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.Accounts.DeleteApiKeyRequest other) {
+        if (other == accounts.v1alpha1.Accounts.DeleteApiKeyRequest.getDefaultInstance()) return this;
         if (other.getId() != 0) {
           setId(other.getId());
         }
@@ -10617,11 +10617,11 @@ public final class Accounts {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.Accounts.DeleteTokenRequest parsedMessage = null;
+        accounts.v1alpha1.Accounts.DeleteApiKeyRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.Accounts.DeleteTokenRequest) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.Accounts.DeleteApiKeyRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -10674,48 +10674,48 @@ public final class Accounts {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.DeleteTokenRequest)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.DeleteApiKeyRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.DeleteTokenRequest)
-    private static final accounts.v1alpha1.Accounts.DeleteTokenRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.DeleteApiKeyRequest)
+    private static final accounts.v1alpha1.Accounts.DeleteApiKeyRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.DeleteTokenRequest();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.DeleteApiKeyRequest();
     }
 
-    public static accounts.v1alpha1.Accounts.DeleteTokenRequest getDefaultInstance() {
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DeleteTokenRequest>
-        PARSER = new com.google.protobuf.AbstractParser<DeleteTokenRequest>() {
+    private static final com.google.protobuf.Parser<DeleteApiKeyRequest>
+        PARSER = new com.google.protobuf.AbstractParser<DeleteApiKeyRequest>() {
       @java.lang.Override
-      public DeleteTokenRequest parsePartialFrom(
+      public DeleteApiKeyRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DeleteTokenRequest(input, extensionRegistry);
+        return new DeleteApiKeyRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DeleteTokenRequest> parser() {
+    public static com.google.protobuf.Parser<DeleteApiKeyRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DeleteTokenRequest> getParserForType() {
+    public com.google.protobuf.Parser<DeleteApiKeyRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.DeleteTokenRequest getDefaultInstanceForType() {
+    public accounts.v1alpha1.Accounts.DeleteApiKeyRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface DeleteTokenResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.DeleteTokenResponse)
+  public interface DeleteApiKeyResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.DeleteApiKeyResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -10731,16 +10731,16 @@ public final class Accounts {
         getMsgBytes();
 
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The apiKey.
      */
-    java.lang.String getToken();
+    java.lang.String getApiKey();
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The bytes for token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The bytes for apiKey.
      */
     com.google.protobuf.ByteString
-        getTokenBytes();
+        getApiKeyBytes();
 
     /**
      * <code>string error = 3 [json_name = "error"];</code>
@@ -10755,20 +10755,20 @@ public final class Accounts {
         getErrorBytes();
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.DeleteTokenResponse}
+   * Protobuf type {@code accounts.v1alpha1.DeleteApiKeyResponse}
    */
-  public static final class DeleteTokenResponse extends
+  public static final class DeleteApiKeyResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.DeleteTokenResponse)
-      DeleteTokenResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.DeleteApiKeyResponse)
+      DeleteApiKeyResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DeleteTokenResponse.newBuilder() to construct.
-    private DeleteTokenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DeleteApiKeyResponse.newBuilder() to construct.
+    private DeleteApiKeyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DeleteTokenResponse() {
+    private DeleteApiKeyResponse() {
       msg_ = "";
-      token_ = "";
+      apiKey_ = "";
       error_ = "";
     }
 
@@ -10776,7 +10776,7 @@ public final class Accounts {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new DeleteTokenResponse();
+      return new DeleteApiKeyResponse();
     }
 
     @java.lang.Override
@@ -10784,7 +10784,7 @@ public final class Accounts {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DeleteTokenResponse(
+    private DeleteApiKeyResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10811,7 +10811,7 @@ public final class Accounts {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              token_ = s;
+              apiKey_ = s;
               break;
             }
             case 26: {
@@ -10841,15 +10841,15 @@ public final class Accounts {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteTokenResponse_descriptor;
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteApiKeyResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteTokenResponse_fieldAccessorTable
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteApiKeyResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.Accounts.DeleteTokenResponse.class, accounts.v1alpha1.Accounts.DeleteTokenResponse.Builder.class);
+              accounts.v1alpha1.Accounts.DeleteApiKeyResponse.class, accounts.v1alpha1.Accounts.DeleteApiKeyResponse.Builder.class);
     }
 
     public static final int MSG_FIELD_NUMBER = 1;
@@ -10890,38 +10890,38 @@ public final class Accounts {
       }
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object token_;
+    public static final int API_KEY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object apiKey_;
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The apiKey.
      */
     @java.lang.Override
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
+    public java.lang.String getApiKey() {
+      java.lang.Object ref = apiKey_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        token_ = s;
+        apiKey_ = s;
         return s;
       }
     }
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The bytes for token.
+     * <code>string api_key = 2 [json_name = "apiKey"];</code>
+     * @return The bytes for apiKey.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
+        getApiKeyBytes() {
+      java.lang.Object ref = apiKey_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        token_ = b;
+        apiKey_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -10983,8 +10983,8 @@ public final class Accounts {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
+      if (!getApiKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiKey_);
       }
       if (!getErrorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
@@ -11001,8 +11001,8 @@ public final class Accounts {
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
       }
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+      if (!getApiKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiKey_);
       }
       if (!getErrorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
@@ -11017,15 +11017,15 @@ public final class Accounts {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.Accounts.DeleteTokenResponse)) {
+      if (!(obj instanceof accounts.v1alpha1.Accounts.DeleteApiKeyResponse)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.Accounts.DeleteTokenResponse other = (accounts.v1alpha1.Accounts.DeleteTokenResponse) obj;
+      accounts.v1alpha1.Accounts.DeleteApiKeyResponse other = (accounts.v1alpha1.Accounts.DeleteApiKeyResponse) obj;
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (!getApiKey()
+          .equals(other.getApiKey())) return false;
       if (!getError()
           .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -11041,8 +11041,8 @@ public final class Accounts {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + API_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getApiKey().hashCode();
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -11050,69 +11050,69 @@ public final class Accounts {
       return hash;
     }
 
-    public static accounts.v1alpha1.Accounts.DeleteTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenResponse parseFrom(byte[] data)
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenResponse parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenResponse parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenResponse parseDelimitedFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.DeleteTokenResponse parseFrom(
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11125,7 +11125,7 @@ public final class Accounts {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.Accounts.DeleteTokenResponse prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.Accounts.DeleteApiKeyResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -11141,26 +11141,26 @@ public final class Accounts {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.DeleteTokenResponse}
+     * Protobuf type {@code accounts.v1alpha1.DeleteApiKeyResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.DeleteTokenResponse)
-        accounts.v1alpha1.Accounts.DeleteTokenResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.DeleteApiKeyResponse)
+        accounts.v1alpha1.Accounts.DeleteApiKeyResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteTokenResponse_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteApiKeyResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteTokenResponse_fieldAccessorTable
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteApiKeyResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.Accounts.DeleteTokenResponse.class, accounts.v1alpha1.Accounts.DeleteTokenResponse.Builder.class);
+                accounts.v1alpha1.Accounts.DeleteApiKeyResponse.class, accounts.v1alpha1.Accounts.DeleteApiKeyResponse.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.Accounts.DeleteTokenResponse.newBuilder()
+      // Construct using accounts.v1alpha1.Accounts.DeleteApiKeyResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -11180,7 +11180,7 @@ public final class Accounts {
         super.clear();
         msg_ = "";
 
-        token_ = "";
+        apiKey_ = "";
 
         error_ = "";
 
@@ -11190,17 +11190,17 @@ public final class Accounts {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteTokenResponse_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_DeleteApiKeyResponse_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.DeleteTokenResponse getDefaultInstanceForType() {
-        return accounts.v1alpha1.Accounts.DeleteTokenResponse.getDefaultInstance();
+      public accounts.v1alpha1.Accounts.DeleteApiKeyResponse getDefaultInstanceForType() {
+        return accounts.v1alpha1.Accounts.DeleteApiKeyResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.DeleteTokenResponse build() {
-        accounts.v1alpha1.Accounts.DeleteTokenResponse result = buildPartial();
+      public accounts.v1alpha1.Accounts.DeleteApiKeyResponse build() {
+        accounts.v1alpha1.Accounts.DeleteApiKeyResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -11208,10 +11208,10 @@ public final class Accounts {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.DeleteTokenResponse buildPartial() {
-        accounts.v1alpha1.Accounts.DeleteTokenResponse result = new accounts.v1alpha1.Accounts.DeleteTokenResponse(this);
+      public accounts.v1alpha1.Accounts.DeleteApiKeyResponse buildPartial() {
+        accounts.v1alpha1.Accounts.DeleteApiKeyResponse result = new accounts.v1alpha1.Accounts.DeleteApiKeyResponse(this);
         result.msg_ = msg_;
-        result.token_ = token_;
+        result.apiKey_ = apiKey_;
         result.error_ = error_;
         onBuilt();
         return result;
@@ -11251,22 +11251,22 @@ public final class Accounts {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.Accounts.DeleteTokenResponse) {
-          return mergeFrom((accounts.v1alpha1.Accounts.DeleteTokenResponse)other);
+        if (other instanceof accounts.v1alpha1.Accounts.DeleteApiKeyResponse) {
+          return mergeFrom((accounts.v1alpha1.Accounts.DeleteApiKeyResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.Accounts.DeleteTokenResponse other) {
-        if (other == accounts.v1alpha1.Accounts.DeleteTokenResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.Accounts.DeleteApiKeyResponse other) {
+        if (other == accounts.v1alpha1.Accounts.DeleteApiKeyResponse.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
           onChanged();
         }
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
+        if (!other.getApiKey().isEmpty()) {
+          apiKey_ = other.apiKey_;
           onChanged();
         }
         if (!other.getError().isEmpty()) {
@@ -11288,11 +11288,11 @@ public final class Accounts {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.Accounts.DeleteTokenResponse parsedMessage = null;
+        accounts.v1alpha1.Accounts.DeleteApiKeyResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.Accounts.DeleteTokenResponse) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.Accounts.DeleteApiKeyResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -11378,78 +11378,78 @@ public final class Accounts {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private java.lang.Object apiKey_ = "";
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @return The token.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @return The apiKey.
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
+      public java.lang.String getApiKey() {
+        java.lang.Object ref = apiKey_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          token_ = s;
+          apiKey_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @return The bytes for token.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @return The bytes for apiKey.
        */
       public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
+          getApiKeyBytes() {
+        java.lang.Object ref = apiKey_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          token_ = b;
+          apiKey_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @param value The token to set.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @param value The apiKey to set.
        * @return This builder for chaining.
        */
-      public Builder setToken(
+      public Builder setApiKey(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        token_ = value;
+        apiKey_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearToken() {
+      public Builder clearApiKey() {
         
-        token_ = getDefaultInstance().getToken();
+        apiKey_ = getDefaultInstance().getApiKey();
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @param value The bytes for token to set.
+       * <code>string api_key = 2 [json_name = "apiKey"];</code>
+       * @param value The bytes for apiKey to set.
        * @return This builder for chaining.
        */
-      public Builder setTokenBytes(
+      public Builder setApiKeyBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        token_ = value;
+        apiKey_ = value;
         onChanged();
         return this;
       }
@@ -11542,41 +11542,41 @@ public final class Accounts {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.DeleteTokenResponse)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.DeleteApiKeyResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.DeleteTokenResponse)
-    private static final accounts.v1alpha1.Accounts.DeleteTokenResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.DeleteApiKeyResponse)
+    private static final accounts.v1alpha1.Accounts.DeleteApiKeyResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.DeleteTokenResponse();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.DeleteApiKeyResponse();
     }
 
-    public static accounts.v1alpha1.Accounts.DeleteTokenResponse getDefaultInstance() {
+    public static accounts.v1alpha1.Accounts.DeleteApiKeyResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DeleteTokenResponse>
-        PARSER = new com.google.protobuf.AbstractParser<DeleteTokenResponse>() {
+    private static final com.google.protobuf.Parser<DeleteApiKeyResponse>
+        PARSER = new com.google.protobuf.AbstractParser<DeleteApiKeyResponse>() {
       @java.lang.Override
-      public DeleteTokenResponse parsePartialFrom(
+      public DeleteApiKeyResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DeleteTokenResponse(input, extensionRegistry);
+        return new DeleteApiKeyResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DeleteTokenResponse> parser() {
+    public static com.google.protobuf.Parser<DeleteApiKeyResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DeleteTokenResponse> getParserForType() {
+    public com.google.protobuf.Parser<DeleteApiKeyResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.DeleteTokenResponse getDefaultInstanceForType() {
+    public accounts.v1alpha1.Accounts.DeleteApiKeyResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -89222,65 +89222,65 @@ public final class Accounts {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_CreateTokenRequest_descriptor;
+    internal_static_accounts_v1alpha1_CreateApiKeyRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_CreateTokenRequest_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_CreateApiKeyRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_Token_descriptor;
+    internal_static_accounts_v1alpha1_ApiKey_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_Token_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_ApiKey_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_CreateTokenResponse_descriptor;
+    internal_static_accounts_v1alpha1_CreateApiKeyResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_CreateTokenResponse_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_CreateApiKeyResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_GetOneTokenRequest_descriptor;
+    internal_static_accounts_v1alpha1_GetOneApiKeyRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_GetOneTokenRequest_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_GetOneApiKeyRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_GetOneTokenResponse_descriptor;
+    internal_static_accounts_v1alpha1_GetOneApiKeyResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_GetOneTokenResponse_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_GetOneApiKeyResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_ListTokenRequest_descriptor;
+    internal_static_accounts_v1alpha1_ListApiKeyRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_ListTokenRequest_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_ListApiKeyRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_TokenList_descriptor;
+    internal_static_accounts_v1alpha1_ApiKeyList_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_TokenList_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_ApiKeyList_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_ListTokenResponse_descriptor;
+    internal_static_accounts_v1alpha1_ListApiKeyResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_ListTokenResponse_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_ListApiKeyResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_UpdateTokenRequest_descriptor;
+    internal_static_accounts_v1alpha1_UpdateApiKeyRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_UpdateTokenRequest_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_UpdateApiKeyRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_UpdateTokenResponse_descriptor;
+    internal_static_accounts_v1alpha1_UpdateApiKeyResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_UpdateTokenResponse_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_UpdateApiKeyResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_DeleteTokenRequest_descriptor;
+    internal_static_accounts_v1alpha1_DeleteApiKeyRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_DeleteTokenRequest_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_DeleteApiKeyRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_DeleteTokenResponse_descriptor;
+    internal_static_accounts_v1alpha1_DeleteApiKeyResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_DeleteTokenResponse_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_DeleteApiKeyResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_accounts_v1alpha1_City_descriptor;
   private static final 
@@ -89721,482 +89721,483 @@ public final class Accounts {
   static {
     java.lang.String[] descriptorData = {
       "\n accounts/v1alpha1/accounts.proto\022\021acco" +
-      "unts.v1alpha1\"\207\001\n\022CreateTokenRequest\022\022\n\004" +
-      "name\030\001 \001(\tR\004name\022\027\n\007user_id\030\002 \001(\tR\006userI" +
-      "d\022\033\n\troles_ids\030\003 \003(\rR\010rolesIds\022\'\n\017permis" +
-      "sions_ids\030\004 \003(\rR\016permissionsIds\"\257\001\n\005Toke" +
-      "n\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\027\n" +
-      "\007user_id\030\003 \001(\tR\006userId\022(\n\003rol\030\004 \003(\0132\026.ac" +
-      "counts.v1alpha1.RolR\003rol\022?\n\013permissions\030" +
-      "\005 \003(\0132\035.accounts.v1alpha1.PermissionR\013pe" +
-      "rmissions\"{\n\023CreateTokenResponse\022\020\n\003msg\030" +
-      "\001 \001(\tR\003msg\022\024\n\005token\030\002 \001(\tR\005token\022&\n\017acce" +
-      "ss_point_id\030\004 \001(\rR\raccessPointId\022\024\n\005erro" +
-      "r\030\005 \001(\tR\005error\"$\n\022GetOneTokenRequest\022\016\n\002" +
-      "id\030\001 \001(\rR\002id\"\327\001\n\023GetOneTokenResponse\022\016\n\002" +
-      "id\030\001 \001(\rR\002id\022\024\n\005token\030\002 \001(\tR\005token\022\022\n\004na" +
-      "me\030\003 \001(\tR\004name\022\027\n\007user_id\030\004 \001(\tR\006userId\022" +
-      ",\n\005roles\030\005 \003(\0132\026.accounts.v1alpha1.RolR\005" +
-      "roles\022?\n\013permissions\030\006 \003(\0132\035.accounts.v1" +
-      "alpha1.PermissionR\013permissions\"+\n\020ListTo" +
-      "kenRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"^\n\tT" +
-      "okenList\022\016\n\002id\030\001 \001(\rR\002id\022\024\n\005token\030\002 \001(\tR" +
-      "\005token\022\022\n\004name\030\003 \001(\tR\004name\022\027\n\007user_id\030\004 " +
-      "\001(\tR\006userId\"I\n\021ListTokenResponse\0224\n\006toke" +
-      "ns\030\001 \003(\0132\034.accounts.v1alpha1.TokenListR\006" +
-      "tokens\"\233\001\n\022UpdateTokenRequest\022\016\n\002id\030\001 \001(" +
-      "\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\033\n\troles_ids\030\003" +
-      " \003(\rR\010rolesIds\022\'\n\017permissions_ids\030\004 \003(\rR" +
-      "\016permissionsIds\022\033\n\tis_active\030\005 \001(\010R\010isAc" +
-      "tive\"S\n\023UpdateTokenResponse\022\020\n\003msg\030\001 \001(\t" +
-      "R\003msg\022\024\n\005token\030\002 \001(\tR\005token\022\024\n\005error\030\003 \001" +
-      "(\tR\005error\"$\n\022DeleteTokenRequest\022\016\n\002id\030\001 " +
-      "\001(\rR\002id\"S\n\023DeleteTokenResponse\022\020\n\003msg\030\001 " +
-      "\001(\tR\003msg\022\024\n\005token\030\002 \001(\tR\005token\022\024\n\005error\030" +
-      "\003 \001(\tR\005error\"d\n\004City\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004" +
-      "name\030\002 \001(\tR\004name\022\032\n\010latitude\030\003 \001(\tR\010lati" +
-      "tude\022\034\n\tlongitude\030\004 \001(\tR\tlongitude\"\\\n\005St" +
-      "ate\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022" +
-      "/\n\006cities\030\003 \003(\0132\027.accounts.v1alpha1.City" +
-      "R\006cities\"z\n\013CountryList\022\016\n\002id\030\001 \001(\rR\002id\022" +
-      "\022\n\004name\030\002 \001(\tR\004name\022\022\n\004code\030\003 \001(\tR\004code\022" +
-      "\035\n\nphone_code\030\004 \001(\tR\tphoneCode\022\024\n\005emoji\030" +
-      "\005 \001(\tR\005emoji\"\026\n\024ListCountriesRequest\"U\n\025" +
-      "ListCountriesResponse\022<\n\tcountries\030\001 \003(\013" +
-      "2\036.accounts.v1alpha1.CountryListR\tcountr" +
-      "ies\"I\n\024GetOneCountryRequest\022\035\n\ncountry_i" +
-      "d\030\001 \001(\rR\tcountryId\022\022\n\004name\030\002 \001(\tR\004name\"\266" +
-      "\001\n\025GetOneCountryResponse\022\016\n\002id\030\001 \001(\rR\002id" +
-      "\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004code\030\003 \001(\tR\004code" +
-      "\022\035\n\nphone_code\030\004 \001(\tR\tphoneCode\022\024\n\005emoji" +
-      "\030\005 \001(\tR\005emoji\0220\n\006states\030\006 \003(\0132\030.accounts" +
-      ".v1alpha1.StateR\006states\"Z\n\034SendVerificat" +
-      "ionEmailRequest\022\024\n\005email\030\001 \001(\tR\005email\022\022\n" +
-      "\004name\030\002 \001(\tR\004name\022\020\n\003url\030\003 \001(\tR\003url\"V\n\035S" +
-      "endVerificationEmailResponse\022\037\n\013html_res" +
-      "ult\030\001 \001(\tR\nhtmlResult\022\024\n\005error\030\002 \001(\tR\005er" +
-      "ror\"*\n\022VerifyEmailRequest\022\024\n\005token\030\001 \001(\t" +
-      "R\005token\"=\n\023VerifyEmailResponse\022\020\n\003msg\030\001 " +
-      "\001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\373\002\n\020Check" +
-      "UserRequest\022\'\n\017organization_id\030\001 \001(\rR\016or" +
-      "ganizationId\022\035\n\nproject_id\030\002 \001(\rR\tprojec" +
-      "tId\022A\n\035get_organization_from_project\030\003 \001" +
-      "(\rR\032getOrganizationFromProject\022\036\n\npermis" +
-      "sion\030\004 \001(\tR\npermission\022\036\n\013user_id_dex\030\005 " +
-      "\001(\tR\tuserIdDex\022\"\n\ruser_id_admin\030\006 \001(\tR\013u" +
-      "serIdAdmin\022\027\n\007user_id\030\007 \001(\rR\006userId\022\'\n\017t" +
-      "ype_permission\030\t \001(\tR\016typePermission\022\033\n\t" +
-      "roles_ids\030\n \003(\rR\010rolesIds\022\031\n\010token_id\030\013 " +
-      "\001(\tR\007tokenId\"F\n\021CheckUserResponse\022\033\n\tis_" +
-      "exists\030\001 \001(\010R\010isExists\022\024\n\005error\030\002 \001(\tR\005e" +
-      "rror\"?\n\010UsersDex\022\027\n\007user_id\030\001 \001(\tR\006userI" +
-      "d\022\032\n\010provider\030\002 \001(\tR\010provider\"<\n\022CreateU" +
-      "serResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002" +
-      " \001(\tR\005error\"<\n\022UpdateUserResponse\022\020\n\003msg" +
-      "\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"<\n\022Del" +
-      "eteUserResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005err" +
-      "or\030\002 \001(\tR\005error\"Y\n\017ListUserRequest\022\'\n\017or" +
-      "ganization_id\030\001 \001(\rR\016organizationId\022\035\n\np" +
-      "roject_id\030\002 \001(\rR\tprojectId\"\317\003\n\021CreateUse" +
-      "rRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\035\n\nfir" +
-      "st_name\030\002 \001(\tR\tfirstName\022\033\n\tlast_name\030\003 " +
-      "\001(\tR\010lastName\022\024\n\005email\030\004 \001(\tR\005email\022\033\n\ti" +
-      "s_active\030\005 \001(\010R\010isActive\022\033\n\troles_ids\030\006 " +
-      "\003(\rR\010rolesIds\022\'\n\017permissions_ids\030\007 \003(\rR\016" +
-      "permissionsIds\022+\n\021organizations_ids\030\010 \003(" +
-      "\rR\020organizationsIds\022!\n\014phone_number\030\t \001(" +
-      "\tR\013phoneNumber\022\030\n\007country\030\n \001(\tR\007country" +
-      "\022\022\n\004city\030\013 \001(\tR\004city\022\031\n\010zip_code\030\014 \001(\tR\007" +
-      "zipCode\022\030\n\007address\030\r \001(\tR\007address\022\024\n\005sta" +
-      "te\030\016 \001(\tR\005state\022#\n\remoji_country\030\017 \001(\tR\014" +
-      "emojiCountry\"f\n\021UpdateUserRequest\022\027\n\007aut" +
-      "h_id\030\001 \001(\rR\006authId\0228\n\004auth\030\002 \001(\0132$.accou" +
-      "nts.v1alpha1.CreateUserRequestR\004auth\",\n\021" +
-      "DeleteUserRequest\022\027\n\007auth_id\030\001 \001(\rR\006auth" +
-      "Id\"\306\001\n\010UserList\022\016\n\002id\030\001 \001(\rR\002id\022\035\n\nfirst" +
-      "_name\030\002 \001(\tR\tfirstName\022\033\n\tlast_name\030\003 \001(" +
-      "\tR\010lastName\022\024\n\005email\030\004 \001(\tR\005email\022\027\n\007use" +
-      "r_id\030\005 \001(\tR\006userId\022\033\n\tis_active\030\006 \001(\010R\010i" +
-      "sActive\022\"\n\ris_super_user\030\007 \001(\010R\013isSuperU" +
-      "ser\"#\n\021GetOneUserRequest\022\016\n\002id\030\001 \001(\rR\002id" +
-      "\"\275\005\n\022GetOneUserResponse\022\016\n\002id\030\001 \001(\rR\002id\022" +
-      "\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003" +
-      " \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010last" +
-      "Name\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis_active\030" +
-      "\006 \001(\010R\010isActive\022\035\n\ncreated_at\030\007 \001(\tR\tcre" +
-      "atedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022,\n" +
-      "\005roles\030\t \003(\0132\026.accounts.v1alpha1.RolR\005ro" +
-      "les\022?\n\013permissions\030\n \003(\0132\035.accounts.v1al" +
-      "pha1.PermissionR\013permissions\022\"\n\ris_super" +
-      "_user\030\013 \001(\010R\013isSuperUser\022E\n\rorganization" +
-      "s\030\014 \003(\0132\037.accounts.v1alpha1.Organization" +
-      "R\rorganizations\0226\n\010projects\030\r \003(\0132\032.acco" +
-      "unts.v1alpha1.ProjectR\010projects\022!\n\014phone" +
-      "_number\030\016 \001(\tR\013phoneNumber\022\030\n\007country\030\017 " +
-      "\001(\tR\007country\022\022\n\004city\030\020 \001(\tR\004city\022\031\n\010zip_" +
-      "code\030\021 \001(\tR\007zipCode\022\030\n\007address\030\022 \001(\tR\007ad" +
-      "dress\022\024\n\005state\030\023 \001(\tR\005state\022#\n\remoji_cou" +
-      "ntry\030\024 \001(\tR\014emojiCountry\"E\n\020ListUserResp" +
-      "onse\0221\n\005users\030\001 \003(\0132\033.accounts.v1alpha1." +
-      "UserListR\005users\"I\n\031ListUserPaginationReq" +
-      "uest\022\026\n\006offset\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 " +
-      "\001(\005R\005limit\"e\n\032ListUserPaginationResponse" +
-      "\022\024\n\005count\030\001 \001(\003R\005count\0221\n\005users\030\002 \003(\0132\033." +
-      "accounts.v1alpha1.UserListR\005users\"\210\001\n\031Se" +
-      "ndInvitationUserRequest\022\022\n\004name\030\001 \001(\tR\004n" +
-      "ame\022\024\n\005email\030\002 \001(\tR\005email\022\035\n\nproject_id\030" +
-      "\003 \001(\rR\tprojectId\022\"\n\ruser_id_admin\030\004 \001(\tR" +
-      "\013userIdAdmin\"\330\001\n\032SendInvitationUserRespo" +
-      "nse\022C\n\014organization\030\001 \001(\0132\037.accounts.v1a" +
-      "lpha1.OrganizationR\014organization\0224\n\007proj" +
-      "ect\030\002 \001(\0132\032.accounts.v1alpha1.ProjectR\007p" +
-      "roject\022\'\n\017invitation_code\030\003 \001(\tR\016invitat" +
-      "ionCode\022\026\n\006result\030\004 \001(\tR\006result\"Y\n\030GetIn" +
-      "vitationUserRequest\022\'\n\017invitation_code\030\001" +
-      " \001(\tR\016invitationCode\022\024\n\005email\030\002 \001(\tR\005ema" +
-      "il\"\256\001\n\031GetInvitationUserResponse\022C\n\014orga" +
-      "nization\030\001 \001(\0132\037.accounts.v1alpha1.Organ" +
-      "izationR\014organization\0224\n\007project\030\002 \001(\0132\032" +
-      ".accounts.v1alpha1.ProjectR\007project\022\026\n\006r" +
-      "esult\030\003 \001(\tR\006result\"\366\001\n\032AgreeInvitationU" +
-      "serRequest\022\'\n\017invitation_code\030\001 \001(\tR\016inv" +
-      "itationCode\022\024\n\005email\030\002 \001(\tR\005email\022\"\n\rgue" +
-      "st_user_id\030\003 \001(\tR\013guestUserId\022V\n\023invitat" +
-      "ion_response\030\004 \001(\0162%.accounts.v1alpha1.I" +
-      "nvitationResponseR\022invitationResponse\022\035\n" +
-      "\nproject_id\030\005 \001(\rR\tprojectId\"5\n\033AgreeInv" +
-      "itationUserResponse\022\026\n\006result\030\001 \001(\tR\006res" +
-      "ult\"\262\001\n\003Rol\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(" +
-      "\tR\004name\022\035\n\nproject_id\030\003 \001(\rR\tprojectId\022\'" +
-      "\n\017organization_id\030\004 \001(\rR\016organizationId\022" +
-      "?\n\013permissions\030\005 \003(\0132\035.accounts.v1alpha1" +
-      ".PermissionR\013permissions\"\341\001\n\021CreateRoleR" +
-      "equest\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013descriptio" +
-      "n\030\002 \001(\tR\013description\022\035\n\nproject_id\030\003 \001(\r" +
-      "R\tprojectId\022\'\n\017organization_id\030\004 \001(\rR\016or" +
-      "ganizationId\022\'\n\017type_permission\030\005 \001(\tR\016t" +
-      "ypePermission\022%\n\016permission_ids\030\006 \003(\rR\rp" +
-      "ermissionIds\"b\n\021UpdateRoleRequest\022\025\n\006rol" +
-      "_id\030\001 \001(\rR\005rolId\0226\n\003rol\030\002 \001(\0132$.accounts" +
-      ".v1alpha1.CreateRoleRequestR\003rol\"*\n\021GetO" +
-      "neRoleRequest\022\025\n\006rol_id\030\001 \001(\rR\005rolId\"\301\001\n" +
-      "\022GetOneRoleResponse\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004n" +
-      "ame\030\002 \001(\tR\004name\022\'\n\017organization_id\030\003 \001(\r" +
-      "R\016organizationId\022\035\n\nproject_id\030\004 \001(\rR\tpr" +
-      "ojectId\022?\n\013permissions\030\005 \003(\0132\035.accounts." +
-      "v1alpha1.PermissionR\013permissions\"*\n\021Dele" +
-      "teRoleRequest\022\025\n\006rol_id\030\001 \001(\rR\005rolId\"Z\n\020" +
-      "ListRolesRequest\022\035\n\nproject_id\030\001 \001(\rR\tpr" +
-      "ojectId\022\'\n\017organization_id\030\002 \001(\rR\016organi" +
-      "zationId\"A\n\021ListRolesResponse\022,\n\005roles\030\001" +
-      " \003(\0132\026.accounts.v1alpha1.RolR\005roles\"L\n\022C" +
-      "reateRoleResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005e" +
-      "rror\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\rR\002id\"<\n\022Upd" +
-      "ateRoleResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005err" +
-      "or\030\002 \001(\tR\005error\"<\n\022DeleteRoleResponse\022\020\n" +
-      "\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\372\001" +
-      "\n\007Project\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR" +
-      "\004name\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017organizat" +
-      "ion_id\030\004 \001(\rR\016organizationId\022 \n\013descript" +
-      "ion\030\005 \001(\tR\013description\022\035\n\ncreated_at\030\006 \001" +
-      "(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdat" +
-      "edAt\022,\n\005roles\030\010 \003(\0132\026.accounts.v1alpha1." +
-      "RolR\005roles\"\244\001\n\024CreateProjectRequest\022\022\n\004n" +
-      "ame\030\001 \001(\tR\004name\022 \n\013description\030\002 \001(\tR\013de" +
-      "scription\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017organ" +
-      "ization_id\030\004 \001(\rR\016organizationId\022\027\n\007user" +
-      "_id\030\005 \001(\tR\006userId\"&\n\024GetOneProjectReques" +
-      "t\022\016\n\002id\030\001 \001(\005R\002id\"&\n\024DeleteProjectReques" +
-      "t\022\016\n\002id\030\001 \001(\005R\002id\"=\n\022ListProjectRequest\022" +
-      "\'\n\017organization_id\030\001 \001(\rR\016organizationId" +
-      "\"i\n\024UpdateProjectRequest\022\016\n\002id\030\001 \001(\005R\002id" +
-      "\022A\n\007project\030\002 \001(\0132\'.accounts.v1alpha1.Cr" +
-      "eateProjectRequestR\007project\"O\n\025CreatePro" +
-      "jectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030" +
-      "\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\rR\002id\"?\n\025UpdatePr" +
-      "ojectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error" +
-      "\030\002 \001(\tR\005error\"?\n\025DeleteProjectResponse\022\020" +
-      "\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\217" +
-      "\002\n\025GetOneProjectResponse\022\016\n\002id\030\001 \001(\005R\002id" +
-      "\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005ima" +
-      "ge\022\'\n\017organization_id\030\004 \001(\rR\016organizatio" +
-      "nId\022 \n\013description\030\005 \001(\tR\013description\022\035\n" +
-      "\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_" +
-      "at\030\007 \001(\tR\tupdatedAt\0223\n\007members\030\010 \003(\0132\031.a" +
-      "ccounts.v1alpha1.MemberR\007members\"M\n\023List" +
-      "ProjectResponse\0226\n\010projects\030\001 \003(\0132\032.acco" +
-      "unts.v1alpha1.ProjectR\010projects\"L\n\034ListP" +
-      "rojectPaginationRequest\022\026\n\006offset\030\001 \001(\005R" +
-      "\006offset\022\024\n\005limit\030\002 \001(\005R\005limit\"m\n\035ListPro" +
-      "jectPaginationResponse\0226\n\010projects\030\001 \003(\013" +
-      "2\032.accounts.v1alpha1.ProjectR\010projects\022\024" +
-      "\n\005count\030\002 \001(\003R\005count\"D\n\nPermission\022\016\n\002id" +
-      "\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004type\030\003" +
-      " \001(\tR\004type\"Y\n\026ListPermissionResponse\022?\n\013" +
-      "permissions\030\001 \003(\0132\035.accounts.v1alpha1.Pe" +
-      "rmissionR\013permissions\"W\n\027AssignPermissio" +
-      "nRequest\022\027\n\007user_id\030\001 \001(\rR\006userId\022#\n\rper" +
-      "mission_id\030\002 \001(\rR\014permissionId\"+\n\025ListPe" +
-      "rmissionRequest\022\022\n\004type\030\001 \001(\tR\004type\"A\n\027C" +
-      "reatePermissionRequest\022\022\n\004name\030\001 \001(\tR\004na" +
-      "me\022\022\n\004type\030\002 \001(\tR\004type\"f\n\027UpdatePermissi" +
-      "onRequest\022#\n\rpermission_id\030\001 \001(\rR\014permis" +
-      "sionId\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004type\030\003 \001(\t" +
-      "R\004type\">\n\027GetOnePermissionRequest\022#\n\rper" +
-      "mission_id\030\001 \001(\rR\014permissionId\"R\n\030GetOne" +
-      "PermissionResponse\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004na" +
-      "me\030\002 \001(\tR\004name\022\022\n\004type\030\003 \001(\tR\004type\">\n\027De" +
-      "letePermissionRequest\022#\n\rpermission_id\030\001" +
-      " \001(\rR\014permissionId\"B\n\030UpdatePermissionRe" +
+      "unts.v1alpha1\"\210\001\n\023CreateApiKeyRequest\022\022\n" +
+      "\004name\030\001 \001(\tR\004name\022\027\n\007user_id\030\002 \001(\tR\006user" +
+      "Id\022\033\n\troles_ids\030\003 \003(\rR\010rolesIds\022\'\n\017permi" +
+      "ssions_ids\030\004 \003(\rR\016permissionsIds\"\260\001\n\006Api" +
+      "Key\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022" +
+      "\027\n\007user_id\030\003 \001(\tR\006userId\022(\n\003rol\030\004 \003(\0132\026." +
+      "accounts.v1alpha1.RolR\003rol\022?\n\013permission" +
+      "s\030\005 \003(\0132\035.accounts.v1alpha1.PermissionR\013" +
+      "permissions\"\177\n\024CreateApiKeyResponse\022\020\n\003m" +
+      "sg\030\001 \001(\tR\003msg\022\027\n\007api_key\030\002 \001(\tR\006apiKey\022&" +
+      "\n\017access_point_id\030\004 \001(\rR\raccessPointId\022\024" +
+      "\n\005error\030\005 \001(\tR\005error\"%\n\023GetOneApiKeyRequ" +
+      "est\022\016\n\002id\030\001 \001(\rR\002id\"\333\001\n\024GetOneApiKeyResp" +
+      "onse\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007api_key\030\002 \001(\tR\006a" +
+      "piKey\022\022\n\004name\030\003 \001(\tR\004name\022\027\n\007user_id\030\004 \001" +
+      "(\tR\006userId\022,\n\005roles\030\005 \003(\0132\026.accounts.v1a" +
+      "lpha1.RolR\005roles\022?\n\013permissions\030\006 \003(\0132\035." +
+      "accounts.v1alpha1.PermissionR\013permission" +
+      "s\",\n\021ListApiKeyRequest\022\027\n\007user_id\030\001 \001(\tR" +
+      "\006userId\"b\n\nApiKeyList\022\016\n\002id\030\001 \001(\rR\002id\022\027\n" +
+      "\007api_key\030\002 \001(\tR\006apiKey\022\022\n\004name\030\003 \001(\tR\004na" +
+      "me\022\027\n\007user_id\030\004 \001(\tR\006userId\"N\n\022ListApiKe" +
+      "yResponse\0228\n\010api_keys\030\001 \003(\0132\035.accounts.v" +
+      "1alpha1.ApiKeyListR\007apiKeys\"\234\001\n\023UpdateAp" +
+      "iKeyRequest\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(" +
+      "\tR\004name\022\033\n\troles_ids\030\003 \003(\rR\010rolesIds\022\'\n\017" +
+      "permissions_ids\030\004 \003(\rR\016permissionsIds\022\033\n" +
+      "\tis_active\030\005 \001(\010R\010isActive\"W\n\024UpdateApiK" +
+      "eyResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\027\n\007api_key\030" +
+      "\002 \001(\tR\006apiKey\022\024\n\005error\030\003 \001(\tR\005error\"%\n\023D" +
+      "eleteApiKeyRequest\022\016\n\002id\030\001 \001(\rR\002id\"W\n\024De" +
+      "leteApiKeyResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\027\n\007" +
+      "api_key\030\002 \001(\tR\006apiKey\022\024\n\005error\030\003 \001(\tR\005er" +
+      "ror\"d\n\004City\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(" +
+      "\tR\004name\022\032\n\010latitude\030\003 \001(\tR\010latitude\022\034\n\tl" +
+      "ongitude\030\004 \001(\tR\tlongitude\"\\\n\005State\022\016\n\002id" +
+      "\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022/\n\006cities" +
+      "\030\003 \003(\0132\027.accounts.v1alpha1.CityR\006cities\"" +
+      "z\n\013CountryList\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002" +
+      " \001(\tR\004name\022\022\n\004code\030\003 \001(\tR\004code\022\035\n\nphone_" +
+      "code\030\004 \001(\tR\tphoneCode\022\024\n\005emoji\030\005 \001(\tR\005em" +
+      "oji\"\026\n\024ListCountriesRequest\"U\n\025ListCount" +
+      "riesResponse\022<\n\tcountries\030\001 \003(\0132\036.accoun" +
+      "ts.v1alpha1.CountryListR\tcountries\"I\n\024Ge" +
+      "tOneCountryRequest\022\035\n\ncountry_id\030\001 \001(\rR\t" +
+      "countryId\022\022\n\004name\030\002 \001(\tR\004name\"\266\001\n\025GetOne" +
+      "CountryResponse\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030" +
+      "\002 \001(\tR\004name\022\022\n\004code\030\003 \001(\tR\004code\022\035\n\nphone" +
+      "_code\030\004 \001(\tR\tphoneCode\022\024\n\005emoji\030\005 \001(\tR\005e" +
+      "moji\0220\n\006states\030\006 \003(\0132\030.accounts.v1alpha1" +
+      ".StateR\006states\"Z\n\034SendVerificationEmailR" +
+      "equest\022\024\n\005email\030\001 \001(\tR\005email\022\022\n\004name\030\002 \001" +
+      "(\tR\004name\022\020\n\003url\030\003 \001(\tR\003url\"V\n\035SendVerifi" +
+      "cationEmailResponse\022\037\n\013html_result\030\001 \001(\t" +
+      "R\nhtmlResult\022\024\n\005error\030\002 \001(\tR\005error\"*\n\022Ve" +
+      "rifyEmailRequest\022\024\n\005token\030\001 \001(\tR\005token\"=" +
+      "\n\023VerifyEmailResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022" +
+      "\024\n\005error\030\002 \001(\tR\005error\"\373\002\n\020CheckUserReque" +
+      "st\022\'\n\017organization_id\030\001 \001(\rR\016organizatio" +
+      "nId\022\035\n\nproject_id\030\002 \001(\rR\tprojectId\022A\n\035ge" +
+      "t_organization_from_project\030\003 \001(\rR\032getOr" +
+      "ganizationFromProject\022\036\n\npermission\030\004 \001(" +
+      "\tR\npermission\022\036\n\013user_id_dex\030\005 \001(\tR\tuser" +
+      "IdDex\022\"\n\ruser_id_admin\030\006 \001(\tR\013userIdAdmi" +
+      "n\022\027\n\007user_id\030\007 \001(\rR\006userId\022\'\n\017type_permi" +
+      "ssion\030\t \001(\tR\016typePermission\022\033\n\troles_ids" +
+      "\030\n \003(\rR\010rolesIds\022\031\n\010token_id\030\013 \001(\tR\007toke" +
+      "nId\"F\n\021CheckUserResponse\022\033\n\tis_exists\030\001 " +
+      "\001(\010R\010isExists\022\024\n\005error\030\002 \001(\tR\005error\"?\n\010U" +
+      "sersDex\022\027\n\007user_id\030\001 \001(\tR\006userId\022\032\n\010prov" +
+      "ider\030\002 \001(\tR\010provider\"<\n\022CreateUserRespon" +
+      "se\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005err" +
+      "or\"<\n\022UpdateUserResponse\022\020\n\003msg\030\001 \001(\tR\003m" +
+      "sg\022\024\n\005error\030\002 \001(\tR\005error\"<\n\022DeleteUserRe" +
       "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR" +
-      "\005error\"B\n\030DeletePermissionResponse\022\020\n\003ms" +
-      "g\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"B\n\030Cr" +
-      "eatePermissionResponse\022\020\n\003msg\030\001 \001(\tR\003msg" +
-      "\022\024\n\005error\030\002 \001(\tR\005error\"\212\001\n\006Member\022\016\n\002id\030" +
-      "\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfi" +
-      "rst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004" +
-      " \001(\tR\010lastName\022\033\n\tis_active\030\005 \001(\010R\010isAct" +
-      "ive\"q\n\023ProjectOrganization\022\016\n\002id\030\001 \001(\005R\002" +
-      "id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005i" +
-      "mage\022 \n\013description\030\004 \001(\tR\013description\"j" +
-      "\n\014Organization\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002" +
-      " \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013desc" +
-      "ription\030\004 \001(\tR\013description\"\200\001\n\031CreateOrg" +
-      "anizationRequest\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005" +
-      "image\030\002 \001(\tR\005image\022\027\n\007user_id\030\003 \001(\tR\006use" +
-      "rId\022 \n\013description\030\004 \001(\tR\013description\"\031\n" +
-      "\027ListOrganizationRequest\"D\n\031GetOneOrgani" +
-      "zationRequest\022\'\n\017organization_id\030\001 \001(\rR\016" +
-      "organizationId\"\220\001\n\031UpdateOrganizationReq" +
+      "\005error\"Y\n\017ListUserRequest\022\'\n\017organizatio" +
+      "n_id\030\001 \001(\rR\016organizationId\022\035\n\nproject_id" +
+      "\030\002 \001(\rR\tprojectId\"\317\003\n\021CreateUserRequest\022" +
+      "\027\n\007user_id\030\001 \001(\tR\006userId\022\035\n\nfirst_name\030\002" +
+      " \001(\tR\tfirstName\022\033\n\tlast_name\030\003 \001(\tR\010last" +
+      "Name\022\024\n\005email\030\004 \001(\tR\005email\022\033\n\tis_active\030" +
+      "\005 \001(\010R\010isActive\022\033\n\troles_ids\030\006 \003(\rR\010role" +
+      "sIds\022\'\n\017permissions_ids\030\007 \003(\rR\016permissio" +
+      "nsIds\022+\n\021organizations_ids\030\010 \003(\rR\020organi" +
+      "zationsIds\022!\n\014phone_number\030\t \001(\tR\013phoneN" +
+      "umber\022\030\n\007country\030\n \001(\tR\007country\022\022\n\004city\030" +
+      "\013 \001(\tR\004city\022\031\n\010zip_code\030\014 \001(\tR\007zipCode\022\030" +
+      "\n\007address\030\r \001(\tR\007address\022\024\n\005state\030\016 \001(\tR" +
+      "\005state\022#\n\remoji_country\030\017 \001(\tR\014emojiCoun" +
+      "try\"f\n\021UpdateUserRequest\022\027\n\007auth_id\030\001 \001(" +
+      "\rR\006authId\0228\n\004auth\030\002 \001(\0132$.accounts.v1alp" +
+      "ha1.CreateUserRequestR\004auth\",\n\021DeleteUse" +
+      "rRequest\022\027\n\007auth_id\030\001 \001(\rR\006authId\"\306\001\n\010Us" +
+      "erList\022\016\n\002id\030\001 \001(\rR\002id\022\035\n\nfirst_name\030\002 \001" +
+      "(\tR\tfirstName\022\033\n\tlast_name\030\003 \001(\tR\010lastNa" +
+      "me\022\024\n\005email\030\004 \001(\tR\005email\022\027\n\007user_id\030\005 \001(" +
+      "\tR\006userId\022\033\n\tis_active\030\006 \001(\010R\010isActive\022\"" +
+      "\n\ris_super_user\030\007 \001(\010R\013isSuperUser\"#\n\021Ge" +
+      "tOneUserRequest\022\016\n\002id\030\001 \001(\rR\002id\"\275\005\n\022GetO" +
+      "neUserResponse\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_i" +
+      "d\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfir" +
+      "stName\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022\024\n\005e" +
+      "mail\030\005 \001(\tR\005email\022\033\n\tis_active\030\006 \001(\010R\010is" +
+      "Active\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022\035\n" +
+      "\nupdated_at\030\010 \001(\tR\tupdatedAt\022,\n\005roles\030\t " +
+      "\003(\0132\026.accounts.v1alpha1.RolR\005roles\022?\n\013pe" +
+      "rmissions\030\n \003(\0132\035.accounts.v1alpha1.Perm" +
+      "issionR\013permissions\022\"\n\ris_super_user\030\013 \001" +
+      "(\010R\013isSuperUser\022E\n\rorganizations\030\014 \003(\0132\037" +
+      ".accounts.v1alpha1.OrganizationR\rorganiz" +
+      "ations\0226\n\010projects\030\r \003(\0132\032.accounts.v1al" +
+      "pha1.ProjectR\010projects\022!\n\014phone_number\030\016" +
+      " \001(\tR\013phoneNumber\022\030\n\007country\030\017 \001(\tR\007coun" +
+      "try\022\022\n\004city\030\020 \001(\tR\004city\022\031\n\010zip_code\030\021 \001(" +
+      "\tR\007zipCode\022\030\n\007address\030\022 \001(\tR\007address\022\024\n\005" +
+      "state\030\023 \001(\tR\005state\022#\n\remoji_country\030\024 \001(" +
+      "\tR\014emojiCountry\"E\n\020ListUserResponse\0221\n\005u" +
+      "sers\030\001 \003(\0132\033.accounts.v1alpha1.UserListR" +
+      "\005users\"I\n\031ListUserPaginationRequest\022\026\n\006o" +
+      "ffset\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001(\005R\005limi" +
+      "t\"e\n\032ListUserPaginationResponse\022\024\n\005count" +
+      "\030\001 \001(\003R\005count\0221\n\005users\030\002 \003(\0132\033.accounts." +
+      "v1alpha1.UserListR\005users\"\210\001\n\031SendInvitat" +
+      "ionUserRequest\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005em" +
+      "ail\030\002 \001(\tR\005email\022\035\n\nproject_id\030\003 \001(\rR\tpr" +
+      "ojectId\022\"\n\ruser_id_admin\030\004 \001(\tR\013userIdAd" +
+      "min\"\330\001\n\032SendInvitationUserResponse\022C\n\014or" +
+      "ganization\030\001 \001(\0132\037.accounts.v1alpha1.Org" +
+      "anizationR\014organization\0224\n\007project\030\002 \001(\013" +
+      "2\032.accounts.v1alpha1.ProjectR\007project\022\'\n" +
+      "\017invitation_code\030\003 \001(\tR\016invitationCode\022\026" +
+      "\n\006result\030\004 \001(\tR\006result\"Y\n\030GetInvitationU" +
+      "serRequest\022\'\n\017invitation_code\030\001 \001(\tR\016inv" +
+      "itationCode\022\024\n\005email\030\002 \001(\tR\005email\"\256\001\n\031Ge" +
+      "tInvitationUserResponse\022C\n\014organization\030" +
+      "\001 \001(\0132\037.accounts.v1alpha1.OrganizationR\014" +
+      "organization\0224\n\007project\030\002 \001(\0132\032.accounts" +
+      ".v1alpha1.ProjectR\007project\022\026\n\006result\030\003 \001" +
+      "(\tR\006result\"\366\001\n\032AgreeInvitationUserReques" +
+      "t\022\'\n\017invitation_code\030\001 \001(\tR\016invitationCo" +
+      "de\022\024\n\005email\030\002 \001(\tR\005email\022\"\n\rguest_user_i" +
+      "d\030\003 \001(\tR\013guestUserId\022V\n\023invitation_respo" +
+      "nse\030\004 \001(\0162%.accounts.v1alpha1.Invitation" +
+      "ResponseR\022invitationResponse\022\035\n\nproject_" +
+      "id\030\005 \001(\rR\tprojectId\"5\n\033AgreeInvitationUs" +
+      "erResponse\022\026\n\006result\030\001 \001(\tR\006result\"\262\001\n\003R" +
+      "ol\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\035" +
+      "\n\nproject_id\030\003 \001(\rR\tprojectId\022\'\n\017organiz" +
+      "ation_id\030\004 \001(\rR\016organizationId\022?\n\013permis" +
+      "sions\030\005 \003(\0132\035.accounts.v1alpha1.Permissi" +
+      "onR\013permissions\"\341\001\n\021CreateRoleRequest\022\022\n" +
+      "\004name\030\001 \001(\tR\004name\022 \n\013description\030\002 \001(\tR\013" +
+      "description\022\035\n\nproject_id\030\003 \001(\rR\tproject" +
+      "Id\022\'\n\017organization_id\030\004 \001(\rR\016organizatio" +
+      "nId\022\'\n\017type_permission\030\005 \001(\tR\016typePermis" +
+      "sion\022%\n\016permission_ids\030\006 \003(\rR\rpermission" +
+      "Ids\"b\n\021UpdateRoleRequest\022\025\n\006rol_id\030\001 \001(\r" +
+      "R\005rolId\0226\n\003rol\030\002 \001(\0132$.accounts.v1alpha1" +
+      ".CreateRoleRequestR\003rol\"*\n\021GetOneRoleReq" +
+      "uest\022\025\n\006rol_id\030\001 \001(\rR\005rolId\"\301\001\n\022GetOneRo" +
+      "leResponse\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\t" +
+      "R\004name\022\'\n\017organization_id\030\003 \001(\rR\016organiz" +
+      "ationId\022\035\n\nproject_id\030\004 \001(\rR\tprojectId\022?" +
+      "\n\013permissions\030\005 \003(\0132\035.accounts.v1alpha1." +
+      "PermissionR\013permissions\"*\n\021DeleteRoleReq" +
+      "uest\022\025\n\006rol_id\030\001 \001(\rR\005rolId\"Z\n\020ListRoles" +
+      "Request\022\035\n\nproject_id\030\001 \001(\rR\tprojectId\022\'" +
+      "\n\017organization_id\030\002 \001(\rR\016organizationId\"" +
+      "A\n\021ListRolesResponse\022,\n\005roles\030\001 \003(\0132\026.ac" +
+      "counts.v1alpha1.RolR\005roles\"L\n\022CreateRole" +
+      "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(" +
+      "\tR\005error\022\016\n\002id\030\003 \001(\rR\002id\"<\n\022UpdateRoleRe" +
+      "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR" +
+      "\005error\"<\n\022DeleteRoleResponse\022\020\n\003msg\030\001 \001(" +
+      "\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\372\001\n\007Project" +
+      "\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005" +
+      "image\030\003 \001(\tR\005image\022\'\n\017organization_id\030\004 " +
+      "\001(\rR\016organizationId\022 \n\013description\030\005 \001(\t" +
+      "R\013description\022\035\n\ncreated_at\030\006 \001(\tR\tcreat" +
+      "edAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022,\n\005r" +
+      "oles\030\010 \003(\0132\026.accounts.v1alpha1.RolR\005role" +
+      "s\"\244\001\n\024CreateProjectRequest\022\022\n\004name\030\001 \001(\t" +
+      "R\004name\022 \n\013description\030\002 \001(\tR\013description" +
+      "\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017organization_i" +
+      "d\030\004 \001(\rR\016organizationId\022\027\n\007user_id\030\005 \001(\t" +
+      "R\006userId\"&\n\024GetOneProjectRequest\022\016\n\002id\030\001" +
+      " \001(\005R\002id\"&\n\024DeleteProjectRequest\022\016\n\002id\030\001" +
+      " \001(\005R\002id\"=\n\022ListProjectRequest\022\'\n\017organi" +
+      "zation_id\030\001 \001(\rR\016organizationId\"i\n\024Updat" +
+      "eProjectRequest\022\016\n\002id\030\001 \001(\005R\002id\022A\n\007proje" +
+      "ct\030\002 \001(\0132\'.accounts.v1alpha1.CreateProje" +
+      "ctRequestR\007project\"O\n\025CreateProjectRespo" +
+      "nse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005er" +
+      "ror\022\016\n\002id\030\003 \001(\rR\002id\"?\n\025UpdateProjectResp" +
+      "onse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005e" +
+      "rror\"?\n\025DeleteProjectResponse\022\020\n\003msg\030\001 \001" +
+      "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\217\002\n\025GetOne" +
+      "ProjectResponse\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030" +
+      "\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017org" +
+      "anization_id\030\004 \001(\rR\016organizationId\022 \n\013de" +
+      "scription\030\005 \001(\tR\013description\022\035\n\ncreated_" +
+      "at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR" +
+      "\tupdatedAt\0223\n\007members\030\010 \003(\0132\031.accounts.v" +
+      "1alpha1.MemberR\007members\"M\n\023ListProjectRe" +
+      "sponse\0226\n\010projects\030\001 \003(\0132\032.accounts.v1al" +
+      "pha1.ProjectR\010projects\"L\n\034ListProjectPag" +
+      "inationRequest\022\026\n\006offset\030\001 \001(\005R\006offset\022\024" +
+      "\n\005limit\030\002 \001(\005R\005limit\"m\n\035ListProjectPagin" +
+      "ationResponse\0226\n\010projects\030\001 \003(\0132\032.accoun" +
+      "ts.v1alpha1.ProjectR\010projects\022\024\n\005count\030\002" +
+      " \001(\003R\005count\"D\n\nPermission\022\016\n\002id\030\001 \001(\rR\002i" +
+      "d\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004type\030\003 \001(\tR\004typ" +
+      "e\"Y\n\026ListPermissionResponse\022?\n\013permissio" +
+      "ns\030\001 \003(\0132\035.accounts.v1alpha1.PermissionR" +
+      "\013permissions\"W\n\027AssignPermissionRequest\022" +
+      "\027\n\007user_id\030\001 \001(\rR\006userId\022#\n\rpermission_i" +
+      "d\030\002 \001(\rR\014permissionId\"+\n\025ListPermissionR" +
+      "equest\022\022\n\004type\030\001 \001(\tR\004type\"A\n\027CreatePerm" +
+      "issionRequest\022\022\n\004name\030\001 \001(\tR\004name\022\022\n\004typ" +
+      "e\030\002 \001(\tR\004type\"f\n\027UpdatePermissionRequest" +
+      "\022#\n\rpermission_id\030\001 \001(\rR\014permissionId\022\022\n" +
+      "\004name\030\002 \001(\tR\004name\022\022\n\004type\030\003 \001(\tR\004type\">\n" +
+      "\027GetOnePermissionRequest\022#\n\rpermission_i" +
+      "d\030\001 \001(\rR\014permissionId\"R\n\030GetOnePermissio" +
+      "nResponse\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR" +
+      "\004name\022\022\n\004type\030\003 \001(\tR\004type\">\n\027DeletePermi" +
+      "ssionRequest\022#\n\rpermission_id\030\001 \001(\rR\014per" +
+      "missionId\"B\n\030UpdatePermissionResponse\022\020\n" +
+      "\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"B\n" +
+      "\030DeletePermissionResponse\022\020\n\003msg\030\001 \001(\tR\003" +
+      "msg\022\024\n\005error\030\002 \001(\tR\005error\"B\n\030CreatePermi" +
+      "ssionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error" +
+      "\030\002 \001(\tR\005error\"\212\001\n\006Member\022\016\n\002id\030\001 \001(\rR\002id" +
+      "\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030" +
+      "\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010las" +
+      "tName\022\033\n\tis_active\030\005 \001(\010R\010isActive\"q\n\023Pr" +
+      "ojectOrganization\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004nam" +
+      "e\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013d" +
+      "escription\030\004 \001(\tR\013description\"j\n\014Organiz" +
+      "ation\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004nam" +
+      "e\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013description\030\004" +
+      " \001(\tR\013description\"\200\001\n\031CreateOrganization" +
+      "Request\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005image\030\002 \001" +
+      "(\tR\005image\022\027\n\007user_id\030\003 \001(\tR\006userId\022 \n\013de" +
+      "scription\030\004 \001(\tR\013description\"\031\n\027ListOrga" +
+      "nizationRequest\"D\n\031GetOneOrganizationReq" +
       "uest\022\'\n\017organization_id\030\001 \001(\rR\016organizat" +
-      "ionId\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013description" +
-      "\030\003 \001(\tR\013description\022\024\n\005image\030\004 \001(\tR\005imag" +
-      "e\"D\n\031DeleteOrganizationRequest\022\'\n\017organi" +
-      "zation_id\030\001 \001(\rR\016organizationId\"\361\001\n\032GetO" +
-      "neOrganizationResponse\022\016\n\002id\030\001 \001(\rR\002id\022\022" +
-      "\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image" +
-      "\022B\n\010projects\030\004 \003(\0132&.accounts.v1alpha1.P" +
-      "rojectOrganizationR\010projects\0223\n\007menbers\030" +
-      "\005 \003(\0132\031.accounts.v1alpha1.MemberR\007menber" +
-      "s\022 \n\013description\030\006 \001(\tR\013description\"a\n\030L" +
-      "istOrganizationResponse\022E\n\rorganizations" +
-      "\030\001 \003(\0132\037.accounts.v1alpha1.OrganizationR" +
-      "\rorganizations\"\206\001\n\032CreateOrganizationRes" +
-      "ponse\022\020\n\003msg\030\001 \001(\tR\003msg\0220\n\024role_id_organ" +
-      "ization\030\002 \001(\rR\022roleIdOrganization\022\024\n\005err" +
-      "or\030\003 \001(\tR\005error\022\016\n\002id\030\004 \001(\rR\002id\"D\n\032Updat" +
-      "eOrganizationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022" +
-      "\024\n\005error\030\002 \001(\tR\005error\"D\n\032DeleteOrganizat" +
-      "ionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002" +
-      " \001(\tR\005error\"\027\n\025GetListUserDexRequest\"R\n\026" +
-      "GetListUserDexResponse\0228\n\tusers_dex\030\001 \003(" +
-      "\0132\033.accounts.v1alpha1.UsersDexR\010usersDex" +
-      "\"i\n\024GetOneUserDexRequest\022\027\n\007user_id\030\001 \001(" +
-      "\tR\006userId\0228\n\004user\030\002 \001(\0132$.accounts.v1alp" +
-      "ha1.CreateUserRequestR\004user\"\322\005\n\025GetOneUs" +
-      "erDexResponse\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id" +
-      "\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirs" +
-      "tName\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022\024\n\005em" +
-      "ail\030\005 \001(\tR\005email\022\033\n\tis_active\030\006 \001(\010R\010isA" +
-      "ctive\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022\035\n\n" +
-      "updated_at\030\010 \001(\tR\tupdatedAt\022,\n\005roles\030\t \003" +
-      "(\0132\026.accounts.v1alpha1.RolR\005roles\022?\n\013per" +
-      "missions\030\n \003(\0132\035.accounts.v1alpha1.Permi" +
-      "ssionR\013permissions\022\"\n\ris_super_user\030\013 \001(" +
-      "\010R\013isSuperUser\022E\n\rorganizations\030\014 \003(\0132\037." +
+      "ionId\"\220\001\n\031UpdateOrganizationRequest\022\'\n\017o" +
+      "rganization_id\030\001 \001(\rR\016organizationId\022\022\n\004" +
+      "name\030\002 \001(\tR\004name\022 \n\013description\030\003 \001(\tR\013d" +
+      "escription\022\024\n\005image\030\004 \001(\tR\005image\"D\n\031Dele" +
+      "teOrganizationRequest\022\'\n\017organization_id" +
+      "\030\001 \001(\rR\016organizationId\"\361\001\n\032GetOneOrganiz" +
+      "ationResponse\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 " +
+      "\001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022B\n\010proje" +
+      "cts\030\004 \003(\0132&.accounts.v1alpha1.ProjectOrg" +
+      "anizationR\010projects\0223\n\007menbers\030\005 \003(\0132\031.a" +
+      "ccounts.v1alpha1.MemberR\007menbers\022 \n\013desc" +
+      "ription\030\006 \001(\tR\013description\"a\n\030ListOrgani" +
+      "zationResponse\022E\n\rorganizations\030\001 \003(\0132\037." +
       "accounts.v1alpha1.OrganizationR\rorganiza" +
-      "tions\022\020\n\003msg\030\r \001(\tR\003msg\0226\n\010projects\030\016 \003(" +
-      "\0132\032.accounts.v1alpha1.ProjectR\010projects\022" +
-      "!\n\014phone_number\030\017 \001(\tR\013phoneNumber\022\030\n\007co" +
-      "untry\030\020 \001(\tR\007country\022\022\n\004city\030\021 \001(\tR\004city" +
-      "\022\031\n\010zip_code\030\022 \001(\tR\007zipCode\022\030\n\007address\030\023" +
-      " \001(\tR\007address\022\024\n\005state\030\024 \001(\tR\005state\022#\n\re" +
-      "moji_country\030\025 \001(\tR\014emojiCountry*d\n\022Invi" +
-      "tationResponse\022,\n(INVITATION_RESPONSE_AC" +
-      "CEPTED_UNSPECIFIED\020\000\022 \n\034INVITATION_RESPO" +
-      "NSE_REJECTED\020\0012\270 \n\016AccountService\022Y\n\nCre" +
-      "ateUser\022$.accounts.v1alpha1.CreateUserRe" +
-      "quest\032%.accounts.v1alpha1.CreateUserResp" +
-      "onse\022S\n\010ListUser\022\".accounts.v1alpha1.Lis" +
-      "tUserRequest\032#.accounts.v1alpha1.ListUse" +
-      "rResponse\022Y\n\nGetOneUser\022$.accounts.v1alp" +
-      "ha1.GetOneUserRequest\032%.accounts.v1alpha" +
-      "1.GetOneUserResponse\022Y\n\nUpdateUser\022$.acc" +
-      "ounts.v1alpha1.UpdateUserRequest\032%.accou" +
-      "nts.v1alpha1.UpdateUserResponse\022Y\n\nDelet" +
-      "eUser\022$.accounts.v1alpha1.DeleteUserRequ" +
-      "est\032%.accounts.v1alpha1.DeleteUserRespon" +
-      "se\022q\n\022ListUserPagination\022,.accounts.v1al" +
-      "pha1.ListUserPaginationRequest\032-.account" +
-      "s.v1alpha1.ListUserPaginationResponse\022q\n" +
-      "\022SendInvitationUser\022,.accounts.v1alpha1." +
-      "SendInvitationUserRequest\032-.accounts.v1a" +
-      "lpha1.SendInvitationUserResponse\022n\n\021GetI" +
-      "nvitationUser\022+.accounts.v1alpha1.GetInv" +
-      "itationUserRequest\032,.accounts.v1alpha1.G" +
-      "etInvitationUserResponse\022t\n\023AgreeInvitat" +
-      "ionUser\022-.accounts.v1alpha1.AgreeInvitat" +
-      "ionUserRequest\032..accounts.v1alpha1.Agree" +
-      "InvitationUserResponse\022k\n\020CreatePermissi" +
-      "on\022*.accounts.v1alpha1.CreatePermissionR" +
-      "equest\032+.accounts.v1alpha1.CreatePermiss" +
-      "ionResponse\022e\n\016ListPermission\022(.accounts" +
-      ".v1alpha1.ListPermissionRequest\032).accoun" +
-      "ts.v1alpha1.ListPermissionResponse\022k\n\020Ge" +
-      "tOnePermission\022*.accounts.v1alpha1.GetOn" +
-      "ePermissionRequest\032+.accounts.v1alpha1.G" +
-      "etOnePermissionResponse\022k\n\020UpdatePermiss" +
-      "ion\022*.accounts.v1alpha1.UpdatePermission" +
-      "Request\032+.accounts.v1alpha1.UpdatePermis" +
-      "sionResponse\022k\n\020DeletePermission\022*.accou" +
-      "nts.v1alpha1.DeletePermissionRequest\032+.a" +
-      "ccounts.v1alpha1.DeletePermissionRespons" +
-      "e\022q\n\022CreateOrganization\022,.accounts.v1alp" +
-      "ha1.CreateOrganizationRequest\032-.accounts" +
-      ".v1alpha1.CreateOrganizationResponse\022k\n\020" +
-      "ListOrganization\022*.accounts.v1alpha1.Lis" +
-      "tOrganizationRequest\032+.accounts.v1alpha1" +
-      ".ListOrganizationResponse\022q\n\022GetOneOrgan" +
-      "ization\022,.accounts.v1alpha1.GetOneOrgani" +
-      "zationRequest\032-.accounts.v1alpha1.GetOne" +
-      "OrganizationResponse\022q\n\022UpdateOrganizati" +
-      "on\022,.accounts.v1alpha1.UpdateOrganizatio" +
-      "nRequest\032-.accounts.v1alpha1.UpdateOrgan" +
-      "izationResponse\022q\n\022DeleteOrganization\022,." +
-      "accounts.v1alpha1.DeleteOrganizationRequ" +
-      "est\032-.accounts.v1alpha1.DeleteOrganizati" +
-      "onResponse\022Y\n\nCreateRole\022$.accounts.v1al" +
-      "pha1.CreateRoleRequest\032%.accounts.v1alph" +
-      "a1.CreateRoleResponse\022V\n\tListRoles\022#.acc" +
-      "ounts.v1alpha1.ListRolesRequest\032$.accoun" +
-      "ts.v1alpha1.ListRolesResponse\022Y\n\nUpdateR" +
-      "ole\022$.accounts.v1alpha1.UpdateRoleReques" +
-      "t\032%.accounts.v1alpha1.UpdateRoleResponse" +
-      "\022Y\n\nGetOneRole\022$.accounts.v1alpha1.GetOn" +
-      "eRoleRequest\032%.accounts.v1alpha1.GetOneR" +
-      "oleResponse\022Y\n\nDeleteRole\022$.accounts.v1a" +
-      "lpha1.DeleteRoleRequest\032%.accounts.v1alp" +
-      "ha1.DeleteRoleResponse\022b\n\rCreateProject\022" +
-      "\'.accounts.v1alpha1.CreateProjectRequest" +
-      "\032(.accounts.v1alpha1.CreateProjectRespon" +
-      "se\022b\n\rGetOneProject\022\'.accounts.v1alpha1." +
-      "GetOneProjectRequest\032(.accounts.v1alpha1" +
-      ".GetOneProjectResponse\022b\n\rUpdateProject\022" +
-      "\'.accounts.v1alpha1.UpdateProjectRequest" +
-      "\032(.accounts.v1alpha1.UpdateProjectRespon" +
-      "se\022b\n\rDeleteProject\022\'.accounts.v1alpha1." +
-      "DeleteProjectRequest\032(.accounts.v1alpha1" +
-      ".DeleteProjectResponse\022\\\n\013ListProject\022%." +
-      "accounts.v1alpha1.ListProjectRequest\032&.a" +
-      "ccounts.v1alpha1.ListProjectResponse\022e\n\016" +
-      "GetListUserDex\022(.accounts.v1alpha1.GetLi" +
-      "stUserDexRequest\032).accounts.v1alpha1.Get" +
-      "ListUserDexResponse\022b\n\rGetOneUserDex\022\'.a" +
-      "ccounts.v1alpha1.GetOneUserDexRequest\032(." +
-      "accounts.v1alpha1.GetOneUserDexResponse\022" +
-      "V\n\tCheckUser\022#.accounts.v1alpha1.CheckUs" +
-      "erRequest\032$.accounts.v1alpha1.CheckUserR" +
-      "esponse\022z\n\025SendVerificationEmail\022/.accou" +
-      "nts.v1alpha1.SendVerificationEmailReques" +
-      "t\0320.accounts.v1alpha1.SendVerificationEm" +
-      "ailResponse\022\\\n\013VerifyEmail\022%.accounts.v1" +
-      "alpha1.VerifyEmailRequest\032&.accounts.v1a" +
-      "lpha1.VerifyEmailResponse\022b\n\rListCountri" +
-      "es\022\'.accounts.v1alpha1.ListCountriesRequ" +
-      "est\032(.accounts.v1alpha1.ListCountriesRes" +
-      "ponse\022b\n\rGetOneCountry\022\'.accounts.v1alph" +
-      "a1.GetOneCountryRequest\032(.accounts.v1alp" +
-      "ha1.GetOneCountryResponse\022\\\n\013CreateToken" +
-      "\022%.accounts.v1alpha1.CreateTokenRequest\032" +
-      "&.accounts.v1alpha1.CreateTokenResponse\022" +
-      "\\\n\013GetOneToken\022%.accounts.v1alpha1.GetOn" +
-      "eTokenRequest\032&.accounts.v1alpha1.GetOne" +
-      "TokenResponse\022V\n\tListToken\022#.accounts.v1" +
-      "alpha1.ListTokenRequest\032$.accounts.v1alp" +
-      "ha1.ListTokenResponse\022\\\n\013UpdateToken\022%.a" +
-      "ccounts.v1alpha1.UpdateTokenRequest\032&.ac" +
-      "counts.v1alpha1.UpdateTokenResponse\022\\\n\013D" +
-      "eleteToken\022%.accounts.v1alpha1.DeleteTok" +
-      "enRequest\032&.accounts.v1alpha1.DeleteToke" +
-      "nResponseB4Z2github.com/cuemby/ccp-sdk/g" +
-      "en/go/accounts/v1alpha1b\006proto3"
+      "tions\"\206\001\n\032CreateOrganizationResponse\022\020\n\003" +
+      "msg\030\001 \001(\tR\003msg\0220\n\024role_id_organization\030\002" +
+      " \001(\rR\022roleIdOrganization\022\024\n\005error\030\003 \001(\tR" +
+      "\005error\022\016\n\002id\030\004 \001(\rR\002id\"D\n\032UpdateOrganiza" +
+      "tionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030" +
+      "\002 \001(\tR\005error\"D\n\032DeleteOrganizationRespon" +
+      "se\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005err" +
+      "or\"\027\n\025GetListUserDexRequest\"R\n\026GetListUs" +
+      "erDexResponse\0228\n\tusers_dex\030\001 \003(\0132\033.accou" +
+      "nts.v1alpha1.UsersDexR\010usersDex\"i\n\024GetOn" +
+      "eUserDexRequest\022\027\n\007user_id\030\001 \001(\tR\006userId" +
+      "\0228\n\004user\030\002 \001(\0132$.accounts.v1alpha1.Creat" +
+      "eUserRequestR\004user\"\322\005\n\025GetOneUserDexResp" +
+      "onse\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006u" +
+      "serId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\t" +
+      "last_name\030\004 \001(\tR\010lastName\022\024\n\005email\030\005 \001(\t" +
+      "R\005email\022\033\n\tis_active\030\006 \001(\010R\010isActive\022\035\n\n" +
+      "created_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_a" +
+      "t\030\010 \001(\tR\tupdatedAt\022,\n\005roles\030\t \003(\0132\026.acco" +
+      "unts.v1alpha1.RolR\005roles\022?\n\013permissions\030" +
+      "\n \003(\0132\035.accounts.v1alpha1.PermissionR\013pe" +
+      "rmissions\022\"\n\ris_super_user\030\013 \001(\010R\013isSupe" +
+      "rUser\022E\n\rorganizations\030\014 \003(\0132\037.accounts." +
+      "v1alpha1.OrganizationR\rorganizations\022\020\n\003" +
+      "msg\030\r \001(\tR\003msg\0226\n\010projects\030\016 \003(\0132\032.accou" +
+      "nts.v1alpha1.ProjectR\010projects\022!\n\014phone_" +
+      "number\030\017 \001(\tR\013phoneNumber\022\030\n\007country\030\020 \001" +
+      "(\tR\007country\022\022\n\004city\030\021 \001(\tR\004city\022\031\n\010zip_c" +
+      "ode\030\022 \001(\tR\007zipCode\022\030\n\007address\030\023 \001(\tR\007add" +
+      "ress\022\024\n\005state\030\024 \001(\tR\005state\022#\n\remoji_coun" +
+      "try\030\025 \001(\tR\014emojiCountry*d\n\022InvitationRes" +
+      "ponse\022,\n(INVITATION_RESPONSE_ACCEPTED_UN" +
+      "SPECIFIED\020\000\022 \n\034INVITATION_RESPONSE_REJEC" +
+      "TED\020\0012\307 \n\016AccountService\022Y\n\nCreateUser\022$" +
+      ".accounts.v1alpha1.CreateUserRequest\032%.a" +
+      "ccounts.v1alpha1.CreateUserResponse\022S\n\010L" +
+      "istUser\022\".accounts.v1alpha1.ListUserRequ" +
+      "est\032#.accounts.v1alpha1.ListUserResponse" +
+      "\022Y\n\nGetOneUser\022$.accounts.v1alpha1.GetOn" +
+      "eUserRequest\032%.accounts.v1alpha1.GetOneU" +
+      "serResponse\022Y\n\nUpdateUser\022$.accounts.v1a" +
+      "lpha1.UpdateUserRequest\032%.accounts.v1alp" +
+      "ha1.UpdateUserResponse\022Y\n\nDeleteUser\022$.a" +
+      "ccounts.v1alpha1.DeleteUserRequest\032%.acc" +
+      "ounts.v1alpha1.DeleteUserResponse\022q\n\022Lis" +
+      "tUserPagination\022,.accounts.v1alpha1.List" +
+      "UserPaginationRequest\032-.accounts.v1alpha" +
+      "1.ListUserPaginationResponse\022q\n\022SendInvi" +
+      "tationUser\022,.accounts.v1alpha1.SendInvit" +
+      "ationUserRequest\032-.accounts.v1alpha1.Sen" +
+      "dInvitationUserResponse\022n\n\021GetInvitation" +
+      "User\022+.accounts.v1alpha1.GetInvitationUs" +
+      "erRequest\032,.accounts.v1alpha1.GetInvitat" +
+      "ionUserResponse\022t\n\023AgreeInvitationUser\022-" +
+      ".accounts.v1alpha1.AgreeInvitationUserRe" +
+      "quest\032..accounts.v1alpha1.AgreeInvitatio" +
+      "nUserResponse\022k\n\020CreatePermission\022*.acco" +
+      "unts.v1alpha1.CreatePermissionRequest\032+." +
+      "accounts.v1alpha1.CreatePermissionRespon" +
+      "se\022e\n\016ListPermission\022(.accounts.v1alpha1" +
+      ".ListPermissionRequest\032).accounts.v1alph" +
+      "a1.ListPermissionResponse\022k\n\020GetOnePermi" +
+      "ssion\022*.accounts.v1alpha1.GetOnePermissi" +
+      "onRequest\032+.accounts.v1alpha1.GetOnePerm" +
+      "issionResponse\022k\n\020UpdatePermission\022*.acc" +
+      "ounts.v1alpha1.UpdatePermissionRequest\032+" +
+      ".accounts.v1alpha1.UpdatePermissionRespo" +
+      "nse\022k\n\020DeletePermission\022*.accounts.v1alp" +
+      "ha1.DeletePermissionRequest\032+.accounts.v" +
+      "1alpha1.DeletePermissionResponse\022q\n\022Crea" +
+      "teOrganization\022,.accounts.v1alpha1.Creat" +
+      "eOrganizationRequest\032-.accounts.v1alpha1" +
+      ".CreateOrganizationResponse\022k\n\020ListOrgan" +
+      "ization\022*.accounts.v1alpha1.ListOrganiza" +
+      "tionRequest\032+.accounts.v1alpha1.ListOrga" +
+      "nizationResponse\022q\n\022GetOneOrganization\022," +
+      ".accounts.v1alpha1.GetOneOrganizationReq" +
+      "uest\032-.accounts.v1alpha1.GetOneOrganizat" +
+      "ionResponse\022q\n\022UpdateOrganization\022,.acco" +
+      "unts.v1alpha1.UpdateOrganizationRequest\032" +
+      "-.accounts.v1alpha1.UpdateOrganizationRe" +
+      "sponse\022q\n\022DeleteOrganization\022,.accounts." +
+      "v1alpha1.DeleteOrganizationRequest\032-.acc" +
+      "ounts.v1alpha1.DeleteOrganizationRespons" +
+      "e\022Y\n\nCreateRole\022$.accounts.v1alpha1.Crea" +
+      "teRoleRequest\032%.accounts.v1alpha1.Create" +
+      "RoleResponse\022V\n\tListRoles\022#.accounts.v1a" +
+      "lpha1.ListRolesRequest\032$.accounts.v1alph" +
+      "a1.ListRolesResponse\022Y\n\nUpdateRole\022$.acc" +
+      "ounts.v1alpha1.UpdateRoleRequest\032%.accou" +
+      "nts.v1alpha1.UpdateRoleResponse\022Y\n\nGetOn" +
+      "eRole\022$.accounts.v1alpha1.GetOneRoleRequ" +
+      "est\032%.accounts.v1alpha1.GetOneRoleRespon" +
+      "se\022Y\n\nDeleteRole\022$.accounts.v1alpha1.Del" +
+      "eteRoleRequest\032%.accounts.v1alpha1.Delet" +
+      "eRoleResponse\022b\n\rCreateProject\022\'.account" +
+      "s.v1alpha1.CreateProjectRequest\032(.accoun" +
+      "ts.v1alpha1.CreateProjectResponse\022b\n\rGet" +
+      "OneProject\022\'.accounts.v1alpha1.GetOnePro" +
+      "jectRequest\032(.accounts.v1alpha1.GetOnePr" +
+      "ojectResponse\022b\n\rUpdateProject\022\'.account" +
+      "s.v1alpha1.UpdateProjectRequest\032(.accoun" +
+      "ts.v1alpha1.UpdateProjectResponse\022b\n\rDel" +
+      "eteProject\022\'.accounts.v1alpha1.DeletePro" +
+      "jectRequest\032(.accounts.v1alpha1.DeletePr" +
+      "ojectResponse\022\\\n\013ListProject\022%.accounts." +
+      "v1alpha1.ListProjectRequest\032&.accounts.v" +
+      "1alpha1.ListProjectResponse\022e\n\016GetListUs" +
+      "erDex\022(.accounts.v1alpha1.GetListUserDex" +
+      "Request\032).accounts.v1alpha1.GetListUserD" +
+      "exResponse\022b\n\rGetOneUserDex\022\'.accounts.v" +
+      "1alpha1.GetOneUserDexRequest\032(.accounts." +
+      "v1alpha1.GetOneUserDexResponse\022V\n\tCheckU" +
+      "ser\022#.accounts.v1alpha1.CheckUserRequest" +
+      "\032$.accounts.v1alpha1.CheckUserResponse\022z" +
+      "\n\025SendVerificationEmail\022/.accounts.v1alp" +
+      "ha1.SendVerificationEmailRequest\0320.accou" +
+      "nts.v1alpha1.SendVerificationEmailRespon" +
+      "se\022\\\n\013VerifyEmail\022%.accounts.v1alpha1.Ve" +
+      "rifyEmailRequest\032&.accounts.v1alpha1.Ver" +
+      "ifyEmailResponse\022b\n\rListCountries\022\'.acco" +
+      "unts.v1alpha1.ListCountriesRequest\032(.acc" +
+      "ounts.v1alpha1.ListCountriesResponse\022b\n\r" +
+      "GetOneCountry\022\'.accounts.v1alpha1.GetOne" +
+      "CountryRequest\032(.accounts.v1alpha1.GetOn" +
+      "eCountryResponse\022_\n\014CreateApiKey\022&.accou" +
+      "nts.v1alpha1.CreateApiKeyRequest\032\'.accou" +
+      "nts.v1alpha1.CreateApiKeyResponse\022_\n\014Get" +
+      "OneApiKey\022&.accounts.v1alpha1.GetOneApiK" +
+      "eyRequest\032\'.accounts.v1alpha1.GetOneApiK" +
+      "eyResponse\022Y\n\nListApiKey\022$.accounts.v1al" +
+      "pha1.ListApiKeyRequest\032%.accounts.v1alph" +
+      "a1.ListApiKeyResponse\022_\n\014UpdateApiKey\022&." +
+      "accounts.v1alpha1.UpdateApiKeyRequest\032\'." +
+      "accounts.v1alpha1.UpdateApiKeyResponse\022_" +
+      "\n\014DeleteApiKey\022&.accounts.v1alpha1.Delet" +
+      "eApiKeyRequest\032\'.accounts.v1alpha1.Delet" +
+      "eApiKeyResponseB4Z2github.com/cuemby/ccp",
+      "-sdk/gen/go/accounts/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_accounts_v1alpha1_CreateTokenRequest_descriptor =
+    internal_static_accounts_v1alpha1_CreateApiKeyRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_accounts_v1alpha1_CreateTokenRequest_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_CreateApiKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_CreateTokenRequest_descriptor,
+        internal_static_accounts_v1alpha1_CreateApiKeyRequest_descriptor,
         new java.lang.String[] { "Name", "UserId", "RolesIds", "PermissionsIds", });
-    internal_static_accounts_v1alpha1_Token_descriptor =
+    internal_static_accounts_v1alpha1_ApiKey_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_accounts_v1alpha1_Token_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_ApiKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_Token_descriptor,
+        internal_static_accounts_v1alpha1_ApiKey_descriptor,
         new java.lang.String[] { "Id", "Name", "UserId", "Rol", "Permissions", });
-    internal_static_accounts_v1alpha1_CreateTokenResponse_descriptor =
+    internal_static_accounts_v1alpha1_CreateApiKeyResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_accounts_v1alpha1_CreateTokenResponse_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_CreateApiKeyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_CreateTokenResponse_descriptor,
-        new java.lang.String[] { "Msg", "Token", "AccessPointId", "Error", });
-    internal_static_accounts_v1alpha1_GetOneTokenRequest_descriptor =
+        internal_static_accounts_v1alpha1_CreateApiKeyResponse_descriptor,
+        new java.lang.String[] { "Msg", "ApiKey", "AccessPointId", "Error", });
+    internal_static_accounts_v1alpha1_GetOneApiKeyRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_accounts_v1alpha1_GetOneTokenRequest_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_GetOneApiKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_GetOneTokenRequest_descriptor,
+        internal_static_accounts_v1alpha1_GetOneApiKeyRequest_descriptor,
         new java.lang.String[] { "Id", });
-    internal_static_accounts_v1alpha1_GetOneTokenResponse_descriptor =
+    internal_static_accounts_v1alpha1_GetOneApiKeyResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_accounts_v1alpha1_GetOneTokenResponse_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_GetOneApiKeyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_GetOneTokenResponse_descriptor,
-        new java.lang.String[] { "Id", "Token", "Name", "UserId", "Roles", "Permissions", });
-    internal_static_accounts_v1alpha1_ListTokenRequest_descriptor =
+        internal_static_accounts_v1alpha1_GetOneApiKeyResponse_descriptor,
+        new java.lang.String[] { "Id", "ApiKey", "Name", "UserId", "Roles", "Permissions", });
+    internal_static_accounts_v1alpha1_ListApiKeyRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_accounts_v1alpha1_ListTokenRequest_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_ListApiKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_ListTokenRequest_descriptor,
+        internal_static_accounts_v1alpha1_ListApiKeyRequest_descriptor,
         new java.lang.String[] { "UserId", });
-    internal_static_accounts_v1alpha1_TokenList_descriptor =
+    internal_static_accounts_v1alpha1_ApiKeyList_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_accounts_v1alpha1_TokenList_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_ApiKeyList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_TokenList_descriptor,
-        new java.lang.String[] { "Id", "Token", "Name", "UserId", });
-    internal_static_accounts_v1alpha1_ListTokenResponse_descriptor =
+        internal_static_accounts_v1alpha1_ApiKeyList_descriptor,
+        new java.lang.String[] { "Id", "ApiKey", "Name", "UserId", });
+    internal_static_accounts_v1alpha1_ListApiKeyResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_accounts_v1alpha1_ListTokenResponse_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_ListApiKeyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_ListTokenResponse_descriptor,
-        new java.lang.String[] { "Tokens", });
-    internal_static_accounts_v1alpha1_UpdateTokenRequest_descriptor =
+        internal_static_accounts_v1alpha1_ListApiKeyResponse_descriptor,
+        new java.lang.String[] { "ApiKeys", });
+    internal_static_accounts_v1alpha1_UpdateApiKeyRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_accounts_v1alpha1_UpdateTokenRequest_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_UpdateApiKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_UpdateTokenRequest_descriptor,
+        internal_static_accounts_v1alpha1_UpdateApiKeyRequest_descriptor,
         new java.lang.String[] { "Id", "Name", "RolesIds", "PermissionsIds", "IsActive", });
-    internal_static_accounts_v1alpha1_UpdateTokenResponse_descriptor =
+    internal_static_accounts_v1alpha1_UpdateApiKeyResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_accounts_v1alpha1_UpdateTokenResponse_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_UpdateApiKeyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_UpdateTokenResponse_descriptor,
-        new java.lang.String[] { "Msg", "Token", "Error", });
-    internal_static_accounts_v1alpha1_DeleteTokenRequest_descriptor =
+        internal_static_accounts_v1alpha1_UpdateApiKeyResponse_descriptor,
+        new java.lang.String[] { "Msg", "ApiKey", "Error", });
+    internal_static_accounts_v1alpha1_DeleteApiKeyRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
-    internal_static_accounts_v1alpha1_DeleteTokenRequest_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_DeleteApiKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_DeleteTokenRequest_descriptor,
+        internal_static_accounts_v1alpha1_DeleteApiKeyRequest_descriptor,
         new java.lang.String[] { "Id", });
-    internal_static_accounts_v1alpha1_DeleteTokenResponse_descriptor =
+    internal_static_accounts_v1alpha1_DeleteApiKeyResponse_descriptor =
       getDescriptor().getMessageTypes().get(11);
-    internal_static_accounts_v1alpha1_DeleteTokenResponse_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_DeleteApiKeyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_DeleteTokenResponse_descriptor,
-        new java.lang.String[] { "Msg", "Token", "Error", });
+        internal_static_accounts_v1alpha1_DeleteApiKeyResponse_descriptor,
+        new java.lang.String[] { "Msg", "ApiKey", "Error", });
     internal_static_accounts_v1alpha1_City_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_accounts_v1alpha1_City_fieldAccessorTable = new
