@@ -10,8 +10,7 @@ option java_package = "io.cuemby.pipelines.runtime.v1alpha1";
 option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Runtime\\V1Alpha1";
 
-//import "pipelines/runtime/v1alpha1/runtime.proto";
-import "runtime.proto";
+import "pipelines/runtime/v1alpha1/runtime.proto";
 
 
 service RuntimeAPIService{
