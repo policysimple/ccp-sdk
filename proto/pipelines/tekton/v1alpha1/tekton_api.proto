@@ -11,6 +11,7 @@ option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Tekton\\V1Alpha1";
 
 import "pipelines/tekton/v1alpha1/tekton.proto";
+import "tekton.proto";
 
 service TektonPipelineAPIService{
     rpc CreateTektonPipeline(CreateTektonPipelineRequest) returns (CreateTektonPipelineResponse);

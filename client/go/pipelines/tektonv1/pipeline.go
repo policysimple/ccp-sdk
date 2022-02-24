@@ -37,6 +37,13 @@ func init() {
 	})
 }
 
+type ParamsStruct struct {
+	Name        string
+	ValueType   string
+	ValueString string
+	ValueArray  []string
+}
+
 type TaskParamsStruct struct {
 	ParamName      string
 	ParamValueType string
@@ -56,7 +63,7 @@ type TaskStruct struct {
 }
 
 func CreateTektonPipeline(
-	organizationId uint32, projectId uint32, name string, namespace string, workspace string, params []string, tasks []TaskStruct, userId string,
+	organizationId uint32, projectId uint32, name string, namespace string, workspace string, params []ParamsStruct, tasks []TaskStruct, userId string,
 ) (response *tektonPipelinepkgv1.CreateTektonPipelineResponse, err error) {
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
@@ -67,6 +74,7 @@ func CreateTektonPipeline(
 
 	var arrayTasks []*tektonPipelinepkgv1.Task
 	var arrayTaskParameters []*tektonPipelinepkgv1.TaskParams
+	var arrayParams []*tektonPipelinepkgv1.Params
 
 	if len(tasks) == 0 {
 		log.Printf("%s: ", "Tasks is required")
@@ -74,6 +82,25 @@ func CreateTektonPipeline(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: ", "Tasks is required"),
 		)
+	}
+
+	for _, item := range params {
+
+		if item.ValueString == "string" {
+			arrayParams = append(arrayParams, &tektonPipelinepkgv1.Params{
+				Name:        item.Name,
+				ValueType:   item.ValueType,
+				ValueString: item.ValueString,
+			})
+		}
+
+		if item.ValueString == "array" {
+			arrayParams = append(arrayParams, &tektonPipelinepkgv1.Params{
+				Name:       item.Name,
+				ValueType:  item.ValueType,
+				ValueArray: item.ValueArray,
+			})
+		}
 	}
 
 	for _, item := range tasks {
@@ -107,7 +134,7 @@ func CreateTektonPipeline(
 			ObjectMetaName:      name,
 			ObjectMetaNamespace: namespace,
 			SpecWorkspacesName:  workspace,
-			Params:              params,
+			Params:              arrayParams,
 			Tasks:               arrayTasks,
 		},
 		UserId: userId,

@@ -10,6 +10,13 @@ option java_package = "io.cuemby.pipelines.tekton.v1alpha1";
 option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Tekton\\V1Alpha1";
 
+message Params {
+    string name = 1;
+    string value_string = 2;
+    repeated string value_array = 3;
+    string value_type = 4;
+}
+
 message TaskParams {
     string param_name = 1;
     string param_value_type = 2;
@@ -28,7 +35,6 @@ message Task {
     string description = 9;
 }
 
-
 // Pipeline ...
 message Pipeline {
     string id = 1;
@@ -39,7 +45,7 @@ message Pipeline {
     string object_meta_name = 6;
     string object_meta_namespace = 7;
     string spec_workspaces_name = 8;
-    repeated string params = 9;
+    repeated Params params = 9;
     repeated Task tasks = 10;
     string status_type= 11;
     bool active = 12;

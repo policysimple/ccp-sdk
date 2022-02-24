@@ -16,8 +16,16 @@ class Tekton
         }
         $pool->internalAddGeneratedFile(
             '
-µ	
-&pipelines/tekton/v1alpha1/tekton.protopipelines.tekton.v1alpha1"v
+Ù
+
+&pipelines/tekton/v1alpha1/tekton.protopipelines.tekton.v1alpha1"
+Params
+name (	Rname!
+value_string (	RvalueString
+value_array (	R
+valueArray
+
+value_type (	R	valueType"v
 
 TaskParams
 
@@ -35,7 +43,7 @@ paramValue"è
 task_workspaces_main (	RtaskWorkspacesMainF
 task_params (2%.pipelines.tekton.v1alpha1.TaskParamsR
 taskParams 
-description	 (	Rdescription"Ó
+description	 (	Rdescription"ö
 Pipeline
 id (	Rid\'
 organization_id (RorganizationId
@@ -45,8 +53,8 @@ project_id (R	projectId$
 type_meta_api_version (	RtypeMetaApiVersion(
 object_meta_name (	RobjectMetaName2
 object_meta_namespace (	RobjectMetaNamespace0
-spec_workspaces_name (	RspecWorkspacesName
-params	 (	Rparams5
+spec_workspaces_name (	RspecWorkspacesName9
+params	 (2!.pipelines.tekton.v1alpha1.ParamsRparams5
 tasks
  (2.pipelines.tekton.v1alpha1.TaskRtasks
 status_type (	R
