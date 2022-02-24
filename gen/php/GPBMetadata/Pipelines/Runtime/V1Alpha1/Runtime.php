@@ -16,16 +16,8 @@ class Runtime
         }
         $pool->internalAddGeneratedFile(
             '
-¦
-(pipelines/runtime/v1alpha1/runtime.protopipelines.runtime.v1alpha1"_
-Integration)
-integration_name (	RintegrationName%
-repository_url (	RrepositoryUrl"d
-Commands#
-build_command (	RbuildCommand
-run_command (	R
-runCommand
-port (	Rport"Þ
+ö
+(pipelines/runtime/v1alpha1/runtime.protopipelines.runtime.v1alpha1"õ
 Runtime
 id (	Rid
 name (	Rname
@@ -33,11 +25,17 @@ runCommand
 
 project_id (R	projectId%
 application_id (	RapplicationId!
-workspace_id (	RworkspaceIdI
-integration (2\'.pipelines.runtime.v1alpha1.IntegrationRintegrationZ
-env_variables (25.pipelines.runtime.v1alpha1.Runtime.EnvVariablesEntryRenvVariables@
-commands	 (2$.pipelines.runtime.v1alpha1.CommandsRcommands?
+workspace_id (	RworkspaceIdV
+integration (24.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryRintegrationZ
+env_variables (25.pipelines.runtime.v1alpha1.Runtime.EnvVariablesEntryRenvVariablesM
+commands	 (21.pipelines.runtime.v1alpha1.Runtime.CommandsEntryRcommands>
+IntegrationEntry
+key (	Rkey
+value (	Rvalue:8?
 EnvVariablesEntry
+key (	Rkey
+value (	Rvalue:8;
+CommandsEntry
 key (	Rkey
 value (	Rvalue:8B­
 $io.cuemby.pipelines.runtime.v1alpha1BRuntimeProtoPZ5github.com/cuemby/ccp-runtime-service/runtimev1alpha1¢PPXªPipelines.Runtime.V1Alpha1ÊPipelines\\Runtime\\V1Alpha1bproto3'

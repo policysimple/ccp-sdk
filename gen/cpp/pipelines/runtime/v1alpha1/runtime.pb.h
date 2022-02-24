@@ -59,26 +59,26 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace pipelines {
 namespace runtime {
 namespace v1alpha1 {
-class Commands;
-struct CommandsDefaultTypeInternal;
-extern CommandsDefaultTypeInternal _Commands_default_instance_;
-class Integration;
-struct IntegrationDefaultTypeInternal;
-extern IntegrationDefaultTypeInternal _Integration_default_instance_;
 class Runtime;
 struct RuntimeDefaultTypeInternal;
 extern RuntimeDefaultTypeInternal _Runtime_default_instance_;
+class Runtime_CommandsEntry_DoNotUse;
+struct Runtime_CommandsEntry_DoNotUseDefaultTypeInternal;
+extern Runtime_CommandsEntry_DoNotUseDefaultTypeInternal _Runtime_CommandsEntry_DoNotUse_default_instance_;
 class Runtime_EnvVariablesEntry_DoNotUse;
 struct Runtime_EnvVariablesEntry_DoNotUseDefaultTypeInternal;
 extern Runtime_EnvVariablesEntry_DoNotUseDefaultTypeInternal _Runtime_EnvVariablesEntry_DoNotUse_default_instance_;
+class Runtime_IntegrationEntry_DoNotUse;
+struct Runtime_IntegrationEntry_DoNotUseDefaultTypeInternal;
+extern Runtime_IntegrationEntry_DoNotUseDefaultTypeInternal _Runtime_IntegrationEntry_DoNotUse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace runtime
 }  // namespace pipelines
 PROTOBUF_NAMESPACE_OPEN
-template<> ::pipelines::runtime::v1alpha1::Commands* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Commands>(Arena*);
-template<> ::pipelines::runtime::v1alpha1::Integration* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Integration>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::Runtime_CommandsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_CommandsEntry_DoNotUse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_EnvVariablesEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_EnvVariablesEntry_DoNotUse>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::Runtime_IntegrationEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_IntegrationEntry_DoNotUse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace pipelines {
 namespace runtime {
@@ -86,340 +86,31 @@ namespace v1alpha1 {
 
 // ===================================================================
 
-class Integration final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.Integration) */ {
- public:
-  inline Integration() : Integration(nullptr) {}
-  ~Integration() override;
-  explicit constexpr Integration(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  Integration(const Integration& from);
-  Integration(Integration&& from) noexcept
-    : Integration() {
-    *this = ::std::move(from);
-  }
-
-  inline Integration& operator=(const Integration& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline Integration& operator=(Integration&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const Integration& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const Integration* internal_default_instance() {
-    return reinterpret_cast<const Integration*>(
-               &_Integration_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    0;
-
-  friend void swap(Integration& a, Integration& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(Integration* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(Integration* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Integration* New() const final {
-    return new Integration();
-  }
-
-  Integration* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<Integration>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const Integration& from);
+class Runtime_IntegrationEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_IntegrationEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_IntegrationEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  Runtime_IntegrationEntry_DoNotUse();
+  explicit constexpr Runtime_IntegrationEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit Runtime_IntegrationEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Runtime_IntegrationEntry_DoNotUse& other);
+  static const Runtime_IntegrationEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Runtime_IntegrationEntry_DoNotUse*>(&_Runtime_IntegrationEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.IntegrationEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.IntegrationEntry.value");
+ }
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const Integration& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Integration* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pipelines.runtime.v1alpha1.Integration";
-  }
-  protected:
-  explicit Integration(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
   ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kIntegrationNameFieldNumber = 1,
-    kRepositoryUrlFieldNumber = 2,
-  };
-  // string integration_name = 1 [json_name = "integrationName"];
-  void clear_integration_name();
-  const std::string& integration_name() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_integration_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_integration_name();
-  PROTOBUF_MUST_USE_RESULT std::string* release_integration_name();
-  void set_allocated_integration_name(std::string* integration_name);
-  private:
-  const std::string& _internal_integration_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_integration_name(const std::string& value);
-  std::string* _internal_mutable_integration_name();
-  public:
-
-  // string repository_url = 2 [json_name = "repositoryUrl"];
-  void clear_repository_url();
-  const std::string& repository_url() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_repository_url(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_repository_url();
-  PROTOBUF_MUST_USE_RESULT std::string* release_repository_url();
-  void set_allocated_repository_url(std::string* repository_url);
-  private:
-  const std::string& _internal_repository_url() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_repository_url(const std::string& value);
-  std::string* _internal_mutable_repository_url();
-  public:
-
-  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Integration)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr repository_url_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto;
 };
-// -------------------------------------------------------------------
 
-class Commands final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.Commands) */ {
- public:
-  inline Commands() : Commands(nullptr) {}
-  ~Commands() override;
-  explicit constexpr Commands(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  Commands(const Commands& from);
-  Commands(Commands&& from) noexcept
-    : Commands() {
-    *this = ::std::move(from);
-  }
-
-  inline Commands& operator=(const Commands& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline Commands& operator=(Commands&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const Commands& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const Commands* internal_default_instance() {
-    return reinterpret_cast<const Commands*>(
-               &_Commands_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    1;
-
-  friend void swap(Commands& a, Commands& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(Commands* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(Commands* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Commands* New() const final {
-    return new Commands();
-  }
-
-  Commands* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<Commands>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const Commands& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const Commands& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Commands* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pipelines.runtime.v1alpha1.Commands";
-  }
-  protected:
-  explicit Commands(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kBuildCommandFieldNumber = 1,
-    kRunCommandFieldNumber = 2,
-    kPortFieldNumber = 3,
-  };
-  // string build_command = 1 [json_name = "buildCommand"];
-  void clear_build_command();
-  const std::string& build_command() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_build_command(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_build_command();
-  PROTOBUF_MUST_USE_RESULT std::string* release_build_command();
-  void set_allocated_build_command(std::string* build_command);
-  private:
-  const std::string& _internal_build_command() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_build_command(const std::string& value);
-  std::string* _internal_mutable_build_command();
-  public:
-
-  // string run_command = 2 [json_name = "runCommand"];
-  void clear_run_command();
-  const std::string& run_command() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_run_command(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_run_command();
-  PROTOBUF_MUST_USE_RESULT std::string* release_run_command();
-  void set_allocated_run_command(std::string* run_command);
-  private:
-  const std::string& _internal_run_command() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_run_command(const std::string& value);
-  std::string* _internal_mutable_run_command();
-  public:
-
-  // string port = 3 [json_name = "port"];
-  void clear_port();
-  const std::string& port() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_port(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_port();
-  PROTOBUF_MUST_USE_RESULT std::string* release_port();
-  void set_allocated_port(std::string* port);
-  private:
-  const std::string& _internal_port() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_port(const std::string& value);
-  std::string* _internal_mutable_port();
-  public:
-
-  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Commands)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr build_command_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr run_command_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr port_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto;
-};
 // -------------------------------------------------------------------
 
 class Runtime_EnvVariablesEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_EnvVariablesEntry_DoNotUse, 
@@ -442,6 +133,33 @@ public:
  }
   static bool ValidateValue(std::string* s) {
     return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.EnvVariablesEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
+class Runtime_CommandsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_CommandsEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_CommandsEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  Runtime_CommandsEntry_DoNotUse();
+  explicit constexpr Runtime_CommandsEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit Runtime_CommandsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Runtime_CommandsEntry_DoNotUse& other);
+  static const Runtime_CommandsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Runtime_CommandsEntry_DoNotUse*>(&_Runtime_CommandsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.CommandsEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.CommandsEntry.value");
  }
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
   ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
@@ -565,16 +283,33 @@ class Runtime final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kIntegrationFieldNumber = 7,
     kEnvVariablesFieldNumber = 8,
+    kCommandsFieldNumber = 9,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kNamespaceFieldNumber = 3,
     kApplicationIdFieldNumber = 5,
     kWorkspaceIdFieldNumber = 6,
-    kIntegrationFieldNumber = 7,
-    kCommandsFieldNumber = 9,
     kProjectIdFieldNumber = 4,
   };
+  // map<string, string> integration = 7 [json_name = "integration"];
+  int integration_size() const;
+  private:
+  int _internal_integration_size() const;
+  public:
+  void clear_integration();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_integration() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_integration();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      integration() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_integration();
+
   // map<string, string> env_variables = 8 [json_name = "envVariables"];
   int env_variables_size() const;
   private:
@@ -591,6 +326,23 @@ class Runtime final :
       env_variables() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_env_variables();
+
+  // map<string, string> commands = 9 [json_name = "commands"];
+  int commands_size() const;
+  private:
+  int _internal_commands_size() const;
+  public:
+  void clear_commands();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_commands() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_commands();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      commands() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_commands();
 
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -662,42 +414,6 @@ class Runtime final :
   std::string* _internal_mutable_workspace_id();
   public:
 
-  // .pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];
-  bool has_integration() const;
-  private:
-  bool _internal_has_integration() const;
-  public:
-  void clear_integration();
-  const ::pipelines::runtime::v1alpha1::Integration& integration() const;
-  PROTOBUF_MUST_USE_RESULT ::pipelines::runtime::v1alpha1::Integration* release_integration();
-  ::pipelines::runtime::v1alpha1::Integration* mutable_integration();
-  void set_allocated_integration(::pipelines::runtime::v1alpha1::Integration* integration);
-  private:
-  const ::pipelines::runtime::v1alpha1::Integration& _internal_integration() const;
-  ::pipelines::runtime::v1alpha1::Integration* _internal_mutable_integration();
-  public:
-  void unsafe_arena_set_allocated_integration(
-      ::pipelines::runtime::v1alpha1::Integration* integration);
-  ::pipelines::runtime::v1alpha1::Integration* unsafe_arena_release_integration();
-
-  // .pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];
-  bool has_commands() const;
-  private:
-  bool _internal_has_commands() const;
-  public:
-  void clear_commands();
-  const ::pipelines::runtime::v1alpha1::Commands& commands() const;
-  PROTOBUF_MUST_USE_RESULT ::pipelines::runtime::v1alpha1::Commands* release_commands();
-  ::pipelines::runtime::v1alpha1::Commands* mutable_commands();
-  void set_allocated_commands(::pipelines::runtime::v1alpha1::Commands* commands);
-  private:
-  const ::pipelines::runtime::v1alpha1::Commands& _internal_commands() const;
-  ::pipelines::runtime::v1alpha1::Commands* _internal_mutable_commands();
-  public:
-  void unsafe_arena_set_allocated_commands(
-      ::pipelines::runtime::v1alpha1::Commands* commands);
-  ::pipelines::runtime::v1alpha1::Commands* unsafe_arena_release_commands();
-
   // uint32 project_id = 4 [json_name = "projectId"];
   void clear_project_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
@@ -715,17 +431,25 @@ class Runtime final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      Runtime_IntegrationEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> integration_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
       Runtime_EnvVariablesEntry_DoNotUse,
       std::string, std::string,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> env_variables_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      Runtime_CommandsEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> commands_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr workspace_id_;
-  ::pipelines::runtime::v1alpha1::Integration* integration_;
-  ::pipelines::runtime::v1alpha1::Commands* commands_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto;
@@ -739,241 +463,7 @@ class Runtime final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// Integration
-
-// string integration_name = 1 [json_name = "integrationName"];
-inline void Integration::clear_integration_name() {
-  integration_name_.ClearToEmpty();
-}
-inline const std::string& Integration::integration_name() const {
-  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Integration.integration_name)
-  return _internal_integration_name();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Integration::set_integration_name(ArgT0&& arg0, ArgT... args) {
- 
- integration_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Integration.integration_name)
-}
-inline std::string* Integration::mutable_integration_name() {
-  std::string* _s = _internal_mutable_integration_name();
-  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Integration.integration_name)
-  return _s;
-}
-inline const std::string& Integration::_internal_integration_name() const {
-  return integration_name_.Get();
-}
-inline void Integration::_internal_set_integration_name(const std::string& value) {
-  
-  integration_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Integration::_internal_mutable_integration_name() {
-  
-  return integration_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Integration::release_integration_name() {
-  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Integration.integration_name)
-  return integration_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Integration::set_allocated_integration_name(std::string* integration_name) {
-  if (integration_name != nullptr) {
-    
-  } else {
-    
-  }
-  integration_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration_name,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Integration.integration_name)
-}
-
-// string repository_url = 2 [json_name = "repositoryUrl"];
-inline void Integration::clear_repository_url() {
-  repository_url_.ClearToEmpty();
-}
-inline const std::string& Integration::repository_url() const {
-  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Integration.repository_url)
-  return _internal_repository_url();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Integration::set_repository_url(ArgT0&& arg0, ArgT... args) {
- 
- repository_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Integration.repository_url)
-}
-inline std::string* Integration::mutable_repository_url() {
-  std::string* _s = _internal_mutable_repository_url();
-  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Integration.repository_url)
-  return _s;
-}
-inline const std::string& Integration::_internal_repository_url() const {
-  return repository_url_.Get();
-}
-inline void Integration::_internal_set_repository_url(const std::string& value) {
-  
-  repository_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Integration::_internal_mutable_repository_url() {
-  
-  return repository_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Integration::release_repository_url() {
-  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Integration.repository_url)
-  return repository_url_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Integration::set_allocated_repository_url(std::string* repository_url) {
-  if (repository_url != nullptr) {
-    
-  } else {
-    
-  }
-  repository_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), repository_url,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Integration.repository_url)
-}
-
 // -------------------------------------------------------------------
-
-// Commands
-
-// string build_command = 1 [json_name = "buildCommand"];
-inline void Commands::clear_build_command() {
-  build_command_.ClearToEmpty();
-}
-inline const std::string& Commands::build_command() const {
-  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Commands.build_command)
-  return _internal_build_command();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Commands::set_build_command(ArgT0&& arg0, ArgT... args) {
- 
- build_command_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Commands.build_command)
-}
-inline std::string* Commands::mutable_build_command() {
-  std::string* _s = _internal_mutable_build_command();
-  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Commands.build_command)
-  return _s;
-}
-inline const std::string& Commands::_internal_build_command() const {
-  return build_command_.Get();
-}
-inline void Commands::_internal_set_build_command(const std::string& value) {
-  
-  build_command_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Commands::_internal_mutable_build_command() {
-  
-  return build_command_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Commands::release_build_command() {
-  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Commands.build_command)
-  return build_command_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Commands::set_allocated_build_command(std::string* build_command) {
-  if (build_command != nullptr) {
-    
-  } else {
-    
-  }
-  build_command_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), build_command,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Commands.build_command)
-}
-
-// string run_command = 2 [json_name = "runCommand"];
-inline void Commands::clear_run_command() {
-  run_command_.ClearToEmpty();
-}
-inline const std::string& Commands::run_command() const {
-  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Commands.run_command)
-  return _internal_run_command();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Commands::set_run_command(ArgT0&& arg0, ArgT... args) {
- 
- run_command_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Commands.run_command)
-}
-inline std::string* Commands::mutable_run_command() {
-  std::string* _s = _internal_mutable_run_command();
-  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Commands.run_command)
-  return _s;
-}
-inline const std::string& Commands::_internal_run_command() const {
-  return run_command_.Get();
-}
-inline void Commands::_internal_set_run_command(const std::string& value) {
-  
-  run_command_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Commands::_internal_mutable_run_command() {
-  
-  return run_command_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Commands::release_run_command() {
-  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Commands.run_command)
-  return run_command_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Commands::set_allocated_run_command(std::string* run_command) {
-  if (run_command != nullptr) {
-    
-  } else {
-    
-  }
-  run_command_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), run_command,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Commands.run_command)
-}
-
-// string port = 3 [json_name = "port"];
-inline void Commands::clear_port() {
-  port_.ClearToEmpty();
-}
-inline const std::string& Commands::port() const {
-  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Commands.port)
-  return _internal_port();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Commands::set_port(ArgT0&& arg0, ArgT... args) {
- 
- port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Commands.port)
-}
-inline std::string* Commands::mutable_port() {
-  std::string* _s = _internal_mutable_port();
-  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Commands.port)
-  return _s;
-}
-inline const std::string& Commands::_internal_port() const {
-  return port_.Get();
-}
-inline void Commands::_internal_set_port(const std::string& value) {
-  
-  port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Commands::_internal_mutable_port() {
-  
-  return port_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Commands::release_port() {
-  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Commands.port)
-  return port_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Commands::set_allocated_port(std::string* port) {
-  if (port != nullptr) {
-    
-  } else {
-    
-  }
-  port_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), port,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Commands.port)
-}
 
 // -------------------------------------------------------------------
 
@@ -1231,94 +721,33 @@ inline void Runtime::set_allocated_workspace_id(std::string* workspace_id) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.workspace_id)
 }
 
-// .pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];
-inline bool Runtime::_internal_has_integration() const {
-  return this != internal_default_instance() && integration_ != nullptr;
+// map<string, string> integration = 7 [json_name = "integration"];
+inline int Runtime::_internal_integration_size() const {
+  return integration_.size();
 }
-inline bool Runtime::has_integration() const {
-  return _internal_has_integration();
+inline int Runtime::integration_size() const {
+  return _internal_integration_size();
 }
 inline void Runtime::clear_integration() {
-  if (GetArenaForAllocation() == nullptr && integration_ != nullptr) {
-    delete integration_;
-  }
-  integration_ = nullptr;
+  integration_.Clear();
 }
-inline const ::pipelines::runtime::v1alpha1::Integration& Runtime::_internal_integration() const {
-  const ::pipelines::runtime::v1alpha1::Integration* p = integration_;
-  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::runtime::v1alpha1::Integration&>(
-      ::pipelines::runtime::v1alpha1::_Integration_default_instance_);
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Runtime::_internal_integration() const {
+  return integration_.GetMap();
 }
-inline const ::pipelines::runtime::v1alpha1::Integration& Runtime::integration() const {
-  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.integration)
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Runtime::integration() const {
+  // @@protoc_insertion_point(field_map:pipelines.runtime.v1alpha1.Runtime.integration)
   return _internal_integration();
 }
-inline void Runtime::unsafe_arena_set_allocated_integration(
-    ::pipelines::runtime::v1alpha1::Integration* integration) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(integration_);
-  }
-  integration_ = integration;
-  if (integration) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.runtime.v1alpha1.Runtime.integration)
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Runtime::_internal_mutable_integration() {
+  return integration_.MutableMap();
 }
-inline ::pipelines::runtime::v1alpha1::Integration* Runtime::release_integration() {
-  
-  ::pipelines::runtime::v1alpha1::Integration* temp = integration_;
-  integration_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::pipelines::runtime::v1alpha1::Integration* Runtime::unsafe_arena_release_integration() {
-  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.integration)
-  
-  ::pipelines::runtime::v1alpha1::Integration* temp = integration_;
-  integration_ = nullptr;
-  return temp;
-}
-inline ::pipelines::runtime::v1alpha1::Integration* Runtime::_internal_mutable_integration() {
-  
-  if (integration_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pipelines::runtime::v1alpha1::Integration>(GetArenaForAllocation());
-    integration_ = p;
-  }
-  return integration_;
-}
-inline ::pipelines::runtime::v1alpha1::Integration* Runtime::mutable_integration() {
-  ::pipelines::runtime::v1alpha1::Integration* _msg = _internal_mutable_integration();
-  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.integration)
-  return _msg;
-}
-inline void Runtime::set_allocated_integration(::pipelines::runtime::v1alpha1::Integration* integration) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete integration_;
-  }
-  if (integration) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::pipelines::runtime::v1alpha1::Integration>::GetOwningArena(integration);
-    if (message_arena != submessage_arena) {
-      integration = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, integration, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  integration_ = integration;
-  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.integration)
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Runtime::mutable_integration() {
+  // @@protoc_insertion_point(field_mutable_map:pipelines.runtime.v1alpha1.Runtime.integration)
+  return _internal_mutable_integration();
 }
 
 // map<string, string> env_variables = 8 [json_name = "envVariables"];
@@ -1350,94 +779,33 @@ Runtime::mutable_env_variables() {
   return _internal_mutable_env_variables();
 }
 
-// .pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];
-inline bool Runtime::_internal_has_commands() const {
-  return this != internal_default_instance() && commands_ != nullptr;
+// map<string, string> commands = 9 [json_name = "commands"];
+inline int Runtime::_internal_commands_size() const {
+  return commands_.size();
 }
-inline bool Runtime::has_commands() const {
-  return _internal_has_commands();
+inline int Runtime::commands_size() const {
+  return _internal_commands_size();
 }
 inline void Runtime::clear_commands() {
-  if (GetArenaForAllocation() == nullptr && commands_ != nullptr) {
-    delete commands_;
-  }
-  commands_ = nullptr;
+  commands_.Clear();
 }
-inline const ::pipelines::runtime::v1alpha1::Commands& Runtime::_internal_commands() const {
-  const ::pipelines::runtime::v1alpha1::Commands* p = commands_;
-  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::runtime::v1alpha1::Commands&>(
-      ::pipelines::runtime::v1alpha1::_Commands_default_instance_);
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Runtime::_internal_commands() const {
+  return commands_.GetMap();
 }
-inline const ::pipelines::runtime::v1alpha1::Commands& Runtime::commands() const {
-  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.commands)
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Runtime::commands() const {
+  // @@protoc_insertion_point(field_map:pipelines.runtime.v1alpha1.Runtime.commands)
   return _internal_commands();
 }
-inline void Runtime::unsafe_arena_set_allocated_commands(
-    ::pipelines::runtime::v1alpha1::Commands* commands) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(commands_);
-  }
-  commands_ = commands;
-  if (commands) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.runtime.v1alpha1.Runtime.commands)
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Runtime::_internal_mutable_commands() {
+  return commands_.MutableMap();
 }
-inline ::pipelines::runtime::v1alpha1::Commands* Runtime::release_commands() {
-  
-  ::pipelines::runtime::v1alpha1::Commands* temp = commands_;
-  commands_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::pipelines::runtime::v1alpha1::Commands* Runtime::unsafe_arena_release_commands() {
-  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.commands)
-  
-  ::pipelines::runtime::v1alpha1::Commands* temp = commands_;
-  commands_ = nullptr;
-  return temp;
-}
-inline ::pipelines::runtime::v1alpha1::Commands* Runtime::_internal_mutable_commands() {
-  
-  if (commands_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pipelines::runtime::v1alpha1::Commands>(GetArenaForAllocation());
-    commands_ = p;
-  }
-  return commands_;
-}
-inline ::pipelines::runtime::v1alpha1::Commands* Runtime::mutable_commands() {
-  ::pipelines::runtime::v1alpha1::Commands* _msg = _internal_mutable_commands();
-  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.commands)
-  return _msg;
-}
-inline void Runtime::set_allocated_commands(::pipelines::runtime::v1alpha1::Commands* commands) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete commands_;
-  }
-  if (commands) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::pipelines::runtime::v1alpha1::Commands>::GetOwningArena(commands);
-    if (message_arena != submessage_arena) {
-      commands = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, commands, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  commands_ = commands;
-  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.commands)
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Runtime::mutable_commands() {
+  // @@protoc_insertion_point(field_mutable_map:pipelines.runtime.v1alpha1.Runtime.commands)
+  return _internal_mutable_commands();
 }
 
 #ifdef __GNUC__

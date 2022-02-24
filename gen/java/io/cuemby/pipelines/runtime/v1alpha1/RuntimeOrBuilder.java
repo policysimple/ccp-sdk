@@ -74,19 +74,38 @@ public interface RuntimeOrBuilder extends
       getWorkspaceIdBytes();
 
   /**
-   * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
-   * @return Whether the integration field is set.
+   * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
    */
-  boolean hasIntegration();
+  int getIntegrationCount();
   /**
-   * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
-   * @return The integration.
+   * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
    */
-  io.cuemby.pipelines.runtime.v1alpha1.Integration getIntegration();
+  boolean containsIntegration(
+      java.lang.String key);
   /**
-   * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
+   * Use {@link #getIntegrationMap()} instead.
    */
-  io.cuemby.pipelines.runtime.v1alpha1.IntegrationOrBuilder getIntegrationOrBuilder();
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getIntegration();
+  /**
+   * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getIntegrationMap();
+  /**
+   * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
+   */
+
+  java.lang.String getIntegrationOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
+   */
+
+  java.lang.String getIntegrationOrThrow(
+      java.lang.String key);
 
   /**
    * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
@@ -123,17 +142,36 @@ public interface RuntimeOrBuilder extends
       java.lang.String key);
 
   /**
-   * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
-   * @return Whether the commands field is set.
+   * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
    */
-  boolean hasCommands();
+  int getCommandsCount();
   /**
-   * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
-   * @return The commands.
+   * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
    */
-  io.cuemby.pipelines.runtime.v1alpha1.Commands getCommands();
+  boolean containsCommands(
+      java.lang.String key);
   /**
-   * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
+   * Use {@link #getCommandsMap()} instead.
    */
-  io.cuemby.pipelines.runtime.v1alpha1.CommandsOrBuilder getCommandsOrBuilder();
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getCommands();
+  /**
+   * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getCommandsMap();
+  /**
+   * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
+   */
+
+  java.lang.String getCommandsOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
+   */
+
+  java.lang.String getCommandsOrThrow(
+      java.lang.String key);
 }
