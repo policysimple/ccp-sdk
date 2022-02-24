@@ -94,23 +94,23 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
-            io.cuemby.pipelines.runtime.v1alpha1.Integration.Builder subBuilder = null;
-            if (integration_ != null) {
-              subBuilder = integration_.toBuilder();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              integration_ = com.google.protobuf.MapField.newMapField(
+                  IntegrationDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000001;
             }
-            integration_ = input.readMessage(io.cuemby.pipelines.runtime.v1alpha1.Integration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(integration_);
-              integration_ = subBuilder.buildPartial();
-            }
-
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+            integration__ = input.readMessage(
+                IntegrationDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            integration_.getMutableMap().put(
+                integration__.getKey(), integration__.getValue());
             break;
           }
           case 66: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               envVariables_ = com.google.protobuf.MapField.newMapField(
                   EnvVariablesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000001;
+              mutable_bitField0_ |= 0x00000002;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             envVariables__ = input.readMessage(
@@ -120,16 +120,16 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 74: {
-            io.cuemby.pipelines.runtime.v1alpha1.Commands.Builder subBuilder = null;
-            if (commands_ != null) {
-              subBuilder = commands_.toBuilder();
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              commands_ = com.google.protobuf.MapField.newMapField(
+                  CommandsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000004;
             }
-            commands_ = input.readMessage(io.cuemby.pipelines.runtime.v1alpha1.Commands.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(commands_);
-              commands_ = subBuilder.buildPartial();
-            }
-
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+            commands__ = input.readMessage(
+                CommandsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            commands_.getMutableMap().put(
+                commands__.getKey(), commands__.getValue());
             break;
           }
           default: {
@@ -161,8 +161,12 @@ private static final long serialVersionUID = 0L;
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
+      case 7:
+        return internalGetIntegration();
       case 8:
         return internalGetEnvVariables();
+      case 9:
+        return internalGetCommands();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -378,29 +382,84 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INTEGRATION_FIELD_NUMBER = 7;
-  private io.cuemby.pipelines.runtime.v1alpha1.Integration integration_;
-  /**
-   * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
-   * @return Whether the integration field is set.
-   */
-  @java.lang.Override
-  public boolean hasIntegration() {
-    return integration_ != null;
+  private static final class IntegrationDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> integration_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetIntegration() {
+    if (integration_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          IntegrationDefaultEntryHolder.defaultEntry);
+    }
+    return integration_;
+  }
+
+  public int getIntegrationCount() {
+    return internalGetIntegration().getMap().size();
   }
   /**
-   * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
-   * @return The integration.
+   * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
    */
+
   @java.lang.Override
-  public io.cuemby.pipelines.runtime.v1alpha1.Integration getIntegration() {
-    return integration_ == null ? io.cuemby.pipelines.runtime.v1alpha1.Integration.getDefaultInstance() : integration_;
+  public boolean containsIntegration(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetIntegration().getMap().containsKey(key);
   }
   /**
-   * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
+   * Use {@link #getIntegrationMap()} instead.
    */
   @java.lang.Override
-  public io.cuemby.pipelines.runtime.v1alpha1.IntegrationOrBuilder getIntegrationOrBuilder() {
-    return getIntegration();
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getIntegration() {
+    return getIntegrationMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, java.lang.String> getIntegrationMap() {
+    return internalGetIntegration().getMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getIntegrationOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetIntegration().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getIntegrationOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetIntegration().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   public static final int ENV_VARIABLES_FIELD_NUMBER = 8;
@@ -485,29 +544,84 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COMMANDS_FIELD_NUMBER = 9;
-  private io.cuemby.pipelines.runtime.v1alpha1.Commands commands_;
-  /**
-   * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
-   * @return Whether the commands field is set.
-   */
-  @java.lang.Override
-  public boolean hasCommands() {
-    return commands_ != null;
+  private static final class CommandsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_Runtime_CommandsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> commands_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetCommands() {
+    if (commands_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          CommandsDefaultEntryHolder.defaultEntry);
+    }
+    return commands_;
+  }
+
+  public int getCommandsCount() {
+    return internalGetCommands().getMap().size();
   }
   /**
-   * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
-   * @return The commands.
+   * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
    */
+
   @java.lang.Override
-  public io.cuemby.pipelines.runtime.v1alpha1.Commands getCommands() {
-    return commands_ == null ? io.cuemby.pipelines.runtime.v1alpha1.Commands.getDefaultInstance() : commands_;
+  public boolean containsCommands(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetCommands().getMap().containsKey(key);
   }
   /**
-   * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
+   * Use {@link #getCommandsMap()} instead.
    */
   @java.lang.Override
-  public io.cuemby.pipelines.runtime.v1alpha1.CommandsOrBuilder getCommandsOrBuilder() {
-    return getCommands();
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getCommands() {
+    return getCommandsMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, java.lang.String> getCommandsMap() {
+    return internalGetCommands().getMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getCommandsOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetCommands().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getCommandsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetCommands().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -542,18 +656,24 @@ private static final long serialVersionUID = 0L;
     if (!getWorkspaceIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, workspaceId_);
     }
-    if (integration_ != null) {
-      output.writeMessage(7, getIntegration());
-    }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetIntegration(),
+        IntegrationDefaultEntryHolder.defaultEntry,
+        7);
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetEnvVariables(),
         EnvVariablesDefaultEntryHolder.defaultEntry,
         8);
-    if (commands_ != null) {
-      output.writeMessage(9, getCommands());
-    }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetCommands(),
+        CommandsDefaultEntryHolder.defaultEntry,
+        9);
     unknownFields.writeTo(output);
   }
 
@@ -582,9 +702,15 @@ private static final long serialVersionUID = 0L;
     if (!getWorkspaceIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, workspaceId_);
     }
-    if (integration_ != null) {
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetIntegration().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      integration__ = IntegrationDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getIntegration());
+          .computeMessageSize(7, integration__);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetEnvVariables().getMap().entrySet()) {
@@ -596,9 +722,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, envVariables__);
     }
-    if (commands_ != null) {
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetCommands().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      commands__ = CommandsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getCommands());
+          .computeMessageSize(9, commands__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -627,18 +759,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getApplicationId())) return false;
     if (!getWorkspaceId()
         .equals(other.getWorkspaceId())) return false;
-    if (hasIntegration() != other.hasIntegration()) return false;
-    if (hasIntegration()) {
-      if (!getIntegration()
-          .equals(other.getIntegration())) return false;
-    }
+    if (!internalGetIntegration().equals(
+        other.internalGetIntegration())) return false;
     if (!internalGetEnvVariables().equals(
         other.internalGetEnvVariables())) return false;
-    if (hasCommands() != other.hasCommands()) return false;
-    if (hasCommands()) {
-      if (!getCommands()
-          .equals(other.getCommands())) return false;
-    }
+    if (!internalGetCommands().equals(
+        other.internalGetCommands())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -662,17 +788,17 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getApplicationId().hashCode();
     hash = (37 * hash) + WORKSPACE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getWorkspaceId().hashCode();
-    if (hasIntegration()) {
+    if (!internalGetIntegration().getMap().isEmpty()) {
       hash = (37 * hash) + INTEGRATION_FIELD_NUMBER;
-      hash = (53 * hash) + getIntegration().hashCode();
+      hash = (53 * hash) + internalGetIntegration().hashCode();
     }
     if (!internalGetEnvVariables().getMap().isEmpty()) {
       hash = (37 * hash) + ENV_VARIABLES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetEnvVariables().hashCode();
     }
-    if (hasCommands()) {
+    if (!internalGetCommands().getMap().isEmpty()) {
       hash = (37 * hash) + COMMANDS_FIELD_NUMBER;
-      hash = (53 * hash) + getCommands().hashCode();
+      hash = (53 * hash) + internalGetCommands().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -789,8 +915,12 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
+        case 7:
+          return internalGetIntegration();
         case 8:
           return internalGetEnvVariables();
+        case 9:
+          return internalGetCommands();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -800,8 +930,12 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMutableMapField(
         int number) {
       switch (number) {
+        case 7:
+          return internalGetMutableIntegration();
         case 8:
           return internalGetMutableEnvVariables();
+        case 9:
+          return internalGetMutableCommands();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -845,19 +979,9 @@ private static final long serialVersionUID = 0L;
 
       workspaceId_ = "";
 
-      if (integrationBuilder_ == null) {
-        integration_ = null;
-      } else {
-        integration_ = null;
-        integrationBuilder_ = null;
-      }
+      internalGetMutableIntegration().clear();
       internalGetMutableEnvVariables().clear();
-      if (commandsBuilder_ == null) {
-        commands_ = null;
-      } else {
-        commands_ = null;
-        commandsBuilder_ = null;
-      }
+      internalGetMutableCommands().clear();
       return this;
     }
 
@@ -891,18 +1015,12 @@ private static final long serialVersionUID = 0L;
       result.projectId_ = projectId_;
       result.applicationId_ = applicationId_;
       result.workspaceId_ = workspaceId_;
-      if (integrationBuilder_ == null) {
-        result.integration_ = integration_;
-      } else {
-        result.integration_ = integrationBuilder_.build();
-      }
+      result.integration_ = internalGetIntegration();
+      result.integration_.makeImmutable();
       result.envVariables_ = internalGetEnvVariables();
       result.envVariables_.makeImmutable();
-      if (commandsBuilder_ == null) {
-        result.commands_ = commands_;
-      } else {
-        result.commands_ = commandsBuilder_.build();
-      }
+      result.commands_ = internalGetCommands();
+      result.commands_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -974,14 +1092,12 @@ private static final long serialVersionUID = 0L;
         workspaceId_ = other.workspaceId_;
         onChanged();
       }
-      if (other.hasIntegration()) {
-        mergeIntegration(other.getIntegration());
-      }
+      internalGetMutableIntegration().mergeFrom(
+          other.internalGetIntegration());
       internalGetMutableEnvVariables().mergeFrom(
           other.internalGetEnvVariables());
-      if (other.hasCommands()) {
-        mergeCommands(other.getCommands());
-      }
+      internalGetMutableCommands().mergeFrom(
+          other.internalGetCommands());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1423,123 +1539,132 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private io.cuemby.pipelines.runtime.v1alpha1.Integration integration_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.runtime.v1alpha1.Integration, io.cuemby.pipelines.runtime.v1alpha1.Integration.Builder, io.cuemby.pipelines.runtime.v1alpha1.IntegrationOrBuilder> integrationBuilder_;
-    /**
-     * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
-     * @return Whether the integration field is set.
-     */
-    public boolean hasIntegration() {
-      return integrationBuilder_ != null || integration_ != null;
-    }
-    /**
-     * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
-     * @return The integration.
-     */
-    public io.cuemby.pipelines.runtime.v1alpha1.Integration getIntegration() {
-      if (integrationBuilder_ == null) {
-        return integration_ == null ? io.cuemby.pipelines.runtime.v1alpha1.Integration.getDefaultInstance() : integration_;
-      } else {
-        return integrationBuilder_.getMessage();
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> integration_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetIntegration() {
+      if (integration_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            IntegrationDefaultEntryHolder.defaultEntry);
       }
+      return integration_;
     }
-    /**
-     * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
-     */
-    public Builder setIntegration(io.cuemby.pipelines.runtime.v1alpha1.Integration value) {
-      if (integrationBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        integration_ = value;
-        onChanged();
-      } else {
-        integrationBuilder_.setMessage(value);
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMutableIntegration() {
+      onChanged();;
+      if (integration_ == null) {
+        integration_ = com.google.protobuf.MapField.newMapField(
+            IntegrationDefaultEntryHolder.defaultEntry);
       }
+      if (!integration_.isMutable()) {
+        integration_ = integration_.copy();
+      }
+      return integration_;
+    }
 
-      return this;
+    public int getIntegrationCount() {
+      return internalGetIntegration().getMap().size();
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
+     * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
      */
-    public Builder setIntegration(
-        io.cuemby.pipelines.runtime.v1alpha1.Integration.Builder builderForValue) {
-      if (integrationBuilder_ == null) {
-        integration_ = builderForValue.build();
-        onChanged();
-      } else {
-        integrationBuilder_.setMessage(builderForValue.build());
-      }
 
-      return this;
+    @java.lang.Override
+    public boolean containsIntegration(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetIntegration().getMap().containsKey(key);
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
+     * Use {@link #getIntegrationMap()} instead.
      */
-    public Builder mergeIntegration(io.cuemby.pipelines.runtime.v1alpha1.Integration value) {
-      if (integrationBuilder_ == null) {
-        if (integration_ != null) {
-          integration_ =
-            io.cuemby.pipelines.runtime.v1alpha1.Integration.newBuilder(integration_).mergeFrom(value).buildPartial();
-        } else {
-          integration_ = value;
-        }
-        onChanged();
-      } else {
-        integrationBuilder_.mergeFrom(value);
-      }
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getIntegration() {
+      return getIntegrationMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
+     */
+    @java.lang.Override
 
-      return this;
+    public java.util.Map<java.lang.String, java.lang.String> getIntegrationMap() {
+      return internalGetIntegration().getMap();
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
+     * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
      */
+    @java.lang.Override
+
+    public java.lang.String getIntegrationOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetIntegration().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getIntegrationOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetIntegration().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     public Builder clearIntegration() {
-      if (integrationBuilder_ == null) {
-        integration_ = null;
-        onChanged();
-      } else {
-        integration_ = null;
-        integrationBuilder_ = null;
-      }
-
+      internalGetMutableIntegration().getMutableMap()
+          .clear();
       return this;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
+     * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
      */
-    public io.cuemby.pipelines.runtime.v1alpha1.Integration.Builder getIntegrationBuilder() {
-      
-      onChanged();
-      return getIntegrationFieldBuilder().getBuilder();
+
+    public Builder removeIntegration(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableIntegration().getMutableMap()
+          .remove(key);
+      return this;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
+     * Use alternate mutation accessors instead.
      */
-    public io.cuemby.pipelines.runtime.v1alpha1.IntegrationOrBuilder getIntegrationOrBuilder() {
-      if (integrationBuilder_ != null) {
-        return integrationBuilder_.getMessageOrBuilder();
-      } else {
-        return integration_ == null ?
-            io.cuemby.pipelines.runtime.v1alpha1.Integration.getDefaultInstance() : integration_;
-      }
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+    getMutableIntegration() {
+      return internalGetMutableIntegration().getMutableMap();
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
+     * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.runtime.v1alpha1.Integration, io.cuemby.pipelines.runtime.v1alpha1.Integration.Builder, io.cuemby.pipelines.runtime.v1alpha1.IntegrationOrBuilder> 
-        getIntegrationFieldBuilder() {
-      if (integrationBuilder_ == null) {
-        integrationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.cuemby.pipelines.runtime.v1alpha1.Integration, io.cuemby.pipelines.runtime.v1alpha1.Integration.Builder, io.cuemby.pipelines.runtime.v1alpha1.IntegrationOrBuilder>(
-                getIntegration(),
-                getParentForChildren(),
-                isClean());
-        integration_ = null;
-      }
-      return integrationBuilder_;
+    public Builder putIntegration(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableIntegration().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; integration = 7 [json_name = "integration"];</code>
+     */
+
+    public Builder putAllIntegration(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableIntegration().getMutableMap()
+          .putAll(values);
+      return this;
     }
 
     private com.google.protobuf.MapField<
@@ -1670,123 +1795,132 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private io.cuemby.pipelines.runtime.v1alpha1.Commands commands_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.runtime.v1alpha1.Commands, io.cuemby.pipelines.runtime.v1alpha1.Commands.Builder, io.cuemby.pipelines.runtime.v1alpha1.CommandsOrBuilder> commandsBuilder_;
-    /**
-     * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
-     * @return Whether the commands field is set.
-     */
-    public boolean hasCommands() {
-      return commandsBuilder_ != null || commands_ != null;
-    }
-    /**
-     * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
-     * @return The commands.
-     */
-    public io.cuemby.pipelines.runtime.v1alpha1.Commands getCommands() {
-      if (commandsBuilder_ == null) {
-        return commands_ == null ? io.cuemby.pipelines.runtime.v1alpha1.Commands.getDefaultInstance() : commands_;
-      } else {
-        return commandsBuilder_.getMessage();
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> commands_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetCommands() {
+      if (commands_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            CommandsDefaultEntryHolder.defaultEntry);
       }
+      return commands_;
     }
-    /**
-     * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
-     */
-    public Builder setCommands(io.cuemby.pipelines.runtime.v1alpha1.Commands value) {
-      if (commandsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        commands_ = value;
-        onChanged();
-      } else {
-        commandsBuilder_.setMessage(value);
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMutableCommands() {
+      onChanged();;
+      if (commands_ == null) {
+        commands_ = com.google.protobuf.MapField.newMapField(
+            CommandsDefaultEntryHolder.defaultEntry);
       }
+      if (!commands_.isMutable()) {
+        commands_ = commands_.copy();
+      }
+      return commands_;
+    }
 
-      return this;
+    public int getCommandsCount() {
+      return internalGetCommands().getMap().size();
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
+     * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
      */
-    public Builder setCommands(
-        io.cuemby.pipelines.runtime.v1alpha1.Commands.Builder builderForValue) {
-      if (commandsBuilder_ == null) {
-        commands_ = builderForValue.build();
-        onChanged();
-      } else {
-        commandsBuilder_.setMessage(builderForValue.build());
-      }
 
-      return this;
+    @java.lang.Override
+    public boolean containsCommands(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetCommands().getMap().containsKey(key);
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
+     * Use {@link #getCommandsMap()} instead.
      */
-    public Builder mergeCommands(io.cuemby.pipelines.runtime.v1alpha1.Commands value) {
-      if (commandsBuilder_ == null) {
-        if (commands_ != null) {
-          commands_ =
-            io.cuemby.pipelines.runtime.v1alpha1.Commands.newBuilder(commands_).mergeFrom(value).buildPartial();
-        } else {
-          commands_ = value;
-        }
-        onChanged();
-      } else {
-        commandsBuilder_.mergeFrom(value);
-      }
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getCommands() {
+      return getCommandsMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
+     */
+    @java.lang.Override
 
-      return this;
+    public java.util.Map<java.lang.String, java.lang.String> getCommandsMap() {
+      return internalGetCommands().getMap();
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
+     * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
      */
+    @java.lang.Override
+
+    public java.lang.String getCommandsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetCommands().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getCommandsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetCommands().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     public Builder clearCommands() {
-      if (commandsBuilder_ == null) {
-        commands_ = null;
-        onChanged();
-      } else {
-        commands_ = null;
-        commandsBuilder_ = null;
-      }
-
+      internalGetMutableCommands().getMutableMap()
+          .clear();
       return this;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
+     * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
      */
-    public io.cuemby.pipelines.runtime.v1alpha1.Commands.Builder getCommandsBuilder() {
-      
-      onChanged();
-      return getCommandsFieldBuilder().getBuilder();
+
+    public Builder removeCommands(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableCommands().getMutableMap()
+          .remove(key);
+      return this;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
+     * Use alternate mutation accessors instead.
      */
-    public io.cuemby.pipelines.runtime.v1alpha1.CommandsOrBuilder getCommandsOrBuilder() {
-      if (commandsBuilder_ != null) {
-        return commandsBuilder_.getMessageOrBuilder();
-      } else {
-        return commands_ == null ?
-            io.cuemby.pipelines.runtime.v1alpha1.Commands.getDefaultInstance() : commands_;
-      }
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+    getMutableCommands() {
+      return internalGetMutableCommands().getMutableMap();
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
+     * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.runtime.v1alpha1.Commands, io.cuemby.pipelines.runtime.v1alpha1.Commands.Builder, io.cuemby.pipelines.runtime.v1alpha1.CommandsOrBuilder> 
-        getCommandsFieldBuilder() {
-      if (commandsBuilder_ == null) {
-        commandsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.cuemby.pipelines.runtime.v1alpha1.Commands, io.cuemby.pipelines.runtime.v1alpha1.Commands.Builder, io.cuemby.pipelines.runtime.v1alpha1.CommandsOrBuilder>(
-                getCommands(),
-                getParentForChildren(),
-                isClean());
-        commands_ = null;
-      }
-      return commandsBuilder_;
+    public Builder putCommands(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableCommands().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; commands = 9 [json_name = "commands"];</code>
+     */
+
+    public Builder putAllCommands(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableCommands().getMutableMap()
+          .putAll(values);
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

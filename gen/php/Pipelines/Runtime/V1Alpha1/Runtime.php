@@ -40,17 +40,17 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     protected $workspace_id = '';
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
+     * Generated from protobuf field <code>map<string, string> integration = 7 [json_name = "integration"];</code>
      */
-    protected $integration = null;
+    private $integration;
     /**
      * Generated from protobuf field <code>map<string, string> env_variables = 8 [json_name = "envVariables"];</code>
      */
     private $env_variables;
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
+     * Generated from protobuf field <code>map<string, string> commands = 9 [json_name = "commands"];</code>
      */
-    protected $commands = null;
+    private $commands;
 
     /**
      * Constructor.
@@ -64,9 +64,9 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type int $project_id
      *     @type string $application_id
      *     @type string $workspace_id
-     *     @type \Pipelines\Runtime\V1Alpha1\Integration $integration
+     *     @type array|\Google\Protobuf\Internal\MapField $integration
      *     @type array|\Google\Protobuf\Internal\MapField $env_variables
-     *     @type \Pipelines\Runtime\V1Alpha1\Commands $commands
+     *     @type array|\Google\Protobuf\Internal\MapField $commands
      * }
      */
     public function __construct($data = NULL) {
@@ -207,33 +207,23 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
-     * @return \Pipelines\Runtime\V1Alpha1\Integration|null
+     * Generated from protobuf field <code>map<string, string> integration = 7 [json_name = "integration"];</code>
+     * @return \Google\Protobuf\Internal\MapField
      */
     public function getIntegration()
     {
         return $this->integration;
     }
 
-    public function hasIntegration()
-    {
-        return isset($this->integration);
-    }
-
-    public function clearIntegration()
-    {
-        unset($this->integration);
-    }
-
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Integration integration = 7 [json_name = "integration"];</code>
-     * @param \Pipelines\Runtime\V1Alpha1\Integration $var
+     * Generated from protobuf field <code>map<string, string> integration = 7 [json_name = "integration"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
     public function setIntegration($var)
     {
-        GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\Integration::class);
-        $this->integration = $var;
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->integration = $arr;
 
         return $this;
     }
@@ -261,33 +251,23 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
-     * @return \Pipelines\Runtime\V1Alpha1\Commands|null
+     * Generated from protobuf field <code>map<string, string> commands = 9 [json_name = "commands"];</code>
+     * @return \Google\Protobuf\Internal\MapField
      */
     public function getCommands()
     {
         return $this->commands;
     }
 
-    public function hasCommands()
-    {
-        return isset($this->commands);
-    }
-
-    public function clearCommands()
-    {
-        unset($this->commands);
-    }
-
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Commands commands = 9 [json_name = "commands"];</code>
-     * @param \Pipelines\Runtime\V1Alpha1\Commands $var
+     * Generated from protobuf field <code>map<string, string> commands = 9 [json_name = "commands"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
     public function setCommands($var)
     {
-        GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\Commands::class);
-        $this->commands = $var;
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->commands = $arr;
 
         return $this;
     }

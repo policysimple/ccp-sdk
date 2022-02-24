@@ -10,17 +10,6 @@ option java_package = "io.cuemby.pipelines.runtime.v1alpha1";
 option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Runtime\\V1Alpha1";
 
-message Integration{
-  string integration_name = 1;
-  string repository_url = 2;
-}
-
-message Commands{
-  string build_command = 1;
-  string run_command = 2;
-  string port = 3;
-}
-
 // Runtime ...
 message Runtime {
   string id = 1;
@@ -29,7 +18,7 @@ message Runtime {
   uint32 project_id = 4;
   string application_id = 5;
   string workspace_id = 6;
-  Integration integration = 7;
+  map<string, string> integration = 7;
   map<string, string> env_variables = 8;
-  Commands commands = 9;
+  map<string, string> commands = 9;
 }
