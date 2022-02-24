@@ -136,6 +136,28 @@ function deserialize_accounts_v1alpha1_CreateRoleResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.CreateRoleResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_CreateTokenRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.CreateTokenRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.CreateTokenRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_CreateTokenRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.CreateTokenRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_CreateTokenResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.CreateTokenResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.CreateTokenResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_CreateTokenResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.CreateTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_CreateUserRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.CreateUserRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.CreateUserRequest');
@@ -244,6 +266,28 @@ function serialize_accounts_v1alpha1_DeleteRoleResponse(arg) {
 
 function deserialize_accounts_v1alpha1_DeleteRoleResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.DeleteRoleResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_DeleteTokenRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.DeleteTokenRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.DeleteTokenRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_DeleteTokenRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.DeleteTokenRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_DeleteTokenResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.DeleteTokenResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.DeleteTokenResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_DeleteTokenResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.DeleteTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_accounts_v1alpha1_DeleteUserRequest(arg) {
@@ -422,6 +466,28 @@ function deserialize_accounts_v1alpha1_GetOneRoleResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.GetOneRoleResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_GetOneTokenRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneTokenRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetOneTokenRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetOneTokenRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetOneTokenRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_GetOneTokenResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneTokenResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetOneTokenResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetOneTokenResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetOneTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_GetOneUserDexRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneUserDexRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.GetOneUserDexRequest');
@@ -574,6 +640,28 @@ function serialize_accounts_v1alpha1_ListRolesResponse(arg) {
 
 function deserialize_accounts_v1alpha1_ListRolesResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.ListRolesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_ListTokenRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.ListTokenRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.ListTokenRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_ListTokenRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.ListTokenRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_ListTokenResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.ListTokenResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.ListTokenResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_ListTokenResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.ListTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_accounts_v1alpha1_ListUserPaginationRequest(arg) {
@@ -750,6 +838,28 @@ function serialize_accounts_v1alpha1_UpdateRoleResponse(arg) {
 
 function deserialize_accounts_v1alpha1_UpdateRoleResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.UpdateRoleResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_UpdateTokenRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.UpdateTokenRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.UpdateTokenRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_UpdateTokenRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.UpdateTokenRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_UpdateTokenResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.UpdateTokenResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.UpdateTokenResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_UpdateTokenResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.UpdateTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_accounts_v1alpha1_UpdateUserRequest(arg) {
@@ -1200,6 +1310,62 @@ var AccountServiceService = exports.AccountServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_GetOneCountryRequest,
     responseSerialize: serialize_accounts_v1alpha1_GetOneCountryResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_GetOneCountryResponse,
+  },
+  // Tokens
+  createToken: {
+    path: '/accounts.v1alpha1.AccountService/CreateToken',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.CreateTokenRequest,
+    responseType: accounts_v1alpha1_accounts_pb.CreateTokenResponse,
+    requestSerialize: serialize_accounts_v1alpha1_CreateTokenRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_CreateTokenRequest,
+    responseSerialize: serialize_accounts_v1alpha1_CreateTokenResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_CreateTokenResponse,
+  },
+  getOneToken: {
+    path: '/accounts.v1alpha1.AccountService/GetOneToken',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.GetOneTokenRequest,
+    responseType: accounts_v1alpha1_accounts_pb.GetOneTokenResponse,
+    requestSerialize: serialize_accounts_v1alpha1_GetOneTokenRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_GetOneTokenRequest,
+    responseSerialize: serialize_accounts_v1alpha1_GetOneTokenResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_GetOneTokenResponse,
+  },
+  listToken: {
+    path: '/accounts.v1alpha1.AccountService/ListToken',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.ListTokenRequest,
+    responseType: accounts_v1alpha1_accounts_pb.ListTokenResponse,
+    requestSerialize: serialize_accounts_v1alpha1_ListTokenRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_ListTokenRequest,
+    responseSerialize: serialize_accounts_v1alpha1_ListTokenResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_ListTokenResponse,
+  },
+  updateToken: {
+    path: '/accounts.v1alpha1.AccountService/UpdateToken',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.UpdateTokenRequest,
+    responseType: accounts_v1alpha1_accounts_pb.UpdateTokenResponse,
+    requestSerialize: serialize_accounts_v1alpha1_UpdateTokenRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_UpdateTokenRequest,
+    responseSerialize: serialize_accounts_v1alpha1_UpdateTokenResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_UpdateTokenResponse,
+  },
+  deleteToken: {
+    path: '/accounts.v1alpha1.AccountService/DeleteToken',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.DeleteTokenRequest,
+    responseType: accounts_v1alpha1_accounts_pb.DeleteTokenResponse,
+    requestSerialize: serialize_accounts_v1alpha1_DeleteTokenRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_DeleteTokenRequest,
+    responseSerialize: serialize_accounts_v1alpha1_DeleteTokenResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_DeleteTokenResponse,
   },
 };
 

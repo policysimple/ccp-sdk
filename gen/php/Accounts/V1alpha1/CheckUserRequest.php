@@ -51,6 +51,10 @@ class CheckUserRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated uint32 roles_ids = 10 [json_name = "rolesIds"];</code>
      */
     private $roles_ids;
+    /**
+     * Generated from protobuf field <code>string token_id = 11 [json_name = "tokenId"];</code>
+     */
+    protected $token_id = '';
 
     /**
      * Constructor.
@@ -68,6 +72,7 @@ class CheckUserRequest extends \Google\Protobuf\Internal\Message
      *     @type int $user_id
      *     @type string $type_permission
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $roles_ids
+     *     @type string $token_id
      * }
      */
     public function __construct($data = NULL) {
@@ -273,6 +278,28 @@ class CheckUserRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
         $this->roles_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token_id = 11 [json_name = "tokenId"];</code>
+     * @return string
+     */
+    public function getTokenId()
+    {
+        return $this->token_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token_id = 11 [json_name = "tokenId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTokenId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->token_id = $var;
 
         return $this;
     }

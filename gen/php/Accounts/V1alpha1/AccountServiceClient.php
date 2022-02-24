@@ -491,4 +491,70 @@ class AccountServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Tokens
+     * @param \Accounts\V1alpha1\CreateTokenRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function CreateToken(\Accounts\V1alpha1\CreateTokenRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/CreateToken',
+        $argument,
+        ['\Accounts\V1alpha1\CreateTokenResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\GetOneTokenRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetOneToken(\Accounts\V1alpha1\GetOneTokenRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/GetOneToken',
+        $argument,
+        ['\Accounts\V1alpha1\GetOneTokenResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\ListTokenRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListToken(\Accounts\V1alpha1\ListTokenRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/ListToken',
+        $argument,
+        ['\Accounts\V1alpha1\ListTokenResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\UpdateTokenRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function UpdateToken(\Accounts\V1alpha1\UpdateTokenRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/UpdateToken',
+        $argument,
+        ['\Accounts\V1alpha1\UpdateTokenResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\DeleteTokenRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DeleteToken(\Accounts\V1alpha1\DeleteTokenRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/DeleteToken',
+        $argument,
+        ['\Accounts\V1alpha1\DeleteTokenResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

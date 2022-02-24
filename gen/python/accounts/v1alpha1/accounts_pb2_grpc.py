@@ -194,6 +194,31 @@ class AccountServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryResponse.FromString,
         )
+    self.CreateToken = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/CreateToken',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateTokenRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateTokenResponse.FromString,
+        )
+    self.GetOneToken = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/GetOneToken',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenResponse.FromString,
+        )
+    self.ListToken = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/ListToken',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListTokenRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListTokenResponse.FromString,
+        )
+    self.UpdateToken = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/UpdateToken',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateTokenRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateTokenResponse.FromString,
+        )
+    self.DeleteToken = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/DeleteToken',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteTokenRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteTokenResponse.FromString,
+        )
 
 
 class AccountServiceServicer(object):
@@ -452,6 +477,41 @@ class AccountServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateToken(self, request, context):
+    """Tokens
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetOneToken(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListToken(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdateToken(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteToken(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AccountServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -634,6 +694,31 @@ def add_AccountServiceServicer_to_server(servicer, server):
           servicer.GetOneCountry,
           request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryResponse.SerializeToString,
+      ),
+      'CreateToken': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateToken,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateTokenRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateTokenResponse.SerializeToString,
+      ),
+      'GetOneToken': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOneToken,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenResponse.SerializeToString,
+      ),
+      'ListToken': grpc.unary_unary_rpc_method_handler(
+          servicer.ListToken,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListTokenRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListTokenResponse.SerializeToString,
+      ),
+      'UpdateToken': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateToken,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateTokenRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateTokenResponse.SerializeToString,
+      ),
+      'DeleteToken': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteToken,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteTokenRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteTokenResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

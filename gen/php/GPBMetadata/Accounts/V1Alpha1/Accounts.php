@@ -16,8 +16,58 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-ýn
- accounts/v1alpha1/accounts.protoaccounts.v1alpha1"d
+÷|
+ accounts/v1alpha1/accounts.protoaccounts.v1alpha1"‡
+CreateTokenRequest
+name (	Rname
+user_id (	RuserId
+	roles_ids (RrolesIds\'
+permissions_ids (RpermissionsIds"¯
+Token
+id (	Rid
+name (	Rname
+user_id (	RuserId(
+rol (2.accounts.v1alpha1.RolRrol?
+permissions (2.accounts.v1alpha1.PermissionRpermissions"{
+CreateTokenResponse
+msg (	Rmsg
+token (	Rtoken&
+access_point_id (RaccessPointId
+error (	Rerror"$
+GetOneTokenRequest
+id (Rid"×
+GetOneTokenResponse
+id (Rid
+token (	Rtoken
+name (	Rname
+user_id (	RuserId,
+roles (2.accounts.v1alpha1.RolRroles?
+permissions (2.accounts.v1alpha1.PermissionRpermissions"+
+ListTokenRequest
+user_id (	RuserId"^
+	TokenList
+id (Rid
+token (	Rtoken
+name (	Rname
+user_id (	RuserId"I
+ListTokenResponse4
+tokens (2.accounts.v1alpha1.TokenListRtokens"›
+UpdateTokenRequest
+id (Rid
+name (	Rname
+	roles_ids (RrolesIds\'
+permissions_ids (RpermissionsIds
+	is_active (RisActive"S
+UpdateTokenResponse
+msg (	Rmsg
+token (	Rtoken
+error (	Rerror"$
+DeleteTokenRequest
+id (Rid"S
+DeleteTokenResponse
+msg (	Rmsg
+token (	Rtoken
+error (	Rerror"d
 City
 id (Rid
 name (	Rname
@@ -61,7 +111,7 @@ htmlResult
 token (	Rtoken"=
 VerifyEmailResponse
 msg (	Rmsg
-error (	Rerror"à
+error (	Rerror"û
 CheckUserRequest\'
 organization_id (RorganizationId
 
@@ -75,7 +125,8 @@ permission
 user_id (RuserId\'
 type_permission	 (	RtypePermission
 	roles_ids
- (RrolesIds"F
+ (RrolesIds
+token_id (	RtokenId"F
 CheckUserResponse
 	is_exists (RisExists
 error (	Rerror"?
@@ -223,10 +274,11 @@ project_id (R	projectId?
 project_id (R	projectId\'
 organization_id (RorganizationId"A
 ListRolesResponse,
-roles (2.accounts.v1alpha1.RolRroles"<
+roles (2.accounts.v1alpha1.RolRroles"L
 CreateRoleResponse
 msg (	Rmsg
-error (	Rerror"<
+error (	Rerror
+id (Rid"<
 UpdateRoleResponse
 msg (	Rmsg
 error (	Rerror"<
@@ -410,7 +462,7 @@ updated_at (	R	updatedAt,
 emoji_country (	RemojiCountry*d
 InvitationResponse,
 (INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED  
-INVITATION_RESPONSE_REJECTED2è
+INVITATION_RESPONSE_REJECTED2¸ 
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
@@ -455,7 +507,12 @@ DeleteRole$.accounts.v1alpha1.DeleteRoleRequest%.accounts.v1alpha1.DeleteRoleR
 SendVerificationEmail/.accounts.v1alpha1.SendVerificationEmailRequest0.accounts.v1alpha1.SendVerificationEmailResponse\\
 VerifyEmail%.accounts.v1alpha1.VerifyEmailRequest&.accounts.v1alpha1.VerifyEmailResponseb
 ListCountries\'.accounts.v1alpha1.ListCountriesRequest(.accounts.v1alpha1.ListCountriesResponseb
-GetOneCountry\'.accounts.v1alpha1.GetOneCountryRequest(.accounts.v1alpha1.GetOneCountryResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
+GetOneCountry\'.accounts.v1alpha1.GetOneCountryRequest(.accounts.v1alpha1.GetOneCountryResponse\\
+CreateToken%.accounts.v1alpha1.CreateTokenRequest&.accounts.v1alpha1.CreateTokenResponse\\
+GetOneToken%.accounts.v1alpha1.GetOneTokenRequest&.accounts.v1alpha1.GetOneTokenResponseV
+	ListToken#.accounts.v1alpha1.ListTokenRequest$.accounts.v1alpha1.ListTokenResponse\\
+UpdateToken%.accounts.v1alpha1.UpdateTokenRequest&.accounts.v1alpha1.UpdateTokenResponse\\
+DeleteToken%.accounts.v1alpha1.DeleteTokenRequest&.accounts.v1alpha1.DeleteTokenResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

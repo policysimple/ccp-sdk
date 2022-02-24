@@ -50,10 +50,112 @@ service AccountService {
     //  Countries
     rpc ListCountries(ListCountriesRequest) returns (ListCountriesResponse);
     rpc GetOneCountry(GetOneCountryRequest) returns (GetOneCountryResponse);
+
+    
+    // Tokens
+    rpc CreateToken(CreateTokenRequest) returns (CreateTokenResponse);
+    rpc GetOneToken(GetOneTokenRequest) returns (GetOneTokenResponse);
+    rpc ListToken(ListTokenRequest) returns (ListTokenResponse);
+    rpc UpdateToken(UpdateTokenRequest) returns (UpdateTokenResponse);
+    rpc DeleteToken(DeleteTokenRequest) returns (DeleteTokenResponse);
     
 }
 
 /*
+    Tokens Create
+*/
+
+message CreateTokenRequest {
+    string name = 1;
+    string user_id =2;
+    repeated uint32 roles_ids = 3;
+    repeated uint32 permissions_ids = 4;
+}
+
+message Token {
+    string id = 1;
+    string name = 2;
+    string user_id = 3;
+    repeated Rol rol = 4;
+    repeated Permission permissions = 5;
+}
+
+message CreateTokenResponse {
+    string msg = 1;
+    string token = 2;
+    uint32 access_point_id = 4;
+    string error = 5;
+}
+
+/*
+    Tokens Get One
+*/
+
+message GetOneTokenRequest {
+    uint32 id = 1;
+}
+
+message GetOneTokenResponse {
+    uint32 id = 1;
+    string token = 2;
+    string name = 3;
+    string user_id =4;
+    repeated Rol roles = 5;
+    repeated Permission permissions = 6;
+}
+
+/*
+    Tokens List
+*/
+
+message ListTokenRequest {
+    string user_id = 1;
+}
+
+message TokenList {
+    uint32  id = 1;
+    string token = 2;
+    string name = 3;
+    string user_id = 4;
+}
+
+message ListTokenResponse {
+    repeated TokenList tokens = 1;
+}
+
+/*
+    Tokens Update
+*/
+
+message UpdateTokenRequest {
+    uint32 id = 1;
+    string name = 2;
+    repeated uint32 roles_ids = 3;
+    repeated uint32 permissions_ids = 4;
+    bool is_active = 5;
+}
+
+message UpdateTokenResponse {
+    string msg = 1;
+    string token = 2;
+    string error = 3;
+}
+
+/*
+    Tokens Delete   
+*/
+
+message DeleteTokenRequest {
+    uint32 id = 1;
+}
+
+message DeleteTokenResponse {
+    string msg = 1;
+    string token = 2;
+    string error = 3;
+}
+
+/*  
 
     Requests Countries
 
@@ -141,6 +243,9 @@ message CheckUserRequest {
     uint32 user_id = 7;
     string type_permission = 9;
     repeated uint32 roles_ids = 10;
+
+    string token_id = 11;
+
 }
 
 message CheckUserResponse {
@@ -376,6 +481,7 @@ message ListRolesResponse {
 message CreateRoleResponse {
     string msg = 1;
     string error = 2;
+    uint32 id = 3;
 }
 
 message UpdateRoleResponse {
