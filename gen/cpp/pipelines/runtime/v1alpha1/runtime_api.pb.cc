@@ -21,7 +21,8 @@ namespace runtime {
 namespace v1alpha1 {
 constexpr CreateRuntimeRequest::CreateRuntimeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : runtime_(nullptr){}
+  : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , runtime_(nullptr){}
 struct CreateRuntimeRequestDefaultTypeInternal {
   constexpr CreateRuntimeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -46,7 +47,8 @@ struct CreateRuntimeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateRuntimeResponseDefaultTypeInternal _CreateRuntimeResponse_default_instance_;
 constexpr UpdateRuntimeRequest::UpdateRuntimeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : runtime_(nullptr){}
+  : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , runtime_(nullptr){}
 struct UpdateRuntimeRequestDefaultTypeInternal {
   constexpr UpdateRuntimeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -71,7 +73,8 @@ struct UpdateRuntimeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateRuntimeResponseDefaultTypeInternal _UpdateRuntimeResponse_default_instance_;
 constexpr DeleteRuntimeRequest::DeleteRuntimeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : runtime_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : runtime_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct DeleteRuntimeRequestDefaultTypeInternal {
   constexpr DeleteRuntimeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -95,7 +98,8 @@ struct DeleteRuntimeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteRuntimeResponseDefaultTypeInternal _DeleteRuntimeResponse_default_instance_;
 constexpr GetRuntimeRequest::GetRuntimeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : runtime_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : runtime_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetRuntimeRequestDefaultTypeInternal {
   constexpr GetRuntimeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -132,6 +136,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::CreateRuntimeRequest, runtime_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::CreateRuntimeRequest, status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::CreateRuntimeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -145,6 +150,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::UpdateRuntimeRequest, runtime_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::UpdateRuntimeRequest, status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::UpdateRuntimeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -158,6 +164,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::DeleteRuntimeRequest, runtime_id_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::DeleteRuntimeRequest, status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::DeleteRuntimeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -170,6 +177,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimeRequest, runtime_id_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimeRequest, status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -180,13 +188,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::pipelines::runtime::v1alpha1::CreateRuntimeRequest)},
-  { 6, -1, sizeof(::pipelines::runtime::v1alpha1::CreateRuntimeResponse)},
-  { 13, -1, sizeof(::pipelines::runtime::v1alpha1::UpdateRuntimeRequest)},
-  { 19, -1, sizeof(::pipelines::runtime::v1alpha1::UpdateRuntimeResponse)},
-  { 26, -1, sizeof(::pipelines::runtime::v1alpha1::DeleteRuntimeRequest)},
-  { 32, -1, sizeof(::pipelines::runtime::v1alpha1::DeleteRuntimeResponse)},
-  { 38, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimeRequest)},
-  { 44, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimeResponse)},
+  { 7, -1, sizeof(::pipelines::runtime::v1alpha1::CreateRuntimeResponse)},
+  { 14, -1, sizeof(::pipelines::runtime::v1alpha1::UpdateRuntimeRequest)},
+  { 21, -1, sizeof(::pipelines::runtime::v1alpha1::UpdateRuntimeResponse)},
+  { 28, -1, sizeof(::pipelines::runtime::v1alpha1::DeleteRuntimeRequest)},
+  { 35, -1, sizeof(::pipelines::runtime::v1alpha1::DeleteRuntimeResponse)},
+  { 41, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimeRequest)},
+  { 48, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimeResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -203,48 +211,50 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n,pipelines/runtime/v1alpha1/runtime_api"
   ".proto\022\032pipelines.runtime.v1alpha1\032(pipe"
-  "lines/runtime/v1alpha1/runtime.proto\"U\n\024"
+  "lines/runtime/v1alpha1/runtime.proto\"m\n\024"
   "CreateRuntimeRequest\022=\n\007runtime\030\001 \001(\0132#."
   "pipelines.runtime.v1alpha1.RuntimeR\007runt"
-  "ime\"n\n\025CreateRuntimeResponse\022=\n\007runtime\030"
-  "\001 \001(\0132#.pipelines.runtime.v1alpha1.Runti"
-  "meR\007runtime\022\026\n\006status\030\002 \001(\tR\006status\"U\n\024U"
-  "pdateRuntimeRequest\022=\n\007runtime\030\001 \001(\0132#.p"
-  "ipelines.runtime.v1alpha1.RuntimeR\007runti"
-  "me\"n\n\025UpdateRuntimeResponse\022=\n\007runtime\030\001"
-  " \001(\0132#.pipelines.runtime.v1alpha1.Runtim"
-  "eR\007runtime\022\026\n\006status\030\002 \001(\tR\006status\"5\n\024De"
-  "leteRuntimeRequest\022\035\n\nruntime_id\030\001 \001(\tR\t"
-  "runtimeId\"/\n\025DeleteRuntimeResponse\022\026\n\006st"
-  "atus\030\001 \001(\tR\006status\"2\n\021GetRuntimeRequest\022"
-  "\035\n\nruntime_id\030\001 \001(\tR\truntimeId\"k\n\022GetRun"
+  "ime\022\026\n\006status\030\002 \001(\tR\006status\"n\n\025CreateRun"
   "timeResponse\022=\n\007runtime\030\001 \001(\0132#.pipeline"
   "s.runtime.v1alpha1.RuntimeR\007runtime\022\026\n\006s"
-  "tatus\030\002 \001(\tR\006status2\352\003\n\021RuntimeAPIServic"
-  "e\022m\n\nGetRuntime\022-.pipelines.runtime.v1al"
-  "pha1.GetRuntimeRequest\032..pipelines.runti"
-  "me.v1alpha1.GetRuntimeResponse\"\000\022v\n\rCrea"
-  "teRuntime\0220.pipelines.runtime.v1alpha1.C"
-  "reateRuntimeRequest\0321.pipelines.runtime."
-  "v1alpha1.CreateRuntimeResponse\"\000\022v\n\rUpda"
-  "teRuntime\0220.pipelines.runtime.v1alpha1.U"
-  "pdateRuntimeRequest\0321.pipelines.runtime."
-  "v1alpha1.UpdateRuntimeResponse\"\000\022v\n\rDele"
-  "teRuntime\0220.pipelines.runtime.v1alpha1.D"
-  "eleteRuntimeRequest\0321.pipelines.runtime."
-  "v1alpha1.DeleteRuntimeResponse\"\000B\260\001\n$io."
-  "cuemby.pipelines.runtime.v1alpha1B\017Runti"
-  "meAPIProtoP\001Z5github.com/cuemby/ccp-runt"
-  "ime-service/runtimev1alpha1\242\002\003PPX\252\002\032Pipe"
-  "lines.Runtime.V1Alpha1\312\002\032Pipelines\\Runti"
-  "me\\V1Alpha1b\006proto3"
+  "tatus\030\002 \001(\tR\006status\"m\n\024UpdateRuntimeRequ"
+  "est\022=\n\007runtime\030\001 \001(\0132#.pipelines.runtime"
+  ".v1alpha1.RuntimeR\007runtime\022\026\n\006status\030\002 \001"
+  "(\tR\006status\"n\n\025UpdateRuntimeResponse\022=\n\007r"
+  "untime\030\001 \001(\0132#.pipelines.runtime.v1alpha"
+  "1.RuntimeR\007runtime\022\026\n\006status\030\002 \001(\tR\006stat"
+  "us\"M\n\024DeleteRuntimeRequest\022\035\n\nruntime_id"
+  "\030\001 \001(\tR\truntimeId\022\026\n\006status\030\002 \001(\tR\006statu"
+  "s\"/\n\025DeleteRuntimeResponse\022\026\n\006status\030\001 \001"
+  "(\tR\006status\"J\n\021GetRuntimeRequest\022\035\n\nrunti"
+  "me_id\030\001 \001(\tR\truntimeId\022\026\n\006status\030\002 \001(\tR\006"
+  "status\"k\n\022GetRuntimeResponse\022=\n\007runtime\030"
+  "\001 \001(\0132#.pipelines.runtime.v1alpha1.Runti"
+  "meR\007runtime\022\026\n\006status\030\002 \001(\tR\006status2\352\003\n\021"
+  "RuntimeAPIService\022m\n\nGetRuntime\022-.pipeli"
+  "nes.runtime.v1alpha1.GetRuntimeRequest\032."
+  ".pipelines.runtime.v1alpha1.GetRuntimeRe"
+  "sponse\"\000\022v\n\rCreateRuntime\0220.pipelines.ru"
+  "ntime.v1alpha1.CreateRuntimeRequest\0321.pi"
+  "pelines.runtime.v1alpha1.CreateRuntimeRe"
+  "sponse\"\000\022v\n\rUpdateRuntime\0220.pipelines.ru"
+  "ntime.v1alpha1.UpdateRuntimeRequest\0321.pi"
+  "pelines.runtime.v1alpha1.UpdateRuntimeRe"
+  "sponse\"\000\022v\n\rDeleteRuntime\0220.pipelines.ru"
+  "ntime.v1alpha1.DeleteRuntimeRequest\0321.pi"
+  "pelines.runtime.v1alpha1.DeleteRuntimeRe"
+  "sponse\"\000B\260\001\n$io.cuemby.pipelines.runtime"
+  ".v1alpha1B\017RuntimeAPIProtoP\001Z5github.com"
+  "/cuemby/ccp-runtime-service/runtimev1alp"
+  "ha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alpha1\312\002"
+  "\032Pipelines\\Runtime\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_deps[1] = {
   &::descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto = {
-  false, false, 1459, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, "pipelines/runtime/v1alpha1/runtime_api.proto", 
+  false, false, 1555, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, "pipelines/runtime/v1alpha1/runtime_api.proto", 
   &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once, descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_deps, 1, 8,
   schemas, file_default_instances, TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto::offsets,
   file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto,
@@ -288,6 +298,11 @@ CreateRuntimeRequest::CreateRuntimeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 CreateRuntimeRequest::CreateRuntimeRequest(const CreateRuntimeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_runtime()) {
     runtime_ = new ::pipelines::runtime::v1alpha1::Runtime(*from.runtime_);
   } else {
@@ -297,6 +312,7 @@ CreateRuntimeRequest::CreateRuntimeRequest(const CreateRuntimeRequest& from)
 }
 
 inline void CreateRuntimeRequest::SharedCtor() {
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 runtime_ = nullptr;
 }
 
@@ -309,6 +325,7 @@ CreateRuntimeRequest::~CreateRuntimeRequest() {
 
 inline void CreateRuntimeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete runtime_;
 }
 
@@ -328,6 +345,7 @@ void CreateRuntimeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  status_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && runtime_ != nullptr) {
     delete runtime_;
   }
@@ -345,6 +363,15 @@ const char* CreateRuntimeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_runtime(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string status = 2 [json_name = "status"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.CreateRuntimeRequest.status"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -385,6 +412,16 @@ failure:
         1, _Internal::runtime(this), target, stream);
   }
 
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.CreateRuntimeRequest.status");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_status(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -400,6 +437,13 @@ size_t CreateRuntimeRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
+  }
 
   // .pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];
   if (this->_internal_has_runtime()) {
@@ -436,6 +480,9 @@ void CreateRuntimeRequest::MergeFrom(const CreateRuntimeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
+  }
   if (from._internal_has_runtime()) {
     _internal_mutable_runtime()->::pipelines::runtime::v1alpha1::Runtime::MergeFrom(from._internal_runtime());
   }
@@ -456,6 +503,11 @@ bool CreateRuntimeRequest::IsInitialized() const {
 void CreateRuntimeRequest::InternalSwap(CreateRuntimeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
+  );
   swap(runtime_, other->runtime_);
 }
 
@@ -742,6 +794,11 @@ UpdateRuntimeRequest::UpdateRuntimeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 UpdateRuntimeRequest::UpdateRuntimeRequest(const UpdateRuntimeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_runtime()) {
     runtime_ = new ::pipelines::runtime::v1alpha1::Runtime(*from.runtime_);
   } else {
@@ -751,6 +808,7 @@ UpdateRuntimeRequest::UpdateRuntimeRequest(const UpdateRuntimeRequest& from)
 }
 
 inline void UpdateRuntimeRequest::SharedCtor() {
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 runtime_ = nullptr;
 }
 
@@ -763,6 +821,7 @@ UpdateRuntimeRequest::~UpdateRuntimeRequest() {
 
 inline void UpdateRuntimeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete runtime_;
 }
 
@@ -782,6 +841,7 @@ void UpdateRuntimeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  status_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && runtime_ != nullptr) {
     delete runtime_;
   }
@@ -799,6 +859,15 @@ const char* UpdateRuntimeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_runtime(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string status = 2 [json_name = "status"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.UpdateRuntimeRequest.status"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -839,6 +908,16 @@ failure:
         1, _Internal::runtime(this), target, stream);
   }
 
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.UpdateRuntimeRequest.status");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_status(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -854,6 +933,13 @@ size_t UpdateRuntimeRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
+  }
 
   // .pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];
   if (this->_internal_has_runtime()) {
@@ -890,6 +976,9 @@ void UpdateRuntimeRequest::MergeFrom(const UpdateRuntimeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
+  }
   if (from._internal_has_runtime()) {
     _internal_mutable_runtime()->::pipelines::runtime::v1alpha1::Runtime::MergeFrom(from._internal_runtime());
   }
@@ -910,6 +999,11 @@ bool UpdateRuntimeRequest::IsInitialized() const {
 void UpdateRuntimeRequest::InternalSwap(UpdateRuntimeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
+  );
   swap(runtime_, other->runtime_);
 }
 
@@ -1190,11 +1284,17 @@ DeleteRuntimeRequest::DeleteRuntimeRequest(const DeleteRuntimeRequest& from)
     runtime_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_runtime_id(), 
       GetArenaForAllocation());
   }
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:pipelines.runtime.v1alpha1.DeleteRuntimeRequest)
 }
 
 inline void DeleteRuntimeRequest::SharedCtor() {
 runtime_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 DeleteRuntimeRequest::~DeleteRuntimeRequest() {
@@ -1207,6 +1307,7 @@ DeleteRuntimeRequest::~DeleteRuntimeRequest() {
 inline void DeleteRuntimeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   runtime_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteRuntimeRequest::ArenaDtor(void* object) {
@@ -1226,6 +1327,7 @@ void DeleteRuntimeRequest::Clear() {
   (void) cached_has_bits;
 
   runtime_id_.ClearToEmpty();
+  status_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1241,6 +1343,15 @@ const char* DeleteRuntimeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           auto str = _internal_mutable_runtime_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.DeleteRuntimeRequest.runtime_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string status = 2 [json_name = "status"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.DeleteRuntimeRequest.status"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1283,6 +1394,16 @@ failure:
         1, this->_internal_runtime_id(), target);
   }
 
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.DeleteRuntimeRequest.status");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_status(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1304,6 +1425,13 @@ size_t DeleteRuntimeRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_runtime_id());
+  }
+
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1337,6 +1465,9 @@ void DeleteRuntimeRequest::MergeFrom(const DeleteRuntimeRequest& from) {
   if (!from._internal_runtime_id().empty()) {
     _internal_set_runtime_id(from._internal_runtime_id());
   }
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1358,6 +1489,11 @@ void DeleteRuntimeRequest::InternalSwap(DeleteRuntimeRequest* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &runtime_id_, GetArenaForAllocation(),
       &other->runtime_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
   );
 }
 
@@ -1590,11 +1726,17 @@ GetRuntimeRequest::GetRuntimeRequest(const GetRuntimeRequest& from)
     runtime_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_runtime_id(), 
       GetArenaForAllocation());
   }
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:pipelines.runtime.v1alpha1.GetRuntimeRequest)
 }
 
 inline void GetRuntimeRequest::SharedCtor() {
 runtime_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 GetRuntimeRequest::~GetRuntimeRequest() {
@@ -1607,6 +1749,7 @@ GetRuntimeRequest::~GetRuntimeRequest() {
 inline void GetRuntimeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   runtime_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetRuntimeRequest::ArenaDtor(void* object) {
@@ -1626,6 +1769,7 @@ void GetRuntimeRequest::Clear() {
   (void) cached_has_bits;
 
   runtime_id_.ClearToEmpty();
+  status_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1641,6 +1785,15 @@ const char* GetRuntimeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           auto str = _internal_mutable_runtime_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.GetRuntimeRequest.runtime_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string status = 2 [json_name = "status"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.GetRuntimeRequest.status"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1683,6 +1836,16 @@ failure:
         1, this->_internal_runtime_id(), target);
   }
 
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.GetRuntimeRequest.status");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_status(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1704,6 +1867,13 @@ size_t GetRuntimeRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_runtime_id());
+  }
+
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1737,6 +1907,9 @@ void GetRuntimeRequest::MergeFrom(const GetRuntimeRequest& from) {
   if (!from._internal_runtime_id().empty()) {
     _internal_set_runtime_id(from._internal_runtime_id());
   }
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1758,6 +1931,11 @@ void GetRuntimeRequest::InternalSwap(GetRuntimeRequest* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &runtime_id_, GetArenaForAllocation(),
       &other->runtime_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
   );
 }
 

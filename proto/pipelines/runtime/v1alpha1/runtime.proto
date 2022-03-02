@@ -19,6 +19,7 @@ message Runtime {
   string application_id = 5;
   string workspace_id = 6;
   map<string, string> integration = 7;
-  map<string, string> env_variables = 8;
+  map<string, string> environment = 8;
   map<string, string> commands = 9;
+  map<string, string> secrets = 10;
 }

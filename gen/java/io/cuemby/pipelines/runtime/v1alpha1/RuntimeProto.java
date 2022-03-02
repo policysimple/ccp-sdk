@@ -25,15 +25,20 @@ public final class RuntimeProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pipelines_runtime_v1alpha1_Runtime_EnvVariablesEntry_descriptor;
+    internal_static_pipelines_runtime_v1alpha1_Runtime_EnvironmentEntry_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pipelines_runtime_v1alpha1_Runtime_EnvVariablesEntry_fieldAccessorTable;
+      internal_static_pipelines_runtime_v1alpha1_Runtime_EnvironmentEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_pipelines_runtime_v1alpha1_Runtime_CommandsEntry_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_runtime_v1alpha1_Runtime_CommandsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_runtime_v1alpha1_Runtime_SecretsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_runtime_v1alpha1_Runtime_SecretsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -44,28 +49,31 @@ public final class RuntimeProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(pipelines/runtime/v1alpha1/runtime.pro" +
-      "to\022\032pipelines.runtime.v1alpha1\"\365\004\n\007Runti" +
+      "to\022\032pipelines.runtime.v1alpha1\"\370\005\n\007Runti" +
       "me\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\034" +
       "\n\tnamespace\030\003 \001(\tR\tnamespace\022\035\n\nproject_" +
       "id\030\004 \001(\rR\tprojectId\022%\n\016application_id\030\005 " +
       "\001(\tR\rapplicationId\022!\n\014workspace_id\030\006 \001(\t" +
       "R\013workspaceId\022V\n\013integration\030\007 \003(\01324.pip" +
       "elines.runtime.v1alpha1.Runtime.Integrat" +
-      "ionEntryR\013integration\022Z\n\renv_variables\030\010" +
-      " \003(\01325.pipelines.runtime.v1alpha1.Runtim" +
-      "e.EnvVariablesEntryR\014envVariables\022M\n\010com" +
-      "mands\030\t \003(\01321.pipelines.runtime.v1alpha1" +
-      ".Runtime.CommandsEntryR\010commands\032>\n\020Inte" +
-      "grationEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030" +
-      "\002 \001(\tR\005value:\0028\001\032?\n\021EnvVariablesEntry\022\020\n" +
-      "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028" +
-      "\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005" +
-      "value\030\002 \001(\tR\005value:\0028\001B\255\001\n$io.cuemby.pip" +
-      "elines.runtime.v1alpha1B\014RuntimeProtoP\001Z" +
-      "5github.com/cuemby/ccp-runtime-service/r" +
-      "untimev1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime" +
-      ".V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1b\006" +
-      "proto3"
+      "ionEntryR\013integration\022V\n\013environment\030\010 \003" +
+      "(\01324.pipelines.runtime.v1alpha1.Runtime." +
+      "EnvironmentEntryR\013environment\022M\n\010command" +
+      "s\030\t \003(\01321.pipelines.runtime.v1alpha1.Run" +
+      "time.CommandsEntryR\010commands\022J\n\007secrets\030" +
+      "\n \003(\01320.pipelines.runtime.v1alpha1.Runti" +
+      "me.SecretsEntryR\007secrets\032>\n\020IntegrationE" +
+      "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v" +
+      "alue:\0028\001\032>\n\020EnvironmentEntry\022\020\n\003key\030\001 \001(" +
+      "\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rComm" +
+      "andsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001" +
+      "(\tR\005value:\0028\001\032:\n\014SecretsEntry\022\020\n\003key\030\001 \001" +
+      "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\255\001\n$io" +
+      ".cuemby.pipelines.runtime.v1alpha1B\014Runt" +
+      "imeProtoP\001Z5github.com/cuemby/ccp-runtim" +
+      "e-service/runtimev1alpha1\242\002\003PPX\252\002\032Pipeli" +
+      "nes.Runtime.V1Alpha1\312\002\032Pipelines\\Runtime" +
+      "\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -76,24 +84,30 @@ public final class RuntimeProto {
     internal_static_pipelines_runtime_v1alpha1_Runtime_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor,
-        new java.lang.String[] { "Id", "Name", "Namespace", "ProjectId", "ApplicationId", "WorkspaceId", "Integration", "EnvVariables", "Commands", });
+        new java.lang.String[] { "Id", "Name", "Namespace", "ProjectId", "ApplicationId", "WorkspaceId", "Integration", "Environment", "Commands", "Secrets", });
     internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_descriptor =
       internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor.getNestedTypes().get(0);
     internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_pipelines_runtime_v1alpha1_Runtime_EnvVariablesEntry_descriptor =
+    internal_static_pipelines_runtime_v1alpha1_Runtime_EnvironmentEntry_descriptor =
       internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor.getNestedTypes().get(1);
-    internal_static_pipelines_runtime_v1alpha1_Runtime_EnvVariablesEntry_fieldAccessorTable = new
+    internal_static_pipelines_runtime_v1alpha1_Runtime_EnvironmentEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pipelines_runtime_v1alpha1_Runtime_EnvVariablesEntry_descriptor,
+        internal_static_pipelines_runtime_v1alpha1_Runtime_EnvironmentEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_pipelines_runtime_v1alpha1_Runtime_CommandsEntry_descriptor =
       internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor.getNestedTypes().get(2);
     internal_static_pipelines_runtime_v1alpha1_Runtime_CommandsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_CommandsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_pipelines_runtime_v1alpha1_Runtime_SecretsEntry_descriptor =
+      internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor.getNestedTypes().get(3);
+    internal_static_pipelines_runtime_v1alpha1_Runtime_SecretsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_runtime_v1alpha1_Runtime_SecretsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
   }
 

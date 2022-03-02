@@ -44,13 +44,17 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     private $integration;
     /**
-     * Generated from protobuf field <code>map<string, string> env_variables = 8 [json_name = "envVariables"];</code>
+     * Generated from protobuf field <code>map<string, string> environment = 8 [json_name = "environment"];</code>
      */
-    private $env_variables;
+    private $environment;
     /**
      * Generated from protobuf field <code>map<string, string> commands = 9 [json_name = "commands"];</code>
      */
     private $commands;
+    /**
+     * Generated from protobuf field <code>map<string, string> secrets = 10 [json_name = "secrets"];</code>
+     */
+    private $secrets;
 
     /**
      * Constructor.
@@ -65,8 +69,9 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type string $application_id
      *     @type string $workspace_id
      *     @type array|\Google\Protobuf\Internal\MapField $integration
-     *     @type array|\Google\Protobuf\Internal\MapField $env_variables
+     *     @type array|\Google\Protobuf\Internal\MapField $environment
      *     @type array|\Google\Protobuf\Internal\MapField $commands
+     *     @type array|\Google\Protobuf\Internal\MapField $secrets
      * }
      */
     public function __construct($data = NULL) {
@@ -229,23 +234,23 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> env_variables = 8 [json_name = "envVariables"];</code>
+     * Generated from protobuf field <code>map<string, string> environment = 8 [json_name = "environment"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
-    public function getEnvVariables()
+    public function getEnvironment()
     {
-        return $this->env_variables;
+        return $this->environment;
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> env_variables = 8 [json_name = "envVariables"];</code>
+     * Generated from protobuf field <code>map<string, string> environment = 8 [json_name = "environment"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setEnvVariables($var)
+    public function setEnvironment($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->env_variables = $arr;
+        $this->environment = $arr;
 
         return $this;
     }
@@ -268,6 +273,28 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->commands = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> secrets = 10 [json_name = "secrets"];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getSecrets()
+    {
+        return $this->secrets;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> secrets = 10 [json_name = "secrets"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setSecrets($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->secrets = $arr;
 
         return $this;
     }

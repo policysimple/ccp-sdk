@@ -21,4 +21,16 @@ public interface CreateRuntimeRequestOrBuilder extends
    * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
    */
   io.cuemby.pipelines.runtime.v1alpha1.RuntimeOrBuilder getRuntimeOrBuilder();
+
+  /**
+   * <code>string status = 2 [json_name = "status"];</code>
+   * @return The status.
+   */
+  java.lang.String getStatus();
+  /**
+   * <code>string status = 2 [json_name = "status"];</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
 }

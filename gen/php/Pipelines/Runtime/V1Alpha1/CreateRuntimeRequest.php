@@ -17,6 +17,10 @@ class CreateRuntimeRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
      */
     protected $runtime = null;
+    /**
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     */
+    protected $status = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class CreateRuntimeRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Pipelines\Runtime\V1Alpha1\Runtime $runtime
+     *     @type string $status
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +65,28 @@ class CreateRuntimeRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\Runtime::class);
         $this->runtime = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
 
         return $this;
     }

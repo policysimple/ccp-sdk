@@ -215,8 +215,23 @@ class CreateRuntimeRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kStatusFieldNumber = 2,
     kRuntimeFieldNumber = 1,
   };
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
   // .pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];
   bool has_runtime() const;
   private:
@@ -242,6 +257,7 @@ class CreateRuntimeRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::pipelines::runtime::v1alpha1::Runtime* runtime_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
@@ -527,8 +543,23 @@ class UpdateRuntimeRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kStatusFieldNumber = 2,
     kRuntimeFieldNumber = 1,
   };
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
   // .pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];
   bool has_runtime() const;
   private:
@@ -554,6 +585,7 @@ class UpdateRuntimeRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::pipelines::runtime::v1alpha1::Runtime* runtime_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
@@ -840,6 +872,7 @@ class DeleteRuntimeRequest final :
 
   enum : int {
     kRuntimeIdFieldNumber = 1,
+    kStatusFieldNumber = 2,
   };
   // string runtime_id = 1 [json_name = "runtimeId"];
   void clear_runtime_id();
@@ -855,6 +888,20 @@ class DeleteRuntimeRequest final :
   std::string* _internal_mutable_runtime_id();
   public:
 
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.DeleteRuntimeRequest)
  private:
   class _Internal;
@@ -863,6 +910,7 @@ class DeleteRuntimeRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
 };
@@ -1128,6 +1176,7 @@ class GetRuntimeRequest final :
 
   enum : int {
     kRuntimeIdFieldNumber = 1,
+    kStatusFieldNumber = 2,
   };
   // string runtime_id = 1 [json_name = "runtimeId"];
   void clear_runtime_id();
@@ -1143,6 +1192,20 @@ class GetRuntimeRequest final :
   std::string* _internal_mutable_runtime_id();
   public:
 
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.GetRuntimeRequest)
  private:
   class _Internal;
@@ -1151,6 +1214,7 @@ class GetRuntimeRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
 };
@@ -1415,6 +1479,52 @@ inline void CreateRuntimeRequest::set_allocated_runtime(::pipelines::runtime::v1
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.CreateRuntimeRequest.runtime)
 }
 
+// string status = 2 [json_name = "status"];
+inline void CreateRuntimeRequest::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& CreateRuntimeRequest::status() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.CreateRuntimeRequest.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateRuntimeRequest::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.CreateRuntimeRequest.status)
+}
+inline std::string* CreateRuntimeRequest::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.CreateRuntimeRequest.status)
+  return _s;
+}
+inline const std::string& CreateRuntimeRequest::_internal_status() const {
+  return status_.Get();
+}
+inline void CreateRuntimeRequest::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateRuntimeRequest::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateRuntimeRequest::release_status() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.CreateRuntimeRequest.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateRuntimeRequest::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.CreateRuntimeRequest.status)
+}
+
 // -------------------------------------------------------------------
 
 // CreateRuntimeResponse
@@ -1641,6 +1751,52 @@ inline void UpdateRuntimeRequest::set_allocated_runtime(::pipelines::runtime::v1
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.UpdateRuntimeRequest.runtime)
 }
 
+// string status = 2 [json_name = "status"];
+inline void UpdateRuntimeRequest::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& UpdateRuntimeRequest::status() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.UpdateRuntimeRequest.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateRuntimeRequest::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.UpdateRuntimeRequest.status)
+}
+inline std::string* UpdateRuntimeRequest::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.UpdateRuntimeRequest.status)
+  return _s;
+}
+inline const std::string& UpdateRuntimeRequest::_internal_status() const {
+  return status_.Get();
+}
+inline void UpdateRuntimeRequest::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateRuntimeRequest::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateRuntimeRequest::release_status() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.UpdateRuntimeRequest.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateRuntimeRequest::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.UpdateRuntimeRequest.status)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateRuntimeResponse
@@ -1827,6 +1983,52 @@ inline void DeleteRuntimeRequest::set_allocated_runtime_id(std::string* runtime_
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.runtime_id)
 }
 
+// string status = 2 [json_name = "status"];
+inline void DeleteRuntimeRequest::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& DeleteRuntimeRequest::status() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRuntimeRequest::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.status)
+}
+inline std::string* DeleteRuntimeRequest::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.status)
+  return _s;
+}
+inline const std::string& DeleteRuntimeRequest::_internal_status() const {
+  return status_.Get();
+}
+inline void DeleteRuntimeRequest::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimeRequest::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimeRequest::release_status() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRuntimeRequest::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.status)
+}
+
 // -------------------------------------------------------------------
 
 // DeleteRuntimeResponse
@@ -1925,6 +2127,52 @@ inline void GetRuntimeRequest::set_allocated_runtime_id(std::string* runtime_id)
   runtime_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), runtime_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.GetRuntimeRequest.runtime_id)
+}
+
+// string status = 2 [json_name = "status"];
+inline void GetRuntimeRequest::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& GetRuntimeRequest::status() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.GetRuntimeRequest.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetRuntimeRequest::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.GetRuntimeRequest.status)
+}
+inline std::string* GetRuntimeRequest::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.GetRuntimeRequest.status)
+  return _s;
+}
+inline const std::string& GetRuntimeRequest::_internal_status() const {
+  return status_.Get();
+}
+inline void GetRuntimeRequest::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetRuntimeRequest::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetRuntimeRequest::release_status() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.GetRuntimeRequest.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetRuntimeRequest::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.GetRuntimeRequest.status)
 }
 
 // -------------------------------------------------------------------

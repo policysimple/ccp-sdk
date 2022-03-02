@@ -108,37 +108,37 @@ public interface RuntimeOrBuilder extends
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
    */
-  int getEnvVariablesCount();
+  int getEnvironmentCount();
   /**
-   * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
    */
-  boolean containsEnvVariables(
+  boolean containsEnvironment(
       java.lang.String key);
   /**
-   * Use {@link #getEnvVariablesMap()} instead.
+   * Use {@link #getEnvironmentMap()} instead.
    */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String>
-  getEnvVariables();
+  getEnvironment();
   /**
-   * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
-  getEnvVariablesMap();
+  getEnvironmentMap();
   /**
-   * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
    */
 
-  java.lang.String getEnvVariablesOrDefault(
+  java.lang.String getEnvironmentOrDefault(
       java.lang.String key,
       java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
    */
 
-  java.lang.String getEnvVariablesOrThrow(
+  java.lang.String getEnvironmentOrThrow(
       java.lang.String key);
 
   /**
@@ -173,5 +173,39 @@ public interface RuntimeOrBuilder extends
    */
 
   java.lang.String getCommandsOrThrow(
+      java.lang.String key);
+
+  /**
+   * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+   */
+  int getSecretsCount();
+  /**
+   * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+   */
+  boolean containsSecrets(
+      java.lang.String key);
+  /**
+   * Use {@link #getSecretsMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getSecrets();
+  /**
+   * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getSecretsMap();
+  /**
+   * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+   */
+
+  java.lang.String getSecretsOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+   */
+
+  java.lang.String getSecretsOrThrow(
       java.lang.String key);
 }

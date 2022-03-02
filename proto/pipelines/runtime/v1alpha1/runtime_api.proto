@@ -10,7 +10,8 @@ option java_package = "io.cuemby.pipelines.runtime.v1alpha1";
 option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Runtime\\V1Alpha1";
 
-import "pipelines/runtime/v1alpha1/runtime.proto";
+//import "pipelines/runtime/v1alpha1/runtime.proto";
+import "runtime.proto";
 
 
 service RuntimeAPIService{
@@ -22,6 +23,7 @@ service RuntimeAPIService{
 
 message CreateRuntimeRequest {
     pipelines.runtime.v1alpha1.Runtime runtime = 1;
+    string status = 2;
 }
 
 message CreateRuntimeResponse {
@@ -31,6 +33,7 @@ message CreateRuntimeResponse {
 
 message UpdateRuntimeRequest {
     pipelines.runtime.v1alpha1.Runtime runtime = 1;
+    string status = 2;
 }
 
 message UpdateRuntimeResponse {
@@ -40,6 +43,7 @@ message UpdateRuntimeResponse {
 
 message DeleteRuntimeRequest {
     string runtime_id = 1;
+    string status = 2;
 }
 
 message DeleteRuntimeResponse {
@@ -48,6 +52,7 @@ message DeleteRuntimeResponse {
 
 message GetRuntimeRequest {
     string runtime_id = 1;
+    string status = 2;
 }
 
 message GetRuntimeResponse {

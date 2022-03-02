@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$io.cuemby.pipelines.runtime.v1alpha1B\014RuntimeProtoP\001Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(pipelines/runtime/v1alpha1/runtime.proto\x12\x1apipelines.runtime.v1alpha1\"\xf5\x04\n\x07Runtime\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\x12\x1d\n\nproject_id\x18\x04 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\tR\rapplicationId\x12!\n\x0cworkspace_id\x18\x06 \x01(\tR\x0bworkspaceId\x12V\n\x0bintegration\x18\x07 \x03(\x0b\x32\x34.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryR\x0bintegration\x12Z\n\renv_variables\x18\x08 \x03(\x0b\x32\x35.pipelines.runtime.v1alpha1.Runtime.EnvVariablesEntryR\x0c\x65nvVariables\x12M\n\x08\x63ommands\x18\t \x03(\x0b\x32\x31.pipelines.runtime.v1alpha1.Runtime.CommandsEntryR\x08\x63ommands\x1a>\n\x10IntegrationEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a?\n\x11\x45nvVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rCommandsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\xad\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0cRuntimeProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n(pipelines/runtime/v1alpha1/runtime.proto\x12\x1apipelines.runtime.v1alpha1\"\xf8\x05\n\x07Runtime\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\x12\x1d\n\nproject_id\x18\x04 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\tR\rapplicationId\x12!\n\x0cworkspace_id\x18\x06 \x01(\tR\x0bworkspaceId\x12V\n\x0bintegration\x18\x07 \x03(\x0b\x32\x34.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryR\x0bintegration\x12V\n\x0b\x65nvironment\x18\x08 \x03(\x0b\x32\x34.pipelines.runtime.v1alpha1.Runtime.EnvironmentEntryR\x0b\x65nvironment\x12M\n\x08\x63ommands\x18\t \x03(\x0b\x32\x31.pipelines.runtime.v1alpha1.Runtime.CommandsEntryR\x08\x63ommands\x12J\n\x07secrets\x18\n \x03(\x0b\x32\x30.pipelines.runtime.v1alpha1.Runtime.SecretsEntryR\x07secrets\x1a>\n\x10IntegrationEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a>\n\x10\x45nvironmentEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rCommandsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cSecretsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\xad\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0cRuntimeProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
 )
 
 
@@ -59,27 +59,27 @@ _RUNTIME_INTEGRATIONENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=514,
-  serialized_end=576,
+  serialized_start=586,
+  serialized_end=648,
 )
 
-_RUNTIME_ENVVARIABLESENTRY = _descriptor.Descriptor(
-  name='EnvVariablesEntry',
-  full_name='pipelines.runtime.v1alpha1.Runtime.EnvVariablesEntry',
+_RUNTIME_ENVIRONMENTENTRY = _descriptor.Descriptor(
+  name='EnvironmentEntry',
+  full_name='pipelines.runtime.v1alpha1.Runtime.EnvironmentEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='pipelines.runtime.v1alpha1.Runtime.EnvVariablesEntry.key', index=0,
+      name='key', full_name='pipelines.runtime.v1alpha1.Runtime.EnvironmentEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='key', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='pipelines.runtime.v1alpha1.Runtime.EnvVariablesEntry.value', index=1,
+      name='value', full_name='pipelines.runtime.v1alpha1.Runtime.EnvironmentEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -97,8 +97,8 @@ _RUNTIME_ENVVARIABLESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=578,
-  serialized_end=641,
+  serialized_start=650,
+  serialized_end=712,
 )
 
 _RUNTIME_COMMANDSENTRY = _descriptor.Descriptor(
@@ -135,8 +135,46 @@ _RUNTIME_COMMANDSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=643,
-  serialized_end=702,
+  serialized_start=714,
+  serialized_end=773,
+)
+
+_RUNTIME_SECRETSENTRY = _descriptor.Descriptor(
+  name='SecretsEntry',
+  full_name='pipelines.runtime.v1alpha1.Runtime.SecretsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='pipelines.runtime.v1alpha1.Runtime.SecretsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='key', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='pipelines.runtime.v1alpha1.Runtime.SecretsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='value', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=775,
+  serialized_end=833,
 )
 
 _RUNTIME = _descriptor.Descriptor(
@@ -197,12 +235,12 @@ _RUNTIME = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='integration', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='env_variables', full_name='pipelines.runtime.v1alpha1.Runtime.env_variables', index=7,
+      name='environment', full_name='pipelines.runtime.v1alpha1.Runtime.environment', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='envVariables', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='environment', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='commands', full_name='pipelines.runtime.v1alpha1.Runtime.commands', index=8,
       number=9, type=11, cpp_type=10, label=3,
@@ -210,10 +248,17 @@ _RUNTIME = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='commands', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='secrets', full_name='pipelines.runtime.v1alpha1.Runtime.secrets', index=9,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='secrets', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[_RUNTIME_INTEGRATIONENTRY, _RUNTIME_ENVVARIABLESENTRY, _RUNTIME_COMMANDSENTRY, ],
+  nested_types=[_RUNTIME_INTEGRATIONENTRY, _RUNTIME_ENVIRONMENTENTRY, _RUNTIME_COMMANDSENTRY, _RUNTIME_SECRETSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -223,15 +268,17 @@ _RUNTIME = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=73,
-  serialized_end=702,
+  serialized_end=833,
 )
 
 _RUNTIME_INTEGRATIONENTRY.containing_type = _RUNTIME
-_RUNTIME_ENVVARIABLESENTRY.containing_type = _RUNTIME
+_RUNTIME_ENVIRONMENTENTRY.containing_type = _RUNTIME
 _RUNTIME_COMMANDSENTRY.containing_type = _RUNTIME
+_RUNTIME_SECRETSENTRY.containing_type = _RUNTIME
 _RUNTIME.fields_by_name['integration'].message_type = _RUNTIME_INTEGRATIONENTRY
-_RUNTIME.fields_by_name['env_variables'].message_type = _RUNTIME_ENVVARIABLESENTRY
+_RUNTIME.fields_by_name['environment'].message_type = _RUNTIME_ENVIRONMENTENTRY
 _RUNTIME.fields_by_name['commands'].message_type = _RUNTIME_COMMANDSENTRY
+_RUNTIME.fields_by_name['secrets'].message_type = _RUNTIME_SECRETSENTRY
 DESCRIPTOR.message_types_by_name['Runtime'] = _RUNTIME
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -244,10 +291,10 @@ Runtime = _reflection.GeneratedProtocolMessageType('Runtime', (_message.Message,
     })
   ,
 
-  'EnvVariablesEntry' : _reflection.GeneratedProtocolMessageType('EnvVariablesEntry', (_message.Message,), {
-    'DESCRIPTOR' : _RUNTIME_ENVVARIABLESENTRY,
+  'EnvironmentEntry' : _reflection.GeneratedProtocolMessageType('EnvironmentEntry', (_message.Message,), {
+    'DESCRIPTOR' : _RUNTIME_ENVIRONMENTENTRY,
     '__module__' : 'pipelines.runtime.v1alpha1.runtime_pb2'
-    # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Runtime.EnvVariablesEntry)
+    # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Runtime.EnvironmentEntry)
     })
   ,
 
@@ -257,18 +304,27 @@ Runtime = _reflection.GeneratedProtocolMessageType('Runtime', (_message.Message,
     # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Runtime.CommandsEntry)
     })
   ,
+
+  'SecretsEntry' : _reflection.GeneratedProtocolMessageType('SecretsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _RUNTIME_SECRETSENTRY,
+    '__module__' : 'pipelines.runtime.v1alpha1.runtime_pb2'
+    # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Runtime.SecretsEntry)
+    })
+  ,
   'DESCRIPTOR' : _RUNTIME,
   '__module__' : 'pipelines.runtime.v1alpha1.runtime_pb2'
   # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Runtime)
   })
 _sym_db.RegisterMessage(Runtime)
 _sym_db.RegisterMessage(Runtime.IntegrationEntry)
-_sym_db.RegisterMessage(Runtime.EnvVariablesEntry)
+_sym_db.RegisterMessage(Runtime.EnvironmentEntry)
 _sym_db.RegisterMessage(Runtime.CommandsEntry)
+_sym_db.RegisterMessage(Runtime.SecretsEntry)
 
 
 DESCRIPTOR._options = None
 _RUNTIME_INTEGRATIONENTRY._options = None
-_RUNTIME_ENVVARIABLESENTRY._options = None
+_RUNTIME_ENVIRONMENTENTRY._options = None
 _RUNTIME_COMMANDSENTRY._options = None
+_RUNTIME_SECRETSENTRY._options = None
 # @@protoc_insertion_point(module_scope)
