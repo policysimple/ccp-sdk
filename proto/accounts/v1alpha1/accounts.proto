@@ -204,13 +204,9 @@ message GetOneCountryResponse {
     repeated State states = 6;
 }
 
-
 /*
-
     VERIFICATION EMAIL
-
 */
-
 message SendVerificationEmailRequest {
     string email = 1;
     string name = 2;
@@ -251,6 +247,8 @@ message CheckUserRequest {
 message CheckUserResponse {
     bool is_exists = 1;
     string error = 2;
+    bool is_admin = 3;
+
 }
 
 message UsersDex {
@@ -461,6 +459,7 @@ message GetOneRoleResponse{
     uint32 organization_id = 3;
     uint32 project_id = 4;
     repeated Permission permissions = 5;
+    bool is_admin =6; 
 }
 
 message DeleteRoleRequest {
@@ -563,6 +562,8 @@ message GetOneProjectResponse {
     string created_at = 6;
     string updated_at = 7;
     repeated Member members = 8;
+    UserList owner = 9;
+
 }
 
 
@@ -710,6 +711,8 @@ message GetOneOrganizationResponse{
     repeated ProjectOrganization projects = 4;
     repeated Member menbers = 5;
     string description = 6;
+    UserList owner = 7;
+    
 }
 
 

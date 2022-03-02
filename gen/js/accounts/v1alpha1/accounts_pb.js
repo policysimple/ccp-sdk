@@ -7268,7 +7268,8 @@ proto.accounts.v1alpha1.CheckUserResponse.prototype.toObject = function(opt_incl
 proto.accounts.v1alpha1.CheckUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     isExists: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    error: jspb.Message.getFieldWithDefault(msg, 2, "")
+    error: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    isAdmin: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -7313,6 +7314,10 @@ proto.accounts.v1alpha1.CheckUserResponse.deserializeBinaryFromReader = function
       var value = /** @type {string} */ (reader.readString());
       msg.setError(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsAdmin(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -7356,6 +7361,13 @@ proto.accounts.v1alpha1.CheckUserResponse.serializeBinaryToWriter = function(mes
       f
     );
   }
+  f = message.getIsAdmin();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -7392,6 +7404,24 @@ proto.accounts.v1alpha1.CheckUserResponse.prototype.getError = function() {
  */
 proto.accounts.v1alpha1.CheckUserResponse.prototype.setError = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bool is_admin = 3;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.CheckUserResponse.prototype.getIsAdmin = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.CheckUserResponse} returns this
+ */
+proto.accounts.v1alpha1.CheckUserResponse.prototype.setIsAdmin = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
@@ -13072,7 +13102,8 @@ proto.accounts.v1alpha1.GetOneRoleResponse.toObject = function(includeInstance, 
     organizationId: jspb.Message.getFieldWithDefault(msg, 3, 0),
     projectId: jspb.Message.getFieldWithDefault(msg, 4, 0),
     permissionsList: jspb.Message.toObjectList(msg.getPermissionsList(),
-    proto.accounts.v1alpha1.Permission.toObject, includeInstance)
+    proto.accounts.v1alpha1.Permission.toObject, includeInstance),
+    isAdmin: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -13129,6 +13160,10 @@ proto.accounts.v1alpha1.GetOneRoleResponse.deserializeBinaryFromReader = functio
       var value = new proto.accounts.v1alpha1.Permission;
       reader.readMessage(value,proto.accounts.v1alpha1.Permission.deserializeBinaryFromReader);
       msg.addPermissions(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsAdmin(value);
       break;
     default:
       reader.skipField();
@@ -13193,6 +13228,13 @@ proto.accounts.v1alpha1.GetOneRoleResponse.serializeBinaryToWriter = function(me
       5,
       f,
       proto.accounts.v1alpha1.Permission.serializeBinaryToWriter
+    );
+  }
+  f = message.getIsAdmin();
+  if (f) {
+    writer.writeBool(
+      6,
+      f
     );
   }
 };
@@ -13305,6 +13347,24 @@ proto.accounts.v1alpha1.GetOneRoleResponse.prototype.addPermissions = function(o
  */
 proto.accounts.v1alpha1.GetOneRoleResponse.prototype.clearPermissionsList = function() {
   return this.setPermissionsList([]);
+};
+
+
+/**
+ * optional bool is_admin = 6;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneRoleResponse.prototype.getIsAdmin = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneRoleResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneRoleResponse.prototype.setIsAdmin = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -16016,7 +16076,8 @@ proto.accounts.v1alpha1.GetOneProjectResponse.toObject = function(includeInstanc
     createdAt: jspb.Message.getFieldWithDefault(msg, 6, ""),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
     membersList: jspb.Message.toObjectList(msg.getMembersList(),
-    proto.accounts.v1alpha1.Member.toObject, includeInstance)
+    proto.accounts.v1alpha1.Member.toObject, includeInstance),
+    owner: (f = msg.getOwner()) && proto.accounts.v1alpha1.UserList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16085,6 +16146,11 @@ proto.accounts.v1alpha1.GetOneProjectResponse.deserializeBinaryFromReader = func
       var value = new proto.accounts.v1alpha1.Member;
       reader.readMessage(value,proto.accounts.v1alpha1.Member.deserializeBinaryFromReader);
       msg.addMembers(value);
+      break;
+    case 9:
+      var value = new proto.accounts.v1alpha1.UserList;
+      reader.readMessage(value,proto.accounts.v1alpha1.UserList.deserializeBinaryFromReader);
+      msg.setOwner(value);
       break;
     default:
       reader.skipField();
@@ -16170,6 +16236,14 @@ proto.accounts.v1alpha1.GetOneProjectResponse.serializeBinaryToWriter = function
       8,
       f,
       proto.accounts.v1alpha1.Member.serializeBinaryToWriter
+    );
+  }
+  f = message.getOwner();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.accounts.v1alpha1.UserList.serializeBinaryToWriter
     );
   }
 };
@@ -16336,6 +16410,43 @@ proto.accounts.v1alpha1.GetOneProjectResponse.prototype.addMembers = function(op
  */
 proto.accounts.v1alpha1.GetOneProjectResponse.prototype.clearMembersList = function() {
   return this.setMembersList([]);
+};
+
+
+/**
+ * optional UserList owner = 9;
+ * @return {?proto.accounts.v1alpha1.UserList}
+ */
+proto.accounts.v1alpha1.GetOneProjectResponse.prototype.getOwner = function() {
+  return /** @type{?proto.accounts.v1alpha1.UserList} */ (
+    jspb.Message.getWrapperField(this, proto.accounts.v1alpha1.UserList, 9));
+};
+
+
+/**
+ * @param {?proto.accounts.v1alpha1.UserList|undefined} value
+ * @return {!proto.accounts.v1alpha1.GetOneProjectResponse} returns this
+*/
+proto.accounts.v1alpha1.GetOneProjectResponse.prototype.setOwner = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.accounts.v1alpha1.GetOneProjectResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneProjectResponse.prototype.clearOwner = function() {
+  return this.setOwner(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneProjectResponse.prototype.hasOwner = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -20306,7 +20417,8 @@ proto.accounts.v1alpha1.GetOneOrganizationResponse.toObject = function(includeIn
     proto.accounts.v1alpha1.ProjectOrganization.toObject, includeInstance),
     menbersList: jspb.Message.toObjectList(msg.getMenbersList(),
     proto.accounts.v1alpha1.Member.toObject, includeInstance),
-    description: jspb.Message.getFieldWithDefault(msg, 6, "")
+    description: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    owner: (f = msg.getOwner()) && proto.accounts.v1alpha1.UserList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -20368,6 +20480,11 @@ proto.accounts.v1alpha1.GetOneOrganizationResponse.deserializeBinaryFromReader =
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
+      break;
+    case 7:
+      var value = new proto.accounts.v1alpha1.UserList;
+      reader.readMessage(value,proto.accounts.v1alpha1.UserList.deserializeBinaryFromReader);
+      msg.setOwner(value);
       break;
     default:
       reader.skipField();
@@ -20440,6 +20557,14 @@ proto.accounts.v1alpha1.GetOneOrganizationResponse.serializeBinaryToWriter = fun
     writer.writeString(
       6,
       f
+    );
+  }
+  f = message.getOwner();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.accounts.v1alpha1.UserList.serializeBinaryToWriter
     );
   }
 };
@@ -20590,6 +20715,43 @@ proto.accounts.v1alpha1.GetOneOrganizationResponse.prototype.getDescription = fu
  */
 proto.accounts.v1alpha1.GetOneOrganizationResponse.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional UserList owner = 7;
+ * @return {?proto.accounts.v1alpha1.UserList}
+ */
+proto.accounts.v1alpha1.GetOneOrganizationResponse.prototype.getOwner = function() {
+  return /** @type{?proto.accounts.v1alpha1.UserList} */ (
+    jspb.Message.getWrapperField(this, proto.accounts.v1alpha1.UserList, 7));
+};
+
+
+/**
+ * @param {?proto.accounts.v1alpha1.UserList|undefined} value
+ * @return {!proto.accounts.v1alpha1.GetOneOrganizationResponse} returns this
+*/
+proto.accounts.v1alpha1.GetOneOrganizationResponse.prototype.setOwner = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.accounts.v1alpha1.GetOneOrganizationResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneOrganizationResponse.prototype.clearOwner = function() {
+  return this.setOwner(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneOrganizationResponse.prototype.hasOwner = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
