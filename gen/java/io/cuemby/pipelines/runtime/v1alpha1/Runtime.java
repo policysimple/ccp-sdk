@@ -108,15 +108,15 @@ private static final long serialVersionUID = 0L;
           }
           case 66: {
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              environment_ = com.google.protobuf.MapField.newMapField(
-                  EnvironmentDefaultEntryHolder.defaultEntry);
+              environmentVariables_ = com.google.protobuf.MapField.newMapField(
+                  EnvironmentVariablesDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000002;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            environment__ = input.readMessage(
-                EnvironmentDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            environment_.getMutableMap().put(
-                environment__.getKey(), environment__.getValue());
+            environmentVariables__ = input.readMessage(
+                EnvironmentVariablesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            environmentVariables_.getMutableMap().put(
+                environmentVariables__.getKey(), environmentVariables__.getValue());
             break;
           }
           case 74: {
@@ -177,7 +177,7 @@ private static final long serialVersionUID = 0L;
       case 7:
         return internalGetIntegration();
       case 8:
-        return internalGetEnvironment();
+        return internalGetEnvironmentVariables();
       case 9:
         return internalGetCommands();
       case 10:
@@ -477,81 +477,81 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
-  public static final int ENVIRONMENT_FIELD_NUMBER = 8;
-  private static final class EnvironmentDefaultEntryHolder {
+  public static final int ENVIRONMENT_VARIABLES_FIELD_NUMBER = 8;
+  private static final class EnvironmentVariablesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.String> defaultEntry =
             com.google.protobuf.MapEntry
             .<java.lang.String, java.lang.String>newDefaultInstance(
-                io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_Runtime_EnvironmentEntry_descriptor, 
+                io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_Runtime_EnvironmentVariablesEntry_descriptor, 
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "");
   }
   private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> environment_;
+      java.lang.String, java.lang.String> environmentVariables_;
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetEnvironment() {
-    if (environment_ == null) {
+  internalGetEnvironmentVariables() {
+    if (environmentVariables_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
-          EnvironmentDefaultEntryHolder.defaultEntry);
+          EnvironmentVariablesDefaultEntryHolder.defaultEntry);
     }
-    return environment_;
+    return environmentVariables_;
   }
 
-  public int getEnvironmentCount() {
-    return internalGetEnvironment().getMap().size();
+  public int getEnvironmentVariablesCount() {
+    return internalGetEnvironmentVariables().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
    */
 
   @java.lang.Override
-  public boolean containsEnvironment(
+  public boolean containsEnvironmentVariables(
       java.lang.String key) {
     if (key == null) { throw new java.lang.NullPointerException(); }
-    return internalGetEnvironment().getMap().containsKey(key);
+    return internalGetEnvironmentVariables().getMap().containsKey(key);
   }
   /**
-   * Use {@link #getEnvironmentMap()} instead.
+   * Use {@link #getEnvironmentVariablesMap()} instead.
    */
   @java.lang.Override
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getEnvironment() {
-    return getEnvironmentMap();
+  public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariables() {
+    return getEnvironmentVariablesMap();
   }
   /**
-   * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
    */
   @java.lang.Override
 
-  public java.util.Map<java.lang.String, java.lang.String> getEnvironmentMap() {
-    return internalGetEnvironment().getMap();
+  public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariablesMap() {
+    return internalGetEnvironmentVariables().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
    */
   @java.lang.Override
 
-  public java.lang.String getEnvironmentOrDefault(
+  public java.lang.String getEnvironmentVariablesOrDefault(
       java.lang.String key,
       java.lang.String defaultValue) {
     if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetEnvironment().getMap();
+        internalGetEnvironmentVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
    */
   @java.lang.Override
 
-  public java.lang.String getEnvironmentOrThrow(
+  public java.lang.String getEnvironmentVariablesOrThrow(
       java.lang.String key) {
     if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetEnvironment().getMap();
+        internalGetEnvironmentVariables().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -761,8 +761,8 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
-        internalGetEnvironment(),
-        EnvironmentDefaultEntryHolder.defaultEntry,
+        internalGetEnvironmentVariables(),
+        EnvironmentVariablesDefaultEntryHolder.defaultEntry,
         8);
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
@@ -815,14 +815,14 @@ private static final long serialVersionUID = 0L;
           .computeMessageSize(7, integration__);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetEnvironment().getMap().entrySet()) {
+         : internalGetEnvironmentVariables().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      environment__ = EnvironmentDefaultEntryHolder.defaultEntry.newBuilderForType()
+      environmentVariables__ = EnvironmentVariablesDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, environment__);
+          .computeMessageSize(8, environmentVariables__);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetCommands().getMap().entrySet()) {
@@ -873,8 +873,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getWorkspaceId())) return false;
     if (!internalGetIntegration().equals(
         other.internalGetIntegration())) return false;
-    if (!internalGetEnvironment().equals(
-        other.internalGetEnvironment())) return false;
+    if (!internalGetEnvironmentVariables().equals(
+        other.internalGetEnvironmentVariables())) return false;
     if (!internalGetCommands().equals(
         other.internalGetCommands())) return false;
     if (!internalGetSecrets().equals(
@@ -906,9 +906,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + INTEGRATION_FIELD_NUMBER;
       hash = (53 * hash) + internalGetIntegration().hashCode();
     }
-    if (!internalGetEnvironment().getMap().isEmpty()) {
-      hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetEnvironment().hashCode();
+    if (!internalGetEnvironmentVariables().getMap().isEmpty()) {
+      hash = (37 * hash) + ENVIRONMENT_VARIABLES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetEnvironmentVariables().hashCode();
     }
     if (!internalGetCommands().getMap().isEmpty()) {
       hash = (37 * hash) + COMMANDS_FIELD_NUMBER;
@@ -1036,7 +1036,7 @@ private static final long serialVersionUID = 0L;
         case 7:
           return internalGetIntegration();
         case 8:
-          return internalGetEnvironment();
+          return internalGetEnvironmentVariables();
         case 9:
           return internalGetCommands();
         case 10:
@@ -1053,7 +1053,7 @@ private static final long serialVersionUID = 0L;
         case 7:
           return internalGetMutableIntegration();
         case 8:
-          return internalGetMutableEnvironment();
+          return internalGetMutableEnvironmentVariables();
         case 9:
           return internalGetMutableCommands();
         case 10:
@@ -1102,7 +1102,7 @@ private static final long serialVersionUID = 0L;
       workspaceId_ = "";
 
       internalGetMutableIntegration().clear();
-      internalGetMutableEnvironment().clear();
+      internalGetMutableEnvironmentVariables().clear();
       internalGetMutableCommands().clear();
       internalGetMutableSecrets().clear();
       return this;
@@ -1140,8 +1140,8 @@ private static final long serialVersionUID = 0L;
       result.workspaceId_ = workspaceId_;
       result.integration_ = internalGetIntegration();
       result.integration_.makeImmutable();
-      result.environment_ = internalGetEnvironment();
-      result.environment_.makeImmutable();
+      result.environmentVariables_ = internalGetEnvironmentVariables();
+      result.environmentVariables_.makeImmutable();
       result.commands_ = internalGetCommands();
       result.commands_.makeImmutable();
       result.secrets_ = internalGetSecrets();
@@ -1219,8 +1219,8 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableIntegration().mergeFrom(
           other.internalGetIntegration());
-      internalGetMutableEnvironment().mergeFrom(
-          other.internalGetEnvironment());
+      internalGetMutableEnvironmentVariables().mergeFrom(
+          other.internalGetEnvironmentVariables());
       internalGetMutableCommands().mergeFrom(
           other.internalGetCommands());
       internalGetMutableSecrets().mergeFrom(
@@ -1795,99 +1795,99 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> environment_;
+        java.lang.String, java.lang.String> environmentVariables_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetEnvironment() {
-      if (environment_ == null) {
+    internalGetEnvironmentVariables() {
+      if (environmentVariables_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            EnvironmentDefaultEntryHolder.defaultEntry);
+            EnvironmentVariablesDefaultEntryHolder.defaultEntry);
       }
-      return environment_;
+      return environmentVariables_;
     }
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableEnvironment() {
+    internalGetMutableEnvironmentVariables() {
       onChanged();;
-      if (environment_ == null) {
-        environment_ = com.google.protobuf.MapField.newMapField(
-            EnvironmentDefaultEntryHolder.defaultEntry);
+      if (environmentVariables_ == null) {
+        environmentVariables_ = com.google.protobuf.MapField.newMapField(
+            EnvironmentVariablesDefaultEntryHolder.defaultEntry);
       }
-      if (!environment_.isMutable()) {
-        environment_ = environment_.copy();
+      if (!environmentVariables_.isMutable()) {
+        environmentVariables_ = environmentVariables_.copy();
       }
-      return environment_;
+      return environmentVariables_;
     }
 
-    public int getEnvironmentCount() {
-      return internalGetEnvironment().getMap().size();
+    public int getEnvironmentVariablesCount() {
+      return internalGetEnvironmentVariables().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
 
     @java.lang.Override
-    public boolean containsEnvironment(
+    public boolean containsEnvironmentVariables(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetEnvironment().getMap().containsKey(key);
+      return internalGetEnvironmentVariables().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getEnvironmentMap()} instead.
+     * Use {@link #getEnvironmentVariablesMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getEnvironment() {
-      return getEnvironmentMap();
+    public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariables() {
+      return getEnvironmentVariablesMap();
     }
     /**
-     * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
     @java.lang.Override
 
-    public java.util.Map<java.lang.String, java.lang.String> getEnvironmentMap() {
-      return internalGetEnvironment().getMap();
+    public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariablesMap() {
+      return internalGetEnvironmentVariables().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
     @java.lang.Override
 
-    public java.lang.String getEnvironmentOrDefault(
+    public java.lang.String getEnvironmentVariablesOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
       if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetEnvironment().getMap();
+          internalGetEnvironmentVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
     @java.lang.Override
 
-    public java.lang.String getEnvironmentOrThrow(
+    public java.lang.String getEnvironmentVariablesOrThrow(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetEnvironment().getMap();
+          internalGetEnvironmentVariables().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
 
-    public Builder clearEnvironment() {
-      internalGetMutableEnvironment().getMutableMap()
+    public Builder clearEnvironmentVariables() {
+      internalGetMutableEnvironmentVariables().getMutableMap()
           .clear();
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
 
-    public Builder removeEnvironment(
+    public Builder removeEnvironmentVariables(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableEnvironment().getMutableMap()
+      internalGetMutableEnvironmentVariables().getMutableMap()
           .remove(key);
       return this;
     }
@@ -1896,28 +1896,28 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
-    getMutableEnvironment() {
-      return internalGetMutableEnvironment().getMutableMap();
+    getMutableEnvironmentVariables() {
+      return internalGetMutableEnvironmentVariables().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
-    public Builder putEnvironment(
+    public Builder putEnvironmentVariables(
         java.lang.String key,
         java.lang.String value) {
       if (key == null) { throw new java.lang.NullPointerException(); }
       if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableEnvironment().getMutableMap()
+      internalGetMutableEnvironmentVariables().getMutableMap()
           .put(key, value);
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
 
-    public Builder putAllEnvironment(
+    public Builder putAllEnvironmentVariables(
         java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableEnvironment().getMutableMap()
+      internalGetMutableEnvironmentVariables().getMutableMap()
           .putAll(values);
       return this;
     }

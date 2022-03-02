@@ -65,9 +65,9 @@ extern RuntimeDefaultTypeInternal _Runtime_default_instance_;
 class Runtime_CommandsEntry_DoNotUse;
 struct Runtime_CommandsEntry_DoNotUseDefaultTypeInternal;
 extern Runtime_CommandsEntry_DoNotUseDefaultTypeInternal _Runtime_CommandsEntry_DoNotUse_default_instance_;
-class Runtime_EnvironmentEntry_DoNotUse;
-struct Runtime_EnvironmentEntry_DoNotUseDefaultTypeInternal;
-extern Runtime_EnvironmentEntry_DoNotUseDefaultTypeInternal _Runtime_EnvironmentEntry_DoNotUse_default_instance_;
+class Runtime_EnvironmentVariablesEntry_DoNotUse;
+struct Runtime_EnvironmentVariablesEntry_DoNotUseDefaultTypeInternal;
+extern Runtime_EnvironmentVariablesEntry_DoNotUseDefaultTypeInternal _Runtime_EnvironmentVariablesEntry_DoNotUse_default_instance_;
 class Runtime_IntegrationEntry_DoNotUse;
 struct Runtime_IntegrationEntry_DoNotUseDefaultTypeInternal;
 extern Runtime_IntegrationEntry_DoNotUseDefaultTypeInternal _Runtime_IntegrationEntry_DoNotUse_default_instance_;
@@ -80,7 +80,7 @@ extern Runtime_SecretsEntry_DoNotUseDefaultTypeInternal _Runtime_SecretsEntry_Do
 PROTOBUF_NAMESPACE_OPEN
 template<> ::pipelines::runtime::v1alpha1::Runtime* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_CommandsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_CommandsEntry_DoNotUse>(Arena*);
-template<> ::pipelines::runtime::v1alpha1::Runtime_EnvironmentEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_EnvironmentEntry_DoNotUse>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::Runtime_EnvironmentVariablesEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_EnvironmentVariablesEntry_DoNotUse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_IntegrationEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_IntegrationEntry_DoNotUse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_SecretsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_SecretsEntry_DoNotUse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -117,26 +117,26 @@ public:
 
 // -------------------------------------------------------------------
 
-class Runtime_EnvironmentEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_EnvironmentEntry_DoNotUse, 
+class Runtime_EnvironmentVariablesEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_EnvironmentVariablesEntry_DoNotUse, 
     std::string, std::string,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
 public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_EnvironmentEntry_DoNotUse, 
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_EnvironmentVariablesEntry_DoNotUse, 
     std::string, std::string,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
-  Runtime_EnvironmentEntry_DoNotUse();
-  explicit constexpr Runtime_EnvironmentEntry_DoNotUse(
+  Runtime_EnvironmentVariablesEntry_DoNotUse();
+  explicit constexpr Runtime_EnvironmentVariablesEntry_DoNotUse(
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-  explicit Runtime_EnvironmentEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const Runtime_EnvironmentEntry_DoNotUse& other);
-  static const Runtime_EnvironmentEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Runtime_EnvironmentEntry_DoNotUse*>(&_Runtime_EnvironmentEntry_DoNotUse_default_instance_); }
+  explicit Runtime_EnvironmentVariablesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Runtime_EnvironmentVariablesEntry_DoNotUse& other);
+  static const Runtime_EnvironmentVariablesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Runtime_EnvironmentVariablesEntry_DoNotUse*>(&_Runtime_EnvironmentVariablesEntry_DoNotUse_default_instance_); }
   static bool ValidateKey(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.EnvironmentEntry.key");
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.EnvironmentVariablesEntry.key");
  }
   static bool ValidateValue(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.EnvironmentEntry.value");
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.EnvironmentVariablesEntry.value");
  }
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
   ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
@@ -315,7 +315,7 @@ class Runtime final :
 
   enum : int {
     kIntegrationFieldNumber = 7,
-    kEnvironmentFieldNumber = 8,
+    kEnvironmentVariablesFieldNumber = 8,
     kCommandsFieldNumber = 9,
     kSecretsFieldNumber = 10,
     kIdFieldNumber = 1,
@@ -342,22 +342,22 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_integration();
 
-  // map<string, string> environment = 8 [json_name = "environment"];
-  int environment_size() const;
+  // map<string, string> environment_variables = 8 [json_name = "environmentVariables"];
+  int environment_variables_size() const;
   private:
-  int _internal_environment_size() const;
+  int _internal_environment_variables_size() const;
   public:
-  void clear_environment();
+  void clear_environment_variables();
   private:
   const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      _internal_environment() const;
+      _internal_environment_variables() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      _internal_mutable_environment();
+      _internal_mutable_environment_variables();
   public:
   const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      environment() const;
+      environment_variables() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      mutable_environment();
+      mutable_environment_variables();
 
   // map<string, string> commands = 9 [json_name = "commands"];
   int commands_size() const;
@@ -485,10 +485,10 @@ class Runtime final :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> integration_;
   ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-      Runtime_EnvironmentEntry_DoNotUse,
+      Runtime_EnvironmentVariablesEntry_DoNotUse,
       std::string, std::string,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> environment_;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> environment_variables_;
   ::PROTOBUF_NAMESPACE_ID::internal::MapField<
       Runtime_CommandsEntry_DoNotUse,
       std::string, std::string,
@@ -806,33 +806,33 @@ Runtime::mutable_integration() {
   return _internal_mutable_integration();
 }
 
-// map<string, string> environment = 8 [json_name = "environment"];
-inline int Runtime::_internal_environment_size() const {
-  return environment_.size();
+// map<string, string> environment_variables = 8 [json_name = "environmentVariables"];
+inline int Runtime::_internal_environment_variables_size() const {
+  return environment_variables_.size();
 }
-inline int Runtime::environment_size() const {
-  return _internal_environment_size();
+inline int Runtime::environment_variables_size() const {
+  return _internal_environment_variables_size();
 }
-inline void Runtime::clear_environment() {
-  environment_.Clear();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-Runtime::_internal_environment() const {
-  return environment_.GetMap();
+inline void Runtime::clear_environment_variables() {
+  environment_variables_.Clear();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-Runtime::environment() const {
-  // @@protoc_insertion_point(field_map:pipelines.runtime.v1alpha1.Runtime.environment)
-  return _internal_environment();
+Runtime::_internal_environment_variables() const {
+  return environment_variables_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Runtime::environment_variables() const {
+  // @@protoc_insertion_point(field_map:pipelines.runtime.v1alpha1.Runtime.environment_variables)
+  return _internal_environment_variables();
 }
 inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-Runtime::_internal_mutable_environment() {
-  return environment_.MutableMap();
+Runtime::_internal_mutable_environment_variables() {
+  return environment_variables_.MutableMap();
 }
 inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-Runtime::mutable_environment() {
-  // @@protoc_insertion_point(field_mutable_map:pipelines.runtime.v1alpha1.Runtime.environment)
-  return _internal_mutable_environment();
+Runtime::mutable_environment_variables() {
+  // @@protoc_insertion_point(field_mutable_map:pipelines.runtime.v1alpha1.Runtime.environment_variables)
+  return _internal_mutable_environment_variables();
 }
 
 // map<string, string> commands = 9 [json_name = "commands"];

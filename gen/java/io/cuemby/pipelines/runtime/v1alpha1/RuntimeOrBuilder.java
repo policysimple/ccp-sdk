@@ -108,37 +108,37 @@ public interface RuntimeOrBuilder extends
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
    */
-  int getEnvironmentCount();
+  int getEnvironmentVariablesCount();
   /**
-   * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
    */
-  boolean containsEnvironment(
+  boolean containsEnvironmentVariables(
       java.lang.String key);
   /**
-   * Use {@link #getEnvironmentMap()} instead.
+   * Use {@link #getEnvironmentVariablesMap()} instead.
    */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String>
-  getEnvironment();
+  getEnvironmentVariables();
   /**
-   * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
-  getEnvironmentMap();
+  getEnvironmentVariablesMap();
   /**
-   * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
    */
 
-  java.lang.String getEnvironmentOrDefault(
+  java.lang.String getEnvironmentVariablesOrDefault(
       java.lang.String key,
       java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; environment = 8 [json_name = "environment"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
    */
 
-  java.lang.String getEnvironmentOrThrow(
+  java.lang.String getEnvironmentVariablesOrThrow(
       java.lang.String key);
 
   /**

@@ -44,9 +44,9 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     private $integration;
     /**
-     * Generated from protobuf field <code>map<string, string> environment = 8 [json_name = "environment"];</code>
+     * Generated from protobuf field <code>map<string, string> environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
-    private $environment;
+    private $environment_variables;
     /**
      * Generated from protobuf field <code>map<string, string> commands = 9 [json_name = "commands"];</code>
      */
@@ -69,7 +69,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type string $application_id
      *     @type string $workspace_id
      *     @type array|\Google\Protobuf\Internal\MapField $integration
-     *     @type array|\Google\Protobuf\Internal\MapField $environment
+     *     @type array|\Google\Protobuf\Internal\MapField $environment_variables
      *     @type array|\Google\Protobuf\Internal\MapField $commands
      *     @type array|\Google\Protobuf\Internal\MapField $secrets
      * }
@@ -234,23 +234,23 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> environment = 8 [json_name = "environment"];</code>
+     * Generated from protobuf field <code>map<string, string> environment_variables = 8 [json_name = "environmentVariables"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
-    public function getEnvironment()
+    public function getEnvironmentVariables()
     {
-        return $this->environment;
+        return $this->environment_variables;
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> environment = 8 [json_name = "environment"];</code>
+     * Generated from protobuf field <code>map<string, string> environment_variables = 8 [json_name = "environmentVariables"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setEnvironment($var)
+    public function setEnvironmentVariables($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->environment = $arr;
+        $this->environment_variables = $arr;
 
         return $this;
     }

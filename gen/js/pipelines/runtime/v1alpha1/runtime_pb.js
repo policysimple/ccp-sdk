@@ -76,7 +76,7 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     applicationId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     workspaceId: jspb.Message.getFieldWithDefault(msg, 6, ""),
     integrationMap: (f = msg.getIntegrationMap()) ? f.toObject(includeInstance, undefined) : [],
-    environmentMap: (f = msg.getEnvironmentMap()) ? f.toObject(includeInstance, undefined) : [],
+    environmentVariablesMap: (f = msg.getEnvironmentVariablesMap()) ? f.toObject(includeInstance, undefined) : [],
     commandsMap: (f = msg.getCommandsMap()) ? f.toObject(includeInstance, undefined) : [],
     secretsMap: (f = msg.getSecretsMap()) ? f.toObject(includeInstance, undefined) : []
   };
@@ -146,7 +146,7 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
          });
       break;
     case 8:
-      var value = msg.getEnvironmentMap();
+      var value = msg.getEnvironmentVariablesMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
@@ -238,7 +238,7 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
   if (f && f.getLength() > 0) {
     f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = message.getEnvironmentMap(true);
+  f = message.getEnvironmentVariablesMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
@@ -384,12 +384,12 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearIntegrationMap = functio
 
 
 /**
- * map<string, string> environment = 8;
+ * map<string, string> environment_variables = 8;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.getEnvironmentMap = function(opt_noLazyCreate) {
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getEnvironmentVariablesMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 8, opt_noLazyCreate,
       null));
@@ -400,8 +400,8 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getEnvironmentMap = function(
  * Clears values from the map. The map will be non-null.
  * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
  */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearEnvironmentMap = function() {
-  this.getEnvironmentMap().clear();
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearEnvironmentVariablesMap = function() {
+  this.getEnvironmentVariablesMap().clear();
   return this;};
 
 
