@@ -39,7 +39,7 @@ func init() {
 
 func CreateRuntime(
 	id string, name string, namespace string, projectId uint32, applicationId string,
-	workspaceId string, integration, envVariables, commands map[string]string,
+	workspaceId string, integration, environments, commands map[string]string, secrets map[string]string,
 ) (response *runtimepkgv1.CreateRuntimeResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
@@ -57,8 +57,9 @@ func CreateRuntime(
 			ApplicationId: applicationId,
 			WorkspaceId:   workspaceId,
 			Integration:   integration,
-			EnvVariables:  envVariables,
+			Environments:  environments,
 			Commands:      commands,
+			Secrets:       secrets,
 		},
 	})
 
@@ -96,7 +97,7 @@ func GetRuntime(runtimeId string) (response *runtimepkgv1.GetRuntimeResponse, er
 
 func UpdateRuntime(
 	id string, name string, namespace string, projectId uint32, applicationId string,
-	workspaceId string, integration, envVariables, commands map[string]string,
+	workspaceId string, integration, envVariables, commands map[string]string, secrets map[string]string,
 ) (response *runtimepkgv1.UpdateRuntimeResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
@@ -114,8 +115,9 @@ func UpdateRuntime(
 			ApplicationId: applicationId,
 			WorkspaceId:   workspaceId,
 			Integration:   integration,
-			EnvVariables:  envVariables,
+			Environments:  environments,
 			Commands:      commands,
+			Secrets:       secrets,
 		},
 	})
 
