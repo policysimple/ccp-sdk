@@ -4898,6 +4898,7 @@ class CheckUserResponse final :
   enum : int {
     kErrorFieldNumber = 2,
     kIsExistsFieldNumber = 1,
+    kIsAdminFieldNumber = 3,
   };
   // string error = 2 [json_name = "error"];
   void clear_error();
@@ -4922,6 +4923,15 @@ class CheckUserResponse final :
   void _internal_set_is_exists(bool value);
   public:
 
+  // bool is_admin = 3 [json_name = "isAdmin"];
+  void clear_is_admin();
+  bool is_admin() const;
+  void set_is_admin(bool value);
+  private:
+  bool _internal_is_admin() const;
+  void _internal_set_is_admin(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.CheckUserResponse)
  private:
   class _Internal;
@@ -4931,6 +4941,7 @@ class CheckUserResponse final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   bool is_exists_;
+  bool is_admin_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -9595,6 +9606,7 @@ class GetOneRoleResponse final :
     kIdFieldNumber = 1,
     kOrganizationIdFieldNumber = 3,
     kProjectIdFieldNumber = 4,
+    kIsAdminFieldNumber = 6,
   };
   // repeated .accounts.v1alpha1.Permission permissions = 5 [json_name = "permissions"];
   int permissions_size() const;
@@ -9655,6 +9667,15 @@ class GetOneRoleResponse final :
   void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
+  // bool is_admin = 6 [json_name = "isAdmin"];
+  void clear_is_admin();
+  bool is_admin() const;
+  void set_is_admin(bool value);
+  private:
+  bool _internal_is_admin() const;
+  void _internal_set_is_admin(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.GetOneRoleResponse)
  private:
   class _Internal;
@@ -9667,6 +9688,7 @@ class GetOneRoleResponse final :
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
+  bool is_admin_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -12241,6 +12263,7 @@ class GetOneProjectResponse final :
     kDescriptionFieldNumber = 5,
     kCreatedAtFieldNumber = 6,
     kUpdatedAtFieldNumber = 7,
+    kOwnerFieldNumber = 9,
     kIdFieldNumber = 1,
     kOrganizationIdFieldNumber = 4,
   };
@@ -12332,6 +12355,24 @@ class GetOneProjectResponse final :
   std::string* _internal_mutable_updated_at();
   public:
 
+  // .accounts.v1alpha1.UserList owner = 9 [json_name = "owner"];
+  bool has_owner() const;
+  private:
+  bool _internal_has_owner() const;
+  public:
+  void clear_owner();
+  const ::accounts::v1alpha1::UserList& owner() const;
+  PROTOBUF_MUST_USE_RESULT ::accounts::v1alpha1::UserList* release_owner();
+  ::accounts::v1alpha1::UserList* mutable_owner();
+  void set_allocated_owner(::accounts::v1alpha1::UserList* owner);
+  private:
+  const ::accounts::v1alpha1::UserList& _internal_owner() const;
+  ::accounts::v1alpha1::UserList* _internal_mutable_owner();
+  public:
+  void unsafe_arena_set_allocated_owner(
+      ::accounts::v1alpha1::UserList* owner);
+  ::accounts::v1alpha1::UserList* unsafe_arena_release_owner();
+
   // int32 id = 1 [json_name = "id"];
   void clear_id();
   ::PROTOBUF_NAMESPACE_ID::int32 id() const;
@@ -12363,6 +12404,7 @@ class GetOneProjectResponse final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
+  ::accounts::v1alpha1::UserList* owner_;
   ::PROTOBUF_NAMESPACE_ID::int32 id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -16175,6 +16217,7 @@ class GetOneOrganizationResponse final :
     kNameFieldNumber = 2,
     kImageFieldNumber = 3,
     kDescriptionFieldNumber = 6,
+    kOwnerFieldNumber = 7,
     kIdFieldNumber = 1,
   };
   // repeated .accounts.v1alpha1.ProjectOrganization projects = 4 [json_name = "projects"];
@@ -16255,6 +16298,24 @@ class GetOneOrganizationResponse final :
   std::string* _internal_mutable_description();
   public:
 
+  // .accounts.v1alpha1.UserList owner = 7 [json_name = "owner"];
+  bool has_owner() const;
+  private:
+  bool _internal_has_owner() const;
+  public:
+  void clear_owner();
+  const ::accounts::v1alpha1::UserList& owner() const;
+  PROTOBUF_MUST_USE_RESULT ::accounts::v1alpha1::UserList* release_owner();
+  ::accounts::v1alpha1::UserList* mutable_owner();
+  void set_allocated_owner(::accounts::v1alpha1::UserList* owner);
+  private:
+  const ::accounts::v1alpha1::UserList& _internal_owner() const;
+  ::accounts::v1alpha1::UserList* _internal_mutable_owner();
+  public:
+  void unsafe_arena_set_allocated_owner(
+      ::accounts::v1alpha1::UserList* owner);
+  ::accounts::v1alpha1::UserList* unsafe_arena_release_owner();
+
   // uint32 id = 1 [json_name = "id"];
   void clear_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
@@ -16276,6 +16337,7 @@ class GetOneOrganizationResponse final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
+  ::accounts::v1alpha1::UserList* owner_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
@@ -21089,6 +21151,26 @@ inline void CheckUserResponse::set_allocated_error(std::string* error) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.CheckUserResponse.error)
 }
 
+// bool is_admin = 3 [json_name = "isAdmin"];
+inline void CheckUserResponse::clear_is_admin() {
+  is_admin_ = false;
+}
+inline bool CheckUserResponse::_internal_is_admin() const {
+  return is_admin_;
+}
+inline bool CheckUserResponse::is_admin() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CheckUserResponse.is_admin)
+  return _internal_is_admin();
+}
+inline void CheckUserResponse::_internal_set_is_admin(bool value) {
+  
+  is_admin_ = value;
+}
+inline void CheckUserResponse::set_is_admin(bool value) {
+  _internal_set_is_admin(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CheckUserResponse.is_admin)
+}
+
 // -------------------------------------------------------------------
 
 // UsersDex
@@ -25235,6 +25317,26 @@ GetOneRoleResponse::permissions() const {
   return permissions_;
 }
 
+// bool is_admin = 6 [json_name = "isAdmin"];
+inline void GetOneRoleResponse::clear_is_admin() {
+  is_admin_ = false;
+}
+inline bool GetOneRoleResponse::_internal_is_admin() const {
+  return is_admin_;
+}
+inline bool GetOneRoleResponse::is_admin() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneRoleResponse.is_admin)
+  return _internal_is_admin();
+}
+inline void GetOneRoleResponse::_internal_set_is_admin(bool value) {
+  
+  is_admin_ = value;
+}
+inline void GetOneRoleResponse::set_is_admin(bool value) {
+  _internal_set_is_admin(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneRoleResponse.is_admin)
+}
+
 // -------------------------------------------------------------------
 
 // DeleteRoleRequest
@@ -26983,6 +27085,96 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Me
 GetOneProjectResponse::members() const {
   // @@protoc_insertion_point(field_list:accounts.v1alpha1.GetOneProjectResponse.members)
   return members_;
+}
+
+// .accounts.v1alpha1.UserList owner = 9 [json_name = "owner"];
+inline bool GetOneProjectResponse::_internal_has_owner() const {
+  return this != internal_default_instance() && owner_ != nullptr;
+}
+inline bool GetOneProjectResponse::has_owner() const {
+  return _internal_has_owner();
+}
+inline void GetOneProjectResponse::clear_owner() {
+  if (GetArenaForAllocation() == nullptr && owner_ != nullptr) {
+    delete owner_;
+  }
+  owner_ = nullptr;
+}
+inline const ::accounts::v1alpha1::UserList& GetOneProjectResponse::_internal_owner() const {
+  const ::accounts::v1alpha1::UserList* p = owner_;
+  return p != nullptr ? *p : reinterpret_cast<const ::accounts::v1alpha1::UserList&>(
+      ::accounts::v1alpha1::_UserList_default_instance_);
+}
+inline const ::accounts::v1alpha1::UserList& GetOneProjectResponse::owner() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneProjectResponse.owner)
+  return _internal_owner();
+}
+inline void GetOneProjectResponse::unsafe_arena_set_allocated_owner(
+    ::accounts::v1alpha1::UserList* owner) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(owner_);
+  }
+  owner_ = owner;
+  if (owner) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:accounts.v1alpha1.GetOneProjectResponse.owner)
+}
+inline ::accounts::v1alpha1::UserList* GetOneProjectResponse::release_owner() {
+  
+  ::accounts::v1alpha1::UserList* temp = owner_;
+  owner_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::accounts::v1alpha1::UserList* GetOneProjectResponse::unsafe_arena_release_owner() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.GetOneProjectResponse.owner)
+  
+  ::accounts::v1alpha1::UserList* temp = owner_;
+  owner_ = nullptr;
+  return temp;
+}
+inline ::accounts::v1alpha1::UserList* GetOneProjectResponse::_internal_mutable_owner() {
+  
+  if (owner_ == nullptr) {
+    auto* p = CreateMaybeMessage<::accounts::v1alpha1::UserList>(GetArenaForAllocation());
+    owner_ = p;
+  }
+  return owner_;
+}
+inline ::accounts::v1alpha1::UserList* GetOneProjectResponse::mutable_owner() {
+  ::accounts::v1alpha1::UserList* _msg = _internal_mutable_owner();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneProjectResponse.owner)
+  return _msg;
+}
+inline void GetOneProjectResponse::set_allocated_owner(::accounts::v1alpha1::UserList* owner) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete owner_;
+  }
+  if (owner) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::accounts::v1alpha1::UserList>::GetOwningArena(owner);
+    if (message_arena != submessage_arena) {
+      owner = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, owner, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  owner_ = owner;
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneProjectResponse.owner)
 }
 
 // -------------------------------------------------------------------
@@ -29203,6 +29395,96 @@ inline void GetOneOrganizationResponse::set_allocated_description(std::string* d
   description_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneOrganizationResponse.description)
+}
+
+// .accounts.v1alpha1.UserList owner = 7 [json_name = "owner"];
+inline bool GetOneOrganizationResponse::_internal_has_owner() const {
+  return this != internal_default_instance() && owner_ != nullptr;
+}
+inline bool GetOneOrganizationResponse::has_owner() const {
+  return _internal_has_owner();
+}
+inline void GetOneOrganizationResponse::clear_owner() {
+  if (GetArenaForAllocation() == nullptr && owner_ != nullptr) {
+    delete owner_;
+  }
+  owner_ = nullptr;
+}
+inline const ::accounts::v1alpha1::UserList& GetOneOrganizationResponse::_internal_owner() const {
+  const ::accounts::v1alpha1::UserList* p = owner_;
+  return p != nullptr ? *p : reinterpret_cast<const ::accounts::v1alpha1::UserList&>(
+      ::accounts::v1alpha1::_UserList_default_instance_);
+}
+inline const ::accounts::v1alpha1::UserList& GetOneOrganizationResponse::owner() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneOrganizationResponse.owner)
+  return _internal_owner();
+}
+inline void GetOneOrganizationResponse::unsafe_arena_set_allocated_owner(
+    ::accounts::v1alpha1::UserList* owner) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(owner_);
+  }
+  owner_ = owner;
+  if (owner) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:accounts.v1alpha1.GetOneOrganizationResponse.owner)
+}
+inline ::accounts::v1alpha1::UserList* GetOneOrganizationResponse::release_owner() {
+  
+  ::accounts::v1alpha1::UserList* temp = owner_;
+  owner_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::accounts::v1alpha1::UserList* GetOneOrganizationResponse::unsafe_arena_release_owner() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.GetOneOrganizationResponse.owner)
+  
+  ::accounts::v1alpha1::UserList* temp = owner_;
+  owner_ = nullptr;
+  return temp;
+}
+inline ::accounts::v1alpha1::UserList* GetOneOrganizationResponse::_internal_mutable_owner() {
+  
+  if (owner_ == nullptr) {
+    auto* p = CreateMaybeMessage<::accounts::v1alpha1::UserList>(GetArenaForAllocation());
+    owner_ = p;
+  }
+  return owner_;
+}
+inline ::accounts::v1alpha1::UserList* GetOneOrganizationResponse::mutable_owner() {
+  ::accounts::v1alpha1::UserList* _msg = _internal_mutable_owner();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneOrganizationResponse.owner)
+  return _msg;
+}
+inline void GetOneOrganizationResponse::set_allocated_owner(::accounts::v1alpha1::UserList* owner) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete owner_;
+  }
+  if (owner) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::accounts::v1alpha1::UserList>::GetOwningArena(owner);
+    if (message_arena != submessage_arena) {
+      owner = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, owner, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  owner_ = owner;
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneOrganizationResponse.owner)
 }
 
 // -------------------------------------------------------------------

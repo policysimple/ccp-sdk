@@ -45,6 +45,10 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.Member members = 8 [json_name = "members"];</code>
      */
     private $members;
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.UserList owner = 9 [json_name = "owner"];</code>
+     */
+    protected $owner = null;
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
      *     @type string $created_at
      *     @type string $updated_at
      *     @type \Accounts\V1alpha1\Member[]|\Google\Protobuf\Internal\RepeatedField $members
+     *     @type \Accounts\V1alpha1\UserList $owner
      * }
      */
     public function __construct($data = NULL) {
@@ -239,6 +244,38 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Member::class);
         $this->members = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.UserList owner = 9 [json_name = "owner"];</code>
+     * @return \Accounts\V1alpha1\UserList|null
+     */
+    public function getOwner()
+    {
+        return $this->owner;
+    }
+
+    public function hasOwner()
+    {
+        return isset($this->owner);
+    }
+
+    public function clearOwner()
+    {
+        unset($this->owner);
+    }
+
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.UserList owner = 9 [json_name = "owner"];</code>
+     * @param \Accounts\V1alpha1\UserList $var
+     * @return $this
+     */
+    public function setOwner($var)
+    {
+        GPBUtil::checkMessage($var, \Accounts\V1alpha1\UserList::class);
+        $this->owner = $var;
 
         return $this;
     }
