@@ -108,15 +108,15 @@ private static final long serialVersionUID = 0L;
           }
           case 66: {
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              envVariables_ = com.google.protobuf.MapField.newMapField(
-                  EnvVariablesDefaultEntryHolder.defaultEntry);
+              environmentVariables_ = com.google.protobuf.MapField.newMapField(
+                  EnvironmentVariablesDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000002;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            envVariables__ = input.readMessage(
-                EnvVariablesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            envVariables_.getMutableMap().put(
-                envVariables__.getKey(), envVariables__.getValue());
+            environmentVariables__ = input.readMessage(
+                EnvironmentVariablesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            environmentVariables_.getMutableMap().put(
+                environmentVariables__.getKey(), environmentVariables__.getValue());
             break;
           }
           case 74: {
@@ -130,6 +130,19 @@ private static final long serialVersionUID = 0L;
                 CommandsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             commands_.getMutableMap().put(
                 commands__.getKey(), commands__.getValue());
+            break;
+          }
+          case 82: {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              secrets_ = com.google.protobuf.MapField.newMapField(
+                  SecretsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000008;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+            secrets__ = input.readMessage(
+                SecretsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            secrets_.getMutableMap().put(
+                secrets__.getKey(), secrets__.getValue());
             break;
           }
           default: {
@@ -164,9 +177,11 @@ private static final long serialVersionUID = 0L;
       case 7:
         return internalGetIntegration();
       case 8:
-        return internalGetEnvVariables();
+        return internalGetEnvironmentVariables();
       case 9:
         return internalGetCommands();
+      case 10:
+        return internalGetSecrets();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -462,81 +477,81 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
-  public static final int ENV_VARIABLES_FIELD_NUMBER = 8;
-  private static final class EnvVariablesDefaultEntryHolder {
+  public static final int ENVIRONMENT_VARIABLES_FIELD_NUMBER = 8;
+  private static final class EnvironmentVariablesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.String> defaultEntry =
             com.google.protobuf.MapEntry
             .<java.lang.String, java.lang.String>newDefaultInstance(
-                io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_Runtime_EnvVariablesEntry_descriptor, 
+                io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_Runtime_EnvironmentVariablesEntry_descriptor, 
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "");
   }
   private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> envVariables_;
+      java.lang.String, java.lang.String> environmentVariables_;
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetEnvVariables() {
-    if (envVariables_ == null) {
+  internalGetEnvironmentVariables() {
+    if (environmentVariables_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
-          EnvVariablesDefaultEntryHolder.defaultEntry);
+          EnvironmentVariablesDefaultEntryHolder.defaultEntry);
     }
-    return envVariables_;
+    return environmentVariables_;
   }
 
-  public int getEnvVariablesCount() {
-    return internalGetEnvVariables().getMap().size();
+  public int getEnvironmentVariablesCount() {
+    return internalGetEnvironmentVariables().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
    */
 
   @java.lang.Override
-  public boolean containsEnvVariables(
+  public boolean containsEnvironmentVariables(
       java.lang.String key) {
     if (key == null) { throw new java.lang.NullPointerException(); }
-    return internalGetEnvVariables().getMap().containsKey(key);
+    return internalGetEnvironmentVariables().getMap().containsKey(key);
   }
   /**
-   * Use {@link #getEnvVariablesMap()} instead.
+   * Use {@link #getEnvironmentVariablesMap()} instead.
    */
   @java.lang.Override
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getEnvVariables() {
-    return getEnvVariablesMap();
+  public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariables() {
+    return getEnvironmentVariablesMap();
   }
   /**
-   * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
    */
   @java.lang.Override
 
-  public java.util.Map<java.lang.String, java.lang.String> getEnvVariablesMap() {
-    return internalGetEnvVariables().getMap();
+  public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariablesMap() {
+    return internalGetEnvironmentVariables().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
    */
   @java.lang.Override
 
-  public java.lang.String getEnvVariablesOrDefault(
+  public java.lang.String getEnvironmentVariablesOrDefault(
       java.lang.String key,
       java.lang.String defaultValue) {
     if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetEnvVariables().getMap();
+        internalGetEnvironmentVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
    */
   @java.lang.Override
 
-  public java.lang.String getEnvVariablesOrThrow(
+  public java.lang.String getEnvironmentVariablesOrThrow(
       java.lang.String key) {
     if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetEnvVariables().getMap();
+        internalGetEnvironmentVariables().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -624,6 +639,87 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int SECRETS_FIELD_NUMBER = 10;
+  private static final class SecretsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_Runtime_SecretsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> secrets_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetSecrets() {
+    if (secrets_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          SecretsDefaultEntryHolder.defaultEntry);
+    }
+    return secrets_;
+  }
+
+  public int getSecretsCount() {
+    return internalGetSecrets().getMap().size();
+  }
+  /**
+   * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+   */
+
+  @java.lang.Override
+  public boolean containsSecrets(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetSecrets().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getSecretsMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getSecrets() {
+    return getSecretsMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, java.lang.String> getSecretsMap() {
+    return internalGetSecrets().getMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getSecretsOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetSecrets().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getSecretsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetSecrets().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -665,8 +761,8 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
-        internalGetEnvVariables(),
-        EnvVariablesDefaultEntryHolder.defaultEntry,
+        internalGetEnvironmentVariables(),
+        EnvironmentVariablesDefaultEntryHolder.defaultEntry,
         8);
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
@@ -674,6 +770,12 @@ private static final long serialVersionUID = 0L;
         internalGetCommands(),
         CommandsDefaultEntryHolder.defaultEntry,
         9);
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetSecrets(),
+        SecretsDefaultEntryHolder.defaultEntry,
+        10);
     unknownFields.writeTo(output);
   }
 
@@ -713,14 +815,14 @@ private static final long serialVersionUID = 0L;
           .computeMessageSize(7, integration__);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetEnvVariables().getMap().entrySet()) {
+         : internalGetEnvironmentVariables().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      envVariables__ = EnvVariablesDefaultEntryHolder.defaultEntry.newBuilderForType()
+      environmentVariables__ = EnvironmentVariablesDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, envVariables__);
+          .computeMessageSize(8, environmentVariables__);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetCommands().getMap().entrySet()) {
@@ -731,6 +833,16 @@ private static final long serialVersionUID = 0L;
           .build();
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, commands__);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetSecrets().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      secrets__ = SecretsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, secrets__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -761,10 +873,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getWorkspaceId())) return false;
     if (!internalGetIntegration().equals(
         other.internalGetIntegration())) return false;
-    if (!internalGetEnvVariables().equals(
-        other.internalGetEnvVariables())) return false;
+    if (!internalGetEnvironmentVariables().equals(
+        other.internalGetEnvironmentVariables())) return false;
     if (!internalGetCommands().equals(
         other.internalGetCommands())) return false;
+    if (!internalGetSecrets().equals(
+        other.internalGetSecrets())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -792,13 +906,17 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + INTEGRATION_FIELD_NUMBER;
       hash = (53 * hash) + internalGetIntegration().hashCode();
     }
-    if (!internalGetEnvVariables().getMap().isEmpty()) {
-      hash = (37 * hash) + ENV_VARIABLES_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetEnvVariables().hashCode();
+    if (!internalGetEnvironmentVariables().getMap().isEmpty()) {
+      hash = (37 * hash) + ENVIRONMENT_VARIABLES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetEnvironmentVariables().hashCode();
     }
     if (!internalGetCommands().getMap().isEmpty()) {
       hash = (37 * hash) + COMMANDS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetCommands().hashCode();
+    }
+    if (!internalGetSecrets().getMap().isEmpty()) {
+      hash = (37 * hash) + SECRETS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetSecrets().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -918,9 +1036,11 @@ private static final long serialVersionUID = 0L;
         case 7:
           return internalGetIntegration();
         case 8:
-          return internalGetEnvVariables();
+          return internalGetEnvironmentVariables();
         case 9:
           return internalGetCommands();
+        case 10:
+          return internalGetSecrets();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -933,9 +1053,11 @@ private static final long serialVersionUID = 0L;
         case 7:
           return internalGetMutableIntegration();
         case 8:
-          return internalGetMutableEnvVariables();
+          return internalGetMutableEnvironmentVariables();
         case 9:
           return internalGetMutableCommands();
+        case 10:
+          return internalGetMutableSecrets();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -980,8 +1102,9 @@ private static final long serialVersionUID = 0L;
       workspaceId_ = "";
 
       internalGetMutableIntegration().clear();
-      internalGetMutableEnvVariables().clear();
+      internalGetMutableEnvironmentVariables().clear();
       internalGetMutableCommands().clear();
+      internalGetMutableSecrets().clear();
       return this;
     }
 
@@ -1017,10 +1140,12 @@ private static final long serialVersionUID = 0L;
       result.workspaceId_ = workspaceId_;
       result.integration_ = internalGetIntegration();
       result.integration_.makeImmutable();
-      result.envVariables_ = internalGetEnvVariables();
-      result.envVariables_.makeImmutable();
+      result.environmentVariables_ = internalGetEnvironmentVariables();
+      result.environmentVariables_.makeImmutable();
       result.commands_ = internalGetCommands();
       result.commands_.makeImmutable();
+      result.secrets_ = internalGetSecrets();
+      result.secrets_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -1094,10 +1219,12 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableIntegration().mergeFrom(
           other.internalGetIntegration());
-      internalGetMutableEnvVariables().mergeFrom(
-          other.internalGetEnvVariables());
+      internalGetMutableEnvironmentVariables().mergeFrom(
+          other.internalGetEnvironmentVariables());
       internalGetMutableCommands().mergeFrom(
           other.internalGetCommands());
+      internalGetMutableSecrets().mergeFrom(
+          other.internalGetSecrets());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1668,99 +1795,99 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> envVariables_;
+        java.lang.String, java.lang.String> environmentVariables_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetEnvVariables() {
-      if (envVariables_ == null) {
+    internalGetEnvironmentVariables() {
+      if (environmentVariables_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            EnvVariablesDefaultEntryHolder.defaultEntry);
+            EnvironmentVariablesDefaultEntryHolder.defaultEntry);
       }
-      return envVariables_;
+      return environmentVariables_;
     }
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableEnvVariables() {
+    internalGetMutableEnvironmentVariables() {
       onChanged();;
-      if (envVariables_ == null) {
-        envVariables_ = com.google.protobuf.MapField.newMapField(
-            EnvVariablesDefaultEntryHolder.defaultEntry);
+      if (environmentVariables_ == null) {
+        environmentVariables_ = com.google.protobuf.MapField.newMapField(
+            EnvironmentVariablesDefaultEntryHolder.defaultEntry);
       }
-      if (!envVariables_.isMutable()) {
-        envVariables_ = envVariables_.copy();
+      if (!environmentVariables_.isMutable()) {
+        environmentVariables_ = environmentVariables_.copy();
       }
-      return envVariables_;
+      return environmentVariables_;
     }
 
-    public int getEnvVariablesCount() {
-      return internalGetEnvVariables().getMap().size();
+    public int getEnvironmentVariablesCount() {
+      return internalGetEnvironmentVariables().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
 
     @java.lang.Override
-    public boolean containsEnvVariables(
+    public boolean containsEnvironmentVariables(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetEnvVariables().getMap().containsKey(key);
+      return internalGetEnvironmentVariables().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getEnvVariablesMap()} instead.
+     * Use {@link #getEnvironmentVariablesMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getEnvVariables() {
-      return getEnvVariablesMap();
+    public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariables() {
+      return getEnvironmentVariablesMap();
     }
     /**
-     * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
     @java.lang.Override
 
-    public java.util.Map<java.lang.String, java.lang.String> getEnvVariablesMap() {
-      return internalGetEnvVariables().getMap();
+    public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariablesMap() {
+      return internalGetEnvironmentVariables().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
     @java.lang.Override
 
-    public java.lang.String getEnvVariablesOrDefault(
+    public java.lang.String getEnvironmentVariablesOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
       if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetEnvVariables().getMap();
+          internalGetEnvironmentVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
     @java.lang.Override
 
-    public java.lang.String getEnvVariablesOrThrow(
+    public java.lang.String getEnvironmentVariablesOrThrow(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetEnvVariables().getMap();
+          internalGetEnvironmentVariables().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
 
-    public Builder clearEnvVariables() {
-      internalGetMutableEnvVariables().getMutableMap()
+    public Builder clearEnvironmentVariables() {
+      internalGetMutableEnvironmentVariables().getMutableMap()
           .clear();
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
 
-    public Builder removeEnvVariables(
+    public Builder removeEnvironmentVariables(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableEnvVariables().getMutableMap()
+      internalGetMutableEnvironmentVariables().getMutableMap()
           .remove(key);
       return this;
     }
@@ -1769,28 +1896,28 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
-    getMutableEnvVariables() {
-      return internalGetMutableEnvVariables().getMutableMap();
+    getMutableEnvironmentVariables() {
+      return internalGetMutableEnvironmentVariables().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
-    public Builder putEnvVariables(
+    public Builder putEnvironmentVariables(
         java.lang.String key,
         java.lang.String value) {
       if (key == null) { throw new java.lang.NullPointerException(); }
       if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableEnvVariables().getMutableMap()
+      internalGetMutableEnvironmentVariables().getMutableMap()
           .put(key, value);
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; env_variables = 8 [json_name = "envVariables"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 8 [json_name = "environmentVariables"];</code>
      */
 
-    public Builder putAllEnvVariables(
+    public Builder putAllEnvironmentVariables(
         java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableEnvVariables().getMutableMap()
+      internalGetMutableEnvironmentVariables().getMutableMap()
           .putAll(values);
       return this;
     }
@@ -1919,6 +2046,134 @@ private static final long serialVersionUID = 0L;
     public Builder putAllCommands(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableCommands().getMutableMap()
+          .putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> secrets_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetSecrets() {
+      if (secrets_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            SecretsDefaultEntryHolder.defaultEntry);
+      }
+      return secrets_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMutableSecrets() {
+      onChanged();;
+      if (secrets_ == null) {
+        secrets_ = com.google.protobuf.MapField.newMapField(
+            SecretsDefaultEntryHolder.defaultEntry);
+      }
+      if (!secrets_.isMutable()) {
+        secrets_ = secrets_.copy();
+      }
+      return secrets_;
+    }
+
+    public int getSecretsCount() {
+      return internalGetSecrets().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsSecrets(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetSecrets().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getSecretsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getSecrets() {
+      return getSecretsMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getSecretsMap() {
+      return internalGetSecrets().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getSecretsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetSecrets().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getSecretsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetSecrets().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearSecrets() {
+      internalGetMutableSecrets().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+     */
+
+    public Builder removeSecrets(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableSecrets().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+    getMutableSecrets() {
+      return internalGetMutableSecrets().getMutableMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+     */
+    public Builder putSecrets(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableSecrets().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; secrets = 10 [json_name = "secrets"];</code>
+     */
+
+    public Builder putAllSecrets(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableSecrets().getMutableMap()
           .putAll(values);
       return this;
     }

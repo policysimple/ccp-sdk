@@ -225,7 +225,8 @@ proto.pipelines.runtime.v1alpha1.CreateRuntimeRequest.prototype.toObject = funct
  */
 proto.pipelines.runtime.v1alpha1.CreateRuntimeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    runtime: (f = msg.getRuntime()) && pipelines_runtime_v1alpha1_runtime_pb.Runtime.toObject(includeInstance, f)
+    runtime: (f = msg.getRuntime()) && pipelines_runtime_v1alpha1_runtime_pb.Runtime.toObject(includeInstance, f),
+    status: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -267,6 +268,10 @@ proto.pipelines.runtime.v1alpha1.CreateRuntimeRequest.deserializeBinaryFromReade
       reader.readMessage(value,pipelines_runtime_v1alpha1_runtime_pb.Runtime.deserializeBinaryFromReader);
       msg.setRuntime(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -302,6 +307,13 @@ proto.pipelines.runtime.v1alpha1.CreateRuntimeRequest.serializeBinaryToWriter = 
       1,
       f,
       pipelines_runtime_v1alpha1_runtime_pb.Runtime.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -341,6 +353,24 @@ proto.pipelines.runtime.v1alpha1.CreateRuntimeRequest.prototype.clearRuntime = f
  */
 proto.pipelines.runtime.v1alpha1.CreateRuntimeRequest.prototype.hasRuntime = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string status = 2;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.CreateRuntimeRequest.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.CreateRuntimeRequest} returns this
+ */
+proto.pipelines.runtime.v1alpha1.CreateRuntimeRequest.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -557,7 +587,8 @@ proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.prototype.toObject = funct
  */
 proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    runtime: (f = msg.getRuntime()) && pipelines_runtime_v1alpha1_runtime_pb.Runtime.toObject(includeInstance, f)
+    runtime: (f = msg.getRuntime()) && pipelines_runtime_v1alpha1_runtime_pb.Runtime.toObject(includeInstance, f),
+    status: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -599,6 +630,10 @@ proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.deserializeBinaryFromReade
       reader.readMessage(value,pipelines_runtime_v1alpha1_runtime_pb.Runtime.deserializeBinaryFromReader);
       msg.setRuntime(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -634,6 +669,13 @@ proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.serializeBinaryToWriter = 
       1,
       f,
       pipelines_runtime_v1alpha1_runtime_pb.Runtime.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -673,6 +715,24 @@ proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.prototype.clearRuntime = f
  */
 proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.prototype.hasRuntime = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string status = 2;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest} returns this
+ */
+proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -889,7 +949,8 @@ proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.prototype.toObject = funct
  */
 proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    runtimeId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    runtimeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -930,6 +991,10 @@ proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.deserializeBinaryFromReade
       var value = /** @type {string} */ (reader.readString());
       msg.setRuntimeId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -966,6 +1031,13 @@ proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.serializeBinaryToWriter = 
       f
     );
   }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -984,6 +1056,24 @@ proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.prototype.getRuntimeId = f
  */
 proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.prototype.setRuntimeId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string status = 2;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest} returns this
+ */
+proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1149,7 +1239,8 @@ proto.pipelines.runtime.v1alpha1.GetRuntimeRequest.prototype.toObject = function
  */
 proto.pipelines.runtime.v1alpha1.GetRuntimeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    runtimeId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    runtimeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1190,6 +1281,10 @@ proto.pipelines.runtime.v1alpha1.GetRuntimeRequest.deserializeBinaryFromReader =
       var value = /** @type {string} */ (reader.readString());
       msg.setRuntimeId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1226,6 +1321,13 @@ proto.pipelines.runtime.v1alpha1.GetRuntimeRequest.serializeBinaryToWriter = fun
       f
     );
   }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -1244,6 +1346,24 @@ proto.pipelines.runtime.v1alpha1.GetRuntimeRequest.prototype.getRuntimeId = func
  */
 proto.pipelines.runtime.v1alpha1.GetRuntimeRequest.prototype.setRuntimeId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string status = 2;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.GetRuntimeRequest.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.GetRuntimeRequest} returns this
+ */
+proto.pipelines.runtime.v1alpha1.GetRuntimeRequest.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
