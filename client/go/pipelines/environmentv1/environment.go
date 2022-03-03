@@ -24,11 +24,11 @@ var environmentServiceTimeout string
 
 func init() {
 	doOnce.Do(func() {
-		environmentServiceTimeout = os.Getenv("ENVIRONMENT_SERVICE_TIMEOUT")
+		environmentServiceTimeout = os.Getenv("PIPELINE_SERVICE_TIMEOUT")
 		if environmentServiceTimeout == "" {
 			environmentServiceTimeout = "30s"
 		}
-		environmentServiceUri = os.Getenv("ENVIRONMENT_SERVICE_URI")
+		environmentServiceUri = os.Getenv("PIPELINE_SERVICE_URI")
 		con, err := grpc.Dial(environmentServiceUri, grpc.WithTransportCredentials(insecure.NewCredentials()))
 		if err != nil {
 			panic(err)

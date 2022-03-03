@@ -48,5 +48,9 @@ message Pipeline {
     repeated Params params = 9;
     repeated Task tasks = 10;
     string status_type= 11;
-    bool active = 12;
+    map<string, string> integration = 12;
+    map<string, string> environment_variables = 13;
+    map<string, string> commands = 14;
+    map<string, string> secrets = 15;
+    bool active = 16;
 }

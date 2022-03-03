@@ -24,11 +24,11 @@ var tektonPipelineServiceTimeout string
 
 func init() {
 	doOnce.Do(func() {
-		tektonPipelineServiceTimeout = os.Getenv("TEKTON_PIPELINE_SERVICE_TIMEOUT")
+		tektonPipelineServiceTimeout = os.Getenv("PIPELINE_SERVICE_TIMEOUT")
 		if tektonPipelineServiceTimeout == "" {
 			tektonPipelineServiceTimeout = "30s"
 		}
-		tektonPipelineServiceUri = os.Getenv("TEKTON_PIPELINE_SERVICE_URI")
+		tektonPipelineServiceUri = os.Getenv("PIPELINE_SERVICE_URI")
 		con, err := grpc.Dial(tektonPipelineServiceUri, grpc.WithTransportCredentials(insecure.NewCredentials()))
 		if err != nil {
 			panic(err)
@@ -63,7 +63,9 @@ type TaskStruct struct {
 }
 
 func CreateTektonPipeline(
-	organizationId uint32, projectId uint32, name string, namespace string, workspace string, params []ParamsStruct, tasks []TaskStruct, userId string,
+	organizationId uint32, projectId uint32, name string, namespace string, workspace string,
+	integration, environmentVariables, commands, secrets map[string]string,
+	params []ParamsStruct, tasks []TaskStruct, userId string,
 ) (response *tektonPipelinepkgv1.CreateTektonPipelineResponse, err error) {
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
@@ -127,15 +129,19 @@ func CreateTektonPipeline(
 
 	response, err = client.CreateTektonPipeline(ctx, &tektonPipelinepkgv1.CreateTektonPipelineRequest{
 		TektonPipeline: &tektonPipelinepkgv1.Pipeline{
-			OrganizationId:      organizationId,
-			ProjectId:           projectId,
-			TypeMetaKind:        "Pipeline",
-			TypeMetaApiVersion:  "tekton.dev/v1beta1",
-			ObjectMetaName:      name,
-			ObjectMetaNamespace: namespace,
-			SpecWorkspacesName:  workspace,
-			Params:              arrayParams,
-			Tasks:               arrayTasks,
+			OrganizationId:       organizationId,
+			ProjectId:            projectId,
+			TypeMetaKind:         "Pipeline",
+			TypeMetaApiVersion:   "tekton.dev/v1beta1",
+			ObjectMetaName:       name,
+			ObjectMetaNamespace:  namespace,
+			SpecWorkspacesName:   workspace,
+			Params:               arrayParams,
+			Tasks:                arrayTasks,
+			Integration:          integration,
+			EnvironmentVariables: environmentVariables,
+			Commands:             commands,
+			Secrets:              secrets,
 		},
 		UserId: userId,
 	})

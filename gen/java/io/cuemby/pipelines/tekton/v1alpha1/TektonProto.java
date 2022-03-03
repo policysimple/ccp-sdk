@@ -34,6 +34,26 @@ public final class TektonProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_tekton_v1alpha1_Pipeline_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_IntegrationEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_Pipeline_IntegrationEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_EnvironmentVariablesEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_Pipeline_EnvironmentVariablesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_CommandsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_Pipeline_CommandsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_SecretsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_Pipeline_SecretsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -60,7 +80,7 @@ public final class TektonProto {
       "orkspacesMain\022F\n\013task_params\030\010 \003(\0132%.pip" +
       "elines.tekton.v1alpha1.TaskParamsR\ntaskP" +
       "arams\022 \n\013description\030\t \001(\tR\013description\"" +
-      "\366\003\n\010Pipeline\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017organiza" +
+      "\337\010\n\010Pipeline\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017organiza" +
       "tion_id\030\002 \001(\rR\016organizationId\022\035\n\nproject" +
       "_id\030\003 \001(\rR\tprojectId\022$\n\016type_meta_kind\030\004" +
       " \001(\tR\014typeMetaKind\0221\n\025type_meta_api_vers" +
@@ -72,12 +92,27 @@ public final class TektonProto {
       "s.tekton.v1alpha1.ParamsR\006params\0225\n\005task" +
       "s\030\n \003(\0132\037.pipelines.tekton.v1alpha1.Task" +
       "R\005tasks\022\037\n\013status_type\030\013 \001(\tR\nstatusType" +
-      "\022\026\n\006active\030\014 \001(\010R\006activeB\256\001\n#io.cuemby.p" +
-      "ipelines.tekton.v1alpha1B\013TektonProtoP\001Z" +
-      ":github.com/cuemby/ccp-sdk/gen/go/pipeli" +
-      "nes/tekton/v1alpha1\242\002\003PPX\252\002\031Pipelines.Te" +
-      "kton.V1Alpha1\312\002\031Pipelines\\Tekton\\V1Alpha" +
-      "1b\006proto3"
+      "\022V\n\013integration\030\014 \003(\01324.pipelines.tekton" +
+      ".v1alpha1.Pipeline.IntegrationEntryR\013int" +
+      "egration\022r\n\025environment_variables\030\r \003(\0132" +
+      "=.pipelines.tekton.v1alpha1.Pipeline.Env" +
+      "ironmentVariablesEntryR\024environmentVaria" +
+      "bles\022M\n\010commands\030\016 \003(\01321.pipelines.tekto" +
+      "n.v1alpha1.Pipeline.CommandsEntryR\010comma" +
+      "nds\022J\n\007secrets\030\017 \003(\01320.pipelines.tekton." +
+      "v1alpha1.Pipeline.SecretsEntryR\007secrets\022" +
+      "\026\n\006active\030\020 \001(\010R\006active\032>\n\020IntegrationEn" +
+      "try\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005va" +
+      "lue:\0028\001\032G\n\031EnvironmentVariablesEntry\022\020\n\003" +
+      "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001" +
+      "\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005v" +
+      "alue\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntry\022\020\n" +
+      "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028" +
+      "\001B\256\001\n#io.cuemby.pipelines.tekton.v1alpha" +
+      "1B\013TektonProtoP\001Z:github.com/cuemby/ccp-" +
+      "sdk/gen/go/pipelines/tekton/v1alpha1\242\002\003P" +
+      "PX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipelin" +
+      "es\\Tekton\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -106,7 +141,31 @@ public final class TektonProto {
     internal_static_pipelines_tekton_v1alpha1_Pipeline_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_tekton_v1alpha1_Pipeline_descriptor,
-        new java.lang.String[] { "Id", "OrganizationId", "ProjectId", "TypeMetaKind", "TypeMetaApiVersion", "ObjectMetaName", "ObjectMetaNamespace", "SpecWorkspacesName", "Params", "Tasks", "StatusType", "Active", });
+        new java.lang.String[] { "Id", "OrganizationId", "ProjectId", "TypeMetaKind", "TypeMetaApiVersion", "ObjectMetaName", "ObjectMetaNamespace", "SpecWorkspacesName", "Params", "Tasks", "StatusType", "Integration", "EnvironmentVariables", "Commands", "Secrets", "Active", });
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_IntegrationEntry_descriptor =
+      internal_static_pipelines_tekton_v1alpha1_Pipeline_descriptor.getNestedTypes().get(0);
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_IntegrationEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_Pipeline_IntegrationEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_EnvironmentVariablesEntry_descriptor =
+      internal_static_pipelines_tekton_v1alpha1_Pipeline_descriptor.getNestedTypes().get(1);
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_EnvironmentVariablesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_Pipeline_EnvironmentVariablesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_CommandsEntry_descriptor =
+      internal_static_pipelines_tekton_v1alpha1_Pipeline_descriptor.getNestedTypes().get(2);
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_CommandsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_Pipeline_CommandsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_SecretsEntry_descriptor =
+      internal_static_pipelines_tekton_v1alpha1_Pipeline_descriptor.getNestedTypes().get(3);
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_SecretsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_Pipeline_SecretsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

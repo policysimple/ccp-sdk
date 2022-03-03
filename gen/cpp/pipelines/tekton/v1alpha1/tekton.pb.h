@@ -30,6 +30,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -46,7 +49,7 @@ struct TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -62,6 +65,18 @@ extern ParamsDefaultTypeInternal _Params_default_instance_;
 class Pipeline;
 struct PipelineDefaultTypeInternal;
 extern PipelineDefaultTypeInternal _Pipeline_default_instance_;
+class Pipeline_CommandsEntry_DoNotUse;
+struct Pipeline_CommandsEntry_DoNotUseDefaultTypeInternal;
+extern Pipeline_CommandsEntry_DoNotUseDefaultTypeInternal _Pipeline_CommandsEntry_DoNotUse_default_instance_;
+class Pipeline_EnvironmentVariablesEntry_DoNotUse;
+struct Pipeline_EnvironmentVariablesEntry_DoNotUseDefaultTypeInternal;
+extern Pipeline_EnvironmentVariablesEntry_DoNotUseDefaultTypeInternal _Pipeline_EnvironmentVariablesEntry_DoNotUse_default_instance_;
+class Pipeline_IntegrationEntry_DoNotUse;
+struct Pipeline_IntegrationEntry_DoNotUseDefaultTypeInternal;
+extern Pipeline_IntegrationEntry_DoNotUseDefaultTypeInternal _Pipeline_IntegrationEntry_DoNotUse_default_instance_;
+class Pipeline_SecretsEntry_DoNotUse;
+struct Pipeline_SecretsEntry_DoNotUseDefaultTypeInternal;
+extern Pipeline_SecretsEntry_DoNotUseDefaultTypeInternal _Pipeline_SecretsEntry_DoNotUse_default_instance_;
 class Task;
 struct TaskDefaultTypeInternal;
 extern TaskDefaultTypeInternal _Task_default_instance_;
@@ -74,6 +89,10 @@ extern TaskParamsDefaultTypeInternal _TaskParams_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::pipelines::tekton::v1alpha1::Params* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Params>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::Pipeline* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Pipeline>(Arena*);
+template<> ::pipelines::tekton::v1alpha1::Pipeline_CommandsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Pipeline_CommandsEntry_DoNotUse>(Arena*);
+template<> ::pipelines::tekton::v1alpha1::Pipeline_EnvironmentVariablesEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Pipeline_EnvironmentVariablesEntry_DoNotUse>(Arena*);
+template<> ::pipelines::tekton::v1alpha1::Pipeline_IntegrationEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Pipeline_IntegrationEntry_DoNotUse>(Arena*);
+template<> ::pipelines::tekton::v1alpha1::Pipeline_SecretsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Pipeline_SecretsEntry_DoNotUse>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::Task* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Task>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::TaskParams* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::TaskParams>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -747,6 +766,114 @@ class Task final :
 };
 // -------------------------------------------------------------------
 
+class Pipeline_IntegrationEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Pipeline_IntegrationEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Pipeline_IntegrationEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  Pipeline_IntegrationEntry_DoNotUse();
+  explicit constexpr Pipeline_IntegrationEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit Pipeline_IntegrationEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Pipeline_IntegrationEntry_DoNotUse& other);
+  static const Pipeline_IntegrationEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Pipeline_IntegrationEntry_DoNotUse*>(&_Pipeline_IntegrationEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.tekton.v1alpha1.Pipeline.IntegrationEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.tekton.v1alpha1.Pipeline.IntegrationEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
+class Pipeline_EnvironmentVariablesEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Pipeline_EnvironmentVariablesEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Pipeline_EnvironmentVariablesEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  Pipeline_EnvironmentVariablesEntry_DoNotUse();
+  explicit constexpr Pipeline_EnvironmentVariablesEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit Pipeline_EnvironmentVariablesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Pipeline_EnvironmentVariablesEntry_DoNotUse& other);
+  static const Pipeline_EnvironmentVariablesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Pipeline_EnvironmentVariablesEntry_DoNotUse*>(&_Pipeline_EnvironmentVariablesEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
+class Pipeline_CommandsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Pipeline_CommandsEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Pipeline_CommandsEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  Pipeline_CommandsEntry_DoNotUse();
+  explicit constexpr Pipeline_CommandsEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit Pipeline_CommandsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Pipeline_CommandsEntry_DoNotUse& other);
+  static const Pipeline_CommandsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Pipeline_CommandsEntry_DoNotUse*>(&_Pipeline_CommandsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.tekton.v1alpha1.Pipeline.CommandsEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.tekton.v1alpha1.Pipeline.CommandsEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
+class Pipeline_SecretsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Pipeline_SecretsEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Pipeline_SecretsEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  Pipeline_SecretsEntry_DoNotUse();
+  explicit constexpr Pipeline_SecretsEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit Pipeline_SecretsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Pipeline_SecretsEntry_DoNotUse& other);
+  static const Pipeline_SecretsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Pipeline_SecretsEntry_DoNotUse*>(&_Pipeline_SecretsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.tekton.v1alpha1.Pipeline.SecretsEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.tekton.v1alpha1.Pipeline.SecretsEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
 class Pipeline final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.tekton.v1alpha1.Pipeline) */ {
  public:
@@ -791,7 +918,7 @@ class Pipeline final :
                &_Pipeline_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    7;
 
   friend void swap(Pipeline& a, Pipeline& b) {
     a.Swap(&b);
@@ -859,11 +986,16 @@ class Pipeline final :
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
 
   enum : int {
     kParamsFieldNumber = 9,
     kTasksFieldNumber = 10,
+    kIntegrationFieldNumber = 12,
+    kEnvironmentVariablesFieldNumber = 13,
+    kCommandsFieldNumber = 14,
+    kSecretsFieldNumber = 15,
     kIdFieldNumber = 1,
     kTypeMetaKindFieldNumber = 4,
     kTypeMetaApiVersionFieldNumber = 5,
@@ -873,7 +1005,7 @@ class Pipeline final :
     kStatusTypeFieldNumber = 11,
     kOrganizationIdFieldNumber = 2,
     kProjectIdFieldNumber = 3,
-    kActiveFieldNumber = 12,
+    kActiveFieldNumber = 16,
   };
   // repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];
   int params_size() const;
@@ -910,6 +1042,74 @@ class Pipeline final :
   ::pipelines::tekton::v1alpha1::Task* add_tasks();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
       tasks() const;
+
+  // map<string, string> integration = 12 [json_name = "integration"];
+  int integration_size() const;
+  private:
+  int _internal_integration_size() const;
+  public:
+  void clear_integration();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_integration() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_integration();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      integration() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_integration();
+
+  // map<string, string> environment_variables = 13 [json_name = "environmentVariables"];
+  int environment_variables_size() const;
+  private:
+  int _internal_environment_variables_size() const;
+  public:
+  void clear_environment_variables();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_environment_variables() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_environment_variables();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      environment_variables() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_environment_variables();
+
+  // map<string, string> commands = 14 [json_name = "commands"];
+  int commands_size() const;
+  private:
+  int _internal_commands_size() const;
+  public:
+  void clear_commands();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_commands() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_commands();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      commands() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_commands();
+
+  // map<string, string> secrets = 15 [json_name = "secrets"];
+  int secrets_size() const;
+  private:
+  int _internal_secrets_size() const;
+  public:
+  void clear_secrets();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_secrets() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_secrets();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      secrets() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_secrets();
 
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -1027,7 +1227,7 @@ class Pipeline final :
   void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // bool active = 12 [json_name = "active"];
+  // bool active = 16 [json_name = "active"];
   void clear_active();
   bool active() const;
   void set_active(bool value);
@@ -1045,6 +1245,26 @@ class Pipeline final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Params > params_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task > tasks_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      Pipeline_IntegrationEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> integration_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      Pipeline_EnvironmentVariablesEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> environment_variables_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      Pipeline_CommandsEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> commands_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      Pipeline_SecretsEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> secrets_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_meta_kind_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_meta_api_version_;
@@ -1867,6 +2087,14 @@ inline void Task::set_allocated_description(std::string* description) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // Pipeline
 
 // string id = 1 [json_name = "id"];
@@ -2311,7 +2539,123 @@ inline void Pipeline::set_allocated_status_type(std::string* status_type) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Pipeline.status_type)
 }
 
-// bool active = 12 [json_name = "active"];
+// map<string, string> integration = 12 [json_name = "integration"];
+inline int Pipeline::_internal_integration_size() const {
+  return integration_.size();
+}
+inline int Pipeline::integration_size() const {
+  return _internal_integration_size();
+}
+inline void Pipeline::clear_integration() {
+  integration_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Pipeline::_internal_integration() const {
+  return integration_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Pipeline::integration() const {
+  // @@protoc_insertion_point(field_map:pipelines.tekton.v1alpha1.Pipeline.integration)
+  return _internal_integration();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Pipeline::_internal_mutable_integration() {
+  return integration_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Pipeline::mutable_integration() {
+  // @@protoc_insertion_point(field_mutable_map:pipelines.tekton.v1alpha1.Pipeline.integration)
+  return _internal_mutable_integration();
+}
+
+// map<string, string> environment_variables = 13 [json_name = "environmentVariables"];
+inline int Pipeline::_internal_environment_variables_size() const {
+  return environment_variables_.size();
+}
+inline int Pipeline::environment_variables_size() const {
+  return _internal_environment_variables_size();
+}
+inline void Pipeline::clear_environment_variables() {
+  environment_variables_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Pipeline::_internal_environment_variables() const {
+  return environment_variables_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Pipeline::environment_variables() const {
+  // @@protoc_insertion_point(field_map:pipelines.tekton.v1alpha1.Pipeline.environment_variables)
+  return _internal_environment_variables();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Pipeline::_internal_mutable_environment_variables() {
+  return environment_variables_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Pipeline::mutable_environment_variables() {
+  // @@protoc_insertion_point(field_mutable_map:pipelines.tekton.v1alpha1.Pipeline.environment_variables)
+  return _internal_mutable_environment_variables();
+}
+
+// map<string, string> commands = 14 [json_name = "commands"];
+inline int Pipeline::_internal_commands_size() const {
+  return commands_.size();
+}
+inline int Pipeline::commands_size() const {
+  return _internal_commands_size();
+}
+inline void Pipeline::clear_commands() {
+  commands_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Pipeline::_internal_commands() const {
+  return commands_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Pipeline::commands() const {
+  // @@protoc_insertion_point(field_map:pipelines.tekton.v1alpha1.Pipeline.commands)
+  return _internal_commands();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Pipeline::_internal_mutable_commands() {
+  return commands_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Pipeline::mutable_commands() {
+  // @@protoc_insertion_point(field_mutable_map:pipelines.tekton.v1alpha1.Pipeline.commands)
+  return _internal_mutable_commands();
+}
+
+// map<string, string> secrets = 15 [json_name = "secrets"];
+inline int Pipeline::_internal_secrets_size() const {
+  return secrets_.size();
+}
+inline int Pipeline::secrets_size() const {
+  return _internal_secrets_size();
+}
+inline void Pipeline::clear_secrets() {
+  secrets_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Pipeline::_internal_secrets() const {
+  return secrets_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Pipeline::secrets() const {
+  // @@protoc_insertion_point(field_map:pipelines.tekton.v1alpha1.Pipeline.secrets)
+  return _internal_secrets();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Pipeline::_internal_mutable_secrets() {
+  return secrets_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Pipeline::mutable_secrets() {
+  // @@protoc_insertion_point(field_mutable_map:pipelines.tekton.v1alpha1.Pipeline.secrets)
+  return _internal_mutable_secrets();
+}
+
+// bool active = 16 [json_name = "active"];
 inline void Pipeline::clear_active() {
   active_ = false;
 }
@@ -2334,6 +2678,14 @@ inline void Pipeline::set_active(bool value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
