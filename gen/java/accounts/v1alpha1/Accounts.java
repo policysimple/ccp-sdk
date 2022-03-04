@@ -38675,6 +38675,564 @@ public final class Accounts {
 
   }
 
+  public interface ProjectDetailOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.ProjectDetail)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * @return The projectId.
+     */
+    int getProjectId();
+
+    /**
+     * <code>uint32 role_id = 2 [json_name = "roleId"];</code>
+     * @return The roleId.
+     */
+    int getRoleId();
+  }
+  /**
+   * Protobuf type {@code accounts.v1alpha1.ProjectDetail}
+   */
+  public static final class ProjectDetail extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.ProjectDetail)
+      ProjectDetailOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ProjectDetail.newBuilder() to construct.
+    private ProjectDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ProjectDetail() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ProjectDetail();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ProjectDetail(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              projectId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              roleId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ProjectDetail_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ProjectDetail_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              accounts.v1alpha1.Accounts.ProjectDetail.class, accounts.v1alpha1.Accounts.ProjectDetail.Builder.class);
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 1;
+    private int projectId_;
+    /**
+     * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public int getProjectId() {
+      return projectId_;
+    }
+
+    public static final int ROLE_ID_FIELD_NUMBER = 2;
+    private int roleId_;
+    /**
+     * <code>uint32 role_id = 2 [json_name = "roleId"];</code>
+     * @return The roleId.
+     */
+    @java.lang.Override
+    public int getRoleId() {
+      return roleId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (projectId_ != 0) {
+        output.writeUInt32(1, projectId_);
+      }
+      if (roleId_ != 0) {
+        output.writeUInt32(2, roleId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (projectId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, projectId_);
+      }
+      if (roleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, roleId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof accounts.v1alpha1.Accounts.ProjectDetail)) {
+        return super.equals(obj);
+      }
+      accounts.v1alpha1.Accounts.ProjectDetail other = (accounts.v1alpha1.Accounts.ProjectDetail) obj;
+
+      if (getProjectId()
+          != other.getProjectId()) return false;
+      if (getRoleId()
+          != other.getRoleId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId();
+      hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoleId();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static accounts.v1alpha1.Accounts.ProjectDetail parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.Accounts.ProjectDetail parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.Accounts.ProjectDetail parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.Accounts.ProjectDetail parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.Accounts.ProjectDetail parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.Accounts.ProjectDetail parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.Accounts.ProjectDetail parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.Accounts.ProjectDetail parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static accounts.v1alpha1.Accounts.ProjectDetail parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.Accounts.ProjectDetail parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static accounts.v1alpha1.Accounts.ProjectDetail parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.Accounts.ProjectDetail parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(accounts.v1alpha1.Accounts.ProjectDetail prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code accounts.v1alpha1.ProjectDetail}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.ProjectDetail)
+        accounts.v1alpha1.Accounts.ProjectDetailOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ProjectDetail_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ProjectDetail_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                accounts.v1alpha1.Accounts.ProjectDetail.class, accounts.v1alpha1.Accounts.ProjectDetail.Builder.class);
+      }
+
+      // Construct using accounts.v1alpha1.Accounts.ProjectDetail.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        projectId_ = 0;
+
+        roleId_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_ProjectDetail_descriptor;
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.Accounts.ProjectDetail getDefaultInstanceForType() {
+        return accounts.v1alpha1.Accounts.ProjectDetail.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.Accounts.ProjectDetail build() {
+        accounts.v1alpha1.Accounts.ProjectDetail result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.Accounts.ProjectDetail buildPartial() {
+        accounts.v1alpha1.Accounts.ProjectDetail result = new accounts.v1alpha1.Accounts.ProjectDetail(this);
+        result.projectId_ = projectId_;
+        result.roleId_ = roleId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof accounts.v1alpha1.Accounts.ProjectDetail) {
+          return mergeFrom((accounts.v1alpha1.Accounts.ProjectDetail)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(accounts.v1alpha1.Accounts.ProjectDetail other) {
+        if (other == accounts.v1alpha1.Accounts.ProjectDetail.getDefaultInstance()) return this;
+        if (other.getProjectId() != 0) {
+          setProjectId(other.getProjectId());
+        }
+        if (other.getRoleId() != 0) {
+          setRoleId(other.getRoleId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        accounts.v1alpha1.Accounts.ProjectDetail parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (accounts.v1alpha1.Accounts.ProjectDetail) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int projectId_ ;
+      /**
+       * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+       * @return The projectId.
+       */
+      @java.lang.Override
+      public int getProjectId() {
+        return projectId_;
+      }
+      /**
+       * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(int value) {
+        
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+        
+        projectId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int roleId_ ;
+      /**
+       * <code>uint32 role_id = 2 [json_name = "roleId"];</code>
+       * @return The roleId.
+       */
+      @java.lang.Override
+      public int getRoleId() {
+        return roleId_;
+      }
+      /**
+       * <code>uint32 role_id = 2 [json_name = "roleId"];</code>
+       * @param value The roleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleId(int value) {
+        
+        roleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 role_id = 2 [json_name = "roleId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoleId() {
+        
+        roleId_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.ProjectDetail)
+    }
+
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.ProjectDetail)
+    private static final accounts.v1alpha1.Accounts.ProjectDetail DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.ProjectDetail();
+    }
+
+    public static accounts.v1alpha1.Accounts.ProjectDetail getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProjectDetail>
+        PARSER = new com.google.protobuf.AbstractParser<ProjectDetail>() {
+      @java.lang.Override
+      public ProjectDetail parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ProjectDetail(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProjectDetail> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProjectDetail> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.ProjectDetail getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface SendInvitationUserRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.SendInvitationUserRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -38704,10 +39262,28 @@ public final class Accounts {
         getEmailBytes();
 
     /**
-     * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-     * @return The projectId.
+     * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
      */
-    int getProjectId();
+    java.util.List<accounts.v1alpha1.Accounts.ProjectDetail> 
+        getProjectsList();
+    /**
+     * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+     */
+    accounts.v1alpha1.Accounts.ProjectDetail getProjects(int index);
+    /**
+     * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+     */
+    int getProjectsCount();
+    /**
+     * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+     */
+    java.util.List<? extends accounts.v1alpha1.Accounts.ProjectDetailOrBuilder> 
+        getProjectsOrBuilderList();
+    /**
+     * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+     */
+    accounts.v1alpha1.Accounts.ProjectDetailOrBuilder getProjectsOrBuilder(
+        int index);
 
     /**
      * <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
@@ -38736,6 +39312,7 @@ public final class Accounts {
     private SendInvitationUserRequest() {
       name_ = "";
       email_ = "";
+      projects_ = java.util.Collections.emptyList();
       userIdAdmin_ = "";
     }
 
@@ -38759,6 +39336,7 @@ public final class Accounts {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -38781,9 +39359,13 @@ public final class Accounts {
               email_ = s;
               break;
             }
-            case 24: {
-
-              projectId_ = input.readUInt32();
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.ProjectDetail>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              projects_.add(
+                  input.readMessage(accounts.v1alpha1.Accounts.ProjectDetail.parser(), extensionRegistry));
               break;
             }
             case 34: {
@@ -38807,6 +39389,9 @@ public final class Accounts {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          projects_ = java.util.Collections.unmodifiableList(projects_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -38900,15 +39485,44 @@ public final class Accounts {
       }
     }
 
-    public static final int PROJECT_ID_FIELD_NUMBER = 3;
-    private int projectId_;
+    public static final int PROJECTS_FIELD_NUMBER = 3;
+    private java.util.List<accounts.v1alpha1.Accounts.ProjectDetail> projects_;
     /**
-     * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-     * @return The projectId.
+     * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
      */
     @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
+    public java.util.List<accounts.v1alpha1.Accounts.ProjectDetail> getProjectsList() {
+      return projects_;
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectDetailOrBuilder> 
+        getProjectsOrBuilderList() {
+      return projects_;
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public int getProjectsCount() {
+      return projects_.size();
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.ProjectDetail getProjects(int index) {
+      return projects_.get(index);
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.ProjectDetailOrBuilder getProjectsOrBuilder(
+        int index) {
+      return projects_.get(index);
     }
 
     public static final int USER_ID_ADMIN_FIELD_NUMBER = 4;
@@ -38969,8 +39583,8 @@ public final class Accounts {
       if (!getEmailBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, email_);
       }
-      if (projectId_ != 0) {
-        output.writeUInt32(3, projectId_);
+      for (int i = 0; i < projects_.size(); i++) {
+        output.writeMessage(3, projects_.get(i));
       }
       if (!getUserIdAdminBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userIdAdmin_);
@@ -38990,9 +39604,9 @@ public final class Accounts {
       if (!getEmailBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, email_);
       }
-      if (projectId_ != 0) {
+      for (int i = 0; i < projects_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, projectId_);
+          .computeMessageSize(3, projects_.get(i));
       }
       if (!getUserIdAdminBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userIdAdmin_);
@@ -39016,8 +39630,8 @@ public final class Accounts {
           .equals(other.getName())) return false;
       if (!getEmail()
           .equals(other.getEmail())) return false;
-      if (getProjectId()
-          != other.getProjectId()) return false;
+      if (!getProjectsList()
+          .equals(other.getProjectsList())) return false;
       if (!getUserIdAdmin()
           .equals(other.getUserIdAdmin())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -39035,8 +39649,10 @@ public final class Accounts {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + EMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getEmail().hashCode();
-      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
+      if (getProjectsCount() > 0) {
+        hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getProjectsList().hashCode();
+      }
       hash = (37 * hash) + USER_ID_ADMIN_FIELD_NUMBER;
       hash = (53 * hash) + getUserIdAdmin().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -39167,6 +39783,7 @@ public final class Accounts {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getProjectsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -39176,8 +39793,12 @@ public final class Accounts {
 
         email_ = "";
 
-        projectId_ = 0;
-
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          projectsBuilder_.clear();
+        }
         userIdAdmin_ = "";
 
         return this;
@@ -39206,9 +39827,18 @@ public final class Accounts {
       @java.lang.Override
       public accounts.v1alpha1.Accounts.SendInvitationUserRequest buildPartial() {
         accounts.v1alpha1.Accounts.SendInvitationUserRequest result = new accounts.v1alpha1.Accounts.SendInvitationUserRequest(this);
+        int from_bitField0_ = bitField0_;
         result.name_ = name_;
         result.email_ = email_;
-        result.projectId_ = projectId_;
+        if (projectsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            projects_ = java.util.Collections.unmodifiableList(projects_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.projects_ = projects_;
+        } else {
+          result.projects_ = projectsBuilder_.build();
+        }
         result.userIdAdmin_ = userIdAdmin_;
         onBuilt();
         return result;
@@ -39266,8 +39896,31 @@ public final class Accounts {
           email_ = other.email_;
           onChanged();
         }
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
+        if (projectsBuilder_ == null) {
+          if (!other.projects_.isEmpty()) {
+            if (projects_.isEmpty()) {
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureProjectsIsMutable();
+              projects_.addAll(other.projects_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.projects_.isEmpty()) {
+            if (projectsBuilder_.isEmpty()) {
+              projectsBuilder_.dispose();
+              projectsBuilder_ = null;
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              projectsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProjectsFieldBuilder() : null;
+            } else {
+              projectsBuilder_.addAllMessages(other.projects_);
+            }
+          }
         }
         if (!other.getUserIdAdmin().isEmpty()) {
           userIdAdmin_ = other.userIdAdmin_;
@@ -39301,6 +39954,7 @@ public final class Accounts {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -39454,35 +40108,244 @@ public final class Accounts {
         return this;
       }
 
-      private int projectId_ ;
+      private java.util.List<accounts.v1alpha1.Accounts.ProjectDetail> projects_ =
+        java.util.Collections.emptyList();
+      private void ensureProjectsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.ProjectDetail>(projects_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          accounts.v1alpha1.Accounts.ProjectDetail, accounts.v1alpha1.Accounts.ProjectDetail.Builder, accounts.v1alpha1.Accounts.ProjectDetailOrBuilder> projectsBuilder_;
+
       /**
-       * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-       * @return The projectId.
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
        */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
+      public java.util.List<accounts.v1alpha1.Accounts.ProjectDetail> getProjectsList() {
+        if (projectsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(projects_);
+        } else {
+          return projectsBuilder_.getMessageList();
+        }
       }
       /**
-       * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-       * @param value The projectId to set.
-       * @return This builder for chaining.
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
        */
-      public Builder setProjectId(int value) {
-        
-        projectId_ = value;
-        onChanged();
+      public int getProjectsCount() {
+        if (projectsBuilder_ == null) {
+          return projects_.size();
+        } else {
+          return projectsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.ProjectDetail getProjects(int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);
+        } else {
+          return projectsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public Builder setProjects(
+          int index, accounts.v1alpha1.Accounts.ProjectDetail value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.set(index, value);
+          onChanged();
+        } else {
+          projectsBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
-       * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-       * @return This builder for chaining.
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
        */
-      public Builder clearProjectId() {
-        
-        projectId_ = 0;
-        onChanged();
+      public Builder setProjects(
+          int index, accounts.v1alpha1.Accounts.ProjectDetail.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(accounts.v1alpha1.Accounts.ProjectDetail value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.add(value);
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(
+          int index, accounts.v1alpha1.Accounts.ProjectDetail value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.add(index, value);
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(
+          accounts.v1alpha1.Accounts.ProjectDetail.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(
+          int index, accounts.v1alpha1.Accounts.ProjectDetail.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public Builder addAllProjects(
+          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.ProjectDetail> values) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, projects_);
+          onChanged();
+        } else {
+          projectsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public Builder clearProjects() {
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          projectsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public Builder removeProjects(int index) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.remove(index);
+          onChanged();
+        } else {
+          projectsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.ProjectDetail.Builder getProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.ProjectDetailOrBuilder getProjectsOrBuilder(
+          int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);  } else {
+          return projectsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectDetailOrBuilder> 
+           getProjectsOrBuilderList() {
+        if (projectsBuilder_ != null) {
+          return projectsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(projects_);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.ProjectDetail.Builder addProjectsBuilder() {
+        return getProjectsFieldBuilder().addBuilder(
+            accounts.v1alpha1.Accounts.ProjectDetail.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.ProjectDetail.Builder addProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().addBuilder(
+            index, accounts.v1alpha1.Accounts.ProjectDetail.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+       */
+      public java.util.List<accounts.v1alpha1.Accounts.ProjectDetail.Builder> 
+           getProjectsBuilderList() {
+        return getProjectsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          accounts.v1alpha1.Accounts.ProjectDetail, accounts.v1alpha1.Accounts.ProjectDetail.Builder, accounts.v1alpha1.Accounts.ProjectDetailOrBuilder> 
+          getProjectsFieldBuilder() {
+        if (projectsBuilder_ == null) {
+          projectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              accounts.v1alpha1.Accounts.ProjectDetail, accounts.v1alpha1.Accounts.ProjectDetail.Builder, accounts.v1alpha1.Accounts.ProjectDetailOrBuilder>(
+                  projects_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          projects_ = null;
+        }
+        return projectsBuilder_;
       }
 
       private java.lang.Object userIdAdmin_ = "";
@@ -39633,19 +40496,28 @@ public final class Accounts {
     accounts.v1alpha1.Accounts.OrganizationOrBuilder getOrganizationOrBuilder();
 
     /**
-     * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
-     * @return Whether the project field is set.
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      */
-    boolean hasProject();
+    java.util.List<accounts.v1alpha1.Accounts.Project> 
+        getProjectsList();
     /**
-     * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
-     * @return The project.
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      */
-    accounts.v1alpha1.Accounts.Project getProject();
+    accounts.v1alpha1.Accounts.Project getProjects(int index);
     /**
-     * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      */
-    accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectOrBuilder();
+    int getProjectsCount();
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+        getProjectsOrBuilderList();
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+        int index);
 
     /**
      * <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
@@ -39684,6 +40556,7 @@ public final class Accounts {
       super(builder);
     }
     private SendInvitationUserResponse() {
+      projects_ = java.util.Collections.emptyList();
       invitationCode_ = "";
       result_ = "";
     }
@@ -39708,6 +40581,7 @@ public final class Accounts {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -39732,16 +40606,12 @@ public final class Accounts {
               break;
             }
             case 18: {
-              accounts.v1alpha1.Accounts.Project.Builder subBuilder = null;
-              if (project_ != null) {
-                subBuilder = project_.toBuilder();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>();
+                mutable_bitField0_ |= 0x00000001;
               }
-              project_ = input.readMessage(accounts.v1alpha1.Accounts.Project.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(project_);
-                project_ = subBuilder.buildPartial();
-              }
-
+              projects_.add(
+                  input.readMessage(accounts.v1alpha1.Accounts.Project.parser(), extensionRegistry));
               break;
             }
             case 26: {
@@ -39771,6 +40641,9 @@ public final class Accounts {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          projects_ = java.util.Collections.unmodifiableList(projects_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -39814,30 +40687,44 @@ public final class Accounts {
       return getOrganization();
     }
 
-    public static final int PROJECT_FIELD_NUMBER = 2;
-    private accounts.v1alpha1.Accounts.Project project_;
+    public static final int PROJECTS_FIELD_NUMBER = 2;
+    private java.util.List<accounts.v1alpha1.Accounts.Project> projects_;
     /**
-     * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
-     * @return Whether the project field is set.
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      */
     @java.lang.Override
-    public boolean hasProject() {
-      return project_ != null;
+    public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
+      return projects_;
     }
     /**
-     * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
-     * @return The project.
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      */
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.Project getProject() {
-      return project_ == null ? accounts.v1alpha1.Accounts.Project.getDefaultInstance() : project_;
+    public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+        getProjectsOrBuilderList() {
+      return projects_;
     }
     /**
-     * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      */
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectOrBuilder() {
-      return getProject();
+    public int getProjectsCount() {
+      return projects_.size();
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.Project getProjects(int index) {
+      return projects_.get(index);
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+        int index) {
+      return projects_.get(index);
     }
 
     public static final int INVITATION_CODE_FIELD_NUMBER = 3;
@@ -39933,8 +40820,8 @@ public final class Accounts {
       if (organization_ != null) {
         output.writeMessage(1, getOrganization());
       }
-      if (project_ != null) {
-        output.writeMessage(2, getProject());
+      for (int i = 0; i < projects_.size(); i++) {
+        output.writeMessage(2, projects_.get(i));
       }
       if (!getInvitationCodeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, invitationCode_);
@@ -39955,9 +40842,9 @@ public final class Accounts {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getOrganization());
       }
-      if (project_ != null) {
+      for (int i = 0; i < projects_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getProject());
+          .computeMessageSize(2, projects_.get(i));
       }
       if (!getInvitationCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, invitationCode_);
@@ -39985,11 +40872,8 @@ public final class Accounts {
         if (!getOrganization()
             .equals(other.getOrganization())) return false;
       }
-      if (hasProject() != other.hasProject()) return false;
-      if (hasProject()) {
-        if (!getProject()
-            .equals(other.getProject())) return false;
-      }
+      if (!getProjectsList()
+          .equals(other.getProjectsList())) return false;
       if (!getInvitationCode()
           .equals(other.getInvitationCode())) return false;
       if (!getResult()
@@ -40009,9 +40893,9 @@ public final class Accounts {
         hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
         hash = (53 * hash) + getOrganization().hashCode();
       }
-      if (hasProject()) {
-        hash = (37 * hash) + PROJECT_FIELD_NUMBER;
-        hash = (53 * hash) + getProject().hashCode();
+      if (getProjectsCount() > 0) {
+        hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getProjectsList().hashCode();
       }
       hash = (37 * hash) + INVITATION_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getInvitationCode().hashCode();
@@ -40145,6 +41029,7 @@ public final class Accounts {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getProjectsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -40156,11 +41041,11 @@ public final class Accounts {
           organization_ = null;
           organizationBuilder_ = null;
         }
-        if (projectBuilder_ == null) {
-          project_ = null;
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          project_ = null;
-          projectBuilder_ = null;
+          projectsBuilder_.clear();
         }
         invitationCode_ = "";
 
@@ -40192,15 +41077,20 @@ public final class Accounts {
       @java.lang.Override
       public accounts.v1alpha1.Accounts.SendInvitationUserResponse buildPartial() {
         accounts.v1alpha1.Accounts.SendInvitationUserResponse result = new accounts.v1alpha1.Accounts.SendInvitationUserResponse(this);
+        int from_bitField0_ = bitField0_;
         if (organizationBuilder_ == null) {
           result.organization_ = organization_;
         } else {
           result.organization_ = organizationBuilder_.build();
         }
-        if (projectBuilder_ == null) {
-          result.project_ = project_;
+        if (projectsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            projects_ = java.util.Collections.unmodifiableList(projects_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.projects_ = projects_;
         } else {
-          result.project_ = projectBuilder_.build();
+          result.projects_ = projectsBuilder_.build();
         }
         result.invitationCode_ = invitationCode_;
         result.result_ = result_;
@@ -40255,8 +41145,31 @@ public final class Accounts {
         if (other.hasOrganization()) {
           mergeOrganization(other.getOrganization());
         }
-        if (other.hasProject()) {
-          mergeProject(other.getProject());
+        if (projectsBuilder_ == null) {
+          if (!other.projects_.isEmpty()) {
+            if (projects_.isEmpty()) {
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureProjectsIsMutable();
+              projects_.addAll(other.projects_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.projects_.isEmpty()) {
+            if (projectsBuilder_.isEmpty()) {
+              projectsBuilder_.dispose();
+              projectsBuilder_ = null;
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              projectsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProjectsFieldBuilder() : null;
+            } else {
+              projectsBuilder_.addAllMessages(other.projects_);
+            }
+          }
         }
         if (!other.getInvitationCode().isEmpty()) {
           invitationCode_ = other.invitationCode_;
@@ -40294,6 +41207,7 @@ public final class Accounts {
         }
         return this;
       }
+      private int bitField0_;
 
       private accounts.v1alpha1.Accounts.Organization organization_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -40414,123 +41328,244 @@ public final class Accounts {
         return organizationBuilder_;
       }
 
-      private accounts.v1alpha1.Accounts.Project project_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> projectBuilder_;
-      /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
-       * @return Whether the project field is set.
-       */
-      public boolean hasProject() {
-        return projectBuilder_ != null || project_ != null;
+      private java.util.List<accounts.v1alpha1.Accounts.Project> projects_ =
+        java.util.Collections.emptyList();
+      private void ensureProjectsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>(projects_);
+          bitField0_ |= 0x00000001;
+         }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> projectsBuilder_;
+
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
-       * @return The project.
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      public accounts.v1alpha1.Accounts.Project getProject() {
-        if (projectBuilder_ == null) {
-          return project_ == null ? accounts.v1alpha1.Accounts.Project.getDefaultInstance() : project_;
+      public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
+        if (projectsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(projects_);
         } else {
-          return projectBuilder_.getMessage();
+          return projectsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      public Builder setProject(accounts.v1alpha1.Accounts.Project value) {
-        if (projectBuilder_ == null) {
+      public int getProjectsCount() {
+        if (projectsBuilder_ == null) {
+          return projects_.size();
+        } else {
+          return projectsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project getProjects(int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);
+        } else {
+          return projectsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder setProjects(
+          int index, accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          project_ = value;
+          ensureProjectsIsMutable();
+          projects_.set(index, value);
           onChanged();
         } else {
-          projectBuilder_.setMessage(value);
+          projectsBuilder_.setMessage(index, value);
         }
-
         return this;
       }
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      public Builder setProject(
-          accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
-        if (projectBuilder_ == null) {
-          project_ = builderForValue.build();
+      public Builder setProjects(
+          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.set(index, builderForValue.build());
           onChanged();
         } else {
-          projectBuilder_.setMessage(builderForValue.build());
+          projectsBuilder_.setMessage(index, builderForValue.build());
         }
-
         return this;
       }
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      public Builder mergeProject(accounts.v1alpha1.Accounts.Project value) {
-        if (projectBuilder_ == null) {
-          if (project_ != null) {
-            project_ =
-              accounts.v1alpha1.Accounts.Project.newBuilder(project_).mergeFrom(value).buildPartial();
-          } else {
-            project_ = value;
+      public Builder addProjects(accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
           }
+          ensureProjectsIsMutable();
+          projects_.add(value);
           onChanged();
         } else {
-          projectBuilder_.mergeFrom(value);
+          projectsBuilder_.addMessage(value);
         }
-
         return this;
       }
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      public Builder clearProject() {
-        if (projectBuilder_ == null) {
-          project_ = null;
+      public Builder addProjects(
+          int index, accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.add(index, value);
           onChanged();
         } else {
-          project_ = null;
-          projectBuilder_ = null;
+          projectsBuilder_.addMessage(index, value);
         }
-
         return this;
       }
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      public accounts.v1alpha1.Accounts.Project.Builder getProjectBuilder() {
-        
-        onChanged();
-        return getProjectFieldBuilder().getBuilder();
+      public Builder addProjects(
+          accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
       }
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectOrBuilder() {
-        if (projectBuilder_ != null) {
-          return projectBuilder_.getMessageOrBuilder();
+      public Builder addProjects(
+          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(index, builderForValue.build());
+          onChanged();
         } else {
-          return project_ == null ?
-              accounts.v1alpha1.Accounts.Project.getDefaultInstance() : project_;
+          projectsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder addAllProjects(
+          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Project> values) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, projects_);
+          onChanged();
+        } else {
+          projectsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder clearProjects() {
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          projectsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder removeProjects(int index) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.remove(index);
+          onChanged();
+        } else {
+          projectsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder getProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+          int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);  } else {
+          return projectsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+           getProjectsOrBuilderList() {
+        if (projectsBuilder_ != null) {
+          return projectsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(projects_);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder() {
+        return getProjectsFieldBuilder().addBuilder(
+            accounts.v1alpha1.Accounts.Project.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().addBuilder(
+            index, accounts.v1alpha1.Accounts.Project.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public java.util.List<accounts.v1alpha1.Accounts.Project.Builder> 
+           getProjectsBuilderList() {
+        return getProjectsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> 
-          getProjectFieldBuilder() {
-        if (projectBuilder_ == null) {
-          projectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getProjectsFieldBuilder() {
+        if (projectsBuilder_ == null) {
+          projectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder>(
-                  getProject(),
+                  projects_,
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          project_ = null;
+          projects_ = null;
         }
-        return projectBuilder_;
+        return projectsBuilder_;
       }
 
       private java.lang.Object invitationCode_ = "";
@@ -41475,19 +42510,28 @@ public final class Accounts {
     accounts.v1alpha1.Accounts.OrganizationOrBuilder getOrganizationOrBuilder();
 
     /**
-     * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
-     * @return Whether the project field is set.
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      */
-    boolean hasProject();
+    java.util.List<accounts.v1alpha1.Accounts.Project> 
+        getProjectsList();
     /**
-     * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
-     * @return The project.
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      */
-    accounts.v1alpha1.Accounts.Project getProject();
+    accounts.v1alpha1.Accounts.Project getProjects(int index);
     /**
-     * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      */
-    accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectOrBuilder();
+    int getProjectsCount();
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+        getProjectsOrBuilderList();
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+        int index);
 
     /**
      * <code>string result = 3 [json_name = "result"];</code>
@@ -41514,6 +42558,7 @@ public final class Accounts {
       super(builder);
     }
     private GetInvitationUserResponse() {
+      projects_ = java.util.Collections.emptyList();
       result_ = "";
     }
 
@@ -41537,6 +42582,7 @@ public final class Accounts {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -41561,16 +42607,12 @@ public final class Accounts {
               break;
             }
             case 18: {
-              accounts.v1alpha1.Accounts.Project.Builder subBuilder = null;
-              if (project_ != null) {
-                subBuilder = project_.toBuilder();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>();
+                mutable_bitField0_ |= 0x00000001;
               }
-              project_ = input.readMessage(accounts.v1alpha1.Accounts.Project.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(project_);
-                project_ = subBuilder.buildPartial();
-              }
-
+              projects_.add(
+                  input.readMessage(accounts.v1alpha1.Accounts.Project.parser(), extensionRegistry));
               break;
             }
             case 26: {
@@ -41594,6 +42636,9 @@ public final class Accounts {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          projects_ = java.util.Collections.unmodifiableList(projects_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -41637,30 +42682,44 @@ public final class Accounts {
       return getOrganization();
     }
 
-    public static final int PROJECT_FIELD_NUMBER = 2;
-    private accounts.v1alpha1.Accounts.Project project_;
+    public static final int PROJECTS_FIELD_NUMBER = 2;
+    private java.util.List<accounts.v1alpha1.Accounts.Project> projects_;
     /**
-     * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
-     * @return Whether the project field is set.
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      */
     @java.lang.Override
-    public boolean hasProject() {
-      return project_ != null;
+    public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
+      return projects_;
     }
     /**
-     * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
-     * @return The project.
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      */
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.Project getProject() {
-      return project_ == null ? accounts.v1alpha1.Accounts.Project.getDefaultInstance() : project_;
+    public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+        getProjectsOrBuilderList() {
+      return projects_;
     }
     /**
-     * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      */
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectOrBuilder() {
-      return getProject();
+    public int getProjectsCount() {
+      return projects_.size();
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.Project getProjects(int index) {
+      return projects_.get(index);
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+        int index) {
+      return projects_.get(index);
     }
 
     public static final int RESULT_FIELD_NUMBER = 3;
@@ -41718,8 +42777,8 @@ public final class Accounts {
       if (organization_ != null) {
         output.writeMessage(1, getOrganization());
       }
-      if (project_ != null) {
-        output.writeMessage(2, getProject());
+      for (int i = 0; i < projects_.size(); i++) {
+        output.writeMessage(2, projects_.get(i));
       }
       if (!getResultBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, result_);
@@ -41737,9 +42796,9 @@ public final class Accounts {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getOrganization());
       }
-      if (project_ != null) {
+      for (int i = 0; i < projects_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getProject());
+          .computeMessageSize(2, projects_.get(i));
       }
       if (!getResultBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, result_);
@@ -41764,11 +42823,8 @@ public final class Accounts {
         if (!getOrganization()
             .equals(other.getOrganization())) return false;
       }
-      if (hasProject() != other.hasProject()) return false;
-      if (hasProject()) {
-        if (!getProject()
-            .equals(other.getProject())) return false;
-      }
+      if (!getProjectsList()
+          .equals(other.getProjectsList())) return false;
       if (!getResult()
           .equals(other.getResult())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -41786,9 +42842,9 @@ public final class Accounts {
         hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
         hash = (53 * hash) + getOrganization().hashCode();
       }
-      if (hasProject()) {
-        hash = (37 * hash) + PROJECT_FIELD_NUMBER;
-        hash = (53 * hash) + getProject().hashCode();
+      if (getProjectsCount() > 0) {
+        hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getProjectsList().hashCode();
       }
       hash = (37 * hash) + RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getResult().hashCode();
@@ -41920,6 +42976,7 @@ public final class Accounts {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getProjectsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -41931,11 +42988,11 @@ public final class Accounts {
           organization_ = null;
           organizationBuilder_ = null;
         }
-        if (projectBuilder_ == null) {
-          project_ = null;
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          project_ = null;
-          projectBuilder_ = null;
+          projectsBuilder_.clear();
         }
         result_ = "";
 
@@ -41965,15 +43022,20 @@ public final class Accounts {
       @java.lang.Override
       public accounts.v1alpha1.Accounts.GetInvitationUserResponse buildPartial() {
         accounts.v1alpha1.Accounts.GetInvitationUserResponse result = new accounts.v1alpha1.Accounts.GetInvitationUserResponse(this);
+        int from_bitField0_ = bitField0_;
         if (organizationBuilder_ == null) {
           result.organization_ = organization_;
         } else {
           result.organization_ = organizationBuilder_.build();
         }
-        if (projectBuilder_ == null) {
-          result.project_ = project_;
+        if (projectsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            projects_ = java.util.Collections.unmodifiableList(projects_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.projects_ = projects_;
         } else {
-          result.project_ = projectBuilder_.build();
+          result.projects_ = projectsBuilder_.build();
         }
         result.result_ = result_;
         onBuilt();
@@ -42027,8 +43089,31 @@ public final class Accounts {
         if (other.hasOrganization()) {
           mergeOrganization(other.getOrganization());
         }
-        if (other.hasProject()) {
-          mergeProject(other.getProject());
+        if (projectsBuilder_ == null) {
+          if (!other.projects_.isEmpty()) {
+            if (projects_.isEmpty()) {
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureProjectsIsMutable();
+              projects_.addAll(other.projects_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.projects_.isEmpty()) {
+            if (projectsBuilder_.isEmpty()) {
+              projectsBuilder_.dispose();
+              projectsBuilder_ = null;
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              projectsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProjectsFieldBuilder() : null;
+            } else {
+              projectsBuilder_.addAllMessages(other.projects_);
+            }
+          }
         }
         if (!other.getResult().isEmpty()) {
           result_ = other.result_;
@@ -42062,6 +43147,7 @@ public final class Accounts {
         }
         return this;
       }
+      private int bitField0_;
 
       private accounts.v1alpha1.Accounts.Organization organization_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -42182,123 +43268,244 @@ public final class Accounts {
         return organizationBuilder_;
       }
 
-      private accounts.v1alpha1.Accounts.Project project_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> projectBuilder_;
-      /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
-       * @return Whether the project field is set.
-       */
-      public boolean hasProject() {
-        return projectBuilder_ != null || project_ != null;
+      private java.util.List<accounts.v1alpha1.Accounts.Project> projects_ =
+        java.util.Collections.emptyList();
+      private void ensureProjectsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>(projects_);
+          bitField0_ |= 0x00000001;
+         }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> projectsBuilder_;
+
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
-       * @return The project.
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      public accounts.v1alpha1.Accounts.Project getProject() {
-        if (projectBuilder_ == null) {
-          return project_ == null ? accounts.v1alpha1.Accounts.Project.getDefaultInstance() : project_;
+      public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
+        if (projectsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(projects_);
         } else {
-          return projectBuilder_.getMessage();
+          return projectsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      public Builder setProject(accounts.v1alpha1.Accounts.Project value) {
-        if (projectBuilder_ == null) {
+      public int getProjectsCount() {
+        if (projectsBuilder_ == null) {
+          return projects_.size();
+        } else {
+          return projectsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project getProjects(int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);
+        } else {
+          return projectsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder setProjects(
+          int index, accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          project_ = value;
+          ensureProjectsIsMutable();
+          projects_.set(index, value);
           onChanged();
         } else {
-          projectBuilder_.setMessage(value);
+          projectsBuilder_.setMessage(index, value);
         }
-
         return this;
       }
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      public Builder setProject(
-          accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
-        if (projectBuilder_ == null) {
-          project_ = builderForValue.build();
+      public Builder setProjects(
+          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.set(index, builderForValue.build());
           onChanged();
         } else {
-          projectBuilder_.setMessage(builderForValue.build());
+          projectsBuilder_.setMessage(index, builderForValue.build());
         }
-
         return this;
       }
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      public Builder mergeProject(accounts.v1alpha1.Accounts.Project value) {
-        if (projectBuilder_ == null) {
-          if (project_ != null) {
-            project_ =
-              accounts.v1alpha1.Accounts.Project.newBuilder(project_).mergeFrom(value).buildPartial();
-          } else {
-            project_ = value;
+      public Builder addProjects(accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
           }
+          ensureProjectsIsMutable();
+          projects_.add(value);
           onChanged();
         } else {
-          projectBuilder_.mergeFrom(value);
+          projectsBuilder_.addMessage(value);
         }
-
         return this;
       }
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      public Builder clearProject() {
-        if (projectBuilder_ == null) {
-          project_ = null;
+      public Builder addProjects(
+          int index, accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.add(index, value);
           onChanged();
         } else {
-          project_ = null;
-          projectBuilder_ = null;
+          projectsBuilder_.addMessage(index, value);
         }
-
         return this;
       }
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      public accounts.v1alpha1.Accounts.Project.Builder getProjectBuilder() {
-        
-        onChanged();
-        return getProjectFieldBuilder().getBuilder();
+      public Builder addProjects(
+          accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
       }
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectOrBuilder() {
-        if (projectBuilder_ != null) {
-          return projectBuilder_.getMessageOrBuilder();
+      public Builder addProjects(
+          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(index, builderForValue.build());
+          onChanged();
         } else {
-          return project_ == null ?
-              accounts.v1alpha1.Accounts.Project.getDefaultInstance() : project_;
+          projectsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder addAllProjects(
+          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Project> values) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, projects_);
+          onChanged();
+        } else {
+          projectsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder clearProjects() {
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          projectsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder removeProjects(int index) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.remove(index);
+          onChanged();
+        } else {
+          projectsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder getProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+          int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);  } else {
+          return projectsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+           getProjectsOrBuilderList() {
+        if (projectsBuilder_ != null) {
+          return projectsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(projects_);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder() {
+        return getProjectsFieldBuilder().addBuilder(
+            accounts.v1alpha1.Accounts.Project.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().addBuilder(
+            index, accounts.v1alpha1.Accounts.Project.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public java.util.List<accounts.v1alpha1.Accounts.Project.Builder> 
+           getProjectsBuilderList() {
+        return getProjectsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> 
-          getProjectFieldBuilder() {
-        if (projectBuilder_ == null) {
-          projectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getProjectsFieldBuilder() {
+        if (projectsBuilder_ == null) {
+          projectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder>(
-                  getProject(),
+                  projects_,
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          project_ = null;
+          projects_ = null;
         }
-        return projectBuilder_;
+        return projectsBuilder_;
       }
 
       private java.lang.Object result_ = "";
@@ -42481,10 +43688,38 @@ public final class Accounts {
     accounts.v1alpha1.Accounts.InvitationResponse getInvitationResponse();
 
     /**
-     * <code>uint32 project_id = 5 [json_name = "projectId"];</code>
-     * @return The projectId.
+     * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
      */
-    int getProjectId();
+    int getProjectsCount();
+    /**
+     * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
+     */
+    boolean containsProjects(
+        int key);
+    /**
+     * Use {@link #getProjectsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.Integer, java.lang.Integer>
+    getProjects();
+    /**
+     * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
+     */
+    java.util.Map<java.lang.Integer, java.lang.Integer>
+    getProjectsMap();
+    /**
+     * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
+     */
+
+    int getProjectsOrDefault(
+        int key,
+        int defaultValue);
+    /**
+     * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
+     */
+
+    int getProjectsOrThrow(
+        int key);
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.AgreeInvitationUserRequest}
@@ -42525,6 +43760,7 @@ public final class Accounts {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -42559,9 +43795,17 @@ public final class Accounts {
               invitationResponse_ = rawValue;
               break;
             }
-            case 40: {
-
-              projectId_ = input.readUInt32();
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                projects_ = com.google.protobuf.MapField.newMapField(
+                    ProjectsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              projects__ = input.readMessage(
+                  ProjectsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              projects_.getMutableMap().put(
+                  projects__.getKey(), projects__.getValue());
               break;
             }
             default: {
@@ -42588,6 +43832,18 @@ public final class Accounts {
       return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_AgreeInvitationUserRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetProjects();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -42729,15 +43985,85 @@ public final class Accounts {
       return result == null ? accounts.v1alpha1.Accounts.InvitationResponse.UNRECOGNIZED : result;
     }
 
-    public static final int PROJECT_ID_FIELD_NUMBER = 5;
-    private int projectId_;
+    public static final int PROJECTS_FIELD_NUMBER = 5;
+    private static final class ProjectsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.Integer, java.lang.Integer> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
+                  accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_AgreeInvitationUserRequest_ProjectsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.UINT32,
+                  0,
+                  com.google.protobuf.WireFormat.FieldType.UINT32,
+                  0);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.Integer, java.lang.Integer> projects_;
+    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+    internalGetProjects() {
+      if (projects_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ProjectsDefaultEntryHolder.defaultEntry);
+      }
+      return projects_;
+    }
+
+    public int getProjectsCount() {
+      return internalGetProjects().getMap().size();
+    }
     /**
-     * <code>uint32 project_id = 5 [json_name = "projectId"];</code>
-     * @return The projectId.
+     * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsProjects(
+        int key) {
+      
+      return internalGetProjects().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getProjectsMap()} instead.
      */
     @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getProjects() {
+      return getProjectsMap();
+    }
+    /**
+     * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getProjectsMap() {
+      return internalGetProjects().getMap();
+    }
+    /**
+     * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+
+    public int getProjectsOrDefault(
+        int key,
+        int defaultValue) {
+      
+      java.util.Map<java.lang.Integer, java.lang.Integer> map =
+          internalGetProjects().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+
+    public int getProjectsOrThrow(
+        int key) {
+      
+      java.util.Map<java.lang.Integer, java.lang.Integer> map =
+          internalGetProjects().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -42766,9 +44092,12 @@ public final class Accounts {
       if (invitationResponse_ != accounts.v1alpha1.Accounts.InvitationResponse.INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED.getNumber()) {
         output.writeEnum(4, invitationResponse_);
       }
-      if (projectId_ != 0) {
-        output.writeUInt32(5, projectId_);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeIntegerMapTo(
+          output,
+          internalGetProjects(),
+          ProjectsDefaultEntryHolder.defaultEntry,
+          5);
       unknownFields.writeTo(output);
     }
 
@@ -42791,9 +44120,15 @@ public final class Accounts {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, invitationResponse_);
       }
-      if (projectId_ != 0) {
+      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
+           : internalGetProjects().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+        projects__ = ProjectsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, projectId_);
+            .computeMessageSize(5, projects__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -42817,8 +44152,8 @@ public final class Accounts {
       if (!getGuestUserId()
           .equals(other.getGuestUserId())) return false;
       if (invitationResponse_ != other.invitationResponse_) return false;
-      if (getProjectId()
-          != other.getProjectId()) return false;
+      if (!internalGetProjects().equals(
+          other.internalGetProjects())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -42838,8 +44173,10 @@ public final class Accounts {
       hash = (53 * hash) + getGuestUserId().hashCode();
       hash = (37 * hash) + INVITATION_RESPONSE_FIELD_NUMBER;
       hash = (53 * hash) + invitationResponse_;
-      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
+      if (!internalGetProjects().getMap().isEmpty()) {
+        hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetProjects().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -42947,6 +44284,28 @@ public final class Accounts {
         return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_AgreeInvitationUserRequest_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetProjects();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMutableProjects();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -42981,8 +44340,7 @@ public final class Accounts {
 
         invitationResponse_ = 0;
 
-        projectId_ = 0;
-
+        internalGetMutableProjects().clear();
         return this;
       }
 
@@ -43009,11 +44367,13 @@ public final class Accounts {
       @java.lang.Override
       public accounts.v1alpha1.Accounts.AgreeInvitationUserRequest buildPartial() {
         accounts.v1alpha1.Accounts.AgreeInvitationUserRequest result = new accounts.v1alpha1.Accounts.AgreeInvitationUserRequest(this);
+        int from_bitField0_ = bitField0_;
         result.invitationCode_ = invitationCode_;
         result.email_ = email_;
         result.guestUserId_ = guestUserId_;
         result.invitationResponse_ = invitationResponse_;
-        result.projectId_ = projectId_;
+        result.projects_ = internalGetProjects();
+        result.projects_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -43077,9 +44437,8 @@ public final class Accounts {
         if (other.invitationResponse_ != 0) {
           setInvitationResponseValue(other.getInvitationResponseValue());
         }
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
-        }
+        internalGetMutableProjects().mergeFrom(
+            other.internalGetProjects());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -43108,6 +44467,7 @@ public final class Accounts {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object invitationCode_ = "";
       /**
@@ -43391,34 +44751,131 @@ public final class Accounts {
         return this;
       }
 
-      private int projectId_ ;
-      /**
-       * <code>uint32 project_id = 5 [json_name = "projectId"];</code>
-       * @return The projectId.
-       */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
+      private com.google.protobuf.MapField<
+          java.lang.Integer, java.lang.Integer> projects_;
+      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+      internalGetProjects() {
+        if (projects_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ProjectsDefaultEntryHolder.defaultEntry);
+        }
+        return projects_;
+      }
+      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+      internalGetMutableProjects() {
+        onChanged();;
+        if (projects_ == null) {
+          projects_ = com.google.protobuf.MapField.newMapField(
+              ProjectsDefaultEntryHolder.defaultEntry);
+        }
+        if (!projects_.isMutable()) {
+          projects_ = projects_.copy();
+        }
+        return projects_;
+      }
+
+      public int getProjectsCount() {
+        return internalGetProjects().getMap().size();
       }
       /**
-       * <code>uint32 project_id = 5 [json_name = "projectId"];</code>
-       * @param value The projectId to set.
-       * @return This builder for chaining.
+       * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
        */
-      public Builder setProjectId(int value) {
+
+      @java.lang.Override
+      public boolean containsProjects(
+          int key) {
         
-        projectId_ = value;
-        onChanged();
+        return internalGetProjects().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getProjectsMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getProjects() {
+        return getProjectsMap();
+      }
+      /**
+       * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getProjectsMap() {
+        return internalGetProjects().getMap();
+      }
+      /**
+       * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
+       */
+      @java.lang.Override
+
+      public int getProjectsOrDefault(
+          int key,
+          int defaultValue) {
+        
+        java.util.Map<java.lang.Integer, java.lang.Integer> map =
+            internalGetProjects().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
+       */
+      @java.lang.Override
+
+      public int getProjectsOrThrow(
+          int key) {
+        
+        java.util.Map<java.lang.Integer, java.lang.Integer> map =
+            internalGetProjects().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearProjects() {
+        internalGetMutableProjects().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>uint32 project_id = 5 [json_name = "projectId"];</code>
-       * @return This builder for chaining.
+       * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
        */
-      public Builder clearProjectId() {
+
+      public Builder removeProjects(
+          int key) {
         
-        projectId_ = 0;
-        onChanged();
+        internalGetMutableProjects().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, java.lang.Integer>
+      getMutableProjects() {
+        return internalGetMutableProjects().getMutableMap();
+      }
+      /**
+       * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
+       */
+      public Builder putProjects(
+          int key,
+          int value) {
+        
+        
+        internalGetMutableProjects().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;uint32, uint32&gt; projects = 5 [json_name = "projects"];</code>
+       */
+
+      public Builder putAllProjects(
+          java.util.Map<java.lang.Integer, java.lang.Integer> values) {
+        internalGetMutableProjects().getMutableMap()
+            .putAll(values);
         return this;
       }
       @java.lang.Override
@@ -89973,6 +91430,11 @@ public final class Accounts {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_accounts_v1alpha1_ListUserPaginationResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_accounts_v1alpha1_ProjectDetail_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_accounts_v1alpha1_ProjectDetail_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_accounts_v1alpha1_SendInvitationUserRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -89997,6 +91459,11 @@ public final class Accounts {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_accounts_v1alpha1_AgreeInvitationUserRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_accounts_v1alpha1_AgreeInvitationUserRequest_ProjectsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_accounts_v1alpha1_AgreeInvitationUserRequest_ProjectsEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_accounts_v1alpha1_AgreeInvitationUserResponse_descriptor;
   private static final 
@@ -90400,288 +91867,293 @@ public final class Accounts {
       "t\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001(\005R\005limit\"e\n" +
       "\032ListUserPaginationResponse\022\024\n\005count\030\001 \001" +
       "(\003R\005count\0221\n\005users\030\002 \003(\0132\033.accounts.v1al" +
-      "pha1.UserListR\005users\"\210\001\n\031SendInvitationU" +
-      "serRequest\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005email\030" +
-      "\002 \001(\tR\005email\022\035\n\nproject_id\030\003 \001(\rR\tprojec" +
-      "tId\022\"\n\ruser_id_admin\030\004 \001(\tR\013userIdAdmin\"" +
-      "\330\001\n\032SendInvitationUserResponse\022C\n\014organi" +
-      "zation\030\001 \001(\0132\037.accounts.v1alpha1.Organiz" +
-      "ationR\014organization\0224\n\007project\030\002 \001(\0132\032.a" +
-      "ccounts.v1alpha1.ProjectR\007project\022\'\n\017inv" +
-      "itation_code\030\003 \001(\tR\016invitationCode\022\026\n\006re" +
-      "sult\030\004 \001(\tR\006result\"Y\n\030GetInvitationUserR" +
-      "equest\022\'\n\017invitation_code\030\001 \001(\tR\016invitat" +
-      "ionCode\022\024\n\005email\030\002 \001(\tR\005email\"\256\001\n\031GetInv" +
-      "itationUserResponse\022C\n\014organization\030\001 \001(" +
-      "\0132\037.accounts.v1alpha1.OrganizationR\014orga" +
-      "nization\0224\n\007project\030\002 \001(\0132\032.accounts.v1a" +
-      "lpha1.ProjectR\007project\022\026\n\006result\030\003 \001(\tR\006" +
-      "result\"\366\001\n\032AgreeInvitationUserRequest\022\'\n" +
-      "\017invitation_code\030\001 \001(\tR\016invitationCode\022\024" +
-      "\n\005email\030\002 \001(\tR\005email\022\"\n\rguest_user_id\030\003 " +
-      "\001(\tR\013guestUserId\022V\n\023invitation_response\030" +
-      "\004 \001(\0162%.accounts.v1alpha1.InvitationResp" +
-      "onseR\022invitationResponse\022\035\n\nproject_id\030\005" +
-      " \001(\rR\tprojectId\"5\n\033AgreeInvitationUserRe" +
-      "sponse\022\026\n\006result\030\001 \001(\tR\006result\"\262\001\n\003Rol\022\016" +
-      "\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\035\n\npr" +
+      "pha1.UserListR\005users\"G\n\rProjectDetail\022\035\n" +
+      "\nproject_id\030\001 \001(\rR\tprojectId\022\027\n\007role_id\030" +
+      "\002 \001(\rR\006roleId\"\247\001\n\031SendInvitationUserRequ" +
+      "est\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005email\030\002 \001(\tR\005" +
+      "email\022<\n\010projects\030\003 \003(\0132 .accounts.v1alp" +
+      "ha1.ProjectDetailR\010projects\022\"\n\ruser_id_a" +
+      "dmin\030\004 \001(\tR\013userIdAdmin\"\332\001\n\032SendInvitati" +
+      "onUserResponse\022C\n\014organization\030\001 \001(\0132\037.a" +
+      "ccounts.v1alpha1.OrganizationR\014organizat" +
+      "ion\0226\n\010projects\030\002 \003(\0132\032.accounts.v1alpha" +
+      "1.ProjectR\010projects\022\'\n\017invitation_code\030\003" +
+      " \001(\tR\016invitationCode\022\026\n\006result\030\004 \001(\tR\006re" +
+      "sult\"Y\n\030GetInvitationUserRequest\022\'\n\017invi" +
+      "tation_code\030\001 \001(\tR\016invitationCode\022\024\n\005ema" +
+      "il\030\002 \001(\tR\005email\"\260\001\n\031GetInvitationUserRes" +
+      "ponse\022C\n\014organization\030\001 \001(\0132\037.accounts.v" +
+      "1alpha1.OrganizationR\014organization\0226\n\010pr" +
+      "ojects\030\002 \003(\0132\032.accounts.v1alpha1.Project" +
+      "R\010projects\022\026\n\006result\030\003 \001(\tR\006result\"\355\002\n\032A" +
+      "greeInvitationUserRequest\022\'\n\017invitation_" +
+      "code\030\001 \001(\tR\016invitationCode\022\024\n\005email\030\002 \001(" +
+      "\tR\005email\022\"\n\rguest_user_id\030\003 \001(\tR\013guestUs" +
+      "erId\022V\n\023invitation_response\030\004 \001(\0162%.acco" +
+      "unts.v1alpha1.InvitationResponseR\022invita" +
+      "tionResponse\022W\n\010projects\030\005 \003(\0132;.account" +
+      "s.v1alpha1.AgreeInvitationUserRequest.Pr" +
+      "ojectsEntryR\010projects\032;\n\rProjectsEntry\022\020" +
+      "\n\003key\030\001 \001(\rR\003key\022\024\n\005value\030\002 \001(\rR\005value:\002" +
+      "8\001\"5\n\033AgreeInvitationUserResponse\022\026\n\006res" +
+      "ult\030\001 \001(\tR\006result\"\262\001\n\003Rol\022\016\n\002id\030\001 \001(\rR\002i" +
+      "d\022\022\n\004name\030\002 \001(\tR\004name\022\035\n\nproject_id\030\003 \001(" +
+      "\rR\tprojectId\022\'\n\017organization_id\030\004 \001(\rR\016o" +
+      "rganizationId\022?\n\013permissions\030\005 \003(\0132\035.acc" +
+      "ounts.v1alpha1.PermissionR\013permissions\"\341" +
+      "\001\n\021CreateRoleRequest\022\022\n\004name\030\001 \001(\tR\004name" +
+      "\022 \n\013description\030\002 \001(\tR\013description\022\035\n\npr" +
       "oject_id\030\003 \001(\rR\tprojectId\022\'\n\017organizatio" +
-      "n_id\030\004 \001(\rR\016organizationId\022?\n\013permission" +
-      "s\030\005 \003(\0132\035.accounts.v1alpha1.PermissionR\013" +
-      "permissions\"\341\001\n\021CreateRoleRequest\022\022\n\004nam" +
-      "e\030\001 \001(\tR\004name\022 \n\013description\030\002 \001(\tR\013desc" +
-      "ription\022\035\n\nproject_id\030\003 \001(\rR\tprojectId\022\'" +
-      "\n\017organization_id\030\004 \001(\rR\016organizationId\022" +
-      "\'\n\017type_permission\030\005 \001(\tR\016typePermission" +
-      "\022%\n\016permission_ids\030\006 \003(\rR\rpermissionIds\"" +
-      "b\n\021UpdateRoleRequest\022\025\n\006rol_id\030\001 \001(\rR\005ro" +
-      "lId\0226\n\003rol\030\002 \001(\0132$.accounts.v1alpha1.Cre" +
-      "ateRoleRequestR\003rol\"*\n\021GetOneRoleRequest" +
-      "\022\025\n\006rol_id\030\001 \001(\rR\005rolId\"\334\001\n\022GetOneRoleRe" +
-      "sponse\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004na" +
-      "me\022\'\n\017organization_id\030\003 \001(\rR\016organizatio" +
-      "nId\022\035\n\nproject_id\030\004 \001(\rR\tprojectId\022?\n\013pe" +
-      "rmissions\030\005 \003(\0132\035.accounts.v1alpha1.Perm" +
-      "issionR\013permissions\022\031\n\010is_admin\030\006 \001(\010R\007i" +
-      "sAdmin\"*\n\021DeleteRoleRequest\022\025\n\006rol_id\030\001 " +
-      "\001(\rR\005rolId\"Z\n\020ListRolesRequest\022\035\n\nprojec" +
-      "t_id\030\001 \001(\rR\tprojectId\022\'\n\017organization_id" +
-      "\030\002 \001(\rR\016organizationId\"A\n\021ListRolesRespo" +
-      "nse\022,\n\005roles\030\001 \003(\0132\026.accounts.v1alpha1.R" +
-      "olR\005roles\"L\n\022CreateRoleResponse\022\020\n\003msg\030\001" +
-      " \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\022\016\n\002id\030\003 " +
-      "\001(\rR\002id\"<\n\022UpdateRoleResponse\022\020\n\003msg\030\001 \001" +
-      "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"<\n\022DeleteR" +
-      "oleResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002" +
-      " \001(\tR\005error\"\372\001\n\007Project\022\016\n\002id\030\001 \001(\005R\002id\022" +
-      "\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005imag" +
-      "e\022\'\n\017organization_id\030\004 \001(\rR\016organization" +
-      "Id\022 \n\013description\030\005 \001(\tR\013description\022\035\n\n" +
-      "created_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_a" +
-      "t\030\007 \001(\tR\tupdatedAt\022,\n\005roles\030\010 \003(\0132\026.acco" +
-      "unts.v1alpha1.RolR\005roles\"\244\001\n\024CreateProje" +
-      "ctRequest\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013descrip" +
-      "tion\030\002 \001(\tR\013description\022\024\n\005image\030\003 \001(\tR\005" +
-      "image\022\'\n\017organization_id\030\004 \001(\rR\016organiza" +
-      "tionId\022\027\n\007user_id\030\005 \001(\tR\006userId\"&\n\024GetOn" +
-      "eProjectRequest\022\016\n\002id\030\001 \001(\005R\002id\"&\n\024Delet" +
-      "eProjectRequest\022\016\n\002id\030\001 \001(\005R\002id\"=\n\022ListP" +
-      "rojectRequest\022\'\n\017organization_id\030\001 \001(\rR\016" +
-      "organizationId\"i\n\024UpdateProjectRequest\022\016" +
-      "\n\002id\030\001 \001(\005R\002id\022A\n\007project\030\002 \001(\0132\'.accoun" +
-      "ts.v1alpha1.CreateProjectRequestR\007projec" +
-      "t\"O\n\025CreateProjectResponse\022\020\n\003msg\030\001 \001(\tR" +
-      "\003msg\022\024\n\005error\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\rR\002" +
-      "id\"?\n\025UpdateProjectResponse\022\020\n\003msg\030\001 \001(\t" +
-      "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"?\n\025DeletePro" +
-      "jectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030" +
-      "\002 \001(\tR\005error\"\302\002\n\025GetOneProjectResponse\022\016" +
-      "\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005im" +
-      "age\030\003 \001(\tR\005image\022\'\n\017organization_id\030\004 \001(" +
-      "\rR\016organizationId\022 \n\013description\030\005 \001(\tR\013" +
-      "description\022\035\n\ncreated_at\030\006 \001(\tR\tcreated" +
-      "At\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\0223\n\007mem" +
-      "bers\030\010 \003(\0132\031.accounts.v1alpha1.MemberR\007m" +
-      "embers\0221\n\005owner\030\t \001(\0132\033.accounts.v1alpha" +
-      "1.UserListR\005owner\"M\n\023ListProjectResponse" +
-      "\0226\n\010projects\030\001 \003(\0132\032.accounts.v1alpha1.P" +
-      "rojectR\010projects\"L\n\034ListProjectPaginatio" +
-      "nRequest\022\026\n\006offset\030\001 \001(\005R\006offset\022\024\n\005limi" +
-      "t\030\002 \001(\005R\005limit\"m\n\035ListProjectPaginationR" +
-      "esponse\0226\n\010projects\030\001 \003(\0132\032.accounts.v1a" +
-      "lpha1.ProjectR\010projects\022\024\n\005count\030\002 \001(\003R\005" +
-      "count\"D\n\nPermission\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004n" +
-      "ame\030\002 \001(\tR\004name\022\022\n\004type\030\003 \001(\tR\004type\"Y\n\026L" +
-      "istPermissionResponse\022?\n\013permissions\030\001 \003" +
+      "n_id\030\004 \001(\rR\016organizationId\022\'\n\017type_permi" +
+      "ssion\030\005 \001(\tR\016typePermission\022%\n\016permissio" +
+      "n_ids\030\006 \003(\rR\rpermissionIds\"b\n\021UpdateRole" +
+      "Request\022\025\n\006rol_id\030\001 \001(\rR\005rolId\0226\n\003rol\030\002 " +
+      "\001(\0132$.accounts.v1alpha1.CreateRoleReques" +
+      "tR\003rol\"*\n\021GetOneRoleRequest\022\025\n\006rol_id\030\001 " +
+      "\001(\rR\005rolId\"\334\001\n\022GetOneRoleResponse\022\016\n\002id\030" +
+      "\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\'\n\017organiz" +
+      "ation_id\030\003 \001(\rR\016organizationId\022\035\n\nprojec" +
+      "t_id\030\004 \001(\rR\tprojectId\022?\n\013permissions\030\005 \003" +
       "(\0132\035.accounts.v1alpha1.PermissionR\013permi" +
-      "ssions\"W\n\027AssignPermissionRequest\022\027\n\007use" +
-      "r_id\030\001 \001(\rR\006userId\022#\n\rpermission_id\030\002 \001(" +
-      "\rR\014permissionId\"+\n\025ListPermissionRequest" +
-      "\022\022\n\004type\030\001 \001(\tR\004type\"A\n\027CreatePermission" +
-      "Request\022\022\n\004name\030\001 \001(\tR\004name\022\022\n\004type\030\002 \001(" +
-      "\tR\004type\"f\n\027UpdatePermissionRequest\022#\n\rpe" +
-      "rmission_id\030\001 \001(\rR\014permissionId\022\022\n\004name\030" +
-      "\002 \001(\tR\004name\022\022\n\004type\030\003 \001(\tR\004type\">\n\027GetOn" +
-      "ePermissionRequest\022#\n\rpermission_id\030\001 \001(" +
-      "\rR\014permissionId\"R\n\030GetOnePermissionRespo" +
-      "nse\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022" +
-      "\022\n\004type\030\003 \001(\tR\004type\">\n\027DeletePermissionR" +
-      "equest\022#\n\rpermission_id\030\001 \001(\rR\014permissio" +
-      "nId\"B\n\030UpdatePermissionResponse\022\020\n\003msg\030\001" +
-      " \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"B\n\030Delet" +
-      "ePermissionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n" +
-      "\005error\030\002 \001(\tR\005error\"B\n\030CreatePermissionR" +
-      "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\t" +
-      "R\005error\"\212\001\n\006Member\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007us" +
-      "er_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR" +
-      "\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022" +
-      "\033\n\tis_active\030\005 \001(\010R\010isActive\"q\n\023ProjectO" +
-      "rganization\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(" +
-      "\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013descrip" +
-      "tion\030\004 \001(\tR\013description\"j\n\014Organization\022" +
-      "\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005i" +
-      "mage\030\003 \001(\tR\005image\022 \n\013description\030\004 \001(\tR\013" +
-      "description\"\200\001\n\031CreateOrganizationReques" +
-      "t\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005image\030\002 \001(\tR\005im" +
-      "age\022\027\n\007user_id\030\003 \001(\tR\006userId\022 \n\013descript" +
-      "ion\030\004 \001(\tR\013description\"\031\n\027ListOrganizati" +
-      "onRequest\"D\n\031GetOneOrganizationRequest\022\'" +
-      "\n\017organization_id\030\001 \001(\rR\016organizationId\"" +
-      "\220\001\n\031UpdateOrganizationRequest\022\'\n\017organiz" +
-      "ation_id\030\001 \001(\rR\016organizationId\022\022\n\004name\030\002" +
-      " \001(\tR\004name\022 \n\013description\030\003 \001(\tR\013descrip" +
-      "tion\022\024\n\005image\030\004 \001(\tR\005image\"D\n\031DeleteOrga" +
-      "nizationRequest\022\'\n\017organization_id\030\001 \001(\r" +
-      "R\016organizationId\"\244\002\n\032GetOneOrganizationR" +
-      "esponse\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004n" +
-      "ame\022\024\n\005image\030\003 \001(\tR\005image\022B\n\010projects\030\004 " +
-      "\003(\0132&.accounts.v1alpha1.ProjectOrganizat" +
-      "ionR\010projects\0223\n\007menbers\030\005 \003(\0132\031.account" +
-      "s.v1alpha1.MemberR\007menbers\022 \n\013descriptio" +
-      "n\030\006 \001(\tR\013description\0221\n\005owner\030\007 \001(\0132\033.ac" +
-      "counts.v1alpha1.UserListR\005owner\"a\n\030ListO" +
-      "rganizationResponse\022E\n\rorganizations\030\001 \003" +
-      "(\0132\037.accounts.v1alpha1.OrganizationR\rorg" +
-      "anizations\"\206\001\n\032CreateOrganizationRespons" +
-      "e\022\020\n\003msg\030\001 \001(\tR\003msg\0220\n\024role_id_organizat" +
-      "ion\030\002 \001(\rR\022roleIdOrganization\022\024\n\005error\030\003" +
-      " \001(\tR\005error\022\016\n\002id\030\004 \001(\rR\002id\"D\n\032UpdateOrg" +
-      "anizationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005e" +
-      "rror\030\002 \001(\tR\005error\"D\n\032DeleteOrganizationR" +
-      "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\t" +
-      "R\005error\"\027\n\025GetListUserDexRequest\"R\n\026GetL" +
-      "istUserDexResponse\0228\n\tusers_dex\030\001 \003(\0132\033." +
-      "accounts.v1alpha1.UsersDexR\010usersDex\"i\n\024" +
-      "GetOneUserDexRequest\022\027\n\007user_id\030\001 \001(\tR\006u" +
-      "serId\0228\n\004user\030\002 \001(\0132$.accounts.v1alpha1." +
-      "CreateUserRequestR\004user\"\322\005\n\025GetOneUserDe" +
-      "xResponse\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001" +
-      "(\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstNam" +
-      "e\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022\024\n\005email\030" +
-      "\005 \001(\tR\005email\022\033\n\tis_active\030\006 \001(\010R\010isActiv" +
-      "e\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupda" +
-      "ted_at\030\010 \001(\tR\tupdatedAt\022,\n\005roles\030\t \003(\0132\026" +
-      ".accounts.v1alpha1.RolR\005roles\022?\n\013permiss" +
-      "ions\030\n \003(\0132\035.accounts.v1alpha1.Permissio" +
-      "nR\013permissions\022\"\n\ris_super_user\030\013 \001(\010R\013i" +
-      "sSuperUser\022E\n\rorganizations\030\014 \003(\0132\037.acco" +
-      "unts.v1alpha1.OrganizationR\rorganization" +
-      "s\022\020\n\003msg\030\r \001(\tR\003msg\0226\n\010projects\030\016 \003(\0132\032." +
-      "accounts.v1alpha1.ProjectR\010projects\022!\n\014p" +
-      "hone_number\030\017 \001(\tR\013phoneNumber\022\030\n\007countr" +
-      "y\030\020 \001(\tR\007country\022\022\n\004city\030\021 \001(\tR\004city\022\031\n\010" +
-      "zip_code\030\022 \001(\tR\007zipCode\022\030\n\007address\030\023 \001(\t" +
-      "R\007address\022\024\n\005state\030\024 \001(\tR\005state\022#\n\remoji" +
-      "_country\030\025 \001(\tR\014emojiCountry*d\n\022Invitati" +
-      "onResponse\022,\n(INVITATION_RESPONSE_ACCEPT" +
-      "ED_UNSPECIFIED\020\000\022 \n\034INVITATION_RESPONSE_" +
-      "REJECTED\020\0012\307 \n\016AccountService\022Y\n\nCreateU" +
-      "ser\022$.accounts.v1alpha1.CreateUserReques" +
-      "t\032%.accounts.v1alpha1.CreateUserResponse" +
-      "\022S\n\010ListUser\022\".accounts.v1alpha1.ListUse" +
-      "rRequest\032#.accounts.v1alpha1.ListUserRes" +
-      "ponse\022Y\n\nGetOneUser\022$.accounts.v1alpha1." +
-      "GetOneUserRequest\032%.accounts.v1alpha1.Ge" +
-      "tOneUserResponse\022Y\n\nUpdateUser\022$.account" +
-      "s.v1alpha1.UpdateUserRequest\032%.accounts." +
-      "v1alpha1.UpdateUserResponse\022Y\n\nDeleteUse" +
-      "r\022$.accounts.v1alpha1.DeleteUserRequest\032" +
-      "%.accounts.v1alpha1.DeleteUserResponse\022q" +
-      "\n\022ListUserPagination\022,.accounts.v1alpha1" +
-      ".ListUserPaginationRequest\032-.accounts.v1" +
-      "alpha1.ListUserPaginationResponse\022q\n\022Sen" +
-      "dInvitationUser\022,.accounts.v1alpha1.Send" +
-      "InvitationUserRequest\032-.accounts.v1alpha" +
-      "1.SendInvitationUserResponse\022n\n\021GetInvit" +
-      "ationUser\022+.accounts.v1alpha1.GetInvitat" +
-      "ionUserRequest\032,.accounts.v1alpha1.GetIn" +
-      "vitationUserResponse\022t\n\023AgreeInvitationU" +
-      "ser\022-.accounts.v1alpha1.AgreeInvitationU" +
-      "serRequest\032..accounts.v1alpha1.AgreeInvi" +
-      "tationUserResponse\022k\n\020CreatePermission\022*" +
-      ".accounts.v1alpha1.CreatePermissionReque" +
-      "st\032+.accounts.v1alpha1.CreatePermissionR" +
-      "esponse\022e\n\016ListPermission\022(.accounts.v1a" +
-      "lpha1.ListPermissionRequest\032).accounts.v" +
-      "1alpha1.ListPermissionResponse\022k\n\020GetOne" +
-      "Permission\022*.accounts.v1alpha1.GetOnePer" +
-      "missionRequest\032+.accounts.v1alpha1.GetOn" +
-      "ePermissionResponse\022k\n\020UpdatePermission\022" +
-      "*.accounts.v1alpha1.UpdatePermissionRequ" +
-      "est\032+.accounts.v1alpha1.UpdatePermission" +
-      "Response\022k\n\020DeletePermission\022*.accounts." +
-      "v1alpha1.DeletePermissionRequest\032+.accou" +
-      "nts.v1alpha1.DeletePermissionResponse\022q\n" +
-      "\022CreateOrganization\022,.accounts.v1alpha1." +
-      "CreateOrganizationRequest\032-.accounts.v1a" +
-      "lpha1.CreateOrganizationResponse\022k\n\020List" +
-      "Organization\022*.accounts.v1alpha1.ListOrg" +
-      "anizationRequest\032+.accounts.v1alpha1.Lis" +
-      "tOrganizationResponse\022q\n\022GetOneOrganizat" +
-      "ion\022,.accounts.v1alpha1.GetOneOrganizati" +
-      "onRequest\032-.accounts.v1alpha1.GetOneOrga" +
-      "nizationResponse\022q\n\022UpdateOrganization\022," +
-      ".accounts.v1alpha1.UpdateOrganizationReq" +
-      "uest\032-.accounts.v1alpha1.UpdateOrganizat" +
-      "ionResponse\022q\n\022DeleteOrganization\022,.acco" +
-      "unts.v1alpha1.DeleteOrganizationRequest\032" +
-      "-.accounts.v1alpha1.DeleteOrganizationRe" +
-      "sponse\022Y\n\nCreateRole\022$.accounts.v1alpha1" +
-      ".CreateRoleRequest\032%.accounts.v1alpha1.C" +
-      "reateRoleResponse\022V\n\tListRoles\022#.account" +
-      "s.v1alpha1.ListRolesRequest\032$.accounts.v" +
-      "1alpha1.ListRolesResponse\022Y\n\nUpdateRole\022" +
-      "$.accounts.v1alpha1.UpdateRoleRequest\032%." +
-      "accounts.v1alpha1.UpdateRoleResponse\022Y\n\n" +
-      "GetOneRole\022$.accounts.v1alpha1.GetOneRol" +
-      "eRequest\032%.accounts.v1alpha1.GetOneRoleR" +
-      "esponse\022Y\n\nDeleteRole\022$.accounts.v1alpha" +
-      "1.DeleteRoleRequest\032%.accounts.v1alpha1." +
-      "DeleteRoleResponse\022b\n\rCreateProject\022\'.ac" +
-      "counts.v1alpha1.CreateProjectRequest\032(.a" +
-      "ccounts.v1alpha1.CreateProjectResponse\022b" +
-      "\n\rGetOneProject\022\'.accounts.v1alpha1.GetO" +
-      "neProjectRequest\032(.accounts.v1alpha1.Get" +
-      "OneProjectResponse\022b\n\rUpdateProject\022\'.ac" +
-      "counts.v1alpha1.UpdateProjectRequest\032(.a" +
-      "ccounts.v1alpha1.UpdateProjectResponse\022b" +
-      "\n\rDeleteProject\022\'.accounts.v1alpha1.Dele" +
-      "teProjectRequest\032(.accounts.v1alpha1.Del" +
-      "eteProjectResponse\022\\\n\013ListProject\022%.acco" +
-      "unts.v1alpha1.ListProjectRequest\032&.accou" +
-      "nts.v1alpha1.ListProjectResponse\022e\n\016GetL" +
-      "istUserDex\022(.accounts.v1alpha1.GetListUs" +
-      "erDexRequest\032).accounts.v1alpha1.GetList" +
-      "UserDexResponse\022b\n\rGetOneUserDex\022\'.accou" +
-      "nts.v1alpha1.GetOneUserDexRequest\032(.acco" +
-      "unts.v1alpha1.GetOneUserDexResponse\022V\n\tC" +
-      "heckUser\022#.accounts.v1alpha1.CheckUserRe" +
-      "quest\032$.accounts.v1alpha1.CheckUserRespo" +
-      "nse\022z\n\025SendVerificationEmail\022/.accounts." +
-      "v1alpha1.SendVerificationEmailRequest\0320." +
-      "accounts.v1alpha1.SendVerificationEmailR" +
-      "esponse\022\\\n\013VerifyEmail\022%.accounts.v1alph" +
-      "a1.VerifyEmailRequest\032&.accounts.v1alpha" +
-      "1.VerifyEmailResponse\022b\n\rListCountries\022\'" +
-      ".accounts.v1alpha1.ListCountriesRequest\032" +
-      "(.accounts.v1alpha1.ListCountriesRespons" +
-      "e\022b\n\rGetOneCountry\022\'.accounts.v1alpha1.G" +
-      "etOneCountryRequest\032(.accounts.v1alpha1." +
-      "GetOneCountryResponse\022_\n\014CreateApiKey\022&." +
-      "accounts.v1alpha1.CreateApiKeyRequest\032\'." +
-      "accounts.v1alpha1.CreateApiKeyResponse\022_" +
-      "\n\014GetOneApiKey\022&.accounts.v1alpha1.GetOn" +
-      "eApiKeyRequest\032\'.accounts.v1alpha1.GetOn" +
-      "eApiKeyResponse\022Y\n\nListApiKey\022$.accounts" +
-      ".v1alpha1.ListApiKeyRequest\032%.accounts.v" +
-      "1alpha1.ListApiKeyResponse\022_\n\014UpdateApiK" +
-      "ey\022&.accounts.v1alpha1.UpdateApiKeyReque",
-      "st\032\'.accounts.v1alpha1.UpdateApiKeyRespo" +
-      "nse\022_\n\014DeleteApiKey\022&.accounts.v1alpha1." +
-      "DeleteApiKeyRequest\032\'.accounts.v1alpha1." +
-      "DeleteApiKeyResponseB4Z2github.com/cuemb" +
-      "y/ccp-sdk/gen/go/accounts/v1alpha1b\006prot" +
-      "o3"
+      "ssions\022\031\n\010is_admin\030\006 \001(\010R\007isAdmin\"*\n\021Del" +
+      "eteRoleRequest\022\025\n\006rol_id\030\001 \001(\rR\005rolId\"Z\n" +
+      "\020ListRolesRequest\022\035\n\nproject_id\030\001 \001(\rR\tp" +
+      "rojectId\022\'\n\017organization_id\030\002 \001(\rR\016organ" +
+      "izationId\"A\n\021ListRolesResponse\022,\n\005roles\030" +
+      "\001 \003(\0132\026.accounts.v1alpha1.RolR\005roles\"L\n\022" +
+      "CreateRoleResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005" +
+      "error\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\rR\002id\"<\n\022Up" +
+      "dateRoleResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005er" +
+      "ror\030\002 \001(\tR\005error\"<\n\022DeleteRoleResponse\022\020" +
+      "\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\372" +
+      "\001\n\007Project\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\t" +
+      "R\004name\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017organiza" +
+      "tion_id\030\004 \001(\rR\016organizationId\022 \n\013descrip" +
+      "tion\030\005 \001(\tR\013description\022\035\n\ncreated_at\030\006 " +
+      "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupda" +
+      "tedAt\022,\n\005roles\030\010 \003(\0132\026.accounts.v1alpha1" +
+      ".RolR\005roles\"\244\001\n\024CreateProjectRequest\022\022\n\004" +
+      "name\030\001 \001(\tR\004name\022 \n\013description\030\002 \001(\tR\013d" +
+      "escription\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017orga" +
+      "nization_id\030\004 \001(\rR\016organizationId\022\027\n\007use" +
+      "r_id\030\005 \001(\tR\006userId\"&\n\024GetOneProjectReque" +
+      "st\022\016\n\002id\030\001 \001(\005R\002id\"&\n\024DeleteProjectReque" +
+      "st\022\016\n\002id\030\001 \001(\005R\002id\"=\n\022ListProjectRequest" +
+      "\022\'\n\017organization_id\030\001 \001(\rR\016organizationI" +
+      "d\"i\n\024UpdateProjectRequest\022\016\n\002id\030\001 \001(\005R\002i" +
+      "d\022A\n\007project\030\002 \001(\0132\'.accounts.v1alpha1.C" +
+      "reateProjectRequestR\007project\"O\n\025CreatePr" +
+      "ojectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error" +
+      "\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\rR\002id\"?\n\025UpdateP" +
+      "rojectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005erro" +
+      "r\030\002 \001(\tR\005error\"?\n\025DeleteProjectResponse\022" +
+      "\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"" +
+      "\302\002\n\025GetOneProjectResponse\022\016\n\002id\030\001 \001(\005R\002i" +
+      "d\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005im" +
+      "age\022\'\n\017organization_id\030\004 \001(\rR\016organizati" +
+      "onId\022 \n\013description\030\005 \001(\tR\013description\022\035" +
+      "\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated" +
+      "_at\030\007 \001(\tR\tupdatedAt\0223\n\007members\030\010 \003(\0132\031." +
+      "accounts.v1alpha1.MemberR\007members\0221\n\005own" +
+      "er\030\t \001(\0132\033.accounts.v1alpha1.UserListR\005o" +
+      "wner\"M\n\023ListProjectResponse\0226\n\010projects\030" +
+      "\001 \003(\0132\032.accounts.v1alpha1.ProjectR\010proje" +
+      "cts\"L\n\034ListProjectPaginationRequest\022\026\n\006o" +
+      "ffset\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001(\005R\005limi" +
+      "t\"m\n\035ListProjectPaginationResponse\0226\n\010pr" +
+      "ojects\030\001 \003(\0132\032.accounts.v1alpha1.Project" +
+      "R\010projects\022\024\n\005count\030\002 \001(\003R\005count\"D\n\nPerm" +
+      "ission\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004na" +
+      "me\022\022\n\004type\030\003 \001(\tR\004type\"Y\n\026ListPermission" +
+      "Response\022?\n\013permissions\030\001 \003(\0132\035.accounts" +
+      ".v1alpha1.PermissionR\013permissions\"W\n\027Ass" +
+      "ignPermissionRequest\022\027\n\007user_id\030\001 \001(\rR\006u" +
+      "serId\022#\n\rpermission_id\030\002 \001(\rR\014permission" +
+      "Id\"+\n\025ListPermissionRequest\022\022\n\004type\030\001 \001(" +
+      "\tR\004type\"A\n\027CreatePermissionRequest\022\022\n\004na" +
+      "me\030\001 \001(\tR\004name\022\022\n\004type\030\002 \001(\tR\004type\"f\n\027Up" +
+      "datePermissionRequest\022#\n\rpermission_id\030\001" +
+      " \001(\rR\014permissionId\022\022\n\004name\030\002 \001(\tR\004name\022\022" +
+      "\n\004type\030\003 \001(\tR\004type\">\n\027GetOnePermissionRe" +
+      "quest\022#\n\rpermission_id\030\001 \001(\rR\014permission" +
+      "Id\"R\n\030GetOnePermissionResponse\022\016\n\002id\030\001 \001" +
+      "(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004type\030\003 \001(\t" +
+      "R\004type\">\n\027DeletePermissionRequest\022#\n\rper" +
+      "mission_id\030\001 \001(\rR\014permissionId\"B\n\030Update" +
+      "PermissionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005" +
+      "error\030\002 \001(\tR\005error\"B\n\030DeletePermissionRe" +
+      "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR" +
+      "\005error\"B\n\030CreatePermissionResponse\022\020\n\003ms" +
+      "g\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\212\001\n\006M" +
+      "ember\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006" +
+      "userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n" +
+      "\tlast_name\030\004 \001(\tR\010lastName\022\033\n\tis_active\030" +
+      "\005 \001(\010R\010isActive\"q\n\023ProjectOrganization\022\016" +
+      "\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005im" +
+      "age\030\003 \001(\tR\005image\022 \n\013description\030\004 \001(\tR\013d" +
+      "escription\"j\n\014Organization\022\016\n\002id\030\001 \001(\rR\002" +
+      "id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005i" +
+      "mage\022 \n\013description\030\004 \001(\tR\013description\"\200" +
+      "\001\n\031CreateOrganizationRequest\022\022\n\004name\030\001 \001" +
+      "(\tR\004name\022\024\n\005image\030\002 \001(\tR\005image\022\027\n\007user_i" +
+      "d\030\003 \001(\tR\006userId\022 \n\013description\030\004 \001(\tR\013de" +
+      "scription\"\031\n\027ListOrganizationRequest\"D\n\031" +
+      "GetOneOrganizationRequest\022\'\n\017organizatio" +
+      "n_id\030\001 \001(\rR\016organizationId\"\220\001\n\031UpdateOrg" +
+      "anizationRequest\022\'\n\017organization_id\030\001 \001(" +
+      "\rR\016organizationId\022\022\n\004name\030\002 \001(\tR\004name\022 \n" +
+      "\013description\030\003 \001(\tR\013description\022\024\n\005image" +
+      "\030\004 \001(\tR\005image\"D\n\031DeleteOrganizationReque" +
+      "st\022\'\n\017organization_id\030\001 \001(\rR\016organizatio" +
+      "nId\"\244\002\n\032GetOneOrganizationResponse\022\016\n\002id" +
+      "\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030" +
+      "\003 \001(\tR\005image\022B\n\010projects\030\004 \003(\0132&.account" +
+      "s.v1alpha1.ProjectOrganizationR\010projects" +
+      "\0223\n\007menbers\030\005 \003(\0132\031.accounts.v1alpha1.Me" +
+      "mberR\007menbers\022 \n\013description\030\006 \001(\tR\013desc" +
+      "ription\0221\n\005owner\030\007 \001(\0132\033.accounts.v1alph" +
+      "a1.UserListR\005owner\"a\n\030ListOrganizationRe" +
+      "sponse\022E\n\rorganizations\030\001 \003(\0132\037.accounts" +
+      ".v1alpha1.OrganizationR\rorganizations\"\206\001" +
+      "\n\032CreateOrganizationResponse\022\020\n\003msg\030\001 \001(" +
+      "\tR\003msg\0220\n\024role_id_organization\030\002 \001(\rR\022ro" +
+      "leIdOrganization\022\024\n\005error\030\003 \001(\tR\005error\022\016" +
+      "\n\002id\030\004 \001(\rR\002id\"D\n\032UpdateOrganizationResp" +
+      "onse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005e" +
+      "rror\"D\n\032DeleteOrganizationResponse\022\020\n\003ms" +
+      "g\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\027\n\025Ge" +
+      "tListUserDexRequest\"R\n\026GetListUserDexRes" +
+      "ponse\0228\n\tusers_dex\030\001 \003(\0132\033.accounts.v1al" +
+      "pha1.UsersDexR\010usersDex\"i\n\024GetOneUserDex" +
+      "Request\022\027\n\007user_id\030\001 \001(\tR\006userId\0228\n\004user" +
+      "\030\002 \001(\0132$.accounts.v1alpha1.CreateUserReq" +
+      "uestR\004user\"\322\005\n\025GetOneUserDexResponse\022\016\n\002" +
+      "id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n" +
+      "\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_nam" +
+      "e\030\004 \001(\tR\010lastName\022\024\n\005email\030\005 \001(\tR\005email\022" +
+      "\033\n\tis_active\030\006 \001(\010R\010isActive\022\035\n\ncreated_" +
+      "at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\tR" +
+      "\tupdatedAt\022,\n\005roles\030\t \003(\0132\026.accounts.v1a" +
+      "lpha1.RolR\005roles\022?\n\013permissions\030\n \003(\0132\035." +
+      "accounts.v1alpha1.PermissionR\013permission" +
+      "s\022\"\n\ris_super_user\030\013 \001(\010R\013isSuperUser\022E\n" +
+      "\rorganizations\030\014 \003(\0132\037.accounts.v1alpha1" +
+      ".OrganizationR\rorganizations\022\020\n\003msg\030\r \001(" +
+      "\tR\003msg\0226\n\010projects\030\016 \003(\0132\032.accounts.v1al" +
+      "pha1.ProjectR\010projects\022!\n\014phone_number\030\017" +
+      " \001(\tR\013phoneNumber\022\030\n\007country\030\020 \001(\tR\007coun" +
+      "try\022\022\n\004city\030\021 \001(\tR\004city\022\031\n\010zip_code\030\022 \001(" +
+      "\tR\007zipCode\022\030\n\007address\030\023 \001(\tR\007address\022\024\n\005" +
+      "state\030\024 \001(\tR\005state\022#\n\remoji_country\030\025 \001(" +
+      "\tR\014emojiCountry*d\n\022InvitationResponse\022,\n" +
+      "(INVITATION_RESPONSE_ACCEPTED_UNSPECIFIE" +
+      "D\020\000\022 \n\034INVITATION_RESPONSE_REJECTED\020\0012\307 " +
+      "\n\016AccountService\022Y\n\nCreateUser\022$.account" +
+      "s.v1alpha1.CreateUserRequest\032%.accounts." +
+      "v1alpha1.CreateUserResponse\022S\n\010ListUser\022" +
+      "\".accounts.v1alpha1.ListUserRequest\032#.ac" +
+      "counts.v1alpha1.ListUserResponse\022Y\n\nGetO" +
+      "neUser\022$.accounts.v1alpha1.GetOneUserReq" +
+      "uest\032%.accounts.v1alpha1.GetOneUserRespo" +
+      "nse\022Y\n\nUpdateUser\022$.accounts.v1alpha1.Up" +
+      "dateUserRequest\032%.accounts.v1alpha1.Upda" +
+      "teUserResponse\022Y\n\nDeleteUser\022$.accounts." +
+      "v1alpha1.DeleteUserRequest\032%.accounts.v1" +
+      "alpha1.DeleteUserResponse\022q\n\022ListUserPag" +
+      "ination\022,.accounts.v1alpha1.ListUserPagi" +
+      "nationRequest\032-.accounts.v1alpha1.ListUs" +
+      "erPaginationResponse\022q\n\022SendInvitationUs" +
+      "er\022,.accounts.v1alpha1.SendInvitationUse" +
+      "rRequest\032-.accounts.v1alpha1.SendInvitat" +
+      "ionUserResponse\022n\n\021GetInvitationUser\022+.a" +
+      "ccounts.v1alpha1.GetInvitationUserReques" +
+      "t\032,.accounts.v1alpha1.GetInvitationUserR" +
+      "esponse\022t\n\023AgreeInvitationUser\022-.account" +
+      "s.v1alpha1.AgreeInvitationUserRequest\032.." +
+      "accounts.v1alpha1.AgreeInvitationUserRes" +
+      "ponse\022k\n\020CreatePermission\022*.accounts.v1a" +
+      "lpha1.CreatePermissionRequest\032+.accounts" +
+      ".v1alpha1.CreatePermissionResponse\022e\n\016Li" +
+      "stPermission\022(.accounts.v1alpha1.ListPer" +
+      "missionRequest\032).accounts.v1alpha1.ListP" +
+      "ermissionResponse\022k\n\020GetOnePermission\022*." +
+      "accounts.v1alpha1.GetOnePermissionReques" +
+      "t\032+.accounts.v1alpha1.GetOnePermissionRe" +
+      "sponse\022k\n\020UpdatePermission\022*.accounts.v1" +
+      "alpha1.UpdatePermissionRequest\032+.account" +
+      "s.v1alpha1.UpdatePermissionResponse\022k\n\020D" +
+      "eletePermission\022*.accounts.v1alpha1.Dele" +
+      "tePermissionRequest\032+.accounts.v1alpha1." +
+      "DeletePermissionResponse\022q\n\022CreateOrgani" +
+      "zation\022,.accounts.v1alpha1.CreateOrganiz" +
+      "ationRequest\032-.accounts.v1alpha1.CreateO" +
+      "rganizationResponse\022k\n\020ListOrganization\022" +
+      "*.accounts.v1alpha1.ListOrganizationRequ" +
+      "est\032+.accounts.v1alpha1.ListOrganization" +
+      "Response\022q\n\022GetOneOrganization\022,.account" +
+      "s.v1alpha1.GetOneOrganizationRequest\032-.a" +
+      "ccounts.v1alpha1.GetOneOrganizationRespo" +
+      "nse\022q\n\022UpdateOrganization\022,.accounts.v1a" +
+      "lpha1.UpdateOrganizationRequest\032-.accoun" +
+      "ts.v1alpha1.UpdateOrganizationResponse\022q" +
+      "\n\022DeleteOrganization\022,.accounts.v1alpha1" +
+      ".DeleteOrganizationRequest\032-.accounts.v1" +
+      "alpha1.DeleteOrganizationResponse\022Y\n\nCre" +
+      "ateRole\022$.accounts.v1alpha1.CreateRoleRe" +
+      "quest\032%.accounts.v1alpha1.CreateRoleResp" +
+      "onse\022V\n\tListRoles\022#.accounts.v1alpha1.Li" +
+      "stRolesRequest\032$.accounts.v1alpha1.ListR" +
+      "olesResponse\022Y\n\nUpdateRole\022$.accounts.v1" +
+      "alpha1.UpdateRoleRequest\032%.accounts.v1al" +
+      "pha1.UpdateRoleResponse\022Y\n\nGetOneRole\022$." +
+      "accounts.v1alpha1.GetOneRoleRequest\032%.ac" +
+      "counts.v1alpha1.GetOneRoleResponse\022Y\n\nDe" +
+      "leteRole\022$.accounts.v1alpha1.DeleteRoleR" +
+      "equest\032%.accounts.v1alpha1.DeleteRoleRes" +
+      "ponse\022b\n\rCreateProject\022\'.accounts.v1alph" +
+      "a1.CreateProjectRequest\032(.accounts.v1alp" +
+      "ha1.CreateProjectResponse\022b\n\rGetOneProje" +
+      "ct\022\'.accounts.v1alpha1.GetOneProjectRequ" +
+      "est\032(.accounts.v1alpha1.GetOneProjectRes" +
+      "ponse\022b\n\rUpdateProject\022\'.accounts.v1alph" +
+      "a1.UpdateProjectRequest\032(.accounts.v1alp" +
+      "ha1.UpdateProjectResponse\022b\n\rDeleteProje" +
+      "ct\022\'.accounts.v1alpha1.DeleteProjectRequ" +
+      "est\032(.accounts.v1alpha1.DeleteProjectRes" +
+      "ponse\022\\\n\013ListProject\022%.accounts.v1alpha1" +
+      ".ListProjectRequest\032&.accounts.v1alpha1." +
+      "ListProjectResponse\022e\n\016GetListUserDex\022(." +
+      "accounts.v1alpha1.GetListUserDexRequest\032" +
+      ").accounts.v1alpha1.GetListUserDexRespon" +
+      "se\022b\n\rGetOneUserDex\022\'.accounts.v1alpha1." +
+      "GetOneUserDexRequest\032(.accounts.v1alpha1" +
+      ".GetOneUserDexResponse\022V\n\tCheckUser\022#.ac" +
+      "counts.v1alpha1.CheckUserRequest\032$.accou" +
+      "nts.v1alpha1.CheckUserResponse\022z\n\025SendVe" +
+      "rificationEmail\022/.accounts.v1alpha1.Send" +
+      "VerificationEmailRequest\0320.accounts.v1al" +
+      "pha1.SendVerificationEmailResponse\022\\\n\013Ve" +
+      "rifyEmail\022%.accounts.v1alpha1.VerifyEmai" +
+      "lRequest\032&.accounts.v1alpha1.VerifyEmail" +
+      "Response\022b\n\rListCountries\022\'.accounts.v1a" +
+      "lpha1.ListCountriesRequest\032(.accounts.v1" +
+      "alpha1.ListCountriesResponse\022b\n\rGetOneCo" +
+      "untry\022\'.accounts.v1alpha1.GetOneCountryR" +
+      "equest\032(.accounts.v1alpha1.GetOneCountry" +
+      "Response\022_\n\014CreateApiKey\022&.accounts.v1al" +
+      "pha1.CreateApiKeyRequest\032\'.accounts.v1al" +
+      "pha1.CreateApiKeyResponse\022_\n\014GetOneApiKe",
+      "y\022&.accounts.v1alpha1.GetOneApiKeyReques" +
+      "t\032\'.accounts.v1alpha1.GetOneApiKeyRespon" +
+      "se\022Y\n\nListApiKey\022$.accounts.v1alpha1.Lis" +
+      "tApiKeyRequest\032%.accounts.v1alpha1.ListA" +
+      "piKeyResponse\022_\n\014UpdateApiKey\022&.accounts" +
+      ".v1alpha1.UpdateApiKeyRequest\032\'.accounts" +
+      ".v1alpha1.UpdateApiKeyResponse\022_\n\014Delete" +
+      "ApiKey\022&.accounts.v1alpha1.DeleteApiKeyR" +
+      "equest\032\'.accounts.v1alpha1.DeleteApiKeyR" +
+      "esponseB4Z2github.com/cuemby/ccp-sdk/gen" +
+      "/go/accounts/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -90921,356 +92393,368 @@ public final class Accounts {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_ListUserPaginationResponse_descriptor,
         new java.lang.String[] { "Count", "Users", });
-    internal_static_accounts_v1alpha1_SendInvitationUserRequest_descriptor =
+    internal_static_accounts_v1alpha1_ProjectDetail_descriptor =
       getDescriptor().getMessageTypes().get(39);
+    internal_static_accounts_v1alpha1_ProjectDetail_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_accounts_v1alpha1_ProjectDetail_descriptor,
+        new java.lang.String[] { "ProjectId", "RoleId", });
+    internal_static_accounts_v1alpha1_SendInvitationUserRequest_descriptor =
+      getDescriptor().getMessageTypes().get(40);
     internal_static_accounts_v1alpha1_SendInvitationUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_SendInvitationUserRequest_descriptor,
-        new java.lang.String[] { "Name", "Email", "ProjectId", "UserIdAdmin", });
+        new java.lang.String[] { "Name", "Email", "Projects", "UserIdAdmin", });
     internal_static_accounts_v1alpha1_SendInvitationUserResponse_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_accounts_v1alpha1_SendInvitationUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_SendInvitationUserResponse_descriptor,
-        new java.lang.String[] { "Organization", "Project", "InvitationCode", "Result", });
+        new java.lang.String[] { "Organization", "Projects", "InvitationCode", "Result", });
     internal_static_accounts_v1alpha1_GetInvitationUserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_accounts_v1alpha1_GetInvitationUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetInvitationUserRequest_descriptor,
         new java.lang.String[] { "InvitationCode", "Email", });
     internal_static_accounts_v1alpha1_GetInvitationUserResponse_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_accounts_v1alpha1_GetInvitationUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetInvitationUserResponse_descriptor,
-        new java.lang.String[] { "Organization", "Project", "Result", });
+        new java.lang.String[] { "Organization", "Projects", "Result", });
     internal_static_accounts_v1alpha1_AgreeInvitationUserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_accounts_v1alpha1_AgreeInvitationUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_AgreeInvitationUserRequest_descriptor,
-        new java.lang.String[] { "InvitationCode", "Email", "GuestUserId", "InvitationResponse", "ProjectId", });
+        new java.lang.String[] { "InvitationCode", "Email", "GuestUserId", "InvitationResponse", "Projects", });
+    internal_static_accounts_v1alpha1_AgreeInvitationUserRequest_ProjectsEntry_descriptor =
+      internal_static_accounts_v1alpha1_AgreeInvitationUserRequest_descriptor.getNestedTypes().get(0);
+    internal_static_accounts_v1alpha1_AgreeInvitationUserRequest_ProjectsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_accounts_v1alpha1_AgreeInvitationUserRequest_ProjectsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_accounts_v1alpha1_AgreeInvitationUserResponse_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_accounts_v1alpha1_AgreeInvitationUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_AgreeInvitationUserResponse_descriptor,
         new java.lang.String[] { "Result", });
     internal_static_accounts_v1alpha1_Rol_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_accounts_v1alpha1_Rol_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_Rol_descriptor,
         new java.lang.String[] { "Id", "Name", "ProjectId", "OrganizationId", "Permissions", });
     internal_static_accounts_v1alpha1_CreateRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_accounts_v1alpha1_CreateRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_CreateRoleRequest_descriptor,
         new java.lang.String[] { "Name", "Description", "ProjectId", "OrganizationId", "TypePermission", "PermissionIds", });
     internal_static_accounts_v1alpha1_UpdateRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_accounts_v1alpha1_UpdateRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_UpdateRoleRequest_descriptor,
         new java.lang.String[] { "RolId", "Rol", });
     internal_static_accounts_v1alpha1_GetOneRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_accounts_v1alpha1_GetOneRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetOneRoleRequest_descriptor,
         new java.lang.String[] { "RolId", });
     internal_static_accounts_v1alpha1_GetOneRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_accounts_v1alpha1_GetOneRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetOneRoleResponse_descriptor,
         new java.lang.String[] { "Id", "Name", "OrganizationId", "ProjectId", "Permissions", "IsAdmin", });
     internal_static_accounts_v1alpha1_DeleteRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_accounts_v1alpha1_DeleteRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_DeleteRoleRequest_descriptor,
         new java.lang.String[] { "RolId", });
     internal_static_accounts_v1alpha1_ListRolesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_accounts_v1alpha1_ListRolesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_ListRolesRequest_descriptor,
         new java.lang.String[] { "ProjectId", "OrganizationId", });
     internal_static_accounts_v1alpha1_ListRolesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_accounts_v1alpha1_ListRolesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_ListRolesResponse_descriptor,
         new java.lang.String[] { "Roles", });
     internal_static_accounts_v1alpha1_CreateRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_accounts_v1alpha1_CreateRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_CreateRoleResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", "Id", });
     internal_static_accounts_v1alpha1_UpdateRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(54);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_accounts_v1alpha1_UpdateRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_UpdateRoleResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_accounts_v1alpha1_DeleteRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(55);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_accounts_v1alpha1_DeleteRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_DeleteRoleResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_accounts_v1alpha1_Project_descriptor =
-      getDescriptor().getMessageTypes().get(56);
+      getDescriptor().getMessageTypes().get(57);
     internal_static_accounts_v1alpha1_Project_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_Project_descriptor,
         new java.lang.String[] { "Id", "Name", "Image", "OrganizationId", "Description", "CreatedAt", "UpdatedAt", "Roles", });
     internal_static_accounts_v1alpha1_CreateProjectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(57);
+      getDescriptor().getMessageTypes().get(58);
     internal_static_accounts_v1alpha1_CreateProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_CreateProjectRequest_descriptor,
         new java.lang.String[] { "Name", "Description", "Image", "OrganizationId", "UserId", });
     internal_static_accounts_v1alpha1_GetOneProjectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(58);
+      getDescriptor().getMessageTypes().get(59);
     internal_static_accounts_v1alpha1_GetOneProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetOneProjectRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_accounts_v1alpha1_DeleteProjectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(59);
+      getDescriptor().getMessageTypes().get(60);
     internal_static_accounts_v1alpha1_DeleteProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_DeleteProjectRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_accounts_v1alpha1_ListProjectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(60);
+      getDescriptor().getMessageTypes().get(61);
     internal_static_accounts_v1alpha1_ListProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_ListProjectRequest_descriptor,
         new java.lang.String[] { "OrganizationId", });
     internal_static_accounts_v1alpha1_UpdateProjectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(61);
+      getDescriptor().getMessageTypes().get(62);
     internal_static_accounts_v1alpha1_UpdateProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_UpdateProjectRequest_descriptor,
         new java.lang.String[] { "Id", "Project", });
     internal_static_accounts_v1alpha1_CreateProjectResponse_descriptor =
-      getDescriptor().getMessageTypes().get(62);
+      getDescriptor().getMessageTypes().get(63);
     internal_static_accounts_v1alpha1_CreateProjectResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_CreateProjectResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", "Id", });
     internal_static_accounts_v1alpha1_UpdateProjectResponse_descriptor =
-      getDescriptor().getMessageTypes().get(63);
+      getDescriptor().getMessageTypes().get(64);
     internal_static_accounts_v1alpha1_UpdateProjectResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_UpdateProjectResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_accounts_v1alpha1_DeleteProjectResponse_descriptor =
-      getDescriptor().getMessageTypes().get(64);
+      getDescriptor().getMessageTypes().get(65);
     internal_static_accounts_v1alpha1_DeleteProjectResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_DeleteProjectResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_accounts_v1alpha1_GetOneProjectResponse_descriptor =
-      getDescriptor().getMessageTypes().get(65);
+      getDescriptor().getMessageTypes().get(66);
     internal_static_accounts_v1alpha1_GetOneProjectResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetOneProjectResponse_descriptor,
         new java.lang.String[] { "Id", "Name", "Image", "OrganizationId", "Description", "CreatedAt", "UpdatedAt", "Members", "Owner", });
     internal_static_accounts_v1alpha1_ListProjectResponse_descriptor =
-      getDescriptor().getMessageTypes().get(66);
+      getDescriptor().getMessageTypes().get(67);
     internal_static_accounts_v1alpha1_ListProjectResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_ListProjectResponse_descriptor,
         new java.lang.String[] { "Projects", });
     internal_static_accounts_v1alpha1_ListProjectPaginationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(67);
+      getDescriptor().getMessageTypes().get(68);
     internal_static_accounts_v1alpha1_ListProjectPaginationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_ListProjectPaginationRequest_descriptor,
         new java.lang.String[] { "Offset", "Limit", });
     internal_static_accounts_v1alpha1_ListProjectPaginationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(68);
+      getDescriptor().getMessageTypes().get(69);
     internal_static_accounts_v1alpha1_ListProjectPaginationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_ListProjectPaginationResponse_descriptor,
         new java.lang.String[] { "Projects", "Count", });
     internal_static_accounts_v1alpha1_Permission_descriptor =
-      getDescriptor().getMessageTypes().get(69);
+      getDescriptor().getMessageTypes().get(70);
     internal_static_accounts_v1alpha1_Permission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_Permission_descriptor,
         new java.lang.String[] { "Id", "Name", "Type", });
     internal_static_accounts_v1alpha1_ListPermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(70);
+      getDescriptor().getMessageTypes().get(71);
     internal_static_accounts_v1alpha1_ListPermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_ListPermissionResponse_descriptor,
         new java.lang.String[] { "Permissions", });
     internal_static_accounts_v1alpha1_AssignPermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(71);
+      getDescriptor().getMessageTypes().get(72);
     internal_static_accounts_v1alpha1_AssignPermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_AssignPermissionRequest_descriptor,
         new java.lang.String[] { "UserId", "PermissionId", });
     internal_static_accounts_v1alpha1_ListPermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(72);
+      getDescriptor().getMessageTypes().get(73);
     internal_static_accounts_v1alpha1_ListPermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_ListPermissionRequest_descriptor,
         new java.lang.String[] { "Type", });
     internal_static_accounts_v1alpha1_CreatePermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(73);
+      getDescriptor().getMessageTypes().get(74);
     internal_static_accounts_v1alpha1_CreatePermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_CreatePermissionRequest_descriptor,
         new java.lang.String[] { "Name", "Type", });
     internal_static_accounts_v1alpha1_UpdatePermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(74);
+      getDescriptor().getMessageTypes().get(75);
     internal_static_accounts_v1alpha1_UpdatePermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_UpdatePermissionRequest_descriptor,
         new java.lang.String[] { "PermissionId", "Name", "Type", });
     internal_static_accounts_v1alpha1_GetOnePermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(75);
+      getDescriptor().getMessageTypes().get(76);
     internal_static_accounts_v1alpha1_GetOnePermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetOnePermissionRequest_descriptor,
         new java.lang.String[] { "PermissionId", });
     internal_static_accounts_v1alpha1_GetOnePermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(76);
+      getDescriptor().getMessageTypes().get(77);
     internal_static_accounts_v1alpha1_GetOnePermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetOnePermissionResponse_descriptor,
         new java.lang.String[] { "Id", "Name", "Type", });
     internal_static_accounts_v1alpha1_DeletePermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(77);
+      getDescriptor().getMessageTypes().get(78);
     internal_static_accounts_v1alpha1_DeletePermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_DeletePermissionRequest_descriptor,
         new java.lang.String[] { "PermissionId", });
     internal_static_accounts_v1alpha1_UpdatePermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(78);
+      getDescriptor().getMessageTypes().get(79);
     internal_static_accounts_v1alpha1_UpdatePermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_UpdatePermissionResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_accounts_v1alpha1_DeletePermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(79);
+      getDescriptor().getMessageTypes().get(80);
     internal_static_accounts_v1alpha1_DeletePermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_DeletePermissionResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_accounts_v1alpha1_CreatePermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(80);
+      getDescriptor().getMessageTypes().get(81);
     internal_static_accounts_v1alpha1_CreatePermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_CreatePermissionResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_accounts_v1alpha1_Member_descriptor =
-      getDescriptor().getMessageTypes().get(81);
+      getDescriptor().getMessageTypes().get(82);
     internal_static_accounts_v1alpha1_Member_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_Member_descriptor,
         new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "IsActive", });
     internal_static_accounts_v1alpha1_ProjectOrganization_descriptor =
-      getDescriptor().getMessageTypes().get(82);
+      getDescriptor().getMessageTypes().get(83);
     internal_static_accounts_v1alpha1_ProjectOrganization_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_ProjectOrganization_descriptor,
         new java.lang.String[] { "Id", "Name", "Image", "Description", });
     internal_static_accounts_v1alpha1_Organization_descriptor =
-      getDescriptor().getMessageTypes().get(83);
+      getDescriptor().getMessageTypes().get(84);
     internal_static_accounts_v1alpha1_Organization_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_Organization_descriptor,
         new java.lang.String[] { "Id", "Name", "Image", "Description", });
     internal_static_accounts_v1alpha1_CreateOrganizationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(84);
+      getDescriptor().getMessageTypes().get(85);
     internal_static_accounts_v1alpha1_CreateOrganizationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_CreateOrganizationRequest_descriptor,
         new java.lang.String[] { "Name", "Image", "UserId", "Description", });
     internal_static_accounts_v1alpha1_ListOrganizationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(85);
+      getDescriptor().getMessageTypes().get(86);
     internal_static_accounts_v1alpha1_ListOrganizationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_ListOrganizationRequest_descriptor,
         new java.lang.String[] { });
     internal_static_accounts_v1alpha1_GetOneOrganizationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(86);
+      getDescriptor().getMessageTypes().get(87);
     internal_static_accounts_v1alpha1_GetOneOrganizationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetOneOrganizationRequest_descriptor,
         new java.lang.String[] { "OrganizationId", });
     internal_static_accounts_v1alpha1_UpdateOrganizationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(87);
+      getDescriptor().getMessageTypes().get(88);
     internal_static_accounts_v1alpha1_UpdateOrganizationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_UpdateOrganizationRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "Name", "Description", "Image", });
     internal_static_accounts_v1alpha1_DeleteOrganizationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(88);
+      getDescriptor().getMessageTypes().get(89);
     internal_static_accounts_v1alpha1_DeleteOrganizationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_DeleteOrganizationRequest_descriptor,
         new java.lang.String[] { "OrganizationId", });
     internal_static_accounts_v1alpha1_GetOneOrganizationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(89);
+      getDescriptor().getMessageTypes().get(90);
     internal_static_accounts_v1alpha1_GetOneOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetOneOrganizationResponse_descriptor,
         new java.lang.String[] { "Id", "Name", "Image", "Projects", "Menbers", "Description", "Owner", });
     internal_static_accounts_v1alpha1_ListOrganizationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(90);
+      getDescriptor().getMessageTypes().get(91);
     internal_static_accounts_v1alpha1_ListOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_ListOrganizationResponse_descriptor,
         new java.lang.String[] { "Organizations", });
     internal_static_accounts_v1alpha1_CreateOrganizationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(91);
+      getDescriptor().getMessageTypes().get(92);
     internal_static_accounts_v1alpha1_CreateOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_CreateOrganizationResponse_descriptor,
         new java.lang.String[] { "Msg", "RoleIdOrganization", "Error", "Id", });
     internal_static_accounts_v1alpha1_UpdateOrganizationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(92);
+      getDescriptor().getMessageTypes().get(93);
     internal_static_accounts_v1alpha1_UpdateOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_UpdateOrganizationResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_accounts_v1alpha1_DeleteOrganizationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(93);
+      getDescriptor().getMessageTypes().get(94);
     internal_static_accounts_v1alpha1_DeleteOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_DeleteOrganizationResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_accounts_v1alpha1_GetListUserDexRequest_descriptor =
-      getDescriptor().getMessageTypes().get(94);
+      getDescriptor().getMessageTypes().get(95);
     internal_static_accounts_v1alpha1_GetListUserDexRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetListUserDexRequest_descriptor,
         new java.lang.String[] { });
     internal_static_accounts_v1alpha1_GetListUserDexResponse_descriptor =
-      getDescriptor().getMessageTypes().get(95);
+      getDescriptor().getMessageTypes().get(96);
     internal_static_accounts_v1alpha1_GetListUserDexResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetListUserDexResponse_descriptor,
         new java.lang.String[] { "UsersDex", });
     internal_static_accounts_v1alpha1_GetOneUserDexRequest_descriptor =
-      getDescriptor().getMessageTypes().get(96);
+      getDescriptor().getMessageTypes().get(97);
     internal_static_accounts_v1alpha1_GetOneUserDexRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetOneUserDexRequest_descriptor,
         new java.lang.String[] { "UserId", "User", });
     internal_static_accounts_v1alpha1_GetOneUserDexResponse_descriptor =
-      getDescriptor().getMessageTypes().get(97);
+      getDescriptor().getMessageTypes().get(98);
     internal_static_accounts_v1alpha1_GetOneUserDexResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_GetOneUserDexResponse_descriptor,

@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-Ê~
+­€
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"ˆ
 CreateApiKeyRequest
 name (	Rname
@@ -214,32 +214,37 @@ updated_at (	R	updatedAt,
 limit (Rlimit"e
 ListUserPaginationResponse
 count (Rcount1
-users (2.accounts.v1alpha1.UserListRusers"ˆ
+users (2.accounts.v1alpha1.UserListRusers"G
+ProjectDetail
+
+project_id (R	projectId
+role_id (RroleId"§
 SendInvitationUserRequest
 name (	Rname
-email (	Remail
-
-project_id (R	projectId"
-user_id_admin (	RuserIdAdmin"Ø
+email (	Remail<
+projects (2 .accounts.v1alpha1.ProjectDetailRprojects"
+user_id_admin (	RuserIdAdmin"Ú
 SendInvitationUserResponseC
-organization (2.accounts.v1alpha1.OrganizationRorganization4
-project (2.accounts.v1alpha1.ProjectRproject\'
+organization (2.accounts.v1alpha1.OrganizationRorganization6
+projects (2.accounts.v1alpha1.ProjectRprojects\'
 invitation_code (	RinvitationCode
 result (	Rresult"Y
 GetInvitationUserRequest\'
 invitation_code (	RinvitationCode
-email (	Remail"®
+email (	Remail"°
 GetInvitationUserResponseC
-organization (2.accounts.v1alpha1.OrganizationRorganization4
-project (2.accounts.v1alpha1.ProjectRproject
-result (	Rresult"ö
+organization (2.accounts.v1alpha1.OrganizationRorganization6
+projects (2.accounts.v1alpha1.ProjectRprojects
+result (	Rresult"í
 AgreeInvitationUserRequest\'
 invitation_code (	RinvitationCode
 email (	Remail"
 guest_user_id (	RguestUserIdV
-invitation_response (2%.accounts.v1alpha1.InvitationResponseRinvitationResponse
-
-project_id (R	projectId"5
+invitation_response (2%.accounts.v1alpha1.InvitationResponseRinvitationResponseW
+projects (2;.accounts.v1alpha1.AgreeInvitationUserRequest.ProjectsEntryRprojects;
+ProjectsEntry
+key (Rkey
+value (Rvalue:8"5
 AgreeInvitationUserResponse
 result (	Rresult"²
 Rol
