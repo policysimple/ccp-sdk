@@ -30,9 +30,9 @@ class AgreeInvitationUserRequest extends \Google\Protobuf\Internal\Message
      */
     protected $invitation_response = 0;
     /**
-     * Generated from protobuf field <code>uint32 project_id = 5 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>map<uint32, uint32> projects = 5 [json_name = "projects"];</code>
      */
-    protected $project_id = 0;
+    private $projects;
 
     /**
      * Constructor.
@@ -44,7 +44,7 @@ class AgreeInvitationUserRequest extends \Google\Protobuf\Internal\Message
      *     @type string $email
      *     @type string $guest_user_id
      *     @type int $invitation_response
-     *     @type int $project_id
+     *     @type array|\Google\Protobuf\Internal\MapField $projects
      * }
      */
     public function __construct($data = NULL) {
@@ -141,23 +141,23 @@ class AgreeInvitationUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 5 [json_name = "projectId"];</code>
-     * @return int
+     * Generated from protobuf field <code>map<uint32, uint32> projects = 5 [json_name = "projects"];</code>
+     * @return \Google\Protobuf\Internal\MapField
      */
-    public function getProjectId()
+    public function getProjects()
     {
-        return $this->project_id;
+        return $this->projects;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 5 [json_name = "projectId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>map<uint32, uint32> projects = 5 [json_name = "projects"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setProjectId($var)
+    public function setProjects($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->project_id = $var;
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::UINT32, \Google\Protobuf\Internal\GPBType::UINT32);
+        $this->projects = $arr;
 
         return $this;
     }

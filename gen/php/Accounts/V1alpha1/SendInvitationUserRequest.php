@@ -22,9 +22,9 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
      */
     protected $email = '';
     /**
-     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
      */
-    protected $project_id = 0;
+    private $projects;
     /**
      * Generated from protobuf field <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
      */
@@ -38,7 +38,7 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *     @type string $email
-     *     @type int $project_id
+     *     @type \Accounts\V1alpha1\ProjectDetail[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type string $user_id_admin
      * }
      */
@@ -92,23 +92,23 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-     * @return int
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getProjectId()
+    public function getProjects()
     {
-        return $this->project_id;
+        return $this->projects;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
+     * @param \Accounts\V1alpha1\ProjectDetail[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setProjectId($var)
+    public function setProjects($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->project_id = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\ProjectDetail::class);
+        $this->projects = $arr;
 
         return $this;
     }

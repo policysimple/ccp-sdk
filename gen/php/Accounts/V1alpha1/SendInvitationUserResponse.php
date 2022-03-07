@@ -18,9 +18,9 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
      */
     protected $organization = null;
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      */
-    protected $project = null;
+    private $projects;
     /**
      * Generated from protobuf field <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
      */
@@ -37,7 +37,7 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Accounts\V1alpha1\Organization $organization
-     *     @type \Accounts\V1alpha1\Project $project
+     *     @type \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type string $invitation_code
      *     @type string $result
      * }
@@ -80,33 +80,23 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
-     * @return \Accounts\V1alpha1\Project|null
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getProject()
+    public function getProjects()
     {
-        return $this->project;
-    }
-
-    public function hasProject()
-    {
-        return isset($this->project);
-    }
-
-    public function clearProject()
-    {
-        unset($this->project);
+        return $this->projects;
     }
 
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.Project project = 2 [json_name = "project"];</code>
-     * @param \Accounts\V1alpha1\Project $var
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     * @param \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setProject($var)
+    public function setProjects($var)
     {
-        GPBUtil::checkMessage($var, \Accounts\V1alpha1\Project::class);
-        $this->project = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Project::class);
+        $this->projects = $arr;
 
         return $this;
     }

@@ -385,16 +385,21 @@ enum InvitationResponse {
     INVITATION_RESPONSE_REJECTED = 1;
 }
 
+message ProjectDetail {
+    uint32 project_id = 1;
+    uint32 role_id = 2;
+}
+
 message SendInvitationUserRequest {
     string name=1;
     string email=2;
-    uint32 project_id=3;
+    repeated ProjectDetail projects = 3;
     string user_id_admin=4;
 }
 
 message SendInvitationUserResponse {
     Organization organization=1;
-    Project project=2;
+    repeated Project projects=2;
     string invitation_code=3;
     string result=4;
 }
@@ -406,7 +411,7 @@ message GetInvitationUserRequest {
 
 message GetInvitationUserResponse {
     Organization organization=1;
-    Project project=2;
+    repeated Project projects=2;
     string result=3;
 }
 
@@ -415,7 +420,7 @@ message AgreeInvitationUserRequest {
     string email=2;
     string guest_user_id=3;
     InvitationResponse invitation_response=4;
-    uint32 project_id=5;
+    map<uint32, uint32> projects=5;
 }
 
 message AgreeInvitationUserResponse {
