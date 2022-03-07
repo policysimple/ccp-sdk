@@ -24,17 +24,24 @@ var tektonPipelineServiceTimeout string
 
 func init() {
 	doOnce.Do(func() {
-		tektonPipelineServiceTimeout = os.Getenv("TEKTON_PIPELINE_SERVICE_TIMEOUT")
+		tektonPipelineServiceTimeout = os.Getenv("PIPELINE_SERVICE_TIMEOUT")
 		if tektonPipelineServiceTimeout == "" {
 			tektonPipelineServiceTimeout = "30s"
 		}
-		tektonPipelineServiceUri = os.Getenv("TEKTON_PIPELINE_SERVICE_URI")
+		tektonPipelineServiceUri = os.Getenv("PIPELINE_SERVICE_URI")
 		con, err := grpc.Dial(tektonPipelineServiceUri, grpc.WithTransportCredentials(insecure.NewCredentials()))
 		if err != nil {
 			panic(err)
 		}
 		client = tektonPipelinepkgv1.NewTektonPipelineAPIServiceClient(con)
 	})
+}
+
+type ParamsStruct struct {
+	Name        string
+	ValueType   string
+	ValueString string
+	ValueArray  []string
 }
 
 type TaskParamsStruct struct {
@@ -56,7 +63,9 @@ type TaskStruct struct {
 }
 
 func CreateTektonPipeline(
-	organizationId uint32, projectId uint32, name string, namespace string, workspace string, params []string, tasks []TaskStruct, userId string,
+	organizationId uint32, projectId uint32, name string, namespace string, workspace string,
+	integration, environmentVariables, commands, secrets map[string]string,
+	params []ParamsStruct, tasks []TaskStruct, userId string,
 ) (response *tektonPipelinepkgv1.CreateTektonPipelineResponse, err error) {
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
@@ -67,6 +76,7 @@ func CreateTektonPipeline(
 
 	var arrayTasks []*tektonPipelinepkgv1.Task
 	var arrayTaskParameters []*tektonPipelinepkgv1.TaskParams
+	var arrayParams []*tektonPipelinepkgv1.Params
 
 	if len(tasks) == 0 {
 		log.Printf("%s: ", "Tasks is required")
@@ -74,6 +84,25 @@ func CreateTektonPipeline(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: ", "Tasks is required"),
 		)
+	}
+
+	for _, item := range params {
+
+		if item.ValueString == "string" {
+			arrayParams = append(arrayParams, &tektonPipelinepkgv1.Params{
+				Name:        item.Name,
+				ValueType:   item.ValueType,
+				ValueString: item.ValueString,
+			})
+		}
+
+		if item.ValueString == "array" {
+			arrayParams = append(arrayParams, &tektonPipelinepkgv1.Params{
+				Name:       item.Name,
+				ValueType:  item.ValueType,
+				ValueArray: item.ValueArray,
+			})
+		}
 	}
 
 	for _, item := range tasks {
@@ -100,15 +129,19 @@ func CreateTektonPipeline(
 
 	response, err = client.CreateTektonPipeline(ctx, &tektonPipelinepkgv1.CreateTektonPipelineRequest{
 		TektonPipeline: &tektonPipelinepkgv1.Pipeline{
-			OrganizationId:      organizationId,
-			ProjectId:           projectId,
-			TypeMetaKind:        "Pipeline",
-			TypeMetaApiVersion:  "tekton.dev/v1beta1",
-			ObjectMetaName:      name,
-			ObjectMetaNamespace: namespace,
-			SpecWorkspacesName:  workspace,
-			Params:              params,
-			Tasks:               arrayTasks,
+			OrganizationId:       organizationId,
+			ProjectId:            projectId,
+			TypeMetaKind:         "Pipeline",
+			TypeMetaApiVersion:   "tekton.dev/v1beta1",
+			ObjectMetaName:       name,
+			ObjectMetaNamespace:  namespace,
+			SpecWorkspacesName:   workspace,
+			Params:               arrayParams,
+			Tasks:                arrayTasks,
+			Integration:          integration,
+			EnvironmentVariables: environmentVariables,
+			Commands:             commands,
+			Secrets:              secrets,
 		},
 		UserId: userId,
 	})

@@ -194,6 +194,31 @@ class AccountServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryResponse.FromString,
         )
+    self.CreateApiKey = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/CreateApiKey',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateApiKeyRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateApiKeyResponse.FromString,
+        )
+    self.GetOneApiKey = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/GetOneApiKey',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneApiKeyRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneApiKeyResponse.FromString,
+        )
+    self.ListApiKey = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/ListApiKey',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListApiKeyRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListApiKeyResponse.FromString,
+        )
+    self.UpdateApiKey = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/UpdateApiKey',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateApiKeyRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateApiKeyResponse.FromString,
+        )
+    self.DeleteApiKey = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/DeleteApiKey',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteApiKeyRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteApiKeyResponse.FromString,
+        )
 
 
 class AccountServiceServicer(object):
@@ -452,6 +477,41 @@ class AccountServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateApiKey(self, request, context):
+    """Tokens
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetOneApiKey(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListApiKey(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdateApiKey(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteApiKey(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AccountServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -634,6 +694,31 @@ def add_AccountServiceServicer_to_server(servicer, server):
           servicer.GetOneCountry,
           request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneCountryResponse.SerializeToString,
+      ),
+      'CreateApiKey': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateApiKey,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateApiKeyRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateApiKeyResponse.SerializeToString,
+      ),
+      'GetOneApiKey': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOneApiKey,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneApiKeyRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneApiKeyResponse.SerializeToString,
+      ),
+      'ListApiKey': grpc.unary_unary_rpc_method_handler(
+          servicer.ListApiKey,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListApiKeyRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListApiKeyResponse.SerializeToString,
+      ),
+      'UpdateApiKey': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateApiKey,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateApiKeyRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.UpdateApiKeyResponse.SerializeToString,
+      ),
+      'DeleteApiKey': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteApiKey,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteApiKeyRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteApiKeyResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

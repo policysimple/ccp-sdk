@@ -48,6 +48,28 @@ function deserialize_accounts_v1alpha1_CheckUserResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.CheckUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_CreateApiKeyRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.CreateApiKeyRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.CreateApiKeyRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_CreateApiKeyRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.CreateApiKeyRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_CreateApiKeyResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.CreateApiKeyResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.CreateApiKeyResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_CreateApiKeyResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.CreateApiKeyResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_CreateOrganizationRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.CreateOrganizationRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.CreateOrganizationRequest');
@@ -156,6 +178,28 @@ function serialize_accounts_v1alpha1_CreateUserResponse(arg) {
 
 function deserialize_accounts_v1alpha1_CreateUserResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.CreateUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_DeleteApiKeyRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.DeleteApiKeyRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.DeleteApiKeyRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_DeleteApiKeyRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.DeleteApiKeyRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_DeleteApiKeyResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.DeleteApiKeyResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.DeleteApiKeyResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_DeleteApiKeyResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.DeleteApiKeyResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_accounts_v1alpha1_DeleteOrganizationRequest(arg) {
@@ -312,6 +356,28 @@ function deserialize_accounts_v1alpha1_GetListUserDexResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.GetListUserDexResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_GetOneApiKeyRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneApiKeyRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetOneApiKeyRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetOneApiKeyRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetOneApiKeyRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_GetOneApiKeyResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneApiKeyResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetOneApiKeyResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetOneApiKeyResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetOneApiKeyResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_GetOneCountryRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneCountryRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.GetOneCountryRequest');
@@ -464,6 +530,28 @@ function serialize_accounts_v1alpha1_GetOneUserResponse(arg) {
 
 function deserialize_accounts_v1alpha1_GetOneUserResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.GetOneUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_ListApiKeyRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.ListApiKeyRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.ListApiKeyRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_ListApiKeyRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.ListApiKeyRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_ListApiKeyResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.ListApiKeyResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.ListApiKeyResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_ListApiKeyResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.ListApiKeyResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_accounts_v1alpha1_ListCountriesRequest(arg) {
@@ -662,6 +750,28 @@ function serialize_accounts_v1alpha1_SendVerificationEmailResponse(arg) {
 
 function deserialize_accounts_v1alpha1_SendVerificationEmailResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.SendVerificationEmailResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_UpdateApiKeyRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.UpdateApiKeyRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.UpdateApiKeyRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_UpdateApiKeyRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.UpdateApiKeyRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_UpdateApiKeyResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.UpdateApiKeyResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.UpdateApiKeyResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_UpdateApiKeyResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.UpdateApiKeyResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_accounts_v1alpha1_UpdateOrganizationRequest(arg) {
@@ -1200,6 +1310,62 @@ var AccountServiceService = exports.AccountServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_GetOneCountryRequest,
     responseSerialize: serialize_accounts_v1alpha1_GetOneCountryResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_GetOneCountryResponse,
+  },
+  // Tokens
+  createApiKey: {
+    path: '/accounts.v1alpha1.AccountService/CreateApiKey',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.CreateApiKeyRequest,
+    responseType: accounts_v1alpha1_accounts_pb.CreateApiKeyResponse,
+    requestSerialize: serialize_accounts_v1alpha1_CreateApiKeyRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_CreateApiKeyRequest,
+    responseSerialize: serialize_accounts_v1alpha1_CreateApiKeyResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_CreateApiKeyResponse,
+  },
+  getOneApiKey: {
+    path: '/accounts.v1alpha1.AccountService/GetOneApiKey',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.GetOneApiKeyRequest,
+    responseType: accounts_v1alpha1_accounts_pb.GetOneApiKeyResponse,
+    requestSerialize: serialize_accounts_v1alpha1_GetOneApiKeyRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_GetOneApiKeyRequest,
+    responseSerialize: serialize_accounts_v1alpha1_GetOneApiKeyResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_GetOneApiKeyResponse,
+  },
+  listApiKey: {
+    path: '/accounts.v1alpha1.AccountService/ListApiKey',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.ListApiKeyRequest,
+    responseType: accounts_v1alpha1_accounts_pb.ListApiKeyResponse,
+    requestSerialize: serialize_accounts_v1alpha1_ListApiKeyRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_ListApiKeyRequest,
+    responseSerialize: serialize_accounts_v1alpha1_ListApiKeyResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_ListApiKeyResponse,
+  },
+  updateApiKey: {
+    path: '/accounts.v1alpha1.AccountService/UpdateApiKey',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.UpdateApiKeyRequest,
+    responseType: accounts_v1alpha1_accounts_pb.UpdateApiKeyResponse,
+    requestSerialize: serialize_accounts_v1alpha1_UpdateApiKeyRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_UpdateApiKeyRequest,
+    responseSerialize: serialize_accounts_v1alpha1_UpdateApiKeyResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_UpdateApiKeyResponse,
+  },
+  deleteApiKey: {
+    path: '/accounts.v1alpha1.AccountService/DeleteApiKey',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.DeleteApiKeyRequest,
+    responseType: accounts_v1alpha1_accounts_pb.DeleteApiKeyResponse,
+    requestSerialize: serialize_accounts_v1alpha1_DeleteApiKeyRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_DeleteApiKeyRequest,
+    responseSerialize: serialize_accounts_v1alpha1_DeleteApiKeyResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_DeleteApiKeyResponse,
   },
 };
 

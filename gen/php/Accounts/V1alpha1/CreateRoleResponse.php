@@ -21,6 +21,10 @@ class CreateRoleResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      */
     protected $error = '';
+    /**
+     * Generated from protobuf field <code>uint32 id = 3 [json_name = "id"];</code>
+     */
+    protected $id = 0;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class CreateRoleResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type string $msg
      *     @type string $error
+     *     @type int $id
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class CreateRoleResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->error = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 id = 3 [json_name = "id"];</code>
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 id = 3 [json_name = "id"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->id = $var;
 
         return $this;
     }

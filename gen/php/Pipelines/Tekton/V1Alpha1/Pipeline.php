@@ -48,7 +48,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      */
     protected $spec_workspaces_name = '';
     /**
-     * Generated from protobuf field <code>repeated string params = 9 [json_name = "params"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
      */
     private $params;
     /**
@@ -60,7 +60,23 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      */
     protected $status_type = '';
     /**
-     * Generated from protobuf field <code>bool active = 12 [json_name = "active"];</code>
+     * Generated from protobuf field <code>map<string, string> integration = 12 [json_name = "integration"];</code>
+     */
+    private $integration;
+    /**
+     * Generated from protobuf field <code>map<string, string> environment_variables = 13 [json_name = "environmentVariables"];</code>
+     */
+    private $environment_variables;
+    /**
+     * Generated from protobuf field <code>map<string, string> commands = 14 [json_name = "commands"];</code>
+     */
+    private $commands;
+    /**
+     * Generated from protobuf field <code>map<string, string> secrets = 15 [json_name = "secrets"];</code>
+     */
+    private $secrets;
+    /**
+     * Generated from protobuf field <code>bool active = 16 [json_name = "active"];</code>
      */
     protected $active = false;
 
@@ -78,9 +94,13 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      *     @type string $object_meta_name
      *     @type string $object_meta_namespace
      *     @type string $spec_workspaces_name
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $params
+     *     @type \Pipelines\Tekton\V1Alpha1\Params[]|\Google\Protobuf\Internal\RepeatedField $params
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $tasks
      *     @type string $status_type
+     *     @type array|\Google\Protobuf\Internal\MapField $integration
+     *     @type array|\Google\Protobuf\Internal\MapField $environment_variables
+     *     @type array|\Google\Protobuf\Internal\MapField $commands
+     *     @type array|\Google\Protobuf\Internal\MapField $secrets
      *     @type bool $active
      * }
      */
@@ -266,7 +286,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string params = 9 [json_name = "params"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getParams()
@@ -275,13 +295,13 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string params = 9 [json_name = "params"];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\Params[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setParams($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Params::class);
         $this->params = $arr;
 
         return $this;
@@ -332,7 +352,95 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool active = 12 [json_name = "active"];</code>
+     * Generated from protobuf field <code>map<string, string> integration = 12 [json_name = "integration"];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getIntegration()
+    {
+        return $this->integration;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> integration = 12 [json_name = "integration"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setIntegration($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->integration = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> environment_variables = 13 [json_name = "environmentVariables"];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getEnvironmentVariables()
+    {
+        return $this->environment_variables;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> environment_variables = 13 [json_name = "environmentVariables"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setEnvironmentVariables($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->environment_variables = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> commands = 14 [json_name = "commands"];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getCommands()
+    {
+        return $this->commands;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> commands = 14 [json_name = "commands"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setCommands($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->commands = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> secrets = 15 [json_name = "secrets"];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getSecrets()
+    {
+        return $this->secrets;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> secrets = 15 [json_name = "secrets"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setSecrets($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->secrets = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool active = 16 [json_name = "active"];</code>
      * @return bool
      */
     public function getActive()
@@ -341,7 +449,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool active = 12 [json_name = "active"];</code>
+     * Generated from protobuf field <code>bool active = 16 [json_name = "active"];</code>
      * @param bool $var
      * @return $this
      */

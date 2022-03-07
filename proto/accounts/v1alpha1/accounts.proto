@@ -50,10 +50,112 @@ service AccountService {
     //  Countries
     rpc ListCountries(ListCountriesRequest) returns (ListCountriesResponse);
     rpc GetOneCountry(GetOneCountryRequest) returns (GetOneCountryResponse);
+
+    
+    // Tokens
+    rpc CreateApiKey(CreateApiKeyRequest) returns (CreateApiKeyResponse);
+    rpc GetOneApiKey(GetOneApiKeyRequest) returns (GetOneApiKeyResponse);
+    rpc ListApiKey(ListApiKeyRequest) returns (ListApiKeyResponse);
+    rpc UpdateApiKey(UpdateApiKeyRequest) returns (UpdateApiKeyResponse);
+    rpc DeleteApiKey(DeleteApiKeyRequest) returns (DeleteApiKeyResponse);
     
 }
 
 /*
+    Tokens Create
+*/
+
+message CreateApiKeyRequest {
+    string name = 1;
+    string user_id =2;
+    repeated uint32 roles_ids = 3;
+    repeated uint32 permissions_ids = 4;
+}
+
+message ApiKey {
+    string id = 1;
+    string name = 2;
+    string user_id = 3;
+    repeated Rol rol = 4;
+    repeated Permission permissions = 5;
+}
+
+message CreateApiKeyResponse {
+    string msg = 1;
+    string api_key = 2;
+    uint32 access_point_id = 4;
+    string error = 5;
+}
+
+/*
+    Tokens Get One
+*/
+
+message GetOneApiKeyRequest {
+    uint32 id = 1;
+}
+
+message GetOneApiKeyResponse {
+    uint32 id = 1;
+    string api_key = 2;
+    string name = 3;
+    string user_id =4;
+    repeated Rol roles = 5;
+    repeated Permission permissions = 6;
+}
+
+/*
+    Tokens List
+*/
+
+message ListApiKeyRequest {
+    string user_id = 1;
+}
+
+message ApiKeyList {
+    uint32  id = 1;
+    string api_key = 2;
+    string name = 3;
+    string user_id = 4;
+}
+
+message ListApiKeyResponse {
+    repeated ApiKeyList api_keys = 1;
+}
+
+/*
+    Tokens Update
+*/
+
+message UpdateApiKeyRequest {
+    uint32 id = 1;
+    string name = 2;
+    repeated uint32 roles_ids = 3;
+    repeated uint32 permissions_ids = 4;
+    bool is_active = 5;
+}
+
+message UpdateApiKeyResponse {
+    string msg = 1;
+    string api_key = 2;
+    string error = 3;
+}
+
+/*
+    Tokens Delete   
+*/
+
+message DeleteApiKeyRequest {
+    uint32 id = 1;
+}
+
+message DeleteApiKeyResponse {
+    string msg = 1;
+    string api_key = 2;
+    string error = 3;
+}
+
+/*  
 
     Requests Countries
 
@@ -102,13 +204,9 @@ message GetOneCountryResponse {
     repeated State states = 6;
 }
 
-
 /*
-
     VERIFICATION EMAIL
-
 */
-
 message SendVerificationEmailRequest {
     string email = 1;
     string name = 2;
@@ -141,11 +239,16 @@ message CheckUserRequest {
     uint32 user_id = 7;
     string type_permission = 9;
     repeated uint32 roles_ids = 10;
+
+    string api_key_value = 11;
+
 }
 
 message CheckUserResponse {
     bool is_exists = 1;
     string error = 2;
+    bool is_admin = 3;
+
 }
 
 message UsersDex {
@@ -356,6 +459,7 @@ message GetOneRoleResponse{
     uint32 organization_id = 3;
     uint32 project_id = 4;
     repeated Permission permissions = 5;
+    bool is_admin =6; 
 }
 
 message DeleteRoleRequest {
@@ -376,6 +480,7 @@ message ListRolesResponse {
 message CreateRoleResponse {
     string msg = 1;
     string error = 2;
+    uint32 id = 3;
 }
 
 message UpdateRoleResponse {
@@ -457,6 +562,8 @@ message GetOneProjectResponse {
     string created_at = 6;
     string updated_at = 7;
     repeated Member members = 8;
+    UserList owner = 9;
+
 }
 
 
@@ -604,6 +711,8 @@ message GetOneOrganizationResponse{
     repeated ProjectOrganization projects = 4;
     repeated Member menbers = 5;
     string description = 6;
+    UserList owner = 7;
+    
 }
 
 

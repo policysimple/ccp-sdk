@@ -33,6 +33,10 @@ class GetOneRoleResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 5 [json_name = "permissions"];</code>
      */
     private $permissions;
+    /**
+     * Generated from protobuf field <code>bool is_admin = 6 [json_name = "isAdmin"];</code>
+     */
+    protected $is_admin = false;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class GetOneRoleResponse extends \Google\Protobuf\Internal\Message
      *     @type int $organization_id
      *     @type int $project_id
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
+     *     @type bool $is_admin
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class GetOneRoleResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Permission::class);
         $this->permissions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_admin = 6 [json_name = "isAdmin"];</code>
+     * @return bool
+     */
+    public function getIsAdmin()
+    {
+        return $this->is_admin;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_admin = 6 [json_name = "isAdmin"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsAdmin($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_admin = $var;
 
         return $this;
     }

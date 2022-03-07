@@ -16,8 +16,15 @@ class Tekton
         }
         $pool->internalAddGeneratedFile(
             '
-µ	
-&pipelines/tekton/v1alpha1/tekton.protopipelines.tekton.v1alpha1"v
+Â
+&pipelines/tekton/v1alpha1/tekton.protopipelines.tekton.v1alpha1"
+Params
+name (	Rname!
+value_string (	RvalueString
+value_array (	R
+valueArray
+
+value_type (	R	valueType"v
 
 TaskParams
 
@@ -35,7 +42,7 @@ paramValue"è
 task_workspaces_main (	RtaskWorkspacesMainF
 task_params (2%.pipelines.tekton.v1alpha1.TaskParamsR
 taskParams 
-description	 (	Rdescription"Ó
+description	 (	Rdescription"ß
 Pipeline
 id (	Rid\'
 organization_id (RorganizationId
@@ -45,13 +52,29 @@ project_id (R	projectId$
 type_meta_api_version (	RtypeMetaApiVersion(
 object_meta_name (	RobjectMetaName2
 object_meta_namespace (	RobjectMetaNamespace0
-spec_workspaces_name (	RspecWorkspacesName
-params	 (	Rparams5
+spec_workspaces_name (	RspecWorkspacesName9
+params	 (2!.pipelines.tekton.v1alpha1.ParamsRparams5
 tasks
  (2.pipelines.tekton.v1alpha1.TaskRtasks
 status_type (	R
-statusType
-active (RactiveB®
+statusTypeV
+integration (24.pipelines.tekton.v1alpha1.Pipeline.IntegrationEntryRintegrationr
+environment_variables (2=.pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntryRenvironmentVariablesM
+commands (21.pipelines.tekton.v1alpha1.Pipeline.CommandsEntryRcommandsJ
+secrets (20.pipelines.tekton.v1alpha1.Pipeline.SecretsEntryRsecrets
+active (Ractive>
+IntegrationEntry
+key (	Rkey
+value (	Rvalue:8G
+EnvironmentVariablesEntry
+key (	Rkey
+value (	Rvalue:8;
+CommandsEntry
+key (	Rkey
+value (	Rvalue:8:
+SecretsEntry
+key (	Rkey
+value (	Rvalue:8B®
 #io.cuemby.pipelines.tekton.v1alpha1BTektonProtoPZ:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1¢PPXªPipelines.Tekton.V1Alpha1ÊPipelines\\Tekton\\V1Alpha1bproto3'
         , true);
 

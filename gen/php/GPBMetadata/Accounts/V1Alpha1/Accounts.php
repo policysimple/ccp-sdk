@@ -16,8 +16,59 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-ýn
- accounts/v1alpha1/accounts.protoaccounts.v1alpha1"d
+Ê~
+ accounts/v1alpha1/accounts.protoaccounts.v1alpha1"ˆ
+CreateApiKeyRequest
+name (	Rname
+user_id (	RuserId
+	roles_ids (RrolesIds\'
+permissions_ids (RpermissionsIds"°
+ApiKey
+id (	Rid
+name (	Rname
+user_id (	RuserId(
+rol (2.accounts.v1alpha1.RolRrol?
+permissions (2.accounts.v1alpha1.PermissionRpermissions"
+CreateApiKeyResponse
+msg (	Rmsg
+api_key (	RapiKey&
+access_point_id (RaccessPointId
+error (	Rerror"%
+GetOneApiKeyRequest
+id (Rid"Û
+GetOneApiKeyResponse
+id (Rid
+api_key (	RapiKey
+name (	Rname
+user_id (	RuserId,
+roles (2.accounts.v1alpha1.RolRroles?
+permissions (2.accounts.v1alpha1.PermissionRpermissions",
+ListApiKeyRequest
+user_id (	RuserId"b
+
+ApiKeyList
+id (Rid
+api_key (	RapiKey
+name (	Rname
+user_id (	RuserId"N
+ListApiKeyResponse8
+api_keys (2.accounts.v1alpha1.ApiKeyListRapiKeys"œ
+UpdateApiKeyRequest
+id (Rid
+name (	Rname
+	roles_ids (RrolesIds\'
+permissions_ids (RpermissionsIds
+	is_active (RisActive"W
+UpdateApiKeyResponse
+msg (	Rmsg
+api_key (	RapiKey
+error (	Rerror"%
+DeleteApiKeyRequest
+id (Rid"W
+DeleteApiKeyResponse
+msg (	Rmsg
+api_key (	RapiKey
+error (	Rerror"d
 City
 id (Rid
 name (	Rname
@@ -61,7 +112,7 @@ htmlResult
 token (	Rtoken"=
 VerifyEmailResponse
 msg (	Rmsg
-error (	Rerror"à
+error (	Rerror"„
 CheckUserRequest\'
 organization_id (RorganizationId
 
@@ -75,10 +126,12 @@ permission
 user_id (RuserId\'
 type_permission	 (	RtypePermission
 	roles_ids
- (RrolesIds"F
+ (RrolesIds"
+api_key_value (	RapiKeyValue"a
 CheckUserResponse
 	is_exists (RisExists
-error (	Rerror"?
+error (	Rerror
+is_admin (RisAdmin"?
 UsersDex
 user_id (	RuserId
 provider (	Rprovider"<
@@ -208,14 +261,15 @@ project_id (R	projectId\'
 rol_id (RrolId6
 rol (2$.accounts.v1alpha1.CreateRoleRequestRrol"*
 GetOneRoleRequest
-rol_id (RrolId"Á
+rol_id (RrolId"Ü
 GetOneRoleResponse
 id (Rid
 name (	Rname\'
 organization_id (RorganizationId
 
 project_id (R	projectId?
-permissions (2.accounts.v1alpha1.PermissionRpermissions"*
+permissions (2.accounts.v1alpha1.PermissionRpermissions
+is_admin (RisAdmin"*
 DeleteRoleRequest
 rol_id (RrolId"Z
 ListRolesRequest
@@ -223,10 +277,11 @@ project_id (R	projectId?
 project_id (R	projectId\'
 organization_id (RorganizationId"A
 ListRolesResponse,
-roles (2.accounts.v1alpha1.RolRroles"<
+roles (2.accounts.v1alpha1.RolRroles"L
 CreateRoleResponse
 msg (	Rmsg
-error (	Rerror"<
+error (	Rerror
+id (Rid"<
 UpdateRoleResponse
 msg (	Rmsg
 error (	Rerror"<
@@ -268,7 +323,7 @@ updated_at (	R	updatedAt,
 error (	Rerror"?
 DeleteProjectResponse
 msg (	Rmsg
-error (	Rerror"
+error (	Rerror"Â
 GetOneProjectResponse
 id (Rid
 name (	Rname
@@ -279,7 +334,8 @@ updated_at (	R	updatedAt,
 created_at (	R	createdAt
 
 updated_at (	R	updatedAt3
-members (2.accounts.v1alpha1.MemberRmembers"M
+members (2.accounts.v1alpha1.MemberRmembers1
+owner	 (2.accounts.v1alpha1.UserListRowner"M
 ListProjectResponse6
 projects (2.accounts.v1alpha1.ProjectRprojects"L
 ListProjectPaginationRequest
@@ -355,14 +411,15 @@ first_name (	R	firstName
 description (	Rdescription
 image (	Rimage"D
 DeleteOrganizationRequest\'
-organization_id (RorganizationId"ñ
+organization_id (RorganizationId"¤
 GetOneOrganizationResponse
 id (Rid
 name (	Rname
 image (	RimageB
 projects (2&.accounts.v1alpha1.ProjectOrganizationRprojects3
 menbers (2.accounts.v1alpha1.MemberRmenbers 
-description (	Rdescription"a
+description (	Rdescription1
+owner (2.accounts.v1alpha1.UserListRowner"a
 ListOrganizationResponseE
 organizations (2.accounts.v1alpha1.OrganizationRorganizations"†
 CreateOrganizationResponse
@@ -410,7 +467,7 @@ updated_at (	R	updatedAt,
 emoji_country (	RemojiCountry*d
 InvitationResponse,
 (INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED  
-INVITATION_RESPONSE_REJECTED2è
+INVITATION_RESPONSE_REJECTED2Ç 
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
@@ -455,7 +512,13 @@ DeleteRole$.accounts.v1alpha1.DeleteRoleRequest%.accounts.v1alpha1.DeleteRoleR
 SendVerificationEmail/.accounts.v1alpha1.SendVerificationEmailRequest0.accounts.v1alpha1.SendVerificationEmailResponse\\
 VerifyEmail%.accounts.v1alpha1.VerifyEmailRequest&.accounts.v1alpha1.VerifyEmailResponseb
 ListCountries\'.accounts.v1alpha1.ListCountriesRequest(.accounts.v1alpha1.ListCountriesResponseb
-GetOneCountry\'.accounts.v1alpha1.GetOneCountryRequest(.accounts.v1alpha1.GetOneCountryResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
+GetOneCountry\'.accounts.v1alpha1.GetOneCountryRequest(.accounts.v1alpha1.GetOneCountryResponse_
+CreateApiKey&.accounts.v1alpha1.CreateApiKeyRequest\'.accounts.v1alpha1.CreateApiKeyResponse_
+GetOneApiKey&.accounts.v1alpha1.GetOneApiKeyRequest\'.accounts.v1alpha1.GetOneApiKeyResponseY
+
+ListApiKey$.accounts.v1alpha1.ListApiKeyRequest%.accounts.v1alpha1.ListApiKeyResponse_
+UpdateApiKey&.accounts.v1alpha1.UpdateApiKeyRequest\'.accounts.v1alpha1.UpdateApiKeyResponse_
+DeleteApiKey&.accounts.v1alpha1.DeleteApiKeyRequest\'.accounts.v1alpha1.DeleteApiKeyResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

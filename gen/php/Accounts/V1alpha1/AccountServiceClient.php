@@ -491,4 +491,70 @@ class AccountServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Tokens
+     * @param \Accounts\V1alpha1\CreateApiKeyRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function CreateApiKey(\Accounts\V1alpha1\CreateApiKeyRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/CreateApiKey',
+        $argument,
+        ['\Accounts\V1alpha1\CreateApiKeyResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\GetOneApiKeyRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetOneApiKey(\Accounts\V1alpha1\GetOneApiKeyRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/GetOneApiKey',
+        $argument,
+        ['\Accounts\V1alpha1\GetOneApiKeyResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\ListApiKeyRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListApiKey(\Accounts\V1alpha1\ListApiKeyRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/ListApiKey',
+        $argument,
+        ['\Accounts\V1alpha1\ListApiKeyResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\UpdateApiKeyRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function UpdateApiKey(\Accounts\V1alpha1\UpdateApiKeyRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/UpdateApiKey',
+        $argument,
+        ['\Accounts\V1alpha1\UpdateApiKeyResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\DeleteApiKeyRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DeleteApiKey(\Accounts\V1alpha1\DeleteApiKeyRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/DeleteApiKey',
+        $argument,
+        ['\Accounts\V1alpha1\DeleteApiKeyResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }
