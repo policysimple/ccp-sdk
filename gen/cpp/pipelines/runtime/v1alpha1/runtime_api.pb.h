@@ -1176,7 +1176,8 @@ class GetRuntimeRequest final :
 
   enum : int {
     kRuntimeIdFieldNumber = 1,
-    kStatusFieldNumber = 2,
+    kStatusFieldNumber = 3,
+    kProjectIdFieldNumber = 2,
   };
   // string runtime_id = 1 [json_name = "runtimeId"];
   void clear_runtime_id();
@@ -1192,7 +1193,7 @@ class GetRuntimeRequest final :
   std::string* _internal_mutable_runtime_id();
   public:
 
-  // string status = 2 [json_name = "status"];
+  // string status = 3 [json_name = "status"];
   void clear_status();
   const std::string& status() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1206,6 +1207,15 @@ class GetRuntimeRequest final :
   std::string* _internal_mutable_status();
   public:
 
+  // uint32 project_id = 2 [json_name = "projectId"];
+  void clear_project_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
+  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
+  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.GetRuntimeRequest)
  private:
   class _Internal;
@@ -1215,6 +1225,7 @@ class GetRuntimeRequest final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
 };
@@ -2129,7 +2140,27 @@ inline void GetRuntimeRequest::set_allocated_runtime_id(std::string* runtime_id)
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.GetRuntimeRequest.runtime_id)
 }
 
-// string status = 2 [json_name = "status"];
+// uint32 project_id = 2 [json_name = "projectId"];
+inline void GetRuntimeRequest::clear_project_id() {
+  project_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetRuntimeRequest::_internal_project_id() const {
+  return project_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetRuntimeRequest::project_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.GetRuntimeRequest.project_id)
+  return _internal_project_id();
+}
+inline void GetRuntimeRequest::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  project_id_ = value;
+}
+inline void GetRuntimeRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_project_id(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.GetRuntimeRequest.project_id)
+}
+
+// string status = 3 [json_name = "status"];
 inline void GetRuntimeRequest::clear_status() {
   status_.ClearToEmpty();
 }

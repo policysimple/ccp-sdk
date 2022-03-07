@@ -18,77 +18,9 @@
 PROTOBUF_PRAGMA_INIT_SEG
 namespace vault {
 namespace v1alpha1 {
-constexpr Metadata::Metadata(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , created_time_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , custom_metadata_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , deletion_time_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , destroyed_(false)
-  , version_(0){}
-struct MetadataDefaultTypeInternal {
-  constexpr MetadataDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~MetadataDefaultTypeInternal() {}
-  union {
-    Metadata _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT MetadataDefaultTypeInternal _Metadata_default_instance_;
-constexpr SecretData_DataEntry_DoNotUse::SecretData_DataEntry_DoNotUse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct SecretData_DataEntry_DoNotUseDefaultTypeInternal {
-  constexpr SecretData_DataEntry_DoNotUseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~SecretData_DataEntry_DoNotUseDefaultTypeInternal() {}
-  union {
-    SecretData_DataEntry_DoNotUse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecretData_DataEntry_DoNotUseDefaultTypeInternal _SecretData_DataEntry_DoNotUse_default_instance_;
-constexpr SecretData::SecretData(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : data_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}){}
-struct SecretDataDefaultTypeInternal {
-  constexpr SecretDataDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~SecretDataDefaultTypeInternal() {}
-  union {
-    SecretData _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecretDataDefaultTypeInternal _SecretData_default_instance_;
-constexpr SecretWarnings::SecretWarnings(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : warnings_(){}
-struct SecretWarningsDefaultTypeInternal {
-  constexpr SecretWarningsDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~SecretWarningsDefaultTypeInternal() {}
-  union {
-    SecretWarnings _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecretWarningsDefaultTypeInternal _SecretWarnings_default_instance_;
-constexpr Secret::Secret(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : environment_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , metadata_(nullptr)
-  , data_(nullptr)
-  , warnings_(nullptr){}
-struct SecretDefaultTypeInternal {
-  constexpr SecretDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~SecretDefaultTypeInternal() {}
-  union {
-    Secret _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecretDefaultTypeInternal _Secret_default_instance_;
 constexpr CreateSecretRequest::CreateSecretRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : environment_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , data_(nullptr){}
+  : secret_(nullptr){}
 struct CreateSecretRequestDefaultTypeInternal {
   constexpr CreateSecretRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -164,7 +96,7 @@ struct DeleteSecretResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteSecretResponseDefaultTypeInternal _DeleteSecretResponse_default_instance_;
 constexpr GetSecretRequest::GetSecretRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : environment_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : project_id_(0u){}
 struct GetSecretRequestDefaultTypeInternal {
   constexpr GetSecretRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -177,7 +109,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetSecretRequestDefaultTypeInte
 constexpr GetSecretResponse::GetSecretResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , data_(nullptr){}
+  , secret_(nullptr){}
 struct GetSecretResponseDefaultTypeInternal {
   constexpr GetSecretResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -214,59 +146,17 @@ struct ListSecretResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListSecretResponseDefaultTypeInternal _ListSecretResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace vault
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[15];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[10];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Metadata, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Metadata, key_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Metadata, created_time_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Metadata, custom_metadata_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Metadata, deletion_time_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Metadata, destroyed_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Metadata, version_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SecretData_DataEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SecretData_DataEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SecretData_DataEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SecretData_DataEntry_DoNotUse, value_),
-  0,
-  1,
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SecretData, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SecretData, data_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SecretWarnings, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SecretWarnings, warnings_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, metadata_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, environment_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, data_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, warnings_),
-  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::CreateSecretRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::CreateSecretRequest, environment_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::CreateSecretRequest, data_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::CreateSecretRequest, secret_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::CreateSecretResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -306,13 +196,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_5fapi
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretRequest, environment_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretRequest, project_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretResponse, data_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretResponse, secret_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretResponse, error_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::ListSecretRequest, _internal_metadata_),
@@ -329,29 +219,19 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_5fapi
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::ListSecretResponse, error_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::vault::v1alpha1::Metadata)},
-  { 11, 18, sizeof(::vault::v1alpha1::SecretData_DataEntry_DoNotUse)},
-  { 20, -1, sizeof(::vault::v1alpha1::SecretData)},
-  { 26, -1, sizeof(::vault::v1alpha1::SecretWarnings)},
-  { 32, -1, sizeof(::vault::v1alpha1::Secret)},
-  { 41, -1, sizeof(::vault::v1alpha1::CreateSecretRequest)},
-  { 48, -1, sizeof(::vault::v1alpha1::CreateSecretResponse)},
-  { 55, -1, sizeof(::vault::v1alpha1::UpdateSecretRequest)},
-  { 62, -1, sizeof(::vault::v1alpha1::UpdateSecretResponse)},
-  { 69, -1, sizeof(::vault::v1alpha1::DeleteSecretRequest)},
-  { 75, -1, sizeof(::vault::v1alpha1::DeleteSecretResponse)},
-  { 82, -1, sizeof(::vault::v1alpha1::GetSecretRequest)},
-  { 88, -1, sizeof(::vault::v1alpha1::GetSecretResponse)},
-  { 95, -1, sizeof(::vault::v1alpha1::ListSecretRequest)},
-  { 101, -1, sizeof(::vault::v1alpha1::ListSecretResponse)},
+  { 0, -1, sizeof(::vault::v1alpha1::CreateSecretRequest)},
+  { 6, -1, sizeof(::vault::v1alpha1::CreateSecretResponse)},
+  { 13, -1, sizeof(::vault::v1alpha1::UpdateSecretRequest)},
+  { 20, -1, sizeof(::vault::v1alpha1::UpdateSecretResponse)},
+  { 27, -1, sizeof(::vault::v1alpha1::DeleteSecretRequest)},
+  { 33, -1, sizeof(::vault::v1alpha1::DeleteSecretResponse)},
+  { 40, -1, sizeof(::vault::v1alpha1::GetSecretRequest)},
+  { 46, -1, sizeof(::vault::v1alpha1::GetSecretResponse)},
+  { 53, -1, sizeof(::vault::v1alpha1::ListSecretRequest)},
+  { 59, -1, sizeof(::vault::v1alpha1::ListSecretResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_Metadata_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_SecretData_DataEntry_DoNotUse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_SecretData_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_SecretWarnings_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_Secret_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_CreateSecretRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_CreateSecretResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_UpdateSecretRequest_default_instance_),
@@ -366,58 +246,49 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\036vault/v1alpha1/vault_api.proto\022\016vault."
-  "v1alpha1\"\305\001\n\010Metadata\022\020\n\003key\030\001 \001(\tR\003key\022"
-  "!\n\014created_time\030\002 \001(\tR\013createdTime\022\'\n\017cu"
-  "stom_metadata\030\003 \001(\tR\016customMetadata\022#\n\rd"
-  "eletion_time\030\004 \001(\tR\014deletionTime\022\034\n\tdest"
-  "royed\030\005 \001(\010R\tdestroyed\022\030\n\007version\030\006 \001(\005R"
-  "\007version\"\177\n\nSecretData\0228\n\004data\030\001 \003(\0132$.v"
-  "ault.v1alpha1.SecretData.DataEntryR\004data"
-  "\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value"
-  "\030\002 \001(\tR\005value:\0028\001\",\n\016SecretWarnings\022\032\n\010w"
-  "arnings\030\001 \003(\tR\010warnings\"\314\001\n\006Secret\0224\n\010me"
-  "tadata\030\001 \001(\0132\030.vault.v1alpha1.MetadataR\010"
-  "metadata\022 \n\013environment\030\002 \001(\tR\013environme"
-  "nt\022.\n\004data\030\003 \001(\0132\032.vault.v1alpha1.Secret"
-  "DataR\004data\022:\n\010warnings\030\004 \001(\0132\036.vault.v1a"
-  "lpha1.SecretWarningsR\010warnings\"g\n\023Create"
-  "SecretRequest\022 \n\013environment\030\001 \001(\tR\013envi"
-  "ronment\022.\n\004data\030\002 \001(\0132\032.vault.v1alpha1.S"
-  "ecretDataR\004data\">\n\024CreateSecretResponse\022"
-  "\024\n\005error\030\001 \001(\tR\005error\022\020\n\003msg\030\002 \001(\tR\003msg\""
-  "g\n\023UpdateSecretRequest\022 \n\013environment\030\001 "
-  "\001(\tR\013environment\022.\n\004data\030\002 \001(\0132\032.vault.v"
-  "1alpha1.SecretDataR\004data\">\n\024UpdateSecret"
-  "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001("
-  "\tR\005error\"7\n\023DeleteSecretRequest\022 \n\013envir"
-  "onment\030\001 \001(\tR\013environment\">\n\024DeleteSecre"
-  "tResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001"
-  "(\tR\005error\"4\n\020GetSecretRequest\022 \n\013environ"
-  "ment\030\001 \001(\tR\013environment\"Y\n\021GetSecretResp"
-  "onse\022.\n\004data\030\001 \001(\0132\032.vault.v1alpha1.Secr"
-  "etDataR\004data\022\024\n\005error\030\002 \001(\tR\005error\"5\n\021Li"
-  "stSecretRequest\022 \n\013environment\030\001 \001(\tR\013en"
-  "vironment\"\\\n\022ListSecretResponse\0220\n\007secre"
-  "ts\030\001 \003(\0132\026.vault.v1alpha1.SecretR\007secret"
-  "s\022\024\n\005error\030\002 \001(\tR\005error2\323\003\n\017VaultAPIServ"
-  "ice\022[\n\014CreateSecret\022#.vault.v1alpha1.Cre"
-  "ateSecretRequest\032$.vault.v1alpha1.Create"
-  "SecretResponse\"\000\022[\n\014UpdateSecret\022#.vault"
-  ".v1alpha1.UpdateSecretRequest\032$.vault.v1"
-  "alpha1.UpdateSecretResponse\"\000\022[\n\014DeleteS"
-  "ecret\022#.vault.v1alpha1.DeleteSecretReque"
-  "st\032$.vault.v1alpha1.DeleteSecretResponse"
-  "\"\000\022R\n\tGetSecret\022 .vault.v1alpha1.GetSecr"
-  "etRequest\032!.vault.v1alpha1.GetSecretResp"
-  "onse\"\000\022U\n\nListSecret\022!.vault.v1alpha1.Li"
-  "stSecretRequest\032\".vault.v1alpha1.ListSec"
-  "retResponse\"\000B1Z/github.com/cuemby/ccp-s"
-  "dk/gen/go/vault/v1alpha1b\006proto3"
+  "v1alpha1\032\032vault/v1alpha1/vault.proto\"E\n\023"
+  "CreateSecretRequest\022.\n\006secret\030\001 \001(\0132\026.va"
+  "ult.v1alpha1.SecretR\006secret\">\n\024CreateSec"
+  "retResponse\022\024\n\005error\030\001 \001(\tR\005error\022\020\n\003msg"
+  "\030\002 \001(\tR\003msg\"g\n\023UpdateSecretRequest\022 \n\013en"
+  "vironment\030\001 \001(\tR\013environment\022.\n\004data\030\002 \001"
+  "(\0132\032.vault.v1alpha1.SecretDataR\004data\">\n\024"
+  "UpdateSecretResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024"
+  "\n\005error\030\002 \001(\tR\005error\"7\n\023DeleteSecretRequ"
+  "est\022 \n\013environment\030\001 \001(\tR\013environment\">\n"
+  "\024DeleteSecretResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022"
+  "\024\n\005error\030\002 \001(\tR\005error\"1\n\020GetSecretReques"
+  "t\022\035\n\nproject_id\030\001 \001(\rR\tprojectId\"Y\n\021GetS"
+  "ecretResponse\022.\n\006secret\030\001 \001(\0132\026.vault.v1"
+  "alpha1.SecretR\006secret\022\024\n\005error\030\002 \001(\tR\005er"
+  "ror\"5\n\021ListSecretRequest\022 \n\013environment\030"
+  "\001 \001(\tR\013environment\"\\\n\022ListSecretResponse"
+  "\0220\n\007secrets\030\001 \003(\0132\026.vault.v1alpha1.Secre"
+  "tR\007secrets\022\024\n\005error\030\002 \001(\tR\005error2\323\003\n\017Vau"
+  "ltAPIService\022[\n\014CreateSecret\022#.vault.v1a"
+  "lpha1.CreateSecretRequest\032$.vault.v1alph"
+  "a1.CreateSecretResponse\"\000\022[\n\014UpdateSecre"
+  "t\022#.vault.v1alpha1.UpdateSecretRequest\032$"
+  ".vault.v1alpha1.UpdateSecretResponse\"\000\022["
+  "\n\014DeleteSecret\022#.vault.v1alpha1.DeleteSe"
+  "cretRequest\032$.vault.v1alpha1.DeleteSecre"
+  "tResponse\"\000\022R\n\tGetSecret\022 .vault.v1alpha"
+  "1.GetSecretRequest\032!.vault.v1alpha1.GetS"
+  "ecretResponse\"\000\022U\n\nListSecret\022!.vault.v1"
+  "alpha1.ListSecretRequest\032\".vault.v1alpha"
+  "1.ListSecretResponse\"\000B\206\001\n\030io.cuemby.vau"
+  "lt.v1alpha1B\rVaultAPIProtoP\001Z1github.com"
+  "/cuemby/ccp-vault-service/vaultv1alpha1\242"
+  "\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1b"
+  "\006proto3"
   ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_deps[1] = {
+  &::descriptor_table_vault_2fv1alpha1_2fvault_2eproto,
+};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto = {
-  false, false, 1912, descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto, "vault/v1alpha1/vault_api.proto", 
-  &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once, nullptr, 0, 15,
+  false, false, 1407, descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto, "vault/v1alpha1/vault_api.proto", 
+  &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once, descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_deps, 1, 10,
   schemas, file_default_instances, TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto::offsets,
   file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto, file_level_enum_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto, file_level_service_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto,
 };
@@ -432,1173 +303,20 @@ namespace v1alpha1 {
 
 // ===================================================================
 
-class Metadata::_Internal {
- public:
-};
-
-Metadata::Metadata(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:vault.v1alpha1.Metadata)
-}
-Metadata::Metadata(const Metadata& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_key().empty()) {
-    key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_key(), 
-      GetArenaForAllocation());
-  }
-  created_time_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_created_time().empty()) {
-    created_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_created_time(), 
-      GetArenaForAllocation());
-  }
-  custom_metadata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_custom_metadata().empty()) {
-    custom_metadata_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_custom_metadata(), 
-      GetArenaForAllocation());
-  }
-  deletion_time_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_deletion_time().empty()) {
-    deletion_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_deletion_time(), 
-      GetArenaForAllocation());
-  }
-  ::memcpy(&destroyed_, &from.destroyed_,
-    static_cast<size_t>(reinterpret_cast<char*>(&version_) -
-    reinterpret_cast<char*>(&destroyed_)) + sizeof(version_));
-  // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.Metadata)
-}
-
-inline void Metadata::SharedCtor() {
-key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-created_time_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-custom_metadata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-deletion_time_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&destroyed_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&version_) -
-    reinterpret_cast<char*>(&destroyed_)) + sizeof(version_));
-}
-
-Metadata::~Metadata() {
-  // @@protoc_insertion_point(destructor:vault.v1alpha1.Metadata)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void Metadata::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  created_time_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  custom_metadata_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  deletion_time_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-void Metadata::ArenaDtor(void* object) {
-  Metadata* _this = reinterpret_cast< Metadata* >(object);
-  (void)_this;
-}
-void Metadata::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void Metadata::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void Metadata::Clear() {
-// @@protoc_insertion_point(message_clear_start:vault.v1alpha1.Metadata)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  key_.ClearToEmpty();
-  created_time_.ClearToEmpty();
-  custom_metadata_.ClearToEmpty();
-  deletion_time_.ClearToEmpty();
-  ::memset(&destroyed_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&version_) -
-      reinterpret_cast<char*>(&destroyed_)) + sizeof(version_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* Metadata::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string key = 1 [json_name = "key"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_key();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.Metadata.key"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string created_time = 2 [json_name = "createdTime"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_created_time();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.Metadata.created_time"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string custom_metadata = 3 [json_name = "customMetadata"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_custom_metadata();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.Metadata.custom_metadata"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string deletion_time = 4 [json_name = "deletionTime"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_deletion_time();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.Metadata.deletion_time"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool destroyed = 5 [json_name = "destroyed"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          destroyed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // int32 version = 6 [json_name = "version"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* Metadata::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vault.v1alpha1.Metadata)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string key = 1 [json_name = "key"];
-  if (!this->_internal_key().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_key().data(), static_cast<int>(this->_internal_key().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vault.v1alpha1.Metadata.key");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_key(), target);
-  }
-
-  // string created_time = 2 [json_name = "createdTime"];
-  if (!this->_internal_created_time().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_created_time().data(), static_cast<int>(this->_internal_created_time().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vault.v1alpha1.Metadata.created_time");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_created_time(), target);
-  }
-
-  // string custom_metadata = 3 [json_name = "customMetadata"];
-  if (!this->_internal_custom_metadata().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_custom_metadata().data(), static_cast<int>(this->_internal_custom_metadata().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vault.v1alpha1.Metadata.custom_metadata");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_custom_metadata(), target);
-  }
-
-  // string deletion_time = 4 [json_name = "deletionTime"];
-  if (!this->_internal_deletion_time().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_deletion_time().data(), static_cast<int>(this->_internal_deletion_time().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vault.v1alpha1.Metadata.deletion_time");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_deletion_time(), target);
-  }
-
-  // bool destroyed = 5 [json_name = "destroyed"];
-  if (this->_internal_destroyed() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_destroyed(), target);
-  }
-
-  // int32 version = 6 [json_name = "version"];
-  if (this->_internal_version() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_version(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:vault.v1alpha1.Metadata)
-  return target;
-}
-
-size_t Metadata::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vault.v1alpha1.Metadata)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string key = 1 [json_name = "key"];
-  if (!this->_internal_key().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_key());
-  }
-
-  // string created_time = 2 [json_name = "createdTime"];
-  if (!this->_internal_created_time().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_created_time());
-  }
-
-  // string custom_metadata = 3 [json_name = "customMetadata"];
-  if (!this->_internal_custom_metadata().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_custom_metadata());
-  }
-
-  // string deletion_time = 4 [json_name = "deletionTime"];
-  if (!this->_internal_deletion_time().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_deletion_time());
-  }
-
-  // bool destroyed = 5 [json_name = "destroyed"];
-  if (this->_internal_destroyed() != 0) {
-    total_size += 1 + 1;
-  }
-
-  // int32 version = 6 [json_name = "version"];
-  if (this->_internal_version() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_version());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Metadata::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Metadata::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Metadata::GetClassData() const { return &_class_data_; }
-
-void Metadata::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<Metadata *>(to)->MergeFrom(
-      static_cast<const Metadata &>(from));
-}
-
-
-void Metadata::MergeFrom(const Metadata& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vault.v1alpha1.Metadata)
-  GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_key().empty()) {
-    _internal_set_key(from._internal_key());
-  }
-  if (!from._internal_created_time().empty()) {
-    _internal_set_created_time(from._internal_created_time());
-  }
-  if (!from._internal_custom_metadata().empty()) {
-    _internal_set_custom_metadata(from._internal_custom_metadata());
-  }
-  if (!from._internal_deletion_time().empty()) {
-    _internal_set_deletion_time(from._internal_deletion_time());
-  }
-  if (from._internal_destroyed() != 0) {
-    _internal_set_destroyed(from._internal_destroyed());
-  }
-  if (from._internal_version() != 0) {
-    _internal_set_version(from._internal_version());
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void Metadata::CopyFrom(const Metadata& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vault.v1alpha1.Metadata)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Metadata::IsInitialized() const {
-  return true;
-}
-
-void Metadata::InternalSwap(Metadata* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &key_, GetArenaForAllocation(),
-      &other->key_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &created_time_, GetArenaForAllocation(),
-      &other->created_time_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &custom_metadata_, GetArenaForAllocation(),
-      &other->custom_metadata_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &deletion_time_, GetArenaForAllocation(),
-      &other->deletion_time_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Metadata, version_)
-      + sizeof(Metadata::version_)
-      - PROTOBUF_FIELD_OFFSET(Metadata, destroyed_)>(
-          reinterpret_cast<char*>(&destroyed_),
-          reinterpret_cast<char*>(&other->destroyed_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata Metadata::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[0]);
-}
-
-// ===================================================================
-
-SecretData_DataEntry_DoNotUse::SecretData_DataEntry_DoNotUse() {}
-SecretData_DataEntry_DoNotUse::SecretData_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-    : SuperType(arena) {}
-void SecretData_DataEntry_DoNotUse::MergeFrom(const SecretData_DataEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::PROTOBUF_NAMESPACE_ID::Metadata SecretData_DataEntry_DoNotUse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[1]);
-}
-
-// ===================================================================
-
-class SecretData::_Internal {
- public:
-};
-
-SecretData::SecretData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  data_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:vault.v1alpha1.SecretData)
-}
-SecretData::SecretData(const SecretData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  data_.MergeFrom(from.data_);
-  // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.SecretData)
-}
-
-inline void SecretData::SharedCtor() {
-}
-
-SecretData::~SecretData() {
-  // @@protoc_insertion_point(destructor:vault.v1alpha1.SecretData)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void SecretData::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void SecretData::ArenaDtor(void* object) {
-  SecretData* _this = reinterpret_cast< SecretData* >(object);
-  (void)_this;
-  _this->data_. ~MapField();
-}
-inline void SecretData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
-  if (arena != nullptr) {
-    arena->OwnCustomDestructor(this, &SecretData::ArenaDtor);
-  }
-}
-void SecretData::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void SecretData::Clear() {
-// @@protoc_insertion_point(message_clear_start:vault.v1alpha1.SecretData)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  data_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* SecretData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // map<string, string> data = 1 [json_name = "data"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(&data_, ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* SecretData::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vault.v1alpha1.SecretData)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // map<string, string> data = 1 [json_name = "data"];
-  if (!this->_internal_data().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        (void)p;
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-          "vault.v1alpha1.SecretData.DataEntry.key");
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-          "vault.v1alpha1.SecretData.DataEntry.value");
-      }
-    };
-
-    if (stream->IsSerializationDeterministic() &&
-        this->_internal_data().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->_internal_data().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
-      size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-          it = this->_internal_data().begin();
-          it != this->_internal_data().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      for (size_type i = 0; i < n; i++) {
-        target = SecretData_DataEntry_DoNotUse::Funcs::InternalSerialize(1, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-          it = this->_internal_data().begin();
-          it != this->_internal_data().end(); ++it) {
-        target = SecretData_DataEntry_DoNotUse::Funcs::InternalSerialize(1, it->first, it->second, target, stream);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:vault.v1alpha1.SecretData)
-  return target;
-}
-
-size_t SecretData::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vault.v1alpha1.SecretData)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // map<string, string> data = 1 [json_name = "data"];
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_data_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-      it = this->_internal_data().begin();
-      it != this->_internal_data().end(); ++it) {
-    total_size += SecretData_DataEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SecretData::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    SecretData::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SecretData::GetClassData() const { return &_class_data_; }
-
-void SecretData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<SecretData *>(to)->MergeFrom(
-      static_cast<const SecretData &>(from));
-}
-
-
-void SecretData::MergeFrom(const SecretData& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vault.v1alpha1.SecretData)
-  GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  data_.MergeFrom(from.data_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void SecretData::CopyFrom(const SecretData& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vault.v1alpha1.SecretData)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool SecretData::IsInitialized() const {
-  return true;
-}
-
-void SecretData::InternalSwap(SecretData* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  data_.InternalSwap(&other->data_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata SecretData::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[2]);
-}
-
-// ===================================================================
-
-class SecretWarnings::_Internal {
- public:
-};
-
-SecretWarnings::SecretWarnings(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  warnings_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:vault.v1alpha1.SecretWarnings)
-}
-SecretWarnings::SecretWarnings(const SecretWarnings& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      warnings_(from.warnings_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.SecretWarnings)
-}
-
-inline void SecretWarnings::SharedCtor() {
-}
-
-SecretWarnings::~SecretWarnings() {
-  // @@protoc_insertion_point(destructor:vault.v1alpha1.SecretWarnings)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void SecretWarnings::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void SecretWarnings::ArenaDtor(void* object) {
-  SecretWarnings* _this = reinterpret_cast< SecretWarnings* >(object);
-  (void)_this;
-}
-void SecretWarnings::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void SecretWarnings::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void SecretWarnings::Clear() {
-// @@protoc_insertion_point(message_clear_start:vault.v1alpha1.SecretWarnings)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  warnings_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* SecretWarnings::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated string warnings = 1 [json_name = "warnings"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_warnings();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.SecretWarnings.warnings"));
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* SecretWarnings::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vault.v1alpha1.SecretWarnings)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated string warnings = 1 [json_name = "warnings"];
-  for (int i = 0, n = this->_internal_warnings_size(); i < n; i++) {
-    const auto& s = this->_internal_warnings(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vault.v1alpha1.SecretWarnings.warnings");
-    target = stream->WriteString(1, s, target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:vault.v1alpha1.SecretWarnings)
-  return target;
-}
-
-size_t SecretWarnings::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vault.v1alpha1.SecretWarnings)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated string warnings = 1 [json_name = "warnings"];
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(warnings_.size());
-  for (int i = 0, n = warnings_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      warnings_.Get(i));
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SecretWarnings::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    SecretWarnings::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SecretWarnings::GetClassData() const { return &_class_data_; }
-
-void SecretWarnings::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<SecretWarnings *>(to)->MergeFrom(
-      static_cast<const SecretWarnings &>(from));
-}
-
-
-void SecretWarnings::MergeFrom(const SecretWarnings& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vault.v1alpha1.SecretWarnings)
-  GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  warnings_.MergeFrom(from.warnings_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void SecretWarnings::CopyFrom(const SecretWarnings& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vault.v1alpha1.SecretWarnings)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool SecretWarnings::IsInitialized() const {
-  return true;
-}
-
-void SecretWarnings::InternalSwap(SecretWarnings* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  warnings_.InternalSwap(&other->warnings_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata SecretWarnings::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[3]);
-}
-
-// ===================================================================
-
-class Secret::_Internal {
- public:
-  static const ::vault::v1alpha1::Metadata& metadata(const Secret* msg);
-  static const ::vault::v1alpha1::SecretData& data(const Secret* msg);
-  static const ::vault::v1alpha1::SecretWarnings& warnings(const Secret* msg);
-};
-
-const ::vault::v1alpha1::Metadata&
-Secret::_Internal::metadata(const Secret* msg) {
-  return *msg->metadata_;
-}
-const ::vault::v1alpha1::SecretData&
-Secret::_Internal::data(const Secret* msg) {
-  return *msg->data_;
-}
-const ::vault::v1alpha1::SecretWarnings&
-Secret::_Internal::warnings(const Secret* msg) {
-  return *msg->warnings_;
-}
-Secret::Secret(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:vault.v1alpha1.Secret)
-}
-Secret::Secret(const Secret& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  environment_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_environment().empty()) {
-    environment_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_environment(), 
-      GetArenaForAllocation());
-  }
-  if (from._internal_has_metadata()) {
-    metadata_ = new ::vault::v1alpha1::Metadata(*from.metadata_);
-  } else {
-    metadata_ = nullptr;
-  }
-  if (from._internal_has_data()) {
-    data_ = new ::vault::v1alpha1::SecretData(*from.data_);
-  } else {
-    data_ = nullptr;
-  }
-  if (from._internal_has_warnings()) {
-    warnings_ = new ::vault::v1alpha1::SecretWarnings(*from.warnings_);
-  } else {
-    warnings_ = nullptr;
-  }
-  // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.Secret)
-}
-
-inline void Secret::SharedCtor() {
-environment_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&metadata_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&warnings_) -
-    reinterpret_cast<char*>(&metadata_)) + sizeof(warnings_));
-}
-
-Secret::~Secret() {
-  // @@protoc_insertion_point(destructor:vault.v1alpha1.Secret)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void Secret::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  environment_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete metadata_;
-  if (this != internal_default_instance()) delete data_;
-  if (this != internal_default_instance()) delete warnings_;
-}
-
-void Secret::ArenaDtor(void* object) {
-  Secret* _this = reinterpret_cast< Secret* >(object);
-  (void)_this;
-}
-void Secret::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void Secret::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void Secret::Clear() {
-// @@protoc_insertion_point(message_clear_start:vault.v1alpha1.Secret)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  environment_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && metadata_ != nullptr) {
-    delete metadata_;
-  }
-  metadata_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && data_ != nullptr) {
-    delete data_;
-  }
-  data_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && warnings_ != nullptr) {
-    delete warnings_;
-  }
-  warnings_ = nullptr;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* Secret::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .vault.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_metadata(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string environment = 2 [json_name = "environment"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_environment();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.Secret.environment"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .vault.v1alpha1.SecretData data = 3 [json_name = "data"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .vault.v1alpha1.SecretWarnings warnings = 4 [json_name = "warnings"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_warnings(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* Secret::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vault.v1alpha1.Secret)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .vault.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
-  if (this->_internal_has_metadata()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::metadata(this), target, stream);
-  }
-
-  // string environment = 2 [json_name = "environment"];
-  if (!this->_internal_environment().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_environment().data(), static_cast<int>(this->_internal_environment().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vault.v1alpha1.Secret.environment");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_environment(), target);
-  }
-
-  // .vault.v1alpha1.SecretData data = 3 [json_name = "data"];
-  if (this->_internal_has_data()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::data(this), target, stream);
-  }
-
-  // .vault.v1alpha1.SecretWarnings warnings = 4 [json_name = "warnings"];
-  if (this->_internal_has_warnings()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        4, _Internal::warnings(this), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:vault.v1alpha1.Secret)
-  return target;
-}
-
-size_t Secret::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vault.v1alpha1.Secret)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string environment = 2 [json_name = "environment"];
-  if (!this->_internal_environment().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_environment());
-  }
-
-  // .vault.v1alpha1.Metadata metadata = 1 [json_name = "metadata"];
-  if (this->_internal_has_metadata()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *metadata_);
-  }
-
-  // .vault.v1alpha1.SecretData data = 3 [json_name = "data"];
-  if (this->_internal_has_data()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *data_);
-  }
-
-  // .vault.v1alpha1.SecretWarnings warnings = 4 [json_name = "warnings"];
-  if (this->_internal_has_warnings()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *warnings_);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Secret::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Secret::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Secret::GetClassData() const { return &_class_data_; }
-
-void Secret::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<Secret *>(to)->MergeFrom(
-      static_cast<const Secret &>(from));
-}
-
-
-void Secret::MergeFrom(const Secret& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vault.v1alpha1.Secret)
-  GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_environment().empty()) {
-    _internal_set_environment(from._internal_environment());
-  }
-  if (from._internal_has_metadata()) {
-    _internal_mutable_metadata()->::vault::v1alpha1::Metadata::MergeFrom(from._internal_metadata());
-  }
-  if (from._internal_has_data()) {
-    _internal_mutable_data()->::vault::v1alpha1::SecretData::MergeFrom(from._internal_data());
-  }
-  if (from._internal_has_warnings()) {
-    _internal_mutable_warnings()->::vault::v1alpha1::SecretWarnings::MergeFrom(from._internal_warnings());
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void Secret::CopyFrom(const Secret& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vault.v1alpha1.Secret)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Secret::IsInitialized() const {
-  return true;
-}
-
-void Secret::InternalSwap(Secret* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &environment_, GetArenaForAllocation(),
-      &other->environment_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Secret, warnings_)
-      + sizeof(Secret::warnings_)
-      - PROTOBUF_FIELD_OFFSET(Secret, metadata_)>(
-          reinterpret_cast<char*>(&metadata_),
-          reinterpret_cast<char*>(&other->metadata_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata Secret::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[4]);
-}
-
-// ===================================================================
-
 class CreateSecretRequest::_Internal {
  public:
-  static const ::vault::v1alpha1::SecretData& data(const CreateSecretRequest* msg);
+  static const ::vault::v1alpha1::Secret& secret(const CreateSecretRequest* msg);
 };
 
-const ::vault::v1alpha1::SecretData&
-CreateSecretRequest::_Internal::data(const CreateSecretRequest* msg) {
-  return *msg->data_;
+const ::vault::v1alpha1::Secret&
+CreateSecretRequest::_Internal::secret(const CreateSecretRequest* msg) {
+  return *msg->secret_;
+}
+void CreateSecretRequest::clear_secret() {
+  if (GetArenaForAllocation() == nullptr && secret_ != nullptr) {
+    delete secret_;
+  }
+  secret_ = nullptr;
 }
 CreateSecretRequest::CreateSecretRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -1612,22 +330,16 @@ CreateSecretRequest::CreateSecretRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 CreateSecretRequest::CreateSecretRequest(const CreateSecretRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  environment_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_environment().empty()) {
-    environment_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_environment(), 
-      GetArenaForAllocation());
-  }
-  if (from._internal_has_data()) {
-    data_ = new ::vault::v1alpha1::SecretData(*from.data_);
+  if (from._internal_has_secret()) {
+    secret_ = new ::vault::v1alpha1::Secret(*from.secret_);
   } else {
-    data_ = nullptr;
+    secret_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.CreateSecretRequest)
 }
 
 inline void CreateSecretRequest::SharedCtor() {
-environment_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-data_ = nullptr;
+secret_ = nullptr;
 }
 
 CreateSecretRequest::~CreateSecretRequest() {
@@ -1639,8 +351,7 @@ CreateSecretRequest::~CreateSecretRequest() {
 
 inline void CreateSecretRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  environment_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete data_;
+  if (this != internal_default_instance()) delete secret_;
 }
 
 void CreateSecretRequest::ArenaDtor(void* object) {
@@ -1659,11 +370,10 @@ void CreateSecretRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  environment_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && data_ != nullptr) {
-    delete data_;
+  if (GetArenaForAllocation() == nullptr && secret_ != nullptr) {
+    delete secret_;
   }
-  data_ = nullptr;
+  secret_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1673,19 +383,10 @@ const char* CreateSecretRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string environment = 1 [json_name = "environment"];
+      // .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_environment();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.CreateSecretRequest.environment"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .vault.v1alpha1.SecretData data = 2 [json_name = "data"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_secret(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1718,22 +419,12 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string environment = 1 [json_name = "environment"];
-  if (!this->_internal_environment().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_environment().data(), static_cast<int>(this->_internal_environment().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vault.v1alpha1.CreateSecretRequest.environment");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_environment(), target);
-  }
-
-  // .vault.v1alpha1.SecretData data = 2 [json_name = "data"];
-  if (this->_internal_has_data()) {
+  // .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];
+  if (this->_internal_has_secret()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::data(this), target, stream);
+        1, _Internal::secret(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1752,18 +443,11 @@ size_t CreateSecretRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string environment = 1 [json_name = "environment"];
-  if (!this->_internal_environment().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_environment());
-  }
-
-  // .vault.v1alpha1.SecretData data = 2 [json_name = "data"];
-  if (this->_internal_has_data()) {
+  // .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];
+  if (this->_internal_has_secret()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *data_);
+        *secret_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1794,11 +478,8 @@ void CreateSecretRequest::MergeFrom(const CreateSecretRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_environment().empty()) {
-    _internal_set_environment(from._internal_environment());
-  }
-  if (from._internal_has_data()) {
-    _internal_mutable_data()->::vault::v1alpha1::SecretData::MergeFrom(from._internal_data());
+  if (from._internal_has_secret()) {
+    _internal_mutable_secret()->::vault::v1alpha1::Secret::MergeFrom(from._internal_secret());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1817,18 +498,13 @@ bool CreateSecretRequest::IsInitialized() const {
 void CreateSecretRequest::InternalSwap(CreateSecretRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &environment_, GetArenaForAllocation(),
-      &other->environment_, other->GetArenaForAllocation()
-  );
-  swap(data_, other->data_);
+  swap(secret_, other->secret_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateSecretRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[5]);
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[0]);
 }
 
 // ===================================================================
@@ -2070,7 +746,7 @@ void CreateSecretResponse::InternalSwap(CreateSecretResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateSecretResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[6]);
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[1]);
 }
 
 // ===================================================================
@@ -2083,6 +759,12 @@ class UpdateSecretRequest::_Internal {
 const ::vault::v1alpha1::SecretData&
 UpdateSecretRequest::_Internal::data(const UpdateSecretRequest* msg) {
   return *msg->data_;
+}
+void UpdateSecretRequest::clear_data() {
+  if (GetArenaForAllocation() == nullptr && data_ != nullptr) {
+    delete data_;
+  }
+  data_ = nullptr;
 }
 UpdateSecretRequest::UpdateSecretRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -2312,7 +994,7 @@ void UpdateSecretRequest::InternalSwap(UpdateSecretRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateSecretRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[7]);
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[2]);
 }
 
 // ===================================================================
@@ -2554,7 +1236,7 @@ void UpdateSecretResponse::InternalSwap(UpdateSecretResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateSecretResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[8]);
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[3]);
 }
 
 // ===================================================================
@@ -2754,7 +1436,7 @@ void DeleteSecretRequest::InternalSwap(DeleteSecretRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteSecretRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[9]);
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[4]);
 }
 
 // ===================================================================
@@ -2996,7 +1678,7 @@ void DeleteSecretResponse::InternalSwap(DeleteSecretResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteSecretResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[10]);
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[5]);
 }
 
 // ===================================================================
@@ -3017,16 +1699,12 @@ GetSecretRequest::GetSecretRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetSecretRequest::GetSecretRequest(const GetSecretRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  environment_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_environment().empty()) {
-    environment_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_environment(), 
-      GetArenaForAllocation());
-  }
+  project_id_ = from.project_id_;
   // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.GetSecretRequest)
 }
 
 inline void GetSecretRequest::SharedCtor() {
-environment_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_id_ = 0u;
 }
 
 GetSecretRequest::~GetSecretRequest() {
@@ -3038,7 +1716,6 @@ GetSecretRequest::~GetSecretRequest() {
 
 inline void GetSecretRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  environment_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetSecretRequest::ArenaDtor(void* object) {
@@ -3057,7 +1734,7 @@ void GetSecretRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  environment_.ClearToEmpty();
+  project_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3067,12 +1744,10 @@ const char* GetSecretRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string environment = 1 [json_name = "environment"];
+      // uint32 project_id = 1 [json_name = "projectId"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_environment();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.GetSecretRequest.environment"));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3105,14 +1780,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string environment = 1 [json_name = "environment"];
-  if (!this->_internal_environment().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_environment().data(), static_cast<int>(this->_internal_environment().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vault.v1alpha1.GetSecretRequest.environment");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_environment(), target);
+  // uint32 project_id = 1 [json_name = "projectId"];
+  if (this->_internal_project_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_project_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3131,11 +1802,11 @@ size_t GetSecretRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string environment = 1 [json_name = "environment"];
-  if (!this->_internal_environment().empty()) {
+  // uint32 project_id = 1 [json_name = "projectId"];
+  if (this->_internal_project_id() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_environment());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_project_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3166,8 +1837,8 @@ void GetSecretRequest::MergeFrom(const GetSecretRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_environment().empty()) {
-    _internal_set_environment(from._internal_environment());
+  if (from._internal_project_id() != 0) {
+    _internal_set_project_id(from._internal_project_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3186,29 +1857,31 @@ bool GetSecretRequest::IsInitialized() const {
 void GetSecretRequest::InternalSwap(GetSecretRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &environment_, GetArenaForAllocation(),
-      &other->environment_, other->GetArenaForAllocation()
-  );
+  swap(project_id_, other->project_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetSecretRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[11]);
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[6]);
 }
 
 // ===================================================================
 
 class GetSecretResponse::_Internal {
  public:
-  static const ::vault::v1alpha1::SecretData& data(const GetSecretResponse* msg);
+  static const ::vault::v1alpha1::Secret& secret(const GetSecretResponse* msg);
 };
 
-const ::vault::v1alpha1::SecretData&
-GetSecretResponse::_Internal::data(const GetSecretResponse* msg) {
-  return *msg->data_;
+const ::vault::v1alpha1::Secret&
+GetSecretResponse::_Internal::secret(const GetSecretResponse* msg) {
+  return *msg->secret_;
+}
+void GetSecretResponse::clear_secret() {
+  if (GetArenaForAllocation() == nullptr && secret_ != nullptr) {
+    delete secret_;
+  }
+  secret_ = nullptr;
 }
 GetSecretResponse::GetSecretResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -3227,17 +1900,17 @@ GetSecretResponse::GetSecretResponse(const GetSecretResponse& from)
     error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_data()) {
-    data_ = new ::vault::v1alpha1::SecretData(*from.data_);
+  if (from._internal_has_secret()) {
+    secret_ = new ::vault::v1alpha1::Secret(*from.secret_);
   } else {
-    data_ = nullptr;
+    secret_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.GetSecretResponse)
 }
 
 inline void GetSecretResponse::SharedCtor() {
 error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-data_ = nullptr;
+secret_ = nullptr;
 }
 
 GetSecretResponse::~GetSecretResponse() {
@@ -3250,7 +1923,7 @@ GetSecretResponse::~GetSecretResponse() {
 inline void GetSecretResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete data_;
+  if (this != internal_default_instance()) delete secret_;
 }
 
 void GetSecretResponse::ArenaDtor(void* object) {
@@ -3270,10 +1943,10 @@ void GetSecretResponse::Clear() {
   (void) cached_has_bits;
 
   error_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && data_ != nullptr) {
-    delete data_;
+  if (GetArenaForAllocation() == nullptr && secret_ != nullptr) {
+    delete secret_;
   }
-  data_ = nullptr;
+  secret_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3283,10 +1956,10 @@ const char* GetSecretResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .vault.v1alpha1.SecretData data = 1 [json_name = "data"];
+      // .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_secret(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3328,12 +2001,12 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vault.v1alpha1.SecretData data = 1 [json_name = "data"];
-  if (this->_internal_has_data()) {
+  // .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];
+  if (this->_internal_has_secret()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::data(this), target, stream);
+        1, _Internal::secret(this), target, stream);
   }
 
   // string error = 2 [json_name = "error"];
@@ -3369,11 +2042,11 @@ size_t GetSecretResponse::ByteSizeLong() const {
         this->_internal_error());
   }
 
-  // .vault.v1alpha1.SecretData data = 1 [json_name = "data"];
-  if (this->_internal_has_data()) {
+  // .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];
+  if (this->_internal_has_secret()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *data_);
+        *secret_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3407,8 +2080,8 @@ void GetSecretResponse::MergeFrom(const GetSecretResponse& from) {
   if (!from._internal_error().empty()) {
     _internal_set_error(from._internal_error());
   }
-  if (from._internal_has_data()) {
-    _internal_mutable_data()->::vault::v1alpha1::SecretData::MergeFrom(from._internal_data());
+  if (from._internal_has_secret()) {
+    _internal_mutable_secret()->::vault::v1alpha1::Secret::MergeFrom(from._internal_secret());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3432,13 +2105,13 @@ void GetSecretResponse::InternalSwap(GetSecretResponse* other) {
       &error_, GetArenaForAllocation(),
       &other->error_, other->GetArenaForAllocation()
   );
-  swap(data_, other->data_);
+  swap(secret_, other->secret_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetSecretResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[12]);
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[7]);
 }
 
 // ===================================================================
@@ -3638,7 +2311,7 @@ void ListSecretRequest::InternalSwap(ListSecretRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListSecretRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[13]);
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[8]);
 }
 
 // ===================================================================
@@ -3647,6 +2320,9 @@ class ListSecretResponse::_Internal {
  public:
 };
 
+void ListSecretResponse::clear_secrets() {
+  secrets_.Clear();
+}
 ListSecretResponse::ListSecretResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
@@ -3870,28 +2546,13 @@ void ListSecretResponse::InternalSwap(ListSecretResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListSecretResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[14]);
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[9]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace vault
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::vault::v1alpha1::Metadata* Arena::CreateMaybeMessage< ::vault::v1alpha1::Metadata >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vault::v1alpha1::Metadata >(arena);
-}
-template<> PROTOBUF_NOINLINE ::vault::v1alpha1::SecretData_DataEntry_DoNotUse* Arena::CreateMaybeMessage< ::vault::v1alpha1::SecretData_DataEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vault::v1alpha1::SecretData_DataEntry_DoNotUse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::vault::v1alpha1::SecretData* Arena::CreateMaybeMessage< ::vault::v1alpha1::SecretData >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vault::v1alpha1::SecretData >(arena);
-}
-template<> PROTOBUF_NOINLINE ::vault::v1alpha1::SecretWarnings* Arena::CreateMaybeMessage< ::vault::v1alpha1::SecretWarnings >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vault::v1alpha1::SecretWarnings >(arena);
-}
-template<> PROTOBUF_NOINLINE ::vault::v1alpha1::Secret* Arena::CreateMaybeMessage< ::vault::v1alpha1::Secret >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vault::v1alpha1::Secret >(arena);
-}
 template<> PROTOBUF_NOINLINE ::vault::v1alpha1::CreateSecretRequest* Arena::CreateMaybeMessage< ::vault::v1alpha1::CreateSecretRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vault::v1alpha1::CreateSecretRequest >(arena);
 }

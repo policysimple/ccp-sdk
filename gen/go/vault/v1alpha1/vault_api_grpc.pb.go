@@ -4,7 +4,7 @@
 // - protoc             v3.17.3
 // source: vault/v1alpha1/vault_api.proto
 
-package v1alpha1
+package vaultv1alpha1
 
 import (
 	context "context"

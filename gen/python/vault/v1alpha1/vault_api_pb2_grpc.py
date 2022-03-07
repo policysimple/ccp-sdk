@@ -5,22 +5,8 @@ from vault.v1alpha1 import vault_api_pb2 as vault_dot_v1alpha1_dot_vault__api__p
 
 
 class VaultAPIServiceStub(object):
-  """======= Metadata =======
-  Key                Value
-  ---                -----
-  created_time       2022-01-21T16:44:14.254178235Z
-  custom_metadata    <nil>
-  deletion_time      n/a
-  destroyed          false
-  version            1
-
-  ====== Data ======
-  Key         Value
-  ---         -----
-  password    static-password
-  username    static-user
-
-  """
+  # missing associated documentation comment in .proto file
+  pass
 
   def __init__(self, channel):
     """Constructor.
@@ -56,22 +42,8 @@ class VaultAPIServiceStub(object):
 
 
 class VaultAPIServiceServicer(object):
-  """======= Metadata =======
-  Key                Value
-  ---                -----
-  created_time       2022-01-21T16:44:14.254178235Z
-  custom_metadata    <nil>
-  deletion_time      n/a
-  destroyed          false
-  version            1
-
-  ====== Data ======
-  Key         Value
-  ---         -----
-  password    static-password
-  username    static-user
-
-  """
+  # missing associated documentation comment in .proto file
+  pass
 
   def CreateSecret(self, request, context):
     # missing associated documentation comment in .proto file
