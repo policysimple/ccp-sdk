@@ -34,6 +34,10 @@ type SecretWarnings struct {
 	*vaultpkgv1.SecretWarnings
 }
 
+type Secret struct {
+	*vaultpkgv1.Secret
+}
+
 func init() {
 	doOnce.Do(func() {
 		vaultServiceTimeout = os.Getenv("VAULT_SERVICE_TIMEOUT")
@@ -49,7 +53,7 @@ func init() {
 	})
 }
 
-func CreateSecret(in *vaultpkgv1.CreateSecretRequest) (*vaultpkgv1.CreateSecretResponse, error) {
+func CreateSecret(in *Secret) (*vaultpkgv1.CreateSecretResponse, error) {
 
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
@@ -58,37 +62,8 @@ func CreateSecret(in *vaultpkgv1.CreateSecretRequest) (*vaultpkgv1.CreateSecretR
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	//convert map to String map secretData
-	var data map[string]string
-	for k, v := range in.Secret.Data.Data {
-		data[k] = v
-	}
-
-	//convert array to String array secretWarnings
-	var warnings []string
-	for _, v := range in.Secret.Warnings.Warnings {
-		warnings = append(warnings, v)
-	}
-
 	response, err := client.CreateSecret(ctx, &vaultpkgv1.CreateSecretRequest{
-		Secret: &vaultpkgv1.Secret{
-			ProjectId:     in.Secret.ProjectId,
-			ApplicationId: in.Secret.ApplicationId,
-			Metadata: &vaultpkgv1.Metadata{
-				Key:            in.Secret.Metadata.Key,
-				CreatedTime:    in.Secret.Metadata.CreatedTime,
-				CustomMetadata: in.Secret.Metadata.CustomMetadata,
-				DeletionTime:   in.Secret.Metadata.DeletionTime,
-				Destroyed:      in.Secret.Metadata.Destroyed,
-				Version:        in.Secret.Metadata.Version,
-			},
-			Data: &vaultpkgv1.SecretData{
-				Data: data,
-			},
-			Warnings: &vaultpkgv1.SecretWarnings{
-				Warnings: warnings,
-			},
-		},
+		Secret: in.Secret,
 	})
 
 	if err != nil {
@@ -102,7 +77,7 @@ func CreateSecret(in *vaultpkgv1.CreateSecretRequest) (*vaultpkgv1.CreateSecretR
 	return response, nil
 }
 
-func UpdateSecret(in *vaultpkgv1.UpdateSecretRequest) (*vaultpkgv1.UpdateSecretResponse, error) {
+func UpdateSecret(in *Secret) (*vaultpkgv1.UpdateSecretResponse, error) {
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -110,37 +85,8 @@ func UpdateSecret(in *vaultpkgv1.UpdateSecretRequest) (*vaultpkgv1.UpdateSecretR
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	//convert map to String map secretData
-	var data map[string]string
-	for k, v := range in.Secret.Data.Data {
-		data[k] = v
-	}
-
-	//convert array to String array secretWarnings
-	var warnings []string
-	for _, v := range in.Secret.Warnings.Warnings {
-		warnings = append(warnings, v)
-	}
-
 	response, err := client.UpdateSecret(ctx, &vaultpkgv1.UpdateSecretRequest{
-		Secret: &vaultpkgv1.Secret{
-			ProjectId:     in.Secret.ProjectId,
-			ApplicationId: in.Secret.ApplicationId,
-			Metadata: &vaultpkgv1.Metadata{
-				Key:            in.Secret.Metadata.Key,
-				CreatedTime:    in.Secret.Metadata.CreatedTime,
-				CustomMetadata: in.Secret.Metadata.CustomMetadata,
-				DeletionTime:   in.Secret.Metadata.DeletionTime,
-				Destroyed:      in.Secret.Metadata.Destroyed,
-				Version:        in.Secret.Metadata.Version,
-			},
-			Data: &vaultpkgv1.SecretData{
-				Data: data,
-			},
-			Warnings: &vaultpkgv1.SecretWarnings{
-				Warnings: warnings,
-			},
-		},
+		Secret: in.Secret,
 	})
 
 	if err != nil {
