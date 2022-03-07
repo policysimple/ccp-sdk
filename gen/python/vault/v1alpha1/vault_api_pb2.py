@@ -11,240 +11,20 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from vault.v1alpha1 import vault_pb2 as vault_dot_v1alpha1_dot_vault__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='vault/v1alpha1/vault_api.proto',
   package='vault.v1alpha1',
   syntax='proto3',
-  serialized_options=b'Z/github.com/cuemby/ccp-sdk/gen/go/vault/v1alpha1',
+  serialized_options=b'\n\030io.cuemby.vault.v1alpha1B\rVaultAPIProtoP\001Z1github.com/cuemby/ccp-vault-service/vaultv1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1evault/v1alpha1/vault_api.proto\x12\x0evault.v1alpha1\"\xc5\x01\n\x08Metadata\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12!\n\x0c\x63reated_time\x18\x02 \x01(\tR\x0b\x63reatedTime\x12\'\n\x0f\x63ustom_metadata\x18\x03 \x01(\tR\x0e\x63ustomMetadata\x12#\n\rdeletion_time\x18\x04 \x01(\tR\x0c\x64\x65letionTime\x12\x1c\n\tdestroyed\x18\x05 \x01(\x08R\tdestroyed\x12\x18\n\x07version\x18\x06 \x01(\x05R\x07version\"\x7f\n\nSecretData\x12\x38\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32$.vault.v1alpha1.SecretData.DataEntryR\x04\x64\x61ta\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\",\n\x0eSecretWarnings\x12\x1a\n\x08warnings\x18\x01 \x03(\tR\x08warnings\"\xcc\x01\n\x06Secret\x12\x34\n\x08metadata\x18\x01 \x01(\x0b\x32\x18.vault.v1alpha1.MetadataR\x08metadata\x12 \n\x0b\x65nvironment\x18\x02 \x01(\tR\x0b\x65nvironment\x12.\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x1a.vault.v1alpha1.SecretDataR\x04\x64\x61ta\x12:\n\x08warnings\x18\x04 \x01(\x0b\x32\x1e.vault.v1alpha1.SecretWarningsR\x08warnings\"g\n\x13\x43reateSecretRequest\x12 \n\x0b\x65nvironment\x18\x01 \x01(\tR\x0b\x65nvironment\x12.\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x1a.vault.v1alpha1.SecretDataR\x04\x64\x61ta\">\n\x14\x43reateSecretResponse\x12\x14\n\x05\x65rror\x18\x01 \x01(\tR\x05\x65rror\x12\x10\n\x03msg\x18\x02 \x01(\tR\x03msg\"g\n\x13UpdateSecretRequest\x12 \n\x0b\x65nvironment\x18\x01 \x01(\tR\x0b\x65nvironment\x12.\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x1a.vault.v1alpha1.SecretDataR\x04\x64\x61ta\">\n\x14UpdateSecretResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"7\n\x13\x44\x65leteSecretRequest\x12 \n\x0b\x65nvironment\x18\x01 \x01(\tR\x0b\x65nvironment\">\n\x14\x44\x65leteSecretResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"4\n\x10GetSecretRequest\x12 \n\x0b\x65nvironment\x18\x01 \x01(\tR\x0b\x65nvironment\"Y\n\x11GetSecretResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1a.vault.v1alpha1.SecretDataR\x04\x64\x61ta\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"5\n\x11ListSecretRequest\x12 \n\x0b\x65nvironment\x18\x01 \x01(\tR\x0b\x65nvironment\"\\\n\x12ListSecretResponse\x12\x30\n\x07secrets\x18\x01 \x03(\x0b\x32\x16.vault.v1alpha1.SecretR\x07secrets\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror2\xd3\x03\n\x0fVaultAPIService\x12[\n\x0c\x43reateSecret\x12#.vault.v1alpha1.CreateSecretRequest\x1a$.vault.v1alpha1.CreateSecretResponse\"\x00\x12[\n\x0cUpdateSecret\x12#.vault.v1alpha1.UpdateSecretRequest\x1a$.vault.v1alpha1.UpdateSecretResponse\"\x00\x12[\n\x0c\x44\x65leteSecret\x12#.vault.v1alpha1.DeleteSecretRequest\x1a$.vault.v1alpha1.DeleteSecretResponse\"\x00\x12R\n\tGetSecret\x12 .vault.v1alpha1.GetSecretRequest\x1a!.vault.v1alpha1.GetSecretResponse\"\x00\x12U\n\nListSecret\x12!.vault.v1alpha1.ListSecretRequest\x1a\".vault.v1alpha1.ListSecretResponse\"\x00\x42\x31Z/github.com/cuemby/ccp-sdk/gen/go/vault/v1alpha1b\x06proto3'
-)
+  serialized_pb=b'\n\x1evault/v1alpha1/vault_api.proto\x12\x0evault.v1alpha1\x1a\x1avault/v1alpha1/vault.proto\"E\n\x13\x43reateSecretRequest\x12.\n\x06secret\x18\x01 \x01(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\">\n\x14\x43reateSecretResponse\x12\x14\n\x05\x65rror\x18\x01 \x01(\tR\x05\x65rror\x12\x10\n\x03msg\x18\x02 \x01(\tR\x03msg\"g\n\x13UpdateSecretRequest\x12 \n\x0b\x65nvironment\x18\x01 \x01(\tR\x0b\x65nvironment\x12.\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x1a.vault.v1alpha1.SecretDataR\x04\x64\x61ta\">\n\x14UpdateSecretResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"7\n\x13\x44\x65leteSecretRequest\x12 \n\x0b\x65nvironment\x18\x01 \x01(\tR\x0b\x65nvironment\">\n\x14\x44\x65leteSecretResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"1\n\x10GetSecretRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\"Y\n\x11GetSecretResponse\x12.\n\x06secret\x18\x01 \x01(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"5\n\x11ListSecretRequest\x12 \n\x0b\x65nvironment\x18\x01 \x01(\tR\x0b\x65nvironment\"\\\n\x12ListSecretResponse\x12\x30\n\x07secrets\x18\x01 \x03(\x0b\x32\x16.vault.v1alpha1.SecretR\x07secrets\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror2\xd3\x03\n\x0fVaultAPIService\x12[\n\x0c\x43reateSecret\x12#.vault.v1alpha1.CreateSecretRequest\x1a$.vault.v1alpha1.CreateSecretResponse\"\x00\x12[\n\x0cUpdateSecret\x12#.vault.v1alpha1.UpdateSecretRequest\x1a$.vault.v1alpha1.UpdateSecretResponse\"\x00\x12[\n\x0c\x44\x65leteSecret\x12#.vault.v1alpha1.DeleteSecretRequest\x1a$.vault.v1alpha1.DeleteSecretResponse\"\x00\x12R\n\tGetSecret\x12 .vault.v1alpha1.GetSecretRequest\x1a!.vault.v1alpha1.GetSecretResponse\"\x00\x12U\n\nListSecret\x12!.vault.v1alpha1.ListSecretRequest\x1a\".vault.v1alpha1.ListSecretResponse\"\x00\x42\x86\x01\n\x18io.cuemby.vault.v1alpha1B\rVaultAPIProtoP\x01Z1github.com/cuemby/ccp-vault-service/vaultv1alpha1\xa2\x02\x03PPX\xaa\x02\x0eVault.V1Alpha1\xca\x02\x0eVault\\V1Alpha1b\x06proto3'
+  ,
+  dependencies=[vault_dot_v1alpha1_dot_vault__pb2.DESCRIPTOR,])
 
 
-
-
-_METADATA = _descriptor.Descriptor(
-  name='Metadata',
-  full_name='vault.v1alpha1.Metadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='vault.v1alpha1.Metadata.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='key', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='created_time', full_name='vault.v1alpha1.Metadata.created_time', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='createdTime', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='custom_metadata', full_name='vault.v1alpha1.Metadata.custom_metadata', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='customMetadata', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deletion_time', full_name='vault.v1alpha1.Metadata.deletion_time', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='deletionTime', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='destroyed', full_name='vault.v1alpha1.Metadata.destroyed', index=4,
-      number=5, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='destroyed', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version', full_name='vault.v1alpha1.Metadata.version', index=5,
-      number=6, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='version', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=51,
-  serialized_end=248,
-)
-
-
-_SECRETDATA_DATAENTRY = _descriptor.Descriptor(
-  name='DataEntry',
-  full_name='vault.v1alpha1.SecretData.DataEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='vault.v1alpha1.SecretData.DataEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='key', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='vault.v1alpha1.SecretData.DataEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='value', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=322,
-  serialized_end=377,
-)
-
-_SECRETDATA = _descriptor.Descriptor(
-  name='SecretData',
-  full_name='vault.v1alpha1.SecretData',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='data', full_name='vault.v1alpha1.SecretData.data', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='data', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_SECRETDATA_DATAENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=250,
-  serialized_end=377,
-)
-
-
-_SECRETWARNINGS = _descriptor.Descriptor(
-  name='SecretWarnings',
-  full_name='vault.v1alpha1.SecretWarnings',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='warnings', full_name='vault.v1alpha1.SecretWarnings.warnings', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='warnings', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=379,
-  serialized_end=423,
-)
-
-
-_SECRET = _descriptor.Descriptor(
-  name='Secret',
-  full_name='vault.v1alpha1.Secret',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='metadata', full_name='vault.v1alpha1.Secret.metadata', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='metadata', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='environment', full_name='vault.v1alpha1.Secret.environment', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='environment', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='data', full_name='vault.v1alpha1.Secret.data', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='data', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='warnings', full_name='vault.v1alpha1.Secret.warnings', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='warnings', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=426,
-  serialized_end=630,
-)
 
 
 _CREATESECRETREQUEST = _descriptor.Descriptor(
@@ -256,19 +36,12 @@ _CREATESECRETREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='environment', full_name='vault.v1alpha1.CreateSecretRequest.environment', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='environment', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='data', full_name='vault.v1alpha1.CreateSecretRequest.data', index=1,
-      number=2, type=11, cpp_type=10, label=1,
+      name='secret', full_name='vault.v1alpha1.CreateSecretRequest.secret', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='data', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='secret', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -281,8 +54,8 @@ _CREATESECRETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=632,
-  serialized_end=735,
+  serialized_start=78,
+  serialized_end=147,
 )
 
 
@@ -320,8 +93,8 @@ _CREATESECRETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=737,
-  serialized_end=799,
+  serialized_start=149,
+  serialized_end=211,
 )
 
 
@@ -359,8 +132,8 @@ _UPDATESECRETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=801,
-  serialized_end=904,
+  serialized_start=213,
+  serialized_end=316,
 )
 
 
@@ -398,8 +171,8 @@ _UPDATESECRETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=906,
-  serialized_end=968,
+  serialized_start=318,
+  serialized_end=380,
 )
 
 
@@ -430,8 +203,8 @@ _DELETESECRETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=970,
-  serialized_end=1025,
+  serialized_start=382,
+  serialized_end=437,
 )
 
 
@@ -469,8 +242,8 @@ _DELETESECRETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1027,
-  serialized_end=1089,
+  serialized_start=439,
+  serialized_end=501,
 )
 
 
@@ -483,12 +256,12 @@ _GETSECRETREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='environment', full_name='vault.v1alpha1.GetSecretRequest.environment', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='project_id', full_name='vault.v1alpha1.GetSecretRequest.project_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='environment', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='projectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -501,8 +274,8 @@ _GETSECRETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1091,
-  serialized_end=1143,
+  serialized_start=503,
+  serialized_end=552,
 )
 
 
@@ -515,12 +288,12 @@ _GETSECRETRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='data', full_name='vault.v1alpha1.GetSecretResponse.data', index=0,
+      name='secret', full_name='vault.v1alpha1.GetSecretResponse.secret', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='data', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='secret', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='error', full_name='vault.v1alpha1.GetSecretResponse.error', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -540,8 +313,8 @@ _GETSECRETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1145,
-  serialized_end=1234,
+  serialized_start=554,
+  serialized_end=643,
 )
 
 
@@ -572,8 +345,8 @@ _LISTSECRETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1236,
-  serialized_end=1289,
+  serialized_start=645,
+  serialized_end=698,
 )
 
 
@@ -611,23 +384,14 @@ _LISTSECRETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1291,
-  serialized_end=1383,
+  serialized_start=700,
+  serialized_end=792,
 )
 
-_SECRETDATA_DATAENTRY.containing_type = _SECRETDATA
-_SECRETDATA.fields_by_name['data'].message_type = _SECRETDATA_DATAENTRY
-_SECRET.fields_by_name['metadata'].message_type = _METADATA
-_SECRET.fields_by_name['data'].message_type = _SECRETDATA
-_SECRET.fields_by_name['warnings'].message_type = _SECRETWARNINGS
-_CREATESECRETREQUEST.fields_by_name['data'].message_type = _SECRETDATA
-_UPDATESECRETREQUEST.fields_by_name['data'].message_type = _SECRETDATA
-_GETSECRETRESPONSE.fields_by_name['data'].message_type = _SECRETDATA
-_LISTSECRETRESPONSE.fields_by_name['secrets'].message_type = _SECRET
-DESCRIPTOR.message_types_by_name['Metadata'] = _METADATA
-DESCRIPTOR.message_types_by_name['SecretData'] = _SECRETDATA
-DESCRIPTOR.message_types_by_name['SecretWarnings'] = _SECRETWARNINGS
-DESCRIPTOR.message_types_by_name['Secret'] = _SECRET
+_CREATESECRETREQUEST.fields_by_name['secret'].message_type = vault_dot_v1alpha1_dot_vault__pb2._SECRET
+_UPDATESECRETREQUEST.fields_by_name['data'].message_type = vault_dot_v1alpha1_dot_vault__pb2._SECRETDATA
+_GETSECRETRESPONSE.fields_by_name['secret'].message_type = vault_dot_v1alpha1_dot_vault__pb2._SECRET
+_LISTSECRETRESPONSE.fields_by_name['secrets'].message_type = vault_dot_v1alpha1_dot_vault__pb2._SECRET
 DESCRIPTOR.message_types_by_name['CreateSecretRequest'] = _CREATESECRETREQUEST
 DESCRIPTOR.message_types_by_name['CreateSecretResponse'] = _CREATESECRETRESPONSE
 DESCRIPTOR.message_types_by_name['UpdateSecretRequest'] = _UPDATESECRETREQUEST
@@ -639,42 +403,6 @@ DESCRIPTOR.message_types_by_name['GetSecretResponse'] = _GETSECRETRESPONSE
 DESCRIPTOR.message_types_by_name['ListSecretRequest'] = _LISTSECRETREQUEST
 DESCRIPTOR.message_types_by_name['ListSecretResponse'] = _LISTSECRETRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Metadata = _reflection.GeneratedProtocolMessageType('Metadata', (_message.Message,), {
-  'DESCRIPTOR' : _METADATA,
-  '__module__' : 'vault.v1alpha1.vault_api_pb2'
-  # @@protoc_insertion_point(class_scope:vault.v1alpha1.Metadata)
-  })
-_sym_db.RegisterMessage(Metadata)
-
-SecretData = _reflection.GeneratedProtocolMessageType('SecretData', (_message.Message,), {
-
-  'DataEntry' : _reflection.GeneratedProtocolMessageType('DataEntry', (_message.Message,), {
-    'DESCRIPTOR' : _SECRETDATA_DATAENTRY,
-    '__module__' : 'vault.v1alpha1.vault_api_pb2'
-    # @@protoc_insertion_point(class_scope:vault.v1alpha1.SecretData.DataEntry)
-    })
-  ,
-  'DESCRIPTOR' : _SECRETDATA,
-  '__module__' : 'vault.v1alpha1.vault_api_pb2'
-  # @@protoc_insertion_point(class_scope:vault.v1alpha1.SecretData)
-  })
-_sym_db.RegisterMessage(SecretData)
-_sym_db.RegisterMessage(SecretData.DataEntry)
-
-SecretWarnings = _reflection.GeneratedProtocolMessageType('SecretWarnings', (_message.Message,), {
-  'DESCRIPTOR' : _SECRETWARNINGS,
-  '__module__' : 'vault.v1alpha1.vault_api_pb2'
-  # @@protoc_insertion_point(class_scope:vault.v1alpha1.SecretWarnings)
-  })
-_sym_db.RegisterMessage(SecretWarnings)
-
-Secret = _reflection.GeneratedProtocolMessageType('Secret', (_message.Message,), {
-  'DESCRIPTOR' : _SECRET,
-  '__module__' : 'vault.v1alpha1.vault_api_pb2'
-  # @@protoc_insertion_point(class_scope:vault.v1alpha1.Secret)
-  })
-_sym_db.RegisterMessage(Secret)
 
 CreateSecretRequest = _reflection.GeneratedProtocolMessageType('CreateSecretRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATESECRETREQUEST,
@@ -748,7 +476,6 @@ _sym_db.RegisterMessage(ListSecretResponse)
 
 
 DESCRIPTOR._options = None
-_SECRETDATA_DATAENTRY._options = None
 
 _VAULTAPISERVICE = _descriptor.ServiceDescriptor(
   name='VaultAPIService',
@@ -757,8 +484,8 @@ _VAULTAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1386,
-  serialized_end=1853,
+  serialized_start=795,
+  serialized_end=1262,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateSecret',

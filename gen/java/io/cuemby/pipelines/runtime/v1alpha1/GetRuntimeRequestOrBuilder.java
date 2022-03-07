@@ -20,12 +20,18 @@ public interface GetRuntimeRequestOrBuilder extends
       getRuntimeIdBytes();
 
   /**
-   * <code>string status = 2 [json_name = "status"];</code>
+   * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+   * @return The projectId.
+   */
+  int getProjectId();
+
+  /**
+   * <code>string status = 3 [json_name = "status"];</code>
    * @return The status.
    */
   java.lang.String getStatus();
   /**
-   * <code>string status = 2 [json_name = "status"];</code>
+   * <code>string status = 3 [json_name = "status"];</code>
    * @return The bytes for status.
    */
   com.google.protobuf.ByteString

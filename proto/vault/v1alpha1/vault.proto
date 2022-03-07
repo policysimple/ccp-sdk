@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package vault.v1alpha1;
+
+option csharp_namespace = "Vault.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-vault-service/vaultv1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "VaultProto";
+option java_package = "io.cuemby.vault.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Vault\\V1Alpha1";
+
+// Vault secrets ...
+message Metadata {
+    string key = 1;
+    string created_time = 2;
+    string custom_metadata = 3;
+    string deletion_time = 4;
+    bool destroyed = 5;
+    int32 version = 6;
+}
+
+message SecretData {
+    map<string, string> data = 1;
+}
+
+message SecretWarnings {
+    repeated string warnings = 1;
+}
+
+message Secret {
+    uint32 project_id = 1;
+    string application_id = 2;
+    Metadata metadata = 3;
+    string environment = 4;
+    SecretData data = 5;
+    SecretWarnings warnings = 6;
+}

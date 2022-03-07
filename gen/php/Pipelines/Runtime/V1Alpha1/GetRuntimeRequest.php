@@ -18,7 +18,11 @@ class GetRuntimeRequest extends \Google\Protobuf\Internal\Message
      */
     protected $runtime_id = '';
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+     */
+    protected $project_id = 0;
+    /**
+     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
      */
     protected $status = '';
 
@@ -29,6 +33,7 @@ class GetRuntimeRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $runtime_id
+     *     @type int $project_id
      *     @type string $status
      * }
      */
@@ -60,7 +65,29 @@ class GetRuntimeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+     * @return int
+     */
+    public function getProjectId()
+    {
+        return $this->project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setProjectId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->project_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
      * @return string
      */
     public function getStatus()
@@ -69,7 +96,7 @@ class GetRuntimeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */

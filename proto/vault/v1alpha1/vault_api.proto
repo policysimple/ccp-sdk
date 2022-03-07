@@ -2,23 +2,17 @@ syntax = "proto3";
 
 package vault.v1alpha1;
 
-option go_package = "github.com/cuemby/ccp-sdk/gen/go/vault/v1alpha1";
+option csharp_namespace = "Vault.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-vault-service/vaultv1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "VaultAPIProto";
+option java_package = "io.cuemby.vault.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Vault\\V1Alpha1";
 
 
-// ======= Metadata =======
-// Key                Value
-// ---                -----
-// created_time       2022-01-21T16:44:14.254178235Z
-// custom_metadata    <nil>
-// deletion_time      n/a
-// destroyed          false
-// version            1
-
-// ====== Data ======
-// Key         Value
-// ---         -----
-// password    static-password
-// username    static-user
+import "vault/v1alpha1/vault.proto";
+//import "vault.proto";
 
 
 service VaultAPIService{
@@ -29,33 +23,8 @@ service VaultAPIService{
     rpc ListSecret(ListSecretRequest) returns (ListSecretResponse) {};
 }
 
-message Metadata {
-    string key = 1;
-    string created_time = 2;
-    string custom_metadata = 3;
-    string deletion_time = 4;
-    bool destroyed = 5;
-    int32 version = 6;
-}
-
-message SecretData {
-    map<string, string> data = 1;
-}
-
-message SecretWarnings {
-    repeated string warnings = 1;
-}
-
-message Secret {
-    Metadata metadata = 1;
-    string environment = 2;
-    SecretData data = 3;
-    SecretWarnings warnings = 4;
-}
-
 message CreateSecretRequest {
-    string environment = 1;
-    SecretData data = 2;
+    Secret secret = 1;
 }
 
 message CreateSecretResponse {
@@ -83,11 +52,11 @@ message DeleteSecretResponse {
 }
 
 message GetSecretRequest {
-    string environment = 1;
+    uint32 project_id = 1;
 }
 
 message GetSecretResponse {
-    SecretData data = 1;
+    Secret secret = 1;
     string error = 2;
 }
 

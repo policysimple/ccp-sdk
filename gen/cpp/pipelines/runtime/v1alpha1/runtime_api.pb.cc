@@ -99,7 +99,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteRuntimeResponseDefaultTyp
 constexpr GetRuntimeRequest::GetRuntimeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : runtime_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_id_(0u){}
 struct GetRuntimeRequestDefaultTypeInternal {
   constexpr GetRuntimeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -177,6 +178,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimeRequest, runtime_id_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimeRequest, project_id_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimeRequest, status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimeResponse, _internal_metadata_),
@@ -194,7 +196,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 28, -1, sizeof(::pipelines::runtime::v1alpha1::DeleteRuntimeRequest)},
   { 35, -1, sizeof(::pipelines::runtime::v1alpha1::DeleteRuntimeResponse)},
   { 41, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimeRequest)},
-  { 48, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimeResponse)},
+  { 49, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimeResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -226,35 +228,36 @@ const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5f
   "us\"M\n\024DeleteRuntimeRequest\022\035\n\nruntime_id"
   "\030\001 \001(\tR\truntimeId\022\026\n\006status\030\002 \001(\tR\006statu"
   "s\"/\n\025DeleteRuntimeResponse\022\026\n\006status\030\001 \001"
-  "(\tR\006status\"J\n\021GetRuntimeRequest\022\035\n\nrunti"
-  "me_id\030\001 \001(\tR\truntimeId\022\026\n\006status\030\002 \001(\tR\006"
-  "status\"k\n\022GetRuntimeResponse\022=\n\007runtime\030"
-  "\001 \001(\0132#.pipelines.runtime.v1alpha1.Runti"
-  "meR\007runtime\022\026\n\006status\030\002 \001(\tR\006status2\352\003\n\021"
-  "RuntimeAPIService\022m\n\nGetRuntime\022-.pipeli"
-  "nes.runtime.v1alpha1.GetRuntimeRequest\032."
-  ".pipelines.runtime.v1alpha1.GetRuntimeRe"
-  "sponse\"\000\022v\n\rCreateRuntime\0220.pipelines.ru"
-  "ntime.v1alpha1.CreateRuntimeRequest\0321.pi"
-  "pelines.runtime.v1alpha1.CreateRuntimeRe"
-  "sponse\"\000\022v\n\rUpdateRuntime\0220.pipelines.ru"
-  "ntime.v1alpha1.UpdateRuntimeRequest\0321.pi"
-  "pelines.runtime.v1alpha1.UpdateRuntimeRe"
-  "sponse\"\000\022v\n\rDeleteRuntime\0220.pipelines.ru"
-  "ntime.v1alpha1.DeleteRuntimeRequest\0321.pi"
-  "pelines.runtime.v1alpha1.DeleteRuntimeRe"
-  "sponse\"\000B\260\001\n$io.cuemby.pipelines.runtime"
-  ".v1alpha1B\017RuntimeAPIProtoP\001Z5github.com"
-  "/cuemby/ccp-runtime-service/runtimev1alp"
-  "ha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alpha1\312\002"
-  "\032Pipelines\\Runtime\\V1Alpha1b\006proto3"
+  "(\tR\006status\"i\n\021GetRuntimeRequest\022\035\n\nrunti"
+  "me_id\030\001 \001(\tR\truntimeId\022\035\n\nproject_id\030\002 \001"
+  "(\rR\tprojectId\022\026\n\006status\030\003 \001(\tR\006status\"k\n"
+  "\022GetRuntimeResponse\022=\n\007runtime\030\001 \001(\0132#.p"
+  "ipelines.runtime.v1alpha1.RuntimeR\007runti"
+  "me\022\026\n\006status\030\002 \001(\tR\006status2\352\003\n\021RuntimeAP"
+  "IService\022m\n\nGetRuntime\022-.pipelines.runti"
+  "me.v1alpha1.GetRuntimeRequest\032..pipeline"
+  "s.runtime.v1alpha1.GetRuntimeResponse\"\000\022"
+  "v\n\rCreateRuntime\0220.pipelines.runtime.v1a"
+  "lpha1.CreateRuntimeRequest\0321.pipelines.r"
+  "untime.v1alpha1.CreateRuntimeResponse\"\000\022"
+  "v\n\rUpdateRuntime\0220.pipelines.runtime.v1a"
+  "lpha1.UpdateRuntimeRequest\0321.pipelines.r"
+  "untime.v1alpha1.UpdateRuntimeResponse\"\000\022"
+  "v\n\rDeleteRuntime\0220.pipelines.runtime.v1a"
+  "lpha1.DeleteRuntimeRequest\0321.pipelines.r"
+  "untime.v1alpha1.DeleteRuntimeResponse\"\000B"
+  "\260\001\n$io.cuemby.pipelines.runtime.v1alpha1"
+  "B\017RuntimeAPIProtoP\001Z5github.com/cuemby/c"
+  "cp-runtime-service/runtimev1alpha1\242\002\003PPX"
+  "\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipeline"
+  "s\\Runtime\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_deps[1] = {
   &::descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto = {
-  false, false, 1555, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, "pipelines/runtime/v1alpha1/runtime_api.proto", 
+  false, false, 1586, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, "pipelines/runtime/v1alpha1/runtime_api.proto", 
   &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once, descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_deps, 1, 8,
   schemas, file_default_instances, TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto::offsets,
   file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto,
@@ -1731,12 +1734,14 @@ GetRuntimeRequest::GetRuntimeRequest(const GetRuntimeRequest& from)
     status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
       GetArenaForAllocation());
   }
+  project_id_ = from.project_id_;
   // @@protoc_insertion_point(copy_constructor:pipelines.runtime.v1alpha1.GetRuntimeRequest)
 }
 
 inline void GetRuntimeRequest::SharedCtor() {
 runtime_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_id_ = 0u;
 }
 
 GetRuntimeRequest::~GetRuntimeRequest() {
@@ -1770,6 +1775,7 @@ void GetRuntimeRequest::Clear() {
 
   runtime_id_.ClearToEmpty();
   status_.ClearToEmpty();
+  project_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1788,9 +1794,16 @@ const char* GetRuntimeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string status = 2 [json_name = "status"];
+      // uint32 project_id = 2 [json_name = "projectId"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string status = 3 [json_name = "status"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.GetRuntimeRequest.status"));
@@ -1836,14 +1849,20 @@ failure:
         1, this->_internal_runtime_id(), target);
   }
 
-  // string status = 2 [json_name = "status"];
+  // uint32 project_id = 2 [json_name = "projectId"];
+  if (this->_internal_project_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_project_id(), target);
+  }
+
+  // string status = 3 [json_name = "status"];
   if (!this->_internal_status().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "pipelines.runtime.v1alpha1.GetRuntimeRequest.status");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_status(), target);
+        3, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1869,11 +1888,18 @@ size_t GetRuntimeRequest::ByteSizeLong() const {
         this->_internal_runtime_id());
   }
 
-  // string status = 2 [json_name = "status"];
+  // string status = 3 [json_name = "status"];
   if (!this->_internal_status().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_status());
+  }
+
+  // uint32 project_id = 2 [json_name = "projectId"];
+  if (this->_internal_project_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_project_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1910,6 +1936,9 @@ void GetRuntimeRequest::MergeFrom(const GetRuntimeRequest& from) {
   if (!from._internal_status().empty()) {
     _internal_set_status(from._internal_status());
   }
+  if (from._internal_project_id() != 0) {
+    _internal_set_project_id(from._internal_project_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1937,6 +1966,7 @@ void GetRuntimeRequest::InternalSwap(GetRuntimeRequest* other) {
       &status_, GetArenaForAllocation(),
       &other->status_, other->GetArenaForAllocation()
   );
+  swap(project_id_, other->project_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetRuntimeRequest::GetMetadata() const {

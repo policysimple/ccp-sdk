@@ -3,6 +3,7 @@
 'use strict';
 var grpc = require('grpc');
 var vault_v1alpha1_vault_api_pb = require('../../vault/v1alpha1/vault_api_pb.js');
+var vault_v1alpha1_vault_pb = require('../../vault/v1alpha1/vault_pb.js');
 
 function serialize_vault_v1alpha1_CreateSecretRequest(arg) {
   if (!(arg instanceof vault_v1alpha1_vault_api_pb.CreateSecretRequest)) {
@@ -115,21 +116,6 @@ function deserialize_vault_v1alpha1_UpdateSecretResponse(buffer_arg) {
 }
 
 
-// ======= Metadata =======
-// Key                Value
-// ---                -----
-// created_time       2022-01-21T16:44:14.254178235Z
-// custom_metadata    <nil>
-// deletion_time      n/a
-// destroyed          false
-// version            1
-//
-// ====== Data ======
-// Key         Value
-// ---         -----
-// password    static-password
-// username    static-user
-//
 var VaultAPIServiceService = exports.VaultAPIServiceService = {
   createSecret: {
     path: '/vault.v1alpha1.VaultAPIService/CreateSecret',

@@ -52,7 +52,8 @@ message DeleteRuntimeResponse {
 
 message GetRuntimeRequest {
     string runtime_id = 1;
-    string status = 2;
+    uint32 project_id = 2;
+    string status = 3;
 }
 
 message GetRuntimeResponse {
