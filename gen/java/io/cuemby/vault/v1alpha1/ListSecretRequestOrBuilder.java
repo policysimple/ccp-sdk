@@ -8,14 +8,26 @@ public interface ListSecretRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string environment = 1 [json_name = "environment"];</code>
-   * @return The environment.
+   * <code>string project_id = 1 [json_name = "projectId"];</code>
+   * @return The projectId.
    */
-  java.lang.String getEnvironment();
+  java.lang.String getProjectId();
   /**
-   * <code>string environment = 1 [json_name = "environment"];</code>
-   * @return The bytes for environment.
+   * <code>string project_id = 1 [json_name = "projectId"];</code>
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString
-      getEnvironmentBytes();
+      getProjectIdBytes();
+
+  /**
+   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * @return The applicationId.
+   */
+  java.lang.String getApplicationId();
+  /**
+   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * @return The bytes for applicationId.
+   */
+  com.google.protobuf.ByteString
+      getApplicationIdBytes();
 }

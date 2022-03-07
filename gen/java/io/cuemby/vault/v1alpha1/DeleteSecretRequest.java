@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeleteSecretRequest() {
-    environment_ = "";
   }
 
   @java.lang.Override
@@ -49,10 +48,9 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 8: {
 
-            environment_ = s;
+            projectId_ = input.readUInt32();
             break;
           }
           default: {
@@ -87,42 +85,15 @@ private static final long serialVersionUID = 0L;
             io.cuemby.vault.v1alpha1.DeleteSecretRequest.class, io.cuemby.vault.v1alpha1.DeleteSecretRequest.Builder.class);
   }
 
-  public static final int ENVIRONMENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object environment_;
+  public static final int PROJECT_ID_FIELD_NUMBER = 1;
+  private int projectId_;
   /**
-   * <code>string environment = 1 [json_name = "environment"];</code>
-   * @return The environment.
+   * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+   * @return The projectId.
    */
   @java.lang.Override
-  public java.lang.String getEnvironment() {
-    java.lang.Object ref = environment_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      environment_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string environment = 1 [json_name = "environment"];</code>
-   * @return The bytes for environment.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getEnvironmentBytes() {
-    java.lang.Object ref = environment_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      environment_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public int getProjectId() {
+    return projectId_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -139,8 +110,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getEnvironmentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, environment_);
+    if (projectId_ != 0) {
+      output.writeUInt32(1, projectId_);
     }
     unknownFields.writeTo(output);
   }
@@ -151,8 +122,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getEnvironmentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, environment_);
+    if (projectId_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(1, projectId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,8 +141,8 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.vault.v1alpha1.DeleteSecretRequest other = (io.cuemby.vault.v1alpha1.DeleteSecretRequest) obj;
 
-    if (!getEnvironment()
-        .equals(other.getEnvironment())) return false;
+    if (getProjectId()
+        != other.getProjectId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -182,8 +154,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
-    hash = (53 * hash) + getEnvironment().hashCode();
+    hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getProjectId();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,7 +289,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      environment_ = "";
+      projectId_ = 0;
 
       return this;
     }
@@ -345,7 +317,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.vault.v1alpha1.DeleteSecretRequest buildPartial() {
       io.cuemby.vault.v1alpha1.DeleteSecretRequest result = new io.cuemby.vault.v1alpha1.DeleteSecretRequest(this);
-      result.environment_ = environment_;
+      result.projectId_ = projectId_;
       onBuilt();
       return result;
     }
@@ -394,9 +366,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.vault.v1alpha1.DeleteSecretRequest other) {
       if (other == io.cuemby.vault.v1alpha1.DeleteSecretRequest.getDefaultInstance()) return this;
-      if (!other.getEnvironment().isEmpty()) {
-        environment_ = other.environment_;
-        onChanged();
+      if (other.getProjectId() != 0) {
+        setProjectId(other.getProjectId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -427,78 +398,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object environment_ = "";
+    private int projectId_ ;
     /**
-     * <code>string environment = 1 [json_name = "environment"];</code>
-     * @return The environment.
+     * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * @return The projectId.
      */
-    public java.lang.String getEnvironment() {
-      java.lang.Object ref = environment_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        environment_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public int getProjectId() {
+      return projectId_;
     }
     /**
-     * <code>string environment = 1 [json_name = "environment"];</code>
-     * @return The bytes for environment.
-     */
-    public com.google.protobuf.ByteString
-        getEnvironmentBytes() {
-      java.lang.Object ref = environment_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        environment_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string environment = 1 [json_name = "environment"];</code>
-     * @param value The environment to set.
+     * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * @param value The projectId to set.
      * @return This builder for chaining.
      */
-    public Builder setEnvironment(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      environment_ = value;
+    public Builder setProjectId(int value) {
+      
+      projectId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string environment = 1 [json_name = "environment"];</code>
+     * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearEnvironment() {
+    public Builder clearProjectId() {
       
-      environment_ = getDefaultInstance().getEnvironment();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string environment = 1 [json_name = "environment"];</code>
-     * @param value The bytes for environment to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEnvironmentBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      environment_ = value;
+      projectId_ = 0;
       onChanged();
       return this;
     }

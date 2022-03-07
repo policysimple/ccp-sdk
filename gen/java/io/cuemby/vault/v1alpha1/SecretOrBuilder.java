@@ -41,18 +41,6 @@ public interface SecretOrBuilder extends
   io.cuemby.vault.v1alpha1.MetadataOrBuilder getMetadataOrBuilder();
 
   /**
-   * <code>string environment = 4 [json_name = "environment"];</code>
-   * @return The environment.
-   */
-  java.lang.String getEnvironment();
-  /**
-   * <code>string environment = 4 [json_name = "environment"];</code>
-   * @return The bytes for environment.
-   */
-  com.google.protobuf.ByteString
-      getEnvironmentBytes();
-
-  /**
    * <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
    * @return Whether the data field is set.
    */

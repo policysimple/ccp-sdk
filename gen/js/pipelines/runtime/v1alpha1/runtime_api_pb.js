@@ -950,7 +950,9 @@ proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.prototype.toObject = funct
 proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     runtimeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 2, "")
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    applicationId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -992,6 +994,14 @@ proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.deserializeBinaryFromReade
       msg.setRuntimeId(value);
       break;
     case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setProjectId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApplicationId(value);
+      break;
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
       break;
@@ -1031,10 +1041,24 @@ proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.serializeBinaryToWriter = 
       f
     );
   }
+  f = message.getProjectId();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = message.getApplicationId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getStatus();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      4,
       f
     );
   }
@@ -1060,11 +1084,47 @@ proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.prototype.setRuntimeId = f
 
 
 /**
- * optional string status = 2;
+ * optional uint32 project_id = 2;
+ * @return {number}
+ */
+proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.prototype.getProjectId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest} returns this
+ */
+proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.prototype.setProjectId = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional string application_id = 3;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.prototype.getApplicationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest} returns this
+ */
+proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.prototype.setApplicationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string status = 4;
  * @return {string}
  */
 proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -1073,7 +1133,7 @@ proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.prototype.getStatus = func
  * @return {!proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest} returns this
  */
 proto.pipelines.runtime.v1alpha1.DeleteRuntimeRequest.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

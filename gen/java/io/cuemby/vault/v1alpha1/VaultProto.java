@@ -58,17 +58,17 @@ public final class VaultProto {
       ".v1alpha1.SecretData.DataEntryR\004data\0327\n\t" +
       "DataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001" +
       "(\tR\005value:\0028\001\",\n\016SecretWarnings\022\032\n\010warni" +
-      "ngs\030\001 \003(\tR\010warnings\"\222\002\n\006Secret\022\035\n\nprojec" +
+      "ngs\030\001 \003(\tR\010warnings\"\360\001\n\006Secret\022\035\n\nprojec" +
       "t_id\030\001 \001(\rR\tprojectId\022%\n\016application_id\030" +
       "\002 \001(\tR\rapplicationId\0224\n\010metadata\030\003 \001(\0132\030" +
-      ".vault.v1alpha1.MetadataR\010metadata\022 \n\013en" +
-      "vironment\030\004 \001(\tR\013environment\022.\n\004data\030\005 \001" +
-      "(\0132\032.vault.v1alpha1.SecretDataR\004data\022:\n\010" +
-      "warnings\030\006 \001(\0132\036.vault.v1alpha1.SecretWa" +
-      "rningsR\010warningsB\203\001\n\030io.cuemby.vault.v1a" +
-      "lpha1B\nVaultProtoP\001Z1github.com/cuemby/c" +
-      "cp-vault-service/vaultv1alpha1\242\002\003PPX\252\002\016V" +
-      "ault.V1Alpha1\312\002\016Vault\\V1Alpha1b\006proto3"
+      ".vault.v1alpha1.MetadataR\010metadata\022.\n\004da" +
+      "ta\030\005 \001(\0132\032.vault.v1alpha1.SecretDataR\004da" +
+      "ta\022:\n\010warnings\030\006 \001(\0132\036.vault.v1alpha1.Se" +
+      "cretWarningsR\010warningsB\203\001\n\030io.cuemby.vau" +
+      "lt.v1alpha1B\nVaultProtoP\001Z1github.com/cu" +
+      "emby/ccp-vault-service/vaultv1alpha1\242\002\003P" +
+      "PX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -103,7 +103,7 @@ public final class VaultProto {
     internal_static_vault_v1alpha1_Secret_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_Secret_descriptor,
-        new java.lang.String[] { "ProjectId", "ApplicationId", "Metadata", "Environment", "Data", "Warnings", });
+        new java.lang.String[] { "ProjectId", "ApplicationId", "Metadata", "Data", "Warnings", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

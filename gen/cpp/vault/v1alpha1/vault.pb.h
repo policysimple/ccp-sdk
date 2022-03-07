@@ -750,7 +750,6 @@ class Secret final :
 
   enum : int {
     kApplicationIdFieldNumber = 2,
-    kEnvironmentFieldNumber = 4,
     kMetadataFieldNumber = 3,
     kDataFieldNumber = 5,
     kWarningsFieldNumber = 6,
@@ -768,20 +767,6 @@ class Secret final :
   const std::string& _internal_application_id() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_application_id(const std::string& value);
   std::string* _internal_mutable_application_id();
-  public:
-
-  // string environment = 4 [json_name = "environment"];
-  void clear_environment();
-  const std::string& environment() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_environment(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_environment();
-  PROTOBUF_MUST_USE_RESULT std::string* release_environment();
-  void set_allocated_environment(std::string* environment);
-  private:
-  const std::string& _internal_environment() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_environment(const std::string& value);
-  std::string* _internal_mutable_environment();
   public:
 
   // .vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];
@@ -855,7 +840,6 @@ class Secret final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_;
   ::vault::v1alpha1::Metadata* metadata_;
   ::vault::v1alpha1::SecretData* data_;
   ::vault::v1alpha1::SecretWarnings* warnings_;
@@ -1370,52 +1354,6 @@ inline void Secret::set_allocated_metadata(::vault::v1alpha1::Metadata* metadata
   }
   metadata_ = metadata;
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.Secret.metadata)
-}
-
-// string environment = 4 [json_name = "environment"];
-inline void Secret::clear_environment() {
-  environment_.ClearToEmpty();
-}
-inline const std::string& Secret::environment() const {
-  // @@protoc_insertion_point(field_get:vault.v1alpha1.Secret.environment)
-  return _internal_environment();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Secret::set_environment(ArgT0&& arg0, ArgT... args) {
- 
- environment_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:vault.v1alpha1.Secret.environment)
-}
-inline std::string* Secret::mutable_environment() {
-  std::string* _s = _internal_mutable_environment();
-  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.Secret.environment)
-  return _s;
-}
-inline const std::string& Secret::_internal_environment() const {
-  return environment_.Get();
-}
-inline void Secret::_internal_set_environment(const std::string& value) {
-  
-  environment_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Secret::_internal_mutable_environment() {
-  
-  return environment_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Secret::release_environment() {
-  // @@protoc_insertion_point(field_release:vault.v1alpha1.Secret.environment)
-  return environment_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Secret::set_allocated_environment(std::string* environment) {
-  if (environment != nullptr) {
-    
-  } else {
-    
-  }
-  environment_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), environment,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.Secret.environment)
 }
 
 // .vault.v1alpha1.SecretData data = 5 [json_name = "data"];

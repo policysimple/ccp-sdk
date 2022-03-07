@@ -73,7 +73,6 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecretWarningsDefaultTypeIntern
 constexpr Secret::Secret(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , environment_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , metadata_(nullptr)
   , data_(nullptr)
   , warnings_(nullptr)
@@ -134,7 +133,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_2epro
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, project_id_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, application_id_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, metadata_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, environment_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, data_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, warnings_),
 };
@@ -165,21 +163,21 @@ const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto[] PROTOBUF
   ".v1alpha1.SecretData.DataEntryR\004data\0327\n\t"
   "DataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001"
   "(\tR\005value:\0028\001\",\n\016SecretWarnings\022\032\n\010warni"
-  "ngs\030\001 \003(\tR\010warnings\"\222\002\n\006Secret\022\035\n\nprojec"
+  "ngs\030\001 \003(\tR\010warnings\"\360\001\n\006Secret\022\035\n\nprojec"
   "t_id\030\001 \001(\rR\tprojectId\022%\n\016application_id\030"
   "\002 \001(\tR\rapplicationId\0224\n\010metadata\030\003 \001(\0132\030"
-  ".vault.v1alpha1.MetadataR\010metadata\022 \n\013en"
-  "vironment\030\004 \001(\tR\013environment\022.\n\004data\030\005 \001"
-  "(\0132\032.vault.v1alpha1.SecretDataR\004data\022:\n\010"
-  "warnings\030\006 \001(\0132\036.vault.v1alpha1.SecretWa"
-  "rningsR\010warningsB\203\001\n\030io.cuemby.vault.v1a"
-  "lpha1B\nVaultProtoP\001Z1github.com/cuemby/c"
-  "cp-vault-service/vaultv1alpha1\242\002\003PPX\252\002\016V"
-  "ault.V1Alpha1\312\002\016Vault\\V1Alpha1b\006proto3"
+  ".vault.v1alpha1.MetadataR\010metadata\022.\n\004da"
+  "ta\030\005 \001(\0132\032.vault.v1alpha1.SecretDataR\004da"
+  "ta\022:\n\010warnings\030\006 \001(\0132\036.vault.v1alpha1.Se"
+  "cretWarningsR\010warningsB\203\001\n\030io.cuemby.vau"
+  "lt.v1alpha1B\nVaultProtoP\001Z1github.com/cu"
+  "emby/ccp-vault-service/vaultv1alpha1\242\002\003P"
+  "PX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1b\006pr"
+  "oto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vault_2fv1alpha1_2fvault_2eproto = {
-  false, false, 838, descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto, "vault/v1alpha1/vault.proto", 
+  false, false, 804, descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto, "vault/v1alpha1/vault.proto", 
   &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once, nullptr, 0, 5,
   schemas, file_default_instances, TableStruct_vault_2fv1alpha1_2fvault_2eproto::offsets,
   file_level_metadata_vault_2fv1alpha1_2fvault_2eproto, file_level_enum_descriptors_vault_2fv1alpha1_2fvault_2eproto, file_level_service_descriptors_vault_2fv1alpha1_2fvault_2eproto,
@@ -1060,11 +1058,6 @@ Secret::Secret(const Secret& from)
     application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_application_id(), 
       GetArenaForAllocation());
   }
-  environment_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_environment().empty()) {
-    environment_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_environment(), 
-      GetArenaForAllocation());
-  }
   if (from._internal_has_metadata()) {
     metadata_ = new ::vault::v1alpha1::Metadata(*from.metadata_);
   } else {
@@ -1086,7 +1079,6 @@ Secret::Secret(const Secret& from)
 
 inline void Secret::SharedCtor() {
 application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-environment_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&metadata_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&project_id_) -
@@ -1103,7 +1095,6 @@ Secret::~Secret() {
 inline void Secret::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   application_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  environment_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete metadata_;
   if (this != internal_default_instance()) delete data_;
   if (this != internal_default_instance()) delete warnings_;
@@ -1126,7 +1117,6 @@ void Secret::Clear() {
   (void) cached_has_bits;
 
   application_id_.ClearToEmpty();
-  environment_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && metadata_ != nullptr) {
     delete metadata_;
   }
@@ -1169,15 +1159,6 @@ const char* Secret::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_metadata(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string environment = 4 [json_name = "environment"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_environment();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.Secret.environment"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1248,16 +1229,6 @@ failure:
         3, _Internal::metadata(this), target, stream);
   }
 
-  // string environment = 4 [json_name = "environment"];
-  if (!this->_internal_environment().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_environment().data(), static_cast<int>(this->_internal_environment().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vault.v1alpha1.Secret.environment");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_environment(), target);
-  }
-
   // .vault.v1alpha1.SecretData data = 5 [json_name = "data"];
   if (this->_internal_has_data()) {
     target = stream->EnsureSpace(target);
@@ -1295,13 +1266,6 @@ size_t Secret::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_application_id());
-  }
-
-  // string environment = 4 [json_name = "environment"];
-  if (!this->_internal_environment().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_environment());
   }
 
   // .vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];
@@ -1363,9 +1327,6 @@ void Secret::MergeFrom(const Secret& from) {
   if (!from._internal_application_id().empty()) {
     _internal_set_application_id(from._internal_application_id());
   }
-  if (!from._internal_environment().empty()) {
-    _internal_set_environment(from._internal_environment());
-  }
   if (from._internal_has_metadata()) {
     _internal_mutable_metadata()->::vault::v1alpha1::Metadata::MergeFrom(from._internal_metadata());
   }
@@ -1399,11 +1360,6 @@ void Secret::InternalSwap(Secret* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &application_id_, GetArenaForAllocation(),
       &other->application_id_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &environment_, GetArenaForAllocation(),
-      &other->environment_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Secret, project_id_)

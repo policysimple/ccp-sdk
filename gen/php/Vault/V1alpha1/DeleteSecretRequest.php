@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteSecretRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string environment = 1 [json_name = "environment"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 1 [json_name = "projectId"];</code>
      */
-    protected $environment = '';
+    protected $project_id = 0;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DeleteSecretRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $environment
+     *     @type int $project_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class DeleteSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string environment = 1 [json_name = "environment"];</code>
-     * @return string
+     * Generated from protobuf field <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * @return int
      */
-    public function getEnvironment()
+    public function getProjectId()
     {
-        return $this->environment;
+        return $this->project_id;
     }
 
     /**
-     * Generated from protobuf field <code>string environment = 1 [json_name = "environment"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * @param int $var
      * @return $this
      */
-    public function setEnvironment($var)
+    public function setProjectId($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->environment = $var;
+        GPBUtil::checkUint32($var);
+        $this->project_id = $var;
 
         return $this;
     }

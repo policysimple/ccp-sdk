@@ -580,8 +580,8 @@ proto.vault.v1alpha1.UpdateSecretRequest.prototype.toObject = function(opt_inclu
  */
 proto.vault.v1alpha1.UpdateSecretRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    environment: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    data: (f = msg.getData()) && vault_v1alpha1_vault_pb.SecretData.toObject(includeInstance, f)
+    projectId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    secret: (f = msg.getSecret()) && vault_v1alpha1_vault_pb.Secret.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -620,12 +620,12 @@ proto.vault.v1alpha1.UpdateSecretRequest.deserializeBinaryFromReader = function(
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEnvironment(value);
+      msg.setProjectId(value);
       break;
     case 2:
-      var value = new vault_v1alpha1_vault_pb.SecretData;
-      reader.readMessage(value,vault_v1alpha1_vault_pb.SecretData.deserializeBinaryFromReader);
-      msg.setData(value);
+      var value = new vault_v1alpha1_vault_pb.Secret;
+      reader.readMessage(value,vault_v1alpha1_vault_pb.Secret.deserializeBinaryFromReader);
+      msg.setSecret(value);
       break;
     default:
       reader.skipField();
@@ -656,29 +656,29 @@ proto.vault.v1alpha1.UpdateSecretRequest.prototype.serializeBinary = function() 
  */
 proto.vault.v1alpha1.UpdateSecretRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getEnvironment();
+  f = message.getProjectId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getData();
+  f = message.getSecret();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      vault_v1alpha1_vault_pb.SecretData.serializeBinaryToWriter
+      vault_v1alpha1_vault_pb.Secret.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string environment = 1;
+ * optional string project_id = 1;
  * @return {string}
  */
-proto.vault.v1alpha1.UpdateSecretRequest.prototype.getEnvironment = function() {
+proto.vault.v1alpha1.UpdateSecretRequest.prototype.getProjectId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -687,26 +687,26 @@ proto.vault.v1alpha1.UpdateSecretRequest.prototype.getEnvironment = function() {
  * @param {string} value
  * @return {!proto.vault.v1alpha1.UpdateSecretRequest} returns this
  */
-proto.vault.v1alpha1.UpdateSecretRequest.prototype.setEnvironment = function(value) {
+proto.vault.v1alpha1.UpdateSecretRequest.prototype.setProjectId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional SecretData data = 2;
- * @return {?proto.vault.v1alpha1.SecretData}
+ * optional Secret secret = 2;
+ * @return {?proto.vault.v1alpha1.Secret}
  */
-proto.vault.v1alpha1.UpdateSecretRequest.prototype.getData = function() {
-  return /** @type{?proto.vault.v1alpha1.SecretData} */ (
-    jspb.Message.getWrapperField(this, vault_v1alpha1_vault_pb.SecretData, 2));
+proto.vault.v1alpha1.UpdateSecretRequest.prototype.getSecret = function() {
+  return /** @type{?proto.vault.v1alpha1.Secret} */ (
+    jspb.Message.getWrapperField(this, vault_v1alpha1_vault_pb.Secret, 2));
 };
 
 
 /**
- * @param {?proto.vault.v1alpha1.SecretData|undefined} value
+ * @param {?proto.vault.v1alpha1.Secret|undefined} value
  * @return {!proto.vault.v1alpha1.UpdateSecretRequest} returns this
 */
-proto.vault.v1alpha1.UpdateSecretRequest.prototype.setData = function(value) {
+proto.vault.v1alpha1.UpdateSecretRequest.prototype.setSecret = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -715,8 +715,8 @@ proto.vault.v1alpha1.UpdateSecretRequest.prototype.setData = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vault.v1alpha1.UpdateSecretRequest} returns this
  */
-proto.vault.v1alpha1.UpdateSecretRequest.prototype.clearData = function() {
-  return this.setData(undefined);
+proto.vault.v1alpha1.UpdateSecretRequest.prototype.clearSecret = function() {
+  return this.setSecret(undefined);
 };
 
 
@@ -724,7 +724,7 @@ proto.vault.v1alpha1.UpdateSecretRequest.prototype.clearData = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vault.v1alpha1.UpdateSecretRequest.prototype.hasData = function() {
+proto.vault.v1alpha1.UpdateSecretRequest.prototype.hasSecret = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -921,7 +921,7 @@ proto.vault.v1alpha1.DeleteSecretRequest.prototype.toObject = function(opt_inclu
  */
 proto.vault.v1alpha1.DeleteSecretRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    environment: jspb.Message.getFieldWithDefault(msg, 1, "")
+    projectId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -959,8 +959,8 @@ proto.vault.v1alpha1.DeleteSecretRequest.deserializeBinaryFromReader = function(
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEnvironment(value);
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setProjectId(value);
       break;
     default:
       reader.skipField();
@@ -991,9 +991,9 @@ proto.vault.v1alpha1.DeleteSecretRequest.prototype.serializeBinary = function() 
  */
 proto.vault.v1alpha1.DeleteSecretRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getEnvironment();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getProjectId();
+  if (f !== 0) {
+    writer.writeUint32(
       1,
       f
     );
@@ -1002,20 +1002,20 @@ proto.vault.v1alpha1.DeleteSecretRequest.serializeBinaryToWriter = function(mess
 
 
 /**
- * optional string environment = 1;
- * @return {string}
+ * optional uint32 project_id = 1;
+ * @return {number}
  */
-proto.vault.v1alpha1.DeleteSecretRequest.prototype.getEnvironment = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.vault.v1alpha1.DeleteSecretRequest.prototype.getProjectId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.vault.v1alpha1.DeleteSecretRequest} returns this
  */
-proto.vault.v1alpha1.DeleteSecretRequest.prototype.setEnvironment = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.vault.v1alpha1.DeleteSecretRequest.prototype.setProjectId = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -1211,7 +1211,8 @@ proto.vault.v1alpha1.GetSecretRequest.prototype.toObject = function(opt_includeI
  */
 proto.vault.v1alpha1.GetSecretRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    projectId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    projectId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    applicationId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1252,6 +1253,10 @@ proto.vault.v1alpha1.GetSecretRequest.deserializeBinaryFromReader = function(msg
       var value = /** @type {number} */ (reader.readUint32());
       msg.setProjectId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApplicationId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1288,6 +1293,13 @@ proto.vault.v1alpha1.GetSecretRequest.serializeBinaryToWriter = function(message
       f
     );
   }
+  f = message.getApplicationId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -1306,6 +1318,24 @@ proto.vault.v1alpha1.GetSecretRequest.prototype.getProjectId = function() {
  */
 proto.vault.v1alpha1.GetSecretRequest.prototype.setProjectId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string application_id = 2;
+ * @return {string}
+ */
+proto.vault.v1alpha1.GetSecretRequest.prototype.getApplicationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vault.v1alpha1.GetSecretRequest} returns this
+ */
+proto.vault.v1alpha1.GetSecretRequest.prototype.setApplicationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1522,7 +1552,8 @@ proto.vault.v1alpha1.ListSecretRequest.prototype.toObject = function(opt_include
  */
 proto.vault.v1alpha1.ListSecretRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    environment: jspb.Message.getFieldWithDefault(msg, 1, "")
+    projectId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    applicationId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1561,7 +1592,11 @@ proto.vault.v1alpha1.ListSecretRequest.deserializeBinaryFromReader = function(ms
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEnvironment(value);
+      msg.setProjectId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApplicationId(value);
       break;
     default:
       reader.skipField();
@@ -1592,10 +1627,17 @@ proto.vault.v1alpha1.ListSecretRequest.prototype.serializeBinary = function() {
  */
 proto.vault.v1alpha1.ListSecretRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getEnvironment();
+  f = message.getProjectId();
   if (f.length > 0) {
     writer.writeString(
       1,
+      f
+    );
+  }
+  f = message.getApplicationId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
       f
     );
   }
@@ -1603,10 +1645,10 @@ proto.vault.v1alpha1.ListSecretRequest.serializeBinaryToWriter = function(messag
 
 
 /**
- * optional string environment = 1;
+ * optional string project_id = 1;
  * @return {string}
  */
-proto.vault.v1alpha1.ListSecretRequest.prototype.getEnvironment = function() {
+proto.vault.v1alpha1.ListSecretRequest.prototype.getProjectId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1615,8 +1657,26 @@ proto.vault.v1alpha1.ListSecretRequest.prototype.getEnvironment = function() {
  * @param {string} value
  * @return {!proto.vault.v1alpha1.ListSecretRequest} returns this
  */
-proto.vault.v1alpha1.ListSecretRequest.prototype.setEnvironment = function(value) {
+proto.vault.v1alpha1.ListSecretRequest.prototype.setProjectId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string application_id = 2;
+ * @return {string}
+ */
+proto.vault.v1alpha1.ListSecretRequest.prototype.getApplicationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vault.v1alpha1.ListSecretRequest} returns this
+ */
+proto.vault.v1alpha1.ListSecretRequest.prototype.setApplicationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

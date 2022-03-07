@@ -131,7 +131,7 @@ func UpdateRuntime(
 	return response, nil
 }
 
-func DeleteRuntime(runtimeId string) (response *runtimepkgv1.DeleteRuntimeResponse, err error) {
+func DeleteRuntime(runtimeId string, projectId uint32, applicationId string) (response *runtimepkgv1.DeleteRuntimeResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
 		return
@@ -140,7 +140,9 @@ func DeleteRuntime(runtimeId string) (response *runtimepkgv1.DeleteRuntimeRespon
 	defer cancel()
 
 	response, err = client.DeleteRuntime(ctx, &runtimepkgv1.DeleteRuntimeRequest{
-		RuntimeId: runtimeId,
+		RuntimeId:     runtimeId,
+		ProjectId:     projectId,
+		ApplicationId: applicationId,
 	})
 
 	if err != nil {

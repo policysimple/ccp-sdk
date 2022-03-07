@@ -14,9 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListSecretRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string environment = 1 [json_name = "environment"];</code>
+     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
      */
-    protected $environment = '';
+    protected $project_id = '';
+    /**
+     * Generated from protobuf field <code>string application_id = 2 [json_name = "applicationId"];</code>
+     */
+    protected $application_id = '';
 
     /**
      * Constructor.
@@ -24,7 +28,8 @@ class ListSecretRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $environment
+     *     @type string $project_id
+     *     @type string $application_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +38,45 @@ class ListSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string environment = 1 [json_name = "environment"];</code>
+     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
      * @return string
      */
-    public function getEnvironment()
+    public function getProjectId()
     {
-        return $this->environment;
+        return $this->project_id;
     }
 
     /**
-     * Generated from protobuf field <code>string environment = 1 [json_name = "environment"];</code>
+     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setEnvironment($var)
+    public function setProjectId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->environment = $var;
+        $this->project_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_id = 2 [json_name = "applicationId"];</code>
+     * @return string
+     */
+    public function getApplicationId()
+    {
+        return $this->application_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_id = 2 [json_name = "applicationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setApplicationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->application_id = $var;
 
         return $this;
     }

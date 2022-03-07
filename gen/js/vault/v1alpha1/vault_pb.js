@@ -707,7 +707,6 @@ proto.vault.v1alpha1.Secret.toObject = function(includeInstance, msg) {
     projectId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     applicationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     metadata: (f = msg.getMetadata()) && proto.vault.v1alpha1.Metadata.toObject(includeInstance, f),
-    environment: jspb.Message.getFieldWithDefault(msg, 4, ""),
     data: (f = msg.getData()) && proto.vault.v1alpha1.SecretData.toObject(includeInstance, f),
     warnings: (f = msg.getWarnings()) && proto.vault.v1alpha1.SecretWarnings.toObject(includeInstance, f)
   };
@@ -758,10 +757,6 @@ proto.vault.v1alpha1.Secret.deserializeBinaryFromReader = function(msg, reader) 
       var value = new proto.vault.v1alpha1.Metadata;
       reader.readMessage(value,proto.vault.v1alpha1.Metadata.deserializeBinaryFromReader);
       msg.setMetadata(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEnvironment(value);
       break;
     case 5:
       var value = new proto.vault.v1alpha1.SecretData;
@@ -822,13 +817,6 @@ proto.vault.v1alpha1.Secret.serializeBinaryToWriter = function(message, writer) 
       3,
       f,
       proto.vault.v1alpha1.Metadata.serializeBinaryToWriter
-    );
-  }
-  f = message.getEnvironment();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
     );
   }
   f = message.getData();
@@ -920,24 +908,6 @@ proto.vault.v1alpha1.Secret.prototype.clearMetadata = function() {
  */
 proto.vault.v1alpha1.Secret.prototype.hasMetadata = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string environment = 4;
- * @return {string}
- */
-proto.vault.v1alpha1.Secret.prototype.getEnvironment = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.vault.v1alpha1.Secret} returns this
- */
-proto.vault.v1alpha1.Secret.prototype.setEnvironment = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

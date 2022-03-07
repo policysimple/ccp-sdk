@@ -26,10 +26,6 @@ class Secret extends \Google\Protobuf\Internal\Message
      */
     protected $metadata = null;
     /**
-     * Generated from protobuf field <code>string environment = 4 [json_name = "environment"];</code>
-     */
-    protected $environment = '';
-    /**
      * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 5 [json_name = "data"];</code>
      */
     protected $data = null;
@@ -47,7 +43,6 @@ class Secret extends \Google\Protobuf\Internal\Message
      *     @type int $project_id
      *     @type string $application_id
      *     @type \Vault\V1Alpha1\Metadata $metadata
-     *     @type string $environment
      *     @type \Vault\V1Alpha1\SecretData $data
      *     @type \Vault\V1Alpha1\SecretWarnings $warnings
      * }
@@ -129,28 +124,6 @@ class Secret extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Vault\V1Alpha1\Metadata::class);
         $this->metadata = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string environment = 4 [json_name = "environment"];</code>
-     * @return string
-     */
-    public function getEnvironment()
-    {
-        return $this->environment;
-    }
-
-    /**
-     * Generated from protobuf field <code>string environment = 4 [json_name = "environment"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setEnvironment($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->environment = $var;
 
         return $this;
     }

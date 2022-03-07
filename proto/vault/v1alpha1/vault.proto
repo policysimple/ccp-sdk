@@ -32,7 +32,6 @@ message Secret {
     uint32 project_id = 1;
     string application_id = 2;
     Metadata metadata = 3;
-    string environment = 4;
     SecretData data = 5;
     SecretWarnings warnings = 6;
 }

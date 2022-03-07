@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UpdateSecretRequest() {
-    environment_ = "";
+    projectId_ = "";
   }
 
   @java.lang.Override
@@ -52,18 +52,18 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            environment_ = s;
+            projectId_ = s;
             break;
           }
           case 18: {
-            io.cuemby.vault.v1alpha1.SecretData.Builder subBuilder = null;
-            if (data_ != null) {
-              subBuilder = data_.toBuilder();
+            io.cuemby.vault.v1alpha1.Secret.Builder subBuilder = null;
+            if (secret_ != null) {
+              subBuilder = secret_.toBuilder();
             }
-            data_ = input.readMessage(io.cuemby.vault.v1alpha1.SecretData.parser(), extensionRegistry);
+            secret_ = input.readMessage(io.cuemby.vault.v1alpha1.Secret.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(data_);
-              data_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(secret_);
+              secret_ = subBuilder.buildPartial();
             }
 
             break;
@@ -100,68 +100,68 @@ private static final long serialVersionUID = 0L;
             io.cuemby.vault.v1alpha1.UpdateSecretRequest.class, io.cuemby.vault.v1alpha1.UpdateSecretRequest.Builder.class);
   }
 
-  public static final int ENVIRONMENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object environment_;
+  public static final int PROJECT_ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object projectId_;
   /**
-   * <code>string environment = 1 [json_name = "environment"];</code>
-   * @return The environment.
+   * <code>string project_id = 1 [json_name = "projectId"];</code>
+   * @return The projectId.
    */
   @java.lang.Override
-  public java.lang.String getEnvironment() {
-    java.lang.Object ref = environment_;
+  public java.lang.String getProjectId() {
+    java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      environment_ = s;
+      projectId_ = s;
       return s;
     }
   }
   /**
-   * <code>string environment = 1 [json_name = "environment"];</code>
-   * @return The bytes for environment.
+   * <code>string project_id = 1 [json_name = "projectId"];</code>
+   * @return The bytes for projectId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getEnvironmentBytes() {
-    java.lang.Object ref = environment_;
+      getProjectIdBytes() {
+    java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      environment_ = b;
+      projectId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int DATA_FIELD_NUMBER = 2;
-  private io.cuemby.vault.v1alpha1.SecretData data_;
+  public static final int SECRET_FIELD_NUMBER = 2;
+  private io.cuemby.vault.v1alpha1.Secret secret_;
   /**
-   * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
-   * @return Whether the data field is set.
+   * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+   * @return Whether the secret field is set.
    */
   @java.lang.Override
-  public boolean hasData() {
-    return data_ != null;
+  public boolean hasSecret() {
+    return secret_ != null;
   }
   /**
-   * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
-   * @return The data.
+   * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+   * @return The secret.
    */
   @java.lang.Override
-  public io.cuemby.vault.v1alpha1.SecretData getData() {
-    return data_ == null ? io.cuemby.vault.v1alpha1.SecretData.getDefaultInstance() : data_;
+  public io.cuemby.vault.v1alpha1.Secret getSecret() {
+    return secret_ == null ? io.cuemby.vault.v1alpha1.Secret.getDefaultInstance() : secret_;
   }
   /**
-   * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+   * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
    */
   @java.lang.Override
-  public io.cuemby.vault.v1alpha1.SecretDataOrBuilder getDataOrBuilder() {
-    return getData();
+  public io.cuemby.vault.v1alpha1.SecretOrBuilder getSecretOrBuilder() {
+    return getSecret();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -178,11 +178,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getEnvironmentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, environment_);
+    if (!getProjectIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
-    if (data_ != null) {
-      output.writeMessage(2, getData());
+    if (secret_ != null) {
+      output.writeMessage(2, getSecret());
     }
     unknownFields.writeTo(output);
   }
@@ -193,12 +193,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getEnvironmentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, environment_);
+    if (!getProjectIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
     }
-    if (data_ != null) {
+    if (secret_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getData());
+        .computeMessageSize(2, getSecret());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,12 +215,12 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.vault.v1alpha1.UpdateSecretRequest other = (io.cuemby.vault.v1alpha1.UpdateSecretRequest) obj;
 
-    if (!getEnvironment()
-        .equals(other.getEnvironment())) return false;
-    if (hasData() != other.hasData()) return false;
-    if (hasData()) {
-      if (!getData()
-          .equals(other.getData())) return false;
+    if (!getProjectId()
+        .equals(other.getProjectId())) return false;
+    if (hasSecret() != other.hasSecret()) return false;
+    if (hasSecret()) {
+      if (!getSecret()
+          .equals(other.getSecret())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -233,11 +233,11 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
-    hash = (53 * hash) + getEnvironment().hashCode();
-    if (hasData()) {
-      hash = (37 * hash) + DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getData().hashCode();
+    hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getProjectId().hashCode();
+    if (hasSecret()) {
+      hash = (37 * hash) + SECRET_FIELD_NUMBER;
+      hash = (53 * hash) + getSecret().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -372,13 +372,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      environment_ = "";
+      projectId_ = "";
 
-      if (dataBuilder_ == null) {
-        data_ = null;
+      if (secretBuilder_ == null) {
+        secret_ = null;
       } else {
-        data_ = null;
-        dataBuilder_ = null;
+        secret_ = null;
+        secretBuilder_ = null;
       }
       return this;
     }
@@ -406,11 +406,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.vault.v1alpha1.UpdateSecretRequest buildPartial() {
       io.cuemby.vault.v1alpha1.UpdateSecretRequest result = new io.cuemby.vault.v1alpha1.UpdateSecretRequest(this);
-      result.environment_ = environment_;
-      if (dataBuilder_ == null) {
-        result.data_ = data_;
+      result.projectId_ = projectId_;
+      if (secretBuilder_ == null) {
+        result.secret_ = secret_;
       } else {
-        result.data_ = dataBuilder_.build();
+        result.secret_ = secretBuilder_.build();
       }
       onBuilt();
       return result;
@@ -460,12 +460,12 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.vault.v1alpha1.UpdateSecretRequest other) {
       if (other == io.cuemby.vault.v1alpha1.UpdateSecretRequest.getDefaultInstance()) return this;
-      if (!other.getEnvironment().isEmpty()) {
-        environment_ = other.environment_;
+      if (!other.getProjectId().isEmpty()) {
+        projectId_ = other.projectId_;
         onChanged();
       }
-      if (other.hasData()) {
-        mergeData(other.getData());
+      if (other.hasSecret()) {
+        mergeSecret(other.getSecret());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -496,199 +496,199 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object environment_ = "";
+    private java.lang.Object projectId_ = "";
     /**
-     * <code>string environment = 1 [json_name = "environment"];</code>
-     * @return The environment.
+     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * @return The projectId.
      */
-    public java.lang.String getEnvironment() {
-      java.lang.Object ref = environment_;
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        environment_ = s;
+        projectId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string environment = 1 [json_name = "environment"];</code>
-     * @return The bytes for environment.
+     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString
-        getEnvironmentBytes() {
-      java.lang.Object ref = environment_;
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        environment_ = b;
+        projectId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string environment = 1 [json_name = "environment"];</code>
-     * @param value The environment to set.
+     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * @param value The projectId to set.
      * @return This builder for chaining.
      */
-    public Builder setEnvironment(
+    public Builder setProjectId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      environment_ = value;
+      projectId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string environment = 1 [json_name = "environment"];</code>
+     * <code>string project_id = 1 [json_name = "projectId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearEnvironment() {
+    public Builder clearProjectId() {
       
-      environment_ = getDefaultInstance().getEnvironment();
+      projectId_ = getDefaultInstance().getProjectId();
       onChanged();
       return this;
     }
     /**
-     * <code>string environment = 1 [json_name = "environment"];</code>
-     * @param value The bytes for environment to set.
+     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
-    public Builder setEnvironmentBytes(
+    public Builder setProjectIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      environment_ = value;
+      projectId_ = value;
       onChanged();
       return this;
     }
 
-    private io.cuemby.vault.v1alpha1.SecretData data_;
+    private io.cuemby.vault.v1alpha1.Secret secret_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.vault.v1alpha1.SecretData, io.cuemby.vault.v1alpha1.SecretData.Builder, io.cuemby.vault.v1alpha1.SecretDataOrBuilder> dataBuilder_;
+        io.cuemby.vault.v1alpha1.Secret, io.cuemby.vault.v1alpha1.Secret.Builder, io.cuemby.vault.v1alpha1.SecretOrBuilder> secretBuilder_;
     /**
-     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
-     * @return Whether the data field is set.
+     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * @return Whether the secret field is set.
      */
-    public boolean hasData() {
-      return dataBuilder_ != null || data_ != null;
+    public boolean hasSecret() {
+      return secretBuilder_ != null || secret_ != null;
     }
     /**
-     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
-     * @return The data.
+     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * @return The secret.
      */
-    public io.cuemby.vault.v1alpha1.SecretData getData() {
-      if (dataBuilder_ == null) {
-        return data_ == null ? io.cuemby.vault.v1alpha1.SecretData.getDefaultInstance() : data_;
+    public io.cuemby.vault.v1alpha1.Secret getSecret() {
+      if (secretBuilder_ == null) {
+        return secret_ == null ? io.cuemby.vault.v1alpha1.Secret.getDefaultInstance() : secret_;
       } else {
-        return dataBuilder_.getMessage();
+        return secretBuilder_.getMessage();
       }
     }
     /**
-     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
      */
-    public Builder setData(io.cuemby.vault.v1alpha1.SecretData value) {
-      if (dataBuilder_ == null) {
+    public Builder setSecret(io.cuemby.vault.v1alpha1.Secret value) {
+      if (secretBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        data_ = value;
+        secret_ = value;
         onChanged();
       } else {
-        dataBuilder_.setMessage(value);
+        secretBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
      */
-    public Builder setData(
-        io.cuemby.vault.v1alpha1.SecretData.Builder builderForValue) {
-      if (dataBuilder_ == null) {
-        data_ = builderForValue.build();
+    public Builder setSecret(
+        io.cuemby.vault.v1alpha1.Secret.Builder builderForValue) {
+      if (secretBuilder_ == null) {
+        secret_ = builderForValue.build();
         onChanged();
       } else {
-        dataBuilder_.setMessage(builderForValue.build());
+        secretBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
      */
-    public Builder mergeData(io.cuemby.vault.v1alpha1.SecretData value) {
-      if (dataBuilder_ == null) {
-        if (data_ != null) {
-          data_ =
-            io.cuemby.vault.v1alpha1.SecretData.newBuilder(data_).mergeFrom(value).buildPartial();
+    public Builder mergeSecret(io.cuemby.vault.v1alpha1.Secret value) {
+      if (secretBuilder_ == null) {
+        if (secret_ != null) {
+          secret_ =
+            io.cuemby.vault.v1alpha1.Secret.newBuilder(secret_).mergeFrom(value).buildPartial();
         } else {
-          data_ = value;
+          secret_ = value;
         }
         onChanged();
       } else {
-        dataBuilder_.mergeFrom(value);
+        secretBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
      */
-    public Builder clearData() {
-      if (dataBuilder_ == null) {
-        data_ = null;
+    public Builder clearSecret() {
+      if (secretBuilder_ == null) {
+        secret_ = null;
         onChanged();
       } else {
-        data_ = null;
-        dataBuilder_ = null;
+        secret_ = null;
+        secretBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
      */
-    public io.cuemby.vault.v1alpha1.SecretData.Builder getDataBuilder() {
+    public io.cuemby.vault.v1alpha1.Secret.Builder getSecretBuilder() {
       
       onChanged();
-      return getDataFieldBuilder().getBuilder();
+      return getSecretFieldBuilder().getBuilder();
     }
     /**
-     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
      */
-    public io.cuemby.vault.v1alpha1.SecretDataOrBuilder getDataOrBuilder() {
-      if (dataBuilder_ != null) {
-        return dataBuilder_.getMessageOrBuilder();
+    public io.cuemby.vault.v1alpha1.SecretOrBuilder getSecretOrBuilder() {
+      if (secretBuilder_ != null) {
+        return secretBuilder_.getMessageOrBuilder();
       } else {
-        return data_ == null ?
-            io.cuemby.vault.v1alpha1.SecretData.getDefaultInstance() : data_;
+        return secret_ == null ?
+            io.cuemby.vault.v1alpha1.Secret.getDefaultInstance() : secret_;
       }
     }
     /**
-     * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.vault.v1alpha1.SecretData, io.cuemby.vault.v1alpha1.SecretData.Builder, io.cuemby.vault.v1alpha1.SecretDataOrBuilder> 
-        getDataFieldBuilder() {
-      if (dataBuilder_ == null) {
-        dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.cuemby.vault.v1alpha1.SecretData, io.cuemby.vault.v1alpha1.SecretData.Builder, io.cuemby.vault.v1alpha1.SecretDataOrBuilder>(
-                getData(),
+        io.cuemby.vault.v1alpha1.Secret, io.cuemby.vault.v1alpha1.Secret.Builder, io.cuemby.vault.v1alpha1.SecretOrBuilder> 
+        getSecretFieldBuilder() {
+      if (secretBuilder_ == null) {
+        secretBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.cuemby.vault.v1alpha1.Secret, io.cuemby.vault.v1alpha1.Secret.Builder, io.cuemby.vault.v1alpha1.SecretOrBuilder>(
+                getSecret(),
                 getParentForChildren(),
                 isClean());
-        data_ = null;
+        secret_ = null;
       }
-      return dataBuilder_;
+      return secretBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
