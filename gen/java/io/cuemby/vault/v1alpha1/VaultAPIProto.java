@@ -82,34 +82,35 @@ public final class VaultAPIProto {
       "oject_id\030\001 \001(\tR\tprojectId\022.\n\006secret\030\002 \001(" +
       "\0132\026.vault.v1alpha1.SecretR\006secret\">\n\024Upd" +
       "ateSecretResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005e" +
-      "rror\030\002 \001(\tR\005error\"4\n\023DeleteSecretRequest" +
-      "\022\035\n\nproject_id\030\001 \001(\rR\tprojectId\">\n\024Delet" +
-      "eSecretResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005err" +
-      "or\030\002 \001(\tR\005error\"X\n\020GetSecretRequest\022\035\n\np" +
-      "roject_id\030\001 \001(\rR\tprojectId\022%\n\016applicatio" +
-      "n_id\030\002 \001(\tR\rapplicationId\"Y\n\021GetSecretRe" +
-      "sponse\022.\n\006secret\030\001 \001(\0132\026.vault.v1alpha1." +
-      "SecretR\006secret\022\024\n\005error\030\002 \001(\tR\005error\"Y\n\021" +
-      "ListSecretRequest\022\035\n\nproject_id\030\001 \001(\tR\tp" +
-      "rojectId\022%\n\016application_id\030\002 \001(\tR\rapplic" +
-      "ationId\"\\\n\022ListSecretResponse\0220\n\007secrets" +
-      "\030\001 \003(\0132\026.vault.v1alpha1.SecretR\007secrets\022" +
-      "\024\n\005error\030\002 \001(\tR\005error2\323\003\n\017VaultAPIServic" +
-      "e\022[\n\014CreateSecret\022#.vault.v1alpha1.Creat" +
-      "eSecretRequest\032$.vault.v1alpha1.CreateSe" +
-      "cretResponse\"\000\022[\n\014UpdateSecret\022#.vault.v" +
-      "1alpha1.UpdateSecretRequest\032$.vault.v1al" +
-      "pha1.UpdateSecretResponse\"\000\022[\n\014DeleteSec" +
-      "ret\022#.vault.v1alpha1.DeleteSecretRequest" +
-      "\032$.vault.v1alpha1.DeleteSecretResponse\"\000" +
-      "\022R\n\tGetSecret\022 .vault.v1alpha1.GetSecret" +
-      "Request\032!.vault.v1alpha1.GetSecretRespon" +
-      "se\"\000\022U\n\nListSecret\022!.vault.v1alpha1.List" +
-      "SecretRequest\032\".vault.v1alpha1.ListSecre" +
-      "tResponse\"\000B\206\001\n\030io.cuemby.vault.v1alpha1" +
-      "B\rVaultAPIProtoP\001Z1github.com/cuemby/ccp" +
-      "-vault-service/vaultv1alpha1\242\002\003PPX\252\002\016Vau" +
-      "lt.V1Alpha1\312\002\016Vault\\V1Alpha1b\006proto3"
+      "rror\030\002 \001(\tR\005error\"[\n\023DeleteSecretRequest" +
+      "\022\035\n\nproject_id\030\001 \001(\rR\tprojectId\022%\n\016appli" +
+      "cation_id\030\002 \001(\tR\rapplicationId\">\n\024Delete" +
+      "SecretResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005erro" +
+      "r\030\002 \001(\tR\005error\"X\n\020GetSecretRequest\022\035\n\npr" +
+      "oject_id\030\001 \001(\rR\tprojectId\022%\n\016application" +
+      "_id\030\002 \001(\tR\rapplicationId\"Y\n\021GetSecretRes" +
+      "ponse\022.\n\006secret\030\001 \001(\0132\026.vault.v1alpha1.S" +
+      "ecretR\006secret\022\024\n\005error\030\002 \001(\tR\005error\"Y\n\021L" +
+      "istSecretRequest\022\035\n\nproject_id\030\001 \001(\tR\tpr" +
+      "ojectId\022%\n\016application_id\030\002 \001(\tR\rapplica" +
+      "tionId\"\\\n\022ListSecretResponse\0220\n\007secrets\030" +
+      "\001 \003(\0132\026.vault.v1alpha1.SecretR\007secrets\022\024" +
+      "\n\005error\030\002 \001(\tR\005error2\323\003\n\017VaultAPIService" +
+      "\022[\n\014CreateSecret\022#.vault.v1alpha1.Create" +
+      "SecretRequest\032$.vault.v1alpha1.CreateSec" +
+      "retResponse\"\000\022[\n\014UpdateSecret\022#.vault.v1" +
+      "alpha1.UpdateSecretRequest\032$.vault.v1alp" +
+      "ha1.UpdateSecretResponse\"\000\022[\n\014DeleteSecr" +
+      "et\022#.vault.v1alpha1.DeleteSecretRequest\032" +
+      "$.vault.v1alpha1.DeleteSecretResponse\"\000\022" +
+      "R\n\tGetSecret\022 .vault.v1alpha1.GetSecretR" +
+      "equest\032!.vault.v1alpha1.GetSecretRespons" +
+      "e\"\000\022U\n\nListSecret\022!.vault.v1alpha1.ListS" +
+      "ecretRequest\032\".vault.v1alpha1.ListSecret" +
+      "Response\"\000B\206\001\n\030io.cuemby.vault.v1alpha1B" +
+      "\rVaultAPIProtoP\001Z1github.com/cuemby/ccp-" +
+      "vault-service/vaultv1alpha1\242\002\003PPX\252\002\016Vaul" +
+      "t.V1Alpha1\312\002\016Vault\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -145,7 +146,7 @@ public final class VaultAPIProto {
     internal_static_vault_v1alpha1_DeleteSecretRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_DeleteSecretRequest_descriptor,
-        new java.lang.String[] { "ProjectId", });
+        new java.lang.String[] { "ProjectId", "ApplicationId", });
     internal_static_vault_v1alpha1_DeleteSecretResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_vault_v1alpha1_DeleteSecretResponse_fieldAccessorTable = new

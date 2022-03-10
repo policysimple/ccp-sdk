@@ -44,6 +44,7 @@ message UpdateSecretResponse {
 
 message DeleteSecretRequest {
     uint32 project_id = 1;
+    string application_id = 2;
 }
 
 message DeleteSecretResponse {
