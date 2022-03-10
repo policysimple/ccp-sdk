@@ -12,4 +12,16 @@ public interface GetSecretRequestOrBuilder extends
    * @return The projectId.
    */
   int getProjectId();
+
+  /**
+   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * @return The applicationId.
+   */
+  java.lang.String getApplicationId();
+  /**
+   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * @return The bytes for applicationId.
+   */
+  com.google.protobuf.ByteString
+      getApplicationIdBytes();
 }

@@ -33,8 +33,8 @@ message CreateSecretResponse {
 }
 
 message UpdateSecretRequest {
-    string environment = 1;
-    SecretData data = 2;
+    string project_id = 1;
+    Secret secret = 2;
 }
 
 message UpdateSecretResponse {
@@ -43,7 +43,8 @@ message UpdateSecretResponse {
 }
 
 message DeleteSecretRequest {
-    string environment = 1;
+    uint32 project_id = 1;
+    string application_id = 2;
 }
 
 message DeleteSecretResponse {
@@ -53,6 +54,7 @@ message DeleteSecretResponse {
 
 message GetSecretRequest {
     uint32 project_id = 1;
+    string application_id = 2;
 }
 
 message GetSecretResponse {
@@ -61,7 +63,8 @@ message GetSecretResponse {
 }
 
 message ListSecretRequest {
-    string environment = 1;
+    string project_id = 1;
+    string application_id = 2;
 }
 
 message ListSecretResponse {

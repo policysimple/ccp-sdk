@@ -34,6 +34,10 @@ type SecretWarnings struct {
 	*vaultpkgv1.SecretWarnings
 }
 
+type Secret struct {
+	*vaultpkgv1.Secret
+}
+
 func init() {
 	doOnce.Do(func() {
 		vaultServiceTimeout = os.Getenv("VAULT_SERVICE_TIMEOUT")
@@ -49,10 +53,8 @@ func init() {
 	})
 }
 
-func CreateSecret(
-	projectId uint32, applicationId string, metadata Metadata,
-	environment string, secretData SecretData, secretWarning SecretWarnings,
-) (*vaultpkgv1.CreateSecretResponse, error) {
+func CreateSecret(in *Secret) (*vaultpkgv1.CreateSecretResponse, error) {
+
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -61,21 +63,7 @@ func CreateSecret(
 	defer cancel()
 
 	response, err := client.CreateSecret(ctx, &vaultpkgv1.CreateSecretRequest{
-		Secret: &vaultpkgv1.Secret{
-			ProjectId:     projectId,
-			ApplicationId: applicationId,
-			Metadata: &vaultpkgv1.Metadata{
-				Key:            metadata.Key,
-				CreatedTime:    metadata.CreatedTime,
-				CustomMetadata: metadata.CustomMetadata,
-				DeletionTime:   metadata.DeletionTime,
-				Destroyed:      metadata.Destroyed,
-				Version:        metadata.Version,
-			},
-			Environment: environment,
-			Data:        secretData.SecretData,
-			Warnings:    secretWarning.SecretWarnings,
-		},
+		Secret: in.Secret,
 	})
 
 	if err != nil {
@@ -89,7 +77,7 @@ func CreateSecret(
 	return response, nil
 }
 
-func UpdateSecret(environment string, secretData SecretData) (*vaultpkgv1.UpdateSecretResponse, error) {
+func UpdateSecret(in *Secret) (*vaultpkgv1.UpdateSecretResponse, error) {
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -98,22 +86,18 @@ func UpdateSecret(environment string, secretData SecretData) (*vaultpkgv1.Update
 	defer cancel()
 
 	response, err := client.UpdateSecret(ctx, &vaultpkgv1.UpdateSecretRequest{
-		Environment: environment,
-		Data:        secretData.SecretData,
+		Secret: in.Secret,
 	})
 
 	if err != nil {
 		log.Printf("%s: %v", "Error update secret", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error update secret: %v", err),
-		)
 	}
 
 	return response, nil
 }
 
-func DeleteSecret(environment string) (*vaultpkgv1.DeleteSecretResponse, error) {
+func DeleteSecret(projectId uint32) (*vaultpkgv1.DeleteSecretResponse, error) {
+
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -122,21 +106,18 @@ func DeleteSecret(environment string) (*vaultpkgv1.DeleteSecretResponse, error) 
 	defer cancel()
 
 	response, err := client.DeleteSecret(ctx, &vaultpkgv1.DeleteSecretRequest{
-		Environment: environment,
+		ProjectId: projectId,
 	})
 
 	if err != nil {
 		log.Printf("%s: %v", "Error delete secret", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error delete secret: %v", err),
-		)
 	}
 
 	return response, nil
 }
 
 func GetSecret(projectId uint32) (*vaultpkgv1.GetSecretResponse, error) {
+
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -150,16 +131,12 @@ func GetSecret(projectId uint32) (*vaultpkgv1.GetSecretResponse, error) {
 
 	if err != nil {
 		log.Printf("%s: %v", "Error get secret", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error get secret: %v", err),
-		)
 	}
 
 	return response, nil
 }
 
-func ListSecret(environment string) (*vaultpkgv1.ListSecretResponse, error) {
+func ListSecret(in *vaultpkgv1.ListSecretRequest) (*vaultpkgv1.ListSecretResponse, error) {
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -168,15 +145,11 @@ func ListSecret(environment string) (*vaultpkgv1.ListSecretResponse, error) {
 	defer cancel()
 
 	response, err := client.ListSecret(ctx, &vaultpkgv1.ListSecretRequest{
-		Environment: environment,
+		ProjectId: in.ProjectId,
 	})
 
 	if err != nil {
-		log.Printf("%s: %v", "Error list secrets", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error list secrets: %v", err),
-		)
+		log.Printf("%s: %v", "Error list secret", err)
 	}
 
 	return response, nil

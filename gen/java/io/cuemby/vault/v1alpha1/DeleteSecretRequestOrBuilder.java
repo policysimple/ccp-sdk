@@ -8,14 +8,20 @@ public interface DeleteSecretRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string environment = 1 [json_name = "environment"];</code>
-   * @return The environment.
+   * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+   * @return The projectId.
    */
-  java.lang.String getEnvironment();
+  int getProjectId();
+
   /**
-   * <code>string environment = 1 [json_name = "environment"];</code>
-   * @return The bytes for environment.
+   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * @return The applicationId.
+   */
+  java.lang.String getApplicationId();
+  /**
+   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * @return The bytes for applicationId.
    */
   com.google.protobuf.ByteString
-      getEnvironmentBytes();
+      getApplicationIdBytes();
 }

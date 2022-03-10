@@ -14,13 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateSecretRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string environment = 1 [json_name = "environment"];</code>
+     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
      */
-    protected $environment = '';
+    protected $project_id = '';
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
      */
-    protected $data = null;
+    protected $secret = null;
 
     /**
      * Constructor.
@@ -28,8 +28,8 @@ class UpdateSecretRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $environment
-     *     @type \Vault\V1Alpha1\SecretData $data
+     *     @type string $project_id
+     *     @type \Vault\V1Alpha1\Secret $secret
      * }
      */
     public function __construct($data = NULL) {
@@ -38,55 +38,55 @@ class UpdateSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string environment = 1 [json_name = "environment"];</code>
+     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
      * @return string
      */
-    public function getEnvironment()
+    public function getProjectId()
     {
-        return $this->environment;
+        return $this->project_id;
     }
 
     /**
-     * Generated from protobuf field <code>string environment = 1 [json_name = "environment"];</code>
+     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setEnvironment($var)
+    public function setProjectId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->environment = $var;
+        $this->project_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
-     * @return \Vault\V1Alpha1\SecretData|null
+     * Generated from protobuf field <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * @return \Vault\V1Alpha1\Secret|null
      */
-    public function getData()
+    public function getSecret()
     {
-        return $this->data;
+        return $this->secret;
     }
 
-    public function hasData()
+    public function hasSecret()
     {
-        return isset($this->data);
+        return isset($this->secret);
     }
 
-    public function clearData()
+    public function clearSecret()
     {
-        unset($this->data);
+        unset($this->secret);
     }
 
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
-     * @param \Vault\V1Alpha1\SecretData $var
+     * Generated from protobuf field <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * @param \Vault\V1Alpha1\Secret $var
      * @return $this
      */
-    public function setData($var)
+    public function setSecret($var)
     {
-        GPBUtil::checkMessage($var, \Vault\V1Alpha1\SecretData::class);
-        $this->data = $var;
+        GPBUtil::checkMessage($var, \Vault\V1Alpha1\Secret::class);
+        $this->secret = $var;
 
         return $this;
     }

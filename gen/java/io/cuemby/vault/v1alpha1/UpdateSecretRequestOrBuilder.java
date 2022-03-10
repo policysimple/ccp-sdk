@@ -8,29 +8,29 @@ public interface UpdateSecretRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string environment = 1 [json_name = "environment"];</code>
-   * @return The environment.
+   * <code>string project_id = 1 [json_name = "projectId"];</code>
+   * @return The projectId.
    */
-  java.lang.String getEnvironment();
+  java.lang.String getProjectId();
   /**
-   * <code>string environment = 1 [json_name = "environment"];</code>
-   * @return The bytes for environment.
+   * <code>string project_id = 1 [json_name = "projectId"];</code>
+   * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString
-      getEnvironmentBytes();
+      getProjectIdBytes();
 
   /**
-   * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
-   * @return Whether the data field is set.
+   * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+   * @return Whether the secret field is set.
    */
-  boolean hasData();
+  boolean hasSecret();
   /**
-   * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
-   * @return The data.
+   * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+   * @return The secret.
    */
-  io.cuemby.vault.v1alpha1.SecretData getData();
+  io.cuemby.vault.v1alpha1.Secret getSecret();
   /**
-   * <code>.vault.v1alpha1.SecretData data = 2 [json_name = "data"];</code>
+   * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
    */
-  io.cuemby.vault.v1alpha1.SecretDataOrBuilder getDataOrBuilder();
+  io.cuemby.vault.v1alpha1.SecretOrBuilder getSecretOrBuilder();
 }

@@ -16,7 +16,7 @@ class Vault
         }
         $pool->internalAddGeneratedFile(
             '
-Æ
+¤
 vault/v1alpha1/vault.protovault.v1alpha1"Å
 Metadata
 key (	Rkey!
@@ -32,13 +32,12 @@ SecretData8
 key (	Rkey
 value (	Rvalue:8",
 SecretWarnings
-warnings (	Rwarnings"’
+warnings (	Rwarnings"ð
 Secret
 
 project_id (R	projectId%
 application_id (	RapplicationId4
-metadata (2.vault.v1alpha1.MetadataRmetadata 
-environment (	Renvironment.
+metadata (2.vault.v1alpha1.MetadataRmetadata.
 data (2.vault.v1alpha1.SecretDataRdata:
 warnings (2.vault.v1alpha1.SecretWarningsRwarningsBƒ
 io.cuemby.vault.v1alpha1B
