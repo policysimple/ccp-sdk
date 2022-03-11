@@ -44,14 +44,12 @@ service AccountService {
     rpc GetListUserDex(GetListUserDexRequest) returns (GetListUserDexResponse);
     rpc GetOneUserDex(GetOneUserDexRequest) returns (GetOneUserDexResponse);
     rpc CheckUser(CheckUserRequest) returns (CheckUserResponse);
-
+    // Send Verification
     rpc SendVerificationEmail(SendVerificationEmailRequest) returns (SendVerificationEmailResponse);
     rpc VerifyEmail(VerifyEmailRequest) returns (VerifyEmailResponse);
     //  Countries
     rpc ListCountries(ListCountriesRequest) returns (ListCountriesResponse);
     rpc GetOneCountry(GetOneCountryRequest) returns (GetOneCountryResponse);
-
-    
     // Tokens
     rpc CreateApiKey(CreateApiKeyRequest) returns (CreateApiKeyResponse);
     rpc GetOneApiKey(GetOneApiKeyRequest) returns (GetOneApiKeyResponse);
@@ -303,7 +301,7 @@ message CreateUserRequest {
     string address = 13;
     string state = 14;
     string emoji_country = 15;
-
+    string invitation_code  = 16;
 }
 
 //Update
@@ -314,7 +312,8 @@ message UpdateUserRequest {
 
 //Update
 message DeleteUserRequest {
-    uint32 auth_id = 1;
+    uint32 user_id = 1;
+    uint32 organization_id = 2;
 }
 
 //Authentication without group and permission
@@ -391,10 +390,13 @@ message ProjectDetail {
 }
 
 message SendInvitationUserRequest {
-    string name=1;
-    string email=2;
+    string name = 1;
+    string email = 2;
     repeated ProjectDetail projects = 3;
-    string user_id_admin=4;
+    string user_id_admin = 4;
+    repeated uint32 roles_ids = 5;
+    repeated uint32 permissions_ids = 6;
+    uint32 organization_id = 7;
 }
 
 message SendInvitationUserResponse {
@@ -402,6 +404,8 @@ message SendInvitationUserResponse {
     repeated Project projects=2;
     string invitation_code=3;
     string result=4;
+    repeated Rol roles = 5;
+    repeated Permission permissions = 6;
 }
 
 message GetInvitationUserRequest {
@@ -413,10 +417,13 @@ message GetInvitationUserResponse {
     Organization organization=1;
     repeated Project projects=2;
     string result=3;
+
+    repeated Rol roles = 4;
+    repeated Permission permissions = 5;
 }
 
 message AgreeInvitationUserRequest {
-    string invitation_code=1;
+    string invitation_code= 1 ;
     string email=2;
     string guest_user_id=3;
     InvitationResponse invitation_response=4;
@@ -437,6 +444,7 @@ message Rol {
     uint32 project_id = 3;
     uint32 organization_id = 4;
     repeated Permission permissions = 5;
+    bool is_admin = 6;
 }
 
 message CreateRoleRequest {
@@ -588,14 +596,29 @@ message ListProjectPaginationResponse {
 /*
     PERMISSIONS
 */
+
+
+
 message Permission {
     uint32 id = 1;
     string name = 2;
-    string type = 3;
+    string action =3;
+    string type = 4;
+    string full_name = 5;
+}
+
+message GroupPermission {
+    string name = 1;
+    repeated Permission permissions = 3;
+}
+message CategoryPermission {
+    string name = 1;
+    string type = 2;
+    repeated GroupPermission group_permissions = 3;
 }
 
 message ListPermissionResponse {
-    repeated Permission permissions = 1;
+    repeated CategoryPermission categories_permissions = 1;
 }
 
 message AssignPermissionRequest {
@@ -606,12 +629,15 @@ message AssignPermissionRequest {
     Requests
 */
 message ListPermissionRequest{
-    string type = 1;
+    //string type = 1;
 }
 
 message CreatePermissionRequest {
     string name = 1;
     string type = 2;
+    string category = 3;
+    string action = 4;
+
 }
 
 message UpdatePermissionRequest {
@@ -675,6 +701,9 @@ message Organization {
     string name = 2;
     string image = 3;
     string description = 4;
+    UserList owner = 7;
+
+
 }
 /*
 Requests

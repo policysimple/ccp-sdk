@@ -9,8 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * PERMISSIONS
- *
  * Generated from protobuf message <code>accounts.v1alpha1.Permission</code>
  */
 class Permission extends \Google\Protobuf\Internal\Message
@@ -24,9 +22,17 @@ class Permission extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
+     * Generated from protobuf field <code>string action = 3 [json_name = "action"];</code>
+     */
+    protected $action = '';
+    /**
+     * Generated from protobuf field <code>string type = 4 [json_name = "type"];</code>
      */
     protected $type = '';
+    /**
+     * Generated from protobuf field <code>string full_name = 5 [json_name = "fullName"];</code>
+     */
+    protected $full_name = '';
 
     /**
      * Constructor.
@@ -36,7 +42,9 @@ class Permission extends \Google\Protobuf\Internal\Message
      *
      *     @type int $id
      *     @type string $name
+     *     @type string $action
      *     @type string $type
+     *     @type string $full_name
      * }
      */
     public function __construct($data = NULL) {
@@ -89,7 +97,29 @@ class Permission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
+     * Generated from protobuf field <code>string action = 3 [json_name = "action"];</code>
+     * @return string
+     */
+    public function getAction()
+    {
+        return $this->action;
+    }
+
+    /**
+     * Generated from protobuf field <code>string action = 3 [json_name = "action"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAction($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->action = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string type = 4 [json_name = "type"];</code>
      * @return string
      */
     public function getType()
@@ -98,7 +128,7 @@ class Permission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
+     * Generated from protobuf field <code>string type = 4 [json_name = "type"];</code>
      * @param string $var
      * @return $this
      */
@@ -106,6 +136,28 @@ class Permission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string full_name = 5 [json_name = "fullName"];</code>
+     * @return string
+     */
+    public function getFullName()
+    {
+        return $this->full_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string full_name = 5 [json_name = "fullName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFullName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->full_name = $var;
 
         return $this;
     }

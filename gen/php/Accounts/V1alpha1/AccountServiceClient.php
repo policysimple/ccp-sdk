@@ -439,6 +439,7 @@ class AccountServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Send Verification
      * @param \Accounts\V1alpha1\SendVerificationEmailRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

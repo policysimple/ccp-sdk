@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>accounts.v1alpha1.CreatePermissionRequest</code>
+ * Generated from protobuf message <code>accounts.v1alpha1.CategoryPermission</code>
  */
-class CreatePermissionRequest extends \Google\Protobuf\Internal\Message
+class CategoryPermission extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
@@ -22,13 +22,9 @@ class CreatePermissionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $type = '';
     /**
-     * Generated from protobuf field <code>string category = 3 [json_name = "category"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.GroupPermission group_permissions = 3 [json_name = "groupPermissions"];</code>
      */
-    protected $category = '';
-    /**
-     * Generated from protobuf field <code>string action = 4 [json_name = "action"];</code>
-     */
-    protected $action = '';
+    private $group_permissions;
 
     /**
      * Constructor.
@@ -38,8 +34,7 @@ class CreatePermissionRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *     @type string $type
-     *     @type string $category
-     *     @type string $action
+     *     @type \Accounts\V1alpha1\GroupPermission[]|\Google\Protobuf\Internal\RepeatedField $group_permissions
      * }
      */
     public function __construct($data = NULL) {
@@ -92,45 +87,23 @@ class CreatePermissionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string category = 3 [json_name = "category"];</code>
-     * @return string
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.GroupPermission group_permissions = 3 [json_name = "groupPermissions"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getCategory()
+    public function getGroupPermissions()
     {
-        return $this->category;
+        return $this->group_permissions;
     }
 
     /**
-     * Generated from protobuf field <code>string category = 3 [json_name = "category"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.GroupPermission group_permissions = 3 [json_name = "groupPermissions"];</code>
+     * @param \Accounts\V1alpha1\GroupPermission[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setCategory($var)
+    public function setGroupPermissions($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->category = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string action = 4 [json_name = "action"];</code>
-     * @return string
-     */
-    public function getAction()
-    {
-        return $this->action;
-    }
-
-    /**
-     * Generated from protobuf field <code>string action = 4 [json_name = "action"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAction($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->action = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\GroupPermission::class);
+        $this->group_permissions = $arr;
 
         return $this;
     }

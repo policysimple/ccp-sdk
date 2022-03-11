@@ -266,6 +266,7 @@ class AccountService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CheckUserResponse>> PrepareAsyncCheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CheckUserResponse>>(PrepareAsyncCheckUserRaw(context, request, cq));
     }
+    // Send Verification
     virtual ::grpc::Status SendVerificationEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendVerificationEmailRequest& request, ::accounts::v1alpha1::SendVerificationEmailResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::SendVerificationEmailResponse>> AsyncSendVerificationEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendVerificationEmailRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::SendVerificationEmailResponse>>(AsyncSendVerificationEmailRaw(context, request, cq));
@@ -372,6 +373,7 @@ class AccountService final {
       virtual void GetListUserDex(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetListUserDexRequest* request, ::accounts::v1alpha1::GetListUserDexResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetOneUserDex(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest* request, ::accounts::v1alpha1::GetOneUserDexResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response, std::function<void(::grpc::Status)>) = 0;
+      // Send Verification
       virtual void SendVerificationEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::SendVerificationEmailRequest* request, ::accounts::v1alpha1::SendVerificationEmailResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void VerifyEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::VerifyEmailRequest* request, ::accounts::v1alpha1::VerifyEmailResponse* response, std::function<void(::grpc::Status)>) = 0;
       //  Countries
@@ -982,6 +984,7 @@ class AccountService final {
     virtual ::grpc::Status GetListUserDex(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetListUserDexRequest* request, ::accounts::v1alpha1::GetListUserDexResponse* response);
     virtual ::grpc::Status GetOneUserDex(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneUserDexRequest* request, ::accounts::v1alpha1::GetOneUserDexResponse* response);
     virtual ::grpc::Status CheckUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::CheckUserRequest* request, ::accounts::v1alpha1::CheckUserResponse* response);
+    // Send Verification
     virtual ::grpc::Status SendVerificationEmail(::grpc::ServerContext* context, const ::accounts::v1alpha1::SendVerificationEmailRequest* request, ::accounts::v1alpha1::SendVerificationEmailResponse* response);
     virtual ::grpc::Status VerifyEmail(::grpc::ServerContext* context, const ::accounts::v1alpha1::VerifyEmailRequest* request, ::accounts::v1alpha1::VerifyEmailResponse* response);
     //  Countries

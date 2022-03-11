@@ -29,6 +29,18 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
      */
     protected $user_id_admin = '';
+    /**
+     * Generated from protobuf field <code>repeated uint32 roles_ids = 5 [json_name = "rolesIds"];</code>
+     */
+    private $roles_ids;
+    /**
+     * Generated from protobuf field <code>repeated uint32 permissions_ids = 6 [json_name = "permissionsIds"];</code>
+     */
+    private $permissions_ids;
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
 
     /**
      * Constructor.
@@ -40,6 +52,9 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
      *     @type string $email
      *     @type \Accounts\V1alpha1\ProjectDetail[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type string $user_id_admin
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $roles_ids
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $permissions_ids
+     *     @type int $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +146,72 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id_admin = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated uint32 roles_ids = 5 [json_name = "rolesIds"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRolesIds()
+    {
+        return $this->roles_ids;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated uint32 roles_ids = 5 [json_name = "rolesIds"];</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRolesIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
+        $this->roles_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated uint32 permissions_ids = 6 [json_name = "permissionsIds"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPermissionsIds()
+    {
+        return $this->permissions_ids;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated uint32 permissions_ids = 6 [json_name = "permissionsIds"];</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPermissionsIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
+        $this->permissions_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
 
         return $this;
     }

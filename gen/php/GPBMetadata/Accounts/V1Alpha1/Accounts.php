@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-­€
+…‡
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"ˆ
 CreateApiKeyRequest
 name (	Rname
@@ -147,7 +147,7 @@ permission
 ListUserRequest\'
 organization_id (RorganizationId
 
-project_id (R	projectId"Ï
+project_id (R	projectId"ø
 CreateUserRequest
 user_id (	RuserId
 
@@ -165,12 +165,14 @@ first_name (	R	firstName
 zip_code (	RzipCode
 address (	Raddress
 state (	Rstate#
-emoji_country (	RemojiCountry"f
+emoji_country (	RemojiCountry\'
+invitation_code (	RinvitationCode"f
 UpdateUserRequest
 auth_id (RauthId8
-auth (2$.accounts.v1alpha1.CreateUserRequestRauth",
+auth (2$.accounts.v1alpha1.CreateUserRequestRauth"U
 DeleteUserRequest
-auth_id (RauthId"Æ
+user_id (RuserId\'
+organization_id (RorganizationId"Æ
 UserList
 id (Rid
 
@@ -218,24 +220,31 @@ updated_at (	R	updatedAt,
 ProjectDetail
 
 project_id (R	projectId
-role_id (RroleId"§
+role_id (RroleId"–
 SendInvitationUserRequest
 name (	Rname
 email (	Remail<
 projects (2 .accounts.v1alpha1.ProjectDetailRprojects"
-user_id_admin (	RuserIdAdmin"Ú
+user_id_admin (	RuserIdAdmin
+	roles_ids (RrolesIds\'
+permissions_ids (RpermissionsIds\'
+organization_id (RorganizationId"É
 SendInvitationUserResponseC
 organization (2.accounts.v1alpha1.OrganizationRorganization6
 projects (2.accounts.v1alpha1.ProjectRprojects\'
 invitation_code (	RinvitationCode
-result (	Rresult"Y
+result (	Rresult,
+roles (2.accounts.v1alpha1.RolRroles?
+permissions (2.accounts.v1alpha1.PermissionRpermissions"Y
 GetInvitationUserRequest\'
 invitation_code (	RinvitationCode
-email (	Remail"°
+email (	Remail"Ÿ
 GetInvitationUserResponseC
 organization (2.accounts.v1alpha1.OrganizationRorganization6
 projects (2.accounts.v1alpha1.ProjectRprojects
-result (	Rresult"í
+result (	Rresult,
+roles (2.accounts.v1alpha1.RolRroles?
+permissions (2.accounts.v1alpha1.PermissionRpermissions"í
 AgreeInvitationUserRequest\'
 invitation_code (	RinvitationCode
 email (	Remail"
@@ -246,14 +255,15 @@ project_id (R	projectId
 key (Rkey
 value (Rvalue:8"5
 AgreeInvitationUserResponse
-result (	Rresult"²
+result (	Rresult"Í
 Rol
 id (Rid
 name (	Rname
 
 project_id (R	projectId\'
 organization_id (RorganizationId?
-permissions (2.accounts.v1alpha1.PermissionRpermissions"á
+permissions (2.accounts.v1alpha1.PermissionRpermissions
+is_admin (RisAdmin"á
 CreateRoleRequest
 name (	Rname 
 description (	Rdescription
@@ -348,22 +358,32 @@ updated_at (	R	updatedAt3
 limit (Rlimit"m
 ListProjectPaginationResponse6
 projects (2.accounts.v1alpha1.ProjectRprojects
-count (Rcount"D
+count (Rcount"y
 
 Permission
 id (Rid
-name (	Rname
-type (	Rtype"Y
-ListPermissionResponse?
-permissions (2.accounts.v1alpha1.PermissionRpermissions"W
+name (	Rname
+action (	Raction
+type (	Rtype
+	full_name (	RfullName"f
+GroupPermission
+name (	Rname?
+permissions (2.accounts.v1alpha1.PermissionRpermissions"
+CategoryPermission
+name (	Rname
+type (	RtypeO
+group_permissions (2".accounts.v1alpha1.GroupPermissionRgroupPermissions"v
+ListPermissionResponse\\
+categories_permissions (2%.accounts.v1alpha1.CategoryPermissionRcategoriesPermissions"W
 AssignPermissionRequest
 user_id (RuserId#
-permission_id (RpermissionId"+
-ListPermissionRequest
-type (	Rtype"A
+permission_id (RpermissionId"
+ListPermissionRequest"u
 CreatePermissionRequest
 name (	Rname
-type (	Rtype"f
+type (	Rtype
+category (	Rcategory
+action (	Raction"f
 UpdatePermissionRequest#
 permission_id (RpermissionId
 name (	Rname
@@ -396,12 +416,13 @@ first_name (	R	firstName
 id (Rid
 name (	Rname
 image (	Rimage 
-description (	Rdescription"j
+description (	Rdescription"
 Organization
 id (Rid
 name (	Rname
 image (	Rimage 
-description (	Rdescription"€
+description (	Rdescription1
+owner (2.accounts.v1alpha1.UserListRowner"€
 CreateOrganizationRequest
 name (	Rname
 image (	Rimage

@@ -16,9 +16,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteUserRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 auth_id = 1 [json_name = "authId"];</code>
+     * Generated from protobuf field <code>uint32 user_id = 1 [json_name = "userId"];</code>
      */
-    protected $auth_id = 0;
+    protected $user_id = 0;
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
 
     /**
      * Constructor.
@@ -26,7 +30,8 @@ class DeleteUserRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $auth_id
+     *     @type int $user_id
+     *     @type int $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -35,23 +40,45 @@ class DeleteUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 auth_id = 1 [json_name = "authId"];</code>
+     * Generated from protobuf field <code>uint32 user_id = 1 [json_name = "userId"];</code>
      * @return int
      */
-    public function getAuthId()
+    public function getUserId()
     {
-        return $this->auth_id;
+        return $this->user_id;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 auth_id = 1 [json_name = "authId"];</code>
+     * Generated from protobuf field <code>uint32 user_id = 1 [json_name = "userId"];</code>
      * @param int $var
      * @return $this
      */
-    public function setAuthId($var)
+    public function setUserId($var)
     {
         GPBUtil::checkUint32($var);
-        $this->auth_id = $var;
+        $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
 
         return $this;
     }
