@@ -29,6 +29,14 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string result = 4 [json_name = "result"];</code>
      */
     protected $result = '';
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 5 [json_name = "roles"];</code>
+     */
+    private $roles;
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 6 [json_name = "permissions"];</code>
+     */
+    private $permissions;
 
     /**
      * Constructor.
@@ -40,6 +48,8 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
      *     @type \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type string $invitation_code
      *     @type string $result
+     *     @type \Accounts\V1alpha1\Rol[]|\Google\Protobuf\Internal\RepeatedField $roles
+     *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
      * }
      */
     public function __construct($data = NULL) {
@@ -141,6 +151,50 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->result = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 5 [json_name = "roles"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 5 [json_name = "roles"];</code>
+     * @param \Accounts\V1alpha1\Rol[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRoles($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Rol::class);
+        $this->roles = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 6 [json_name = "permissions"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPermissions()
+    {
+        return $this->permissions;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 6 [json_name = "permissions"];</code>
+     * @param \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPermissions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Permission::class);
+        $this->permissions = $arr;
 
         return $this;
     }

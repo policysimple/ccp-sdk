@@ -1266,6 +1266,7 @@ var AccountServiceService = exports.AccountServiceService = {
     responseSerialize: serialize_accounts_v1alpha1_CheckUserResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_CheckUserResponse,
   },
+  // Send Verification
   sendVerificationEmail: {
     path: '/accounts.v1alpha1.AccountService/SendVerificationEmail',
     requestStream: false,

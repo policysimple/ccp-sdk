@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListPermissionResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 1 [json_name = "permissions"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.CategoryPermission categories_permissions = 1 [json_name = "categoriesPermissions"];</code>
      */
-    private $permissions;
+    private $categories_permissions;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class ListPermissionResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
+     *     @type \Accounts\V1alpha1\CategoryPermission[]|\Google\Protobuf\Internal\RepeatedField $categories_permissions
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class ListPermissionResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 1 [json_name = "permissions"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.CategoryPermission categories_permissions = 1 [json_name = "categoriesPermissions"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getPermissions()
+    public function getCategoriesPermissions()
     {
-        return $this->permissions;
+        return $this->categories_permissions;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 1 [json_name = "permissions"];</code>
-     * @param \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.CategoryPermission categories_permissions = 1 [json_name = "categoriesPermissions"];</code>
+     * @param \Accounts\V1alpha1\CategoryPermission[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setPermissions($var)
+    public function setCategoriesPermissions($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Permission::class);
-        $this->permissions = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\CategoryPermission::class);
+        $this->categories_permissions = $arr;
 
         return $this;
     }

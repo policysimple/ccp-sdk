@@ -77,6 +77,10 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string emoji_country = 15 [json_name = "emojiCountry"];</code>
      */
     protected $emoji_country = '';
+    /**
+     * Generated from protobuf field <code>string invitation_code = 16 [json_name = "invitationCode"];</code>
+     */
+    protected $invitation_code = '';
 
     /**
      * Constructor.
@@ -100,6 +104,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      *     @type string $address
      *     @type string $state
      *     @type string $emoji_country
+     *     @type string $invitation_code
      * }
      */
     public function __construct($data = NULL) {
@@ -437,6 +442,28 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->emoji_country = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string invitation_code = 16 [json_name = "invitationCode"];</code>
+     * @return string
+     */
+    public function getInvitationCode()
+    {
+        return $this->invitation_code;
+    }
+
+    /**
+     * Generated from protobuf field <code>string invitation_code = 16 [json_name = "invitationCode"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInvitationCode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->invitation_code = $var;
 
         return $this;
     }

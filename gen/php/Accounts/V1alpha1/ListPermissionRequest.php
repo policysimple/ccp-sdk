@@ -15,10 +15,6 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class ListPermissionRequest extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf field <code>string type = 1 [json_name = "type"];</code>
-     */
-    protected $type = '';
 
     /**
      * Constructor.
@@ -26,34 +22,11 @@ class ListPermissionRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $type
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string type = 1 [json_name = "type"];</code>
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Generated from protobuf field <code>string type = 1 [json_name = "type"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->type = $var;
-
-        return $this;
     }
 
 }

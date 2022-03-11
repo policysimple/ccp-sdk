@@ -56,6 +56,7 @@ type AccountServiceClient interface {
 	GetListUserDex(ctx context.Context, in *GetListUserDexRequest, opts ...grpc.CallOption) (*GetListUserDexResponse, error)
 	GetOneUserDex(ctx context.Context, in *GetOneUserDexRequest, opts ...grpc.CallOption) (*GetOneUserDexResponse, error)
 	CheckUser(ctx context.Context, in *CheckUserRequest, opts ...grpc.CallOption) (*CheckUserResponse, error)
+	// Send Verification
 	SendVerificationEmail(ctx context.Context, in *SendVerificationEmailRequest, opts ...grpc.CallOption) (*SendVerificationEmailResponse, error)
 	VerifyEmail(ctx context.Context, in *VerifyEmailRequest, opts ...grpc.CallOption) (*VerifyEmailResponse, error)
 	//  Countries
@@ -488,6 +489,7 @@ type AccountServiceServer interface {
 	GetListUserDex(context.Context, *GetListUserDexRequest) (*GetListUserDexResponse, error)
 	GetOneUserDex(context.Context, *GetOneUserDexRequest) (*GetOneUserDexResponse, error)
 	CheckUser(context.Context, *CheckUserRequest) (*CheckUserResponse, error)
+	// Send Verification
 	SendVerificationEmail(context.Context, *SendVerificationEmailRequest) (*SendVerificationEmailResponse, error)
 	VerifyEmail(context.Context, *VerifyEmailRequest) (*VerifyEmailResponse, error)
 	//  Countries
