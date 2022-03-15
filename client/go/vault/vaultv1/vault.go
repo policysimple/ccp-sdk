@@ -53,7 +53,7 @@ func init() {
 	})
 }
 
-func CreateSecret(in *Secret) (*vaultpkgv1.CreateSecretResponse, error) {
+func CreateSecret(in *vaultpkgv1.CreateSecretRequest) (*vaultpkgv1.CreateSecretResponse, error) {
 
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
