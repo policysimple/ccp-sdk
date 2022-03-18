@@ -11,8 +11,8 @@ option objc_class_prefix = "PPX";
 option php_namespace = "Vault\\V1Alpha1";
 
 
-//import "vault/v1alpha1/vault.proto";
-import "vault.proto";
+import "vault/v1alpha1/vault.proto";
+//import "vault.proto";
 
 
 service VaultAPIService{
