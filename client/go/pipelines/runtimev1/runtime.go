@@ -37,10 +37,7 @@ func init() {
 	})
 }
 
-func CreateRuntime(
-	id string, name string, namespace string, projectId uint32, applicationId string,
-	workspaceId string, integration, environmentVariables, commands map[string]string, secrets map[string]string,
-) (response *runtimepkgv1.CreateRuntimeResponse, err error) {
+func CreateRuntime(in *runtimepkgv1.CreateRuntimeRequest) (response *runtimepkgv1.CreateRuntimeResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
 		return
@@ -50,16 +47,17 @@ func CreateRuntime(
 
 	response, err = client.CreateRuntime(ctx, &runtimepkgv1.CreateRuntimeRequest{
 		Runtime: &runtimepkgv1.Runtime{
-			Id:                   id,
-			Name:                 name,
-			Namespace:            namespace,
-			ProjectId:            projectId,
-			ApplicationId:        applicationId,
-			WorkspaceId:          workspaceId,
-			Integration:          integration,
-			EnvironmentVariables: environmentVariables,
-			Commands:             commands,
-			Secrets:              secrets,
+			Id:                   in.Runtime.Id,
+			Name:                 in.Runtime.Name,
+			Namespace:            in.Runtime.Namespace,
+			InstanceType:         in.Runtime.InstanceType,
+			ProjectId:            in.Runtime.ProjectId,
+			ApplicationId:        in.Runtime.ApplicationId,
+			WorkspaceId:          in.Runtime.WorkspaceId,
+			Integration:          in.Runtime.Integration,
+			EnvironmentVariables: in.Runtime.EnvironmentVariables,
+			Commands:             in.Runtime.Commands,
+			Secrets:              in.Runtime.Secrets,
 		},
 	})
 
@@ -95,10 +93,7 @@ func GetRuntime(runtimeId string) (response *runtimepkgv1.GetRuntimeResponse, er
 	return response, nil
 }
 
-func UpdateRuntime(
-	id string, name string, namespace string, projectId uint32, applicationId string,
-	workspaceId string, integration, environmentVariables, commands map[string]string, secrets map[string]string,
-) (response *runtimepkgv1.UpdateRuntimeResponse, err error) {
+func UpdateRuntime(in *runtimepkgv1.CreateRuntimeRequest) (response *runtimepkgv1.UpdateRuntimeResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
 		return
@@ -108,16 +103,17 @@ func UpdateRuntime(
 
 	response, err = client.UpdateRuntime(ctx, &runtimepkgv1.UpdateRuntimeRequest{
 		Runtime: &runtimepkgv1.Runtime{
-			Id:                   id,
-			Name:                 name,
-			Namespace:            namespace,
-			ProjectId:            projectId,
-			ApplicationId:        applicationId,
-			WorkspaceId:          workspaceId,
-			Integration:          integration,
-			EnvironmentVariables: environmentVariables,
-			Commands:             commands,
-			Secrets:              secrets,
+			Id:                   in.Runtime.Id,
+			Name:                 in.Runtime.Name,
+			Namespace:            in.Runtime.Namespace,
+			ProjectId:            in.Runtime.ProjectId,
+			InstanceType:         in.Runtime.InstanceType,
+			ApplicationId:        in.Runtime.ApplicationId,
+			WorkspaceId:          in.Runtime.WorkspaceId,
+			Integration:          in.Runtime.Integration,
+			EnvironmentVariables: in.Runtime.EnvironmentVariables,
+			Commands:             in.Runtime.Commands,
+			Secrets:              in.Runtime.Secrets,
 		},
 	})
 

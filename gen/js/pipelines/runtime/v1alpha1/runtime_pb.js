@@ -72,9 +72,10 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    projectId: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    applicationId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    workspaceId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    instanceType: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    applicationId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    workspaceId: jspb.Message.getFieldWithDefault(msg, 7, ""),
     integrationMap: (f = msg.getIntegrationMap()) ? f.toObject(includeInstance, undefined) : [],
     environmentVariablesMap: (f = msg.getEnvironmentVariablesMap()) ? f.toObject(includeInstance, undefined) : [],
     commandsMap: (f = msg.getCommandsMap()) ? f.toObject(includeInstance, undefined) : [],
@@ -128,36 +129,40 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
       msg.setNamespace(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInstanceType(value);
+      break;
+    case 5:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setProjectId(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setApplicationId(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setWorkspaceId(value);
       break;
-    case 7:
+    case 8:
       var value = msg.getIntegrationMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 8:
+    case 9:
       var value = msg.getEnvironmentVariablesMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 9:
+    case 10:
       var value = msg.getCommandsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 10:
+    case 11:
       var value = msg.getSecretsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
@@ -213,42 +218,49 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
       f
     );
   }
+  f = message.getInstanceType();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getProjectId();
   if (f !== 0) {
     writer.writeUint32(
-      4,
+      5,
       f
     );
   }
   f = message.getApplicationId();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      6,
       f
     );
   }
   f = message.getWorkspaceId();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      7,
       f
     );
   }
   f = message.getIntegrationMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getEnvironmentVariablesMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getCommandsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getSecretsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -308,11 +320,29 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.setNamespace = function(value
 
 
 /**
- * optional uint32 project_id = 4;
+ * optional string instance_type = 4;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getInstanceType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setInstanceType = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional uint32 project_id = 5;
  * @return {number}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
@@ -321,33 +351,15 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getProjectId = function() {
  * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
 /**
- * optional string application_id = 5;
+ * optional string application_id = 6;
  * @return {string}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getApplicationId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
- */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.setApplicationId = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional string workspace_id = 6;
- * @return {string}
- */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.getWorkspaceId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -356,20 +368,38 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getWorkspaceId = function() {
  * @param {string} value
  * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
  */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.setWorkspaceId = function(value) {
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setApplicationId = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * map<string, string> integration = 7;
+ * optional string workspace_id = 7;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getWorkspaceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setWorkspaceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * map<string, string> integration = 8;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getIntegrationMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 8, opt_noLazyCreate,
       null));
 };
 
@@ -384,14 +414,14 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearIntegrationMap = functio
 
 
 /**
- * map<string, string> environment_variables = 8;
+ * map<string, string> environment_variables = 9;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getEnvironmentVariablesMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 8, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
       null));
 };
 
@@ -406,14 +436,14 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearEnvironmentVariablesMap 
 
 
 /**
- * map<string, string> commands = 9;
+ * map<string, string> commands = 10;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getCommandsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
       null));
 };
 
@@ -428,14 +458,14 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearCommandsMap = function()
 
 
 /**
- * map<string, string> secrets = 10;
+ * map<string, string> secrets = 11;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getSecretsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 11, opt_noLazyCreate,
       null));
 };
 

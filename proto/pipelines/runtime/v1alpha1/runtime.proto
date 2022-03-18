@@ -15,11 +15,12 @@ message Runtime {
   string id = 1;
   string name = 2;
   string namespace = 3;
-  uint32 project_id = 4;
-  string application_id = 5;
-  string workspace_id = 6;
-  map<string, string> integration = 7;
-  map<string, string> environment_variables = 8;
-  map<string, string> commands = 9;
-  map<string, string> secrets = 10;
+  string instance_type = 4;
+  uint32 project_id = 5;
+  string application_id = 6;
+  string workspace_id = 7;
+  map<string, string> integration = 8;
+  map<string, string> environment_variables = 9;
+  map<string, string> commands = 10;
+  map<string, string> secrets = 11;
 }
