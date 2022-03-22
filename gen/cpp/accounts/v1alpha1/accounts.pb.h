@@ -8105,12 +8105,31 @@ class SendInvitationUserResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kProjectsFieldNumber = 2,
     kRolesFieldNumber = 5,
     kPermissionsFieldNumber = 6,
     kInvitationCodeFieldNumber = 3,
     kResultFieldNumber = 4,
     kOrganizationFieldNumber = 1,
   };
+  // repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];
+  int projects_size() const;
+  private:
+  int _internal_projects_size() const;
+  public:
+  void clear_projects();
+  ::accounts::v1alpha1::Project* mutable_projects(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >*
+      mutable_projects();
+  private:
+  const ::accounts::v1alpha1::Project& _internal_projects(int index) const;
+  ::accounts::v1alpha1::Project* _internal_add_projects();
+  public:
+  const ::accounts::v1alpha1::Project& projects(int index) const;
+  ::accounts::v1alpha1::Project* add_projects();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >&
+      projects() const;
+
   // repeated .accounts.v1alpha1.Rol roles = 5 [json_name = "roles"];
   int roles_size() const;
   private:
@@ -8200,6 +8219,7 @@ class SendInvitationUserResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project > projects_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol > roles_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission > permissions_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invitation_code_;
@@ -24739,6 +24759,46 @@ inline void SendInvitationUserResponse::set_allocated_organization(::accounts::v
   }
   organization_ = organization;
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.SendInvitationUserResponse.organization)
+}
+
+// repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];
+inline int SendInvitationUserResponse::_internal_projects_size() const {
+  return projects_.size();
+}
+inline int SendInvitationUserResponse::projects_size() const {
+  return _internal_projects_size();
+}
+inline void SendInvitationUserResponse::clear_projects() {
+  projects_.Clear();
+}
+inline ::accounts::v1alpha1::Project* SendInvitationUserResponse::mutable_projects(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.SendInvitationUserResponse.projects)
+  return projects_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >*
+SendInvitationUserResponse::mutable_projects() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.SendInvitationUserResponse.projects)
+  return &projects_;
+}
+inline const ::accounts::v1alpha1::Project& SendInvitationUserResponse::_internal_projects(int index) const {
+  return projects_.Get(index);
+}
+inline const ::accounts::v1alpha1::Project& SendInvitationUserResponse::projects(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.SendInvitationUserResponse.projects)
+  return _internal_projects(index);
+}
+inline ::accounts::v1alpha1::Project* SendInvitationUserResponse::_internal_add_projects() {
+  return projects_.Add();
+}
+inline ::accounts::v1alpha1::Project* SendInvitationUserResponse::add_projects() {
+  ::accounts::v1alpha1::Project* _add = _internal_add_projects();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.SendInvitationUserResponse.projects)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >&
+SendInvitationUserResponse::projects() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.SendInvitationUserResponse.projects)
+  return projects_;
 }
 
 // string invitation_code = 3 [json_name = "invitationCode"];

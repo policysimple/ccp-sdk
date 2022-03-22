@@ -402,7 +402,7 @@ message SendInvitationUserRequest {
 
 message SendInvitationUserResponse {
     Organization organization=1;
-    //repeated Project projects=2;
+    repeated Project projects=2;
     string invitation_code=3;
     string result=4;
     repeated Rol roles = 5;

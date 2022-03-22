@@ -18,8 +18,10 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
      */
     protected $organization = null;
     /**
-     *repeated Project projects=2;
-     *
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    private $projects;
+    /**
      * Generated from protobuf field <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
      */
     protected $invitation_code = '';
@@ -43,8 +45,8 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Accounts\V1alpha1\Organization $organization
+     *     @type \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type string $invitation_code
-     *          repeated Project projects=2;
      *     @type string $result
      *     @type \Accounts\V1alpha1\Rol[]|\Google\Protobuf\Internal\RepeatedField $roles
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
@@ -88,8 +90,28 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *repeated Project projects=2;
-     *
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getProjects()
+    {
+        return $this->projects;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     * @param \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProjects($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Project::class);
+        $this->projects = $arr;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
      * @return string
      */
@@ -99,8 +121,6 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *repeated Project projects=2;
-     *
      * Generated from protobuf field <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
      * @param string $var
      * @return $this
