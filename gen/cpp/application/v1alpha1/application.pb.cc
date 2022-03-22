@@ -83,6 +83,7 @@ constexpr Application::Application(
   , integration_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , repository_(nullptr)
   , configuration_(nullptr)
+  , scaling_(nullptr)
   , project_id_(0u){}
 struct ApplicationDefaultTypeInternal {
   constexpr ApplicationDefaultTypeInternal()
@@ -93,12 +94,29 @@ struct ApplicationDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ApplicationDefaultTypeInternal _Application_default_instance_;
+constexpr Scaling::Scaling(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : cpu_rule_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , cool_down_period_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , polling_interval_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , min_replica_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , max_replica_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ScalingDefaultTypeInternal {
+  constexpr ScalingDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ScalingDefaultTypeInternal() {}
+  union {
+    Scaling _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ScalingDefaultTypeInternal _Scaling_default_instance_;
 constexpr CreateApplicationRequest::CreateApplicationRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , integration_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , repository_(nullptr)
   , configuration_(nullptr)
+  , scaling_(nullptr)
   , project_id_(0u){}
 struct CreateApplicationRequestDefaultTypeInternal {
   constexpr CreateApplicationRequestDefaultTypeInternal()
@@ -223,7 +241,7 @@ struct UpdateApplicationResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateApplicationResponseDefaultTypeInternal _UpdateApplicationResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace application
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[15];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[16];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_application_2fv1alpha1_2fapplication_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_application_2fv1alpha1_2fapplication_2eproto = nullptr;
 
@@ -273,6 +291,17 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fappli
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, repository_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, configuration_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, project_id_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, scaling_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Scaling, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Scaling, cpu_rule_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Scaling, cool_down_period_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Scaling, polling_interval_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Scaling, min_replica_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Scaling, max_replica_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::CreateApplicationRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -283,6 +312,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fappli
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::CreateApplicationRequest, repository_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::CreateApplicationRequest, configuration_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::CreateApplicationRequest, project_id_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::CreateApplicationRequest, scaling_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::CreateApplicationResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -348,16 +378,17 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 18, -1, sizeof(::application::v1alpha1::Env)},
   { 26, -1, sizeof(::application::v1alpha1::Configuration)},
   { 34, -1, sizeof(::application::v1alpha1::Application)},
-  { 45, -1, sizeof(::application::v1alpha1::CreateApplicationRequest)},
-  { 55, -1, sizeof(::application::v1alpha1::CreateApplicationResponse)},
-  { 62, -1, sizeof(::application::v1alpha1::ListApplicationRequest)},
-  { 68, -1, sizeof(::application::v1alpha1::ListApplicationResponse)},
-  { 74, -1, sizeof(::application::v1alpha1::GetApplicationRequest)},
-  { 80, -1, sizeof(::application::v1alpha1::GetApplicationResponse)},
-  { 86, -1, sizeof(::application::v1alpha1::DeleteApplicationRequest)},
-  { 92, -1, sizeof(::application::v1alpha1::DeleteApplicationResponse)},
-  { 99, -1, sizeof(::application::v1alpha1::UpdateApplicationRequest)},
-  { 106, -1, sizeof(::application::v1alpha1::UpdateApplicationResponse)},
+  { 46, -1, sizeof(::application::v1alpha1::Scaling)},
+  { 56, -1, sizeof(::application::v1alpha1::CreateApplicationRequest)},
+  { 67, -1, sizeof(::application::v1alpha1::CreateApplicationResponse)},
+  { 74, -1, sizeof(::application::v1alpha1::ListApplicationRequest)},
+  { 80, -1, sizeof(::application::v1alpha1::ListApplicationResponse)},
+  { 86, -1, sizeof(::application::v1alpha1::GetApplicationRequest)},
+  { 92, -1, sizeof(::application::v1alpha1::GetApplicationResponse)},
+  { 98, -1, sizeof(::application::v1alpha1::DeleteApplicationRequest)},
+  { 104, -1, sizeof(::application::v1alpha1::DeleteApplicationResponse)},
+  { 111, -1, sizeof(::application::v1alpha1::UpdateApplicationRequest)},
+  { 118, -1, sizeof(::application::v1alpha1::UpdateApplicationResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -366,6 +397,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Env_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Configuration_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Application_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Scaling_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_CreateApplicationRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_CreateApplicationResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_ListApplicationRequest_default_instance_),
@@ -391,58 +423,66 @@ const char descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eprot
   "ted\"\215\001\n\rConfiguration\022-\n\004envs\030\001 \003(\0132\031.ap"
   "plication.v1alpha1.EnvR\004envs\0229\n\010commands"
   "\030\002 \003(\0132\035.application.v1alpha1.CommandR\010c"
-  "ommands\022\022\n\004port\030\003 \001(\005R\004port\"\377\001\n\013Applicat"
+  "ommands\022\022\n\004port\030\003 \001(\005R\004port\"\270\002\n\013Applicat"
   "ion\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022"
   " \n\013integration\030\003 \001(\tR\013integration\022@\n\nrep"
   "ository\030\004 \001(\0132 .application.v1alpha1.Rep"
   "ositoryR\nrepository\022I\n\rconfiguration\030\005 \001"
   "(\0132#.application.v1alpha1.ConfigurationR"
   "\rconfiguration\022\035\n\nproject_id\030\006 \001(\rR\tproj"
-  "ectId\"\374\001\n\030CreateApplicationRequest\022\022\n\004na"
-  "me\030\001 \001(\tR\004name\022 \n\013integration\030\002 \001(\tR\013int"
-  "egration\022@\n\nrepository\030\003 \001(\0132 .applicati"
-  "on.v1alpha1.RepositoryR\nrepository\022I\n\rco"
-  "nfiguration\030\004 \001(\0132#.application.v1alpha1"
-  ".ConfigurationR\rconfiguration\022\035\n\nproject"
-  "_id\030\005 \001(\rR\tprojectId\"C\n\031CreateApplicatio"
-  "nResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001"
-  "(\tR\005error\"7\n\026ListApplicationRequest\022\035\n\np"
-  "roject_id\030\001 \001(\rR\tprojectId\"`\n\027ListApplic"
-  "ationResponse\022E\n\014applications\030\001 \003(\0132!.ap"
-  "plication.v1alpha1.ApplicationR\014applicat"
-  "ions\"\'\n\025GetApplicationRequest\022\016\n\002id\030\001 \001("
-  "\tR\002id\"]\n\026GetApplicationResponse\022C\n\013appli"
-  "cation\030\001 \001(\0132!.application.v1alpha1.Appl"
-  "icationR\013application\"*\n\030DeleteApplicatio"
-  "nRequest\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteApplic"
-  "ationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error"
-  "\030\002 \001(\tR\005error\"|\n\030UpdateApplicationReques"
-  "t\022\016\n\002id\030\001 \001(\tR\002id\022P\n\013application\030\002 \001(\0132."
-  ".application.v1alpha1.CreateApplicationR"
-  "equestR\013application\"C\n\031UpdateApplication"
-  "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001("
-  "\tR\005error2\323\004\n\022ApplicationService\022t\n\021Creat"
-  "eApplication\022..application.v1alpha1.Crea"
-  "teApplicationRequest\032/.application.v1alp"
-  "ha1.CreateApplicationResponse\022n\n\017ListApp"
-  "lication\022,.application.v1alpha1.ListAppl"
-  "icationRequest\032-.application.v1alpha1.Li"
-  "stApplicationResponse\022k\n\016GetApplication\022"
-  "+.application.v1alpha1.GetApplicationReq"
-  "uest\032,.application.v1alpha1.GetApplicati"
-  "onResponse\022t\n\021DeleteApplication\022..applic"
-  "ation.v1alpha1.DeleteApplicationRequest\032"
-  "/.application.v1alpha1.DeleteApplication"
-  "Response\022t\n\021UpdateApplication\022..applicat"
-  "ion.v1alpha1.UpdateApplicationRequest\032/."
-  "application.v1alpha1.UpdateApplicationRe"
-  "sponseB7Z5github.com/cuemby/ccp-sdk/gen/"
-  "go/application/v1alpha1b\006proto3"
+  "ectId\0227\n\007scaling\030\007 \001(\0132\035.application.v1a"
+  "lpha1.ScalingR\007scaling\"\273\001\n\007Scaling\022\031\n\010cp"
+  "u_rule\030\001 \001(\tR\007cpuRule\022(\n\020cool_down_perio"
+  "d\030\002 \001(\tR\016coolDownPeriod\022)\n\020polling_inter"
+  "val\030\003 \001(\tR\017pollingInterval\022\037\n\013min_replic"
+  "a\030\004 \001(\tR\nminReplica\022\037\n\013max_replica\030\005 \001(\t"
+  "R\nmaxReplica\"\265\002\n\030CreateApplicationReques"
+  "t\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013integration\030\002 \001"
+  "(\tR\013integration\022@\n\nrepository\030\003 \001(\0132 .ap"
+  "plication.v1alpha1.RepositoryR\nrepositor"
+  "y\022I\n\rconfiguration\030\004 \001(\0132#.application.v"
+  "1alpha1.ConfigurationR\rconfiguration\022\035\n\n"
+  "project_id\030\005 \001(\rR\tprojectId\0227\n\007scaling\030\006"
+  " \001(\0132\035.application.v1alpha1.ScalingR\007sca"
+  "ling\"C\n\031CreateApplicationResponse\022\020\n\003msg"
+  "\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"7\n\026Lis"
+  "tApplicationRequest\022\035\n\nproject_id\030\001 \001(\rR"
+  "\tprojectId\"`\n\027ListApplicationResponse\022E\n"
+  "\014applications\030\001 \003(\0132!.application.v1alph"
+  "a1.ApplicationR\014applications\"\'\n\025GetAppli"
+  "cationRequest\022\016\n\002id\030\001 \001(\tR\002id\"]\n\026GetAppl"
+  "icationResponse\022C\n\013application\030\001 \001(\0132!.a"
+  "pplication.v1alpha1.ApplicationR\013applica"
+  "tion\"*\n\030DeleteApplicationRequest\022\016\n\002id\030\001"
+  " \001(\tR\002id\"C\n\031DeleteApplicationResponse\022\020\n"
+  "\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"|\n"
+  "\030UpdateApplicationRequest\022\016\n\002id\030\001 \001(\tR\002i"
+  "d\022P\n\013application\030\002 \001(\0132..application.v1a"
+  "lpha1.CreateApplicationRequestR\013applicat"
+  "ion\"C\n\031UpdateApplicationResponse\022\020\n\003msg\030"
+  "\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error2\323\004\n\022App"
+  "licationService\022t\n\021CreateApplication\022..a"
+  "pplication.v1alpha1.CreateApplicationReq"
+  "uest\032/.application.v1alpha1.CreateApplic"
+  "ationResponse\022n\n\017ListApplication\022,.appli"
+  "cation.v1alpha1.ListApplicationRequest\032-"
+  ".application.v1alpha1.ListApplicationRes"
+  "ponse\022k\n\016GetApplication\022+.application.v1"
+  "alpha1.GetApplicationRequest\032,.applicati"
+  "on.v1alpha1.GetApplicationResponse\022t\n\021De"
+  "leteApplication\022..application.v1alpha1.D"
+  "eleteApplicationRequest\032/.application.v1"
+  "alpha1.DeleteApplicationResponse\022t\n\021Upda"
+  "teApplication\022..application.v1alpha1.Upd"
+  "ateApplicationRequest\032/.application.v1al"
+  "pha1.UpdateApplicationResponseB7Z5github"
+  ".com/cuemby/ccp-sdk/gen/go/application/v"
+  "1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_application_2fv1alpha1_2fapplication_2eproto = {
-  false, false, 2351, descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto, "application/v1alpha1/application.proto", 
-  &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once, nullptr, 0, 15,
+  false, false, 2655, descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto, "application/v1alpha1/application.proto", 
+  &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once, nullptr, 0, 16,
   schemas, file_default_instances, TableStruct_application_2fv1alpha1_2fapplication_2eproto::offsets,
   file_level_metadata_application_2fv1alpha1_2fapplication_2eproto, file_level_enum_descriptors_application_2fv1alpha1_2fapplication_2eproto, file_level_service_descriptors_application_2fv1alpha1_2fapplication_2eproto,
 };
@@ -1603,6 +1643,7 @@ class Application::_Internal {
  public:
   static const ::application::v1alpha1::Repository& repository(const Application* msg);
   static const ::application::v1alpha1::Configuration& configuration(const Application* msg);
+  static const ::application::v1alpha1::Scaling& scaling(const Application* msg);
 };
 
 const ::application::v1alpha1::Repository&
@@ -1612,6 +1653,10 @@ Application::_Internal::repository(const Application* msg) {
 const ::application::v1alpha1::Configuration&
 Application::_Internal::configuration(const Application* msg) {
   return *msg->configuration_;
+}
+const ::application::v1alpha1::Scaling&
+Application::_Internal::scaling(const Application* msg) {
+  return *msg->scaling_;
 }
 Application::Application(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -1650,6 +1695,11 @@ Application::Application(const Application& from)
   } else {
     configuration_ = nullptr;
   }
+  if (from._internal_has_scaling()) {
+    scaling_ = new ::application::v1alpha1::Scaling(*from.scaling_);
+  } else {
+    scaling_ = nullptr;
+  }
   project_id_ = from.project_id_;
   // @@protoc_insertion_point(copy_constructor:application.v1alpha1.Application)
 }
@@ -1678,6 +1728,7 @@ inline void Application::SharedDtor() {
   integration_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete repository_;
   if (this != internal_default_instance()) delete configuration_;
+  if (this != internal_default_instance()) delete scaling_;
 }
 
 void Application::ArenaDtor(void* object) {
@@ -1707,6 +1758,10 @@ void Application::Clear() {
     delete configuration_;
   }
   configuration_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && scaling_ != nullptr) {
+    delete scaling_;
+  }
+  scaling_ = nullptr;
   project_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1762,6 +1817,13 @@ const char* Application::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          ptr = ctx->ParseMessage(_internal_mutable_scaling(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1846,6 +1908,14 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_project_id(), target);
   }
 
+  // .application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];
+  if (this->_internal_has_scaling()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        7, _Internal::scaling(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1895,6 +1965,13 @@ size_t Application::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *configuration_);
+  }
+
+  // .application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];
+  if (this->_internal_has_scaling()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *scaling_);
   }
 
   // uint32 project_id = 6 [json_name = "projectId"];
@@ -1947,6 +2024,9 @@ void Application::MergeFrom(const Application& from) {
   if (from._internal_has_configuration()) {
     _internal_mutable_configuration()->::application::v1alpha1::Configuration::MergeFrom(from._internal_configuration());
   }
+  if (from._internal_has_scaling()) {
+    _internal_mutable_scaling()->::application::v1alpha1::Scaling::MergeFrom(from._internal_scaling());
+  }
   if (from._internal_project_id() != 0) {
     _internal_set_project_id(from._internal_project_id());
   }
@@ -1998,10 +2078,379 @@ void Application::InternalSwap(Application* other) {
 
 // ===================================================================
 
+class Scaling::_Internal {
+ public:
+};
+
+Scaling::Scaling(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:application.v1alpha1.Scaling)
+}
+Scaling::Scaling(const Scaling& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  cpu_rule_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_cpu_rule().empty()) {
+    cpu_rule_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_cpu_rule(), 
+      GetArenaForAllocation());
+  }
+  cool_down_period_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_cool_down_period().empty()) {
+    cool_down_period_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_cool_down_period(), 
+      GetArenaForAllocation());
+  }
+  polling_interval_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_polling_interval().empty()) {
+    polling_interval_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_polling_interval(), 
+      GetArenaForAllocation());
+  }
+  min_replica_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_min_replica().empty()) {
+    min_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_min_replica(), 
+      GetArenaForAllocation());
+  }
+  max_replica_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_max_replica().empty()) {
+    max_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_max_replica(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:application.v1alpha1.Scaling)
+}
+
+inline void Scaling::SharedCtor() {
+cpu_rule_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+cool_down_period_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+polling_interval_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+min_replica_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+max_replica_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+Scaling::~Scaling() {
+  // @@protoc_insertion_point(destructor:application.v1alpha1.Scaling)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void Scaling::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  cpu_rule_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  cool_down_period_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  polling_interval_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  min_replica_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  max_replica_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void Scaling::ArenaDtor(void* object) {
+  Scaling* _this = reinterpret_cast< Scaling* >(object);
+  (void)_this;
+}
+void Scaling::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void Scaling::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void Scaling::Clear() {
+// @@protoc_insertion_point(message_clear_start:application.v1alpha1.Scaling)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cpu_rule_.ClearToEmpty();
+  cool_down_period_.ClearToEmpty();
+  polling_interval_.ClearToEmpty();
+  min_replica_.ClearToEmpty();
+  max_replica_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Scaling::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string cpu_rule = 1 [json_name = "cpuRule"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_cpu_rule();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Scaling.cpu_rule"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string cool_down_period = 2 [json_name = "coolDownPeriod"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_cool_down_period();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Scaling.cool_down_period"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string polling_interval = 3 [json_name = "pollingInterval"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_polling_interval();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Scaling.polling_interval"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string min_replica = 4 [json_name = "minReplica"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_min_replica();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Scaling.min_replica"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string max_replica = 5 [json_name = "maxReplica"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_max_replica();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Scaling.max_replica"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Scaling::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:application.v1alpha1.Scaling)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string cpu_rule = 1 [json_name = "cpuRule"];
+  if (!this->_internal_cpu_rule().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_cpu_rule().data(), static_cast<int>(this->_internal_cpu_rule().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.Scaling.cpu_rule");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_cpu_rule(), target);
+  }
+
+  // string cool_down_period = 2 [json_name = "coolDownPeriod"];
+  if (!this->_internal_cool_down_period().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_cool_down_period().data(), static_cast<int>(this->_internal_cool_down_period().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.Scaling.cool_down_period");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_cool_down_period(), target);
+  }
+
+  // string polling_interval = 3 [json_name = "pollingInterval"];
+  if (!this->_internal_polling_interval().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_polling_interval().data(), static_cast<int>(this->_internal_polling_interval().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.Scaling.polling_interval");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_polling_interval(), target);
+  }
+
+  // string min_replica = 4 [json_name = "minReplica"];
+  if (!this->_internal_min_replica().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_min_replica().data(), static_cast<int>(this->_internal_min_replica().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.Scaling.min_replica");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_min_replica(), target);
+  }
+
+  // string max_replica = 5 [json_name = "maxReplica"];
+  if (!this->_internal_max_replica().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_max_replica().data(), static_cast<int>(this->_internal_max_replica().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.Scaling.max_replica");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_max_replica(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:application.v1alpha1.Scaling)
+  return target;
+}
+
+size_t Scaling::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:application.v1alpha1.Scaling)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string cpu_rule = 1 [json_name = "cpuRule"];
+  if (!this->_internal_cpu_rule().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_cpu_rule());
+  }
+
+  // string cool_down_period = 2 [json_name = "coolDownPeriod"];
+  if (!this->_internal_cool_down_period().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_cool_down_period());
+  }
+
+  // string polling_interval = 3 [json_name = "pollingInterval"];
+  if (!this->_internal_polling_interval().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_polling_interval());
+  }
+
+  // string min_replica = 4 [json_name = "minReplica"];
+  if (!this->_internal_min_replica().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_min_replica());
+  }
+
+  // string max_replica = 5 [json_name = "maxReplica"];
+  if (!this->_internal_max_replica().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_max_replica());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Scaling::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Scaling::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Scaling::GetClassData() const { return &_class_data_; }
+
+void Scaling::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<Scaling *>(to)->MergeFrom(
+      static_cast<const Scaling &>(from));
+}
+
+
+void Scaling::MergeFrom(const Scaling& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:application.v1alpha1.Scaling)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_cpu_rule().empty()) {
+    _internal_set_cpu_rule(from._internal_cpu_rule());
+  }
+  if (!from._internal_cool_down_period().empty()) {
+    _internal_set_cool_down_period(from._internal_cool_down_period());
+  }
+  if (!from._internal_polling_interval().empty()) {
+    _internal_set_polling_interval(from._internal_polling_interval());
+  }
+  if (!from._internal_min_replica().empty()) {
+    _internal_set_min_replica(from._internal_min_replica());
+  }
+  if (!from._internal_max_replica().empty()) {
+    _internal_set_max_replica(from._internal_max_replica());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Scaling::CopyFrom(const Scaling& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:application.v1alpha1.Scaling)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Scaling::IsInitialized() const {
+  return true;
+}
+
+void Scaling::InternalSwap(Scaling* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &cpu_rule_, GetArenaForAllocation(),
+      &other->cpu_rule_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &cool_down_period_, GetArenaForAllocation(),
+      &other->cool_down_period_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &polling_interval_, GetArenaForAllocation(),
+      &other->polling_interval_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &min_replica_, GetArenaForAllocation(),
+      &other->min_replica_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &max_replica_, GetArenaForAllocation(),
+      &other->max_replica_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Scaling::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[5]);
+}
+
+// ===================================================================
+
 class CreateApplicationRequest::_Internal {
  public:
   static const ::application::v1alpha1::Repository& repository(const CreateApplicationRequest* msg);
   static const ::application::v1alpha1::Configuration& configuration(const CreateApplicationRequest* msg);
+  static const ::application::v1alpha1::Scaling& scaling(const CreateApplicationRequest* msg);
 };
 
 const ::application::v1alpha1::Repository&
@@ -2011,6 +2460,10 @@ CreateApplicationRequest::_Internal::repository(const CreateApplicationRequest* 
 const ::application::v1alpha1::Configuration&
 CreateApplicationRequest::_Internal::configuration(const CreateApplicationRequest* msg) {
   return *msg->configuration_;
+}
+const ::application::v1alpha1::Scaling&
+CreateApplicationRequest::_Internal::scaling(const CreateApplicationRequest* msg) {
+  return *msg->scaling_;
 }
 CreateApplicationRequest::CreateApplicationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -2044,6 +2497,11 @@ CreateApplicationRequest::CreateApplicationRequest(const CreateApplicationReques
   } else {
     configuration_ = nullptr;
   }
+  if (from._internal_has_scaling()) {
+    scaling_ = new ::application::v1alpha1::Scaling(*from.scaling_);
+  } else {
+    scaling_ = nullptr;
+  }
   project_id_ = from.project_id_;
   // @@protoc_insertion_point(copy_constructor:application.v1alpha1.CreateApplicationRequest)
 }
@@ -2070,6 +2528,7 @@ inline void CreateApplicationRequest::SharedDtor() {
   integration_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete repository_;
   if (this != internal_default_instance()) delete configuration_;
+  if (this != internal_default_instance()) delete scaling_;
 }
 
 void CreateApplicationRequest::ArenaDtor(void* object) {
@@ -2098,6 +2557,10 @@ void CreateApplicationRequest::Clear() {
     delete configuration_;
   }
   configuration_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && scaling_ != nullptr) {
+    delete scaling_;
+  }
+  scaling_ = nullptr;
   project_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2144,6 +2607,13 @@ const char* CreateApplicationRequest::_InternalParse(const char* ptr, ::PROTOBUF
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr = ctx->ParseMessage(_internal_mutable_scaling(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2218,6 +2688,14 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_project_id(), target);
   }
 
+  // .application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];
+  if (this->_internal_has_scaling()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        6, _Internal::scaling(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2260,6 +2738,13 @@ size_t CreateApplicationRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *configuration_);
+  }
+
+  // .application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];
+  if (this->_internal_has_scaling()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *scaling_);
   }
 
   // uint32 project_id = 5 [json_name = "projectId"];
@@ -2309,6 +2794,9 @@ void CreateApplicationRequest::MergeFrom(const CreateApplicationRequest& from) {
   if (from._internal_has_configuration()) {
     _internal_mutable_configuration()->::application::v1alpha1::Configuration::MergeFrom(from._internal_configuration());
   }
+  if (from._internal_has_scaling()) {
+    _internal_mutable_scaling()->::application::v1alpha1::Scaling::MergeFrom(from._internal_scaling());
+  }
   if (from._internal_project_id() != 0) {
     _internal_set_project_id(from._internal_project_id());
   }
@@ -2350,7 +2838,7 @@ void CreateApplicationRequest::InternalSwap(CreateApplicationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateApplicationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[5]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[6]);
 }
 
 // ===================================================================
@@ -2592,7 +3080,7 @@ void CreateApplicationResponse::InternalSwap(CreateApplicationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateApplicationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[6]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[7]);
 }
 
 // ===================================================================
@@ -2777,7 +3265,7 @@ void ListApplicationRequest::InternalSwap(ListApplicationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListApplicationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[7]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[8]);
 }
 
 // ===================================================================
@@ -2967,7 +3455,7 @@ void ListApplicationResponse::InternalSwap(ListApplicationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListApplicationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[8]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[9]);
 }
 
 // ===================================================================
@@ -3167,7 +3655,7 @@ void GetApplicationRequest::InternalSwap(GetApplicationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetApplicationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[9]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[10]);
 }
 
 // ===================================================================
@@ -3367,7 +3855,7 @@ void GetApplicationResponse::InternalSwap(GetApplicationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetApplicationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[10]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[11]);
 }
 
 // ===================================================================
@@ -3567,7 +4055,7 @@ void DeleteApplicationRequest::InternalSwap(DeleteApplicationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteApplicationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[11]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[12]);
 }
 
 // ===================================================================
@@ -3809,7 +4297,7 @@ void DeleteApplicationResponse::InternalSwap(DeleteApplicationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteApplicationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[12]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[13]);
 }
 
 // ===================================================================
@@ -4051,7 +4539,7 @@ void UpdateApplicationRequest::InternalSwap(UpdateApplicationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateApplicationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[13]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[14]);
 }
 
 // ===================================================================
@@ -4293,7 +4781,7 @@ void UpdateApplicationResponse::InternalSwap(UpdateApplicationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateApplicationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[14]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[15]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -4314,6 +4802,9 @@ template<> PROTOBUF_NOINLINE ::application::v1alpha1::Configuration* Arena::Crea
 }
 template<> PROTOBUF_NOINLINE ::application::v1alpha1::Application* Arena::CreateMaybeMessage< ::application::v1alpha1::Application >(Arena* arena) {
   return Arena::CreateMessageInternal< ::application::v1alpha1::Application >(arena);
+}
+template<> PROTOBUF_NOINLINE ::application::v1alpha1::Scaling* Arena::CreateMaybeMessage< ::application::v1alpha1::Scaling >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::application::v1alpha1::Scaling >(arena);
 }
 template<> PROTOBUF_NOINLINE ::application::v1alpha1::CreateApplicationRequest* Arena::CreateMaybeMessage< ::application::v1alpha1::CreateApplicationRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::application::v1alpha1::CreateApplicationRequest >(arena);
