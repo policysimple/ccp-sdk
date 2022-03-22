@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-ÿÖ
+êÜ
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"à
 CreateApiKeyRequest
 name (	Rname
@@ -224,9 +224,10 @@ updated_at (	R	updatedAt,
 user_id_admin (	RuserIdAdmin
 	roles_ids (RrolesIds\'
 permissions_ids (RpermissionsIds\'
-organization_id (RorganizationId"ë
+organization_id (RorganizationId"…
 SendInvitationUserResponseC
-organization (2.accounts.v1alpha1.OrganizationRorganization\'
+organization (2.accounts.v1alpha1.OrganizationRorganization6
+projects (2.accounts.v1alpha1.ProjectRprojects\'
 invitation_code (	RinvitationCode
 result (	Rresult,
 roles (2.accounts.v1alpha1.RolRroles?

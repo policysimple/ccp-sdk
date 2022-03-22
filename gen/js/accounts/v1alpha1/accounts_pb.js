@@ -11374,7 +11374,7 @@ proto.accounts.v1alpha1.SendInvitationUserRequest.prototype.setOrganizationId = 
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.SendInvitationUserResponse.repeatedFields_ = [5,6];
+proto.accounts.v1alpha1.SendInvitationUserResponse.repeatedFields_ = [2,5,6];
 
 
 
@@ -11408,6 +11408,8 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.toObject = function
 proto.accounts.v1alpha1.SendInvitationUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     organization: (f = msg.getOrganization()) && proto.accounts.v1alpha1.Organization.toObject(includeInstance, f),
+    projectsList: jspb.Message.toObjectList(msg.getProjectsList(),
+    proto.accounts.v1alpha1.Project.toObject, includeInstance),
     invitationCode: jspb.Message.getFieldWithDefault(msg, 3, ""),
     result: jspb.Message.getFieldWithDefault(msg, 4, ""),
     rolesList: jspb.Message.toObjectList(msg.getRolesList(),
@@ -11454,6 +11456,11 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.deserializeBinaryFromReader =
       var value = new proto.accounts.v1alpha1.Organization;
       reader.readMessage(value,proto.accounts.v1alpha1.Organization.deserializeBinaryFromReader);
       msg.setOrganization(value);
+      break;
+    case 2:
+      var value = new proto.accounts.v1alpha1.Project;
+      reader.readMessage(value,proto.accounts.v1alpha1.Project.deserializeBinaryFromReader);
+      msg.addProjects(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -11508,6 +11515,14 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.serializeBinaryToWriter = fun
       1,
       f,
       proto.accounts.v1alpha1.Organization.serializeBinaryToWriter
+    );
+  }
+  f = message.getProjectsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.accounts.v1alpha1.Project.serializeBinaryToWriter
     );
   }
   f = message.getInvitationCode();
@@ -11577,6 +11592,44 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.clearOrganization =
  */
 proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.hasOrganization = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated Project projects = 2;
+ * @return {!Array<!proto.accounts.v1alpha1.Project>}
+ */
+proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.getProjectsList = function() {
+  return /** @type{!Array<!proto.accounts.v1alpha1.Project>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Project, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.accounts.v1alpha1.Project>} value
+ * @return {!proto.accounts.v1alpha1.SendInvitationUserResponse} returns this
+*/
+proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.setProjectsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.accounts.v1alpha1.Project=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.accounts.v1alpha1.Project}
+ */
+proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.addProjects = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.accounts.v1alpha1.Project, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.accounts.v1alpha1.SendInvitationUserResponse} returns this
+ */
+proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.clearProjectsList = function() {
+  return this.setProjectsList([]);
 };
 
 

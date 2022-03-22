@@ -40429,19 +40429,35 @@ public final class Accounts {
     accounts.v1alpha1.Accounts.OrganizationOrBuilder getOrganizationOrBuilder();
 
     /**
-     * <pre>
-     *repeated Project projects=2;
-     * </pre>
-     *
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    java.util.List<accounts.v1alpha1.Accounts.Project> 
+        getProjectsList();
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    accounts.v1alpha1.Accounts.Project getProjects(int index);
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    int getProjectsCount();
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+        getProjectsOrBuilderList();
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+        int index);
+
+    /**
      * <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
      * @return The invitationCode.
      */
     java.lang.String getInvitationCode();
     /**
-     * <pre>
-     *repeated Project projects=2;
-     * </pre>
-     *
      * <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
      * @return The bytes for invitationCode.
      */
@@ -40521,6 +40537,7 @@ public final class Accounts {
       super(builder);
     }
     private SendInvitationUserResponse() {
+      projects_ = java.util.Collections.emptyList();
       invitationCode_ = "";
       result_ = "";
       roles_ = java.util.Collections.emptyList();
@@ -40571,6 +40588,15 @@ public final class Accounts {
 
               break;
             }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              projects_.add(
+                  input.readMessage(accounts.v1alpha1.Accounts.Project.parser(), extensionRegistry));
+              break;
+            }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -40584,18 +40610,18 @@ public final class Accounts {
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 roles_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Rol>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               roles_.add(
                   input.readMessage(accounts.v1alpha1.Accounts.Rol.parser(), extensionRegistry));
               break;
             }
             case 50: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 permissions_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Permission>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               permissions_.add(
                   input.readMessage(accounts.v1alpha1.Accounts.Permission.parser(), extensionRegistry));
@@ -40617,9 +40643,12 @@ public final class Accounts {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          roles_ = java.util.Collections.unmodifiableList(roles_);
+          projects_ = java.util.Collections.unmodifiableList(projects_);
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          roles_ = java.util.Collections.unmodifiableList(roles_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           permissions_ = java.util.Collections.unmodifiableList(permissions_);
         }
         this.unknownFields = unknownFields.build();
@@ -40665,13 +40694,49 @@ public final class Accounts {
       return getOrganization();
     }
 
+    public static final int PROJECTS_FIELD_NUMBER = 2;
+    private java.util.List<accounts.v1alpha1.Accounts.Project> projects_;
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
+      return projects_;
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+        getProjectsOrBuilderList() {
+      return projects_;
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public int getProjectsCount() {
+      return projects_.size();
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.Project getProjects(int index) {
+      return projects_.get(index);
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+        int index) {
+      return projects_.get(index);
+    }
+
     public static final int INVITATION_CODE_FIELD_NUMBER = 3;
     private volatile java.lang.Object invitationCode_;
     /**
-     * <pre>
-     *repeated Project projects=2;
-     * </pre>
-     *
      * <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
      * @return The invitationCode.
      */
@@ -40689,10 +40754,6 @@ public final class Accounts {
       }
     }
     /**
-     * <pre>
-     *repeated Project projects=2;
-     * </pre>
-     *
      * <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
      * @return The bytes for invitationCode.
      */
@@ -40846,6 +40907,9 @@ public final class Accounts {
       if (organization_ != null) {
         output.writeMessage(1, getOrganization());
       }
+      for (int i = 0; i < projects_.size(); i++) {
+        output.writeMessage(2, projects_.get(i));
+      }
       if (!getInvitationCodeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, invitationCode_);
       }
@@ -40870,6 +40934,10 @@ public final class Accounts {
       if (organization_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getOrganization());
+      }
+      for (int i = 0; i < projects_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, projects_.get(i));
       }
       if (!getInvitationCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, invitationCode_);
@@ -40905,6 +40973,8 @@ public final class Accounts {
         if (!getOrganization()
             .equals(other.getOrganization())) return false;
       }
+      if (!getProjectsList()
+          .equals(other.getProjectsList())) return false;
       if (!getInvitationCode()
           .equals(other.getInvitationCode())) return false;
       if (!getResult()
@@ -40927,6 +40997,10 @@ public final class Accounts {
       if (hasOrganization()) {
         hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
         hash = (53 * hash) + getOrganization().hashCode();
+      }
+      if (getProjectsCount() > 0) {
+        hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getProjectsList().hashCode();
       }
       hash = (37 * hash) + INVITATION_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getInvitationCode().hashCode();
@@ -41068,6 +41142,7 @@ public final class Accounts {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getProjectsFieldBuilder();
           getRolesFieldBuilder();
           getPermissionsFieldBuilder();
         }
@@ -41081,19 +41156,25 @@ public final class Accounts {
           organization_ = null;
           organizationBuilder_ = null;
         }
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          projectsBuilder_.clear();
+        }
         invitationCode_ = "";
 
         result_ = "";
 
         if (rolesBuilder_ == null) {
           roles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           rolesBuilder_.clear();
         }
         if (permissionsBuilder_ == null) {
           permissions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           permissionsBuilder_.clear();
         }
@@ -41129,21 +41210,30 @@ public final class Accounts {
         } else {
           result.organization_ = organizationBuilder_.build();
         }
+        if (projectsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            projects_ = java.util.Collections.unmodifiableList(projects_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.projects_ = projects_;
+        } else {
+          result.projects_ = projectsBuilder_.build();
+        }
         result.invitationCode_ = invitationCode_;
         result.result_ = result_;
         if (rolesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             roles_ = java.util.Collections.unmodifiableList(roles_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.roles_ = roles_;
         } else {
           result.roles_ = rolesBuilder_.build();
         }
         if (permissionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             permissions_ = java.util.Collections.unmodifiableList(permissions_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.permissions_ = permissions_;
         } else {
@@ -41200,6 +41290,32 @@ public final class Accounts {
         if (other.hasOrganization()) {
           mergeOrganization(other.getOrganization());
         }
+        if (projectsBuilder_ == null) {
+          if (!other.projects_.isEmpty()) {
+            if (projects_.isEmpty()) {
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureProjectsIsMutable();
+              projects_.addAll(other.projects_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.projects_.isEmpty()) {
+            if (projectsBuilder_.isEmpty()) {
+              projectsBuilder_.dispose();
+              projectsBuilder_ = null;
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              projectsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProjectsFieldBuilder() : null;
+            } else {
+              projectsBuilder_.addAllMessages(other.projects_);
+            }
+          }
+        }
         if (!other.getInvitationCode().isEmpty()) {
           invitationCode_ = other.invitationCode_;
           onChanged();
@@ -41212,7 +41328,7 @@ public final class Accounts {
           if (!other.roles_.isEmpty()) {
             if (roles_.isEmpty()) {
               roles_ = other.roles_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureRolesIsMutable();
               roles_.addAll(other.roles_);
@@ -41225,7 +41341,7 @@ public final class Accounts {
               rolesBuilder_.dispose();
               rolesBuilder_ = null;
               roles_ = other.roles_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               rolesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getRolesFieldBuilder() : null;
@@ -41238,7 +41354,7 @@ public final class Accounts {
           if (!other.permissions_.isEmpty()) {
             if (permissions_.isEmpty()) {
               permissions_ = other.permissions_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensurePermissionsIsMutable();
               permissions_.addAll(other.permissions_);
@@ -41251,7 +41367,7 @@ public final class Accounts {
               permissionsBuilder_.dispose();
               permissionsBuilder_ = null;
               permissions_ = other.permissions_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               permissionsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPermissionsFieldBuilder() : null;
@@ -41409,12 +41525,248 @@ public final class Accounts {
         return organizationBuilder_;
       }
 
+      private java.util.List<accounts.v1alpha1.Accounts.Project> projects_ =
+        java.util.Collections.emptyList();
+      private void ensureProjectsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>(projects_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> projectsBuilder_;
+
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
+        if (projectsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(projects_);
+        } else {
+          return projectsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public int getProjectsCount() {
+        if (projectsBuilder_ == null) {
+          return projects_.size();
+        } else {
+          return projectsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project getProjects(int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);
+        } else {
+          return projectsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder setProjects(
+          int index, accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.set(index, value);
+          onChanged();
+        } else {
+          projectsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder setProjects(
+          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.add(value);
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(
+          int index, accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.add(index, value);
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(
+          accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(
+          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder addAllProjects(
+          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Project> values) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, projects_);
+          onChanged();
+        } else {
+          projectsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder clearProjects() {
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          projectsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public Builder removeProjects(int index) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.remove(index);
+          onChanged();
+        } else {
+          projectsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder getProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+          int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);  } else {
+          return projectsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+           getProjectsOrBuilderList() {
+        if (projectsBuilder_ != null) {
+          return projectsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(projects_);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder() {
+        return getProjectsFieldBuilder().addBuilder(
+            accounts.v1alpha1.Accounts.Project.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().addBuilder(
+            index, accounts.v1alpha1.Accounts.Project.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+       */
+      public java.util.List<accounts.v1alpha1.Accounts.Project.Builder> 
+           getProjectsBuilderList() {
+        return getProjectsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+          getProjectsFieldBuilder() {
+        if (projectsBuilder_ == null) {
+          projectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder>(
+                  projects_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          projects_ = null;
+        }
+        return projectsBuilder_;
+      }
+
       private java.lang.Object invitationCode_ = "";
       /**
-       * <pre>
-       *repeated Project projects=2;
-       * </pre>
-       *
        * <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
        * @return The invitationCode.
        */
@@ -41431,10 +41783,6 @@ public final class Accounts {
         }
       }
       /**
-       * <pre>
-       *repeated Project projects=2;
-       * </pre>
-       *
        * <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
        * @return The bytes for invitationCode.
        */
@@ -41452,10 +41800,6 @@ public final class Accounts {
         }
       }
       /**
-       * <pre>
-       *repeated Project projects=2;
-       * </pre>
-       *
        * <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
        * @param value The invitationCode to set.
        * @return This builder for chaining.
@@ -41471,10 +41815,6 @@ public final class Accounts {
         return this;
       }
       /**
-       * <pre>
-       *repeated Project projects=2;
-       * </pre>
-       *
        * <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
        * @return This builder for chaining.
        */
@@ -41485,10 +41825,6 @@ public final class Accounts {
         return this;
       }
       /**
-       * <pre>
-       *repeated Project projects=2;
-       * </pre>
-       *
        * <code>string invitation_code = 3 [json_name = "invitationCode"];</code>
        * @param value The bytes for invitationCode to set.
        * @return This builder for chaining.
@@ -41584,9 +41920,9 @@ public final class Accounts {
       private java.util.List<accounts.v1alpha1.Accounts.Rol> roles_ =
         java.util.Collections.emptyList();
       private void ensureRolesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           roles_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Rol>(roles_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -41736,7 +42072,7 @@ public final class Accounts {
       public Builder clearRoles() {
         if (rolesBuilder_ == null) {
           roles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           rolesBuilder_.clear();
@@ -41813,7 +42149,7 @@ public final class Accounts {
           rolesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               accounts.v1alpha1.Accounts.Rol, accounts.v1alpha1.Accounts.Rol.Builder, accounts.v1alpha1.Accounts.RolOrBuilder>(
                   roles_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           roles_ = null;
@@ -41824,9 +42160,9 @@ public final class Accounts {
       private java.util.List<accounts.v1alpha1.Accounts.Permission> permissions_ =
         java.util.Collections.emptyList();
       private void ensurePermissionsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           permissions_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Permission>(permissions_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -41976,7 +42312,7 @@ public final class Accounts {
       public Builder clearPermissions() {
         if (permissionsBuilder_ == null) {
           permissions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           permissionsBuilder_.clear();
@@ -42053,7 +42389,7 @@ public final class Accounts {
           permissionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               accounts.v1alpha1.Accounts.Permission, accounts.v1alpha1.Accounts.Permission.Builder, accounts.v1alpha1.Accounts.PermissionOrBuilder>(
                   permissions_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           permissions_ = null;
@@ -95725,302 +96061,304 @@ public final class Accounts {
       "_id_admin\030\004 \001(\tR\013userIdAdmin\022\033\n\troles_id" +
       "s\030\005 \003(\rR\010rolesIds\022\'\n\017permissions_ids\030\006 \003" +
       "(\rR\016permissionsIds\022\'\n\017organization_id\030\007 " +
-      "\001(\rR\016organizationId\"\221\002\n\032SendInvitationUs" +
+      "\001(\rR\016organizationId\"\311\002\n\032SendInvitationUs" +
       "erResponse\022C\n\014organization\030\001 \001(\0132\037.accou" +
       "nts.v1alpha1.OrganizationR\014organization\022" +
-      "\'\n\017invitation_code\030\003 \001(\tR\016invitationCode" +
-      "\022\026\n\006result\030\004 \001(\tR\006result\022,\n\005roles\030\005 \003(\0132" +
-      "\026.accounts.v1alpha1.RolR\005roles\022?\n\013permis" +
-      "sions\030\006 \003(\0132\035.accounts.v1alpha1.Permissi" +
-      "onR\013permissions\"Y\n\030GetInvitationUserRequ" +
+      "6\n\010projects\030\002 \003(\0132\032.accounts.v1alpha1.Pr" +
+      "ojectR\010projects\022\'\n\017invitation_code\030\003 \001(\t" +
+      "R\016invitationCode\022\026\n\006result\030\004 \001(\tR\006result" +
+      "\022,\n\005roles\030\005 \003(\0132\026.accounts.v1alpha1.RolR" +
+      "\005roles\022?\n\013permissions\030\006 \003(\0132\035.accounts.v" +
+      "1alpha1.PermissionR\013permissions\"Y\n\030GetIn" +
+      "vitationUserRequest\022\'\n\017invitation_code\030\001" +
+      " \001(\tR\016invitationCode\022\024\n\005email\030\002 \001(\tR\005ema" +
+      "il\"\237\002\n\031GetInvitationUserResponse\022C\n\014orga" +
+      "nization\030\001 \001(\0132\037.accounts.v1alpha1.Organ" +
+      "izationR\014organization\0226\n\010projects\030\002 \003(\0132" +
+      "\032.accounts.v1alpha1.ProjectR\010projects\022\026\n" +
+      "\006result\030\003 \001(\tR\006result\022,\n\005roles\030\004 \003(\0132\026.a" +
+      "ccounts.v1alpha1.RolR\005roles\022?\n\013permissio" +
+      "ns\030\005 \003(\0132\035.accounts.v1alpha1.PermissionR" +
+      "\013permissions\"\355\002\n\032AgreeInvitationUserRequ" +
       "est\022\'\n\017invitation_code\030\001 \001(\tR\016invitation" +
-      "Code\022\024\n\005email\030\002 \001(\tR\005email\"\237\002\n\031GetInvita" +
-      "tionUserResponse\022C\n\014organization\030\001 \001(\0132\037" +
-      ".accounts.v1alpha1.OrganizationR\014organiz" +
-      "ation\0226\n\010projects\030\002 \003(\0132\032.accounts.v1alp" +
-      "ha1.ProjectR\010projects\022\026\n\006result\030\003 \001(\tR\006r" +
-      "esult\022,\n\005roles\030\004 \003(\0132\026.accounts.v1alpha1" +
-      ".RolR\005roles\022?\n\013permissions\030\005 \003(\0132\035.accou" +
-      "nts.v1alpha1.PermissionR\013permissions\"\355\002\n" +
-      "\032AgreeInvitationUserRequest\022\'\n\017invitatio" +
-      "n_code\030\001 \001(\tR\016invitationCode\022\024\n\005email\030\002 " +
-      "\001(\tR\005email\022\"\n\rguest_user_id\030\003 \001(\tR\013guest" +
-      "UserId\022V\n\023invitation_response\030\004 \001(\0162%.ac" +
-      "counts.v1alpha1.InvitationResponseR\022invi" +
-      "tationResponse\022W\n\010projects\030\005 \003(\0132;.accou" +
-      "nts.v1alpha1.AgreeInvitationUserRequest." +
-      "ProjectsEntryR\010projects\032;\n\rProjectsEntry" +
-      "\022\020\n\003key\030\001 \001(\rR\003key\022\024\n\005value\030\002 \001(\rR\005value" +
-      ":\0028\001\"5\n\033AgreeInvitationUserResponse\022\026\n\006r" +
-      "esult\030\001 \001(\tR\006result\"\315\001\n\003Rol\022\016\n\002id\030\001 \001(\rR" +
-      "\002id\022\022\n\004name\030\002 \001(\tR\004name\022\035\n\nproject_id\030\003 " +
-      "\001(\rR\tprojectId\022\'\n\017organization_id\030\004 \001(\rR" +
-      "\016organizationId\022?\n\013permissions\030\005 \003(\0132\035.a" +
-      "ccounts.v1alpha1.PermissionR\013permissions" +
-      "\022\031\n\010is_admin\030\006 \001(\010R\007isAdmin\"\341\001\n\021CreateRo" +
-      "leRequest\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013descrip" +
-      "tion\030\002 \001(\tR\013description\022\035\n\nproject_id\030\003 " +
-      "\001(\rR\tprojectId\022\'\n\017organization_id\030\004 \001(\rR" +
-      "\016organizationId\022\'\n\017type_permission\030\005 \001(\t" +
-      "R\016typePermission\022%\n\016permission_ids\030\006 \003(\r" +
-      "R\rpermissionIds\"b\n\021UpdateRoleRequest\022\025\n\006" +
-      "rol_id\030\001 \001(\rR\005rolId\0226\n\003rol\030\002 \001(\0132$.accou" +
-      "nts.v1alpha1.CreateRoleRequestR\003rol\"*\n\021G" +
-      "etOneRoleRequest\022\025\n\006rol_id\030\001 \001(\rR\005rolId\"" +
-      "\334\001\n\022GetOneRoleResponse\022\016\n\002id\030\001 \001(\rR\002id\022\022" +
-      "\n\004name\030\002 \001(\tR\004name\022\'\n\017organization_id\030\003 " +
-      "\001(\rR\016organizationId\022\035\n\nproject_id\030\004 \001(\rR" +
-      "\tprojectId\022?\n\013permissions\030\005 \003(\0132\035.accoun" +
-      "ts.v1alpha1.PermissionR\013permissions\022\031\n\010i" +
-      "s_admin\030\006 \001(\010R\007isAdmin\"*\n\021DeleteRoleRequ" +
-      "est\022\025\n\006rol_id\030\001 \001(\rR\005rolId\"Z\n\020ListRolesR" +
-      "equest\022\035\n\nproject_id\030\001 \001(\rR\tprojectId\022\'\n" +
-      "\017organization_id\030\002 \001(\rR\016organizationId\"A" +
-      "\n\021ListRolesResponse\022,\n\005roles\030\001 \003(\0132\026.acc" +
-      "ounts.v1alpha1.RolR\005roles\"L\n\022CreateRoleR" +
-      "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\t" +
-      "R\005error\022\016\n\002id\030\003 \001(\rR\002id\"<\n\022UpdateRoleRes" +
-      "ponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005" +
-      "error\"<\n\022DeleteRoleResponse\022\020\n\003msg\030\001 \001(\t" +
-      "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\372\001\n\007Project\022" +
-      "\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005i" +
-      "mage\030\003 \001(\tR\005image\022\'\n\017organization_id\030\004 \001" +
-      "(\rR\016organizationId\022 \n\013description\030\005 \001(\tR" +
-      "\013description\022\035\n\ncreated_at\030\006 \001(\tR\tcreate" +
-      "dAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022,\n\005ro" +
-      "les\030\010 \003(\0132\026.accounts.v1alpha1.RolR\005roles" +
-      "\"\244\001\n\024CreateProjectRequest\022\022\n\004name\030\001 \001(\tR" +
+      "Code\022\024\n\005email\030\002 \001(\tR\005email\022\"\n\rguest_user" +
+      "_id\030\003 \001(\tR\013guestUserId\022V\n\023invitation_res" +
+      "ponse\030\004 \001(\0162%.accounts.v1alpha1.Invitati" +
+      "onResponseR\022invitationResponse\022W\n\010projec" +
+      "ts\030\005 \003(\0132;.accounts.v1alpha1.AgreeInvita" +
+      "tionUserRequest.ProjectsEntryR\010projects\032" +
+      ";\n\rProjectsEntry\022\020\n\003key\030\001 \001(\rR\003key\022\024\n\005va" +
+      "lue\030\002 \001(\rR\005value:\0028\001\"5\n\033AgreeInvitationU" +
+      "serResponse\022\026\n\006result\030\001 \001(\tR\006result\"\315\001\n\003" +
+      "Rol\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022" +
+      "\035\n\nproject_id\030\003 \001(\rR\tprojectId\022\'\n\017organi" +
+      "zation_id\030\004 \001(\rR\016organizationId\022?\n\013permi" +
+      "ssions\030\005 \003(\0132\035.accounts.v1alpha1.Permiss" +
+      "ionR\013permissions\022\031\n\010is_admin\030\006 \001(\010R\007isAd" +
+      "min\"\341\001\n\021CreateRoleRequest\022\022\n\004name\030\001 \001(\tR" +
       "\004name\022 \n\013description\030\002 \001(\tR\013description\022" +
-      "\024\n\005image\030\003 \001(\tR\005image\022\'\n\017organization_id" +
-      "\030\004 \001(\rR\016organizationId\022\027\n\007user_id\030\005 \001(\tR" +
-      "\006userId\"&\n\024GetOneProjectRequest\022\016\n\002id\030\001 " +
-      "\001(\005R\002id\"&\n\024DeleteProjectRequest\022\016\n\002id\030\001 " +
-      "\001(\005R\002id\"=\n\022ListProjectRequest\022\'\n\017organiz" +
-      "ation_id\030\001 \001(\rR\016organizationId\"i\n\024Update" +
-      "ProjectRequest\022\016\n\002id\030\001 \001(\005R\002id\022A\n\007projec" +
-      "t\030\002 \001(\0132\'.accounts.v1alpha1.CreateProjec" +
-      "tRequestR\007project\"O\n\025CreateProjectRespon" +
-      "se\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005err" +
-      "or\022\016\n\002id\030\003 \001(\rR\002id\"?\n\025UpdateProjectRespo" +
+      "\035\n\nproject_id\030\003 \001(\rR\tprojectId\022\'\n\017organi" +
+      "zation_id\030\004 \001(\rR\016organizationId\022\'\n\017type_" +
+      "permission\030\005 \001(\tR\016typePermission\022%\n\016perm" +
+      "ission_ids\030\006 \003(\rR\rpermissionIds\"b\n\021Updat" +
+      "eRoleRequest\022\025\n\006rol_id\030\001 \001(\rR\005rolId\0226\n\003r" +
+      "ol\030\002 \001(\0132$.accounts.v1alpha1.CreateRoleR" +
+      "equestR\003rol\"*\n\021GetOneRoleRequest\022\025\n\006rol_" +
+      "id\030\001 \001(\rR\005rolId\"\334\001\n\022GetOneRoleResponse\022\016" +
+      "\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\'\n\017or" +
+      "ganization_id\030\003 \001(\rR\016organizationId\022\035\n\np" +
+      "roject_id\030\004 \001(\rR\tprojectId\022?\n\013permission" +
+      "s\030\005 \003(\0132\035.accounts.v1alpha1.PermissionR\013" +
+      "permissions\022\031\n\010is_admin\030\006 \001(\010R\007isAdmin\"*" +
+      "\n\021DeleteRoleRequest\022\025\n\006rol_id\030\001 \001(\rR\005rol" +
+      "Id\"Z\n\020ListRolesRequest\022\035\n\nproject_id\030\001 \001" +
+      "(\rR\tprojectId\022\'\n\017organization_id\030\002 \001(\rR\016" +
+      "organizationId\"A\n\021ListRolesResponse\022,\n\005r" +
+      "oles\030\001 \003(\0132\026.accounts.v1alpha1.RolR\005role" +
+      "s\"L\n\022CreateRoleResponse\022\020\n\003msg\030\001 \001(\tR\003ms" +
+      "g\022\024\n\005error\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\rR\002id\"" +
+      "<\n\022UpdateRoleResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022" +
+      "\024\n\005error\030\002 \001(\tR\005error\"<\n\022DeleteRoleRespo" +
       "nse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005er" +
-      "ror\"?\n\025DeleteProjectResponse\022\020\n\003msg\030\001 \001(" +
-      "\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\302\002\n\025GetOneP" +
-      "rojectResponse\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\002" +
-      " \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017orga" +
-      "nization_id\030\004 \001(\rR\016organizationId\022 \n\013des" +
-      "cription\030\005 \001(\tR\013description\022\035\n\ncreated_a" +
-      "t\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\t" +
-      "updatedAt\0223\n\007members\030\010 \003(\0132\031.accounts.v1" +
-      "alpha1.MemberR\007members\0221\n\005owner\030\t \001(\0132\033." +
-      "accounts.v1alpha1.UserListR\005owner\"M\n\023Lis" +
-      "tProjectResponse\0226\n\010projects\030\001 \003(\0132\032.acc" +
-      "ounts.v1alpha1.ProjectR\010projects\"L\n\034List" +
-      "ProjectPaginationRequest\022\026\n\006offset\030\001 \001(\005" +
-      "R\006offset\022\024\n\005limit\030\002 \001(\005R\005limit\"m\n\035ListPr" +
-      "ojectPaginationResponse\0226\n\010projects\030\001 \003(" +
-      "\0132\032.accounts.v1alpha1.ProjectR\010projects\022" +
-      "\024\n\005count\030\002 \001(\003R\005count\"y\n\nPermission\022\016\n\002i" +
-      "d\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\026\n\006actio" +
-      "n\030\003 \001(\tR\006action\022\022\n\004type\030\004 \001(\tR\004type\022\033\n\tf" +
-      "ull_name\030\005 \001(\tR\010fullName\"f\n\017GroupPermiss" +
-      "ion\022\022\n\004name\030\001 \001(\tR\004name\022?\n\013permissions\030\003" +
-      " \003(\0132\035.accounts.v1alpha1.PermissionR\013per" +
-      "missions\"\215\001\n\022CategoryPermission\022\022\n\004name\030" +
-      "\001 \001(\tR\004name\022\022\n\004type\030\002 \001(\tR\004type\022O\n\021group" +
-      "_permissions\030\003 \003(\0132\".accounts.v1alpha1.G" +
-      "roupPermissionR\020groupPermissions\"v\n\026List" +
-      "PermissionResponse\022\\\n\026categories_permiss" +
-      "ions\030\001 \003(\0132%.accounts.v1alpha1.CategoryP" +
-      "ermissionR\025categoriesPermissions\"W\n\027Assi" +
-      "gnPermissionRequest\022\027\n\007user_id\030\001 \001(\rR\006us" +
-      "erId\022#\n\rpermission_id\030\002 \001(\rR\014permissionI" +
-      "d\"\027\n\025ListPermissionRequest\"u\n\027CreatePerm" +
-      "issionRequest\022\022\n\004name\030\001 \001(\tR\004name\022\022\n\004typ" +
-      "e\030\002 \001(\tR\004type\022\032\n\010category\030\003 \001(\tR\010categor" +
-      "y\022\026\n\006action\030\004 \001(\tR\006action\"f\n\027UpdatePermi" +
-      "ssionRequest\022#\n\rpermission_id\030\001 \001(\rR\014per" +
-      "missionId\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004type\030\003 " +
-      "\001(\tR\004type\">\n\027GetOnePermissionRequest\022#\n\r" +
-      "permission_id\030\001 \001(\rR\014permissionId\"R\n\030Get" +
-      "OnePermissionResponse\022\016\n\002id\030\001 \001(\rR\002id\022\022\n" +
-      "\004name\030\002 \001(\tR\004name\022\022\n\004type\030\003 \001(\tR\004type\">\n" +
-      "\027DeletePermissionRequest\022#\n\rpermission_i" +
-      "d\030\001 \001(\rR\014permissionId\"B\n\030UpdatePermissio" +
-      "nResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001" +
-      "(\tR\005error\"B\n\030DeletePermissionResponse\022\020\n" +
-      "\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"B\n" +
-      "\030CreatePermissionResponse\022\020\n\003msg\030\001 \001(\tR\003" +
-      "msg\022\024\n\005error\030\002 \001(\tR\005error\"\212\001\n\006Member\022\016\n\002" +
-      "id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n" +
-      "\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_nam" +
-      "e\030\004 \001(\tR\010lastName\022\033\n\tis_active\030\005 \001(\010R\010is" +
-      "Active\"q\n\023ProjectOrganization\022\016\n\002id\030\001 \001(" +
-      "\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\t" +
-      "R\005image\022 \n\013description\030\004 \001(\tR\013descriptio" +
-      "n\"\235\001\n\014Organization\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004na" +
-      "me\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013" +
-      "description\030\004 \001(\tR\013description\0221\n\005owner\030" +
-      "\007 \001(\0132\033.accounts.v1alpha1.UserListR\005owne" +
-      "r\"\200\001\n\031CreateOrganizationRequest\022\022\n\004name\030" +
-      "\001 \001(\tR\004name\022\024\n\005image\030\002 \001(\tR\005image\022\027\n\007use" +
-      "r_id\030\003 \001(\tR\006userId\022 \n\013description\030\004 \001(\tR" +
-      "\013description\"\031\n\027ListOrganizationRequest\"" +
-      "D\n\031GetOneOrganizationRequest\022\'\n\017organiza" +
-      "tion_id\030\001 \001(\rR\016organizationId\"\220\001\n\031Update" +
-      "OrganizationRequest\022\'\n\017organization_id\030\001" +
-      " \001(\rR\016organizationId\022\022\n\004name\030\002 \001(\tR\004name" +
-      "\022 \n\013description\030\003 \001(\tR\013description\022\024\n\005im" +
-      "age\030\004 \001(\tR\005image\"D\n\031DeleteOrganizationRe" +
+      "ror\"\372\001\n\007Project\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030" +
+      "\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017org" +
+      "anization_id\030\004 \001(\rR\016organizationId\022 \n\013de" +
+      "scription\030\005 \001(\tR\013description\022\035\n\ncreated_" +
+      "at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR" +
+      "\tupdatedAt\022,\n\005roles\030\010 \003(\0132\026.accounts.v1a" +
+      "lpha1.RolR\005roles\"\244\001\n\024CreateProjectReques" +
+      "t\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013description\030\002 \001" +
+      "(\tR\013description\022\024\n\005image\030\003 \001(\tR\005image\022\'\n" +
+      "\017organization_id\030\004 \001(\rR\016organizationId\022\027" +
+      "\n\007user_id\030\005 \001(\tR\006userId\"&\n\024GetOneProject" +
+      "Request\022\016\n\002id\030\001 \001(\005R\002id\"&\n\024DeleteProject" +
+      "Request\022\016\n\002id\030\001 \001(\005R\002id\"=\n\022ListProjectRe" +
       "quest\022\'\n\017organization_id\030\001 \001(\rR\016organiza" +
-      "tionId\"\244\002\n\032GetOneOrganizationResponse\022\016\n" +
-      "\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005ima" +
-      "ge\030\003 \001(\tR\005image\022B\n\010projects\030\004 \003(\0132&.acco" +
-      "unts.v1alpha1.ProjectOrganizationR\010proje" +
-      "cts\0223\n\007menbers\030\005 \003(\0132\031.accounts.v1alpha1" +
-      ".MemberR\007menbers\022 \n\013description\030\006 \001(\tR\013d" +
-      "escription\0221\n\005owner\030\007 \001(\0132\033.accounts.v1a" +
-      "lpha1.UserListR\005owner\"a\n\030ListOrganizatio" +
-      "nResponse\022E\n\rorganizations\030\001 \003(\0132\037.accou" +
-      "nts.v1alpha1.OrganizationR\rorganizations" +
-      "\"\206\001\n\032CreateOrganizationResponse\022\020\n\003msg\030\001" +
-      " \001(\tR\003msg\0220\n\024role_id_organization\030\002 \001(\rR" +
-      "\022roleIdOrganization\022\024\n\005error\030\003 \001(\tR\005erro" +
-      "r\022\016\n\002id\030\004 \001(\rR\002id\"D\n\032UpdateOrganizationR" +
-      "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\t" +
-      "R\005error\"D\n\032DeleteOrganizationResponse\022\020\n" +
-      "\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\027\n" +
-      "\025GetListUserDexRequest\"R\n\026GetListUserDex" +
-      "Response\0228\n\tusers_dex\030\001 \003(\0132\033.accounts.v" +
-      "1alpha1.UsersDexR\010usersDex\"i\n\024GetOneUser" +
-      "DexRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\0228\n\004u" +
-      "ser\030\002 \001(\0132$.accounts.v1alpha1.CreateUser" +
-      "RequestR\004user\"\322\005\n\025GetOneUserDexResponse\022" +
-      "\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId" +
-      "\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_" +
-      "name\030\004 \001(\tR\010lastName\022\024\n\005email\030\005 \001(\tR\005ema" +
-      "il\022\033\n\tis_active\030\006 \001(\010R\010isActive\022\035\n\ncreat" +
-      "ed_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001" +
-      "(\tR\tupdatedAt\022,\n\005roles\030\t \003(\0132\026.accounts." +
-      "v1alpha1.RolR\005roles\022?\n\013permissions\030\n \003(\013" +
-      "2\035.accounts.v1alpha1.PermissionR\013permiss" +
-      "ions\022\"\n\ris_super_user\030\013 \001(\010R\013isSuperUser" +
-      "\022E\n\rorganizations\030\014 \003(\0132\037.accounts.v1alp" +
-      "ha1.OrganizationR\rorganizations\022\020\n\003msg\030\r" +
-      " \001(\tR\003msg\0226\n\010projects\030\016 \003(\0132\032.accounts.v" +
-      "1alpha1.ProjectR\010projects\022!\n\014phone_numbe" +
-      "r\030\017 \001(\tR\013phoneNumber\022\030\n\007country\030\020 \001(\tR\007c" +
-      "ountry\022\022\n\004city\030\021 \001(\tR\004city\022\031\n\010zip_code\030\022" +
-      " \001(\tR\007zipCode\022\030\n\007address\030\023 \001(\tR\007address\022" +
-      "\024\n\005state\030\024 \001(\tR\005state\022#\n\remoji_country\030\025" +
-      " \001(\tR\014emojiCountry*d\n\022InvitationResponse" +
-      "\022,\n(INVITATION_RESPONSE_ACCEPTED_UNSPECI" +
-      "FIED\020\000\022 \n\034INVITATION_RESPONSE_REJECTED\020\001" +
-      "2\307 \n\016AccountService\022Y\n\nCreateUser\022$.acco" +
-      "unts.v1alpha1.CreateUserRequest\032%.accoun" +
-      "ts.v1alpha1.CreateUserResponse\022S\n\010ListUs" +
-      "er\022\".accounts.v1alpha1.ListUserRequest\032#" +
-      ".accounts.v1alpha1.ListUserResponse\022Y\n\nG" +
-      "etOneUser\022$.accounts.v1alpha1.GetOneUser" +
-      "Request\032%.accounts.v1alpha1.GetOneUserRe" +
-      "sponse\022Y\n\nUpdateUser\022$.accounts.v1alpha1" +
-      ".UpdateUserRequest\032%.accounts.v1alpha1.U" +
-      "pdateUserResponse\022Y\n\nDeleteUser\022$.accoun" +
-      "ts.v1alpha1.DeleteUserRequest\032%.accounts" +
-      ".v1alpha1.DeleteUserResponse\022q\n\022ListUser" +
-      "Pagination\022,.accounts.v1alpha1.ListUserP" +
-      "aginationRequest\032-.accounts.v1alpha1.Lis" +
-      "tUserPaginationResponse\022q\n\022SendInvitatio" +
-      "nUser\022,.accounts.v1alpha1.SendInvitation" +
-      "UserRequest\032-.accounts.v1alpha1.SendInvi" +
-      "tationUserResponse\022n\n\021GetInvitationUser\022" +
-      "+.accounts.v1alpha1.GetInvitationUserReq" +
-      "uest\032,.accounts.v1alpha1.GetInvitationUs" +
-      "erResponse\022t\n\023AgreeInvitationUser\022-.acco" +
-      "unts.v1alpha1.AgreeInvitationUserRequest" +
-      "\032..accounts.v1alpha1.AgreeInvitationUser" +
-      "Response\022k\n\020CreatePermission\022*.accounts." +
-      "v1alpha1.CreatePermissionRequest\032+.accou" +
-      "nts.v1alpha1.CreatePermissionResponse\022e\n" +
-      "\016ListPermission\022(.accounts.v1alpha1.List" +
-      "PermissionRequest\032).accounts.v1alpha1.Li" +
-      "stPermissionResponse\022k\n\020GetOnePermission" +
-      "\022*.accounts.v1alpha1.GetOnePermissionReq" +
-      "uest\032+.accounts.v1alpha1.GetOnePermissio" +
-      "nResponse\022k\n\020UpdatePermission\022*.accounts" +
-      ".v1alpha1.UpdatePermissionRequest\032+.acco" +
-      "unts.v1alpha1.UpdatePermissionResponse\022k" +
-      "\n\020DeletePermission\022*.accounts.v1alpha1.D" +
-      "eletePermissionRequest\032+.accounts.v1alph" +
-      "a1.DeletePermissionResponse\022q\n\022CreateOrg" +
-      "anization\022,.accounts.v1alpha1.CreateOrga" +
-      "nizationRequest\032-.accounts.v1alpha1.Crea" +
-      "teOrganizationResponse\022k\n\020ListOrganizati" +
-      "on\022*.accounts.v1alpha1.ListOrganizationR" +
-      "equest\032+.accounts.v1alpha1.ListOrganizat" +
-      "ionResponse\022q\n\022GetOneOrganization\022,.acco" +
-      "unts.v1alpha1.GetOneOrganizationRequest\032" +
-      "-.accounts.v1alpha1.GetOneOrganizationRe" +
-      "sponse\022q\n\022UpdateOrganization\022,.accounts." +
-      "v1alpha1.UpdateOrganizationRequest\032-.acc" +
-      "ounts.v1alpha1.UpdateOrganizationRespons" +
-      "e\022q\n\022DeleteOrganization\022,.accounts.v1alp" +
-      "ha1.DeleteOrganizationRequest\032-.accounts" +
-      ".v1alpha1.DeleteOrganizationResponse\022Y\n\n" +
-      "CreateRole\022$.accounts.v1alpha1.CreateRol" +
-      "eRequest\032%.accounts.v1alpha1.CreateRoleR" +
-      "esponse\022V\n\tListRoles\022#.accounts.v1alpha1" +
-      ".ListRolesRequest\032$.accounts.v1alpha1.Li" +
-      "stRolesResponse\022Y\n\nUpdateRole\022$.accounts" +
-      ".v1alpha1.UpdateRoleRequest\032%.accounts.v" +
-      "1alpha1.UpdateRoleResponse\022Y\n\nGetOneRole" +
-      "\022$.accounts.v1alpha1.GetOneRoleRequest\032%" +
-      ".accounts.v1alpha1.GetOneRoleResponse\022Y\n" +
-      "\nDeleteRole\022$.accounts.v1alpha1.DeleteRo" +
-      "leRequest\032%.accounts.v1alpha1.DeleteRole" +
-      "Response\022b\n\rCreateProject\022\'.accounts.v1a" +
-      "lpha1.CreateProjectRequest\032(.accounts.v1" +
-      "alpha1.CreateProjectResponse\022b\n\rGetOnePr" +
-      "oject\022\'.accounts.v1alpha1.GetOneProjectR" +
-      "equest\032(.accounts.v1alpha1.GetOneProject" +
-      "Response\022b\n\rUpdateProject\022\'.accounts.v1a" +
-      "lpha1.UpdateProjectRequest\032(.accounts.v1" +
-      "alpha1.UpdateProjectResponse\022b\n\rDeletePr" +
-      "oject\022\'.accounts.v1alpha1.DeleteProjectR" +
-      "equest\032(.accounts.v1alpha1.DeleteProject" +
-      "Response\022\\\n\013ListProject\022%.accounts.v1alp" +
-      "ha1.ListProjectRequest\032&.accounts.v1alph" +
-      "a1.ListProjectResponse\022e\n\016GetListUserDex" +
-      "\022(.accounts.v1alpha1.GetListUserDexReque" +
-      "st\032).accounts.v1alpha1.GetListUserDexRes" +
-      "ponse\022b\n\rGetOneUserDex\022\'.accounts.v1alph",
-      "a1.GetOneUserDexRequest\032(.accounts.v1alp" +
-      "ha1.GetOneUserDexResponse\022V\n\tCheckUser\022#" +
-      ".accounts.v1alpha1.CheckUserRequest\032$.ac" +
-      "counts.v1alpha1.CheckUserResponse\022z\n\025Sen" +
-      "dVerificationEmail\022/.accounts.v1alpha1.S" +
-      "endVerificationEmailRequest\0320.accounts.v" +
-      "1alpha1.SendVerificationEmailResponse\022\\\n" +
-      "\013VerifyEmail\022%.accounts.v1alpha1.VerifyE" +
-      "mailRequest\032&.accounts.v1alpha1.VerifyEm" +
-      "ailResponse\022b\n\rListCountries\022\'.accounts." +
-      "v1alpha1.ListCountriesRequest\032(.accounts" +
-      ".v1alpha1.ListCountriesResponse\022b\n\rGetOn" +
-      "eCountry\022\'.accounts.v1alpha1.GetOneCount" +
-      "ryRequest\032(.accounts.v1alpha1.GetOneCoun" +
-      "tryResponse\022_\n\014CreateApiKey\022&.accounts.v" +
-      "1alpha1.CreateApiKeyRequest\032\'.accounts.v" +
-      "1alpha1.CreateApiKeyResponse\022_\n\014GetOneAp" +
-      "iKey\022&.accounts.v1alpha1.GetOneApiKeyReq" +
-      "uest\032\'.accounts.v1alpha1.GetOneApiKeyRes" +
-      "ponse\022Y\n\nListApiKey\022$.accounts.v1alpha1." +
-      "ListApiKeyRequest\032%.accounts.v1alpha1.Li" +
-      "stApiKeyResponse\022_\n\014UpdateApiKey\022&.accou" +
-      "nts.v1alpha1.UpdateApiKeyRequest\032\'.accou" +
-      "nts.v1alpha1.UpdateApiKeyResponse\022_\n\014Del" +
-      "eteApiKey\022&.accounts.v1alpha1.DeleteApiK" +
-      "eyRequest\032\'.accounts.v1alpha1.DeleteApiK" +
-      "eyResponseB4Z2github.com/cuemby/ccp-sdk/" +
-      "gen/go/accounts/v1alpha1b\006proto3"
+      "tionId\"i\n\024UpdateProjectRequest\022\016\n\002id\030\001 \001" +
+      "(\005R\002id\022A\n\007project\030\002 \001(\0132\'.accounts.v1alp" +
+      "ha1.CreateProjectRequestR\007project\"O\n\025Cre" +
+      "ateProjectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005" +
+      "error\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\rR\002id\"?\n\025Up" +
+      "dateProjectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n" +
+      "\005error\030\002 \001(\tR\005error\"?\n\025DeleteProjectResp" +
+      "onse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005e" +
+      "rror\"\302\002\n\025GetOneProjectResponse\022\016\n\002id\030\001 \001" +
+      "(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(" +
+      "\tR\005image\022\'\n\017organization_id\030\004 \001(\rR\016organ" +
+      "izationId\022 \n\013description\030\005 \001(\tR\013descript" +
+      "ion\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nup" +
+      "dated_at\030\007 \001(\tR\tupdatedAt\0223\n\007members\030\010 \003" +
+      "(\0132\031.accounts.v1alpha1.MemberR\007members\0221" +
+      "\n\005owner\030\t \001(\0132\033.accounts.v1alpha1.UserLi" +
+      "stR\005owner\"M\n\023ListProjectResponse\0226\n\010proj" +
+      "ects\030\001 \003(\0132\032.accounts.v1alpha1.ProjectR\010" +
+      "projects\"L\n\034ListProjectPaginationRequest" +
+      "\022\026\n\006offset\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001(\005R" +
+      "\005limit\"m\n\035ListProjectPaginationResponse\022" +
+      "6\n\010projects\030\001 \003(\0132\032.accounts.v1alpha1.Pr" +
+      "ojectR\010projects\022\024\n\005count\030\002 \001(\003R\005count\"y\n" +
+      "\nPermission\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(" +
+      "\tR\004name\022\026\n\006action\030\003 \001(\tR\006action\022\022\n\004type\030" +
+      "\004 \001(\tR\004type\022\033\n\tfull_name\030\005 \001(\tR\010fullName" +
+      "\"f\n\017GroupPermission\022\022\n\004name\030\001 \001(\tR\004name\022" +
+      "?\n\013permissions\030\003 \003(\0132\035.accounts.v1alpha1" +
+      ".PermissionR\013permissions\"\215\001\n\022CategoryPer" +
+      "mission\022\022\n\004name\030\001 \001(\tR\004name\022\022\n\004type\030\002 \001(" +
+      "\tR\004type\022O\n\021group_permissions\030\003 \003(\0132\".acc" +
+      "ounts.v1alpha1.GroupPermissionR\020groupPer" +
+      "missions\"v\n\026ListPermissionResponse\022\\\n\026ca" +
+      "tegories_permissions\030\001 \003(\0132%.accounts.v1" +
+      "alpha1.CategoryPermissionR\025categoriesPer" +
+      "missions\"W\n\027AssignPermissionRequest\022\027\n\007u" +
+      "ser_id\030\001 \001(\rR\006userId\022#\n\rpermission_id\030\002 " +
+      "\001(\rR\014permissionId\"\027\n\025ListPermissionReque" +
+      "st\"u\n\027CreatePermissionRequest\022\022\n\004name\030\001 " +
+      "\001(\tR\004name\022\022\n\004type\030\002 \001(\tR\004type\022\032\n\010categor" +
+      "y\030\003 \001(\tR\010category\022\026\n\006action\030\004 \001(\tR\006actio" +
+      "n\"f\n\027UpdatePermissionRequest\022#\n\rpermissi" +
+      "on_id\030\001 \001(\rR\014permissionId\022\022\n\004name\030\002 \001(\tR" +
+      "\004name\022\022\n\004type\030\003 \001(\tR\004type\">\n\027GetOnePermi" +
+      "ssionRequest\022#\n\rpermission_id\030\001 \001(\rR\014per" +
+      "missionId\"R\n\030GetOnePermissionResponse\022\016\n" +
+      "\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004typ" +
+      "e\030\003 \001(\tR\004type\">\n\027DeletePermissionRequest" +
+      "\022#\n\rpermission_id\030\001 \001(\rR\014permissionId\"B\n" +
+      "\030UpdatePermissionResponse\022\020\n\003msg\030\001 \001(\tR\003" +
+      "msg\022\024\n\005error\030\002 \001(\tR\005error\"B\n\030DeletePermi" +
+      "ssionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error" +
+      "\030\002 \001(\tR\005error\"B\n\030CreatePermissionRespons" +
+      "e\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005erro" +
+      "r\"\212\001\n\006Member\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030" +
+      "\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirst" +
+      "Name\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022\033\n\tis_" +
+      "active\030\005 \001(\010R\010isActive\"q\n\023ProjectOrganiz" +
+      "ation\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004nam" +
+      "e\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013description\030\004" +
+      " \001(\tR\013description\"\235\001\n\014Organization\022\016\n\002id" +
+      "\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030" +
+      "\003 \001(\tR\005image\022 \n\013description\030\004 \001(\tR\013descr" +
+      "iption\0221\n\005owner\030\007 \001(\0132\033.accounts.v1alpha" +
+      "1.UserListR\005owner\"\200\001\n\031CreateOrganization" +
+      "Request\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005image\030\002 \001" +
+      "(\tR\005image\022\027\n\007user_id\030\003 \001(\tR\006userId\022 \n\013de" +
+      "scription\030\004 \001(\tR\013description\"\031\n\027ListOrga" +
+      "nizationRequest\"D\n\031GetOneOrganizationReq" +
+      "uest\022\'\n\017organization_id\030\001 \001(\rR\016organizat" +
+      "ionId\"\220\001\n\031UpdateOrganizationRequest\022\'\n\017o" +
+      "rganization_id\030\001 \001(\rR\016organizationId\022\022\n\004" +
+      "name\030\002 \001(\tR\004name\022 \n\013description\030\003 \001(\tR\013d" +
+      "escription\022\024\n\005image\030\004 \001(\tR\005image\"D\n\031Dele" +
+      "teOrganizationRequest\022\'\n\017organization_id" +
+      "\030\001 \001(\rR\016organizationId\"\244\002\n\032GetOneOrganiz" +
+      "ationResponse\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 " +
+      "\001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022B\n\010proje" +
+      "cts\030\004 \003(\0132&.accounts.v1alpha1.ProjectOrg" +
+      "anizationR\010projects\0223\n\007menbers\030\005 \003(\0132\031.a" +
+      "ccounts.v1alpha1.MemberR\007menbers\022 \n\013desc" +
+      "ription\030\006 \001(\tR\013description\0221\n\005owner\030\007 \001(" +
+      "\0132\033.accounts.v1alpha1.UserListR\005owner\"a\n" +
+      "\030ListOrganizationResponse\022E\n\rorganizatio" +
+      "ns\030\001 \003(\0132\037.accounts.v1alpha1.Organizatio" +
+      "nR\rorganizations\"\206\001\n\032CreateOrganizationR" +
+      "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\0220\n\024role_id_org" +
+      "anization\030\002 \001(\rR\022roleIdOrganization\022\024\n\005e" +
+      "rror\030\003 \001(\tR\005error\022\016\n\002id\030\004 \001(\rR\002id\"D\n\032Upd" +
+      "ateOrganizationResponse\022\020\n\003msg\030\001 \001(\tR\003ms" +
+      "g\022\024\n\005error\030\002 \001(\tR\005error\"D\n\032DeleteOrganiz" +
+      "ationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error" +
+      "\030\002 \001(\tR\005error\"\027\n\025GetListUserDexRequest\"R" +
+      "\n\026GetListUserDexResponse\0228\n\tusers_dex\030\001 " +
+      "\003(\0132\033.accounts.v1alpha1.UsersDexR\010usersD" +
+      "ex\"i\n\024GetOneUserDexRequest\022\027\n\007user_id\030\001 " +
+      "\001(\tR\006userId\0228\n\004user\030\002 \001(\0132$.accounts.v1a" +
+      "lpha1.CreateUserRequestR\004user\"\322\005\n\025GetOne" +
+      "UserDexResponse\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_" +
+      "id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfi" +
+      "rstName\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022\024\n\005" +
+      "email\030\005 \001(\tR\005email\022\033\n\tis_active\030\006 \001(\010R\010i" +
+      "sActive\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022\035" +
+      "\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022,\n\005roles\030\t" +
+      " \003(\0132\026.accounts.v1alpha1.RolR\005roles\022?\n\013p" +
+      "ermissions\030\n \003(\0132\035.accounts.v1alpha1.Per" +
+      "missionR\013permissions\022\"\n\ris_super_user\030\013 " +
+      "\001(\010R\013isSuperUser\022E\n\rorganizations\030\014 \003(\0132" +
+      "\037.accounts.v1alpha1.OrganizationR\rorgani" +
+      "zations\022\020\n\003msg\030\r \001(\tR\003msg\0226\n\010projects\030\016 " +
+      "\003(\0132\032.accounts.v1alpha1.ProjectR\010project" +
+      "s\022!\n\014phone_number\030\017 \001(\tR\013phoneNumber\022\030\n\007" +
+      "country\030\020 \001(\tR\007country\022\022\n\004city\030\021 \001(\tR\004ci" +
+      "ty\022\031\n\010zip_code\030\022 \001(\tR\007zipCode\022\030\n\007address" +
+      "\030\023 \001(\tR\007address\022\024\n\005state\030\024 \001(\tR\005state\022#\n" +
+      "\remoji_country\030\025 \001(\tR\014emojiCountry*d\n\022In" +
+      "vitationResponse\022,\n(INVITATION_RESPONSE_" +
+      "ACCEPTED_UNSPECIFIED\020\000\022 \n\034INVITATION_RES" +
+      "PONSE_REJECTED\020\0012\307 \n\016AccountService\022Y\n\nC" +
+      "reateUser\022$.accounts.v1alpha1.CreateUser" +
+      "Request\032%.accounts.v1alpha1.CreateUserRe" +
+      "sponse\022S\n\010ListUser\022\".accounts.v1alpha1.L" +
+      "istUserRequest\032#.accounts.v1alpha1.ListU" +
+      "serResponse\022Y\n\nGetOneUser\022$.accounts.v1a" +
+      "lpha1.GetOneUserRequest\032%.accounts.v1alp" +
+      "ha1.GetOneUserResponse\022Y\n\nUpdateUser\022$.a" +
+      "ccounts.v1alpha1.UpdateUserRequest\032%.acc" +
+      "ounts.v1alpha1.UpdateUserResponse\022Y\n\nDel" +
+      "eteUser\022$.accounts.v1alpha1.DeleteUserRe" +
+      "quest\032%.accounts.v1alpha1.DeleteUserResp" +
+      "onse\022q\n\022ListUserPagination\022,.accounts.v1" +
+      "alpha1.ListUserPaginationRequest\032-.accou" +
+      "nts.v1alpha1.ListUserPaginationResponse\022" +
+      "q\n\022SendInvitationUser\022,.accounts.v1alpha" +
+      "1.SendInvitationUserRequest\032-.accounts.v" +
+      "1alpha1.SendInvitationUserResponse\022n\n\021Ge" +
+      "tInvitationUser\022+.accounts.v1alpha1.GetI" +
+      "nvitationUserRequest\032,.accounts.v1alpha1" +
+      ".GetInvitationUserResponse\022t\n\023AgreeInvit" +
+      "ationUser\022-.accounts.v1alpha1.AgreeInvit" +
+      "ationUserRequest\032..accounts.v1alpha1.Agr" +
+      "eeInvitationUserResponse\022k\n\020CreatePermis" +
+      "sion\022*.accounts.v1alpha1.CreatePermissio" +
+      "nRequest\032+.accounts.v1alpha1.CreatePermi" +
+      "ssionResponse\022e\n\016ListPermission\022(.accoun" +
+      "ts.v1alpha1.ListPermissionRequest\032).acco" +
+      "unts.v1alpha1.ListPermissionResponse\022k\n\020" +
+      "GetOnePermission\022*.accounts.v1alpha1.Get" +
+      "OnePermissionRequest\032+.accounts.v1alpha1" +
+      ".GetOnePermissionResponse\022k\n\020UpdatePermi" +
+      "ssion\022*.accounts.v1alpha1.UpdatePermissi" +
+      "onRequest\032+.accounts.v1alpha1.UpdatePerm" +
+      "issionResponse\022k\n\020DeletePermission\022*.acc" +
+      "ounts.v1alpha1.DeletePermissionRequest\032+" +
+      ".accounts.v1alpha1.DeletePermissionRespo" +
+      "nse\022q\n\022CreateOrganization\022,.accounts.v1a" +
+      "lpha1.CreateOrganizationRequest\032-.accoun" +
+      "ts.v1alpha1.CreateOrganizationResponse\022k" +
+      "\n\020ListOrganization\022*.accounts.v1alpha1.L" +
+      "istOrganizationRequest\032+.accounts.v1alph" +
+      "a1.ListOrganizationResponse\022q\n\022GetOneOrg" +
+      "anization\022,.accounts.v1alpha1.GetOneOrga" +
+      "nizationRequest\032-.accounts.v1alpha1.GetO" +
+      "neOrganizationResponse\022q\n\022UpdateOrganiza" +
+      "tion\022,.accounts.v1alpha1.UpdateOrganizat" +
+      "ionRequest\032-.accounts.v1alpha1.UpdateOrg" +
+      "anizationResponse\022q\n\022DeleteOrganization\022" +
+      ",.accounts.v1alpha1.DeleteOrganizationRe" +
+      "quest\032-.accounts.v1alpha1.DeleteOrganiza" +
+      "tionResponse\022Y\n\nCreateRole\022$.accounts.v1" +
+      "alpha1.CreateRoleRequest\032%.accounts.v1al" +
+      "pha1.CreateRoleResponse\022V\n\tListRoles\022#.a" +
+      "ccounts.v1alpha1.ListRolesRequest\032$.acco" +
+      "unts.v1alpha1.ListRolesResponse\022Y\n\nUpdat" +
+      "eRole\022$.accounts.v1alpha1.UpdateRoleRequ" +
+      "est\032%.accounts.v1alpha1.UpdateRoleRespon" +
+      "se\022Y\n\nGetOneRole\022$.accounts.v1alpha1.Get" +
+      "OneRoleRequest\032%.accounts.v1alpha1.GetOn" +
+      "eRoleResponse\022Y\n\nDeleteRole\022$.accounts.v" +
+      "1alpha1.DeleteRoleRequest\032%.accounts.v1a" +
+      "lpha1.DeleteRoleResponse\022b\n\rCreateProjec" +
+      "t\022\'.accounts.v1alpha1.CreateProjectReque" +
+      "st\032(.accounts.v1alpha1.CreateProjectResp" +
+      "onse\022b\n\rGetOneProject\022\'.accounts.v1alpha" +
+      "1.GetOneProjectRequest\032(.accounts.v1alph" +
+      "a1.GetOneProjectResponse\022b\n\rUpdateProjec" +
+      "t\022\'.accounts.v1alpha1.UpdateProjectReque" +
+      "st\032(.accounts.v1alpha1.UpdateProjectResp" +
+      "onse\022b\n\rDeleteProject\022\'.accounts.v1alpha" +
+      "1.DeleteProjectRequest\032(.accounts.v1alph" +
+      "a1.DeleteProjectResponse\022\\\n\013ListProject\022" +
+      "%.accounts.v1alpha1.ListProjectRequest\032&" +
+      ".accounts.v1alpha1.ListProjectResponse\022e" +
+      "\n\016GetListUserDex\022(.accounts.v1alpha1.Get" +
+      "ListUserDexRequest\032).accounts.v1alpha1.G",
+      "etListUserDexResponse\022b\n\rGetOneUserDex\022\'" +
+      ".accounts.v1alpha1.GetOneUserDexRequest\032" +
+      "(.accounts.v1alpha1.GetOneUserDexRespons" +
+      "e\022V\n\tCheckUser\022#.accounts.v1alpha1.Check" +
+      "UserRequest\032$.accounts.v1alpha1.CheckUse" +
+      "rResponse\022z\n\025SendVerificationEmail\022/.acc" +
+      "ounts.v1alpha1.SendVerificationEmailRequ" +
+      "est\0320.accounts.v1alpha1.SendVerification" +
+      "EmailResponse\022\\\n\013VerifyEmail\022%.accounts." +
+      "v1alpha1.VerifyEmailRequest\032&.accounts.v" +
+      "1alpha1.VerifyEmailResponse\022b\n\rListCount" +
+      "ries\022\'.accounts.v1alpha1.ListCountriesRe" +
+      "quest\032(.accounts.v1alpha1.ListCountriesR" +
+      "esponse\022b\n\rGetOneCountry\022\'.accounts.v1al" +
+      "pha1.GetOneCountryRequest\032(.accounts.v1a" +
+      "lpha1.GetOneCountryResponse\022_\n\014CreateApi" +
+      "Key\022&.accounts.v1alpha1.CreateApiKeyRequ" +
+      "est\032\'.accounts.v1alpha1.CreateApiKeyResp" +
+      "onse\022_\n\014GetOneApiKey\022&.accounts.v1alpha1" +
+      ".GetOneApiKeyRequest\032\'.accounts.v1alpha1" +
+      ".GetOneApiKeyResponse\022Y\n\nListApiKey\022$.ac" +
+      "counts.v1alpha1.ListApiKeyRequest\032%.acco" +
+      "unts.v1alpha1.ListApiKeyResponse\022_\n\014Upda" +
+      "teApiKey\022&.accounts.v1alpha1.UpdateApiKe" +
+      "yRequest\032\'.accounts.v1alpha1.UpdateApiKe" +
+      "yResponse\022_\n\014DeleteApiKey\022&.accounts.v1a" +
+      "lpha1.DeleteApiKeyRequest\032\'.accounts.v1a" +
+      "lpha1.DeleteApiKeyResponseB4Z2github.com" +
+      "/cuemby/ccp-sdk/gen/go/accounts/v1alpha1" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -96271,7 +96609,7 @@ public final class Accounts {
     internal_static_accounts_v1alpha1_SendInvitationUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_SendInvitationUserResponse_descriptor,
-        new java.lang.String[] { "Organization", "InvitationCode", "Result", "Roles", "Permissions", });
+        new java.lang.String[] { "Organization", "Projects", "InvitationCode", "Result", "Roles", "Permissions", });
     internal_static_accounts_v1alpha1_GetInvitationUserRequest_descriptor =
       getDescriptor().getMessageTypes().get(41);
     internal_static_accounts_v1alpha1_GetInvitationUserRequest_fieldAccessorTable = new
