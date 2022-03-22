@@ -22,10 +22,8 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
      */
     protected $email = '';
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
-     */
-    private $projects;
-    /**
+     *repeated ProjectDetail projects = 3;
+     *
      * Generated from protobuf field <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
      */
     protected $user_id_admin = '';
@@ -50,8 +48,8 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *     @type string $email
-     *     @type \Accounts\V1alpha1\ProjectDetail[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type string $user_id_admin
+     *          repeated ProjectDetail projects = 3;
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $roles_ids
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $permissions_ids
      *     @type int $organization_id
@@ -107,28 +105,8 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getProjects()
-    {
-        return $this->projects;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.ProjectDetail projects = 3 [json_name = "projects"];</code>
-     * @param \Accounts\V1alpha1\ProjectDetail[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setProjects($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\ProjectDetail::class);
-        $this->projects = $arr;
-
-        return $this;
-    }
-
-    /**
+     *repeated ProjectDetail projects = 3;
+     *
      * Generated from protobuf field <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
      * @return string
      */
@@ -138,6 +116,8 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *repeated ProjectDetail projects = 3;
+     *
      * Generated from protobuf field <code>string user_id_admin = 4 [json_name = "userIdAdmin"];</code>
      * @param string $var
      * @return $this

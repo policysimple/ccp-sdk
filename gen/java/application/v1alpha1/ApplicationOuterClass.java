@@ -3991,6 +3991,21 @@ public final class ApplicationOuterClass {
      * @return The projectId.
      */
     int getProjectId();
+
+    /**
+     * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+     * @return Whether the scaling field is set.
+     */
+    boolean hasScaling();
+    /**
+     * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+     * @return The scaling.
+     */
+    application.v1alpha1.ApplicationOuterClass.Scaling getScaling();
+    /**
+     * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+     */
+    application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder getScalingOrBuilder();
   }
   /**
    * Protobuf type {@code application.v1alpha1.Application}
@@ -4087,6 +4102,19 @@ public final class ApplicationOuterClass {
             case 48: {
 
               projectId_ = input.readUInt32();
+              break;
+            }
+            case 58: {
+              application.v1alpha1.ApplicationOuterClass.Scaling.Builder subBuilder = null;
+              if (scaling_ != null) {
+                subBuilder = scaling_.toBuilder();
+              }
+              scaling_ = input.readMessage(application.v1alpha1.ApplicationOuterClass.Scaling.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scaling_);
+                scaling_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -4298,6 +4326,32 @@ public final class ApplicationOuterClass {
       return projectId_;
     }
 
+    public static final int SCALING_FIELD_NUMBER = 7;
+    private application.v1alpha1.ApplicationOuterClass.Scaling scaling_;
+    /**
+     * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+     * @return Whether the scaling field is set.
+     */
+    @java.lang.Override
+    public boolean hasScaling() {
+      return scaling_ != null;
+    }
+    /**
+     * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+     * @return The scaling.
+     */
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.Scaling getScaling() {
+      return scaling_ == null ? application.v1alpha1.ApplicationOuterClass.Scaling.getDefaultInstance() : scaling_;
+    }
+    /**
+     * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+     */
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder getScalingOrBuilder() {
+      return getScaling();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4330,6 +4384,9 @@ public final class ApplicationOuterClass {
       if (projectId_ != 0) {
         output.writeUInt32(6, projectId_);
       }
+      if (scaling_ != null) {
+        output.writeMessage(7, getScaling());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4359,6 +4416,10 @@ public final class ApplicationOuterClass {
       if (projectId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, projectId_);
+      }
+      if (scaling_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getScaling());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4393,6 +4454,11 @@ public final class ApplicationOuterClass {
       }
       if (getProjectId()
           != other.getProjectId()) return false;
+      if (hasScaling() != other.hasScaling()) return false;
+      if (hasScaling()) {
+        if (!getScaling()
+            .equals(other.getScaling())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4420,6 +4486,10 @@ public final class ApplicationOuterClass {
       }
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getProjectId();
+      if (hasScaling()) {
+        hash = (37 * hash) + SCALING_FIELD_NUMBER;
+        hash = (53 * hash) + getScaling().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4573,6 +4643,12 @@ public final class ApplicationOuterClass {
         }
         projectId_ = 0;
 
+        if (scalingBuilder_ == null) {
+          scaling_ = null;
+        } else {
+          scaling_ = null;
+          scalingBuilder_ = null;
+        }
         return this;
       }
 
@@ -4613,6 +4689,11 @@ public final class ApplicationOuterClass {
           result.configuration_ = configurationBuilder_.build();
         }
         result.projectId_ = projectId_;
+        if (scalingBuilder_ == null) {
+          result.scaling_ = scaling_;
+        } else {
+          result.scaling_ = scalingBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -4681,6 +4762,9 @@ public final class ApplicationOuterClass {
         }
         if (other.getProjectId() != 0) {
           setProjectId(other.getProjectId());
+        }
+        if (other.hasScaling()) {
+          mergeScaling(other.getScaling());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5207,6 +5291,125 @@ public final class ApplicationOuterClass {
         onChanged();
         return this;
       }
+
+      private application.v1alpha1.ApplicationOuterClass.Scaling scaling_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          application.v1alpha1.ApplicationOuterClass.Scaling, application.v1alpha1.ApplicationOuterClass.Scaling.Builder, application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder> scalingBuilder_;
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+       * @return Whether the scaling field is set.
+       */
+      public boolean hasScaling() {
+        return scalingBuilder_ != null || scaling_ != null;
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+       * @return The scaling.
+       */
+      public application.v1alpha1.ApplicationOuterClass.Scaling getScaling() {
+        if (scalingBuilder_ == null) {
+          return scaling_ == null ? application.v1alpha1.ApplicationOuterClass.Scaling.getDefaultInstance() : scaling_;
+        } else {
+          return scalingBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+       */
+      public Builder setScaling(application.v1alpha1.ApplicationOuterClass.Scaling value) {
+        if (scalingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          scaling_ = value;
+          onChanged();
+        } else {
+          scalingBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+       */
+      public Builder setScaling(
+          application.v1alpha1.ApplicationOuterClass.Scaling.Builder builderForValue) {
+        if (scalingBuilder_ == null) {
+          scaling_ = builderForValue.build();
+          onChanged();
+        } else {
+          scalingBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+       */
+      public Builder mergeScaling(application.v1alpha1.ApplicationOuterClass.Scaling value) {
+        if (scalingBuilder_ == null) {
+          if (scaling_ != null) {
+            scaling_ =
+              application.v1alpha1.ApplicationOuterClass.Scaling.newBuilder(scaling_).mergeFrom(value).buildPartial();
+          } else {
+            scaling_ = value;
+          }
+          onChanged();
+        } else {
+          scalingBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+       */
+      public Builder clearScaling() {
+        if (scalingBuilder_ == null) {
+          scaling_ = null;
+          onChanged();
+        } else {
+          scaling_ = null;
+          scalingBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+       */
+      public application.v1alpha1.ApplicationOuterClass.Scaling.Builder getScalingBuilder() {
+        
+        onChanged();
+        return getScalingFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+       */
+      public application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder getScalingOrBuilder() {
+        if (scalingBuilder_ != null) {
+          return scalingBuilder_.getMessageOrBuilder();
+        } else {
+          return scaling_ == null ?
+              application.v1alpha1.ApplicationOuterClass.Scaling.getDefaultInstance() : scaling_;
+        }
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          application.v1alpha1.ApplicationOuterClass.Scaling, application.v1alpha1.ApplicationOuterClass.Scaling.Builder, application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder> 
+          getScalingFieldBuilder() {
+        if (scalingBuilder_ == null) {
+          scalingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              application.v1alpha1.ApplicationOuterClass.Scaling, application.v1alpha1.ApplicationOuterClass.Scaling.Builder, application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder>(
+                  getScaling(),
+                  getParentForChildren(),
+                  isClean());
+          scaling_ = null;
+        }
+        return scalingBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5255,6 +5458,1174 @@ public final class ApplicationOuterClass {
 
     @java.lang.Override
     public application.v1alpha1.ApplicationOuterClass.Application getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ScalingOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:application.v1alpha1.Scaling)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string cpu_rule = 1 [json_name = "cpuRule"];</code>
+     * @return The cpuRule.
+     */
+    java.lang.String getCpuRule();
+    /**
+     * <code>string cpu_rule = 1 [json_name = "cpuRule"];</code>
+     * @return The bytes for cpuRule.
+     */
+    com.google.protobuf.ByteString
+        getCpuRuleBytes();
+
+    /**
+     * <code>string cool_down_period = 2 [json_name = "coolDownPeriod"];</code>
+     * @return The coolDownPeriod.
+     */
+    java.lang.String getCoolDownPeriod();
+    /**
+     * <code>string cool_down_period = 2 [json_name = "coolDownPeriod"];</code>
+     * @return The bytes for coolDownPeriod.
+     */
+    com.google.protobuf.ByteString
+        getCoolDownPeriodBytes();
+
+    /**
+     * <code>string polling_interval = 3 [json_name = "pollingInterval"];</code>
+     * @return The pollingInterval.
+     */
+    java.lang.String getPollingInterval();
+    /**
+     * <code>string polling_interval = 3 [json_name = "pollingInterval"];</code>
+     * @return The bytes for pollingInterval.
+     */
+    com.google.protobuf.ByteString
+        getPollingIntervalBytes();
+
+    /**
+     * <code>string min_replica = 4 [json_name = "minReplica"];</code>
+     * @return The minReplica.
+     */
+    java.lang.String getMinReplica();
+    /**
+     * <code>string min_replica = 4 [json_name = "minReplica"];</code>
+     * @return The bytes for minReplica.
+     */
+    com.google.protobuf.ByteString
+        getMinReplicaBytes();
+
+    /**
+     * <code>string max_replica = 5 [json_name = "maxReplica"];</code>
+     * @return The maxReplica.
+     */
+    java.lang.String getMaxReplica();
+    /**
+     * <code>string max_replica = 5 [json_name = "maxReplica"];</code>
+     * @return The bytes for maxReplica.
+     */
+    com.google.protobuf.ByteString
+        getMaxReplicaBytes();
+  }
+  /**
+   * Protobuf type {@code application.v1alpha1.Scaling}
+   */
+  public static final class Scaling extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:application.v1alpha1.Scaling)
+      ScalingOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Scaling.newBuilder() to construct.
+    private Scaling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Scaling() {
+      cpuRule_ = "";
+      coolDownPeriod_ = "";
+      pollingInterval_ = "";
+      minReplica_ = "";
+      maxReplica_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Scaling();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Scaling(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cpuRule_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              coolDownPeriod_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pollingInterval_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              minReplica_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              maxReplica_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_Scaling_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_Scaling_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              application.v1alpha1.ApplicationOuterClass.Scaling.class, application.v1alpha1.ApplicationOuterClass.Scaling.Builder.class);
+    }
+
+    public static final int CPU_RULE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object cpuRule_;
+    /**
+     * <code>string cpu_rule = 1 [json_name = "cpuRule"];</code>
+     * @return The cpuRule.
+     */
+    @java.lang.Override
+    public java.lang.String getCpuRule() {
+      java.lang.Object ref = cpuRule_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cpuRule_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string cpu_rule = 1 [json_name = "cpuRule"];</code>
+     * @return The bytes for cpuRule.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCpuRuleBytes() {
+      java.lang.Object ref = cpuRule_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cpuRule_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COOL_DOWN_PERIOD_FIELD_NUMBER = 2;
+    private volatile java.lang.Object coolDownPeriod_;
+    /**
+     * <code>string cool_down_period = 2 [json_name = "coolDownPeriod"];</code>
+     * @return The coolDownPeriod.
+     */
+    @java.lang.Override
+    public java.lang.String getCoolDownPeriod() {
+      java.lang.Object ref = coolDownPeriod_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        coolDownPeriod_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string cool_down_period = 2 [json_name = "coolDownPeriod"];</code>
+     * @return The bytes for coolDownPeriod.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCoolDownPeriodBytes() {
+      java.lang.Object ref = coolDownPeriod_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        coolDownPeriod_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int POLLING_INTERVAL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object pollingInterval_;
+    /**
+     * <code>string polling_interval = 3 [json_name = "pollingInterval"];</code>
+     * @return The pollingInterval.
+     */
+    @java.lang.Override
+    public java.lang.String getPollingInterval() {
+      java.lang.Object ref = pollingInterval_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pollingInterval_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string polling_interval = 3 [json_name = "pollingInterval"];</code>
+     * @return The bytes for pollingInterval.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPollingIntervalBytes() {
+      java.lang.Object ref = pollingInterval_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pollingInterval_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MIN_REPLICA_FIELD_NUMBER = 4;
+    private volatile java.lang.Object minReplica_;
+    /**
+     * <code>string min_replica = 4 [json_name = "minReplica"];</code>
+     * @return The minReplica.
+     */
+    @java.lang.Override
+    public java.lang.String getMinReplica() {
+      java.lang.Object ref = minReplica_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        minReplica_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string min_replica = 4 [json_name = "minReplica"];</code>
+     * @return The bytes for minReplica.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMinReplicaBytes() {
+      java.lang.Object ref = minReplica_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        minReplica_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MAX_REPLICA_FIELD_NUMBER = 5;
+    private volatile java.lang.Object maxReplica_;
+    /**
+     * <code>string max_replica = 5 [json_name = "maxReplica"];</code>
+     * @return The maxReplica.
+     */
+    @java.lang.Override
+    public java.lang.String getMaxReplica() {
+      java.lang.Object ref = maxReplica_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        maxReplica_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string max_replica = 5 [json_name = "maxReplica"];</code>
+     * @return The bytes for maxReplica.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMaxReplicaBytes() {
+      java.lang.Object ref = maxReplica_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        maxReplica_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getCpuRuleBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cpuRule_);
+      }
+      if (!getCoolDownPeriodBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, coolDownPeriod_);
+      }
+      if (!getPollingIntervalBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pollingInterval_);
+      }
+      if (!getMinReplicaBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, minReplica_);
+      }
+      if (!getMaxReplicaBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, maxReplica_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getCpuRuleBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cpuRule_);
+      }
+      if (!getCoolDownPeriodBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, coolDownPeriod_);
+      }
+      if (!getPollingIntervalBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pollingInterval_);
+      }
+      if (!getMinReplicaBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, minReplica_);
+      }
+      if (!getMaxReplicaBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, maxReplica_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof application.v1alpha1.ApplicationOuterClass.Scaling)) {
+        return super.equals(obj);
+      }
+      application.v1alpha1.ApplicationOuterClass.Scaling other = (application.v1alpha1.ApplicationOuterClass.Scaling) obj;
+
+      if (!getCpuRule()
+          .equals(other.getCpuRule())) return false;
+      if (!getCoolDownPeriod()
+          .equals(other.getCoolDownPeriod())) return false;
+      if (!getPollingInterval()
+          .equals(other.getPollingInterval())) return false;
+      if (!getMinReplica()
+          .equals(other.getMinReplica())) return false;
+      if (!getMaxReplica()
+          .equals(other.getMaxReplica())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CPU_RULE_FIELD_NUMBER;
+      hash = (53 * hash) + getCpuRule().hashCode();
+      hash = (37 * hash) + COOL_DOWN_PERIOD_FIELD_NUMBER;
+      hash = (53 * hash) + getCoolDownPeriod().hashCode();
+      hash = (37 * hash) + POLLING_INTERVAL_FIELD_NUMBER;
+      hash = (53 * hash) + getPollingInterval().hashCode();
+      hash = (37 * hash) + MIN_REPLICA_FIELD_NUMBER;
+      hash = (53 * hash) + getMinReplica().hashCode();
+      hash = (37 * hash) + MAX_REPLICA_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxReplica().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static application.v1alpha1.ApplicationOuterClass.Scaling parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Scaling parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Scaling parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Scaling parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Scaling parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Scaling parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Scaling parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Scaling parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Scaling parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Scaling parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Scaling parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Scaling parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(application.v1alpha1.ApplicationOuterClass.Scaling prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code application.v1alpha1.Scaling}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:application.v1alpha1.Scaling)
+        application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_Scaling_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_Scaling_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                application.v1alpha1.ApplicationOuterClass.Scaling.class, application.v1alpha1.ApplicationOuterClass.Scaling.Builder.class);
+      }
+
+      // Construct using application.v1alpha1.ApplicationOuterClass.Scaling.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        cpuRule_ = "";
+
+        coolDownPeriod_ = "";
+
+        pollingInterval_ = "";
+
+        minReplica_ = "";
+
+        maxReplica_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_Scaling_descriptor;
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.Scaling getDefaultInstanceForType() {
+        return application.v1alpha1.ApplicationOuterClass.Scaling.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.Scaling build() {
+        application.v1alpha1.ApplicationOuterClass.Scaling result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.Scaling buildPartial() {
+        application.v1alpha1.ApplicationOuterClass.Scaling result = new application.v1alpha1.ApplicationOuterClass.Scaling(this);
+        result.cpuRule_ = cpuRule_;
+        result.coolDownPeriod_ = coolDownPeriod_;
+        result.pollingInterval_ = pollingInterval_;
+        result.minReplica_ = minReplica_;
+        result.maxReplica_ = maxReplica_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof application.v1alpha1.ApplicationOuterClass.Scaling) {
+          return mergeFrom((application.v1alpha1.ApplicationOuterClass.Scaling)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(application.v1alpha1.ApplicationOuterClass.Scaling other) {
+        if (other == application.v1alpha1.ApplicationOuterClass.Scaling.getDefaultInstance()) return this;
+        if (!other.getCpuRule().isEmpty()) {
+          cpuRule_ = other.cpuRule_;
+          onChanged();
+        }
+        if (!other.getCoolDownPeriod().isEmpty()) {
+          coolDownPeriod_ = other.coolDownPeriod_;
+          onChanged();
+        }
+        if (!other.getPollingInterval().isEmpty()) {
+          pollingInterval_ = other.pollingInterval_;
+          onChanged();
+        }
+        if (!other.getMinReplica().isEmpty()) {
+          minReplica_ = other.minReplica_;
+          onChanged();
+        }
+        if (!other.getMaxReplica().isEmpty()) {
+          maxReplica_ = other.maxReplica_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        application.v1alpha1.ApplicationOuterClass.Scaling parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (application.v1alpha1.ApplicationOuterClass.Scaling) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object cpuRule_ = "";
+      /**
+       * <code>string cpu_rule = 1 [json_name = "cpuRule"];</code>
+       * @return The cpuRule.
+       */
+      public java.lang.String getCpuRule() {
+        java.lang.Object ref = cpuRule_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cpuRule_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string cpu_rule = 1 [json_name = "cpuRule"];</code>
+       * @return The bytes for cpuRule.
+       */
+      public com.google.protobuf.ByteString
+          getCpuRuleBytes() {
+        java.lang.Object ref = cpuRule_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cpuRule_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string cpu_rule = 1 [json_name = "cpuRule"];</code>
+       * @param value The cpuRule to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCpuRule(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cpuRule_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cpu_rule = 1 [json_name = "cpuRule"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCpuRule() {
+        
+        cpuRule_ = getDefaultInstance().getCpuRule();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cpu_rule = 1 [json_name = "cpuRule"];</code>
+       * @param value The bytes for cpuRule to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCpuRuleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cpuRule_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object coolDownPeriod_ = "";
+      /**
+       * <code>string cool_down_period = 2 [json_name = "coolDownPeriod"];</code>
+       * @return The coolDownPeriod.
+       */
+      public java.lang.String getCoolDownPeriod() {
+        java.lang.Object ref = coolDownPeriod_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          coolDownPeriod_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string cool_down_period = 2 [json_name = "coolDownPeriod"];</code>
+       * @return The bytes for coolDownPeriod.
+       */
+      public com.google.protobuf.ByteString
+          getCoolDownPeriodBytes() {
+        java.lang.Object ref = coolDownPeriod_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          coolDownPeriod_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string cool_down_period = 2 [json_name = "coolDownPeriod"];</code>
+       * @param value The coolDownPeriod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCoolDownPeriod(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        coolDownPeriod_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cool_down_period = 2 [json_name = "coolDownPeriod"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCoolDownPeriod() {
+        
+        coolDownPeriod_ = getDefaultInstance().getCoolDownPeriod();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cool_down_period = 2 [json_name = "coolDownPeriod"];</code>
+       * @param value The bytes for coolDownPeriod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCoolDownPeriodBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        coolDownPeriod_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object pollingInterval_ = "";
+      /**
+       * <code>string polling_interval = 3 [json_name = "pollingInterval"];</code>
+       * @return The pollingInterval.
+       */
+      public java.lang.String getPollingInterval() {
+        java.lang.Object ref = pollingInterval_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pollingInterval_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string polling_interval = 3 [json_name = "pollingInterval"];</code>
+       * @return The bytes for pollingInterval.
+       */
+      public com.google.protobuf.ByteString
+          getPollingIntervalBytes() {
+        java.lang.Object ref = pollingInterval_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pollingInterval_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string polling_interval = 3 [json_name = "pollingInterval"];</code>
+       * @param value The pollingInterval to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPollingInterval(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        pollingInterval_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string polling_interval = 3 [json_name = "pollingInterval"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPollingInterval() {
+        
+        pollingInterval_ = getDefaultInstance().getPollingInterval();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string polling_interval = 3 [json_name = "pollingInterval"];</code>
+       * @param value The bytes for pollingInterval to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPollingIntervalBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pollingInterval_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object minReplica_ = "";
+      /**
+       * <code>string min_replica = 4 [json_name = "minReplica"];</code>
+       * @return The minReplica.
+       */
+      public java.lang.String getMinReplica() {
+        java.lang.Object ref = minReplica_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          minReplica_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string min_replica = 4 [json_name = "minReplica"];</code>
+       * @return The bytes for minReplica.
+       */
+      public com.google.protobuf.ByteString
+          getMinReplicaBytes() {
+        java.lang.Object ref = minReplica_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          minReplica_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string min_replica = 4 [json_name = "minReplica"];</code>
+       * @param value The minReplica to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMinReplica(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        minReplica_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string min_replica = 4 [json_name = "minReplica"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMinReplica() {
+        
+        minReplica_ = getDefaultInstance().getMinReplica();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string min_replica = 4 [json_name = "minReplica"];</code>
+       * @param value The bytes for minReplica to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMinReplicaBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        minReplica_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object maxReplica_ = "";
+      /**
+       * <code>string max_replica = 5 [json_name = "maxReplica"];</code>
+       * @return The maxReplica.
+       */
+      public java.lang.String getMaxReplica() {
+        java.lang.Object ref = maxReplica_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          maxReplica_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string max_replica = 5 [json_name = "maxReplica"];</code>
+       * @return The bytes for maxReplica.
+       */
+      public com.google.protobuf.ByteString
+          getMaxReplicaBytes() {
+        java.lang.Object ref = maxReplica_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          maxReplica_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string max_replica = 5 [json_name = "maxReplica"];</code>
+       * @param value The maxReplica to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxReplica(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        maxReplica_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string max_replica = 5 [json_name = "maxReplica"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxReplica() {
+        
+        maxReplica_ = getDefaultInstance().getMaxReplica();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string max_replica = 5 [json_name = "maxReplica"];</code>
+       * @param value The bytes for maxReplica to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxReplicaBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        maxReplica_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:application.v1alpha1.Scaling)
+    }
+
+    // @@protoc_insertion_point(class_scope:application.v1alpha1.Scaling)
+    private static final application.v1alpha1.ApplicationOuterClass.Scaling DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new application.v1alpha1.ApplicationOuterClass.Scaling();
+    }
+
+    public static application.v1alpha1.ApplicationOuterClass.Scaling getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Scaling>
+        PARSER = new com.google.protobuf.AbstractParser<Scaling>() {
+      @java.lang.Override
+      public Scaling parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Scaling(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Scaling> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Scaling> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.Scaling getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5323,6 +6694,21 @@ public final class ApplicationOuterClass {
      * @return The projectId.
      */
     int getProjectId();
+
+    /**
+     * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+     * @return Whether the scaling field is set.
+     */
+    boolean hasScaling();
+    /**
+     * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+     * @return The scaling.
+     */
+    application.v1alpha1.ApplicationOuterClass.Scaling getScaling();
+    /**
+     * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+     */
+    application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder getScalingOrBuilder();
   }
   /**
    * Protobuf type {@code application.v1alpha1.CreateApplicationRequest}
@@ -5412,6 +6798,19 @@ public final class ApplicationOuterClass {
             case 40: {
 
               projectId_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              application.v1alpha1.ApplicationOuterClass.Scaling.Builder subBuilder = null;
+              if (scaling_ != null) {
+                subBuilder = scaling_.toBuilder();
+              }
+              scaling_ = input.readMessage(application.v1alpha1.ApplicationOuterClass.Scaling.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scaling_);
+                scaling_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -5585,6 +6984,32 @@ public final class ApplicationOuterClass {
       return projectId_;
     }
 
+    public static final int SCALING_FIELD_NUMBER = 6;
+    private application.v1alpha1.ApplicationOuterClass.Scaling scaling_;
+    /**
+     * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+     * @return Whether the scaling field is set.
+     */
+    @java.lang.Override
+    public boolean hasScaling() {
+      return scaling_ != null;
+    }
+    /**
+     * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+     * @return The scaling.
+     */
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.Scaling getScaling() {
+      return scaling_ == null ? application.v1alpha1.ApplicationOuterClass.Scaling.getDefaultInstance() : scaling_;
+    }
+    /**
+     * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+     */
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder getScalingOrBuilder() {
+      return getScaling();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5614,6 +7039,9 @@ public final class ApplicationOuterClass {
       if (projectId_ != 0) {
         output.writeUInt32(5, projectId_);
       }
+      if (scaling_ != null) {
+        output.writeMessage(6, getScaling());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5640,6 +7068,10 @@ public final class ApplicationOuterClass {
       if (projectId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, projectId_);
+      }
+      if (scaling_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getScaling());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5672,6 +7104,11 @@ public final class ApplicationOuterClass {
       }
       if (getProjectId()
           != other.getProjectId()) return false;
+      if (hasScaling() != other.hasScaling()) return false;
+      if (hasScaling()) {
+        if (!getScaling()
+            .equals(other.getScaling())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5697,6 +7134,10 @@ public final class ApplicationOuterClass {
       }
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getProjectId();
+      if (hasScaling()) {
+        hash = (37 * hash) + SCALING_FIELD_NUMBER;
+        hash = (53 * hash) + getScaling().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5848,6 +7289,12 @@ public final class ApplicationOuterClass {
         }
         projectId_ = 0;
 
+        if (scalingBuilder_ == null) {
+          scaling_ = null;
+        } else {
+          scaling_ = null;
+          scalingBuilder_ = null;
+        }
         return this;
       }
 
@@ -5887,6 +7334,11 @@ public final class ApplicationOuterClass {
           result.configuration_ = configurationBuilder_.build();
         }
         result.projectId_ = projectId_;
+        if (scalingBuilder_ == null) {
+          result.scaling_ = scaling_;
+        } else {
+          result.scaling_ = scalingBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -5951,6 +7403,9 @@ public final class ApplicationOuterClass {
         }
         if (other.getProjectId() != 0) {
           setProjectId(other.getProjectId());
+        }
+        if (other.hasScaling()) {
+          mergeScaling(other.getScaling());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6400,6 +7855,125 @@ public final class ApplicationOuterClass {
         projectId_ = 0;
         onChanged();
         return this;
+      }
+
+      private application.v1alpha1.ApplicationOuterClass.Scaling scaling_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          application.v1alpha1.ApplicationOuterClass.Scaling, application.v1alpha1.ApplicationOuterClass.Scaling.Builder, application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder> scalingBuilder_;
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+       * @return Whether the scaling field is set.
+       */
+      public boolean hasScaling() {
+        return scalingBuilder_ != null || scaling_ != null;
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+       * @return The scaling.
+       */
+      public application.v1alpha1.ApplicationOuterClass.Scaling getScaling() {
+        if (scalingBuilder_ == null) {
+          return scaling_ == null ? application.v1alpha1.ApplicationOuterClass.Scaling.getDefaultInstance() : scaling_;
+        } else {
+          return scalingBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+       */
+      public Builder setScaling(application.v1alpha1.ApplicationOuterClass.Scaling value) {
+        if (scalingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          scaling_ = value;
+          onChanged();
+        } else {
+          scalingBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+       */
+      public Builder setScaling(
+          application.v1alpha1.ApplicationOuterClass.Scaling.Builder builderForValue) {
+        if (scalingBuilder_ == null) {
+          scaling_ = builderForValue.build();
+          onChanged();
+        } else {
+          scalingBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+       */
+      public Builder mergeScaling(application.v1alpha1.ApplicationOuterClass.Scaling value) {
+        if (scalingBuilder_ == null) {
+          if (scaling_ != null) {
+            scaling_ =
+              application.v1alpha1.ApplicationOuterClass.Scaling.newBuilder(scaling_).mergeFrom(value).buildPartial();
+          } else {
+            scaling_ = value;
+          }
+          onChanged();
+        } else {
+          scalingBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+       */
+      public Builder clearScaling() {
+        if (scalingBuilder_ == null) {
+          scaling_ = null;
+          onChanged();
+        } else {
+          scaling_ = null;
+          scalingBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+       */
+      public application.v1alpha1.ApplicationOuterClass.Scaling.Builder getScalingBuilder() {
+        
+        onChanged();
+        return getScalingFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+       */
+      public application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder getScalingOrBuilder() {
+        if (scalingBuilder_ != null) {
+          return scalingBuilder_.getMessageOrBuilder();
+        } else {
+          return scaling_ == null ?
+              application.v1alpha1.ApplicationOuterClass.Scaling.getDefaultInstance() : scaling_;
+        }
+      }
+      /**
+       * <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          application.v1alpha1.ApplicationOuterClass.Scaling, application.v1alpha1.ApplicationOuterClass.Scaling.Builder, application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder> 
+          getScalingFieldBuilder() {
+        if (scalingBuilder_ == null) {
+          scalingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              application.v1alpha1.ApplicationOuterClass.Scaling, application.v1alpha1.ApplicationOuterClass.Scaling.Builder, application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder>(
+                  getScaling(),
+                  getParentForChildren(),
+                  isClean());
+          scaling_ = null;
+        }
+        return scalingBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -12443,6 +14017,11 @@ public final class ApplicationOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_application_v1alpha1_Application_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_application_v1alpha1_Scaling_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_application_v1alpha1_Scaling_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_application_v1alpha1_CreateApplicationRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -12513,53 +14092,61 @@ public final class ApplicationOuterClass {
       "ted\"\215\001\n\rConfiguration\022-\n\004envs\030\001 \003(\0132\031.ap" +
       "plication.v1alpha1.EnvR\004envs\0229\n\010commands" +
       "\030\002 \003(\0132\035.application.v1alpha1.CommandR\010c" +
-      "ommands\022\022\n\004port\030\003 \001(\005R\004port\"\377\001\n\013Applicat" +
+      "ommands\022\022\n\004port\030\003 \001(\005R\004port\"\270\002\n\013Applicat" +
       "ion\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022" +
       " \n\013integration\030\003 \001(\tR\013integration\022@\n\nrep" +
       "ository\030\004 \001(\0132 .application.v1alpha1.Rep" +
       "ositoryR\nrepository\022I\n\rconfiguration\030\005 \001" +
       "(\0132#.application.v1alpha1.ConfigurationR" +
       "\rconfiguration\022\035\n\nproject_id\030\006 \001(\rR\tproj" +
-      "ectId\"\374\001\n\030CreateApplicationRequest\022\022\n\004na" +
-      "me\030\001 \001(\tR\004name\022 \n\013integration\030\002 \001(\tR\013int" +
-      "egration\022@\n\nrepository\030\003 \001(\0132 .applicati" +
-      "on.v1alpha1.RepositoryR\nrepository\022I\n\rco" +
-      "nfiguration\030\004 \001(\0132#.application.v1alpha1" +
-      ".ConfigurationR\rconfiguration\022\035\n\nproject" +
-      "_id\030\005 \001(\rR\tprojectId\"C\n\031CreateApplicatio" +
-      "nResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001" +
-      "(\tR\005error\"7\n\026ListApplicationRequest\022\035\n\np" +
-      "roject_id\030\001 \001(\rR\tprojectId\"`\n\027ListApplic" +
-      "ationResponse\022E\n\014applications\030\001 \003(\0132!.ap" +
-      "plication.v1alpha1.ApplicationR\014applicat" +
-      "ions\"\'\n\025GetApplicationRequest\022\016\n\002id\030\001 \001(" +
-      "\tR\002id\"]\n\026GetApplicationResponse\022C\n\013appli" +
-      "cation\030\001 \001(\0132!.application.v1alpha1.Appl" +
-      "icationR\013application\"*\n\030DeleteApplicatio" +
-      "nRequest\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteApplic" +
-      "ationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error" +
-      "\030\002 \001(\tR\005error\"|\n\030UpdateApplicationReques" +
-      "t\022\016\n\002id\030\001 \001(\tR\002id\022P\n\013application\030\002 \001(\0132." +
-      ".application.v1alpha1.CreateApplicationR" +
-      "equestR\013application\"C\n\031UpdateApplication" +
-      "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(" +
-      "\tR\005error2\323\004\n\022ApplicationService\022t\n\021Creat" +
-      "eApplication\022..application.v1alpha1.Crea" +
-      "teApplicationRequest\032/.application.v1alp" +
-      "ha1.CreateApplicationResponse\022n\n\017ListApp" +
-      "lication\022,.application.v1alpha1.ListAppl" +
-      "icationRequest\032-.application.v1alpha1.Li" +
-      "stApplicationResponse\022k\n\016GetApplication\022" +
-      "+.application.v1alpha1.GetApplicationReq" +
-      "uest\032,.application.v1alpha1.GetApplicati" +
-      "onResponse\022t\n\021DeleteApplication\022..applic" +
-      "ation.v1alpha1.DeleteApplicationRequest\032" +
-      "/.application.v1alpha1.DeleteApplication" +
-      "Response\022t\n\021UpdateApplication\022..applicat" +
-      "ion.v1alpha1.UpdateApplicationRequest\032/." +
-      "application.v1alpha1.UpdateApplicationRe" +
-      "sponseB7Z5github.com/cuemby/ccp-sdk/gen/" +
-      "go/application/v1alpha1b\006proto3"
+      "ectId\0227\n\007scaling\030\007 \001(\0132\035.application.v1a" +
+      "lpha1.ScalingR\007scaling\"\273\001\n\007Scaling\022\031\n\010cp" +
+      "u_rule\030\001 \001(\tR\007cpuRule\022(\n\020cool_down_perio" +
+      "d\030\002 \001(\tR\016coolDownPeriod\022)\n\020polling_inter" +
+      "val\030\003 \001(\tR\017pollingInterval\022\037\n\013min_replic" +
+      "a\030\004 \001(\tR\nminReplica\022\037\n\013max_replica\030\005 \001(\t" +
+      "R\nmaxReplica\"\265\002\n\030CreateApplicationReques" +
+      "t\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013integration\030\002 \001" +
+      "(\tR\013integration\022@\n\nrepository\030\003 \001(\0132 .ap" +
+      "plication.v1alpha1.RepositoryR\nrepositor" +
+      "y\022I\n\rconfiguration\030\004 \001(\0132#.application.v" +
+      "1alpha1.ConfigurationR\rconfiguration\022\035\n\n" +
+      "project_id\030\005 \001(\rR\tprojectId\0227\n\007scaling\030\006" +
+      " \001(\0132\035.application.v1alpha1.ScalingR\007sca" +
+      "ling\"C\n\031CreateApplicationResponse\022\020\n\003msg" +
+      "\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"7\n\026Lis" +
+      "tApplicationRequest\022\035\n\nproject_id\030\001 \001(\rR" +
+      "\tprojectId\"`\n\027ListApplicationResponse\022E\n" +
+      "\014applications\030\001 \003(\0132!.application.v1alph" +
+      "a1.ApplicationR\014applications\"\'\n\025GetAppli" +
+      "cationRequest\022\016\n\002id\030\001 \001(\tR\002id\"]\n\026GetAppl" +
+      "icationResponse\022C\n\013application\030\001 \001(\0132!.a" +
+      "pplication.v1alpha1.ApplicationR\013applica" +
+      "tion\"*\n\030DeleteApplicationRequest\022\016\n\002id\030\001" +
+      " \001(\tR\002id\"C\n\031DeleteApplicationResponse\022\020\n" +
+      "\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"|\n" +
+      "\030UpdateApplicationRequest\022\016\n\002id\030\001 \001(\tR\002i" +
+      "d\022P\n\013application\030\002 \001(\0132..application.v1a" +
+      "lpha1.CreateApplicationRequestR\013applicat" +
+      "ion\"C\n\031UpdateApplicationResponse\022\020\n\003msg\030" +
+      "\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error2\323\004\n\022App" +
+      "licationService\022t\n\021CreateApplication\022..a" +
+      "pplication.v1alpha1.CreateApplicationReq" +
+      "uest\032/.application.v1alpha1.CreateApplic" +
+      "ationResponse\022n\n\017ListApplication\022,.appli" +
+      "cation.v1alpha1.ListApplicationRequest\032-" +
+      ".application.v1alpha1.ListApplicationRes" +
+      "ponse\022k\n\016GetApplication\022+.application.v1" +
+      "alpha1.GetApplicationRequest\032,.applicati" +
+      "on.v1alpha1.GetApplicationResponse\022t\n\021De" +
+      "leteApplication\022..application.v1alpha1.D" +
+      "eleteApplicationRequest\032/.application.v1" +
+      "alpha1.DeleteApplicationResponse\022t\n\021Upda" +
+      "teApplication\022..application.v1alpha1.Upd" +
+      "ateApplicationRequest\032/.application.v1al" +
+      "pha1.UpdateApplicationResponseB7Z5github" +
+      ".com/cuemby/ccp-sdk/gen/go/application/v" +
+      "1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12594,63 +14181,69 @@ public final class ApplicationOuterClass {
     internal_static_application_v1alpha1_Application_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Application_descriptor,
-        new java.lang.String[] { "Id", "Name", "Integration", "Repository", "Configuration", "ProjectId", });
-    internal_static_application_v1alpha1_CreateApplicationRequest_descriptor =
+        new java.lang.String[] { "Id", "Name", "Integration", "Repository", "Configuration", "ProjectId", "Scaling", });
+    internal_static_application_v1alpha1_Scaling_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_application_v1alpha1_Scaling_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_application_v1alpha1_Scaling_descriptor,
+        new java.lang.String[] { "CpuRule", "CoolDownPeriod", "PollingInterval", "MinReplica", "MaxReplica", });
+    internal_static_application_v1alpha1_CreateApplicationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_application_v1alpha1_CreateApplicationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_CreateApplicationRequest_descriptor,
-        new java.lang.String[] { "Name", "Integration", "Repository", "Configuration", "ProjectId", });
+        new java.lang.String[] { "Name", "Integration", "Repository", "Configuration", "ProjectId", "Scaling", });
     internal_static_application_v1alpha1_CreateApplicationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_application_v1alpha1_CreateApplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_CreateApplicationResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_application_v1alpha1_ListApplicationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_application_v1alpha1_ListApplicationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_ListApplicationRequest_descriptor,
         new java.lang.String[] { "ProjectId", });
     internal_static_application_v1alpha1_ListApplicationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_application_v1alpha1_ListApplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_ListApplicationResponse_descriptor,
         new java.lang.String[] { "Applications", });
     internal_static_application_v1alpha1_GetApplicationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_application_v1alpha1_GetApplicationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_GetApplicationRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_application_v1alpha1_GetApplicationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_application_v1alpha1_GetApplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_GetApplicationResponse_descriptor,
         new java.lang.String[] { "Application", });
     internal_static_application_v1alpha1_DeleteApplicationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_application_v1alpha1_DeleteApplicationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_DeleteApplicationRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_application_v1alpha1_DeleteApplicationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_application_v1alpha1_DeleteApplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_DeleteApplicationResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_application_v1alpha1_UpdateApplicationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_application_v1alpha1_UpdateApplicationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_UpdateApplicationRequest_descriptor,
         new java.lang.String[] { "Id", "Application", });
     internal_static_application_v1alpha1_UpdateApplicationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_application_v1alpha1_UpdateApplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_UpdateApplicationResponse_descriptor,

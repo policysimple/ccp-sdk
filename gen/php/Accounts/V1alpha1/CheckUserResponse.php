@@ -25,6 +25,10 @@ class CheckUserResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_admin = 3 [json_name = "isAdmin"];</code>
      */
     protected $is_admin = false;
+    /**
+     * Generated from protobuf field <code>string msg = 4 [json_name = "msg"];</code>
+     */
+    protected $msg = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class CheckUserResponse extends \Google\Protobuf\Internal\Message
      *     @type bool $is_exists
      *     @type string $error
      *     @type bool $is_admin
+     *     @type string $msg
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class CheckUserResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_admin = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string msg = 4 [json_name = "msg"];</code>
+     * @return string
+     */
+    public function getMsg()
+    {
+        return $this->msg;
+    }
+
+    /**
+     * Generated from protobuf field <code>string msg = 4 [json_name = "msg"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMsg($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->msg = $var;
 
         return $this;
     }
