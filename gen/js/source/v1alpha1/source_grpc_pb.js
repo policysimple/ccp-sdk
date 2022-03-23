@@ -246,6 +246,28 @@ function deserialize_source_v1alpha1_ListProvidersResponse(buffer_arg) {
   return source_v1alpha1_source_pb.ListProvidersResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_source_v1alpha1_ListRepositoriesProviderRequest(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.ListRepositoriesProviderRequest)) {
+    throw new Error('Expected argument of type source.v1alpha1.ListRepositoriesProviderRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_ListRepositoriesProviderRequest(buffer_arg) {
+  return source_v1alpha1_source_pb.ListRepositoriesProviderRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_source_v1alpha1_ListRepositoriesProviderResponse(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.ListRepositoriesProviderResponse)) {
+    throw new Error('Expected argument of type source.v1alpha1.ListRepositoriesProviderResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_ListRepositoriesProviderResponse(buffer_arg) {
+  return source_v1alpha1_source_pb.ListRepositoriesProviderResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_source_v1alpha1_ListRepositoriesRequest(arg) {
   if (!(arg instanceof source_v1alpha1_source_pb.ListRepositoriesRequest)) {
     throw new Error('Expected argument of type source.v1alpha1.ListRepositoriesRequest');
@@ -447,6 +469,18 @@ var SourceServiceService = exports.SourceServiceService = {
     requestDeserialize: deserialize_source_v1alpha1_DeleteIntegrationRequest,
     responseSerialize: serialize_source_v1alpha1_DeleteIntegrationResponse,
     responseDeserialize: deserialize_source_v1alpha1_DeleteIntegrationResponse,
+  },
+  // List Repositories providers by integrations
+  listRepositoriesProvider: {
+    path: '/source.v1alpha1.SourceService/ListRepositoriesProvider',
+    requestStream: false,
+    responseStream: false,
+    requestType: source_v1alpha1_source_pb.ListRepositoriesProviderRequest,
+    responseType: source_v1alpha1_source_pb.ListRepositoriesProviderResponse,
+    requestSerialize: serialize_source_v1alpha1_ListRepositoriesProviderRequest,
+    requestDeserialize: deserialize_source_v1alpha1_ListRepositoriesProviderRequest,
+    responseSerialize: serialize_source_v1alpha1_ListRepositoriesProviderResponse,
+    responseDeserialize: deserialize_source_v1alpha1_ListRepositoriesProviderResponse,
   },
   // REPOSITORIES
   createRepository: {

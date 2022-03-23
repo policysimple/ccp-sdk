@@ -149,6 +149,20 @@ class SourceServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * List Repositories providers by integrations
+     * @param \Source\V1alpha1\ListRepositoriesProviderRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListRepositoriesProvider(\Source\V1alpha1\ListRepositoriesProviderRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/source.v1alpha1.SourceService/ListRepositoriesProvider',
+        $argument,
+        ['\Source\V1alpha1\ListRepositoriesProviderResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * REPOSITORIES
      * @param \Source\V1alpha1\CreateRepositoryRequest $argument input argument
      * @param array $metadata metadata

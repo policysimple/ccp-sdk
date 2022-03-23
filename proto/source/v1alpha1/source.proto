@@ -21,12 +21,27 @@ service SourceService {
     rpc UpdateIntegration(UpdateIntegrationRequest) returns (UpdateIntegrationResponse);
     rpc DeleteIntegration(DeleteIntegrationRequest) returns (DeleteIntegrationResponse);
 
+    //List Repositories providers by integrations
+    rpc ListRepositoriesProvider(ListRepositoriesProviderRequest) returns (ListRepositoriesProviderResponse);
+
     //REPOSITORIES
     rpc CreateRepository(CreateRepositoryRequest) returns (CreateRepositoryResponse);
     rpc ListRepositories(ListRepositoriesRequest) returns (ListRepositoriesResponse);
     rpc GetRepository(GetRepositoryRequest) returns (GetRepositoryResponse);
     rpc DeleteRepository(DeleteRepositoryRequest) returns (DeleteRepositoryResponse);
     rpc UpdateRepository(UpdateRepositoryRequest) returns (UpdateRepositoryResponse);
+}
+
+/*
+  CreateProviderRequest is the request for the CreateProvider method.
+*/
+
+message ListRepositoriesProviderRequest {
+    string integration_id = 1;
+}
+
+message ListRepositoriesProviderResponse {
+    repeated Repository repositories = 1;
 }
 
 /*
@@ -183,7 +198,7 @@ message GetIntegrationRequest {
 
 message GetIntegrationResponse {
     Integration integration = 1;
-    repeated Repository repositories = 2;
+    //repeated Repository repositories = 2;
 }
 
 message UpdateIntegrationRequest {

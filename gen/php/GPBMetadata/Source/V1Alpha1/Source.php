@@ -16,8 +16,12 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-Ð3
-source/v1alpha1/source.protosource.v1alpha1"È
+¾5
+source/v1alpha1/source.protosource.v1alpha1"H
+ListRepositoriesProviderRequest%
+integration_id (	RintegrationId"c
+ ListRepositoriesProviderResponse?
+repositories (2.source.v1alpha1.RepositoryRrepositories"È
 DetailRepository
 id (	Rid
 name (	Rname
@@ -134,10 +138,9 @@ Repository
 ListIntegrationsResponse@
 integrations (2.source.v1alpha1.IntegrationRintegrations"\'
 GetIntegrationRequest
-id (	Rid"™
+id (	Rid"X
 GetIntegrationResponse>
-integration (2.source.v1alpha1.IntegrationRintegration?
-repositories (2.source.v1alpha1.RepositoryRrepositories"y
+integration (2.source.v1alpha1.IntegrationRintegration"y
 UpdateIntegrationRequest
 id (	RidM
 integrations (2).source.v1alpha1.CreateIntegrationRequestRintegrations"C
@@ -194,7 +197,7 @@ Repository
 error (	Rerror"
 ListProvidersRequest"P
 ListProvidersResponse7
-	providers (2.source.v1alpha1.ProviderR	providers2†
+	providers (2.source.v1alpha1.ProviderR	providers2‡
 SourceServicea
 CreateProvider&.source.v1alpha1.CreateProviderRequest\'.source.v1alpha1.CreateProviderResponse^
 ListProviders%.source.v1alpha1.ListProvidersRequest&.source.v1alpha1.ListProvidersResponseX
@@ -205,7 +208,8 @@ Repository
 ListIntegrations(.source.v1alpha1.ListIntegrationsRequest).source.v1alpha1.ListIntegrationsResponsea
 GetIntegration&.source.v1alpha1.GetIntegrationRequest\'.source.v1alpha1.GetIntegrationResponsej
 UpdateIntegration).source.v1alpha1.UpdateIntegrationRequest*.source.v1alpha1.UpdateIntegrationResponsej
-DeleteIntegration).source.v1alpha1.DeleteIntegrationRequest*.source.v1alpha1.DeleteIntegrationResponseg
+DeleteIntegration).source.v1alpha1.DeleteIntegrationRequest*.source.v1alpha1.DeleteIntegrationResponse
+ListRepositoriesProvider0.source.v1alpha1.ListRepositoriesProviderRequest1.source.v1alpha1.ListRepositoriesProviderResponseg
 CreateRepository(.source.v1alpha1.CreateRepositoryRequest).source.v1alpha1.CreateRepositoryResponseg
 ListRepositories(.source.v1alpha1.ListRepositoriesRequest).source.v1alpha1.ListRepositoriesResponse^
 GetRepository%.source.v1alpha1.GetRepositoryRequest&.source.v1alpha1.GetRepositoryResponseg
