@@ -65,6 +65,13 @@ class RuntimeAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse>> PrepareAsyncDeleteRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse>>(PrepareAsyncDeleteRuntimeRaw(context, request, cq));
     }
+    virtual ::grpc::Status ListRuntimes(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest& request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>> AsyncListRuntimes(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>>(AsyncListRuntimesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>> PrepareAsyncListRuntimes(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>>(PrepareAsyncListRuntimesRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -72,6 +79,7 @@ class RuntimeAPIService final {
       virtual void CreateRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::CreateRuntimeRequest* request, ::pipelines::runtime::v1alpha1::CreateRuntimeResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateRuntimeRequest* request, ::pipelines::runtime::v1alpha1::UpdateRuntimeResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest* request, ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ListRuntimes(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest* request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -83,6 +91,8 @@ class RuntimeAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::UpdateRuntimeResponse>* PrepareAsyncUpdateRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateRuntimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse>* AsyncDeleteRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse>* PrepareAsyncDeleteRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>* AsyncListRuntimesRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>* PrepareAsyncListRuntimesRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -115,6 +125,13 @@ class RuntimeAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse>> PrepareAsyncDeleteRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse>>(PrepareAsyncDeleteRuntimeRaw(context, request, cq));
     }
+    ::grpc::Status ListRuntimes(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest& request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>> AsyncListRuntimes(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>>(AsyncListRuntimesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>> PrepareAsyncListRuntimes(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>>(PrepareAsyncListRuntimesRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -122,6 +139,7 @@ class RuntimeAPIService final {
       void CreateRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::CreateRuntimeRequest* request, ::pipelines::runtime::v1alpha1::CreateRuntimeResponse* response, std::function<void(::grpc::Status)>) override;
       void UpdateRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateRuntimeRequest* request, ::pipelines::runtime::v1alpha1::UpdateRuntimeResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest* request, ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse* response, std::function<void(::grpc::Status)>) override;
+      void ListRuntimes(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest* request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -141,10 +159,13 @@ class RuntimeAPIService final {
     ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::UpdateRuntimeResponse>* PrepareAsyncUpdateRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateRuntimeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse>* AsyncDeleteRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse>* PrepareAsyncDeleteRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>* AsyncListRuntimesRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>* PrepareAsyncListRuntimesRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetRuntime_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateRuntime_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateRuntime_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteRuntime_;
+    const ::grpc::internal::RpcMethod rpcmethod_ListRuntimes_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -156,6 +177,7 @@ class RuntimeAPIService final {
     virtual ::grpc::Status CreateRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::CreateRuntimeRequest* request, ::pipelines::runtime::v1alpha1::CreateRuntimeResponse* response);
     virtual ::grpc::Status UpdateRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::UpdateRuntimeRequest* request, ::pipelines::runtime::v1alpha1::UpdateRuntimeResponse* response);
     virtual ::grpc::Status DeleteRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest* request, ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse* response);
+    virtual ::grpc::Status ListRuntimes(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest* request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_GetRuntime : public BaseClass {
@@ -237,7 +259,27 @@ class RuntimeAPIService final {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_GetRuntime<WithAsyncMethod_CreateRuntime<WithAsyncMethod_UpdateRuntime<WithAsyncMethod_DeleteRuntime<Service > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_ListRuntimes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_ListRuntimes() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_ListRuntimes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListRuntimes(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest* request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListRuntimes(::grpc::ServerContext* context, ::pipelines::runtime::v1alpha1::ListRuntimesRequest* request, ::grpc::ServerAsyncResponseWriter< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_GetRuntime<WithAsyncMethod_CreateRuntime<WithAsyncMethod_UpdateRuntime<WithAsyncMethod_DeleteRuntime<WithAsyncMethod_ListRuntimes<Service > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_GetRuntime : public BaseClass {
    private:
@@ -302,6 +344,23 @@ class RuntimeAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status DeleteRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest* request, ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ListRuntimes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_ListRuntimes() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_ListRuntimes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListRuntimes(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest* request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -387,6 +446,26 @@ class RuntimeAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_ListRuntimes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_ListRuntimes() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_ListRuntimes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListRuntimes(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest* request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListRuntimes(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_GetRuntime : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -466,9 +545,29 @@ class RuntimeAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedDeleteRuntime(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest,::pipelines::runtime::v1alpha1::DeleteRuntimeResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_DeleteRuntime<Service > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ListRuntimes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_ListRuntimes() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler< ::pipelines::runtime::v1alpha1::ListRuntimesRequest, ::pipelines::runtime::v1alpha1::ListRuntimesResponse>(std::bind(&WithStreamedUnaryMethod_ListRuntimes<BaseClass>::StreamedListRuntimes, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_ListRuntimes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ListRuntimes(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest* request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedListRuntimes(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pipelines::runtime::v1alpha1::ListRuntimesRequest,::pipelines::runtime::v1alpha1::ListRuntimesResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_DeleteRuntime<WithStreamedUnaryMethod_ListRuntimes<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_DeleteRuntime<Service > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_DeleteRuntime<WithStreamedUnaryMethod_ListRuntimes<Service > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

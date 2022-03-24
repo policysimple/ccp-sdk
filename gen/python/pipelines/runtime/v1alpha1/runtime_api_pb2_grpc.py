@@ -34,6 +34,11 @@ class RuntimeAPIServiceStub(object):
         request_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.DeleteRuntimeRequest.SerializeToString,
         response_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.DeleteRuntimeResponse.FromString,
         )
+    self.ListRuntimes = channel.unary_unary(
+        '/pipelines.runtime.v1alpha1.RuntimeAPIService/ListRuntimes',
+        request_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.ListRuntimesRequest.SerializeToString,
+        response_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.ListRuntimesResponse.FromString,
+        )
 
 
 class RuntimeAPIServiceServicer(object):
@@ -68,6 +73,13 @@ class RuntimeAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListRuntimes(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_RuntimeAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -90,6 +102,11 @@ def add_RuntimeAPIServiceServicer_to_server(servicer, server):
           servicer.DeleteRuntime,
           request_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.DeleteRuntimeRequest.FromString,
           response_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.DeleteRuntimeResponse.SerializeToString,
+      ),
+      'ListRuntimes': grpc.unary_unary_rpc_method_handler(
+          servicer.ListRuntimes,
+          request_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.ListRuntimesRequest.FromString,
+          response_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.ListRuntimesResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
