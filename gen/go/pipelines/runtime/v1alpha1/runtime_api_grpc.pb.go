@@ -26,6 +26,7 @@ type RuntimeAPIServiceClient interface {
 	CreateRuntime(ctx context.Context, in *CreateRuntimeRequest, opts ...grpc.CallOption) (*CreateRuntimeResponse, error)
 	UpdateRuntime(ctx context.Context, in *UpdateRuntimeRequest, opts ...grpc.CallOption) (*UpdateRuntimeResponse, error)
 	DeleteRuntime(ctx context.Context, in *DeleteRuntimeRequest, opts ...grpc.CallOption) (*DeleteRuntimeResponse, error)
+	ListRuntimes(ctx context.Context, in *ListRuntimesRequest, opts ...grpc.CallOption) (*ListRuntimesResponse, error)
 }
 
 type runtimeAPIServiceClient struct {
@@ -72,6 +73,15 @@ func (c *runtimeAPIServiceClient) DeleteRuntime(ctx context.Context, in *DeleteR
 	return out, nil
 }
 
+func (c *runtimeAPIServiceClient) ListRuntimes(ctx context.Context, in *ListRuntimesRequest, opts ...grpc.CallOption) (*ListRuntimesResponse, error) {
+	out := new(ListRuntimesResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.runtime.v1alpha1.RuntimeAPIService/ListRuntimes", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // RuntimeAPIServiceServer is the server API for RuntimeAPIService service.
 // All implementations should embed UnimplementedRuntimeAPIServiceServer
 // for forward compatibility
@@ -80,6 +90,7 @@ type RuntimeAPIServiceServer interface {
 	CreateRuntime(context.Context, *CreateRuntimeRequest) (*CreateRuntimeResponse, error)
 	UpdateRuntime(context.Context, *UpdateRuntimeRequest) (*UpdateRuntimeResponse, error)
 	DeleteRuntime(context.Context, *DeleteRuntimeRequest) (*DeleteRuntimeResponse, error)
+	ListRuntimes(context.Context, *ListRuntimesRequest) (*ListRuntimesResponse, error)
 }
 
 // UnimplementedRuntimeAPIServiceServer should be embedded to have forward compatible implementations.
@@ -97,6 +108,9 @@ func (UnimplementedRuntimeAPIServiceServer) UpdateRuntime(context.Context, *Upda
 }
 func (UnimplementedRuntimeAPIServiceServer) DeleteRuntime(context.Context, *DeleteRuntimeRequest) (*DeleteRuntimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteRuntime not implemented")
+}
+func (UnimplementedRuntimeAPIServiceServer) ListRuntimes(context.Context, *ListRuntimesRequest) (*ListRuntimesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListRuntimes not implemented")
 }
 
 // UnsafeRuntimeAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -182,6 +196,24 @@ func _RuntimeAPIService_DeleteRuntime_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _RuntimeAPIService_ListRuntimes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRuntimesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RuntimeAPIServiceServer).ListRuntimes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.runtime.v1alpha1.RuntimeAPIService/ListRuntimes",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RuntimeAPIServiceServer).ListRuntimes(ctx, req.(*ListRuntimesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // RuntimeAPIService_ServiceDesc is the grpc.ServiceDesc for RuntimeAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -204,6 +236,10 @@ var RuntimeAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteRuntime",
 			Handler:    _RuntimeAPIService_DeleteRuntime_Handler,
+		},
+		{
+			MethodName: "ListRuntimes",
+			Handler:    _RuntimeAPIService_ListRuntimes_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

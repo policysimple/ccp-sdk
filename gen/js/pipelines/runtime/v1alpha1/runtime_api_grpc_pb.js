@@ -71,6 +71,28 @@ function deserialize_pipelines_runtime_v1alpha1_GetRuntimeResponse(buffer_arg) {
   return pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_pipelines_runtime_v1alpha1_ListRuntimesRequest(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.ListRuntimesRequest)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.ListRuntimesRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_ListRuntimesRequest(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.ListRuntimesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_runtime_v1alpha1_ListRuntimesResponse(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.ListRuntimesResponse)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.ListRuntimesResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_ListRuntimesResponse(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.ListRuntimesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_runtime_v1alpha1_UpdateRuntimeRequest(arg) {
   if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.UpdateRuntimeRequest)) {
     throw new Error('Expected argument of type pipelines.runtime.v1alpha1.UpdateRuntimeRequest');
@@ -138,6 +160,17 @@ var RuntimeAPIServiceService = exports.RuntimeAPIServiceService = {
     requestDeserialize: deserialize_pipelines_runtime_v1alpha1_DeleteRuntimeRequest,
     responseSerialize: serialize_pipelines_runtime_v1alpha1_DeleteRuntimeResponse,
     responseDeserialize: deserialize_pipelines_runtime_v1alpha1_DeleteRuntimeResponse,
+  },
+  listRuntimes: {
+    path: '/pipelines.runtime.v1alpha1.RuntimeAPIService/ListRuntimes',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_runtime_v1alpha1_runtime_api_pb.ListRuntimesRequest,
+    responseType: pipelines_runtime_v1alpha1_runtime_api_pb.ListRuntimesResponse,
+    requestSerialize: serialize_pipelines_runtime_v1alpha1_ListRuntimesRequest,
+    requestDeserialize: deserialize_pipelines_runtime_v1alpha1_ListRuntimesRequest,
+    responseSerialize: serialize_pipelines_runtime_v1alpha1_ListRuntimesResponse,
+    responseDeserialize: deserialize_pipelines_runtime_v1alpha1_ListRuntimesResponse,
   },
 };
 
