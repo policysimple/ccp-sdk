@@ -64,6 +64,16 @@ class SourceServiceStub(object):
         request_serializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationRequest.SerializeToString,
         response_deserializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationResponse.FromString,
         )
+    self.ListRepositoriesProvider = channel.unary_unary(
+        '/source.v1alpha1.SourceService/ListRepositoriesProvider',
+        request_serializer=source_dot_v1alpha1_dot_source__pb2.ListRepositoriesProviderRequest.SerializeToString,
+        response_deserializer=source_dot_v1alpha1_dot_source__pb2.ListRepositoriesProviderResponse.FromString,
+        )
+    self.GetRepositoryProvider = channel.unary_unary(
+        '/source.v1alpha1.SourceService/GetRepositoryProvider',
+        request_serializer=source_dot_v1alpha1_dot_source__pb2.GetRepositoryProviderRequest.SerializeToString,
+        response_deserializer=source_dot_v1alpha1_dot_source__pb2.GetRepositoryProviderResponse.FromString,
+        )
     self.CreateRepository = channel.unary_unary(
         '/source.v1alpha1.SourceService/CreateRepository',
         request_serializer=source_dot_v1alpha1_dot_source__pb2.CreateRepositoryRequest.SerializeToString,
@@ -165,6 +175,20 @@ class SourceServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListRepositoriesProvider(self, request, context):
+    """List Repositories providers by integrations
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetRepositoryProvider(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def CreateRepository(self, request, context):
     """REPOSITORIES
     """
@@ -252,6 +276,16 @@ def add_SourceServiceServicer_to_server(servicer, server):
           servicer.DeleteIntegration,
           request_deserializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationRequest.FromString,
           response_serializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationResponse.SerializeToString,
+      ),
+      'ListRepositoriesProvider': grpc.unary_unary_rpc_method_handler(
+          servicer.ListRepositoriesProvider,
+          request_deserializer=source_dot_v1alpha1_dot_source__pb2.ListRepositoriesProviderRequest.FromString,
+          response_serializer=source_dot_v1alpha1_dot_source__pb2.ListRepositoriesProviderResponse.SerializeToString,
+      ),
+      'GetRepositoryProvider': grpc.unary_unary_rpc_method_handler(
+          servicer.GetRepositoryProvider,
+          request_deserializer=source_dot_v1alpha1_dot_source__pb2.GetRepositoryProviderRequest.FromString,
+          response_serializer=source_dot_v1alpha1_dot_source__pb2.GetRepositoryProviderResponse.SerializeToString,
       ),
       'CreateRepository': grpc.unary_unary_rpc_method_handler(
           servicer.CreateRepository,
