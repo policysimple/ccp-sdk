@@ -63,7 +63,7 @@ type TaskStruct struct {
 }
 
 func CreateTektonPipeline(
-	organizationId uint32, projectId uint32, name string, namespace string, workspace string,
+	projectId uint32, name string, namespace string, workspace string, instanceType string,
 	integration, environmentVariables, commands, secrets map[string]string,
 	params []ParamsStruct, tasks []TaskStruct, userId string,
 ) (response *tektonPipelinepkgv1.CreateTektonPipelineResponse, err error) {
@@ -75,7 +75,6 @@ func CreateTektonPipeline(
 	defer cancel()
 
 	var arrayTasks []*tektonPipelinepkgv1.Task
-	var arrayTaskParameters []*tektonPipelinepkgv1.TaskParams
 	var arrayParams []*tektonPipelinepkgv1.Params
 
 	if len(tasks) == 0 {
@@ -88,7 +87,7 @@ func CreateTektonPipeline(
 
 	for _, item := range params {
 
-		if item.ValueString == "string" {
+		if item.ValueType == "string" {
 			arrayParams = append(arrayParams, &tektonPipelinepkgv1.Params{
 				Name:        item.Name,
 				ValueType:   item.ValueType,
@@ -96,7 +95,7 @@ func CreateTektonPipeline(
 			})
 		}
 
-		if item.ValueString == "array" {
+		if item.ValueType == "array" {
 			arrayParams = append(arrayParams, &tektonPipelinepkgv1.Params{
 				Name:       item.Name,
 				ValueType:  item.ValueType,
@@ -106,7 +105,7 @@ func CreateTektonPipeline(
 	}
 
 	for _, item := range tasks {
-
+		var arrayTaskParameters []*tektonPipelinepkgv1.TaskParams
 		for _, itemDetail := range item.TaskParams {
 			arrayTaskParameters = append(arrayTaskParameters, &tektonPipelinepkgv1.TaskParams{
 				ParamName:      itemDetail.ParamName,
@@ -127,12 +126,12 @@ func CreateTektonPipeline(
 		})
 	}
 
-	response, err = client.CreateTektonPipeline(ctx, &tektonPipelinepkgv1.CreateTektonPipelineRequest{
+	dataPipeline := &tektonPipelinepkgv1.CreateTektonPipelineRequest{
 		TektonPipeline: &tektonPipelinepkgv1.Pipeline{
-			OrganizationId:       organizationId,
 			ProjectId:            projectId,
 			TypeMetaKind:         "Pipeline",
 			TypeMetaApiVersion:   "tekton.dev/v1beta1",
+			InstanceType:         instanceType,
 			ObjectMetaName:       name,
 			ObjectMetaNamespace:  namespace,
 			SpecWorkspacesName:   workspace,
@@ -144,7 +143,9 @@ func CreateTektonPipeline(
 			Secrets:              secrets,
 		},
 		UserId: userId,
-	})
+	}
+
+	response, err = client.CreateTektonPipeline(ctx, dataPipeline)
 
 	if err != nil {
 		log.Printf("%s: %v", "Error create tekton pipeline", err)

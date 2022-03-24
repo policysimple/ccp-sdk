@@ -127,6 +127,7 @@ constexpr Pipeline::Pipeline(
   , object_meta_namespace_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , spec_workspaces_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , instance_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , organization_id_(0u)
   , project_id_(0u)
   , active_(false){}
@@ -235,6 +236,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2ftekton_2fv1alpha1_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, commands_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, secrets_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, active_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, instance_type_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::pipelines::tekton::v1alpha1::Params)},
@@ -276,7 +278,7 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2epr
   "orkspacesMain\022F\n\013task_params\030\010 \003(\0132%.pip"
   "elines.tekton.v1alpha1.TaskParamsR\ntaskP"
   "arams\022 \n\013description\030\t \001(\tR\013description\""
-  "\337\010\n\010Pipeline\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017organiza"
+  "\204\t\n\010Pipeline\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017organiza"
   "tion_id\030\002 \001(\rR\016organizationId\022\035\n\nproject"
   "_id\030\003 \001(\rR\tprojectId\022$\n\016type_meta_kind\030\004"
   " \001(\tR\014typeMetaKind\0221\n\025type_meta_api_vers"
@@ -297,22 +299,23 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2epr
   "n.v1alpha1.Pipeline.CommandsEntryR\010comma"
   "nds\022J\n\007secrets\030\017 \003(\01320.pipelines.tekton."
   "v1alpha1.Pipeline.SecretsEntryR\007secrets\022"
-  "\026\n\006active\030\020 \001(\010R\006active\032>\n\020IntegrationEn"
-  "try\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005va"
-  "lue:\0028\001\032G\n\031EnvironmentVariablesEntry\022\020\n\003"
-  "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001"
-  "\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005v"
-  "alue\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntry\022\020\n"
-  "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028"
-  "\001B\256\001\n#io.cuemby.pipelines.tekton.v1alpha"
-  "1B\013TektonProtoP\001Z:github.com/cuemby/ccp-"
-  "sdk/gen/go/pipelines/tekton/v1alpha1\242\002\003P"
-  "PX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipelin"
-  "es\\Tekton\\V1Alpha1b\006proto3"
+  "\026\n\006active\030\020 \001(\010R\006active\022#\n\rinstance_type"
+  "\030\021 \001(\tR\014instanceType\032>\n\020IntegrationEntry"
+  "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value"
+  ":\0028\001\032G\n\031EnvironmentVariablesEntry\022\020\n\003key"
+  "\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n"
+  "\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005valu"
+  "e\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntry\022\020\n\003ke"
+  "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\256"
+  "\001\n#io.cuemby.pipelines.tekton.v1alpha1B\013"
+  "TektonProtoP\001Z:github.com/cuemby/ccp-sdk"
+  "/gen/go/pipelines/tekton/v1alpha1\242\002\003PPX\252"
+  "\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipelines\\"
+  "Tekton\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto = {
-  false, false, 1986, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
+  false, false, 2023, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
   &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once, nullptr, 0, 8,
   schemas, file_default_instances, TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto::offsets,
   file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_enum_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_service_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto,
@@ -1574,6 +1577,11 @@ Pipeline::Pipeline(const Pipeline& from)
     status_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status_type(), 
       GetArenaForAllocation());
   }
+  instance_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_instance_type().empty()) {
+    instance_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_instance_type(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&organization_id_, &from.organization_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&active_) -
     reinterpret_cast<char*>(&organization_id_)) + sizeof(active_));
@@ -1588,6 +1596,7 @@ object_meta_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyS
 object_meta_namespace_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 spec_workspaces_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 status_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+instance_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&organization_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&active_) -
@@ -1610,6 +1619,7 @@ inline void Pipeline::SharedDtor() {
   object_meta_namespace_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   spec_workspaces_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   status_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  instance_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Pipeline::ArenaDtor(void* object) {
@@ -1648,6 +1658,7 @@ void Pipeline::Clear() {
   object_meta_namespace_.ClearToEmpty();
   spec_workspaces_name_.ClearToEmpty();
   status_type_.ClearToEmpty();
+  instance_type_.ClearToEmpty();
   ::memset(&organization_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&active_) -
       reinterpret_cast<char*>(&organization_id_)) + sizeof(active_));
@@ -1813,6 +1824,15 @@ const char* Pipeline::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       case 16:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 128)) {
           active_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string instance_type = 17 [json_name = "instanceType"];
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
+          auto str = _internal_mutable_instance_type();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.Pipeline.instance_type"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2133,6 +2153,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(16, this->_internal_active(), target);
   }
 
+  // string instance_type = 17 [json_name = "instanceType"];
+  if (!this->_internal_instance_type().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_instance_type().data(), static_cast<int>(this->_internal_instance_type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.Pipeline.instance_type");
+    target = stream->WriteStringMaybeAliased(
+        17, this->_internal_instance_type(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2248,6 +2278,13 @@ size_t Pipeline::ByteSizeLong() const {
         this->_internal_status_type());
   }
 
+  // string instance_type = 17 [json_name = "instanceType"];
+  if (!this->_internal_instance_type().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_instance_type());
+  }
+
   // uint32 organization_id = 2 [json_name = "organizationId"];
   if (this->_internal_organization_id() != 0) {
     total_size += 1 +
@@ -2322,6 +2359,9 @@ void Pipeline::MergeFrom(const Pipeline& from) {
   if (!from._internal_status_type().empty()) {
     _internal_set_status_type(from._internal_status_type());
   }
+  if (!from._internal_instance_type().empty()) {
+    _internal_set_instance_type(from._internal_instance_type());
+  }
   if (from._internal_organization_id() != 0) {
     _internal_set_organization_id(from._internal_organization_id());
   }
@@ -2388,6 +2428,11 @@ void Pipeline::InternalSwap(Pipeline* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &status_type_, GetArenaForAllocation(),
       &other->status_type_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &instance_type_, GetArenaForAllocation(),
+      &other->instance_type_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Pipeline, active_)
