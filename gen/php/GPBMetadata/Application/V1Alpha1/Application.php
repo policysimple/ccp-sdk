@@ -16,7 +16,7 @@ class Application
         }
         $pool->internalAddGeneratedFile(
             '
-¯
+ß
 &application/v1alpha1/application.protoapplication.v1alpha1"ª
 
 Repository
@@ -36,7 +36,7 @@ Repository
 Configuration-
 envs (2.application.v1alpha1.EnvRenvs9
 commands (2.application.v1alpha1.CommandRcommands
-port (Rport"ÿ
+port (Rport"¸
 Application
 id (	Rid
 name (	Rname 
@@ -46,7 +46,16 @@ repository (2 .application.v1alpha1.RepositoryR
 repositoryI
 configuration (2#.application.v1alpha1.ConfigurationRconfiguration
 
-project_id (R	projectId"ü
+project_id (R	projectId7
+scaling (2.application.v1alpha1.ScalingRscaling"»
+Scaling
+cpu_rule (	RcpuRule(
+cool_down_period (	RcoolDownPeriod)
+polling_interval (	RpollingInterval
+min_replica (	R
+minReplica
+max_replica (	R
+maxReplica"µ
 CreateApplicationRequest
 name (	Rname 
 integration (	Rintegration@
@@ -55,7 +64,8 @@ repository (2 .application.v1alpha1.RepositoryR
 repositoryI
 configuration (2#.application.v1alpha1.ConfigurationRconfiguration
 
-project_id (R	projectId"C
+project_id (R	projectId7
+scaling (2.application.v1alpha1.ScalingRscaling"C
 CreateApplicationResponse
 msg (	Rmsg
 error (	Rerror"7

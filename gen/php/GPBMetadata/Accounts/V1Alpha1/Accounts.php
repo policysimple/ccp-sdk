@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-Öá
+êÜ
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"à
 CreateApiKeyRequest
 name (	Rname
@@ -127,11 +127,12 @@ permission
 type_permission	 (	RtypePermission
 	roles_ids
  (RrolesIds"
-api_key_value (	RapiKeyValue"a
+api_key_value (	RapiKeyValue"s
 CheckUserResponse
 	is_exists (RisExists
 error (	Rerror
-is_admin (RisAdmin"?
+is_admin (RisAdmin
+msg (	Rmsg"?
 UsersDex
 user_id (	RuserId
 provider (	Rprovider"<
@@ -216,15 +217,10 @@ updated_at (	R	updatedAt,
 limit (Rlimit"e
 ListUserPaginationResponse
 count (Rcount1
-users (2.accounts.v1alpha1.UserListRusers"G
-ProjectDetail
-
-project_id (R	projectId
-role_id (RroleId"ñ
+users (2.accounts.v1alpha1.UserListRusers"ÿ
 SendInvitationUserRequest
 name (	Rname
-email (	Remail<
-projects (2 .accounts.v1alpha1.ProjectDetailRprojects"
+email (	Remail"
 user_id_admin (	RuserIdAdmin
 	roles_ids (RrolesIds\'
 permissions_ids (RpermissionsIds\'

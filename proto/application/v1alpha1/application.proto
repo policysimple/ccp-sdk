@@ -50,6 +50,16 @@ message Application {
     Repository repository = 4;
     Configuration configuration = 5;
     uint32 project_id = 6;
+    Scaling scaling = 7;
+
+}
+
+message Scaling  {
+	string cpu_rule = 1;
+	string cool_down_period = 2;  
+	string polling_interval = 3; 
+	string min_replica = 4;      
+	string max_replica = 5;      
 }
 
 message CreateApplicationRequest {
@@ -58,6 +68,7 @@ message CreateApplicationRequest {
     Repository repository = 3;
     Configuration configuration = 4;
     uint32 project_id = 5;
+    Scaling scaling = 6;
 }
 
 message CreateApplicationResponse {

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&application/v1alpha1/application.proto\x12\x14\x61pplication.v1alpha1\"\xaa\x01\n\nRepository\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1b\n\tfull_name\x18\x02 \x01(\tR\x08\x66ullName\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ork\x18\x04 \x01(\x08R\x04\x66ork\x12\x1b\n\tclone_url\x18\x05 \x01(\tR\x08\x63loneUrl\x12\x18\n\x07private\x18\x06 \x01(\x08R\x07private\"1\n\x07\x43ommand\x12\x14\n\x05\x62uild\x18\x01 \x01(\tR\x05\x62uild\x12\x10\n\x03run\x18\x02 \x01(\tR\x03run\"K\n\x03\x45nv\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\x12\x10\n\x03key\x18\x02 \x01(\tR\x03key\x12\x1c\n\tencrypted\x18\x03 \x01(\x08R\tencrypted\"\x8d\x01\n\rConfiguration\x12-\n\x04\x65nvs\x18\x01 \x03(\x0b\x32\x19.application.v1alpha1.EnvR\x04\x65nvs\x12\x39\n\x08\x63ommands\x18\x02 \x03(\x0b\x32\x1d.application.v1alpha1.CommandR\x08\x63ommands\x12\x12\n\x04port\x18\x03 \x01(\x05R\x04port\"\xff\x01\n\x0b\x41pplication\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0bintegration\x18\x03 \x01(\tR\x0bintegration\x12@\n\nrepository\x18\x04 \x01(\x0b\x32 .application.v1alpha1.RepositoryR\nrepository\x12I\n\rconfiguration\x18\x05 \x01(\x0b\x32#.application.v1alpha1.ConfigurationR\rconfiguration\x12\x1d\n\nproject_id\x18\x06 \x01(\rR\tprojectId\"\xfc\x01\n\x18\x43reateApplicationRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12 \n\x0bintegration\x18\x02 \x01(\tR\x0bintegration\x12@\n\nrepository\x18\x03 \x01(\x0b\x32 .application.v1alpha1.RepositoryR\nrepository\x12I\n\rconfiguration\x18\x04 \x01(\x0b\x32#.application.v1alpha1.ConfigurationR\rconfiguration\x12\x1d\n\nproject_id\x18\x05 \x01(\rR\tprojectId\"C\n\x19\x43reateApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"7\n\x16ListApplicationRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\"`\n\x17ListApplicationResponse\x12\x45\n\x0c\x61pplications\x18\x01 \x03(\x0b\x32!.application.v1alpha1.ApplicationR\x0c\x61pplications\"\'\n\x15GetApplicationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"]\n\x16GetApplicationResponse\x12\x43\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32!.application.v1alpha1.ApplicationR\x0b\x61pplication\"*\n\x18\x44\x65leteApplicationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"C\n\x19\x44\x65leteApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"|\n\x18UpdateApplicationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12P\n\x0b\x61pplication\x18\x02 \x01(\x0b\x32..application.v1alpha1.CreateApplicationRequestR\x0b\x61pplication\"C\n\x19UpdateApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror2\xd3\x04\n\x12\x41pplicationService\x12t\n\x11\x43reateApplication\x12..application.v1alpha1.CreateApplicationRequest\x1a/.application.v1alpha1.CreateApplicationResponse\x12n\n\x0fListApplication\x12,.application.v1alpha1.ListApplicationRequest\x1a-.application.v1alpha1.ListApplicationResponse\x12k\n\x0eGetApplication\x12+.application.v1alpha1.GetApplicationRequest\x1a,.application.v1alpha1.GetApplicationResponse\x12t\n\x11\x44\x65leteApplication\x12..application.v1alpha1.DeleteApplicationRequest\x1a/.application.v1alpha1.DeleteApplicationResponse\x12t\n\x11UpdateApplication\x12..application.v1alpha1.UpdateApplicationRequest\x1a/.application.v1alpha1.UpdateApplicationResponseB7Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1b\x06proto3'
+  serialized_pb=b'\n&application/v1alpha1/application.proto\x12\x14\x61pplication.v1alpha1\"\xaa\x01\n\nRepository\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1b\n\tfull_name\x18\x02 \x01(\tR\x08\x66ullName\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ork\x18\x04 \x01(\x08R\x04\x66ork\x12\x1b\n\tclone_url\x18\x05 \x01(\tR\x08\x63loneUrl\x12\x18\n\x07private\x18\x06 \x01(\x08R\x07private\"1\n\x07\x43ommand\x12\x14\n\x05\x62uild\x18\x01 \x01(\tR\x05\x62uild\x12\x10\n\x03run\x18\x02 \x01(\tR\x03run\"K\n\x03\x45nv\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\x12\x10\n\x03key\x18\x02 \x01(\tR\x03key\x12\x1c\n\tencrypted\x18\x03 \x01(\x08R\tencrypted\"\x8d\x01\n\rConfiguration\x12-\n\x04\x65nvs\x18\x01 \x03(\x0b\x32\x19.application.v1alpha1.EnvR\x04\x65nvs\x12\x39\n\x08\x63ommands\x18\x02 \x03(\x0b\x32\x1d.application.v1alpha1.CommandR\x08\x63ommands\x12\x12\n\x04port\x18\x03 \x01(\x05R\x04port\"\xb8\x02\n\x0b\x41pplication\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0bintegration\x18\x03 \x01(\tR\x0bintegration\x12@\n\nrepository\x18\x04 \x01(\x0b\x32 .application.v1alpha1.RepositoryR\nrepository\x12I\n\rconfiguration\x18\x05 \x01(\x0b\x32#.application.v1alpha1.ConfigurationR\rconfiguration\x12\x1d\n\nproject_id\x18\x06 \x01(\rR\tprojectId\x12\x37\n\x07scaling\x18\x07 \x01(\x0b\x32\x1d.application.v1alpha1.ScalingR\x07scaling\"\xbb\x01\n\x07Scaling\x12\x19\n\x08\x63pu_rule\x18\x01 \x01(\tR\x07\x63puRule\x12(\n\x10\x63ool_down_period\x18\x02 \x01(\tR\x0e\x63oolDownPeriod\x12)\n\x10polling_interval\x18\x03 \x01(\tR\x0fpollingInterval\x12\x1f\n\x0bmin_replica\x18\x04 \x01(\tR\nminReplica\x12\x1f\n\x0bmax_replica\x18\x05 \x01(\tR\nmaxReplica\"\xb5\x02\n\x18\x43reateApplicationRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12 \n\x0bintegration\x18\x02 \x01(\tR\x0bintegration\x12@\n\nrepository\x18\x03 \x01(\x0b\x32 .application.v1alpha1.RepositoryR\nrepository\x12I\n\rconfiguration\x18\x04 \x01(\x0b\x32#.application.v1alpha1.ConfigurationR\rconfiguration\x12\x1d\n\nproject_id\x18\x05 \x01(\rR\tprojectId\x12\x37\n\x07scaling\x18\x06 \x01(\x0b\x32\x1d.application.v1alpha1.ScalingR\x07scaling\"C\n\x19\x43reateApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"7\n\x16ListApplicationRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\"`\n\x17ListApplicationResponse\x12\x45\n\x0c\x61pplications\x18\x01 \x03(\x0b\x32!.application.v1alpha1.ApplicationR\x0c\x61pplications\"\'\n\x15GetApplicationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"]\n\x16GetApplicationResponse\x12\x43\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32!.application.v1alpha1.ApplicationR\x0b\x61pplication\"*\n\x18\x44\x65leteApplicationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"C\n\x19\x44\x65leteApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"|\n\x18UpdateApplicationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12P\n\x0b\x61pplication\x18\x02 \x01(\x0b\x32..application.v1alpha1.CreateApplicationRequestR\x0b\x61pplication\"C\n\x19UpdateApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror2\xd3\x04\n\x12\x41pplicationService\x12t\n\x11\x43reateApplication\x12..application.v1alpha1.CreateApplicationRequest\x1a/.application.v1alpha1.CreateApplicationResponse\x12n\n\x0fListApplication\x12,.application.v1alpha1.ListApplicationRequest\x1a-.application.v1alpha1.ListApplicationResponse\x12k\n\x0eGetApplication\x12+.application.v1alpha1.GetApplicationRequest\x1a,.application.v1alpha1.GetApplicationResponse\x12t\n\x11\x44\x65leteApplication\x12..application.v1alpha1.DeleteApplicationRequest\x1a/.application.v1alpha1.DeleteApplicationResponse\x12t\n\x11UpdateApplication\x12..application.v1alpha1.UpdateApplicationRequest\x1a/.application.v1alpha1.UpdateApplicationResponseB7Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1b\x06proto3'
 )
 
 
@@ -273,6 +273,13 @@ _APPLICATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='projectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='scaling', full_name='application.v1alpha1.Application.scaling', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='scaling', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -286,7 +293,67 @@ _APPLICATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=510,
-  serialized_end=765,
+  serialized_end=822,
+)
+
+
+_SCALING = _descriptor.Descriptor(
+  name='Scaling',
+  full_name='application.v1alpha1.Scaling',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cpu_rule', full_name='application.v1alpha1.Scaling.cpu_rule', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='cpuRule', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cool_down_period', full_name='application.v1alpha1.Scaling.cool_down_period', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='coolDownPeriod', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='polling_interval', full_name='application.v1alpha1.Scaling.polling_interval', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='pollingInterval', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='min_replica', full_name='application.v1alpha1.Scaling.min_replica', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='minReplica', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='max_replica', full_name='application.v1alpha1.Scaling.max_replica', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='maxReplica', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=825,
+  serialized_end=1012,
 )
 
 
@@ -333,6 +400,13 @@ _CREATEAPPLICATIONREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='projectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='scaling', full_name='application.v1alpha1.CreateApplicationRequest.scaling', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='scaling', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -345,8 +419,8 @@ _CREATEAPPLICATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=768,
-  serialized_end=1020,
+  serialized_start=1015,
+  serialized_end=1324,
 )
 
 
@@ -384,8 +458,8 @@ _CREATEAPPLICATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1022,
-  serialized_end=1089,
+  serialized_start=1326,
+  serialized_end=1393,
 )
 
 
@@ -416,8 +490,8 @@ _LISTAPPLICATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1091,
-  serialized_end=1146,
+  serialized_start=1395,
+  serialized_end=1450,
 )
 
 
@@ -448,8 +522,8 @@ _LISTAPPLICATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1148,
-  serialized_end=1244,
+  serialized_start=1452,
+  serialized_end=1548,
 )
 
 
@@ -480,8 +554,8 @@ _GETAPPLICATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1246,
-  serialized_end=1285,
+  serialized_start=1550,
+  serialized_end=1589,
 )
 
 
@@ -512,8 +586,8 @@ _GETAPPLICATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1287,
-  serialized_end=1380,
+  serialized_start=1591,
+  serialized_end=1684,
 )
 
 
@@ -544,8 +618,8 @@ _DELETEAPPLICATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1382,
-  serialized_end=1424,
+  serialized_start=1686,
+  serialized_end=1728,
 )
 
 
@@ -583,8 +657,8 @@ _DELETEAPPLICATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1426,
-  serialized_end=1493,
+  serialized_start=1730,
+  serialized_end=1797,
 )
 
 
@@ -622,8 +696,8 @@ _UPDATEAPPLICATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1495,
-  serialized_end=1619,
+  serialized_start=1799,
+  serialized_end=1923,
 )
 
 
@@ -661,16 +735,18 @@ _UPDATEAPPLICATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1621,
-  serialized_end=1688,
+  serialized_start=1925,
+  serialized_end=1992,
 )
 
 _CONFIGURATION.fields_by_name['envs'].message_type = _ENV
 _CONFIGURATION.fields_by_name['commands'].message_type = _COMMAND
 _APPLICATION.fields_by_name['repository'].message_type = _REPOSITORY
 _APPLICATION.fields_by_name['configuration'].message_type = _CONFIGURATION
+_APPLICATION.fields_by_name['scaling'].message_type = _SCALING
 _CREATEAPPLICATIONREQUEST.fields_by_name['repository'].message_type = _REPOSITORY
 _CREATEAPPLICATIONREQUEST.fields_by_name['configuration'].message_type = _CONFIGURATION
+_CREATEAPPLICATIONREQUEST.fields_by_name['scaling'].message_type = _SCALING
 _LISTAPPLICATIONRESPONSE.fields_by_name['applications'].message_type = _APPLICATION
 _GETAPPLICATIONRESPONSE.fields_by_name['application'].message_type = _APPLICATION
 _UPDATEAPPLICATIONREQUEST.fields_by_name['application'].message_type = _CREATEAPPLICATIONREQUEST
@@ -679,6 +755,7 @@ DESCRIPTOR.message_types_by_name['Command'] = _COMMAND
 DESCRIPTOR.message_types_by_name['Env'] = _ENV
 DESCRIPTOR.message_types_by_name['Configuration'] = _CONFIGURATION
 DESCRIPTOR.message_types_by_name['Application'] = _APPLICATION
+DESCRIPTOR.message_types_by_name['Scaling'] = _SCALING
 DESCRIPTOR.message_types_by_name['CreateApplicationRequest'] = _CREATEAPPLICATIONREQUEST
 DESCRIPTOR.message_types_by_name['CreateApplicationResponse'] = _CREATEAPPLICATIONRESPONSE
 DESCRIPTOR.message_types_by_name['ListApplicationRequest'] = _LISTAPPLICATIONREQUEST
@@ -725,6 +802,13 @@ Application = _reflection.GeneratedProtocolMessageType('Application', (_message.
   # @@protoc_insertion_point(class_scope:application.v1alpha1.Application)
   })
 _sym_db.RegisterMessage(Application)
+
+Scaling = _reflection.GeneratedProtocolMessageType('Scaling', (_message.Message,), {
+  'DESCRIPTOR' : _SCALING,
+  '__module__' : 'application.v1alpha1.application_pb2'
+  # @@protoc_insertion_point(class_scope:application.v1alpha1.Scaling)
+  })
+_sym_db.RegisterMessage(Scaling)
 
 CreateApplicationRequest = _reflection.GeneratedProtocolMessageType('CreateApplicationRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATEAPPLICATIONREQUEST,
@@ -806,8 +890,8 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1691,
-  serialized_end=2286,
+  serialized_start=1995,
+  serialized_end=2590,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateApplication',

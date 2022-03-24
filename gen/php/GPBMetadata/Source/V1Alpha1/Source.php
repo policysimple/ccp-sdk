@@ -16,8 +16,21 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-Ð3
-source/v1alpha1/source.protosource.v1alpha1"È
+©8
+source/v1alpha1/source.protosource.v1alpha1"@
+Branch
+name (	Rname
+sha (	Rsha
+url (	Rurl"H
+ListRepositoriesProviderRequest%
+integration_id (	RintegrationId"c
+ ListRepositoriesProviderResponse?
+repositories (2.source.v1alpha1.RepositoryRrepositories"Y
+GetRepositoryProviderRequest%
+integration_id (	RintegrationId
+name (	Rname"R
+GetRepositoryProviderResponse1
+branchs (2.source.v1alpha1.BranchRbranchs"È
 DetailRepository
 id (	Rid
 name (	Rname
@@ -102,7 +115,7 @@ repository"B
 value (	Rvalue:8;
 MetadataEntry
 key (	Rkey
-value (	Rvalue:8"©
+value (	Rvalue:8"Á
 
 Repository
 name (	Rname
@@ -110,14 +123,16 @@ Repository
 fullname (	Rfullname 
 description (	Rdescription
 fork (Rfork
-	clone_url (	RcloneUrl"»
+	clone_url (	RcloneUrl
+branch (	Rbranch"¥
 CreateIntegrationRequest\'
 organization_id (RorganizationId
-name (	Rname5
-provider (2.source.v1alpha1.ProviderRproviderG
+name (	RnameG
 data (23.source.v1alpha1.CreateIntegrationRequest.DataEntryRdataS
 metadata (27.source.v1alpha1.CreateIntegrationRequest.MetadataEntryRmetadata
-user_id (	RuserId7
+user_id (	RuserId
+provider_id (	R
+providerId7
 	DataEntry
 key (	Rkey
 value (	Rvalue:8;
@@ -134,10 +149,9 @@ Repository
 ListIntegrationsResponse@
 integrations (2.source.v1alpha1.IntegrationRintegrations"\'
 GetIntegrationRequest
-id (	Rid"™
+id (	Rid"X
 GetIntegrationResponse>
-integration (2.source.v1alpha1.IntegrationRintegration?
-repositories (2.source.v1alpha1.RepositoryRrepositories"y
+integration (2.source.v1alpha1.IntegrationRintegration"y
 UpdateIntegrationRequest
 id (	RidM
 integrations (2).source.v1alpha1.CreateIntegrationRequestRintegrations"C
@@ -194,7 +208,7 @@ Repository
 error (	Rerror"
 ListProvidersRequest"P
 ListProvidersResponse7
-	providers (2.source.v1alpha1.ProviderR	providers2†
+	providers (2.source.v1alpha1.ProviderR	providers2ÿ
 SourceServicea
 CreateProvider&.source.v1alpha1.CreateProviderRequest\'.source.v1alpha1.CreateProviderResponse^
 ListProviders%.source.v1alpha1.ListProvidersRequest&.source.v1alpha1.ListProvidersResponseX
@@ -205,7 +219,9 @@ Repository
 ListIntegrations(.source.v1alpha1.ListIntegrationsRequest).source.v1alpha1.ListIntegrationsResponsea
 GetIntegration&.source.v1alpha1.GetIntegrationRequest\'.source.v1alpha1.GetIntegrationResponsej
 UpdateIntegration).source.v1alpha1.UpdateIntegrationRequest*.source.v1alpha1.UpdateIntegrationResponsej
-DeleteIntegration).source.v1alpha1.DeleteIntegrationRequest*.source.v1alpha1.DeleteIntegrationResponseg
+DeleteIntegration).source.v1alpha1.DeleteIntegrationRequest*.source.v1alpha1.DeleteIntegrationResponse
+ListRepositoriesProvider0.source.v1alpha1.ListRepositoriesProviderRequest1.source.v1alpha1.ListRepositoriesProviderResponsev
+GetRepositoryProvider-.source.v1alpha1.GetRepositoryProviderRequest..source.v1alpha1.GetRepositoryProviderResponseg
 CreateRepository(.source.v1alpha1.CreateRepositoryRequest).source.v1alpha1.CreateRepositoryResponseg
 ListRepositories(.source.v1alpha1.ListRepositoriesRequest).source.v1alpha1.ListRepositoriesResponse^
 GetRepository%.source.v1alpha1.GetRepositoryRequest&.source.v1alpha1.GetRepositoryResponseg

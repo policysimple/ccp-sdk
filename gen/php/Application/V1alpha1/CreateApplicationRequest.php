@@ -33,6 +33,10 @@ class CreateApplicationRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 project_id = 5 [json_name = "projectId"];</code>
      */
     protected $project_id = 0;
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+     */
+    protected $scaling = null;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class CreateApplicationRequest extends \Google\Protobuf\Internal\Message
      *     @type \Application\V1alpha1\Repository $repository
      *     @type \Application\V1alpha1\Configuration $configuration
      *     @type int $project_id
+     *     @type \Application\V1alpha1\Scaling $scaling
      * }
      */
     public function __construct($data = NULL) {
@@ -178,6 +183,38 @@ class CreateApplicationRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->project_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+     * @return \Application\V1alpha1\Scaling|null
+     */
+    public function getScaling()
+    {
+        return $this->scaling;
+    }
+
+    public function hasScaling()
+    {
+        return isset($this->scaling);
+    }
+
+    public function clearScaling()
+    {
+        unset($this->scaling);
+    }
+
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];</code>
+     * @param \Application\V1alpha1\Scaling $var
+     * @return $this
+     */
+    public function setScaling($var)
+    {
+        GPBUtil::checkMessage($var, \Application\V1alpha1\Scaling::class);
+        $this->scaling = $var;
 
         return $this;
     }

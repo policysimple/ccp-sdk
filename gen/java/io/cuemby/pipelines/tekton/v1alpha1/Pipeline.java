@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     params_ = java.util.Collections.emptyList();
     tasks_ = java.util.Collections.emptyList();
     statusType_ = "";
+    instanceType_ = "";
   }
 
   @java.lang.Override
@@ -187,6 +188,12 @@ private static final long serialVersionUID = 0L;
           case 128: {
 
             active_ = input.readBool();
+            break;
+          }
+          case 138: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            instanceType_ = s;
             break;
           }
           default: {
@@ -948,6 +955,44 @@ private static final long serialVersionUID = 0L;
     return active_;
   }
 
+  public static final int INSTANCE_TYPE_FIELD_NUMBER = 17;
+  private volatile java.lang.Object instanceType_;
+  /**
+   * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+   * @return The instanceType.
+   */
+  @java.lang.Override
+  public java.lang.String getInstanceType() {
+    java.lang.Object ref = instanceType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      instanceType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+   * @return The bytes for instanceType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInstanceTypeBytes() {
+    java.lang.Object ref = instanceType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      instanceType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1021,6 +1066,9 @@ private static final long serialVersionUID = 0L;
         15);
     if (active_ != false) {
       output.writeBool(16, active_);
+    }
+    if (!getInstanceTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, instanceType_);
     }
     unknownFields.writeTo(output);
   }
@@ -1112,6 +1160,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(16, active_);
     }
+    if (!getInstanceTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, instanceType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1159,6 +1210,8 @@ private static final long serialVersionUID = 0L;
         other.internalGetSecrets())) return false;
     if (getActive()
         != other.getActive()) return false;
+    if (!getInstanceType()
+        .equals(other.getInstanceType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1215,6 +1268,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ACTIVE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getActive());
+    hash = (37 * hash) + INSTANCE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getInstanceType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1424,6 +1479,8 @@ private static final long serialVersionUID = 0L;
       internalGetMutableSecrets().clear();
       active_ = false;
 
+      instanceType_ = "";
+
       return this;
     }
 
@@ -1487,6 +1544,7 @@ private static final long serialVersionUID = 0L;
       result.secrets_ = internalGetSecrets();
       result.secrets_.makeImmutable();
       result.active_ = active_;
+      result.instanceType_ = instanceType_;
       onBuilt();
       return result;
     }
@@ -1631,6 +1689,10 @@ private static final long serialVersionUID = 0L;
           other.internalGetSecrets());
       if (other.getActive() != false) {
         setActive(other.getActive());
+      }
+      if (!other.getInstanceType().isEmpty()) {
+        instanceType_ = other.instanceType_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3275,6 +3337,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearActive() {
       
       active_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object instanceType_ = "";
+    /**
+     * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * @return The instanceType.
+     */
+    public java.lang.String getInstanceType() {
+      java.lang.Object ref = instanceType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instanceType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * @return The bytes for instanceType.
+     */
+    public com.google.protobuf.ByteString
+        getInstanceTypeBytes() {
+      java.lang.Object ref = instanceType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        instanceType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * @param value The instanceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstanceType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      instanceType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInstanceType() {
+      
+      instanceType_ = getDefaultInstance().getInstanceType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * @param value The bytes for instanceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstanceTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      instanceType_ = value;
       onChanged();
       return this;
     }

@@ -292,4 +292,16 @@ public interface PipelineOrBuilder extends
    * @return The active.
    */
   boolean getActive();
+
+  /**
+   * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+   * @return The instanceType.
+   */
+  java.lang.String getInstanceType();
+  /**
+   * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+   * @return The bytes for instanceType.
+   */
+  com.google.protobuf.ByteString
+      getInstanceTypeBytes();
 }

@@ -46,7 +46,7 @@ struct TableStruct_application_2fv1alpha1_2fapplication_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[15]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -94,6 +94,9 @@ extern ListApplicationResponseDefaultTypeInternal _ListApplicationResponse_defau
 class Repository;
 struct RepositoryDefaultTypeInternal;
 extern RepositoryDefaultTypeInternal _Repository_default_instance_;
+class Scaling;
+struct ScalingDefaultTypeInternal;
+extern ScalingDefaultTypeInternal _Scaling_default_instance_;
 class UpdateApplicationRequest;
 struct UpdateApplicationRequestDefaultTypeInternal;
 extern UpdateApplicationRequestDefaultTypeInternal _UpdateApplicationRequest_default_instance_;
@@ -116,6 +119,7 @@ template<> ::application::v1alpha1::GetApplicationResponse* Arena::CreateMaybeMe
 template<> ::application::v1alpha1::ListApplicationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::ListApplicationRequest>(Arena*);
 template<> ::application::v1alpha1::ListApplicationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::ListApplicationResponse>(Arena*);
 template<> ::application::v1alpha1::Repository* Arena::CreateMaybeMessage<::application::v1alpha1::Repository>(Arena*);
+template<> ::application::v1alpha1::Scaling* Arena::CreateMaybeMessage<::application::v1alpha1::Scaling>(Arena*);
 template<> ::application::v1alpha1::UpdateApplicationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::UpdateApplicationRequest>(Arena*);
 template<> ::application::v1alpha1::UpdateApplicationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::UpdateApplicationResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -968,6 +972,7 @@ class Application final :
     kIntegrationFieldNumber = 3,
     kRepositoryFieldNumber = 4,
     kConfigurationFieldNumber = 5,
+    kScalingFieldNumber = 7,
     kProjectIdFieldNumber = 6,
   };
   // string id = 1 [json_name = "id"];
@@ -1048,6 +1053,24 @@ class Application final :
       ::application::v1alpha1::Configuration* configuration);
   ::application::v1alpha1::Configuration* unsafe_arena_release_configuration();
 
+  // .application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];
+  bool has_scaling() const;
+  private:
+  bool _internal_has_scaling() const;
+  public:
+  void clear_scaling();
+  const ::application::v1alpha1::Scaling& scaling() const;
+  PROTOBUF_MUST_USE_RESULT ::application::v1alpha1::Scaling* release_scaling();
+  ::application::v1alpha1::Scaling* mutable_scaling();
+  void set_allocated_scaling(::application::v1alpha1::Scaling* scaling);
+  private:
+  const ::application::v1alpha1::Scaling& _internal_scaling() const;
+  ::application::v1alpha1::Scaling* _internal_mutable_scaling();
+  public:
+  void unsafe_arena_set_allocated_scaling(
+      ::application::v1alpha1::Scaling* scaling);
+  ::application::v1alpha1::Scaling* unsafe_arena_release_scaling();
+
   // uint32 project_id = 6 [json_name = "projectId"];
   void clear_project_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
@@ -1069,7 +1092,216 @@ class Application final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_;
   ::application::v1alpha1::Repository* repository_;
   ::application::v1alpha1::Configuration* configuration_;
+  ::application::v1alpha1::Scaling* scaling_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Scaling final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.Scaling) */ {
+ public:
+  inline Scaling() : Scaling(nullptr) {}
+  ~Scaling() override;
+  explicit constexpr Scaling(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Scaling(const Scaling& from);
+  Scaling(Scaling&& from) noexcept
+    : Scaling() {
+    *this = ::std::move(from);
+  }
+
+  inline Scaling& operator=(const Scaling& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Scaling& operator=(Scaling&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Scaling& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Scaling* internal_default_instance() {
+    return reinterpret_cast<const Scaling*>(
+               &_Scaling_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(Scaling& a, Scaling& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Scaling* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Scaling* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Scaling* New() const final {
+    return new Scaling();
+  }
+
+  Scaling* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Scaling>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Scaling& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const Scaling& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Scaling* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "application.v1alpha1.Scaling";
+  }
+  protected:
+  explicit Scaling(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCpuRuleFieldNumber = 1,
+    kCoolDownPeriodFieldNumber = 2,
+    kPollingIntervalFieldNumber = 3,
+    kMinReplicaFieldNumber = 4,
+    kMaxReplicaFieldNumber = 5,
+  };
+  // string cpu_rule = 1 [json_name = "cpuRule"];
+  void clear_cpu_rule();
+  const std::string& cpu_rule() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_cpu_rule(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_cpu_rule();
+  PROTOBUF_MUST_USE_RESULT std::string* release_cpu_rule();
+  void set_allocated_cpu_rule(std::string* cpu_rule);
+  private:
+  const std::string& _internal_cpu_rule() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_cpu_rule(const std::string& value);
+  std::string* _internal_mutable_cpu_rule();
+  public:
+
+  // string cool_down_period = 2 [json_name = "coolDownPeriod"];
+  void clear_cool_down_period();
+  const std::string& cool_down_period() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_cool_down_period(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_cool_down_period();
+  PROTOBUF_MUST_USE_RESULT std::string* release_cool_down_period();
+  void set_allocated_cool_down_period(std::string* cool_down_period);
+  private:
+  const std::string& _internal_cool_down_period() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_cool_down_period(const std::string& value);
+  std::string* _internal_mutable_cool_down_period();
+  public:
+
+  // string polling_interval = 3 [json_name = "pollingInterval"];
+  void clear_polling_interval();
+  const std::string& polling_interval() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_polling_interval(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_polling_interval();
+  PROTOBUF_MUST_USE_RESULT std::string* release_polling_interval();
+  void set_allocated_polling_interval(std::string* polling_interval);
+  private:
+  const std::string& _internal_polling_interval() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_polling_interval(const std::string& value);
+  std::string* _internal_mutable_polling_interval();
+  public:
+
+  // string min_replica = 4 [json_name = "minReplica"];
+  void clear_min_replica();
+  const std::string& min_replica() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_min_replica(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_min_replica();
+  PROTOBUF_MUST_USE_RESULT std::string* release_min_replica();
+  void set_allocated_min_replica(std::string* min_replica);
+  private:
+  const std::string& _internal_min_replica() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_min_replica(const std::string& value);
+  std::string* _internal_mutable_min_replica();
+  public:
+
+  // string max_replica = 5 [json_name = "maxReplica"];
+  void clear_max_replica();
+  const std::string& max_replica() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_max_replica(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_max_replica();
+  PROTOBUF_MUST_USE_RESULT std::string* release_max_replica();
+  void set_allocated_max_replica(std::string* max_replica);
+  private:
+  const std::string& _internal_max_replica() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_max_replica(const std::string& value);
+  std::string* _internal_mutable_max_replica();
+  public:
+
+  // @@protoc_insertion_point(class_scope:application.v1alpha1.Scaling)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cpu_rule_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cool_down_period_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr polling_interval_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr min_replica_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr max_replica_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
 };
@@ -1119,7 +1351,7 @@ class CreateApplicationRequest final :
                &_CreateApplicationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(CreateApplicationRequest& a, CreateApplicationRequest& b) {
     a.Swap(&b);
@@ -1194,6 +1426,7 @@ class CreateApplicationRequest final :
     kIntegrationFieldNumber = 2,
     kRepositoryFieldNumber = 3,
     kConfigurationFieldNumber = 4,
+    kScalingFieldNumber = 6,
     kProjectIdFieldNumber = 5,
   };
   // string name = 1 [json_name = "name"];
@@ -1260,6 +1493,24 @@ class CreateApplicationRequest final :
       ::application::v1alpha1::Configuration* configuration);
   ::application::v1alpha1::Configuration* unsafe_arena_release_configuration();
 
+  // .application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];
+  bool has_scaling() const;
+  private:
+  bool _internal_has_scaling() const;
+  public:
+  void clear_scaling();
+  const ::application::v1alpha1::Scaling& scaling() const;
+  PROTOBUF_MUST_USE_RESULT ::application::v1alpha1::Scaling* release_scaling();
+  ::application::v1alpha1::Scaling* mutable_scaling();
+  void set_allocated_scaling(::application::v1alpha1::Scaling* scaling);
+  private:
+  const ::application::v1alpha1::Scaling& _internal_scaling() const;
+  ::application::v1alpha1::Scaling* _internal_mutable_scaling();
+  public:
+  void unsafe_arena_set_allocated_scaling(
+      ::application::v1alpha1::Scaling* scaling);
+  ::application::v1alpha1::Scaling* unsafe_arena_release_scaling();
+
   // uint32 project_id = 5 [json_name = "projectId"];
   void clear_project_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
@@ -1280,6 +1531,7 @@ class CreateApplicationRequest final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_;
   ::application::v1alpha1::Repository* repository_;
   ::application::v1alpha1::Configuration* configuration_;
+  ::application::v1alpha1::Scaling* scaling_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
@@ -1330,7 +1582,7 @@ class CreateApplicationResponse final :
                &_CreateApplicationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(CreateApplicationResponse& a, CreateApplicationResponse& b) {
     a.Swap(&b);
@@ -1490,7 +1742,7 @@ class ListApplicationRequest final :
                &_ListApplicationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(ListApplicationRequest& a, ListApplicationRequest& b) {
     a.Swap(&b);
@@ -1629,7 +1881,7 @@ class ListApplicationResponse final :
                &_ListApplicationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(ListApplicationResponse& a, ListApplicationResponse& b) {
     a.Swap(&b);
@@ -1777,7 +2029,7 @@ class GetApplicationRequest final :
                &_GetApplicationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(GetApplicationRequest& a, GetApplicationRequest& b) {
     a.Swap(&b);
@@ -1921,7 +2173,7 @@ class GetApplicationResponse final :
                &_GetApplicationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(GetApplicationResponse& a, GetApplicationResponse& b) {
     a.Swap(&b);
@@ -2069,7 +2321,7 @@ class DeleteApplicationRequest final :
                &_DeleteApplicationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(DeleteApplicationRequest& a, DeleteApplicationRequest& b) {
     a.Swap(&b);
@@ -2213,7 +2465,7 @@ class DeleteApplicationResponse final :
                &_DeleteApplicationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(DeleteApplicationResponse& a, DeleteApplicationResponse& b) {
     a.Swap(&b);
@@ -2373,7 +2625,7 @@ class UpdateApplicationRequest final :
                &_UpdateApplicationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(UpdateApplicationRequest& a, UpdateApplicationRequest& b) {
     a.Swap(&b);
@@ -2537,7 +2789,7 @@ class UpdateApplicationResponse final :
                &_UpdateApplicationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(UpdateApplicationResponse& a, UpdateApplicationResponse& b) {
     a.Swap(&b);
@@ -3544,6 +3796,330 @@ inline void Application::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:application.v1alpha1.Application.project_id)
 }
 
+// .application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];
+inline bool Application::_internal_has_scaling() const {
+  return this != internal_default_instance() && scaling_ != nullptr;
+}
+inline bool Application::has_scaling() const {
+  return _internal_has_scaling();
+}
+inline void Application::clear_scaling() {
+  if (GetArenaForAllocation() == nullptr && scaling_ != nullptr) {
+    delete scaling_;
+  }
+  scaling_ = nullptr;
+}
+inline const ::application::v1alpha1::Scaling& Application::_internal_scaling() const {
+  const ::application::v1alpha1::Scaling* p = scaling_;
+  return p != nullptr ? *p : reinterpret_cast<const ::application::v1alpha1::Scaling&>(
+      ::application::v1alpha1::_Scaling_default_instance_);
+}
+inline const ::application::v1alpha1::Scaling& Application::scaling() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Application.scaling)
+  return _internal_scaling();
+}
+inline void Application::unsafe_arena_set_allocated_scaling(
+    ::application::v1alpha1::Scaling* scaling) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(scaling_);
+  }
+  scaling_ = scaling;
+  if (scaling) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:application.v1alpha1.Application.scaling)
+}
+inline ::application::v1alpha1::Scaling* Application::release_scaling() {
+  
+  ::application::v1alpha1::Scaling* temp = scaling_;
+  scaling_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::application::v1alpha1::Scaling* Application::unsafe_arena_release_scaling() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Application.scaling)
+  
+  ::application::v1alpha1::Scaling* temp = scaling_;
+  scaling_ = nullptr;
+  return temp;
+}
+inline ::application::v1alpha1::Scaling* Application::_internal_mutable_scaling() {
+  
+  if (scaling_ == nullptr) {
+    auto* p = CreateMaybeMessage<::application::v1alpha1::Scaling>(GetArenaForAllocation());
+    scaling_ = p;
+  }
+  return scaling_;
+}
+inline ::application::v1alpha1::Scaling* Application::mutable_scaling() {
+  ::application::v1alpha1::Scaling* _msg = _internal_mutable_scaling();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Application.scaling)
+  return _msg;
+}
+inline void Application::set_allocated_scaling(::application::v1alpha1::Scaling* scaling) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete scaling_;
+  }
+  if (scaling) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::application::v1alpha1::Scaling>::GetOwningArena(scaling);
+    if (message_arena != submessage_arena) {
+      scaling = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, scaling, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  scaling_ = scaling;
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Application.scaling)
+}
+
+// -------------------------------------------------------------------
+
+// Scaling
+
+// string cpu_rule = 1 [json_name = "cpuRule"];
+inline void Scaling::clear_cpu_rule() {
+  cpu_rule_.ClearToEmpty();
+}
+inline const std::string& Scaling::cpu_rule() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.cpu_rule)
+  return _internal_cpu_rule();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Scaling::set_cpu_rule(ArgT0&& arg0, ArgT... args) {
+ 
+ cpu_rule_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.cpu_rule)
+}
+inline std::string* Scaling::mutable_cpu_rule() {
+  std::string* _s = _internal_mutable_cpu_rule();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.cpu_rule)
+  return _s;
+}
+inline const std::string& Scaling::_internal_cpu_rule() const {
+  return cpu_rule_.Get();
+}
+inline void Scaling::_internal_set_cpu_rule(const std::string& value) {
+  
+  cpu_rule_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Scaling::_internal_mutable_cpu_rule() {
+  
+  return cpu_rule_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Scaling::release_cpu_rule() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.cpu_rule)
+  return cpu_rule_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Scaling::set_allocated_cpu_rule(std::string* cpu_rule) {
+  if (cpu_rule != nullptr) {
+    
+  } else {
+    
+  }
+  cpu_rule_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), cpu_rule,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.cpu_rule)
+}
+
+// string cool_down_period = 2 [json_name = "coolDownPeriod"];
+inline void Scaling::clear_cool_down_period() {
+  cool_down_period_.ClearToEmpty();
+}
+inline const std::string& Scaling::cool_down_period() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.cool_down_period)
+  return _internal_cool_down_period();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Scaling::set_cool_down_period(ArgT0&& arg0, ArgT... args) {
+ 
+ cool_down_period_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.cool_down_period)
+}
+inline std::string* Scaling::mutable_cool_down_period() {
+  std::string* _s = _internal_mutable_cool_down_period();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.cool_down_period)
+  return _s;
+}
+inline const std::string& Scaling::_internal_cool_down_period() const {
+  return cool_down_period_.Get();
+}
+inline void Scaling::_internal_set_cool_down_period(const std::string& value) {
+  
+  cool_down_period_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Scaling::_internal_mutable_cool_down_period() {
+  
+  return cool_down_period_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Scaling::release_cool_down_period() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.cool_down_period)
+  return cool_down_period_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Scaling::set_allocated_cool_down_period(std::string* cool_down_period) {
+  if (cool_down_period != nullptr) {
+    
+  } else {
+    
+  }
+  cool_down_period_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), cool_down_period,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.cool_down_period)
+}
+
+// string polling_interval = 3 [json_name = "pollingInterval"];
+inline void Scaling::clear_polling_interval() {
+  polling_interval_.ClearToEmpty();
+}
+inline const std::string& Scaling::polling_interval() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.polling_interval)
+  return _internal_polling_interval();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Scaling::set_polling_interval(ArgT0&& arg0, ArgT... args) {
+ 
+ polling_interval_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.polling_interval)
+}
+inline std::string* Scaling::mutable_polling_interval() {
+  std::string* _s = _internal_mutable_polling_interval();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.polling_interval)
+  return _s;
+}
+inline const std::string& Scaling::_internal_polling_interval() const {
+  return polling_interval_.Get();
+}
+inline void Scaling::_internal_set_polling_interval(const std::string& value) {
+  
+  polling_interval_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Scaling::_internal_mutable_polling_interval() {
+  
+  return polling_interval_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Scaling::release_polling_interval() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.polling_interval)
+  return polling_interval_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Scaling::set_allocated_polling_interval(std::string* polling_interval) {
+  if (polling_interval != nullptr) {
+    
+  } else {
+    
+  }
+  polling_interval_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), polling_interval,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.polling_interval)
+}
+
+// string min_replica = 4 [json_name = "minReplica"];
+inline void Scaling::clear_min_replica() {
+  min_replica_.ClearToEmpty();
+}
+inline const std::string& Scaling::min_replica() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.min_replica)
+  return _internal_min_replica();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Scaling::set_min_replica(ArgT0&& arg0, ArgT... args) {
+ 
+ min_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.min_replica)
+}
+inline std::string* Scaling::mutable_min_replica() {
+  std::string* _s = _internal_mutable_min_replica();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.min_replica)
+  return _s;
+}
+inline const std::string& Scaling::_internal_min_replica() const {
+  return min_replica_.Get();
+}
+inline void Scaling::_internal_set_min_replica(const std::string& value) {
+  
+  min_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Scaling::_internal_mutable_min_replica() {
+  
+  return min_replica_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Scaling::release_min_replica() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.min_replica)
+  return min_replica_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Scaling::set_allocated_min_replica(std::string* min_replica) {
+  if (min_replica != nullptr) {
+    
+  } else {
+    
+  }
+  min_replica_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), min_replica,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.min_replica)
+}
+
+// string max_replica = 5 [json_name = "maxReplica"];
+inline void Scaling::clear_max_replica() {
+  max_replica_.ClearToEmpty();
+}
+inline const std::string& Scaling::max_replica() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.max_replica)
+  return _internal_max_replica();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Scaling::set_max_replica(ArgT0&& arg0, ArgT... args) {
+ 
+ max_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.max_replica)
+}
+inline std::string* Scaling::mutable_max_replica() {
+  std::string* _s = _internal_mutable_max_replica();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.max_replica)
+  return _s;
+}
+inline const std::string& Scaling::_internal_max_replica() const {
+  return max_replica_.Get();
+}
+inline void Scaling::_internal_set_max_replica(const std::string& value) {
+  
+  max_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Scaling::_internal_mutable_max_replica() {
+  
+  return max_replica_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Scaling::release_max_replica() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.max_replica)
+  return max_replica_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Scaling::set_allocated_max_replica(std::string* max_replica) {
+  if (max_replica != nullptr) {
+    
+  } else {
+    
+  }
+  max_replica_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), max_replica,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.max_replica)
+}
+
 // -------------------------------------------------------------------
 
 // CreateApplicationRequest
@@ -3838,6 +4414,96 @@ inline void CreateApplicationRequest::_internal_set_project_id(::PROTOBUF_NAMESP
 inline void CreateApplicationRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_project_id(value);
   // @@protoc_insertion_point(field_set:application.v1alpha1.CreateApplicationRequest.project_id)
+}
+
+// .application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];
+inline bool CreateApplicationRequest::_internal_has_scaling() const {
+  return this != internal_default_instance() && scaling_ != nullptr;
+}
+inline bool CreateApplicationRequest::has_scaling() const {
+  return _internal_has_scaling();
+}
+inline void CreateApplicationRequest::clear_scaling() {
+  if (GetArenaForAllocation() == nullptr && scaling_ != nullptr) {
+    delete scaling_;
+  }
+  scaling_ = nullptr;
+}
+inline const ::application::v1alpha1::Scaling& CreateApplicationRequest::_internal_scaling() const {
+  const ::application::v1alpha1::Scaling* p = scaling_;
+  return p != nullptr ? *p : reinterpret_cast<const ::application::v1alpha1::Scaling&>(
+      ::application::v1alpha1::_Scaling_default_instance_);
+}
+inline const ::application::v1alpha1::Scaling& CreateApplicationRequest::scaling() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.CreateApplicationRequest.scaling)
+  return _internal_scaling();
+}
+inline void CreateApplicationRequest::unsafe_arena_set_allocated_scaling(
+    ::application::v1alpha1::Scaling* scaling) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(scaling_);
+  }
+  scaling_ = scaling;
+  if (scaling) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:application.v1alpha1.CreateApplicationRequest.scaling)
+}
+inline ::application::v1alpha1::Scaling* CreateApplicationRequest::release_scaling() {
+  
+  ::application::v1alpha1::Scaling* temp = scaling_;
+  scaling_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::application::v1alpha1::Scaling* CreateApplicationRequest::unsafe_arena_release_scaling() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.CreateApplicationRequest.scaling)
+  
+  ::application::v1alpha1::Scaling* temp = scaling_;
+  scaling_ = nullptr;
+  return temp;
+}
+inline ::application::v1alpha1::Scaling* CreateApplicationRequest::_internal_mutable_scaling() {
+  
+  if (scaling_ == nullptr) {
+    auto* p = CreateMaybeMessage<::application::v1alpha1::Scaling>(GetArenaForAllocation());
+    scaling_ = p;
+  }
+  return scaling_;
+}
+inline ::application::v1alpha1::Scaling* CreateApplicationRequest::mutable_scaling() {
+  ::application::v1alpha1::Scaling* _msg = _internal_mutable_scaling();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.CreateApplicationRequest.scaling)
+  return _msg;
+}
+inline void CreateApplicationRequest::set_allocated_scaling(::application::v1alpha1::Scaling* scaling) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete scaling_;
+  }
+  if (scaling) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::application::v1alpha1::Scaling>::GetOwningArena(scaling);
+    if (message_arena != submessage_arena) {
+      scaling = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, scaling, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  scaling_ = scaling;
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.CreateApplicationRequest.scaling)
 }
 
 // -------------------------------------------------------------------
@@ -4533,6 +5199,8 @@ inline void UpdateApplicationResponse::set_allocated_error(std::string* error) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

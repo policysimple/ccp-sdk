@@ -246,7 +246,7 @@ message CheckUserResponse {
     bool is_exists = 1;
     string error = 2;
     bool is_admin = 3;
-
+    string msg = 4;
 }
 
 message UsersDex {
@@ -383,16 +383,17 @@ enum InvitationResponse {
     INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED = 0;
     INVITATION_RESPONSE_REJECTED = 1;
 }
-
+/*
 message ProjectDetail {
     uint32 project_id = 1;
     uint32 role_id = 2;
 }
+*/
 
 message SendInvitationUserRequest {
     string name = 1;
     string email = 2;
-    repeated ProjectDetail projects = 3;
+    //repeated ProjectDetail projects = 3;
     string user_id_admin = 4;
     repeated uint32 roles_ids = 5;
     repeated uint32 permissions_ids = 6;
@@ -746,7 +747,6 @@ message GetOneOrganizationResponse{
     repeated Member menbers = 5;
     string description = 6;
     UserList owner = 7;
-    
 }
 
 

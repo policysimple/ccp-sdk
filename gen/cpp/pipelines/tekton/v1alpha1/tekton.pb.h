@@ -1003,6 +1003,7 @@ class Pipeline final :
     kObjectMetaNamespaceFieldNumber = 7,
     kSpecWorkspacesNameFieldNumber = 8,
     kStatusTypeFieldNumber = 11,
+    kInstanceTypeFieldNumber = 17,
     kOrganizationIdFieldNumber = 2,
     kProjectIdFieldNumber = 3,
     kActiveFieldNumber = 16,
@@ -1209,6 +1210,20 @@ class Pipeline final :
   std::string* _internal_mutable_status_type();
   public:
 
+  // string instance_type = 17 [json_name = "instanceType"];
+  void clear_instance_type();
+  const std::string& instance_type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_instance_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_instance_type();
+  PROTOBUF_MUST_USE_RESULT std::string* release_instance_type();
+  void set_allocated_instance_type(std::string* instance_type);
+  private:
+  const std::string& _internal_instance_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_instance_type(const std::string& value);
+  std::string* _internal_mutable_instance_type();
+  public:
+
   // uint32 organization_id = 2 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
@@ -1272,6 +1287,7 @@ class Pipeline final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr object_meta_namespace_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr spec_workspaces_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_type_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr instance_type_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   bool active_;
@@ -2673,6 +2689,52 @@ inline void Pipeline::_internal_set_active(bool value) {
 inline void Pipeline::set_active(bool value) {
   _internal_set_active(value);
   // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.active)
+}
+
+// string instance_type = 17 [json_name = "instanceType"];
+inline void Pipeline::clear_instance_type() {
+  instance_type_.ClearToEmpty();
+}
+inline const std::string& Pipeline::instance_type() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Pipeline.instance_type)
+  return _internal_instance_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Pipeline::set_instance_type(ArgT0&& arg0, ArgT... args) {
+ 
+ instance_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.instance_type)
+}
+inline std::string* Pipeline::mutable_instance_type() {
+  std::string* _s = _internal_mutable_instance_type();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Pipeline.instance_type)
+  return _s;
+}
+inline const std::string& Pipeline::_internal_instance_type() const {
+  return instance_type_.Get();
+}
+inline void Pipeline::_internal_set_instance_type(const std::string& value) {
+  
+  instance_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Pipeline::_internal_mutable_instance_type() {
+  
+  return instance_type_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Pipeline::release_instance_type() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.Pipeline.instance_type)
+  return instance_type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Pipeline::set_allocated_instance_type(std::string* instance_type) {
+  if (instance_type != nullptr) {
+    
+  } else {
+    
+  }
+  instance_type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), instance_type,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Pipeline.instance_type)
 }
 
 #ifdef __GNUC__
