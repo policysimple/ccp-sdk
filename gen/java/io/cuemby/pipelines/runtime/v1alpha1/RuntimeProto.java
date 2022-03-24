@@ -39,6 +39,11 @@ public final class RuntimeProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_runtime_v1alpha1_Runtime_SecretsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_runtime_v1alpha1_RuntimeList_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_runtime_v1alpha1_RuntimeList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -49,33 +54,35 @@ public final class RuntimeProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(pipelines/runtime/v1alpha1/runtime.pro" +
-      "to\022\032pipelines.runtime.v1alpha1\"\302\006\n\007Runti" +
+      "to\022\032pipelines.runtime.v1alpha1\"\332\006\n\007Runti" +
       "me\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\034" +
       "\n\tnamespace\030\003 \001(\tR\tnamespace\022#\n\rinstance" +
       "_type\030\004 \001(\tR\014instanceType\022\035\n\nproject_id\030" +
       "\005 \001(\rR\tprojectId\022%\n\016application_id\030\006 \001(\t" +
       "R\rapplicationId\022!\n\014workspace_id\030\007 \001(\tR\013w" +
-      "orkspaceId\022V\n\013integration\030\010 \003(\01324.pipeli" +
-      "nes.runtime.v1alpha1.Runtime.Integration" +
-      "EntryR\013integration\022r\n\025environment_variab" +
-      "les\030\t \003(\0132=.pipelines.runtime.v1alpha1.R" +
-      "untime.EnvironmentVariablesEntryR\024enviro" +
-      "nmentVariables\022M\n\010commands\030\n \003(\01321.pipel" +
-      "ines.runtime.v1alpha1.Runtime.CommandsEn" +
-      "tryR\010commands\022J\n\007secrets\030\013 \003(\01320.pipelin" +
-      "es.runtime.v1alpha1.Runtime.SecretsEntry" +
-      "R\007secrets\032>\n\020IntegrationEntry\022\020\n\003key\030\001 \001" +
-      "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032G\n\031Env" +
-      "ironmentVariablesEntry\022\020\n\003key\030\001 \001(\tR\003key" +
-      "\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rCommandsEn" +
-      "try\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005va" +
-      "lue:\0028\001\032:\n\014SecretsEntry\022\020\n\003key\030\001 \001(\tR\003ke" +
-      "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\255\001\n$io.cuemb" +
-      "y.pipelines.runtime.v1alpha1B\014RuntimePro" +
-      "toP\001Z5github.com/cuemby/ccp-runtime-serv" +
-      "ice/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.Ru" +
-      "ntime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alp" +
-      "ha1b\006proto3"
+      "orkspaceId\022\026\n\006scaler\030\010 \001(\tR\006scaler\022V\n\013in" +
+      "tegration\030\t \003(\01324.pipelines.runtime.v1al" +
+      "pha1.Runtime.IntegrationEntryR\013integrati" +
+      "on\022r\n\025environment_variables\030\n \003(\0132=.pipe" +
+      "lines.runtime.v1alpha1.Runtime.Environme" +
+      "ntVariablesEntryR\024environmentVariables\022M" +
+      "\n\010commands\030\013 \003(\01321.pipelines.runtime.v1a" +
+      "lpha1.Runtime.CommandsEntryR\010commands\022J\n" +
+      "\007secrets\030\014 \003(\01320.pipelines.runtime.v1alp" +
+      "ha1.Runtime.SecretsEntryR\007secrets\032>\n\020Int" +
+      "egrationEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value" +
+      "\030\002 \001(\tR\005value:\0028\001\032G\n\031EnvironmentVariable" +
+      "sEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR" +
+      "\005value:\0028\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\t" +
+      "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032:\n\014Secre" +
+      "tsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t" +
+      "R\005value:\0028\001\"H\n\013RuntimeList\0229\n\005items\030\001 \003(" +
+      "\0132#.pipelines.runtime.v1alpha1.RuntimeR\005" +
+      "itemsB\255\001\n$io.cuemby.pipelines.runtime.v1" +
+      "alpha1B\014RuntimeProtoP\001Z5github.com/cuemb" +
+      "y/ccp-runtime-service/runtimev1alpha1\242\002\003" +
+      "PPX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipel" +
+      "ines\\Runtime\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -86,7 +93,7 @@ public final class RuntimeProto {
     internal_static_pipelines_runtime_v1alpha1_Runtime_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor,
-        new java.lang.String[] { "Id", "Name", "Namespace", "InstanceType", "ProjectId", "ApplicationId", "WorkspaceId", "Integration", "EnvironmentVariables", "Commands", "Secrets", });
+        new java.lang.String[] { "Id", "Name", "Namespace", "InstanceType", "ProjectId", "ApplicationId", "WorkspaceId", "Scaler", "Integration", "EnvironmentVariables", "Commands", "Secrets", });
     internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_descriptor =
       internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor.getNestedTypes().get(0);
     internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_fieldAccessorTable = new
@@ -111,6 +118,12 @@ public final class RuntimeProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_SecretsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_pipelines_runtime_v1alpha1_RuntimeList_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_pipelines_runtime_v1alpha1_RuntimeList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_runtime_v1alpha1_RuntimeList_descriptor,
+        new java.lang.String[] { "Items", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,8 +19,13 @@ message Runtime {
   uint32 project_id = 5;
   string application_id = 6;
   string workspace_id = 7;
-  map<string, string> integration = 8;
-  map<string, string> environment_variables = 9;
-  map<string, string> commands = 10;
-  map<string, string> secrets = 11;
+  string scaler = 8;
+  map<string, string> integration = 9;
+  map<string, string> environment_variables = 10;
+  map<string, string> commands = 11;
+  map<string, string> secrets = 12;
+}
+
+message RuntimeList {
+  repeated Runtime items = 1;
 }

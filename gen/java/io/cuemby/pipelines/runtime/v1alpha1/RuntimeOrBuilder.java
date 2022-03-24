@@ -86,11 +86,23 @@ public interface RuntimeOrBuilder extends
       getWorkspaceIdBytes();
 
   /**
-   * <code>map&lt;string, string&gt; integration = 8 [json_name = "integration"];</code>
+   * <code>string scaler = 8 [json_name = "scaler"];</code>
+   * @return The scaler.
+   */
+  java.lang.String getScaler();
+  /**
+   * <code>string scaler = 8 [json_name = "scaler"];</code>
+   * @return The bytes for scaler.
+   */
+  com.google.protobuf.ByteString
+      getScalerBytes();
+
+  /**
+   * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
    */
   int getIntegrationCount();
   /**
-   * <code>map&lt;string, string&gt; integration = 8 [json_name = "integration"];</code>
+   * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
    */
   boolean containsIntegration(
       java.lang.String key);
@@ -101,30 +113,30 @@ public interface RuntimeOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getIntegration();
   /**
-   * <code>map&lt;string, string&gt; integration = 8 [json_name = "integration"];</code>
+   * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getIntegrationMap();
   /**
-   * <code>map&lt;string, string&gt; integration = 8 [json_name = "integration"];</code>
+   * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
    */
 
   java.lang.String getIntegrationOrDefault(
       java.lang.String key,
       java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; integration = 8 [json_name = "integration"];</code>
+   * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
    */
 
   java.lang.String getIntegrationOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, string&gt; environment_variables = 9 [json_name = "environmentVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
    */
   int getEnvironmentVariablesCount();
   /**
-   * <code>map&lt;string, string&gt; environment_variables = 9 [json_name = "environmentVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
    */
   boolean containsEnvironmentVariables(
       java.lang.String key);
@@ -135,30 +147,30 @@ public interface RuntimeOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getEnvironmentVariables();
   /**
-   * <code>map&lt;string, string&gt; environment_variables = 9 [json_name = "environmentVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getEnvironmentVariablesMap();
   /**
-   * <code>map&lt;string, string&gt; environment_variables = 9 [json_name = "environmentVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
    */
 
   java.lang.String getEnvironmentVariablesOrDefault(
       java.lang.String key,
       java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; environment_variables = 9 [json_name = "environmentVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
    */
 
   java.lang.String getEnvironmentVariablesOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, string&gt; commands = 10 [json_name = "commands"];</code>
+   * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
    */
   int getCommandsCount();
   /**
-   * <code>map&lt;string, string&gt; commands = 10 [json_name = "commands"];</code>
+   * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
    */
   boolean containsCommands(
       java.lang.String key);
@@ -169,30 +181,30 @@ public interface RuntimeOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getCommands();
   /**
-   * <code>map&lt;string, string&gt; commands = 10 [json_name = "commands"];</code>
+   * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getCommandsMap();
   /**
-   * <code>map&lt;string, string&gt; commands = 10 [json_name = "commands"];</code>
+   * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
    */
 
   java.lang.String getCommandsOrDefault(
       java.lang.String key,
       java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; commands = 10 [json_name = "commands"];</code>
+   * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
    */
 
   java.lang.String getCommandsOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, string&gt; secrets = 11 [json_name = "secrets"];</code>
+   * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
    */
   int getSecretsCount();
   /**
-   * <code>map&lt;string, string&gt; secrets = 11 [json_name = "secrets"];</code>
+   * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
    */
   boolean containsSecrets(
       java.lang.String key);
@@ -203,19 +215,19 @@ public interface RuntimeOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getSecrets();
   /**
-   * <code>map&lt;string, string&gt; secrets = 11 [json_name = "secrets"];</code>
+   * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getSecretsMap();
   /**
-   * <code>map&lt;string, string&gt; secrets = 11 [json_name = "secrets"];</code>
+   * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
    */
 
   java.lang.String getSecretsOrDefault(
       java.lang.String key,
       java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; secrets = 11 [json_name = "secrets"];</code>
+   * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
    */
 
   java.lang.String getSecretsOrThrow(

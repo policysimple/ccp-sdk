@@ -49,7 +49,7 @@ struct TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[5]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -62,6 +62,9 @@ namespace v1alpha1 {
 class Runtime;
 struct RuntimeDefaultTypeInternal;
 extern RuntimeDefaultTypeInternal _Runtime_default_instance_;
+class RuntimeList;
+struct RuntimeListDefaultTypeInternal;
+extern RuntimeListDefaultTypeInternal _RuntimeList_default_instance_;
 class Runtime_CommandsEntry_DoNotUse;
 struct Runtime_CommandsEntry_DoNotUseDefaultTypeInternal;
 extern Runtime_CommandsEntry_DoNotUseDefaultTypeInternal _Runtime_CommandsEntry_DoNotUse_default_instance_;
@@ -79,6 +82,7 @@ extern Runtime_SecretsEntry_DoNotUseDefaultTypeInternal _Runtime_SecretsEntry_Do
 }  // namespace pipelines
 PROTOBUF_NAMESPACE_OPEN
 template<> ::pipelines::runtime::v1alpha1::Runtime* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::RuntimeList* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::RuntimeList>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_CommandsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_CommandsEntry_DoNotUse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_EnvironmentVariablesEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_EnvironmentVariablesEntry_DoNotUse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_IntegrationEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_IntegrationEntry_DoNotUse>(Arena*);
@@ -314,19 +318,20 @@ class Runtime final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIntegrationFieldNumber = 8,
-    kEnvironmentVariablesFieldNumber = 9,
-    kCommandsFieldNumber = 10,
-    kSecretsFieldNumber = 11,
+    kIntegrationFieldNumber = 9,
+    kEnvironmentVariablesFieldNumber = 10,
+    kCommandsFieldNumber = 11,
+    kSecretsFieldNumber = 12,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kNamespaceFieldNumber = 3,
     kInstanceTypeFieldNumber = 4,
     kApplicationIdFieldNumber = 6,
     kWorkspaceIdFieldNumber = 7,
+    kScalerFieldNumber = 8,
     kProjectIdFieldNumber = 5,
   };
-  // map<string, string> integration = 8 [json_name = "integration"];
+  // map<string, string> integration = 9 [json_name = "integration"];
   int integration_size() const;
   private:
   int _internal_integration_size() const;
@@ -343,7 +348,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_integration();
 
-  // map<string, string> environment_variables = 9 [json_name = "environmentVariables"];
+  // map<string, string> environment_variables = 10 [json_name = "environmentVariables"];
   int environment_variables_size() const;
   private:
   int _internal_environment_variables_size() const;
@@ -360,7 +365,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_environment_variables();
 
-  // map<string, string> commands = 10 [json_name = "commands"];
+  // map<string, string> commands = 11 [json_name = "commands"];
   int commands_size() const;
   private:
   int _internal_commands_size() const;
@@ -377,7 +382,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_commands();
 
-  // map<string, string> secrets = 11 [json_name = "secrets"];
+  // map<string, string> secrets = 12 [json_name = "secrets"];
   int secrets_size() const;
   private:
   int _internal_secrets_size() const;
@@ -478,6 +483,20 @@ class Runtime final :
   std::string* _internal_mutable_workspace_id();
   public:
 
+  // string scaler = 8 [json_name = "scaler"];
+  void clear_scaler();
+  const std::string& scaler() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_scaler(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_scaler();
+  PROTOBUF_MUST_USE_RESULT std::string* release_scaler();
+  void set_allocated_scaler(std::string* scaler);
+  private:
+  const std::string& _internal_scaler() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_scaler(const std::string& value);
+  std::string* _internal_mutable_scaler();
+  public:
+
   // uint32 project_id = 5 [json_name = "projectId"];
   void clear_project_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
@@ -520,7 +539,156 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr instance_type_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr workspace_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr scaler_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RuntimeList final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.RuntimeList) */ {
+ public:
+  inline RuntimeList() : RuntimeList(nullptr) {}
+  ~RuntimeList() override;
+  explicit constexpr RuntimeList(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RuntimeList(const RuntimeList& from);
+  RuntimeList(RuntimeList&& from) noexcept
+    : RuntimeList() {
+    *this = ::std::move(from);
+  }
+
+  inline RuntimeList& operator=(const RuntimeList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RuntimeList& operator=(RuntimeList&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const RuntimeList& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RuntimeList* internal_default_instance() {
+    return reinterpret_cast<const RuntimeList*>(
+               &_RuntimeList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(RuntimeList& a, RuntimeList& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RuntimeList* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RuntimeList* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RuntimeList* New() const final {
+    return new RuntimeList();
+  }
+
+  RuntimeList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<RuntimeList>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const RuntimeList& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const RuntimeList& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RuntimeList* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.runtime.v1alpha1.RuntimeList";
+  }
+  protected:
+  explicit RuntimeList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kItemsFieldNumber = 1,
+  };
+  // repeated .pipelines.runtime.v1alpha1.Runtime items = 1 [json_name = "items"];
+  int items_size() const;
+  private:
+  int _internal_items_size() const;
+  public:
+  void clear_items();
+  ::pipelines::runtime::v1alpha1::Runtime* mutable_items(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::runtime::v1alpha1::Runtime >*
+      mutable_items();
+  private:
+  const ::pipelines::runtime::v1alpha1::Runtime& _internal_items(int index) const;
+  ::pipelines::runtime::v1alpha1::Runtime* _internal_add_items();
+  public:
+  const ::pipelines::runtime::v1alpha1::Runtime& items(int index) const;
+  ::pipelines::runtime::v1alpha1::Runtime* add_items();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::runtime::v1alpha1::Runtime >&
+      items() const;
+
+  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.RuntimeList)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::runtime::v1alpha1::Runtime > items_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto;
 };
@@ -839,7 +1007,53 @@ inline void Runtime::set_allocated_workspace_id(std::string* workspace_id) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.workspace_id)
 }
 
-// map<string, string> integration = 8 [json_name = "integration"];
+// string scaler = 8 [json_name = "scaler"];
+inline void Runtime::clear_scaler() {
+  scaler_.ClearToEmpty();
+}
+inline const std::string& Runtime::scaler() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.scaler)
+  return _internal_scaler();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_scaler(ArgT0&& arg0, ArgT... args) {
+ 
+ scaler_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.scaler)
+}
+inline std::string* Runtime::mutable_scaler() {
+  std::string* _s = _internal_mutable_scaler();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.scaler)
+  return _s;
+}
+inline const std::string& Runtime::_internal_scaler() const {
+  return scaler_.Get();
+}
+inline void Runtime::_internal_set_scaler(const std::string& value) {
+  
+  scaler_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_scaler() {
+  
+  return scaler_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_scaler() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.scaler)
+  return scaler_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_scaler(std::string* scaler) {
+  if (scaler != nullptr) {
+    
+  } else {
+    
+  }
+  scaler_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), scaler,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.scaler)
+}
+
+// map<string, string> integration = 9 [json_name = "integration"];
 inline int Runtime::_internal_integration_size() const {
   return integration_.size();
 }
@@ -868,7 +1082,7 @@ Runtime::mutable_integration() {
   return _internal_mutable_integration();
 }
 
-// map<string, string> environment_variables = 9 [json_name = "environmentVariables"];
+// map<string, string> environment_variables = 10 [json_name = "environmentVariables"];
 inline int Runtime::_internal_environment_variables_size() const {
   return environment_variables_.size();
 }
@@ -897,7 +1111,7 @@ Runtime::mutable_environment_variables() {
   return _internal_mutable_environment_variables();
 }
 
-// map<string, string> commands = 10 [json_name = "commands"];
+// map<string, string> commands = 11 [json_name = "commands"];
 inline int Runtime::_internal_commands_size() const {
   return commands_.size();
 }
@@ -926,7 +1140,7 @@ Runtime::mutable_commands() {
   return _internal_mutable_commands();
 }
 
-// map<string, string> secrets = 11 [json_name = "secrets"];
+// map<string, string> secrets = 12 [json_name = "secrets"];
 inline int Runtime::_internal_secrets_size() const {
   return secrets_.size();
 }
@@ -955,9 +1169,55 @@ Runtime::mutable_secrets() {
   return _internal_mutable_secrets();
 }
 
+// -------------------------------------------------------------------
+
+// RuntimeList
+
+// repeated .pipelines.runtime.v1alpha1.Runtime items = 1 [json_name = "items"];
+inline int RuntimeList::_internal_items_size() const {
+  return items_.size();
+}
+inline int RuntimeList::items_size() const {
+  return _internal_items_size();
+}
+inline void RuntimeList::clear_items() {
+  items_.Clear();
+}
+inline ::pipelines::runtime::v1alpha1::Runtime* RuntimeList::mutable_items(int index) {
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.RuntimeList.items)
+  return items_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::runtime::v1alpha1::Runtime >*
+RuntimeList::mutable_items() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.runtime.v1alpha1.RuntimeList.items)
+  return &items_;
+}
+inline const ::pipelines::runtime::v1alpha1::Runtime& RuntimeList::_internal_items(int index) const {
+  return items_.Get(index);
+}
+inline const ::pipelines::runtime::v1alpha1::Runtime& RuntimeList::items(int index) const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.RuntimeList.items)
+  return _internal_items(index);
+}
+inline ::pipelines::runtime::v1alpha1::Runtime* RuntimeList::_internal_add_items() {
+  return items_.Add();
+}
+inline ::pipelines::runtime::v1alpha1::Runtime* RuntimeList::add_items() {
+  ::pipelines::runtime::v1alpha1::Runtime* _add = _internal_add_items();
+  // @@protoc_insertion_point(field_add:pipelines.runtime.v1alpha1.RuntimeList.items)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::runtime::v1alpha1::Runtime >&
+RuntimeList::items() const {
+  // @@protoc_insertion_point(field_list:pipelines.runtime.v1alpha1.RuntimeList.items)
+  return items_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
