@@ -32,6 +32,7 @@ type SourceServiceClient interface {
 	DeleteIntegration(ctx context.Context, in *DeleteIntegrationRequest, opts ...grpc.CallOption) (*DeleteIntegrationResponse, error)
 	//List Repositories providers by integrations
 	ListRepositoriesProvider(ctx context.Context, in *ListRepositoriesProviderRequest, opts ...grpc.CallOption) (*ListRepositoriesProviderResponse, error)
+	GetRepositoryProvider(ctx context.Context, in *GetRepositoryProviderRequest, opts ...grpc.CallOption) (*GetRepositoryProviderResponse, error)
 	//REPOSITORIES
 	CreateRepository(ctx context.Context, in *CreateRepositoryRequest, opts ...grpc.CallOption) (*CreateRepositoryResponse, error)
 	ListRepositories(ctx context.Context, in *ListRepositoriesRequest, opts ...grpc.CallOption) (*ListRepositoriesResponse, error)
@@ -147,6 +148,15 @@ func (c *sourceServiceClient) ListRepositoriesProvider(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *sourceServiceClient) GetRepositoryProvider(ctx context.Context, in *GetRepositoryProviderRequest, opts ...grpc.CallOption) (*GetRepositoryProviderResponse, error) {
+	out := new(GetRepositoryProviderResponse)
+	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/GetRepositoryProvider", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *sourceServiceClient) CreateRepository(ctx context.Context, in *CreateRepositoryRequest, opts ...grpc.CallOption) (*CreateRepositoryResponse, error) {
 	out := new(CreateRepositoryResponse)
 	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/CreateRepository", in, out, opts...)
@@ -210,6 +220,7 @@ type SourceServiceServer interface {
 	DeleteIntegration(context.Context, *DeleteIntegrationRequest) (*DeleteIntegrationResponse, error)
 	//List Repositories providers by integrations
 	ListRepositoriesProvider(context.Context, *ListRepositoriesProviderRequest) (*ListRepositoriesProviderResponse, error)
+	GetRepositoryProvider(context.Context, *GetRepositoryProviderRequest) (*GetRepositoryProviderResponse, error)
 	//REPOSITORIES
 	CreateRepository(context.Context, *CreateRepositoryRequest) (*CreateRepositoryResponse, error)
 	ListRepositories(context.Context, *ListRepositoriesRequest) (*ListRepositoriesResponse, error)
@@ -254,6 +265,9 @@ func (UnimplementedSourceServiceServer) DeleteIntegration(context.Context, *Dele
 }
 func (UnimplementedSourceServiceServer) ListRepositoriesProvider(context.Context, *ListRepositoriesProviderRequest) (*ListRepositoriesProviderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListRepositoriesProvider not implemented")
+}
+func (UnimplementedSourceServiceServer) GetRepositoryProvider(context.Context, *GetRepositoryProviderRequest) (*GetRepositoryProviderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRepositoryProvider not implemented")
 }
 func (UnimplementedSourceServiceServer) CreateRepository(context.Context, *CreateRepositoryRequest) (*CreateRepositoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateRepository not implemented")
@@ -480,6 +494,24 @@ func _SourceService_ListRepositoriesProvider_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SourceService_GetRepositoryProvider_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRepositoryProviderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourceServiceServer).GetRepositoryProvider(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/source.v1alpha1.SourceService/GetRepositoryProvider",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourceServiceServer).GetRepositoryProvider(ctx, req.(*GetRepositoryProviderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _SourceService_CreateRepository_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateRepositoryRequest)
 	if err := dec(in); err != nil {
@@ -620,6 +652,10 @@ var SourceService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListRepositoriesProvider",
 			Handler:    _SourceService_ListRepositoriesProvider_Handler,
+		},
+		{
+			MethodName: "GetRepositoryProvider",
+			Handler:    _SourceService_GetRepositoryProvider_Handler,
 		},
 		{
 			MethodName: "CreateRepository",

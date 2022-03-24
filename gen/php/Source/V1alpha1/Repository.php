@@ -37,6 +37,10 @@ class Repository extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string clone_url = 6 [json_name = "cloneUrl"];</code>
      */
     protected $clone_url = '';
+    /**
+     * Generated from protobuf field <code>string branch = 7 [json_name = "branch"];</code>
+     */
+    protected $branch = '';
 
     /**
      * Constructor.
@@ -50,6 +54,7 @@ class Repository extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *     @type bool $fork
      *     @type string $clone_url
+     *     @type string $branch
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +190,28 @@ class Repository extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->clone_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string branch = 7 [json_name = "branch"];</code>
+     * @return string
+     */
+    public function getBranch()
+    {
+        return $this->branch;
+    }
+
+    /**
+     * Generated from protobuf field <code>string branch = 7 [json_name = "branch"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBranch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->branch = $var;
 
         return $this;
     }

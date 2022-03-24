@@ -23,6 +23,7 @@ service SourceService {
 
     //List Repositories providers by integrations
     rpc ListRepositoriesProvider(ListRepositoriesProviderRequest) returns (ListRepositoriesProviderResponse);
+    rpc GetRepositoryProvider(GetRepositoryProviderRequest) returns (GetRepositoryProviderResponse);
 
     //REPOSITORIES
     rpc CreateRepository(CreateRepositoryRequest) returns (CreateRepositoryResponse);
@@ -36,12 +37,27 @@ service SourceService {
   CreateProviderRequest is the request for the CreateProvider method.
 */
 
+message Branch {
+    string name = 1;
+    string sha = 2;
+    string url = 3;
+}
+
 message ListRepositoriesProviderRequest {
     string integration_id = 1;
 }
 
 message ListRepositoriesProviderResponse {
     repeated Repository repositories = 1;
+}
+
+message GetRepositoryProviderRequest {
+    string integration_id = 1;
+    string name = 2;
+}
+
+message GetRepositoryProviderResponse {
+    repeated Branch branchs = 1;
 }
 
 /*
@@ -165,16 +181,18 @@ message Repository {
     string description = 4;
     bool fork = 5;
     string clone_url = 6;
+    string branch = 7;
 }
 
 message CreateIntegrationRequest {
     //string id = 1;
     uint32 organization_id = 2;
     string name = 3;
-    Provider provider = 4;
+    //Provider provider = 4;
     map<string, string> data = 5;
     map<string, string> metadata = 6;
     string user_id = 7;
+    string provider_id = 8;
 }
 
 message CreateIntegrationResponse {

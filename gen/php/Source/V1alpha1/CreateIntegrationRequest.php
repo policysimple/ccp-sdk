@@ -24,10 +24,8 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
-     */
-    protected $provider = null;
-    /**
+     *Provider provider = 4;
+     *
      * Generated from protobuf field <code>map<string, string> data = 5 [json_name = "data"];</code>
      */
     private $data;
@@ -39,6 +37,10 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_id = 7 [json_name = "userId"];</code>
      */
     protected $user_id = '';
+    /**
+     * Generated from protobuf field <code>string provider_id = 8 [json_name = "providerId"];</code>
+     */
+    protected $provider_id = '';
 
     /**
      * Constructor.
@@ -49,10 +51,11 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
      *     @type int $organization_id
      *          string id = 1;
      *     @type string $name
-     *     @type \Source\V1alpha1\Provider $provider
      *     @type array|\Google\Protobuf\Internal\MapField $data
+     *          Provider provider = 4;
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type string $user_id
+     *     @type string $provider_id
      * }
      */
     public function __construct($data = NULL) {
@@ -109,38 +112,8 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
-     * @return \Source\V1alpha1\Provider|null
-     */
-    public function getProvider()
-    {
-        return $this->provider;
-    }
-
-    public function hasProvider()
-    {
-        return isset($this->provider);
-    }
-
-    public function clearProvider()
-    {
-        unset($this->provider);
-    }
-
-    /**
-     * Generated from protobuf field <code>.source.v1alpha1.Provider provider = 4 [json_name = "provider"];</code>
-     * @param \Source\V1alpha1\Provider $var
-     * @return $this
-     */
-    public function setProvider($var)
-    {
-        GPBUtil::checkMessage($var, \Source\V1alpha1\Provider::class);
-        $this->provider = $var;
-
-        return $this;
-    }
-
-    /**
+     *Provider provider = 4;
+     *
      * Generated from protobuf field <code>map<string, string> data = 5 [json_name = "data"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
@@ -150,6 +123,8 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *Provider provider = 4;
+     *
      * Generated from protobuf field <code>map<string, string> data = 5 [json_name = "data"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
@@ -202,6 +177,28 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string provider_id = 8 [json_name = "providerId"];</code>
+     * @return string
+     */
+    public function getProviderId()
+    {
+        return $this->provider_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string provider_id = 8 [json_name = "providerId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProviderId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->provider_id = $var;
 
         return $this;
     }
