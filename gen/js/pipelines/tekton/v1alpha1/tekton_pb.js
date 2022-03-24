@@ -1014,7 +1014,8 @@ proto.pipelines.tekton.v1alpha1.Pipeline.toObject = function(includeInstance, ms
     environmentVariablesMap: (f = msg.getEnvironmentVariablesMap()) ? f.toObject(includeInstance, undefined) : [],
     commandsMap: (f = msg.getCommandsMap()) ? f.toObject(includeInstance, undefined) : [],
     secretsMap: (f = msg.getSecretsMap()) ? f.toObject(includeInstance, undefined) : [],
-    active: jspb.Message.getBooleanFieldWithDefault(msg, 16, false)
+    active: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
+    instanceType: jspb.Message.getFieldWithDefault(msg, 17, "")
   };
 
   if (includeInstance) {
@@ -1124,6 +1125,10 @@ proto.pipelines.tekton.v1alpha1.Pipeline.deserializeBinaryFromReader = function(
     case 16:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setActive(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInstanceType(value);
       break;
     default:
       reader.skipField();
@@ -1253,6 +1258,13 @@ proto.pipelines.tekton.v1alpha1.Pipeline.serializeBinaryToWriter = function(mess
   if (f) {
     writer.writeBool(
       16,
+      f
+    );
+  }
+  f = message.getInstanceType();
+  if (f.length > 0) {
+    writer.writeString(
+      17,
       f
     );
   }
@@ -1600,6 +1612,24 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getActive = function() {
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setActive = function(value) {
   return jspb.Message.setProto3BooleanField(this, 16, value);
+};
+
+
+/**
+ * optional string instance_type = 17;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getInstanceType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setInstanceType = function(value) {
+  return jspb.Message.setProto3StringField(this, 17, value);
 };
 
 

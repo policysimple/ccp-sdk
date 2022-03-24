@@ -53,4 +53,5 @@ message Pipeline {
     map<string, string> commands = 14;
     map<string, string> secrets = 15;
     bool active = 16;
+    string instance_type = 17;
 }
