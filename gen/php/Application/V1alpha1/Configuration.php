@@ -25,6 +25,10 @@ class Configuration extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 port = 3 [json_name = "port"];</code>
      */
     protected $port = 0;
+    /**
+     * Generated from protobuf field <code>string instace_type = 4 [json_name = "instaceType"];</code>
+     */
+    protected $instace_type = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class Configuration extends \Google\Protobuf\Internal\Message
      *     @type \Application\V1alpha1\Env[]|\Google\Protobuf\Internal\RepeatedField $envs
      *     @type \Application\V1alpha1\Command[]|\Google\Protobuf\Internal\RepeatedField $commands
      *     @type int $port
+     *     @type string $instace_type
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class Configuration extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->port = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string instace_type = 4 [json_name = "instaceType"];</code>
+     * @return string
+     */
+    public function getInstaceType()
+    {
+        return $this->instace_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string instace_type = 4 [json_name = "instaceType"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInstaceType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->instace_type = $var;
 
         return $this;
     }

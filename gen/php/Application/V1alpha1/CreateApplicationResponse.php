@@ -21,6 +21,10 @@ class CreateApplicationResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      */
     protected $error = '';
+    /**
+     * Generated from protobuf field <code>string id = 3 [json_name = "id"];</code>
+     */
+    protected $id = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class CreateApplicationResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type string $msg
      *     @type string $error
+     *     @type string $id
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class CreateApplicationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->error = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 3 [json_name = "id"];</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 3 [json_name = "id"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
 
         return $this;
     }

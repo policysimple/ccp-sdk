@@ -2738,6 +2738,18 @@ public final class ApplicationOuterClass {
      * @return The port.
      */
     int getPort();
+
+    /**
+     * <code>string instace_type = 4 [json_name = "instaceType"];</code>
+     * @return The instaceType.
+     */
+    java.lang.String getInstaceType();
+    /**
+     * <code>string instace_type = 4 [json_name = "instaceType"];</code>
+     * @return The bytes for instaceType.
+     */
+    com.google.protobuf.ByteString
+        getInstaceTypeBytes();
   }
   /**
    * Protobuf type {@code application.v1alpha1.Configuration}
@@ -2754,6 +2766,7 @@ public final class ApplicationOuterClass {
     private Configuration() {
       envs_ = java.util.Collections.emptyList();
       commands_ = java.util.Collections.emptyList();
+      instaceType_ = "";
     }
 
     @java.lang.Override
@@ -2808,6 +2821,12 @@ public final class ApplicationOuterClass {
             case 24: {
 
               port_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instaceType_ = s;
               break;
             }
             default: {
@@ -2939,6 +2958,44 @@ public final class ApplicationOuterClass {
       return port_;
     }
 
+    public static final int INSTACE_TYPE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object instaceType_;
+    /**
+     * <code>string instace_type = 4 [json_name = "instaceType"];</code>
+     * @return The instaceType.
+     */
+    @java.lang.Override
+    public java.lang.String getInstaceType() {
+      java.lang.Object ref = instaceType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instaceType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string instace_type = 4 [json_name = "instaceType"];</code>
+     * @return The bytes for instaceType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInstaceTypeBytes() {
+      java.lang.Object ref = instaceType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        instaceType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2962,6 +3019,9 @@ public final class ApplicationOuterClass {
       if (port_ != 0) {
         output.writeInt32(3, port_);
       }
+      if (!getInstaceTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, instaceType_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2982,6 +3042,9 @@ public final class ApplicationOuterClass {
       if (port_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, port_);
+      }
+      if (!getInstaceTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, instaceType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3004,6 +3067,8 @@ public final class ApplicationOuterClass {
           .equals(other.getCommandsList())) return false;
       if (getPort()
           != other.getPort()) return false;
+      if (!getInstaceType()
+          .equals(other.getInstaceType())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3025,6 +3090,8 @@ public final class ApplicationOuterClass {
       }
       hash = (37 * hash) + PORT_FIELD_NUMBER;
       hash = (53 * hash) + getPort();
+      hash = (37 * hash) + INSTACE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getInstaceType().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3174,6 +3241,8 @@ public final class ApplicationOuterClass {
         }
         port_ = 0;
 
+        instaceType_ = "";
+
         return this;
       }
 
@@ -3220,6 +3289,7 @@ public final class ApplicationOuterClass {
           result.commands_ = commandsBuilder_.build();
         }
         result.port_ = port_;
+        result.instaceType_ = instaceType_;
         onBuilt();
         return result;
       }
@@ -3322,6 +3392,10 @@ public final class ApplicationOuterClass {
         }
         if (other.getPort() != 0) {
           setPort(other.getPort());
+        }
+        if (!other.getInstaceType().isEmpty()) {
+          instaceType_ = other.instaceType_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3860,6 +3934,82 @@ public final class ApplicationOuterClass {
       public Builder clearPort() {
         
         port_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object instaceType_ = "";
+      /**
+       * <code>string instace_type = 4 [json_name = "instaceType"];</code>
+       * @return The instaceType.
+       */
+      public java.lang.String getInstaceType() {
+        java.lang.Object ref = instaceType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          instaceType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string instace_type = 4 [json_name = "instaceType"];</code>
+       * @return The bytes for instaceType.
+       */
+      public com.google.protobuf.ByteString
+          getInstaceTypeBytes() {
+        java.lang.Object ref = instaceType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          instaceType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string instace_type = 4 [json_name = "instaceType"];</code>
+       * @param value The instaceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstaceType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        instaceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string instace_type = 4 [json_name = "instaceType"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInstaceType() {
+        
+        instaceType_ = getDefaultInstance().getInstaceType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string instace_type = 4 [json_name = "instaceType"];</code>
+       * @param value The bytes for instaceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstaceTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        instaceType_ = value;
         onChanged();
         return this;
       }
@@ -8055,6 +8205,18 @@ public final class ApplicationOuterClass {
      */
     com.google.protobuf.ByteString
         getErrorBytes();
+
+    /**
+     * <code>string id = 3 [json_name = "id"];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 3 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
   }
   /**
    * Protobuf type {@code application.v1alpha1.CreateApplicationResponse}
@@ -8071,6 +8233,7 @@ public final class ApplicationOuterClass {
     private CreateApplicationResponse() {
       msg_ = "";
       error_ = "";
+      id_ = "";
     }
 
     @java.lang.Override
@@ -8113,6 +8276,12 @@ public final class ApplicationOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
               break;
             }
             default: {
@@ -8223,6 +8392,44 @@ public final class ApplicationOuterClass {
       }
     }
 
+    public static final int ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 3 [json_name = "id"];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 3 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8243,6 +8450,9 @@ public final class ApplicationOuterClass {
       if (!getErrorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
       }
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -8257,6 +8467,9 @@ public final class ApplicationOuterClass {
       }
       if (!getErrorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8277,6 +8490,8 @@ public final class ApplicationOuterClass {
           .equals(other.getMsg())) return false;
       if (!getError()
           .equals(other.getError())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8292,6 +8507,8 @@ public final class ApplicationOuterClass {
       hash = (53 * hash) + getMsg().hashCode();
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8429,6 +8646,8 @@ public final class ApplicationOuterClass {
 
         error_ = "";
 
+        id_ = "";
+
         return this;
       }
 
@@ -8457,6 +8676,7 @@ public final class ApplicationOuterClass {
         application.v1alpha1.ApplicationOuterClass.CreateApplicationResponse result = new application.v1alpha1.ApplicationOuterClass.CreateApplicationResponse(this);
         result.msg_ = msg_;
         result.error_ = error_;
+        result.id_ = id_;
         onBuilt();
         return result;
       }
@@ -8511,6 +8731,10 @@ public final class ApplicationOuterClass {
         }
         if (!other.getError().isEmpty()) {
           error_ = other.error_;
+          onChanged();
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -8690,6 +8914,82 @@ public final class ApplicationOuterClass {
   checkByteStringIsUtf8(value);
         
         error_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 3 [json_name = "id"];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 3 [json_name = "id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 3 [json_name = "id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 3 [json_name = "id"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 3 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
         onChanged();
         return this;
       }
@@ -14089,64 +14389,65 @@ public final class ApplicationOuterClass {
       "ommand\022\024\n\005build\030\001 \001(\tR\005build\022\020\n\003run\030\002 \001(" +
       "\tR\003run\"K\n\003Env\022\024\n\005value\030\001 \001(\tR\005value\022\020\n\003k" +
       "ey\030\002 \001(\tR\003key\022\034\n\tencrypted\030\003 \001(\010R\tencryp" +
-      "ted\"\215\001\n\rConfiguration\022-\n\004envs\030\001 \003(\0132\031.ap" +
+      "ted\"\260\001\n\rConfiguration\022-\n\004envs\030\001 \003(\0132\031.ap" +
       "plication.v1alpha1.EnvR\004envs\0229\n\010commands" +
       "\030\002 \003(\0132\035.application.v1alpha1.CommandR\010c" +
-      "ommands\022\022\n\004port\030\003 \001(\005R\004port\"\270\002\n\013Applicat" +
-      "ion\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022" +
-      " \n\013integration\030\003 \001(\tR\013integration\022@\n\nrep" +
-      "ository\030\004 \001(\0132 .application.v1alpha1.Rep" +
-      "ositoryR\nrepository\022I\n\rconfiguration\030\005 \001" +
-      "(\0132#.application.v1alpha1.ConfigurationR" +
-      "\rconfiguration\022\035\n\nproject_id\030\006 \001(\rR\tproj" +
-      "ectId\0227\n\007scaling\030\007 \001(\0132\035.application.v1a" +
-      "lpha1.ScalingR\007scaling\"\273\001\n\007Scaling\022\031\n\010cp" +
-      "u_rule\030\001 \001(\tR\007cpuRule\022(\n\020cool_down_perio" +
-      "d\030\002 \001(\tR\016coolDownPeriod\022)\n\020polling_inter" +
-      "val\030\003 \001(\tR\017pollingInterval\022\037\n\013min_replic" +
-      "a\030\004 \001(\tR\nminReplica\022\037\n\013max_replica\030\005 \001(\t" +
-      "R\nmaxReplica\"\265\002\n\030CreateApplicationReques" +
-      "t\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013integration\030\002 \001" +
-      "(\tR\013integration\022@\n\nrepository\030\003 \001(\0132 .ap" +
-      "plication.v1alpha1.RepositoryR\nrepositor" +
-      "y\022I\n\rconfiguration\030\004 \001(\0132#.application.v" +
-      "1alpha1.ConfigurationR\rconfiguration\022\035\n\n" +
-      "project_id\030\005 \001(\rR\tprojectId\0227\n\007scaling\030\006" +
-      " \001(\0132\035.application.v1alpha1.ScalingR\007sca" +
-      "ling\"C\n\031CreateApplicationResponse\022\020\n\003msg" +
-      "\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"7\n\026Lis" +
-      "tApplicationRequest\022\035\n\nproject_id\030\001 \001(\rR" +
-      "\tprojectId\"`\n\027ListApplicationResponse\022E\n" +
-      "\014applications\030\001 \003(\0132!.application.v1alph" +
-      "a1.ApplicationR\014applications\"\'\n\025GetAppli" +
-      "cationRequest\022\016\n\002id\030\001 \001(\tR\002id\"]\n\026GetAppl" +
-      "icationResponse\022C\n\013application\030\001 \001(\0132!.a" +
-      "pplication.v1alpha1.ApplicationR\013applica" +
-      "tion\"*\n\030DeleteApplicationRequest\022\016\n\002id\030\001" +
-      " \001(\tR\002id\"C\n\031DeleteApplicationResponse\022\020\n" +
-      "\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"|\n" +
-      "\030UpdateApplicationRequest\022\016\n\002id\030\001 \001(\tR\002i" +
-      "d\022P\n\013application\030\002 \001(\0132..application.v1a" +
-      "lpha1.CreateApplicationRequestR\013applicat" +
-      "ion\"C\n\031UpdateApplicationResponse\022\020\n\003msg\030" +
-      "\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error2\323\004\n\022App" +
-      "licationService\022t\n\021CreateApplication\022..a" +
-      "pplication.v1alpha1.CreateApplicationReq" +
-      "uest\032/.application.v1alpha1.CreateApplic" +
-      "ationResponse\022n\n\017ListApplication\022,.appli" +
-      "cation.v1alpha1.ListApplicationRequest\032-" +
-      ".application.v1alpha1.ListApplicationRes" +
-      "ponse\022k\n\016GetApplication\022+.application.v1" +
-      "alpha1.GetApplicationRequest\032,.applicati" +
-      "on.v1alpha1.GetApplicationResponse\022t\n\021De" +
-      "leteApplication\022..application.v1alpha1.D" +
-      "eleteApplicationRequest\032/.application.v1" +
-      "alpha1.DeleteApplicationResponse\022t\n\021Upda" +
-      "teApplication\022..application.v1alpha1.Upd" +
-      "ateApplicationRequest\032/.application.v1al" +
-      "pha1.UpdateApplicationResponseB7Z5github" +
-      ".com/cuemby/ccp-sdk/gen/go/application/v" +
-      "1alpha1b\006proto3"
+      "ommands\022\022\n\004port\030\003 \001(\005R\004port\022!\n\014instace_t" +
+      "ype\030\004 \001(\tR\013instaceType\"\270\002\n\013Application\022\016" +
+      "\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013in" +
+      "tegration\030\003 \001(\tR\013integration\022@\n\nreposito" +
+      "ry\030\004 \001(\0132 .application.v1alpha1.Reposito" +
+      "ryR\nrepository\022I\n\rconfiguration\030\005 \001(\0132#." +
+      "application.v1alpha1.ConfigurationR\rconf" +
+      "iguration\022\035\n\nproject_id\030\006 \001(\rR\tprojectId" +
+      "\0227\n\007scaling\030\007 \001(\0132\035.application.v1alpha1" +
+      ".ScalingR\007scaling\"\273\001\n\007Scaling\022\031\n\010cpu_rul" +
+      "e\030\001 \001(\tR\007cpuRule\022(\n\020cool_down_period\030\002 \001" +
+      "(\tR\016coolDownPeriod\022)\n\020polling_interval\030\003" +
+      " \001(\tR\017pollingInterval\022\037\n\013min_replica\030\004 \001" +
+      "(\tR\nminReplica\022\037\n\013max_replica\030\005 \001(\tR\nmax" +
+      "Replica\"\265\002\n\030CreateApplicationRequest\022\022\n\004" +
+      "name\030\001 \001(\tR\004name\022 \n\013integration\030\002 \001(\tR\013i" +
+      "ntegration\022@\n\nrepository\030\003 \001(\0132 .applica" +
+      "tion.v1alpha1.RepositoryR\nrepository\022I\n\r" +
+      "configuration\030\004 \001(\0132#.application.v1alph" +
+      "a1.ConfigurationR\rconfiguration\022\035\n\nproje" +
+      "ct_id\030\005 \001(\rR\tprojectId\0227\n\007scaling\030\006 \001(\0132" +
+      "\035.application.v1alpha1.ScalingR\007scaling\"" +
+      "S\n\031CreateApplicationResponse\022\020\n\003msg\030\001 \001(" +
+      "\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\t" +
+      "R\002id\"7\n\026ListApplicationRequest\022\035\n\nprojec" +
+      "t_id\030\001 \001(\rR\tprojectId\"`\n\027ListApplication" +
+      "Response\022E\n\014applications\030\001 \003(\0132!.applica" +
+      "tion.v1alpha1.ApplicationR\014applications\"" +
+      "\'\n\025GetApplicationRequest\022\016\n\002id\030\001 \001(\tR\002id" +
+      "\"]\n\026GetApplicationResponse\022C\n\013applicatio" +
+      "n\030\001 \001(\0132!.application.v1alpha1.Applicati" +
+      "onR\013application\"*\n\030DeleteApplicationRequ" +
+      "est\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteApplication" +
+      "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(" +
+      "\tR\005error\"|\n\030UpdateApplicationRequest\022\016\n\002" +
+      "id\030\001 \001(\tR\002id\022P\n\013application\030\002 \001(\0132..appl" +
+      "ication.v1alpha1.CreateApplicationReques" +
+      "tR\013application\"C\n\031UpdateApplicationRespo" +
+      "nse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005er" +
+      "ror2\323\004\n\022ApplicationService\022t\n\021CreateAppl" +
+      "ication\022..application.v1alpha1.CreateApp" +
+      "licationRequest\032/.application.v1alpha1.C" +
+      "reateApplicationResponse\022n\n\017ListApplicat" +
+      "ion\022,.application.v1alpha1.ListApplicati" +
+      "onRequest\032-.application.v1alpha1.ListApp" +
+      "licationResponse\022k\n\016GetApplication\022+.app" +
+      "lication.v1alpha1.GetApplicationRequest\032" +
+      ",.application.v1alpha1.GetApplicationRes" +
+      "ponse\022t\n\021DeleteApplication\022..application" +
+      ".v1alpha1.DeleteApplicationRequest\032/.app" +
+      "lication.v1alpha1.DeleteApplicationRespo" +
+      "nse\022t\n\021UpdateApplication\022..application.v" +
+      "1alpha1.UpdateApplicationRequest\032/.appli" +
+      "cation.v1alpha1.UpdateApplicationRespons" +
+      "eB7Z5github.com/cuemby/ccp-sdk/gen/go/ap" +
+      "plication/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -14175,7 +14476,7 @@ public final class ApplicationOuterClass {
     internal_static_application_v1alpha1_Configuration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Configuration_descriptor,
-        new java.lang.String[] { "Envs", "Commands", "Port", });
+        new java.lang.String[] { "Envs", "Commands", "Port", "InstaceType", });
     internal_static_application_v1alpha1_Application_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_application_v1alpha1_Application_fieldAccessorTable = new
@@ -14199,7 +14500,7 @@ public final class ApplicationOuterClass {
     internal_static_application_v1alpha1_CreateApplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_CreateApplicationResponse_descriptor,
-        new java.lang.String[] { "Msg", "Error", });
+        new java.lang.String[] { "Msg", "Error", "Id", });
     internal_static_application_v1alpha1_ListApplicationRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_application_v1alpha1_ListApplicationRequest_fieldAccessorTable = new

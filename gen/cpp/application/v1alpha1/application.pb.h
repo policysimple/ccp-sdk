@@ -790,6 +790,7 @@ class Configuration final :
   enum : int {
     kEnvsFieldNumber = 1,
     kCommandsFieldNumber = 2,
+    kInstaceTypeFieldNumber = 4,
     kPortFieldNumber = 3,
   };
   // repeated .application.v1alpha1.Env envs = 1 [json_name = "envs"];
@@ -828,6 +829,20 @@ class Configuration final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Command >&
       commands() const;
 
+  // string instace_type = 4 [json_name = "instaceType"];
+  void clear_instace_type();
+  const std::string& instace_type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_instace_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_instace_type();
+  PROTOBUF_MUST_USE_RESULT std::string* release_instace_type();
+  void set_allocated_instace_type(std::string* instace_type);
+  private:
+  const std::string& _internal_instace_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_instace_type(const std::string& value);
+  std::string* _internal_mutable_instace_type();
+  public:
+
   // int32 port = 3 [json_name = "port"];
   void clear_port();
   ::PROTOBUF_NAMESPACE_ID::int32 port() const;
@@ -846,6 +861,7 @@ class Configuration final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Env > envs_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Command > commands_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr instace_type_;
   ::PROTOBUF_NAMESPACE_ID::int32 port_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
@@ -1655,6 +1671,7 @@ class CreateApplicationResponse final :
   enum : int {
     kMsgFieldNumber = 1,
     kErrorFieldNumber = 2,
+    kIdFieldNumber = 3,
   };
   // string msg = 1 [json_name = "msg"];
   void clear_msg();
@@ -1684,6 +1701,20 @@ class CreateApplicationResponse final :
   std::string* _internal_mutable_error();
   public:
 
+  // string id = 3 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
   // @@protoc_insertion_point(class_scope:application.v1alpha1.CreateApplicationResponse)
  private:
   class _Internal;
@@ -1693,6 +1724,7 @@ class CreateApplicationResponse final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
 };
@@ -3454,6 +3486,52 @@ inline void Configuration::set_port(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:application.v1alpha1.Configuration.port)
 }
 
+// string instace_type = 4 [json_name = "instaceType"];
+inline void Configuration::clear_instace_type() {
+  instace_type_.ClearToEmpty();
+}
+inline const std::string& Configuration::instace_type() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Configuration.instace_type)
+  return _internal_instace_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Configuration::set_instace_type(ArgT0&& arg0, ArgT... args) {
+ 
+ instace_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Configuration.instace_type)
+}
+inline std::string* Configuration::mutable_instace_type() {
+  std::string* _s = _internal_mutable_instace_type();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Configuration.instace_type)
+  return _s;
+}
+inline const std::string& Configuration::_internal_instace_type() const {
+  return instace_type_.Get();
+}
+inline void Configuration::_internal_set_instace_type(const std::string& value) {
+  
+  instace_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Configuration::_internal_mutable_instace_type() {
+  
+  return instace_type_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Configuration::release_instace_type() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Configuration.instace_type)
+  return instace_type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Configuration::set_allocated_instace_type(std::string* instace_type) {
+  if (instace_type != nullptr) {
+    
+  } else {
+    
+  }
+  instace_type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), instace_type,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Configuration.instace_type)
+}
+
 // -------------------------------------------------------------------
 
 // Application
@@ -4600,6 +4678,52 @@ inline void CreateApplicationResponse::set_allocated_error(std::string* error) {
   error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.CreateApplicationResponse.error)
+}
+
+// string id = 3 [json_name = "id"];
+inline void CreateApplicationResponse::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& CreateApplicationResponse::id() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.CreateApplicationResponse.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateApplicationResponse::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.CreateApplicationResponse.id)
+}
+inline std::string* CreateApplicationResponse::mutable_id() {
+  std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.CreateApplicationResponse.id)
+  return _s;
+}
+inline const std::string& CreateApplicationResponse::_internal_id() const {
+  return id_.Get();
+}
+inline void CreateApplicationResponse::_internal_set_id(const std::string& value) {
+  
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateApplicationResponse::_internal_mutable_id() {
+  
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateApplicationResponse::release_id() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.CreateApplicationResponse.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateApplicationResponse::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.CreateApplicationResponse.id)
 }
 
 // -------------------------------------------------------------------
