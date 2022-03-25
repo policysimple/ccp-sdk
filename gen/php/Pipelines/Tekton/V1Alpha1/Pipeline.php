@@ -79,6 +79,10 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool active = 16 [json_name = "active"];</code>
      */
     protected $active = false;
+    /**
+     * Generated from protobuf field <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     */
+    protected $instance_type = '';
 
     /**
      * Constructor.
@@ -102,6 +106,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $commands
      *     @type array|\Google\Protobuf\Internal\MapField $secrets
      *     @type bool $active
+     *     @type string $instance_type
      * }
      */
     public function __construct($data = NULL) {
@@ -457,6 +462,28 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->active = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * @return string
+     */
+    public function getInstanceType()
+    {
+        return $this->instance_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInstanceType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->instance_type = $var;
 
         return $this;
     }

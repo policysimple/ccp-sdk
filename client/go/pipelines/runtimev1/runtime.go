@@ -150,3 +150,25 @@ func DeleteRuntime(runtimeId string, projectId uint32, applicationId string) (re
 	}
 	return response, nil
 }
+
+func ListRuntimes(projectId uint32) (response *runtimepkgv1.ListRuntimesResponse, err error) {
+	d, err := time.ParseDuration(runtimeServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ListRuntimes(ctx, &runtimepkgv1.ListRuntimesRequest{
+		ProjectId: projectId,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error list runtime", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error list runtime", err),
+		)
+	}
+	return response, nil
+}
