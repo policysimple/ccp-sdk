@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-êÜ
+êá
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"à
 CreateApiKeyRequest
 name (	Rname
@@ -324,7 +324,11 @@ updated_at (	R	updatedAt,
 organization_id (RorganizationId"i
 UpdateProjectRequest
 id (RidA
-project (2\'.accounts.v1alpha1.CreateProjectRequestRproject"O
+project (2\'.accounts.v1alpha1.CreateProjectRequestRproject"J
+	MenberRol
+id (Rid
+name (	Rname
+is_admin (RisAdmin"O
 CreateProjectResponse
 msg (	Rmsg
 error (	Rerror
@@ -400,14 +404,15 @@ Permission
 error (	Rerror"B
 CreatePermissionResponse
 msg (	Rmsg
-error (	Rerror"ä
+error (	Rerror"æ
 Member
 id (Rid
 user_id (	RuserId
 
 first_name (	R	firstName
 	last_name (	RlastName
-	is_active (RisActive"q
+	is_active (RisActive2
+roles (2.accounts.v1alpha1.MenberRolRroles"q
 ProjectOrganization
 id (Rid
 name (	Rname

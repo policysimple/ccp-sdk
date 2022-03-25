@@ -473,7 +473,7 @@ message GetOneRoleResponse{
     uint32 organization_id = 3;
     uint32 project_id = 4;
     repeated Permission permissions = 5;
-    bool is_admin =6; 
+    bool is_admin = 6; 
 }
 
 message DeleteRoleRequest {
@@ -551,6 +551,14 @@ message UpdateProjectRequest {
 /*
     Responses
 */
+
+message MenberRol {
+    uint32 id = 1;
+    string name = 2;
+    bool is_admin = 3;
+    
+}
+
 message CreateProjectResponse {
     string msg = 1;
     string error = 2;
@@ -686,6 +694,8 @@ message Member {
     string first_name = 3;
     string last_name = 4;
     bool is_active = 5;
+    repeated MenberRol roles = 6;
+
 }
 
 //Project Organization
