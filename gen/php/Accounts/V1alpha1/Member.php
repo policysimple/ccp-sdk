@@ -35,6 +35,10 @@ class Member extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_active = 5 [json_name = "isActive"];</code>
      */
     protected $is_active = false;
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.MenberRol roles = 6 [json_name = "roles"];</code>
+     */
+    private $roles;
 
     /**
      * Constructor.
@@ -47,6 +51,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type string $first_name
      *     @type string $last_name
      *     @type bool $is_active
+     *     @type \Accounts\V1alpha1\MenberRol[]|\Google\Protobuf\Internal\RepeatedField $roles
      * }
      */
     public function __construct($data = NULL) {
@@ -160,6 +165,28 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_active = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.MenberRol roles = 6 [json_name = "roles"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.MenberRol roles = 6 [json_name = "roles"];</code>
+     * @param \Accounts\V1alpha1\MenberRol[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRoles($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\MenberRol::class);
+        $this->roles = $arr;
 
         return $this;
     }
