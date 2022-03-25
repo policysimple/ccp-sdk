@@ -34,19 +34,15 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     private $task_run_after;
     /**
-     * Generated from protobuf field <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces = 6 [json_name = "workspaces"];</code>
      */
-    protected $task_workspaces_name = '';
+    private $workspaces;
     /**
-     * Generated from protobuf field <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
-     */
-    protected $task_workspaces_main = '';
-    /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 7 [json_name = "taskParams"];</code>
      */
     private $task_params;
     /**
-     * Generated from protobuf field <code>string description = 9 [json_name = "description"];</code>
+     * Generated from protobuf field <code>string description = 8 [json_name = "description"];</code>
      */
     protected $description = '';
 
@@ -61,8 +57,7 @@ class Task extends \Google\Protobuf\Internal\Message
      *     @type string $task_ref_name
      *     @type string $task_kind
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $task_run_after
-     *     @type string $task_workspaces_name
-     *     @type string $task_workspaces_main
+     *     @type \Pipelines\Tekton\V1Alpha1\Workspaces[]|\Google\Protobuf\Internal\RepeatedField $workspaces
      *     @type \Pipelines\Tekton\V1Alpha1\TaskParams[]|\Google\Protobuf\Internal\RepeatedField $task_params
      *     @type string $description
      * }
@@ -183,51 +178,29 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
-     * @return string
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces = 6 [json_name = "workspaces"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getTaskWorkspacesName()
+    public function getWorkspaces()
     {
-        return $this->task_workspaces_name;
+        return $this->workspaces;
     }
 
     /**
-     * Generated from protobuf field <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces = 6 [json_name = "workspaces"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\Workspaces[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setTaskWorkspacesName($var)
+    public function setWorkspaces($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->task_workspaces_name = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Workspaces::class);
+        $this->workspaces = $arr;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
-     * @return string
-     */
-    public function getTaskWorkspacesMain()
-    {
-        return $this->task_workspaces_main;
-    }
-
-    /**
-     * Generated from protobuf field <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTaskWorkspacesMain($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->task_workspaces_main = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 7 [json_name = "taskParams"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTaskParams()
@@ -236,7 +209,7 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 7 [json_name = "taskParams"];</code>
      * @param \Pipelines\Tekton\V1Alpha1\TaskParams[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -249,7 +222,7 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string description = 9 [json_name = "description"];</code>
+     * Generated from protobuf field <code>string description = 8 [json_name = "description"];</code>
      * @return string
      */
     public function getDescription()
@@ -258,7 +231,7 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string description = 9 [json_name = "description"];</code>
+     * Generated from protobuf field <code>string description = 8 [json_name = "description"];</code>
      * @param string $var
      * @return $this
      */

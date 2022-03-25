@@ -81,60 +81,60 @@ public interface TaskOrBuilder extends
       getTaskRunAfterBytes(int index);
 
   /**
-   * <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
-   * @return The taskWorkspacesName.
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces = 6 [json_name = "workspaces"];</code>
    */
-  java.lang.String getTaskWorkspacesName();
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Workspaces> 
+      getWorkspacesList();
   /**
-   * <code>string task_workspaces_name = 6 [json_name = "taskWorkspacesName"];</code>
-   * @return The bytes for taskWorkspacesName.
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces = 6 [json_name = "workspaces"];</code>
    */
-  com.google.protobuf.ByteString
-      getTaskWorkspacesNameBytes();
+  io.cuemby.pipelines.tekton.v1alpha1.Workspaces getWorkspaces(int index);
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces = 6 [json_name = "workspaces"];</code>
+   */
+  int getWorkspacesCount();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces = 6 [json_name = "workspaces"];</code>
+   */
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder> 
+      getWorkspacesOrBuilderList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces = 6 [json_name = "workspaces"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder getWorkspacesOrBuilder(
+      int index);
 
   /**
-   * <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
-   * @return The taskWorkspacesMain.
-   */
-  java.lang.String getTaskWorkspacesMain();
-  /**
-   * <code>string task_workspaces_main = 7 [json_name = "taskWorkspacesMain"];</code>
-   * @return The bytes for taskWorkspacesMain.
-   */
-  com.google.protobuf.ByteString
-      getTaskWorkspacesMainBytes();
-
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 7 [json_name = "taskParams"];</code>
    */
   java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskParams> 
       getTaskParamsList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 7 [json_name = "taskParams"];</code>
    */
   io.cuemby.pipelines.tekton.v1alpha1.TaskParams getTaskParams(int index);
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 7 [json_name = "taskParams"];</code>
    */
   int getTaskParamsCount();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 7 [json_name = "taskParams"];</code>
    */
   java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder> 
       getTaskParamsOrBuilderList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 8 [json_name = "taskParams"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams task_params = 7 [json_name = "taskParams"];</code>
    */
   io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder getTaskParamsOrBuilder(
       int index);
 
   /**
-   * <code>string description = 9 [json_name = "description"];</code>
+   * <code>string description = 8 [json_name = "description"];</code>
    * @return The description.
    */
   java.lang.String getDescription();
   /**
-   * <code>string description = 9 [json_name = "description"];</code>
+   * <code>string description = 8 [json_name = "description"];</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString

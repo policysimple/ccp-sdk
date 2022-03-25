@@ -23,16 +23,21 @@ message TaskParams {
     string param_value = 3;
 }
 
+message Workspaces {
+    string name = 1;
+    string main = 2;
+    string type = 3;
+}
+
 message Task {
     string id = 1;
     string task_name = 2;
     string task_ref_name = 3;
     string task_kind = 4;
     repeated string task_run_after = 5;
-    string task_workspaces_name = 6;
-    string task_workspaces_main = 7;
-    repeated TaskParams task_params = 8;
-    string description = 9;
+    repeated Workspaces workspaces = 6;
+    repeated TaskParams task_params = 7;
+    string description = 8;
 }
 
 // Pipeline ...
@@ -44,14 +49,14 @@ message Pipeline {
     string type_meta_api_version = 5;
     string object_meta_name = 6;
     string object_meta_namespace = 7;
-    string spec_workspaces_name = 8;
-    repeated Params params = 9;
-    repeated Task tasks = 10;
-    string status_type= 11;
-    map<string, string> integration = 12;
-    map<string, string> environment_variables = 13;
-    map<string, string> commands = 14;
-    map<string, string> secrets = 15;
-    bool active = 16;
-    string instance_type = 17;
+    repeated Params params = 8;
+    repeated Task tasks = 9;
+    string status_type= 10;
+    map<string, string> integration = 11;
+    map<string, string> environment_variables = 12;
+    map<string, string> commands = 13;
+    map<string, string> secrets = 14;
+    bool active = 15;
+    string instance_type = 16;
+    repeated Workspaces workspaces_main = 17;
 }

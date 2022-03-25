@@ -16,7 +16,7 @@ class Tekton
         }
         $pool->internalAddGeneratedFile(
             '
-ç
+²
 &pipelines/tekton/v1alpha1/tekton.protopipelines.tekton.v1alpha1"
 Params
 name (	Rname!
@@ -31,18 +31,24 @@ TaskParams
 param_name (	R	paramName(
 param_value_type (	RparamValueType
 param_value (	R
-paramValue"è
+paramValue"H
+
+Workspaces
+name (	Rname
+main (	Rmain
+type (	Rtype"Ë
 Task
 id (	Rid
 	task_name (	RtaskName"
 task_ref_name (	RtaskRefName
 	task_kind (	RtaskKind$
-task_run_after (	RtaskRunAfter0
-task_workspaces_name (	RtaskWorkspacesName0
-task_workspaces_main (	RtaskWorkspacesMainF
-task_params (2%.pipelines.tekton.v1alpha1.TaskParamsR
+task_run_after (	RtaskRunAfterE
+
+workspaces (2%.pipelines.tekton.v1alpha1.WorkspacesR
+workspacesF
+task_params (2%.pipelines.tekton.v1alpha1.TaskParamsR
 taskParams 
-description	 (	Rdescription"„	
+description (	Rdescription"¢	
 Pipeline
 id (	Rid\'
 organization_id (RorganizationId
@@ -51,19 +57,19 @@ project_id (R	projectId$
 type_meta_kind (	RtypeMetaKind1
 type_meta_api_version (	RtypeMetaApiVersion(
 object_meta_name (	RobjectMetaName2
-object_meta_namespace (	RobjectMetaNamespace0
-spec_workspaces_name (	RspecWorkspacesName9
-params	 (2!.pipelines.tekton.v1alpha1.ParamsRparams5
-tasks
- (2.pipelines.tekton.v1alpha1.TaskRtasks
-status_type (	R
+object_meta_namespace (	RobjectMetaNamespace9
+params (2!.pipelines.tekton.v1alpha1.ParamsRparams5
+tasks	 (2.pipelines.tekton.v1alpha1.TaskRtasks
+status_type
+ (	R
 statusTypeV
-integration (24.pipelines.tekton.v1alpha1.Pipeline.IntegrationEntryRintegrationr
-environment_variables (2=.pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntryRenvironmentVariablesM
-commands (21.pipelines.tekton.v1alpha1.Pipeline.CommandsEntryRcommandsJ
-secrets (20.pipelines.tekton.v1alpha1.Pipeline.SecretsEntryRsecrets
-active (Ractive#
-instance_type (	RinstanceType>
+integration (24.pipelines.tekton.v1alpha1.Pipeline.IntegrationEntryRintegrationr
+environment_variables (2=.pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntryRenvironmentVariablesM
+commands (21.pipelines.tekton.v1alpha1.Pipeline.CommandsEntryRcommandsJ
+secrets (20.pipelines.tekton.v1alpha1.Pipeline.SecretsEntryRsecrets
+active (Ractive#
+instance_type (	RinstanceTypeN
+workspaces_main (2%.pipelines.tekton.v1alpha1.WorkspacesRworkspacesMain>
 IntegrationEntry
 key (	Rkey
 value (	Rvalue:8G
