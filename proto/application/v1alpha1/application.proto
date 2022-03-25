@@ -41,6 +41,7 @@ message Configuration {
     repeated Env envs = 1;
     repeated Command commands = 2;
     int32 port = 3;
+    string instace_type = 4;
 }
 
 message Application {
@@ -74,6 +75,7 @@ message CreateApplicationRequest {
 message CreateApplicationResponse {
     string msg = 1;
     string error = 2;
+    string id = 3;
 }
 
 

@@ -16,7 +16,7 @@ class Application
         }
         $pool->internalAddGeneratedFile(
             '
-ﬂ
+í
 &application/v1alpha1/application.protoapplication.v1alpha1"™
 
 Repository
@@ -32,11 +32,12 @@ Repository
 Env
 value (	Rvalue
 key (	Rkey
-	encrypted (R	encrypted"ç
+	encrypted (R	encrypted"∞
 Configuration-
 envs (2.application.v1alpha1.EnvRenvs9
 commands (2.application.v1alpha1.CommandRcommands
-port (Rport"∏
+port (Rport!
+instace_type (	RinstaceType"∏
 Application
 id (	Rid
 name (	Rname 
@@ -65,10 +66,11 @@ repositoryI
 configuration (2#.application.v1alpha1.ConfigurationRconfiguration
 
 project_id (R	projectId7
-scaling (2.application.v1alpha1.ScalingRscaling"C
+scaling (2.application.v1alpha1.ScalingRscaling"S
 CreateApplicationResponse
 msg (	Rmsg
-error (	Rerror"7
+error (	Rerror
+id (	Rid"7
 ListApplicationRequest
 
 project_id (R	projectId"`

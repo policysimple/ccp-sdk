@@ -1040,7 +1040,8 @@ proto.application.v1alpha1.Configuration.toObject = function(includeInstance, ms
     proto.application.v1alpha1.Env.toObject, includeInstance),
     commandsList: jspb.Message.toObjectList(msg.getCommandsList(),
     proto.application.v1alpha1.Command.toObject, includeInstance),
-    port: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    port: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    instaceType: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1091,6 +1092,10 @@ proto.application.v1alpha1.Configuration.deserializeBinaryFromReader = function(
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPort(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInstaceType(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1140,6 +1145,13 @@ proto.application.v1alpha1.Configuration.serializeBinaryToWriter = function(mess
   if (f !== 0) {
     writer.writeInt32(
       3,
+      f
+    );
+  }
+  f = message.getInstaceType();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -1237,6 +1249,24 @@ proto.application.v1alpha1.Configuration.prototype.getPort = function() {
  */
 proto.application.v1alpha1.Configuration.prototype.setPort = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string instace_type = 4;
+ * @return {string}
+ */
+proto.application.v1alpha1.Configuration.prototype.getInstaceType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.application.v1alpha1.Configuration} returns this
+ */
+proto.application.v1alpha1.Configuration.prototype.setInstaceType = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -2239,7 +2269,8 @@ proto.application.v1alpha1.CreateApplicationResponse.prototype.toObject = functi
 proto.application.v1alpha1.CreateApplicationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 2, "")
+    error: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    id: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2284,6 +2315,10 @@ proto.application.v1alpha1.CreateApplicationResponse.deserializeBinaryFromReader
       var value = /** @type {string} */ (reader.readString());
       msg.setError(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2327,6 +2362,13 @@ proto.application.v1alpha1.CreateApplicationResponse.serializeBinaryToWriter = f
       f
     );
   }
+  f = message.getId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -2363,6 +2405,24 @@ proto.application.v1alpha1.CreateApplicationResponse.prototype.getError = functi
  */
 proto.application.v1alpha1.CreateApplicationResponse.prototype.setError = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string id = 3;
+ * @return {string}
+ */
+proto.application.v1alpha1.CreateApplicationResponse.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.application.v1alpha1.CreateApplicationResponse} returns this
+ */
+proto.application.v1alpha1.CreateApplicationResponse.prototype.setId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
