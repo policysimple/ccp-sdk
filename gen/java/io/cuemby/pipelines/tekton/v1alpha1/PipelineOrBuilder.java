@@ -80,83 +80,71 @@ public interface PipelineOrBuilder extends
       getObjectMetaNamespaceBytes();
 
   /**
-   * <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
-   * @return The specWorkspacesName.
-   */
-  java.lang.String getSpecWorkspacesName();
-  /**
-   * <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
-   * @return The bytes for specWorkspacesName.
-   */
-  com.google.protobuf.ByteString
-      getSpecWorkspacesNameBytes();
-
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
    */
   java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> 
       getParamsList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
    */
   io.cuemby.pipelines.tekton.v1alpha1.Params getParams(int index);
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
    */
   int getParamsCount();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
    */
   java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
       getParamsOrBuilderList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
    */
   io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder(
       int index);
 
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
    */
   java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> 
       getTasksList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
    */
   io.cuemby.pipelines.tekton.v1alpha1.Task getTasks(int index);
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
    */
   int getTasksCount();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
    */
   java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
       getTasksOrBuilderList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
    */
   io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTasksOrBuilder(
       int index);
 
   /**
-   * <code>string status_type = 11 [json_name = "statusType"];</code>
+   * <code>string status_type = 10 [json_name = "statusType"];</code>
    * @return The statusType.
    */
   java.lang.String getStatusType();
   /**
-   * <code>string status_type = 11 [json_name = "statusType"];</code>
+   * <code>string status_type = 10 [json_name = "statusType"];</code>
    * @return The bytes for statusType.
    */
   com.google.protobuf.ByteString
       getStatusTypeBytes();
 
   /**
-   * <code>map&lt;string, string&gt; integration = 12 [json_name = "integration"];</code>
+   * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
    */
   int getIntegrationCount();
   /**
-   * <code>map&lt;string, string&gt; integration = 12 [json_name = "integration"];</code>
+   * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
    */
   boolean containsIntegration(
       java.lang.String key);
@@ -167,30 +155,30 @@ public interface PipelineOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getIntegration();
   /**
-   * <code>map&lt;string, string&gt; integration = 12 [json_name = "integration"];</code>
+   * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getIntegrationMap();
   /**
-   * <code>map&lt;string, string&gt; integration = 12 [json_name = "integration"];</code>
+   * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
    */
 
   java.lang.String getIntegrationOrDefault(
       java.lang.String key,
       java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; integration = 12 [json_name = "integration"];</code>
+   * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
    */
 
   java.lang.String getIntegrationOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, string&gt; environment_variables = 13 [json_name = "environmentVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
    */
   int getEnvironmentVariablesCount();
   /**
-   * <code>map&lt;string, string&gt; environment_variables = 13 [json_name = "environmentVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
    */
   boolean containsEnvironmentVariables(
       java.lang.String key);
@@ -201,30 +189,30 @@ public interface PipelineOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getEnvironmentVariables();
   /**
-   * <code>map&lt;string, string&gt; environment_variables = 13 [json_name = "environmentVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getEnvironmentVariablesMap();
   /**
-   * <code>map&lt;string, string&gt; environment_variables = 13 [json_name = "environmentVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
    */
 
   java.lang.String getEnvironmentVariablesOrDefault(
       java.lang.String key,
       java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; environment_variables = 13 [json_name = "environmentVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
    */
 
   java.lang.String getEnvironmentVariablesOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, string&gt; commands = 14 [json_name = "commands"];</code>
+   * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
    */
   int getCommandsCount();
   /**
-   * <code>map&lt;string, string&gt; commands = 14 [json_name = "commands"];</code>
+   * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
    */
   boolean containsCommands(
       java.lang.String key);
@@ -235,30 +223,30 @@ public interface PipelineOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getCommands();
   /**
-   * <code>map&lt;string, string&gt; commands = 14 [json_name = "commands"];</code>
+   * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getCommandsMap();
   /**
-   * <code>map&lt;string, string&gt; commands = 14 [json_name = "commands"];</code>
+   * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
    */
 
   java.lang.String getCommandsOrDefault(
       java.lang.String key,
       java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; commands = 14 [json_name = "commands"];</code>
+   * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
    */
 
   java.lang.String getCommandsOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, string&gt; secrets = 15 [json_name = "secrets"];</code>
+   * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
    */
   int getSecretsCount();
   /**
-   * <code>map&lt;string, string&gt; secrets = 15 [json_name = "secrets"];</code>
+   * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
    */
   boolean containsSecrets(
       java.lang.String key);
@@ -269,39 +257,63 @@ public interface PipelineOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getSecrets();
   /**
-   * <code>map&lt;string, string&gt; secrets = 15 [json_name = "secrets"];</code>
+   * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getSecretsMap();
   /**
-   * <code>map&lt;string, string&gt; secrets = 15 [json_name = "secrets"];</code>
+   * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
    */
 
   java.lang.String getSecretsOrDefault(
       java.lang.String key,
       java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; secrets = 15 [json_name = "secrets"];</code>
+   * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
    */
 
   java.lang.String getSecretsOrThrow(
       java.lang.String key);
 
   /**
-   * <code>bool active = 16 [json_name = "active"];</code>
+   * <code>bool active = 15 [json_name = "active"];</code>
    * @return The active.
    */
   boolean getActive();
 
   /**
-   * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+   * <code>string instance_type = 16 [json_name = "instanceType"];</code>
    * @return The instanceType.
    */
   java.lang.String getInstanceType();
   /**
-   * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+   * <code>string instance_type = 16 [json_name = "instanceType"];</code>
    * @return The bytes for instanceType.
    */
   com.google.protobuf.ByteString
       getInstanceTypeBytes();
+
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 17 [json_name = "workspacesMain"];</code>
+   */
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Workspaces> 
+      getWorkspacesMainList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 17 [json_name = "workspacesMain"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.Workspaces getWorkspacesMain(int index);
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 17 [json_name = "workspacesMain"];</code>
+   */
+  int getWorkspacesMainCount();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 17 [json_name = "workspacesMain"];</code>
+   */
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder> 
+      getWorkspacesMainOrBuilderList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 17 [json_name = "workspacesMain"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder getWorkspacesMainOrBuilder(
+      int index);
 }

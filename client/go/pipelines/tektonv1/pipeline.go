@@ -50,22 +50,27 @@ type TaskParamsStruct struct {
 	ParamValue     string
 }
 
+type WorkspaceStruct struct {
+	Name string
+	Main string
+	Type string
+}
+
 type TaskStruct struct {
-	Id                 string
-	TaskName           string
-	TaskRefName        string
-	TaskKind           string
-	TaskRunAfter       []string
-	TaskWorkspacesName string
-	TaskWorkspacesMain string
-	TaskParams         []TaskParamsStruct
-	Description        string
+	Id             string
+	TaskName       string
+	TaskRefName    string
+	TaskKind       string
+	TaskRunAfter   []string
+	TaskWorkspaces []WorkspaceStruct
+	TaskParams     []TaskParamsStruct
+	Description    string
 }
 
 func CreateTektonPipeline(
-	projectId uint32, name string, namespace string, workspace string, instanceType string,
+	projectId uint32, name string, namespace string, instanceType string,
 	integration, environmentVariables, commands, secrets map[string]string,
-	params []ParamsStruct, tasks []TaskStruct, userId string,
+	workspacesMain []WorkspaceStruct, params []ParamsStruct, tasks []TaskStruct, userId string,
 ) (response *tektonPipelinepkgv1.CreateTektonPipelineResponse, err error) {
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
@@ -76,6 +81,7 @@ func CreateTektonPipeline(
 
 	var arrayTasks []*tektonPipelinepkgv1.Task
 	var arrayParams []*tektonPipelinepkgv1.Params
+	var arrayWorkspacesMain []*tektonPipelinepkgv1.Workspaces
 
 	if len(tasks) == 0 {
 		log.Printf("%s: ", "Tasks is required")
@@ -83,6 +89,14 @@ func CreateTektonPipeline(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: ", "Tasks is required"),
 		)
+	}
+
+	for _, item := range workspacesMain {
+		arrayWorkspacesMain = append(arrayWorkspacesMain, &tektonPipelinepkgv1.Workspaces{
+			Name: item.Name,
+			Main: item.Main,
+			Type: item.Type,
+		})
 	}
 
 	for _, item := range params {
@@ -106,6 +120,7 @@ func CreateTektonPipeline(
 
 	for _, item := range tasks {
 		var arrayTaskParameters []*tektonPipelinepkgv1.TaskParams
+		var arrayWorkspaces []*tektonPipelinepkgv1.Workspaces
 		for _, itemDetail := range item.TaskParams {
 			arrayTaskParameters = append(arrayTaskParameters, &tektonPipelinepkgv1.TaskParams{
 				ParamName:      itemDetail.ParamName,
@@ -114,15 +129,22 @@ func CreateTektonPipeline(
 			})
 		}
 
+		for _, itemDetail := range item.TaskWorkspaces {
+			arrayWorkspaces = append(arrayWorkspaces, &tektonPipelinepkgv1.Workspaces{
+				Name: itemDetail.Name,
+				Main: itemDetail.Main,
+				Type: itemDetail.Type,
+			})
+		}
+
 		arrayTasks = append(arrayTasks, &tektonPipelinepkgv1.Task{
-			TaskName:           item.TaskName,
-			TaskRefName:        item.TaskRefName,
-			TaskKind:           item.TaskKind,
-			TaskRunAfter:       item.TaskRunAfter,
-			TaskWorkspacesName: item.TaskWorkspacesName,
-			TaskWorkspacesMain: item.TaskWorkspacesMain,
-			TaskParams:         arrayTaskParameters,
-			Description:        item.Description,
+			TaskName:     item.TaskName,
+			TaskRefName:  item.TaskRefName,
+			TaskKind:     item.TaskKind,
+			TaskRunAfter: item.TaskRunAfter,
+			Workspaces:   arrayWorkspaces,
+			TaskParams:   arrayTaskParameters,
+			Description:  item.Description,
 		})
 	}
 
@@ -134,7 +156,7 @@ func CreateTektonPipeline(
 			InstanceType:         instanceType,
 			ObjectMetaName:       name,
 			ObjectMetaNamespace:  namespace,
-			SpecWorkspacesName:   workspace,
+			WorkspacesMain:       arrayWorkspacesMain,
 			Params:               arrayParams,
 			Tasks:                arrayTasks,
 			Integration:          integration,

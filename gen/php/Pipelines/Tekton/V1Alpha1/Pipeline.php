@@ -44,45 +44,45 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      */
     protected $object_meta_namespace = '';
     /**
-     * Generated from protobuf field <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
-     */
-    protected $spec_workspaces_name = '';
-    /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
      */
     private $params;
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
      */
     private $tasks;
     /**
-     * Generated from protobuf field <code>string status_type = 11 [json_name = "statusType"];</code>
+     * Generated from protobuf field <code>string status_type = 10 [json_name = "statusType"];</code>
      */
     protected $status_type = '';
     /**
-     * Generated from protobuf field <code>map<string, string> integration = 12 [json_name = "integration"];</code>
+     * Generated from protobuf field <code>map<string, string> integration = 11 [json_name = "integration"];</code>
      */
     private $integration;
     /**
-     * Generated from protobuf field <code>map<string, string> environment_variables = 13 [json_name = "environmentVariables"];</code>
+     * Generated from protobuf field <code>map<string, string> environment_variables = 12 [json_name = "environmentVariables"];</code>
      */
     private $environment_variables;
     /**
-     * Generated from protobuf field <code>map<string, string> commands = 14 [json_name = "commands"];</code>
+     * Generated from protobuf field <code>map<string, string> commands = 13 [json_name = "commands"];</code>
      */
     private $commands;
     /**
-     * Generated from protobuf field <code>map<string, string> secrets = 15 [json_name = "secrets"];</code>
+     * Generated from protobuf field <code>map<string, string> secrets = 14 [json_name = "secrets"];</code>
      */
     private $secrets;
     /**
-     * Generated from protobuf field <code>bool active = 16 [json_name = "active"];</code>
+     * Generated from protobuf field <code>bool active = 15 [json_name = "active"];</code>
      */
     protected $active = false;
     /**
-     * Generated from protobuf field <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * Generated from protobuf field <code>string instance_type = 16 [json_name = "instanceType"];</code>
      */
     protected $instance_type = '';
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 17 [json_name = "workspacesMain"];</code>
+     */
+    private $workspaces_main;
 
     /**
      * Constructor.
@@ -97,7 +97,6 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      *     @type string $type_meta_api_version
      *     @type string $object_meta_name
      *     @type string $object_meta_namespace
-     *     @type string $spec_workspaces_name
      *     @type \Pipelines\Tekton\V1Alpha1\Params[]|\Google\Protobuf\Internal\RepeatedField $params
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $tasks
      *     @type string $status_type
@@ -107,6 +106,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $secrets
      *     @type bool $active
      *     @type string $instance_type
+     *     @type \Pipelines\Tekton\V1Alpha1\Workspaces[]|\Google\Protobuf\Internal\RepeatedField $workspaces_main
      * }
      */
     public function __construct($data = NULL) {
@@ -269,29 +269,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
-     * @return string
-     */
-    public function getSpecWorkspacesName()
-    {
-        return $this->spec_workspaces_name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string spec_workspaces_name = 8 [json_name = "specWorkspacesName"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSpecWorkspacesName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->spec_workspaces_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getParams()
@@ -300,7 +278,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Params params = 9 [json_name = "params"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
      * @param \Pipelines\Tekton\V1Alpha1\Params[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -313,7 +291,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTasks()
@@ -322,7 +300,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 10 [json_name = "tasks"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
      * @param \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -335,7 +313,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status_type = 11 [json_name = "statusType"];</code>
+     * Generated from protobuf field <code>string status_type = 10 [json_name = "statusType"];</code>
      * @return string
      */
     public function getStatusType()
@@ -344,7 +322,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status_type = 11 [json_name = "statusType"];</code>
+     * Generated from protobuf field <code>string status_type = 10 [json_name = "statusType"];</code>
      * @param string $var
      * @return $this
      */
@@ -357,7 +335,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> integration = 12 [json_name = "integration"];</code>
+     * Generated from protobuf field <code>map<string, string> integration = 11 [json_name = "integration"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getIntegration()
@@ -366,7 +344,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> integration = 12 [json_name = "integration"];</code>
+     * Generated from protobuf field <code>map<string, string> integration = 11 [json_name = "integration"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -379,7 +357,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> environment_variables = 13 [json_name = "environmentVariables"];</code>
+     * Generated from protobuf field <code>map<string, string> environment_variables = 12 [json_name = "environmentVariables"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getEnvironmentVariables()
@@ -388,7 +366,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> environment_variables = 13 [json_name = "environmentVariables"];</code>
+     * Generated from protobuf field <code>map<string, string> environment_variables = 12 [json_name = "environmentVariables"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -401,7 +379,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> commands = 14 [json_name = "commands"];</code>
+     * Generated from protobuf field <code>map<string, string> commands = 13 [json_name = "commands"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getCommands()
@@ -410,7 +388,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> commands = 14 [json_name = "commands"];</code>
+     * Generated from protobuf field <code>map<string, string> commands = 13 [json_name = "commands"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -423,7 +401,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> secrets = 15 [json_name = "secrets"];</code>
+     * Generated from protobuf field <code>map<string, string> secrets = 14 [json_name = "secrets"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getSecrets()
@@ -432,7 +410,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> secrets = 15 [json_name = "secrets"];</code>
+     * Generated from protobuf field <code>map<string, string> secrets = 14 [json_name = "secrets"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -445,7 +423,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool active = 16 [json_name = "active"];</code>
+     * Generated from protobuf field <code>bool active = 15 [json_name = "active"];</code>
      * @return bool
      */
     public function getActive()
@@ -454,7 +432,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool active = 16 [json_name = "active"];</code>
+     * Generated from protobuf field <code>bool active = 15 [json_name = "active"];</code>
      * @param bool $var
      * @return $this
      */
@@ -467,7 +445,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * Generated from protobuf field <code>string instance_type = 16 [json_name = "instanceType"];</code>
      * @return string
      */
     public function getInstanceType()
@@ -476,7 +454,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * Generated from protobuf field <code>string instance_type = 16 [json_name = "instanceType"];</code>
      * @param string $var
      * @return $this
      */
@@ -484,6 +462,28 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->instance_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 17 [json_name = "workspacesMain"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getWorkspacesMain()
+    {
+        return $this->workspaces_main;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 17 [json_name = "workspacesMain"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\Workspaces[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setWorkspacesMain($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Workspaces::class);
+        $this->workspaces_main = $arr;
 
         return $this;
     }
