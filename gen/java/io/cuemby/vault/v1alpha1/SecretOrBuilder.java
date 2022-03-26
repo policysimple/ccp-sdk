@@ -26,17 +26,29 @@ public interface SecretOrBuilder extends
       getApplicationIdBytes();
 
   /**
-   * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+   * <code>string namespace = 3 [json_name = "namespace"];</code>
+   * @return The namespace.
+   */
+  java.lang.String getNamespace();
+  /**
+   * <code>string namespace = 3 [json_name = "namespace"];</code>
+   * @return The bytes for namespace.
+   */
+  com.google.protobuf.ByteString
+      getNamespaceBytes();
+
+  /**
+   * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
-   * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+   * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
    * @return The metadata.
    */
   io.cuemby.vault.v1alpha1.Metadata getMetadata();
   /**
-   * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+   * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
    */
   io.cuemby.vault.v1alpha1.MetadataOrBuilder getMetadataOrBuilder();
 

@@ -22,7 +22,11 @@ class Secret extends \Google\Protobuf\Internal\Message
      */
     protected $application_id = '';
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
+     */
+    protected $namespace = '';
+    /**
+     * Generated from protobuf field <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
      */
     protected $metadata = null;
     /**
@@ -42,6 +46,7 @@ class Secret extends \Google\Protobuf\Internal\Message
      *
      *     @type int $project_id
      *     @type string $application_id
+     *     @type string $namespace
      *     @type \Vault\V1Alpha1\Metadata $metadata
      *     @type \Vault\V1Alpha1\SecretData $data
      *     @type \Vault\V1Alpha1\SecretWarnings $warnings
@@ -97,7 +102,29 @@ class Secret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
      * @return \Vault\V1Alpha1\Metadata|null
      */
     public function getMetadata()
@@ -116,7 +143,7 @@ class Secret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
      * @param \Vault\V1Alpha1\Metadata $var
      * @return $this
      */
