@@ -16057,12 +16057,31 @@ class Organization final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kRolesFieldNumber = 8,
     kNameFieldNumber = 2,
     kImageFieldNumber = 3,
     kDescriptionFieldNumber = 4,
     kOwnerFieldNumber = 7,
     kIdFieldNumber = 1,
   };
+  // repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];
+  int roles_size() const;
+  private:
+  int _internal_roles_size() const;
+  public:
+  void clear_roles();
+  ::accounts::v1alpha1::Rol* mutable_roles(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol >*
+      mutable_roles();
+  private:
+  const ::accounts::v1alpha1::Rol& _internal_roles(int index) const;
+  ::accounts::v1alpha1::Rol* _internal_add_roles();
+  public:
+  const ::accounts::v1alpha1::Rol& roles(int index) const;
+  ::accounts::v1alpha1::Rol* add_roles();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol >&
+      roles() const;
+
   // string name = 2 [json_name = "name"];
   void clear_name();
   const std::string& name() const;
@@ -16139,6 +16158,7 @@ class Organization final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol > roles_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
@@ -30469,6 +30489,46 @@ inline void Organization::set_allocated_owner(::accounts::v1alpha1::UserList* ow
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.Organization.owner)
 }
 
+// repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];
+inline int Organization::_internal_roles_size() const {
+  return roles_.size();
+}
+inline int Organization::roles_size() const {
+  return _internal_roles_size();
+}
+inline void Organization::clear_roles() {
+  roles_.Clear();
+}
+inline ::accounts::v1alpha1::Rol* Organization::mutable_roles(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.Organization.roles)
+  return roles_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol >*
+Organization::mutable_roles() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.Organization.roles)
+  return &roles_;
+}
+inline const ::accounts::v1alpha1::Rol& Organization::_internal_roles(int index) const {
+  return roles_.Get(index);
+}
+inline const ::accounts::v1alpha1::Rol& Organization::roles(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.Organization.roles)
+  return _internal_roles(index);
+}
+inline ::accounts::v1alpha1::Rol* Organization::_internal_add_roles() {
+  return roles_.Add();
+}
+inline ::accounts::v1alpha1::Rol* Organization::add_roles() {
+  ::accounts::v1alpha1::Rol* _add = _internal_add_roles();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.Organization.roles)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Rol >&
+Organization::roles() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.Organization.roles)
+  return roles_;
+}
+
 // -------------------------------------------------------------------
 
 // CreateOrganizationRequest
@@ -32223,6 +32283,46 @@ GetOneUserDexResponse::organizations() const {
   return organizations_;
 }
 
+// repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
+inline int GetOneUserDexResponse::_internal_projects_size() const {
+  return projects_.size();
+}
+inline int GetOneUserDexResponse::projects_size() const {
+  return _internal_projects_size();
+}
+inline void GetOneUserDexResponse::clear_projects() {
+  projects_.Clear();
+}
+inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::mutable_projects(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return projects_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >*
+GetOneUserDexResponse::mutable_projects() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return &projects_;
+}
+inline const ::accounts::v1alpha1::Project& GetOneUserDexResponse::_internal_projects(int index) const {
+  return projects_.Get(index);
+}
+inline const ::accounts::v1alpha1::Project& GetOneUserDexResponse::projects(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return _internal_projects(index);
+}
+inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::_internal_add_projects() {
+  return projects_.Add();
+}
+inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::add_projects() {
+  ::accounts::v1alpha1::Project* _add = _internal_add_projects();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >&
+GetOneUserDexResponse::projects() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return projects_;
+}
+
 // string msg = 13 [json_name = "msg"];
 inline void GetOneUserDexResponse::clear_msg() {
   msg_.ClearToEmpty();
@@ -32267,46 +32367,6 @@ inline void GetOneUserDexResponse::set_allocated_msg(std::string* msg) {
   msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserDexResponse.msg)
-}
-
-// repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
-inline int GetOneUserDexResponse::_internal_projects_size() const {
-  return projects_.size();
-}
-inline int GetOneUserDexResponse::projects_size() const {
-  return _internal_projects_size();
-}
-inline void GetOneUserDexResponse::clear_projects() {
-  projects_.Clear();
-}
-inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::mutable_projects(int index) {
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneUserDexResponse.projects)
-  return projects_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >*
-GetOneUserDexResponse::mutable_projects() {
-  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.GetOneUserDexResponse.projects)
-  return &projects_;
-}
-inline const ::accounts::v1alpha1::Project& GetOneUserDexResponse::_internal_projects(int index) const {
-  return projects_.Get(index);
-}
-inline const ::accounts::v1alpha1::Project& GetOneUserDexResponse::projects(int index) const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.projects)
-  return _internal_projects(index);
-}
-inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::_internal_add_projects() {
-  return projects_.Add();
-}
-inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::add_projects() {
-  ::accounts::v1alpha1::Project* _add = _internal_add_projects();
-  // @@protoc_insertion_point(field_add:accounts.v1alpha1.GetOneUserDexResponse.projects)
-  return _add;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >&
-GetOneUserDexResponse::projects() const {
-  // @@protoc_insertion_point(field_list:accounts.v1alpha1.GetOneUserDexResponse.projects)
-  return projects_;
 }
 
 // string phone_number = 15 [json_name = "phoneNumber"];

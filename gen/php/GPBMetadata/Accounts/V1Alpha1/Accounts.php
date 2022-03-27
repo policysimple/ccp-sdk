@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-êá
+æá
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"à
 CreateApiKeyRequest
 name (	Rname
@@ -417,13 +417,14 @@ first_name (	R	firstName
 id (Rid
 name (	Rname
 image (	Rimage 
-description (	Rdescription"ù
+description (	Rdescription"À
 Organization
 id (Rid
 name (	Rname
 image (	Rimage 
 description (	Rdescription1
-owner (2.accounts.v1alpha1.UserListRowner"Ä
+owner (2.accounts.v1alpha1.UserListRowner,
+roles (2.accounts.v1alpha1.RolRroles"Ä
 CreateOrganizationRequest
 name (	Rname
 image (	Rimage
@@ -482,9 +483,9 @@ updated_at (	R	updatedAt,
 permissions
  (2.accounts.v1alpha1.PermissionRpermissions"
 is_super_user (RisSuperUserE
-organizations (2.accounts.v1alpha1.OrganizationRorganizations
-msg (	Rmsg6
-projects (2.accounts.v1alpha1.ProjectRprojects!
+organizations (2.accounts.v1alpha1.OrganizationRorganizations6
+projects (2.accounts.v1alpha1.ProjectRprojects
+msg (	Rmsg!
 phone_number (	RphoneNumber
 country (	Rcountry
 city (	Rcity
