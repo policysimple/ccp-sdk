@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private Secret() {
     applicationId_ = "";
+    namespace_ = "";
   }
 
   @java.lang.Override
@@ -61,6 +62,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            namespace_ = s;
+            break;
+          }
+          case 34: {
             io.cuemby.vault.v1alpha1.Metadata.Builder subBuilder = null;
             if (metadata_ != null) {
               subBuilder = metadata_.toBuilder();
@@ -180,10 +187,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int METADATA_FIELD_NUMBER = 3;
+  public static final int NAMESPACE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object namespace_;
+  /**
+   * <code>string namespace = 3 [json_name = "namespace"];</code>
+   * @return The namespace.
+   */
+  @java.lang.Override
+  public java.lang.String getNamespace() {
+    java.lang.Object ref = namespace_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      namespace_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string namespace = 3 [json_name = "namespace"];</code>
+   * @return The bytes for namespace.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNamespaceBytes() {
+    java.lang.Object ref = namespace_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      namespace_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int METADATA_FIELD_NUMBER = 4;
   private io.cuemby.vault.v1alpha1.Metadata metadata_;
   /**
-   * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+   * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
    * @return Whether the metadata field is set.
    */
   @java.lang.Override
@@ -191,7 +236,7 @@ private static final long serialVersionUID = 0L;
     return metadata_ != null;
   }
   /**
-   * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+   * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
    * @return The metadata.
    */
   @java.lang.Override
@@ -199,7 +244,7 @@ private static final long serialVersionUID = 0L;
     return metadata_ == null ? io.cuemby.vault.v1alpha1.Metadata.getDefaultInstance() : metadata_;
   }
   /**
-   * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+   * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
    */
   @java.lang.Override
   public io.cuemby.vault.v1alpha1.MetadataOrBuilder getMetadataOrBuilder() {
@@ -278,8 +323,11 @@ private static final long serialVersionUID = 0L;
     if (!getApplicationIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, applicationId_);
     }
+    if (!getNamespaceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, namespace_);
+    }
     if (metadata_ != null) {
-      output.writeMessage(3, getMetadata());
+      output.writeMessage(4, getMetadata());
     }
     if (data_ != null) {
       output.writeMessage(5, getData());
@@ -303,9 +351,12 @@ private static final long serialVersionUID = 0L;
     if (!getApplicationIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, applicationId_);
     }
+    if (!getNamespaceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, namespace_);
+    }
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getMetadata());
+        .computeMessageSize(4, getMetadata());
     }
     if (data_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -334,6 +385,8 @@ private static final long serialVersionUID = 0L;
         != other.getProjectId()) return false;
     if (!getApplicationId()
         .equals(other.getApplicationId())) return false;
+    if (!getNamespace()
+        .equals(other.getNamespace())) return false;
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
       if (!getMetadata()
@@ -364,6 +417,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getProjectId();
     hash = (37 * hash) + APPLICATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getApplicationId().hashCode();
+    hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+    hash = (53 * hash) + getNamespace().hashCode();
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
@@ -513,6 +568,8 @@ private static final long serialVersionUID = 0L;
 
       applicationId_ = "";
 
+      namespace_ = "";
+
       if (metadataBuilder_ == null) {
         metadata_ = null;
       } else {
@@ -559,6 +616,7 @@ private static final long serialVersionUID = 0L;
       io.cuemby.vault.v1alpha1.Secret result = new io.cuemby.vault.v1alpha1.Secret(this);
       result.projectId_ = projectId_;
       result.applicationId_ = applicationId_;
+      result.namespace_ = namespace_;
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
       } else {
@@ -627,6 +685,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getApplicationId().isEmpty()) {
         applicationId_ = other.applicationId_;
+        onChanged();
+      }
+      if (!other.getNamespace().isEmpty()) {
+        namespace_ = other.namespace_;
         onChanged();
       }
       if (other.hasMetadata()) {
@@ -774,18 +836,94 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object namespace_ = "";
+    /**
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
+     * @return The namespace.
+     */
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
+     * @return The bytes for namespace.
+     */
+    public com.google.protobuf.ByteString
+        getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
+     * @param value The namespace to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNamespace(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      namespace_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNamespace() {
+      
+      namespace_ = getDefaultInstance().getNamespace();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
+     * @param value The bytes for namespace to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNamespaceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      namespace_ = value;
+      onChanged();
+      return this;
+    }
+
     private io.cuemby.vault.v1alpha1.Metadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
         io.cuemby.vault.v1alpha1.Metadata, io.cuemby.vault.v1alpha1.Metadata.Builder, io.cuemby.vault.v1alpha1.MetadataOrBuilder> metadataBuilder_;
     /**
-     * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+     * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
     }
     /**
-     * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+     * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
      * @return The metadata.
      */
     public io.cuemby.vault.v1alpha1.Metadata getMetadata() {
@@ -796,7 +934,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+     * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
      */
     public Builder setMetadata(io.cuemby.vault.v1alpha1.Metadata value) {
       if (metadataBuilder_ == null) {
@@ -812,7 +950,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+     * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
      */
     public Builder setMetadata(
         io.cuemby.vault.v1alpha1.Metadata.Builder builderForValue) {
@@ -826,7 +964,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+     * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
      */
     public Builder mergeMetadata(io.cuemby.vault.v1alpha1.Metadata value) {
       if (metadataBuilder_ == null) {
@@ -844,7 +982,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+     * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
      */
     public Builder clearMetadata() {
       if (metadataBuilder_ == null) {
@@ -858,7 +996,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+     * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
      */
     public io.cuemby.vault.v1alpha1.Metadata.Builder getMetadataBuilder() {
       
@@ -866,7 +1004,7 @@ private static final long serialVersionUID = 0L;
       return getMetadataFieldBuilder().getBuilder();
     }
     /**
-     * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+     * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
      */
     public io.cuemby.vault.v1alpha1.MetadataOrBuilder getMetadataOrBuilder() {
       if (metadataBuilder_ != null) {
@@ -877,7 +1015,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.vault.v1alpha1.Metadata metadata = 3 [json_name = "metadata"];</code>
+     * <code>.vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         io.cuemby.vault.v1alpha1.Metadata, io.cuemby.vault.v1alpha1.Metadata.Builder, io.cuemby.vault.v1alpha1.MetadataOrBuilder> 
