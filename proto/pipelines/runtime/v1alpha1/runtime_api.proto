@@ -46,7 +46,8 @@ message DeleteRuntimeRequest {
     string runtime_id = 1;
     uint32 project_id = 2;
     string application_id = 3;
-    string status = 4;
+    string namespace = 4;
+    string status = 5;
 }
 
 message DeleteRuntimeResponse {
@@ -56,7 +57,8 @@ message DeleteRuntimeResponse {
 message GetRuntimeRequest {
     string runtime_id = 1;
     uint32 project_id = 2;
-    string status = 3;
+    string namespace = 3;
+    string status = 4;
 }
 
 message GetRuntimeResponse {
@@ -66,7 +68,8 @@ message GetRuntimeResponse {
 
 message ListRuntimesRequest {
     uint32 project_id = 1;
-    string status = 2;
+    string namespace = 2;
+    string status = 3;
 }
 
 message ListRuntimesResponse {

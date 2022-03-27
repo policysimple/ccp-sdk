@@ -44,7 +44,7 @@ message UpdateSecretResponse {
 
 message DeleteSecretRequest {
     uint32 project_id = 1;
-    string application_id = 2;
+    string namespace = 2;
 }
 
 message DeleteSecretResponse {
@@ -54,7 +54,7 @@ message DeleteSecretResponse {
 
 message GetSecretRequest {
     uint32 project_id = 1;
-    string application_id = 2;
+    string namespace = 2;
 }
 
 message GetSecretResponse {
@@ -64,7 +64,7 @@ message GetSecretResponse {
 
 message ListSecretRequest {
     string project_id = 1;
-    string application_id = 2;
+    string namespace = 2;
 }
 
 message ListSecretResponse {
