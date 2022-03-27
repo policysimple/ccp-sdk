@@ -706,6 +706,7 @@ proto.vault.v1alpha1.Secret.toObject = function(includeInstance, msg) {
   var f, obj = {
     projectId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     applicationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    namespace: jspb.Message.getFieldWithDefault(msg, 3, ""),
     metadata: (f = msg.getMetadata()) && proto.vault.v1alpha1.Metadata.toObject(includeInstance, f),
     data: (f = msg.getData()) && proto.vault.v1alpha1.SecretData.toObject(includeInstance, f),
     warnings: (f = msg.getWarnings()) && proto.vault.v1alpha1.SecretWarnings.toObject(includeInstance, f)
@@ -754,6 +755,10 @@ proto.vault.v1alpha1.Secret.deserializeBinaryFromReader = function(msg, reader) 
       msg.setApplicationId(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
+    case 4:
       var value = new proto.vault.v1alpha1.Metadata;
       reader.readMessage(value,proto.vault.v1alpha1.Metadata.deserializeBinaryFromReader);
       msg.setMetadata(value);
@@ -811,10 +816,17 @@ proto.vault.v1alpha1.Secret.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getMetadata();
   if (f != null) {
     writer.writeMessage(
-      3,
+      4,
       f,
       proto.vault.v1alpha1.Metadata.serializeBinaryToWriter
     );
@@ -875,12 +887,30 @@ proto.vault.v1alpha1.Secret.prototype.setApplicationId = function(value) {
 
 
 /**
- * optional Metadata metadata = 3;
+ * optional string namespace = 3;
+ * @return {string}
+ */
+proto.vault.v1alpha1.Secret.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vault.v1alpha1.Secret} returns this
+ */
+proto.vault.v1alpha1.Secret.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional Metadata metadata = 4;
  * @return {?proto.vault.v1alpha1.Metadata}
  */
 proto.vault.v1alpha1.Secret.prototype.getMetadata = function() {
   return /** @type{?proto.vault.v1alpha1.Metadata} */ (
-    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.Metadata, 3));
+    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.Metadata, 4));
 };
 
 
@@ -889,7 +919,7 @@ proto.vault.v1alpha1.Secret.prototype.getMetadata = function() {
  * @return {!proto.vault.v1alpha1.Secret} returns this
 */
 proto.vault.v1alpha1.Secret.prototype.setMetadata = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -907,7 +937,7 @@ proto.vault.v1alpha1.Secret.prototype.clearMetadata = function() {
  * @return {boolean}
  */
 proto.vault.v1alpha1.Secret.prototype.hasMetadata = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

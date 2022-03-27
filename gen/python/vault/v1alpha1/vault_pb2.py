@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\030io.cuemby.vault.v1alpha1B\nVaultProtoP\001Z1github.com/cuemby/ccp-vault-service/vaultv1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1avault/v1alpha1/vault.proto\x12\x0evault.v1alpha1\"\xc5\x01\n\x08Metadata\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12!\n\x0c\x63reated_time\x18\x02 \x01(\tR\x0b\x63reatedTime\x12\'\n\x0f\x63ustom_metadata\x18\x03 \x01(\tR\x0e\x63ustomMetadata\x12#\n\rdeletion_time\x18\x04 \x01(\tR\x0c\x64\x65letionTime\x12\x1c\n\tdestroyed\x18\x05 \x01(\x08R\tdestroyed\x12\x18\n\x07version\x18\x06 \x01(\x05R\x07version\"\x7f\n\nSecretData\x12\x38\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32$.vault.v1alpha1.SecretData.DataEntryR\x04\x64\x61ta\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\",\n\x0eSecretWarnings\x12\x1a\n\x08warnings\x18\x01 \x03(\tR\x08warnings\"\xf0\x01\n\x06Secret\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x02 \x01(\tR\rapplicationId\x12\x34\n\x08metadata\x18\x03 \x01(\x0b\x32\x18.vault.v1alpha1.MetadataR\x08metadata\x12.\n\x04\x64\x61ta\x18\x05 \x01(\x0b\x32\x1a.vault.v1alpha1.SecretDataR\x04\x64\x61ta\x12:\n\x08warnings\x18\x06 \x01(\x0b\x32\x1e.vault.v1alpha1.SecretWarningsR\x08warningsB\x83\x01\n\x18io.cuemby.vault.v1alpha1B\nVaultProtoP\x01Z1github.com/cuemby/ccp-vault-service/vaultv1alpha1\xa2\x02\x03PPX\xaa\x02\x0eVault.V1Alpha1\xca\x02\x0eVault\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n\x1avault/v1alpha1/vault.proto\x12\x0evault.v1alpha1\"\xc5\x01\n\x08Metadata\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12!\n\x0c\x63reated_time\x18\x02 \x01(\tR\x0b\x63reatedTime\x12\'\n\x0f\x63ustom_metadata\x18\x03 \x01(\tR\x0e\x63ustomMetadata\x12#\n\rdeletion_time\x18\x04 \x01(\tR\x0c\x64\x65letionTime\x12\x1c\n\tdestroyed\x18\x05 \x01(\x08R\tdestroyed\x12\x18\n\x07version\x18\x06 \x01(\x05R\x07version\"\x7f\n\nSecretData\x12\x38\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32$.vault.v1alpha1.SecretData.DataEntryR\x04\x64\x61ta\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\",\n\x0eSecretWarnings\x12\x1a\n\x08warnings\x18\x01 \x03(\tR\x08warnings\"\x8e\x02\n\x06Secret\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x02 \x01(\tR\rapplicationId\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\x12\x34\n\x08metadata\x18\x04 \x01(\x0b\x32\x18.vault.v1alpha1.MetadataR\x08metadata\x12.\n\x04\x64\x61ta\x18\x05 \x01(\x0b\x32\x1a.vault.v1alpha1.SecretDataR\x04\x64\x61ta\x12:\n\x08warnings\x18\x06 \x01(\x0b\x32\x1e.vault.v1alpha1.SecretWarningsR\x08warningsB\x83\x01\n\x18io.cuemby.vault.v1alpha1B\nVaultProtoP\x01Z1github.com/cuemby/ccp-vault-service/vaultv1alpha1\xa2\x02\x03PPX\xaa\x02\x0eVault.V1Alpha1\xca\x02\x0eVault\\V1Alpha1b\x06proto3'
 )
 
 
@@ -217,21 +217,28 @@ _SECRET = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='applicationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='metadata', full_name='vault.v1alpha1.Secret.metadata', index=2,
-      number=3, type=11, cpp_type=10, label=1,
+      name='namespace', full_name='vault.v1alpha1.Secret.namespace', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='namespace', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='metadata', full_name='vault.v1alpha1.Secret.metadata', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='metadata', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='data', full_name='vault.v1alpha1.Secret.data', index=3,
+      name='data', full_name='vault.v1alpha1.Secret.data', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='data', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='warnings', full_name='vault.v1alpha1.Secret.warnings', index=4,
+      name='warnings', full_name='vault.v1alpha1.Secret.warnings', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -250,7 +257,7 @@ _SECRET = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=422,
-  serialized_end=662,
+  serialized_end=692,
 )
 
 _SECRETDATA_DATAENTRY.containing_type = _SECRETDATA
