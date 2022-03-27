@@ -33,6 +33,10 @@ class Organization extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.accounts.v1alpha1.UserList owner = 7 [json_name = "owner"];</code>
      */
     protected $owner = null;
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];</code>
+     */
+    private $roles;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class Organization extends \Google\Protobuf\Internal\Message
      *     @type string $image
      *     @type string $description
      *     @type \Accounts\V1alpha1\UserList $owner
+     *     @type \Accounts\V1alpha1\Rol[]|\Google\Protobuf\Internal\RepeatedField $roles
      * }
      */
     public function __construct($data = NULL) {
@@ -168,6 +173,28 @@ class Organization extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Accounts\V1alpha1\UserList::class);
         $this->owner = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];</code>
+     * @param \Accounts\V1alpha1\Rol[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRoles($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Rol::class);
+        $this->roles = $arr;
 
         return $this;
     }

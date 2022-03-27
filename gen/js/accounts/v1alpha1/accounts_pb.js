@@ -1934,7 +1934,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.accounts.v1alpha1.Organization = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.Organization.repeatedFields_, null);
 };
 goog.inherits(proto.accounts.v1alpha1.Organization, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -20630,6 +20630,13 @@ proto.accounts.v1alpha1.ProjectOrganization.prototype.setDescription = function(
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.accounts.v1alpha1.Organization.repeatedFields_ = [8];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -20665,7 +20672,9 @@ proto.accounts.v1alpha1.Organization.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     image: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    owner: (f = msg.getOwner()) && proto.accounts.v1alpha1.UserList.toObject(includeInstance, f)
+    owner: (f = msg.getOwner()) && proto.accounts.v1alpha1.UserList.toObject(includeInstance, f),
+    rolesList: jspb.Message.toObjectList(msg.getRolesList(),
+    proto.accounts.v1alpha1.Rol.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -20722,6 +20731,11 @@ proto.accounts.v1alpha1.Organization.deserializeBinaryFromReader = function(msg,
       var value = new proto.accounts.v1alpha1.UserList;
       reader.readMessage(value,proto.accounts.v1alpha1.UserList.deserializeBinaryFromReader);
       msg.setOwner(value);
+      break;
+    case 8:
+      var value = new proto.accounts.v1alpha1.Rol;
+      reader.readMessage(value,proto.accounts.v1alpha1.Rol.deserializeBinaryFromReader);
+      msg.addRoles(value);
       break;
     default:
       reader.skipField();
@@ -20786,6 +20800,14 @@ proto.accounts.v1alpha1.Organization.serializeBinaryToWriter = function(message,
       7,
       f,
       proto.accounts.v1alpha1.UserList.serializeBinaryToWriter
+    );
+  }
+  f = message.getRolesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      8,
+      f,
+      proto.accounts.v1alpha1.Rol.serializeBinaryToWriter
     );
   }
 };
@@ -20897,6 +20919,44 @@ proto.accounts.v1alpha1.Organization.prototype.clearOwner = function() {
  */
 proto.accounts.v1alpha1.Organization.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * repeated Rol roles = 8;
+ * @return {!Array<!proto.accounts.v1alpha1.Rol>}
+ */
+proto.accounts.v1alpha1.Organization.prototype.getRolesList = function() {
+  return /** @type{!Array<!proto.accounts.v1alpha1.Rol>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Rol, 8));
+};
+
+
+/**
+ * @param {!Array<!proto.accounts.v1alpha1.Rol>} value
+ * @return {!proto.accounts.v1alpha1.Organization} returns this
+*/
+proto.accounts.v1alpha1.Organization.prototype.setRolesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+};
+
+
+/**
+ * @param {!proto.accounts.v1alpha1.Rol=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.accounts.v1alpha1.Rol}
+ */
+proto.accounts.v1alpha1.Organization.prototype.addRoles = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.accounts.v1alpha1.Rol, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.accounts.v1alpha1.Organization} returns this
+ */
+proto.accounts.v1alpha1.Organization.prototype.clearRolesList = function() {
+  return this.setRolesList([]);
 };
 
 
@@ -23281,9 +23341,9 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.toObject = function(includeInstanc
     isSuperUser: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     organizationsList: jspb.Message.toObjectList(msg.getOrganizationsList(),
     proto.accounts.v1alpha1.Organization.toObject, includeInstance),
-    msg: jspb.Message.getFieldWithDefault(msg, 13, ""),
     projectsList: jspb.Message.toObjectList(msg.getProjectsList(),
     proto.accounts.v1alpha1.Project.toObject, includeInstance),
+    msg: jspb.Message.getFieldWithDefault(msg, 13, ""),
     phoneNumber: jspb.Message.getFieldWithDefault(msg, 15, ""),
     country: jspb.Message.getFieldWithDefault(msg, 16, ""),
     city: jspb.Message.getFieldWithDefault(msg, 17, ""),
@@ -23378,14 +23438,14 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.deserializeBinaryFromReader = func
       reader.readMessage(value,proto.accounts.v1alpha1.Organization.deserializeBinaryFromReader);
       msg.addOrganizations(value);
       break;
-    case 13:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMsg(value);
-      break;
     case 14:
       var value = new proto.accounts.v1alpha1.Project;
       reader.readMessage(value,proto.accounts.v1alpha1.Project.deserializeBinaryFromReader);
       msg.addProjects(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMsg(value);
       break;
     case 15:
       var value = /** @type {string} */ (reader.readString());
@@ -23531,19 +23591,19 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.serializeBinaryToWriter = function
       proto.accounts.v1alpha1.Organization.serializeBinaryToWriter
     );
   }
-  f = message.getMsg();
-  if (f.length > 0) {
-    writer.writeString(
-      13,
-      f
-    );
-  }
   f = message.getProjectsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       14,
       f,
       proto.accounts.v1alpha1.Project.serializeBinaryToWriter
+    );
+  }
+  f = message.getMsg();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
     );
   }
   f = message.getPhoneNumber();
@@ -23875,24 +23935,6 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.clearOrganizationsList =
 
 
 /**
- * optional string msg = 13;
- * @return {string}
- */
-proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getMsg = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setMsg = function(value) {
-  return jspb.Message.setProto3StringField(this, 13, value);
-};
-
-
-/**
  * repeated Project projects = 14;
  * @return {!Array<!proto.accounts.v1alpha1.Project>}
  */
@@ -23927,6 +23969,24 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.addProjects = function(o
  */
 proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.clearProjectsList = function() {
   return this.setProjectsList([]);
+};
+
+
+/**
+ * optional string msg = 13;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getMsg = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setMsg = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
