@@ -14,14 +14,14 @@ public interface DeleteSecretRequestOrBuilder extends
   int getProjectId();
 
   /**
-   * <code>string application_id = 2 [json_name = "applicationId"];</code>
-   * @return The applicationId.
+   * <code>string namespace = 2 [json_name = "namespace"];</code>
+   * @return The namespace.
    */
-  java.lang.String getApplicationId();
+  java.lang.String getNamespace();
   /**
-   * <code>string application_id = 2 [json_name = "applicationId"];</code>
-   * @return The bytes for applicationId.
+   * <code>string namespace = 2 [json_name = "namespace"];</code>
+   * @return The bytes for namespace.
    */
   com.google.protobuf.ByteString
-      getApplicationIdBytes();
+      getNamespaceBytes();
 }

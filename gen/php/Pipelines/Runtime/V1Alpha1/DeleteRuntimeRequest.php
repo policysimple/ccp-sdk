@@ -26,7 +26,11 @@ class DeleteRuntimeRequest extends \Google\Protobuf\Internal\Message
      */
     protected $application_id = '';
     /**
-     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string namespace = 4 [json_name = "namespace"];</code>
+     */
+    protected $namespace = '';
+    /**
+     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
      */
     protected $status = '';
 
@@ -39,6 +43,7 @@ class DeleteRuntimeRequest extends \Google\Protobuf\Internal\Message
      *     @type string $runtime_id
      *     @type int $project_id
      *     @type string $application_id
+     *     @type string $namespace
      *     @type string $status
      * }
      */
@@ -114,7 +119,29 @@ class DeleteRuntimeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string namespace = 4 [json_name = "namespace"];</code>
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 4 [json_name = "namespace"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
      * @return string
      */
     public function getStatus()
@@ -123,7 +150,7 @@ class DeleteRuntimeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */

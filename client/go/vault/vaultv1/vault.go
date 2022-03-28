@@ -96,7 +96,7 @@ func UpdateSecret(in *Secret) (*vaultpkgv1.UpdateSecretResponse, error) {
 	return response, nil
 }
 
-func DeleteSecret(projectId uint32) (*vaultpkgv1.DeleteSecretResponse, error) {
+func DeleteSecret(projectId uint32, namespace string) (*vaultpkgv1.DeleteSecretResponse, error) {
 
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
@@ -107,6 +107,7 @@ func DeleteSecret(projectId uint32) (*vaultpkgv1.DeleteSecretResponse, error) {
 
 	response, err := client.DeleteSecret(ctx, &vaultpkgv1.DeleteSecretRequest{
 		ProjectId: projectId,
+		Namespace: namespace,
 	})
 
 	if err != nil {
@@ -116,7 +117,7 @@ func DeleteSecret(projectId uint32) (*vaultpkgv1.DeleteSecretResponse, error) {
 	return response, nil
 }
 
-func GetSecret(projectId uint32) (*vaultpkgv1.GetSecretResponse, error) {
+func GetSecret(projectId uint32, namespace string) (*vaultpkgv1.GetSecretResponse, error) {
 
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
@@ -127,6 +128,7 @@ func GetSecret(projectId uint32) (*vaultpkgv1.GetSecretResponse, error) {
 
 	response, err := client.GetSecret(ctx, &vaultpkgv1.GetSecretRequest{
 		ProjectId: projectId,
+		Namespace: namespace,
 	})
 
 	if err != nil {
@@ -146,6 +148,7 @@ func ListSecret(in *vaultpkgv1.ListSecretRequest) (*vaultpkgv1.ListSecretRespons
 
 	response, err := client.ListSecret(ctx, &vaultpkgv1.ListSecretRequest{
 		ProjectId: in.ProjectId,
+		Namespace: in.Namespace,
 	})
 
 	if err != nil {

@@ -922,7 +922,7 @@ proto.vault.v1alpha1.DeleteSecretRequest.prototype.toObject = function(opt_inclu
 proto.vault.v1alpha1.DeleteSecretRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     projectId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    applicationId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -965,7 +965,7 @@ proto.vault.v1alpha1.DeleteSecretRequest.deserializeBinaryFromReader = function(
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setApplicationId(value);
+      msg.setNamespace(value);
       break;
     default:
       reader.skipField();
@@ -1003,7 +1003,7 @@ proto.vault.v1alpha1.DeleteSecretRequest.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getApplicationId();
+  f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -1032,10 +1032,10 @@ proto.vault.v1alpha1.DeleteSecretRequest.prototype.setProjectId = function(value
 
 
 /**
- * optional string application_id = 2;
+ * optional string namespace = 2;
  * @return {string}
  */
-proto.vault.v1alpha1.DeleteSecretRequest.prototype.getApplicationId = function() {
+proto.vault.v1alpha1.DeleteSecretRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1044,7 +1044,7 @@ proto.vault.v1alpha1.DeleteSecretRequest.prototype.getApplicationId = function()
  * @param {string} value
  * @return {!proto.vault.v1alpha1.DeleteSecretRequest} returns this
  */
-proto.vault.v1alpha1.DeleteSecretRequest.prototype.setApplicationId = function(value) {
+proto.vault.v1alpha1.DeleteSecretRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1242,7 +1242,7 @@ proto.vault.v1alpha1.GetSecretRequest.prototype.toObject = function(opt_includeI
 proto.vault.v1alpha1.GetSecretRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     projectId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    applicationId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1285,7 +1285,7 @@ proto.vault.v1alpha1.GetSecretRequest.deserializeBinaryFromReader = function(msg
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setApplicationId(value);
+      msg.setNamespace(value);
       break;
     default:
       reader.skipField();
@@ -1323,7 +1323,7 @@ proto.vault.v1alpha1.GetSecretRequest.serializeBinaryToWriter = function(message
       f
     );
   }
-  f = message.getApplicationId();
+  f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -1352,10 +1352,10 @@ proto.vault.v1alpha1.GetSecretRequest.prototype.setProjectId = function(value) {
 
 
 /**
- * optional string application_id = 2;
+ * optional string namespace = 2;
  * @return {string}
  */
-proto.vault.v1alpha1.GetSecretRequest.prototype.getApplicationId = function() {
+proto.vault.v1alpha1.GetSecretRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1364,7 +1364,7 @@ proto.vault.v1alpha1.GetSecretRequest.prototype.getApplicationId = function() {
  * @param {string} value
  * @return {!proto.vault.v1alpha1.GetSecretRequest} returns this
  */
-proto.vault.v1alpha1.GetSecretRequest.prototype.setApplicationId = function(value) {
+proto.vault.v1alpha1.GetSecretRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1583,7 +1583,7 @@ proto.vault.v1alpha1.ListSecretRequest.prototype.toObject = function(opt_include
 proto.vault.v1alpha1.ListSecretRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     projectId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    applicationId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1626,7 +1626,7 @@ proto.vault.v1alpha1.ListSecretRequest.deserializeBinaryFromReader = function(ms
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setApplicationId(value);
+      msg.setNamespace(value);
       break;
     default:
       reader.skipField();
@@ -1664,7 +1664,7 @@ proto.vault.v1alpha1.ListSecretRequest.serializeBinaryToWriter = function(messag
       f
     );
   }
-  f = message.getApplicationId();
+  f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -1693,10 +1693,10 @@ proto.vault.v1alpha1.ListSecretRequest.prototype.setProjectId = function(value) 
 
 
 /**
- * optional string application_id = 2;
+ * optional string namespace = 2;
  * @return {string}
  */
-proto.vault.v1alpha1.ListSecretRequest.prototype.getApplicationId = function() {
+proto.vault.v1alpha1.ListSecretRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1705,7 +1705,7 @@ proto.vault.v1alpha1.ListSecretRequest.prototype.getApplicationId = function() {
  * @param {string} value
  * @return {!proto.vault.v1alpha1.ListSecretRequest} returns this
  */
-proto.vault.v1alpha1.ListSecretRequest.prototype.setApplicationId = function(value) {
+proto.vault.v1alpha1.ListSecretRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
