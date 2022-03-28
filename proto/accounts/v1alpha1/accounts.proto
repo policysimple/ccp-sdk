@@ -33,6 +33,7 @@ service AccountService {
     rpc ListRoles(ListRolesRequest) returns (ListRolesResponse);
     rpc UpdateRole(UpdateRoleRequest) returns (UpdateRoleResponse);
     rpc GetOneRole(GetOneRoleRequest) returns (GetOneRoleResponse);
+    rpc GetRolesByUser(GetRolesByUserRequest) returns (GetRolesByUserResponse);
     rpc DeleteRole(DeleteRoleRequest) returns (DeleteRoleResponse);
     //CRUD Project
     rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse);
@@ -57,6 +58,19 @@ service AccountService {
     rpc UpdateApiKey(UpdateApiKeyRequest) returns (UpdateApiKeyResponse);
     rpc DeleteApiKey(DeleteApiKeyRequest) returns (DeleteApiKeyResponse);
     
+}
+
+/*
+    GET ROLES BY USER 
+*/
+
+message GetRolesByUserRequest {
+    string user_id = 1;
+}
+
+message GetRolesByUserResponse {
+    repeated Organization organization = 1;
+    repeated Project project = 2;
 }
 
 /*
