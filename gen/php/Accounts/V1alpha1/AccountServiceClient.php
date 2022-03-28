@@ -135,6 +135,19 @@ class AccountServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Accounts\V1alpha1\ListInvitationUserRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListInvitationUser(\Accounts\V1alpha1\ListInvitationUserRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/ListInvitationUser',
+        $argument,
+        ['\Accounts\V1alpha1\ListInvitationUserResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * /PERMISSION
      * @param \Accounts\V1alpha1\CreatePermissionRequest $argument input argument
      * @param array $metadata metadata

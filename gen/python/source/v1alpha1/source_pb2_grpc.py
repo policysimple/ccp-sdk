@@ -29,6 +29,11 @@ class SourceServiceStub(object):
         request_serializer=source_dot_v1alpha1_dot_source__pb2.GetProviderRequest.SerializeToString,
         response_deserializer=source_dot_v1alpha1_dot_source__pb2.GetProviderResponse.FromString,
         )
+    self.GetOneProviderByName = channel.unary_unary(
+        '/source.v1alpha1.SourceService/GetOneProviderByName',
+        request_serializer=source_dot_v1alpha1_dot_source__pb2.GetOneProviderByNameRequest.SerializeToString,
+        response_deserializer=source_dot_v1alpha1_dot_source__pb2.GetOneProviderByNameResponse.FromString,
+        )
     self.UpdateProvider = channel.unary_unary(
         '/source.v1alpha1.SourceService/UpdateProvider',
         request_serializer=source_dot_v1alpha1_dot_source__pb2.UpdateProviderRequest.SerializeToString,
@@ -120,6 +125,13 @@ class SourceServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def GetProvider(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetOneProviderByName(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -241,6 +253,11 @@ def add_SourceServiceServicer_to_server(servicer, server):
           servicer.GetProvider,
           request_deserializer=source_dot_v1alpha1_dot_source__pb2.GetProviderRequest.FromString,
           response_serializer=source_dot_v1alpha1_dot_source__pb2.GetProviderResponse.SerializeToString,
+      ),
+      'GetOneProviderByName': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOneProviderByName,
+          request_deserializer=source_dot_v1alpha1_dot_source__pb2.GetOneProviderByNameRequest.FromString,
+          response_serializer=source_dot_v1alpha1_dot_source__pb2.GetOneProviderByNameResponse.SerializeToString,
       ),
       'UpdateProvider': grpc.unary_unary_rpc_method_handler(
           servicer.UpdateProvider,

@@ -16,8 +16,12 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-©8
-source/v1alpha1/source.protosource.v1alpha1"@
+¨:
+source/v1alpha1/source.protosource.v1alpha1"1
+GetOneProviderByNameRequest
+name (	Rname"U
+GetOneProviderByNameResponse5
+provider (2.source.v1alpha1.ProviderRprovider"@
 Branch
 name (	Rname
 sha (	Rsha
@@ -208,11 +212,12 @@ providerId7
 error (	Rerror"
 ListProvidersRequest"P
 ListProvidersResponse7
-	providers (2.source.v1alpha1.ProviderR	providers2ÿ
+	providers (2.source.v1alpha1.ProviderR	providers2ô
 SourceServicea
 CreateProvider&.source.v1alpha1.CreateProviderRequest\'.source.v1alpha1.CreateProviderResponse^
 ListProviders%.source.v1alpha1.ListProvidersRequest&.source.v1alpha1.ListProvidersResponseX
-GetProvider#.source.v1alpha1.GetProviderRequest$.source.v1alpha1.GetProviderResponsea
+GetProvider#.source.v1alpha1.GetProviderRequest$.source.v1alpha1.GetProviderResponses
+GetOneProviderByName,.source.v1alpha1.GetOneProviderByNameRequest-.source.v1alpha1.GetOneProviderByNameResponsea
 UpdateProvider&.source.v1alpha1.UpdateProviderRequest\'.source.v1alpha1.UpdateProviderResponsea
 DeleteProvider&.source.v1alpha1.DeleteProviderRequest\'.source.v1alpha1.DeleteProviderResponsej
 CreateIntegration).source.v1alpha1.CreateIntegrationRequest*.source.v1alpha1.CreateIntegrationResponseg

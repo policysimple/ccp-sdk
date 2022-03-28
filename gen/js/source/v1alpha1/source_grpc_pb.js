@@ -158,6 +158,28 @@ function deserialize_source_v1alpha1_GetIntegrationResponse(buffer_arg) {
   return source_v1alpha1_source_pb.GetIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_source_v1alpha1_GetOneProviderByNameRequest(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.GetOneProviderByNameRequest)) {
+    throw new Error('Expected argument of type source.v1alpha1.GetOneProviderByNameRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_GetOneProviderByNameRequest(buffer_arg) {
+  return source_v1alpha1_source_pb.GetOneProviderByNameRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_source_v1alpha1_GetOneProviderByNameResponse(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.GetOneProviderByNameResponse)) {
+    throw new Error('Expected argument of type source.v1alpha1.GetOneProviderByNameResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_GetOneProviderByNameResponse(buffer_arg) {
+  return source_v1alpha1_source_pb.GetOneProviderByNameResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_source_v1alpha1_GetProviderRequest(arg) {
   if (!(arg instanceof source_v1alpha1_source_pb.GetProviderRequest)) {
     throw new Error('Expected argument of type source.v1alpha1.GetProviderRequest');
@@ -413,6 +435,17 @@ var SourceServiceService = exports.SourceServiceService = {
     requestDeserialize: deserialize_source_v1alpha1_GetProviderRequest,
     responseSerialize: serialize_source_v1alpha1_GetProviderResponse,
     responseDeserialize: deserialize_source_v1alpha1_GetProviderResponse,
+  },
+  getOneProviderByName: {
+    path: '/source.v1alpha1.SourceService/GetOneProviderByName',
+    requestStream: false,
+    responseStream: false,
+    requestType: source_v1alpha1_source_pb.GetOneProviderByNameRequest,
+    responseType: source_v1alpha1_source_pb.GetOneProviderByNameResponse,
+    requestSerialize: serialize_source_v1alpha1_GetOneProviderByNameRequest,
+    requestDeserialize: deserialize_source_v1alpha1_GetOneProviderByNameRequest,
+    responseSerialize: serialize_source_v1alpha1_GetOneProviderByNameResponse,
+    responseDeserialize: deserialize_source_v1alpha1_GetOneProviderByNameResponse,
   },
   updateProvider: {
     path: '/source.v1alpha1.SourceService/UpdateProvider',

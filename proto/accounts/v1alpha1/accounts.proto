@@ -16,6 +16,7 @@ service AccountService {
     rpc SendInvitationUser(SendInvitationUserRequest) returns (SendInvitationUserResponse);
     rpc GetInvitationUser(GetInvitationUserRequest) returns (GetInvitationUserResponse);
     rpc AgreeInvitationUser(AgreeInvitationUserRequest) returns (AgreeInvitationUserResponse);
+    rpc ListInvitationUser(ListInvitationUserRequest) returns (ListInvitationUserResponse);
     ///PERMISSION
     rpc CreatePermission(CreatePermissionRequest) returns (CreatePermissionResponse);
     rpc ListPermission(ListPermissionRequest) returns (ListPermissionResponse);
@@ -58,6 +59,18 @@ service AccountService {
     rpc UpdateApiKey(UpdateApiKeyRequest) returns (UpdateApiKeyResponse);
     rpc DeleteApiKey(DeleteApiKeyRequest) returns (DeleteApiKeyResponse);
     
+}
+
+/*
+    rpc ListInvitationUser(ListInvitationUserRequest) returns (ListInvitationUserResponse);
+*/
+
+message ListInvitationUserRequest {
+    string user_id = 1;
+}
+
+message ListInvitationUserResponse {
+    repeated GetInvitationUserResponse invitation_user = 1;
 }
 
 /*
@@ -429,13 +442,22 @@ message GetInvitationUserRequest {
     string email=2;
 }
 
-message GetInvitationUserResponse {
-    Organization organization=1;
-    repeated Project projects=2;
-    string result=3;
+message OrganizationInvitation {
+    uint32 id = 1;
+    string name = 2;
+    string image = 3;
+    string description = 4;
+    repeated Project projects = 5;
+}
 
+message GetInvitationUserResponse {
+    uint32 id = 1;
+    string invitation_code = 2;
     repeated Rol roles = 4;
     repeated Permission permissions = 5;
+    OrganizationInvitation organization = 6;
+    string email = 7;
+    bool success = 8;
 }
 
 message AgreeInvitationUserRequest {

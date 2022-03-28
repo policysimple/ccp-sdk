@@ -11,6 +11,7 @@ service SourceService {
     rpc CreateProvider(CreateProviderRequest) returns (CreateProviderResponse);
     rpc ListProviders(ListProvidersRequest) returns (ListProvidersResponse);
     rpc GetProvider(GetProviderRequest) returns (GetProviderResponse);
+    rpc GetOneProviderByName(GetOneProviderByNameRequest) returns (GetOneProviderByNameResponse);
     rpc UpdateProvider(UpdateProviderRequest) returns (UpdateProviderResponse);
     rpc DeleteProvider(DeleteProviderRequest) returns (DeleteProviderResponse);
 
@@ -33,6 +34,17 @@ service SourceService {
     rpc UpdateRepository(UpdateRepositoryRequest) returns (UpdateRepositoryResponse);
 }
 
+/*
+    rpc GetOneProviderByName(GetOneProviderByNameRequest) returns (GetOneProviderByNameResponse);
+*/
+
+message GetOneProviderByNameRequest {
+    string name = 1;
+}
+
+message GetOneProviderByNameResponse {
+    Provider provider = 1;
+}
 /*
   CreateProviderRequest is the request for the CreateProvider method.
 */

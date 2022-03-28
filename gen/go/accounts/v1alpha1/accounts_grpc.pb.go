@@ -28,6 +28,7 @@ type AccountServiceClient interface {
 	SendInvitationUser(ctx context.Context, in *SendInvitationUserRequest, opts ...grpc.CallOption) (*SendInvitationUserResponse, error)
 	GetInvitationUser(ctx context.Context, in *GetInvitationUserRequest, opts ...grpc.CallOption) (*GetInvitationUserResponse, error)
 	AgreeInvitationUser(ctx context.Context, in *AgreeInvitationUserRequest, opts ...grpc.CallOption) (*AgreeInvitationUserResponse, error)
+	ListInvitationUser(ctx context.Context, in *ListInvitationUserRequest, opts ...grpc.CallOption) (*ListInvitationUserResponse, error)
 	///PERMISSION
 	CreatePermission(ctx context.Context, in *CreatePermissionRequest, opts ...grpc.CallOption) (*CreatePermissionResponse, error)
 	ListPermission(ctx context.Context, in *ListPermissionRequest, opts ...grpc.CallOption) (*ListPermissionResponse, error)
@@ -154,6 +155,15 @@ func (c *accountServiceClient) GetInvitationUser(ctx context.Context, in *GetInv
 func (c *accountServiceClient) AgreeInvitationUser(ctx context.Context, in *AgreeInvitationUserRequest, opts ...grpc.CallOption) (*AgreeInvitationUserResponse, error) {
 	out := new(AgreeInvitationUserResponse)
 	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/AgreeInvitationUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountServiceClient) ListInvitationUser(ctx context.Context, in *ListInvitationUserRequest, opts ...grpc.CallOption) (*ListInvitationUserResponse, error) {
+	out := new(ListInvitationUserResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/ListInvitationUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -471,6 +481,7 @@ type AccountServiceServer interface {
 	SendInvitationUser(context.Context, *SendInvitationUserRequest) (*SendInvitationUserResponse, error)
 	GetInvitationUser(context.Context, *GetInvitationUserRequest) (*GetInvitationUserResponse, error)
 	AgreeInvitationUser(context.Context, *AgreeInvitationUserRequest) (*AgreeInvitationUserResponse, error)
+	ListInvitationUser(context.Context, *ListInvitationUserRequest) (*ListInvitationUserResponse, error)
 	///PERMISSION
 	CreatePermission(context.Context, *CreatePermissionRequest) (*CreatePermissionResponse, error)
 	ListPermission(context.Context, *ListPermissionRequest) (*ListPermissionResponse, error)
@@ -544,6 +555,9 @@ func (UnimplementedAccountServiceServer) GetInvitationUser(context.Context, *Get
 }
 func (UnimplementedAccountServiceServer) AgreeInvitationUser(context.Context, *AgreeInvitationUserRequest) (*AgreeInvitationUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AgreeInvitationUser not implemented")
+}
+func (UnimplementedAccountServiceServer) ListInvitationUser(context.Context, *ListInvitationUserRequest) (*ListInvitationUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListInvitationUser not implemented")
 }
 func (UnimplementedAccountServiceServer) CreatePermission(context.Context, *CreatePermissionRequest) (*CreatePermissionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePermission not implemented")
@@ -814,6 +828,24 @@ func _AccountService_AgreeInvitationUser_Handler(srv interface{}, ctx context.Co
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).AgreeInvitationUser(ctx, req.(*AgreeInvitationUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountService_ListInvitationUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListInvitationUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).ListInvitationUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/ListInvitationUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).ListInvitationUser(ctx, req.(*ListInvitationUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1454,6 +1486,10 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AgreeInvitationUser",
 			Handler:    _AccountService_AgreeInvitationUser_Handler,
+		},
+		{
+			MethodName: "ListInvitationUser",
+			Handler:    _AccountService_ListInvitationUser_Handler,
 		},
 		{
 			MethodName: "CreatePermission",
