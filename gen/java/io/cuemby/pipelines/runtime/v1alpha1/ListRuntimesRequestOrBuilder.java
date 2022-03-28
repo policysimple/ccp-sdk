@@ -14,24 +14,12 @@ public interface ListRuntimesRequestOrBuilder extends
   int getProjectId();
 
   /**
-   * <code>string namespace = 2 [json_name = "namespace"];</code>
-   * @return The namespace.
-   */
-  java.lang.String getNamespace();
-  /**
-   * <code>string namespace = 2 [json_name = "namespace"];</code>
-   * @return The bytes for namespace.
-   */
-  com.google.protobuf.ByteString
-      getNamespaceBytes();
-
-  /**
-   * <code>string status = 3 [json_name = "status"];</code>
+   * <code>string status = 2 [json_name = "status"];</code>
    * @return The status.
    */
   java.lang.String getStatus();
   /**
-   * <code>string status = 3 [json_name = "status"];</code>
+   * <code>string status = 2 [json_name = "status"];</code>
    * @return The bytes for status.
    */
   com.google.protobuf.ByteString

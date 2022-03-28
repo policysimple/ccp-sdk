@@ -151,7 +151,7 @@ func DeleteRuntime(runtimeId string, projectId uint32, namespace string) (respon
 	return response, nil
 }
 
-func ListRuntimes(projectId uint32, namespace string) (response *runtimepkgv1.ListRuntimesResponse, err error) {
+func ListRuntimes(projectId uint32) (response *runtimepkgv1.ListRuntimesResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
 		return
@@ -161,7 +161,6 @@ func ListRuntimes(projectId uint32, namespace string) (response *runtimepkgv1.Li
 
 	response, err = client.ListRuntimes(ctx, &runtimepkgv1.ListRuntimesRequest{
 		ProjectId: projectId,
-		Namespace: namespace,
 	})
 
 	if err != nil {
