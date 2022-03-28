@@ -1,5 +1,8 @@
 # Docker commands
 # Docker commands
+
+export DOCKER_SCAN_SUGGEST=false
+
 NAME_IMAGE=proto-compiler2
 DIR_LOCAL=`pwd`
 docker build --platform linux/amd64 --tag $NAME_IMAGE .
