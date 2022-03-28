@@ -7148,6 +7148,7 @@ class GetOneUserRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kOrganizationIdFieldNumber = 2,
   };
   // uint32 id = 1 [json_name = "id"];
   void clear_id();
@@ -7158,6 +7159,15 @@ class GetOneUserRequest final :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
+  // uint32 organization_id = 2 [json_name = "organizationId"];
+  void clear_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.GetOneUserRequest)
  private:
   class _Internal;
@@ -7166,6 +7176,7 @@ class GetOneUserRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -24099,6 +24110,26 @@ inline void GetOneUserRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 
 inline void GetOneUserRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserRequest.id)
+}
+
+// uint32 organization_id = 2 [json_name = "organizationId"];
+inline void GetOneUserRequest::clear_organization_id() {
+  organization_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetOneUserRequest::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetOneUserRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserRequest.organization_id)
+  return _internal_organization_id();
+}
+inline void GetOneUserRequest::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void GetOneUserRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserRequest.organization_id)
 }
 
 // -------------------------------------------------------------------

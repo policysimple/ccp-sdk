@@ -10041,7 +10041,8 @@ proto.accounts.v1alpha1.GetOneUserRequest.prototype.toObject = function(opt_incl
  */
 proto.accounts.v1alpha1.GetOneUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -10082,6 +10083,10 @@ proto.accounts.v1alpha1.GetOneUserRequest.deserializeBinaryFromReader = function
       var value = /** @type {number} */ (reader.readUint32());
       msg.setId(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setOrganizationId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -10118,6 +10123,13 @@ proto.accounts.v1alpha1.GetOneUserRequest.serializeBinaryToWriter = function(mes
       f
     );
   }
+  f = message.getOrganizationId();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -10136,6 +10148,24 @@ proto.accounts.v1alpha1.GetOneUserRequest.prototype.getId = function() {
  */
 proto.accounts.v1alpha1.GetOneUserRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional uint32 organization_id = 2;
+ * @return {number}
+ */
+proto.accounts.v1alpha1.GetOneUserRequest.prototype.getOrganizationId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserRequest} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserRequest.prototype.setOrganizationId = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 

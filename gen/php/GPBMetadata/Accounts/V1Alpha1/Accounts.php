@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-í‰
+–Š
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"0
 GetRolesByUserRequest
 user_id (	RuserId"“
@@ -187,9 +187,10 @@ first_name (	R	firstName
 email (	Remail
 user_id (	RuserId
 	is_active (RisActive"
-is_super_user (RisSuperUser"#
+is_super_user (RisSuperUser"L
 GetOneUserRequest
-id (Rid"½
+id (Rid\'
+organization_id (RorganizationId"½
 GetOneUserResponse
 id (Rid
 user_id (	RuserId
