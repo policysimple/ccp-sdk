@@ -128,8 +128,7 @@ struct GetRuntimeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetRuntimeResponseDefaultTypeInternal _GetRuntimeResponse_default_instance_;
 constexpr ListRuntimesRequest::ListRuntimesRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , project_id_(0u){}
 struct ListRuntimesRequestDefaultTypeInternal {
   constexpr ListRuntimesRequestDefaultTypeInternal()
@@ -226,7 +225,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::ListRuntimesRequest, project_id_),
-  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::ListRuntimesRequest, namespace__),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::ListRuntimesRequest, status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::ListRuntimesResponse, _internal_metadata_),
@@ -246,7 +244,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 43, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimeRequest)},
   { 52, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimeResponse)},
   { 59, -1, sizeof(::pipelines::runtime::v1alpha1::ListRuntimesRequest)},
-  { 67, -1, sizeof(::pipelines::runtime::v1alpha1::ListRuntimesResponse)},
+  { 66, -1, sizeof(::pipelines::runtime::v1alpha1::ListRuntimesResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -288,39 +286,38 @@ const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5f
   "(\tR\006status\"k\n\022GetRuntimeResponse\022=\n\007runt"
   "ime\030\001 \001(\0132#.pipelines.runtime.v1alpha1.R"
   "untimeR\007runtime\022\026\n\006status\030\002 \001(\tR\006status\""
-  "j\n\023ListRuntimesRequest\022\035\n\nproject_id\030\001 \001"
-  "(\rR\tprojectId\022\034\n\tnamespace\030\002 \001(\tR\tnamesp"
-  "ace\022\026\n\006status\030\003 \001(\tR\006status\"z\n\024ListRunti"
-  "mesResponse\022J\n\014runtime_list\030\001 \001(\0132\'.pipe"
-  "lines.runtime.v1alpha1.RuntimeListR\013runt"
-  "imeList\022\026\n\006status\030\002 \001(\tR\006status2\337\004\n\021Runt"
-  "imeAPIService\022m\n\nGetRuntime\022-.pipelines."
-  "runtime.v1alpha1.GetRuntimeRequest\032..pip"
-  "elines.runtime.v1alpha1.GetRuntimeRespon"
-  "se\"\000\022v\n\rCreateRuntime\0220.pipelines.runtim"
-  "e.v1alpha1.CreateRuntimeRequest\0321.pipeli"
-  "nes.runtime.v1alpha1.CreateRuntimeRespon"
-  "se\"\000\022v\n\rUpdateRuntime\0220.pipelines.runtim"
-  "e.v1alpha1.UpdateRuntimeRequest\0321.pipeli"
-  "nes.runtime.v1alpha1.UpdateRuntimeRespon"
-  "se\"\000\022v\n\rDeleteRuntime\0220.pipelines.runtim"
-  "e.v1alpha1.DeleteRuntimeRequest\0321.pipeli"
-  "nes.runtime.v1alpha1.DeleteRuntimeRespon"
-  "se\"\000\022s\n\014ListRuntimes\022/.pipelines.runtime"
-  ".v1alpha1.ListRuntimesRequest\0320.pipeline"
-  "s.runtime.v1alpha1.ListRuntimesResponse\""
-  "\000B\260\001\n$io.cuemby.pipelines.runtime.v1alph"
-  "a1B\017RuntimeAPIProtoP\001Z5github.com/cuemby"
-  "/ccp-runtime-service/runtimev1alpha1\242\002\003P"
-  "PX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipeli"
-  "nes\\Runtime\\V1Alpha1b\006proto3"
+  "L\n\023ListRuntimesRequest\022\035\n\nproject_id\030\001 \001"
+  "(\rR\tprojectId\022\026\n\006status\030\002 \001(\tR\006status\"z\n"
+  "\024ListRuntimesResponse\022J\n\014runtime_list\030\001 "
+  "\001(\0132\'.pipelines.runtime.v1alpha1.Runtime"
+  "ListR\013runtimeList\022\026\n\006status\030\002 \001(\tR\006statu"
+  "s2\337\004\n\021RuntimeAPIService\022m\n\nGetRuntime\022-."
+  "pipelines.runtime.v1alpha1.GetRuntimeReq"
+  "uest\032..pipelines.runtime.v1alpha1.GetRun"
+  "timeResponse\"\000\022v\n\rCreateRuntime\0220.pipeli"
+  "nes.runtime.v1alpha1.CreateRuntimeReques"
+  "t\0321.pipelines.runtime.v1alpha1.CreateRun"
+  "timeResponse\"\000\022v\n\rUpdateRuntime\0220.pipeli"
+  "nes.runtime.v1alpha1.UpdateRuntimeReques"
+  "t\0321.pipelines.runtime.v1alpha1.UpdateRun"
+  "timeResponse\"\000\022v\n\rDeleteRuntime\0220.pipeli"
+  "nes.runtime.v1alpha1.DeleteRuntimeReques"
+  "t\0321.pipelines.runtime.v1alpha1.DeleteRun"
+  "timeResponse\"\000\022s\n\014ListRuntimes\022/.pipelin"
+  "es.runtime.v1alpha1.ListRuntimesRequest\032"
+  "0.pipelines.runtime.v1alpha1.ListRuntime"
+  "sResponse\"\000B\260\001\n$io.cuemby.pipelines.runt"
+  "ime.v1alpha1B\017RuntimeAPIProtoP\001Z5github."
+  "com/cuemby/ccp-runtime-service/runtimev1"
+  "alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alpha"
+  "1\312\002\032Pipelines\\Runtime\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_deps[1] = {
   &::descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto = {
-  false, false, 2028, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, "pipelines/runtime/v1alpha1/runtime_api.proto", 
+  false, false, 1998, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, "pipelines/runtime/v1alpha1/runtime_api.proto", 
   &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once, descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_deps, 1, 10,
   schemas, file_default_instances, TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto::offsets,
   file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto,
@@ -2415,11 +2412,6 @@ ListRuntimesRequest::ListRuntimesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 ListRuntimesRequest::ListRuntimesRequest(const ListRuntimesRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_namespace_().empty()) {
-    namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_namespace_(), 
-      GetArenaForAllocation());
-  }
   status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_status().empty()) {
     status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
@@ -2430,7 +2422,6 @@ ListRuntimesRequest::ListRuntimesRequest(const ListRuntimesRequest& from)
 }
 
 inline void ListRuntimesRequest::SharedCtor() {
-namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 project_id_ = 0u;
 }
@@ -2444,7 +2435,6 @@ ListRuntimesRequest::~ListRuntimesRequest() {
 
 inline void ListRuntimesRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  namespace__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -2464,7 +2454,6 @@ void ListRuntimesRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  namespace__.ClearToEmpty();
   status_.ClearToEmpty();
   project_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -2483,18 +2472,9 @@ const char* ListRuntimesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string namespace = 2 [json_name = "namespace"];
+      // string status = 2 [json_name = "status"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_namespace_();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.ListRuntimesRequest.namespace"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string status = 3 [json_name = "status"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.ListRuntimesRequest.status"));
@@ -2536,24 +2516,14 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_project_id(), target);
   }
 
-  // string namespace = 2 [json_name = "namespace"];
-  if (!this->_internal_namespace_().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_namespace_().data(), static_cast<int>(this->_internal_namespace_().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pipelines.runtime.v1alpha1.ListRuntimesRequest.namespace");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_namespace_(), target);
-  }
-
-  // string status = 3 [json_name = "status"];
+  // string status = 2 [json_name = "status"];
   if (!this->_internal_status().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "pipelines.runtime.v1alpha1.ListRuntimesRequest.status");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_status(), target);
+        2, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2572,14 +2542,7 @@ size_t ListRuntimesRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string namespace = 2 [json_name = "namespace"];
-  if (!this->_internal_namespace_().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_namespace_());
-  }
-
-  // string status = 3 [json_name = "status"];
+  // string status = 2 [json_name = "status"];
   if (!this->_internal_status().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -2621,9 +2584,6 @@ void ListRuntimesRequest::MergeFrom(const ListRuntimesRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_namespace_().empty()) {
-    _internal_set_namespace_(from._internal_namespace_());
-  }
   if (!from._internal_status().empty()) {
     _internal_set_status(from._internal_status());
   }
@@ -2647,11 +2607,6 @@ bool ListRuntimesRequest::IsInitialized() const {
 void ListRuntimesRequest::InternalSwap(ListRuntimesRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &namespace__, GetArenaForAllocation(),
-      &other->namespace__, other->GetArenaForAllocation()
-  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &status_, GetArenaForAllocation(),

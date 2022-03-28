@@ -1745,8 +1745,7 @@ proto.pipelines.runtime.v1alpha1.ListRuntimesRequest.prototype.toObject = functi
 proto.pipelines.runtime.v1alpha1.ListRuntimesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     projectId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 3, "")
+    status: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1789,10 +1788,6 @@ proto.pipelines.runtime.v1alpha1.ListRuntimesRequest.deserializeBinaryFromReader
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
       break;
     default:
@@ -1831,17 +1826,10 @@ proto.pipelines.runtime.v1alpha1.ListRuntimesRequest.serializeBinaryToWriter = f
       f
     );
   }
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getStatus();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
@@ -1867,10 +1855,10 @@ proto.pipelines.runtime.v1alpha1.ListRuntimesRequest.prototype.setProjectId = fu
 
 
 /**
- * optional string namespace = 2;
+ * optional string status = 2;
  * @return {string}
  */
-proto.pipelines.runtime.v1alpha1.ListRuntimesRequest.prototype.getNamespace = function() {
+proto.pipelines.runtime.v1alpha1.ListRuntimesRequest.prototype.getStatus = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1879,26 +1867,8 @@ proto.pipelines.runtime.v1alpha1.ListRuntimesRequest.prototype.getNamespace = fu
  * @param {string} value
  * @return {!proto.pipelines.runtime.v1alpha1.ListRuntimesRequest} returns this
  */
-proto.pipelines.runtime.v1alpha1.ListRuntimesRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string status = 3;
- * @return {string}
- */
-proto.pipelines.runtime.v1alpha1.ListRuntimesRequest.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.pipelines.runtime.v1alpha1.ListRuntimesRequest} returns this
- */
 proto.pipelines.runtime.v1alpha1.ListRuntimesRequest.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

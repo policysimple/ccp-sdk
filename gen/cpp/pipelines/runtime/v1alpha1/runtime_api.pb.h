@@ -1561,25 +1561,10 @@ class ListRuntimesRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNamespaceFieldNumber = 2,
-    kStatusFieldNumber = 3,
+    kStatusFieldNumber = 2,
     kProjectIdFieldNumber = 1,
   };
-  // string namespace = 2 [json_name = "namespace"];
-  void clear_namespace_();
-  const std::string& namespace_() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_namespace_(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_namespace_();
-  PROTOBUF_MUST_USE_RESULT std::string* release_namespace_();
-  void set_allocated_namespace_(std::string* namespace_);
-  private:
-  const std::string& _internal_namespace_() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_namespace_(const std::string& value);
-  std::string* _internal_mutable_namespace_();
-  public:
-
-  // string status = 3 [json_name = "status"];
+  // string status = 2 [json_name = "status"];
   void clear_status();
   const std::string& status() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1609,7 +1594,6 @@ class ListRuntimesRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2864,53 +2848,7 @@ inline void ListRuntimesRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 
   // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.ListRuntimesRequest.project_id)
 }
 
-// string namespace = 2 [json_name = "namespace"];
-inline void ListRuntimesRequest::clear_namespace_() {
-  namespace__.ClearToEmpty();
-}
-inline const std::string& ListRuntimesRequest::namespace_() const {
-  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.ListRuntimesRequest.namespace)
-  return _internal_namespace_();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void ListRuntimesRequest::set_namespace_(ArgT0&& arg0, ArgT... args) {
- 
- namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.ListRuntimesRequest.namespace)
-}
-inline std::string* ListRuntimesRequest::mutable_namespace_() {
-  std::string* _s = _internal_mutable_namespace_();
-  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.ListRuntimesRequest.namespace)
-  return _s;
-}
-inline const std::string& ListRuntimesRequest::_internal_namespace_() const {
-  return namespace__.Get();
-}
-inline void ListRuntimesRequest::_internal_set_namespace_(const std::string& value) {
-  
-  namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* ListRuntimesRequest::_internal_mutable_namespace_() {
-  
-  return namespace__.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* ListRuntimesRequest::release_namespace_() {
-  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.ListRuntimesRequest.namespace)
-  return namespace__.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void ListRuntimesRequest::set_allocated_namespace_(std::string* namespace_) {
-  if (namespace_ != nullptr) {
-    
-  } else {
-    
-  }
-  namespace__.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), namespace_,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.ListRuntimesRequest.namespace)
-}
-
-// string status = 3 [json_name = "status"];
+// string status = 2 [json_name = "status"];
 inline void ListRuntimesRequest::clear_status() {
   status_.ClearToEmpty();
 }

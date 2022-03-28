@@ -98,32 +98,31 @@ public final class RuntimeAPIProto {
       "(\tR\006status\"k\n\022GetRuntimeResponse\022=\n\007runt" +
       "ime\030\001 \001(\0132#.pipelines.runtime.v1alpha1.R" +
       "untimeR\007runtime\022\026\n\006status\030\002 \001(\tR\006status\"" +
-      "j\n\023ListRuntimesRequest\022\035\n\nproject_id\030\001 \001" +
-      "(\rR\tprojectId\022\034\n\tnamespace\030\002 \001(\tR\tnamesp" +
-      "ace\022\026\n\006status\030\003 \001(\tR\006status\"z\n\024ListRunti" +
-      "mesResponse\022J\n\014runtime_list\030\001 \001(\0132\'.pipe" +
-      "lines.runtime.v1alpha1.RuntimeListR\013runt" +
-      "imeList\022\026\n\006status\030\002 \001(\tR\006status2\337\004\n\021Runt" +
-      "imeAPIService\022m\n\nGetRuntime\022-.pipelines." +
-      "runtime.v1alpha1.GetRuntimeRequest\032..pip" +
-      "elines.runtime.v1alpha1.GetRuntimeRespon" +
-      "se\"\000\022v\n\rCreateRuntime\0220.pipelines.runtim" +
-      "e.v1alpha1.CreateRuntimeRequest\0321.pipeli" +
-      "nes.runtime.v1alpha1.CreateRuntimeRespon" +
-      "se\"\000\022v\n\rUpdateRuntime\0220.pipelines.runtim" +
-      "e.v1alpha1.UpdateRuntimeRequest\0321.pipeli" +
-      "nes.runtime.v1alpha1.UpdateRuntimeRespon" +
-      "se\"\000\022v\n\rDeleteRuntime\0220.pipelines.runtim" +
-      "e.v1alpha1.DeleteRuntimeRequest\0321.pipeli" +
-      "nes.runtime.v1alpha1.DeleteRuntimeRespon" +
-      "se\"\000\022s\n\014ListRuntimes\022/.pipelines.runtime" +
-      ".v1alpha1.ListRuntimesRequest\0320.pipeline" +
-      "s.runtime.v1alpha1.ListRuntimesResponse\"" +
-      "\000B\260\001\n$io.cuemby.pipelines.runtime.v1alph" +
-      "a1B\017RuntimeAPIProtoP\001Z5github.com/cuemby" +
-      "/ccp-runtime-service/runtimev1alpha1\242\002\003P" +
-      "PX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipeli" +
-      "nes\\Runtime\\V1Alpha1b\006proto3"
+      "L\n\023ListRuntimesRequest\022\035\n\nproject_id\030\001 \001" +
+      "(\rR\tprojectId\022\026\n\006status\030\002 \001(\tR\006status\"z\n" +
+      "\024ListRuntimesResponse\022J\n\014runtime_list\030\001 " +
+      "\001(\0132\'.pipelines.runtime.v1alpha1.Runtime" +
+      "ListR\013runtimeList\022\026\n\006status\030\002 \001(\tR\006statu" +
+      "s2\337\004\n\021RuntimeAPIService\022m\n\nGetRuntime\022-." +
+      "pipelines.runtime.v1alpha1.GetRuntimeReq" +
+      "uest\032..pipelines.runtime.v1alpha1.GetRun" +
+      "timeResponse\"\000\022v\n\rCreateRuntime\0220.pipeli" +
+      "nes.runtime.v1alpha1.CreateRuntimeReques" +
+      "t\0321.pipelines.runtime.v1alpha1.CreateRun" +
+      "timeResponse\"\000\022v\n\rUpdateRuntime\0220.pipeli" +
+      "nes.runtime.v1alpha1.UpdateRuntimeReques" +
+      "t\0321.pipelines.runtime.v1alpha1.UpdateRun" +
+      "timeResponse\"\000\022v\n\rDeleteRuntime\0220.pipeli" +
+      "nes.runtime.v1alpha1.DeleteRuntimeReques" +
+      "t\0321.pipelines.runtime.v1alpha1.DeleteRun" +
+      "timeResponse\"\000\022s\n\014ListRuntimes\022/.pipelin" +
+      "es.runtime.v1alpha1.ListRuntimesRequest\032" +
+      "0.pipelines.runtime.v1alpha1.ListRuntime" +
+      "sResponse\"\000B\260\001\n$io.cuemby.pipelines.runt" +
+      "ime.v1alpha1B\017RuntimeAPIProtoP\001Z5github." +
+      "com/cuemby/ccp-runtime-service/runtimev1" +
+      "alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alpha" +
+      "1\312\002\032Pipelines\\Runtime\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -183,7 +182,7 @@ public final class RuntimeAPIProto {
     internal_static_pipelines_runtime_v1alpha1_ListRuntimesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_ListRuntimesRequest_descriptor,
-        new java.lang.String[] { "ProjectId", "Namespace", "Status", });
+        new java.lang.String[] { "ProjectId", "Status", });
     internal_static_pipelines_runtime_v1alpha1_ListRuntimesResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_pipelines_runtime_v1alpha1_ListRuntimesResponse_fieldAccessorTable = new

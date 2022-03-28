@@ -18,11 +18,7 @@ class ListRuntimesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $project_id = 0;
     /**
-     * Generated from protobuf field <code>string namespace = 2 [json_name = "namespace"];</code>
-     */
-    protected $namespace = '';
-    /**
-     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
     protected $status = '';
 
@@ -33,7 +29,6 @@ class ListRuntimesRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $project_id
-     *     @type string $namespace
      *     @type string $status
      * }
      */
@@ -65,29 +60,7 @@ class ListRuntimesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 2 [json_name = "namespace"];</code>
-     * @return string
-     */
-    public function getNamespace()
-    {
-        return $this->namespace;
-    }
-
-    /**
-     * Generated from protobuf field <code>string namespace = 2 [json_name = "namespace"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setNamespace($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->namespace = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      * @return string
      */
     public function getStatus()
@@ -96,7 +69,7 @@ class ListRuntimesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */
