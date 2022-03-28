@@ -320,6 +320,19 @@ class AccountServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Accounts\V1alpha1\GetRolesByUserRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetRolesByUser(\Accounts\V1alpha1\GetRolesByUserRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/GetRolesByUser',
+        $argument,
+        ['\Accounts\V1alpha1\GetRolesByUserResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Accounts\V1alpha1\DeleteRoleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

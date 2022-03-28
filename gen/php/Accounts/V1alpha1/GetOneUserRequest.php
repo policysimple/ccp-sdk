@@ -19,6 +19,10 @@ class GetOneUserRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
      */
     protected $id = 0;
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
 
     /**
      * Constructor.
@@ -27,6 +31,7 @@ class GetOneUserRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $id
+     *     @type int $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -52,6 +57,28 @@ class GetOneUserRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
 
         return $this;
     }

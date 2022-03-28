@@ -42,6 +42,7 @@ static const char* AccountService_method_names[] = {
   "/accounts.v1alpha1.AccountService/ListRoles",
   "/accounts.v1alpha1.AccountService/UpdateRole",
   "/accounts.v1alpha1.AccountService/GetOneRole",
+  "/accounts.v1alpha1.AccountService/GetRolesByUser",
   "/accounts.v1alpha1.AccountService/DeleteRole",
   "/accounts.v1alpha1.AccountService/CreateProject",
   "/accounts.v1alpha1.AccountService/GetOneProject",
@@ -92,24 +93,25 @@ AccountService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& cha
   , rpcmethod_ListRoles_(AccountService_method_names[20], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateRole_(AccountService_method_names[21], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetOneRole_(AccountService_method_names[22], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteRole_(AccountService_method_names[23], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateProject_(AccountService_method_names[24], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetOneProject_(AccountService_method_names[25], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateProject_(AccountService_method_names[26], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteProject_(AccountService_method_names[27], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListProject_(AccountService_method_names[28], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetListUserDex_(AccountService_method_names[29], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetOneUserDex_(AccountService_method_names[30], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CheckUser_(AccountService_method_names[31], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SendVerificationEmail_(AccountService_method_names[32], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_VerifyEmail_(AccountService_method_names[33], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListCountries_(AccountService_method_names[34], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetOneCountry_(AccountService_method_names[35], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateApiKey_(AccountService_method_names[36], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetOneApiKey_(AccountService_method_names[37], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListApiKey_(AccountService_method_names[38], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateApiKey_(AccountService_method_names[39], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteApiKey_(AccountService_method_names[40], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetRolesByUser_(AccountService_method_names[23], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteRole_(AccountService_method_names[24], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateProject_(AccountService_method_names[25], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOneProject_(AccountService_method_names[26], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateProject_(AccountService_method_names[27], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteProject_(AccountService_method_names[28], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListProject_(AccountService_method_names[29], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetListUserDex_(AccountService_method_names[30], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOneUserDex_(AccountService_method_names[31], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CheckUser_(AccountService_method_names[32], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SendVerificationEmail_(AccountService_method_names[33], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_VerifyEmail_(AccountService_method_names[34], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListCountries_(AccountService_method_names[35], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOneCountry_(AccountService_method_names[36], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateApiKey_(AccountService_method_names[37], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOneApiKey_(AccountService_method_names[38], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListApiKey_(AccountService_method_names[39], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateApiKey_(AccountService_method_names[40], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteApiKey_(AccountService_method_names[41], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status AccountService::Stub::CreateUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateUserRequest& request, ::accounts::v1alpha1::CreateUserResponse* response) {
@@ -478,6 +480,22 @@ void AccountService::Stub::experimental_async::GetOneRole(::grpc::ClientContext*
 
 ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneRoleResponse>* AccountService::Stub::PrepareAsyncGetOneRoleRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneRoleRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::GetOneRoleResponse>::Create(channel_.get(), cq, rpcmethod_GetOneRole_, context, request, false);
+}
+
+::grpc::Status AccountService::Stub::GetRolesByUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetRolesByUserRequest& request, ::accounts::v1alpha1::GetRolesByUserResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetRolesByUser_, context, request, response);
+}
+
+void AccountService::Stub::experimental_async::GetRolesByUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetRolesByUserRequest* request, ::accounts::v1alpha1::GetRolesByUserResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetRolesByUser_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetRolesByUserResponse>* AccountService::Stub::AsyncGetRolesByUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetRolesByUserRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::GetRolesByUserResponse>::Create(channel_.get(), cq, rpcmethod_GetRolesByUser_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetRolesByUserResponse>* AccountService::Stub::PrepareAsyncGetRolesByUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetRolesByUserRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::GetRolesByUserResponse>::Create(channel_.get(), cq, rpcmethod_GetRolesByUser_, context, request, false);
 }
 
 ::grpc::Status AccountService::Stub::DeleteRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteRoleRequest& request, ::accounts::v1alpha1::DeleteRoleResponse* response) {
@@ -887,90 +905,95 @@ AccountService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AccountService_method_names[23],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::GetRolesByUserRequest, ::accounts::v1alpha1::GetRolesByUserResponse>(
+          std::mem_fn(&AccountService::Service::GetRolesByUser), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AccountService_method_names[24],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::DeleteRoleRequest, ::accounts::v1alpha1::DeleteRoleResponse>(
           std::mem_fn(&AccountService::Service::DeleteRole), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[24],
+      AccountService_method_names[25],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::CreateProjectRequest, ::accounts::v1alpha1::CreateProjectResponse>(
           std::mem_fn(&AccountService::Service::CreateProject), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[25],
+      AccountService_method_names[26],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::GetOneProjectRequest, ::accounts::v1alpha1::GetOneProjectResponse>(
           std::mem_fn(&AccountService::Service::GetOneProject), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[26],
+      AccountService_method_names[27],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::UpdateProjectRequest, ::accounts::v1alpha1::UpdateProjectResponse>(
           std::mem_fn(&AccountService::Service::UpdateProject), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[27],
+      AccountService_method_names[28],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::DeleteProjectRequest, ::accounts::v1alpha1::DeleteProjectResponse>(
           std::mem_fn(&AccountService::Service::DeleteProject), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[28],
+      AccountService_method_names[29],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::ListProjectRequest, ::accounts::v1alpha1::ListProjectResponse>(
           std::mem_fn(&AccountService::Service::ListProject), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[29],
+      AccountService_method_names[30],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::GetListUserDexRequest, ::accounts::v1alpha1::GetListUserDexResponse>(
           std::mem_fn(&AccountService::Service::GetListUserDex), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[30],
+      AccountService_method_names[31],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::GetOneUserDexRequest, ::accounts::v1alpha1::GetOneUserDexResponse>(
           std::mem_fn(&AccountService::Service::GetOneUserDex), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[31],
+      AccountService_method_names[32],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::CheckUserRequest, ::accounts::v1alpha1::CheckUserResponse>(
           std::mem_fn(&AccountService::Service::CheckUser), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[32],
+      AccountService_method_names[33],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::SendVerificationEmailRequest, ::accounts::v1alpha1::SendVerificationEmailResponse>(
           std::mem_fn(&AccountService::Service::SendVerificationEmail), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[33],
+      AccountService_method_names[34],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::VerifyEmailRequest, ::accounts::v1alpha1::VerifyEmailResponse>(
           std::mem_fn(&AccountService::Service::VerifyEmail), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[34],
+      AccountService_method_names[35],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::ListCountriesRequest, ::accounts::v1alpha1::ListCountriesResponse>(
           std::mem_fn(&AccountService::Service::ListCountries), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[35],
+      AccountService_method_names[36],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::GetOneCountryRequest, ::accounts::v1alpha1::GetOneCountryResponse>(
           std::mem_fn(&AccountService::Service::GetOneCountry), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[36],
+      AccountService_method_names[37],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::CreateApiKeyRequest, ::accounts::v1alpha1::CreateApiKeyResponse>(
           std::mem_fn(&AccountService::Service::CreateApiKey), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[37],
+      AccountService_method_names[38],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::GetOneApiKeyRequest, ::accounts::v1alpha1::GetOneApiKeyResponse>(
           std::mem_fn(&AccountService::Service::GetOneApiKey), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[38],
+      AccountService_method_names[39],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::ListApiKeyRequest, ::accounts::v1alpha1::ListApiKeyResponse>(
           std::mem_fn(&AccountService::Service::ListApiKey), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[39],
+      AccountService_method_names[40],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::UpdateApiKeyRequest, ::accounts::v1alpha1::UpdateApiKeyResponse>(
           std::mem_fn(&AccountService::Service::UpdateApiKey), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AccountService_method_names[40],
+      AccountService_method_names[41],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::DeleteApiKeyRequest, ::accounts::v1alpha1::DeleteApiKeyResponse>(
           std::mem_fn(&AccountService::Service::DeleteApiKey), this)));
@@ -1134,6 +1157,13 @@ AccountService::Service::~Service() {
 }
 
 ::grpc::Status AccountService::Service::GetOneRole(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneRoleRequest* request, ::accounts::v1alpha1::GetOneRoleResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AccountService::Service::GetRolesByUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetRolesByUserRequest* request, ::accounts::v1alpha1::GetRolesByUserResponse* response) {
   (void) context;
   (void) request;
   (void) response;

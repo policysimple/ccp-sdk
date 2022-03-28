@@ -532,6 +532,28 @@ function deserialize_accounts_v1alpha1_GetOneUserResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.GetOneUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_GetRolesByUserRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetRolesByUserRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetRolesByUserRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetRolesByUserRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetRolesByUserRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_GetRolesByUserResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetRolesByUserResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetRolesByUserResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetRolesByUserResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetRolesByUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_ListApiKeyRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.ListApiKeyRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.ListApiKeyRequest');
@@ -1164,6 +1186,17 @@ var AccountServiceService = exports.AccountServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_GetOneRoleRequest,
     responseSerialize: serialize_accounts_v1alpha1_GetOneRoleResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_GetOneRoleResponse,
+  },
+  getRolesByUser: {
+    path: '/accounts.v1alpha1.AccountService/GetRolesByUser',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.GetRolesByUserRequest,
+    responseType: accounts_v1alpha1_accounts_pb.GetRolesByUserResponse,
+    requestSerialize: serialize_accounts_v1alpha1_GetRolesByUserRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_GetRolesByUserRequest,
+    responseSerialize: serialize_accounts_v1alpha1_GetRolesByUserResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_GetRolesByUserResponse,
   },
   deleteRole: {
     path: '/accounts.v1alpha1.AccountService/DeleteRole',

@@ -129,6 +129,11 @@ class AccountServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneRoleRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneRoleResponse.FromString,
         )
+    self.GetRolesByUser = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/GetRolesByUser',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetRolesByUserRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetRolesByUserResponse.FromString,
+        )
     self.DeleteRole = channel.unary_unary(
         '/accounts.v1alpha1.AccountService/DeleteRole',
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteRoleRequest.SerializeToString,
@@ -386,6 +391,13 @@ class AccountServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetRolesByUser(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def DeleteRole(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -629,6 +641,11 @@ def add_AccountServiceServicer_to_server(servicer, server):
           servicer.GetOneRole,
           request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneRoleRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneRoleResponse.SerializeToString,
+      ),
+      'GetRolesByUser': grpc.unary_unary_rpc_method_handler(
+          servicer.GetRolesByUser,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetRolesByUserRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetRolesByUserResponse.SerializeToString,
       ),
       'DeleteRole': grpc.unary_unary_rpc_method_handler(
           servicer.DeleteRole,
