@@ -87,44 +87,43 @@ public final class RuntimeAPIProto {
       "(\tR\006status\"n\n\025UpdateRuntimeResponse\022=\n\007r" +
       "untime\030\001 \001(\0132#.pipelines.runtime.v1alpha" +
       "1.RuntimeR\007runtime\022\026\n\006status\030\002 \001(\tR\006stat" +
-      "us\"\261\001\n\024DeleteRuntimeRequest\022\035\n\nruntime_i" +
+      "us\"\212\001\n\024DeleteRuntimeRequest\022\035\n\nruntime_i" +
       "d\030\001 \001(\tR\truntimeId\022\035\n\nproject_id\030\002 \001(\rR\t" +
-      "projectId\022%\n\016application_id\030\003 \001(\tR\rappli" +
-      "cationId\022\034\n\tnamespace\030\004 \001(\tR\tnamespace\022\026" +
-      "\n\006status\030\005 \001(\tR\006status\"/\n\025DeleteRuntimeR" +
-      "esponse\022\026\n\006status\030\001 \001(\tR\006status\"\207\001\n\021GetR" +
-      "untimeRequest\022\035\n\nruntime_id\030\001 \001(\tR\trunti" +
-      "meId\022\035\n\nproject_id\030\002 \001(\rR\tprojectId\022\034\n\tn" +
-      "amespace\030\003 \001(\tR\tnamespace\022\026\n\006status\030\004 \001(" +
-      "\tR\006status\"k\n\022GetRuntimeResponse\022=\n\007runti" +
-      "me\030\001 \001(\0132#.pipelines.runtime.v1alpha1.Ru" +
-      "ntimeR\007runtime\022\026\n\006status\030\002 \001(\tR\006status\"j" +
-      "\n\023ListRuntimesRequest\022\035\n\nproject_id\030\001 \001(" +
-      "\rR\tprojectId\022\034\n\tnamespace\030\002 \001(\tR\tnamespa" +
-      "ce\022\026\n\006status\030\003 \001(\tR\006status\"z\n\024ListRuntim" +
-      "esResponse\022J\n\014runtime_list\030\001 \001(\0132\'.pipel" +
-      "ines.runtime.v1alpha1.RuntimeListR\013runti" +
-      "meList\022\026\n\006status\030\002 \001(\tR\006status2\337\004\n\021Runti" +
-      "meAPIService\022m\n\nGetRuntime\022-.pipelines.r" +
-      "untime.v1alpha1.GetRuntimeRequest\032..pipe" +
-      "lines.runtime.v1alpha1.GetRuntimeRespons" +
-      "e\"\000\022v\n\rCreateRuntime\0220.pipelines.runtime" +
-      ".v1alpha1.CreateRuntimeRequest\0321.pipelin" +
-      "es.runtime.v1alpha1.CreateRuntimeRespons" +
-      "e\"\000\022v\n\rUpdateRuntime\0220.pipelines.runtime" +
-      ".v1alpha1.UpdateRuntimeRequest\0321.pipelin" +
-      "es.runtime.v1alpha1.UpdateRuntimeRespons" +
-      "e\"\000\022v\n\rDeleteRuntime\0220.pipelines.runtime" +
-      ".v1alpha1.DeleteRuntimeRequest\0321.pipelin" +
-      "es.runtime.v1alpha1.DeleteRuntimeRespons" +
-      "e\"\000\022s\n\014ListRuntimes\022/.pipelines.runtime." +
-      "v1alpha1.ListRuntimesRequest\0320.pipelines" +
-      ".runtime.v1alpha1.ListRuntimesResponse\"\000" +
-      "B\260\001\n$io.cuemby.pipelines.runtime.v1alpha" +
-      "1B\017RuntimeAPIProtoP\001Z5github.com/cuemby/" +
-      "ccp-runtime-service/runtimev1alpha1\242\002\003PP" +
-      "X\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipelin" +
-      "es\\Runtime\\V1Alpha1b\006proto3"
+      "projectId\022\034\n\tnamespace\030\003 \001(\tR\tnamespace\022" +
+      "\026\n\006status\030\004 \001(\tR\006status\"/\n\025DeleteRuntime" +
+      "Response\022\026\n\006status\030\001 \001(\tR\006status\"\207\001\n\021Get" +
+      "RuntimeRequest\022\035\n\nruntime_id\030\001 \001(\tR\trunt" +
+      "imeId\022\035\n\nproject_id\030\002 \001(\rR\tprojectId\022\034\n\t" +
+      "namespace\030\003 \001(\tR\tnamespace\022\026\n\006status\030\004 \001" +
+      "(\tR\006status\"k\n\022GetRuntimeResponse\022=\n\007runt" +
+      "ime\030\001 \001(\0132#.pipelines.runtime.v1alpha1.R" +
+      "untimeR\007runtime\022\026\n\006status\030\002 \001(\tR\006status\"" +
+      "j\n\023ListRuntimesRequest\022\035\n\nproject_id\030\001 \001" +
+      "(\rR\tprojectId\022\034\n\tnamespace\030\002 \001(\tR\tnamesp" +
+      "ace\022\026\n\006status\030\003 \001(\tR\006status\"z\n\024ListRunti" +
+      "mesResponse\022J\n\014runtime_list\030\001 \001(\0132\'.pipe" +
+      "lines.runtime.v1alpha1.RuntimeListR\013runt" +
+      "imeList\022\026\n\006status\030\002 \001(\tR\006status2\337\004\n\021Runt" +
+      "imeAPIService\022m\n\nGetRuntime\022-.pipelines." +
+      "runtime.v1alpha1.GetRuntimeRequest\032..pip" +
+      "elines.runtime.v1alpha1.GetRuntimeRespon" +
+      "se\"\000\022v\n\rCreateRuntime\0220.pipelines.runtim" +
+      "e.v1alpha1.CreateRuntimeRequest\0321.pipeli" +
+      "nes.runtime.v1alpha1.CreateRuntimeRespon" +
+      "se\"\000\022v\n\rUpdateRuntime\0220.pipelines.runtim" +
+      "e.v1alpha1.UpdateRuntimeRequest\0321.pipeli" +
+      "nes.runtime.v1alpha1.UpdateRuntimeRespon" +
+      "se\"\000\022v\n\rDeleteRuntime\0220.pipelines.runtim" +
+      "e.v1alpha1.DeleteRuntimeRequest\0321.pipeli" +
+      "nes.runtime.v1alpha1.DeleteRuntimeRespon" +
+      "se\"\000\022s\n\014ListRuntimes\022/.pipelines.runtime" +
+      ".v1alpha1.ListRuntimesRequest\0320.pipeline" +
+      "s.runtime.v1alpha1.ListRuntimesResponse\"" +
+      "\000B\260\001\n$io.cuemby.pipelines.runtime.v1alph" +
+      "a1B\017RuntimeAPIProtoP\001Z5github.com/cuemby" +
+      "/ccp-runtime-service/runtimev1alpha1\242\002\003P" +
+      "PX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipeli" +
+      "nes\\Runtime\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -160,7 +159,7 @@ public final class RuntimeAPIProto {
     internal_static_pipelines_runtime_v1alpha1_DeleteRuntimeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_DeleteRuntimeRequest_descriptor,
-        new java.lang.String[] { "RuntimeId", "ProjectId", "ApplicationId", "Namespace", "Status", });
+        new java.lang.String[] { "RuntimeId", "ProjectId", "Namespace", "Status", });
     internal_static_pipelines_runtime_v1alpha1_DeleteRuntimeResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_pipelines_runtime_v1alpha1_DeleteRuntimeResponse_fieldAccessorTable = new

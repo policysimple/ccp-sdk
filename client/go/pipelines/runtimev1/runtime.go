@@ -127,7 +127,7 @@ func UpdateRuntime(in *runtimepkgv1.CreateRuntimeRequest) (response *runtimepkgv
 	return response, nil
 }
 
-func DeleteRuntime(runtimeId string, projectId uint32, applicationId string, namespace string) (response *runtimepkgv1.DeleteRuntimeResponse, err error) {
+func DeleteRuntime(runtimeId string, projectId uint32, namespace string) (response *runtimepkgv1.DeleteRuntimeResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
 		return
@@ -136,10 +136,9 @@ func DeleteRuntime(runtimeId string, projectId uint32, applicationId string, nam
 	defer cancel()
 
 	response, err = client.DeleteRuntime(ctx, &runtimepkgv1.DeleteRuntimeRequest{
-		RuntimeId:     runtimeId,
-		ProjectId:     projectId,
-		ApplicationId: applicationId,
-		Namespace:     namespace,
+		RuntimeId: runtimeId,
+		ProjectId: projectId,
+		Namespace: namespace,
 	})
 
 	if err != nil {
@@ -152,7 +151,7 @@ func DeleteRuntime(runtimeId string, projectId uint32, applicationId string, nam
 	return response, nil
 }
 
-func ListRuntimes(projectId uint32) (response *runtimepkgv1.ListRuntimesResponse, err error) {
+func ListRuntimes(projectId uint32, namespace string) (response *runtimepkgv1.ListRuntimesResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
 		return
@@ -162,6 +161,7 @@ func ListRuntimes(projectId uint32) (response *runtimepkgv1.ListRuntimesResponse
 
 	response, err = client.ListRuntimes(ctx, &runtimepkgv1.ListRuntimesRequest{
 		ProjectId: projectId,
+		Namespace: namespace,
 	})
 
 	if err != nil {
