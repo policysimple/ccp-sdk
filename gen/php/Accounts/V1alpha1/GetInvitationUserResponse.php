@@ -14,17 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetInvitationUserResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
      */
-    protected $organization = null;
+    protected $id = 0;
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
+     * Generated from protobuf field <code>string invitation_code = 2 [json_name = "invitationCode"];</code>
      */
-    private $projects;
-    /**
-     * Generated from protobuf field <code>string result = 3 [json_name = "result"];</code>
-     */
-    protected $result = '';
+    protected $invitation_code = '';
     /**
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 4 [json_name = "roles"];</code>
      */
@@ -33,6 +29,18 @@ class GetInvitationUserResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 5 [json_name = "permissions"];</code>
      */
     private $permissions;
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.OrganizationInvitation organization = 6 [json_name = "organization"];</code>
+     */
+    protected $organization = null;
+    /**
+     * Generated from protobuf field <code>string email = 7 [json_name = "email"];</code>
+     */
+    protected $email = '';
+    /**
+     * Generated from protobuf field <code>bool success = 8 [json_name = "success"];</code>
+     */
+    protected $success = false;
 
     /**
      * Constructor.
@@ -40,11 +48,13 @@ class GetInvitationUserResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Accounts\V1alpha1\Organization $organization
-     *     @type \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
-     *     @type string $result
+     *     @type int $id
+     *     @type string $invitation_code
      *     @type \Accounts\V1alpha1\Rol[]|\Google\Protobuf\Internal\RepeatedField $roles
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
+     *     @type \Accounts\V1alpha1\OrganizationInvitation $organization
+     *     @type string $email
+     *     @type bool $success
      * }
      */
     public function __construct($data = NULL) {
@@ -53,77 +63,45 @@ class GetInvitationUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @return \Accounts\V1alpha1\Organization|null
+     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
+     * @return int
      */
-    public function getOrganization()
+    public function getId()
     {
-        return $this->organization;
-    }
-
-    public function hasOrganization()
-    {
-        return isset($this->organization);
-    }
-
-    public function clearOrganization()
-    {
-        unset($this->organization);
+        return $this->id;
     }
 
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @param \Accounts\V1alpha1\Organization $var
+     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
+     * @param int $var
      * @return $this
      */
-    public function setOrganization($var)
+    public function setId($var)
     {
-        GPBUtil::checkMessage($var, \Accounts\V1alpha1\Organization::class);
-        $this->organization = $var;
+        GPBUtil::checkUint32($var);
+        $this->id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getProjects()
-    {
-        return $this->projects;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
-     * @param \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setProjects($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Project::class);
-        $this->projects = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string result = 3 [json_name = "result"];</code>
+     * Generated from protobuf field <code>string invitation_code = 2 [json_name = "invitationCode"];</code>
      * @return string
      */
-    public function getResult()
+    public function getInvitationCode()
     {
-        return $this->result;
+        return $this->invitation_code;
     }
 
     /**
-     * Generated from protobuf field <code>string result = 3 [json_name = "result"];</code>
+     * Generated from protobuf field <code>string invitation_code = 2 [json_name = "invitationCode"];</code>
      * @param string $var
      * @return $this
      */
-    public function setResult($var)
+    public function setInvitationCode($var)
     {
         GPBUtil::checkString($var, True);
-        $this->result = $var;
+        $this->invitation_code = $var;
 
         return $this;
     }
@@ -168,6 +146,82 @@ class GetInvitationUserResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Permission::class);
         $this->permissions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.OrganizationInvitation organization = 6 [json_name = "organization"];</code>
+     * @return \Accounts\V1alpha1\OrganizationInvitation|null
+     */
+    public function getOrganization()
+    {
+        return $this->organization;
+    }
+
+    public function hasOrganization()
+    {
+        return isset($this->organization);
+    }
+
+    public function clearOrganization()
+    {
+        unset($this->organization);
+    }
+
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.OrganizationInvitation organization = 6 [json_name = "organization"];</code>
+     * @param \Accounts\V1alpha1\OrganizationInvitation $var
+     * @return $this
+     */
+    public function setOrganization($var)
+    {
+        GPBUtil::checkMessage($var, \Accounts\V1alpha1\OrganizationInvitation::class);
+        $this->organization = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 7 [json_name = "email"];</code>
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 7 [json_name = "email"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool success = 8 [json_name = "success"];</code>
+     * @return bool
+     */
+    public function getSuccess()
+    {
+        return $this->success;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool success = 8 [json_name = "success"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSuccess($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->success = $var;
 
         return $this;
     }

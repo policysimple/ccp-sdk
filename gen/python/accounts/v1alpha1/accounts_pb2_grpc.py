@@ -59,6 +59,11 @@ class AccountServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.AgreeInvitationUserRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.AgreeInvitationUserResponse.FromString,
         )
+    self.ListInvitationUser = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/ListInvitationUser',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListInvitationUserRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListInvitationUserResponse.FromString,
+        )
     self.CreatePermission = channel.unary_unary(
         '/accounts.v1alpha1.AccountService/CreatePermission',
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreatePermissionRequest.SerializeToString,
@@ -287,6 +292,13 @@ class AccountServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def AgreeInvitationUser(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListInvitationUser(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -571,6 +583,11 @@ def add_AccountServiceServicer_to_server(servicer, server):
           servicer.AgreeInvitationUser,
           request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.AgreeInvitationUserRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.AgreeInvitationUserResponse.SerializeToString,
+      ),
+      'ListInvitationUser': grpc.unary_unary_rpc_method_handler(
+          servicer.ListInvitationUser,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListInvitationUserRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListInvitationUserResponse.SerializeToString,
       ),
       'CreatePermission': grpc.unary_unary_rpc_method_handler(
           servicer.CreatePermission,

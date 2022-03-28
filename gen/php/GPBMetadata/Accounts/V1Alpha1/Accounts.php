@@ -16,8 +16,12 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-–Š
- accounts/v1alpha1/accounts.protoaccounts.v1alpha1"0
+†Ž
+ accounts/v1alpha1/accounts.protoaccounts.v1alpha1"4
+ListInvitationUserRequest
+user_id (	RuserId"s
+ListInvitationUserResponseU
+invitation_user (2,.accounts.v1alpha1.GetInvitationUserResponseRinvitationUser"0
 GetRolesByUserRequest
 user_id (	RuserId"“
 GetRolesByUserResponseC
@@ -240,13 +244,21 @@ updated_at (	R	updatedAt,
 permissions (2.accounts.v1alpha1.PermissionRpermissions"Y
 GetInvitationUserRequest\'
 invitation_code (	RinvitationCode
-email (	Remail"Ÿ
-GetInvitationUserResponseC
-organization (2.accounts.v1alpha1.OrganizationRorganization6
-projects (2.accounts.v1alpha1.ProjectRprojects
-result (	Rresult,
+email (	Remail"¬
+OrganizationInvitation
+id (Rid
+name (	Rname
+image (	Rimage 
+description (	Rdescription6
+projects (2.accounts.v1alpha1.ProjectRprojects"Â
+GetInvitationUserResponse
+id (Rid\'
+invitation_code (	RinvitationCode,
 roles (2.accounts.v1alpha1.RolRroles?
-permissions (2.accounts.v1alpha1.PermissionRpermissions"í
+permissions (2.accounts.v1alpha1.PermissionRpermissionsM
+organization (2).accounts.v1alpha1.OrganizationInvitationRorganization
+email (	Remail
+success (Rsuccess"í
 AgreeInvitationUserRequest\'
 invitation_code (	RinvitationCode
 email (	Remail"
@@ -501,7 +513,7 @@ updated_at (	R	updatedAt,
 emoji_country (	RemojiCountry*d
 InvitationResponse,
 (INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED  
-INVITATION_RESPONSE_REJECTED2®!
+INVITATION_RESPONSE_REJECTED2¡"
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
@@ -515,7 +527,8 @@ DeleteUser$.accounts.v1alpha1.DeleteUserRequest%.accounts.v1alpha1.DeleteUserR
 ListUserPagination,.accounts.v1alpha1.ListUserPaginationRequest-.accounts.v1alpha1.ListUserPaginationResponseq
 SendInvitationUser,.accounts.v1alpha1.SendInvitationUserRequest-.accounts.v1alpha1.SendInvitationUserResponsen
 GetInvitationUser+.accounts.v1alpha1.GetInvitationUserRequest,.accounts.v1alpha1.GetInvitationUserResponset
-AgreeInvitationUser-.accounts.v1alpha1.AgreeInvitationUserRequest..accounts.v1alpha1.AgreeInvitationUserResponsek
+AgreeInvitationUser-.accounts.v1alpha1.AgreeInvitationUserRequest..accounts.v1alpha1.AgreeInvitationUserResponseq
+ListInvitationUser,.accounts.v1alpha1.ListInvitationUserRequest-.accounts.v1alpha1.ListInvitationUserResponsek
 CreatePermission*.accounts.v1alpha1.CreatePermissionRequest+.accounts.v1alpha1.CreatePermissionResponsee
 ListPermission(.accounts.v1alpha1.ListPermissionRequest).accounts.v1alpha1.ListPermissionResponsek
 GetOnePermission*.accounts.v1alpha1.GetOnePermissionRequest+.accounts.v1alpha1.GetOnePermissionResponsek

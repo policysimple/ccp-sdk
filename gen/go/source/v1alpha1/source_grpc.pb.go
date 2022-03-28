@@ -22,6 +22,7 @@ type SourceServiceClient interface {
 	CreateProvider(ctx context.Context, in *CreateProviderRequest, opts ...grpc.CallOption) (*CreateProviderResponse, error)
 	ListProviders(ctx context.Context, in *ListProvidersRequest, opts ...grpc.CallOption) (*ListProvidersResponse, error)
 	GetProvider(ctx context.Context, in *GetProviderRequest, opts ...grpc.CallOption) (*GetProviderResponse, error)
+	GetOneProviderByName(ctx context.Context, in *GetOneProviderByNameRequest, opts ...grpc.CallOption) (*GetOneProviderByNameResponse, error)
 	UpdateProvider(ctx context.Context, in *UpdateProviderRequest, opts ...grpc.CallOption) (*UpdateProviderResponse, error)
 	DeleteProvider(ctx context.Context, in *DeleteProviderRequest, opts ...grpc.CallOption) (*DeleteProviderResponse, error)
 	//INTEGRATIONS
@@ -70,6 +71,15 @@ func (c *sourceServiceClient) ListProviders(ctx context.Context, in *ListProvide
 func (c *sourceServiceClient) GetProvider(ctx context.Context, in *GetProviderRequest, opts ...grpc.CallOption) (*GetProviderResponse, error) {
 	out := new(GetProviderResponse)
 	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/GetProvider", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sourceServiceClient) GetOneProviderByName(ctx context.Context, in *GetOneProviderByNameRequest, opts ...grpc.CallOption) (*GetOneProviderByNameResponse, error) {
+	out := new(GetOneProviderByNameResponse)
+	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/GetOneProviderByName", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -210,6 +220,7 @@ type SourceServiceServer interface {
 	CreateProvider(context.Context, *CreateProviderRequest) (*CreateProviderResponse, error)
 	ListProviders(context.Context, *ListProvidersRequest) (*ListProvidersResponse, error)
 	GetProvider(context.Context, *GetProviderRequest) (*GetProviderResponse, error)
+	GetOneProviderByName(context.Context, *GetOneProviderByNameRequest) (*GetOneProviderByNameResponse, error)
 	UpdateProvider(context.Context, *UpdateProviderRequest) (*UpdateProviderResponse, error)
 	DeleteProvider(context.Context, *DeleteProviderRequest) (*DeleteProviderResponse, error)
 	//INTEGRATIONS
@@ -241,6 +252,9 @@ func (UnimplementedSourceServiceServer) ListProviders(context.Context, *ListProv
 }
 func (UnimplementedSourceServiceServer) GetProvider(context.Context, *GetProviderRequest) (*GetProviderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProvider not implemented")
+}
+func (UnimplementedSourceServiceServer) GetOneProviderByName(context.Context, *GetOneProviderByNameRequest) (*GetOneProviderByNameResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOneProviderByName not implemented")
 }
 func (UnimplementedSourceServiceServer) UpdateProvider(context.Context, *UpdateProviderRequest) (*UpdateProviderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateProvider not implemented")
@@ -346,6 +360,24 @@ func _SourceService_GetProvider_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SourceServiceServer).GetProvider(ctx, req.(*GetProviderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SourceService_GetOneProviderByName_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOneProviderByNameRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourceServiceServer).GetOneProviderByName(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/source.v1alpha1.SourceService/GetOneProviderByName",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourceServiceServer).GetOneProviderByName(ctx, req.(*GetOneProviderByNameRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -620,6 +652,10 @@ var SourceService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetProvider",
 			Handler:    _SourceService_GetProvider_Handler,
+		},
+		{
+			MethodName: "GetOneProviderByName",
+			Handler:    _SourceService_GetOneProviderByName_Handler,
 		},
 		{
 			MethodName: "UpdateProvider",

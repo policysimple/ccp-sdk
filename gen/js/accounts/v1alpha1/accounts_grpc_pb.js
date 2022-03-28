@@ -598,6 +598,28 @@ function deserialize_accounts_v1alpha1_ListCountriesResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.ListCountriesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_ListInvitationUserRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.ListInvitationUserRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.ListInvitationUserRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_ListInvitationUserRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.ListInvitationUserRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_ListInvitationUserResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.ListInvitationUserResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.ListInvitationUserResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_ListInvitationUserResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.ListInvitationUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_ListOrganizationRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.ListOrganizationRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.ListOrganizationRequest');
@@ -1029,6 +1051,17 @@ var AccountServiceService = exports.AccountServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_AgreeInvitationUserRequest,
     responseSerialize: serialize_accounts_v1alpha1_AgreeInvitationUserResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_AgreeInvitationUserResponse,
+  },
+  listInvitationUser: {
+    path: '/accounts.v1alpha1.AccountService/ListInvitationUser',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.ListInvitationUserRequest,
+    responseType: accounts_v1alpha1_accounts_pb.ListInvitationUserResponse,
+    requestSerialize: serialize_accounts_v1alpha1_ListInvitationUserRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_ListInvitationUserRequest,
+    responseSerialize: serialize_accounts_v1alpha1_ListInvitationUserResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_ListInvitationUserResponse,
   },
   // /PERMISSION
   createPermission: {

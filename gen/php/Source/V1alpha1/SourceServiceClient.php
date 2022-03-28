@@ -57,6 +57,19 @@ class SourceServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Source\V1alpha1\GetOneProviderByNameRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetOneProviderByName(\Source\V1alpha1\GetOneProviderByNameRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/source.v1alpha1.SourceService/GetOneProviderByName',
+        $argument,
+        ['\Source\V1alpha1\GetOneProviderByNameResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Source\V1alpha1\UpdateProviderRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
