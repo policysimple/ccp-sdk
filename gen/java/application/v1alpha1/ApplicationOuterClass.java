@@ -14,6 +14,1142 @@ public final class ApplicationOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface DeleteApplicationsByOrganizationRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
+  }
+  /**
+   * Protobuf type {@code application.v1alpha1.DeleteApplicationsByOrganizationRequest}
+   */
+  public static final class DeleteApplicationsByOrganizationRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+      DeleteApplicationsByOrganizationRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeleteApplicationsByOrganizationRequest.newBuilder() to construct.
+    private DeleteApplicationsByOrganizationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeleteApplicationsByOrganizationRequest() {
+      organizationId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DeleteApplicationsByOrganizationRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeleteApplicationsByOrganizationRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              organizationId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_DeleteApplicationsByOrganizationRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_DeleteApplicationsByOrganizationRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest.class, application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest.Builder.class);
+    }
+
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object organizationId_;
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    @java.lang.Override
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest)) {
+        return super.equals(obj);
+      }
+      application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest other = (application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest) obj;
+
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code application.v1alpha1.DeleteApplicationsByOrganizationRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+        application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_DeleteApplicationsByOrganizationRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_DeleteApplicationsByOrganizationRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest.class, application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest.Builder.class);
+      }
+
+      // Construct using application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        organizationId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_DeleteApplicationsByOrganizationRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest getDefaultInstanceForType() {
+        return application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest build() {
+        application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest buildPartial() {
+        application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest result = new application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest(this);
+        result.organizationId_ = organizationId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest) {
+          return mergeFrom((application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest other) {
+        if (other == application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest.getDefaultInstance()) return this;
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object organizationId_ = "";
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The organizationId.
+       */
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOrganizationId() {
+        
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+    private static final application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest();
+    }
+
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeleteApplicationsByOrganizationRequest>
+        PARSER = new com.google.protobuf.AbstractParser<DeleteApplicationsByOrganizationRequest>() {
+      @java.lang.Override
+      public DeleteApplicationsByOrganizationRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeleteApplicationsByOrganizationRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeleteApplicationsByOrganizationRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeleteApplicationsByOrganizationRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DeleteApplicationsByOrganizationResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The msg.
+     */
+    java.lang.String getMsg();
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The bytes for msg.
+     */
+    com.google.protobuf.ByteString
+        getMsgBytes();
+  }
+  /**
+   * Protobuf type {@code application.v1alpha1.DeleteApplicationsByOrganizationResponse}
+   */
+  public static final class DeleteApplicationsByOrganizationResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+      DeleteApplicationsByOrganizationResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeleteApplicationsByOrganizationResponse.newBuilder() to construct.
+    private DeleteApplicationsByOrganizationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeleteApplicationsByOrganizationResponse() {
+      msg_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DeleteApplicationsByOrganizationResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeleteApplicationsByOrganizationResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              msg_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_DeleteApplicationsByOrganizationResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_DeleteApplicationsByOrganizationResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse.class, application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse.Builder.class);
+    }
+
+    public static final int MSG_FIELD_NUMBER = 1;
+    private volatile java.lang.Object msg_;
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The msg.
+     */
+    @java.lang.Override
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The bytes for msg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse)) {
+        return super.equals(obj);
+      }
+      application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse other = (application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse) obj;
+
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code application.v1alpha1.DeleteApplicationsByOrganizationResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+        application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_DeleteApplicationsByOrganizationResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_DeleteApplicationsByOrganizationResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse.class, application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse.Builder.class);
+      }
+
+      // Construct using application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        msg_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_DeleteApplicationsByOrganizationResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse getDefaultInstanceForType() {
+        return application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse build() {
+        application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse buildPartial() {
+        application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse result = new application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse(this);
+        result.msg_ = msg_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse) {
+          return mergeFrom((application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse other) {
+        if (other == application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse.getDefaultInstance()) return this;
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object msg_ = "";
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return The msg.
+       */
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          msg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return The bytes for msg.
+       */
+      public com.google.protobuf.ByteString
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMsg() {
+        
+        msg_ = getDefaultInstance().getMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @param value The bytes for msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+    private static final application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse();
+    }
+
+    public static application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeleteApplicationsByOrganizationResponse>
+        PARSER = new com.google.protobuf.AbstractParser<DeleteApplicationsByOrganizationResponse>() {
+      @java.lang.Override
+      public DeleteApplicationsByOrganizationResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeleteApplicationsByOrganizationResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeleteApplicationsByOrganizationResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeleteApplicationsByOrganizationResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.DeleteApplicationsByOrganizationResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface RepositoryOrBuilder extends
       // @@protoc_insertion_point(interface_extends:application.v1alpha1.Repository)
       com.google.protobuf.MessageOrBuilder {
@@ -5676,6 +6812,18 @@ public final class ApplicationOuterClass {
      */
     com.google.protobuf.ByteString
         getMaxReplicaBytes();
+
+    /**
+     * <code>string memory_rule = 6 [json_name = "memoryRule"];</code>
+     * @return The memoryRule.
+     */
+    java.lang.String getMemoryRule();
+    /**
+     * <code>string memory_rule = 6 [json_name = "memoryRule"];</code>
+     * @return The bytes for memoryRule.
+     */
+    com.google.protobuf.ByteString
+        getMemoryRuleBytes();
   }
   /**
    * Protobuf type {@code application.v1alpha1.Scaling}
@@ -5695,6 +6843,7 @@ public final class ApplicationOuterClass {
       pollingInterval_ = "";
       minReplica_ = "";
       maxReplica_ = "";
+      memoryRule_ = "";
     }
 
     @java.lang.Override
@@ -5755,6 +6904,12 @@ public final class ApplicationOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               maxReplica_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              memoryRule_ = s;
               break;
             }
             default: {
@@ -5979,6 +7134,44 @@ public final class ApplicationOuterClass {
       }
     }
 
+    public static final int MEMORY_RULE_FIELD_NUMBER = 6;
+    private volatile java.lang.Object memoryRule_;
+    /**
+     * <code>string memory_rule = 6 [json_name = "memoryRule"];</code>
+     * @return The memoryRule.
+     */
+    @java.lang.Override
+    public java.lang.String getMemoryRule() {
+      java.lang.Object ref = memoryRule_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        memoryRule_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string memory_rule = 6 [json_name = "memoryRule"];</code>
+     * @return The bytes for memoryRule.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMemoryRuleBytes() {
+      java.lang.Object ref = memoryRule_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        memoryRule_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6008,6 +7201,9 @@ public final class ApplicationOuterClass {
       if (!getMaxReplicaBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, maxReplica_);
       }
+      if (!getMemoryRuleBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, memoryRule_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6031,6 +7227,9 @@ public final class ApplicationOuterClass {
       }
       if (!getMaxReplicaBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, maxReplica_);
+      }
+      if (!getMemoryRuleBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, memoryRule_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6057,6 +7256,8 @@ public final class ApplicationOuterClass {
           .equals(other.getMinReplica())) return false;
       if (!getMaxReplica()
           .equals(other.getMaxReplica())) return false;
+      if (!getMemoryRule()
+          .equals(other.getMemoryRule())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6078,6 +7279,8 @@ public final class ApplicationOuterClass {
       hash = (53 * hash) + getMinReplica().hashCode();
       hash = (37 * hash) + MAX_REPLICA_FIELD_NUMBER;
       hash = (53 * hash) + getMaxReplica().hashCode();
+      hash = (37 * hash) + MEMORY_RULE_FIELD_NUMBER;
+      hash = (53 * hash) + getMemoryRule().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6221,6 +7424,8 @@ public final class ApplicationOuterClass {
 
         maxReplica_ = "";
 
+        memoryRule_ = "";
+
         return this;
       }
 
@@ -6252,6 +7457,7 @@ public final class ApplicationOuterClass {
         result.pollingInterval_ = pollingInterval_;
         result.minReplica_ = minReplica_;
         result.maxReplica_ = maxReplica_;
+        result.memoryRule_ = memoryRule_;
         onBuilt();
         return result;
       }
@@ -6318,6 +7524,10 @@ public final class ApplicationOuterClass {
         }
         if (!other.getMaxReplica().isEmpty()) {
           maxReplica_ = other.maxReplica_;
+          onChanged();
+        }
+        if (!other.getMemoryRule().isEmpty()) {
+          memoryRule_ = other.memoryRule_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -6725,6 +7935,82 @@ public final class ApplicationOuterClass {
   checkByteStringIsUtf8(value);
         
         maxReplica_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object memoryRule_ = "";
+      /**
+       * <code>string memory_rule = 6 [json_name = "memoryRule"];</code>
+       * @return The memoryRule.
+       */
+      public java.lang.String getMemoryRule() {
+        java.lang.Object ref = memoryRule_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          memoryRule_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string memory_rule = 6 [json_name = "memoryRule"];</code>
+       * @return The bytes for memoryRule.
+       */
+      public com.google.protobuf.ByteString
+          getMemoryRuleBytes() {
+        java.lang.Object ref = memoryRule_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          memoryRule_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string memory_rule = 6 [json_name = "memoryRule"];</code>
+       * @param value The memoryRule to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMemoryRule(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        memoryRule_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string memory_rule = 6 [json_name = "memoryRule"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMemoryRule() {
+        
+        memoryRule_ = getDefaultInstance().getMemoryRule();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string memory_rule = 6 [json_name = "memoryRule"];</code>
+       * @param value The bytes for memoryRule to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMemoryRuleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        memoryRule_ = value;
         onChanged();
         return this;
       }
@@ -14292,6 +15578,16 @@ public final class ApplicationOuterClass {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_application_v1alpha1_DeleteApplicationsByOrganizationRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_application_v1alpha1_DeleteApplicationsByOrganizationRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_application_v1alpha1_DeleteApplicationsByOrganizationResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_application_v1alpha1_DeleteApplicationsByOrganizationResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_application_v1alpha1_Repository_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -14381,170 +15677,191 @@ public final class ApplicationOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n&application/v1alpha1/application.proto" +
-      "\022\024application.v1alpha1\"\252\001\n\nRepository\022\022\n" +
-      "\004name\030\001 \001(\tR\004name\022\033\n\tfull_name\030\002 \001(\tR\010fu" +
-      "llName\022 \n\013description\030\003 \001(\tR\013description" +
-      "\022\022\n\004fork\030\004 \001(\010R\004fork\022\033\n\tclone_url\030\005 \001(\tR" +
-      "\010cloneUrl\022\030\n\007private\030\006 \001(\010R\007private\"1\n\007C" +
-      "ommand\022\024\n\005build\030\001 \001(\tR\005build\022\020\n\003run\030\002 \001(" +
-      "\tR\003run\"K\n\003Env\022\024\n\005value\030\001 \001(\tR\005value\022\020\n\003k" +
-      "ey\030\002 \001(\tR\003key\022\034\n\tencrypted\030\003 \001(\010R\tencryp" +
-      "ted\"\260\001\n\rConfiguration\022-\n\004envs\030\001 \003(\0132\031.ap" +
-      "plication.v1alpha1.EnvR\004envs\0229\n\010commands" +
-      "\030\002 \003(\0132\035.application.v1alpha1.CommandR\010c" +
-      "ommands\022\022\n\004port\030\003 \001(\005R\004port\022!\n\014instace_t" +
-      "ype\030\004 \001(\tR\013instaceType\"\270\002\n\013Application\022\016" +
-      "\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013in" +
-      "tegration\030\003 \001(\tR\013integration\022@\n\nreposito" +
-      "ry\030\004 \001(\0132 .application.v1alpha1.Reposito" +
-      "ryR\nrepository\022I\n\rconfiguration\030\005 \001(\0132#." +
-      "application.v1alpha1.ConfigurationR\rconf" +
-      "iguration\022\035\n\nproject_id\030\006 \001(\rR\tprojectId" +
-      "\0227\n\007scaling\030\007 \001(\0132\035.application.v1alpha1" +
-      ".ScalingR\007scaling\"\273\001\n\007Scaling\022\031\n\010cpu_rul" +
-      "e\030\001 \001(\tR\007cpuRule\022(\n\020cool_down_period\030\002 \001" +
-      "(\tR\016coolDownPeriod\022)\n\020polling_interval\030\003" +
-      " \001(\tR\017pollingInterval\022\037\n\013min_replica\030\004 \001" +
-      "(\tR\nminReplica\022\037\n\013max_replica\030\005 \001(\tR\nmax" +
-      "Replica\"\265\002\n\030CreateApplicationRequest\022\022\n\004" +
-      "name\030\001 \001(\tR\004name\022 \n\013integration\030\002 \001(\tR\013i" +
-      "ntegration\022@\n\nrepository\030\003 \001(\0132 .applica" +
-      "tion.v1alpha1.RepositoryR\nrepository\022I\n\r" +
-      "configuration\030\004 \001(\0132#.application.v1alph" +
-      "a1.ConfigurationR\rconfiguration\022\035\n\nproje" +
-      "ct_id\030\005 \001(\rR\tprojectId\0227\n\007scaling\030\006 \001(\0132" +
-      "\035.application.v1alpha1.ScalingR\007scaling\"" +
-      "S\n\031CreateApplicationResponse\022\020\n\003msg\030\001 \001(" +
-      "\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\t" +
-      "R\002id\"7\n\026ListApplicationRequest\022\035\n\nprojec" +
-      "t_id\030\001 \001(\rR\tprojectId\"`\n\027ListApplication" +
-      "Response\022E\n\014applications\030\001 \003(\0132!.applica" +
-      "tion.v1alpha1.ApplicationR\014applications\"" +
-      "\'\n\025GetApplicationRequest\022\016\n\002id\030\001 \001(\tR\002id" +
-      "\"]\n\026GetApplicationResponse\022C\n\013applicatio" +
-      "n\030\001 \001(\0132!.application.v1alpha1.Applicati" +
-      "onR\013application\"*\n\030DeleteApplicationRequ" +
-      "est\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteApplication" +
-      "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(" +
-      "\tR\005error\"|\n\030UpdateApplicationRequest\022\016\n\002" +
-      "id\030\001 \001(\tR\002id\022P\n\013application\030\002 \001(\0132..appl" +
-      "ication.v1alpha1.CreateApplicationReques" +
-      "tR\013application\"C\n\031UpdateApplicationRespo" +
-      "nse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005er" +
-      "ror2\323\004\n\022ApplicationService\022t\n\021CreateAppl" +
-      "ication\022..application.v1alpha1.CreateApp" +
-      "licationRequest\032/.application.v1alpha1.C" +
-      "reateApplicationResponse\022n\n\017ListApplicat" +
-      "ion\022,.application.v1alpha1.ListApplicati" +
-      "onRequest\032-.application.v1alpha1.ListApp" +
-      "licationResponse\022k\n\016GetApplication\022+.app" +
-      "lication.v1alpha1.GetApplicationRequest\032" +
-      ",.application.v1alpha1.GetApplicationRes" +
-      "ponse\022t\n\021DeleteApplication\022..application" +
-      ".v1alpha1.DeleteApplicationRequest\032/.app" +
-      "lication.v1alpha1.DeleteApplicationRespo" +
-      "nse\022t\n\021UpdateApplication\022..application.v" +
-      "1alpha1.UpdateApplicationRequest\032/.appli" +
-      "cation.v1alpha1.UpdateApplicationRespons" +
-      "eB7Z5github.com/cuemby/ccp-sdk/gen/go/ap" +
-      "plication/v1alpha1b\006proto3"
+      "\022\024application.v1alpha1\"R\n\'DeleteApplicat" +
+      "ionsByOrganizationRequest\022\'\n\017organizatio" +
+      "n_id\030\001 \001(\tR\016organizationId\"<\n(DeleteAppl" +
+      "icationsByOrganizationResponse\022\020\n\003msg\030\001 " +
+      "\001(\tR\003msg\"\252\001\n\nRepository\022\022\n\004name\030\001 \001(\tR\004n" +
+      "ame\022\033\n\tfull_name\030\002 \001(\tR\010fullName\022 \n\013desc" +
+      "ription\030\003 \001(\tR\013description\022\022\n\004fork\030\004 \001(\010" +
+      "R\004fork\022\033\n\tclone_url\030\005 \001(\tR\010cloneUrl\022\030\n\007p" +
+      "rivate\030\006 \001(\010R\007private\"1\n\007Command\022\024\n\005buil" +
+      "d\030\001 \001(\tR\005build\022\020\n\003run\030\002 \001(\tR\003run\"K\n\003Env\022" +
+      "\024\n\005value\030\001 \001(\tR\005value\022\020\n\003key\030\002 \001(\tR\003key\022" +
+      "\034\n\tencrypted\030\003 \001(\010R\tencrypted\"\260\001\n\rConfig" +
+      "uration\022-\n\004envs\030\001 \003(\0132\031.application.v1al" +
+      "pha1.EnvR\004envs\0229\n\010commands\030\002 \003(\0132\035.appli" +
+      "cation.v1alpha1.CommandR\010commands\022\022\n\004por" +
+      "t\030\003 \001(\005R\004port\022!\n\014instace_type\030\004 \001(\tR\013ins" +
+      "taceType\"\270\002\n\013Application\022\016\n\002id\030\001 \001(\tR\002id" +
+      "\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013integration\030\003 \001(" +
+      "\tR\013integration\022@\n\nrepository\030\004 \001(\0132 .app" +
+      "lication.v1alpha1.RepositoryR\nrepository" +
+      "\022I\n\rconfiguration\030\005 \001(\0132#.application.v1" +
+      "alpha1.ConfigurationR\rconfiguration\022\035\n\np" +
+      "roject_id\030\006 \001(\rR\tprojectId\0227\n\007scaling\030\007 " +
+      "\001(\0132\035.application.v1alpha1.ScalingR\007scal" +
+      "ing\"\334\001\n\007Scaling\022\031\n\010cpu_rule\030\001 \001(\tR\007cpuRu" +
+      "le\022(\n\020cool_down_period\030\002 \001(\tR\016coolDownPe" +
+      "riod\022)\n\020polling_interval\030\003 \001(\tR\017pollingI" +
+      "nterval\022\037\n\013min_replica\030\004 \001(\tR\nminReplica" +
+      "\022\037\n\013max_replica\030\005 \001(\tR\nmaxReplica\022\037\n\013mem" +
+      "ory_rule\030\006 \001(\tR\nmemoryRule\"\265\002\n\030CreateApp" +
+      "licationRequest\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013i" +
+      "ntegration\030\002 \001(\tR\013integration\022@\n\nreposit" +
+      "ory\030\003 \001(\0132 .application.v1alpha1.Reposit" +
+      "oryR\nrepository\022I\n\rconfiguration\030\004 \001(\0132#" +
+      ".application.v1alpha1.ConfigurationR\rcon" +
+      "figuration\022\035\n\nproject_id\030\005 \001(\rR\tprojectI" +
+      "d\0227\n\007scaling\030\006 \001(\0132\035.application.v1alpha" +
+      "1.ScalingR\007scaling\"S\n\031CreateApplicationR" +
+      "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\t" +
+      "R\005error\022\016\n\002id\030\003 \001(\tR\002id\"7\n\026ListApplicati" +
+      "onRequest\022\035\n\nproject_id\030\001 \001(\rR\tprojectId" +
+      "\"`\n\027ListApplicationResponse\022E\n\014applicati" +
+      "ons\030\001 \003(\0132!.application.v1alpha1.Applica" +
+      "tionR\014applications\"\'\n\025GetApplicationRequ" +
+      "est\022\016\n\002id\030\001 \001(\tR\002id\"]\n\026GetApplicationRes" +
+      "ponse\022C\n\013application\030\001 \001(\0132!.application" +
+      ".v1alpha1.ApplicationR\013application\"*\n\030De" +
+      "leteApplicationRequest\022\016\n\002id\030\001 \001(\tR\002id\"C" +
+      "\n\031DeleteApplicationResponse\022\020\n\003msg\030\001 \001(\t" +
+      "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"|\n\030UpdateApp" +
+      "licationRequest\022\016\n\002id\030\001 \001(\tR\002id\022P\n\013appli" +
+      "cation\030\002 \001(\0132..application.v1alpha1.Crea" +
+      "teApplicationRequestR\013application\"C\n\031Upd" +
+      "ateApplicationResponse\022\020\n\003msg\030\001 \001(\tR\003msg" +
+      "\022\024\n\005error\030\002 \001(\tR\005error2\367\005\n\022ApplicationSe" +
+      "rvice\022t\n\021CreateApplication\022..application" +
+      ".v1alpha1.CreateApplicationRequest\032/.app" +
+      "lication.v1alpha1.CreateApplicationRespo" +
+      "nse\022n\n\017ListApplication\022,.application.v1a" +
+      "lpha1.ListApplicationRequest\032-.applicati" +
+      "on.v1alpha1.ListApplicationResponse\022k\n\016G" +
+      "etApplication\022+.application.v1alpha1.Get" +
+      "ApplicationRequest\032,.application.v1alpha" +
+      "1.GetApplicationResponse\022t\n\021DeleteApplic" +
+      "ation\022..application.v1alpha1.DeleteAppli" +
+      "cationRequest\032/.application.v1alpha1.Del" +
+      "eteApplicationResponse\022t\n\021UpdateApplicat" +
+      "ion\022..application.v1alpha1.UpdateApplica" +
+      "tionRequest\032/.application.v1alpha1.Updat" +
+      "eApplicationResponse\022\241\001\n DeleteApplicati" +
+      "onsByOrganization\022=.application.v1alpha1" +
+      ".DeleteApplicationsByOrganizationRequest" +
+      "\032>.application.v1alpha1.DeleteApplicatio" +
+      "nsByOrganizationResponseB7Z5github.com/c" +
+      "uemby/ccp-sdk/gen/go/application/v1alpha" +
+      "1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_application_v1alpha1_Repository_descriptor =
+    internal_static_application_v1alpha1_DeleteApplicationsByOrganizationRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_application_v1alpha1_DeleteApplicationsByOrganizationRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_application_v1alpha1_DeleteApplicationsByOrganizationRequest_descriptor,
+        new java.lang.String[] { "OrganizationId", });
+    internal_static_application_v1alpha1_DeleteApplicationsByOrganizationResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_application_v1alpha1_DeleteApplicationsByOrganizationResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_application_v1alpha1_DeleteApplicationsByOrganizationResponse_descriptor,
+        new java.lang.String[] { "Msg", });
+    internal_static_application_v1alpha1_Repository_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_application_v1alpha1_Repository_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Repository_descriptor,
         new java.lang.String[] { "Name", "FullName", "Description", "Fork", "CloneUrl", "Private", });
     internal_static_application_v1alpha1_Command_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_application_v1alpha1_Command_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Command_descriptor,
         new java.lang.String[] { "Build", "Run", });
     internal_static_application_v1alpha1_Env_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_application_v1alpha1_Env_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Env_descriptor,
         new java.lang.String[] { "Value", "Key", "Encrypted", });
     internal_static_application_v1alpha1_Configuration_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_application_v1alpha1_Configuration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Configuration_descriptor,
         new java.lang.String[] { "Envs", "Commands", "Port", "InstaceType", });
     internal_static_application_v1alpha1_Application_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_application_v1alpha1_Application_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Application_descriptor,
         new java.lang.String[] { "Id", "Name", "Integration", "Repository", "Configuration", "ProjectId", "Scaling", });
     internal_static_application_v1alpha1_Scaling_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_application_v1alpha1_Scaling_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Scaling_descriptor,
-        new java.lang.String[] { "CpuRule", "CoolDownPeriod", "PollingInterval", "MinReplica", "MaxReplica", });
+        new java.lang.String[] { "CpuRule", "CoolDownPeriod", "PollingInterval", "MinReplica", "MaxReplica", "MemoryRule", });
     internal_static_application_v1alpha1_CreateApplicationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_application_v1alpha1_CreateApplicationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_CreateApplicationRequest_descriptor,
         new java.lang.String[] { "Name", "Integration", "Repository", "Configuration", "ProjectId", "Scaling", });
     internal_static_application_v1alpha1_CreateApplicationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_application_v1alpha1_CreateApplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_CreateApplicationResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", "Id", });
     internal_static_application_v1alpha1_ListApplicationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_application_v1alpha1_ListApplicationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_ListApplicationRequest_descriptor,
         new java.lang.String[] { "ProjectId", });
     internal_static_application_v1alpha1_ListApplicationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_application_v1alpha1_ListApplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_ListApplicationResponse_descriptor,
         new java.lang.String[] { "Applications", });
     internal_static_application_v1alpha1_GetApplicationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_application_v1alpha1_GetApplicationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_GetApplicationRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_application_v1alpha1_GetApplicationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_application_v1alpha1_GetApplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_GetApplicationResponse_descriptor,
         new java.lang.String[] { "Application", });
     internal_static_application_v1alpha1_DeleteApplicationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_application_v1alpha1_DeleteApplicationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_DeleteApplicationRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_application_v1alpha1_DeleteApplicationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_application_v1alpha1_DeleteApplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_DeleteApplicationResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_application_v1alpha1_UpdateApplicationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_application_v1alpha1_UpdateApplicationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_UpdateApplicationRequest_descriptor,
         new java.lang.String[] { "Id", "Application", });
     internal_static_application_v1alpha1_UpdateApplicationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_application_v1alpha1_UpdateApplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_UpdateApplicationResponse_descriptor,

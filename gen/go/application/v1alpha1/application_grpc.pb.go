@@ -24,6 +24,7 @@ type ApplicationServiceClient interface {
 	GetApplication(ctx context.Context, in *GetApplicationRequest, opts ...grpc.CallOption) (*GetApplicationResponse, error)
 	DeleteApplication(ctx context.Context, in *DeleteApplicationRequest, opts ...grpc.CallOption) (*DeleteApplicationResponse, error)
 	UpdateApplication(ctx context.Context, in *UpdateApplicationRequest, opts ...grpc.CallOption) (*UpdateApplicationResponse, error)
+	DeleteApplicationsByOrganization(ctx context.Context, in *DeleteApplicationsByOrganizationRequest, opts ...grpc.CallOption) (*DeleteApplicationsByOrganizationResponse, error)
 }
 
 type applicationServiceClient struct {
@@ -79,6 +80,15 @@ func (c *applicationServiceClient) UpdateApplication(ctx context.Context, in *Up
 	return out, nil
 }
 
+func (c *applicationServiceClient) DeleteApplicationsByOrganization(ctx context.Context, in *DeleteApplicationsByOrganizationRequest, opts ...grpc.CallOption) (*DeleteApplicationsByOrganizationResponse, error) {
+	out := new(DeleteApplicationsByOrganizationResponse)
+	err := c.cc.Invoke(ctx, "/application.v1alpha1.ApplicationService/DeleteApplicationsByOrganization", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ApplicationServiceServer is the server API for ApplicationService service.
 // All implementations should embed UnimplementedApplicationServiceServer
 // for forward compatibility
@@ -89,6 +99,7 @@ type ApplicationServiceServer interface {
 	GetApplication(context.Context, *GetApplicationRequest) (*GetApplicationResponse, error)
 	DeleteApplication(context.Context, *DeleteApplicationRequest) (*DeleteApplicationResponse, error)
 	UpdateApplication(context.Context, *UpdateApplicationRequest) (*UpdateApplicationResponse, error)
+	DeleteApplicationsByOrganization(context.Context, *DeleteApplicationsByOrganizationRequest) (*DeleteApplicationsByOrganizationResponse, error)
 }
 
 // UnimplementedApplicationServiceServer should be embedded to have forward compatible implementations.
@@ -109,6 +120,9 @@ func (UnimplementedApplicationServiceServer) DeleteApplication(context.Context, 
 }
 func (UnimplementedApplicationServiceServer) UpdateApplication(context.Context, *UpdateApplicationRequest) (*UpdateApplicationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateApplication not implemented")
+}
+func (UnimplementedApplicationServiceServer) DeleteApplicationsByOrganization(context.Context, *DeleteApplicationsByOrganizationRequest) (*DeleteApplicationsByOrganizationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteApplicationsByOrganization not implemented")
 }
 
 // UnsafeApplicationServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -212,6 +226,24 @@ func _ApplicationService_UpdateApplication_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ApplicationService_DeleteApplicationsByOrganization_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteApplicationsByOrganizationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).DeleteApplicationsByOrganization(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/application.v1alpha1.ApplicationService/DeleteApplicationsByOrganization",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).DeleteApplicationsByOrganization(ctx, req.(*DeleteApplicationsByOrganizationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ApplicationService_ServiceDesc is the grpc.ServiceDesc for ApplicationService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -238,6 +270,10 @@ var ApplicationService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateApplication",
 			Handler:    _ApplicationService_UpdateApplication_Handler,
+		},
+		{
+			MethodName: "DeleteApplicationsByOrganization",
+			Handler:    _ApplicationService_DeleteApplicationsByOrganization_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

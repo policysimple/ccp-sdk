@@ -13,9 +13,18 @@ service ApplicationService {
     rpc GetApplication(GetApplicationRequest) returns (GetApplicationResponse);
     rpc DeleteApplication(DeleteApplicationRequest) returns (DeleteApplicationResponse);
     rpc UpdateApplication(UpdateApplicationRequest) returns (UpdateApplicationResponse);
+    rpc DeleteApplicationsByOrganization(DeleteApplicationsByOrganizationRequest) returns (DeleteApplicationsByOrganizationResponse);
 }
 
+/* Integration with the application service */
 
+message DeleteApplicationsByOrganizationRequest {
+    string organization_id = 1;
+}
+
+message DeleteApplicationsByOrganizationResponse {
+    string msg = 1;
+}
 
 message Repository {
     string name = 1;
@@ -61,6 +70,7 @@ message Scaling  {
 	string polling_interval = 3; 
 	string min_replica = 4;      
 	string max_replica = 5;      
+    string memory_rule = 6;
 }
 
 message CreateApplicationRequest {

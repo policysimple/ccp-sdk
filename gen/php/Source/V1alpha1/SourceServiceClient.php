@@ -162,6 +162,19 @@ class SourceServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Source\V1alpha1\DeleteIntegrationsByOrganizationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DeleteIntegrationsByOrganization(\Source\V1alpha1\DeleteIntegrationsByOrganizationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/source.v1alpha1.SourceService/DeleteIntegrationsByOrganization',
+        $argument,
+        ['\Source\V1alpha1\DeleteIntegrationsByOrganizationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List Repositories providers by integrations
      * @param \Source\V1alpha1\ListRepositoriesProviderRequest $argument input argument
      * @param array $metadata metadata

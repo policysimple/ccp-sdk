@@ -69,6 +69,11 @@ class SourceServiceStub(object):
         request_serializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationRequest.SerializeToString,
         response_deserializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationResponse.FromString,
         )
+    self.DeleteIntegrationsByOrganization = channel.unary_unary(
+        '/source.v1alpha1.SourceService/DeleteIntegrationsByOrganization',
+        request_serializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationsByOrganizationRequest.SerializeToString,
+        response_deserializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationsByOrganizationResponse.FromString,
+        )
     self.ListRepositoriesProvider = channel.unary_unary(
         '/source.v1alpha1.SourceService/ListRepositoriesProvider',
         request_serializer=source_dot_v1alpha1_dot_source__pb2.ListRepositoriesProviderRequest.SerializeToString,
@@ -187,6 +192,13 @@ class SourceServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def DeleteIntegrationsByOrganization(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def ListRepositoriesProvider(self, request, context):
     """List Repositories providers by integrations
     """
@@ -293,6 +305,11 @@ def add_SourceServiceServicer_to_server(servicer, server):
           servicer.DeleteIntegration,
           request_deserializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationRequest.FromString,
           response_serializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationResponse.SerializeToString,
+      ),
+      'DeleteIntegrationsByOrganization': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteIntegrationsByOrganization,
+          request_deserializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationsByOrganizationRequest.FromString,
+          response_serializer=source_dot_v1alpha1_dot_source__pb2.DeleteIntegrationsByOrganizationResponse.SerializeToString,
       ),
       'ListRepositoriesProvider': grpc.unary_unary_rpc_method_handler(
           servicer.ListRepositoriesProvider,

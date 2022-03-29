@@ -18,6 +18,30 @@
 PROTOBUF_PRAGMA_INIT_SEG
 namespace application {
 namespace v1alpha1 {
+constexpr DeleteApplicationsByOrganizationRequest::DeleteApplicationsByOrganizationRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct DeleteApplicationsByOrganizationRequestDefaultTypeInternal {
+  constexpr DeleteApplicationsByOrganizationRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~DeleteApplicationsByOrganizationRequestDefaultTypeInternal() {}
+  union {
+    DeleteApplicationsByOrganizationRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteApplicationsByOrganizationRequestDefaultTypeInternal _DeleteApplicationsByOrganizationRequest_default_instance_;
+constexpr DeleteApplicationsByOrganizationResponse::DeleteApplicationsByOrganizationResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct DeleteApplicationsByOrganizationResponseDefaultTypeInternal {
+  constexpr DeleteApplicationsByOrganizationResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~DeleteApplicationsByOrganizationResponseDefaultTypeInternal() {}
+  union {
+    DeleteApplicationsByOrganizationResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteApplicationsByOrganizationResponseDefaultTypeInternal _DeleteApplicationsByOrganizationResponse_default_instance_;
 constexpr Repository::Repository(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -101,7 +125,8 @@ constexpr Scaling::Scaling(
   , cool_down_period_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , polling_interval_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , min_replica_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , max_replica_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , max_replica_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , memory_rule_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct ScalingDefaultTypeInternal {
   constexpr ScalingDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -243,11 +268,23 @@ struct UpdateApplicationResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateApplicationResponseDefaultTypeInternal _UpdateApplicationResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace application
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[16];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[18];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_application_2fv1alpha1_2fapplication_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_application_2fv1alpha1_2fapplication_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fapplication_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::DeleteApplicationsByOrganizationRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::DeleteApplicationsByOrganizationRequest, organization_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::DeleteApplicationsByOrganizationResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::DeleteApplicationsByOrganizationResponse, msg_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Repository, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -305,6 +342,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fappli
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Scaling, polling_interval_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Scaling, min_replica_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Scaling, max_replica_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Scaling, memory_rule_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::CreateApplicationRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -377,25 +415,29 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fappli
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::UpdateApplicationResponse, error_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::application::v1alpha1::Repository)},
-  { 11, -1, sizeof(::application::v1alpha1::Command)},
-  { 18, -1, sizeof(::application::v1alpha1::Env)},
-  { 26, -1, sizeof(::application::v1alpha1::Configuration)},
-  { 35, -1, sizeof(::application::v1alpha1::Application)},
-  { 47, -1, sizeof(::application::v1alpha1::Scaling)},
-  { 57, -1, sizeof(::application::v1alpha1::CreateApplicationRequest)},
-  { 68, -1, sizeof(::application::v1alpha1::CreateApplicationResponse)},
-  { 76, -1, sizeof(::application::v1alpha1::ListApplicationRequest)},
-  { 82, -1, sizeof(::application::v1alpha1::ListApplicationResponse)},
-  { 88, -1, sizeof(::application::v1alpha1::GetApplicationRequest)},
-  { 94, -1, sizeof(::application::v1alpha1::GetApplicationResponse)},
-  { 100, -1, sizeof(::application::v1alpha1::DeleteApplicationRequest)},
-  { 106, -1, sizeof(::application::v1alpha1::DeleteApplicationResponse)},
-  { 113, -1, sizeof(::application::v1alpha1::UpdateApplicationRequest)},
-  { 120, -1, sizeof(::application::v1alpha1::UpdateApplicationResponse)},
+  { 0, -1, sizeof(::application::v1alpha1::DeleteApplicationsByOrganizationRequest)},
+  { 6, -1, sizeof(::application::v1alpha1::DeleteApplicationsByOrganizationResponse)},
+  { 12, -1, sizeof(::application::v1alpha1::Repository)},
+  { 23, -1, sizeof(::application::v1alpha1::Command)},
+  { 30, -1, sizeof(::application::v1alpha1::Env)},
+  { 38, -1, sizeof(::application::v1alpha1::Configuration)},
+  { 47, -1, sizeof(::application::v1alpha1::Application)},
+  { 59, -1, sizeof(::application::v1alpha1::Scaling)},
+  { 70, -1, sizeof(::application::v1alpha1::CreateApplicationRequest)},
+  { 81, -1, sizeof(::application::v1alpha1::CreateApplicationResponse)},
+  { 89, -1, sizeof(::application::v1alpha1::ListApplicationRequest)},
+  { 95, -1, sizeof(::application::v1alpha1::ListApplicationResponse)},
+  { 101, -1, sizeof(::application::v1alpha1::GetApplicationRequest)},
+  { 107, -1, sizeof(::application::v1alpha1::GetApplicationResponse)},
+  { 113, -1, sizeof(::application::v1alpha1::DeleteApplicationRequest)},
+  { 119, -1, sizeof(::application::v1alpha1::DeleteApplicationResponse)},
+  { 126, -1, sizeof(::application::v1alpha1::UpdateApplicationRequest)},
+  { 133, -1, sizeof(::application::v1alpha1::UpdateApplicationResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_DeleteApplicationsByOrganizationRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_DeleteApplicationsByOrganizationResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Repository_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Command_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Env_default_instance_),
@@ -416,78 +458,87 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n&application/v1alpha1/application.proto"
-  "\022\024application.v1alpha1\"\252\001\n\nRepository\022\022\n"
-  "\004name\030\001 \001(\tR\004name\022\033\n\tfull_name\030\002 \001(\tR\010fu"
-  "llName\022 \n\013description\030\003 \001(\tR\013description"
-  "\022\022\n\004fork\030\004 \001(\010R\004fork\022\033\n\tclone_url\030\005 \001(\tR"
-  "\010cloneUrl\022\030\n\007private\030\006 \001(\010R\007private\"1\n\007C"
-  "ommand\022\024\n\005build\030\001 \001(\tR\005build\022\020\n\003run\030\002 \001("
-  "\tR\003run\"K\n\003Env\022\024\n\005value\030\001 \001(\tR\005value\022\020\n\003k"
-  "ey\030\002 \001(\tR\003key\022\034\n\tencrypted\030\003 \001(\010R\tencryp"
-  "ted\"\260\001\n\rConfiguration\022-\n\004envs\030\001 \003(\0132\031.ap"
-  "plication.v1alpha1.EnvR\004envs\0229\n\010commands"
-  "\030\002 \003(\0132\035.application.v1alpha1.CommandR\010c"
-  "ommands\022\022\n\004port\030\003 \001(\005R\004port\022!\n\014instace_t"
-  "ype\030\004 \001(\tR\013instaceType\"\270\002\n\013Application\022\016"
-  "\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013in"
-  "tegration\030\003 \001(\tR\013integration\022@\n\nreposito"
-  "ry\030\004 \001(\0132 .application.v1alpha1.Reposito"
-  "ryR\nrepository\022I\n\rconfiguration\030\005 \001(\0132#."
-  "application.v1alpha1.ConfigurationR\rconf"
-  "iguration\022\035\n\nproject_id\030\006 \001(\rR\tprojectId"
-  "\0227\n\007scaling\030\007 \001(\0132\035.application.v1alpha1"
-  ".ScalingR\007scaling\"\273\001\n\007Scaling\022\031\n\010cpu_rul"
-  "e\030\001 \001(\tR\007cpuRule\022(\n\020cool_down_period\030\002 \001"
-  "(\tR\016coolDownPeriod\022)\n\020polling_interval\030\003"
-  " \001(\tR\017pollingInterval\022\037\n\013min_replica\030\004 \001"
-  "(\tR\nminReplica\022\037\n\013max_replica\030\005 \001(\tR\nmax"
-  "Replica\"\265\002\n\030CreateApplicationRequest\022\022\n\004"
-  "name\030\001 \001(\tR\004name\022 \n\013integration\030\002 \001(\tR\013i"
-  "ntegration\022@\n\nrepository\030\003 \001(\0132 .applica"
-  "tion.v1alpha1.RepositoryR\nrepository\022I\n\r"
-  "configuration\030\004 \001(\0132#.application.v1alph"
-  "a1.ConfigurationR\rconfiguration\022\035\n\nproje"
-  "ct_id\030\005 \001(\rR\tprojectId\0227\n\007scaling\030\006 \001(\0132"
-  "\035.application.v1alpha1.ScalingR\007scaling\""
-  "S\n\031CreateApplicationResponse\022\020\n\003msg\030\001 \001("
-  "\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\t"
-  "R\002id\"7\n\026ListApplicationRequest\022\035\n\nprojec"
-  "t_id\030\001 \001(\rR\tprojectId\"`\n\027ListApplication"
-  "Response\022E\n\014applications\030\001 \003(\0132!.applica"
-  "tion.v1alpha1.ApplicationR\014applications\""
-  "\'\n\025GetApplicationRequest\022\016\n\002id\030\001 \001(\tR\002id"
-  "\"]\n\026GetApplicationResponse\022C\n\013applicatio"
-  "n\030\001 \001(\0132!.application.v1alpha1.Applicati"
-  "onR\013application\"*\n\030DeleteApplicationRequ"
-  "est\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteApplication"
-  "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001("
-  "\tR\005error\"|\n\030UpdateApplicationRequest\022\016\n\002"
-  "id\030\001 \001(\tR\002id\022P\n\013application\030\002 \001(\0132..appl"
-  "ication.v1alpha1.CreateApplicationReques"
-  "tR\013application\"C\n\031UpdateApplicationRespo"
-  "nse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005er"
-  "ror2\323\004\n\022ApplicationService\022t\n\021CreateAppl"
-  "ication\022..application.v1alpha1.CreateApp"
-  "licationRequest\032/.application.v1alpha1.C"
-  "reateApplicationResponse\022n\n\017ListApplicat"
-  "ion\022,.application.v1alpha1.ListApplicati"
-  "onRequest\032-.application.v1alpha1.ListApp"
-  "licationResponse\022k\n\016GetApplication\022+.app"
-  "lication.v1alpha1.GetApplicationRequest\032"
-  ",.application.v1alpha1.GetApplicationRes"
-  "ponse\022t\n\021DeleteApplication\022..application"
-  ".v1alpha1.DeleteApplicationRequest\032/.app"
-  "lication.v1alpha1.DeleteApplicationRespo"
-  "nse\022t\n\021UpdateApplication\022..application.v"
-  "1alpha1.UpdateApplicationRequest\032/.appli"
-  "cation.v1alpha1.UpdateApplicationRespons"
-  "eB7Z5github.com/cuemby/ccp-sdk/gen/go/ap"
-  "plication/v1alpha1b\006proto3"
+  "\022\024application.v1alpha1\"R\n\'DeleteApplicat"
+  "ionsByOrganizationRequest\022\'\n\017organizatio"
+  "n_id\030\001 \001(\tR\016organizationId\"<\n(DeleteAppl"
+  "icationsByOrganizationResponse\022\020\n\003msg\030\001 "
+  "\001(\tR\003msg\"\252\001\n\nRepository\022\022\n\004name\030\001 \001(\tR\004n"
+  "ame\022\033\n\tfull_name\030\002 \001(\tR\010fullName\022 \n\013desc"
+  "ription\030\003 \001(\tR\013description\022\022\n\004fork\030\004 \001(\010"
+  "R\004fork\022\033\n\tclone_url\030\005 \001(\tR\010cloneUrl\022\030\n\007p"
+  "rivate\030\006 \001(\010R\007private\"1\n\007Command\022\024\n\005buil"
+  "d\030\001 \001(\tR\005build\022\020\n\003run\030\002 \001(\tR\003run\"K\n\003Env\022"
+  "\024\n\005value\030\001 \001(\tR\005value\022\020\n\003key\030\002 \001(\tR\003key\022"
+  "\034\n\tencrypted\030\003 \001(\010R\tencrypted\"\260\001\n\rConfig"
+  "uration\022-\n\004envs\030\001 \003(\0132\031.application.v1al"
+  "pha1.EnvR\004envs\0229\n\010commands\030\002 \003(\0132\035.appli"
+  "cation.v1alpha1.CommandR\010commands\022\022\n\004por"
+  "t\030\003 \001(\005R\004port\022!\n\014instace_type\030\004 \001(\tR\013ins"
+  "taceType\"\270\002\n\013Application\022\016\n\002id\030\001 \001(\tR\002id"
+  "\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013integration\030\003 \001("
+  "\tR\013integration\022@\n\nrepository\030\004 \001(\0132 .app"
+  "lication.v1alpha1.RepositoryR\nrepository"
+  "\022I\n\rconfiguration\030\005 \001(\0132#.application.v1"
+  "alpha1.ConfigurationR\rconfiguration\022\035\n\np"
+  "roject_id\030\006 \001(\rR\tprojectId\0227\n\007scaling\030\007 "
+  "\001(\0132\035.application.v1alpha1.ScalingR\007scal"
+  "ing\"\334\001\n\007Scaling\022\031\n\010cpu_rule\030\001 \001(\tR\007cpuRu"
+  "le\022(\n\020cool_down_period\030\002 \001(\tR\016coolDownPe"
+  "riod\022)\n\020polling_interval\030\003 \001(\tR\017pollingI"
+  "nterval\022\037\n\013min_replica\030\004 \001(\tR\nminReplica"
+  "\022\037\n\013max_replica\030\005 \001(\tR\nmaxReplica\022\037\n\013mem"
+  "ory_rule\030\006 \001(\tR\nmemoryRule\"\265\002\n\030CreateApp"
+  "licationRequest\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013i"
+  "ntegration\030\002 \001(\tR\013integration\022@\n\nreposit"
+  "ory\030\003 \001(\0132 .application.v1alpha1.Reposit"
+  "oryR\nrepository\022I\n\rconfiguration\030\004 \001(\0132#"
+  ".application.v1alpha1.ConfigurationR\rcon"
+  "figuration\022\035\n\nproject_id\030\005 \001(\rR\tprojectI"
+  "d\0227\n\007scaling\030\006 \001(\0132\035.application.v1alpha"
+  "1.ScalingR\007scaling\"S\n\031CreateApplicationR"
+  "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\t"
+  "R\005error\022\016\n\002id\030\003 \001(\tR\002id\"7\n\026ListApplicati"
+  "onRequest\022\035\n\nproject_id\030\001 \001(\rR\tprojectId"
+  "\"`\n\027ListApplicationResponse\022E\n\014applicati"
+  "ons\030\001 \003(\0132!.application.v1alpha1.Applica"
+  "tionR\014applications\"\'\n\025GetApplicationRequ"
+  "est\022\016\n\002id\030\001 \001(\tR\002id\"]\n\026GetApplicationRes"
+  "ponse\022C\n\013application\030\001 \001(\0132!.application"
+  ".v1alpha1.ApplicationR\013application\"*\n\030De"
+  "leteApplicationRequest\022\016\n\002id\030\001 \001(\tR\002id\"C"
+  "\n\031DeleteApplicationResponse\022\020\n\003msg\030\001 \001(\t"
+  "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"|\n\030UpdateApp"
+  "licationRequest\022\016\n\002id\030\001 \001(\tR\002id\022P\n\013appli"
+  "cation\030\002 \001(\0132..application.v1alpha1.Crea"
+  "teApplicationRequestR\013application\"C\n\031Upd"
+  "ateApplicationResponse\022\020\n\003msg\030\001 \001(\tR\003msg"
+  "\022\024\n\005error\030\002 \001(\tR\005error2\367\005\n\022ApplicationSe"
+  "rvice\022t\n\021CreateApplication\022..application"
+  ".v1alpha1.CreateApplicationRequest\032/.app"
+  "lication.v1alpha1.CreateApplicationRespo"
+  "nse\022n\n\017ListApplication\022,.application.v1a"
+  "lpha1.ListApplicationRequest\032-.applicati"
+  "on.v1alpha1.ListApplicationResponse\022k\n\016G"
+  "etApplication\022+.application.v1alpha1.Get"
+  "ApplicationRequest\032,.application.v1alpha"
+  "1.GetApplicationResponse\022t\n\021DeleteApplic"
+  "ation\022..application.v1alpha1.DeleteAppli"
+  "cationRequest\032/.application.v1alpha1.Del"
+  "eteApplicationResponse\022t\n\021UpdateApplicat"
+  "ion\022..application.v1alpha1.UpdateApplica"
+  "tionRequest\032/.application.v1alpha1.Updat"
+  "eApplicationResponse\022\241\001\n DeleteApplicati"
+  "onsByOrganization\022=.application.v1alpha1"
+  ".DeleteApplicationsByOrganizationRequest"
+  "\032>.application.v1alpha1.DeleteApplicatio"
+  "nsByOrganizationResponseB7Z5github.com/c"
+  "uemby/ccp-sdk/gen/go/application/v1alpha"
+  "1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_application_2fv1alpha1_2fapplication_2eproto = {
-  false, false, 2706, descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto, "application/v1alpha1/application.proto", 
-  &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once, nullptr, 0, 16,
+  false, false, 3049, descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto, "application/v1alpha1/application.proto", 
+  &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once, nullptr, 0, 18,
   schemas, file_default_instances, TableStruct_application_2fv1alpha1_2fapplication_2eproto::offsets,
   file_level_metadata_application_2fv1alpha1_2fapplication_2eproto, file_level_enum_descriptors_application_2fv1alpha1_2fapplication_2eproto, file_level_service_descriptors_application_2fv1alpha1_2fapplication_2eproto,
 };
@@ -499,6 +550,406 @@ PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_application_2fv1alpha1_2fapplication_2eproto(&descriptor_table_application_2fv1alpha1_2fapplication_2eproto);
 namespace application {
 namespace v1alpha1 {
+
+// ===================================================================
+
+class DeleteApplicationsByOrganizationRequest::_Internal {
+ public:
+};
+
+DeleteApplicationsByOrganizationRequest::DeleteApplicationsByOrganizationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+}
+DeleteApplicationsByOrganizationRequest::DeleteApplicationsByOrganizationRequest(const DeleteApplicationsByOrganizationRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+}
+
+inline void DeleteApplicationsByOrganizationRequest::SharedCtor() {
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+DeleteApplicationsByOrganizationRequest::~DeleteApplicationsByOrganizationRequest() {
+  // @@protoc_insertion_point(destructor:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void DeleteApplicationsByOrganizationRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void DeleteApplicationsByOrganizationRequest::ArenaDtor(void* object) {
+  DeleteApplicationsByOrganizationRequest* _this = reinterpret_cast< DeleteApplicationsByOrganizationRequest* >(object);
+  (void)_this;
+}
+void DeleteApplicationsByOrganizationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void DeleteApplicationsByOrganizationRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void DeleteApplicationsByOrganizationRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  organization_id_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DeleteApplicationsByOrganizationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string organization_id = 1 [json_name = "organizationId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.DeleteApplicationsByOrganizationRequest.organization_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteApplicationsByOrganizationRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.DeleteApplicationsByOrganizationRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_organization_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+  return target;
+}
+
+size_t DeleteApplicationsByOrganizationRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeleteApplicationsByOrganizationRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    DeleteApplicationsByOrganizationRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteApplicationsByOrganizationRequest::GetClassData() const { return &_class_data_; }
+
+void DeleteApplicationsByOrganizationRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<DeleteApplicationsByOrganizationRequest *>(to)->MergeFrom(
+      static_cast<const DeleteApplicationsByOrganizationRequest &>(from));
+}
+
+
+void DeleteApplicationsByOrganizationRequest::MergeFrom(const DeleteApplicationsByOrganizationRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DeleteApplicationsByOrganizationRequest::CopyFrom(const DeleteApplicationsByOrganizationRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeleteApplicationsByOrganizationRequest::IsInitialized() const {
+  return true;
+}
+
+void DeleteApplicationsByOrganizationRequest::InternalSwap(DeleteApplicationsByOrganizationRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteApplicationsByOrganizationRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[0]);
+}
+
+// ===================================================================
+
+class DeleteApplicationsByOrganizationResponse::_Internal {
+ public:
+};
+
+DeleteApplicationsByOrganizationResponse::DeleteApplicationsByOrganizationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+}
+DeleteApplicationsByOrganizationResponse::DeleteApplicationsByOrganizationResponse(const DeleteApplicationsByOrganizationResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_msg().empty()) {
+    msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+}
+
+inline void DeleteApplicationsByOrganizationResponse::SharedCtor() {
+msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+DeleteApplicationsByOrganizationResponse::~DeleteApplicationsByOrganizationResponse() {
+  // @@protoc_insertion_point(destructor:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void DeleteApplicationsByOrganizationResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void DeleteApplicationsByOrganizationResponse::ArenaDtor(void* object) {
+  DeleteApplicationsByOrganizationResponse* _this = reinterpret_cast< DeleteApplicationsByOrganizationResponse* >(object);
+  (void)_this;
+}
+void DeleteApplicationsByOrganizationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void DeleteApplicationsByOrganizationResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void DeleteApplicationsByOrganizationResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  msg_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DeleteApplicationsByOrganizationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string msg = 1 [json_name = "msg"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_msg();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.DeleteApplicationsByOrganizationResponse.msg"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteApplicationsByOrganizationResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string msg = 1 [json_name = "msg"];
+  if (!this->_internal_msg().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_msg().data(), static_cast<int>(this->_internal_msg().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.DeleteApplicationsByOrganizationResponse.msg");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_msg(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+  return target;
+}
+
+size_t DeleteApplicationsByOrganizationResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string msg = 1 [json_name = "msg"];
+  if (!this->_internal_msg().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_msg());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeleteApplicationsByOrganizationResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    DeleteApplicationsByOrganizationResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteApplicationsByOrganizationResponse::GetClassData() const { return &_class_data_; }
+
+void DeleteApplicationsByOrganizationResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<DeleteApplicationsByOrganizationResponse *>(to)->MergeFrom(
+      static_cast<const DeleteApplicationsByOrganizationResponse &>(from));
+}
+
+
+void DeleteApplicationsByOrganizationResponse::MergeFrom(const DeleteApplicationsByOrganizationResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_msg().empty()) {
+    _internal_set_msg(from._internal_msg());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DeleteApplicationsByOrganizationResponse::CopyFrom(const DeleteApplicationsByOrganizationResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeleteApplicationsByOrganizationResponse::IsInitialized() const {
+  return true;
+}
+
+void DeleteApplicationsByOrganizationResponse::InternalSwap(DeleteApplicationsByOrganizationResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &msg_, GetArenaForAllocation(),
+      &other->msg_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteApplicationsByOrganizationResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[1]);
+}
 
 // ===================================================================
 
@@ -881,7 +1332,7 @@ void Repository::InternalSwap(Repository* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Repository::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[0]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[2]);
 }
 
 // ===================================================================
@@ -1123,7 +1574,7 @@ void Command::InternalSwap(Command* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Command::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[1]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[3]);
 }
 
 // ===================================================================
@@ -1390,7 +1841,7 @@ void Env::InternalSwap(Env* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Env::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[2]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[4]);
 }
 
 // ===================================================================
@@ -1681,7 +2132,7 @@ void Configuration::InternalSwap(Configuration* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Configuration::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[3]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[5]);
 }
 
 // ===================================================================
@@ -2120,7 +2571,7 @@ void Application::InternalSwap(Application* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Application::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[4]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[6]);
 }
 
 // ===================================================================
@@ -2166,6 +2617,11 @@ Scaling::Scaling(const Scaling& from)
     max_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_max_replica(), 
       GetArenaForAllocation());
   }
+  memory_rule_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_memory_rule().empty()) {
+    memory_rule_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_memory_rule(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:application.v1alpha1.Scaling)
 }
 
@@ -2175,6 +2631,7 @@ cool_down_period_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyS
 polling_interval_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 min_replica_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 max_replica_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+memory_rule_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Scaling::~Scaling() {
@@ -2191,6 +2648,7 @@ inline void Scaling::SharedDtor() {
   polling_interval_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   min_replica_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   max_replica_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  memory_rule_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Scaling::ArenaDtor(void* object) {
@@ -2214,6 +2672,7 @@ void Scaling::Clear() {
   polling_interval_.ClearToEmpty();
   min_replica_.ClearToEmpty();
   max_replica_.ClearToEmpty();
+  memory_rule_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2265,6 +2724,15 @@ const char* Scaling::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           auto str = _internal_mutable_max_replica();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Scaling.max_replica"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string memory_rule = 6 [json_name = "memoryRule"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_memory_rule();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Scaling.memory_rule"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2347,6 +2815,16 @@ failure:
         5, this->_internal_max_replica(), target);
   }
 
+  // string memory_rule = 6 [json_name = "memoryRule"];
+  if (!this->_internal_memory_rule().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_memory_rule().data(), static_cast<int>(this->_internal_memory_rule().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.Scaling.memory_rule");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_memory_rule(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2398,6 +2876,13 @@ size_t Scaling::ByteSizeLong() const {
         this->_internal_max_replica());
   }
 
+  // string memory_rule = 6 [json_name = "memoryRule"];
+  if (!this->_internal_memory_rule().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_memory_rule());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -2441,6 +2926,9 @@ void Scaling::MergeFrom(const Scaling& from) {
   if (!from._internal_max_replica().empty()) {
     _internal_set_max_replica(from._internal_max_replica());
   }
+  if (!from._internal_memory_rule().empty()) {
+    _internal_set_memory_rule(from._internal_memory_rule());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2483,12 +2971,17 @@ void Scaling::InternalSwap(Scaling* other) {
       &max_replica_, GetArenaForAllocation(),
       &other->max_replica_, other->GetArenaForAllocation()
   );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &memory_rule_, GetArenaForAllocation(),
+      &other->memory_rule_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Scaling::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[5]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[7]);
 }
 
 // ===================================================================
@@ -2885,7 +3378,7 @@ void CreateApplicationRequest::InternalSwap(CreateApplicationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateApplicationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[6]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[8]);
 }
 
 // ===================================================================
@@ -3169,7 +3662,7 @@ void CreateApplicationResponse::InternalSwap(CreateApplicationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateApplicationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[7]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[9]);
 }
 
 // ===================================================================
@@ -3354,7 +3847,7 @@ void ListApplicationRequest::InternalSwap(ListApplicationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListApplicationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[8]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[10]);
 }
 
 // ===================================================================
@@ -3544,7 +4037,7 @@ void ListApplicationResponse::InternalSwap(ListApplicationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListApplicationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[9]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[11]);
 }
 
 // ===================================================================
@@ -3744,7 +4237,7 @@ void GetApplicationRequest::InternalSwap(GetApplicationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetApplicationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[10]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[12]);
 }
 
 // ===================================================================
@@ -3944,7 +4437,7 @@ void GetApplicationResponse::InternalSwap(GetApplicationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetApplicationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[11]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[13]);
 }
 
 // ===================================================================
@@ -4144,7 +4637,7 @@ void DeleteApplicationRequest::InternalSwap(DeleteApplicationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteApplicationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[12]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[14]);
 }
 
 // ===================================================================
@@ -4386,7 +4879,7 @@ void DeleteApplicationResponse::InternalSwap(DeleteApplicationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteApplicationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[13]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[15]);
 }
 
 // ===================================================================
@@ -4628,7 +5121,7 @@ void UpdateApplicationRequest::InternalSwap(UpdateApplicationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateApplicationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[14]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[16]);
 }
 
 // ===================================================================
@@ -4870,13 +5363,19 @@ void UpdateApplicationResponse::InternalSwap(UpdateApplicationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateApplicationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[15]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[17]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace application
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::application::v1alpha1::DeleteApplicationsByOrganizationRequest* Arena::CreateMaybeMessage< ::application::v1alpha1::DeleteApplicationsByOrganizationRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::application::v1alpha1::DeleteApplicationsByOrganizationRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::application::v1alpha1::DeleteApplicationsByOrganizationResponse* Arena::CreateMaybeMessage< ::application::v1alpha1::DeleteApplicationsByOrganizationResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::application::v1alpha1::DeleteApplicationsByOrganizationResponse >(arena);
+}
 template<> PROTOBUF_NOINLINE ::application::v1alpha1::Repository* Arena::CreateMaybeMessage< ::application::v1alpha1::Repository >(Arena* arena) {
   return Arena::CreateMessageInternal< ::application::v1alpha1::Repository >(arena);
 }
