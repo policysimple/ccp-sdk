@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     paramName_ = "";
     paramValueType_ = "";
     paramValue_ = "";
+    paramValueArray_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -41,6 +42,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,6 +71,15 @@ private static final long serialVersionUID = 0L;
             paramValue_ = s;
             break;
           }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              paramValueArray_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            paramValueArray_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -84,6 +95,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        paramValueArray_ = paramValueArray_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -215,6 +229,41 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PARAM_VALUE_ARRAY_FIELD_NUMBER = 4;
+  private com.google.protobuf.LazyStringList paramValueArray_;
+  /**
+   * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+   * @return A list containing the paramValueArray.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getParamValueArrayList() {
+    return paramValueArray_;
+  }
+  /**
+   * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+   * @return The count of paramValueArray.
+   */
+  public int getParamValueArrayCount() {
+    return paramValueArray_.size();
+  }
+  /**
+   * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+   * @param index The index of the element to return.
+   * @return The paramValueArray at the given index.
+   */
+  public java.lang.String getParamValueArray(int index) {
+    return paramValueArray_.get(index);
+  }
+  /**
+   * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the paramValueArray at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getParamValueArrayBytes(int index) {
+    return paramValueArray_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -238,6 +287,9 @@ private static final long serialVersionUID = 0L;
     if (!getParamValueBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, paramValue_);
     }
+    for (int i = 0; i < paramValueArray_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, paramValueArray_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -255,6 +307,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getParamValueBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, paramValue_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < paramValueArray_.size(); i++) {
+        dataSize += computeStringSizeNoTag(paramValueArray_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getParamValueArrayList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -277,6 +337,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getParamValueType())) return false;
     if (!getParamValue()
         .equals(other.getParamValue())) return false;
+    if (!getParamValueArrayList()
+        .equals(other.getParamValueArrayList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -294,6 +356,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getParamValueType().hashCode();
     hash = (37 * hash) + PARAM_VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getParamValue().hashCode();
+    if (getParamValueArrayCount() > 0) {
+      hash = (37 * hash) + PARAM_VALUE_ARRAY_FIELD_NUMBER;
+      hash = (53 * hash) + getParamValueArrayList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -433,6 +499,8 @@ private static final long serialVersionUID = 0L;
 
       paramValue_ = "";
 
+      paramValueArray_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -459,9 +527,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.pipelines.tekton.v1alpha1.TaskParams buildPartial() {
       io.cuemby.pipelines.tekton.v1alpha1.TaskParams result = new io.cuemby.pipelines.tekton.v1alpha1.TaskParams(this);
+      int from_bitField0_ = bitField0_;
       result.paramName_ = paramName_;
       result.paramValueType_ = paramValueType_;
       result.paramValue_ = paramValue_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        paramValueArray_ = paramValueArray_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.paramValueArray_ = paramValueArray_;
       onBuilt();
       return result;
     }
@@ -522,6 +596,16 @@ private static final long serialVersionUID = 0L;
         paramValue_ = other.paramValue_;
         onChanged();
       }
+      if (!other.paramValueArray_.isEmpty()) {
+        if (paramValueArray_.isEmpty()) {
+          paramValueArray_ = other.paramValueArray_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureParamValueArrayIsMutable();
+          paramValueArray_.addAll(other.paramValueArray_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -550,6 +634,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object paramName_ = "";
     /**
@@ -775,6 +860,116 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       paramValue_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList paramValueArray_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureParamValueArrayIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        paramValueArray_ = new com.google.protobuf.LazyStringArrayList(paramValueArray_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+     * @return A list containing the paramValueArray.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getParamValueArrayList() {
+      return paramValueArray_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+     * @return The count of paramValueArray.
+     */
+    public int getParamValueArrayCount() {
+      return paramValueArray_.size();
+    }
+    /**
+     * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+     * @param index The index of the element to return.
+     * @return The paramValueArray at the given index.
+     */
+    public java.lang.String getParamValueArray(int index) {
+      return paramValueArray_.get(index);
+    }
+    /**
+     * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the paramValueArray at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getParamValueArrayBytes(int index) {
+      return paramValueArray_.getByteString(index);
+    }
+    /**
+     * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+     * @param index The index to set the value at.
+     * @param value The paramValueArray to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParamValueArray(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureParamValueArrayIsMutable();
+      paramValueArray_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+     * @param value The paramValueArray to add.
+     * @return This builder for chaining.
+     */
+    public Builder addParamValueArray(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureParamValueArrayIsMutable();
+      paramValueArray_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+     * @param values The paramValueArray to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllParamValueArray(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureParamValueArrayIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, paramValueArray_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParamValueArray() {
+      paramValueArray_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+     * @param value The bytes of the paramValueArray to add.
+     * @return This builder for chaining.
+     */
+    public Builder addParamValueArrayBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureParamValueArrayIsMutable();
+      paramValueArray_.add(value);
       onChanged();
       return this;
     }

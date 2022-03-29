@@ -36,7 +36,8 @@ struct ParamsDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ParamsDefaultTypeInternal _Params_default_instance_;
 constexpr TaskParams::TaskParams(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : param_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : param_value_array_()
+  , param_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , param_value_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , param_value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct TaskParamsDefaultTypeInternal {
@@ -178,6 +179,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2ftekton_2fv1alpha1_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskParams, param_name_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskParams, param_value_type_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskParams, param_value_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskParams, param_value_array_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Workspaces, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -261,13 +263,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2ftekton_2fv1alpha1_
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::pipelines::tekton::v1alpha1::Params)},
   { 9, -1, sizeof(::pipelines::tekton::v1alpha1::TaskParams)},
-  { 17, -1, sizeof(::pipelines::tekton::v1alpha1::Workspaces)},
-  { 25, -1, sizeof(::pipelines::tekton::v1alpha1::Task)},
-  { 38, 45, sizeof(::pipelines::tekton::v1alpha1::Pipeline_IntegrationEntry_DoNotUse)},
-  { 47, 54, sizeof(::pipelines::tekton::v1alpha1::Pipeline_EnvironmentVariablesEntry_DoNotUse)},
-  { 56, 63, sizeof(::pipelines::tekton::v1alpha1::Pipeline_CommandsEntry_DoNotUse)},
-  { 65, 72, sizeof(::pipelines::tekton::v1alpha1::Pipeline_SecretsEntry_DoNotUse)},
-  { 74, -1, sizeof(::pipelines::tekton::v1alpha1::Pipeline)},
+  { 18, -1, sizeof(::pipelines::tekton::v1alpha1::Workspaces)},
+  { 26, -1, sizeof(::pipelines::tekton::v1alpha1::Task)},
+  { 39, 46, sizeof(::pipelines::tekton::v1alpha1::Pipeline_IntegrationEntry_DoNotUse)},
+  { 48, 55, sizeof(::pipelines::tekton::v1alpha1::Pipeline_EnvironmentVariablesEntry_DoNotUse)},
+  { 57, 64, sizeof(::pipelines::tekton::v1alpha1::Pipeline_CommandsEntry_DoNotUse)},
+  { 66, 73, sizeof(::pipelines::tekton::v1alpha1::Pipeline_SecretsEntry_DoNotUse)},
+  { 75, -1, sizeof(::pipelines::tekton::v1alpha1::Pipeline)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -287,59 +289,60 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2epr
   "\022\031pipelines.tekton.v1alpha1\"\177\n\006Params\022\022\n"
   "\004name\030\001 \001(\tR\004name\022!\n\014value_string\030\002 \001(\tR"
   "\013valueString\022\037\n\013value_array\030\003 \003(\tR\nvalue"
-  "Array\022\035\n\nvalue_type\030\004 \001(\tR\tvalueType\"v\n\n"
-  "TaskParams\022\035\n\nparam_name\030\001 \001(\tR\tparamNam"
-  "e\022(\n\020param_value_type\030\002 \001(\tR\016paramValueT"
-  "ype\022\037\n\013param_value\030\003 \001(\tR\nparamValue\"H\n\n"
-  "Workspaces\022\022\n\004name\030\001 \001(\tR\004name\022\022\n\004main\030\002"
-  " \001(\tR\004main\022\022\n\004type\030\003 \001(\tR\004type\"\313\002\n\004Task\022"
-  "\016\n\002id\030\001 \001(\tR\002id\022\033\n\ttask_name\030\002 \001(\tR\010task"
-  "Name\022\"\n\rtask_ref_name\030\003 \001(\tR\013taskRefName"
-  "\022\033\n\ttask_kind\030\004 \001(\tR\010taskKind\022$\n\016task_ru"
-  "n_after\030\005 \003(\tR\014taskRunAfter\022E\n\nworkspace"
-  "s\030\006 \003(\0132%.pipelines.tekton.v1alpha1.Work"
-  "spacesR\nworkspaces\022F\n\013task_params\030\007 \003(\0132"
-  "%.pipelines.tekton.v1alpha1.TaskParamsR\n"
-  "taskParams\022 \n\013description\030\010 \001(\tR\013descrip"
-  "tion\"\242\t\n\010Pipeline\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017org"
-  "anization_id\030\002 \001(\rR\016organizationId\022\035\n\npr"
-  "oject_id\030\003 \001(\rR\tprojectId\022$\n\016type_meta_k"
-  "ind\030\004 \001(\tR\014typeMetaKind\0221\n\025type_meta_api"
-  "_version\030\005 \001(\tR\022typeMetaApiVersion\022(\n\020ob"
-  "ject_meta_name\030\006 \001(\tR\016objectMetaName\0222\n\025"
-  "object_meta_namespace\030\007 \001(\tR\023objectMetaN"
-  "amespace\0229\n\006params\030\010 \003(\0132!.pipelines.tek"
-  "ton.v1alpha1.ParamsR\006params\0225\n\005tasks\030\t \003"
-  "(\0132\037.pipelines.tekton.v1alpha1.TaskR\005tas"
-  "ks\022\037\n\013status_type\030\n \001(\tR\nstatusType\022V\n\013i"
-  "ntegration\030\013 \003(\01324.pipelines.tekton.v1al"
-  "pha1.Pipeline.IntegrationEntryR\013integrat"
-  "ion\022r\n\025environment_variables\030\014 \003(\0132=.pip"
-  "elines.tekton.v1alpha1.Pipeline.Environm"
-  "entVariablesEntryR\024environmentVariables\022"
-  "M\n\010commands\030\r \003(\01321.pipelines.tekton.v1a"
-  "lpha1.Pipeline.CommandsEntryR\010commands\022J"
-  "\n\007secrets\030\016 \003(\01320.pipelines.tekton.v1alp"
-  "ha1.Pipeline.SecretsEntryR\007secrets\022\026\n\006ac"
-  "tive\030\017 \001(\010R\006active\022#\n\rinstance_type\030\020 \001("
-  "\tR\014instanceType\022N\n\017workspaces_main\030\021 \003(\013"
-  "2%.pipelines.tekton.v1alpha1.WorkspacesR"
-  "\016workspacesMain\032>\n\020IntegrationEntry\022\020\n\003k"
-  "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032"
-  "G\n\031EnvironmentVariablesEntry\022\020\n\003key\030\001 \001("
-  "\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rComm"
-  "andsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001"
-  "(\tR\005value:\0028\001\032:\n\014SecretsEntry\022\020\n\003key\030\001 \001"
-  "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\256\001\n#io"
-  ".cuemby.pipelines.tekton.v1alpha1B\013Tekto"
-  "nProtoP\001Z:github.com/cuemby/ccp-sdk/gen/"
-  "go/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031Pip"
-  "elines.Tekton.V1Alpha1\312\002\031Pipelines\\Tekto"
-  "n\\V1Alpha1b\006proto3"
+  "Array\022\035\n\nvalue_type\030\004 \001(\tR\tvalueType\"\242\001\n"
+  "\nTaskParams\022\035\n\nparam_name\030\001 \001(\tR\tparamNa"
+  "me\022(\n\020param_value_type\030\002 \001(\tR\016paramValue"
+  "Type\022\037\n\013param_value\030\003 \001(\tR\nparamValue\022*\n"
+  "\021param_value_array\030\004 \003(\tR\017paramValueArra"
+  "y\"H\n\nWorkspaces\022\022\n\004name\030\001 \001(\tR\004name\022\022\n\004m"
+  "ain\030\002 \001(\tR\004main\022\022\n\004type\030\003 \001(\tR\004type\"\313\002\n\004"
+  "Task\022\016\n\002id\030\001 \001(\tR\002id\022\033\n\ttask_name\030\002 \001(\tR"
+  "\010taskName\022\"\n\rtask_ref_name\030\003 \001(\tR\013taskRe"
+  "fName\022\033\n\ttask_kind\030\004 \001(\tR\010taskKind\022$\n\016ta"
+  "sk_run_after\030\005 \003(\tR\014taskRunAfter\022E\n\nwork"
+  "spaces\030\006 \003(\0132%.pipelines.tekton.v1alpha1"
+  ".WorkspacesR\nworkspaces\022F\n\013task_params\030\007"
+  " \003(\0132%.pipelines.tekton.v1alpha1.TaskPar"
+  "amsR\ntaskParams\022 \n\013description\030\010 \001(\tR\013de"
+  "scription\"\242\t\n\010Pipeline\022\016\n\002id\030\001 \001(\tR\002id\022\'"
+  "\n\017organization_id\030\002 \001(\rR\016organizationId\022"
+  "\035\n\nproject_id\030\003 \001(\rR\tprojectId\022$\n\016type_m"
+  "eta_kind\030\004 \001(\tR\014typeMetaKind\0221\n\025type_met"
+  "a_api_version\030\005 \001(\tR\022typeMetaApiVersion\022"
+  "(\n\020object_meta_name\030\006 \001(\tR\016objectMetaNam"
+  "e\0222\n\025object_meta_namespace\030\007 \001(\tR\023object"
+  "MetaNamespace\0229\n\006params\030\010 \003(\0132!.pipeline"
+  "s.tekton.v1alpha1.ParamsR\006params\0225\n\005task"
+  "s\030\t \003(\0132\037.pipelines.tekton.v1alpha1.Task"
+  "R\005tasks\022\037\n\013status_type\030\n \001(\tR\nstatusType"
+  "\022V\n\013integration\030\013 \003(\01324.pipelines.tekton"
+  ".v1alpha1.Pipeline.IntegrationEntryR\013int"
+  "egration\022r\n\025environment_variables\030\014 \003(\0132"
+  "=.pipelines.tekton.v1alpha1.Pipeline.Env"
+  "ironmentVariablesEntryR\024environmentVaria"
+  "bles\022M\n\010commands\030\r \003(\01321.pipelines.tekto"
+  "n.v1alpha1.Pipeline.CommandsEntryR\010comma"
+  "nds\022J\n\007secrets\030\016 \003(\01320.pipelines.tekton."
+  "v1alpha1.Pipeline.SecretsEntryR\007secrets\022"
+  "\026\n\006active\030\017 \001(\010R\006active\022#\n\rinstance_type"
+  "\030\020 \001(\tR\014instanceType\022N\n\017workspaces_main\030"
+  "\021 \003(\0132%.pipelines.tekton.v1alpha1.Worksp"
+  "acesR\016workspacesMain\032>\n\020IntegrationEntry"
+  "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value"
+  ":\0028\001\032G\n\031EnvironmentVariablesEntry\022\020\n\003key"
+  "\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n"
+  "\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005valu"
+  "e\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntry\022\020\n\003ke"
+  "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\256"
+  "\001\n#io.cuemby.pipelines.tekton.v1alpha1B\013"
+  "TektonProtoP\001Z:github.com/cuemby/ccp-sdk"
+  "/gen/go/pipelines/tekton/v1alpha1\242\002\003PPX\252"
+  "\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipelines\\"
+  "Tekton\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto = {
-  false, false, 2098, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
+  false, false, 2143, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
   &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once, nullptr, 0, 9,
   schemas, file_default_instances, TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto::offsets,
   file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_enum_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_service_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto,
@@ -683,7 +686,8 @@ class TaskParams::_Internal {
 
 TaskParams::TaskParams(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  param_value_array_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -691,7 +695,8 @@ TaskParams::TaskParams(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:pipelines.tekton.v1alpha1.TaskParams)
 }
 TaskParams::TaskParams(const TaskParams& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      param_value_array_(from.param_value_array_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   param_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_param_name().empty()) {
@@ -747,6 +752,7 @@ void TaskParams::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  param_value_array_.Clear();
   param_name_.ClearToEmpty();
   param_value_type_.ClearToEmpty();
   param_value_.ClearToEmpty();
@@ -784,6 +790,20 @@ const char* TaskParams::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.TaskParams.param_value"));
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated string param_value_array = 4 [json_name = "paramValueArray"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_param_value_array();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.TaskParams.param_value_array"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -845,6 +865,16 @@ failure:
         3, this->_internal_param_value(), target);
   }
 
+  // repeated string param_value_array = 4 [json_name = "paramValueArray"];
+  for (int i = 0, n = this->_internal_param_value_array_size(); i < n; i++) {
+    const auto& s = this->_internal_param_value_array(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.TaskParams.param_value_array");
+    target = stream->WriteString(4, s, target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -860,6 +890,14 @@ size_t TaskParams::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated string param_value_array = 4 [json_name = "paramValueArray"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(param_value_array_.size());
+  for (int i = 0, n = param_value_array_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      param_value_array_.Get(i));
+  }
 
   // string param_name = 1 [json_name = "paramName"];
   if (!this->_internal_param_name().empty()) {
@@ -910,6 +948,7 @@ void TaskParams::MergeFrom(const TaskParams& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  param_value_array_.MergeFrom(from.param_value_array_);
   if (!from._internal_param_name().empty()) {
     _internal_set_param_name(from._internal_param_name());
   }
@@ -936,6 +975,7 @@ bool TaskParams::IsInitialized() const {
 void TaskParams::InternalSwap(TaskParams* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  param_value_array_.InternalSwap(&other->param_value_array_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &param_name_, GetArenaForAllocation(),

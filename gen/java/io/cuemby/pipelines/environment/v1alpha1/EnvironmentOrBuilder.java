@@ -60,4 +60,16 @@ public interface EnvironmentOrBuilder extends
    */
   com.google.protobuf.ByteString
       getStatusTypeBytes();
+
+  /**
+   * <code>string internal_name = 7 [json_name = "internalName"];</code>
+   * @return The internalName.
+   */
+  java.lang.String getInternalName();
+  /**
+   * <code>string internal_name = 7 [json_name = "internalName"];</code>
+   * @return The bytes for internalName.
+   */
+  com.google.protobuf.ByteString
+      getInternalNameBytes();
 }

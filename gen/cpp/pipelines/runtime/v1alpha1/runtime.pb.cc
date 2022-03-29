@@ -63,12 +63,24 @@ struct Runtime_SecretsEntry_DoNotUseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Runtime_SecretsEntry_DoNotUseDefaultTypeInternal _Runtime_SecretsEntry_DoNotUse_default_instance_;
+constexpr Runtime_ExtraArgsEntry_DoNotUse::Runtime_ExtraArgsEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct Runtime_ExtraArgsEntry_DoNotUseDefaultTypeInternal {
+  constexpr Runtime_ExtraArgsEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~Runtime_ExtraArgsEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    Runtime_ExtraArgsEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Runtime_ExtraArgsEntry_DoNotUseDefaultTypeInternal _Runtime_ExtraArgsEntry_DoNotUse_default_instance_;
 constexpr Runtime::Runtime(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : integration_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , environment_variables_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , commands_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , secrets_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
+  , extra_args_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -101,7 +113,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RuntimeListDefaultTypeInternal 
 }  // namespace v1alpha1
 }  // namespace runtime
 }  // namespace pipelines
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[6];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[7];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto = nullptr;
 
@@ -142,6 +154,15 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime_SecretsEntry_DoNotUse, value_),
   0,
   1,
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -159,6 +180,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, environment_variables_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, commands_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, secrets_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, extra_args_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::RuntimeList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -171,8 +193,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 9, 16, sizeof(::pipelines::runtime::v1alpha1::Runtime_EnvironmentVariablesEntry_DoNotUse)},
   { 18, 25, sizeof(::pipelines::runtime::v1alpha1::Runtime_CommandsEntry_DoNotUse)},
   { 27, 34, sizeof(::pipelines::runtime::v1alpha1::Runtime_SecretsEntry_DoNotUse)},
-  { 36, -1, sizeof(::pipelines::runtime::v1alpha1::Runtime)},
-  { 53, -1, sizeof(::pipelines::runtime::v1alpha1::RuntimeList)},
+  { 36, 43, sizeof(::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse)},
+  { 45, -1, sizeof(::pipelines::runtime::v1alpha1::Runtime)},
+  { 63, -1, sizeof(::pipelines::runtime::v1alpha1::RuntimeList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -180,13 +203,14 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_Runtime_EnvironmentVariablesEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_Runtime_CommandsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_Runtime_SecretsEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_Runtime_ExtraArgsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_Runtime_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_RuntimeList_default_instance_),
 };
 
 const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n(pipelines/runtime/v1alpha1/runtime.pro"
-  "to\022\032pipelines.runtime.v1alpha1\"\332\006\n\007Runti"
+  "to\022\032pipelines.runtime.v1alpha1\"\353\007\n\007Runti"
   "me\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\034"
   "\n\tnamespace\030\003 \001(\tR\tnamespace\022#\n\rinstance"
   "_type\030\004 \001(\tR\014instanceType\022\035\n\nproject_id\030"
@@ -201,25 +225,29 @@ const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2e
   "\n\010commands\030\013 \003(\01321.pipelines.runtime.v1a"
   "lpha1.Runtime.CommandsEntryR\010commands\022J\n"
   "\007secrets\030\014 \003(\01320.pipelines.runtime.v1alp"
-  "ha1.Runtime.SecretsEntryR\007secrets\032>\n\020Int"
-  "egrationEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value"
-  "\030\002 \001(\tR\005value:\0028\001\032G\n\031EnvironmentVariable"
-  "sEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR"
-  "\005value:\0028\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\t"
-  "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032:\n\014Secre"
-  "tsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t"
-  "R\005value:\0028\001\"H\n\013RuntimeList\0229\n\005items\030\001 \003("
-  "\0132#.pipelines.runtime.v1alpha1.RuntimeR\005"
-  "itemsB\255\001\n$io.cuemby.pipelines.runtime.v1"
-  "alpha1B\014RuntimeProtoP\001Z5github.com/cuemb"
-  "y/ccp-runtime-service/runtimev1alpha1\242\002\003"
-  "PPX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipel"
-  "ines\\Runtime\\V1Alpha1b\006proto3"
+  "ha1.Runtime.SecretsEntryR\007secrets\022Q\n\next"
+  "ra_args\030\r \003(\01322.pipelines.runtime.v1alph"
+  "a1.Runtime.ExtraArgsEntryR\textraArgs\032>\n\020"
+  "IntegrationEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va"
+  "lue\030\002 \001(\tR\005value:\0028\001\032G\n\031EnvironmentVaria"
+  "blesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001"
+  "(\tR\005value:\0028\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 "
+  "\001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032:\n\014Se"
+  "cretsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 "
+  "\001(\tR\005value:\0028\001\032<\n\016ExtraArgsEntry\022\020\n\003key\030"
+  "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"H\n\013"
+  "RuntimeList\0229\n\005items\030\001 \003(\0132#.pipelines.r"
+  "untime.v1alpha1.RuntimeR\005itemsB\255\001\n$io.cu"
+  "emby.pipelines.runtime.v1alpha1B\014Runtime"
+  "ProtoP\001Z5github.com/cuemby/ccp-runtime-s"
+  "ervice/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines"
+  ".Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1"
+  "Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto = {
-  false, false, 1189, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, "pipelines/runtime/v1alpha1/runtime.proto", 
-  &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once, nullptr, 0, 6,
+  false, false, 1334, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, "pipelines/runtime/v1alpha1/runtime.proto", 
+  &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once, nullptr, 0, 7,
   schemas, file_default_instances, TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto::offsets,
   file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto,
 };
@@ -291,6 +319,20 @@ void Runtime_SecretsEntry_DoNotUse::MergeFrom(const Runtime_SecretsEntry_DoNotUs
 
 // ===================================================================
 
+Runtime_ExtraArgsEntry_DoNotUse::Runtime_ExtraArgsEntry_DoNotUse() {}
+Runtime_ExtraArgsEntry_DoNotUse::Runtime_ExtraArgsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void Runtime_ExtraArgsEntry_DoNotUse::MergeFrom(const Runtime_ExtraArgsEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata Runtime_ExtraArgsEntry_DoNotUse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_getter, &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once,
+      file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[4]);
+}
+
+// ===================================================================
+
 class Runtime::_Internal {
  public:
 };
@@ -301,7 +343,8 @@ Runtime::Runtime(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   integration_(arena),
   environment_variables_(arena),
   commands_(arena),
-  secrets_(arena) {
+  secrets_(arena),
+  extra_args_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -315,6 +358,7 @@ Runtime::Runtime(const Runtime& from)
   environment_variables_.MergeFrom(from.environment_variables_);
   commands_.MergeFrom(from.commands_);
   secrets_.MergeFrom(from.secrets_);
+  extra_args_.MergeFrom(from.extra_args_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
@@ -390,6 +434,7 @@ void Runtime::ArenaDtor(void* object) {
   _this->environment_variables_. ~MapField();
   _this->commands_. ~MapField();
   _this->secrets_. ~MapField();
+  _this->extra_args_. ~MapField();
 }
 inline void Runtime::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
   if (arena != nullptr) {
@@ -410,6 +455,7 @@ void Runtime::Clear() {
   environment_variables_.Clear();
   commands_.Clear();
   secrets_.Clear();
+  extra_args_.Clear();
   id_.ClearToEmpty();
   name_.ClearToEmpty();
   namespace__.ClearToEmpty();
@@ -543,6 +589,18 @@ const char* Runtime::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // map<string, string> extra_args = 13 [json_name = "extraArgs"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&extra_args_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<106>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -834,6 +892,52 @@ failure:
     }
   }
 
+  // map<string, string> extra_args = 13 [json_name = "extraArgs"];
+  if (!this->_internal_extra_args().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        (void)p;
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntry.key");
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntry.value");
+      }
+    };
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_extra_args().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_extra_args().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_extra_args().begin();
+          it != this->_internal_extra_args().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = Runtime_ExtraArgsEntry_DoNotUse::Funcs::InternalSerialize(13, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_extra_args().begin();
+          it != this->_internal_extra_args().end(); ++it) {
+        target = Runtime_ExtraArgsEntry_DoNotUse::Funcs::InternalSerialize(13, it->first, it->second, target, stream);
+        Utf8Check::Check(&(*it));
+      }
+    }
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -884,6 +988,15 @@ size_t Runtime::ByteSizeLong() const {
       it = this->_internal_secrets().begin();
       it != this->_internal_secrets().end(); ++it) {
     total_size += Runtime_SecretsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<string, string> extra_args = 13 [json_name = "extraArgs"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_extra_args_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      it = this->_internal_extra_args().begin();
+      it != this->_internal_extra_args().end(); ++it) {
+    total_size += Runtime_ExtraArgsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
   // string id = 1 [json_name = "id"];
@@ -974,6 +1087,7 @@ void Runtime::MergeFrom(const Runtime& from) {
   environment_variables_.MergeFrom(from.environment_variables_);
   commands_.MergeFrom(from.commands_);
   secrets_.MergeFrom(from.secrets_);
+  extra_args_.MergeFrom(from.extra_args_);
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
@@ -1019,6 +1133,7 @@ void Runtime::InternalSwap(Runtime* other) {
   environment_variables_.InternalSwap(&other->environment_variables_);
   commands_.InternalSwap(&other->commands_);
   secrets_.InternalSwap(&other->secrets_);
+  extra_args_.InternalSwap(&other->extra_args_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),
@@ -1060,7 +1175,7 @@ void Runtime::InternalSwap(Runtime* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Runtime::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_getter, &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once,
-      file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[4]);
+      file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[5]);
 }
 
 // ===================================================================
@@ -1250,7 +1365,7 @@ void RuntimeList::InternalSwap(RuntimeList* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RuntimeList::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_getter, &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once,
-      file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[5]);
+      file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[6]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -1269,6 +1384,9 @@ template<> PROTOBUF_NOINLINE ::pipelines::runtime::v1alpha1::Runtime_CommandsEnt
 }
 template<> PROTOBUF_NOINLINE ::pipelines::runtime::v1alpha1::Runtime_SecretsEntry_DoNotUse* Arena::CreateMaybeMessage< ::pipelines::runtime::v1alpha1::Runtime_SecretsEntry_DoNotUse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::pipelines::runtime::v1alpha1::Runtime_SecretsEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse* Arena::CreateMaybeMessage< ::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::pipelines::runtime::v1alpha1::Runtime* Arena::CreateMaybeMessage< ::pipelines::runtime::v1alpha1::Runtime >(Arena* arena) {
   return Arena::CreateMessageInternal< ::pipelines::runtime::v1alpha1::Runtime >(arena);

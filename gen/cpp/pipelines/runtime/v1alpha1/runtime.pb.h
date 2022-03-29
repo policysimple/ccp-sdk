@@ -49,7 +49,7 @@ struct TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -71,6 +71,9 @@ extern Runtime_CommandsEntry_DoNotUseDefaultTypeInternal _Runtime_CommandsEntry_
 class Runtime_EnvironmentVariablesEntry_DoNotUse;
 struct Runtime_EnvironmentVariablesEntry_DoNotUseDefaultTypeInternal;
 extern Runtime_EnvironmentVariablesEntry_DoNotUseDefaultTypeInternal _Runtime_EnvironmentVariablesEntry_DoNotUse_default_instance_;
+class Runtime_ExtraArgsEntry_DoNotUse;
+struct Runtime_ExtraArgsEntry_DoNotUseDefaultTypeInternal;
+extern Runtime_ExtraArgsEntry_DoNotUseDefaultTypeInternal _Runtime_ExtraArgsEntry_DoNotUse_default_instance_;
 class Runtime_IntegrationEntry_DoNotUse;
 struct Runtime_IntegrationEntry_DoNotUseDefaultTypeInternal;
 extern Runtime_IntegrationEntry_DoNotUseDefaultTypeInternal _Runtime_IntegrationEntry_DoNotUse_default_instance_;
@@ -85,6 +88,7 @@ template<> ::pipelines::runtime::v1alpha1::Runtime* Arena::CreateMaybeMessage<::
 template<> ::pipelines::runtime::v1alpha1::RuntimeList* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::RuntimeList>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_CommandsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_CommandsEntry_DoNotUse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_EnvironmentVariablesEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_EnvironmentVariablesEntry_DoNotUse>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_IntegrationEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_IntegrationEntry_DoNotUse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_SecretsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_SecretsEntry_DoNotUse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -202,6 +206,33 @@ public:
 
 // -------------------------------------------------------------------
 
+class Runtime_ExtraArgsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_ExtraArgsEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_ExtraArgsEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  Runtime_ExtraArgsEntry_DoNotUse();
+  explicit constexpr Runtime_ExtraArgsEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit Runtime_ExtraArgsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Runtime_ExtraArgsEntry_DoNotUse& other);
+  static const Runtime_ExtraArgsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Runtime_ExtraArgsEntry_DoNotUse*>(&_Runtime_ExtraArgsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
 class Runtime final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.Runtime) */ {
  public:
@@ -246,7 +277,7 @@ class Runtime final :
                &_Runtime_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(Runtime& a, Runtime& b) {
     a.Swap(&b);
@@ -322,6 +353,7 @@ class Runtime final :
     kEnvironmentVariablesFieldNumber = 10,
     kCommandsFieldNumber = 11,
     kSecretsFieldNumber = 12,
+    kExtraArgsFieldNumber = 13,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kNamespaceFieldNumber = 3,
@@ -398,6 +430,23 @@ class Runtime final :
       secrets() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_secrets();
+
+  // map<string, string> extra_args = 13 [json_name = "extraArgs"];
+  int extra_args_size() const;
+  private:
+  int _internal_extra_args_size() const;
+  public:
+  void clear_extra_args();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_extra_args() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_extra_args();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      extra_args() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_extra_args();
 
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -533,6 +582,11 @@ class Runtime final :
       std::string, std::string,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> secrets_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      Runtime_ExtraArgsEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> extra_args_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
@@ -590,7 +644,7 @@ class RuntimeList final :
                &_RuntimeList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(RuntimeList& a, RuntimeList& b) {
     a.Swap(&b);
@@ -701,6 +755,8 @@ class RuntimeList final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -1169,6 +1225,35 @@ Runtime::mutable_secrets() {
   return _internal_mutable_secrets();
 }
 
+// map<string, string> extra_args = 13 [json_name = "extraArgs"];
+inline int Runtime::_internal_extra_args_size() const {
+  return extra_args_.size();
+}
+inline int Runtime::extra_args_size() const {
+  return _internal_extra_args_size();
+}
+inline void Runtime::clear_extra_args() {
+  extra_args_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Runtime::_internal_extra_args() const {
+  return extra_args_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Runtime::extra_args() const {
+  // @@protoc_insertion_point(field_map:pipelines.runtime.v1alpha1.Runtime.extra_args)
+  return _internal_extra_args();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Runtime::_internal_mutable_extra_args() {
+  return extra_args_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Runtime::mutable_extra_args() {
+  // @@protoc_insertion_point(field_mutable_map:pipelines.runtime.v1alpha1.Runtime.extra_args)
+  return _internal_mutable_extra_args();
+}
+
 // -------------------------------------------------------------------
 
 // RuntimeList
@@ -1216,6 +1301,8 @@ RuntimeList::items() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
