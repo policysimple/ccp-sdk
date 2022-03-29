@@ -58,6 +58,7 @@ func CreateRuntime(in *runtimepkgv1.CreateRuntimeRequest) (response *runtimepkgv
 			EnvironmentVariables: in.Runtime.EnvironmentVariables,
 			Commands:             in.Runtime.Commands,
 			Secrets:              in.Runtime.Secrets,
+			ExtraArgs:            in.Runtime.ExtraArgs,
 		},
 	})
 

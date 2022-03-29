@@ -232,4 +232,38 @@ public interface RuntimeOrBuilder extends
 
   java.lang.String getSecretsOrThrow(
       java.lang.String key);
+
+  /**
+   * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+   */
+  int getExtraArgsCount();
+  /**
+   * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+   */
+  boolean containsExtraArgs(
+      java.lang.String key);
+  /**
+   * Use {@link #getExtraArgsMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getExtraArgs();
+  /**
+   * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getExtraArgsMap();
+  /**
+   * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+   */
+
+  java.lang.String getExtraArgsOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+   */
+
+  java.lang.String getExtraArgsOrThrow(
+      java.lang.String key);
 }

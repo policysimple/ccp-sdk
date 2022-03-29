@@ -52,7 +52,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.pipelines.tekton.v1alpha1.TaskParams = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.pipelines.tekton.v1alpha1.TaskParams.repeatedFields_, null);
 };
 goog.inherits(proto.pipelines.tekton.v1alpha1.TaskParams, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -372,6 +372,13 @@ proto.pipelines.tekton.v1alpha1.Params.prototype.setValueType = function(value) 
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.pipelines.tekton.v1alpha1.TaskParams.repeatedFields_ = [4];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -405,7 +412,8 @@ proto.pipelines.tekton.v1alpha1.TaskParams.toObject = function(includeInstance, 
   var f, obj = {
     paramName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     paramValueType: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    paramValue: jspb.Message.getFieldWithDefault(msg, 3, "")
+    paramValue: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    paramValueArrayList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -454,6 +462,10 @@ proto.pipelines.tekton.v1alpha1.TaskParams.deserializeBinaryFromReader = functio
       var value = /** @type {string} */ (reader.readString());
       msg.setParamValue(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addParamValueArray(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -501,6 +513,13 @@ proto.pipelines.tekton.v1alpha1.TaskParams.serializeBinaryToWriter = function(me
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getParamValueArrayList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      4,
       f
     );
   }
@@ -558,6 +577,43 @@ proto.pipelines.tekton.v1alpha1.TaskParams.prototype.getParamValue = function() 
  */
 proto.pipelines.tekton.v1alpha1.TaskParams.prototype.setParamValue = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * repeated string param_value_array = 4;
+ * @return {!Array<string>}
+ */
+proto.pipelines.tekton.v1alpha1.TaskParams.prototype.getParamValueArrayList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.pipelines.tekton.v1alpha1.TaskParams} returns this
+ */
+proto.pipelines.tekton.v1alpha1.TaskParams.prototype.setParamValueArrayList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.pipelines.tekton.v1alpha1.TaskParams} returns this
+ */
+proto.pipelines.tekton.v1alpha1.TaskParams.prototype.addParamValueArray = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.pipelines.tekton.v1alpha1.TaskParams} returns this
+ */
+proto.pipelines.tekton.v1alpha1.TaskParams.prototype.clearParamValueArrayList = function() {
+  return this.setParamValueArrayList([]);
 };
 
 

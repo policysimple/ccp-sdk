@@ -74,7 +74,8 @@ proto.pipelines.environment.v1alpha1.Environment.toObject = function(includeInst
     projectId: jspb.Message.getFieldWithDefault(msg, 3, 0),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     active: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    statusType: jspb.Message.getFieldWithDefault(msg, 6, "")
+    statusType: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    internalName: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -134,6 +135,10 @@ proto.pipelines.environment.v1alpha1.Environment.deserializeBinaryFromReader = f
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setStatusType(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInternalName(value);
       break;
     default:
       reader.skipField();
@@ -203,6 +208,13 @@ proto.pipelines.environment.v1alpha1.Environment.serializeBinaryToWriter = funct
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getInternalName();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -314,6 +326,24 @@ proto.pipelines.environment.v1alpha1.Environment.prototype.getStatusType = funct
  */
 proto.pipelines.environment.v1alpha1.Environment.prototype.setStatusType = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string internal_name = 7;
+ * @return {string}
+ */
+proto.pipelines.environment.v1alpha1.Environment.prototype.getInternalName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.environment.v1alpha1.Environment} returns this
+ */
+proto.pipelines.environment.v1alpha1.Environment.prototype.setInternalName = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

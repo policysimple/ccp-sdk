@@ -159,6 +159,19 @@ private static final long serialVersionUID = 0L;
                 secrets__.getKey(), secrets__.getValue());
             break;
           }
+          case 106: {
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              extraArgs_ = com.google.protobuf.MapField.newMapField(
+                  ExtraArgsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000010;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+            extraArgs__ = input.readMessage(
+                ExtraArgsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            extraArgs_.getMutableMap().put(
+                extraArgs__.getKey(), extraArgs__.getValue());
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -196,6 +209,8 @@ private static final long serialVersionUID = 0L;
         return internalGetCommands();
       case 12:
         return internalGetSecrets();
+      case 13:
+        return internalGetExtraArgs();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -810,6 +825,87 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int EXTRA_ARGS_FIELD_NUMBER = 13;
+  private static final class ExtraArgsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_Runtime_ExtraArgsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> extraArgs_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetExtraArgs() {
+    if (extraArgs_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ExtraArgsDefaultEntryHolder.defaultEntry);
+    }
+    return extraArgs_;
+  }
+
+  public int getExtraArgsCount() {
+    return internalGetExtraArgs().getMap().size();
+  }
+  /**
+   * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+   */
+
+  @java.lang.Override
+  public boolean containsExtraArgs(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetExtraArgs().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getExtraArgsMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getExtraArgs() {
+    return getExtraArgsMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, java.lang.String> getExtraArgsMap() {
+    return internalGetExtraArgs().getMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getExtraArgsOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetExtraArgs().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getExtraArgsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetExtraArgs().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -872,6 +968,12 @@ private static final long serialVersionUID = 0L;
         internalGetSecrets(),
         SecretsDefaultEntryHolder.defaultEntry,
         12);
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetExtraArgs(),
+        ExtraArgsDefaultEntryHolder.defaultEntry,
+        13);
     unknownFields.writeTo(output);
   }
 
@@ -946,6 +1048,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, secrets__);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetExtraArgs().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      extraArgs__ = ExtraArgsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, extraArgs__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -985,6 +1097,8 @@ private static final long serialVersionUID = 0L;
         other.internalGetCommands())) return false;
     if (!internalGetSecrets().equals(
         other.internalGetSecrets())) return false;
+    if (!internalGetExtraArgs().equals(
+        other.internalGetExtraArgs())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1027,6 +1141,10 @@ private static final long serialVersionUID = 0L;
     if (!internalGetSecrets().getMap().isEmpty()) {
       hash = (37 * hash) + SECRETS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetSecrets().hashCode();
+    }
+    if (!internalGetExtraArgs().getMap().isEmpty()) {
+      hash = (37 * hash) + EXTRA_ARGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetExtraArgs().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1151,6 +1269,8 @@ private static final long serialVersionUID = 0L;
           return internalGetCommands();
         case 12:
           return internalGetSecrets();
+        case 13:
+          return internalGetExtraArgs();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1168,6 +1288,8 @@ private static final long serialVersionUID = 0L;
           return internalGetMutableCommands();
         case 12:
           return internalGetMutableSecrets();
+        case 13:
+          return internalGetMutableExtraArgs();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1219,6 +1341,7 @@ private static final long serialVersionUID = 0L;
       internalGetMutableEnvironmentVariables().clear();
       internalGetMutableCommands().clear();
       internalGetMutableSecrets().clear();
+      internalGetMutableExtraArgs().clear();
       return this;
     }
 
@@ -1262,6 +1385,8 @@ private static final long serialVersionUID = 0L;
       result.commands_.makeImmutable();
       result.secrets_ = internalGetSecrets();
       result.secrets_.makeImmutable();
+      result.extraArgs_ = internalGetExtraArgs();
+      result.extraArgs_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -1349,6 +1474,8 @@ private static final long serialVersionUID = 0L;
           other.internalGetCommands());
       internalGetMutableSecrets().mergeFrom(
           other.internalGetSecrets());
+      internalGetMutableExtraArgs().mergeFrom(
+          other.internalGetExtraArgs());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2450,6 +2577,134 @@ private static final long serialVersionUID = 0L;
     public Builder putAllSecrets(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSecrets().getMutableMap()
+          .putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> extraArgs_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExtraArgs() {
+      if (extraArgs_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtraArgsDefaultEntryHolder.defaultEntry);
+      }
+      return extraArgs_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMutableExtraArgs() {
+      onChanged();;
+      if (extraArgs_ == null) {
+        extraArgs_ = com.google.protobuf.MapField.newMapField(
+            ExtraArgsDefaultEntryHolder.defaultEntry);
+      }
+      if (!extraArgs_.isMutable()) {
+        extraArgs_ = extraArgs_.copy();
+      }
+      return extraArgs_;
+    }
+
+    public int getExtraArgsCount() {
+      return internalGetExtraArgs().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsExtraArgs(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExtraArgs().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtraArgsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExtraArgs() {
+      return getExtraArgsMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtraArgsMap() {
+      return internalGetExtraArgs().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getExtraArgsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExtraArgs().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getExtraArgsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExtraArgs().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearExtraArgs() {
+      internalGetMutableExtraArgs().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+     */
+
+    public Builder removeExtraArgs(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableExtraArgs().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+    getMutableExtraArgs() {
+      return internalGetMutableExtraArgs().getMutableMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+     */
+    public Builder putExtraArgs(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableExtraArgs().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
+     */
+
+    public Builder putAllExtraArgs(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableExtraArgs().getMutableMap()
           .putAll(values);
       return this;
     }

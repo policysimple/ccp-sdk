@@ -63,6 +63,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> secrets = 12 [json_name = "secrets"];</code>
      */
     private $secrets;
+    /**
+     * Generated from protobuf field <code>map<string, string> extra_args = 13 [json_name = "extraArgs"];</code>
+     */
+    private $extra_args;
 
     /**
      * Constructor.
@@ -82,6 +86,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $environment_variables
      *     @type array|\Google\Protobuf\Internal\MapField $commands
      *     @type array|\Google\Protobuf\Internal\MapField $secrets
+     *     @type array|\Google\Protobuf\Internal\MapField $extra_args
      * }
      */
     public function __construct($data = NULL) {
@@ -349,6 +354,28 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->secrets = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> extra_args = 13 [json_name = "extraArgs"];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getExtraArgs()
+    {
+        return $this->extra_args;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> extra_args = 13 [json_name = "extraArgs"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setExtraArgs($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->extra_args = $arr;
 
         return $this;
     }
