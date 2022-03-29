@@ -16,7 +16,7 @@ class Tekton
         }
         $pool->internalAddGeneratedFile(
             '
-²
+ß
 &pipelines/tekton/v1alpha1/tekton.protopipelines.tekton.v1alpha1"
 Params
 name (	Rname!
@@ -24,14 +24,15 @@ class Tekton
 value_array (	R
 valueArray
 
-value_type (	R	valueType"v
+value_type (	R	valueType"¢
 
 TaskParams
 
 param_name (	R	paramName(
 param_value_type (	RparamValueType
 param_value (	R
-paramValue"H
+paramValue*
+param_value_array (	RparamValueArray"H
 
 Workspaces
 name (	Rname

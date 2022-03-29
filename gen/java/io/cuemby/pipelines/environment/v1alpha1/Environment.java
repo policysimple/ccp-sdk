@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     name_ = "";
     statusType_ = "";
+    internalName_ = "";
   }
 
   @java.lang.Override
@@ -86,6 +87,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             statusType_ = s;
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            internalName_ = s;
             break;
           }
           default: {
@@ -267,6 +274,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int INTERNAL_NAME_FIELD_NUMBER = 7;
+  private volatile java.lang.Object internalName_;
+  /**
+   * <code>string internal_name = 7 [json_name = "internalName"];</code>
+   * @return The internalName.
+   */
+  @java.lang.Override
+  public java.lang.String getInternalName() {
+    java.lang.Object ref = internalName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      internalName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string internal_name = 7 [json_name = "internalName"];</code>
+   * @return The bytes for internalName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInternalNameBytes() {
+    java.lang.Object ref = internalName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      internalName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -299,6 +344,9 @@ private static final long serialVersionUID = 0L;
     if (!getStatusTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, statusType_);
     }
+    if (!getInternalNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, internalName_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -329,6 +377,9 @@ private static final long serialVersionUID = 0L;
     if (!getStatusTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, statusType_);
     }
+    if (!getInternalNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, internalName_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -356,6 +407,8 @@ private static final long serialVersionUID = 0L;
         != other.getActive()) return false;
     if (!getStatusType()
         .equals(other.getStatusType())) return false;
+    if (!getInternalName()
+        .equals(other.getInternalName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -380,6 +433,8 @@ private static final long serialVersionUID = 0L;
         getActive());
     hash = (37 * hash) + STATUS_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getStatusType().hashCode();
+    hash = (37 * hash) + INTERNAL_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getInternalName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -529,6 +584,8 @@ private static final long serialVersionUID = 0L;
 
       statusType_ = "";
 
+      internalName_ = "";
+
       return this;
     }
 
@@ -561,6 +618,7 @@ private static final long serialVersionUID = 0L;
       result.name_ = name_;
       result.active_ = active_;
       result.statusType_ = statusType_;
+      result.internalName_ = internalName_;
       onBuilt();
       return result;
     }
@@ -628,6 +686,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getStatusType().isEmpty()) {
         statusType_ = other.statusType_;
+        onChanged();
+      }
+      if (!other.getInternalName().isEmpty()) {
+        internalName_ = other.internalName_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -976,6 +1038,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       statusType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object internalName_ = "";
+    /**
+     * <code>string internal_name = 7 [json_name = "internalName"];</code>
+     * @return The internalName.
+     */
+    public java.lang.String getInternalName() {
+      java.lang.Object ref = internalName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        internalName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string internal_name = 7 [json_name = "internalName"];</code>
+     * @return The bytes for internalName.
+     */
+    public com.google.protobuf.ByteString
+        getInternalNameBytes() {
+      java.lang.Object ref = internalName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        internalName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string internal_name = 7 [json_name = "internalName"];</code>
+     * @param value The internalName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      internalName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string internal_name = 7 [json_name = "internalName"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInternalName() {
+      
+      internalName_ = getDefaultInstance().getInternalName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string internal_name = 7 [json_name = "internalName"];</code>
+     * @param value The bytes for internalName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      internalName_ = value;
       onChanged();
       return this;
     }

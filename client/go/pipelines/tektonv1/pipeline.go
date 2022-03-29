@@ -45,9 +45,10 @@ type ParamsStruct struct {
 }
 
 type TaskParamsStruct struct {
-	ParamName      string
-	ParamValueType string
-	ParamValue     string
+	ParamName       string
+	ParamValueType  string
+	ParamValue      string
+	ParamValueArray []string
 }
 
 type WorkspaceStruct struct {
@@ -68,7 +69,7 @@ type TaskStruct struct {
 }
 
 func CreateTektonPipeline(
-	projectId uint32, name string, namespace string, instanceType string,
+	organizationId uint32, projectId uint32, name string, namespace string, instanceType string,
 	integration, environmentVariables, commands, secrets map[string]string,
 	workspacesMain []WorkspaceStruct, params []ParamsStruct, tasks []TaskStruct, userId string,
 ) (response *tektonPipelinepkgv1.CreateTektonPipelineResponse, err error) {
@@ -123,9 +124,10 @@ func CreateTektonPipeline(
 		var arrayWorkspaces []*tektonPipelinepkgv1.Workspaces
 		for _, itemDetail := range item.TaskParams {
 			arrayTaskParameters = append(arrayTaskParameters, &tektonPipelinepkgv1.TaskParams{
-				ParamName:      itemDetail.ParamName,
-				ParamValueType: itemDetail.ParamValueType,
-				ParamValue:     itemDetail.ParamValue,
+				ParamName:       itemDetail.ParamName,
+				ParamValueType:  itemDetail.ParamValueType,
+				ParamValue:      itemDetail.ParamValue,
+				ParamValueArray: itemDetail.ParamValueArray,
 			})
 		}
 

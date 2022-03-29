@@ -189,6 +189,7 @@ class Environment final :
     kIdFieldNumber = 1,
     kNameFieldNumber = 4,
     kStatusTypeFieldNumber = 6,
+    kInternalNameFieldNumber = 7,
     kOrganizationIdFieldNumber = 2,
     kProjectIdFieldNumber = 3,
     kActiveFieldNumber = 5,
@@ -235,6 +236,20 @@ class Environment final :
   std::string* _internal_mutable_status_type();
   public:
 
+  // string internal_name = 7 [json_name = "internalName"];
+  void clear_internal_name();
+  const std::string& internal_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_internal_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_internal_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_internal_name();
+  void set_allocated_internal_name(std::string* internal_name);
+  private:
+  const std::string& _internal_internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_internal_name(const std::string& value);
+  std::string* _internal_mutable_internal_name();
+  public:
+
   // uint32 organization_id = 2 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
@@ -272,6 +287,7 @@ class Environment final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_type_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr internal_name_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   bool active_;
@@ -485,6 +501,52 @@ inline void Environment::set_allocated_status_type(std::string* status_type) {
   status_type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status_type,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.Environment.status_type)
+}
+
+// string internal_name = 7 [json_name = "internalName"];
+inline void Environment::clear_internal_name() {
+  internal_name_.ClearToEmpty();
+}
+inline const std::string& Environment::internal_name() const {
+  // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.Environment.internal_name)
+  return _internal_internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Environment::set_internal_name(ArgT0&& arg0, ArgT... args) {
+ 
+ internal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.environment.v1alpha1.Environment.internal_name)
+}
+inline std::string* Environment::mutable_internal_name() {
+  std::string* _s = _internal_mutable_internal_name();
+  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.Environment.internal_name)
+  return _s;
+}
+inline const std::string& Environment::_internal_internal_name() const {
+  return internal_name_.Get();
+}
+inline void Environment::_internal_set_internal_name(const std::string& value) {
+  
+  internal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Environment::_internal_mutable_internal_name() {
+  
+  return internal_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Environment::release_internal_name() {
+  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.Environment.internal_name)
+  return internal_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Environment::set_allocated_internal_name(std::string* internal_name) {
+  if (internal_name != nullptr) {
+    
+  } else {
+    
+  }
+  internal_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), internal_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.Environment.internal_name)
 }
 
 #ifdef __GNUC__

@@ -18,4 +18,5 @@ message Environment {
     string name = 4;
     bool active = 5;
     string status_type= 6;
+    string internal_name = 7;
 }

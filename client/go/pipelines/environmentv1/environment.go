@@ -47,8 +47,9 @@ func CreateEnvironment(organizationId uint32, projectId uint32, name string, use
 
 	response, err = client.CreateEnvironment(ctx, &environmentpkgv1.CreateEnvironmentRequest{
 		Environment: &environmentpkgv1.Environment{
-			ProjectId: projectId,
-			Name:      name,
+			OrganizationId: organizationId,
+			ProjectId:      projectId,
+			Name:           name,
 		},
 		UserId: userId,
 	})

@@ -25,6 +25,10 @@ class TaskParams extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string param_value = 3 [json_name = "paramValue"];</code>
      */
     protected $param_value = '';
+    /**
+     * Generated from protobuf field <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+     */
+    private $param_value_array;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class TaskParams extends \Google\Protobuf\Internal\Message
      *     @type string $param_name
      *     @type string $param_value_type
      *     @type string $param_value
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $param_value_array
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class TaskParams extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->param_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getParamValueArray()
+    {
+        return $this->param_value_array;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setParamValueArray($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->param_value_array = $arr;
 
         return $this;
     }

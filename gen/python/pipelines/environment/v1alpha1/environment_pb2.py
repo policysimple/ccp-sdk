@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n(io.cuemby.pipelines.environment.v1alpha1B\020EnvironmentProtoP\001Z?github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1\242\002\003PPX\252\002\036Pipelines.Environment.V1Alpha1\312\002\036Pipelines\\Environment\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0pipelines/environment/v1alpha1/environment.proto\x12\x1epipelines.environment.v1alpha1\"\xb2\x01\n\x0b\x45nvironment\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12\x12\n\x04name\x18\x04 \x01(\tR\x04name\x12\x16\n\x06\x61\x63tive\x18\x05 \x01(\x08R\x06\x61\x63tive\x12\x1f\n\x0bstatus_type\x18\x06 \x01(\tR\nstatusTypeB\xc7\x01\n(io.cuemby.pipelines.environment.v1alpha1B\x10\x45nvironmentProtoP\x01Z?github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1ePipelines.Environment.V1Alpha1\xca\x02\x1ePipelines\\Environment\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n0pipelines/environment/v1alpha1/environment.proto\x12\x1epipelines.environment.v1alpha1\"\xd7\x01\n\x0b\x45nvironment\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12\x12\n\x04name\x18\x04 \x01(\tR\x04name\x12\x16\n\x06\x61\x63tive\x18\x05 \x01(\x08R\x06\x61\x63tive\x12\x1f\n\x0bstatus_type\x18\x06 \x01(\tR\nstatusType\x12#\n\rinternal_name\x18\x07 \x01(\tR\x0cinternalNameB\xc7\x01\n(io.cuemby.pipelines.environment.v1alpha1B\x10\x45nvironmentProtoP\x01Z?github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1ePipelines.Environment.V1Alpha1\xca\x02\x1ePipelines\\Environment\\V1Alpha1b\x06proto3'
 )
 
 
@@ -75,6 +75,13 @@ _ENVIRONMENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='statusType', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='internal_name', full_name='pipelines.environment.v1alpha1.Environment.internal_name', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='internalName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -88,7 +95,7 @@ _ENVIRONMENT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=85,
-  serialized_end=263,
+  serialized_end=300,
 )
 
 DESCRIPTOR.message_types_by_name['Environment'] = _ENVIRONMENT

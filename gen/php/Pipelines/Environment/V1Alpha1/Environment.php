@@ -39,6 +39,10 @@ class Environment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string status_type = 6 [json_name = "statusType"];</code>
      */
     protected $status_type = '';
+    /**
+     * Generated from protobuf field <code>string internal_name = 7 [json_name = "internalName"];</code>
+     */
+    protected $internal_name = '';
 
     /**
      * Constructor.
@@ -52,6 +56,7 @@ class Environment extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type bool $active
      *     @type string $status_type
+     *     @type string $internal_name
      * }
      */
     public function __construct($data = NULL) {
@@ -187,6 +192,28 @@ class Environment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->status_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string internal_name = 7 [json_name = "internalName"];</code>
+     * @return string
+     */
+    public function getInternalName()
+    {
+        return $this->internal_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string internal_name = 7 [json_name = "internalName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInternalName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->internal_name = $var;
 
         return $this;
     }

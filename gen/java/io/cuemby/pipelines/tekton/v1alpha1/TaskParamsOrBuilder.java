@@ -42,4 +42,29 @@ public interface TaskParamsOrBuilder extends
    */
   com.google.protobuf.ByteString
       getParamValueBytes();
+
+  /**
+   * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+   * @return A list containing the paramValueArray.
+   */
+  java.util.List<java.lang.String>
+      getParamValueArrayList();
+  /**
+   * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+   * @return The count of paramValueArray.
+   */
+  int getParamValueArrayCount();
+  /**
+   * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+   * @param index The index of the element to return.
+   * @return The paramValueArray at the given index.
+   */
+  java.lang.String getParamValueArray(int index);
+  /**
+   * <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the paramValueArray at the given index.
+   */
+  com.google.protobuf.ByteString
+      getParamValueArrayBytes(int index);
 }

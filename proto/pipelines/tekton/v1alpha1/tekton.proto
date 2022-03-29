@@ -21,6 +21,7 @@ message TaskParams {
     string param_name = 1;
     string param_value_type = 2;
     string param_value = 3;
+    repeated string param_value_array = 4;
 }
 
 message Workspaces {

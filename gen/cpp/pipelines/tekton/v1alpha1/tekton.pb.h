@@ -423,10 +423,35 @@ class TaskParams final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kParamValueArrayFieldNumber = 4,
     kParamNameFieldNumber = 1,
     kParamValueTypeFieldNumber = 2,
     kParamValueFieldNumber = 3,
   };
+  // repeated string param_value_array = 4 [json_name = "paramValueArray"];
+  int param_value_array_size() const;
+  private:
+  int _internal_param_value_array_size() const;
+  public:
+  void clear_param_value_array();
+  const std::string& param_value_array(int index) const;
+  std::string* mutable_param_value_array(int index);
+  void set_param_value_array(int index, const std::string& value);
+  void set_param_value_array(int index, std::string&& value);
+  void set_param_value_array(int index, const char* value);
+  void set_param_value_array(int index, const char* value, size_t size);
+  std::string* add_param_value_array();
+  void add_param_value_array(const std::string& value);
+  void add_param_value_array(std::string&& value);
+  void add_param_value_array(const char* value);
+  void add_param_value_array(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& param_value_array() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_param_value_array();
+  private:
+  const std::string& _internal_param_value_array(int index) const;
+  std::string* _internal_add_param_value_array();
+  public:
+
   // string param_name = 1 [json_name = "paramName"];
   void clear_param_name();
   const std::string& param_name() const;
@@ -476,6 +501,7 @@ class TaskParams final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> param_value_array_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr param_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr param_value_type_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr param_value_;
@@ -1830,6 +1856,81 @@ inline void TaskParams::set_allocated_param_value(std::string* param_value) {
   param_value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), param_value,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.TaskParams.param_value)
+}
+
+// repeated string param_value_array = 4 [json_name = "paramValueArray"];
+inline int TaskParams::_internal_param_value_array_size() const {
+  return param_value_array_.size();
+}
+inline int TaskParams::param_value_array_size() const {
+  return _internal_param_value_array_size();
+}
+inline void TaskParams::clear_param_value_array() {
+  param_value_array_.Clear();
+}
+inline std::string* TaskParams::add_param_value_array() {
+  std::string* _s = _internal_add_param_value_array();
+  // @@protoc_insertion_point(field_add_mutable:pipelines.tekton.v1alpha1.TaskParams.param_value_array)
+  return _s;
+}
+inline const std::string& TaskParams::_internal_param_value_array(int index) const {
+  return param_value_array_.Get(index);
+}
+inline const std::string& TaskParams::param_value_array(int index) const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskParams.param_value_array)
+  return _internal_param_value_array(index);
+}
+inline std::string* TaskParams::mutable_param_value_array(int index) {
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskParams.param_value_array)
+  return param_value_array_.Mutable(index);
+}
+inline void TaskParams::set_param_value_array(int index, const std::string& value) {
+  param_value_array_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskParams.param_value_array)
+}
+inline void TaskParams::set_param_value_array(int index, std::string&& value) {
+  param_value_array_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskParams.param_value_array)
+}
+inline void TaskParams::set_param_value_array(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  param_value_array_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:pipelines.tekton.v1alpha1.TaskParams.param_value_array)
+}
+inline void TaskParams::set_param_value_array(int index, const char* value, size_t size) {
+  param_value_array_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:pipelines.tekton.v1alpha1.TaskParams.param_value_array)
+}
+inline std::string* TaskParams::_internal_add_param_value_array() {
+  return param_value_array_.Add();
+}
+inline void TaskParams::add_param_value_array(const std::string& value) {
+  param_value_array_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.TaskParams.param_value_array)
+}
+inline void TaskParams::add_param_value_array(std::string&& value) {
+  param_value_array_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.TaskParams.param_value_array)
+}
+inline void TaskParams::add_param_value_array(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  param_value_array_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:pipelines.tekton.v1alpha1.TaskParams.param_value_array)
+}
+inline void TaskParams::add_param_value_array(const char* value, size_t size) {
+  param_value_array_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:pipelines.tekton.v1alpha1.TaskParams.param_value_array)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+TaskParams::param_value_array() const {
+  // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.TaskParams.param_value_array)
+  return param_value_array_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+TaskParams::mutable_param_value_array() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.tekton.v1alpha1.TaskParams.param_value_array)
+  return &param_value_array_;
 }
 
 // -------------------------------------------------------------------

@@ -24,6 +24,7 @@ message Runtime {
   map<string, string> environment_variables = 10;
   map<string, string> commands = 11;
   map<string, string> secrets = 12;
+  map<string, string> extra_args = 13;
 }
 
 message RuntimeList {

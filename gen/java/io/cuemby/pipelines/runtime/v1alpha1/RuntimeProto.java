@@ -40,6 +40,11 @@ public final class RuntimeProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_runtime_v1alpha1_Runtime_SecretsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_runtime_v1alpha1_Runtime_ExtraArgsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_runtime_v1alpha1_Runtime_ExtraArgsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_pipelines_runtime_v1alpha1_RuntimeList_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -54,7 +59,7 @@ public final class RuntimeProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(pipelines/runtime/v1alpha1/runtime.pro" +
-      "to\022\032pipelines.runtime.v1alpha1\"\332\006\n\007Runti" +
+      "to\022\032pipelines.runtime.v1alpha1\"\353\007\n\007Runti" +
       "me\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\034" +
       "\n\tnamespace\030\003 \001(\tR\tnamespace\022#\n\rinstance" +
       "_type\030\004 \001(\tR\014instanceType\022\035\n\nproject_id\030" +
@@ -69,20 +74,24 @@ public final class RuntimeProto {
       "\n\010commands\030\013 \003(\01321.pipelines.runtime.v1a" +
       "lpha1.Runtime.CommandsEntryR\010commands\022J\n" +
       "\007secrets\030\014 \003(\01320.pipelines.runtime.v1alp" +
-      "ha1.Runtime.SecretsEntryR\007secrets\032>\n\020Int" +
-      "egrationEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value" +
-      "\030\002 \001(\tR\005value:\0028\001\032G\n\031EnvironmentVariable" +
-      "sEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR" +
-      "\005value:\0028\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\t" +
-      "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032:\n\014Secre" +
-      "tsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t" +
-      "R\005value:\0028\001\"H\n\013RuntimeList\0229\n\005items\030\001 \003(" +
-      "\0132#.pipelines.runtime.v1alpha1.RuntimeR\005" +
-      "itemsB\255\001\n$io.cuemby.pipelines.runtime.v1" +
-      "alpha1B\014RuntimeProtoP\001Z5github.com/cuemb" +
-      "y/ccp-runtime-service/runtimev1alpha1\242\002\003" +
-      "PPX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipel" +
-      "ines\\Runtime\\V1Alpha1b\006proto3"
+      "ha1.Runtime.SecretsEntryR\007secrets\022Q\n\next" +
+      "ra_args\030\r \003(\01322.pipelines.runtime.v1alph" +
+      "a1.Runtime.ExtraArgsEntryR\textraArgs\032>\n\020" +
+      "IntegrationEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va" +
+      "lue\030\002 \001(\tR\005value:\0028\001\032G\n\031EnvironmentVaria" +
+      "blesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001" +
+      "(\tR\005value:\0028\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 " +
+      "\001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032:\n\014Se" +
+      "cretsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 " +
+      "\001(\tR\005value:\0028\001\032<\n\016ExtraArgsEntry\022\020\n\003key\030" +
+      "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"H\n\013" +
+      "RuntimeList\0229\n\005items\030\001 \003(\0132#.pipelines.r" +
+      "untime.v1alpha1.RuntimeR\005itemsB\255\001\n$io.cu" +
+      "emby.pipelines.runtime.v1alpha1B\014Runtime" +
+      "ProtoP\001Z5github.com/cuemby/ccp-runtime-s" +
+      "ervice/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines" +
+      ".Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1" +
+      "Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -93,7 +102,7 @@ public final class RuntimeProto {
     internal_static_pipelines_runtime_v1alpha1_Runtime_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor,
-        new java.lang.String[] { "Id", "Name", "Namespace", "InstanceType", "ProjectId", "ApplicationId", "WorkspaceId", "Scaler", "Integration", "EnvironmentVariables", "Commands", "Secrets", });
+        new java.lang.String[] { "Id", "Name", "Namespace", "InstanceType", "ProjectId", "ApplicationId", "WorkspaceId", "Scaler", "Integration", "EnvironmentVariables", "Commands", "Secrets", "ExtraArgs", });
     internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_descriptor =
       internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor.getNestedTypes().get(0);
     internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_fieldAccessorTable = new
@@ -117,6 +126,12 @@ public final class RuntimeProto {
     internal_static_pipelines_runtime_v1alpha1_Runtime_SecretsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_SecretsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_pipelines_runtime_v1alpha1_Runtime_ExtraArgsEntry_descriptor =
+      internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor.getNestedTypes().get(4);
+    internal_static_pipelines_runtime_v1alpha1_Runtime_ExtraArgsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_runtime_v1alpha1_Runtime_ExtraArgsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_pipelines_runtime_v1alpha1_RuntimeList_descriptor =
       getDescriptor().getMessageTypes().get(1);

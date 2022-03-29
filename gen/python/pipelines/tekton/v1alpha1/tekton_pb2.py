@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#io.cuemby.pipelines.tekton.v1alpha1B\013TektonProtoP\001Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipelines\\Tekton\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&pipelines/tekton/v1alpha1/tekton.proto\x12\x19pipelines.tekton.v1alpha1\"\x7f\n\x06Params\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12!\n\x0cvalue_string\x18\x02 \x01(\tR\x0bvalueString\x12\x1f\n\x0bvalue_array\x18\x03 \x03(\tR\nvalueArray\x12\x1d\n\nvalue_type\x18\x04 \x01(\tR\tvalueType\"v\n\nTaskParams\x12\x1d\n\nparam_name\x18\x01 \x01(\tR\tparamName\x12(\n\x10param_value_type\x18\x02 \x01(\tR\x0eparamValueType\x12\x1f\n\x0bparam_value\x18\x03 \x01(\tR\nparamValue\"H\n\nWorkspaces\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n\x04main\x18\x02 \x01(\tR\x04main\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\"\xcb\x02\n\x04Task\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n\ttask_name\x18\x02 \x01(\tR\x08taskName\x12\"\n\rtask_ref_name\x18\x03 \x01(\tR\x0btaskRefName\x12\x1b\n\ttask_kind\x18\x04 \x01(\tR\x08taskKind\x12$\n\x0etask_run_after\x18\x05 \x03(\tR\x0ctaskRunAfter\x12\x45\n\nworkspaces\x18\x06 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.WorkspacesR\nworkspaces\x12\x46\n\x0btask_params\x18\x07 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.TaskParamsR\ntaskParams\x12 \n\x0b\x64\x65scription\x18\x08 \x01(\tR\x0b\x64\x65scription\"\xa2\t\n\x08Pipeline\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12$\n\x0etype_meta_kind\x18\x04 \x01(\tR\x0ctypeMetaKind\x12\x31\n\x15type_meta_api_version\x18\x05 \x01(\tR\x12typeMetaApiVersion\x12(\n\x10object_meta_name\x18\x06 \x01(\tR\x0eobjectMetaName\x12\x32\n\x15object_meta_namespace\x18\x07 \x01(\tR\x13objectMetaNamespace\x12\x39\n\x06params\x18\x08 \x03(\x0b\x32!.pipelines.tekton.v1alpha1.ParamsR\x06params\x12\x35\n\x05tasks\x18\t \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x05tasks\x12\x1f\n\x0bstatus_type\x18\n \x01(\tR\nstatusType\x12V\n\x0bintegration\x18\x0b \x03(\x0b\x32\x34.pipelines.tekton.v1alpha1.Pipeline.IntegrationEntryR\x0bintegration\x12r\n\x15\x65nvironment_variables\x18\x0c \x03(\x0b\x32=.pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntryR\x14\x65nvironmentVariables\x12M\n\x08\x63ommands\x18\r \x03(\x0b\x32\x31.pipelines.tekton.v1alpha1.Pipeline.CommandsEntryR\x08\x63ommands\x12J\n\x07secrets\x18\x0e \x03(\x0b\x32\x30.pipelines.tekton.v1alpha1.Pipeline.SecretsEntryR\x07secrets\x12\x16\n\x06\x61\x63tive\x18\x0f \x01(\x08R\x06\x61\x63tive\x12#\n\rinstance_type\x18\x10 \x01(\tR\x0cinstanceType\x12N\n\x0fworkspaces_main\x18\x11 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.WorkspacesR\x0eworkspacesMain\x1a>\n\x10IntegrationEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1aG\n\x19\x45nvironmentVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rCommandsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cSecretsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\xae\x01\n#io.cuemby.pipelines.tekton.v1alpha1B\x0bTektonProtoP\x01Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19Pipelines.Tekton.V1Alpha1\xca\x02\x19Pipelines\\Tekton\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n&pipelines/tekton/v1alpha1/tekton.proto\x12\x19pipelines.tekton.v1alpha1\"\x7f\n\x06Params\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12!\n\x0cvalue_string\x18\x02 \x01(\tR\x0bvalueString\x12\x1f\n\x0bvalue_array\x18\x03 \x03(\tR\nvalueArray\x12\x1d\n\nvalue_type\x18\x04 \x01(\tR\tvalueType\"\xa2\x01\n\nTaskParams\x12\x1d\n\nparam_name\x18\x01 \x01(\tR\tparamName\x12(\n\x10param_value_type\x18\x02 \x01(\tR\x0eparamValueType\x12\x1f\n\x0bparam_value\x18\x03 \x01(\tR\nparamValue\x12*\n\x11param_value_array\x18\x04 \x03(\tR\x0fparamValueArray\"H\n\nWorkspaces\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n\x04main\x18\x02 \x01(\tR\x04main\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\"\xcb\x02\n\x04Task\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n\ttask_name\x18\x02 \x01(\tR\x08taskName\x12\"\n\rtask_ref_name\x18\x03 \x01(\tR\x0btaskRefName\x12\x1b\n\ttask_kind\x18\x04 \x01(\tR\x08taskKind\x12$\n\x0etask_run_after\x18\x05 \x03(\tR\x0ctaskRunAfter\x12\x45\n\nworkspaces\x18\x06 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.WorkspacesR\nworkspaces\x12\x46\n\x0btask_params\x18\x07 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.TaskParamsR\ntaskParams\x12 \n\x0b\x64\x65scription\x18\x08 \x01(\tR\x0b\x64\x65scription\"\xa2\t\n\x08Pipeline\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12$\n\x0etype_meta_kind\x18\x04 \x01(\tR\x0ctypeMetaKind\x12\x31\n\x15type_meta_api_version\x18\x05 \x01(\tR\x12typeMetaApiVersion\x12(\n\x10object_meta_name\x18\x06 \x01(\tR\x0eobjectMetaName\x12\x32\n\x15object_meta_namespace\x18\x07 \x01(\tR\x13objectMetaNamespace\x12\x39\n\x06params\x18\x08 \x03(\x0b\x32!.pipelines.tekton.v1alpha1.ParamsR\x06params\x12\x35\n\x05tasks\x18\t \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x05tasks\x12\x1f\n\x0bstatus_type\x18\n \x01(\tR\nstatusType\x12V\n\x0bintegration\x18\x0b \x03(\x0b\x32\x34.pipelines.tekton.v1alpha1.Pipeline.IntegrationEntryR\x0bintegration\x12r\n\x15\x65nvironment_variables\x18\x0c \x03(\x0b\x32=.pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntryR\x14\x65nvironmentVariables\x12M\n\x08\x63ommands\x18\r \x03(\x0b\x32\x31.pipelines.tekton.v1alpha1.Pipeline.CommandsEntryR\x08\x63ommands\x12J\n\x07secrets\x18\x0e \x03(\x0b\x32\x30.pipelines.tekton.v1alpha1.Pipeline.SecretsEntryR\x07secrets\x12\x16\n\x06\x61\x63tive\x18\x0f \x01(\x08R\x06\x61\x63tive\x12#\n\rinstance_type\x18\x10 \x01(\tR\x0cinstanceType\x12N\n\x0fworkspaces_main\x18\x11 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.WorkspacesR\x0eworkspacesMain\x1a>\n\x10IntegrationEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1aG\n\x19\x45nvironmentVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rCommandsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cSecretsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\xae\x01\n#io.cuemby.pipelines.tekton.v1alpha1B\x0bTektonProtoP\x01Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19Pipelines.Tekton.V1Alpha1\xca\x02\x19Pipelines\\Tekton\\V1Alpha1b\x06proto3'
 )
 
 
@@ -107,6 +107,13 @@ _TASKPARAMS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='paramValue', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='param_value_array', full_name='pipelines.tekton.v1alpha1.TaskParams.param_value_array', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='paramValueArray', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -119,8 +126,8 @@ _TASKPARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=198,
-  serialized_end=316,
+  serialized_start=199,
+  serialized_end=361,
 )
 
 
@@ -165,8 +172,8 @@ _WORKSPACES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=318,
-  serialized_end=390,
+  serialized_start=363,
+  serialized_end=435,
 )
 
 
@@ -246,8 +253,8 @@ _TASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=393,
-  serialized_end=724,
+  serialized_start=438,
+  serialized_end=769,
 )
 
 
@@ -285,8 +292,8 @@ _PIPELINE_INTEGRATIONENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1657,
-  serialized_end=1719,
+  serialized_start=1702,
+  serialized_end=1764,
 )
 
 _PIPELINE_ENVIRONMENTVARIABLESENTRY = _descriptor.Descriptor(
@@ -323,8 +330,8 @@ _PIPELINE_ENVIRONMENTVARIABLESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1721,
-  serialized_end=1792,
+  serialized_start=1766,
+  serialized_end=1837,
 )
 
 _PIPELINE_COMMANDSENTRY = _descriptor.Descriptor(
@@ -361,8 +368,8 @@ _PIPELINE_COMMANDSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1794,
-  serialized_end=1853,
+  serialized_start=1839,
+  serialized_end=1898,
 )
 
 _PIPELINE_SECRETSENTRY = _descriptor.Descriptor(
@@ -399,8 +406,8 @@ _PIPELINE_SECRETSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1855,
-  serialized_end=1913,
+  serialized_start=1900,
+  serialized_end=1958,
 )
 
 _PIPELINE = _descriptor.Descriptor(
@@ -542,8 +549,8 @@ _PIPELINE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=727,
-  serialized_end=1913,
+  serialized_start=772,
+  serialized_end=1958,
 )
 
 _TASK.fields_by_name['workspaces'].message_type = _WORKSPACES
