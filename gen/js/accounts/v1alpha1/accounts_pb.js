@@ -3806,7 +3806,7 @@ proto.accounts.v1alpha1.GetOneApiKeyRequest.prototype.toObject = function(opt_in
 proto.accounts.v1alpha1.GetOneApiKeyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    token: jspb.Message.getFieldWithDefault(msg, 2, "")
+    valueKey: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3849,7 +3849,7 @@ proto.accounts.v1alpha1.GetOneApiKeyRequest.deserializeBinaryFromReader = functi
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setToken(value);
+      msg.setValueKey(value);
       break;
     default:
       reader.skipField();
@@ -3887,7 +3887,7 @@ proto.accounts.v1alpha1.GetOneApiKeyRequest.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getToken();
+  f = message.getValueKey();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -3916,10 +3916,10 @@ proto.accounts.v1alpha1.GetOneApiKeyRequest.prototype.setId = function(value) {
 
 
 /**
- * optional string token = 2;
+ * optional string value_key = 2;
  * @return {string}
  */
-proto.accounts.v1alpha1.GetOneApiKeyRequest.prototype.getToken = function() {
+proto.accounts.v1alpha1.GetOneApiKeyRequest.prototype.getValueKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -3928,7 +3928,7 @@ proto.accounts.v1alpha1.GetOneApiKeyRequest.prototype.getToken = function() {
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.GetOneApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.GetOneApiKeyRequest.prototype.setToken = function(value) {
+proto.accounts.v1alpha1.GetOneApiKeyRequest.prototype.setValueKey = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
