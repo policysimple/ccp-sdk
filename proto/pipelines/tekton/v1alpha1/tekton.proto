@@ -57,7 +57,8 @@ message Pipeline {
     map<string, string> environment_variables = 12;
     map<string, string> commands = 13;
     map<string, string> secrets = 14;
-    bool active = 15;
-    string instance_type = 16;
-    repeated Workspaces workspaces_main = 17;
+    map<string, string> labels = 15;
+    bool active = 16;
+    string instance_type = 17;
+    repeated Workspaces workspaces_main = 18;
 }

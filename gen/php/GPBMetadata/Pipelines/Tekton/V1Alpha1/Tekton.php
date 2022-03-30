@@ -16,7 +16,7 @@ class Tekton
         }
         $pool->internalAddGeneratedFile(
             '
-ß
+ã
 &pipelines/tekton/v1alpha1/tekton.protopipelines.tekton.v1alpha1"
 Params
 name (	Rname!
@@ -49,7 +49,8 @@ workspaces (2%.pipelines.tekton.v1alpha1.WorkspacesR
 workspacesF
 task_params (2%.pipelines.tekton.v1alpha1.TaskParamsR
 taskParams 
-description (	Rdescription"¢	
+description (	Rdescription"¦
+
 Pipeline
 id (	Rid\'
 organization_id (RorganizationId
@@ -67,10 +68,11 @@ statusTypeV
 integration (24.pipelines.tekton.v1alpha1.Pipeline.IntegrationEntryRintegrationr
 environment_variables (2=.pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntryRenvironmentVariablesM
 commands (21.pipelines.tekton.v1alpha1.Pipeline.CommandsEntryRcommandsJ
-secrets (20.pipelines.tekton.v1alpha1.Pipeline.SecretsEntryRsecrets
-active (Ractive#
-instance_type (	RinstanceTypeN
-workspaces_main (2%.pipelines.tekton.v1alpha1.WorkspacesRworkspacesMain>
+secrets (20.pipelines.tekton.v1alpha1.Pipeline.SecretsEntryRsecretsG
+labels (2/.pipelines.tekton.v1alpha1.Pipeline.LabelsEntryRlabels
+active (Ractive#
+instance_type (	RinstanceTypeN
+workspaces_main (2%.pipelines.tekton.v1alpha1.WorkspacesRworkspacesMain>
 IntegrationEntry
 key (	Rkey
 value (	Rvalue:8G
@@ -81,6 +83,9 @@ statusTypeV
 key (	Rkey
 value (	Rvalue:8:
 SecretsEntry
+key (	Rkey
+value (	Rvalue:89
+LabelsEntry
 key (	Rkey
 value (	Rvalue:8B®
 #io.cuemby.pipelines.tekton.v1alpha1BTektonProtoPZ:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1¢PPXªPipelines.Tekton.V1Alpha1ÊPipelines\\Tekton\\V1Alpha1bproto3'
