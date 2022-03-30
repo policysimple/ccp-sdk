@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-†Ž
+£Ž
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"4
 ListInvitationUserRequest
 user_id (	RuserId"s
@@ -42,9 +42,10 @@ class Accounts
 msg (	Rmsg
 api_key (	RapiKey&
 access_point_id (RaccessPointId
-error (	Rerror"%
+error (	Rerror"B
 GetOneApiKeyRequest
-id (Rid"Û
+id (Rid
+	value_key (	RvalueKey"Û
 GetOneApiKeyResponse
 id (Rid
 api_key (	RapiKey
