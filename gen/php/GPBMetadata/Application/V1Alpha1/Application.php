@@ -16,11 +16,11 @@ class Application
         }
         $pool->internalAddGeneratedFile(
             '
-é
-&application/v1alpha1/application.protoapplication.v1alpha1"R
-\'DeleteApplicationsByOrganizationRequest\'
-organization_id (	RorganizationId"<
-(DeleteApplicationsByOrganizationResponse
+â
+&application/v1alpha1/application.protoapplication.v1alpha1"O
+&DeleteApplicationsByIntegrationRequest%
+integration_id (	RintegrationId";
+\'DeleteApplicationsByIntegrationResponse
 msg (	Rmsg"ª
 
 Repository
@@ -96,14 +96,14 @@ project_id (R	projectId"`
 application (2..application.v1alpha1.CreateApplicationRequestRapplication"C
 UpdateApplicationResponse
 msg (	Rmsg
-error (	Rerror2÷
+error (	Rerror2ô
 ApplicationServicet
 CreateApplication..application.v1alpha1.CreateApplicationRequest/.application.v1alpha1.CreateApplicationResponsen
 ListApplication,.application.v1alpha1.ListApplicationRequest-.application.v1alpha1.ListApplicationResponsek
 GetApplication+.application.v1alpha1.GetApplicationRequest,.application.v1alpha1.GetApplicationResponset
 DeleteApplication..application.v1alpha1.DeleteApplicationRequest/.application.v1alpha1.DeleteApplicationResponset
-UpdateApplication..application.v1alpha1.UpdateApplicationRequest/.application.v1alpha1.UpdateApplicationResponse¡
- DeleteApplicationsByOrganization=.application.v1alpha1.DeleteApplicationsByOrganizationRequest>.application.v1alpha1.DeleteApplicationsByOrganizationResponseB7Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1bproto3'
+UpdateApplication..application.v1alpha1.UpdateApplicationRequest/.application.v1alpha1.UpdateApplicationResponsež
+DeleteApplicationsByIntegration<.application.v1alpha1.DeleteApplicationsByIntegrationRequest=.application.v1alpha1.DeleteApplicationsByIntegrationResponseB7Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

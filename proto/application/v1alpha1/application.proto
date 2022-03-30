@@ -13,16 +13,16 @@ service ApplicationService {
     rpc GetApplication(GetApplicationRequest) returns (GetApplicationResponse);
     rpc DeleteApplication(DeleteApplicationRequest) returns (DeleteApplicationResponse);
     rpc UpdateApplication(UpdateApplicationRequest) returns (UpdateApplicationResponse);
-    rpc DeleteApplicationsByOrganization(DeleteApplicationsByOrganizationRequest) returns (DeleteApplicationsByOrganizationResponse);
+    rpc DeleteApplicationsByIntegration(DeleteApplicationsByIntegrationRequest) returns (DeleteApplicationsByIntegrationResponse);
 }
 
 /* Integration with the application service */
 
-message DeleteApplicationsByOrganizationRequest {
-    string organization_id = 1;
+message DeleteApplicationsByIntegrationRequest {
+    string integration_id = 1;
 }
 
-message DeleteApplicationsByOrganizationResponse {
+message DeleteApplicationsByIntegrationResponse {
     string msg = 1;
 }
 

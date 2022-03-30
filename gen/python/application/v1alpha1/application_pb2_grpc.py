@@ -39,10 +39,10 @@ class ApplicationServiceStub(object):
         request_serializer=application_dot_v1alpha1_dot_application__pb2.UpdateApplicationRequest.SerializeToString,
         response_deserializer=application_dot_v1alpha1_dot_application__pb2.UpdateApplicationResponse.FromString,
         )
-    self.DeleteApplicationsByOrganization = channel.unary_unary(
-        '/application.v1alpha1.ApplicationService/DeleteApplicationsByOrganization',
-        request_serializer=application_dot_v1alpha1_dot_application__pb2.DeleteApplicationsByOrganizationRequest.SerializeToString,
-        response_deserializer=application_dot_v1alpha1_dot_application__pb2.DeleteApplicationsByOrganizationResponse.FromString,
+    self.DeleteApplicationsByIntegration = channel.unary_unary(
+        '/application.v1alpha1.ApplicationService/DeleteApplicationsByIntegration',
+        request_serializer=application_dot_v1alpha1_dot_application__pb2.DeleteApplicationsByIntegrationRequest.SerializeToString,
+        response_deserializer=application_dot_v1alpha1_dot_application__pb2.DeleteApplicationsByIntegrationResponse.FromString,
         )
 
 
@@ -85,7 +85,7 @@ class ApplicationServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def DeleteApplicationsByOrganization(self, request, context):
+  def DeleteApplicationsByIntegration(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -120,10 +120,10 @@ def add_ApplicationServiceServicer_to_server(servicer, server):
           request_deserializer=application_dot_v1alpha1_dot_application__pb2.UpdateApplicationRequest.FromString,
           response_serializer=application_dot_v1alpha1_dot_application__pb2.UpdateApplicationResponse.SerializeToString,
       ),
-      'DeleteApplicationsByOrganization': grpc.unary_unary_rpc_method_handler(
-          servicer.DeleteApplicationsByOrganization,
-          request_deserializer=application_dot_v1alpha1_dot_application__pb2.DeleteApplicationsByOrganizationRequest.FromString,
-          response_serializer=application_dot_v1alpha1_dot_application__pb2.DeleteApplicationsByOrganizationResponse.SerializeToString,
+      'DeleteApplicationsByIntegration': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteApplicationsByIntegration,
+          request_deserializer=application_dot_v1alpha1_dot_application__pb2.DeleteApplicationsByIntegrationRequest.FromString,
+          response_serializer=application_dot_v1alpha1_dot_application__pb2.DeleteApplicationsByIntegrationResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

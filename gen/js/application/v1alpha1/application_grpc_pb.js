@@ -48,26 +48,26 @@ function deserialize_application_v1alpha1_DeleteApplicationResponse(buffer_arg) 
   return application_v1alpha1_application_pb.DeleteApplicationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_application_v1alpha1_DeleteApplicationsByOrganizationRequest(arg) {
-  if (!(arg instanceof application_v1alpha1_application_pb.DeleteApplicationsByOrganizationRequest)) {
-    throw new Error('Expected argument of type application.v1alpha1.DeleteApplicationsByOrganizationRequest');
+function serialize_application_v1alpha1_DeleteApplicationsByIntegrationRequest(arg) {
+  if (!(arg instanceof application_v1alpha1_application_pb.DeleteApplicationsByIntegrationRequest)) {
+    throw new Error('Expected argument of type application.v1alpha1.DeleteApplicationsByIntegrationRequest');
   }
   return new Buffer(arg.serializeBinary());
 }
 
-function deserialize_application_v1alpha1_DeleteApplicationsByOrganizationRequest(buffer_arg) {
-  return application_v1alpha1_application_pb.DeleteApplicationsByOrganizationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_application_v1alpha1_DeleteApplicationsByIntegrationRequest(buffer_arg) {
+  return application_v1alpha1_application_pb.DeleteApplicationsByIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_application_v1alpha1_DeleteApplicationsByOrganizationResponse(arg) {
-  if (!(arg instanceof application_v1alpha1_application_pb.DeleteApplicationsByOrganizationResponse)) {
-    throw new Error('Expected argument of type application.v1alpha1.DeleteApplicationsByOrganizationResponse');
+function serialize_application_v1alpha1_DeleteApplicationsByIntegrationResponse(arg) {
+  if (!(arg instanceof application_v1alpha1_application_pb.DeleteApplicationsByIntegrationResponse)) {
+    throw new Error('Expected argument of type application.v1alpha1.DeleteApplicationsByIntegrationResponse');
   }
   return new Buffer(arg.serializeBinary());
 }
 
-function deserialize_application_v1alpha1_DeleteApplicationsByOrganizationResponse(buffer_arg) {
-  return application_v1alpha1_application_pb.DeleteApplicationsByOrganizationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_application_v1alpha1_DeleteApplicationsByIntegrationResponse(buffer_arg) {
+  return application_v1alpha1_application_pb.DeleteApplicationsByIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_application_v1alpha1_GetApplicationRequest(arg) {
@@ -194,16 +194,16 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseSerialize: serialize_application_v1alpha1_UpdateApplicationResponse,
     responseDeserialize: deserialize_application_v1alpha1_UpdateApplicationResponse,
   },
-  deleteApplicationsByOrganization: {
-    path: '/application.v1alpha1.ApplicationService/DeleteApplicationsByOrganization',
+  deleteApplicationsByIntegration: {
+    path: '/application.v1alpha1.ApplicationService/DeleteApplicationsByIntegration',
     requestStream: false,
     responseStream: false,
-    requestType: application_v1alpha1_application_pb.DeleteApplicationsByOrganizationRequest,
-    responseType: application_v1alpha1_application_pb.DeleteApplicationsByOrganizationResponse,
-    requestSerialize: serialize_application_v1alpha1_DeleteApplicationsByOrganizationRequest,
-    requestDeserialize: deserialize_application_v1alpha1_DeleteApplicationsByOrganizationRequest,
-    responseSerialize: serialize_application_v1alpha1_DeleteApplicationsByOrganizationResponse,
-    responseDeserialize: deserialize_application_v1alpha1_DeleteApplicationsByOrganizationResponse,
+    requestType: application_v1alpha1_application_pb.DeleteApplicationsByIntegrationRequest,
+    responseType: application_v1alpha1_application_pb.DeleteApplicationsByIntegrationResponse,
+    requestSerialize: serialize_application_v1alpha1_DeleteApplicationsByIntegrationRequest,
+    requestDeserialize: deserialize_application_v1alpha1_DeleteApplicationsByIntegrationRequest,
+    responseSerialize: serialize_application_v1alpha1_DeleteApplicationsByIntegrationResponse,
+    responseDeserialize: deserialize_application_v1alpha1_DeleteApplicationsByIntegrationResponse,
   },
 };
 

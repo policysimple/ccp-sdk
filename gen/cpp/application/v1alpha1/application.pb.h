@@ -76,12 +76,12 @@ extern DeleteApplicationRequestDefaultTypeInternal _DeleteApplicationRequest_def
 class DeleteApplicationResponse;
 struct DeleteApplicationResponseDefaultTypeInternal;
 extern DeleteApplicationResponseDefaultTypeInternal _DeleteApplicationResponse_default_instance_;
-class DeleteApplicationsByOrganizationRequest;
-struct DeleteApplicationsByOrganizationRequestDefaultTypeInternal;
-extern DeleteApplicationsByOrganizationRequestDefaultTypeInternal _DeleteApplicationsByOrganizationRequest_default_instance_;
-class DeleteApplicationsByOrganizationResponse;
-struct DeleteApplicationsByOrganizationResponseDefaultTypeInternal;
-extern DeleteApplicationsByOrganizationResponseDefaultTypeInternal _DeleteApplicationsByOrganizationResponse_default_instance_;
+class DeleteApplicationsByIntegrationRequest;
+struct DeleteApplicationsByIntegrationRequestDefaultTypeInternal;
+extern DeleteApplicationsByIntegrationRequestDefaultTypeInternal _DeleteApplicationsByIntegrationRequest_default_instance_;
+class DeleteApplicationsByIntegrationResponse;
+struct DeleteApplicationsByIntegrationResponseDefaultTypeInternal;
+extern DeleteApplicationsByIntegrationResponseDefaultTypeInternal _DeleteApplicationsByIntegrationResponse_default_instance_;
 class Env;
 struct EnvDefaultTypeInternal;
 extern EnvDefaultTypeInternal _Env_default_instance_;
@@ -119,8 +119,8 @@ template<> ::application::v1alpha1::CreateApplicationRequest* Arena::CreateMaybe
 template<> ::application::v1alpha1::CreateApplicationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::CreateApplicationResponse>(Arena*);
 template<> ::application::v1alpha1::DeleteApplicationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::DeleteApplicationRequest>(Arena*);
 template<> ::application::v1alpha1::DeleteApplicationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::DeleteApplicationResponse>(Arena*);
-template<> ::application::v1alpha1::DeleteApplicationsByOrganizationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::DeleteApplicationsByOrganizationRequest>(Arena*);
-template<> ::application::v1alpha1::DeleteApplicationsByOrganizationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::DeleteApplicationsByOrganizationResponse>(Arena*);
+template<> ::application::v1alpha1::DeleteApplicationsByIntegrationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::DeleteApplicationsByIntegrationRequest>(Arena*);
+template<> ::application::v1alpha1::DeleteApplicationsByIntegrationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::DeleteApplicationsByIntegrationResponse>(Arena*);
 template<> ::application::v1alpha1::Env* Arena::CreateMaybeMessage<::application::v1alpha1::Env>(Arena*);
 template<> ::application::v1alpha1::GetApplicationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::GetApplicationRequest>(Arena*);
 template<> ::application::v1alpha1::GetApplicationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::GetApplicationResponse>(Arena*);
@@ -136,24 +136,24 @@ namespace v1alpha1 {
 
 // ===================================================================
 
-class DeleteApplicationsByOrganizationRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.DeleteApplicationsByOrganizationRequest) */ {
+class DeleteApplicationsByIntegrationRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.DeleteApplicationsByIntegrationRequest) */ {
  public:
-  inline DeleteApplicationsByOrganizationRequest() : DeleteApplicationsByOrganizationRequest(nullptr) {}
-  ~DeleteApplicationsByOrganizationRequest() override;
-  explicit constexpr DeleteApplicationsByOrganizationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline DeleteApplicationsByIntegrationRequest() : DeleteApplicationsByIntegrationRequest(nullptr) {}
+  ~DeleteApplicationsByIntegrationRequest() override;
+  explicit constexpr DeleteApplicationsByIntegrationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  DeleteApplicationsByOrganizationRequest(const DeleteApplicationsByOrganizationRequest& from);
-  DeleteApplicationsByOrganizationRequest(DeleteApplicationsByOrganizationRequest&& from) noexcept
-    : DeleteApplicationsByOrganizationRequest() {
+  DeleteApplicationsByIntegrationRequest(const DeleteApplicationsByIntegrationRequest& from);
+  DeleteApplicationsByIntegrationRequest(DeleteApplicationsByIntegrationRequest&& from) noexcept
+    : DeleteApplicationsByIntegrationRequest() {
     *this = ::std::move(from);
   }
 
-  inline DeleteApplicationsByOrganizationRequest& operator=(const DeleteApplicationsByOrganizationRequest& from) {
+  inline DeleteApplicationsByIntegrationRequest& operator=(const DeleteApplicationsByIntegrationRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline DeleteApplicationsByOrganizationRequest& operator=(DeleteApplicationsByOrganizationRequest&& from) noexcept {
+  inline DeleteApplicationsByIntegrationRequest& operator=(DeleteApplicationsByIntegrationRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -172,20 +172,20 @@ class DeleteApplicationsByOrganizationRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const DeleteApplicationsByOrganizationRequest& default_instance() {
+  static const DeleteApplicationsByIntegrationRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const DeleteApplicationsByOrganizationRequest* internal_default_instance() {
-    return reinterpret_cast<const DeleteApplicationsByOrganizationRequest*>(
-               &_DeleteApplicationsByOrganizationRequest_default_instance_);
+  static inline const DeleteApplicationsByIntegrationRequest* internal_default_instance() {
+    return reinterpret_cast<const DeleteApplicationsByIntegrationRequest*>(
+               &_DeleteApplicationsByIntegrationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(DeleteApplicationsByOrganizationRequest& a, DeleteApplicationsByOrganizationRequest& b) {
+  friend void swap(DeleteApplicationsByIntegrationRequest& a, DeleteApplicationsByIntegrationRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(DeleteApplicationsByOrganizationRequest* other) {
+  inline void Swap(DeleteApplicationsByIntegrationRequest* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -193,7 +193,7 @@ class DeleteApplicationsByOrganizationRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(DeleteApplicationsByOrganizationRequest* other) {
+  void UnsafeArenaSwap(DeleteApplicationsByIntegrationRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -201,17 +201,17 @@ class DeleteApplicationsByOrganizationRequest final :
 
   // implements Message ----------------------------------------------
 
-  inline DeleteApplicationsByOrganizationRequest* New() const final {
-    return new DeleteApplicationsByOrganizationRequest();
+  inline DeleteApplicationsByIntegrationRequest* New() const final {
+    return new DeleteApplicationsByIntegrationRequest();
   }
 
-  DeleteApplicationsByOrganizationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<DeleteApplicationsByOrganizationRequest>(arena);
+  DeleteApplicationsByIntegrationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteApplicationsByIntegrationRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const DeleteApplicationsByOrganizationRequest& from);
+  void CopyFrom(const DeleteApplicationsByIntegrationRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const DeleteApplicationsByOrganizationRequest& from);
+  void MergeFrom(const DeleteApplicationsByIntegrationRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -228,13 +228,13 @@ class DeleteApplicationsByOrganizationRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(DeleteApplicationsByOrganizationRequest* other);
+  void InternalSwap(DeleteApplicationsByIntegrationRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.DeleteApplicationsByOrganizationRequest";
+    return "application.v1alpha1.DeleteApplicationsByIntegrationRequest";
   }
   protected:
-  explicit DeleteApplicationsByOrganizationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit DeleteApplicationsByIntegrationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -251,53 +251,53 @@ class DeleteApplicationsByOrganizationRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOrganizationIdFieldNumber = 1,
+    kIntegrationIdFieldNumber = 1,
   };
-  // string organization_id = 1 [json_name = "organizationId"];
-  void clear_organization_id();
-  const std::string& organization_id() const;
+  // string integration_id = 1 [json_name = "integrationId"];
+  void clear_integration_id();
+  const std::string& integration_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_organization_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_organization_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
-  void set_allocated_organization_id(std::string* organization_id);
+  void set_integration_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_integration_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_integration_id();
+  void set_allocated_integration_id(std::string* integration_id);
   private:
-  const std::string& _internal_organization_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
-  std::string* _internal_mutable_organization_id();
+  const std::string& _internal_integration_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_integration_id(const std::string& value);
+  std::string* _internal_mutable_integration_id();
   public:
 
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.DeleteApplicationsByOrganizationRequest)
+  // @@protoc_insertion_point(class_scope:application.v1alpha1.DeleteApplicationsByIntegrationRequest)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
 };
 // -------------------------------------------------------------------
 
-class DeleteApplicationsByOrganizationResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.DeleteApplicationsByOrganizationResponse) */ {
+class DeleteApplicationsByIntegrationResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.DeleteApplicationsByIntegrationResponse) */ {
  public:
-  inline DeleteApplicationsByOrganizationResponse() : DeleteApplicationsByOrganizationResponse(nullptr) {}
-  ~DeleteApplicationsByOrganizationResponse() override;
-  explicit constexpr DeleteApplicationsByOrganizationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline DeleteApplicationsByIntegrationResponse() : DeleteApplicationsByIntegrationResponse(nullptr) {}
+  ~DeleteApplicationsByIntegrationResponse() override;
+  explicit constexpr DeleteApplicationsByIntegrationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  DeleteApplicationsByOrganizationResponse(const DeleteApplicationsByOrganizationResponse& from);
-  DeleteApplicationsByOrganizationResponse(DeleteApplicationsByOrganizationResponse&& from) noexcept
-    : DeleteApplicationsByOrganizationResponse() {
+  DeleteApplicationsByIntegrationResponse(const DeleteApplicationsByIntegrationResponse& from);
+  DeleteApplicationsByIntegrationResponse(DeleteApplicationsByIntegrationResponse&& from) noexcept
+    : DeleteApplicationsByIntegrationResponse() {
     *this = ::std::move(from);
   }
 
-  inline DeleteApplicationsByOrganizationResponse& operator=(const DeleteApplicationsByOrganizationResponse& from) {
+  inline DeleteApplicationsByIntegrationResponse& operator=(const DeleteApplicationsByIntegrationResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline DeleteApplicationsByOrganizationResponse& operator=(DeleteApplicationsByOrganizationResponse&& from) noexcept {
+  inline DeleteApplicationsByIntegrationResponse& operator=(DeleteApplicationsByIntegrationResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -316,20 +316,20 @@ class DeleteApplicationsByOrganizationResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const DeleteApplicationsByOrganizationResponse& default_instance() {
+  static const DeleteApplicationsByIntegrationResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const DeleteApplicationsByOrganizationResponse* internal_default_instance() {
-    return reinterpret_cast<const DeleteApplicationsByOrganizationResponse*>(
-               &_DeleteApplicationsByOrganizationResponse_default_instance_);
+  static inline const DeleteApplicationsByIntegrationResponse* internal_default_instance() {
+    return reinterpret_cast<const DeleteApplicationsByIntegrationResponse*>(
+               &_DeleteApplicationsByIntegrationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(DeleteApplicationsByOrganizationResponse& a, DeleteApplicationsByOrganizationResponse& b) {
+  friend void swap(DeleteApplicationsByIntegrationResponse& a, DeleteApplicationsByIntegrationResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(DeleteApplicationsByOrganizationResponse* other) {
+  inline void Swap(DeleteApplicationsByIntegrationResponse* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -337,7 +337,7 @@ class DeleteApplicationsByOrganizationResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(DeleteApplicationsByOrganizationResponse* other) {
+  void UnsafeArenaSwap(DeleteApplicationsByIntegrationResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -345,17 +345,17 @@ class DeleteApplicationsByOrganizationResponse final :
 
   // implements Message ----------------------------------------------
 
-  inline DeleteApplicationsByOrganizationResponse* New() const final {
-    return new DeleteApplicationsByOrganizationResponse();
+  inline DeleteApplicationsByIntegrationResponse* New() const final {
+    return new DeleteApplicationsByIntegrationResponse();
   }
 
-  DeleteApplicationsByOrganizationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<DeleteApplicationsByOrganizationResponse>(arena);
+  DeleteApplicationsByIntegrationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteApplicationsByIntegrationResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const DeleteApplicationsByOrganizationResponse& from);
+  void CopyFrom(const DeleteApplicationsByIntegrationResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const DeleteApplicationsByOrganizationResponse& from);
+  void MergeFrom(const DeleteApplicationsByIntegrationResponse& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -372,13 +372,13 @@ class DeleteApplicationsByOrganizationResponse final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(DeleteApplicationsByOrganizationResponse* other);
+  void InternalSwap(DeleteApplicationsByIntegrationResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.DeleteApplicationsByOrganizationResponse";
+    return "application.v1alpha1.DeleteApplicationsByIntegrationResponse";
   }
   protected:
-  explicit DeleteApplicationsByOrganizationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit DeleteApplicationsByIntegrationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -411,7 +411,7 @@ class DeleteApplicationsByOrganizationResponse final :
   std::string* _internal_mutable_msg();
   public:
 
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.DeleteApplicationsByOrganizationResponse)
+  // @@protoc_insertion_point(class_scope:application.v1alpha1.DeleteApplicationsByIntegrationResponse)
  private:
   class _Internal;
 
@@ -3256,94 +3256,94 @@ class UpdateApplicationResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// DeleteApplicationsByOrganizationRequest
+// DeleteApplicationsByIntegrationRequest
 
-// string organization_id = 1 [json_name = "organizationId"];
-inline void DeleteApplicationsByOrganizationRequest::clear_organization_id() {
-  organization_id_.ClearToEmpty();
+// string integration_id = 1 [json_name = "integrationId"];
+inline void DeleteApplicationsByIntegrationRequest::clear_integration_id() {
+  integration_id_.ClearToEmpty();
 }
-inline const std::string& DeleteApplicationsByOrganizationRequest::organization_id() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.DeleteApplicationsByOrganizationRequest.organization_id)
-  return _internal_organization_id();
+inline const std::string& DeleteApplicationsByIntegrationRequest::integration_id() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.DeleteApplicationsByIntegrationRequest.integration_id)
+  return _internal_integration_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteApplicationsByOrganizationRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
+void DeleteApplicationsByIntegrationRequest::set_integration_id(ArgT0&& arg0, ArgT... args) {
  
- organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.DeleteApplicationsByOrganizationRequest.organization_id)
+ integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.DeleteApplicationsByIntegrationRequest.integration_id)
 }
-inline std::string* DeleteApplicationsByOrganizationRequest::mutable_organization_id() {
-  std::string* _s = _internal_mutable_organization_id();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.DeleteApplicationsByOrganizationRequest.organization_id)
+inline std::string* DeleteApplicationsByIntegrationRequest::mutable_integration_id() {
+  std::string* _s = _internal_mutable_integration_id();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.DeleteApplicationsByIntegrationRequest.integration_id)
   return _s;
 }
-inline const std::string& DeleteApplicationsByOrganizationRequest::_internal_organization_id() const {
-  return organization_id_.Get();
+inline const std::string& DeleteApplicationsByIntegrationRequest::_internal_integration_id() const {
+  return integration_id_.Get();
 }
-inline void DeleteApplicationsByOrganizationRequest::_internal_set_organization_id(const std::string& value) {
+inline void DeleteApplicationsByIntegrationRequest::_internal_set_integration_id(const std::string& value) {
   
-  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteApplicationsByOrganizationRequest::_internal_mutable_organization_id() {
+inline std::string* DeleteApplicationsByIntegrationRequest::_internal_mutable_integration_id() {
   
-  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return integration_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteApplicationsByOrganizationRequest::release_organization_id() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.DeleteApplicationsByOrganizationRequest.organization_id)
-  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteApplicationsByIntegrationRequest::release_integration_id() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.DeleteApplicationsByIntegrationRequest.integration_id)
+  return integration_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteApplicationsByOrganizationRequest::set_allocated_organization_id(std::string* organization_id) {
-  if (organization_id != nullptr) {
+inline void DeleteApplicationsByIntegrationRequest::set_allocated_integration_id(std::string* integration_id) {
+  if (integration_id != nullptr) {
     
   } else {
     
   }
-  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+  integration_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration_id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.DeleteApplicationsByOrganizationRequest.organization_id)
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.DeleteApplicationsByIntegrationRequest.integration_id)
 }
 
 // -------------------------------------------------------------------
 
-// DeleteApplicationsByOrganizationResponse
+// DeleteApplicationsByIntegrationResponse
 
 // string msg = 1 [json_name = "msg"];
-inline void DeleteApplicationsByOrganizationResponse::clear_msg() {
+inline void DeleteApplicationsByIntegrationResponse::clear_msg() {
   msg_.ClearToEmpty();
 }
-inline const std::string& DeleteApplicationsByOrganizationResponse::msg() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.DeleteApplicationsByOrganizationResponse.msg)
+inline const std::string& DeleteApplicationsByIntegrationResponse::msg() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.DeleteApplicationsByIntegrationResponse.msg)
   return _internal_msg();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteApplicationsByOrganizationResponse::set_msg(ArgT0&& arg0, ArgT... args) {
+void DeleteApplicationsByIntegrationResponse::set_msg(ArgT0&& arg0, ArgT... args) {
  
  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.DeleteApplicationsByOrganizationResponse.msg)
+  // @@protoc_insertion_point(field_set:application.v1alpha1.DeleteApplicationsByIntegrationResponse.msg)
 }
-inline std::string* DeleteApplicationsByOrganizationResponse::mutable_msg() {
+inline std::string* DeleteApplicationsByIntegrationResponse::mutable_msg() {
   std::string* _s = _internal_mutable_msg();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.DeleteApplicationsByOrganizationResponse.msg)
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.DeleteApplicationsByIntegrationResponse.msg)
   return _s;
 }
-inline const std::string& DeleteApplicationsByOrganizationResponse::_internal_msg() const {
+inline const std::string& DeleteApplicationsByIntegrationResponse::_internal_msg() const {
   return msg_.Get();
 }
-inline void DeleteApplicationsByOrganizationResponse::_internal_set_msg(const std::string& value) {
+inline void DeleteApplicationsByIntegrationResponse::_internal_set_msg(const std::string& value) {
   
   msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteApplicationsByOrganizationResponse::_internal_mutable_msg() {
+inline std::string* DeleteApplicationsByIntegrationResponse::_internal_mutable_msg() {
   
   return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteApplicationsByOrganizationResponse::release_msg() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.DeleteApplicationsByOrganizationResponse.msg)
+inline std::string* DeleteApplicationsByIntegrationResponse::release_msg() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.DeleteApplicationsByIntegrationResponse.msg)
   return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteApplicationsByOrganizationResponse::set_allocated_msg(std::string* msg) {
+inline void DeleteApplicationsByIntegrationResponse::set_allocated_msg(std::string* msg) {
   if (msg != nullptr) {
     
   } else {
@@ -3351,7 +3351,7 @@ inline void DeleteApplicationsByOrganizationResponse::set_allocated_msg(std::str
   }
   msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.DeleteApplicationsByOrganizationResponse.msg)
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.DeleteApplicationsByIntegrationResponse.msg)
 }
 
 // -------------------------------------------------------------------
