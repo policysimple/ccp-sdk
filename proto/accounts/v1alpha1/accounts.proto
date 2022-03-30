@@ -118,6 +118,7 @@ message CreateApiKeyResponse {
 
 message GetOneApiKeyRequest {
     uint32 id = 1;
+    string token = 2;
 }
 
 message GetOneApiKeyResponse {
