@@ -21,6 +21,7 @@ service SourceService {
     rpc GetIntegration(GetIntegrationRequest) returns (GetIntegrationResponse);
     rpc UpdateIntegration(UpdateIntegrationRequest) returns (UpdateIntegrationResponse);
     rpc DeleteIntegration(DeleteIntegrationRequest) returns (DeleteIntegrationResponse);
+    rpc DeleteIntegrationsByOrganization(DeleteIntegrationsByOrganizationRequest) returns (DeleteIntegrationsByOrganizationResponse);
 
     //List Repositories providers by integrations
     rpc ListRepositoriesProvider(ListRepositoriesProviderRequest) returns (ListRepositoriesProviderResponse);
@@ -32,6 +33,14 @@ service SourceService {
     rpc GetRepository(GetRepositoryRequest) returns (GetRepositoryResponse);
     rpc DeleteRepository(DeleteRepositoryRequest) returns (DeleteRepositoryResponse);
     rpc UpdateRepository(UpdateRepositoryRequest) returns (UpdateRepositoryResponse);
+}
+
+message DeleteIntegrationsByOrganizationRequest {
+    string organization_id = 1;
+}
+
+message DeleteIntegrationsByOrganizationResponse {
+    string msg = 1;
 }
 
 /*

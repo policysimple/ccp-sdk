@@ -92,6 +92,28 @@ function deserialize_source_v1alpha1_DeleteIntegrationResponse(buffer_arg) {
   return source_v1alpha1_source_pb.DeleteIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_source_v1alpha1_DeleteIntegrationsByOrganizationRequest(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.DeleteIntegrationsByOrganizationRequest)) {
+    throw new Error('Expected argument of type source.v1alpha1.DeleteIntegrationsByOrganizationRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_DeleteIntegrationsByOrganizationRequest(buffer_arg) {
+  return source_v1alpha1_source_pb.DeleteIntegrationsByOrganizationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_source_v1alpha1_DeleteIntegrationsByOrganizationResponse(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.DeleteIntegrationsByOrganizationResponse)) {
+    throw new Error('Expected argument of type source.v1alpha1.DeleteIntegrationsByOrganizationResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_DeleteIntegrationsByOrganizationResponse(buffer_arg) {
+  return source_v1alpha1_source_pb.DeleteIntegrationsByOrganizationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_source_v1alpha1_DeleteProviderRequest(arg) {
   if (!(arg instanceof source_v1alpha1_source_pb.DeleteProviderRequest)) {
     throw new Error('Expected argument of type source.v1alpha1.DeleteProviderRequest');
@@ -524,6 +546,17 @@ var SourceServiceService = exports.SourceServiceService = {
     requestDeserialize: deserialize_source_v1alpha1_DeleteIntegrationRequest,
     responseSerialize: serialize_source_v1alpha1_DeleteIntegrationResponse,
     responseDeserialize: deserialize_source_v1alpha1_DeleteIntegrationResponse,
+  },
+  deleteIntegrationsByOrganization: {
+    path: '/source.v1alpha1.SourceService/DeleteIntegrationsByOrganization',
+    requestStream: false,
+    responseStream: false,
+    requestType: source_v1alpha1_source_pb.DeleteIntegrationsByOrganizationRequest,
+    responseType: source_v1alpha1_source_pb.DeleteIntegrationsByOrganizationResponse,
+    requestSerialize: serialize_source_v1alpha1_DeleteIntegrationsByOrganizationRequest,
+    requestDeserialize: deserialize_source_v1alpha1_DeleteIntegrationsByOrganizationRequest,
+    responseSerialize: serialize_source_v1alpha1_DeleteIntegrationsByOrganizationResponse,
+    responseDeserialize: deserialize_source_v1alpha1_DeleteIntegrationsByOrganizationResponse,
   },
   // List Repositories providers by integrations
   listRepositoriesProvider: {

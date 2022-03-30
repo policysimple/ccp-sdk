@@ -82,4 +82,17 @@ class ApplicationServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Application\V1alpha1\DeleteApplicationsByIntegrationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DeleteApplicationsByIntegration(\Application\V1alpha1\DeleteApplicationsByIntegrationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/application.v1alpha1.ApplicationService/DeleteApplicationsByIntegration',
+        $argument,
+        ['\Application\V1alpha1\DeleteApplicationsByIntegrationResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

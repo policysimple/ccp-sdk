@@ -33,6 +33,10 @@ class Scaling extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string max_replica = 5 [json_name = "maxReplica"];</code>
      */
     protected $max_replica = '';
+    /**
+     * Generated from protobuf field <code>string memory_rule = 6 [json_name = "memoryRule"];</code>
+     */
+    protected $memory_rule = '';
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class Scaling extends \Google\Protobuf\Internal\Message
      *     @type string $polling_interval
      *     @type string $min_replica
      *     @type string $max_replica
+     *     @type string $memory_rule
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class Scaling extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->max_replica = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string memory_rule = 6 [json_name = "memoryRule"];</code>
+     * @return string
+     */
+    public function getMemoryRule()
+    {
+        return $this->memory_rule;
+    }
+
+    /**
+     * Generated from protobuf field <code>string memory_rule = 6 [json_name = "memoryRule"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemoryRule($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->memory_rule = $var;
 
         return $this;
     }

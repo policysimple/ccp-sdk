@@ -31,6 +31,7 @@ type SourceServiceClient interface {
 	GetIntegration(ctx context.Context, in *GetIntegrationRequest, opts ...grpc.CallOption) (*GetIntegrationResponse, error)
 	UpdateIntegration(ctx context.Context, in *UpdateIntegrationRequest, opts ...grpc.CallOption) (*UpdateIntegrationResponse, error)
 	DeleteIntegration(ctx context.Context, in *DeleteIntegrationRequest, opts ...grpc.CallOption) (*DeleteIntegrationResponse, error)
+	DeleteIntegrationsByOrganization(ctx context.Context, in *DeleteIntegrationsByOrganizationRequest, opts ...grpc.CallOption) (*DeleteIntegrationsByOrganizationResponse, error)
 	//List Repositories providers by integrations
 	ListRepositoriesProvider(ctx context.Context, in *ListRepositoriesProviderRequest, opts ...grpc.CallOption) (*ListRepositoriesProviderResponse, error)
 	GetRepositoryProvider(ctx context.Context, in *GetRepositoryProviderRequest, opts ...grpc.CallOption) (*GetRepositoryProviderResponse, error)
@@ -149,6 +150,15 @@ func (c *sourceServiceClient) DeleteIntegration(ctx context.Context, in *DeleteI
 	return out, nil
 }
 
+func (c *sourceServiceClient) DeleteIntegrationsByOrganization(ctx context.Context, in *DeleteIntegrationsByOrganizationRequest, opts ...grpc.CallOption) (*DeleteIntegrationsByOrganizationResponse, error) {
+	out := new(DeleteIntegrationsByOrganizationResponse)
+	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/DeleteIntegrationsByOrganization", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *sourceServiceClient) ListRepositoriesProvider(ctx context.Context, in *ListRepositoriesProviderRequest, opts ...grpc.CallOption) (*ListRepositoriesProviderResponse, error) {
 	out := new(ListRepositoriesProviderResponse)
 	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/ListRepositoriesProvider", in, out, opts...)
@@ -229,6 +239,7 @@ type SourceServiceServer interface {
 	GetIntegration(context.Context, *GetIntegrationRequest) (*GetIntegrationResponse, error)
 	UpdateIntegration(context.Context, *UpdateIntegrationRequest) (*UpdateIntegrationResponse, error)
 	DeleteIntegration(context.Context, *DeleteIntegrationRequest) (*DeleteIntegrationResponse, error)
+	DeleteIntegrationsByOrganization(context.Context, *DeleteIntegrationsByOrganizationRequest) (*DeleteIntegrationsByOrganizationResponse, error)
 	//List Repositories providers by integrations
 	ListRepositoriesProvider(context.Context, *ListRepositoriesProviderRequest) (*ListRepositoriesProviderResponse, error)
 	GetRepositoryProvider(context.Context, *GetRepositoryProviderRequest) (*GetRepositoryProviderResponse, error)
@@ -276,6 +287,9 @@ func (UnimplementedSourceServiceServer) UpdateIntegration(context.Context, *Upda
 }
 func (UnimplementedSourceServiceServer) DeleteIntegration(context.Context, *DeleteIntegrationRequest) (*DeleteIntegrationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteIntegration not implemented")
+}
+func (UnimplementedSourceServiceServer) DeleteIntegrationsByOrganization(context.Context, *DeleteIntegrationsByOrganizationRequest) (*DeleteIntegrationsByOrganizationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteIntegrationsByOrganization not implemented")
 }
 func (UnimplementedSourceServiceServer) ListRepositoriesProvider(context.Context, *ListRepositoriesProviderRequest) (*ListRepositoriesProviderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListRepositoriesProvider not implemented")
@@ -508,6 +522,24 @@ func _SourceService_DeleteIntegration_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SourceService_DeleteIntegrationsByOrganization_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteIntegrationsByOrganizationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourceServiceServer).DeleteIntegrationsByOrganization(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/source.v1alpha1.SourceService/DeleteIntegrationsByOrganization",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourceServiceServer).DeleteIntegrationsByOrganization(ctx, req.(*DeleteIntegrationsByOrganizationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _SourceService_ListRepositoriesProvider_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListRepositoriesProviderRequest)
 	if err := dec(in); err != nil {
@@ -684,6 +716,10 @@ var SourceService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteIntegration",
 			Handler:    _SourceService_DeleteIntegration_Handler,
+		},
+		{
+			MethodName: "DeleteIntegrationsByOrganization",
+			Handler:    _SourceService_DeleteIntegrationsByOrganization_Handler,
 		},
 		{
 			MethodName: "ListRepositoriesProvider",

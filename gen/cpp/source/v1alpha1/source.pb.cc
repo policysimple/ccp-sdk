@@ -18,6 +18,30 @@
 PROTOBUF_PRAGMA_INIT_SEG
 namespace source {
 namespace v1alpha1 {
+constexpr DeleteIntegrationsByOrganizationRequest::DeleteIntegrationsByOrganizationRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct DeleteIntegrationsByOrganizationRequestDefaultTypeInternal {
+  constexpr DeleteIntegrationsByOrganizationRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~DeleteIntegrationsByOrganizationRequestDefaultTypeInternal() {}
+  union {
+    DeleteIntegrationsByOrganizationRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteIntegrationsByOrganizationRequestDefaultTypeInternal _DeleteIntegrationsByOrganizationRequest_default_instance_;
+constexpr DeleteIntegrationsByOrganizationResponse::DeleteIntegrationsByOrganizationResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct DeleteIntegrationsByOrganizationResponseDefaultTypeInternal {
+  constexpr DeleteIntegrationsByOrganizationResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~DeleteIntegrationsByOrganizationResponseDefaultTypeInternal() {}
+  union {
+    DeleteIntegrationsByOrganizationResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteIntegrationsByOrganizationResponseDefaultTypeInternal _DeleteIntegrationsByOrganizationResponse_default_instance_;
 constexpr GetOneProviderByNameRequest::GetOneProviderByNameRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
@@ -695,11 +719,23 @@ struct ListProvidersResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListProvidersResponseDefaultTypeInternal _ListProvidersResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace source
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_source_2fv1alpha1_2fsource_2eproto[51];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_source_2fv1alpha1_2fsource_2eproto[53];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_source_2fv1alpha1_2fsource_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_source_2fv1alpha1_2fsource_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::DeleteIntegrationsByOrganizationRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::DeleteIntegrationsByOrganizationRequest, organization_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::DeleteIntegrationsByOrganizationResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::source::v1alpha1::DeleteIntegrationsByOrganizationResponse, msg_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::GetOneProviderByNameRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1103,60 +1139,64 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_source_2fv1alpha1_2fsource_2ep
   PROTOBUF_FIELD_OFFSET(::source::v1alpha1::ListProvidersResponse, providers_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::source::v1alpha1::GetOneProviderByNameRequest)},
-  { 6, -1, sizeof(::source::v1alpha1::GetOneProviderByNameResponse)},
-  { 12, -1, sizeof(::source::v1alpha1::Branch)},
-  { 20, -1, sizeof(::source::v1alpha1::ListRepositoriesProviderRequest)},
-  { 26, -1, sizeof(::source::v1alpha1::ListRepositoriesProviderResponse)},
-  { 32, -1, sizeof(::source::v1alpha1::GetRepositoryProviderRequest)},
-  { 39, -1, sizeof(::source::v1alpha1::GetRepositoryProviderResponse)},
-  { 45, -1, sizeof(::source::v1alpha1::DetailRepository)},
-  { 61, -1, sizeof(::source::v1alpha1::ListRepository)},
-  { 75, -1, sizeof(::source::v1alpha1::CreateDetailRepository)},
-  { 89, -1, sizeof(::source::v1alpha1::CreateRepositoryRequest)},
-  { 97, -1, sizeof(::source::v1alpha1::CreateRepositoryResponse)},
-  { 104, -1, sizeof(::source::v1alpha1::ListRepositoriesRequest)},
-  { 111, -1, sizeof(::source::v1alpha1::ListRepositoriesResponse)},
-  { 117, -1, sizeof(::source::v1alpha1::GetRepositoryRequest)},
-  { 123, -1, sizeof(::source::v1alpha1::GetRepositoryResponse)},
-  { 129, -1, sizeof(::source::v1alpha1::DeleteRepositoryRequest)},
-  { 135, -1, sizeof(::source::v1alpha1::DeleteRepositoryResponse)},
-  { 142, -1, sizeof(::source::v1alpha1::UpdateRepositoryRequest)},
-  { 149, -1, sizeof(::source::v1alpha1::UpdateRepositoryResponse)},
-  { 156, 163, sizeof(::source::v1alpha1::Integration_DataEntry_DoNotUse)},
-  { 165, 172, sizeof(::source::v1alpha1::Integration_MetadataEntry_DoNotUse)},
-  { 174, -1, sizeof(::source::v1alpha1::Integration)},
-  { 186, -1, sizeof(::source::v1alpha1::Repository)},
-  { 198, 205, sizeof(::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse)},
-  { 207, 214, sizeof(::source::v1alpha1::CreateIntegrationRequest_MetadataEntry_DoNotUse)},
-  { 216, -1, sizeof(::source::v1alpha1::CreateIntegrationRequest)},
-  { 227, -1, sizeof(::source::v1alpha1::CreateIntegrationResponse)},
-  { 235, -1, sizeof(::source::v1alpha1::ListIntegrationsRequest)},
-  { 242, -1, sizeof(::source::v1alpha1::ListIntegrationsResponse)},
-  { 248, -1, sizeof(::source::v1alpha1::GetIntegrationRequest)},
-  { 254, -1, sizeof(::source::v1alpha1::GetIntegrationResponse)},
-  { 260, -1, sizeof(::source::v1alpha1::UpdateIntegrationRequest)},
-  { 267, -1, sizeof(::source::v1alpha1::UpdateIntegrationResponse)},
-  { 274, -1, sizeof(::source::v1alpha1::DeleteIntegrationRequest)},
-  { 280, -1, sizeof(::source::v1alpha1::DeleteIntegrationResponse)},
-  { 287, 294, sizeof(::source::v1alpha1::Provider_DataEntry_DoNotUse)},
-  { 296, 303, sizeof(::source::v1alpha1::Provider_MetadataEntry_DoNotUse)},
-  { 305, -1, sizeof(::source::v1alpha1::Provider)},
-  { 316, -1, sizeof(::source::v1alpha1::DeleteProviderRequest)},
-  { 322, -1, sizeof(::source::v1alpha1::DeleteProviderResponse)},
-  { 329, -1, sizeof(::source::v1alpha1::UpdateProviderRequest)},
-  { 336, -1, sizeof(::source::v1alpha1::UpdateProviderResponse)},
-  { 343, -1, sizeof(::source::v1alpha1::GetProviderRequest)},
-  { 349, -1, sizeof(::source::v1alpha1::GetProviderResponse)},
-  { 355, 362, sizeof(::source::v1alpha1::CreateProviderRequest_DataEntry_DoNotUse)},
-  { 364, 371, sizeof(::source::v1alpha1::CreateProviderRequest_MetadataEntry_DoNotUse)},
-  { 373, -1, sizeof(::source::v1alpha1::CreateProviderRequest)},
-  { 383, -1, sizeof(::source::v1alpha1::CreateProviderResponse)},
-  { 390, -1, sizeof(::source::v1alpha1::ListProvidersRequest)},
-  { 395, -1, sizeof(::source::v1alpha1::ListProvidersResponse)},
+  { 0, -1, sizeof(::source::v1alpha1::DeleteIntegrationsByOrganizationRequest)},
+  { 6, -1, sizeof(::source::v1alpha1::DeleteIntegrationsByOrganizationResponse)},
+  { 12, -1, sizeof(::source::v1alpha1::GetOneProviderByNameRequest)},
+  { 18, -1, sizeof(::source::v1alpha1::GetOneProviderByNameResponse)},
+  { 24, -1, sizeof(::source::v1alpha1::Branch)},
+  { 32, -1, sizeof(::source::v1alpha1::ListRepositoriesProviderRequest)},
+  { 38, -1, sizeof(::source::v1alpha1::ListRepositoriesProviderResponse)},
+  { 44, -1, sizeof(::source::v1alpha1::GetRepositoryProviderRequest)},
+  { 51, -1, sizeof(::source::v1alpha1::GetRepositoryProviderResponse)},
+  { 57, -1, sizeof(::source::v1alpha1::DetailRepository)},
+  { 73, -1, sizeof(::source::v1alpha1::ListRepository)},
+  { 87, -1, sizeof(::source::v1alpha1::CreateDetailRepository)},
+  { 101, -1, sizeof(::source::v1alpha1::CreateRepositoryRequest)},
+  { 109, -1, sizeof(::source::v1alpha1::CreateRepositoryResponse)},
+  { 116, -1, sizeof(::source::v1alpha1::ListRepositoriesRequest)},
+  { 123, -1, sizeof(::source::v1alpha1::ListRepositoriesResponse)},
+  { 129, -1, sizeof(::source::v1alpha1::GetRepositoryRequest)},
+  { 135, -1, sizeof(::source::v1alpha1::GetRepositoryResponse)},
+  { 141, -1, sizeof(::source::v1alpha1::DeleteRepositoryRequest)},
+  { 147, -1, sizeof(::source::v1alpha1::DeleteRepositoryResponse)},
+  { 154, -1, sizeof(::source::v1alpha1::UpdateRepositoryRequest)},
+  { 161, -1, sizeof(::source::v1alpha1::UpdateRepositoryResponse)},
+  { 168, 175, sizeof(::source::v1alpha1::Integration_DataEntry_DoNotUse)},
+  { 177, 184, sizeof(::source::v1alpha1::Integration_MetadataEntry_DoNotUse)},
+  { 186, -1, sizeof(::source::v1alpha1::Integration)},
+  { 198, -1, sizeof(::source::v1alpha1::Repository)},
+  { 210, 217, sizeof(::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse)},
+  { 219, 226, sizeof(::source::v1alpha1::CreateIntegrationRequest_MetadataEntry_DoNotUse)},
+  { 228, -1, sizeof(::source::v1alpha1::CreateIntegrationRequest)},
+  { 239, -1, sizeof(::source::v1alpha1::CreateIntegrationResponse)},
+  { 247, -1, sizeof(::source::v1alpha1::ListIntegrationsRequest)},
+  { 254, -1, sizeof(::source::v1alpha1::ListIntegrationsResponse)},
+  { 260, -1, sizeof(::source::v1alpha1::GetIntegrationRequest)},
+  { 266, -1, sizeof(::source::v1alpha1::GetIntegrationResponse)},
+  { 272, -1, sizeof(::source::v1alpha1::UpdateIntegrationRequest)},
+  { 279, -1, sizeof(::source::v1alpha1::UpdateIntegrationResponse)},
+  { 286, -1, sizeof(::source::v1alpha1::DeleteIntegrationRequest)},
+  { 292, -1, sizeof(::source::v1alpha1::DeleteIntegrationResponse)},
+  { 299, 306, sizeof(::source::v1alpha1::Provider_DataEntry_DoNotUse)},
+  { 308, 315, sizeof(::source::v1alpha1::Provider_MetadataEntry_DoNotUse)},
+  { 317, -1, sizeof(::source::v1alpha1::Provider)},
+  { 328, -1, sizeof(::source::v1alpha1::DeleteProviderRequest)},
+  { 334, -1, sizeof(::source::v1alpha1::DeleteProviderResponse)},
+  { 341, -1, sizeof(::source::v1alpha1::UpdateProviderRequest)},
+  { 348, -1, sizeof(::source::v1alpha1::UpdateProviderResponse)},
+  { 355, -1, sizeof(::source::v1alpha1::GetProviderRequest)},
+  { 361, -1, sizeof(::source::v1alpha1::GetProviderResponse)},
+  { 367, 374, sizeof(::source::v1alpha1::CreateProviderRequest_DataEntry_DoNotUse)},
+  { 376, 383, sizeof(::source::v1alpha1::CreateProviderRequest_MetadataEntry_DoNotUse)},
+  { 385, -1, sizeof(::source::v1alpha1::CreateProviderRequest)},
+  { 395, -1, sizeof(::source::v1alpha1::CreateProviderResponse)},
+  { 402, -1, sizeof(::source::v1alpha1::ListProvidersRequest)},
+  { 407, -1, sizeof(::source::v1alpha1::ListProvidersResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_DeleteIntegrationsByOrganizationRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_DeleteIntegrationsByOrganizationResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_GetOneProviderByNameRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_GetOneProviderByNameResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::source::v1alpha1::_Branch_default_instance_),
@@ -1212,197 +1252,205 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_source_2fv1alpha1_2fsource_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\034source/v1alpha1/source.proto\022\017source.v"
-  "1alpha1\"1\n\033GetOneProviderByNameRequest\022\022"
-  "\n\004name\030\001 \001(\tR\004name\"U\n\034GetOneProviderByNa"
-  "meResponse\0225\n\010provider\030\001 \001(\0132\031.source.v1"
-  "alpha1.ProviderR\010provider\"@\n\006Branch\022\022\n\004n"
-  "ame\030\001 \001(\tR\004name\022\020\n\003sha\030\002 \001(\tR\003sha\022\020\n\003url"
-  "\030\003 \001(\tR\003url\"H\n\037ListRepositoriesProviderR"
-  "equest\022%\n\016integration_id\030\001 \001(\tR\rintegrat"
-  "ionId\"c\n ListRepositoriesProviderRespons"
-  "e\022\?\n\014repositories\030\001 \003(\0132\033.source.v1alpha"
-  "1.RepositoryR\014repositories\"Y\n\034GetReposit"
-  "oryProviderRequest\022%\n\016integration_id\030\001 \001"
-  "(\tR\rintegrationId\022\022\n\004name\030\002 \001(\tR\004name\"R\n"
-  "\035GetRepositoryProviderResponse\0221\n\007branch"
-  "s\030\001 \003(\0132\027.source.v1alpha1.BranchR\007branch"
-  "s\"\310\002\n\020DetailRepository\022\016\n\002id\030\001 \001(\tR\002id\022\022"
-  "\n\004name\030\002 \001(\tR\004name\022\030\n\007private\030\003 \001(\010R\007pri"
-  "vate\022\032\n\010fullname\030\004 \001(\tR\010fullname\022 \n\013desc"
-  "ription\030\005 \001(\tR\013description\022\022\n\004fork\030\006 \001(\010"
-  "R\004fork\022\033\n\tclone_url\030\007 \001(\tR\010cloneUrl\022\035\n\np"
-  "roject_id\030\010 \001(\rR\tprojectId\022\'\n\017organizati"
-  "on_id\030\t \001(\rR\016organizationId\022\030\n\007branchs\030\n"
-  " \003(\tR\007branchs\022%\n\016integration_id\030\013 \001(\tR\ri"
-  "ntegrationId\"\230\002\n\016ListRepository\022\016\n\002id\030\001 "
-  "\001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\030\n\007private\030\003"
-  " \001(\010R\007private\022\032\n\010fullname\030\004 \001(\tR\010fullnam"
-  "e\022 \n\013description\030\005 \001(\tR\013description\022\033\n\tc"
-  "lone_url\030\007 \001(\tR\010cloneUrl\022\035\n\nproject_id\030\010"
-  " \001(\rR\tprojectId\022\'\n\017organization_id\030\t \001(\r"
-  "R\016organizationId\022%\n\016integration_id\030\013 \001(\t"
-  "R\rintegrationId\"\244\002\n\026CreateDetailReposito"
-  "ry\022\022\n\004name\030\001 \001(\tR\004name\022\030\n\007private\030\002 \001(\010R"
-  "\007private\022\032\n\010fullname\030\003 \001(\tR\010fullname\022 \n\013"
-  "description\030\004 \001(\tR\013description\022\022\n\004fork\030\005"
-  " \001(\010R\004fork\022\033\n\tclone_url\030\006 \001(\tR\010cloneUrl\022"
-  "\035\n\nproject_id\030\007 \001(\rR\tprojectId\022\'\n\017organi"
-  "zation_id\030\010 \001(\rR\016organizationId\022%\n\016integ"
-  "ration_id\030\t \001(\tR\rintegrationId\"\252\001\n\027Creat"
-  "eRepositoryRequest\022G\n\nrepository\030\001 \001(\0132\'"
-  ".source.v1alpha1.CreateDetailRepositoryR"
-  "\nrepository\022\035\n\nproject_id\030\002 \001(\rR\tproject"
-  "Id\022\'\n\017organization_id\030\003 \001(\rR\016organizatio"
-  "nId\"B\n\030CreateRepositoryResponse\022\020\n\003msg\030\001"
-  " \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"a\n\027ListR"
-  "epositoriesRequest\022\035\n\nproject_id\030\001 \001(\rR\t"
-  "projectId\022\'\n\017organization_id\030\002 \001(\rR\016orga"
-  "nizationId\"_\n\030ListRepositoriesResponse\022C"
-  "\n\014repositories\030\001 \003(\0132\037.source.v1alpha1.L"
-  "istRepositoryR\014repositories\";\n\024GetReposi"
-  "toryRequest\022#\n\rrepository_id\030\001 \001(\tR\014repo"
-  "sitoryId\"Z\n\025GetRepositoryResponse\022A\n\nrep"
-  "ository\030\001 \001(\0132!.source.v1alpha1.DetailRe"
-  "positoryR\nrepository\">\n\027DeleteRepository"
-  "Request\022#\n\rrepository_id\030\001 \001(\tR\014reposito"
-  "ryId\"B\n\030DeleteRepositoryResponse\022\020\n\003msg\030"
-  "\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\201\001\n\027Upd"
-  "ateRepositoryRequest\022#\n\rrepository_id\030\001 "
-  "\001(\tR\014repositoryId\022A\n\nrepository\030\002 \001(\0132!."
-  "source.v1alpha1.DetailRepositoryR\nreposi"
-  "tory\"B\n\030UpdateRepositoryResponse\022\020\n\003msg\030"
-  "\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\244\003\n\013Int"
-  "egration\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017organization"
-  "_id\030\002 \001(\rR\016organizationId\022\022\n\004name\030\003 \001(\tR"
-  "\004name\0225\n\010provider\030\004 \001(\0132\031.source.v1alpha"
-  "1.ProviderR\010provider\022:\n\004data\030\005 \003(\0132&.sou"
-  "rce.v1alpha1.Integration.DataEntryR\004data"
-  "\022F\n\010metadata\030\006 \003(\0132*.source.v1alpha1.Int"
-  "egration.MetadataEntryR\010metadata\022\027\n\007user"
-  "_id\030\007 \001(\tR\006userId\0327\n\tDataEntry\022\020\n\003key\030\001 "
-  "\001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rMe"
-  "tadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002"
-  " \001(\tR\005value:\0028\001\"\301\001\n\nRepository\022\022\n\004name\030\001"
-  " \001(\tR\004name\022\030\n\007private\030\002 \001(\010R\007private\022\032\n\010"
-  "fullname\030\003 \001(\tR\010fullname\022 \n\013description\030"
-  "\004 \001(\tR\013description\022\022\n\004fork\030\005 \001(\010R\004fork\022\033"
-  "\n\tclone_url\030\006 \001(\tR\010cloneUrl\022\026\n\006branch\030\007 "
-  "\001(\tR\006branch\"\245\003\n\030CreateIntegrationRequest"
-  "\022\'\n\017organization_id\030\002 \001(\rR\016organizationI"
-  "d\022\022\n\004name\030\003 \001(\tR\004name\022G\n\004data\030\005 \003(\01323.so"
-  "urce.v1alpha1.CreateIntegrationRequest.D"
-  "ataEntryR\004data\022S\n\010metadata\030\006 \003(\01327.sourc"
-  "e.v1alpha1.CreateIntegrationRequest.Meta"
-  "dataEntryR\010metadata\022\027\n\007user_id\030\007 \001(\tR\006us"
-  "erId\022\037\n\013provider_id\030\010 \001(\tR\nproviderId\0327\n"
-  "\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 "
-  "\001(\tR\005value:\0028\001\032;\n\rMetadataEntry\022\020\n\003key\030\001"
-  " \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"j\n\031C"
-  "reateIntegrationResponse\022\020\n\003msg\030\001 \001(\tR\003m"
-  "sg\022\024\n\005error\030\002 \001(\tR\005error\022%\n\016integration_"
-  "id\030\003 \001(\tR\rintegrationId\"[\n\027ListIntegrati"
-  "onsRequest\022\'\n\017organization_id\030\001 \001(\rR\016org"
-  "anizationId\022\027\n\007user_id\030\002 \001(\tR\006userId\"\\\n\030"
-  "ListIntegrationsResponse\022@\n\014integrations"
-  "\030\001 \003(\0132\034.source.v1alpha1.IntegrationR\014in"
-  "tegrations\"\'\n\025GetIntegrationRequest\022\016\n\002i"
-  "d\030\001 \001(\tR\002id\"X\n\026GetIntegrationResponse\022>\n"
-  "\013integration\030\001 \001(\0132\034.source.v1alpha1.Int"
-  "egrationR\013integration\"y\n\030UpdateIntegrati"
-  "onRequest\022\016\n\002id\030\001 \001(\tR\002id\022M\n\014integration"
-  "s\030\002 \001(\0132).source.v1alpha1.CreateIntegrat"
-  "ionRequestR\014integrations\"C\n\031UpdateIntegr"
-  "ationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error"
-  "\030\002 \001(\tR\005error\"*\n\030DeleteIntegrationReques"
-  "t\022\016\n\002id\030\001 \001(\tR\002id\"C\n\031DeleteIntegrationRe"
-  "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR"
-  "\005error\"\330\002\n\010Provider\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004n"
-  "ame\030\002 \001(\tR\004name\022 \n\013description\030\003 \001(\tR\013de"
-  "scription\022\022\n\004logo\030\004 \001(\tR\004logo\0227\n\004data\030\005 "
-  "\003(\0132#.source.v1alpha1.Provider.DataEntry"
-  "R\004data\022C\n\010metadata\030\006 \003(\0132\'.source.v1alph"
-  "a1.Provider.MetadataEntryR\010metadata\0327\n\tD"
-  "ataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001("
-  "\tR\005value:\0028\001\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001"
-  "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\'\n\025Del"
-  "eteProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"@\n\026De"
-  "leteProviderResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024"
-  "\n\005error\030\002 \001(\tR\005error\"k\n\025UpdateProviderRe"
-  "quest\022\016\n\002id\030\001 \001(\tR\002id\022B\n\010provider\030\002 \001(\0132"
-  "&.source.v1alpha1.CreateProviderRequestR"
-  "\010provider\"@\n\026UpdateProviderResponse\022\020\n\003m"
-  "sg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"$\n\022G"
-  "etProviderRequest\022\016\n\002id\030\001 \001(\tR\002id\"L\n\023Get"
-  "ProviderResponse\0225\n\010provider\030\001 \001(\0132\031.sou"
-  "rce.v1alpha1.ProviderR\010provider\"\357\002\n\025Crea"
-  "teProviderRequest\022\022\n\004name\030\001 \001(\tR\004name\022 \n"
-  "\013description\030\002 \001(\tR\013description\022\022\n\004logo\030"
-  "\003 \001(\tR\004logo\022D\n\004data\030\005 \003(\01320.source.v1alp"
-  "ha1.CreateProviderRequest.DataEntryR\004dat"
-  "a\022P\n\010metadata\030\006 \003(\01324.source.v1alpha1.Cr"
-  "eateProviderRequest.MetadataEntryR\010metad"
-  "ata\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va"
+  "1alpha1\"R\n\'DeleteIntegrationsByOrganizat"
+  "ionRequest\022\'\n\017organization_id\030\001 \001(\tR\016org"
+  "anizationId\"<\n(DeleteIntegrationsByOrgan"
+  "izationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\"1\n\033Get"
+  "OneProviderByNameRequest\022\022\n\004name\030\001 \001(\tR\004"
+  "name\"U\n\034GetOneProviderByNameResponse\0225\n\010"
+  "provider\030\001 \001(\0132\031.source.v1alpha1.Provide"
+  "rR\010provider\"@\n\006Branch\022\022\n\004name\030\001 \001(\tR\004nam"
+  "e\022\020\n\003sha\030\002 \001(\tR\003sha\022\020\n\003url\030\003 \001(\tR\003url\"H\n"
+  "\037ListRepositoriesProviderRequest\022%\n\016inte"
+  "gration_id\030\001 \001(\tR\rintegrationId\"c\n ListR"
+  "epositoriesProviderResponse\022\?\n\014repositor"
+  "ies\030\001 \003(\0132\033.source.v1alpha1.RepositoryR\014"
+  "repositories\"Y\n\034GetRepositoryProviderReq"
+  "uest\022%\n\016integration_id\030\001 \001(\tR\rintegratio"
+  "nId\022\022\n\004name\030\002 \001(\tR\004name\"R\n\035GetRepository"
+  "ProviderResponse\0221\n\007branchs\030\001 \003(\0132\027.sour"
+  "ce.v1alpha1.BranchR\007branchs\"\310\002\n\020DetailRe"
+  "pository\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004"
+  "name\022\030\n\007private\030\003 \001(\010R\007private\022\032\n\010fullna"
+  "me\030\004 \001(\tR\010fullname\022 \n\013description\030\005 \001(\tR"
+  "\013description\022\022\n\004fork\030\006 \001(\010R\004fork\022\033\n\tclon"
+  "e_url\030\007 \001(\tR\010cloneUrl\022\035\n\nproject_id\030\010 \001("
+  "\rR\tprojectId\022\'\n\017organization_id\030\t \001(\rR\016o"
+  "rganizationId\022\030\n\007branchs\030\n \003(\tR\007branchs\022"
+  "%\n\016integration_id\030\013 \001(\tR\rintegrationId\"\230"
+  "\002\n\016ListRepository\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004nam"
+  "e\030\002 \001(\tR\004name\022\030\n\007private\030\003 \001(\010R\007private\022"
+  "\032\n\010fullname\030\004 \001(\tR\010fullname\022 \n\013descripti"
+  "on\030\005 \001(\tR\013description\022\033\n\tclone_url\030\007 \001(\t"
+  "R\010cloneUrl\022\035\n\nproject_id\030\010 \001(\rR\tprojectI"
+  "d\022\'\n\017organization_id\030\t \001(\rR\016organization"
+  "Id\022%\n\016integration_id\030\013 \001(\tR\rintegrationI"
+  "d\"\244\002\n\026CreateDetailRepository\022\022\n\004name\030\001 \001"
+  "(\tR\004name\022\030\n\007private\030\002 \001(\010R\007private\022\032\n\010fu"
+  "llname\030\003 \001(\tR\010fullname\022 \n\013description\030\004 "
+  "\001(\tR\013description\022\022\n\004fork\030\005 \001(\010R\004fork\022\033\n\t"
+  "clone_url\030\006 \001(\tR\010cloneUrl\022\035\n\nproject_id\030"
+  "\007 \001(\rR\tprojectId\022\'\n\017organization_id\030\010 \001("
+  "\rR\016organizationId\022%\n\016integration_id\030\t \001("
+  "\tR\rintegrationId\"\252\001\n\027CreateRepositoryReq"
+  "uest\022G\n\nrepository\030\001 \001(\0132\'.source.v1alph"
+  "a1.CreateDetailRepositoryR\nrepository\022\035\n"
+  "\nproject_id\030\002 \001(\rR\tprojectId\022\'\n\017organiza"
+  "tion_id\030\003 \001(\rR\016organizationId\"B\n\030CreateR"
+  "epositoryResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005e"
+  "rror\030\002 \001(\tR\005error\"a\n\027ListRepositoriesReq"
+  "uest\022\035\n\nproject_id\030\001 \001(\rR\tprojectId\022\'\n\017o"
+  "rganization_id\030\002 \001(\rR\016organizationId\"_\n\030"
+  "ListRepositoriesResponse\022C\n\014repositories"
+  "\030\001 \003(\0132\037.source.v1alpha1.ListRepositoryR"
+  "\014repositories\";\n\024GetRepositoryRequest\022#\n"
+  "\rrepository_id\030\001 \001(\tR\014repositoryId\"Z\n\025Ge"
+  "tRepositoryResponse\022A\n\nrepository\030\001 \001(\0132"
+  "!.source.v1alpha1.DetailRepositoryR\nrepo"
+  "sitory\">\n\027DeleteRepositoryRequest\022#\n\rrep"
+  "ository_id\030\001 \001(\tR\014repositoryId\"B\n\030Delete"
+  "RepositoryResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005"
+  "error\030\002 \001(\tR\005error\"\201\001\n\027UpdateRepositoryR"
+  "equest\022#\n\rrepository_id\030\001 \001(\tR\014repositor"
+  "yId\022A\n\nrepository\030\002 \001(\0132!.source.v1alpha"
+  "1.DetailRepositoryR\nrepository\"B\n\030Update"
+  "RepositoryResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005"
+  "error\030\002 \001(\tR\005error\"\244\003\n\013Integration\022\016\n\002id"
+  "\030\001 \001(\tR\002id\022\'\n\017organization_id\030\002 \001(\rR\016org"
+  "anizationId\022\022\n\004name\030\003 \001(\tR\004name\0225\n\010provi"
+  "der\030\004 \001(\0132\031.source.v1alpha1.ProviderR\010pr"
+  "ovider\022:\n\004data\030\005 \003(\0132&.source.v1alpha1.I"
+  "ntegration.DataEntryR\004data\022F\n\010metadata\030\006"
+  " \003(\0132*.source.v1alpha1.Integration.Metad"
+  "ataEntryR\010metadata\022\027\n\007user_id\030\007 \001(\tR\006use"
+  "rId\0327\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va"
   "lue\030\002 \001(\tR\005value:\0028\001\032;\n\rMetadataEntry\022\020\n"
   "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028"
-  "\001\"@\n\026CreateProviderResponse\022\020\n\003msg\030\001 \001(\t"
-  "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\026\n\024ListProvi"
-  "dersRequest\"P\n\025ListProvidersResponse\0227\n\t"
-  "providers\030\001 \003(\0132\031.source.v1alpha1.Provid"
-  "erR\tproviders2\364\016\n\rSourceService\022a\n\016Creat"
-  "eProvider\022&.source.v1alpha1.CreateProvid"
-  "erRequest\032\'.source.v1alpha1.CreateProvid"
-  "erResponse\022^\n\rListProviders\022%.source.v1a"
-  "lpha1.ListProvidersRequest\032&.source.v1al"
-  "pha1.ListProvidersResponse\022X\n\013GetProvide"
-  "r\022#.source.v1alpha1.GetProviderRequest\032$"
-  ".source.v1alpha1.GetProviderResponse\022s\n\024"
-  "GetOneProviderByName\022,.source.v1alpha1.G"
-  "etOneProviderByNameRequest\032-.source.v1al"
-  "pha1.GetOneProviderByNameResponse\022a\n\016Upd"
-  "ateProvider\022&.source.v1alpha1.UpdateProv"
-  "iderRequest\032\'.source.v1alpha1.UpdateProv"
-  "iderResponse\022a\n\016DeleteProvider\022&.source."
-  "v1alpha1.DeleteProviderRequest\032\'.source."
-  "v1alpha1.DeleteProviderResponse\022j\n\021Creat"
-  "eIntegration\022).source.v1alpha1.CreateInt"
-  "egrationRequest\032*.source.v1alpha1.Create"
-  "IntegrationResponse\022g\n\020ListIntegrations\022"
-  "(.source.v1alpha1.ListIntegrationsReques"
-  "t\032).source.v1alpha1.ListIntegrationsResp"
-  "onse\022a\n\016GetIntegration\022&.source.v1alpha1"
-  ".GetIntegrationRequest\032\'.source.v1alpha1"
-  ".GetIntegrationResponse\022j\n\021UpdateIntegra"
-  "tion\022).source.v1alpha1.UpdateIntegration"
-  "Request\032*.source.v1alpha1.UpdateIntegrat"
-  "ionResponse\022j\n\021DeleteIntegration\022).sourc"
-  "e.v1alpha1.DeleteIntegrationRequest\032*.so"
-  "urce.v1alpha1.DeleteIntegrationResponse\022"
-  "\177\n\030ListRepositoriesProvider\0220.source.v1a"
-  "lpha1.ListRepositoriesProviderRequest\0321."
-  "source.v1alpha1.ListRepositoriesProvider"
-  "Response\022v\n\025GetRepositoryProvider\022-.sour"
-  "ce.v1alpha1.GetRepositoryProviderRequest"
-  "\032..source.v1alpha1.GetRepositoryProvider"
-  "Response\022g\n\020CreateRepository\022(.source.v1"
-  "alpha1.CreateRepositoryRequest\032).source."
-  "v1alpha1.CreateRepositoryResponse\022g\n\020Lis"
-  "tRepositories\022(.source.v1alpha1.ListRepo"
-  "sitoriesRequest\032).source.v1alpha1.ListRe"
-  "positoriesResponse\022^\n\rGetRepository\022%.so"
-  "urce.v1alpha1.GetRepositoryRequest\032&.sou"
-  "rce.v1alpha1.GetRepositoryResponse\022g\n\020De"
-  "leteRepository\022(.source.v1alpha1.DeleteR"
-  "epositoryRequest\032).source.v1alpha1.Delet"
-  "eRepositoryResponse\022g\n\020UpdateRepository\022"
-  "(.source.v1alpha1.UpdateRepositoryReques"
-  "t\032).source.v1alpha1.UpdateRepositoryResp"
-  "onseB2Z0github.com/cuemby/ccp-sdk/gen/go"
-  "/source/v1alpha1b\006proto3"
+  "\001\"\301\001\n\nRepository\022\022\n\004name\030\001 \001(\tR\004name\022\030\n\007"
+  "private\030\002 \001(\010R\007private\022\032\n\010fullname\030\003 \001(\t"
+  "R\010fullname\022 \n\013description\030\004 \001(\tR\013descrip"
+  "tion\022\022\n\004fork\030\005 \001(\010R\004fork\022\033\n\tclone_url\030\006 "
+  "\001(\tR\010cloneUrl\022\026\n\006branch\030\007 \001(\tR\006branch\"\245\003"
+  "\n\030CreateIntegrationRequest\022\'\n\017organizati"
+  "on_id\030\002 \001(\rR\016organizationId\022\022\n\004name\030\003 \001("
+  "\tR\004name\022G\n\004data\030\005 \003(\01323.source.v1alpha1."
+  "CreateIntegrationRequest.DataEntryR\004data"
+  "\022S\n\010metadata\030\006 \003(\01327.source.v1alpha1.Cre"
+  "ateIntegrationRequest.MetadataEntryR\010met"
+  "adata\022\027\n\007user_id\030\007 \001(\tR\006userId\022\037\n\013provid"
+  "er_id\030\010 \001(\tR\nproviderId\0327\n\tDataEntry\022\020\n\003"
+  "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001"
+  "\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005v"
+  "alue\030\002 \001(\tR\005value:\0028\001\"j\n\031CreateIntegrati"
+  "onResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 "
+  "\001(\tR\005error\022%\n\016integration_id\030\003 \001(\tR\rinte"
+  "grationId\"[\n\027ListIntegrationsRequest\022\'\n\017"
+  "organization_id\030\001 \001(\rR\016organizationId\022\027\n"
+  "\007user_id\030\002 \001(\tR\006userId\"\\\n\030ListIntegratio"
+  "nsResponse\022@\n\014integrations\030\001 \003(\0132\034.sourc"
+  "e.v1alpha1.IntegrationR\014integrations\"\'\n\025"
+  "GetIntegrationRequest\022\016\n\002id\030\001 \001(\tR\002id\"X\n"
+  "\026GetIntegrationResponse\022>\n\013integration\030\001"
+  " \001(\0132\034.source.v1alpha1.IntegrationR\013inte"
+  "gration\"y\n\030UpdateIntegrationRequest\022\016\n\002i"
+  "d\030\001 \001(\tR\002id\022M\n\014integrations\030\002 \001(\0132).sour"
+  "ce.v1alpha1.CreateIntegrationRequestR\014in"
+  "tegrations\"C\n\031UpdateIntegrationResponse\022"
+  "\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\""
+  "*\n\030DeleteIntegrationRequest\022\016\n\002id\030\001 \001(\tR"
+  "\002id\"C\n\031DeleteIntegrationResponse\022\020\n\003msg\030"
+  "\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\330\002\n\010Pro"
+  "vider\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004nam"
+  "e\022 \n\013description\030\003 \001(\tR\013description\022\022\n\004l"
+  "ogo\030\004 \001(\tR\004logo\0227\n\004data\030\005 \003(\0132#.source.v"
+  "1alpha1.Provider.DataEntryR\004data\022C\n\010meta"
+  "data\030\006 \003(\0132\'.source.v1alpha1.Provider.Me"
+  "tadataEntryR\010metadata\0327\n\tDataEntry\022\020\n\003ke"
+  "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;"
+  "\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005val"
+  "ue\030\002 \001(\tR\005value:\0028\001\"\'\n\025DeleteProviderReq"
+  "uest\022\016\n\002id\030\001 \001(\tR\002id\"@\n\026DeleteProviderRe"
+  "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR"
+  "\005error\"k\n\025UpdateProviderRequest\022\016\n\002id\030\001 "
+  "\001(\tR\002id\022B\n\010provider\030\002 \001(\0132&.source.v1alp"
+  "ha1.CreateProviderRequestR\010provider\"@\n\026U"
+  "pdateProviderResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022"
+  "\024\n\005error\030\002 \001(\tR\005error\"$\n\022GetProviderRequ"
+  "est\022\016\n\002id\030\001 \001(\tR\002id\"L\n\023GetProviderRespon"
+  "se\0225\n\010provider\030\001 \001(\0132\031.source.v1alpha1.P"
+  "roviderR\010provider\"\357\002\n\025CreateProviderRequ"
+  "est\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013description\030\002"
+  " \001(\tR\013description\022\022\n\004logo\030\003 \001(\tR\004logo\022D\n"
+  "\004data\030\005 \003(\01320.source.v1alpha1.CreateProv"
+  "iderRequest.DataEntryR\004data\022P\n\010metadata\030"
+  "\006 \003(\01324.source.v1alpha1.CreateProviderRe"
+  "quest.MetadataEntryR\010metadata\0327\n\tDataEnt"
+  "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val"
+  "ue:\0028\001\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003ke"
+  "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"@\n\026CreatePro"
+  "viderResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error"
+  "\030\002 \001(\tR\005error\"\026\n\024ListProvidersRequest\"P\n"
+  "\025ListProvidersResponse\0227\n\tproviders\030\001 \003("
+  "\0132\031.source.v1alpha1.ProviderR\tproviders2"
+  "\216\020\n\rSourceService\022a\n\016CreateProvider\022&.so"
+  "urce.v1alpha1.CreateProviderRequest\032\'.so"
+  "urce.v1alpha1.CreateProviderResponse\022^\n\r"
+  "ListProviders\022%.source.v1alpha1.ListProv"
+  "idersRequest\032&.source.v1alpha1.ListProvi"
+  "dersResponse\022X\n\013GetProvider\022#.source.v1a"
+  "lpha1.GetProviderRequest\032$.source.v1alph"
+  "a1.GetProviderResponse\022s\n\024GetOneProvider"
+  "ByName\022,.source.v1alpha1.GetOneProviderB"
+  "yNameRequest\032-.source.v1alpha1.GetOnePro"
+  "viderByNameResponse\022a\n\016UpdateProvider\022&."
+  "source.v1alpha1.UpdateProviderRequest\032\'."
+  "source.v1alpha1.UpdateProviderResponse\022a"
+  "\n\016DeleteProvider\022&.source.v1alpha1.Delet"
+  "eProviderRequest\032\'.source.v1alpha1.Delet"
+  "eProviderResponse\022j\n\021CreateIntegration\022)"
+  ".source.v1alpha1.CreateIntegrationReques"
+  "t\032*.source.v1alpha1.CreateIntegrationRes"
+  "ponse\022g\n\020ListIntegrations\022(.source.v1alp"
+  "ha1.ListIntegrationsRequest\032).source.v1a"
+  "lpha1.ListIntegrationsResponse\022a\n\016GetInt"
+  "egration\022&.source.v1alpha1.GetIntegratio"
+  "nRequest\032\'.source.v1alpha1.GetIntegratio"
+  "nResponse\022j\n\021UpdateIntegration\022).source."
+  "v1alpha1.UpdateIntegrationRequest\032*.sour"
+  "ce.v1alpha1.UpdateIntegrationResponse\022j\n"
+  "\021DeleteIntegration\022).source.v1alpha1.Del"
+  "eteIntegrationRequest\032*.source.v1alpha1."
+  "DeleteIntegrationResponse\022\227\001\n DeleteInte"
+  "grationsByOrganization\0228.source.v1alpha1"
+  ".DeleteIntegrationsByOrganizationRequest"
+  "\0329.source.v1alpha1.DeleteIntegrationsByO"
+  "rganizationResponse\022\177\n\030ListRepositoriesP"
+  "rovider\0220.source.v1alpha1.ListRepositori"
+  "esProviderRequest\0321.source.v1alpha1.List"
+  "RepositoriesProviderResponse\022v\n\025GetRepos"
+  "itoryProvider\022-.source.v1alpha1.GetRepos"
+  "itoryProviderRequest\032..source.v1alpha1.G"
+  "etRepositoryProviderResponse\022g\n\020CreateRe"
+  "pository\022(.source.v1alpha1.CreateReposit"
+  "oryRequest\032).source.v1alpha1.CreateRepos"
+  "itoryResponse\022g\n\020ListRepositories\022(.sour"
+  "ce.v1alpha1.ListRepositoriesRequest\032).so"
+  "urce.v1alpha1.ListRepositoriesResponse\022^"
+  "\n\rGetRepository\022%.source.v1alpha1.GetRep"
+  "ositoryRequest\032&.source.v1alpha1.GetRepo"
+  "sitoryResponse\022g\n\020DeleteRepository\022(.sou"
+  "rce.v1alpha1.DeleteRepositoryRequest\032).s"
+  "ource.v1alpha1.DeleteRepositoryResponse\022"
+  "g\n\020UpdateRepository\022(.source.v1alpha1.Up"
+  "dateRepositoryRequest\032).source.v1alpha1."
+  "UpdateRepositoryResponseB2Z0github.com/c"
+  "uemby/ccp-sdk/gen/go/source/v1alpha1b\006pr"
+  "oto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_source_2fv1alpha1_2fsource_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_source_2fv1alpha1_2fsource_2eproto = {
-  false, false, 7464, descriptor_table_protodef_source_2fv1alpha1_2fsource_2eproto, "source/v1alpha1/source.proto", 
-  &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once, nullptr, 0, 51,
+  false, false, 7764, descriptor_table_protodef_source_2fv1alpha1_2fsource_2eproto, "source/v1alpha1/source.proto", 
+  &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once, nullptr, 0, 53,
   schemas, file_default_instances, TableStruct_source_2fv1alpha1_2fsource_2eproto::offsets,
   file_level_metadata_source_2fv1alpha1_2fsource_2eproto, file_level_enum_descriptors_source_2fv1alpha1_2fsource_2eproto, file_level_service_descriptors_source_2fv1alpha1_2fsource_2eproto,
 };
@@ -1414,6 +1462,406 @@ PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_source_2fv1alpha1_2fsource_2eproto(&descriptor_table_source_2fv1alpha1_2fsource_2eproto);
 namespace source {
 namespace v1alpha1 {
+
+// ===================================================================
+
+class DeleteIntegrationsByOrganizationRequest::_Internal {
+ public:
+};
+
+DeleteIntegrationsByOrganizationRequest::DeleteIntegrationsByOrganizationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:source.v1alpha1.DeleteIntegrationsByOrganizationRequest)
+}
+DeleteIntegrationsByOrganizationRequest::DeleteIntegrationsByOrganizationRequest(const DeleteIntegrationsByOrganizationRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:source.v1alpha1.DeleteIntegrationsByOrganizationRequest)
+}
+
+inline void DeleteIntegrationsByOrganizationRequest::SharedCtor() {
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+DeleteIntegrationsByOrganizationRequest::~DeleteIntegrationsByOrganizationRequest() {
+  // @@protoc_insertion_point(destructor:source.v1alpha1.DeleteIntegrationsByOrganizationRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void DeleteIntegrationsByOrganizationRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void DeleteIntegrationsByOrganizationRequest::ArenaDtor(void* object) {
+  DeleteIntegrationsByOrganizationRequest* _this = reinterpret_cast< DeleteIntegrationsByOrganizationRequest* >(object);
+  (void)_this;
+}
+void DeleteIntegrationsByOrganizationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void DeleteIntegrationsByOrganizationRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void DeleteIntegrationsByOrganizationRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:source.v1alpha1.DeleteIntegrationsByOrganizationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  organization_id_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DeleteIntegrationsByOrganizationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string organization_id = 1 [json_name = "organizationId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "source.v1alpha1.DeleteIntegrationsByOrganizationRequest.organization_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteIntegrationsByOrganizationRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:source.v1alpha1.DeleteIntegrationsByOrganizationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "source.v1alpha1.DeleteIntegrationsByOrganizationRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_organization_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:source.v1alpha1.DeleteIntegrationsByOrganizationRequest)
+  return target;
+}
+
+size_t DeleteIntegrationsByOrganizationRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:source.v1alpha1.DeleteIntegrationsByOrganizationRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeleteIntegrationsByOrganizationRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    DeleteIntegrationsByOrganizationRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteIntegrationsByOrganizationRequest::GetClassData() const { return &_class_data_; }
+
+void DeleteIntegrationsByOrganizationRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<DeleteIntegrationsByOrganizationRequest *>(to)->MergeFrom(
+      static_cast<const DeleteIntegrationsByOrganizationRequest &>(from));
+}
+
+
+void DeleteIntegrationsByOrganizationRequest::MergeFrom(const DeleteIntegrationsByOrganizationRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:source.v1alpha1.DeleteIntegrationsByOrganizationRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DeleteIntegrationsByOrganizationRequest::CopyFrom(const DeleteIntegrationsByOrganizationRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:source.v1alpha1.DeleteIntegrationsByOrganizationRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeleteIntegrationsByOrganizationRequest::IsInitialized() const {
+  return true;
+}
+
+void DeleteIntegrationsByOrganizationRequest::InternalSwap(DeleteIntegrationsByOrganizationRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteIntegrationsByOrganizationRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[0]);
+}
+
+// ===================================================================
+
+class DeleteIntegrationsByOrganizationResponse::_Internal {
+ public:
+};
+
+DeleteIntegrationsByOrganizationResponse::DeleteIntegrationsByOrganizationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:source.v1alpha1.DeleteIntegrationsByOrganizationResponse)
+}
+DeleteIntegrationsByOrganizationResponse::DeleteIntegrationsByOrganizationResponse(const DeleteIntegrationsByOrganizationResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_msg().empty()) {
+    msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:source.v1alpha1.DeleteIntegrationsByOrganizationResponse)
+}
+
+inline void DeleteIntegrationsByOrganizationResponse::SharedCtor() {
+msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+DeleteIntegrationsByOrganizationResponse::~DeleteIntegrationsByOrganizationResponse() {
+  // @@protoc_insertion_point(destructor:source.v1alpha1.DeleteIntegrationsByOrganizationResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void DeleteIntegrationsByOrganizationResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void DeleteIntegrationsByOrganizationResponse::ArenaDtor(void* object) {
+  DeleteIntegrationsByOrganizationResponse* _this = reinterpret_cast< DeleteIntegrationsByOrganizationResponse* >(object);
+  (void)_this;
+}
+void DeleteIntegrationsByOrganizationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void DeleteIntegrationsByOrganizationResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void DeleteIntegrationsByOrganizationResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:source.v1alpha1.DeleteIntegrationsByOrganizationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  msg_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DeleteIntegrationsByOrganizationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string msg = 1 [json_name = "msg"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_msg();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "source.v1alpha1.DeleteIntegrationsByOrganizationResponse.msg"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteIntegrationsByOrganizationResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:source.v1alpha1.DeleteIntegrationsByOrganizationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string msg = 1 [json_name = "msg"];
+  if (!this->_internal_msg().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_msg().data(), static_cast<int>(this->_internal_msg().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "source.v1alpha1.DeleteIntegrationsByOrganizationResponse.msg");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_msg(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:source.v1alpha1.DeleteIntegrationsByOrganizationResponse)
+  return target;
+}
+
+size_t DeleteIntegrationsByOrganizationResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:source.v1alpha1.DeleteIntegrationsByOrganizationResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string msg = 1 [json_name = "msg"];
+  if (!this->_internal_msg().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_msg());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeleteIntegrationsByOrganizationResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    DeleteIntegrationsByOrganizationResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteIntegrationsByOrganizationResponse::GetClassData() const { return &_class_data_; }
+
+void DeleteIntegrationsByOrganizationResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<DeleteIntegrationsByOrganizationResponse *>(to)->MergeFrom(
+      static_cast<const DeleteIntegrationsByOrganizationResponse &>(from));
+}
+
+
+void DeleteIntegrationsByOrganizationResponse::MergeFrom(const DeleteIntegrationsByOrganizationResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:source.v1alpha1.DeleteIntegrationsByOrganizationResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_msg().empty()) {
+    _internal_set_msg(from._internal_msg());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DeleteIntegrationsByOrganizationResponse::CopyFrom(const DeleteIntegrationsByOrganizationResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:source.v1alpha1.DeleteIntegrationsByOrganizationResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeleteIntegrationsByOrganizationResponse::IsInitialized() const {
+  return true;
+}
+
+void DeleteIntegrationsByOrganizationResponse::InternalSwap(DeleteIntegrationsByOrganizationResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &msg_, GetArenaForAllocation(),
+      &other->msg_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteIntegrationsByOrganizationResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[1]);
+}
 
 // ===================================================================
 
@@ -1612,7 +2060,7 @@ void GetOneProviderByNameRequest::InternalSwap(GetOneProviderByNameRequest* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata GetOneProviderByNameRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[0]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[2]);
 }
 
 // ===================================================================
@@ -1812,7 +2260,7 @@ void GetOneProviderByNameResponse::InternalSwap(GetOneProviderByNameResponse* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata GetOneProviderByNameResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[1]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[3]);
 }
 
 // ===================================================================
@@ -2096,7 +2544,7 @@ void Branch::InternalSwap(Branch* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Branch::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[2]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[4]);
 }
 
 // ===================================================================
@@ -2296,7 +2744,7 @@ void ListRepositoriesProviderRequest::InternalSwap(ListRepositoriesProviderReque
 ::PROTOBUF_NAMESPACE_ID::Metadata ListRepositoriesProviderRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[3]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[5]);
 }
 
 // ===================================================================
@@ -2486,7 +2934,7 @@ void ListRepositoriesProviderResponse::InternalSwap(ListRepositoriesProviderResp
 ::PROTOBUF_NAMESPACE_ID::Metadata ListRepositoriesProviderResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[4]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[6]);
 }
 
 // ===================================================================
@@ -2728,7 +3176,7 @@ void GetRepositoryProviderRequest::InternalSwap(GetRepositoryProviderRequest* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata GetRepositoryProviderRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[5]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[7]);
 }
 
 // ===================================================================
@@ -2918,7 +3366,7 @@ void GetRepositoryProviderResponse::InternalSwap(GetRepositoryProviderResponse* 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetRepositoryProviderResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[6]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[8]);
 }
 
 // ===================================================================
@@ -3469,7 +3917,7 @@ void DetailRepository::InternalSwap(DetailRepository* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DetailRepository::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[7]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[9]);
 }
 
 // ===================================================================
@@ -3962,7 +4410,7 @@ void ListRepository::InternalSwap(ListRepository* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListRepository::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[8]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[10]);
 }
 
 // ===================================================================
@@ -4434,7 +4882,7 @@ void CreateDetailRepository::InternalSwap(CreateDetailRepository* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateDetailRepository::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[9]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[11]);
 }
 
 // ===================================================================
@@ -4694,7 +5142,7 @@ void CreateRepositoryRequest::InternalSwap(CreateRepositoryRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateRepositoryRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[10]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[12]);
 }
 
 // ===================================================================
@@ -4936,7 +5384,7 @@ void CreateRepositoryResponse::InternalSwap(CreateRepositoryResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateRepositoryResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[11]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[13]);
 }
 
 // ===================================================================
@@ -5156,7 +5604,7 @@ void ListRepositoriesRequest::InternalSwap(ListRepositoriesRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListRepositoriesRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[12]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[14]);
 }
 
 // ===================================================================
@@ -5346,7 +5794,7 @@ void ListRepositoriesResponse::InternalSwap(ListRepositoriesResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListRepositoriesResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[13]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[15]);
 }
 
 // ===================================================================
@@ -5546,7 +5994,7 @@ void GetRepositoryRequest::InternalSwap(GetRepositoryRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetRepositoryRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[14]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[16]);
 }
 
 // ===================================================================
@@ -5746,7 +6194,7 @@ void GetRepositoryResponse::InternalSwap(GetRepositoryResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetRepositoryResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[15]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[17]);
 }
 
 // ===================================================================
@@ -5946,7 +6394,7 @@ void DeleteRepositoryRequest::InternalSwap(DeleteRepositoryRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteRepositoryRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[16]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[18]);
 }
 
 // ===================================================================
@@ -6188,7 +6636,7 @@ void DeleteRepositoryResponse::InternalSwap(DeleteRepositoryResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteRepositoryResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[17]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[19]);
 }
 
 // ===================================================================
@@ -6430,7 +6878,7 @@ void UpdateRepositoryRequest::InternalSwap(UpdateRepositoryRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateRepositoryRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[18]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[20]);
 }
 
 // ===================================================================
@@ -6672,7 +7120,7 @@ void UpdateRepositoryResponse::InternalSwap(UpdateRepositoryResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateRepositoryResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[19]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[21]);
 }
 
 // ===================================================================
@@ -6686,7 +7134,7 @@ void Integration_DataEntry_DoNotUse::MergeFrom(const Integration_DataEntry_DoNot
 ::PROTOBUF_NAMESPACE_ID::Metadata Integration_DataEntry_DoNotUse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[20]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[22]);
 }
 
 // ===================================================================
@@ -6700,7 +7148,7 @@ void Integration_MetadataEntry_DoNotUse::MergeFrom(const Integration_MetadataEnt
 ::PROTOBUF_NAMESPACE_ID::Metadata Integration_MetadataEntry_DoNotUse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[21]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[23]);
 }
 
 // ===================================================================
@@ -7208,7 +7656,7 @@ void Integration::InternalSwap(Integration* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Integration::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[22]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[24]);
 }
 
 // ===================================================================
@@ -7634,7 +8082,7 @@ void Repository::InternalSwap(Repository* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Repository::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[23]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[25]);
 }
 
 // ===================================================================
@@ -7648,7 +8096,7 @@ void CreateIntegrationRequest_DataEntry_DoNotUse::MergeFrom(const CreateIntegrat
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateIntegrationRequest_DataEntry_DoNotUse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[24]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[26]);
 }
 
 // ===================================================================
@@ -7662,7 +8110,7 @@ void CreateIntegrationRequest_MetadataEntry_DoNotUse::MergeFrom(const CreateInte
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateIntegrationRequest_MetadataEntry_DoNotUse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[25]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[27]);
 }
 
 // ===================================================================
@@ -8122,7 +8570,7 @@ void CreateIntegrationRequest::InternalSwap(CreateIntegrationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateIntegrationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[26]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[28]);
 }
 
 // ===================================================================
@@ -8406,7 +8854,7 @@ void CreateIntegrationResponse::InternalSwap(CreateIntegrationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateIntegrationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[27]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[29]);
 }
 
 // ===================================================================
@@ -8633,7 +9081,7 @@ void ListIntegrationsRequest::InternalSwap(ListIntegrationsRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListIntegrationsRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[28]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[30]);
 }
 
 // ===================================================================
@@ -8823,7 +9271,7 @@ void ListIntegrationsResponse::InternalSwap(ListIntegrationsResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListIntegrationsResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[29]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[31]);
 }
 
 // ===================================================================
@@ -9023,7 +9471,7 @@ void GetIntegrationRequest::InternalSwap(GetIntegrationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetIntegrationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[30]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[32]);
 }
 
 // ===================================================================
@@ -9223,7 +9671,7 @@ void GetIntegrationResponse::InternalSwap(GetIntegrationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetIntegrationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[31]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[33]);
 }
 
 // ===================================================================
@@ -9465,7 +9913,7 @@ void UpdateIntegrationRequest::InternalSwap(UpdateIntegrationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateIntegrationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[32]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[34]);
 }
 
 // ===================================================================
@@ -9707,7 +10155,7 @@ void UpdateIntegrationResponse::InternalSwap(UpdateIntegrationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateIntegrationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[33]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[35]);
 }
 
 // ===================================================================
@@ -9907,7 +10355,7 @@ void DeleteIntegrationRequest::InternalSwap(DeleteIntegrationRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteIntegrationRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[34]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[36]);
 }
 
 // ===================================================================
@@ -10149,7 +10597,7 @@ void DeleteIntegrationResponse::InternalSwap(DeleteIntegrationResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteIntegrationResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[35]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[37]);
 }
 
 // ===================================================================
@@ -10163,7 +10611,7 @@ void Provider_DataEntry_DoNotUse::MergeFrom(const Provider_DataEntry_DoNotUse& o
 ::PROTOBUF_NAMESPACE_ID::Metadata Provider_DataEntry_DoNotUse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[36]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[38]);
 }
 
 // ===================================================================
@@ -10177,7 +10625,7 @@ void Provider_MetadataEntry_DoNotUse::MergeFrom(const Provider_MetadataEntry_DoN
 ::PROTOBUF_NAMESPACE_ID::Metadata Provider_MetadataEntry_DoNotUse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[37]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[39]);
 }
 
 // ===================================================================
@@ -10652,7 +11100,7 @@ void Provider::InternalSwap(Provider* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Provider::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[38]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[40]);
 }
 
 // ===================================================================
@@ -10852,7 +11300,7 @@ void DeleteProviderRequest::InternalSwap(DeleteProviderRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteProviderRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[39]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[41]);
 }
 
 // ===================================================================
@@ -11094,7 +11542,7 @@ void DeleteProviderResponse::InternalSwap(DeleteProviderResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteProviderResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[40]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[42]);
 }
 
 // ===================================================================
@@ -11336,7 +11784,7 @@ void UpdateProviderRequest::InternalSwap(UpdateProviderRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateProviderRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[41]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[43]);
 }
 
 // ===================================================================
@@ -11578,7 +12026,7 @@ void UpdateProviderResponse::InternalSwap(UpdateProviderResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateProviderResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[42]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[44]);
 }
 
 // ===================================================================
@@ -11778,7 +12226,7 @@ void GetProviderRequest::InternalSwap(GetProviderRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetProviderRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[43]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[45]);
 }
 
 // ===================================================================
@@ -11978,7 +12426,7 @@ void GetProviderResponse::InternalSwap(GetProviderResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetProviderResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[44]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[46]);
 }
 
 // ===================================================================
@@ -11992,7 +12440,7 @@ void CreateProviderRequest_DataEntry_DoNotUse::MergeFrom(const CreateProviderReq
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateProviderRequest_DataEntry_DoNotUse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[45]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[47]);
 }
 
 // ===================================================================
@@ -12006,7 +12454,7 @@ void CreateProviderRequest_MetadataEntry_DoNotUse::MergeFrom(const CreateProvide
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateProviderRequest_MetadataEntry_DoNotUse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[46]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[48]);
 }
 
 // ===================================================================
@@ -12439,7 +12887,7 @@ void CreateProviderRequest::InternalSwap(CreateProviderRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateProviderRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[47]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[49]);
 }
 
 // ===================================================================
@@ -12681,7 +13129,7 @@ void CreateProviderResponse::InternalSwap(CreateProviderResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateProviderResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[48]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[50]);
 }
 
 // ===================================================================
@@ -12834,7 +13282,7 @@ void ListProvidersRequest::InternalSwap(ListProvidersRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListProvidersRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[49]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[51]);
 }
 
 // ===================================================================
@@ -13024,13 +13472,19 @@ void ListProvidersResponse::InternalSwap(ListProvidersResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListProvidersResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_source_2fv1alpha1_2fsource_2eproto_getter, &descriptor_table_source_2fv1alpha1_2fsource_2eproto_once,
-      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[50]);
+      file_level_metadata_source_2fv1alpha1_2fsource_2eproto[52]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace source
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::source::v1alpha1::DeleteIntegrationsByOrganizationRequest* Arena::CreateMaybeMessage< ::source::v1alpha1::DeleteIntegrationsByOrganizationRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::source::v1alpha1::DeleteIntegrationsByOrganizationRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::source::v1alpha1::DeleteIntegrationsByOrganizationResponse* Arena::CreateMaybeMessage< ::source::v1alpha1::DeleteIntegrationsByOrganizationResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::source::v1alpha1::DeleteIntegrationsByOrganizationResponse >(arena);
+}
 template<> PROTOBUF_NOINLINE ::source::v1alpha1::GetOneProviderByNameRequest* Arena::CreateMaybeMessage< ::source::v1alpha1::GetOneProviderByNameRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::source::v1alpha1::GetOneProviderByNameRequest >(arena);
 }

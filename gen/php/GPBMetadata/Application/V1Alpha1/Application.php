@@ -16,8 +16,12 @@ class Application
         }
         $pool->internalAddGeneratedFile(
             '
-’
-&application/v1alpha1/application.protoapplication.v1alpha1"ª
+â
+&application/v1alpha1/application.protoapplication.v1alpha1"O
+&DeleteApplicationsByIntegrationRequest%
+integration_id (	RintegrationId";
+\'DeleteApplicationsByIntegrationResponse
+msg (	Rmsg"ª
 
 Repository
 name (	Rname
@@ -48,7 +52,7 @@ repositoryI
 configuration (2#.application.v1alpha1.ConfigurationRconfiguration
 
 project_id (R	projectId7
-scaling (2.application.v1alpha1.ScalingRscaling"»
+scaling (2.application.v1alpha1.ScalingRscaling"Ü
 Scaling
 cpu_rule (	RcpuRule(
 cool_down_period (	RcoolDownPeriod)
@@ -56,7 +60,9 @@ project_id (R	projectId7
 min_replica (	R
 minReplica
 max_replica (	R
-maxReplica"µ
+maxReplica
+memory_rule (	R
+memoryRule"µ
 CreateApplicationRequest
 name (	Rname 
 integration (	Rintegration@
@@ -90,13 +96,14 @@ project_id (R	projectId"`
 application (2..application.v1alpha1.CreateApplicationRequestRapplication"C
 UpdateApplicationResponse
 msg (	Rmsg
-error (	Rerror2Ó
+error (	Rerror2ô
 ApplicationServicet
 CreateApplication..application.v1alpha1.CreateApplicationRequest/.application.v1alpha1.CreateApplicationResponsen
 ListApplication,.application.v1alpha1.ListApplicationRequest-.application.v1alpha1.ListApplicationResponsek
 GetApplication+.application.v1alpha1.GetApplicationRequest,.application.v1alpha1.GetApplicationResponset
 DeleteApplication..application.v1alpha1.DeleteApplicationRequest/.application.v1alpha1.DeleteApplicationResponset
-UpdateApplication..application.v1alpha1.UpdateApplicationRequest/.application.v1alpha1.UpdateApplicationResponseB7Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1bproto3'
+UpdateApplication..application.v1alpha1.UpdateApplicationRequest/.application.v1alpha1.UpdateApplicationResponsež
+DeleteApplicationsByIntegration<.application.v1alpha1.DeleteApplicationsByIntegrationRequest=.application.v1alpha1.DeleteApplicationsByIntegrationResponseB7Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

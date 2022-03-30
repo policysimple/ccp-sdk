@@ -39,6 +39,11 @@ class ApplicationServiceStub(object):
         request_serializer=application_dot_v1alpha1_dot_application__pb2.UpdateApplicationRequest.SerializeToString,
         response_deserializer=application_dot_v1alpha1_dot_application__pb2.UpdateApplicationResponse.FromString,
         )
+    self.DeleteApplicationsByIntegration = channel.unary_unary(
+        '/application.v1alpha1.ApplicationService/DeleteApplicationsByIntegration',
+        request_serializer=application_dot_v1alpha1_dot_application__pb2.DeleteApplicationsByIntegrationRequest.SerializeToString,
+        response_deserializer=application_dot_v1alpha1_dot_application__pb2.DeleteApplicationsByIntegrationResponse.FromString,
+        )
 
 
 class ApplicationServiceServicer(object):
@@ -80,6 +85,13 @@ class ApplicationServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def DeleteApplicationsByIntegration(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ApplicationServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -107,6 +119,11 @@ def add_ApplicationServiceServicer_to_server(servicer, server):
           servicer.UpdateApplication,
           request_deserializer=application_dot_v1alpha1_dot_application__pb2.UpdateApplicationRequest.FromString,
           response_serializer=application_dot_v1alpha1_dot_application__pb2.UpdateApplicationResponse.SerializeToString,
+      ),
+      'DeleteApplicationsByIntegration': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteApplicationsByIntegration,
+          request_deserializer=application_dot_v1alpha1_dot_application__pb2.DeleteApplicationsByIntegrationRequest.FromString,
+          response_serializer=application_dot_v1alpha1_dot_application__pb2.DeleteApplicationsByIntegrationResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

@@ -24,6 +24,7 @@ static const char* ApplicationService_method_names[] = {
   "/application.v1alpha1.ApplicationService/GetApplication",
   "/application.v1alpha1.ApplicationService/DeleteApplication",
   "/application.v1alpha1.ApplicationService/UpdateApplication",
+  "/application.v1alpha1.ApplicationService/DeleteApplicationsByIntegration",
 };
 
 std::unique_ptr< ApplicationService::Stub> ApplicationService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -38,6 +39,7 @@ ApplicationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>&
   , rpcmethod_GetApplication_(ApplicationService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteApplication_(ApplicationService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateApplication_(ApplicationService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteApplicationsByIntegration_(ApplicationService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status ApplicationService::Stub::CreateApplication(::grpc::ClientContext* context, const ::application::v1alpha1::CreateApplicationRequest& request, ::application::v1alpha1::CreateApplicationResponse* response) {
@@ -120,6 +122,22 @@ void ApplicationService::Stub::experimental_async::UpdateApplication(::grpc::Cli
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::application::v1alpha1::UpdateApplicationResponse>::Create(channel_.get(), cq, rpcmethod_UpdateApplication_, context, request, false);
 }
 
+::grpc::Status ApplicationService::Stub::DeleteApplicationsByIntegration(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest& request, ::application::v1alpha1::DeleteApplicationsByIntegrationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteApplicationsByIntegration_, context, request, response);
+}
+
+void ApplicationService::Stub::experimental_async::DeleteApplicationsByIntegration(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest* request, ::application::v1alpha1::DeleteApplicationsByIntegrationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteApplicationsByIntegration_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>* ApplicationService::Stub::AsyncDeleteApplicationsByIntegrationRaw(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>::Create(channel_.get(), cq, rpcmethod_DeleteApplicationsByIntegration_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>* ApplicationService::Stub::PrepareAsyncDeleteApplicationsByIntegrationRaw(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>::Create(channel_.get(), cq, rpcmethod_DeleteApplicationsByIntegration_, context, request, false);
+}
+
 ApplicationService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       ApplicationService_method_names[0],
@@ -146,6 +164,11 @@ ApplicationService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< ApplicationService::Service, ::application::v1alpha1::UpdateApplicationRequest, ::application::v1alpha1::UpdateApplicationResponse>(
           std::mem_fn(&ApplicationService::Service::UpdateApplication), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      ApplicationService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< ApplicationService::Service, ::application::v1alpha1::DeleteApplicationsByIntegrationRequest, ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>(
+          std::mem_fn(&ApplicationService::Service::DeleteApplicationsByIntegration), this)));
 }
 
 ApplicationService::Service::~Service() {
@@ -180,6 +203,13 @@ ApplicationService::Service::~Service() {
 }
 
 ::grpc::Status ApplicationService::Service::UpdateApplication(::grpc::ServerContext* context, const ::application::v1alpha1::UpdateApplicationRequest* request, ::application::v1alpha1::UpdateApplicationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status ApplicationService::Service::DeleteApplicationsByIntegration(::grpc::ServerContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest* request, ::application::v1alpha1::DeleteApplicationsByIntegrationResponse* response) {
   (void) context;
   (void) request;
   (void) response;

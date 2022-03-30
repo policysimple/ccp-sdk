@@ -30,6 +30,7 @@ static const char* SourceService_method_names[] = {
   "/source.v1alpha1.SourceService/GetIntegration",
   "/source.v1alpha1.SourceService/UpdateIntegration",
   "/source.v1alpha1.SourceService/DeleteIntegration",
+  "/source.v1alpha1.SourceService/DeleteIntegrationsByOrganization",
   "/source.v1alpha1.SourceService/ListRepositoriesProvider",
   "/source.v1alpha1.SourceService/GetRepositoryProvider",
   "/source.v1alpha1.SourceService/CreateRepository",
@@ -57,13 +58,14 @@ SourceService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chan
   , rpcmethod_GetIntegration_(SourceService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateIntegration_(SourceService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteIntegration_(SourceService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListRepositoriesProvider_(SourceService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetRepositoryProvider_(SourceService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateRepository_(SourceService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListRepositories_(SourceService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetRepository_(SourceService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteRepository_(SourceService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateRepository_(SourceService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteIntegrationsByOrganization_(SourceService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListRepositoriesProvider_(SourceService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetRepositoryProvider_(SourceService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateRepository_(SourceService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListRepositories_(SourceService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetRepository_(SourceService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteRepository_(SourceService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateRepository_(SourceService_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status SourceService::Stub::CreateProvider(::grpc::ClientContext* context, const ::source::v1alpha1::CreateProviderRequest& request, ::source::v1alpha1::CreateProviderResponse* response) {
@@ -242,6 +244,22 @@ void SourceService::Stub::experimental_async::DeleteIntegration(::grpc::ClientCo
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::source::v1alpha1::DeleteIntegrationResponse>::Create(channel_.get(), cq, rpcmethod_DeleteIntegration_, context, request, false);
 }
 
+::grpc::Status SourceService::Stub::DeleteIntegrationsByOrganization(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteIntegrationsByOrganizationRequest& request, ::source::v1alpha1::DeleteIntegrationsByOrganizationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteIntegrationsByOrganization_, context, request, response);
+}
+
+void SourceService::Stub::experimental_async::DeleteIntegrationsByOrganization(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteIntegrationsByOrganizationRequest* request, ::source::v1alpha1::DeleteIntegrationsByOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteIntegrationsByOrganization_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::source::v1alpha1::DeleteIntegrationsByOrganizationResponse>* SourceService::Stub::AsyncDeleteIntegrationsByOrganizationRaw(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteIntegrationsByOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::source::v1alpha1::DeleteIntegrationsByOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_DeleteIntegrationsByOrganization_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::source::v1alpha1::DeleteIntegrationsByOrganizationResponse>* SourceService::Stub::PrepareAsyncDeleteIntegrationsByOrganizationRaw(::grpc::ClientContext* context, const ::source::v1alpha1::DeleteIntegrationsByOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::source::v1alpha1::DeleteIntegrationsByOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_DeleteIntegrationsByOrganization_, context, request, false);
+}
+
 ::grpc::Status SourceService::Stub::ListRepositoriesProvider(::grpc::ClientContext* context, const ::source::v1alpha1::ListRepositoriesProviderRequest& request, ::source::v1alpha1::ListRepositoriesProviderResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListRepositoriesProvider_, context, request, response);
 }
@@ -413,35 +431,40 @@ SourceService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       SourceService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< SourceService::Service, ::source::v1alpha1::DeleteIntegrationsByOrganizationRequest, ::source::v1alpha1::DeleteIntegrationsByOrganizationResponse>(
+          std::mem_fn(&SourceService::Service::DeleteIntegrationsByOrganization), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      SourceService_method_names[12],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< SourceService::Service, ::source::v1alpha1::ListRepositoriesProviderRequest, ::source::v1alpha1::ListRepositoriesProviderResponse>(
           std::mem_fn(&SourceService::Service::ListRepositoriesProvider), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      SourceService_method_names[12],
+      SourceService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< SourceService::Service, ::source::v1alpha1::GetRepositoryProviderRequest, ::source::v1alpha1::GetRepositoryProviderResponse>(
           std::mem_fn(&SourceService::Service::GetRepositoryProvider), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      SourceService_method_names[13],
+      SourceService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< SourceService::Service, ::source::v1alpha1::CreateRepositoryRequest, ::source::v1alpha1::CreateRepositoryResponse>(
           std::mem_fn(&SourceService::Service::CreateRepository), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      SourceService_method_names[14],
+      SourceService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< SourceService::Service, ::source::v1alpha1::ListRepositoriesRequest, ::source::v1alpha1::ListRepositoriesResponse>(
           std::mem_fn(&SourceService::Service::ListRepositories), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      SourceService_method_names[15],
+      SourceService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< SourceService::Service, ::source::v1alpha1::GetRepositoryRequest, ::source::v1alpha1::GetRepositoryResponse>(
           std::mem_fn(&SourceService::Service::GetRepository), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      SourceService_method_names[16],
+      SourceService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< SourceService::Service, ::source::v1alpha1::DeleteRepositoryRequest, ::source::v1alpha1::DeleteRepositoryResponse>(
           std::mem_fn(&SourceService::Service::DeleteRepository), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      SourceService_method_names[17],
+      SourceService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< SourceService::Service, ::source::v1alpha1::UpdateRepositoryRequest, ::source::v1alpha1::UpdateRepositoryResponse>(
           std::mem_fn(&SourceService::Service::UpdateRepository), this)));
@@ -521,6 +544,13 @@ SourceService::Service::~Service() {
 }
 
 ::grpc::Status SourceService::Service::DeleteIntegration(::grpc::ServerContext* context, const ::source::v1alpha1::DeleteIntegrationRequest* request, ::source::v1alpha1::DeleteIntegrationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status SourceService::Service::DeleteIntegrationsByOrganization(::grpc::ServerContext* context, const ::source::v1alpha1::DeleteIntegrationsByOrganizationRequest* request, ::source::v1alpha1::DeleteIntegrationsByOrganizationResponse* response) {
   (void) context;
   (void) request;
   (void) response;

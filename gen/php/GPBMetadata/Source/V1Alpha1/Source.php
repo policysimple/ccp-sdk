@@ -16,8 +16,12 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-¨:
-source/v1alpha1/source.protosource.v1alpha1"1
+Ô<
+source/v1alpha1/source.protosource.v1alpha1"R
+\'DeleteIntegrationsByOrganizationRequest\'
+organization_id (	RorganizationId"<
+(DeleteIntegrationsByOrganizationResponse
+msg (	Rmsg"1
 GetOneProviderByNameRequest
 name (	Rname"U
 GetOneProviderByNameResponse5
@@ -212,7 +216,7 @@ providerId7
 error (	Rerror"
 ListProvidersRequest"P
 ListProvidersResponse7
-	providers (2.source.v1alpha1.ProviderR	providers2ô
+	providers (2.source.v1alpha1.ProviderR	providers2Ž
 SourceServicea
 CreateProvider&.source.v1alpha1.CreateProviderRequest\'.source.v1alpha1.CreateProviderResponse^
 ListProviders%.source.v1alpha1.ListProvidersRequest&.source.v1alpha1.ListProvidersResponseX
@@ -224,7 +228,8 @@ providerId7
 ListIntegrations(.source.v1alpha1.ListIntegrationsRequest).source.v1alpha1.ListIntegrationsResponsea
 GetIntegration&.source.v1alpha1.GetIntegrationRequest\'.source.v1alpha1.GetIntegrationResponsej
 UpdateIntegration).source.v1alpha1.UpdateIntegrationRequest*.source.v1alpha1.UpdateIntegrationResponsej
-DeleteIntegration).source.v1alpha1.DeleteIntegrationRequest*.source.v1alpha1.DeleteIntegrationResponse
+DeleteIntegration).source.v1alpha1.DeleteIntegrationRequest*.source.v1alpha1.DeleteIntegrationResponse—
+ DeleteIntegrationsByOrganization8.source.v1alpha1.DeleteIntegrationsByOrganizationRequest9.source.v1alpha1.DeleteIntegrationsByOrganizationResponse
 ListRepositoriesProvider0.source.v1alpha1.ListRepositoriesProviderRequest1.source.v1alpha1.ListRepositoriesProviderResponsev
 GetRepositoryProvider-.source.v1alpha1.GetRepositoryProviderRequest..source.v1alpha1.GetRepositoryProviderResponseg
 CreateRepository(.source.v1alpha1.CreateRepositoryRequest).source.v1alpha1.CreateRepositoryResponseg

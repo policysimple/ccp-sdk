@@ -72,6 +72,13 @@ class ApplicationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::application::v1alpha1::UpdateApplicationResponse>> PrepareAsyncUpdateApplication(::grpc::ClientContext* context, const ::application::v1alpha1::UpdateApplicationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::application::v1alpha1::UpdateApplicationResponse>>(PrepareAsyncUpdateApplicationRaw(context, request, cq));
     }
+    virtual ::grpc::Status DeleteApplicationsByIntegration(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest& request, ::application::v1alpha1::DeleteApplicationsByIntegrationResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>> AsyncDeleteApplicationsByIntegration(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>>(AsyncDeleteApplicationsByIntegrationRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>> PrepareAsyncDeleteApplicationsByIntegration(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>>(PrepareAsyncDeleteApplicationsByIntegrationRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -81,6 +88,7 @@ class ApplicationService final {
       virtual void GetApplication(::grpc::ClientContext* context, const ::application::v1alpha1::GetApplicationRequest* request, ::application::v1alpha1::GetApplicationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteApplication(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationRequest* request, ::application::v1alpha1::DeleteApplicationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateApplication(::grpc::ClientContext* context, const ::application::v1alpha1::UpdateApplicationRequest* request, ::application::v1alpha1::UpdateApplicationResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteApplicationsByIntegration(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest* request, ::application::v1alpha1::DeleteApplicationsByIntegrationResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -94,6 +102,8 @@ class ApplicationService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::application::v1alpha1::DeleteApplicationResponse>* PrepareAsyncDeleteApplicationRaw(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::application::v1alpha1::UpdateApplicationResponse>* AsyncUpdateApplicationRaw(::grpc::ClientContext* context, const ::application::v1alpha1::UpdateApplicationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::application::v1alpha1::UpdateApplicationResponse>* PrepareAsyncUpdateApplicationRaw(::grpc::ClientContext* context, const ::application::v1alpha1::UpdateApplicationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>* AsyncDeleteApplicationsByIntegrationRaw(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>* PrepareAsyncDeleteApplicationsByIntegrationRaw(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -133,6 +143,13 @@ class ApplicationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::application::v1alpha1::UpdateApplicationResponse>> PrepareAsyncUpdateApplication(::grpc::ClientContext* context, const ::application::v1alpha1::UpdateApplicationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::application::v1alpha1::UpdateApplicationResponse>>(PrepareAsyncUpdateApplicationRaw(context, request, cq));
     }
+    ::grpc::Status DeleteApplicationsByIntegration(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest& request, ::application::v1alpha1::DeleteApplicationsByIntegrationResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>> AsyncDeleteApplicationsByIntegration(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>>(AsyncDeleteApplicationsByIntegrationRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>> PrepareAsyncDeleteApplicationsByIntegration(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>>(PrepareAsyncDeleteApplicationsByIntegrationRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -141,6 +158,7 @@ class ApplicationService final {
       void GetApplication(::grpc::ClientContext* context, const ::application::v1alpha1::GetApplicationRequest* request, ::application::v1alpha1::GetApplicationResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteApplication(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationRequest* request, ::application::v1alpha1::DeleteApplicationResponse* response, std::function<void(::grpc::Status)>) override;
       void UpdateApplication(::grpc::ClientContext* context, const ::application::v1alpha1::UpdateApplicationRequest* request, ::application::v1alpha1::UpdateApplicationResponse* response, std::function<void(::grpc::Status)>) override;
+      void DeleteApplicationsByIntegration(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest* request, ::application::v1alpha1::DeleteApplicationsByIntegrationResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -162,11 +180,14 @@ class ApplicationService final {
     ::grpc::ClientAsyncResponseReader< ::application::v1alpha1::DeleteApplicationResponse>* PrepareAsyncDeleteApplicationRaw(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::application::v1alpha1::UpdateApplicationResponse>* AsyncUpdateApplicationRaw(::grpc::ClientContext* context, const ::application::v1alpha1::UpdateApplicationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::application::v1alpha1::UpdateApplicationResponse>* PrepareAsyncUpdateApplicationRaw(::grpc::ClientContext* context, const ::application::v1alpha1::UpdateApplicationRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>* AsyncDeleteApplicationsByIntegrationRaw(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>* PrepareAsyncDeleteApplicationsByIntegrationRaw(::grpc::ClientContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateApplication_;
     const ::grpc::internal::RpcMethod rpcmethod_ListApplication_;
     const ::grpc::internal::RpcMethod rpcmethod_GetApplication_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteApplication_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateApplication_;
+    const ::grpc::internal::RpcMethod rpcmethod_DeleteApplicationsByIntegration_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -180,6 +201,7 @@ class ApplicationService final {
     virtual ::grpc::Status GetApplication(::grpc::ServerContext* context, const ::application::v1alpha1::GetApplicationRequest* request, ::application::v1alpha1::GetApplicationResponse* response);
     virtual ::grpc::Status DeleteApplication(::grpc::ServerContext* context, const ::application::v1alpha1::DeleteApplicationRequest* request, ::application::v1alpha1::DeleteApplicationResponse* response);
     virtual ::grpc::Status UpdateApplication(::grpc::ServerContext* context, const ::application::v1alpha1::UpdateApplicationRequest* request, ::application::v1alpha1::UpdateApplicationResponse* response);
+    virtual ::grpc::Status DeleteApplicationsByIntegration(::grpc::ServerContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest* request, ::application::v1alpha1::DeleteApplicationsByIntegrationResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateApplication : public BaseClass {
@@ -281,7 +303,27 @@ class ApplicationService final {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateApplication<WithAsyncMethod_ListApplication<WithAsyncMethod_GetApplication<WithAsyncMethod_DeleteApplication<WithAsyncMethod_UpdateApplication<Service > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_DeleteApplicationsByIntegration : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_DeleteApplicationsByIntegration() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_DeleteApplicationsByIntegration() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteApplicationsByIntegration(::grpc::ServerContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest* request, ::application::v1alpha1::DeleteApplicationsByIntegrationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteApplicationsByIntegration(::grpc::ServerContext* context, ::application::v1alpha1::DeleteApplicationsByIntegrationRequest* request, ::grpc::ServerAsyncResponseWriter< ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateApplication<WithAsyncMethod_ListApplication<WithAsyncMethod_GetApplication<WithAsyncMethod_DeleteApplication<WithAsyncMethod_UpdateApplication<WithAsyncMethod_DeleteApplicationsByIntegration<Service > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateApplication : public BaseClass {
    private:
@@ -363,6 +405,23 @@ class ApplicationService final {
     }
     // disable synchronous version of this method
     ::grpc::Status UpdateApplication(::grpc::ServerContext* context, const ::application::v1alpha1::UpdateApplicationRequest* request, ::application::v1alpha1::UpdateApplicationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DeleteApplicationsByIntegration : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_DeleteApplicationsByIntegration() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_DeleteApplicationsByIntegration() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteApplicationsByIntegration(::grpc::ServerContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest* request, ::application::v1alpha1::DeleteApplicationsByIntegrationResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -468,6 +527,26 @@ class ApplicationService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_DeleteApplicationsByIntegration : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_DeleteApplicationsByIntegration() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_DeleteApplicationsByIntegration() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteApplicationsByIntegration(::grpc::ServerContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest* request, ::application::v1alpha1::DeleteApplicationsByIntegrationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteApplicationsByIntegration(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateApplication : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -567,9 +646,29 @@ class ApplicationService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedUpdateApplication(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::application::v1alpha1::UpdateApplicationRequest,::application::v1alpha1::UpdateApplicationResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateApplication<WithStreamedUnaryMethod_ListApplication<WithStreamedUnaryMethod_GetApplication<WithStreamedUnaryMethod_DeleteApplication<WithStreamedUnaryMethod_UpdateApplication<Service > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DeleteApplicationsByIntegration : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_DeleteApplicationsByIntegration() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler< ::application::v1alpha1::DeleteApplicationsByIntegrationRequest, ::application::v1alpha1::DeleteApplicationsByIntegrationResponse>(std::bind(&WithStreamedUnaryMethod_DeleteApplicationsByIntegration<BaseClass>::StreamedDeleteApplicationsByIntegration, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_DeleteApplicationsByIntegration() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DeleteApplicationsByIntegration(::grpc::ServerContext* context, const ::application::v1alpha1::DeleteApplicationsByIntegrationRequest* request, ::application::v1alpha1::DeleteApplicationsByIntegrationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDeleteApplicationsByIntegration(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::application::v1alpha1::DeleteApplicationsByIntegrationRequest,::application::v1alpha1::DeleteApplicationsByIntegrationResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateApplication<WithStreamedUnaryMethod_ListApplication<WithStreamedUnaryMethod_GetApplication<WithStreamedUnaryMethod_DeleteApplication<WithStreamedUnaryMethod_UpdateApplication<WithStreamedUnaryMethod_DeleteApplicationsByIntegration<Service > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateApplication<WithStreamedUnaryMethod_ListApplication<WithStreamedUnaryMethod_GetApplication<WithStreamedUnaryMethod_DeleteApplication<WithStreamedUnaryMethod_UpdateApplication<Service > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateApplication<WithStreamedUnaryMethod_ListApplication<WithStreamedUnaryMethod_GetApplication<WithStreamedUnaryMethod_DeleteApplication<WithStreamedUnaryMethod_UpdateApplication<WithStreamedUnaryMethod_DeleteApplicationsByIntegration<Service > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1
