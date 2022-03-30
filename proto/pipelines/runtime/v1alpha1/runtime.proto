@@ -16,15 +16,16 @@ message Runtime {
   string name = 2;
   string namespace = 3;
   string instance_type = 4;
-  uint32 project_id = 5;
-  string application_id = 6;
-  string workspace_id = 7;
-  string scaler = 8;
-  map<string, string> integration = 9;
-  map<string, string> environment_variables = 10;
-  map<string, string> commands = 11;
-  map<string, string> secrets = 12;
-  map<string, string> extra_args = 13;
+  uint32 organization_id = 5;
+  uint32 project_id = 6;
+  string application_id = 7;
+  string workspace_id = 8;
+  string scaler = 9;
+  map<string, string> integration = 10;
+  map<string, string> environment_variables = 11;
+  map<string, string> commands = 12;
+  map<string, string> secrets = 13;
+  map<string, string> extra_args = 14;
 }
 
 message RuntimeList {
