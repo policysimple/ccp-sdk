@@ -72,7 +72,7 @@ func CreateRuntime(in *runtimepkgv1.CreateRuntimeRequest) (response *runtimepkgv
 	return response, nil
 }
 
-func GetRuntime(runtimeId string) (response *runtimepkgv1.GetRuntimeResponse, err error) {
+func GetRuntime(projectId uint32, runtimeId string, namespace string) (response *runtimepkgv1.GetRuntimeResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
 		return
@@ -81,7 +81,9 @@ func GetRuntime(runtimeId string) (response *runtimepkgv1.GetRuntimeResponse, er
 	defer cancel()
 
 	response, err = client.GetRuntime(ctx, &runtimepkgv1.GetRuntimeRequest{
+		ProjectId: projectId,
 		RuntimeId: runtimeId,
+		Namespace: namespace,
 	})
 
 	if err != nil {
