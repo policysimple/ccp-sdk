@@ -17,6 +17,10 @@ class GetOneApiKeyRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
      */
     protected $id = 0;
+    /**
+     * Generated from protobuf field <code>string token = 2 [json_name = "token"];</code>
+     */
+    protected $token = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class GetOneApiKeyRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $id
+     *     @type string $token
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class GetOneApiKeyRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token = 2 [json_name = "token"];</code>
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token = 2 [json_name = "token"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setToken($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->token = $var;
 
         return $this;
     }
