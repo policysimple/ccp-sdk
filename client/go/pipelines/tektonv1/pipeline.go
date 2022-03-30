@@ -152,6 +152,7 @@ func CreateTektonPipeline(
 
 	dataPipeline := &tektonPipelinepkgv1.CreateTektonPipelineRequest{
 		TektonPipeline: &tektonPipelinepkgv1.Pipeline{
+			OrganizationId:       organizationId,
 			ProjectId:            projectId,
 			TypeMetaKind:         "Pipeline",
 			TypeMetaApiVersion:   "tekton.dev/v1beta1",
