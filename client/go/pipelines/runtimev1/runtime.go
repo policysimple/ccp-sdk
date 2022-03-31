@@ -55,6 +55,7 @@ func CreateRuntime(in *runtimepkgv1.CreateRuntimeRequest) (response *runtimepkgv
 			ProjectId:            in.Runtime.ProjectId,
 			ApplicationId:        in.Runtime.ApplicationId,
 			WorkspaceId:          in.Runtime.WorkspaceId,
+			EnvironmentId:        in.Runtime.EnvironmentId,
 			Integration:          in.Runtime.Integration,
 			EnvironmentVariables: in.Runtime.EnvironmentVariables,
 			Commands:             in.Runtime.Commands,
@@ -114,11 +115,13 @@ func UpdateRuntime(in *runtimepkgv1.CreateRuntimeRequest) (response *runtimepkgv
 			ProjectId:            in.Runtime.ProjectId,
 			InstanceType:         in.Runtime.InstanceType,
 			ApplicationId:        in.Runtime.ApplicationId,
+			EnvironmentId:        in.Runtime.EnvironmentId,
 			WorkspaceId:          in.Runtime.WorkspaceId,
 			Integration:          in.Runtime.Integration,
 			EnvironmentVariables: in.Runtime.EnvironmentVariables,
 			Commands:             in.Runtime.Commands,
 			Secrets:              in.Runtime.Secrets,
+			ExtraArgs:            in.Runtime.ExtraArgs,
 		},
 	})
 

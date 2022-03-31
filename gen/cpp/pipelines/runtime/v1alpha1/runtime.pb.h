@@ -349,22 +349,23 @@ class Runtime final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIntegrationFieldNumber = 10,
-    kEnvironmentVariablesFieldNumber = 11,
-    kCommandsFieldNumber = 12,
-    kSecretsFieldNumber = 13,
-    kExtraArgsFieldNumber = 14,
+    kIntegrationFieldNumber = 11,
+    kEnvironmentVariablesFieldNumber = 12,
+    kCommandsFieldNumber = 13,
+    kSecretsFieldNumber = 14,
+    kExtraArgsFieldNumber = 15,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kNamespaceFieldNumber = 3,
     kInstanceTypeFieldNumber = 4,
     kApplicationIdFieldNumber = 7,
     kWorkspaceIdFieldNumber = 8,
-    kScalerFieldNumber = 9,
+    kEnvironmentIdFieldNumber = 9,
+    kScalerFieldNumber = 10,
     kOrganizationIdFieldNumber = 5,
     kProjectIdFieldNumber = 6,
   };
-  // map<string, string> integration = 10 [json_name = "integration"];
+  // map<string, string> integration = 11 [json_name = "integration"];
   int integration_size() const;
   private:
   int _internal_integration_size() const;
@@ -381,7 +382,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_integration();
 
-  // map<string, string> environment_variables = 11 [json_name = "environmentVariables"];
+  // map<string, string> environment_variables = 12 [json_name = "environmentVariables"];
   int environment_variables_size() const;
   private:
   int _internal_environment_variables_size() const;
@@ -398,7 +399,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_environment_variables();
 
-  // map<string, string> commands = 12 [json_name = "commands"];
+  // map<string, string> commands = 13 [json_name = "commands"];
   int commands_size() const;
   private:
   int _internal_commands_size() const;
@@ -415,7 +416,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_commands();
 
-  // map<string, string> secrets = 13 [json_name = "secrets"];
+  // map<string, string> secrets = 14 [json_name = "secrets"];
   int secrets_size() const;
   private:
   int _internal_secrets_size() const;
@@ -432,7 +433,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_secrets();
 
-  // map<string, string> extra_args = 14 [json_name = "extraArgs"];
+  // map<string, string> extra_args = 15 [json_name = "extraArgs"];
   int extra_args_size() const;
   private:
   int _internal_extra_args_size() const;
@@ -533,7 +534,21 @@ class Runtime final :
   std::string* _internal_mutable_workspace_id();
   public:
 
-  // string scaler = 9 [json_name = "scaler"];
+  // string environment_id = 9 [json_name = "environmentId"];
+  void clear_environment_id();
+  const std::string& environment_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_environment_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_environment_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_environment_id();
+  void set_allocated_environment_id(std::string* environment_id);
+  private:
+  const std::string& _internal_environment_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_environment_id(const std::string& value);
+  std::string* _internal_mutable_environment_id();
+  public:
+
+  // string scaler = 10 [json_name = "scaler"];
   void clear_scaler();
   const std::string& scaler() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -603,6 +618,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr instance_type_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr workspace_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr scaler_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
@@ -1094,7 +1110,53 @@ inline void Runtime::set_allocated_workspace_id(std::string* workspace_id) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.workspace_id)
 }
 
-// string scaler = 9 [json_name = "scaler"];
+// string environment_id = 9 [json_name = "environmentId"];
+inline void Runtime::clear_environment_id() {
+  environment_id_.ClearToEmpty();
+}
+inline const std::string& Runtime::environment_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.environment_id)
+  return _internal_environment_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_environment_id(ArgT0&& arg0, ArgT... args) {
+ 
+ environment_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.environment_id)
+}
+inline std::string* Runtime::mutable_environment_id() {
+  std::string* _s = _internal_mutable_environment_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.environment_id)
+  return _s;
+}
+inline const std::string& Runtime::_internal_environment_id() const {
+  return environment_id_.Get();
+}
+inline void Runtime::_internal_set_environment_id(const std::string& value) {
+  
+  environment_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_environment_id() {
+  
+  return environment_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_environment_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.environment_id)
+  return environment_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_environment_id(std::string* environment_id) {
+  if (environment_id != nullptr) {
+    
+  } else {
+    
+  }
+  environment_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), environment_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.environment_id)
+}
+
+// string scaler = 10 [json_name = "scaler"];
 inline void Runtime::clear_scaler() {
   scaler_.ClearToEmpty();
 }
@@ -1140,7 +1202,7 @@ inline void Runtime::set_allocated_scaler(std::string* scaler) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.scaler)
 }
 
-// map<string, string> integration = 10 [json_name = "integration"];
+// map<string, string> integration = 11 [json_name = "integration"];
 inline int Runtime::_internal_integration_size() const {
   return integration_.size();
 }
@@ -1169,7 +1231,7 @@ Runtime::mutable_integration() {
   return _internal_mutable_integration();
 }
 
-// map<string, string> environment_variables = 11 [json_name = "environmentVariables"];
+// map<string, string> environment_variables = 12 [json_name = "environmentVariables"];
 inline int Runtime::_internal_environment_variables_size() const {
   return environment_variables_.size();
 }
@@ -1198,7 +1260,7 @@ Runtime::mutable_environment_variables() {
   return _internal_mutable_environment_variables();
 }
 
-// map<string, string> commands = 12 [json_name = "commands"];
+// map<string, string> commands = 13 [json_name = "commands"];
 inline int Runtime::_internal_commands_size() const {
   return commands_.size();
 }
@@ -1227,7 +1289,7 @@ Runtime::mutable_commands() {
   return _internal_mutable_commands();
 }
 
-// map<string, string> secrets = 13 [json_name = "secrets"];
+// map<string, string> secrets = 14 [json_name = "secrets"];
 inline int Runtime::_internal_secrets_size() const {
   return secrets_.size();
 }
@@ -1256,7 +1318,7 @@ Runtime::mutable_secrets() {
   return _internal_mutable_secrets();
 }
 
-// map<string, string> extra_args = 14 [json_name = "extraArgs"];
+// map<string, string> extra_args = 15 [json_name = "extraArgs"];
 inline int Runtime::_internal_extra_args_size() const {
   return extra_args_.size();
 }
