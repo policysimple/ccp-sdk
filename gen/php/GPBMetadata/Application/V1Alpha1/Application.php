@@ -41,7 +41,7 @@ Repository
 envs (2.application.v1alpha1.EnvRenvs9
 commands (2.application.v1alpha1.CommandRcommands
 port (Rport!
-instace_type (	RinstaceType"¸
+runtime_type (	RruntimeType"¸
 Application
 id (	Rid
 name (	Rname 

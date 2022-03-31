@@ -90,7 +90,7 @@ constexpr Configuration::Configuration(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : envs_()
   , commands_()
-  , instace_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , runtime_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , port_(0){}
 struct ConfigurationDefaultTypeInternal {
   constexpr ConfigurationDefaultTypeInternal()
@@ -319,7 +319,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fappli
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Configuration, envs_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Configuration, commands_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Configuration, port_),
-  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Configuration, instace_type_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Configuration, runtime_type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -473,7 +473,7 @@ const char descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eprot
   "ion\022-\n\004envs\030\001 \003(\0132\031.application.v1alpha1"
   ".EnvR\004envs\0229\n\010commands\030\002 \003(\0132\035.applicati"
   "on.v1alpha1.CommandR\010commands\022\022\n\004port\030\003 "
-  "\001(\005R\004port\022!\n\014instace_type\030\004 \001(\tR\013instace"
+  "\001(\005R\004port\022!\n\014runtime_type\030\004 \001(\tR\013runtime"
   "Type\"\270\002\n\013Application\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004"
   "name\030\002 \001(\tR\004name\022 \n\013integration\030\003 \001(\tR\013i"
   "ntegration\022@\n\nrepository\030\004 \001(\0132 .applica"
@@ -1866,9 +1866,9 @@ Configuration::Configuration(const Configuration& from)
       envs_(from.envs_),
       commands_(from.commands_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  instace_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_instace_type().empty()) {
-    instace_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_instace_type(), 
+  runtime_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_runtime_type().empty()) {
+    runtime_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_runtime_type(), 
       GetArenaForAllocation());
   }
   port_ = from.port_;
@@ -1876,7 +1876,7 @@ Configuration::Configuration(const Configuration& from)
 }
 
 inline void Configuration::SharedCtor() {
-instace_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+runtime_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 port_ = 0;
 }
 
@@ -1889,7 +1889,7 @@ Configuration::~Configuration() {
 
 inline void Configuration::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  instace_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  runtime_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Configuration::ArenaDtor(void* object) {
@@ -1910,7 +1910,7 @@ void Configuration::Clear() {
 
   envs_.Clear();
   commands_.Clear();
-  instace_type_.ClearToEmpty();
+  runtime_type_.ClearToEmpty();
   port_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1952,12 +1952,12 @@ const char* Configuration::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string instace_type = 4 [json_name = "instaceType"];
+      // string runtime_type = 4 [json_name = "runtimeType"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_instace_type();
+          auto str = _internal_mutable_runtime_type();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Configuration.instace_type"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Configuration.runtime_type"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2012,14 +2012,14 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_port(), target);
   }
 
-  // string instace_type = 4 [json_name = "instaceType"];
-  if (!this->_internal_instace_type().empty()) {
+  // string runtime_type = 4 [json_name = "runtimeType"];
+  if (!this->_internal_runtime_type().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_instace_type().data(), static_cast<int>(this->_internal_instace_type().length()),
+      this->_internal_runtime_type().data(), static_cast<int>(this->_internal_runtime_type().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "application.v1alpha1.Configuration.instace_type");
+      "application.v1alpha1.Configuration.runtime_type");
     target = stream->WriteStringMaybeAliased(
-        4, this->_internal_instace_type(), target);
+        4, this->_internal_runtime_type(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2052,11 +2052,11 @@ size_t Configuration::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // string instace_type = 4 [json_name = "instaceType"];
-  if (!this->_internal_instace_type().empty()) {
+  // string runtime_type = 4 [json_name = "runtimeType"];
+  if (!this->_internal_runtime_type().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_instace_type());
+        this->_internal_runtime_type());
   }
 
   // int32 port = 3 [json_name = "port"];
@@ -2096,8 +2096,8 @@ void Configuration::MergeFrom(const Configuration& from) {
 
   envs_.MergeFrom(from.envs_);
   commands_.MergeFrom(from.commands_);
-  if (!from._internal_instace_type().empty()) {
-    _internal_set_instace_type(from._internal_instace_type());
+  if (!from._internal_runtime_type().empty()) {
+    _internal_set_runtime_type(from._internal_runtime_type());
   }
   if (from._internal_port() != 0) {
     _internal_set_port(from._internal_port());
@@ -2123,8 +2123,8 @@ void Configuration::InternalSwap(Configuration* other) {
   commands_.InternalSwap(&other->commands_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &instace_type_, GetArenaForAllocation(),
-      &other->instace_type_, other->GetArenaForAllocation()
+      &runtime_type_, GetArenaForAllocation(),
+      &other->runtime_type_, other->GetArenaForAllocation()
   );
   swap(port_, other->port_);
 }

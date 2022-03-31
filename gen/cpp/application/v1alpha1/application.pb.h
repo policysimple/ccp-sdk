@@ -1086,7 +1086,7 @@ class Configuration final :
   enum : int {
     kEnvsFieldNumber = 1,
     kCommandsFieldNumber = 2,
-    kInstaceTypeFieldNumber = 4,
+    kRuntimeTypeFieldNumber = 4,
     kPortFieldNumber = 3,
   };
   // repeated .application.v1alpha1.Env envs = 1 [json_name = "envs"];
@@ -1125,18 +1125,18 @@ class Configuration final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Command >&
       commands() const;
 
-  // string instace_type = 4 [json_name = "instaceType"];
-  void clear_instace_type();
-  const std::string& instace_type() const;
+  // string runtime_type = 4 [json_name = "runtimeType"];
+  void clear_runtime_type();
+  const std::string& runtime_type() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_instace_type(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_instace_type();
-  PROTOBUF_MUST_USE_RESULT std::string* release_instace_type();
-  void set_allocated_instace_type(std::string* instace_type);
+  void set_runtime_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_runtime_type();
+  PROTOBUF_MUST_USE_RESULT std::string* release_runtime_type();
+  void set_allocated_runtime_type(std::string* runtime_type);
   private:
-  const std::string& _internal_instace_type() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_instace_type(const std::string& value);
-  std::string* _internal_mutable_instace_type();
+  const std::string& _internal_runtime_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_runtime_type(const std::string& value);
+  std::string* _internal_mutable_runtime_type();
   public:
 
   // int32 port = 3 [json_name = "port"];
@@ -1157,7 +1157,7 @@ class Configuration final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Env > envs_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Command > commands_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr instace_type_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_type_;
   ::PROTOBUF_NAMESPACE_ID::int32 port_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
@@ -3898,50 +3898,50 @@ inline void Configuration::set_port(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:application.v1alpha1.Configuration.port)
 }
 
-// string instace_type = 4 [json_name = "instaceType"];
-inline void Configuration::clear_instace_type() {
-  instace_type_.ClearToEmpty();
+// string runtime_type = 4 [json_name = "runtimeType"];
+inline void Configuration::clear_runtime_type() {
+  runtime_type_.ClearToEmpty();
 }
-inline const std::string& Configuration::instace_type() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.Configuration.instace_type)
-  return _internal_instace_type();
+inline const std::string& Configuration::runtime_type() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Configuration.runtime_type)
+  return _internal_runtime_type();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void Configuration::set_instace_type(ArgT0&& arg0, ArgT... args) {
+void Configuration::set_runtime_type(ArgT0&& arg0, ArgT... args) {
  
- instace_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.Configuration.instace_type)
+ runtime_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Configuration.runtime_type)
 }
-inline std::string* Configuration::mutable_instace_type() {
-  std::string* _s = _internal_mutable_instace_type();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Configuration.instace_type)
+inline std::string* Configuration::mutable_runtime_type() {
+  std::string* _s = _internal_mutable_runtime_type();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Configuration.runtime_type)
   return _s;
 }
-inline const std::string& Configuration::_internal_instace_type() const {
-  return instace_type_.Get();
+inline const std::string& Configuration::_internal_runtime_type() const {
+  return runtime_type_.Get();
 }
-inline void Configuration::_internal_set_instace_type(const std::string& value) {
+inline void Configuration::_internal_set_runtime_type(const std::string& value) {
   
-  instace_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  runtime_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* Configuration::_internal_mutable_instace_type() {
+inline std::string* Configuration::_internal_mutable_runtime_type() {
   
-  return instace_type_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return runtime_type_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* Configuration::release_instace_type() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.Configuration.instace_type)
-  return instace_type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* Configuration::release_runtime_type() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Configuration.runtime_type)
+  return runtime_type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void Configuration::set_allocated_instace_type(std::string* instace_type) {
-  if (instace_type != nullptr) {
+inline void Configuration::set_allocated_runtime_type(std::string* runtime_type) {
+  if (runtime_type != nullptr) {
     
   } else {
     
   }
-  instace_type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), instace_type,
+  runtime_type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), runtime_type,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Configuration.instace_type)
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Configuration.runtime_type)
 }
 
 // -------------------------------------------------------------------

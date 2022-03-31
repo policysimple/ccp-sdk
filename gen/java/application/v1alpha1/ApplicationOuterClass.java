@@ -3876,16 +3876,16 @@ public final class ApplicationOuterClass {
     int getPort();
 
     /**
-     * <code>string instace_type = 4 [json_name = "instaceType"];</code>
-     * @return The instaceType.
+     * <code>string runtime_type = 4 [json_name = "runtimeType"];</code>
+     * @return The runtimeType.
      */
-    java.lang.String getInstaceType();
+    java.lang.String getRuntimeType();
     /**
-     * <code>string instace_type = 4 [json_name = "instaceType"];</code>
-     * @return The bytes for instaceType.
+     * <code>string runtime_type = 4 [json_name = "runtimeType"];</code>
+     * @return The bytes for runtimeType.
      */
     com.google.protobuf.ByteString
-        getInstaceTypeBytes();
+        getRuntimeTypeBytes();
   }
   /**
    * Protobuf type {@code application.v1alpha1.Configuration}
@@ -3902,7 +3902,7 @@ public final class ApplicationOuterClass {
     private Configuration() {
       envs_ = java.util.Collections.emptyList();
       commands_ = java.util.Collections.emptyList();
-      instaceType_ = "";
+      runtimeType_ = "";
     }
 
     @java.lang.Override
@@ -3962,7 +3962,7 @@ public final class ApplicationOuterClass {
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              instaceType_ = s;
+              runtimeType_ = s;
               break;
             }
             default: {
@@ -4094,38 +4094,38 @@ public final class ApplicationOuterClass {
       return port_;
     }
 
-    public static final int INSTACE_TYPE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object instaceType_;
+    public static final int RUNTIME_TYPE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object runtimeType_;
     /**
-     * <code>string instace_type = 4 [json_name = "instaceType"];</code>
-     * @return The instaceType.
+     * <code>string runtime_type = 4 [json_name = "runtimeType"];</code>
+     * @return The runtimeType.
      */
     @java.lang.Override
-    public java.lang.String getInstaceType() {
-      java.lang.Object ref = instaceType_;
+    public java.lang.String getRuntimeType() {
+      java.lang.Object ref = runtimeType_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        instaceType_ = s;
+        runtimeType_ = s;
         return s;
       }
     }
     /**
-     * <code>string instace_type = 4 [json_name = "instaceType"];</code>
-     * @return The bytes for instaceType.
+     * <code>string runtime_type = 4 [json_name = "runtimeType"];</code>
+     * @return The bytes for runtimeType.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getInstaceTypeBytes() {
-      java.lang.Object ref = instaceType_;
+        getRuntimeTypeBytes() {
+      java.lang.Object ref = runtimeType_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        instaceType_ = b;
+        runtimeType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -4155,8 +4155,8 @@ public final class ApplicationOuterClass {
       if (port_ != 0) {
         output.writeInt32(3, port_);
       }
-      if (!getInstaceTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, instaceType_);
+      if (!getRuntimeTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, runtimeType_);
       }
       unknownFields.writeTo(output);
     }
@@ -4179,8 +4179,8 @@ public final class ApplicationOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, port_);
       }
-      if (!getInstaceTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, instaceType_);
+      if (!getRuntimeTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, runtimeType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4203,8 +4203,8 @@ public final class ApplicationOuterClass {
           .equals(other.getCommandsList())) return false;
       if (getPort()
           != other.getPort()) return false;
-      if (!getInstaceType()
-          .equals(other.getInstaceType())) return false;
+      if (!getRuntimeType()
+          .equals(other.getRuntimeType())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4226,8 +4226,8 @@ public final class ApplicationOuterClass {
       }
       hash = (37 * hash) + PORT_FIELD_NUMBER;
       hash = (53 * hash) + getPort();
-      hash = (37 * hash) + INSTACE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getInstaceType().hashCode();
+      hash = (37 * hash) + RUNTIME_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getRuntimeType().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4377,7 +4377,7 @@ public final class ApplicationOuterClass {
         }
         port_ = 0;
 
-        instaceType_ = "";
+        runtimeType_ = "";
 
         return this;
       }
@@ -4425,7 +4425,7 @@ public final class ApplicationOuterClass {
           result.commands_ = commandsBuilder_.build();
         }
         result.port_ = port_;
-        result.instaceType_ = instaceType_;
+        result.runtimeType_ = runtimeType_;
         onBuilt();
         return result;
       }
@@ -4529,8 +4529,8 @@ public final class ApplicationOuterClass {
         if (other.getPort() != 0) {
           setPort(other.getPort());
         }
-        if (!other.getInstaceType().isEmpty()) {
-          instaceType_ = other.instaceType_;
+        if (!other.getRuntimeType().isEmpty()) {
+          runtimeType_ = other.runtimeType_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -5074,78 +5074,78 @@ public final class ApplicationOuterClass {
         return this;
       }
 
-      private java.lang.Object instaceType_ = "";
+      private java.lang.Object runtimeType_ = "";
       /**
-       * <code>string instace_type = 4 [json_name = "instaceType"];</code>
-       * @return The instaceType.
+       * <code>string runtime_type = 4 [json_name = "runtimeType"];</code>
+       * @return The runtimeType.
        */
-      public java.lang.String getInstaceType() {
-        java.lang.Object ref = instaceType_;
+      public java.lang.String getRuntimeType() {
+        java.lang.Object ref = runtimeType_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          instaceType_ = s;
+          runtimeType_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string instace_type = 4 [json_name = "instaceType"];</code>
-       * @return The bytes for instaceType.
+       * <code>string runtime_type = 4 [json_name = "runtimeType"];</code>
+       * @return The bytes for runtimeType.
        */
       public com.google.protobuf.ByteString
-          getInstaceTypeBytes() {
-        java.lang.Object ref = instaceType_;
+          getRuntimeTypeBytes() {
+        java.lang.Object ref = runtimeType_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          instaceType_ = b;
+          runtimeType_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string instace_type = 4 [json_name = "instaceType"];</code>
-       * @param value The instaceType to set.
+       * <code>string runtime_type = 4 [json_name = "runtimeType"];</code>
+       * @param value The runtimeType to set.
        * @return This builder for chaining.
        */
-      public Builder setInstaceType(
+      public Builder setRuntimeType(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        instaceType_ = value;
+        runtimeType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string instace_type = 4 [json_name = "instaceType"];</code>
+       * <code>string runtime_type = 4 [json_name = "runtimeType"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearInstaceType() {
+      public Builder clearRuntimeType() {
         
-        instaceType_ = getDefaultInstance().getInstaceType();
+        runtimeType_ = getDefaultInstance().getRuntimeType();
         onChanged();
         return this;
       }
       /**
-       * <code>string instace_type = 4 [json_name = "instaceType"];</code>
-       * @param value The bytes for instaceType to set.
+       * <code>string runtime_type = 4 [json_name = "runtimeType"];</code>
+       * @param value The bytes for runtimeType to set.
        * @return This builder for chaining.
        */
-      public Builder setInstaceTypeBytes(
+      public Builder setRuntimeTypeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        instaceType_ = value;
+        runtimeType_ = value;
         onChanged();
         return this;
       }
@@ -15692,7 +15692,7 @@ public final class ApplicationOuterClass {
       "ion\022-\n\004envs\030\001 \003(\0132\031.application.v1alpha1" +
       ".EnvR\004envs\0229\n\010commands\030\002 \003(\0132\035.applicati" +
       "on.v1alpha1.CommandR\010commands\022\022\n\004port\030\003 " +
-      "\001(\005R\004port\022!\n\014instace_type\030\004 \001(\tR\013instace" +
+      "\001(\005R\004port\022!\n\014runtime_type\030\004 \001(\tR\013runtime" +
       "Type\"\270\002\n\013Application\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004" +
       "name\030\002 \001(\tR\004name\022 \n\013integration\030\003 \001(\tR\013i" +
       "ntegration\022@\n\nrepository\030\004 \001(\0132 .applica" +
@@ -15793,7 +15793,7 @@ public final class ApplicationOuterClass {
     internal_static_application_v1alpha1_Configuration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Configuration_descriptor,
-        new java.lang.String[] { "Envs", "Commands", "Port", "InstaceType", });
+        new java.lang.String[] { "Envs", "Commands", "Port", "RuntimeType", });
     internal_static_application_v1alpha1_Application_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_application_v1alpha1_Application_fieldAccessorTable = new
