@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	autoscalingAgentPkgV1 "github.com/cuemby/ccp-sdk/gen/go/performance/autoscaling/v1alpha1"
+	autoscalingPkgV1 "github.com/cuemby/ccp-sdk/gen/go/performance/autoscaling/v1alpha1"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -16,7 +16,7 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-var client autoscalingAgentPkgV1.AutoscalingAgentAPIServiceClient
+var client autoscalingPkgV1.AutoscalingAPIServiceClient
 var doOnce sync.Once
 
 var autoscalingServiceUri string
@@ -24,30 +24,28 @@ var autoscalingServiceTimeout string
 
 func init() {
 	doOnce.Do(func() {
-		autoscalingServiceTimeout = os.Getenv("AUTOSCALING_SERVICE_TIMEOUT")
+		autoscalingServiceTimeout = os.Getenv("PERFORMANCE_SERVICE_TIMEOUT")
 		if autoscalingServiceTimeout == "" {
 			autoscalingServiceTimeout = "30s"
 		}
-		autoscalingServiceUri = os.Getenv("AUTOSCALING_SERVICE_URI")
+		autoscalingServiceUri = os.Getenv("PERFORMANCE_SERVICE_URI.03")
 		con, err := grpc.Dial(autoscalingServiceUri, grpc.WithTransportCredentials(insecure.NewCredentials()))
 		if err != nil {
 			panic(err)
 		}
-		client = autoscalingAgentPkgV1.NewAutoscalingAgentAPIServiceClient(con)
+		client = autoscalingPkgV1.NewAutoscalingAPIServiceClient(con)
 	})
 }
 
-func CreateAutoscaling(in *autoscalingAgentPkgV1.AgentCreateAutoscalingRequest) (response *autoscalingAgentPkgV1.AgentCreateAutoscalingResponse, err error) {
+func CreateAutoscaling(in *autoscalingPkgV1.AgentCreateAutoscalingRequest) (response *autoscalingPkgV1.AgentCreateAutoscalingResponse, err error) {
 	d, err := time.ParseDuration(autoscalingServiceTimeout)
 	if err != nil {
 		return
 	}
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
-	res, err := client.AgentCreateAutoscaling(ctx, &autoscalingAgentPkgV1.AgentCreateAutoscalingRequest{
+	res, err := client.CreateAutoscaling(ctx, &autoscalingPkgV1.CreateAutoscalingRequest{
 		Autoscaling: in.Autoscaling,
-		Status:      in.Status,
-		Origin:      in.Origin,
 	})
 	if err != nil {
 		log.Printf("%s: %v", "Error create autoscaling", err)
@@ -56,27 +54,20 @@ func CreateAutoscaling(in *autoscalingAgentPkgV1.AgentCreateAutoscalingRequest) 
 			fmt.Sprintf("%s: %v", "Error create autoscaling", err),
 		)
 	}
-	if response, err = res.Recv(); err != nil {
-		log.Printf("%s: %v", "Error create autoscaling", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error create autoscaling", err),
-		)
-	}
+	response.Autoscaling = res.Autoscaling
+
 	return response, nil
 }
 
-func UpdateAutoscaling(in *autoscalingAgentPkgV1.AgentUpdateAutoscalingRequest) (response *autoscalingAgentPkgV1.AgentUpdateAutoscalingResponse, err error) {
+func UpdateAutoscaling(in *autoscalingPkgV1.UpdateAutoscalingRequest) (response *autoscalingPkgV1.UpdateAutoscalingResponse, err error) {
 	d, err := time.ParseDuration(autoscalingServiceTimeout)
 	if err != nil {
 		return
 	}
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
-	res, err := client.AgentUpdateAutoscaling(ctx, &autoscalingAgentPkgV1.AgentUpdateAutoscalingRequest{
+	res, err := client.UpdateAutoscaling(ctx, &autoscalingPkgV1.UpdateAutoscalingRequest{
 		Autoscaling: in.Autoscaling,
-		Status:      in.Status,
-		Origin:      in.Origin,
 	})
 	if err != nil {
 		log.Printf("%s: %v", "Error update autoscaling", err)
@@ -85,24 +76,19 @@ func UpdateAutoscaling(in *autoscalingAgentPkgV1.AgentUpdateAutoscalingRequest) 
 			fmt.Sprintf("%s: %v", "Error update autoscaling", err),
 		)
 	}
-	if response, err = res.Recv(); err != nil {
-		log.Printf("%s: %v", "Error update autoscaling", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error update autoscaling", err),
-		)
-	}
+	response.Status = res.Status
+
 	return response, nil
 }
 
-func DeleteAutoscaling(in *autoscalingAgentPkgV1.AgentDeleteAutoscalingRequest) (response *autoscalingAgentPkgV1.AgentDeleteAutoscalingResponse, err error) {
+func DeleteAutoscaling(in *autoscalingPkgV1.DeleteAutoscalingRequest) (response *autoscalingPkgV1.DeleteAutoscalingResponse, err error) {
 	d, err := time.ParseDuration(autoscalingServiceTimeout)
 	if err != nil {
 		return
 	}
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
-	res, err := client.AgentDeleteAutoscaling(ctx, &autoscalingAgentPkgV1.AgentDeleteAutoscalingRequest{
+	res, err := client.DeleteAutoscaling(ctx, &autoscalingPkgV1.DeleteAutoscalingRequest{
 		Metadata: in.Metadata,
 	})
 	if err != nil {
@@ -112,7 +98,8 @@ func DeleteAutoscaling(in *autoscalingAgentPkgV1.AgentDeleteAutoscalingRequest) 
 			fmt.Sprintf("%s: %v", "Error delete autoscaling", err),
 		)
 	}
-	if response, err = res.Recv(); err != nil {
+	response.Status = res.Status
+	if response.Status != "OK" {
 		log.Printf("%s: %v", "Error delete autoscaling", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
@@ -122,55 +109,45 @@ func DeleteAutoscaling(in *autoscalingAgentPkgV1.AgentDeleteAutoscalingRequest) 
 	return response, nil
 }
 
-func GetAutoscaling(in *autoscalingAgentPkgV1.AgentGetAutoscalingRequest) (response *autoscalingAgentPkgV1.AgentGetAutoscalingResponse, err error) {
+func GetAutoscaling(in *autoscalingPkgV1.GetAutoscalingRequest) (response *autoscalingPkgV1.GetAutoscalingResponse, err error) {
 	d, err := time.ParseDuration(autoscalingServiceTimeout)
 	if err != nil {
 		return
 	}
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
-	res, err := client.AgentGetAutoscaling(ctx, &autoscalingAgentPkgV1.AgentGetAutoscalingRequest{
-		Autoscaling: in.Autoscaling,
-	})
-	if err != nil {
-		log.Printf("%s: %v", "Error get autoscaling", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get autoscaling", err),
-		)
-	}
-	if response, err = res.Recv(); err != nil {
-		log.Printf("%s: %v", "Error get autoscaling", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get autoscaling", err),
-		)
-	}
-	return response, nil
-}
-
-func ListAutoscaling(in *autoscalingAgentPkgV1.AgentListAutoscalingRequest) (response *autoscalingAgentPkgV1.AgentListAutoscalingResponse, err error) {
-	d, err := time.ParseDuration(autoscalingServiceTimeout)
-	if err != nil {
-		return
-	}
-	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
-	defer cancel()
-	res, err := client.AgentListAutoscaling(ctx, &autoscalingAgentPkgV1.AgentListAutoscalingRequest{
+	res, err := client.GetAutoscaling(ctx, &autoscalingPkgV1.GetAutoscalingRequest{
 		Metadata: in.Metadata,
 	})
 	if err != nil {
-		log.Printf("%s: %v", "Error list autoscaling", err)
+		log.Printf("%s: %v", "Error get autoscaling", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error list autoscaling", err),
+			fmt.Sprintf("%s: %v", "Error get autoscaling", err),
 		)
 	}
-	if response, err = res.Recv(); err != nil {
-		log.Printf("%s: %v", "Error list autoscaling", err)
+	response.Autoscaling = res.Autoscaling
+	response.Status = res.Status
+
+	return response, nil
+}
+
+func ListAutoscaling(in *autoscalingPkgV1.AgentListAutoscalingRequest) (response *autoscalingPkgV1.ListAutoscalingResponse, err error) {
+	d, err := time.ParseDuration(autoscalingServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+	response, err = client.ListAutoscaling(ctx, &autoscalingPkgV1.ListAutoscalingRequest{
+		Metadata: in.Metadata,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error list runtime", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error list autoscaling", err),
+			fmt.Sprintf("%s: %v", "Error list runtime", err),
 		)
 	}
 	return response, nil
