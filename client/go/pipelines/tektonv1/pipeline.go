@@ -72,6 +72,7 @@ func CreateTektonPipeline(
 	organizationId uint32, projectId uint32, name string, namespace string, instanceType string,
 	integration, environmentVariables, commands, secrets map[string]string,
 	workspacesMain []WorkspaceStruct, params []ParamsStruct, tasks []TaskStruct, userId string,
+	labels map[string]string,
 ) (response *tektonPipelinepkgv1.CreateTektonPipelineResponse, err error) {
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
@@ -166,6 +167,7 @@ func CreateTektonPipeline(
 			EnvironmentVariables: environmentVariables,
 			Commands:             commands,
 			Secrets:              secrets,
+			Labels:               labels,
 		},
 		UserId: userId,
 	}

@@ -276,43 +276,77 @@ public interface PipelineOrBuilder extends
       java.lang.String key);
 
   /**
-   * <code>bool active = 15 [json_name = "active"];</code>
+   * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+   */
+  int getLabelsCount();
+  /**
+   * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+   */
+  boolean containsLabels(
+      java.lang.String key);
+  /**
+   * Use {@link #getLabelsMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getLabels();
+  /**
+   * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getLabelsMap();
+  /**
+   * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+   */
+
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+   */
+
+  java.lang.String getLabelsOrThrow(
+      java.lang.String key);
+
+  /**
+   * <code>bool active = 16 [json_name = "active"];</code>
    * @return The active.
    */
   boolean getActive();
 
   /**
-   * <code>string instance_type = 16 [json_name = "instanceType"];</code>
+   * <code>string instance_type = 17 [json_name = "instanceType"];</code>
    * @return The instanceType.
    */
   java.lang.String getInstanceType();
   /**
-   * <code>string instance_type = 16 [json_name = "instanceType"];</code>
+   * <code>string instance_type = 17 [json_name = "instanceType"];</code>
    * @return The bytes for instanceType.
    */
   com.google.protobuf.ByteString
       getInstanceTypeBytes();
 
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 17 [json_name = "workspacesMain"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
    */
   java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Workspaces> 
       getWorkspacesMainList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 17 [json_name = "workspacesMain"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
    */
   io.cuemby.pipelines.tekton.v1alpha1.Workspaces getWorkspacesMain(int index);
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 17 [json_name = "workspacesMain"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
    */
   int getWorkspacesMainCount();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 17 [json_name = "workspacesMain"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
    */
   java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder> 
       getWorkspacesMainOrBuilderList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 17 [json_name = "workspacesMain"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
    */
   io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder getWorkspacesMainOrBuilder(
       int index);
