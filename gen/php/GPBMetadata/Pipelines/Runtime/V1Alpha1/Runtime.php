@@ -16,9 +16,8 @@ class Runtime
         }
         $pool->internalAddGeneratedFile(
             '
-ß
-
-(pipelines/runtime/v1alpha1/runtime.protopipelines.runtime.v1alpha1"”
+†
+(pipelines/runtime/v1alpha1/runtime.protopipelines.runtime.v1alpha1"»
 Runtime
 id (	Rid
 name (	Rname
@@ -28,15 +27,16 @@ class Runtime
 
 project_id (R	projectId%
 application_id (	RapplicationId!
-workspace_id (	RworkspaceId
-scaler	 (	RscalerV
-integration
- (24.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryRintegrationr
-environment_variables (2=.pipelines.runtime.v1alpha1.Runtime.EnvironmentVariablesEntryRenvironmentVariablesM
-commands (21.pipelines.runtime.v1alpha1.Runtime.CommandsEntryRcommandsJ
-secrets (20.pipelines.runtime.v1alpha1.Runtime.SecretsEntryRsecretsQ
+workspace_id (	RworkspaceId%
+environment_id	 (	RenvironmentId
+scaler
+ (	RscalerV
+integration (24.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryRintegrationr
+environment_variables (2=.pipelines.runtime.v1alpha1.Runtime.EnvironmentVariablesEntryRenvironmentVariablesM
+commands (21.pipelines.runtime.v1alpha1.Runtime.CommandsEntryRcommandsJ
+secrets (20.pipelines.runtime.v1alpha1.Runtime.SecretsEntryRsecretsQ
 
-extra_args (22.pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntryR	extraArgs>
+extra_args (22.pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntryR	extraArgs>
 IntegrationEntry
 key (	Rkey
 value (	Rvalue:8G
