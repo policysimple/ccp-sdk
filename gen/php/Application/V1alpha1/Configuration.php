@@ -26,9 +26,9 @@ class Configuration extends \Google\Protobuf\Internal\Message
      */
     protected $port = 0;
     /**
-     * Generated from protobuf field <code>string instace_type = 4 [json_name = "instaceType"];</code>
+     * Generated from protobuf field <code>string runtime_type = 4 [json_name = "runtimeType"];</code>
      */
-    protected $instace_type = '';
+    protected $runtime_type = '';
 
     /**
      * Constructor.
@@ -39,7 +39,7 @@ class Configuration extends \Google\Protobuf\Internal\Message
      *     @type \Application\V1alpha1\Env[]|\Google\Protobuf\Internal\RepeatedField $envs
      *     @type \Application\V1alpha1\Command[]|\Google\Protobuf\Internal\RepeatedField $commands
      *     @type int $port
-     *     @type string $instace_type
+     *     @type string $runtime_type
      * }
      */
     public function __construct($data = NULL) {
@@ -114,23 +114,23 @@ class Configuration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string instace_type = 4 [json_name = "instaceType"];</code>
+     * Generated from protobuf field <code>string runtime_type = 4 [json_name = "runtimeType"];</code>
      * @return string
      */
-    public function getInstaceType()
+    public function getRuntimeType()
     {
-        return $this->instace_type;
+        return $this->runtime_type;
     }
 
     /**
-     * Generated from protobuf field <code>string instace_type = 4 [json_name = "instaceType"];</code>
+     * Generated from protobuf field <code>string runtime_type = 4 [json_name = "runtimeType"];</code>
      * @param string $var
      * @return $this
      */
-    public function setInstaceType($var)
+    public function setRuntimeType($var)
     {
         GPBUtil::checkString($var, True);
-        $this->instace_type = $var;
+        $this->runtime_type = $var;
 
         return $this;
     }

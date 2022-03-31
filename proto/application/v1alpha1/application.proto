@@ -50,7 +50,7 @@ message Configuration {
     repeated Env envs = 1;
     repeated Command commands = 2;
     int32 port = 3;
-    string instace_type = 4;
+    string runtime_type = 4;
 }
 
 message Application {
