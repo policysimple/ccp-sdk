@@ -28,7 +28,7 @@ func init() {
 		if autoscalingServiceTimeout == "" {
 			autoscalingServiceTimeout = "30s"
 		}
-		autoscalingServiceUri = os.Getenv("PERFORMANCE_SERVICE_URI.03")
+		autoscalingServiceUri = os.Getenv("PERFORMANCE_SERVICE_URI")
 		con, err := grpc.Dial(autoscalingServiceUri, grpc.WithTransportCredentials(insecure.NewCredentials()))
 		if err != nil {
 			panic(err)
@@ -37,7 +37,7 @@ func init() {
 	})
 }
 
-func CreateAutoscaling(in *autoscalingPkgV1.AgentCreateAutoscalingRequest) (response *autoscalingPkgV1.AgentCreateAutoscalingResponse, err error) {
+func CreateAutoscaling(in *autoscalingPkgV1.CreateAutoscalingRequest) (response *autoscalingPkgV1.CreateAutoscalingResponse, err error) {
 	d, err := time.ParseDuration(autoscalingServiceTimeout)
 	if err != nil {
 		return
@@ -132,7 +132,7 @@ func GetAutoscaling(in *autoscalingPkgV1.GetAutoscalingRequest) (response *autos
 	return response, nil
 }
 
-func ListAutoscaling(in *autoscalingPkgV1.AgentListAutoscalingRequest) (response *autoscalingPkgV1.ListAutoscalingResponse, err error) {
+func ListAutoscaling(in *autoscalingPkgV1.ListAutoscalingRequest) (response *autoscalingPkgV1.ListAutoscalingResponse, err error) {
 	d, err := time.ParseDuration(autoscalingServiceTimeout)
 	if err != nil {
 		return
