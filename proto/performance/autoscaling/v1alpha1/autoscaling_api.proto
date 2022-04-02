@@ -11,6 +11,7 @@ option objc_class_prefix = "PFX";
 option php_namespace = "Performance\\Autoscaling\\V1Alpha1";
 
 import "performance/autoscaling/v1alpha1/autoscaling.proto";
+//import "./autoscaling.proto";
 
 
 service AutoscalingAPIService{
