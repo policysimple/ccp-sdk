@@ -9,6 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ *
  * CreateProviderRequest is the request for the CreateProvider method.
  *
  * Generated from protobuf message <code>source.v1alpha1.GetOneProviderByNameResponse</code>
