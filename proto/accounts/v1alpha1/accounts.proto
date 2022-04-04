@@ -35,6 +35,9 @@ service AccountService {
     rpc UpdateRole(UpdateRoleRequest) returns (UpdateRoleResponse);
     rpc GetOneRole(GetOneRoleRequest) returns (GetOneRoleResponse);
     rpc GetRolesByUser(GetRolesByUserRequest) returns (GetRolesByUserResponse);
+    rpc GetRolesByOrgUser(GetRolesByOrgUserRequest) returns (GetRolesByOrgUserResponse);
+
+
     rpc DeleteRole(DeleteRoleRequest) returns (DeleteRoleResponse);
     //CRUD Project
     rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse);
@@ -65,6 +68,24 @@ service AccountService {
     rpc ListInvitationUser(ListInvitationUserRequest) returns (ListInvitationUserResponse);
 */
 
+
+/*
+    ROLES ORG BY USER
+*/
+
+message GetRolesByOrgUserRequest {
+    uint32 organization_id = 1;
+    uint32 project_id = 2;
+    uint32 user_id = 3;
+}
+
+message GetRolesByOrgUserResponse {
+    repeated Organization organization = 1;
+    repeated Project project = 2;
+}
+/*
+    LIST INVITATION USER
+*/
 message ListInvitationUserRequest {
     string user_id = 1;
 }
@@ -458,7 +479,7 @@ message GetInvitationUserResponse {
     repeated Permission permissions = 5;
     OrganizationInvitation organization = 6;
     string email = 7;
-    bool success = 8;
+    bool success = 8;   
 }
 
 message AgreeInvitationUserRequest {

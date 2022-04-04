@@ -16,8 +16,16 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-£Ž
- accounts/v1alpha1/accounts.protoaccounts.v1alpha1"4
+©‘
+ accounts/v1alpha1/accounts.protoaccounts.v1alpha1"{
+GetRolesByOrgUserRequest\'
+organization_id (RorganizationId
+
+project_id (R	projectId
+user_id (RuserId"–
+GetRolesByOrgUserResponseC
+organization (2.accounts.v1alpha1.OrganizationRorganization4
+project (2.accounts.v1alpha1.ProjectRproject"4
 ListInvitationUserRequest
 user_id (	RuserId"s
 ListInvitationUserResponseU
@@ -514,7 +522,7 @@ updated_at (	R	updatedAt,
 emoji_country (	RemojiCountry*d
 InvitationResponse,
 (INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED  
-INVITATION_RESPONSE_REJECTED2¡"
+INVITATION_RESPONSE_REJECTED2‘#
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
@@ -547,7 +555,8 @@ CreateRole$.accounts.v1alpha1.CreateRoleRequest%.accounts.v1alpha1.CreateRoleR
 UpdateRole$.accounts.v1alpha1.UpdateRoleRequest%.accounts.v1alpha1.UpdateRoleResponseY
 
 GetOneRole$.accounts.v1alpha1.GetOneRoleRequest%.accounts.v1alpha1.GetOneRoleResponsee
-GetRolesByUser(.accounts.v1alpha1.GetRolesByUserRequest).accounts.v1alpha1.GetRolesByUserResponseY
+GetRolesByUser(.accounts.v1alpha1.GetRolesByUserRequest).accounts.v1alpha1.GetRolesByUserResponsen
+GetRolesByOrgUser+.accounts.v1alpha1.GetRolesByOrgUserRequest,.accounts.v1alpha1.GetRolesByOrgUserResponseY
 
 DeleteRole$.accounts.v1alpha1.DeleteRoleRequest%.accounts.v1alpha1.DeleteRoleResponseb
 CreateProject\'.accounts.v1alpha1.CreateProjectRequest(.accounts.v1alpha1.CreateProjectResponseb
