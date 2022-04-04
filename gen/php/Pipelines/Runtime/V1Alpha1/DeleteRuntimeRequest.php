@@ -22,11 +22,15 @@ class DeleteRuntimeRequest extends \Google\Protobuf\Internal\Message
      */
     protected $project_id = 0;
     /**
-     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
+     * Generated from protobuf field <code>string name = 3 [json_name = "name"];</code>
+     */
+    protected $name = '';
+    /**
+     * Generated from protobuf field <code>string namespace = 4 [json_name = "namespace"];</code>
      */
     protected $namespace = '';
     /**
-     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
      */
     protected $status = '';
 
@@ -38,6 +42,7 @@ class DeleteRuntimeRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $runtime_id
      *     @type int $project_id
+     *     @type string $name
      *     @type string $namespace
      *     @type string $status
      * }
@@ -92,7 +97,29 @@ class DeleteRuntimeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
+     * Generated from protobuf field <code>string name = 3 [json_name = "name"];</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 3 [json_name = "name"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 4 [json_name = "namespace"];</code>
      * @return string
      */
     public function getNamespace()
@@ -101,7 +128,7 @@ class DeleteRuntimeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
+     * Generated from protobuf field <code>string namespace = 4 [json_name = "namespace"];</code>
      * @param string $var
      * @return $this
      */
@@ -114,7 +141,7 @@ class DeleteRuntimeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
      * @return string
      */
     public function getStatus()
@@ -123,7 +150,7 @@ class DeleteRuntimeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */

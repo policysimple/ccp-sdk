@@ -42,9 +42,10 @@ func CreateAutoscaling(in *autoscalingPkgV1.CreateAutoscalingRequest) (response 
 	if err != nil {
 		return
 	}
+	//log.Println("Create autoscaling", in.Autoscaling)
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
-	res, err := client.CreateAutoscaling(ctx, &autoscalingPkgV1.CreateAutoscalingRequest{
+	response, err = client.CreateAutoscaling(ctx, &autoscalingPkgV1.CreateAutoscalingRequest{
 		Autoscaling: in.Autoscaling,
 	})
 	if err != nil {
@@ -54,8 +55,7 @@ func CreateAutoscaling(in *autoscalingPkgV1.CreateAutoscalingRequest) (response 
 			fmt.Sprintf("%s: %v", "Error create autoscaling", err),
 		)
 	}
-	response.Autoscaling = res.Autoscaling
-
+	log.Println("Create autoscaling", response)
 	return response, nil
 }
 
@@ -88,7 +88,7 @@ func DeleteAutoscaling(in *autoscalingPkgV1.DeleteAutoscalingRequest) (response 
 	}
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
-	res, err := client.DeleteAutoscaling(ctx, &autoscalingPkgV1.DeleteAutoscalingRequest{
+	response, err = client.DeleteAutoscaling(ctx, &autoscalingPkgV1.DeleteAutoscalingRequest{
 		Metadata: in.Metadata,
 	})
 	if err != nil {
@@ -98,14 +98,7 @@ func DeleteAutoscaling(in *autoscalingPkgV1.DeleteAutoscalingRequest) (response 
 			fmt.Sprintf("%s: %v", "Error delete autoscaling", err),
 		)
 	}
-	response.Status = res.Status
-	if response.Status != "OK" {
-		log.Printf("%s: %v", "Error delete autoscaling", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error delete autoscaling", err),
-		)
-	}
+
 	return response, nil
 }
 

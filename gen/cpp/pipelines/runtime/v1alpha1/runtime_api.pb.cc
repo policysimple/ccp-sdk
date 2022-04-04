@@ -74,6 +74,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateRuntimeResponseDefaultTyp
 constexpr DeleteRuntimeRequest::DeleteRuntimeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : runtime_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , project_id_(0u){}
@@ -195,6 +196,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::DeleteRuntimeRequest, runtime_id_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::DeleteRuntimeRequest, project_id_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::DeleteRuntimeRequest, name_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::DeleteRuntimeRequest, namespace__),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::DeleteRuntimeRequest, status_),
   ~0u,  // no _has_bits_
@@ -240,11 +242,11 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 14, -1, sizeof(::pipelines::runtime::v1alpha1::UpdateRuntimeRequest)},
   { 21, -1, sizeof(::pipelines::runtime::v1alpha1::UpdateRuntimeResponse)},
   { 28, -1, sizeof(::pipelines::runtime::v1alpha1::DeleteRuntimeRequest)},
-  { 37, -1, sizeof(::pipelines::runtime::v1alpha1::DeleteRuntimeResponse)},
-  { 43, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimeRequest)},
-  { 52, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimeResponse)},
-  { 59, -1, sizeof(::pipelines::runtime::v1alpha1::ListRuntimesRequest)},
-  { 66, -1, sizeof(::pipelines::runtime::v1alpha1::ListRuntimesResponse)},
+  { 38, -1, sizeof(::pipelines::runtime::v1alpha1::DeleteRuntimeResponse)},
+  { 44, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimeRequest)},
+  { 53, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimeResponse)},
+  { 60, -1, sizeof(::pipelines::runtime::v1alpha1::ListRuntimesRequest)},
+  { 67, -1, sizeof(::pipelines::runtime::v1alpha1::ListRuntimesResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -275,49 +277,50 @@ const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5f
   "(\tR\006status\"n\n\025UpdateRuntimeResponse\022=\n\007r"
   "untime\030\001 \001(\0132#.pipelines.runtime.v1alpha"
   "1.RuntimeR\007runtime\022\026\n\006status\030\002 \001(\tR\006stat"
-  "us\"\212\001\n\024DeleteRuntimeRequest\022\035\n\nruntime_i"
+  "us\"\236\001\n\024DeleteRuntimeRequest\022\035\n\nruntime_i"
   "d\030\001 \001(\tR\truntimeId\022\035\n\nproject_id\030\002 \001(\rR\t"
-  "projectId\022\034\n\tnamespace\030\003 \001(\tR\tnamespace\022"
-  "\026\n\006status\030\004 \001(\tR\006status\"/\n\025DeleteRuntime"
-  "Response\022\026\n\006status\030\001 \001(\tR\006status\"\207\001\n\021Get"
-  "RuntimeRequest\022\035\n\nruntime_id\030\001 \001(\tR\trunt"
-  "imeId\022\035\n\nproject_id\030\002 \001(\rR\tprojectId\022\034\n\t"
-  "namespace\030\003 \001(\tR\tnamespace\022\026\n\006status\030\004 \001"
-  "(\tR\006status\"k\n\022GetRuntimeResponse\022=\n\007runt"
-  "ime\030\001 \001(\0132#.pipelines.runtime.v1alpha1.R"
-  "untimeR\007runtime\022\026\n\006status\030\002 \001(\tR\006status\""
-  "L\n\023ListRuntimesRequest\022\035\n\nproject_id\030\001 \001"
-  "(\rR\tprojectId\022\026\n\006status\030\002 \001(\tR\006status\"z\n"
-  "\024ListRuntimesResponse\022J\n\014runtime_list\030\001 "
-  "\001(\0132\'.pipelines.runtime.v1alpha1.Runtime"
-  "ListR\013runtimeList\022\026\n\006status\030\002 \001(\tR\006statu"
-  "s2\337\004\n\021RuntimeAPIService\022m\n\nGetRuntime\022-."
-  "pipelines.runtime.v1alpha1.GetRuntimeReq"
-  "uest\032..pipelines.runtime.v1alpha1.GetRun"
-  "timeResponse\"\000\022v\n\rCreateRuntime\0220.pipeli"
-  "nes.runtime.v1alpha1.CreateRuntimeReques"
-  "t\0321.pipelines.runtime.v1alpha1.CreateRun"
-  "timeResponse\"\000\022v\n\rUpdateRuntime\0220.pipeli"
-  "nes.runtime.v1alpha1.UpdateRuntimeReques"
-  "t\0321.pipelines.runtime.v1alpha1.UpdateRun"
-  "timeResponse\"\000\022v\n\rDeleteRuntime\0220.pipeli"
-  "nes.runtime.v1alpha1.DeleteRuntimeReques"
-  "t\0321.pipelines.runtime.v1alpha1.DeleteRun"
-  "timeResponse\"\000\022s\n\014ListRuntimes\022/.pipelin"
-  "es.runtime.v1alpha1.ListRuntimesRequest\032"
-  "0.pipelines.runtime.v1alpha1.ListRuntime"
-  "sResponse\"\000B\260\001\n$io.cuemby.pipelines.runt"
-  "ime.v1alpha1B\017RuntimeAPIProtoP\001Z5github."
-  "com/cuemby/ccp-runtime-service/runtimev1"
-  "alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alpha"
-  "1\312\002\032Pipelines\\Runtime\\V1Alpha1b\006proto3"
+  "projectId\022\022\n\004name\030\003 \001(\tR\004name\022\034\n\tnamespa"
+  "ce\030\004 \001(\tR\tnamespace\022\026\n\006status\030\005 \001(\tR\006sta"
+  "tus\"/\n\025DeleteRuntimeResponse\022\026\n\006status\030\001"
+  " \001(\tR\006status\"\207\001\n\021GetRuntimeRequest\022\035\n\nru"
+  "ntime_id\030\001 \001(\tR\truntimeId\022\035\n\nproject_id\030"
+  "\002 \001(\rR\tprojectId\022\034\n\tnamespace\030\003 \001(\tR\tnam"
+  "espace\022\026\n\006status\030\004 \001(\tR\006status\"k\n\022GetRun"
+  "timeResponse\022=\n\007runtime\030\001 \001(\0132#.pipeline"
+  "s.runtime.v1alpha1.RuntimeR\007runtime\022\026\n\006s"
+  "tatus\030\002 \001(\tR\006status\"L\n\023ListRuntimesReque"
+  "st\022\035\n\nproject_id\030\001 \001(\rR\tprojectId\022\026\n\006sta"
+  "tus\030\002 \001(\tR\006status\"z\n\024ListRuntimesRespons"
+  "e\022J\n\014runtime_list\030\001 \001(\0132\'.pipelines.runt"
+  "ime.v1alpha1.RuntimeListR\013runtimeList\022\026\n"
+  "\006status\030\002 \001(\tR\006status2\337\004\n\021RuntimeAPIServ"
+  "ice\022m\n\nGetRuntime\022-.pipelines.runtime.v1"
+  "alpha1.GetRuntimeRequest\032..pipelines.run"
+  "time.v1alpha1.GetRuntimeResponse\"\000\022v\n\rCr"
+  "eateRuntime\0220.pipelines.runtime.v1alpha1"
+  ".CreateRuntimeRequest\0321.pipelines.runtim"
+  "e.v1alpha1.CreateRuntimeResponse\"\000\022v\n\rUp"
+  "dateRuntime\0220.pipelines.runtime.v1alpha1"
+  ".UpdateRuntimeRequest\0321.pipelines.runtim"
+  "e.v1alpha1.UpdateRuntimeResponse\"\000\022v\n\rDe"
+  "leteRuntime\0220.pipelines.runtime.v1alpha1"
+  ".DeleteRuntimeRequest\0321.pipelines.runtim"
+  "e.v1alpha1.DeleteRuntimeResponse\"\000\022s\n\014Li"
+  "stRuntimes\022/.pipelines.runtime.v1alpha1."
+  "ListRuntimesRequest\0320.pipelines.runtime."
+  "v1alpha1.ListRuntimesResponse\"\000B\260\001\n$io.c"
+  "uemby.pipelines.runtime.v1alpha1B\017Runtim"
+  "eAPIProtoP\001Z5github.com/cuemby/ccp-runti"
+  "me-service/runtimev1alpha1\242\002\003PPX\252\002\032Pipel"
+  "ines.Runtime.V1Alpha1\312\002\032Pipelines\\Runtim"
+  "e\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_deps[1] = {
   &::descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto = {
-  false, false, 1998, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, "pipelines/runtime/v1alpha1/runtime_api.proto", 
+  false, false, 2018, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, "pipelines/runtime/v1alpha1/runtime_api.proto", 
   &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once, descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_deps, 1, 10,
   schemas, file_default_instances, TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto::offsets,
   file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto,
@@ -1347,6 +1350,11 @@ DeleteRuntimeRequest::DeleteRuntimeRequest(const DeleteRuntimeRequest& from)
     runtime_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_runtime_id(), 
       GetArenaForAllocation());
   }
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_namespace_().empty()) {
     namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_namespace_(), 
@@ -1363,6 +1371,7 @@ DeleteRuntimeRequest::DeleteRuntimeRequest(const DeleteRuntimeRequest& from)
 
 inline void DeleteRuntimeRequest::SharedCtor() {
 runtime_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 project_id_ = 0u;
@@ -1378,6 +1387,7 @@ DeleteRuntimeRequest::~DeleteRuntimeRequest() {
 inline void DeleteRuntimeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   runtime_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   namespace__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -1399,6 +1409,7 @@ void DeleteRuntimeRequest::Clear() {
   (void) cached_has_bits;
 
   runtime_id_.ClearToEmpty();
+  name_.ClearToEmpty();
   namespace__.ClearToEmpty();
   status_.ClearToEmpty();
   project_id_ = 0u;
@@ -1427,18 +1438,27 @@ const char* DeleteRuntimeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string namespace = 3 [json_name = "namespace"];
+      // string name = 3 [json_name = "name"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.DeleteRuntimeRequest.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string namespace = 4 [json_name = "namespace"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_namespace_();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.DeleteRuntimeRequest.namespace"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string status = 4 [json_name = "status"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // string status = 5 [json_name = "status"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.DeleteRuntimeRequest.status"));
@@ -1490,24 +1510,34 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_project_id(), target);
   }
 
-  // string namespace = 3 [json_name = "namespace"];
+  // string name = 3 [json_name = "name"];
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.DeleteRuntimeRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_name(), target);
+  }
+
+  // string namespace = 4 [json_name = "namespace"];
   if (!this->_internal_namespace_().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_namespace_().data(), static_cast<int>(this->_internal_namespace_().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "pipelines.runtime.v1alpha1.DeleteRuntimeRequest.namespace");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_namespace_(), target);
+        4, this->_internal_namespace_(), target);
   }
 
-  // string status = 4 [json_name = "status"];
+  // string status = 5 [json_name = "status"];
   if (!this->_internal_status().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "pipelines.runtime.v1alpha1.DeleteRuntimeRequest.status");
     target = stream->WriteStringMaybeAliased(
-        4, this->_internal_status(), target);
+        5, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1533,14 +1563,21 @@ size_t DeleteRuntimeRequest::ByteSizeLong() const {
         this->_internal_runtime_id());
   }
 
-  // string namespace = 3 [json_name = "namespace"];
+  // string name = 3 [json_name = "name"];
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string namespace = 4 [json_name = "namespace"];
   if (!this->_internal_namespace_().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_namespace_());
   }
 
-  // string status = 4 [json_name = "status"];
+  // string status = 5 [json_name = "status"];
   if (!this->_internal_status().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -1585,6 +1622,9 @@ void DeleteRuntimeRequest::MergeFrom(const DeleteRuntimeRequest& from) {
   if (!from._internal_runtime_id().empty()) {
     _internal_set_runtime_id(from._internal_runtime_id());
   }
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
   if (!from._internal_namespace_().empty()) {
     _internal_set_namespace_(from._internal_namespace_());
   }
@@ -1615,6 +1655,11 @@ void DeleteRuntimeRequest::InternalSwap(DeleteRuntimeRequest* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &runtime_id_, GetArenaForAllocation(),
       &other->runtime_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, GetArenaForAllocation(),
+      &other->name_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),

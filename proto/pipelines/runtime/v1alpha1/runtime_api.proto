@@ -11,7 +11,7 @@ option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Runtime\\V1Alpha1";
 
 import "pipelines/runtime/v1alpha1/runtime.proto";
-// import "runtime.proto";
+//import "runtime.proto";
 
 
 service RuntimeAPIService{
@@ -45,8 +45,9 @@ message UpdateRuntimeResponse {
 message DeleteRuntimeRequest {
     string runtime_id = 1;
     uint32 project_id = 2;
-    string namespace = 3;
-    string status = 4;
+    string name = 3;
+    string namespace = 4;
+    string status = 5;
 }
 
 message DeleteRuntimeResponse {
@@ -74,3 +75,4 @@ message ListRuntimesResponse {
     pipelines.runtime.v1alpha1.RuntimeList runtime_list = 1;
     string status = 2;
 }
+
