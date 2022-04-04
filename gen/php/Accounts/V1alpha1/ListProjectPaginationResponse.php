@@ -9,6 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ *
  * PERMISSIONS
  *
  * Generated from protobuf message <code>accounts.v1alpha1.ListProjectPaginationResponse</code>

@@ -47,6 +47,7 @@ type AccountServiceClient interface {
 	UpdateRole(ctx context.Context, in *UpdateRoleRequest, opts ...grpc.CallOption) (*UpdateRoleResponse, error)
 	GetOneRole(ctx context.Context, in *GetOneRoleRequest, opts ...grpc.CallOption) (*GetOneRoleResponse, error)
 	GetRolesByUser(ctx context.Context, in *GetRolesByUserRequest, opts ...grpc.CallOption) (*GetRolesByUserResponse, error)
+	GetRolesByOrgUser(ctx context.Context, in *GetRolesByOrgUserRequest, opts ...grpc.CallOption) (*GetRolesByOrgUserResponse, error)
 	DeleteRole(ctx context.Context, in *DeleteRoleRequest, opts ...grpc.CallOption) (*DeleteRoleResponse, error)
 	//CRUD Project
 	CreateProject(ctx context.Context, in *CreateProjectRequest, opts ...grpc.CallOption) (*CreateProjectResponse, error)
@@ -305,6 +306,15 @@ func (c *accountServiceClient) GetRolesByUser(ctx context.Context, in *GetRolesB
 	return out, nil
 }
 
+func (c *accountServiceClient) GetRolesByOrgUser(ctx context.Context, in *GetRolesByOrgUserRequest, opts ...grpc.CallOption) (*GetRolesByOrgUserResponse, error) {
+	out := new(GetRolesByOrgUserResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/GetRolesByOrgUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *accountServiceClient) DeleteRole(ctx context.Context, in *DeleteRoleRequest, opts ...grpc.CallOption) (*DeleteRoleResponse, error) {
 	out := new(DeleteRoleResponse)
 	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/DeleteRole", in, out, opts...)
@@ -500,6 +510,7 @@ type AccountServiceServer interface {
 	UpdateRole(context.Context, *UpdateRoleRequest) (*UpdateRoleResponse, error)
 	GetOneRole(context.Context, *GetOneRoleRequest) (*GetOneRoleResponse, error)
 	GetRolesByUser(context.Context, *GetRolesByUserRequest) (*GetRolesByUserResponse, error)
+	GetRolesByOrgUser(context.Context, *GetRolesByOrgUserRequest) (*GetRolesByOrgUserResponse, error)
 	DeleteRole(context.Context, *DeleteRoleRequest) (*DeleteRoleResponse, error)
 	//CRUD Project
 	CreateProject(context.Context, *CreateProjectRequest) (*CreateProjectResponse, error)
@@ -603,6 +614,9 @@ func (UnimplementedAccountServiceServer) GetOneRole(context.Context, *GetOneRole
 }
 func (UnimplementedAccountServiceServer) GetRolesByUser(context.Context, *GetRolesByUserRequest) (*GetRolesByUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRolesByUser not implemented")
+}
+func (UnimplementedAccountServiceServer) GetRolesByOrgUser(context.Context, *GetRolesByOrgUserRequest) (*GetRolesByOrgUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRolesByOrgUser not implemented")
 }
 func (UnimplementedAccountServiceServer) DeleteRole(context.Context, *DeleteRoleRequest) (*DeleteRoleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteRole not implemented")
@@ -1120,6 +1134,24 @@ func _AccountService_GetRolesByUser_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AccountService_GetRolesByOrgUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRolesByOrgUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).GetRolesByOrgUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/GetRolesByOrgUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).GetRolesByOrgUser(ctx, req.(*GetRolesByOrgUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AccountService_DeleteRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteRoleRequest)
 	if err := dec(in); err != nil {
@@ -1550,6 +1582,10 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetRolesByUser",
 			Handler:    _AccountService_GetRolesByUser_Handler,
+		},
+		{
+			MethodName: "GetRolesByOrgUser",
+			Handler:    _AccountService_GetRolesByOrgUser_Handler,
 		},
 		{
 			MethodName: "DeleteRole",
