@@ -71,7 +71,8 @@ struct UpdateSecretResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateSecretResponseDefaultTypeInternal _UpdateSecretResponse_default_instance_;
 constexpr DeleteSecretRequest::DeleteSecretRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , project_id_(0u){}
 struct DeleteSecretRequestDefaultTypeInternal {
   constexpr DeleteSecretRequestDefaultTypeInternal()
@@ -97,7 +98,8 @@ struct DeleteSecretResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteSecretResponseDefaultTypeInternal _DeleteSecretResponse_default_instance_;
 constexpr GetSecretRequest::GetSecretRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , project_id_(0u){}
 struct GetSecretRequestDefaultTypeInternal {
   constexpr GetSecretRequestDefaultTypeInternal()
@@ -187,6 +189,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_5fapi
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::DeleteSecretRequest, project_id_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::DeleteSecretRequest, application_id_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::DeleteSecretRequest, namespace__),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::DeleteSecretResponse, _internal_metadata_),
@@ -201,6 +204,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_5fapi
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretRequest, project_id_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretRequest, application_id_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretRequest, namespace__),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretResponse, _internal_metadata_),
@@ -230,11 +234,11 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 13, -1, sizeof(::vault::v1alpha1::UpdateSecretRequest)},
   { 20, -1, sizeof(::vault::v1alpha1::UpdateSecretResponse)},
   { 27, -1, sizeof(::vault::v1alpha1::DeleteSecretRequest)},
-  { 34, -1, sizeof(::vault::v1alpha1::DeleteSecretResponse)},
-  { 41, -1, sizeof(::vault::v1alpha1::GetSecretRequest)},
-  { 48, -1, sizeof(::vault::v1alpha1::GetSecretResponse)},
-  { 55, -1, sizeof(::vault::v1alpha1::ListSecretRequest)},
-  { 62, -1, sizeof(::vault::v1alpha1::ListSecretResponse)},
+  { 35, -1, sizeof(::vault::v1alpha1::DeleteSecretResponse)},
+  { 42, -1, sizeof(::vault::v1alpha1::GetSecretRequest)},
+  { 50, -1, sizeof(::vault::v1alpha1::GetSecretResponse)},
+  { 57, -1, sizeof(::vault::v1alpha1::ListSecretRequest)},
+  { 64, -1, sizeof(::vault::v1alpha1::ListSecretResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -260,42 +264,44 @@ const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto[] PR
   "oject_id\030\001 \001(\tR\tprojectId\022.\n\006secret\030\002 \001("
   "\0132\026.vault.v1alpha1.SecretR\006secret\">\n\024Upd"
   "ateSecretResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005e"
-  "rror\030\002 \001(\tR\005error\"R\n\023DeleteSecretRequest"
-  "\022\035\n\nproject_id\030\001 \001(\rR\tprojectId\022\034\n\tnames"
-  "pace\030\002 \001(\tR\tnamespace\">\n\024DeleteSecretRes"
-  "ponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005"
-  "error\"O\n\020GetSecretRequest\022\035\n\nproject_id\030"
-  "\001 \001(\rR\tprojectId\022\034\n\tnamespace\030\002 \001(\tR\tnam"
-  "espace\"Y\n\021GetSecretResponse\022.\n\006secret\030\001 "
-  "\001(\0132\026.vault.v1alpha1.SecretR\006secret\022\024\n\005e"
-  "rror\030\002 \001(\tR\005error\"P\n\021ListSecretRequest\022\035"
-  "\n\nproject_id\030\001 \001(\tR\tprojectId\022\034\n\tnamespa"
-  "ce\030\002 \001(\tR\tnamespace\"\\\n\022ListSecretRespons"
-  "e\0220\n\007secrets\030\001 \003(\0132\026.vault.v1alpha1.Secr"
-  "etR\007secrets\022\024\n\005error\030\002 \001(\tR\005error2\323\003\n\017Va"
-  "ultAPIService\022[\n\014CreateSecret\022#.vault.v1"
-  "alpha1.CreateSecretRequest\032$.vault.v1alp"
-  "ha1.CreateSecretResponse\"\000\022[\n\014UpdateSecr"
-  "et\022#.vault.v1alpha1.UpdateSecretRequest\032"
-  "$.vault.v1alpha1.UpdateSecretResponse\"\000\022"
-  "[\n\014DeleteSecret\022#.vault.v1alpha1.DeleteS"
-  "ecretRequest\032$.vault.v1alpha1.DeleteSecr"
-  "etResponse\"\000\022R\n\tGetSecret\022 .vault.v1alph"
-  "a1.GetSecretRequest\032!.vault.v1alpha1.Get"
-  "SecretResponse\"\000\022U\n\nListSecret\022!.vault.v"
-  "1alpha1.ListSecretRequest\032\".vault.v1alph"
-  "a1.ListSecretResponse\"\000B\206\001\n\030io.cuemby.va"
-  "ult.v1alpha1B\rVaultAPIProtoP\001Z1github.co"
-  "m/cuemby/ccp-vault-service/vaultv1alpha1"
-  "\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1"
-  "b\006proto3"
+  "rror\030\002 \001(\tR\005error\"y\n\023DeleteSecretRequest"
+  "\022\035\n\nproject_id\030\001 \001(\rR\tprojectId\022%\n\016appli"
+  "cation_id\030\002 \001(\tR\rapplicationId\022\034\n\tnamesp"
+  "ace\030\003 \001(\tR\tnamespace\">\n\024DeleteSecretResp"
+  "onse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005e"
+  "rror\"v\n\020GetSecretRequest\022\035\n\nproject_id\030\001"
+  " \001(\rR\tprojectId\022%\n\016application_id\030\002 \001(\tR"
+  "\rapplicationId\022\034\n\tnamespace\030\003 \001(\tR\tnames"
+  "pace\"Y\n\021GetSecretResponse\022.\n\006secret\030\001 \001("
+  "\0132\026.vault.v1alpha1.SecretR\006secret\022\024\n\005err"
+  "or\030\002 \001(\tR\005error\"P\n\021ListSecretRequest\022\035\n\n"
+  "project_id\030\001 \001(\tR\tprojectId\022\034\n\tnamespace"
+  "\030\002 \001(\tR\tnamespace\"\\\n\022ListSecretResponse\022"
+  "0\n\007secrets\030\001 \003(\0132\026.vault.v1alpha1.Secret"
+  "R\007secrets\022\024\n\005error\030\002 \001(\tR\005error2\323\003\n\017Vaul"
+  "tAPIService\022[\n\014CreateSecret\022#.vault.v1al"
+  "pha1.CreateSecretRequest\032$.vault.v1alpha"
+  "1.CreateSecretResponse\"\000\022[\n\014UpdateSecret"
+  "\022#.vault.v1alpha1.UpdateSecretRequest\032$."
+  "vault.v1alpha1.UpdateSecretResponse\"\000\022[\n"
+  "\014DeleteSecret\022#.vault.v1alpha1.DeleteSec"
+  "retRequest\032$.vault.v1alpha1.DeleteSecret"
+  "Response\"\000\022R\n\tGetSecret\022 .vault.v1alpha1"
+  ".GetSecretRequest\032!.vault.v1alpha1.GetSe"
+  "cretResponse\"\000\022U\n\nListSecret\022!.vault.v1a"
+  "lpha1.ListSecretRequest\032\".vault.v1alpha1"
+  ".ListSecretResponse\"\000B\206\001\n\030io.cuemby.vaul"
+  "t.v1alpha1B\rVaultAPIProtoP\001Z1github.com/"
+  "cuemby/ccp-vault-service/vaultv1alpha1\242\002"
+  "\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1b\006"
+  "proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_deps[1] = {
   &::descriptor_table_vault_2fv1alpha1_2fvault_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto = {
-  false, false, 1488, descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto, "vault/v1alpha1/vault_api.proto", 
+  false, false, 1566, descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto, "vault/v1alpha1/vault_api.proto", 
   &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once, descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_deps, 1, 10,
   schemas, file_default_instances, TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto::offsets,
   file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto, file_level_enum_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto, file_level_service_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto,
@@ -1265,6 +1271,11 @@ DeleteSecretRequest::DeleteSecretRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 DeleteSecretRequest::DeleteSecretRequest(const DeleteSecretRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_application_id().empty()) {
+    application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_application_id(), 
+      GetArenaForAllocation());
+  }
   namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_namespace_().empty()) {
     namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_namespace_(), 
@@ -1275,6 +1286,7 @@ DeleteSecretRequest::DeleteSecretRequest(const DeleteSecretRequest& from)
 }
 
 inline void DeleteSecretRequest::SharedCtor() {
+application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 project_id_ = 0u;
 }
@@ -1288,6 +1300,7 @@ DeleteSecretRequest::~DeleteSecretRequest() {
 
 inline void DeleteSecretRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  application_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   namespace__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1307,6 +1320,7 @@ void DeleteSecretRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  application_id_.ClearToEmpty();
   namespace__.ClearToEmpty();
   project_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1325,9 +1339,18 @@ const char* DeleteSecretRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string namespace = 2 [json_name = "namespace"];
+      // string application_id = 2 [json_name = "applicationId"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_application_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.DeleteSecretRequest.application_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string namespace = 3 [json_name = "namespace"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_namespace_();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.DeleteSecretRequest.namespace"));
@@ -1369,14 +1392,24 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_project_id(), target);
   }
 
-  // string namespace = 2 [json_name = "namespace"];
+  // string application_id = 2 [json_name = "applicationId"];
+  if (!this->_internal_application_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_application_id().data(), static_cast<int>(this->_internal_application_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.DeleteSecretRequest.application_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_application_id(), target);
+  }
+
+  // string namespace = 3 [json_name = "namespace"];
   if (!this->_internal_namespace_().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_namespace_().data(), static_cast<int>(this->_internal_namespace_().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vault.v1alpha1.DeleteSecretRequest.namespace");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_namespace_(), target);
+        3, this->_internal_namespace_(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1395,7 +1428,14 @@ size_t DeleteSecretRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string namespace = 2 [json_name = "namespace"];
+  // string application_id = 2 [json_name = "applicationId"];
+  if (!this->_internal_application_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_application_id());
+  }
+
+  // string namespace = 3 [json_name = "namespace"];
   if (!this->_internal_namespace_().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -1437,6 +1477,9 @@ void DeleteSecretRequest::MergeFrom(const DeleteSecretRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_application_id().empty()) {
+    _internal_set_application_id(from._internal_application_id());
+  }
   if (!from._internal_namespace_().empty()) {
     _internal_set_namespace_(from._internal_namespace_());
   }
@@ -1460,6 +1503,11 @@ bool DeleteSecretRequest::IsInitialized() const {
 void DeleteSecretRequest::InternalSwap(DeleteSecretRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &application_id_, GetArenaForAllocation(),
+      &other->application_id_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &namespace__, GetArenaForAllocation(),
@@ -1734,6 +1782,11 @@ GetSecretRequest::GetSecretRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetSecretRequest::GetSecretRequest(const GetSecretRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_application_id().empty()) {
+    application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_application_id(), 
+      GetArenaForAllocation());
+  }
   namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_namespace_().empty()) {
     namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_namespace_(), 
@@ -1744,6 +1797,7 @@ GetSecretRequest::GetSecretRequest(const GetSecretRequest& from)
 }
 
 inline void GetSecretRequest::SharedCtor() {
+application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 project_id_ = 0u;
 }
@@ -1757,6 +1811,7 @@ GetSecretRequest::~GetSecretRequest() {
 
 inline void GetSecretRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  application_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   namespace__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1776,6 +1831,7 @@ void GetSecretRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  application_id_.ClearToEmpty();
   namespace__.ClearToEmpty();
   project_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1794,9 +1850,18 @@ const char* GetSecretRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string namespace = 2 [json_name = "namespace"];
+      // string application_id = 2 [json_name = "applicationId"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_application_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.GetSecretRequest.application_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string namespace = 3 [json_name = "namespace"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_namespace_();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.GetSecretRequest.namespace"));
@@ -1838,14 +1903,24 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_project_id(), target);
   }
 
-  // string namespace = 2 [json_name = "namespace"];
+  // string application_id = 2 [json_name = "applicationId"];
+  if (!this->_internal_application_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_application_id().data(), static_cast<int>(this->_internal_application_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.GetSecretRequest.application_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_application_id(), target);
+  }
+
+  // string namespace = 3 [json_name = "namespace"];
   if (!this->_internal_namespace_().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_namespace_().data(), static_cast<int>(this->_internal_namespace_().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vault.v1alpha1.GetSecretRequest.namespace");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_namespace_(), target);
+        3, this->_internal_namespace_(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1864,7 +1939,14 @@ size_t GetSecretRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string namespace = 2 [json_name = "namespace"];
+  // string application_id = 2 [json_name = "applicationId"];
+  if (!this->_internal_application_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_application_id());
+  }
+
+  // string namespace = 3 [json_name = "namespace"];
   if (!this->_internal_namespace_().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -1906,6 +1988,9 @@ void GetSecretRequest::MergeFrom(const GetSecretRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_application_id().empty()) {
+    _internal_set_application_id(from._internal_application_id());
+  }
   if (!from._internal_namespace_().empty()) {
     _internal_set_namespace_(from._internal_namespace_());
   }
@@ -1929,6 +2014,11 @@ bool GetSecretRequest::IsInitialized() const {
 void GetSecretRequest::InternalSwap(GetSecretRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &application_id_, GetArenaForAllocation(),
+      &other->application_id_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &namespace__, GetArenaForAllocation(),

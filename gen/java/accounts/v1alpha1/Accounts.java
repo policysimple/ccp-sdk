@@ -1936,6 +1936,11 @@ public final class Accounts {
         getUserIdBytes();
   }
   /**
+   * <pre>
+   *
+   * LIST INVITATION USER
+   * </pre>
+   *
    * Protobuf type {@code accounts.v1alpha1.ListInvitationUserRequest}
    */
   public static final class ListInvitationUserRequest extends
@@ -2212,6 +2217,11 @@ public final class Accounts {
       return builder;
     }
     /**
+     * <pre>
+     *
+     * LIST INVITATION USER
+     * </pre>
+     *
      * Protobuf type {@code accounts.v1alpha1.ListInvitationUserRequest}
      */
     public static final class Builder extends

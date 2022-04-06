@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeleteSecretRequest() {
+    applicationId_ = "";
     namespace_ = "";
   }
 
@@ -55,6 +56,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            applicationId_ = s;
+            break;
+          }
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             namespace_ = s;
@@ -103,10 +110,48 @@ private static final long serialVersionUID = 0L;
     return projectId_;
   }
 
-  public static final int NAMESPACE_FIELD_NUMBER = 2;
+  public static final int APPLICATION_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object applicationId_;
+  /**
+   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * @return The applicationId.
+   */
+  @java.lang.Override
+  public java.lang.String getApplicationId() {
+    java.lang.Object ref = applicationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      applicationId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * @return The bytes for applicationId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getApplicationIdBytes() {
+    java.lang.Object ref = applicationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      applicationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NAMESPACE_FIELD_NUMBER = 3;
   private volatile java.lang.Object namespace_;
   /**
-   * <code>string namespace = 2 [json_name = "namespace"];</code>
+   * <code>string namespace = 3 [json_name = "namespace"];</code>
    * @return The namespace.
    */
   @java.lang.Override
@@ -123,7 +168,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string namespace = 2 [json_name = "namespace"];</code>
+   * <code>string namespace = 3 [json_name = "namespace"];</code>
    * @return The bytes for namespace.
    */
   @java.lang.Override
@@ -158,8 +203,11 @@ private static final long serialVersionUID = 0L;
     if (projectId_ != 0) {
       output.writeUInt32(1, projectId_);
     }
+    if (!getApplicationIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, applicationId_);
+    }
     if (!getNamespaceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, namespace_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, namespace_);
     }
     unknownFields.writeTo(output);
   }
@@ -174,8 +222,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(1, projectId_);
     }
+    if (!getApplicationIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, applicationId_);
+    }
     if (!getNamespaceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, namespace_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, namespace_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -194,6 +245,8 @@ private static final long serialVersionUID = 0L;
 
     if (getProjectId()
         != other.getProjectId()) return false;
+    if (!getApplicationId()
+        .equals(other.getApplicationId())) return false;
     if (!getNamespace()
         .equals(other.getNamespace())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -209,6 +262,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId();
+    hash = (37 * hash) + APPLICATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getApplicationId().hashCode();
     hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
     hash = (53 * hash) + getNamespace().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -346,6 +401,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       projectId_ = 0;
 
+      applicationId_ = "";
+
       namespace_ = "";
 
       return this;
@@ -375,6 +432,7 @@ private static final long serialVersionUID = 0L;
     public io.cuemby.vault.v1alpha1.DeleteSecretRequest buildPartial() {
       io.cuemby.vault.v1alpha1.DeleteSecretRequest result = new io.cuemby.vault.v1alpha1.DeleteSecretRequest(this);
       result.projectId_ = projectId_;
+      result.applicationId_ = applicationId_;
       result.namespace_ = namespace_;
       onBuilt();
       return result;
@@ -426,6 +484,10 @@ private static final long serialVersionUID = 0L;
       if (other == io.cuemby.vault.v1alpha1.DeleteSecretRequest.getDefaultInstance()) return this;
       if (other.getProjectId() != 0) {
         setProjectId(other.getProjectId());
+      }
+      if (!other.getApplicationId().isEmpty()) {
+        applicationId_ = other.applicationId_;
+        onChanged();
       }
       if (!other.getNamespace().isEmpty()) {
         namespace_ = other.namespace_;
@@ -491,9 +553,85 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object applicationId_ = "";
+    /**
+     * <code>string application_id = 2 [json_name = "applicationId"];</code>
+     * @return The applicationId.
+     */
+    public java.lang.String getApplicationId() {
+      java.lang.Object ref = applicationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        applicationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string application_id = 2 [json_name = "applicationId"];</code>
+     * @return The bytes for applicationId.
+     */
+    public com.google.protobuf.ByteString
+        getApplicationIdBytes() {
+      java.lang.Object ref = applicationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        applicationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string application_id = 2 [json_name = "applicationId"];</code>
+     * @param value The applicationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplicationId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      applicationId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string application_id = 2 [json_name = "applicationId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApplicationId() {
+      
+      applicationId_ = getDefaultInstance().getApplicationId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string application_id = 2 [json_name = "applicationId"];</code>
+     * @param value The bytes for applicationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplicationIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      applicationId_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object namespace_ = "";
     /**
-     * <code>string namespace = 2 [json_name = "namespace"];</code>
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
      * @return The namespace.
      */
     public java.lang.String getNamespace() {
@@ -509,7 +647,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string namespace = 2 [json_name = "namespace"];</code>
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
      * @return The bytes for namespace.
      */
     public com.google.protobuf.ByteString
@@ -526,7 +664,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string namespace = 2 [json_name = "namespace"];</code>
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
      * @param value The namespace to set.
      * @return This builder for chaining.
      */
@@ -541,7 +679,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string namespace = 2 [json_name = "namespace"];</code>
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
      * @return This builder for chaining.
      */
     public Builder clearNamespace() {
@@ -551,7 +689,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string namespace = 2 [json_name = "namespace"];</code>
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
      * @param value The bytes for namespace to set.
      * @return This builder for chaining.
      */

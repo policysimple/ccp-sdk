@@ -20,30 +20,42 @@ public interface GetRuntimeRequestOrBuilder extends
       getRuntimeIdBytes();
 
   /**
-   * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * @return The applicationId.
+   */
+  java.lang.String getApplicationId();
+  /**
+   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * @return The bytes for applicationId.
+   */
+  com.google.protobuf.ByteString
+      getApplicationIdBytes();
+
+  /**
+   * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
    * @return The projectId.
    */
   int getProjectId();
 
   /**
-   * <code>string namespace = 3 [json_name = "namespace"];</code>
+   * <code>string namespace = 4 [json_name = "namespace"];</code>
    * @return The namespace.
    */
   java.lang.String getNamespace();
   /**
-   * <code>string namespace = 3 [json_name = "namespace"];</code>
+   * <code>string namespace = 4 [json_name = "namespace"];</code>
    * @return The bytes for namespace.
    */
   com.google.protobuf.ByteString
       getNamespaceBytes();
 
   /**
-   * <code>string status = 4 [json_name = "status"];</code>
+   * <code>string status = 5 [json_name = "status"];</code>
    * @return The status.
    */
   java.lang.String getStatus();
   /**
-   * <code>string status = 4 [json_name = "status"];</code>
+   * <code>string status = 5 [json_name = "status"];</code>
    * @return The bytes for status.
    */
   com.google.protobuf.ByteString

@@ -3,13 +3,12 @@ package vaultclientv1
 import (
 	"context"
 	"fmt"
-	"log"
 	"os"
 	"sync"
 	"time"
 
+	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
 	vaultpkgv1 "github.com/cuemby/ccp-sdk/gen/go/vault/v1alpha1"
-
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
@@ -54,7 +53,7 @@ func init() {
 }
 
 func CreateSecret(in *vaultpkgv1.CreateSecretRequest) (*vaultpkgv1.CreateSecretResponse, error) {
-
+	bylogs.LogInfo("CreateSecret-clientSdk")
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -67,17 +66,19 @@ func CreateSecret(in *vaultpkgv1.CreateSecretRequest) (*vaultpkgv1.CreateSecretR
 	})
 
 	if err != nil {
-		log.Printf("%s: %v", "Error create secret", err)
+		bylogs.LogErr("CreateSecret-clientSdk", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("Error create secret: %v", err),
 		)
+	} else {
+		bylogs.LogInfo("CreateSecret Client Sdk", "Success")
 	}
-
 	return response, nil
 }
 
 func UpdateSecret(in *Secret) (*vaultpkgv1.UpdateSecretResponse, error) {
+	bylogs.LogInfo("UpdateSecret Client Sdk")
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -90,14 +91,20 @@ func UpdateSecret(in *Secret) (*vaultpkgv1.UpdateSecretResponse, error) {
 	})
 
 	if err != nil {
-		log.Printf("%s: %v", "Error update secret", err)
+		bylogs.LogErr("UpdateSecret Client Sdk", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("Error update secret: %v", err),
+		)
+	} else {
+		bylogs.LogInfo("UpdateSecret Client Sdk", "Success")
 	}
 
 	return response, nil
 }
 
-func DeleteSecret(projectId uint32, namespace string) (*vaultpkgv1.DeleteSecretResponse, error) {
-
+func DeleteSecret(projectId uint32, applicationId string, namespace string) (*vaultpkgv1.DeleteSecretResponse, error) {
+	bylogs.LogInfo("DeleteSecret Client Sdk")
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -106,19 +113,26 @@ func DeleteSecret(projectId uint32, namespace string) (*vaultpkgv1.DeleteSecretR
 	defer cancel()
 
 	response, err := client.DeleteSecret(ctx, &vaultpkgv1.DeleteSecretRequest{
-		ProjectId: projectId,
-		Namespace: namespace,
+		ProjectId:     projectId,
+		ApplicationId: applicationId,
+		Namespace:     namespace,
 	})
 
 	if err != nil {
-		log.Printf("%s: %v", "Error delete secret", err)
+		bylogs.LogErr("DeleteSecret Client Sdk", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("Error delete secret: %v", err),
+		)
+	} else {
+		bylogs.LogInfo("DeleteSecret Client Sdk", "Success")
 	}
 
 	return response, nil
 }
 
-func GetSecret(projectId uint32, namespace string) (*vaultpkgv1.GetSecretResponse, error) {
-
+func GetSecret(projectId uint32, applicationId string, namespace string) (*vaultpkgv1.GetSecretResponse, error) {
+	bylogs.LogInfo("GetSecret Client Sdk")
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -127,18 +141,26 @@ func GetSecret(projectId uint32, namespace string) (*vaultpkgv1.GetSecretRespons
 	defer cancel()
 
 	response, err := client.GetSecret(ctx, &vaultpkgv1.GetSecretRequest{
-		ProjectId: projectId,
-		Namespace: namespace,
+		ProjectId:     projectId,
+		ApplicationId: applicationId,
+		Namespace:     namespace,
 	})
 
 	if err != nil {
-		log.Printf("%s: %v", "Error get secret", err)
+		bylogs.LogErr("GetSecret Client Sdk", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("Error get secret: %v", err),
+		)
+	} else {
+		bylogs.LogInfo("GetSecret Client Sdk", "Success")
 	}
 
 	return response, nil
 }
 
 func ListSecret(in *vaultpkgv1.ListSecretRequest) (*vaultpkgv1.ListSecretResponse, error) {
+	bylogs.LogInfo("ListSecret Client Sdk")
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -152,7 +174,13 @@ func ListSecret(in *vaultpkgv1.ListSecretRequest) (*vaultpkgv1.ListSecretRespons
 	})
 
 	if err != nil {
-		log.Printf("%s: %v", "Error list secret", err)
+		bylogs.LogErr("ListSecret Client Sdk", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("Error list secret: %v", err),
+		)
+	} else {
+		bylogs.LogInfo("ListSecret Client Sdk", "Success")
 	}
 
 	return response, nil
