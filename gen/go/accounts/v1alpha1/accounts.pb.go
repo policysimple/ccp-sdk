@@ -185,6 +185,8 @@ func (x *GetRolesByOrgUserResponse) GetProject() []*Project {
 	return nil
 }
 
+//
+// LIST INVITATION USER
 type ListInvitationUserRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

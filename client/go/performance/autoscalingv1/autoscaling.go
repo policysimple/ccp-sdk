@@ -55,7 +55,7 @@ func CreateAutoscaling(in *autoscalingPkgV1.CreateAutoscalingRequest) (response 
 			fmt.Sprintf("%s: %v", "Error create autoscaling", err),
 		)
 	}
-	log.Println("Create autoscaling", response)
+
 	return response, nil
 }
 

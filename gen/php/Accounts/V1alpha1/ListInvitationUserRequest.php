@@ -9,6 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ *
+ * LIST INVITATION USER
+ *
  * Generated from protobuf message <code>accounts.v1alpha1.ListInvitationUserRequest</code>
  */
 class ListInvitationUserRequest extends \Google\Protobuf\Internal\Message

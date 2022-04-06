@@ -14,12 +14,24 @@ public interface GetSecretRequestOrBuilder extends
   int getProjectId();
 
   /**
-   * <code>string namespace = 2 [json_name = "namespace"];</code>
+   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * @return The applicationId.
+   */
+  java.lang.String getApplicationId();
+  /**
+   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * @return The bytes for applicationId.
+   */
+  com.google.protobuf.ByteString
+      getApplicationIdBytes();
+
+  /**
+   * <code>string namespace = 3 [json_name = "namespace"];</code>
    * @return The namespace.
    */
   java.lang.String getNamespace();
   /**
-   * <code>string namespace = 2 [json_name = "namespace"];</code>
+   * <code>string namespace = 3 [json_name = "namespace"];</code>
    * @return The bytes for namespace.
    */
   com.google.protobuf.ByteString
