@@ -3,13 +3,12 @@ package environmentclientv1
 import (
 	"context"
 	"fmt"
-	"log"
 	"os"
 	"sync"
 	"time"
 
+	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
 	environmentpkgv1 "github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1"
-
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
@@ -38,6 +37,7 @@ func init() {
 }
 
 func CreateEnvironment(organizationId uint32, projectId uint32, name string, userId string) (response *environmentpkgv1.CreateEnvironmentResponse, err error) {
+	bylogs.LogInfo("Client: Create environment")
 	d, err := time.ParseDuration(environmentServiceTimeout)
 	if err != nil {
 		return
@@ -55,7 +55,7 @@ func CreateEnvironment(organizationId uint32, projectId uint32, name string, use
 	})
 
 	if err != nil {
-		log.Printf("%s: %v", "Error create environment", err)
+		bylogs.LogErr("Client: Error create environment", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: %v", "Error create environment", err),
@@ -65,6 +65,7 @@ func CreateEnvironment(organizationId uint32, projectId uint32, name string, use
 }
 
 func ListEnvironment(projectId uint32) (response *environmentpkgv1.ListEnvironmentResponse, err error) {
+	bylogs.LogInfo("Client: List environment")
 	d, err := time.ParseDuration(environmentServiceTimeout)
 	if err != nil {
 		return
@@ -77,7 +78,7 @@ func ListEnvironment(projectId uint32) (response *environmentpkgv1.ListEnvironme
 	})
 
 	if err != nil {
-		log.Printf("%s: %v", "Error list environment", err)
+		bylogs.LogErr("Client: Error list environment", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: %v", "Error list environment", err),
@@ -87,6 +88,7 @@ func ListEnvironment(projectId uint32) (response *environmentpkgv1.ListEnvironme
 }
 
 func DeleteEnvironment(environmentId string, userId string) (response *environmentpkgv1.DeleteEnvironmentResponse, err error) {
+	bylogs.LogInfo("Client: Delete environment")
 	d, err := time.ParseDuration(environmentServiceTimeout)
 	if err != nil {
 		return
@@ -100,7 +102,7 @@ func DeleteEnvironment(environmentId string, userId string) (response *environme
 	})
 
 	if err != nil {
-		log.Printf("%s: %v", "Error delete environment", err)
+		bylogs.LogErr("Client: Error delete environment", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: %v", "Error delete environment", err),

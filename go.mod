@@ -3,12 +3,12 @@ module github.com/cuemby/ccp-sdk
 go 1.17
 
 require (
+	github.com/cuemby/by-go-utils v1.0.0-dev2
 	google.golang.org/grpc v1.45.0
 	google.golang.org/protobuf v1.27.1
 )
 
 require (
-	github.com/cuemby/by-go-utils v0.0.3 // indirect
 	github.com/go-kit/kit v0.12.0 // indirect
 	github.com/go-kit/log v0.2.0 // indirect
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
