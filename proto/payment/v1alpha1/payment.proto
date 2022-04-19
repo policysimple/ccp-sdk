@@ -1,0 +1,20 @@
+syntax = "proto3";
+ 
+package payment.v1alpha1;
+option go_package = "github.com/cuemby/ccp-payment-service/paymentv1alpha1";
+
+// Payment
+message Payment {
+    string card_id = 1;
+    string card_holder_name = 2;
+    string card_type = 3;
+    int32 card_number = 4;
+    int32 cvv_number = 5;
+    int32 expiry_date = 6;
+
+  }
+  
+  message PaymentList {
+    repeated Payment items = 1;
+  }
+  

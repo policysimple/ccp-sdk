@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package payment.v1alpha1;
+option csharp_namespace = "Payment.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-payment-service/paymentv1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "PaymentAPIProto";
+option java_package = "io.cuemby.payment.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Payment\\V1Alpha1";
+
+import "payment/v1alpha1/payment.proto";
+// import "payment.proto";
+
+
+service PaymentAPIService{
+    rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {};
+    rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {};
+    rpc UpdatePayment(UpdatePaymentRequest) returns (UpdatePaymentResponse) {};
+    rpc DeletePayment(DeletePaymentRequest) returns (DeletePaymentResponse) {};
+    rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {};
+  
+}
+
+message CreatePaymentRequest {
+    payment.v1alpha1.Payment payment = 1;
+    string status = 2;
+}
+
+message CreatePaymentResponse {
+    payment.v1alpha1.Payment payment = 1;
+    string status = 2;
+}
+
+message UpdatePaymentRequest {
+    payment.v1alpha1.Payment payment = 1;
+    string status = 2;
+}
+
+message UpdatePaymentResponse {
+    payment.v1alpha1.Payment payment = 1;
+    string status = 2;
+}
+
+message DeletePaymentRequest {
+    string card_id = 1;
+    string card_holder_name = 2;
+    string card_type = 3;
+    int32 card_number = 4;
+    int32 cvv_number = 5;
+    int32 expiry_date = 6;
+}
+
+message DeletePaymentResponse {
+    string status = 1;
+}
+
+message GetPaymentRequest {
+    string card_id = 1;
+    string card_holder_name = 2;
+    string card_type = 3;
+    int32 card_number = 4;
+    int32 cvv_number = 5;
+    int32 expiry_date = 6;
+
+}
+
+message GetPaymentResponse {
+    payment.v1alpha1.Payment payment = 1;
+    string status = 2;
+}
+
+message ListPaymentRequest {
+    uint32 card_id = 1;
+    string card_holder_name = 2;
+    string card_type = 3;
+    int32 card_number = 4;
+}
+
+message ListPaymentResponse {
+    payment.v1alpha1.PaymentList payment_list = 1;
+    string status = 2;
+}
+
+
+
+
