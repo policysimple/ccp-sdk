@@ -16,8 +16,15 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-Ô<
-source/v1alpha1/source.protosource.v1alpha1"R
+Õ@
+source/v1alpha1/source.protosource.v1alpha1"9
+AccountProvider
+name (	Rname
+type (	Rtype"A
+AccountsProvidersRequest%
+integration_id (	RintegrationId"Y
+AccountsProvidersResponse<
+accounts (2 .source.v1alpha1.AccountProviderRaccounts"R
 \'DeleteIntegrationsByOrganizationRequest\'
 organization_id (	RorganizationId"<
 (DeleteIntegrationsByOrganizationResponse
@@ -109,7 +116,7 @@ repository (2!.source.v1alpha1.DetailRepositoryR
 repository"B
 UpdateRepositoryResponse
 msg (	Rmsg
-error (	Rerror"¤
+error (	Rerror"ã
 Integration
 id (	Rid\'
 organization_id (RorganizationId
@@ -117,7 +124,8 @@ repository"B
 provider (2.source.v1alpha1.ProviderRprovider:
 data (2&.source.v1alpha1.Integration.DataEntryRdataF
 metadata (2*.source.v1alpha1.Integration.MetadataEntryRmetadata
-user_id (	RuserId7
+user_id (	RuserId=
+account (2#.source.v1alpha1.AccountIntegrationRaccount7
 	DataEntry
 key (	Rkey
 value (	Rvalue:8;
@@ -132,7 +140,10 @@ Repository
 description (	Rdescription
 fork (Rfork
 	clone_url (	RcloneUrl
-branch (	Rbranch"¥
+branch (	Rbranch"<
+AccountIntegration
+name (	Rname
+type (	Rtype"ä
 CreateIntegrationRequest\'
 organization_id (RorganizationId
 name (	RnameG
@@ -140,7 +151,8 @@ Repository
 metadata (27.source.v1alpha1.CreateIntegrationRequest.MetadataEntryRmetadata
 user_id (	RuserId
 provider_id (	R
-providerId7
+providerId=
+account	 (2#.source.v1alpha1.AccountIntegrationRaccount7
 	DataEntry
 key (	Rkey
 value (	Rvalue:8;
@@ -216,7 +228,7 @@ providerId7
 error (	Rerror"
 ListProvidersRequest"P
 ListProvidersResponse7
-	providers (2.source.v1alpha1.ProviderR	providers2Ž
+	providers (2.source.v1alpha1.ProviderR	providers2ú
 SourceServicea
 CreateProvider&.source.v1alpha1.CreateProviderRequest\'.source.v1alpha1.CreateProviderResponse^
 ListProviders%.source.v1alpha1.ListProvidersRequest&.source.v1alpha1.ListProvidersResponseX
@@ -224,6 +236,7 @@ providerId7
 GetOneProviderByName,.source.v1alpha1.GetOneProviderByNameRequest-.source.v1alpha1.GetOneProviderByNameResponsea
 UpdateProvider&.source.v1alpha1.UpdateProviderRequest\'.source.v1alpha1.UpdateProviderResponsea
 DeleteProvider&.source.v1alpha1.DeleteProviderRequest\'.source.v1alpha1.DeleteProviderResponsej
+AccountsProviders).source.v1alpha1.AccountsProvidersRequest*.source.v1alpha1.AccountsProvidersResponsej
 CreateIntegration).source.v1alpha1.CreateIntegrationRequest*.source.v1alpha1.CreateIntegrationResponseg
 ListIntegrations(.source.v1alpha1.ListIntegrationsRequest).source.v1alpha1.ListIntegrationsResponsea
 GetIntegration&.source.v1alpha1.GetIntegrationRequest\'.source.v1alpha1.GetIntegrationResponsej
