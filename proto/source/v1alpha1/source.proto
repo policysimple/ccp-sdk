@@ -15,6 +15,7 @@ service SourceService {
     rpc UpdateProvider(UpdateProviderRequest) returns (UpdateProviderResponse);
     rpc DeleteProvider(DeleteProviderRequest) returns (DeleteProviderResponse);
 
+    rpc AccountsProviders(AccountsProvidersRequest) returns (AccountsProvidersResponse);
     //INTEGRATIONS
     rpc CreateIntegration(CreateIntegrationRequest) returns (CreateIntegrationResponse);
     rpc ListIntegrations(ListIntegrationsRequest) returns (ListIntegrationsResponse);
@@ -34,6 +35,41 @@ service SourceService {
     rpc DeleteRepository(DeleteRepositoryRequest) returns (DeleteRepositoryResponse);
     rpc UpdateRepository(UpdateRepositoryRequest) returns (UpdateRepositoryResponse);
 }
+
+/*
+    ACCOUNT PROVIDERS
+
+    Returns a list of accounts activated to a provider, for example:
+    - GitHub Personal and Organizations
+*/
+
+
+
+
+//enum type account provider
+/*
+enum TypeAccountProvider {
+    TYPE_ACCOUNT_PROVIDER_PERSONAL_UNSPECIFIED = 0;
+    TYPE_ACCOUNT_PROVIDER_ORGANIZATION_UNSPECIFIED = 1;
+}
+*/
+
+message AccountProvider{
+    string name = 1;
+    string type = 2; // Personal or Organization
+}
+
+message AccountsProvidersRequest {
+    string integration_id = 1;
+}
+
+message AccountsProvidersResponse {
+    repeated AccountProvider accounts = 1;
+}
+
+/*
+    delete integrations using the id of the organization
+*/
 
 message DeleteIntegrationsByOrganizationRequest {
     string organization_id = 1;
@@ -193,6 +229,8 @@ message Integration {
     map<string, string> data = 5;
     map<string, string> metadata = 6;
     string user_id = 7;
+    AccountIntegration account = 8;
+
 }
 
 message Repository {
@@ -205,6 +243,11 @@ message Repository {
     string branch = 7;
 }
 
+message AccountIntegration {
+    string name = 1;
+    string type = 2;
+}
+
 message CreateIntegrationRequest {
     //string id = 1;
     uint32 organization_id = 2;
@@ -214,6 +257,8 @@ message CreateIntegrationRequest {
     map<string, string> metadata = 6;
     string user_id = 7;
     string provider_id = 8;
+    AccountIntegration account = 9;
+
 }
 
 message CreateIntegrationResponse {

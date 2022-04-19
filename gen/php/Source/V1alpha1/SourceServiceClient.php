@@ -96,6 +96,19 @@ class SourceServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Source\V1alpha1\AccountsProvidersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function AccountsProviders(\Source\V1alpha1\AccountsProvidersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/source.v1alpha1.SourceService/AccountsProviders',
+        $argument,
+        ['\Source\V1alpha1\AccountsProvidersResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * INTEGRATIONS
      * @param \Source\V1alpha1\CreateIntegrationRequest $argument input argument
      * @param array $metadata metadata
