@@ -3,13 +3,12 @@ package environmentclientv1
 import (
 	"context"
 	"fmt"
-	"log"
 	"os"
 	"sync"
 	"time"
 
+	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
 	tektonPipelinepkgv1 "github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1"
-
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
@@ -74,6 +73,7 @@ func CreateTektonPipeline(
 	workspacesMain []WorkspaceStruct, params []ParamsStruct, tasks []TaskStruct, userId string,
 	labels map[string]string,
 ) (response *tektonPipelinepkgv1.CreateTektonPipelineResponse, err error) {
+	bylogs.LogInfo("Client: Create tekton pipeline")
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
 		return
@@ -86,7 +86,7 @@ func CreateTektonPipeline(
 	var arrayWorkspacesMain []*tektonPipelinepkgv1.Workspaces
 
 	if len(tasks) == 0 {
-		log.Printf("%s: ", "Tasks is required")
+		bylogs.LogErr("Client: No tasks found")
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: ", "Tasks is required"),
@@ -175,7 +175,7 @@ func CreateTektonPipeline(
 	response, err = client.CreateTektonPipeline(ctx, dataPipeline)
 
 	if err != nil {
-		log.Printf("%s: %v", "Error create tekton pipeline", err)
+		bylogs.LogErr("Client: Create tekton pipeline failed", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: %v", "Error create tekton pipeline", err),
@@ -185,6 +185,7 @@ func CreateTektonPipeline(
 }
 
 func ListTektonPipeline(projectId uint32) (response *tektonPipelinepkgv1.ListTektonPipelineResponse, err error) {
+	bylogs.LogInfo("Client: List tekton pipeline")
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
 		return
@@ -197,7 +198,7 @@ func ListTektonPipeline(projectId uint32) (response *tektonPipelinepkgv1.ListTek
 	})
 
 	if err != nil {
-		log.Printf("%s: %v", "Error list tekton pipeline", err)
+		bylogs.LogErr("Client: List tekton pipeline failed", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: %v", "Error list tekton pipeline", err),
@@ -207,6 +208,7 @@ func ListTektonPipeline(projectId uint32) (response *tektonPipelinepkgv1.ListTek
 }
 
 func DeleteTektonPipeline(tektonPipelineId string, userId string) (response *tektonPipelinepkgv1.DeleteTektonPipelineResponse, err error) {
+	bylogs.LogInfo("Client: Delete tekton pipeline")
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
 		return
@@ -220,7 +222,7 @@ func DeleteTektonPipeline(tektonPipelineId string, userId string) (response *tek
 	})
 
 	if err != nil {
-		log.Printf("%s: %v", "Error delete tekton pipeline", err)
+		bylogs.LogErr("Client: Delete tekton pipeline failed", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: %v", "Error delete tekton pipeline", err),
@@ -230,6 +232,7 @@ func DeleteTektonPipeline(tektonPipelineId string, userId string) (response *tek
 }
 
 func ListTektonTask() (response *tektonPipelinepkgv1.ListTektonTaskResponse, err error) {
+	bylogs.LogInfo("Client: List tekton task")
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
 		return
@@ -240,7 +243,7 @@ func ListTektonTask() (response *tektonPipelinepkgv1.ListTektonTaskResponse, err
 	response, err = client.ListTektonTask(ctx, &tektonPipelinepkgv1.ListTektonTaskRequest{})
 
 	if err != nil {
-		log.Printf("%s: %v", "Error list tekton task", err)
+		bylogs.LogErr("Client: List tekton task failed", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: %v", "Error list tekton task", err),
