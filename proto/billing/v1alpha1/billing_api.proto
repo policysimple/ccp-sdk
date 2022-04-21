@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package billing.v1alpha1;
+
+
+option go_package = "github.com/cuemby/ccp-billing-service/billingv1alpha1";
+import "billing.proto";
+//import "billing/v1alpha1/billing.proto";
+
+service BillingService{
+  rpc CreateBilling(CreateBillingRequest) returns (CreateBillingResponse) {};
+  rpc GetBilling(GetBillingRequest) returns (GetBillingResponse) {};
+  rpc ListBillings(ListBillingsRequest) returns (ListBillingsResponse) {};
+  rpc UpdateBilling(UpdateBillingRequest) returns (UpdateBillingResponse) {};
+}
+
+message CreateBillingRequest{
+  billing.v1alpha1.Billing billing = 1;
+}
+
+message CreateBillingResponse{
+  string billing_id = 1;
+  string status = 2;
+}
+
+message GetBillingRequest{
+  string billing_id = 1;
+}
+
+message GetBillingResponse{
+  billing.v1alpha1.Billing billing = 1;
+
+}
+
+message ListBillingsRequest{
+
+}
+
+message ListBillingsResponse{
+
+}
+
+message UpdateBillingRequest{
+
+}
+
+message UpdateBillingResponse{
+
+}
