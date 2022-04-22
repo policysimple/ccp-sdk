@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Payment extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      */
-    protected $card_id = '';
+    protected $id = '';
     /**
      * Generated from protobuf field <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
      */
@@ -46,7 +46,7 @@ class Payment extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $card_id
+     *     @type string $id
      *     @type string $card_holder_name
      *     @type string $card_type
      *     @type int $card_number
@@ -60,23 +60,23 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      * @return string
      */
-    public function getCardId()
+    public function getId()
     {
-        return $this->card_id;
+        return $this->id;
     }
 
     /**
-     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      * @param string $var
      * @return $this
      */
-    public function setCardId($var)
+    public function setId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->card_id = $var;
+        $this->id = $var;
 
         return $this;
     }

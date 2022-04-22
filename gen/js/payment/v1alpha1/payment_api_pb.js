@@ -993,7 +993,7 @@ proto.payment.v1alpha1.DeletePaymentRequest.prototype.toObject = function(opt_in
  */
 proto.payment.v1alpha1.DeletePaymentRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     cardHolderName: jspb.Message.getFieldWithDefault(msg, 2, ""),
     cardType: jspb.Message.getFieldWithDefault(msg, 3, ""),
     cardNumber: jspb.Message.getFieldWithDefault(msg, 4, 0),
@@ -1037,7 +1037,7 @@ proto.payment.v1alpha1.DeletePaymentRequest.deserializeBinaryFromReader = functi
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCardId(value);
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1088,7 +1088,7 @@ proto.payment.v1alpha1.DeletePaymentRequest.prototype.serializeBinary = function
  */
 proto.payment.v1alpha1.DeletePaymentRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCardId();
+  f = message.getId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1134,10 +1134,10 @@ proto.payment.v1alpha1.DeletePaymentRequest.serializeBinaryToWriter = function(m
 
 
 /**
- * optional string card_id = 1;
+ * optional string id = 1;
  * @return {string}
  */
-proto.payment.v1alpha1.DeletePaymentRequest.prototype.getCardId = function() {
+proto.payment.v1alpha1.DeletePaymentRequest.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1146,7 +1146,7 @@ proto.payment.v1alpha1.DeletePaymentRequest.prototype.getCardId = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.DeletePaymentRequest} returns this
  */
-proto.payment.v1alpha1.DeletePaymentRequest.prototype.setCardId = function(value) {
+proto.payment.v1alpha1.DeletePaymentRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1403,12 +1403,7 @@ proto.payment.v1alpha1.GetPaymentRequest.prototype.toObject = function(opt_inclu
  */
 proto.payment.v1alpha1.GetPaymentRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    cardHolderName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    cardType: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    cardNumber: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    cvvNumber: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    expiryDate: jspb.Message.getFieldWithDefault(msg, 6, 0)
+    id: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1447,27 +1442,7 @@ proto.payment.v1alpha1.GetPaymentRequest.deserializeBinaryFromReader = function(
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCardId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCardHolderName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCardType(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setCardNumber(value);
-      break;
-    case 5:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setCvvNumber(value);
-      break;
-    case 6:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setExpiryDate(value);
+      msg.setId(value);
       break;
     default:
       reader.skipField();
@@ -1498,45 +1473,10 @@ proto.payment.v1alpha1.GetPaymentRequest.prototype.serializeBinary = function() 
  */
 proto.payment.v1alpha1.GetPaymentRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCardId();
+  f = message.getId();
   if (f.length > 0) {
     writer.writeString(
       1,
-      f
-    );
-  }
-  f = message.getCardHolderName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getCardType();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getCardNumber();
-  if (f !== 0) {
-    writer.writeInt32(
-      4,
-      f
-    );
-  }
-  f = message.getCvvNumber();
-  if (f !== 0) {
-    writer.writeInt32(
-      5,
-      f
-    );
-  }
-  f = message.getExpiryDate();
-  if (f !== 0) {
-    writer.writeInt32(
-      6,
       f
     );
   }
@@ -1544,10 +1484,10 @@ proto.payment.v1alpha1.GetPaymentRequest.serializeBinaryToWriter = function(mess
 
 
 /**
- * optional string card_id = 1;
+ * optional string id = 1;
  * @return {string}
  */
-proto.payment.v1alpha1.GetPaymentRequest.prototype.getCardId = function() {
+proto.payment.v1alpha1.GetPaymentRequest.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1556,98 +1496,8 @@ proto.payment.v1alpha1.GetPaymentRequest.prototype.getCardId = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.GetPaymentRequest} returns this
  */
-proto.payment.v1alpha1.GetPaymentRequest.prototype.setCardId = function(value) {
+proto.payment.v1alpha1.GetPaymentRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string card_holder_name = 2;
- * @return {string}
- */
-proto.payment.v1alpha1.GetPaymentRequest.prototype.getCardHolderName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.payment.v1alpha1.GetPaymentRequest} returns this
- */
-proto.payment.v1alpha1.GetPaymentRequest.prototype.setCardHolderName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string card_type = 3;
- * @return {string}
- */
-proto.payment.v1alpha1.GetPaymentRequest.prototype.getCardType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.payment.v1alpha1.GetPaymentRequest} returns this
- */
-proto.payment.v1alpha1.GetPaymentRequest.prototype.setCardType = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional int32 card_number = 4;
- * @return {number}
- */
-proto.payment.v1alpha1.GetPaymentRequest.prototype.getCardNumber = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.payment.v1alpha1.GetPaymentRequest} returns this
- */
-proto.payment.v1alpha1.GetPaymentRequest.prototype.setCardNumber = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
-};
-
-
-/**
- * optional int32 cvv_number = 5;
- * @return {number}
- */
-proto.payment.v1alpha1.GetPaymentRequest.prototype.getCvvNumber = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.payment.v1alpha1.GetPaymentRequest} returns this
- */
-proto.payment.v1alpha1.GetPaymentRequest.prototype.setCvvNumber = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
-};
-
-
-/**
- * optional int32 expiry_date = 6;
- * @return {number}
- */
-proto.payment.v1alpha1.GetPaymentRequest.prototype.getExpiryDate = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.payment.v1alpha1.GetPaymentRequest} returns this
- */
-proto.payment.v1alpha1.GetPaymentRequest.prototype.setExpiryDate = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -1864,7 +1714,7 @@ proto.payment.v1alpha1.ListPaymentRequest.prototype.toObject = function(opt_incl
  */
 proto.payment.v1alpha1.ListPaymentRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cardId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     cardHolderName: jspb.Message.getFieldWithDefault(msg, 2, ""),
     cardType: jspb.Message.getFieldWithDefault(msg, 3, ""),
     cardNumber: jspb.Message.getFieldWithDefault(msg, 4, 0)
@@ -1906,7 +1756,7 @@ proto.payment.v1alpha1.ListPaymentRequest.deserializeBinaryFromReader = function
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setCardId(value);
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1949,7 +1799,7 @@ proto.payment.v1alpha1.ListPaymentRequest.prototype.serializeBinary = function()
  */
 proto.payment.v1alpha1.ListPaymentRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCardId();
+  f = message.getId();
   if (f !== 0) {
     writer.writeUint32(
       1,
@@ -1981,10 +1831,10 @@ proto.payment.v1alpha1.ListPaymentRequest.serializeBinaryToWriter = function(mes
 
 
 /**
- * optional uint32 card_id = 1;
+ * optional uint32 id = 1;
  * @return {number}
  */
-proto.payment.v1alpha1.ListPaymentRequest.prototype.getCardId = function() {
+proto.payment.v1alpha1.ListPaymentRequest.prototype.getId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -1993,7 +1843,7 @@ proto.payment.v1alpha1.ListPaymentRequest.prototype.getCardId = function() {
  * @param {number} value
  * @return {!proto.payment.v1alpha1.ListPaymentRequest} returns this
  */
-proto.payment.v1alpha1.ListPaymentRequest.prototype.setCardId = function(value) {
+proto.payment.v1alpha1.ListPaymentRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 

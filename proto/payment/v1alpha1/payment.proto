@@ -5,7 +5,7 @@ option go_package = "github.com/cuemby/ccp-payment-service/paymentv1alpha1";
 
 // Payment
 message Payment {
-    string card_id = 1;
+    string id = 1;
     string card_holder_name = 2;
     string card_type = 3;
     int32 card_number = 4;

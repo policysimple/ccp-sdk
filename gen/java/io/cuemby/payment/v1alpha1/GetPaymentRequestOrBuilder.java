@@ -8,56 +8,14 @@ public interface GetPaymentRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string card_id = 1 [json_name = "cardId"];</code>
-   * @return The cardId.
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The id.
    */
-  java.lang.String getCardId();
+  java.lang.String getId();
   /**
-   * <code>string card_id = 1 [json_name = "cardId"];</code>
-   * @return The bytes for cardId.
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
-      getCardIdBytes();
-
-  /**
-   * <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-   * @return The cardHolderName.
-   */
-  java.lang.String getCardHolderName();
-  /**
-   * <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-   * @return The bytes for cardHolderName.
-   */
-  com.google.protobuf.ByteString
-      getCardHolderNameBytes();
-
-  /**
-   * <code>string card_type = 3 [json_name = "cardType"];</code>
-   * @return The cardType.
-   */
-  java.lang.String getCardType();
-  /**
-   * <code>string card_type = 3 [json_name = "cardType"];</code>
-   * @return The bytes for cardType.
-   */
-  com.google.protobuf.ByteString
-      getCardTypeBytes();
-
-  /**
-   * <code>int32 card_number = 4 [json_name = "cardNumber"];</code>
-   * @return The cardNumber.
-   */
-  int getCardNumber();
-
-  /**
-   * <code>int32 cvv_number = 5 [json_name = "cvvNumber"];</code>
-   * @return The cvvNumber.
-   */
-  int getCvvNumber();
-
-  /**
-   * <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
-   * @return The expiryDate.
-   */
-  int getExpiryDate();
+      getIdBytes();
 }

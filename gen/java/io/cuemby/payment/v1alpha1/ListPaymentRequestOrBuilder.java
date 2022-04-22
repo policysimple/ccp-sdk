@@ -8,10 +8,10 @@ public interface ListPaymentRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 card_id = 1 [json_name = "cardId"];</code>
-   * @return The cardId.
+   * <code>uint32 id = 1 [json_name = "id"];</code>
+   * @return The id.
    */
-  int getCardId();
+  int getId();
 
   /**
    * <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>

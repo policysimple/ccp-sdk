@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\032io.cuemby.payment.v1alpha1B\017PaymentAPIProtoP\001Z5github.com/cuemby/ccp-payment-service/paymentv1alpha1\242\002\003PPX\252\002\020Payment.V1Alpha1\312\002\020Payment\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"payment/v1alpha1/payment_api.proto\x12\x10payment.v1alpha1\x1a\x1epayment/v1alpha1/payment.proto\"c\n\x14\x43reatePaymentRequest\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"d\n\x15\x43reatePaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"c\n\x14UpdatePaymentRequest\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"d\n\x15UpdatePaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\xd7\x01\n\x14\x44\x65letePaymentRequest\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12(\n\x10\x63\x61rd_holder_name\x18\x02 \x01(\tR\x0e\x63\x61rdHolderName\x12\x1b\n\tcard_type\x18\x03 \x01(\tR\x08\x63\x61rdType\x12\x1f\n\x0b\x63\x61rd_number\x18\x04 \x01(\x05R\ncardNumber\x12\x1d\n\ncvv_number\x18\x05 \x01(\x05R\tcvvNumber\x12\x1f\n\x0b\x65xpiry_date\x18\x06 \x01(\x05R\nexpiryDate\"/\n\x15\x44\x65letePaymentResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"\xd4\x01\n\x11GetPaymentRequest\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12(\n\x10\x63\x61rd_holder_name\x18\x02 \x01(\tR\x0e\x63\x61rdHolderName\x12\x1b\n\tcard_type\x18\x03 \x01(\tR\x08\x63\x61rdType\x12\x1f\n\x0b\x63\x61rd_number\x18\x04 \x01(\x05R\ncardNumber\x12\x1d\n\ncvv_number\x18\x05 \x01(\x05R\tcvvNumber\x12\x1f\n\x0b\x65xpiry_date\x18\x06 \x01(\x05R\nexpiryDate\"a\n\x12GetPaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\x95\x01\n\x12ListPaymentRequest\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\rR\x06\x63\x61rdId\x12(\n\x10\x63\x61rd_holder_name\x18\x02 \x01(\tR\x0e\x63\x61rdHolderName\x12\x1b\n\tcard_type\x18\x03 \x01(\tR\x08\x63\x61rdType\x12\x1f\n\x0b\x63\x61rd_number\x18\x04 \x01(\x05R\ncardNumber\"o\n\x13ListPaymentResponse\x12@\n\x0cpayment_list\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.PaymentListR\x0bpaymentList\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xf8\x03\n\x11PaymentAPIService\x12Y\n\nGetPayment\x12#.payment.v1alpha1.GetPaymentRequest\x1a$.payment.v1alpha1.GetPaymentResponse\"\x00\x12\x62\n\rCreatePayment\x12&.payment.v1alpha1.CreatePaymentRequest\x1a\'.payment.v1alpha1.CreatePaymentResponse\"\x00\x12\x62\n\rUpdatePayment\x12&.payment.v1alpha1.UpdatePaymentRequest\x1a\'.payment.v1alpha1.UpdatePaymentResponse\"\x00\x12\x62\n\rDeletePayment\x12&.payment.v1alpha1.DeletePaymentRequest\x1a\'.payment.v1alpha1.DeletePaymentResponse\"\x00\x12\\\n\x0bListPayment\x12$.payment.v1alpha1.ListPaymentRequest\x1a%.payment.v1alpha1.ListPaymentResponse\"\x00\x42\x92\x01\n\x1aio.cuemby.payment.v1alpha1B\x0fPaymentAPIProtoP\x01Z5github.com/cuemby/ccp-payment-service/paymentv1alpha1\xa2\x02\x03PPX\xaa\x02\x10Payment.V1Alpha1\xca\x02\x10Payment\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n\"payment/v1alpha1/payment_api.proto\x12\x10payment.v1alpha1\x1a\x1epayment/v1alpha1/payment.proto\"c\n\x14\x43reatePaymentRequest\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"d\n\x15\x43reatePaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"c\n\x14UpdatePaymentRequest\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"d\n\x15UpdatePaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\xce\x01\n\x14\x44\x65letePaymentRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12(\n\x10\x63\x61rd_holder_name\x18\x02 \x01(\tR\x0e\x63\x61rdHolderName\x12\x1b\n\tcard_type\x18\x03 \x01(\tR\x08\x63\x61rdType\x12\x1f\n\x0b\x63\x61rd_number\x18\x04 \x01(\x05R\ncardNumber\x12\x1d\n\ncvv_number\x18\x05 \x01(\x05R\tcvvNumber\x12\x1f\n\x0b\x65xpiry_date\x18\x06 \x01(\x05R\nexpiryDate\"/\n\x15\x44\x65letePaymentResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"#\n\x11GetPaymentRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"a\n\x12GetPaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\x8c\x01\n\x12ListPaymentRequest\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12(\n\x10\x63\x61rd_holder_name\x18\x02 \x01(\tR\x0e\x63\x61rdHolderName\x12\x1b\n\tcard_type\x18\x03 \x01(\tR\x08\x63\x61rdType\x12\x1f\n\x0b\x63\x61rd_number\x18\x04 \x01(\x05R\ncardNumber\"o\n\x13ListPaymentResponse\x12@\n\x0cpayment_list\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.PaymentListR\x0bpaymentList\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xf8\x03\n\x11PaymentAPIService\x12Y\n\nGetPayment\x12#.payment.v1alpha1.GetPaymentRequest\x1a$.payment.v1alpha1.GetPaymentResponse\"\x00\x12\x62\n\rCreatePayment\x12&.payment.v1alpha1.CreatePaymentRequest\x1a\'.payment.v1alpha1.CreatePaymentResponse\"\x00\x12\x62\n\rUpdatePayment\x12&.payment.v1alpha1.UpdatePaymentRequest\x1a\'.payment.v1alpha1.UpdatePaymentResponse\"\x00\x12\x62\n\rDeletePayment\x12&.payment.v1alpha1.DeletePaymentRequest\x1a\'.payment.v1alpha1.DeletePaymentResponse\"\x00\x12\\\n\x0bListPayment\x12$.payment.v1alpha1.ListPaymentRequest\x1a%.payment.v1alpha1.ListPaymentResponse\"\x00\x42\x92\x01\n\x1aio.cuemby.payment.v1alpha1B\x0fPaymentAPIProtoP\x01Z5github.com/cuemby/ccp-payment-service/paymentv1alpha1\xa2\x02\x03PPX\xaa\x02\x10Payment.V1Alpha1\xca\x02\x10Payment\\V1Alpha1b\x06proto3'
   ,
   dependencies=[payment_dot_v1alpha1_dot_payment__pb2.DESCRIPTOR,])
 
@@ -192,12 +192,12 @@ _DELETEPAYMENTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='card_id', full_name='payment.v1alpha1.DeletePaymentRequest.card_id', index=0,
+      name='id', full_name='payment.v1alpha1.DeletePaymentRequest.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='cardId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='card_holder_name', full_name='payment.v1alpha1.DeletePaymentRequest.card_holder_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -246,7 +246,7 @@ _DELETEPAYMENTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=495,
-  serialized_end=710,
+  serialized_end=701,
 )
 
 
@@ -277,8 +277,8 @@ _DELETEPAYMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=712,
-  serialized_end=759,
+  serialized_start=703,
+  serialized_end=750,
 )
 
 
@@ -291,47 +291,12 @@ _GETPAYMENTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='card_id', full_name='payment.v1alpha1.GetPaymentRequest.card_id', index=0,
+      name='id', full_name='payment.v1alpha1.GetPaymentRequest.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='cardId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='card_holder_name', full_name='payment.v1alpha1.GetPaymentRequest.card_holder_name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='cardHolderName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='card_type', full_name='payment.v1alpha1.GetPaymentRequest.card_type', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='cardType', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='card_number', full_name='payment.v1alpha1.GetPaymentRequest.card_number', index=3,
-      number=4, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='cardNumber', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cvv_number', full_name='payment.v1alpha1.GetPaymentRequest.cvv_number', index=4,
-      number=5, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='cvvNumber', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='expiry_date', full_name='payment.v1alpha1.GetPaymentRequest.expiry_date', index=5,
-      number=6, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='expiryDate', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -344,8 +309,8 @@ _GETPAYMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=762,
-  serialized_end=974,
+  serialized_start=752,
+  serialized_end=787,
 )
 
 
@@ -383,8 +348,8 @@ _GETPAYMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=976,
-  serialized_end=1073,
+  serialized_start=789,
+  serialized_end=886,
 )
 
 
@@ -397,12 +362,12 @@ _LISTPAYMENTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='card_id', full_name='payment.v1alpha1.ListPaymentRequest.card_id', index=0,
+      name='id', full_name='payment.v1alpha1.ListPaymentRequest.id', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='cardId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='card_holder_name', full_name='payment.v1alpha1.ListPaymentRequest.card_holder_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -436,8 +401,8 @@ _LISTPAYMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1076,
-  serialized_end=1225,
+  serialized_start=889,
+  serialized_end=1029,
 )
 
 
@@ -475,8 +440,8 @@ _LISTPAYMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1227,
-  serialized_end=1338,
+  serialized_start=1031,
+  serialized_end=1142,
 )
 
 _CREATEPAYMENTREQUEST.fields_by_name['payment'].message_type = payment_dot_v1alpha1_dot_payment__pb2._PAYMENT
@@ -577,8 +542,8 @@ _PAYMENTAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1341,
-  serialized_end=1845,
+  serialized_start=1145,
+  serialized_end=1649,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetPayment',

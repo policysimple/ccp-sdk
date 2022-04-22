@@ -85,45 +85,40 @@ public final class PaymentAPIProto {
       "ayment\022\026\n\006status\030\002 \001(\tR\006status\"d\n\025Update" +
       "PaymentResponse\0223\n\007payment\030\001 \001(\0132\031.payme" +
       "nt.v1alpha1.PaymentR\007payment\022\026\n\006status\030\002" +
-      " \001(\tR\006status\"\327\001\n\024DeletePaymentRequest\022\027\n" +
-      "\007card_id\030\001 \001(\tR\006cardId\022(\n\020card_holder_na" +
-      "me\030\002 \001(\tR\016cardHolderName\022\033\n\tcard_type\030\003 " +
-      "\001(\tR\010cardType\022\037\n\013card_number\030\004 \001(\005R\ncard" +
-      "Number\022\035\n\ncvv_number\030\005 \001(\005R\tcvvNumber\022\037\n" +
-      "\013expiry_date\030\006 \001(\005R\nexpiryDate\"/\n\025Delete" +
-      "PaymentResponse\022\026\n\006status\030\001 \001(\tR\006status\"" +
-      "\324\001\n\021GetPaymentRequest\022\027\n\007card_id\030\001 \001(\tR\006" +
-      "cardId\022(\n\020card_holder_name\030\002 \001(\tR\016cardHo" +
-      "lderName\022\033\n\tcard_type\030\003 \001(\tR\010cardType\022\037\n" +
-      "\013card_number\030\004 \001(\005R\ncardNumber\022\035\n\ncvv_nu" +
-      "mber\030\005 \001(\005R\tcvvNumber\022\037\n\013expiry_date\030\006 \001" +
-      "(\005R\nexpiryDate\"a\n\022GetPaymentResponse\0223\n\007" +
-      "payment\030\001 \001(\0132\031.payment.v1alpha1.Payment" +
-      "R\007payment\022\026\n\006status\030\002 \001(\tR\006status\"\225\001\n\022Li" +
-      "stPaymentRequest\022\027\n\007card_id\030\001 \001(\rR\006cardI" +
-      "d\022(\n\020card_holder_name\030\002 \001(\tR\016cardHolderN" +
-      "ame\022\033\n\tcard_type\030\003 \001(\tR\010cardType\022\037\n\013card" +
-      "_number\030\004 \001(\005R\ncardNumber\"o\n\023ListPayment" +
-      "Response\022@\n\014payment_list\030\001 \001(\0132\035.payment" +
-      ".v1alpha1.PaymentListR\013paymentList\022\026\n\006st" +
-      "atus\030\002 \001(\tR\006status2\370\003\n\021PaymentAPIService" +
-      "\022Y\n\nGetPayment\022#.payment.v1alpha1.GetPay" +
-      "mentRequest\032$.payment.v1alpha1.GetPaymen" +
-      "tResponse\"\000\022b\n\rCreatePayment\022&.payment.v" +
-      "1alpha1.CreatePaymentRequest\032\'.payment.v" +
-      "1alpha1.CreatePaymentResponse\"\000\022b\n\rUpdat" +
-      "ePayment\022&.payment.v1alpha1.UpdatePaymen" +
-      "tRequest\032\'.payment.v1alpha1.UpdatePaymen" +
-      "tResponse\"\000\022b\n\rDeletePayment\022&.payment.v" +
-      "1alpha1.DeletePaymentRequest\032\'.payment.v" +
-      "1alpha1.DeletePaymentResponse\"\000\022\\\n\013ListP" +
-      "ayment\022$.payment.v1alpha1.ListPaymentReq" +
-      "uest\032%.payment.v1alpha1.ListPaymentRespo" +
-      "nse\"\000B\222\001\n\032io.cuemby.payment.v1alpha1B\017Pa" +
-      "ymentAPIProtoP\001Z5github.com/cuemby/ccp-p" +
-      "ayment-service/paymentv1alpha1\242\002\003PPX\252\002\020P" +
-      "ayment.V1Alpha1\312\002\020Payment\\V1Alpha1b\006prot" +
-      "o3"
+      " \001(\tR\006status\"\316\001\n\024DeletePaymentRequest\022\016\n" +
+      "\002id\030\001 \001(\tR\002id\022(\n\020card_holder_name\030\002 \001(\tR" +
+      "\016cardHolderName\022\033\n\tcard_type\030\003 \001(\tR\010card" +
+      "Type\022\037\n\013card_number\030\004 \001(\005R\ncardNumber\022\035\n" +
+      "\ncvv_number\030\005 \001(\005R\tcvvNumber\022\037\n\013expiry_d" +
+      "ate\030\006 \001(\005R\nexpiryDate\"/\n\025DeletePaymentRe" +
+      "sponse\022\026\n\006status\030\001 \001(\tR\006status\"#\n\021GetPay" +
+      "mentRequest\022\016\n\002id\030\001 \001(\tR\002id\"a\n\022GetPaymen" +
+      "tResponse\0223\n\007payment\030\001 \001(\0132\031.payment.v1a" +
+      "lpha1.PaymentR\007payment\022\026\n\006status\030\002 \001(\tR\006" +
+      "status\"\214\001\n\022ListPaymentRequest\022\016\n\002id\030\001 \001(" +
+      "\rR\002id\022(\n\020card_holder_name\030\002 \001(\tR\016cardHol" +
+      "derName\022\033\n\tcard_type\030\003 \001(\tR\010cardType\022\037\n\013" +
+      "card_number\030\004 \001(\005R\ncardNumber\"o\n\023ListPay" +
+      "mentResponse\022@\n\014payment_list\030\001 \001(\0132\035.pay" +
+      "ment.v1alpha1.PaymentListR\013paymentList\022\026" +
+      "\n\006status\030\002 \001(\tR\006status2\370\003\n\021PaymentAPISer" +
+      "vice\022Y\n\nGetPayment\022#.payment.v1alpha1.Ge" +
+      "tPaymentRequest\032$.payment.v1alpha1.GetPa" +
+      "ymentResponse\"\000\022b\n\rCreatePayment\022&.payme" +
+      "nt.v1alpha1.CreatePaymentRequest\032\'.payme" +
+      "nt.v1alpha1.CreatePaymentResponse\"\000\022b\n\rU" +
+      "pdatePayment\022&.payment.v1alpha1.UpdatePa" +
+      "ymentRequest\032\'.payment.v1alpha1.UpdatePa" +
+      "ymentResponse\"\000\022b\n\rDeletePayment\022&.payme" +
+      "nt.v1alpha1.DeletePaymentRequest\032\'.payme" +
+      "nt.v1alpha1.DeletePaymentResponse\"\000\022\\\n\013L" +
+      "istPayment\022$.payment.v1alpha1.ListPaymen" +
+      "tRequest\032%.payment.v1alpha1.ListPaymentR" +
+      "esponse\"\000B\222\001\n\032io.cuemby.payment.v1alpha1" +
+      "B\017PaymentAPIProtoP\001Z5github.com/cuemby/c" +
+      "cp-payment-service/paymentv1alpha1\242\002\003PPX" +
+      "\252\002\020Payment.V1Alpha1\312\002\020Payment\\V1Alpha1b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -159,7 +154,7 @@ public final class PaymentAPIProto {
     internal_static_payment_v1alpha1_DeletePaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_DeletePaymentRequest_descriptor,
-        new java.lang.String[] { "CardId", "CardHolderName", "CardType", "CardNumber", "CvvNumber", "ExpiryDate", });
+        new java.lang.String[] { "Id", "CardHolderName", "CardType", "CardNumber", "CvvNumber", "ExpiryDate", });
     internal_static_payment_v1alpha1_DeletePaymentResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_payment_v1alpha1_DeletePaymentResponse_fieldAccessorTable = new
@@ -171,7 +166,7 @@ public final class PaymentAPIProto {
     internal_static_payment_v1alpha1_GetPaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetPaymentRequest_descriptor,
-        new java.lang.String[] { "CardId", "CardHolderName", "CardType", "CardNumber", "CvvNumber", "ExpiryDate", });
+        new java.lang.String[] { "Id", });
     internal_static_payment_v1alpha1_GetPaymentResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_payment_v1alpha1_GetPaymentResponse_fieldAccessorTable = new
@@ -183,7 +178,7 @@ public final class PaymentAPIProto {
     internal_static_payment_v1alpha1_ListPaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_ListPaymentRequest_descriptor,
-        new java.lang.String[] { "CardId", "CardHolderName", "CardType", "CardNumber", });
+        new java.lang.String[] { "Id", "CardHolderName", "CardType", "CardNumber", });
     internal_static_payment_v1alpha1_ListPaymentResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_payment_v1alpha1_ListPaymentResponse_fieldAccessorTable = new

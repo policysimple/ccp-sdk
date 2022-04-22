@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z5github.com/cuemby/ccp-payment-service/paymentv1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1epayment/v1alpha1/payment.proto\x12\x10payment.v1alpha1\"\xca\x01\n\x07Payment\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12(\n\x10\x63\x61rd_holder_name\x18\x02 \x01(\tR\x0e\x63\x61rdHolderName\x12\x1b\n\tcard_type\x18\x03 \x01(\tR\x08\x63\x61rdType\x12\x1f\n\x0b\x63\x61rd_number\x18\x04 \x01(\x05R\ncardNumber\x12\x1d\n\ncvv_number\x18\x05 \x01(\x05R\tcvvNumber\x12\x1f\n\x0b\x65xpiry_date\x18\x06 \x01(\x05R\nexpiryDate\">\n\x0bPaymentList\x12/\n\x05items\x18\x01 \x03(\x0b\x32\x19.payment.v1alpha1.PaymentR\x05itemsB7Z5github.com/cuemby/ccp-payment-service/paymentv1alpha1b\x06proto3'
+  serialized_pb=b'\n\x1epayment/v1alpha1/payment.proto\x12\x10payment.v1alpha1\"\xc1\x01\n\x07Payment\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12(\n\x10\x63\x61rd_holder_name\x18\x02 \x01(\tR\x0e\x63\x61rdHolderName\x12\x1b\n\tcard_type\x18\x03 \x01(\tR\x08\x63\x61rdType\x12\x1f\n\x0b\x63\x61rd_number\x18\x04 \x01(\x05R\ncardNumber\x12\x1d\n\ncvv_number\x18\x05 \x01(\x05R\tcvvNumber\x12\x1f\n\x0b\x65xpiry_date\x18\x06 \x01(\x05R\nexpiryDate\">\n\x0bPaymentList\x12/\n\x05items\x18\x01 \x03(\x0b\x32\x19.payment.v1alpha1.PaymentR\x05itemsB7Z5github.com/cuemby/ccp-payment-service/paymentv1alpha1b\x06proto3'
 )
 
 
@@ -34,12 +34,12 @@ _PAYMENT = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='card_id', full_name='payment.v1alpha1.Payment.card_id', index=0,
+      name='id', full_name='payment.v1alpha1.Payment.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='cardId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='card_holder_name', full_name='payment.v1alpha1.Payment.card_holder_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -88,7 +88,7 @@ _PAYMENT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=53,
-  serialized_end=255,
+  serialized_end=246,
 )
 
 
@@ -119,8 +119,8 @@ _PAYMENTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=257,
-  serialized_end=319,
+  serialized_start=248,
+  serialized_end=310,
 )
 
 _PAYMENTLIST.fields_by_name['items'].message_type = _PAYMENT

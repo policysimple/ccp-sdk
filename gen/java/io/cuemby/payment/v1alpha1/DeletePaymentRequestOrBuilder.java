@@ -8,16 +8,16 @@ public interface DeletePaymentRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string card_id = 1 [json_name = "cardId"];</code>
-   * @return The cardId.
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The id.
    */
-  java.lang.String getCardId();
+  java.lang.String getId();
   /**
-   * <code>string card_id = 1 [json_name = "cardId"];</code>
-   * @return The bytes for cardId.
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
-      getCardIdBytes();
+      getIdBytes();
 
   /**
    * <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>

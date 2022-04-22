@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListPaymentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 card_id = 1 [json_name = "cardId"];</code>
+     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
      */
-    protected $card_id = 0;
+    protected $id = 0;
     /**
      * Generated from protobuf field <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
      */
@@ -36,7 +36,7 @@ class ListPaymentRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $card_id
+     *     @type int $id
      *     @type string $card_holder_name
      *     @type string $card_type
      *     @type int $card_number
@@ -48,23 +48,23 @@ class ListPaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 card_id = 1 [json_name = "cardId"];</code>
+     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
      * @return int
      */
-    public function getCardId()
+    public function getId()
     {
-        return $this->card_id;
+        return $this->id;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 card_id = 1 [json_name = "cardId"];</code>
+     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
      * @param int $var
      * @return $this
      */
-    public function setCardId($var)
+    public function setId($var)
     {
         GPBUtil::checkUint32($var);
-        $this->card_id = $var;
+        $this->id = $var;
 
         return $this;
     }

@@ -10,7 +10,7 @@ option objc_class_prefix = "PPX";
 option php_namespace = "Payment\\V1Alpha1";
 
 import "payment/v1alpha1/payment.proto";
-// import "payment.proto";
+//import "payment.proto";
 
 
 service PaymentAPIService{
@@ -35,6 +35,8 @@ message CreatePaymentResponse {
 message UpdatePaymentRequest {
     payment.v1alpha1.Payment payment = 1;
     string status = 2;
+   
+
 }
 
 message UpdatePaymentResponse {
@@ -43,7 +45,7 @@ message UpdatePaymentResponse {
 }
 
 message DeletePaymentRequest {
-    string card_id = 1;
+    string id = 1;
     string card_holder_name = 2;
     string card_type = 3;
     int32 card_number = 4;
@@ -56,12 +58,8 @@ message DeletePaymentResponse {
 }
 
 message GetPaymentRequest {
-    string card_id = 1;
-    string card_holder_name = 2;
-    string card_type = 3;
-    int32 card_number = 4;
-    int32 cvv_number = 5;
-    int32 expiry_date = 6;
+    string id = 1;
+  
 
 }
 
@@ -71,7 +69,7 @@ message GetPaymentResponse {
 }
 
 message ListPaymentRequest {
-    uint32 card_id = 1;
+    uint32 id = 1;
     string card_holder_name = 2;
     string card_type = 3;
     int32 card_number = 4;

@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeletePaymentRequest() {
-    cardId_ = "";
+    id_ = "";
     cardHolderName_ = "";
     cardType_ = "";
   }
@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            cardId_ = s;
+            id_ = s;
             break;
           }
           case 18: {
@@ -116,38 +116,38 @@ private static final long serialVersionUID = 0L;
             io.cuemby.payment.v1alpha1.DeletePaymentRequest.class, io.cuemby.payment.v1alpha1.DeletePaymentRequest.Builder.class);
   }
 
-  public static final int CARD_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object cardId_;
+  public static final int ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object id_;
   /**
-   * <code>string card_id = 1 [json_name = "cardId"];</code>
-   * @return The cardId.
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The id.
    */
   @java.lang.Override
-  public java.lang.String getCardId() {
-    java.lang.Object ref = cardId_;
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      cardId_ = s;
+      id_ = s;
       return s;
     }
   }
   /**
-   * <code>string card_id = 1 [json_name = "cardId"];</code>
-   * @return The bytes for cardId.
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The bytes for id.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getCardIdBytes() {
-    java.lang.Object ref = cardId_;
+      getIdBytes() {
+    java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      cardId_ = b;
+      id_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -277,8 +277,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getCardIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cardId_);
+    if (!getIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (!getCardHolderNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cardHolderName_);
@@ -304,8 +304,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getCardIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cardId_);
+    if (!getIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (!getCardHolderNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cardHolderName_);
@@ -340,8 +340,8 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.payment.v1alpha1.DeletePaymentRequest other = (io.cuemby.payment.v1alpha1.DeletePaymentRequest) obj;
 
-    if (!getCardId()
-        .equals(other.getCardId())) return false;
+    if (!getId()
+        .equals(other.getId())) return false;
     if (!getCardHolderName()
         .equals(other.getCardHolderName())) return false;
     if (!getCardType()
@@ -363,8 +363,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getCardId().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + CARD_HOLDER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getCardHolderName().hashCode();
     hash = (37 * hash) + CARD_TYPE_FIELD_NUMBER;
@@ -508,7 +508,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      cardId_ = "";
+      id_ = "";
 
       cardHolderName_ = "";
 
@@ -546,7 +546,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.payment.v1alpha1.DeletePaymentRequest buildPartial() {
       io.cuemby.payment.v1alpha1.DeletePaymentRequest result = new io.cuemby.payment.v1alpha1.DeletePaymentRequest(this);
-      result.cardId_ = cardId_;
+      result.id_ = id_;
       result.cardHolderName_ = cardHolderName_;
       result.cardType_ = cardType_;
       result.cardNumber_ = cardNumber_;
@@ -600,8 +600,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.payment.v1alpha1.DeletePaymentRequest other) {
       if (other == io.cuemby.payment.v1alpha1.DeletePaymentRequest.getDefaultInstance()) return this;
-      if (!other.getCardId().isEmpty()) {
-        cardId_ = other.cardId_;
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
         onChanged();
       }
       if (!other.getCardHolderName().isEmpty()) {
@@ -650,78 +650,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object cardId_ = "";
+    private java.lang.Object id_ = "";
     /**
-     * <code>string card_id = 1 [json_name = "cardId"];</code>
-     * @return The cardId.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
      */
-    public java.lang.String getCardId() {
-      java.lang.Object ref = cardId_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        cardId_ = s;
+        id_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string card_id = 1 [json_name = "cardId"];</code>
-     * @return The bytes for cardId.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
-        getCardIdBytes() {
-      java.lang.Object ref = cardId_;
+        getIdBytes() {
+      java.lang.Object ref = id_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        cardId_ = b;
+        id_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string card_id = 1 [json_name = "cardId"];</code>
-     * @param value The cardId to set.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setCardId(
+    public Builder setId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      cardId_ = value;
+      id_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string card_id = 1 [json_name = "cardId"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearCardId() {
+    public Builder clearId() {
       
-      cardId_ = getDefaultInstance().getCardId();
+      id_ = getDefaultInstance().getId();
       onChanged();
       return this;
     }
     /**
-     * <code>string card_id = 1 [json_name = "cardId"];</code>
-     * @param value The bytes for cardId to set.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
-    public Builder setCardIdBytes(
+    public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      cardId_ = value;
+      id_ = value;
       onChanged();
       return this;
     }

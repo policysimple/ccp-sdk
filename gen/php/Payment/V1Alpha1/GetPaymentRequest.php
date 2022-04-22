@@ -14,29 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetPaymentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      */
-    protected $card_id = '';
-    /**
-     * Generated from protobuf field <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-     */
-    protected $card_holder_name = '';
-    /**
-     * Generated from protobuf field <code>string card_type = 3 [json_name = "cardType"];</code>
-     */
-    protected $card_type = '';
-    /**
-     * Generated from protobuf field <code>int32 card_number = 4 [json_name = "cardNumber"];</code>
-     */
-    protected $card_number = 0;
-    /**
-     * Generated from protobuf field <code>int32 cvv_number = 5 [json_name = "cvvNumber"];</code>
-     */
-    protected $cvv_number = 0;
-    /**
-     * Generated from protobuf field <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
-     */
-    protected $expiry_date = 0;
+    protected $id = '';
 
     /**
      * Constructor.
@@ -44,12 +24,7 @@ class GetPaymentRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $card_id
-     *     @type string $card_holder_name
-     *     @type string $card_type
-     *     @type int $card_number
-     *     @type int $cvv_number
-     *     @type int $expiry_date
+     *     @type string $id
      * }
      */
     public function __construct($data = NULL) {
@@ -58,133 +33,23 @@ class GetPaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      * @return string
      */
-    public function getCardId()
+    public function getId()
     {
-        return $this->card_id;
+        return $this->id;
     }
 
     /**
-     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      * @param string $var
      * @return $this
      */
-    public function setCardId($var)
+    public function setId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->card_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-     * @return string
-     */
-    public function getCardHolderName()
-    {
-        return $this->card_holder_name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCardHolderName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->card_holder_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string card_type = 3 [json_name = "cardType"];</code>
-     * @return string
-     */
-    public function getCardType()
-    {
-        return $this->card_type;
-    }
-
-    /**
-     * Generated from protobuf field <code>string card_type = 3 [json_name = "cardType"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCardType($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->card_type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 card_number = 4 [json_name = "cardNumber"];</code>
-     * @return int
-     */
-    public function getCardNumber()
-    {
-        return $this->card_number;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 card_number = 4 [json_name = "cardNumber"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setCardNumber($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->card_number = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 cvv_number = 5 [json_name = "cvvNumber"];</code>
-     * @return int
-     */
-    public function getCvvNumber()
-    {
-        return $this->cvv_number;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 cvv_number = 5 [json_name = "cvvNumber"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setCvvNumber($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->cvv_number = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
-     * @return int
-     */
-    public function getExpiryDate()
-    {
-        return $this->expiry_date;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setExpiryDate($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->expiry_date = $var;
+        $this->id = $var;
 
         return $this;
     }

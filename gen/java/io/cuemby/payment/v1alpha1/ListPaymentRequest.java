@@ -52,7 +52,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            cardId_ = input.readUInt32();
+            id_ = input.readUInt32();
             break;
           }
           case 18: {
@@ -104,15 +104,15 @@ private static final long serialVersionUID = 0L;
             io.cuemby.payment.v1alpha1.ListPaymentRequest.class, io.cuemby.payment.v1alpha1.ListPaymentRequest.Builder.class);
   }
 
-  public static final int CARD_ID_FIELD_NUMBER = 1;
-  private int cardId_;
+  public static final int ID_FIELD_NUMBER = 1;
+  private int id_;
   /**
-   * <code>uint32 card_id = 1 [json_name = "cardId"];</code>
-   * @return The cardId.
+   * <code>uint32 id = 1 [json_name = "id"];</code>
+   * @return The id.
    */
   @java.lang.Override
-  public int getCardId() {
-    return cardId_;
+  public int getId() {
+    return id_;
   }
 
   public static final int CARD_HOLDER_NAME_FIELD_NUMBER = 2;
@@ -216,8 +216,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (cardId_ != 0) {
-      output.writeUInt32(1, cardId_);
+    if (id_ != 0) {
+      output.writeUInt32(1, id_);
     }
     if (!getCardHolderNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cardHolderName_);
@@ -237,9 +237,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (cardId_ != 0) {
+    if (id_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(1, cardId_);
+        .computeUInt32Size(1, id_);
     }
     if (!getCardHolderNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cardHolderName_);
@@ -266,8 +266,8 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.payment.v1alpha1.ListPaymentRequest other = (io.cuemby.payment.v1alpha1.ListPaymentRequest) obj;
 
-    if (getCardId()
-        != other.getCardId()) return false;
+    if (getId()
+        != other.getId()) return false;
     if (!getCardHolderName()
         .equals(other.getCardHolderName())) return false;
     if (!getCardType()
@@ -285,8 +285,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getCardId();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId();
     hash = (37 * hash) + CARD_HOLDER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getCardHolderName().hashCode();
     hash = (37 * hash) + CARD_TYPE_FIELD_NUMBER;
@@ -426,7 +426,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      cardId_ = 0;
+      id_ = 0;
 
       cardHolderName_ = "";
 
@@ -460,7 +460,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.payment.v1alpha1.ListPaymentRequest buildPartial() {
       io.cuemby.payment.v1alpha1.ListPaymentRequest result = new io.cuemby.payment.v1alpha1.ListPaymentRequest(this);
-      result.cardId_ = cardId_;
+      result.id_ = id_;
       result.cardHolderName_ = cardHolderName_;
       result.cardType_ = cardType_;
       result.cardNumber_ = cardNumber_;
@@ -512,8 +512,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.payment.v1alpha1.ListPaymentRequest other) {
       if (other == io.cuemby.payment.v1alpha1.ListPaymentRequest.getDefaultInstance()) return this;
-      if (other.getCardId() != 0) {
-        setCardId(other.getCardId());
+      if (other.getId() != 0) {
+        setId(other.getId());
       }
       if (!other.getCardHolderName().isEmpty()) {
         cardHolderName_ = other.cardHolderName_;
@@ -555,33 +555,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int cardId_ ;
+    private int id_ ;
     /**
-     * <code>uint32 card_id = 1 [json_name = "cardId"];</code>
-     * @return The cardId.
+     * <code>uint32 id = 1 [json_name = "id"];</code>
+     * @return The id.
      */
     @java.lang.Override
-    public int getCardId() {
-      return cardId_;
+    public int getId() {
+      return id_;
     }
     /**
-     * <code>uint32 card_id = 1 [json_name = "cardId"];</code>
-     * @param value The cardId to set.
+     * <code>uint32 id = 1 [json_name = "id"];</code>
+     * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setCardId(int value) {
+    public Builder setId(int value) {
       
-      cardId_ = value;
+      id_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 card_id = 1 [json_name = "cardId"];</code>
+     * <code>uint32 id = 1 [json_name = "id"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearCardId() {
+    public Builder clearId() {
       
-      cardId_ = 0;
+      id_ = 0;
       onChanged();
       return this;
     }

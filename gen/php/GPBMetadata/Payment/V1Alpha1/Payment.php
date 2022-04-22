@@ -16,10 +16,10 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-€
-payment/v1alpha1/payment.protopayment.v1alpha1"Ê
-Payment
-card_id (	RcardId(
+÷
+payment/v1alpha1/payment.protopayment.v1alpha1"Á
+Payment
+id (	Rid(
 card_holder_name (	RcardHolderName
 	card_type (	RcardType
 card_number (R
