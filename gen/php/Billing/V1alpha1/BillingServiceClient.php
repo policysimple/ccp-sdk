@@ -43,19 +43,6 @@ class BillingServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Billing\V1alpha1\ListBillingsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function ListBillings(\Billing\V1alpha1\ListBillingsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/billing.v1alpha1.BillingService/ListBillings',
-        $argument,
-        ['\Billing\V1alpha1\ListBillingsResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * @param \Billing\V1alpha1\UpdateBillingRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

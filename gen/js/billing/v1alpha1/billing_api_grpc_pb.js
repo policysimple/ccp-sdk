@@ -49,28 +49,6 @@ function deserialize_billing_v1alpha1_GetBillingResponse(buffer_arg) {
   return billing_v1alpha1_billing_api_pb.GetBillingResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_billing_v1alpha1_ListBillingsRequest(arg) {
-  if (!(arg instanceof billing_v1alpha1_billing_api_pb.ListBillingsRequest)) {
-    throw new Error('Expected argument of type billing.v1alpha1.ListBillingsRequest');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_billing_v1alpha1_ListBillingsRequest(buffer_arg) {
-  return billing_v1alpha1_billing_api_pb.ListBillingsRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_billing_v1alpha1_ListBillingsResponse(arg) {
-  if (!(arg instanceof billing_v1alpha1_billing_api_pb.ListBillingsResponse)) {
-    throw new Error('Expected argument of type billing.v1alpha1.ListBillingsResponse');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_billing_v1alpha1_ListBillingsResponse(buffer_arg) {
-  return billing_v1alpha1_billing_api_pb.ListBillingsResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_billing_v1alpha1_UpdateBillingRequest(arg) {
   if (!(arg instanceof billing_v1alpha1_billing_api_pb.UpdateBillingRequest)) {
     throw new Error('Expected argument of type billing.v1alpha1.UpdateBillingRequest');
@@ -116,17 +94,6 @@ var BillingServiceService = exports.BillingServiceService = {
     requestDeserialize: deserialize_billing_v1alpha1_GetBillingRequest,
     responseSerialize: serialize_billing_v1alpha1_GetBillingResponse,
     responseDeserialize: deserialize_billing_v1alpha1_GetBillingResponse,
-  },
-  listBillings: {
-    path: '/billing.v1alpha1.BillingService/ListBillings',
-    requestStream: false,
-    responseStream: false,
-    requestType: billing_v1alpha1_billing_api_pb.ListBillingsRequest,
-    responseType: billing_v1alpha1_billing_api_pb.ListBillingsResponse,
-    requestSerialize: serialize_billing_v1alpha1_ListBillingsRequest,
-    requestDeserialize: deserialize_billing_v1alpha1_ListBillingsRequest,
-    responseSerialize: serialize_billing_v1alpha1_ListBillingsResponse,
-    responseDeserialize: deserialize_billing_v1alpha1_ListBillingsResponse,
   },
   updateBilling: {
     path: '/billing.v1alpha1.BillingService/UpdateBilling',

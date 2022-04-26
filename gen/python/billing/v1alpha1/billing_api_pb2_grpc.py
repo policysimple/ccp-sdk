@@ -24,11 +24,6 @@ class BillingServiceStub(object):
         request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetBillingRequest.SerializeToString,
         response_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetBillingResponse.FromString,
         )
-    self.ListBillings = channel.unary_unary(
-        '/billing.v1alpha1.BillingService/ListBillings',
-        request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.ListBillingsRequest.SerializeToString,
-        response_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.ListBillingsResponse.FromString,
-        )
     self.UpdateBilling = channel.unary_unary(
         '/billing.v1alpha1.BillingService/UpdateBilling',
         request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateBillingRequest.SerializeToString,
@@ -54,13 +49,6 @@ class BillingServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def ListBillings(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
   def UpdateBilling(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -80,11 +68,6 @@ def add_BillingServiceServicer_to_server(servicer, server):
           servicer.GetBilling,
           request_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetBillingRequest.FromString,
           response_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetBillingResponse.SerializeToString,
-      ),
-      'ListBillings': grpc.unary_unary_rpc_method_handler(
-          servicer.ListBillings,
-          request_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.ListBillingsRequest.FromString,
-          response_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.ListBillingsResponse.SerializeToString,
       ),
       'UpdateBilling': grpc.unary_unary_rpc_method_handler(
           servicer.UpdateBilling,

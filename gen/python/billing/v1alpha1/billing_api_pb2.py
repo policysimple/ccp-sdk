@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z5github.com/cuemby/ccp-billing-service/billingv1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"billing/v1alpha1/billing_api.proto\x12\x10\x62illing.v1alpha1\x1a\x1e\x62illing/v1alpha1/billing.proto\"K\n\x14\x43reateBillingRequest\x12\x33\n\x07\x62illing\x18\x01 \x01(\x0b\x32\x19.billing.v1alpha1.BillingR\x07\x62illing\"N\n\x15\x43reateBillingResponse\x12\x1d\n\nbilling_id\x18\x01 \x01(\tR\tbillingId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"2\n\x11GetBillingRequest\x12\x1d\n\nbilling_id\x18\x01 \x01(\tR\tbillingId\"I\n\x12GetBillingResponse\x12\x33\n\x07\x62illing\x18\x01 \x01(\x0b\x32\x19.billing.v1alpha1.BillingR\x07\x62illing\"\x15\n\x13ListBillingsRequest\"\x16\n\x14ListBillingsResponse\"\x16\n\x14UpdateBillingRequest\"\x17\n\x15UpdateBillingResponse2\x94\x03\n\x0e\x42illingService\x12\x62\n\rCreateBilling\x12&.billing.v1alpha1.CreateBillingRequest\x1a\'.billing.v1alpha1.CreateBillingResponse\"\x00\x12Y\n\nGetBilling\x12#.billing.v1alpha1.GetBillingRequest\x1a$.billing.v1alpha1.GetBillingResponse\"\x00\x12_\n\x0cListBillings\x12%.billing.v1alpha1.ListBillingsRequest\x1a&.billing.v1alpha1.ListBillingsResponse\"\x00\x12\x62\n\rUpdateBilling\x12&.billing.v1alpha1.UpdateBillingRequest\x1a\'.billing.v1alpha1.UpdateBillingResponse\"\x00\x42\x37Z5github.com/cuemby/ccp-billing-service/billingv1alpha1b\x06proto3'
+  serialized_pb=b'\n\"billing/v1alpha1/billing_api.proto\x12\x10\x62illing.v1alpha1\x1a\x1e\x62illing/v1alpha1/billing.proto\"K\n\x14\x43reateBillingRequest\x12\x33\n\x07\x62illing\x18\x01 \x01(\x0b\x32\x19.billing.v1alpha1.BillingR\x07\x62illing\"N\n\x15\x43reateBillingResponse\x12\x1d\n\nbilling_id\x18\x01 \x01(\tR\tbillingId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"2\n\x11GetBillingRequest\x12\x1d\n\nbilling_id\x18\x01 \x01(\tR\tbillingId\"I\n\x12GetBillingResponse\x12\x33\n\x07\x62illing\x18\x01 \x01(\x0b\x32\x19.billing.v1alpha1.BillingR\x07\x62illing\"5\n\x14UpdateBillingRequest\x12\x1d\n\nbilling_id\x18\x01 \x01(\tR\tbillingId\"N\n\x15UpdateBillingResponse\x12\x1d\n\nbilling_id\x18\x01 \x01(\tR\tbillingId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xb3\x02\n\x0e\x42illingService\x12\x62\n\rCreateBilling\x12&.billing.v1alpha1.CreateBillingRequest\x1a\'.billing.v1alpha1.CreateBillingResponse\"\x00\x12Y\n\nGetBilling\x12#.billing.v1alpha1.GetBillingRequest\x1a$.billing.v1alpha1.GetBillingResponse\"\x00\x12\x62\n\rUpdateBilling\x12&.billing.v1alpha1.UpdateBillingRequest\x1a\'.billing.v1alpha1.UpdateBillingResponse\"\x00\x42\x37Z5github.com/cuemby/ccp-billing-service/billingv1alpha1b\x06proto3'
   ,
   dependencies=[billing_dot_v1alpha1_dot_billing__pb2.DESCRIPTOR,])
 
@@ -162,14 +162,21 @@ _GETBILLINGRESPONSE = _descriptor.Descriptor(
 )
 
 
-_LISTBILLINGSREQUEST = _descriptor.Descriptor(
-  name='ListBillingsRequest',
-  full_name='billing.v1alpha1.ListBillingsRequest',
+_UPDATEBILLINGREQUEST = _descriptor.Descriptor(
+  name='UpdateBillingRequest',
+  full_name='billing.v1alpha1.UpdateBillingRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='billing_id', full_name='billing.v1alpha1.UpdateBillingRequest.billing_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='billingId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -183,57 +190,7 @@ _LISTBILLINGSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=372,
-  serialized_end=393,
-)
-
-
-_LISTBILLINGSRESPONSE = _descriptor.Descriptor(
-  name='ListBillingsResponse',
-  full_name='billing.v1alpha1.ListBillingsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=395,
-  serialized_end=417,
-)
-
-
-_UPDATEBILLINGREQUEST = _descriptor.Descriptor(
-  name='UpdateBillingRequest',
-  full_name='billing.v1alpha1.UpdateBillingRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=419,
-  serialized_end=441,
+  serialized_end=425,
 )
 
 
@@ -245,6 +202,20 @@ _UPDATEBILLINGRESPONSE = _descriptor.Descriptor(
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='billing_id', full_name='billing.v1alpha1.UpdateBillingResponse.billing_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='billingId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='billing.v1alpha1.UpdateBillingResponse.status', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -257,8 +228,8 @@ _UPDATEBILLINGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=443,
-  serialized_end=466,
+  serialized_start=427,
+  serialized_end=505,
 )
 
 _CREATEBILLINGREQUEST.fields_by_name['billing'].message_type = billing_dot_v1alpha1_dot_billing__pb2._BILLING
@@ -267,8 +238,6 @@ DESCRIPTOR.message_types_by_name['CreateBillingRequest'] = _CREATEBILLINGREQUEST
 DESCRIPTOR.message_types_by_name['CreateBillingResponse'] = _CREATEBILLINGRESPONSE
 DESCRIPTOR.message_types_by_name['GetBillingRequest'] = _GETBILLINGREQUEST
 DESCRIPTOR.message_types_by_name['GetBillingResponse'] = _GETBILLINGRESPONSE
-DESCRIPTOR.message_types_by_name['ListBillingsRequest'] = _LISTBILLINGSREQUEST
-DESCRIPTOR.message_types_by_name['ListBillingsResponse'] = _LISTBILLINGSRESPONSE
 DESCRIPTOR.message_types_by_name['UpdateBillingRequest'] = _UPDATEBILLINGREQUEST
 DESCRIPTOR.message_types_by_name['UpdateBillingResponse'] = _UPDATEBILLINGRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -301,20 +270,6 @@ GetBillingResponse = _reflection.GeneratedProtocolMessageType('GetBillingRespons
   })
 _sym_db.RegisterMessage(GetBillingResponse)
 
-ListBillingsRequest = _reflection.GeneratedProtocolMessageType('ListBillingsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTBILLINGSREQUEST,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.ListBillingsRequest)
-  })
-_sym_db.RegisterMessage(ListBillingsRequest)
-
-ListBillingsResponse = _reflection.GeneratedProtocolMessageType('ListBillingsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTBILLINGSRESPONSE,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.ListBillingsResponse)
-  })
-_sym_db.RegisterMessage(ListBillingsResponse)
-
 UpdateBillingRequest = _reflection.GeneratedProtocolMessageType('UpdateBillingRequest', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEBILLINGREQUEST,
   '__module__' : 'billing.v1alpha1.billing_api_pb2'
@@ -339,8 +294,8 @@ _BILLINGSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=469,
-  serialized_end=873,
+  serialized_start=508,
+  serialized_end=815,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateBilling',
@@ -363,19 +318,9 @@ _BILLINGSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='ListBillings',
-    full_name='billing.v1alpha1.BillingService.ListBillings',
-    index=2,
-    containing_service=None,
-    input_type=_LISTBILLINGSREQUEST,
-    output_type=_LISTBILLINGSRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
     name='UpdateBilling',
     full_name='billing.v1alpha1.BillingService.UpdateBilling',
-    index=3,
+    index=2,
     containing_service=None,
     input_type=_UPDATEBILLINGREQUEST,
     output_type=_UPDATEBILLINGRESPONSE,

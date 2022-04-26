@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class UpdateBillingRequest extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string billing_id = 1 [json_name = "billingId"];</code>
+     */
+    protected $billing_id = '';
 
     /**
      * Constructor.
@@ -20,11 +24,34 @@ class UpdateBillingRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $billing_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Billing\V1Alpha1\BillingApi::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string billing_id = 1 [json_name = "billingId"];</code>
+     * @return string
+     */
+    public function getBillingId()
+    {
+        return $this->billing_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string billing_id = 1 [json_name = "billingId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBillingId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->billing_id = $var;
+
+        return $this;
     }
 
 }

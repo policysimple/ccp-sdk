@@ -50,13 +50,6 @@ class BillingService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::GetBillingResponse>> PrepareAsyncGetBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::GetBillingRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::GetBillingResponse>>(PrepareAsyncGetBillingRaw(context, request, cq));
     }
-    virtual ::grpc::Status ListBillings(::grpc::ClientContext* context, const ::billing::v1alpha1::ListBillingsRequest& request, ::billing::v1alpha1::ListBillingsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::ListBillingsResponse>> AsyncListBillings(::grpc::ClientContext* context, const ::billing::v1alpha1::ListBillingsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::ListBillingsResponse>>(AsyncListBillingsRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::ListBillingsResponse>> PrepareAsyncListBillings(::grpc::ClientContext* context, const ::billing::v1alpha1::ListBillingsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::ListBillingsResponse>>(PrepareAsyncListBillingsRaw(context, request, cq));
-    }
     virtual ::grpc::Status UpdateBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateBillingRequest& request, ::billing::v1alpha1::UpdateBillingResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::UpdateBillingResponse>> AsyncUpdateBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateBillingRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::UpdateBillingResponse>>(AsyncUpdateBillingRaw(context, request, cq));
@@ -69,7 +62,6 @@ class BillingService final {
       virtual ~experimental_async_interface() {}
       virtual void CreateBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateBillingRequest* request, ::billing::v1alpha1::CreateBillingResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::GetBillingRequest* request, ::billing::v1alpha1::GetBillingResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void ListBillings(::grpc::ClientContext* context, const ::billing::v1alpha1::ListBillingsRequest* request, ::billing::v1alpha1::ListBillingsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateBillingRequest* request, ::billing::v1alpha1::UpdateBillingResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
@@ -78,8 +70,6 @@ class BillingService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::CreateBillingResponse>* PrepareAsyncCreateBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateBillingRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::GetBillingResponse>* AsyncGetBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::GetBillingRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::GetBillingResponse>* PrepareAsyncGetBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::GetBillingRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::ListBillingsResponse>* AsyncListBillingsRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::ListBillingsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::ListBillingsResponse>* PrepareAsyncListBillingsRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::ListBillingsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::UpdateBillingResponse>* AsyncUpdateBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateBillingRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::billing::v1alpha1::UpdateBillingResponse>* PrepareAsyncUpdateBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateBillingRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
@@ -100,13 +90,6 @@ class BillingService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::GetBillingResponse>> PrepareAsyncGetBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::GetBillingRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::GetBillingResponse>>(PrepareAsyncGetBillingRaw(context, request, cq));
     }
-    ::grpc::Status ListBillings(::grpc::ClientContext* context, const ::billing::v1alpha1::ListBillingsRequest& request, ::billing::v1alpha1::ListBillingsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::ListBillingsResponse>> AsyncListBillings(::grpc::ClientContext* context, const ::billing::v1alpha1::ListBillingsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::ListBillingsResponse>>(AsyncListBillingsRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::ListBillingsResponse>> PrepareAsyncListBillings(::grpc::ClientContext* context, const ::billing::v1alpha1::ListBillingsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::ListBillingsResponse>>(PrepareAsyncListBillingsRaw(context, request, cq));
-    }
     ::grpc::Status UpdateBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateBillingRequest& request, ::billing::v1alpha1::UpdateBillingResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::UpdateBillingResponse>> AsyncUpdateBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateBillingRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::UpdateBillingResponse>>(AsyncUpdateBillingRaw(context, request, cq));
@@ -119,7 +102,6 @@ class BillingService final {
      public:
       void CreateBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateBillingRequest* request, ::billing::v1alpha1::CreateBillingResponse* response, std::function<void(::grpc::Status)>) override;
       void GetBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::GetBillingRequest* request, ::billing::v1alpha1::GetBillingResponse* response, std::function<void(::grpc::Status)>) override;
-      void ListBillings(::grpc::ClientContext* context, const ::billing::v1alpha1::ListBillingsRequest* request, ::billing::v1alpha1::ListBillingsResponse* response, std::function<void(::grpc::Status)>) override;
       void UpdateBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateBillingRequest* request, ::billing::v1alpha1::UpdateBillingResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
@@ -136,13 +118,10 @@ class BillingService final {
     ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::CreateBillingResponse>* PrepareAsyncCreateBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateBillingRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::GetBillingResponse>* AsyncGetBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::GetBillingRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::GetBillingResponse>* PrepareAsyncGetBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::GetBillingRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::ListBillingsResponse>* AsyncListBillingsRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::ListBillingsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::ListBillingsResponse>* PrepareAsyncListBillingsRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::ListBillingsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::UpdateBillingResponse>* AsyncUpdateBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateBillingRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::UpdateBillingResponse>* PrepareAsyncUpdateBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateBillingRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateBilling_;
     const ::grpc::internal::RpcMethod rpcmethod_GetBilling_;
-    const ::grpc::internal::RpcMethod rpcmethod_ListBillings_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateBilling_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
@@ -153,7 +132,6 @@ class BillingService final {
     virtual ~Service();
     virtual ::grpc::Status CreateBilling(::grpc::ServerContext* context, const ::billing::v1alpha1::CreateBillingRequest* request, ::billing::v1alpha1::CreateBillingResponse* response);
     virtual ::grpc::Status GetBilling(::grpc::ServerContext* context, const ::billing::v1alpha1::GetBillingRequest* request, ::billing::v1alpha1::GetBillingResponse* response);
-    virtual ::grpc::Status ListBillings(::grpc::ServerContext* context, const ::billing::v1alpha1::ListBillingsRequest* request, ::billing::v1alpha1::ListBillingsResponse* response);
     virtual ::grpc::Status UpdateBilling(::grpc::ServerContext* context, const ::billing::v1alpha1::UpdateBillingRequest* request, ::billing::v1alpha1::UpdateBillingResponse* response);
   };
   template <class BaseClass>
@@ -197,32 +175,12 @@ class BillingService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_ListBillings : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithAsyncMethod_ListBillings() {
-      ::grpc::Service::MarkMethodAsync(2);
-    }
-    ~WithAsyncMethod_ListBillings() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ListBillings(::grpc::ServerContext* context, const ::billing::v1alpha1::ListBillingsRequest* request, ::billing::v1alpha1::ListBillingsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestListBillings(::grpc::ServerContext* context, ::billing::v1alpha1::ListBillingsRequest* request, ::grpc::ServerAsyncResponseWriter< ::billing::v1alpha1::ListBillingsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithAsyncMethod_UpdateBilling : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_UpdateBilling() {
-      ::grpc::Service::MarkMethodAsync(3);
+      ::grpc::Service::MarkMethodAsync(2);
     }
     ~WithAsyncMethod_UpdateBilling() override {
       BaseClassMustBeDerivedFromService(this);
@@ -233,10 +191,10 @@ class BillingService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateBilling(::grpc::ServerContext* context, ::billing::v1alpha1::UpdateBillingRequest* request, ::grpc::ServerAsyncResponseWriter< ::billing::v1alpha1::UpdateBillingResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateBilling<WithAsyncMethod_GetBilling<WithAsyncMethod_ListBillings<WithAsyncMethod_UpdateBilling<Service > > > > AsyncService;
+  typedef WithAsyncMethod_CreateBilling<WithAsyncMethod_GetBilling<WithAsyncMethod_UpdateBilling<Service > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateBilling : public BaseClass {
    private:
@@ -272,29 +230,12 @@ class BillingService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_ListBillings : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithGenericMethod_ListBillings() {
-      ::grpc::Service::MarkMethodGeneric(2);
-    }
-    ~WithGenericMethod_ListBillings() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ListBillings(::grpc::ServerContext* context, const ::billing::v1alpha1::ListBillingsRequest* request, ::billing::v1alpha1::ListBillingsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
   class WithGenericMethod_UpdateBilling : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_UpdateBilling() {
-      ::grpc::Service::MarkMethodGeneric(3);
+      ::grpc::Service::MarkMethodGeneric(2);
     }
     ~WithGenericMethod_UpdateBilling() override {
       BaseClassMustBeDerivedFromService(this);
@@ -346,32 +287,12 @@ class BillingService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_ListBillings : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithRawMethod_ListBillings() {
-      ::grpc::Service::MarkMethodRaw(2);
-    }
-    ~WithRawMethod_ListBillings() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ListBillings(::grpc::ServerContext* context, const ::billing::v1alpha1::ListBillingsRequest* request, ::billing::v1alpha1::ListBillingsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestListBillings(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithRawMethod_UpdateBilling : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_UpdateBilling() {
-      ::grpc::Service::MarkMethodRaw(3);
+      ::grpc::Service::MarkMethodRaw(2);
     }
     ~WithRawMethod_UpdateBilling() override {
       BaseClassMustBeDerivedFromService(this);
@@ -382,7 +303,7 @@ class BillingService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateBilling(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -426,32 +347,12 @@ class BillingService final {
     virtual ::grpc::Status StreamedGetBilling(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::billing::v1alpha1::GetBillingRequest,::billing::v1alpha1::GetBillingResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_ListBillings : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithStreamedUnaryMethod_ListBillings() {
-      ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::billing::v1alpha1::ListBillingsRequest, ::billing::v1alpha1::ListBillingsResponse>(std::bind(&WithStreamedUnaryMethod_ListBillings<BaseClass>::StreamedListBillings, this, std::placeholders::_1, std::placeholders::_2)));
-    }
-    ~WithStreamedUnaryMethod_ListBillings() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status ListBillings(::grpc::ServerContext* context, const ::billing::v1alpha1::ListBillingsRequest* request, ::billing::v1alpha1::ListBillingsResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedListBillings(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::billing::v1alpha1::ListBillingsRequest,::billing::v1alpha1::ListBillingsResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_UpdateBilling : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_UpdateBilling() {
-      ::grpc::Service::MarkMethodStreamed(3,
+      ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler< ::billing::v1alpha1::UpdateBillingRequest, ::billing::v1alpha1::UpdateBillingResponse>(std::bind(&WithStreamedUnaryMethod_UpdateBilling<BaseClass>::StreamedUpdateBilling, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_UpdateBilling() override {
@@ -465,9 +366,9 @@ class BillingService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedUpdateBilling(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::billing::v1alpha1::UpdateBillingRequest,::billing::v1alpha1::UpdateBillingResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateBilling<WithStreamedUnaryMethod_GetBilling<WithStreamedUnaryMethod_ListBillings<WithStreamedUnaryMethod_UpdateBilling<Service > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateBilling<WithStreamedUnaryMethod_GetBilling<WithStreamedUnaryMethod_UpdateBilling<Service > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateBilling<WithStreamedUnaryMethod_GetBilling<WithStreamedUnaryMethod_ListBillings<WithStreamedUnaryMethod_UpdateBilling<Service > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateBilling<WithStreamedUnaryMethod_GetBilling<WithStreamedUnaryMethod_UpdateBilling<Service > > > StreamedService;
 };
 
 }  // namespace v1alpha1

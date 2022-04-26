@@ -20,7 +20,6 @@ const _ = grpc.SupportPackageIsVersion7
 type BillingServiceClient interface {
 	CreateBilling(ctx context.Context, in *CreateBillingRequest, opts ...grpc.CallOption) (*CreateBillingResponse, error)
 	GetBilling(ctx context.Context, in *GetBillingRequest, opts ...grpc.CallOption) (*GetBillingResponse, error)
-	ListBillings(ctx context.Context, in *ListBillingsRequest, opts ...grpc.CallOption) (*ListBillingsResponse, error)
 	UpdateBilling(ctx context.Context, in *UpdateBillingRequest, opts ...grpc.CallOption) (*UpdateBillingResponse, error)
 }
 
@@ -50,15 +49,6 @@ func (c *billingServiceClient) GetBilling(ctx context.Context, in *GetBillingReq
 	return out, nil
 }
 
-func (c *billingServiceClient) ListBillings(ctx context.Context, in *ListBillingsRequest, opts ...grpc.CallOption) (*ListBillingsResponse, error) {
-	out := new(ListBillingsResponse)
-	err := c.cc.Invoke(ctx, "/billing.v1alpha1.BillingService/ListBillings", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *billingServiceClient) UpdateBilling(ctx context.Context, in *UpdateBillingRequest, opts ...grpc.CallOption) (*UpdateBillingResponse, error) {
 	out := new(UpdateBillingResponse)
 	err := c.cc.Invoke(ctx, "/billing.v1alpha1.BillingService/UpdateBilling", in, out, opts...)
@@ -74,7 +64,6 @@ func (c *billingServiceClient) UpdateBilling(ctx context.Context, in *UpdateBill
 type BillingServiceServer interface {
 	CreateBilling(context.Context, *CreateBillingRequest) (*CreateBillingResponse, error)
 	GetBilling(context.Context, *GetBillingRequest) (*GetBillingResponse, error)
-	ListBillings(context.Context, *ListBillingsRequest) (*ListBillingsResponse, error)
 	UpdateBilling(context.Context, *UpdateBillingRequest) (*UpdateBillingResponse, error)
 }
 
@@ -87,9 +76,6 @@ func (UnimplementedBillingServiceServer) CreateBilling(context.Context, *CreateB
 }
 func (UnimplementedBillingServiceServer) GetBilling(context.Context, *GetBillingRequest) (*GetBillingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBilling not implemented")
-}
-func (UnimplementedBillingServiceServer) ListBillings(context.Context, *ListBillingsRequest) (*ListBillingsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListBillings not implemented")
 }
 func (UnimplementedBillingServiceServer) UpdateBilling(context.Context, *UpdateBillingRequest) (*UpdateBillingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateBilling not implemented")
@@ -142,24 +128,6 @@ func _BillingService_GetBilling_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BillingService_ListBillings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListBillingsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(BillingServiceServer).ListBillings(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/billing.v1alpha1.BillingService/ListBillings",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BillingServiceServer).ListBillings(ctx, req.(*ListBillingsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _BillingService_UpdateBilling_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateBillingRequest)
 	if err := dec(in); err != nil {
@@ -192,10 +160,6 @@ var BillingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetBilling",
 			Handler:    _BillingService_GetBilling_Handler,
-		},
-		{
-			MethodName: "ListBillings",
-			Handler:    _BillingService_ListBillings_Handler,
 		},
 		{
 			MethodName: "UpdateBilling",
