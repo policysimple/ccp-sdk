@@ -39,6 +39,18 @@ class Payment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
      */
     protected $expiry_date = 0;
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 8 [json_name = "projectId"];</code>
+     */
+    protected $project_id = 0;
+    /**
+     * Generated from protobuf field <code>string application_id = 9 [json_name = "applicationId"];</code>
+     */
+    protected $application_id = '';
 
     /**
      * Constructor.
@@ -52,6 +64,9 @@ class Payment extends \Google\Protobuf\Internal\Message
      *     @type int $card_number
      *     @type int $cvv_number
      *     @type int $expiry_date
+     *     @type int $organization_id
+     *     @type int $project_id
+     *     @type string $application_id
      * }
      */
     public function __construct($data = NULL) {
@@ -187,6 +202,72 @@ class Payment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->expiry_date = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 8 [json_name = "projectId"];</code>
+     * @return int
+     */
+    public function getProjectId()
+    {
+        return $this->project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 8 [json_name = "projectId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setProjectId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->project_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_id = 9 [json_name = "applicationId"];</code>
+     * @return string
+     */
+    public function getApplicationId()
+    {
+        return $this->application_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_id = 9 [json_name = "applicationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setApplicationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->application_id = $var;
 
         return $this;
     }

@@ -16,8 +16,8 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-÷
-payment/v1alpha1/payment.protopayment.v1alpha1"Á
+æ
+payment/v1alpha1/payment.protopayment.v1alpha1"°
 Payment
 id (	Rid(
 card_holder_name (	RcardHolderName
@@ -27,7 +27,11 @@ cardNumber
 
 cvv_number (R	cvvNumber
 expiry_date (R
-expiryDate">
+expiryDate\'
+organization_id (RorganizationId
+
+project_id (R	projectId%
+application_id	 (	RapplicationId">
 PaymentList/
 items (2.payment.v1alpha1.PaymentRitemsB7Z5github.com/cuemby/ccp-payment-service/paymentv1alpha1bproto3'
         , true);

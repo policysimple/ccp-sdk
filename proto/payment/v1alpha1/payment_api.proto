@@ -51,6 +51,9 @@ message DeletePaymentRequest {
     int32 card_number = 4;
     int32 cvv_number = 5;
     int32 expiry_date = 6;
+    uint32 organization_id = 7;
+    uint32 project_id = 8;
+    string application_id = 9;
 }
 
 message DeletePaymentResponse {

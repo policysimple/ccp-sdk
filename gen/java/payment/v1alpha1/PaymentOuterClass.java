@@ -71,6 +71,30 @@ public final class PaymentOuterClass {
      * @return The expiryDate.
      */
     int getExpiryDate();
+
+    /**
+     * <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    int getOrganizationId();
+
+    /**
+     * <code>uint32 project_id = 8 [json_name = "projectId"];</code>
+     * @return The projectId.
+     */
+    int getProjectId();
+
+    /**
+     * <code>string application_id = 9 [json_name = "applicationId"];</code>
+     * @return The applicationId.
+     */
+    java.lang.String getApplicationId();
+    /**
+     * <code>string application_id = 9 [json_name = "applicationId"];</code>
+     * @return The bytes for applicationId.
+     */
+    com.google.protobuf.ByteString
+        getApplicationIdBytes();
   }
   /**
    * <pre>
@@ -92,6 +116,7 @@ public final class PaymentOuterClass {
       id_ = "";
       cardHolderName_ = "";
       cardType_ = "";
+      applicationId_ = "";
     }
 
     @java.lang.Override
@@ -155,6 +180,22 @@ public final class PaymentOuterClass {
             case 48: {
 
               expiryDate_ = input.readInt32();
+              break;
+            }
+            case 56: {
+
+              organizationId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              projectId_ = input.readUInt32();
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              applicationId_ = s;
               break;
             }
             default: {
@@ -336,6 +377,66 @@ public final class PaymentOuterClass {
       return expiryDate_;
     }
 
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 7;
+    private int organizationId_;
+    /**
+     * <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    @java.lang.Override
+    public int getOrganizationId() {
+      return organizationId_;
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 8;
+    private int projectId_;
+    /**
+     * <code>uint32 project_id = 8 [json_name = "projectId"];</code>
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public int getProjectId() {
+      return projectId_;
+    }
+
+    public static final int APPLICATION_ID_FIELD_NUMBER = 9;
+    private volatile java.lang.Object applicationId_;
+    /**
+     * <code>string application_id = 9 [json_name = "applicationId"];</code>
+     * @return The applicationId.
+     */
+    @java.lang.Override
+    public java.lang.String getApplicationId() {
+      java.lang.Object ref = applicationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        applicationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string application_id = 9 [json_name = "applicationId"];</code>
+     * @return The bytes for applicationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApplicationIdBytes() {
+      java.lang.Object ref = applicationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        applicationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -368,6 +469,15 @@ public final class PaymentOuterClass {
       if (expiryDate_ != 0) {
         output.writeInt32(6, expiryDate_);
       }
+      if (organizationId_ != 0) {
+        output.writeUInt32(7, organizationId_);
+      }
+      if (projectId_ != 0) {
+        output.writeUInt32(8, projectId_);
+      }
+      if (!getApplicationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, applicationId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -398,6 +508,17 @@ public final class PaymentOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(6, expiryDate_);
       }
+      if (organizationId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, organizationId_);
+      }
+      if (projectId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, projectId_);
+      }
+      if (!getApplicationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, applicationId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -425,6 +546,12 @@ public final class PaymentOuterClass {
           != other.getCvvNumber()) return false;
       if (getExpiryDate()
           != other.getExpiryDate()) return false;
+      if (getOrganizationId()
+          != other.getOrganizationId()) return false;
+      if (getProjectId()
+          != other.getProjectId()) return false;
+      if (!getApplicationId()
+          .equals(other.getApplicationId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -448,6 +575,12 @@ public final class PaymentOuterClass {
       hash = (53 * hash) + getCvvNumber();
       hash = (37 * hash) + EXPIRY_DATE_FIELD_NUMBER;
       hash = (53 * hash) + getExpiryDate();
+      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationId();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId();
+      hash = (37 * hash) + APPLICATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getApplicationId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -597,6 +730,12 @@ public final class PaymentOuterClass {
 
         expiryDate_ = 0;
 
+        organizationId_ = 0;
+
+        projectId_ = 0;
+
+        applicationId_ = "";
+
         return this;
       }
 
@@ -629,6 +768,9 @@ public final class PaymentOuterClass {
         result.cardNumber_ = cardNumber_;
         result.cvvNumber_ = cvvNumber_;
         result.expiryDate_ = expiryDate_;
+        result.organizationId_ = organizationId_;
+        result.projectId_ = projectId_;
+        result.applicationId_ = applicationId_;
         onBuilt();
         return result;
       }
@@ -697,6 +839,16 @@ public final class PaymentOuterClass {
         }
         if (other.getExpiryDate() != 0) {
           setExpiryDate(other.getExpiryDate());
+        }
+        if (other.getOrganizationId() != 0) {
+          setOrganizationId(other.getOrganizationId());
+        }
+        if (other.getProjectId() != 0) {
+          setProjectId(other.getProjectId());
+        }
+        if (!other.getApplicationId().isEmpty()) {
+          applicationId_ = other.applicationId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1044,6 +1196,144 @@ public final class PaymentOuterClass {
       public Builder clearExpiryDate() {
         
         expiryDate_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int organizationId_ ;
+      /**
+       * <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+       * @return The organizationId.
+       */
+      @java.lang.Override
+      public int getOrganizationId() {
+        return organizationId_;
+      }
+      /**
+       * <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+       * @param value The organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationId(int value) {
+        
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOrganizationId() {
+        
+        organizationId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int projectId_ ;
+      /**
+       * <code>uint32 project_id = 8 [json_name = "projectId"];</code>
+       * @return The projectId.
+       */
+      @java.lang.Override
+      public int getProjectId() {
+        return projectId_;
+      }
+      /**
+       * <code>uint32 project_id = 8 [json_name = "projectId"];</code>
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(int value) {
+        
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 project_id = 8 [json_name = "projectId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+        
+        projectId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object applicationId_ = "";
+      /**
+       * <code>string application_id = 9 [json_name = "applicationId"];</code>
+       * @return The applicationId.
+       */
+      public java.lang.String getApplicationId() {
+        java.lang.Object ref = applicationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          applicationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string application_id = 9 [json_name = "applicationId"];</code>
+       * @return The bytes for applicationId.
+       */
+      public com.google.protobuf.ByteString
+          getApplicationIdBytes() {
+        java.lang.Object ref = applicationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          applicationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string application_id = 9 [json_name = "applicationId"];</code>
+       * @param value The applicationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApplicationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        applicationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string application_id = 9 [json_name = "applicationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApplicationId() {
+        
+        applicationId_ = getDefaultInstance().getApplicationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string application_id = 9 [json_name = "applicationId"];</code>
+       * @param value The bytes for applicationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApplicationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        applicationId_ = value;
         onChanged();
         return this;
       }
@@ -1913,15 +2203,18 @@ public final class PaymentOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036payment/v1alpha1/payment.proto\022\020paymen" +
-      "t.v1alpha1\"\301\001\n\007Payment\022\016\n\002id\030\001 \001(\tR\002id\022(" +
+      "t.v1alpha1\"\260\002\n\007Payment\022\016\n\002id\030\001 \001(\tR\002id\022(" +
       "\n\020card_holder_name\030\002 \001(\tR\016cardHolderName" +
       "\022\033\n\tcard_type\030\003 \001(\tR\010cardType\022\037\n\013card_nu" +
       "mber\030\004 \001(\005R\ncardNumber\022\035\n\ncvv_number\030\005 \001" +
       "(\005R\tcvvNumber\022\037\n\013expiry_date\030\006 \001(\005R\nexpi" +
-      "ryDate\">\n\013PaymentList\022/\n\005items\030\001 \003(\0132\031.p" +
-      "ayment.v1alpha1.PaymentR\005itemsB7Z5github" +
-      ".com/cuemby/ccp-payment-service/paymentv" +
-      "1alpha1b\006proto3"
+      "ryDate\022\'\n\017organization_id\030\007 \001(\rR\016organiz" +
+      "ationId\022\035\n\nproject_id\030\010 \001(\rR\tprojectId\022%" +
+      "\n\016application_id\030\t \001(\tR\rapplicationId\">\n" +
+      "\013PaymentList\022/\n\005items\030\001 \003(\0132\031.payment.v1" +
+      "alpha1.PaymentR\005itemsB7Z5github.com/cuem" +
+      "by/ccp-payment-service/paymentv1alpha1b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1932,7 +2225,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_Payment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Payment_descriptor,
-        new java.lang.String[] { "Id", "CardHolderName", "CardType", "CardNumber", "CvvNumber", "ExpiryDate", });
+        new java.lang.String[] { "Id", "CardHolderName", "CardType", "CardNumber", "CvvNumber", "ExpiryDate", "OrganizationId", "ProjectId", "ApplicationId", });
     internal_static_payment_v1alpha1_PaymentList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_payment_v1alpha1_PaymentList_fieldAccessorTable = new

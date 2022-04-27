@@ -85,40 +85,42 @@ public final class PaymentAPIProto {
       "ayment\022\026\n\006status\030\002 \001(\tR\006status\"d\n\025Update" +
       "PaymentResponse\0223\n\007payment\030\001 \001(\0132\031.payme" +
       "nt.v1alpha1.PaymentR\007payment\022\026\n\006status\030\002" +
-      " \001(\tR\006status\"\316\001\n\024DeletePaymentRequest\022\016\n" +
+      " \001(\tR\006status\"\275\002\n\024DeletePaymentRequest\022\016\n" +
       "\002id\030\001 \001(\tR\002id\022(\n\020card_holder_name\030\002 \001(\tR" +
       "\016cardHolderName\022\033\n\tcard_type\030\003 \001(\tR\010card" +
       "Type\022\037\n\013card_number\030\004 \001(\005R\ncardNumber\022\035\n" +
       "\ncvv_number\030\005 \001(\005R\tcvvNumber\022\037\n\013expiry_d" +
-      "ate\030\006 \001(\005R\nexpiryDate\"/\n\025DeletePaymentRe" +
-      "sponse\022\026\n\006status\030\001 \001(\tR\006status\"#\n\021GetPay" +
-      "mentRequest\022\016\n\002id\030\001 \001(\tR\002id\"a\n\022GetPaymen" +
-      "tResponse\0223\n\007payment\030\001 \001(\0132\031.payment.v1a" +
-      "lpha1.PaymentR\007payment\022\026\n\006status\030\002 \001(\tR\006" +
-      "status\"\214\001\n\022ListPaymentRequest\022\016\n\002id\030\001 \001(" +
-      "\rR\002id\022(\n\020card_holder_name\030\002 \001(\tR\016cardHol" +
-      "derName\022\033\n\tcard_type\030\003 \001(\tR\010cardType\022\037\n\013" +
-      "card_number\030\004 \001(\005R\ncardNumber\"o\n\023ListPay" +
-      "mentResponse\022@\n\014payment_list\030\001 \001(\0132\035.pay" +
-      "ment.v1alpha1.PaymentListR\013paymentList\022\026" +
-      "\n\006status\030\002 \001(\tR\006status2\370\003\n\021PaymentAPISer" +
-      "vice\022Y\n\nGetPayment\022#.payment.v1alpha1.Ge" +
-      "tPaymentRequest\032$.payment.v1alpha1.GetPa" +
-      "ymentResponse\"\000\022b\n\rCreatePayment\022&.payme" +
-      "nt.v1alpha1.CreatePaymentRequest\032\'.payme" +
-      "nt.v1alpha1.CreatePaymentResponse\"\000\022b\n\rU" +
-      "pdatePayment\022&.payment.v1alpha1.UpdatePa" +
-      "ymentRequest\032\'.payment.v1alpha1.UpdatePa" +
-      "ymentResponse\"\000\022b\n\rDeletePayment\022&.payme" +
-      "nt.v1alpha1.DeletePaymentRequest\032\'.payme" +
-      "nt.v1alpha1.DeletePaymentResponse\"\000\022\\\n\013L" +
-      "istPayment\022$.payment.v1alpha1.ListPaymen" +
-      "tRequest\032%.payment.v1alpha1.ListPaymentR" +
-      "esponse\"\000B\222\001\n\032io.cuemby.payment.v1alpha1" +
-      "B\017PaymentAPIProtoP\001Z5github.com/cuemby/c" +
-      "cp-payment-service/paymentv1alpha1\242\002\003PPX" +
-      "\252\002\020Payment.V1Alpha1\312\002\020Payment\\V1Alpha1b\006" +
-      "proto3"
+      "ate\030\006 \001(\005R\nexpiryDate\022\'\n\017organization_id" +
+      "\030\007 \001(\rR\016organizationId\022\035\n\nproject_id\030\010 \001" +
+      "(\rR\tprojectId\022%\n\016application_id\030\t \001(\tR\ra" +
+      "pplicationId\"/\n\025DeletePaymentResponse\022\026\n" +
+      "\006status\030\001 \001(\tR\006status\"#\n\021GetPaymentReque" +
+      "st\022\016\n\002id\030\001 \001(\tR\002id\"a\n\022GetPaymentResponse" +
+      "\0223\n\007payment\030\001 \001(\0132\031.payment.v1alpha1.Pay" +
+      "mentR\007payment\022\026\n\006status\030\002 \001(\tR\006status\"\214\001" +
+      "\n\022ListPaymentRequest\022\016\n\002id\030\001 \001(\rR\002id\022(\n\020" +
+      "card_holder_name\030\002 \001(\tR\016cardHolderName\022\033" +
+      "\n\tcard_type\030\003 \001(\tR\010cardType\022\037\n\013card_numb" +
+      "er\030\004 \001(\005R\ncardNumber\"o\n\023ListPaymentRespo" +
+      "nse\022@\n\014payment_list\030\001 \001(\0132\035.payment.v1al" +
+      "pha1.PaymentListR\013paymentList\022\026\n\006status\030" +
+      "\002 \001(\tR\006status2\370\003\n\021PaymentAPIService\022Y\n\nG" +
+      "etPayment\022#.payment.v1alpha1.GetPaymentR" +
+      "equest\032$.payment.v1alpha1.GetPaymentResp" +
+      "onse\"\000\022b\n\rCreatePayment\022&.payment.v1alph" +
+      "a1.CreatePaymentRequest\032\'.payment.v1alph" +
+      "a1.CreatePaymentResponse\"\000\022b\n\rUpdatePaym" +
+      "ent\022&.payment.v1alpha1.UpdatePaymentRequ" +
+      "est\032\'.payment.v1alpha1.UpdatePaymentResp" +
+      "onse\"\000\022b\n\rDeletePayment\022&.payment.v1alph" +
+      "a1.DeletePaymentRequest\032\'.payment.v1alph" +
+      "a1.DeletePaymentResponse\"\000\022\\\n\013ListPaymen" +
+      "t\022$.payment.v1alpha1.ListPaymentRequest\032" +
+      "%.payment.v1alpha1.ListPaymentResponse\"\000" +
+      "B\222\001\n\032io.cuemby.payment.v1alpha1B\017Payment" +
+      "APIProtoP\001Z5github.com/cuemby/ccp-paymen" +
+      "t-service/paymentv1alpha1\242\002\003PPX\252\002\020Paymen" +
+      "t.V1Alpha1\312\002\020Payment\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -154,7 +156,7 @@ public final class PaymentAPIProto {
     internal_static_payment_v1alpha1_DeletePaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_DeletePaymentRequest_descriptor,
-        new java.lang.String[] { "Id", "CardHolderName", "CardType", "CardNumber", "CvvNumber", "ExpiryDate", });
+        new java.lang.String[] { "Id", "CardHolderName", "CardType", "CardNumber", "CvvNumber", "ExpiryDate", "OrganizationId", "ProjectId", "ApplicationId", });
     internal_static_payment_v1alpha1_DeletePaymentResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_payment_v1alpha1_DeletePaymentResponse_fieldAccessorTable = new

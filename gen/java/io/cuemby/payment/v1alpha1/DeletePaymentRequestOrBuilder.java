@@ -60,4 +60,28 @@ public interface DeletePaymentRequestOrBuilder extends
    * @return The expiryDate.
    */
   int getExpiryDate();
+
+  /**
+   * <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+   * @return The organizationId.
+   */
+  int getOrganizationId();
+
+  /**
+   * <code>uint32 project_id = 8 [json_name = "projectId"];</code>
+   * @return The projectId.
+   */
+  int getProjectId();
+
+  /**
+   * <code>string application_id = 9 [json_name = "applicationId"];</code>
+   * @return The applicationId.
+   */
+  java.lang.String getApplicationId();
+  /**
+   * <code>string application_id = 9 [json_name = "applicationId"];</code>
+   * @return The bytes for applicationId.
+   */
+  com.google.protobuf.ByteString
+      getApplicationIdBytes();
 }
