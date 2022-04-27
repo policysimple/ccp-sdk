@@ -4,28 +4,6 @@
 var grpc = require('grpc');
 var source_v1alpha1_source_pb = require('../../source/v1alpha1/source_pb.js');
 
-function serialize_source_v1alpha1_AccountsProvidersRequest(arg) {
-  if (!(arg instanceof source_v1alpha1_source_pb.AccountsProvidersRequest)) {
-    throw new Error('Expected argument of type source.v1alpha1.AccountsProvidersRequest');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_source_v1alpha1_AccountsProvidersRequest(buffer_arg) {
-  return source_v1alpha1_source_pb.AccountsProvidersRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_source_v1alpha1_AccountsProvidersResponse(arg) {
-  if (!(arg instanceof source_v1alpha1_source_pb.AccountsProvidersResponse)) {
-    throw new Error('Expected argument of type source.v1alpha1.AccountsProvidersResponse');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_source_v1alpha1_AccountsProvidersResponse(buffer_arg) {
-  return source_v1alpha1_source_pb.AccountsProvidersResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_source_v1alpha1_CreateIntegrationRequest(arg) {
   if (!(arg instanceof source_v1alpha1_source_pb.CreateIntegrationRequest)) {
     throw new Error('Expected argument of type source.v1alpha1.CreateIntegrationRequest');
@@ -512,17 +490,6 @@ var SourceServiceService = exports.SourceServiceService = {
     requestDeserialize: deserialize_source_v1alpha1_DeleteProviderRequest,
     responseSerialize: serialize_source_v1alpha1_DeleteProviderResponse,
     responseDeserialize: deserialize_source_v1alpha1_DeleteProviderResponse,
-  },
-  accountsProviders: {
-    path: '/source.v1alpha1.SourceService/AccountsProviders',
-    requestStream: false,
-    responseStream: false,
-    requestType: source_v1alpha1_source_pb.AccountsProvidersRequest,
-    responseType: source_v1alpha1_source_pb.AccountsProvidersResponse,
-    requestSerialize: serialize_source_v1alpha1_AccountsProvidersRequest,
-    requestDeserialize: deserialize_source_v1alpha1_AccountsProvidersRequest,
-    responseSerialize: serialize_source_v1alpha1_AccountsProvidersResponse,
-    responseDeserialize: deserialize_source_v1alpha1_AccountsProvidersResponse,
   },
   // INTEGRATIONS
   createIntegration: {

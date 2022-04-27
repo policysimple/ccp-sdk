@@ -41,10 +41,6 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string provider_id = 8 [json_name = "providerId"];</code>
      */
     protected $provider_id = '';
-    /**
-     * Generated from protobuf field <code>.source.v1alpha1.AccountIntegration account = 9 [json_name = "account"];</code>
-     */
-    protected $account = null;
 
     /**
      * Constructor.
@@ -60,7 +56,6 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type string $user_id
      *     @type string $provider_id
-     *     @type \Source\V1alpha1\AccountIntegration $account
      * }
      */
     public function __construct($data = NULL) {
@@ -204,38 +199,6 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->provider_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.source.v1alpha1.AccountIntegration account = 9 [json_name = "account"];</code>
-     * @return \Source\V1alpha1\AccountIntegration|null
-     */
-    public function getAccount()
-    {
-        return $this->account;
-    }
-
-    public function hasAccount()
-    {
-        return isset($this->account);
-    }
-
-    public function clearAccount()
-    {
-        unset($this->account);
-    }
-
-    /**
-     * Generated from protobuf field <code>.source.v1alpha1.AccountIntegration account = 9 [json_name = "account"];</code>
-     * @param \Source\V1alpha1\AccountIntegration $var
-     * @return $this
-     */
-    public function setAccount($var)
-    {
-        GPBUtil::checkMessage($var, \Source\V1alpha1\AccountIntegration::class);
-        $this->account = $var;
 
         return $this;
     }

@@ -44,11 +44,6 @@ class SourceServiceStub(object):
         request_serializer=source_dot_v1alpha1_dot_source__pb2.DeleteProviderRequest.SerializeToString,
         response_deserializer=source_dot_v1alpha1_dot_source__pb2.DeleteProviderResponse.FromString,
         )
-    self.AccountsProviders = channel.unary_unary(
-        '/source.v1alpha1.SourceService/AccountsProviders',
-        request_serializer=source_dot_v1alpha1_dot_source__pb2.AccountsProvidersRequest.SerializeToString,
-        response_deserializer=source_dot_v1alpha1_dot_source__pb2.AccountsProvidersResponse.FromString,
-        )
     self.CreateIntegration = channel.unary_unary(
         '/source.v1alpha1.SourceService/CreateIntegration',
         request_serializer=source_dot_v1alpha1_dot_source__pb2.CreateIntegrationRequest.SerializeToString,
@@ -156,13 +151,6 @@ class SourceServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def DeleteProvider(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def AccountsProviders(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -292,11 +280,6 @@ def add_SourceServiceServicer_to_server(servicer, server):
           servicer.DeleteProvider,
           request_deserializer=source_dot_v1alpha1_dot_source__pb2.DeleteProviderRequest.FromString,
           response_serializer=source_dot_v1alpha1_dot_source__pb2.DeleteProviderResponse.SerializeToString,
-      ),
-      'AccountsProviders': grpc.unary_unary_rpc_method_handler(
-          servicer.AccountsProviders,
-          request_deserializer=source_dot_v1alpha1_dot_source__pb2.AccountsProvidersRequest.FromString,
-          response_serializer=source_dot_v1alpha1_dot_source__pb2.AccountsProvidersResponse.SerializeToString,
       ),
       'CreateIntegration': grpc.unary_unary_rpc_method_handler(
           servicer.CreateIntegration,
