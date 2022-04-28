@@ -56,10 +56,16 @@ public interface DeletePaymentRequestOrBuilder extends
   int getCvvNumber();
 
   /**
-   * <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
+   * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
    * @return The expiryDate.
    */
-  int getExpiryDate();
+  java.lang.String getExpiryDate();
+  /**
+   * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
+   * @return The bytes for expiryDate.
+   */
+  com.google.protobuf.ByteString
+      getExpiryDateBytes();
 
   /**
    * <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>

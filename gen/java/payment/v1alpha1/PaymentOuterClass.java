@@ -67,10 +67,16 @@ public final class PaymentOuterClass {
     int getCvvNumber();
 
     /**
-     * <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
+     * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
      * @return The expiryDate.
      */
-    int getExpiryDate();
+    java.lang.String getExpiryDate();
+    /**
+     * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
+     * @return The bytes for expiryDate.
+     */
+    com.google.protobuf.ByteString
+        getExpiryDateBytes();
 
     /**
      * <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
@@ -116,6 +122,7 @@ public final class PaymentOuterClass {
       id_ = "";
       cardHolderName_ = "";
       cardType_ = "";
+      expiryDate_ = "";
       applicationId_ = "";
     }
 
@@ -177,9 +184,10 @@ public final class PaymentOuterClass {
               cvvNumber_ = input.readInt32();
               break;
             }
-            case 48: {
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              expiryDate_ = input.readInt32();
+              expiryDate_ = s;
               break;
             }
             case 56: {
@@ -367,14 +375,41 @@ public final class PaymentOuterClass {
     }
 
     public static final int EXPIRY_DATE_FIELD_NUMBER = 6;
-    private int expiryDate_;
+    private volatile java.lang.Object expiryDate_;
     /**
-     * <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
+     * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
      * @return The expiryDate.
      */
     @java.lang.Override
-    public int getExpiryDate() {
-      return expiryDate_;
+    public java.lang.String getExpiryDate() {
+      java.lang.Object ref = expiryDate_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        expiryDate_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
+     * @return The bytes for expiryDate.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getExpiryDateBytes() {
+      java.lang.Object ref = expiryDate_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        expiryDate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 7;
@@ -466,8 +501,8 @@ public final class PaymentOuterClass {
       if (cvvNumber_ != 0) {
         output.writeInt32(5, cvvNumber_);
       }
-      if (expiryDate_ != 0) {
-        output.writeInt32(6, expiryDate_);
+      if (!getExpiryDateBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, expiryDate_);
       }
       if (organizationId_ != 0) {
         output.writeUInt32(7, organizationId_);
@@ -504,9 +539,8 @@ public final class PaymentOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, cvvNumber_);
       }
-      if (expiryDate_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, expiryDate_);
+      if (!getExpiryDateBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, expiryDate_);
       }
       if (organizationId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -544,8 +578,8 @@ public final class PaymentOuterClass {
           != other.getCardNumber()) return false;
       if (getCvvNumber()
           != other.getCvvNumber()) return false;
-      if (getExpiryDate()
-          != other.getExpiryDate()) return false;
+      if (!getExpiryDate()
+          .equals(other.getExpiryDate())) return false;
       if (getOrganizationId()
           != other.getOrganizationId()) return false;
       if (getProjectId()
@@ -574,7 +608,7 @@ public final class PaymentOuterClass {
       hash = (37 * hash) + CVV_NUMBER_FIELD_NUMBER;
       hash = (53 * hash) + getCvvNumber();
       hash = (37 * hash) + EXPIRY_DATE_FIELD_NUMBER;
-      hash = (53 * hash) + getExpiryDate();
+      hash = (53 * hash) + getExpiryDate().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getOrganizationId();
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
@@ -728,7 +762,7 @@ public final class PaymentOuterClass {
 
         cvvNumber_ = 0;
 
-        expiryDate_ = 0;
+        expiryDate_ = "";
 
         organizationId_ = 0;
 
@@ -837,8 +871,9 @@ public final class PaymentOuterClass {
         if (other.getCvvNumber() != 0) {
           setCvvNumber(other.getCvvNumber());
         }
-        if (other.getExpiryDate() != 0) {
-          setExpiryDate(other.getExpiryDate());
+        if (!other.getExpiryDate().isEmpty()) {
+          expiryDate_ = other.expiryDate_;
+          onChanged();
         }
         if (other.getOrganizationId() != 0) {
           setOrganizationId(other.getOrganizationId());
@@ -1169,33 +1204,78 @@ public final class PaymentOuterClass {
         return this;
       }
 
-      private int expiryDate_ ;
+      private java.lang.Object expiryDate_ = "";
       /**
-       * <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
+       * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
        * @return The expiryDate.
        */
-      @java.lang.Override
-      public int getExpiryDate() {
-        return expiryDate_;
+      public java.lang.String getExpiryDate() {
+        java.lang.Object ref = expiryDate_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          expiryDate_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
+       * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
+       * @return The bytes for expiryDate.
+       */
+      public com.google.protobuf.ByteString
+          getExpiryDateBytes() {
+        java.lang.Object ref = expiryDate_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          expiryDate_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
        * @param value The expiryDate to set.
        * @return This builder for chaining.
        */
-      public Builder setExpiryDate(int value) {
-        
+      public Builder setExpiryDate(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         expiryDate_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
+       * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
        * @return This builder for chaining.
        */
       public Builder clearExpiryDate() {
         
-        expiryDate_ = 0;
+        expiryDate_ = getDefaultInstance().getExpiryDate();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
+       * @param value The bytes for expiryDate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExpiryDateBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        expiryDate_ = value;
         onChanged();
         return this;
       }
@@ -2207,7 +2287,7 @@ public final class PaymentOuterClass {
       "\n\020card_holder_name\030\002 \001(\tR\016cardHolderName" +
       "\022\033\n\tcard_type\030\003 \001(\tR\010cardType\022\037\n\013card_nu" +
       "mber\030\004 \001(\005R\ncardNumber\022\035\n\ncvv_number\030\005 \001" +
-      "(\005R\tcvvNumber\022\037\n\013expiry_date\030\006 \001(\005R\nexpi" +
+      "(\005R\tcvvNumber\022\037\n\013expiry_date\030\006 \001(\tR\nexpi" +
       "ryDate\022\'\n\017organization_id\030\007 \001(\rR\016organiz" +
       "ationId\022\035\n\nproject_id\030\010 \001(\rR\tprojectId\022%" +
       "\n\016application_id\030\t \001(\tR\rapplicationId\">\n" +

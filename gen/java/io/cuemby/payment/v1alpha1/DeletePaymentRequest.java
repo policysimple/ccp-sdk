@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     cardHolderName_ = "";
     cardType_ = "";
+    expiryDate_ = "";
     applicationId_ = "";
   }
 
@@ -80,9 +81,10 @@ private static final long serialVersionUID = 0L;
             cvvNumber_ = input.readInt32();
             break;
           }
-          case 48: {
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            expiryDate_ = input.readInt32();
+            expiryDate_ = s;
             break;
           }
           case 56: {
@@ -270,14 +272,41 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int EXPIRY_DATE_FIELD_NUMBER = 6;
-  private int expiryDate_;
+  private volatile java.lang.Object expiryDate_;
   /**
-   * <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
+   * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
    * @return The expiryDate.
    */
   @java.lang.Override
-  public int getExpiryDate() {
-    return expiryDate_;
+  public java.lang.String getExpiryDate() {
+    java.lang.Object ref = expiryDate_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      expiryDate_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
+   * @return The bytes for expiryDate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getExpiryDateBytes() {
+    java.lang.Object ref = expiryDate_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      expiryDate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ORGANIZATION_ID_FIELD_NUMBER = 7;
@@ -369,8 +398,8 @@ private static final long serialVersionUID = 0L;
     if (cvvNumber_ != 0) {
       output.writeInt32(5, cvvNumber_);
     }
-    if (expiryDate_ != 0) {
-      output.writeInt32(6, expiryDate_);
+    if (!getExpiryDateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, expiryDate_);
     }
     if (organizationId_ != 0) {
       output.writeUInt32(7, organizationId_);
@@ -407,9 +436,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, cvvNumber_);
     }
-    if (expiryDate_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, expiryDate_);
+    if (!getExpiryDateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, expiryDate_);
     }
     if (organizationId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -447,8 +475,8 @@ private static final long serialVersionUID = 0L;
         != other.getCardNumber()) return false;
     if (getCvvNumber()
         != other.getCvvNumber()) return false;
-    if (getExpiryDate()
-        != other.getExpiryDate()) return false;
+    if (!getExpiryDate()
+        .equals(other.getExpiryDate())) return false;
     if (getOrganizationId()
         != other.getOrganizationId()) return false;
     if (getProjectId()
@@ -477,7 +505,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + CVV_NUMBER_FIELD_NUMBER;
     hash = (53 * hash) + getCvvNumber();
     hash = (37 * hash) + EXPIRY_DATE_FIELD_NUMBER;
-    hash = (53 * hash) + getExpiryDate();
+    hash = (53 * hash) + getExpiryDate().hashCode();
     hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getOrganizationId();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
@@ -627,7 +655,7 @@ private static final long serialVersionUID = 0L;
 
       cvvNumber_ = 0;
 
-      expiryDate_ = 0;
+      expiryDate_ = "";
 
       organizationId_ = 0;
 
@@ -736,8 +764,9 @@ private static final long serialVersionUID = 0L;
       if (other.getCvvNumber() != 0) {
         setCvvNumber(other.getCvvNumber());
       }
-      if (other.getExpiryDate() != 0) {
-        setExpiryDate(other.getExpiryDate());
+      if (!other.getExpiryDate().isEmpty()) {
+        expiryDate_ = other.expiryDate_;
+        onChanged();
       }
       if (other.getOrganizationId() != 0) {
         setOrganizationId(other.getOrganizationId());
@@ -1068,33 +1097,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int expiryDate_ ;
+    private java.lang.Object expiryDate_ = "";
     /**
-     * <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
+     * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
      * @return The expiryDate.
      */
-    @java.lang.Override
-    public int getExpiryDate() {
-      return expiryDate_;
+    public java.lang.String getExpiryDate() {
+      java.lang.Object ref = expiryDate_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        expiryDate_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
+     * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
+     * @return The bytes for expiryDate.
+     */
+    public com.google.protobuf.ByteString
+        getExpiryDateBytes() {
+      java.lang.Object ref = expiryDate_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        expiryDate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
      * @param value The expiryDate to set.
      * @return This builder for chaining.
      */
-    public Builder setExpiryDate(int value) {
-      
+    public Builder setExpiryDate(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       expiryDate_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
+     * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
      * @return This builder for chaining.
      */
     public Builder clearExpiryDate() {
       
-      expiryDate_ = 0;
+      expiryDate_ = getDefaultInstance().getExpiryDate();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
+     * @param value The bytes for expiryDate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExpiryDateBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      expiryDate_ = value;
       onChanged();
       return this;
     }

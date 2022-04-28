@@ -26,7 +26,7 @@ class Payment
 cardNumber
 
 cvv_number (R	cvvNumber
-expiry_date (R
+expiry_date (	R
 expiryDate\'
 organization_id (RorganizationId
 

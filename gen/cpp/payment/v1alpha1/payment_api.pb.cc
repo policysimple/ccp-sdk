@@ -75,10 +75,10 @@ constexpr DeletePaymentRequest::DeletePaymentRequest(
   : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , card_holder_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , card_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , expiry_date_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , card_number_(0)
   , cvv_number_(0)
-  , expiry_date_(0)
   , organization_id_(0u)
   , project_id_(0u){}
 struct DeletePaymentRequestDefaultTypeInternal {
@@ -284,7 +284,7 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto[
   "\016cardHolderName\022\033\n\tcard_type\030\003 \001(\tR\010card"
   "Type\022\037\n\013card_number\030\004 \001(\005R\ncardNumber\022\035\n"
   "\ncvv_number\030\005 \001(\005R\tcvvNumber\022\037\n\013expiry_d"
-  "ate\030\006 \001(\005R\nexpiryDate\022\'\n\017organization_id"
+  "ate\030\006 \001(\tR\nexpiryDate\022\'\n\017organization_id"
   "\030\007 \001(\rR\016organizationId\022\035\n\nproject_id\030\010 \001"
   "(\rR\tprojectId\022%\n\016application_id\030\t \001(\tR\ra"
   "pplicationId\"/\n\025DeletePaymentResponse\022\026\n"
@@ -1360,6 +1360,11 @@ DeletePaymentRequest::DeletePaymentRequest(const DeletePaymentRequest& from)
     card_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_card_type(), 
       GetArenaForAllocation());
   }
+  expiry_date_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_expiry_date().empty()) {
+    expiry_date_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_expiry_date(), 
+      GetArenaForAllocation());
+  }
   application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_application_id().empty()) {
     application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_application_id(), 
@@ -1375,6 +1380,7 @@ inline void DeletePaymentRequest::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 card_holder_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 card_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+expiry_date_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&card_number_) - reinterpret_cast<char*>(this)),
@@ -1394,6 +1400,7 @@ inline void DeletePaymentRequest::SharedDtor() {
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   card_holder_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   card_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  expiry_date_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   application_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1416,6 +1423,7 @@ void DeletePaymentRequest::Clear() {
   id_.ClearToEmpty();
   card_holder_name_.ClearToEmpty();
   card_type_.ClearToEmpty();
+  expiry_date_.ClearToEmpty();
   application_id_.ClearToEmpty();
   ::memset(&card_number_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&project_id_) -
@@ -1470,10 +1478,12 @@ const char* DeletePaymentRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int32 expiry_date = 6 [json_name = "expiryDate"];
+      // string expiry_date = 6 [json_name = "expiryDate"];
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          expiry_date_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_expiry_date();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.DeletePaymentRequest.expiry_date"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1571,10 +1581,14 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_cvv_number(), target);
   }
 
-  // int32 expiry_date = 6 [json_name = "expiryDate"];
-  if (this->_internal_expiry_date() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_expiry_date(), target);
+  // string expiry_date = 6 [json_name = "expiryDate"];
+  if (!this->_internal_expiry_date().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_expiry_date().data(), static_cast<int>(this->_internal_expiry_date().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.DeletePaymentRequest.expiry_date");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_expiry_date(), target);
   }
 
   // uint32 organization_id = 7 [json_name = "organizationId"];
@@ -1636,6 +1650,13 @@ size_t DeletePaymentRequest::ByteSizeLong() const {
         this->_internal_card_type());
   }
 
+  // string expiry_date = 6 [json_name = "expiryDate"];
+  if (!this->_internal_expiry_date().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_expiry_date());
+  }
+
   // string application_id = 9 [json_name = "applicationId"];
   if (!this->_internal_application_id().empty()) {
     total_size += 1 +
@@ -1655,13 +1676,6 @@ size_t DeletePaymentRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_cvv_number());
-  }
-
-  // int32 expiry_date = 6 [json_name = "expiryDate"];
-  if (this->_internal_expiry_date() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_expiry_date());
   }
 
   // uint32 organization_id = 7 [json_name = "organizationId"];
@@ -1715,6 +1729,9 @@ void DeletePaymentRequest::MergeFrom(const DeletePaymentRequest& from) {
   if (!from._internal_card_type().empty()) {
     _internal_set_card_type(from._internal_card_type());
   }
+  if (!from._internal_expiry_date().empty()) {
+    _internal_set_expiry_date(from._internal_expiry_date());
+  }
   if (!from._internal_application_id().empty()) {
     _internal_set_application_id(from._internal_application_id());
   }
@@ -1723,9 +1740,6 @@ void DeletePaymentRequest::MergeFrom(const DeletePaymentRequest& from) {
   }
   if (from._internal_cvv_number() != 0) {
     _internal_set_cvv_number(from._internal_cvv_number());
-  }
-  if (from._internal_expiry_date() != 0) {
-    _internal_set_expiry_date(from._internal_expiry_date());
   }
   if (from._internal_organization_id() != 0) {
     _internal_set_organization_id(from._internal_organization_id());
@@ -1764,6 +1778,11 @@ void DeletePaymentRequest::InternalSwap(DeletePaymentRequest* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &card_type_, GetArenaForAllocation(),
       &other->card_type_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &expiry_date_, GetArenaForAllocation(),
+      &other->expiry_date_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
