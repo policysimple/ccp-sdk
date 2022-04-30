@@ -120,7 +120,7 @@ public final class PaymentAPIProto {
       "B\222\001\n\032io.cuemby.payment.v1alpha1B\017Payment" +
       "APIProtoP\001Z5github.com/cuemby/ccp-paymen" +
       "t-service/paymentv1alpha1\242\002\003PPX\252\002\020Paymen" +
-      "t.V1Alpha1\312\002\020Payment\\V1Alpha1b\006proto3"
+      "t.V1alpha1\312\002\020Payment\\V1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

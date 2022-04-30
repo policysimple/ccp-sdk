@@ -314,7 +314,7 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto[
   "B\222\001\n\032io.cuemby.payment.v1alpha1B\017Payment"
   "APIProtoP\001Z5github.com/cuemby/ccp-paymen"
   "t-service/paymentv1alpha1\242\002\003PPX\252\002\020Paymen"
-  "t.V1Alpha1\312\002\020Payment\\V1Alpha1b\006proto3"
+  "t.V1alpha1\312\002\020Payment\\V1alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_deps[1] = {
   &::descriptor_table_payment_2fv1alpha1_2fpayment_2eproto,
