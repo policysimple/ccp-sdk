@@ -90,7 +90,7 @@ public final class PaymentAPIProto {
       "\016cardHolderName\022\033\n\tcard_type\030\003 \001(\tR\010card" +
       "Type\022\037\n\013card_number\030\004 \001(\005R\ncardNumber\022\035\n" +
       "\ncvv_number\030\005 \001(\005R\tcvvNumber\022\037\n\013expiry_d" +
-      "ate\030\006 \001(\005R\nexpiryDate\022\'\n\017organization_id" +
+      "ate\030\006 \001(\tR\nexpiryDate\022\'\n\017organization_id" +
       "\030\007 \001(\rR\016organizationId\022\035\n\nproject_id\030\010 \001" +
       "(\rR\tprojectId\022%\n\016application_id\030\t \001(\tR\ra" +
       "pplicationId\"/\n\025DeletePaymentResponse\022\026\n" +
@@ -120,7 +120,7 @@ public final class PaymentAPIProto {
       "B\222\001\n\032io.cuemby.payment.v1alpha1B\017Payment" +
       "APIProtoP\001Z5github.com/cuemby/ccp-paymen" +
       "t-service/paymentv1alpha1\242\002\003PPX\252\002\020Paymen" +
-      "t.V1Alpha1\312\002\020Payment\\V1Alpha1b\006proto3"
+      "t.V1alpha1\312\002\020Payment\\V1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

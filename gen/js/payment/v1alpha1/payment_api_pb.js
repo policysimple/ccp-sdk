@@ -998,7 +998,7 @@ proto.payment.v1alpha1.DeletePaymentRequest.toObject = function(includeInstance,
     cardType: jspb.Message.getFieldWithDefault(msg, 3, ""),
     cardNumber: jspb.Message.getFieldWithDefault(msg, 4, 0),
     cvvNumber: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    expiryDate: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    expiryDate: jspb.Message.getFieldWithDefault(msg, 6, ""),
     organizationId: jspb.Message.getFieldWithDefault(msg, 7, 0),
     projectId: jspb.Message.getFieldWithDefault(msg, 8, 0),
     applicationId: jspb.Message.getFieldWithDefault(msg, 9, "")
@@ -1059,7 +1059,7 @@ proto.payment.v1alpha1.DeletePaymentRequest.deserializeBinaryFromReader = functi
       msg.setCvvNumber(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setExpiryDate(value);
       break;
     case 7:
@@ -1139,8 +1139,8 @@ proto.payment.v1alpha1.DeletePaymentRequest.serializeBinaryToWriter = function(m
     );
   }
   f = message.getExpiryDate();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       6,
       f
     );
@@ -1260,20 +1260,20 @@ proto.payment.v1alpha1.DeletePaymentRequest.prototype.setCvvNumber = function(va
 
 
 /**
- * optional int32 expiry_date = 6;
- * @return {number}
+ * optional string expiry_date = 6;
+ * @return {string}
  */
 proto.payment.v1alpha1.DeletePaymentRequest.prototype.getExpiryDate = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.payment.v1alpha1.DeletePaymentRequest} returns this
  */
 proto.payment.v1alpha1.DeletePaymentRequest.prototype.setExpiryDate = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
