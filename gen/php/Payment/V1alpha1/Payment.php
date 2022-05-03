@@ -36,9 +36,9 @@ class Payment extends \Google\Protobuf\Internal\Message
      */
     protected $cvv_number = 0;
     /**
-     * Generated from protobuf field <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
+     * Generated from protobuf field <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
      */
-    protected $expiry_date = 0;
+    protected $expiry_date = '';
     /**
      * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
      */
@@ -63,7 +63,7 @@ class Payment extends \Google\Protobuf\Internal\Message
      *     @type string $card_type
      *     @type int $card_number
      *     @type int $cvv_number
-     *     @type int $expiry_date
+     *     @type string $expiry_date
      *     @type int $organization_id
      *     @type int $project_id
      *     @type string $application_id
@@ -185,8 +185,8 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
-     * @return int
+     * Generated from protobuf field <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
+     * @return string
      */
     public function getExpiryDate()
     {
@@ -194,13 +194,13 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 expiry_date = 6 [json_name = "expiryDate"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
+     * @param string $var
      * @return $this
      */
     public function setExpiryDate($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkString($var, True);
         $this->expiry_date = $var;
 
         return $this;
