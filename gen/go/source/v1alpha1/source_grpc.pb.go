@@ -25,6 +25,7 @@ type SourceServiceClient interface {
 	GetOneProviderByName(ctx context.Context, in *GetOneProviderByNameRequest, opts ...grpc.CallOption) (*GetOneProviderByNameResponse, error)
 	UpdateProvider(ctx context.Context, in *UpdateProviderRequest, opts ...grpc.CallOption) (*UpdateProviderResponse, error)
 	DeleteProvider(ctx context.Context, in *DeleteProviderRequest, opts ...grpc.CallOption) (*DeleteProviderResponse, error)
+	AccountsProviders(ctx context.Context, in *AccountsProvidersRequest, opts ...grpc.CallOption) (*AccountsProvidersResponse, error)
 	//INTEGRATIONS
 	CreateIntegration(ctx context.Context, in *CreateIntegrationRequest, opts ...grpc.CallOption) (*CreateIntegrationResponse, error)
 	ListIntegrations(ctx context.Context, in *ListIntegrationsRequest, opts ...grpc.CallOption) (*ListIntegrationsResponse, error)
@@ -99,6 +100,15 @@ func (c *sourceServiceClient) UpdateProvider(ctx context.Context, in *UpdateProv
 func (c *sourceServiceClient) DeleteProvider(ctx context.Context, in *DeleteProviderRequest, opts ...grpc.CallOption) (*DeleteProviderResponse, error) {
 	out := new(DeleteProviderResponse)
 	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/DeleteProvider", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sourceServiceClient) AccountsProviders(ctx context.Context, in *AccountsProvidersRequest, opts ...grpc.CallOption) (*AccountsProvidersResponse, error) {
+	out := new(AccountsProvidersResponse)
+	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/AccountsProviders", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -233,6 +243,7 @@ type SourceServiceServer interface {
 	GetOneProviderByName(context.Context, *GetOneProviderByNameRequest) (*GetOneProviderByNameResponse, error)
 	UpdateProvider(context.Context, *UpdateProviderRequest) (*UpdateProviderResponse, error)
 	DeleteProvider(context.Context, *DeleteProviderRequest) (*DeleteProviderResponse, error)
+	AccountsProviders(context.Context, *AccountsProvidersRequest) (*AccountsProvidersResponse, error)
 	//INTEGRATIONS
 	CreateIntegration(context.Context, *CreateIntegrationRequest) (*CreateIntegrationResponse, error)
 	ListIntegrations(context.Context, *ListIntegrationsRequest) (*ListIntegrationsResponse, error)
@@ -272,6 +283,9 @@ func (UnimplementedSourceServiceServer) UpdateProvider(context.Context, *UpdateP
 }
 func (UnimplementedSourceServiceServer) DeleteProvider(context.Context, *DeleteProviderRequest) (*DeleteProviderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteProvider not implemented")
+}
+func (UnimplementedSourceServiceServer) AccountsProviders(context.Context, *AccountsProvidersRequest) (*AccountsProvidersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AccountsProviders not implemented")
 }
 func (UnimplementedSourceServiceServer) CreateIntegration(context.Context, *CreateIntegrationRequest) (*CreateIntegrationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateIntegration not implemented")
@@ -428,6 +442,24 @@ func _SourceService_DeleteProvider_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SourceServiceServer).DeleteProvider(ctx, req.(*DeleteProviderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SourceService_AccountsProviders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AccountsProvidersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourceServiceServer).AccountsProviders(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/source.v1alpha1.SourceService/AccountsProviders",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourceServiceServer).AccountsProviders(ctx, req.(*AccountsProvidersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -696,6 +728,10 @@ var SourceService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteProvider",
 			Handler:    _SourceService_DeleteProvider_Handler,
+		},
+		{
+			MethodName: "AccountsProviders",
+			Handler:    _SourceService_AccountsProviders_Handler,
 		},
 		{
 			MethodName: "CreateIntegration",
