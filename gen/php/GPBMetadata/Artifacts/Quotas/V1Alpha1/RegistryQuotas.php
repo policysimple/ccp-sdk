@@ -16,12 +16,11 @@ class RegistryQuotas
         }
         $pool->internalAddGeneratedFile(
             '
-ç
-/artifacts/quotas/v1alpha1/registry_quotas.protoartifacts.quotas.v1alpha1"í
-HarborQuotas*
-additional_prop_1 (RadditionalProp1*
-additional_prop_2 (RadditionalProp2*
-additional_prop_3 (RadditionalProp3"Ë
+–
+/artifacts/quotas/v1alpha1/registry_quotas.protoartifacts.quotas.v1alpha1"V
+HarborQuotas!
+storage_used (RstorageUsed#
+storage_limit (RstorageLimit"Ë
 QuotasRegistry
 id (	Rid\'
 organization_id (RorganizationId

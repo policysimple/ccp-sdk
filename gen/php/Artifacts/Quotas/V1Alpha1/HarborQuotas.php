@@ -14,17 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class HarborQuotas extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 additional_prop_1 = 1 [json_name = "additionalProp1"];</code>
+     * Generated from protobuf field <code>uint32 storage_used = 1 [json_name = "storageUsed"];</code>
      */
-    protected $additional_prop_1 = 0;
+    protected $storage_used = 0;
     /**
-     * Generated from protobuf field <code>uint32 additional_prop_2 = 2 [json_name = "additionalProp2"];</code>
+     * Generated from protobuf field <code>uint32 storage_limit = 2 [json_name = "storageLimit"];</code>
      */
-    protected $additional_prop_2 = 0;
-    /**
-     * Generated from protobuf field <code>uint32 additional_prop_3 = 3 [json_name = "additionalProp3"];</code>
-     */
-    protected $additional_prop_3 = 0;
+    protected $storage_limit = 0;
 
     /**
      * Constructor.
@@ -32,9 +28,8 @@ class HarborQuotas extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $additional_prop_1
-     *     @type int $additional_prop_2
-     *     @type int $additional_prop_3
+     *     @type int $storage_used
+     *     @type int $storage_limit
      * }
      */
     public function __construct($data = NULL) {
@@ -43,67 +38,45 @@ class HarborQuotas extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 additional_prop_1 = 1 [json_name = "additionalProp1"];</code>
+     * Generated from protobuf field <code>uint32 storage_used = 1 [json_name = "storageUsed"];</code>
      * @return int
      */
-    public function getAdditionalProp1()
+    public function getStorageUsed()
     {
-        return $this->additional_prop_1;
+        return $this->storage_used;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 additional_prop_1 = 1 [json_name = "additionalProp1"];</code>
+     * Generated from protobuf field <code>uint32 storage_used = 1 [json_name = "storageUsed"];</code>
      * @param int $var
      * @return $this
      */
-    public function setAdditionalProp1($var)
+    public function setStorageUsed($var)
     {
         GPBUtil::checkUint32($var);
-        $this->additional_prop_1 = $var;
+        $this->storage_used = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 additional_prop_2 = 2 [json_name = "additionalProp2"];</code>
+     * Generated from protobuf field <code>uint32 storage_limit = 2 [json_name = "storageLimit"];</code>
      * @return int
      */
-    public function getAdditionalProp2()
+    public function getStorageLimit()
     {
-        return $this->additional_prop_2;
+        return $this->storage_limit;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 additional_prop_2 = 2 [json_name = "additionalProp2"];</code>
+     * Generated from protobuf field <code>uint32 storage_limit = 2 [json_name = "storageLimit"];</code>
      * @param int $var
      * @return $this
      */
-    public function setAdditionalProp2($var)
+    public function setStorageLimit($var)
     {
         GPBUtil::checkUint32($var);
-        $this->additional_prop_2 = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 additional_prop_3 = 3 [json_name = "additionalProp3"];</code>
-     * @return int
-     */
-    public function getAdditionalProp3()
-    {
-        return $this->additional_prop_3;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 additional_prop_3 = 3 [json_name = "additionalProp3"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setAdditionalProp3($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->additional_prop_3 = $var;
+        $this->storage_limit = $var;
 
         return $this;
     }

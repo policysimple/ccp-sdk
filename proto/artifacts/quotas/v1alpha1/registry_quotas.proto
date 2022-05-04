@@ -11,9 +11,8 @@ option objc_class_prefix = "PPX";
 option php_namespace = "Artifacts\\Quotas\\V1Alpha1";
 
 message HarborQuotas {
-    uint32 additional_prop_1 = 1;
-    uint32 additional_prop_2 = 2;
-    uint32 additional_prop_3 = 3;
+  uint32 storage_used = 1;
+  uint32 storage_limit = 2;
 }
 
 message QuotasRegistry {

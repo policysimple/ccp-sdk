@@ -91,9 +91,8 @@ proto.artifacts.quotas.v1alpha1.HarborQuotas.prototype.toObject = function(opt_i
  */
 proto.artifacts.quotas.v1alpha1.HarborQuotas.toObject = function(includeInstance, msg) {
   var f, obj = {
-    additionalProp1: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    additionalProp2: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    additionalProp3: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    storageUsed: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    storageLimit: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -132,15 +131,11 @@ proto.artifacts.quotas.v1alpha1.HarborQuotas.deserializeBinaryFromReader = funct
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setAdditionalProp1(value);
+      msg.setStorageUsed(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setAdditionalProp2(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setAdditionalProp3(value);
+      msg.setStorageLimit(value);
       break;
     default:
       reader.skipField();
@@ -171,24 +166,17 @@ proto.artifacts.quotas.v1alpha1.HarborQuotas.prototype.serializeBinary = functio
  */
 proto.artifacts.quotas.v1alpha1.HarborQuotas.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAdditionalProp1();
+  f = message.getStorageUsed();
   if (f !== 0) {
     writer.writeUint32(
       1,
       f
     );
   }
-  f = message.getAdditionalProp2();
+  f = message.getStorageLimit();
   if (f !== 0) {
     writer.writeUint32(
       2,
-      f
-    );
-  }
-  f = message.getAdditionalProp3();
-  if (f !== 0) {
-    writer.writeUint32(
-      3,
       f
     );
   }
@@ -196,10 +184,10 @@ proto.artifacts.quotas.v1alpha1.HarborQuotas.serializeBinaryToWriter = function(
 
 
 /**
- * optional uint32 additional_prop_1 = 1;
+ * optional uint32 storage_used = 1;
  * @return {number}
  */
-proto.artifacts.quotas.v1alpha1.HarborQuotas.prototype.getAdditionalProp1 = function() {
+proto.artifacts.quotas.v1alpha1.HarborQuotas.prototype.getStorageUsed = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -208,16 +196,16 @@ proto.artifacts.quotas.v1alpha1.HarborQuotas.prototype.getAdditionalProp1 = func
  * @param {number} value
  * @return {!proto.artifacts.quotas.v1alpha1.HarborQuotas} returns this
  */
-proto.artifacts.quotas.v1alpha1.HarborQuotas.prototype.setAdditionalProp1 = function(value) {
+proto.artifacts.quotas.v1alpha1.HarborQuotas.prototype.setStorageUsed = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint32 additional_prop_2 = 2;
+ * optional uint32 storage_limit = 2;
  * @return {number}
  */
-proto.artifacts.quotas.v1alpha1.HarborQuotas.prototype.getAdditionalProp2 = function() {
+proto.artifacts.quotas.v1alpha1.HarborQuotas.prototype.getStorageLimit = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -226,26 +214,8 @@ proto.artifacts.quotas.v1alpha1.HarborQuotas.prototype.getAdditionalProp2 = func
  * @param {number} value
  * @return {!proto.artifacts.quotas.v1alpha1.HarborQuotas} returns this
  */
-proto.artifacts.quotas.v1alpha1.HarborQuotas.prototype.setAdditionalProp2 = function(value) {
+proto.artifacts.quotas.v1alpha1.HarborQuotas.prototype.setStorageLimit = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
-};
-
-
-/**
- * optional uint32 additional_prop_3 = 3;
- * @return {number}
- */
-proto.artifacts.quotas.v1alpha1.HarborQuotas.prototype.getAdditionalProp3 = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.artifacts.quotas.v1alpha1.HarborQuotas} returns this
- */
-proto.artifacts.quotas.v1alpha1.HarborQuotas.prototype.setAdditionalProp3 = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 

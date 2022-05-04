@@ -34,22 +34,20 @@ public final class RegistryQuotasProto {
   static {
     java.lang.String[] descriptorData = {
       "\n/artifacts/quotas/v1alpha1/registry_quo" +
-      "tas.proto\022\031artifacts.quotas.v1alpha1\"\222\001\n" +
-      "\014HarborQuotas\022*\n\021additional_prop_1\030\001 \001(\r" +
-      "R\017additionalProp1\022*\n\021additional_prop_2\030\002" +
-      " \001(\rR\017additionalProp2\022*\n\021additional_prop" +
-      "_3\030\003 \001(\rR\017additionalProp3\"\350\001\n\016QuotasRegi" +
-      "stry\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017organization_id\030" +
-      "\002 \001(\rR\016organizationId\022\035\n\nproject_id\030\003 \001(" +
-      "\rR\tprojectId\022%\n\016environment_id\030\004 \001(\tR\ren" +
-      "vironmentId\022\026\n\006active\030\006 \001(\010R\006active\022?\n\006h" +
-      "arbor\030\007 \001(\0132\'.artifacts.quotas.v1alpha1." +
-      "HarborQuotasR\006harborB\266\001\n#io.cuemby.artif" +
-      "acts.quotas.v1alpha1B\023RegistryQuotasProt" +
-      "oP\001Z:github.com/cuemby/ccp-sdk/gen/go/ar" +
-      "tifacts/quotas/v1alpha1\242\002\003PPX\252\002\031Artifact" +
-      "s.Quotas.V1Alpha1\312\002\031Artifacts\\Quotas\\V1A" +
-      "lpha1b\006proto3"
+      "tas.proto\022\031artifacts.quotas.v1alpha1\"V\n\014" +
+      "HarborQuotas\022!\n\014storage_used\030\001 \001(\rR\013stor" +
+      "ageUsed\022#\n\rstorage_limit\030\002 \001(\rR\014storageL" +
+      "imit\"\350\001\n\016QuotasRegistry\022\016\n\002id\030\001 \001(\tR\002id\022" +
+      "\'\n\017organization_id\030\002 \001(\rR\016organizationId" +
+      "\022\035\n\nproject_id\030\003 \001(\rR\tprojectId\022%\n\016envir" +
+      "onment_id\030\004 \001(\tR\renvironmentId\022\026\n\006active" +
+      "\030\006 \001(\010R\006active\022?\n\006harbor\030\007 \001(\0132\'.artifac" +
+      "ts.quotas.v1alpha1.HarborQuotasR\006harborB" +
+      "\266\001\n#io.cuemby.artifacts.quotas.v1alpha1B" +
+      "\023RegistryQuotasProtoP\001Z:github.com/cuemb" +
+      "y/ccp-sdk/gen/go/artifacts/quotas/v1alph" +
+      "a1\242\002\003PPX\252\002\031Artifacts.Quotas.V1Alpha1\312\002\031A" +
+      "rtifacts\\Quotas\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -60,7 +58,7 @@ public final class RegistryQuotasProto {
     internal_static_artifacts_quotas_v1alpha1_HarborQuotas_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_artifacts_quotas_v1alpha1_HarborQuotas_descriptor,
-        new java.lang.String[] { "AdditionalProp1", "AdditionalProp2", "AdditionalProp3", });
+        new java.lang.String[] { "StorageUsed", "StorageLimit", });
     internal_static_artifacts_quotas_v1alpha1_QuotasRegistry_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_artifacts_quotas_v1alpha1_QuotasRegistry_fieldAccessorTable = new

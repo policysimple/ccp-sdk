@@ -8,20 +8,14 @@ public interface HarborQuotasOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 additional_prop_1 = 1 [json_name = "additionalProp1"];</code>
-   * @return The additionalProp1.
+   * <code>uint32 storage_used = 1 [json_name = "storageUsed"];</code>
+   * @return The storageUsed.
    */
-  int getAdditionalProp1();
+  int getStorageUsed();
 
   /**
-   * <code>uint32 additional_prop_2 = 2 [json_name = "additionalProp2"];</code>
-   * @return The additionalProp2.
+   * <code>uint32 storage_limit = 2 [json_name = "storageLimit"];</code>
+   * @return The storageLimit.
    */
-  int getAdditionalProp2();
-
-  /**
-   * <code>uint32 additional_prop_3 = 3 [json_name = "additionalProp3"];</code>
-   * @return The additionalProp3.
-   */
-  int getAdditionalProp3();
+  int getStorageLimit();
 }

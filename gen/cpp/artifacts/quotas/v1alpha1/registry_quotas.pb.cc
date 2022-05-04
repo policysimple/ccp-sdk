@@ -21,9 +21,8 @@ namespace quotas {
 namespace v1alpha1 {
 constexpr HarborQuotas::HarborQuotas(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : additional_prop_1_(0u)
-  , additional_prop_2_(0u)
-  , additional_prop_3_(0u){}
+  : storage_used_(0u)
+  , storage_limit_(0u){}
 struct HarborQuotasDefaultTypeInternal {
   constexpr HarborQuotasDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -63,9 +62,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_artifacts_2fquotas_2fv1alpha1_
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::artifacts::quotas::v1alpha1::HarborQuotas, additional_prop_1_),
-  PROTOBUF_FIELD_OFFSET(::artifacts::quotas::v1alpha1::HarborQuotas, additional_prop_2_),
-  PROTOBUF_FIELD_OFFSET(::artifacts::quotas::v1alpha1::HarborQuotas, additional_prop_3_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::quotas::v1alpha1::HarborQuotas, storage_used_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::quotas::v1alpha1::HarborQuotas, storage_limit_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::artifacts::quotas::v1alpha1::QuotasRegistry, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -80,7 +78,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_artifacts_2fquotas_2fv1alpha1_
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::artifacts::quotas::v1alpha1::HarborQuotas)},
-  { 8, -1, sizeof(::artifacts::quotas::v1alpha1::QuotasRegistry)},
+  { 7, -1, sizeof(::artifacts::quotas::v1alpha1::QuotasRegistry)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -90,26 +88,24 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n/artifacts/quotas/v1alpha1/registry_quo"
-  "tas.proto\022\031artifacts.quotas.v1alpha1\"\222\001\n"
-  "\014HarborQuotas\022*\n\021additional_prop_1\030\001 \001(\r"
-  "R\017additionalProp1\022*\n\021additional_prop_2\030\002"
-  " \001(\rR\017additionalProp2\022*\n\021additional_prop"
-  "_3\030\003 \001(\rR\017additionalProp3\"\350\001\n\016QuotasRegi"
-  "stry\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017organization_id\030"
-  "\002 \001(\rR\016organizationId\022\035\n\nproject_id\030\003 \001("
-  "\rR\tprojectId\022%\n\016environment_id\030\004 \001(\tR\ren"
-  "vironmentId\022\026\n\006active\030\006 \001(\010R\006active\022\?\n\006h"
-  "arbor\030\007 \001(\0132\'.artifacts.quotas.v1alpha1."
-  "HarborQuotasR\006harborB\266\001\n#io.cuemby.artif"
-  "acts.quotas.v1alpha1B\023RegistryQuotasProt"
-  "oP\001Z:github.com/cuemby/ccp-sdk/gen/go/ar"
-  "tifacts/quotas/v1alpha1\242\002\003PPX\252\002\031Artifact"
-  "s.Quotas.V1Alpha1\312\002\031Artifacts\\Quotas\\V1A"
-  "lpha1b\006proto3"
+  "tas.proto\022\031artifacts.quotas.v1alpha1\"V\n\014"
+  "HarborQuotas\022!\n\014storage_used\030\001 \001(\rR\013stor"
+  "ageUsed\022#\n\rstorage_limit\030\002 \001(\rR\014storageL"
+  "imit\"\350\001\n\016QuotasRegistry\022\016\n\002id\030\001 \001(\tR\002id\022"
+  "\'\n\017organization_id\030\002 \001(\rR\016organizationId"
+  "\022\035\n\nproject_id\030\003 \001(\rR\tprojectId\022%\n\016envir"
+  "onment_id\030\004 \001(\tR\renvironmentId\022\026\n\006active"
+  "\030\006 \001(\010R\006active\022\?\n\006harbor\030\007 \001(\0132\'.artifac"
+  "ts.quotas.v1alpha1.HarborQuotasR\006harborB"
+  "\266\001\n#io.cuemby.artifacts.quotas.v1alpha1B"
+  "\023RegistryQuotasProtoP\001Z:github.com/cuemb"
+  "y/ccp-sdk/gen/go/artifacts/quotas/v1alph"
+  "a1\242\002\003PPX\252\002\031Artifacts.Quotas.V1Alpha1\312\002\031A"
+  "rtifacts\\Quotas\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto = {
-  false, false, 653, descriptor_table_protodef_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto, "artifacts/quotas/v1alpha1/registry_quotas.proto", 
+  false, false, 592, descriptor_table_protodef_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto, "artifacts/quotas/v1alpha1/registry_quotas.proto", 
   &descriptor_table_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto::offsets,
   file_level_metadata_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto, file_level_enum_descriptors_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto, file_level_service_descriptors_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto,
@@ -142,17 +138,17 @@ HarborQuotas::HarborQuotas(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 HarborQuotas::HarborQuotas(const HarborQuotas& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&additional_prop_1_, &from.additional_prop_1_,
-    static_cast<size_t>(reinterpret_cast<char*>(&additional_prop_3_) -
-    reinterpret_cast<char*>(&additional_prop_1_)) + sizeof(additional_prop_3_));
+  ::memcpy(&storage_used_, &from.storage_used_,
+    static_cast<size_t>(reinterpret_cast<char*>(&storage_limit_) -
+    reinterpret_cast<char*>(&storage_used_)) + sizeof(storage_limit_));
   // @@protoc_insertion_point(copy_constructor:artifacts.quotas.v1alpha1.HarborQuotas)
 }
 
 inline void HarborQuotas::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&additional_prop_1_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&additional_prop_3_) -
-    reinterpret_cast<char*>(&additional_prop_1_)) + sizeof(additional_prop_3_));
+    reinterpret_cast<char*>(&storage_used_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&storage_limit_) -
+    reinterpret_cast<char*>(&storage_used_)) + sizeof(storage_limit_));
 }
 
 HarborQuotas::~HarborQuotas() {
@@ -182,9 +178,9 @@ void HarborQuotas::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&additional_prop_1_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&additional_prop_3_) -
-      reinterpret_cast<char*>(&additional_prop_1_)) + sizeof(additional_prop_3_));
+  ::memset(&storage_used_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&storage_limit_) -
+      reinterpret_cast<char*>(&storage_used_)) + sizeof(storage_limit_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -194,24 +190,17 @@ const char* HarborQuotas::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 additional_prop_1 = 1 [json_name = "additionalProp1"];
+      // uint32 storage_used = 1 [json_name = "storageUsed"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          additional_prop_1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          storage_used_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 additional_prop_2 = 2 [json_name = "additionalProp2"];
+      // uint32 storage_limit = 2 [json_name = "storageLimit"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          additional_prop_2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint32 additional_prop_3 = 3 [json_name = "additionalProp3"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          additional_prop_3_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          storage_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -244,22 +233,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 additional_prop_1 = 1 [json_name = "additionalProp1"];
-  if (this->_internal_additional_prop_1() != 0) {
+  // uint32 storage_used = 1 [json_name = "storageUsed"];
+  if (this->_internal_storage_used() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_additional_prop_1(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_used(), target);
   }
 
-  // uint32 additional_prop_2 = 2 [json_name = "additionalProp2"];
-  if (this->_internal_additional_prop_2() != 0) {
+  // uint32 storage_limit = 2 [json_name = "storageLimit"];
+  if (this->_internal_storage_limit() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_additional_prop_2(), target);
-  }
-
-  // uint32 additional_prop_3 = 3 [json_name = "additionalProp3"];
-  if (this->_internal_additional_prop_3() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_additional_prop_3(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_storage_limit(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -278,25 +261,18 @@ size_t HarborQuotas::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 additional_prop_1 = 1 [json_name = "additionalProp1"];
-  if (this->_internal_additional_prop_1() != 0) {
+  // uint32 storage_used = 1 [json_name = "storageUsed"];
+  if (this->_internal_storage_used() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_additional_prop_1());
+        this->_internal_storage_used());
   }
 
-  // uint32 additional_prop_2 = 2 [json_name = "additionalProp2"];
-  if (this->_internal_additional_prop_2() != 0) {
+  // uint32 storage_limit = 2 [json_name = "storageLimit"];
+  if (this->_internal_storage_limit() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_additional_prop_2());
-  }
-
-  // uint32 additional_prop_3 = 3 [json_name = "additionalProp3"];
-  if (this->_internal_additional_prop_3() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_additional_prop_3());
+        this->_internal_storage_limit());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -327,14 +303,11 @@ void HarborQuotas::MergeFrom(const HarborQuotas& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_additional_prop_1() != 0) {
-    _internal_set_additional_prop_1(from._internal_additional_prop_1());
+  if (from._internal_storage_used() != 0) {
+    _internal_set_storage_used(from._internal_storage_used());
   }
-  if (from._internal_additional_prop_2() != 0) {
-    _internal_set_additional_prop_2(from._internal_additional_prop_2());
-  }
-  if (from._internal_additional_prop_3() != 0) {
-    _internal_set_additional_prop_3(from._internal_additional_prop_3());
+  if (from._internal_storage_limit() != 0) {
+    _internal_set_storage_limit(from._internal_storage_limit());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -354,11 +327,11 @@ void HarborQuotas::InternalSwap(HarborQuotas* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(HarborQuotas, additional_prop_3_)
-      + sizeof(HarborQuotas::additional_prop_3_)
-      - PROTOBUF_FIELD_OFFSET(HarborQuotas, additional_prop_1_)>(
-          reinterpret_cast<char*>(&additional_prop_1_),
-          reinterpret_cast<char*>(&other->additional_prop_1_));
+      PROTOBUF_FIELD_OFFSET(HarborQuotas, storage_limit_)
+      + sizeof(HarborQuotas::storage_limit_)
+      - PROTOBUF_FIELD_OFFSET(HarborQuotas, storage_used_)>(
+          reinterpret_cast<char*>(&storage_used_),
+          reinterpret_cast<char*>(&other->storage_used_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HarborQuotas::GetMetadata() const {

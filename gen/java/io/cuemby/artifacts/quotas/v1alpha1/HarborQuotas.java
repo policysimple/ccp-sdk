@@ -50,17 +50,12 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            additionalProp1_ = input.readUInt32();
+            storageUsed_ = input.readUInt32();
             break;
           }
           case 16: {
 
-            additionalProp2_ = input.readUInt32();
-            break;
-          }
-          case 24: {
-
-            additionalProp3_ = input.readUInt32();
+            storageLimit_ = input.readUInt32();
             break;
           }
           default: {
@@ -95,37 +90,26 @@ private static final long serialVersionUID = 0L;
             io.cuemby.artifacts.quotas.v1alpha1.HarborQuotas.class, io.cuemby.artifacts.quotas.v1alpha1.HarborQuotas.Builder.class);
   }
 
-  public static final int ADDITIONAL_PROP_1_FIELD_NUMBER = 1;
-  private int additionalProp1_;
+  public static final int STORAGE_USED_FIELD_NUMBER = 1;
+  private int storageUsed_;
   /**
-   * <code>uint32 additional_prop_1 = 1 [json_name = "additionalProp1"];</code>
-   * @return The additionalProp1.
+   * <code>uint32 storage_used = 1 [json_name = "storageUsed"];</code>
+   * @return The storageUsed.
    */
   @java.lang.Override
-  public int getAdditionalProp1() {
-    return additionalProp1_;
+  public int getStorageUsed() {
+    return storageUsed_;
   }
 
-  public static final int ADDITIONAL_PROP_2_FIELD_NUMBER = 2;
-  private int additionalProp2_;
+  public static final int STORAGE_LIMIT_FIELD_NUMBER = 2;
+  private int storageLimit_;
   /**
-   * <code>uint32 additional_prop_2 = 2 [json_name = "additionalProp2"];</code>
-   * @return The additionalProp2.
+   * <code>uint32 storage_limit = 2 [json_name = "storageLimit"];</code>
+   * @return The storageLimit.
    */
   @java.lang.Override
-  public int getAdditionalProp2() {
-    return additionalProp2_;
-  }
-
-  public static final int ADDITIONAL_PROP_3_FIELD_NUMBER = 3;
-  private int additionalProp3_;
-  /**
-   * <code>uint32 additional_prop_3 = 3 [json_name = "additionalProp3"];</code>
-   * @return The additionalProp3.
-   */
-  @java.lang.Override
-  public int getAdditionalProp3() {
-    return additionalProp3_;
+  public int getStorageLimit() {
+    return storageLimit_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -142,14 +126,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (additionalProp1_ != 0) {
-      output.writeUInt32(1, additionalProp1_);
+    if (storageUsed_ != 0) {
+      output.writeUInt32(1, storageUsed_);
     }
-    if (additionalProp2_ != 0) {
-      output.writeUInt32(2, additionalProp2_);
-    }
-    if (additionalProp3_ != 0) {
-      output.writeUInt32(3, additionalProp3_);
+    if (storageLimit_ != 0) {
+      output.writeUInt32(2, storageLimit_);
     }
     unknownFields.writeTo(output);
   }
@@ -160,17 +141,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (additionalProp1_ != 0) {
+    if (storageUsed_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(1, additionalProp1_);
+        .computeUInt32Size(1, storageUsed_);
     }
-    if (additionalProp2_ != 0) {
+    if (storageLimit_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, additionalProp2_);
-    }
-    if (additionalProp3_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(3, additionalProp3_);
+        .computeUInt32Size(2, storageLimit_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -187,12 +164,10 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.artifacts.quotas.v1alpha1.HarborQuotas other = (io.cuemby.artifacts.quotas.v1alpha1.HarborQuotas) obj;
 
-    if (getAdditionalProp1()
-        != other.getAdditionalProp1()) return false;
-    if (getAdditionalProp2()
-        != other.getAdditionalProp2()) return false;
-    if (getAdditionalProp3()
-        != other.getAdditionalProp3()) return false;
+    if (getStorageUsed()
+        != other.getStorageUsed()) return false;
+    if (getStorageLimit()
+        != other.getStorageLimit()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -204,12 +179,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ADDITIONAL_PROP_1_FIELD_NUMBER;
-    hash = (53 * hash) + getAdditionalProp1();
-    hash = (37 * hash) + ADDITIONAL_PROP_2_FIELD_NUMBER;
-    hash = (53 * hash) + getAdditionalProp2();
-    hash = (37 * hash) + ADDITIONAL_PROP_3_FIELD_NUMBER;
-    hash = (53 * hash) + getAdditionalProp3();
+    hash = (37 * hash) + STORAGE_USED_FIELD_NUMBER;
+    hash = (53 * hash) + getStorageUsed();
+    hash = (37 * hash) + STORAGE_LIMIT_FIELD_NUMBER;
+    hash = (53 * hash) + getStorageLimit();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -343,11 +316,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      additionalProp1_ = 0;
+      storageUsed_ = 0;
 
-      additionalProp2_ = 0;
-
-      additionalProp3_ = 0;
+      storageLimit_ = 0;
 
       return this;
     }
@@ -375,9 +346,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.artifacts.quotas.v1alpha1.HarborQuotas buildPartial() {
       io.cuemby.artifacts.quotas.v1alpha1.HarborQuotas result = new io.cuemby.artifacts.quotas.v1alpha1.HarborQuotas(this);
-      result.additionalProp1_ = additionalProp1_;
-      result.additionalProp2_ = additionalProp2_;
-      result.additionalProp3_ = additionalProp3_;
+      result.storageUsed_ = storageUsed_;
+      result.storageLimit_ = storageLimit_;
       onBuilt();
       return result;
     }
@@ -426,14 +396,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.artifacts.quotas.v1alpha1.HarborQuotas other) {
       if (other == io.cuemby.artifacts.quotas.v1alpha1.HarborQuotas.getDefaultInstance()) return this;
-      if (other.getAdditionalProp1() != 0) {
-        setAdditionalProp1(other.getAdditionalProp1());
+      if (other.getStorageUsed() != 0) {
+        setStorageUsed(other.getStorageUsed());
       }
-      if (other.getAdditionalProp2() != 0) {
-        setAdditionalProp2(other.getAdditionalProp2());
-      }
-      if (other.getAdditionalProp3() != 0) {
-        setAdditionalProp3(other.getAdditionalProp3());
+      if (other.getStorageLimit() != 0) {
+        setStorageLimit(other.getStorageLimit());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -464,95 +431,64 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int additionalProp1_ ;
+    private int storageUsed_ ;
     /**
-     * <code>uint32 additional_prop_1 = 1 [json_name = "additionalProp1"];</code>
-     * @return The additionalProp1.
+     * <code>uint32 storage_used = 1 [json_name = "storageUsed"];</code>
+     * @return The storageUsed.
      */
     @java.lang.Override
-    public int getAdditionalProp1() {
-      return additionalProp1_;
+    public int getStorageUsed() {
+      return storageUsed_;
     }
     /**
-     * <code>uint32 additional_prop_1 = 1 [json_name = "additionalProp1"];</code>
-     * @param value The additionalProp1 to set.
+     * <code>uint32 storage_used = 1 [json_name = "storageUsed"];</code>
+     * @param value The storageUsed to set.
      * @return This builder for chaining.
      */
-    public Builder setAdditionalProp1(int value) {
+    public Builder setStorageUsed(int value) {
       
-      additionalProp1_ = value;
+      storageUsed_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 additional_prop_1 = 1 [json_name = "additionalProp1"];</code>
+     * <code>uint32 storage_used = 1 [json_name = "storageUsed"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearAdditionalProp1() {
+    public Builder clearStorageUsed() {
       
-      additionalProp1_ = 0;
+      storageUsed_ = 0;
       onChanged();
       return this;
     }
 
-    private int additionalProp2_ ;
+    private int storageLimit_ ;
     /**
-     * <code>uint32 additional_prop_2 = 2 [json_name = "additionalProp2"];</code>
-     * @return The additionalProp2.
+     * <code>uint32 storage_limit = 2 [json_name = "storageLimit"];</code>
+     * @return The storageLimit.
      */
     @java.lang.Override
-    public int getAdditionalProp2() {
-      return additionalProp2_;
+    public int getStorageLimit() {
+      return storageLimit_;
     }
     /**
-     * <code>uint32 additional_prop_2 = 2 [json_name = "additionalProp2"];</code>
-     * @param value The additionalProp2 to set.
+     * <code>uint32 storage_limit = 2 [json_name = "storageLimit"];</code>
+     * @param value The storageLimit to set.
      * @return This builder for chaining.
      */
-    public Builder setAdditionalProp2(int value) {
+    public Builder setStorageLimit(int value) {
       
-      additionalProp2_ = value;
+      storageLimit_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 additional_prop_2 = 2 [json_name = "additionalProp2"];</code>
+     * <code>uint32 storage_limit = 2 [json_name = "storageLimit"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearAdditionalProp2() {
+    public Builder clearStorageLimit() {
       
-      additionalProp2_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int additionalProp3_ ;
-    /**
-     * <code>uint32 additional_prop_3 = 3 [json_name = "additionalProp3"];</code>
-     * @return The additionalProp3.
-     */
-    @java.lang.Override
-    public int getAdditionalProp3() {
-      return additionalProp3_;
-    }
-    /**
-     * <code>uint32 additional_prop_3 = 3 [json_name = "additionalProp3"];</code>
-     * @param value The additionalProp3 to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAdditionalProp3(int value) {
-      
-      additionalProp3_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>uint32 additional_prop_3 = 3 [json_name = "additionalProp3"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAdditionalProp3() {
-      
-      additionalProp3_ = 0;
+      storageLimit_ = 0;
       onChanged();
       return this;
     }

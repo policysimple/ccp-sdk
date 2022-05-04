@@ -190,35 +190,25 @@ class HarborQuotas final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAdditionalProp1FieldNumber = 1,
-    kAdditionalProp2FieldNumber = 2,
-    kAdditionalProp3FieldNumber = 3,
+    kStorageUsedFieldNumber = 1,
+    kStorageLimitFieldNumber = 2,
   };
-  // uint32 additional_prop_1 = 1 [json_name = "additionalProp1"];
-  void clear_additional_prop_1();
-  ::PROTOBUF_NAMESPACE_ID::uint32 additional_prop_1() const;
-  void set_additional_prop_1(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 storage_used = 1 [json_name = "storageUsed"];
+  void clear_storage_used();
+  ::PROTOBUF_NAMESPACE_ID::uint32 storage_used() const;
+  void set_storage_used(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_additional_prop_1() const;
-  void _internal_set_additional_prop_1(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_storage_used() const;
+  void _internal_set_storage_used(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 additional_prop_2 = 2 [json_name = "additionalProp2"];
-  void clear_additional_prop_2();
-  ::PROTOBUF_NAMESPACE_ID::uint32 additional_prop_2() const;
-  void set_additional_prop_2(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 storage_limit = 2 [json_name = "storageLimit"];
+  void clear_storage_limit();
+  ::PROTOBUF_NAMESPACE_ID::uint32 storage_limit() const;
+  void set_storage_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_additional_prop_2() const;
-  void _internal_set_additional_prop_2(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // uint32 additional_prop_3 = 3 [json_name = "additionalProp3"];
-  void clear_additional_prop_3();
-  ::PROTOBUF_NAMESPACE_ID::uint32 additional_prop_3() const;
-  void set_additional_prop_3(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_additional_prop_3() const;
-  void _internal_set_additional_prop_3(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_storage_limit() const;
+  void _internal_set_storage_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:artifacts.quotas.v1alpha1.HarborQuotas)
@@ -228,9 +218,8 @@ class HarborQuotas final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 additional_prop_1_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 additional_prop_2_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 additional_prop_3_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 storage_used_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 storage_limit_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto;
 };
@@ -458,64 +447,44 @@ class QuotasRegistry final :
 #endif  // __GNUC__
 // HarborQuotas
 
-// uint32 additional_prop_1 = 1 [json_name = "additionalProp1"];
-inline void HarborQuotas::clear_additional_prop_1() {
-  additional_prop_1_ = 0u;
+// uint32 storage_used = 1 [json_name = "storageUsed"];
+inline void HarborQuotas::clear_storage_used() {
+  storage_used_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 HarborQuotas::_internal_additional_prop_1() const {
-  return additional_prop_1_;
+inline ::PROTOBUF_NAMESPACE_ID::uint32 HarborQuotas::_internal_storage_used() const {
+  return storage_used_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 HarborQuotas::additional_prop_1() const {
-  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.HarborQuotas.additional_prop_1)
-  return _internal_additional_prop_1();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 HarborQuotas::storage_used() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.HarborQuotas.storage_used)
+  return _internal_storage_used();
 }
-inline void HarborQuotas::_internal_set_additional_prop_1(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void HarborQuotas::_internal_set_storage_used(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
-  additional_prop_1_ = value;
+  storage_used_ = value;
 }
-inline void HarborQuotas::set_additional_prop_1(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_additional_prop_1(value);
-  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.HarborQuotas.additional_prop_1)
+inline void HarborQuotas::set_storage_used(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_storage_used(value);
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.HarborQuotas.storage_used)
 }
 
-// uint32 additional_prop_2 = 2 [json_name = "additionalProp2"];
-inline void HarborQuotas::clear_additional_prop_2() {
-  additional_prop_2_ = 0u;
+// uint32 storage_limit = 2 [json_name = "storageLimit"];
+inline void HarborQuotas::clear_storage_limit() {
+  storage_limit_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 HarborQuotas::_internal_additional_prop_2() const {
-  return additional_prop_2_;
+inline ::PROTOBUF_NAMESPACE_ID::uint32 HarborQuotas::_internal_storage_limit() const {
+  return storage_limit_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 HarborQuotas::additional_prop_2() const {
-  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.HarborQuotas.additional_prop_2)
-  return _internal_additional_prop_2();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 HarborQuotas::storage_limit() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.HarborQuotas.storage_limit)
+  return _internal_storage_limit();
 }
-inline void HarborQuotas::_internal_set_additional_prop_2(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void HarborQuotas::_internal_set_storage_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
-  additional_prop_2_ = value;
+  storage_limit_ = value;
 }
-inline void HarborQuotas::set_additional_prop_2(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_additional_prop_2(value);
-  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.HarborQuotas.additional_prop_2)
-}
-
-// uint32 additional_prop_3 = 3 [json_name = "additionalProp3"];
-inline void HarborQuotas::clear_additional_prop_3() {
-  additional_prop_3_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 HarborQuotas::_internal_additional_prop_3() const {
-  return additional_prop_3_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 HarborQuotas::additional_prop_3() const {
-  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.HarborQuotas.additional_prop_3)
-  return _internal_additional_prop_3();
-}
-inline void HarborQuotas::_internal_set_additional_prop_3(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  additional_prop_3_ = value;
-}
-inline void HarborQuotas::set_additional_prop_3(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_additional_prop_3(value);
-  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.HarborQuotas.additional_prop_3)
+inline void HarborQuotas::set_storage_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_storage_limit(value);
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.HarborQuotas.storage_limit)
 }
 
 // -------------------------------------------------------------------

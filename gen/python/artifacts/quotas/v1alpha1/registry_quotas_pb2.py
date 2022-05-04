@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#io.cuemby.artifacts.quotas.v1alpha1B\023RegistryQuotasProtoP\001Z:github.com/cuemby/ccp-sdk/gen/go/artifacts/quotas/v1alpha1\242\002\003PPX\252\002\031Artifacts.Quotas.V1Alpha1\312\002\031Artifacts\\Quotas\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/artifacts/quotas/v1alpha1/registry_quotas.proto\x12\x19\x61rtifacts.quotas.v1alpha1\"\x92\x01\n\x0cHarborQuotas\x12*\n\x11\x61\x64\x64itional_prop_1\x18\x01 \x01(\rR\x0f\x61\x64\x64itionalProp1\x12*\n\x11\x61\x64\x64itional_prop_2\x18\x02 \x01(\rR\x0f\x61\x64\x64itionalProp2\x12*\n\x11\x61\x64\x64itional_prop_3\x18\x03 \x01(\rR\x0f\x61\x64\x64itionalProp3\"\xe8\x01\n\x0eQuotasRegistry\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12%\n\x0e\x65nvironment_id\x18\x04 \x01(\tR\renvironmentId\x12\x16\n\x06\x61\x63tive\x18\x06 \x01(\x08R\x06\x61\x63tive\x12?\n\x06harbor\x18\x07 \x01(\x0b\x32\'.artifacts.quotas.v1alpha1.HarborQuotasR\x06harborB\xb6\x01\n#io.cuemby.artifacts.quotas.v1alpha1B\x13RegistryQuotasProtoP\x01Z:github.com/cuemby/ccp-sdk/gen/go/artifacts/quotas/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19\x41rtifacts.Quotas.V1Alpha1\xca\x02\x19\x41rtifacts\\Quotas\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n/artifacts/quotas/v1alpha1/registry_quotas.proto\x12\x19\x61rtifacts.quotas.v1alpha1\"V\n\x0cHarborQuotas\x12!\n\x0cstorage_used\x18\x01 \x01(\rR\x0bstorageUsed\x12#\n\rstorage_limit\x18\x02 \x01(\rR\x0cstorageLimit\"\xe8\x01\n\x0eQuotasRegistry\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12%\n\x0e\x65nvironment_id\x18\x04 \x01(\tR\renvironmentId\x12\x16\n\x06\x61\x63tive\x18\x06 \x01(\x08R\x06\x61\x63tive\x12?\n\x06harbor\x18\x07 \x01(\x0b\x32\'.artifacts.quotas.v1alpha1.HarborQuotasR\x06harborB\xb6\x01\n#io.cuemby.artifacts.quotas.v1alpha1B\x13RegistryQuotasProtoP\x01Z:github.com/cuemby/ccp-sdk/gen/go/artifacts/quotas/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19\x41rtifacts.Quotas.V1Alpha1\xca\x02\x19\x41rtifacts\\Quotas\\V1Alpha1b\x06proto3'
 )
 
 
@@ -34,26 +34,19 @@ _HARBORQUOTAS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='additional_prop_1', full_name='artifacts.quotas.v1alpha1.HarborQuotas.additional_prop_1', index=0,
+      name='storage_used', full_name='artifacts.quotas.v1alpha1.HarborQuotas.storage_used', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='additionalProp1', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='storageUsed', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='additional_prop_2', full_name='artifacts.quotas.v1alpha1.HarborQuotas.additional_prop_2', index=1,
+      name='storage_limit', full_name='artifacts.quotas.v1alpha1.HarborQuotas.storage_limit', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='additionalProp2', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='additional_prop_3', full_name='artifacts.quotas.v1alpha1.HarborQuotas.additional_prop_3', index=2,
-      number=3, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='additionalProp3', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='storageLimit', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -66,8 +59,8 @@ _HARBORQUOTAS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=79,
-  serialized_end=225,
+  serialized_start=78,
+  serialized_end=164,
 )
 
 
@@ -133,8 +126,8 @@ _QUOTASREGISTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=228,
-  serialized_end=460,
+  serialized_start=167,
+  serialized_end=399,
 )
 
 _QUOTASREGISTRY.fields_by_name['harbor'].message_type = _HARBORQUOTAS
