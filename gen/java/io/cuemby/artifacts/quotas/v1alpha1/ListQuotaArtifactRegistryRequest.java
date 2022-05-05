@@ -4,29 +4,30 @@
 package io.cuemby.artifacts.quotas.v1alpha1;
 
 /**
- * Protobuf type {@code artifacts.quotas.v1alpha1.ListQuotasRegistryRequest}
+ * Protobuf type {@code artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest}
  */
-public final class ListQuotasRegistryRequest extends
+public final class ListQuotaArtifactRegistryRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest)
-    ListQuotasRegistryRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest)
+    ListQuotaArtifactRegistryRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ListQuotasRegistryRequest.newBuilder() to construct.
-  private ListQuotasRegistryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListQuotaArtifactRegistryRequest.newBuilder() to construct.
+  private ListQuotaArtifactRegistryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ListQuotasRegistryRequest() {
+  private ListQuotaArtifactRegistryRequest() {
     repositoryName_ = "";
     query_ = "";
     sort_ = "";
     referenceId_ = "";
+    projectName_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ListQuotasRegistryRequest();
+    return new ListQuotaArtifactRegistryRequest();
   }
 
   @java.lang.Override
@@ -34,7 +35,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ListQuotasRegistryRequest(
+  private ListQuotaArtifactRegistryRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -96,6 +97,42 @@ private static final long serialVersionUID = 0L;
             referenceId_ = s;
             break;
           }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            projectName_ = s;
+            break;
+          }
+          case 80: {
+
+            withTag_ = input.readBool();
+            break;
+          }
+          case 88: {
+
+            withLabel_ = input.readBool();
+            break;
+          }
+          case 96: {
+
+            withScanOverview_ = input.readBool();
+            break;
+          }
+          case 104: {
+
+            withSignature_ = input.readBool();
+            break;
+          }
+          case 112: {
+
+            withImmutableStatus_ = input.readBool();
+            break;
+          }
+          case 120: {
+
+            withAccessory_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -117,15 +154,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.cuemby.artifacts.quotas.v1alpha1.RegistryQuotasProtoAPI.internal_static_artifacts_quotas_v1alpha1_ListQuotasRegistryRequest_descriptor;
+    return io.cuemby.artifacts.quotas.v1alpha1.RegistryQuotasProtoAPI.internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.cuemby.artifacts.quotas.v1alpha1.RegistryQuotasProtoAPI.internal_static_artifacts_quotas_v1alpha1_ListQuotasRegistryRequest_fieldAccessorTable
+    return io.cuemby.artifacts.quotas.v1alpha1.RegistryQuotasProtoAPI.internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.class, io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.Builder.class);
+            io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.class, io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.Builder.class);
   }
 
   public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
@@ -324,6 +361,110 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PROJECT_NAME_FIELD_NUMBER = 9;
+  private volatile java.lang.Object projectName_;
+  /**
+   * <code>string project_name = 9 [json_name = "projectName"];</code>
+   * @return The projectName.
+   */
+  @java.lang.Override
+  public java.lang.String getProjectName() {
+    java.lang.Object ref = projectName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      projectName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string project_name = 9 [json_name = "projectName"];</code>
+   * @return The bytes for projectName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProjectNameBytes() {
+    java.lang.Object ref = projectName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      projectName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int WITH_TAG_FIELD_NUMBER = 10;
+  private boolean withTag_;
+  /**
+   * <code>bool with_tag = 10 [json_name = "withTag"];</code>
+   * @return The withTag.
+   */
+  @java.lang.Override
+  public boolean getWithTag() {
+    return withTag_;
+  }
+
+  public static final int WITH_LABEL_FIELD_NUMBER = 11;
+  private boolean withLabel_;
+  /**
+   * <code>bool with_label = 11 [json_name = "withLabel"];</code>
+   * @return The withLabel.
+   */
+  @java.lang.Override
+  public boolean getWithLabel() {
+    return withLabel_;
+  }
+
+  public static final int WITH_SCAN_OVERVIEW_FIELD_NUMBER = 12;
+  private boolean withScanOverview_;
+  /**
+   * <code>bool with_scan_overview = 12 [json_name = "withScanOverview"];</code>
+   * @return The withScanOverview.
+   */
+  @java.lang.Override
+  public boolean getWithScanOverview() {
+    return withScanOverview_;
+  }
+
+  public static final int WITH_SIGNATURE_FIELD_NUMBER = 13;
+  private boolean withSignature_;
+  /**
+   * <code>bool with_signature = 13 [json_name = "withSignature"];</code>
+   * @return The withSignature.
+   */
+  @java.lang.Override
+  public boolean getWithSignature() {
+    return withSignature_;
+  }
+
+  public static final int WITH_IMMUTABLE_STATUS_FIELD_NUMBER = 14;
+  private boolean withImmutableStatus_;
+  /**
+   * <code>bool with_immutable_status = 14 [json_name = "withImmutableStatus"];</code>
+   * @return The withImmutableStatus.
+   */
+  @java.lang.Override
+  public boolean getWithImmutableStatus() {
+    return withImmutableStatus_;
+  }
+
+  public static final int WITH_ACCESSORY_FIELD_NUMBER = 15;
+  private boolean withAccessory_;
+  /**
+   * <code>bool with_accessory = 15 [json_name = "withAccessory"];</code>
+   * @return The withAccessory.
+   */
+  @java.lang.Override
+  public boolean getWithAccessory() {
+    return withAccessory_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -362,6 +503,27 @@ private static final long serialVersionUID = 0L;
     if (!getReferenceIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, referenceId_);
     }
+    if (!getProjectNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, projectName_);
+    }
+    if (withTag_ != false) {
+      output.writeBool(10, withTag_);
+    }
+    if (withLabel_ != false) {
+      output.writeBool(11, withLabel_);
+    }
+    if (withScanOverview_ != false) {
+      output.writeBool(12, withScanOverview_);
+    }
+    if (withSignature_ != false) {
+      output.writeBool(13, withSignature_);
+    }
+    if (withImmutableStatus_ != false) {
+      output.writeBool(14, withImmutableStatus_);
+    }
+    if (withAccessory_ != false) {
+      output.writeBool(15, withAccessory_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -399,6 +561,33 @@ private static final long serialVersionUID = 0L;
     if (!getReferenceIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, referenceId_);
     }
+    if (!getProjectNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, projectName_);
+    }
+    if (withTag_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(10, withTag_);
+    }
+    if (withLabel_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(11, withLabel_);
+    }
+    if (withScanOverview_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, withScanOverview_);
+    }
+    if (withSignature_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(13, withSignature_);
+    }
+    if (withImmutableStatus_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(14, withImmutableStatus_);
+    }
+    if (withAccessory_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(15, withAccessory_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -409,10 +598,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest)) {
+    if (!(obj instanceof io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest)) {
       return super.equals(obj);
     }
-    io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest other = (io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest) obj;
+    io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest other = (io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest) obj;
 
     if (getOrganizationId()
         != other.getOrganizationId()) return false;
@@ -430,6 +619,20 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSort())) return false;
     if (!getReferenceId()
         .equals(other.getReferenceId())) return false;
+    if (!getProjectName()
+        .equals(other.getProjectName())) return false;
+    if (getWithTag()
+        != other.getWithTag()) return false;
+    if (getWithLabel()
+        != other.getWithLabel()) return false;
+    if (getWithScanOverview()
+        != other.getWithScanOverview()) return false;
+    if (getWithSignature()
+        != other.getWithSignature()) return false;
+    if (getWithImmutableStatus()
+        != other.getWithImmutableStatus()) return false;
+    if (getWithAccessory()
+        != other.getWithAccessory()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -457,74 +660,94 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getSort().hashCode();
     hash = (37 * hash) + REFERENCE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getReferenceId().hashCode();
+    hash = (37 * hash) + PROJECT_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getProjectName().hashCode();
+    hash = (37 * hash) + WITH_TAG_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getWithTag());
+    hash = (37 * hash) + WITH_LABEL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getWithLabel());
+    hash = (37 * hash) + WITH_SCAN_OVERVIEW_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getWithScanOverview());
+    hash = (37 * hash) + WITH_SIGNATURE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getWithSignature());
+    hash = (37 * hash) + WITH_IMMUTABLE_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getWithImmutableStatus());
+    hash = (37 * hash) + WITH_ACCESSORY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getWithAccessory());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest parseFrom(
+  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest parseFrom(
+  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest parseFrom(
+  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest parseFrom(
+  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest parseFrom(byte[] data)
+  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest parseFrom(
+  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest parseFrom(java.io.InputStream input)
+  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest parseFrom(
+  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest parseDelimitedFrom(java.io.InputStream input)
+  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest parseDelimitedFrom(
+  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest parseFrom(
+  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest parseFrom(
+  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -537,7 +760,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest prototype) {
+  public static Builder newBuilder(io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -553,26 +776,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code artifacts.quotas.v1alpha1.ListQuotasRegistryRequest}
+   * Protobuf type {@code artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest)
-      io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest)
+      io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.cuemby.artifacts.quotas.v1alpha1.RegistryQuotasProtoAPI.internal_static_artifacts_quotas_v1alpha1_ListQuotasRegistryRequest_descriptor;
+      return io.cuemby.artifacts.quotas.v1alpha1.RegistryQuotasProtoAPI.internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.cuemby.artifacts.quotas.v1alpha1.RegistryQuotasProtoAPI.internal_static_artifacts_quotas_v1alpha1_ListQuotasRegistryRequest_fieldAccessorTable
+      return io.cuemby.artifacts.quotas.v1alpha1.RegistryQuotasProtoAPI.internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.class, io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.Builder.class);
+              io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.class, io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.Builder.class);
     }
 
-    // Construct using io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.newBuilder()
+    // Construct using io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -606,23 +829,37 @@ private static final long serialVersionUID = 0L;
 
       referenceId_ = "";
 
+      projectName_ = "";
+
+      withTag_ = false;
+
+      withLabel_ = false;
+
+      withScanOverview_ = false;
+
+      withSignature_ = false;
+
+      withImmutableStatus_ = false;
+
+      withAccessory_ = false;
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.cuemby.artifacts.quotas.v1alpha1.RegistryQuotasProtoAPI.internal_static_artifacts_quotas_v1alpha1_ListQuotasRegistryRequest_descriptor;
+      return io.cuemby.artifacts.quotas.v1alpha1.RegistryQuotasProtoAPI.internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryRequest_descriptor;
     }
 
     @java.lang.Override
-    public io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest getDefaultInstanceForType() {
-      return io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.getDefaultInstance();
+    public io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest getDefaultInstanceForType() {
+      return io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest build() {
-      io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest result = buildPartial();
+    public io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest build() {
+      io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -630,8 +867,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest buildPartial() {
-      io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest result = new io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest(this);
+    public io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest buildPartial() {
+      io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest result = new io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest(this);
       result.organizationId_ = organizationId_;
       result.projectId_ = projectId_;
       result.repositoryName_ = repositoryName_;
@@ -640,6 +877,13 @@ private static final long serialVersionUID = 0L;
       result.pageSize_ = pageSize_;
       result.sort_ = sort_;
       result.referenceId_ = referenceId_;
+      result.projectName_ = projectName_;
+      result.withTag_ = withTag_;
+      result.withLabel_ = withLabel_;
+      result.withScanOverview_ = withScanOverview_;
+      result.withSignature_ = withSignature_;
+      result.withImmutableStatus_ = withImmutableStatus_;
+      result.withAccessory_ = withAccessory_;
       onBuilt();
       return result;
     }
@@ -678,16 +922,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest) {
-        return mergeFrom((io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest)other);
+      if (other instanceof io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest) {
+        return mergeFrom((io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest other) {
-      if (other == io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest other) {
+      if (other == io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.getDefaultInstance()) return this;
       if (other.getOrganizationId() != 0) {
         setOrganizationId(other.getOrganizationId());
       }
@@ -716,6 +960,28 @@ private static final long serialVersionUID = 0L;
         referenceId_ = other.referenceId_;
         onChanged();
       }
+      if (!other.getProjectName().isEmpty()) {
+        projectName_ = other.projectName_;
+        onChanged();
+      }
+      if (other.getWithTag() != false) {
+        setWithTag(other.getWithTag());
+      }
+      if (other.getWithLabel() != false) {
+        setWithLabel(other.getWithLabel());
+      }
+      if (other.getWithScanOverview() != false) {
+        setWithScanOverview(other.getWithScanOverview());
+      }
+      if (other.getWithSignature() != false) {
+        setWithSignature(other.getWithSignature());
+      }
+      if (other.getWithImmutableStatus() != false) {
+        setWithImmutableStatus(other.getWithImmutableStatus());
+      }
+      if (other.getWithAccessory() != false) {
+        setWithAccessory(other.getWithAccessory());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -731,11 +997,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest parsedMessage = null;
+      io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest) e.getUnfinishedMessage();
+        parsedMessage = (io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1172,6 +1438,268 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private java.lang.Object projectName_ = "";
+    /**
+     * <code>string project_name = 9 [json_name = "projectName"];</code>
+     * @return The projectName.
+     */
+    public java.lang.String getProjectName() {
+      java.lang.Object ref = projectName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string project_name = 9 [json_name = "projectName"];</code>
+     * @return The bytes for projectName.
+     */
+    public com.google.protobuf.ByteString
+        getProjectNameBytes() {
+      java.lang.Object ref = projectName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string project_name = 9 [json_name = "projectName"];</code>
+     * @param value The projectName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProjectName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      projectName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string project_name = 9 [json_name = "projectName"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProjectName() {
+      
+      projectName_ = getDefaultInstance().getProjectName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string project_name = 9 [json_name = "projectName"];</code>
+     * @param value The bytes for projectName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProjectNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      projectName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean withTag_ ;
+    /**
+     * <code>bool with_tag = 10 [json_name = "withTag"];</code>
+     * @return The withTag.
+     */
+    @java.lang.Override
+    public boolean getWithTag() {
+      return withTag_;
+    }
+    /**
+     * <code>bool with_tag = 10 [json_name = "withTag"];</code>
+     * @param value The withTag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWithTag(boolean value) {
+      
+      withTag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool with_tag = 10 [json_name = "withTag"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWithTag() {
+      
+      withTag_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean withLabel_ ;
+    /**
+     * <code>bool with_label = 11 [json_name = "withLabel"];</code>
+     * @return The withLabel.
+     */
+    @java.lang.Override
+    public boolean getWithLabel() {
+      return withLabel_;
+    }
+    /**
+     * <code>bool with_label = 11 [json_name = "withLabel"];</code>
+     * @param value The withLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWithLabel(boolean value) {
+      
+      withLabel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool with_label = 11 [json_name = "withLabel"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWithLabel() {
+      
+      withLabel_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean withScanOverview_ ;
+    /**
+     * <code>bool with_scan_overview = 12 [json_name = "withScanOverview"];</code>
+     * @return The withScanOverview.
+     */
+    @java.lang.Override
+    public boolean getWithScanOverview() {
+      return withScanOverview_;
+    }
+    /**
+     * <code>bool with_scan_overview = 12 [json_name = "withScanOverview"];</code>
+     * @param value The withScanOverview to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWithScanOverview(boolean value) {
+      
+      withScanOverview_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool with_scan_overview = 12 [json_name = "withScanOverview"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWithScanOverview() {
+      
+      withScanOverview_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean withSignature_ ;
+    /**
+     * <code>bool with_signature = 13 [json_name = "withSignature"];</code>
+     * @return The withSignature.
+     */
+    @java.lang.Override
+    public boolean getWithSignature() {
+      return withSignature_;
+    }
+    /**
+     * <code>bool with_signature = 13 [json_name = "withSignature"];</code>
+     * @param value The withSignature to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWithSignature(boolean value) {
+      
+      withSignature_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool with_signature = 13 [json_name = "withSignature"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWithSignature() {
+      
+      withSignature_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean withImmutableStatus_ ;
+    /**
+     * <code>bool with_immutable_status = 14 [json_name = "withImmutableStatus"];</code>
+     * @return The withImmutableStatus.
+     */
+    @java.lang.Override
+    public boolean getWithImmutableStatus() {
+      return withImmutableStatus_;
+    }
+    /**
+     * <code>bool with_immutable_status = 14 [json_name = "withImmutableStatus"];</code>
+     * @param value The withImmutableStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWithImmutableStatus(boolean value) {
+      
+      withImmutableStatus_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool with_immutable_status = 14 [json_name = "withImmutableStatus"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWithImmutableStatus() {
+      
+      withImmutableStatus_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean withAccessory_ ;
+    /**
+     * <code>bool with_accessory = 15 [json_name = "withAccessory"];</code>
+     * @return The withAccessory.
+     */
+    @java.lang.Override
+    public boolean getWithAccessory() {
+      return withAccessory_;
+    }
+    /**
+     * <code>bool with_accessory = 15 [json_name = "withAccessory"];</code>
+     * @param value The withAccessory to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWithAccessory(boolean value) {
+      
+      withAccessory_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool with_accessory = 15 [json_name = "withAccessory"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWithAccessory() {
+      
+      withAccessory_ = false;
+      onChanged();
+      return this;
+    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1185,41 +1713,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest)
+    // @@protoc_insertion_point(builder_scope:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest)
-  private static final io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest)
+  private static final io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest();
+    DEFAULT_INSTANCE = new io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest();
   }
 
-  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest getDefaultInstance() {
+  public static io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListQuotasRegistryRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListQuotasRegistryRequest>() {
+  private static final com.google.protobuf.Parser<ListQuotaArtifactRegistryRequest>
+      PARSER = new com.google.protobuf.AbstractParser<ListQuotaArtifactRegistryRequest>() {
     @java.lang.Override
-    public ListQuotasRegistryRequest parsePartialFrom(
+    public ListQuotaArtifactRegistryRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListQuotasRegistryRequest(input, extensionRegistry);
+      return new ListQuotaArtifactRegistryRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ListQuotasRegistryRequest> parser() {
+  public static com.google.protobuf.Parser<ListQuotaArtifactRegistryRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListQuotasRegistryRequest> getParserForType() {
+  public com.google.protobuf.Parser<ListQuotaArtifactRegistryRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public io.cuemby.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest getDefaultInstanceForType() {
+  public io.cuemby.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

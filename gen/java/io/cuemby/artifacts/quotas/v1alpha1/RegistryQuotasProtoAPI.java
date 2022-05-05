@@ -15,6 +15,11 @@ public final class RegistryQuotasProtoAPI {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_artifacts_quotas_v1alpha1_UpdateQuotaRegistryRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -29,6 +34,11 @@ public final class RegistryQuotasProtoAPI {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_artifacts_quotas_v1alpha1_ListQuotasRegistryRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_artifacts_quotas_v1alpha1_ListQuotasRegistryResponse_descriptor;
   static final 
@@ -46,60 +56,95 @@ public final class RegistryQuotasProtoAPI {
       "\n3artifacts/quotas/v1alpha1/registry_quo" +
       "tas_api.proto\022\031artifacts.quotas.v1alpha1" +
       "\032/artifacts/quotas/v1alpha1/registry_quo" +
-      "tas.proto\"n\n\032UpdateQuotaRegistryRequest\022" +
-      "P\n\016quota_registry\030\001 \001(\0132).artifacts.quot" +
-      "as.v1alpha1.QuotasRegistryR\rquotaRegistr" +
-      "y\"\207\001\n\033UpdateQuotaRegistryResponse\022P\n\016quo" +
-      "ta_registry\030\001 \001(\0132).artifacts.quotas.v1a" +
-      "lpha1.QuotasRegistryR\rquotaRegistry\022\026\n\006s" +
-      "tatus\030\002 \001(\tR\006status\"\341\001\n\031ListQuotasRegist" +
-      "ryRequest\022\'\n\017organization_id\030\001 \001(\rR\016orga" +
-      "nizationId\022\035\n\nproject_id\030\002 \001(\rR\tprojectI" +
-      "d\022\024\n\005query\030\003 \001(\tR\005query\022\022\n\004page\030\004 \001(\rR\004p" +
-      "age\022\033\n\tpage_size\030\005 \001(\rR\010pageSize\022\022\n\004sort" +
-      "\030\006 \001(\tR\004sort\022!\n\014reference_id\030\007 \001(\tR\013refe" +
-      "renceId\"\210\001\n\032ListQuotasRegistryResponse\022R" +
-      "\n\017quotas_registry\030\001 \003(\0132).artifacts.quot" +
-      "as.v1alpha1.QuotasRegistryR\016quotasRegist" +
-      "ry\022\026\n\006status\030\002 \001(\tR\006status2\245\002\n\030RegistryQ" +
-      "uotasAPIService\022\201\001\n\022ListQuotasRegistry\0224" +
-      ".artifacts.quotas.v1alpha1.ListQuotasReg" +
-      "istryRequest\0325.artifacts.quotas.v1alpha1" +
-      ".ListQuotasRegistryResponse\022\204\001\n\023UpdateQu" +
-      "otaRegistry\0225.artifacts.quotas.v1alpha1." +
-      "UpdateQuotaRegistryRequest\0326.artifacts.q" +
-      "uotas.v1alpha1.UpdateQuotaRegistryRespon" +
-      "seB\271\001\n#io.cuemby.artifacts.quotas.v1alph" +
-      "a1B\026RegistryQuotasProtoAPIP\001Z:github.com" +
-      "/cuemby/ccp-sdk/gen/go/artifacts/quotas/" +
-      "v1alpha1\242\002\003PPX\252\002\031Artifacts.Quotas.V1Alph" +
-      "a1\312\002\031Artifacts\\Quotas\\V1Alpha1b\006proto3"
+      "tas.proto\"\217\001\n!ListQuotaArtifactRegistryR" +
+      "esponse\022R\n\017quotas_registry\030\001 \003(\0132).artif" +
+      "acts.quotas.v1alpha1.QuotasRegistryR\016quo" +
+      "tasRegistry\022\026\n\006status\030\002 \001(\tR\006status\"n\n\032U" +
+      "pdateQuotaRegistryRequest\022P\n\016quota_regis" +
+      "try\030\001 \001(\0132).artifacts.quotas.v1alpha1.Qu" +
+      "otasRegistryR\rquotaRegistry\"\207\001\n\033UpdateQu" +
+      "otaRegistryResponse\022P\n\016quota_registry\030\001 " +
+      "\001(\0132).artifacts.quotas.v1alpha1.QuotasRe" +
+      "gistryR\rquotaRegistry\022\026\n\006status\030\002 \001(\tR\006s" +
+      "tatus\"\212\002\n\031ListQuotasRegistryRequest\022\'\n\017o" +
+      "rganization_id\030\001 \001(\rR\016organizationId\022\035\n\n" +
+      "project_id\030\002 \001(\rR\tprojectId\022\'\n\017repositor" +
+      "y_name\030\003 \001(\tR\016repositoryName\022\024\n\005query\030\004 " +
+      "\001(\tR\005query\022\022\n\004page\030\005 \001(\rR\004page\022\033\n\tpage_s" +
+      "ize\030\006 \001(\rR\010pageSize\022\022\n\004sort\030\007 \001(\tR\004sort\022" +
+      "!\n\014reference_id\030\010 \001(\tR\013referenceId\"\236\004\n L" +
+      "istQuotaArtifactRegistryRequest\022\'\n\017organ" +
+      "ization_id\030\001 \001(\rR\016organizationId\022\035\n\nproj" +
+      "ect_id\030\002 \001(\rR\tprojectId\022\'\n\017repository_na" +
+      "me\030\003 \001(\tR\016repositoryName\022\024\n\005query\030\004 \001(\tR" +
+      "\005query\022\022\n\004page\030\005 \001(\rR\004page\022\033\n\tpage_size\030" +
+      "\006 \001(\rR\010pageSize\022\022\n\004sort\030\007 \001(\tR\004sort\022!\n\014r" +
+      "eference_id\030\010 \001(\tR\013referenceId\022!\n\014projec" +
+      "t_name\030\t \001(\tR\013projectName\022\031\n\010with_tag\030\n " +
+      "\001(\010R\007withTag\022\035\n\nwith_label\030\013 \001(\010R\twithLa" +
+      "bel\022,\n\022with_scan_overview\030\014 \001(\010R\020withSca" +
+      "nOverview\022%\n\016with_signature\030\r \001(\010R\rwithS" +
+      "ignature\0222\n\025with_immutable_status\030\016 \001(\010R" +
+      "\023withImmutableStatus\022%\n\016with_accessory\030\017" +
+      " \001(\010R\rwithAccessory\"\210\001\n\032ListQuotasRegist" +
+      "ryResponse\022R\n\017quotas_registry\030\001 \003(\0132).ar" +
+      "tifacts.quotas.v1alpha1.QuotasRegistryR\016" +
+      "quotasRegistry\022\026\n\006status\030\002 \001(\tR\006status2\276" +
+      "\003\n\030RegistryQuotasAPIService\022\201\001\n\022ListQuot" +
+      "asRegistry\0224.artifacts.quotas.v1alpha1.L" +
+      "istQuotasRegistryRequest\0325.artifacts.quo" +
+      "tas.v1alpha1.ListQuotasRegistryResponse\022" +
+      "\204\001\n\023UpdateQuotaRegistry\0225.artifacts.quot" +
+      "as.v1alpha1.UpdateQuotaRegistryRequest\0326" +
+      ".artifacts.quotas.v1alpha1.UpdateQuotaRe" +
+      "gistryResponse\022\226\001\n\031ListQuotaArtifactRegi" +
+      "stry\022;.artifacts.quotas.v1alpha1.ListQuo" +
+      "taArtifactRegistryRequest\032<.artifacts.qu" +
+      "otas.v1alpha1.ListQuotaArtifactRegistryR" +
+      "esponseB\271\001\n#io.cuemby.artifacts.quotas.v" +
+      "1alpha1B\026RegistryQuotasProtoAPIP\001Z:githu" +
+      "b.com/cuemby/ccp-sdk/gen/go/artifacts/qu" +
+      "otas/v1alpha1\242\002\003PPX\252\002\031Artifacts.Quotas.V" +
+      "1Alpha1\312\002\031Artifacts\\Quotas\\V1Alpha1b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.cuemby.artifacts.quotas.v1alpha1.RegistryQuotasProto.getDescriptor(),
         });
-    internal_static_artifacts_quotas_v1alpha1_UpdateQuotaRegistryRequest_descriptor =
+    internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryResponse_descriptor,
+        new java.lang.String[] { "QuotasRegistry", "Status", });
+    internal_static_artifacts_quotas_v1alpha1_UpdateQuotaRegistryRequest_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_artifacts_quotas_v1alpha1_UpdateQuotaRegistryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_artifacts_quotas_v1alpha1_UpdateQuotaRegistryRequest_descriptor,
         new java.lang.String[] { "QuotaRegistry", });
     internal_static_artifacts_quotas_v1alpha1_UpdateQuotaRegistryResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_artifacts_quotas_v1alpha1_UpdateQuotaRegistryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_artifacts_quotas_v1alpha1_UpdateQuotaRegistryResponse_descriptor,
         new java.lang.String[] { "QuotaRegistry", "Status", });
     internal_static_artifacts_quotas_v1alpha1_ListQuotasRegistryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_artifacts_quotas_v1alpha1_ListQuotasRegistryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_artifacts_quotas_v1alpha1_ListQuotasRegistryRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", "ProjectId", "Query", "Page", "PageSize", "Sort", "ReferenceId", });
+        new java.lang.String[] { "OrganizationId", "ProjectId", "RepositoryName", "Query", "Page", "PageSize", "Sort", "ReferenceId", });
+    internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryRequest_descriptor,
+        new java.lang.String[] { "OrganizationId", "ProjectId", "RepositoryName", "Query", "Page", "PageSize", "Sort", "ReferenceId", "ProjectName", "WithTag", "WithLabel", "WithScanOverview", "WithSignature", "WithImmutableStatus", "WithAccessory", });
     internal_static_artifacts_quotas_v1alpha1_ListQuotasRegistryResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_artifacts_quotas_v1alpha1_ListQuotasRegistryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_artifacts_quotas_v1alpha1_ListQuotasRegistryResponse_descriptor,

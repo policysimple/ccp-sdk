@@ -24,6 +24,11 @@ class RegistryQuotasAPIServiceStub(object):
         request_serializer=artifacts_dot_quotas_dot_v1alpha1_dot_registry__quotas__api__pb2.UpdateQuotaRegistryRequest.SerializeToString,
         response_deserializer=artifacts_dot_quotas_dot_v1alpha1_dot_registry__quotas__api__pb2.UpdateQuotaRegistryResponse.FromString,
         )
+    self.ListQuotaArtifactRegistry = channel.unary_unary(
+        '/artifacts.quotas.v1alpha1.RegistryQuotasAPIService/ListQuotaArtifactRegistry',
+        request_serializer=artifacts_dot_quotas_dot_v1alpha1_dot_registry__quotas__api__pb2.ListQuotaArtifactRegistryRequest.SerializeToString,
+        response_deserializer=artifacts_dot_quotas_dot_v1alpha1_dot_registry__quotas__api__pb2.ListQuotaArtifactRegistryResponse.FromString,
+        )
 
 
 class RegistryQuotasAPIServiceServicer(object):
@@ -44,6 +49,13 @@ class RegistryQuotasAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListQuotaArtifactRegistry(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_RegistryQuotasAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -56,6 +68,11 @@ def add_RegistryQuotasAPIServiceServicer_to_server(servicer, server):
           servicer.UpdateQuotaRegistry,
           request_deserializer=artifacts_dot_quotas_dot_v1alpha1_dot_registry__quotas__api__pb2.UpdateQuotaRegistryRequest.FromString,
           response_serializer=artifacts_dot_quotas_dot_v1alpha1_dot_registry__quotas__api__pb2.UpdateQuotaRegistryResponse.SerializeToString,
+      ),
+      'ListQuotaArtifactRegistry': grpc.unary_unary_rpc_method_handler(
+          servicer.ListQuotaArtifactRegistry,
+          request_deserializer=artifacts_dot_quotas_dot_v1alpha1_dot_registry__quotas__api__pb2.ListQuotaArtifactRegistryRequest.FromString,
+          response_serializer=artifacts_dot_quotas_dot_v1alpha1_dot_registry__quotas__api__pb2.ListQuotaArtifactRegistryResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

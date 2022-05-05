@@ -17,28 +17,52 @@ class RegistryQuotasApi
         \GPBMetadata\Artifacts\Quotas\V1Alpha1\RegistryQuotas::initOnce();
         $pool->internalAddGeneratedFile(
             '
-•	
-3artifacts/quotas/v1alpha1/registry_quotas_api.protoartifacts.quotas.v1alpha1"n
+ö
+3artifacts/quotas/v1alpha1/registry_quotas_api.protoartifacts.quotas.v1alpha1"è
+!ListQuotaArtifactRegistryResponseR
+quotas_registry (2).artifacts.quotas.v1alpha1.QuotasRegistryRquotasRegistry
+status (	Rstatus"n
 UpdateQuotaRegistryRequestP
 quota_registry (2).artifacts.quotas.v1alpha1.QuotasRegistryRquotaRegistry"á
 UpdateQuotaRegistryResponseP
 quota_registry (2).artifacts.quotas.v1alpha1.QuotasRegistryRquotaRegistry
-status (	Rstatus"·
+status (	Rstatus"ä
 ListQuotasRegistryRequest\'
 organization_id (RorganizationId
 
-project_id (R	projectId
-query (	Rquery
-page (Rpage
-	page_size (RpageSize
-sort (	Rsort!
-reference_id (	RreferenceId"à
+project_id (R	projectId\'
+repository_name (	RrepositoryName
+query (	Rquery
+page (Rpage
+	page_size (RpageSize
+sort (	Rsort!
+reference_id (	RreferenceId"û
+ ListQuotaArtifactRegistryRequest\'
+organization_id (RorganizationId
+
+project_id (R	projectId\'
+repository_name (	RrepositoryName
+query (	Rquery
+page (Rpage
+	page_size (RpageSize
+sort (	Rsort!
+reference_id (	RreferenceId!
+project_name	 (	RprojectName
+with_tag
+ (RwithTag
+
+with_label (R	withLabel,
+with_scan_overview (RwithScanOverview%
+with_signature (RwithSignature2
+with_immutable_status (RwithImmutableStatus%
+with_accessory (RwithAccessory"à
 ListQuotasRegistryResponseR
 quotas_registry (2).artifacts.quotas.v1alpha1.QuotasRegistryRquotasRegistry
-status (	Rstatus2•
+status (	Rstatus2æ
 RegistryQuotasAPIServiceÅ
 ListQuotasRegistry4.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest5.artifacts.quotas.v1alpha1.ListQuotasRegistryResponseÑ
-UpdateQuotaRegistry5.artifacts.quotas.v1alpha1.UpdateQuotaRegistryRequest6.artifacts.quotas.v1alpha1.UpdateQuotaRegistryResponseBπ
+UpdateQuotaRegistry5.artifacts.quotas.v1alpha1.UpdateQuotaRegistryRequest6.artifacts.quotas.v1alpha1.UpdateQuotaRegistryResponseñ
+ListQuotaArtifactRegistry;.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest<.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponseBπ
 #io.cuemby.artifacts.quotas.v1alpha1BRegistryQuotasProtoAPIPZ:github.com/cuemby/ccp-sdk/gen/go/artifacts/quotas/v1alpha1¢PPX™Artifacts.Quotas.V1Alpha1 Artifacts\\Quotas\\V1Alpha1bproto3'
         , true);
 

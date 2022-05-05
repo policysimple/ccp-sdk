@@ -11,12 +11,17 @@ option objc_class_prefix = "PPX";
 option php_namespace = "Artifacts\\Quotas\\V1Alpha1";
 
 import "artifacts/quotas/v1alpha1/registry_quotas.proto";
-//import "registry_quotas.proto";
+// import "registry_quotas.proto";
 
 service RegistryQuotasAPIService{
     rpc ListQuotasRegistry(ListQuotasRegistryRequest) returns (ListQuotasRegistryResponse);
     rpc UpdateQuotaRegistry(UpdateQuotaRegistryRequest) returns (UpdateQuotaRegistryResponse);
-}
+    rpc ListQuotaArtifactRegistry(ListQuotaArtifactRegistryRequest) returns (ListQuotaArtifactRegistryResponse);
+  }
+
+message ListQuotaArtifactRegistryResponse {
+  repeated artifacts.quotas.v1alpha1.QuotasRegistry quotas_registry = 1;
+  string status = 2;}
 
 message UpdateQuotaRegistryRequest {
     artifacts.quotas.v1alpha1.QuotasRegistry quota_registry = 1;
@@ -30,11 +35,30 @@ message UpdateQuotaRegistryResponse {
 message ListQuotasRegistryRequest {
     uint32 organization_id = 1;
     uint32 project_id = 2;
-    string query = 3;
-    uint32 page = 4;
-    uint32 page_size = 5;
-    string sort = 6;
-    string reference_id = 7;
+    string repository_name = 3;
+    string query = 4;
+    uint32 page = 5;
+    uint32 page_size = 6;
+    string sort = 7;
+    string reference_id = 8;
+}
+
+message ListQuotaArtifactRegistryRequest {
+  uint32 organization_id = 1;
+  uint32 project_id = 2;
+  string repository_name = 3;
+  string query = 4;
+  uint32 page = 5;
+  uint32 page_size = 6;
+  string sort = 7;
+  string reference_id = 8;
+  string project_name = 9;
+  bool with_tag = 10;
+  bool with_label = 11;
+  bool with_scan_overview = 12;
+  bool with_signature = 13;
+  bool with_immutable_status = 14;
+  bool with_accessory = 15;
 }
 
 message ListQuotasRegistryResponse {

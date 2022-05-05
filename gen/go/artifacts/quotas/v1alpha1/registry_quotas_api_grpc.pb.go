@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type RegistryQuotasAPIServiceClient interface {
 	ListQuotasRegistry(ctx context.Context, in *ListQuotasRegistryRequest, opts ...grpc.CallOption) (*ListQuotasRegistryResponse, error)
 	UpdateQuotaRegistry(ctx context.Context, in *UpdateQuotaRegistryRequest, opts ...grpc.CallOption) (*UpdateQuotaRegistryResponse, error)
+	ListQuotaArtifactRegistry(ctx context.Context, in *ListQuotaArtifactRegistryRequest, opts ...grpc.CallOption) (*ListQuotaArtifactRegistryResponse, error)
 }
 
 type registryQuotasAPIServiceClient struct {
@@ -52,12 +53,22 @@ func (c *registryQuotasAPIServiceClient) UpdateQuotaRegistry(ctx context.Context
 	return out, nil
 }
 
+func (c *registryQuotasAPIServiceClient) ListQuotaArtifactRegistry(ctx context.Context, in *ListQuotaArtifactRegistryRequest, opts ...grpc.CallOption) (*ListQuotaArtifactRegistryResponse, error) {
+	out := new(ListQuotaArtifactRegistryResponse)
+	err := c.cc.Invoke(ctx, "/artifacts.quotas.v1alpha1.RegistryQuotasAPIService/ListQuotaArtifactRegistry", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // RegistryQuotasAPIServiceServer is the server API for RegistryQuotasAPIService service.
 // All implementations should embed UnimplementedRegistryQuotasAPIServiceServer
 // for forward compatibility
 type RegistryQuotasAPIServiceServer interface {
 	ListQuotasRegistry(context.Context, *ListQuotasRegistryRequest) (*ListQuotasRegistryResponse, error)
 	UpdateQuotaRegistry(context.Context, *UpdateQuotaRegistryRequest) (*UpdateQuotaRegistryResponse, error)
+	ListQuotaArtifactRegistry(context.Context, *ListQuotaArtifactRegistryRequest) (*ListQuotaArtifactRegistryResponse, error)
 }
 
 // UnimplementedRegistryQuotasAPIServiceServer should be embedded to have forward compatible implementations.
@@ -69,6 +80,9 @@ func (UnimplementedRegistryQuotasAPIServiceServer) ListQuotasRegistry(context.Co
 }
 func (UnimplementedRegistryQuotasAPIServiceServer) UpdateQuotaRegistry(context.Context, *UpdateQuotaRegistryRequest) (*UpdateQuotaRegistryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateQuotaRegistry not implemented")
+}
+func (UnimplementedRegistryQuotasAPIServiceServer) ListQuotaArtifactRegistry(context.Context, *ListQuotaArtifactRegistryRequest) (*ListQuotaArtifactRegistryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListQuotaArtifactRegistry not implemented")
 }
 
 // UnsafeRegistryQuotasAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -118,6 +132,24 @@ func _RegistryQuotasAPIService_UpdateQuotaRegistry_Handler(srv interface{}, ctx 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _RegistryQuotasAPIService_ListQuotaArtifactRegistry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListQuotaArtifactRegistryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RegistryQuotasAPIServiceServer).ListQuotaArtifactRegistry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/artifacts.quotas.v1alpha1.RegistryQuotasAPIService/ListQuotaArtifactRegistry",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RegistryQuotasAPIServiceServer).ListQuotaArtifactRegistry(ctx, req.(*ListQuotaArtifactRegistryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // RegistryQuotasAPIService_ServiceDesc is the grpc.ServiceDesc for RegistryQuotasAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -132,6 +164,10 @@ var RegistryQuotasAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateQuotaRegistry",
 			Handler:    _RegistryQuotasAPIService_UpdateQuotaRegistry_Handler,
+		},
+		{
+			MethodName: "ListQuotaArtifactRegistry",
+			Handler:    _RegistryQuotasAPIService_ListQuotaArtifactRegistry_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

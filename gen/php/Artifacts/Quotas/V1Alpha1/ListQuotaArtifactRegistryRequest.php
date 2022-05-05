@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>artifacts.quotas.v1alpha1.ListQuotasRegistryRequest</code>
+ * Generated from protobuf message <code>artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest</code>
  */
-class ListQuotasRegistryRequest extends \Google\Protobuf\Internal\Message
+class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
@@ -45,6 +45,34 @@ class ListQuotasRegistryRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string reference_id = 8 [json_name = "referenceId"];</code>
      */
     protected $reference_id = '';
+    /**
+     * Generated from protobuf field <code>string project_name = 9 [json_name = "projectName"];</code>
+     */
+    protected $project_name = '';
+    /**
+     * Generated from protobuf field <code>bool with_tag = 10 [json_name = "withTag"];</code>
+     */
+    protected $with_tag = false;
+    /**
+     * Generated from protobuf field <code>bool with_label = 11 [json_name = "withLabel"];</code>
+     */
+    protected $with_label = false;
+    /**
+     * Generated from protobuf field <code>bool with_scan_overview = 12 [json_name = "withScanOverview"];</code>
+     */
+    protected $with_scan_overview = false;
+    /**
+     * Generated from protobuf field <code>bool with_signature = 13 [json_name = "withSignature"];</code>
+     */
+    protected $with_signature = false;
+    /**
+     * Generated from protobuf field <code>bool with_immutable_status = 14 [json_name = "withImmutableStatus"];</code>
+     */
+    protected $with_immutable_status = false;
+    /**
+     * Generated from protobuf field <code>bool with_accessory = 15 [json_name = "withAccessory"];</code>
+     */
+    protected $with_accessory = false;
 
     /**
      * Constructor.
@@ -60,6 +88,13 @@ class ListQuotasRegistryRequest extends \Google\Protobuf\Internal\Message
      *     @type int $page_size
      *     @type string $sort
      *     @type string $reference_id
+     *     @type string $project_name
+     *     @type bool $with_tag
+     *     @type bool $with_label
+     *     @type bool $with_scan_overview
+     *     @type bool $with_signature
+     *     @type bool $with_immutable_status
+     *     @type bool $with_accessory
      * }
      */
     public function __construct($data = NULL) {
@@ -239,6 +274,160 @@ class ListQuotasRegistryRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->reference_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_name = 9 [json_name = "projectName"];</code>
+     * @return string
+     */
+    public function getProjectName()
+    {
+        return $this->project_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_name = 9 [json_name = "projectName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProjectName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->project_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool with_tag = 10 [json_name = "withTag"];</code>
+     * @return bool
+     */
+    public function getWithTag()
+    {
+        return $this->with_tag;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool with_tag = 10 [json_name = "withTag"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setWithTag($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->with_tag = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool with_label = 11 [json_name = "withLabel"];</code>
+     * @return bool
+     */
+    public function getWithLabel()
+    {
+        return $this->with_label;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool with_label = 11 [json_name = "withLabel"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setWithLabel($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->with_label = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool with_scan_overview = 12 [json_name = "withScanOverview"];</code>
+     * @return bool
+     */
+    public function getWithScanOverview()
+    {
+        return $this->with_scan_overview;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool with_scan_overview = 12 [json_name = "withScanOverview"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setWithScanOverview($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->with_scan_overview = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool with_signature = 13 [json_name = "withSignature"];</code>
+     * @return bool
+     */
+    public function getWithSignature()
+    {
+        return $this->with_signature;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool with_signature = 13 [json_name = "withSignature"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setWithSignature($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->with_signature = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool with_immutable_status = 14 [json_name = "withImmutableStatus"];</code>
+     * @return bool
+     */
+    public function getWithImmutableStatus()
+    {
+        return $this->with_immutable_status;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool with_immutable_status = 14 [json_name = "withImmutableStatus"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setWithImmutableStatus($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->with_immutable_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool with_accessory = 15 [json_name = "withAccessory"];</code>
+     * @return bool
+     */
+    public function getWithAccessory()
+    {
+        return $this->with_accessory;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool with_accessory = 15 [json_name = "withAccessory"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setWithAccessory($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->with_accessory = $var;
 
         return $this;
     }

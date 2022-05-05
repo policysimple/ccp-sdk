@@ -5,6 +5,28 @@ var grpc = require('grpc');
 var artifacts_quotas_v1alpha1_registry_quotas_api_pb = require('../../../artifacts/quotas/v1alpha1/registry_quotas_api_pb.js');
 var artifacts_quotas_v1alpha1_registry_quotas_pb = require('../../../artifacts/quotas/v1alpha1/registry_quotas_pb.js');
 
+function serialize_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryRequest(arg) {
+  if (!(arg instanceof artifacts_quotas_v1alpha1_registry_quotas_api_pb.ListQuotaArtifactRegistryRequest)) {
+    throw new Error('Expected argument of type artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryRequest(buffer_arg) {
+  return artifacts_quotas_v1alpha1_registry_quotas_api_pb.ListQuotaArtifactRegistryRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryResponse(arg) {
+  if (!(arg instanceof artifacts_quotas_v1alpha1_registry_quotas_api_pb.ListQuotaArtifactRegistryResponse)) {
+    throw new Error('Expected argument of type artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryResponse(buffer_arg) {
+  return artifacts_quotas_v1alpha1_registry_quotas_api_pb.ListQuotaArtifactRegistryResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_artifacts_quotas_v1alpha1_ListQuotasRegistryRequest(arg) {
   if (!(arg instanceof artifacts_quotas_v1alpha1_registry_quotas_api_pb.ListQuotasRegistryRequest)) {
     throw new Error('Expected argument of type artifacts.quotas.v1alpha1.ListQuotasRegistryRequest');
@@ -72,6 +94,17 @@ var RegistryQuotasAPIServiceService = exports.RegistryQuotasAPIServiceService = 
     requestDeserialize: deserialize_artifacts_quotas_v1alpha1_UpdateQuotaRegistryRequest,
     responseSerialize: serialize_artifacts_quotas_v1alpha1_UpdateQuotaRegistryResponse,
     responseDeserialize: deserialize_artifacts_quotas_v1alpha1_UpdateQuotaRegistryResponse,
+  },
+  listQuotaArtifactRegistry: {
+    path: '/artifacts.quotas.v1alpha1.RegistryQuotasAPIService/ListQuotaArtifactRegistry',
+    requestStream: false,
+    responseStream: false,
+    requestType: artifacts_quotas_v1alpha1_registry_quotas_api_pb.ListQuotaArtifactRegistryRequest,
+    responseType: artifacts_quotas_v1alpha1_registry_quotas_api_pb.ListQuotaArtifactRegistryResponse,
+    requestSerialize: serialize_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryRequest,
+    requestDeserialize: deserialize_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryRequest,
+    responseSerialize: serialize_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryResponse,
+    responseDeserialize: deserialize_artifacts_quotas_v1alpha1_ListQuotaArtifactRegistryResponse,
   },
 };
 

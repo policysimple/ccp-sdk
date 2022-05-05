@@ -22,6 +22,7 @@ namespace v1alpha1 {
 static const char* RegistryQuotasAPIService_method_names[] = {
   "/artifacts.quotas.v1alpha1.RegistryQuotasAPIService/ListQuotasRegistry",
   "/artifacts.quotas.v1alpha1.RegistryQuotasAPIService/UpdateQuotaRegistry",
+  "/artifacts.quotas.v1alpha1.RegistryQuotasAPIService/ListQuotaArtifactRegistry",
 };
 
 std::unique_ptr< RegistryQuotasAPIService::Stub> RegistryQuotasAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -33,6 +34,7 @@ std::unique_ptr< RegistryQuotasAPIService::Stub> RegistryQuotasAPIService::NewSt
 RegistryQuotasAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_ListQuotasRegistry_(RegistryQuotasAPIService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateQuotaRegistry_(RegistryQuotasAPIService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListQuotaArtifactRegistry_(RegistryQuotasAPIService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status RegistryQuotasAPIService::Stub::ListQuotasRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotasRegistryRequest& request, ::artifacts::quotas::v1alpha1::ListQuotasRegistryResponse* response) {
@@ -67,6 +69,22 @@ void RegistryQuotasAPIService::Stub::experimental_async::UpdateQuotaRegistry(::g
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse>::Create(channel_.get(), cq, rpcmethod_UpdateQuotaRegistry_, context, request, false);
 }
 
+::grpc::Status RegistryQuotasAPIService::Stub::ListQuotaArtifactRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest& request, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListQuotaArtifactRegistry_, context, request, response);
+}
+
+void RegistryQuotasAPIService::Stub::experimental_async::ListQuotaArtifactRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest* request, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListQuotaArtifactRegistry_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>* RegistryQuotasAPIService::Stub::AsyncListQuotaArtifactRegistryRaw(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>::Create(channel_.get(), cq, rpcmethod_ListQuotaArtifactRegistry_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>* RegistryQuotasAPIService::Stub::PrepareAsyncListQuotaArtifactRegistryRaw(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>::Create(channel_.get(), cq, rpcmethod_ListQuotaArtifactRegistry_, context, request, false);
+}
+
 RegistryQuotasAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       RegistryQuotasAPIService_method_names[0],
@@ -78,6 +96,11 @@ RegistryQuotasAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< RegistryQuotasAPIService::Service, ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest, ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse>(
           std::mem_fn(&RegistryQuotasAPIService::Service::UpdateQuotaRegistry), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      RegistryQuotasAPIService_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< RegistryQuotasAPIService::Service, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>(
+          std::mem_fn(&RegistryQuotasAPIService::Service::ListQuotaArtifactRegistry), this)));
 }
 
 RegistryQuotasAPIService::Service::~Service() {
@@ -91,6 +114,13 @@ RegistryQuotasAPIService::Service::~Service() {
 }
 
 ::grpc::Status RegistryQuotasAPIService::Service::UpdateQuotaRegistry(::grpc::ServerContext* context, const ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest* request, ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status RegistryQuotasAPIService::Service::ListQuotaArtifactRegistry(::grpc::ServerContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest* request, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse* response) {
   (void) context;
   (void) request;
   (void) response;

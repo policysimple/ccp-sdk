@@ -42,4 +42,17 @@ class RegistryQuotasAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Artifacts\Quotas\V1Alpha1\ListQuotaArtifactRegistryRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListQuotaArtifactRegistry(\Artifacts\Quotas\V1Alpha1\ListQuotaArtifactRegistryRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/artifacts.quotas.v1alpha1.RegistryQuotasAPIService/ListQuotaArtifactRegistry',
+        $argument,
+        ['\Artifacts\Quotas\V1Alpha1\ListQuotaArtifactRegistryResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

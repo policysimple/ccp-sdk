@@ -3,8 +3,8 @@
 
 package io.cuemby.artifacts.quotas.v1alpha1;
 
-public interface ListQuotasRegistryRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest)
+public interface ListQuotaArtifactRegistryRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -78,4 +78,52 @@ public interface ListQuotasRegistryRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getReferenceIdBytes();
+
+  /**
+   * <code>string project_name = 9 [json_name = "projectName"];</code>
+   * @return The projectName.
+   */
+  java.lang.String getProjectName();
+  /**
+   * <code>string project_name = 9 [json_name = "projectName"];</code>
+   * @return The bytes for projectName.
+   */
+  com.google.protobuf.ByteString
+      getProjectNameBytes();
+
+  /**
+   * <code>bool with_tag = 10 [json_name = "withTag"];</code>
+   * @return The withTag.
+   */
+  boolean getWithTag();
+
+  /**
+   * <code>bool with_label = 11 [json_name = "withLabel"];</code>
+   * @return The withLabel.
+   */
+  boolean getWithLabel();
+
+  /**
+   * <code>bool with_scan_overview = 12 [json_name = "withScanOverview"];</code>
+   * @return The withScanOverview.
+   */
+  boolean getWithScanOverview();
+
+  /**
+   * <code>bool with_signature = 13 [json_name = "withSignature"];</code>
+   * @return The withSignature.
+   */
+  boolean getWithSignature();
+
+  /**
+   * <code>bool with_immutable_status = 14 [json_name = "withImmutableStatus"];</code>
+   * @return The withImmutableStatus.
+   */
+  boolean getWithImmutableStatus();
+
+  /**
+   * <code>bool with_accessory = 15 [json_name = "withAccessory"];</code>
+   * @return The withAccessory.
+   */
+  boolean getWithAccessory();
 }

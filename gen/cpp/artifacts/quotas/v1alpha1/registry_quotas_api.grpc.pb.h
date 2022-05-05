@@ -51,11 +51,19 @@ class RegistryQuotasAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse>> PrepareAsyncUpdateQuotaRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse>>(PrepareAsyncUpdateQuotaRegistryRaw(context, request, cq));
     }
+    virtual ::grpc::Status ListQuotaArtifactRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest& request, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>> AsyncListQuotaArtifactRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>>(AsyncListQuotaArtifactRegistryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>> PrepareAsyncListQuotaArtifactRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>>(PrepareAsyncListQuotaArtifactRegistryRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
       virtual void ListQuotasRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotasRegistryRequest* request, ::artifacts::quotas::v1alpha1::ListQuotasRegistryResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateQuotaRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest* request, ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ListQuotaArtifactRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest* request, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -63,6 +71,8 @@ class RegistryQuotasAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::quotas::v1alpha1::ListQuotasRegistryResponse>* PrepareAsyncListQuotasRegistryRaw(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotasRegistryRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse>* AsyncUpdateQuotaRegistryRaw(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse>* PrepareAsyncUpdateQuotaRegistryRaw(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>* AsyncListQuotaArtifactRegistryRaw(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>* PrepareAsyncListQuotaArtifactRegistryRaw(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -81,11 +91,19 @@ class RegistryQuotasAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse>> PrepareAsyncUpdateQuotaRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse>>(PrepareAsyncUpdateQuotaRegistryRaw(context, request, cq));
     }
+    ::grpc::Status ListQuotaArtifactRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest& request, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>> AsyncListQuotaArtifactRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>>(AsyncListQuotaArtifactRegistryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>> PrepareAsyncListQuotaArtifactRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>>(PrepareAsyncListQuotaArtifactRegistryRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
       void ListQuotasRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotasRegistryRequest* request, ::artifacts::quotas::v1alpha1::ListQuotasRegistryResponse* response, std::function<void(::grpc::Status)>) override;
       void UpdateQuotaRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest* request, ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse* response, std::function<void(::grpc::Status)>) override;
+      void ListQuotaArtifactRegistry(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest* request, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -101,8 +119,11 @@ class RegistryQuotasAPIService final {
     ::grpc::ClientAsyncResponseReader< ::artifacts::quotas::v1alpha1::ListQuotasRegistryResponse>* PrepareAsyncListQuotasRegistryRaw(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotasRegistryRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse>* AsyncUpdateQuotaRegistryRaw(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse>* PrepareAsyncUpdateQuotaRegistryRaw(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>* AsyncListQuotaArtifactRegistryRaw(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>* PrepareAsyncListQuotaArtifactRegistryRaw(::grpc::ClientContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_ListQuotasRegistry_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateQuotaRegistry_;
+    const ::grpc::internal::RpcMethod rpcmethod_ListQuotaArtifactRegistry_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -112,6 +133,7 @@ class RegistryQuotasAPIService final {
     virtual ~Service();
     virtual ::grpc::Status ListQuotasRegistry(::grpc::ServerContext* context, const ::artifacts::quotas::v1alpha1::ListQuotasRegistryRequest* request, ::artifacts::quotas::v1alpha1::ListQuotasRegistryResponse* response);
     virtual ::grpc::Status UpdateQuotaRegistry(::grpc::ServerContext* context, const ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest* request, ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse* response);
+    virtual ::grpc::Status ListQuotaArtifactRegistry(::grpc::ServerContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest* request, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_ListQuotasRegistry : public BaseClass {
@@ -153,7 +175,27 @@ class RegistryQuotasAPIService final {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_ListQuotasRegistry<WithAsyncMethod_UpdateQuotaRegistry<Service > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_ListQuotaArtifactRegistry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_ListQuotaArtifactRegistry() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_ListQuotaArtifactRegistry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListQuotaArtifactRegistry(::grpc::ServerContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest* request, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListQuotaArtifactRegistry(::grpc::ServerContext* context, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest* request, ::grpc::ServerAsyncResponseWriter< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_ListQuotasRegistry<WithAsyncMethod_UpdateQuotaRegistry<WithAsyncMethod_ListQuotaArtifactRegistry<Service > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_ListQuotasRegistry : public BaseClass {
    private:
@@ -184,6 +226,23 @@ class RegistryQuotasAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status UpdateQuotaRegistry(::grpc::ServerContext* context, const ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest* request, ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ListQuotaArtifactRegistry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_ListQuotaArtifactRegistry() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_ListQuotaArtifactRegistry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListQuotaArtifactRegistry(::grpc::ServerContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest* request, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -229,6 +288,26 @@ class RegistryQuotasAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_ListQuotaArtifactRegistry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_ListQuotaArtifactRegistry() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_ListQuotaArtifactRegistry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListQuotaArtifactRegistry(::grpc::ServerContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest* request, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListQuotaArtifactRegistry(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_ListQuotasRegistry : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -268,9 +347,29 @@ class RegistryQuotasAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedUpdateQuotaRegistry(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest,::artifacts::quotas::v1alpha1::UpdateQuotaRegistryResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_ListQuotasRegistry<WithStreamedUnaryMethod_UpdateQuotaRegistry<Service > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ListQuotaArtifactRegistry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_ListQuotaArtifactRegistry() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>(std::bind(&WithStreamedUnaryMethod_ListQuotaArtifactRegistry<BaseClass>::StreamedListQuotaArtifactRegistry, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_ListQuotaArtifactRegistry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ListQuotaArtifactRegistry(::grpc::ServerContext* context, const ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest* request, ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedListQuotaArtifactRegistry(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest,::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_ListQuotasRegistry<WithStreamedUnaryMethod_UpdateQuotaRegistry<WithStreamedUnaryMethod_ListQuotaArtifactRegistry<Service > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_ListQuotasRegistry<WithStreamedUnaryMethod_UpdateQuotaRegistry<Service > > StreamedService;
+  typedef WithStreamedUnaryMethod_ListQuotasRegistry<WithStreamedUnaryMethod_UpdateQuotaRegistry<WithStreamedUnaryMethod_ListQuotaArtifactRegistry<Service > > > StreamedService;
 };
 
 }  // namespace v1alpha1

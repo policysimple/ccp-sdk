@@ -47,7 +47,7 @@ struct TableStruct_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_5fapi_2epro
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -57,6 +57,12 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace artifacts {
 namespace quotas {
 namespace v1alpha1 {
+class ListQuotaArtifactRegistryRequest;
+struct ListQuotaArtifactRegistryRequestDefaultTypeInternal;
+extern ListQuotaArtifactRegistryRequestDefaultTypeInternal _ListQuotaArtifactRegistryRequest_default_instance_;
+class ListQuotaArtifactRegistryResponse;
+struct ListQuotaArtifactRegistryResponseDefaultTypeInternal;
+extern ListQuotaArtifactRegistryResponseDefaultTypeInternal _ListQuotaArtifactRegistryResponse_default_instance_;
 class ListQuotasRegistryRequest;
 struct ListQuotasRegistryRequestDefaultTypeInternal;
 extern ListQuotasRegistryRequestDefaultTypeInternal _ListQuotasRegistryRequest_default_instance_;
@@ -73,6 +79,8 @@ extern UpdateQuotaRegistryResponseDefaultTypeInternal _UpdateQuotaRegistryRespon
 }  // namespace quotas
 }  // namespace artifacts
 PROTOBUF_NAMESPACE_OPEN
+template<> ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest* Arena::CreateMaybeMessage<::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryRequest>(Arena*);
+template<> ::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse* Arena::CreateMaybeMessage<::artifacts::quotas::v1alpha1::ListQuotaArtifactRegistryResponse>(Arena*);
 template<> ::artifacts::quotas::v1alpha1::ListQuotasRegistryRequest* Arena::CreateMaybeMessage<::artifacts::quotas::v1alpha1::ListQuotasRegistryRequest>(Arena*);
 template<> ::artifacts::quotas::v1alpha1::ListQuotasRegistryResponse* Arena::CreateMaybeMessage<::artifacts::quotas::v1alpha1::ListQuotasRegistryResponse>(Arena*);
 template<> ::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest* Arena::CreateMaybeMessage<::artifacts::quotas::v1alpha1::UpdateQuotaRegistryRequest>(Arena*);
@@ -83,6 +91,170 @@ namespace quotas {
 namespace v1alpha1 {
 
 // ===================================================================
+
+class ListQuotaArtifactRegistryResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponse) */ {
+ public:
+  inline ListQuotaArtifactRegistryResponse() : ListQuotaArtifactRegistryResponse(nullptr) {}
+  ~ListQuotaArtifactRegistryResponse() override;
+  explicit constexpr ListQuotaArtifactRegistryResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ListQuotaArtifactRegistryResponse(const ListQuotaArtifactRegistryResponse& from);
+  ListQuotaArtifactRegistryResponse(ListQuotaArtifactRegistryResponse&& from) noexcept
+    : ListQuotaArtifactRegistryResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ListQuotaArtifactRegistryResponse& operator=(const ListQuotaArtifactRegistryResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListQuotaArtifactRegistryResponse& operator=(ListQuotaArtifactRegistryResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ListQuotaArtifactRegistryResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ListQuotaArtifactRegistryResponse* internal_default_instance() {
+    return reinterpret_cast<const ListQuotaArtifactRegistryResponse*>(
+               &_ListQuotaArtifactRegistryResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(ListQuotaArtifactRegistryResponse& a, ListQuotaArtifactRegistryResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListQuotaArtifactRegistryResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListQuotaArtifactRegistryResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListQuotaArtifactRegistryResponse* New() const final {
+    return new ListQuotaArtifactRegistryResponse();
+  }
+
+  ListQuotaArtifactRegistryResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListQuotaArtifactRegistryResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ListQuotaArtifactRegistryResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ListQuotaArtifactRegistryResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListQuotaArtifactRegistryResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponse";
+  }
+  protected:
+  explicit ListQuotaArtifactRegistryResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kQuotasRegistryFieldNumber = 1,
+    kStatusFieldNumber = 2,
+  };
+  // repeated .artifacts.quotas.v1alpha1.QuotasRegistry quotas_registry = 1 [json_name = "quotasRegistry"];
+  int quotas_registry_size() const;
+  private:
+  int _internal_quotas_registry_size() const;
+  public:
+  void clear_quotas_registry();
+  ::artifacts::quotas::v1alpha1::QuotasRegistry* mutable_quotas_registry(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::artifacts::quotas::v1alpha1::QuotasRegistry >*
+      mutable_quotas_registry();
+  private:
+  const ::artifacts::quotas::v1alpha1::QuotasRegistry& _internal_quotas_registry(int index) const;
+  ::artifacts::quotas::v1alpha1::QuotasRegistry* _internal_add_quotas_registry();
+  public:
+  const ::artifacts::quotas::v1alpha1::QuotasRegistry& quotas_registry(int index) const;
+  ::artifacts::quotas::v1alpha1::QuotasRegistry* add_quotas_registry();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::artifacts::quotas::v1alpha1::QuotasRegistry >&
+      quotas_registry() const;
+
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // @@protoc_insertion_point(class_scope:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::artifacts::quotas::v1alpha1::QuotasRegistry > quotas_registry_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
 
 class UpdateQuotaRegistryRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:artifacts.quotas.v1alpha1.UpdateQuotaRegistryRequest) */ {
@@ -128,7 +300,7 @@ class UpdateQuotaRegistryRequest final :
                &_UpdateQuotaRegistryRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(UpdateQuotaRegistryRequest& a, UpdateQuotaRegistryRequest& b) {
     a.Swap(&b);
@@ -276,7 +448,7 @@ class UpdateQuotaRegistryResponse final :
                &_UpdateQuotaRegistryResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(UpdateQuotaRegistryResponse& a, UpdateQuotaRegistryResponse& b) {
     a.Swap(&b);
@@ -440,7 +612,7 @@ class ListQuotasRegistryRequest final :
                &_ListQuotasRegistryRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(ListQuotasRegistryRequest& a, ListQuotasRegistryRequest& b) {
     a.Swap(&b);
@@ -511,15 +683,30 @@ class ListQuotasRegistryRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kQueryFieldNumber = 3,
-    kSortFieldNumber = 6,
-    kReferenceIdFieldNumber = 7,
+    kRepositoryNameFieldNumber = 3,
+    kQueryFieldNumber = 4,
+    kSortFieldNumber = 7,
+    kReferenceIdFieldNumber = 8,
     kOrganizationIdFieldNumber = 1,
     kProjectIdFieldNumber = 2,
-    kPageFieldNumber = 4,
-    kPageSizeFieldNumber = 5,
+    kPageFieldNumber = 5,
+    kPageSizeFieldNumber = 6,
   };
-  // string query = 3 [json_name = "query"];
+  // string repository_name = 3 [json_name = "repositoryName"];
+  void clear_repository_name();
+  const std::string& repository_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_repository_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_repository_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_repository_name();
+  void set_allocated_repository_name(std::string* repository_name);
+  private:
+  const std::string& _internal_repository_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_repository_name(const std::string& value);
+  std::string* _internal_mutable_repository_name();
+  public:
+
+  // string query = 4 [json_name = "query"];
   void clear_query();
   const std::string& query() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -533,7 +720,7 @@ class ListQuotasRegistryRequest final :
   std::string* _internal_mutable_query();
   public:
 
-  // string sort = 6 [json_name = "sort"];
+  // string sort = 7 [json_name = "sort"];
   void clear_sort();
   const std::string& sort() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -547,7 +734,7 @@ class ListQuotasRegistryRequest final :
   std::string* _internal_mutable_sort();
   public:
 
-  // string reference_id = 7 [json_name = "referenceId"];
+  // string reference_id = 8 [json_name = "referenceId"];
   void clear_reference_id();
   const std::string& reference_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -579,7 +766,7 @@ class ListQuotasRegistryRequest final :
   void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 page = 4 [json_name = "page"];
+  // uint32 page = 5 [json_name = "page"];
   void clear_page();
   ::PROTOBUF_NAMESPACE_ID::uint32 page() const;
   void set_page(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -588,7 +775,7 @@ class ListQuotasRegistryRequest final :
   void _internal_set_page(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 page_size = 5 [json_name = "pageSize"];
+  // uint32 page_size = 6 [json_name = "pageSize"];
   void clear_page_size();
   ::PROTOBUF_NAMESPACE_ID::uint32 page_size() const;
   void set_page_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -604,6 +791,7 @@ class ListQuotasRegistryRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr repository_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr query_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sort_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_id_;
@@ -611,6 +799,324 @@ class ListQuotasRegistryRequest final :
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 page_;
   ::PROTOBUF_NAMESPACE_ID::uint32 page_size_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListQuotaArtifactRegistryRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest) */ {
+ public:
+  inline ListQuotaArtifactRegistryRequest() : ListQuotaArtifactRegistryRequest(nullptr) {}
+  ~ListQuotaArtifactRegistryRequest() override;
+  explicit constexpr ListQuotaArtifactRegistryRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ListQuotaArtifactRegistryRequest(const ListQuotaArtifactRegistryRequest& from);
+  ListQuotaArtifactRegistryRequest(ListQuotaArtifactRegistryRequest&& from) noexcept
+    : ListQuotaArtifactRegistryRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ListQuotaArtifactRegistryRequest& operator=(const ListQuotaArtifactRegistryRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListQuotaArtifactRegistryRequest& operator=(ListQuotaArtifactRegistryRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ListQuotaArtifactRegistryRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ListQuotaArtifactRegistryRequest* internal_default_instance() {
+    return reinterpret_cast<const ListQuotaArtifactRegistryRequest*>(
+               &_ListQuotaArtifactRegistryRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(ListQuotaArtifactRegistryRequest& a, ListQuotaArtifactRegistryRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListQuotaArtifactRegistryRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListQuotaArtifactRegistryRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListQuotaArtifactRegistryRequest* New() const final {
+    return new ListQuotaArtifactRegistryRequest();
+  }
+
+  ListQuotaArtifactRegistryRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListQuotaArtifactRegistryRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ListQuotaArtifactRegistryRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ListQuotaArtifactRegistryRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListQuotaArtifactRegistryRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest";
+  }
+  protected:
+  explicit ListQuotaArtifactRegistryRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRepositoryNameFieldNumber = 3,
+    kQueryFieldNumber = 4,
+    kSortFieldNumber = 7,
+    kReferenceIdFieldNumber = 8,
+    kProjectNameFieldNumber = 9,
+    kOrganizationIdFieldNumber = 1,
+    kProjectIdFieldNumber = 2,
+    kPageFieldNumber = 5,
+    kPageSizeFieldNumber = 6,
+    kWithTagFieldNumber = 10,
+    kWithLabelFieldNumber = 11,
+    kWithScanOverviewFieldNumber = 12,
+    kWithSignatureFieldNumber = 13,
+    kWithImmutableStatusFieldNumber = 14,
+    kWithAccessoryFieldNumber = 15,
+  };
+  // string repository_name = 3 [json_name = "repositoryName"];
+  void clear_repository_name();
+  const std::string& repository_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_repository_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_repository_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_repository_name();
+  void set_allocated_repository_name(std::string* repository_name);
+  private:
+  const std::string& _internal_repository_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_repository_name(const std::string& value);
+  std::string* _internal_mutable_repository_name();
+  public:
+
+  // string query = 4 [json_name = "query"];
+  void clear_query();
+  const std::string& query() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_query(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_query();
+  PROTOBUF_MUST_USE_RESULT std::string* release_query();
+  void set_allocated_query(std::string* query);
+  private:
+  const std::string& _internal_query() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_query(const std::string& value);
+  std::string* _internal_mutable_query();
+  public:
+
+  // string sort = 7 [json_name = "sort"];
+  void clear_sort();
+  const std::string& sort() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_sort(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_sort();
+  PROTOBUF_MUST_USE_RESULT std::string* release_sort();
+  void set_allocated_sort(std::string* sort);
+  private:
+  const std::string& _internal_sort() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_sort(const std::string& value);
+  std::string* _internal_mutable_sort();
+  public:
+
+  // string reference_id = 8 [json_name = "referenceId"];
+  void clear_reference_id();
+  const std::string& reference_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_reference_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_reference_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_reference_id();
+  void set_allocated_reference_id(std::string* reference_id);
+  private:
+  const std::string& _internal_reference_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_reference_id(const std::string& value);
+  std::string* _internal_mutable_reference_id();
+  public:
+
+  // string project_name = 9 [json_name = "projectName"];
+  void clear_project_name();
+  const std::string& project_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_project_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_name();
+  void set_allocated_project_name(std::string* project_name);
+  private:
+  const std::string& _internal_project_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_name(const std::string& value);
+  std::string* _internal_mutable_project_name();
+  public:
+
+  // uint32 organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 project_id = 2 [json_name = "projectId"];
+  void clear_project_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
+  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
+  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 page = 5 [json_name = "page"];
+  void clear_page();
+  ::PROTOBUF_NAMESPACE_ID::uint32 page() const;
+  void set_page(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_page() const;
+  void _internal_set_page(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 page_size = 6 [json_name = "pageSize"];
+  void clear_page_size();
+  ::PROTOBUF_NAMESPACE_ID::uint32 page_size() const;
+  void set_page_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_page_size() const;
+  void _internal_set_page_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // bool with_tag = 10 [json_name = "withTag"];
+  void clear_with_tag();
+  bool with_tag() const;
+  void set_with_tag(bool value);
+  private:
+  bool _internal_with_tag() const;
+  void _internal_set_with_tag(bool value);
+  public:
+
+  // bool with_label = 11 [json_name = "withLabel"];
+  void clear_with_label();
+  bool with_label() const;
+  void set_with_label(bool value);
+  private:
+  bool _internal_with_label() const;
+  void _internal_set_with_label(bool value);
+  public:
+
+  // bool with_scan_overview = 12 [json_name = "withScanOverview"];
+  void clear_with_scan_overview();
+  bool with_scan_overview() const;
+  void set_with_scan_overview(bool value);
+  private:
+  bool _internal_with_scan_overview() const;
+  void _internal_set_with_scan_overview(bool value);
+  public:
+
+  // bool with_signature = 13 [json_name = "withSignature"];
+  void clear_with_signature();
+  bool with_signature() const;
+  void set_with_signature(bool value);
+  private:
+  bool _internal_with_signature() const;
+  void _internal_set_with_signature(bool value);
+  public:
+
+  // bool with_immutable_status = 14 [json_name = "withImmutableStatus"];
+  void clear_with_immutable_status();
+  bool with_immutable_status() const;
+  void set_with_immutable_status(bool value);
+  private:
+  bool _internal_with_immutable_status() const;
+  void _internal_set_with_immutable_status(bool value);
+  public:
+
+  // bool with_accessory = 15 [json_name = "withAccessory"];
+  void clear_with_accessory();
+  bool with_accessory() const;
+  void set_with_accessory(bool value);
+  private:
+  bool _internal_with_accessory() const;
+  void _internal_set_with_accessory(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr repository_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr query_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sort_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_name_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 page_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 page_size_;
+  bool with_tag_;
+  bool with_label_;
+  bool with_scan_overview_;
+  bool with_signature_;
+  bool with_immutable_status_;
+  bool with_accessory_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_5fapi_2eproto;
 };
@@ -660,7 +1166,7 @@ class ListQuotasRegistryResponse final :
                &_ListQuotasRegistryResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(ListQuotasRegistryResponse& a, ListQuotasRegistryResponse& b) {
     a.Swap(&b);
@@ -787,6 +1293,93 @@ class ListQuotasRegistryResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// ListQuotaArtifactRegistryResponse
+
+// repeated .artifacts.quotas.v1alpha1.QuotasRegistry quotas_registry = 1 [json_name = "quotasRegistry"];
+inline int ListQuotaArtifactRegistryResponse::_internal_quotas_registry_size() const {
+  return quotas_registry_.size();
+}
+inline int ListQuotaArtifactRegistryResponse::quotas_registry_size() const {
+  return _internal_quotas_registry_size();
+}
+inline ::artifacts::quotas::v1alpha1::QuotasRegistry* ListQuotaArtifactRegistryResponse::mutable_quotas_registry(int index) {
+  // @@protoc_insertion_point(field_mutable:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponse.quotas_registry)
+  return quotas_registry_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::artifacts::quotas::v1alpha1::QuotasRegistry >*
+ListQuotaArtifactRegistryResponse::mutable_quotas_registry() {
+  // @@protoc_insertion_point(field_mutable_list:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponse.quotas_registry)
+  return &quotas_registry_;
+}
+inline const ::artifacts::quotas::v1alpha1::QuotasRegistry& ListQuotaArtifactRegistryResponse::_internal_quotas_registry(int index) const {
+  return quotas_registry_.Get(index);
+}
+inline const ::artifacts::quotas::v1alpha1::QuotasRegistry& ListQuotaArtifactRegistryResponse::quotas_registry(int index) const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponse.quotas_registry)
+  return _internal_quotas_registry(index);
+}
+inline ::artifacts::quotas::v1alpha1::QuotasRegistry* ListQuotaArtifactRegistryResponse::_internal_add_quotas_registry() {
+  return quotas_registry_.Add();
+}
+inline ::artifacts::quotas::v1alpha1::QuotasRegistry* ListQuotaArtifactRegistryResponse::add_quotas_registry() {
+  ::artifacts::quotas::v1alpha1::QuotasRegistry* _add = _internal_add_quotas_registry();
+  // @@protoc_insertion_point(field_add:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponse.quotas_registry)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::artifacts::quotas::v1alpha1::QuotasRegistry >&
+ListQuotaArtifactRegistryResponse::quotas_registry() const {
+  // @@protoc_insertion_point(field_list:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponse.quotas_registry)
+  return quotas_registry_;
+}
+
+// string status = 2 [json_name = "status"];
+inline void ListQuotaArtifactRegistryResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& ListQuotaArtifactRegistryResponse::status() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListQuotaArtifactRegistryResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponse.status)
+}
+inline std::string* ListQuotaArtifactRegistryResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponse.status)
+  return _s;
+}
+inline const std::string& ListQuotaArtifactRegistryResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void ListQuotaArtifactRegistryResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListQuotaArtifactRegistryResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListQuotaArtifactRegistryResponse::release_status() {
+  // @@protoc_insertion_point(field_release:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListQuotaArtifactRegistryResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponse.status)
+}
+
+// -------------------------------------------------------------------
+
 // UpdateQuotaRegistryRequest
 
 // .artifacts.quotas.v1alpha1.QuotasRegistry quota_registry = 1 [json_name = "quotaRegistry"];
@@ -1055,7 +1648,53 @@ inline void ListQuotasRegistryRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::u
   // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.project_id)
 }
 
-// string query = 3 [json_name = "query"];
+// string repository_name = 3 [json_name = "repositoryName"];
+inline void ListQuotasRegistryRequest::clear_repository_name() {
+  repository_name_.ClearToEmpty();
+}
+inline const std::string& ListQuotasRegistryRequest::repository_name() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.repository_name)
+  return _internal_repository_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListQuotasRegistryRequest::set_repository_name(ArgT0&& arg0, ArgT... args) {
+ 
+ repository_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.repository_name)
+}
+inline std::string* ListQuotasRegistryRequest::mutable_repository_name() {
+  std::string* _s = _internal_mutable_repository_name();
+  // @@protoc_insertion_point(field_mutable:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.repository_name)
+  return _s;
+}
+inline const std::string& ListQuotasRegistryRequest::_internal_repository_name() const {
+  return repository_name_.Get();
+}
+inline void ListQuotasRegistryRequest::_internal_set_repository_name(const std::string& value) {
+  
+  repository_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListQuotasRegistryRequest::_internal_mutable_repository_name() {
+  
+  return repository_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListQuotasRegistryRequest::release_repository_name() {
+  // @@protoc_insertion_point(field_release:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.repository_name)
+  return repository_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListQuotasRegistryRequest::set_allocated_repository_name(std::string* repository_name) {
+  if (repository_name != nullptr) {
+    
+  } else {
+    
+  }
+  repository_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), repository_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.repository_name)
+}
+
+// string query = 4 [json_name = "query"];
 inline void ListQuotasRegistryRequest::clear_query() {
   query_.ClearToEmpty();
 }
@@ -1101,7 +1740,7 @@ inline void ListQuotasRegistryRequest::set_allocated_query(std::string* query) {
   // @@protoc_insertion_point(field_set_allocated:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.query)
 }
 
-// uint32 page = 4 [json_name = "page"];
+// uint32 page = 5 [json_name = "page"];
 inline void ListQuotasRegistryRequest::clear_page() {
   page_ = 0u;
 }
@@ -1121,7 +1760,7 @@ inline void ListQuotasRegistryRequest::set_page(::PROTOBUF_NAMESPACE_ID::uint32 
   // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.page)
 }
 
-// uint32 page_size = 5 [json_name = "pageSize"];
+// uint32 page_size = 6 [json_name = "pageSize"];
 inline void ListQuotasRegistryRequest::clear_page_size() {
   page_size_ = 0u;
 }
@@ -1141,7 +1780,7 @@ inline void ListQuotasRegistryRequest::set_page_size(::PROTOBUF_NAMESPACE_ID::ui
   // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.page_size)
 }
 
-// string sort = 6 [json_name = "sort"];
+// string sort = 7 [json_name = "sort"];
 inline void ListQuotasRegistryRequest::clear_sort() {
   sort_.ClearToEmpty();
 }
@@ -1187,7 +1826,7 @@ inline void ListQuotasRegistryRequest::set_allocated_sort(std::string* sort) {
   // @@protoc_insertion_point(field_set_allocated:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.sort)
 }
 
-// string reference_id = 7 [json_name = "referenceId"];
+// string reference_id = 8 [json_name = "referenceId"];
 inline void ListQuotasRegistryRequest::clear_reference_id() {
   reference_id_.ClearToEmpty();
 }
@@ -1231,6 +1870,440 @@ inline void ListQuotasRegistryRequest::set_allocated_reference_id(std::string* r
   reference_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reference_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.reference_id)
+}
+
+// -------------------------------------------------------------------
+
+// ListQuotaArtifactRegistryRequest
+
+// uint32 organization_id = 1 [json_name = "organizationId"];
+inline void ListQuotaArtifactRegistryRequest::clear_organization_id() {
+  organization_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListQuotaArtifactRegistryRequest::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListQuotaArtifactRegistryRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.organization_id)
+  return _internal_organization_id();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void ListQuotaArtifactRegistryRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.organization_id)
+}
+
+// uint32 project_id = 2 [json_name = "projectId"];
+inline void ListQuotaArtifactRegistryRequest::clear_project_id() {
+  project_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListQuotaArtifactRegistryRequest::_internal_project_id() const {
+  return project_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListQuotaArtifactRegistryRequest::project_id() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.project_id)
+  return _internal_project_id();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  project_id_ = value;
+}
+inline void ListQuotaArtifactRegistryRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_project_id(value);
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.project_id)
+}
+
+// string repository_name = 3 [json_name = "repositoryName"];
+inline void ListQuotaArtifactRegistryRequest::clear_repository_name() {
+  repository_name_.ClearToEmpty();
+}
+inline const std::string& ListQuotaArtifactRegistryRequest::repository_name() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.repository_name)
+  return _internal_repository_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListQuotaArtifactRegistryRequest::set_repository_name(ArgT0&& arg0, ArgT... args) {
+ 
+ repository_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.repository_name)
+}
+inline std::string* ListQuotaArtifactRegistryRequest::mutable_repository_name() {
+  std::string* _s = _internal_mutable_repository_name();
+  // @@protoc_insertion_point(field_mutable:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.repository_name)
+  return _s;
+}
+inline const std::string& ListQuotaArtifactRegistryRequest::_internal_repository_name() const {
+  return repository_name_.Get();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_repository_name(const std::string& value) {
+  
+  repository_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListQuotaArtifactRegistryRequest::_internal_mutable_repository_name() {
+  
+  return repository_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListQuotaArtifactRegistryRequest::release_repository_name() {
+  // @@protoc_insertion_point(field_release:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.repository_name)
+  return repository_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListQuotaArtifactRegistryRequest::set_allocated_repository_name(std::string* repository_name) {
+  if (repository_name != nullptr) {
+    
+  } else {
+    
+  }
+  repository_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), repository_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.repository_name)
+}
+
+// string query = 4 [json_name = "query"];
+inline void ListQuotaArtifactRegistryRequest::clear_query() {
+  query_.ClearToEmpty();
+}
+inline const std::string& ListQuotaArtifactRegistryRequest::query() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.query)
+  return _internal_query();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListQuotaArtifactRegistryRequest::set_query(ArgT0&& arg0, ArgT... args) {
+ 
+ query_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.query)
+}
+inline std::string* ListQuotaArtifactRegistryRequest::mutable_query() {
+  std::string* _s = _internal_mutable_query();
+  // @@protoc_insertion_point(field_mutable:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.query)
+  return _s;
+}
+inline const std::string& ListQuotaArtifactRegistryRequest::_internal_query() const {
+  return query_.Get();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_query(const std::string& value) {
+  
+  query_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListQuotaArtifactRegistryRequest::_internal_mutable_query() {
+  
+  return query_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListQuotaArtifactRegistryRequest::release_query() {
+  // @@protoc_insertion_point(field_release:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.query)
+  return query_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListQuotaArtifactRegistryRequest::set_allocated_query(std::string* query) {
+  if (query != nullptr) {
+    
+  } else {
+    
+  }
+  query_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), query,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.query)
+}
+
+// uint32 page = 5 [json_name = "page"];
+inline void ListQuotaArtifactRegistryRequest::clear_page() {
+  page_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListQuotaArtifactRegistryRequest::_internal_page() const {
+  return page_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListQuotaArtifactRegistryRequest::page() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.page)
+  return _internal_page();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_page(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  page_ = value;
+}
+inline void ListQuotaArtifactRegistryRequest::set_page(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_page(value);
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.page)
+}
+
+// uint32 page_size = 6 [json_name = "pageSize"];
+inline void ListQuotaArtifactRegistryRequest::clear_page_size() {
+  page_size_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListQuotaArtifactRegistryRequest::_internal_page_size() const {
+  return page_size_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListQuotaArtifactRegistryRequest::page_size() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.page_size)
+  return _internal_page_size();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_page_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  page_size_ = value;
+}
+inline void ListQuotaArtifactRegistryRequest::set_page_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_page_size(value);
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.page_size)
+}
+
+// string sort = 7 [json_name = "sort"];
+inline void ListQuotaArtifactRegistryRequest::clear_sort() {
+  sort_.ClearToEmpty();
+}
+inline const std::string& ListQuotaArtifactRegistryRequest::sort() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.sort)
+  return _internal_sort();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListQuotaArtifactRegistryRequest::set_sort(ArgT0&& arg0, ArgT... args) {
+ 
+ sort_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.sort)
+}
+inline std::string* ListQuotaArtifactRegistryRequest::mutable_sort() {
+  std::string* _s = _internal_mutable_sort();
+  // @@protoc_insertion_point(field_mutable:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.sort)
+  return _s;
+}
+inline const std::string& ListQuotaArtifactRegistryRequest::_internal_sort() const {
+  return sort_.Get();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_sort(const std::string& value) {
+  
+  sort_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListQuotaArtifactRegistryRequest::_internal_mutable_sort() {
+  
+  return sort_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListQuotaArtifactRegistryRequest::release_sort() {
+  // @@protoc_insertion_point(field_release:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.sort)
+  return sort_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListQuotaArtifactRegistryRequest::set_allocated_sort(std::string* sort) {
+  if (sort != nullptr) {
+    
+  } else {
+    
+  }
+  sort_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), sort,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.sort)
+}
+
+// string reference_id = 8 [json_name = "referenceId"];
+inline void ListQuotaArtifactRegistryRequest::clear_reference_id() {
+  reference_id_.ClearToEmpty();
+}
+inline const std::string& ListQuotaArtifactRegistryRequest::reference_id() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.reference_id)
+  return _internal_reference_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListQuotaArtifactRegistryRequest::set_reference_id(ArgT0&& arg0, ArgT... args) {
+ 
+ reference_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.reference_id)
+}
+inline std::string* ListQuotaArtifactRegistryRequest::mutable_reference_id() {
+  std::string* _s = _internal_mutable_reference_id();
+  // @@protoc_insertion_point(field_mutable:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.reference_id)
+  return _s;
+}
+inline const std::string& ListQuotaArtifactRegistryRequest::_internal_reference_id() const {
+  return reference_id_.Get();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_reference_id(const std::string& value) {
+  
+  reference_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListQuotaArtifactRegistryRequest::_internal_mutable_reference_id() {
+  
+  return reference_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListQuotaArtifactRegistryRequest::release_reference_id() {
+  // @@protoc_insertion_point(field_release:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.reference_id)
+  return reference_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListQuotaArtifactRegistryRequest::set_allocated_reference_id(std::string* reference_id) {
+  if (reference_id != nullptr) {
+    
+  } else {
+    
+  }
+  reference_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reference_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.reference_id)
+}
+
+// string project_name = 9 [json_name = "projectName"];
+inline void ListQuotaArtifactRegistryRequest::clear_project_name() {
+  project_name_.ClearToEmpty();
+}
+inline const std::string& ListQuotaArtifactRegistryRequest::project_name() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.project_name)
+  return _internal_project_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListQuotaArtifactRegistryRequest::set_project_name(ArgT0&& arg0, ArgT... args) {
+ 
+ project_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.project_name)
+}
+inline std::string* ListQuotaArtifactRegistryRequest::mutable_project_name() {
+  std::string* _s = _internal_mutable_project_name();
+  // @@protoc_insertion_point(field_mutable:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.project_name)
+  return _s;
+}
+inline const std::string& ListQuotaArtifactRegistryRequest::_internal_project_name() const {
+  return project_name_.Get();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_project_name(const std::string& value) {
+  
+  project_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListQuotaArtifactRegistryRequest::_internal_mutable_project_name() {
+  
+  return project_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListQuotaArtifactRegistryRequest::release_project_name() {
+  // @@protoc_insertion_point(field_release:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.project_name)
+  return project_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListQuotaArtifactRegistryRequest::set_allocated_project_name(std::string* project_name) {
+  if (project_name != nullptr) {
+    
+  } else {
+    
+  }
+  project_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.project_name)
+}
+
+// bool with_tag = 10 [json_name = "withTag"];
+inline void ListQuotaArtifactRegistryRequest::clear_with_tag() {
+  with_tag_ = false;
+}
+inline bool ListQuotaArtifactRegistryRequest::_internal_with_tag() const {
+  return with_tag_;
+}
+inline bool ListQuotaArtifactRegistryRequest::with_tag() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_tag)
+  return _internal_with_tag();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_with_tag(bool value) {
+  
+  with_tag_ = value;
+}
+inline void ListQuotaArtifactRegistryRequest::set_with_tag(bool value) {
+  _internal_set_with_tag(value);
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_tag)
+}
+
+// bool with_label = 11 [json_name = "withLabel"];
+inline void ListQuotaArtifactRegistryRequest::clear_with_label() {
+  with_label_ = false;
+}
+inline bool ListQuotaArtifactRegistryRequest::_internal_with_label() const {
+  return with_label_;
+}
+inline bool ListQuotaArtifactRegistryRequest::with_label() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_label)
+  return _internal_with_label();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_with_label(bool value) {
+  
+  with_label_ = value;
+}
+inline void ListQuotaArtifactRegistryRequest::set_with_label(bool value) {
+  _internal_set_with_label(value);
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_label)
+}
+
+// bool with_scan_overview = 12 [json_name = "withScanOverview"];
+inline void ListQuotaArtifactRegistryRequest::clear_with_scan_overview() {
+  with_scan_overview_ = false;
+}
+inline bool ListQuotaArtifactRegistryRequest::_internal_with_scan_overview() const {
+  return with_scan_overview_;
+}
+inline bool ListQuotaArtifactRegistryRequest::with_scan_overview() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_scan_overview)
+  return _internal_with_scan_overview();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_with_scan_overview(bool value) {
+  
+  with_scan_overview_ = value;
+}
+inline void ListQuotaArtifactRegistryRequest::set_with_scan_overview(bool value) {
+  _internal_set_with_scan_overview(value);
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_scan_overview)
+}
+
+// bool with_signature = 13 [json_name = "withSignature"];
+inline void ListQuotaArtifactRegistryRequest::clear_with_signature() {
+  with_signature_ = false;
+}
+inline bool ListQuotaArtifactRegistryRequest::_internal_with_signature() const {
+  return with_signature_;
+}
+inline bool ListQuotaArtifactRegistryRequest::with_signature() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_signature)
+  return _internal_with_signature();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_with_signature(bool value) {
+  
+  with_signature_ = value;
+}
+inline void ListQuotaArtifactRegistryRequest::set_with_signature(bool value) {
+  _internal_set_with_signature(value);
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_signature)
+}
+
+// bool with_immutable_status = 14 [json_name = "withImmutableStatus"];
+inline void ListQuotaArtifactRegistryRequest::clear_with_immutable_status() {
+  with_immutable_status_ = false;
+}
+inline bool ListQuotaArtifactRegistryRequest::_internal_with_immutable_status() const {
+  return with_immutable_status_;
+}
+inline bool ListQuotaArtifactRegistryRequest::with_immutable_status() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_immutable_status)
+  return _internal_with_immutable_status();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_with_immutable_status(bool value) {
+  
+  with_immutable_status_ = value;
+}
+inline void ListQuotaArtifactRegistryRequest::set_with_immutable_status(bool value) {
+  _internal_set_with_immutable_status(value);
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_immutable_status)
+}
+
+// bool with_accessory = 15 [json_name = "withAccessory"];
+inline void ListQuotaArtifactRegistryRequest::clear_with_accessory() {
+  with_accessory_ = false;
+}
+inline bool ListQuotaArtifactRegistryRequest::_internal_with_accessory() const {
+  return with_accessory_;
+}
+inline bool ListQuotaArtifactRegistryRequest::with_accessory() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_accessory)
+  return _internal_with_accessory();
+}
+inline void ListQuotaArtifactRegistryRequest::_internal_set_with_accessory(bool value) {
+  
+  with_accessory_ = value;
+}
+inline void ListQuotaArtifactRegistryRequest::set_with_accessory(bool value) {
+  _internal_set_with_accessory(value);
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_accessory)
 }
 
 // -------------------------------------------------------------------
@@ -1323,6 +2396,10 @@ inline void ListQuotasRegistryResponse::set_allocated_status(std::string* status
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
