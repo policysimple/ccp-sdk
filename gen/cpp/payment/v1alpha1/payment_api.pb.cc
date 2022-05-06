@@ -311,17 +311,17 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto[
   "a1.DeletePaymentResponse\"\000\022\\\n\013ListPaymen"
   "t\022$.payment.v1alpha1.ListPaymentRequest\032"
   "%.payment.v1alpha1.ListPaymentResponse\"\000"
-  "B\222\001\n\032io.cuemby.payment.v1alpha1B\017Payment"
-  "APIProtoP\001Z5github.com/cuemby/ccp-paymen"
-  "t-service/paymentv1alpha1\242\002\003PPX\252\002\020Paymen"
-  "t.V1alpha1\312\002\020Payment\\V1alpha1b\006proto3"
+  "B\217\001\n\032io.cuemby.payment.v1alpha1B\020Environ"
+  "mentProtoP\001Z1github.com/cuemby/ccp-sdk/g"
+  "en/go/payment/v1alpha1\242\002\003PPX\252\002\020Payment.V"
+  "1Alpha1\312\002\020Payment\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_deps[1] = {
   &::descriptor_table_payment_2fv1alpha1_2fpayment_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto = {
-  false, false, 1917, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto, "payment/v1alpha1/payment_api.proto", 
+  false, false, 1914, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto, "payment/v1alpha1/payment_api.proto", 
   &descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_once, descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_deps, 1, 10,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_5fapi_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_5fapi_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_5fapi_2eproto,

@@ -28,7 +28,7 @@ class UpdatePaymentResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Payment $payment
+     *     @type \Payment\V1Alpha1\Payment $payment
      *     @type string $status
      * }
      */
@@ -39,7 +39,7 @@ class UpdatePaymentResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
-     * @return \Payment\V1alpha1\Payment|null
+     * @return \Payment\V1Alpha1\Payment|null
      */
     public function getPayment()
     {
@@ -58,12 +58,12 @@ class UpdatePaymentResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
-     * @param \Payment\V1alpha1\Payment $var
+     * @param \Payment\V1Alpha1\Payment $var
      * @return $this
      */
     public function setPayment($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Payment::class);
+        GPBUtil::checkMessage($var, \Payment\V1Alpha1\Payment::class);
         $this->payment = $var;
 
         return $this;

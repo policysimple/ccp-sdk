@@ -16,11 +16,11 @@ public interface UpdatePaymentResponseOrBuilder extends
    * <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
    * @return The payment.
    */
-  payment.v1alpha1.PaymentOuterClass.Payment getPayment();
+  io.cuemby.payment.v1alpha1.Payment getPayment();
   /**
    * <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
    */
-  payment.v1alpha1.PaymentOuterClass.PaymentOrBuilder getPaymentOrBuilder();
+  io.cuemby.payment.v1alpha1.PaymentOrBuilder getPaymentOrBuilder();
 
   /**
    * <code>string status = 2 [json_name = "status"];</code>

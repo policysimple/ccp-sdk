@@ -50,11 +50,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            payment.v1alpha1.PaymentOuterClass.Payment.Builder subBuilder = null;
+            io.cuemby.payment.v1alpha1.Payment.Builder subBuilder = null;
             if (payment_ != null) {
               subBuilder = payment_.toBuilder();
             }
-            payment_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.Payment.parser(), extensionRegistry);
+            payment_ = input.readMessage(io.cuemby.payment.v1alpha1.Payment.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(payment_);
               payment_ = subBuilder.buildPartial();
@@ -89,19 +89,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.cuemby.payment.v1alpha1.PaymentAPIProto.internal_static_payment_v1alpha1_CreatePaymentRequest_descriptor;
+    return io.cuemby.payment.v1alpha1.EnvironmentProto.internal_static_payment_v1alpha1_CreatePaymentRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.cuemby.payment.v1alpha1.PaymentAPIProto.internal_static_payment_v1alpha1_CreatePaymentRequest_fieldAccessorTable
+    return io.cuemby.payment.v1alpha1.EnvironmentProto.internal_static_payment_v1alpha1_CreatePaymentRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.cuemby.payment.v1alpha1.CreatePaymentRequest.class, io.cuemby.payment.v1alpha1.CreatePaymentRequest.Builder.class);
   }
 
   public static final int PAYMENT_FIELD_NUMBER = 1;
-  private payment.v1alpha1.PaymentOuterClass.Payment payment_;
+  private io.cuemby.payment.v1alpha1.Payment payment_;
   /**
    * <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
    * @return Whether the payment field is set.
@@ -115,14 +115,14 @@ private static final long serialVersionUID = 0L;
    * @return The payment.
    */
   @java.lang.Override
-  public payment.v1alpha1.PaymentOuterClass.Payment getPayment() {
-    return payment_ == null ? payment.v1alpha1.PaymentOuterClass.Payment.getDefaultInstance() : payment_;
+  public io.cuemby.payment.v1alpha1.Payment getPayment() {
+    return payment_ == null ? io.cuemby.payment.v1alpha1.Payment.getDefaultInstance() : payment_;
   }
   /**
    * <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
    */
   @java.lang.Override
-  public payment.v1alpha1.PaymentOuterClass.PaymentOrBuilder getPaymentOrBuilder() {
+  public io.cuemby.payment.v1alpha1.PaymentOrBuilder getPaymentOrBuilder() {
     return getPayment();
   }
 
@@ -343,13 +343,13 @@ private static final long serialVersionUID = 0L;
       io.cuemby.payment.v1alpha1.CreatePaymentRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.cuemby.payment.v1alpha1.PaymentAPIProto.internal_static_payment_v1alpha1_CreatePaymentRequest_descriptor;
+      return io.cuemby.payment.v1alpha1.EnvironmentProto.internal_static_payment_v1alpha1_CreatePaymentRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.cuemby.payment.v1alpha1.PaymentAPIProto.internal_static_payment_v1alpha1_CreatePaymentRequest_fieldAccessorTable
+      return io.cuemby.payment.v1alpha1.EnvironmentProto.internal_static_payment_v1alpha1_CreatePaymentRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.cuemby.payment.v1alpha1.CreatePaymentRequest.class, io.cuemby.payment.v1alpha1.CreatePaymentRequest.Builder.class);
     }
@@ -386,7 +386,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.cuemby.payment.v1alpha1.PaymentAPIProto.internal_static_payment_v1alpha1_CreatePaymentRequest_descriptor;
+      return io.cuemby.payment.v1alpha1.EnvironmentProto.internal_static_payment_v1alpha1_CreatePaymentRequest_descriptor;
     }
 
     @java.lang.Override
@@ -496,9 +496,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private payment.v1alpha1.PaymentOuterClass.Payment payment_;
+    private io.cuemby.payment.v1alpha1.Payment payment_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        payment.v1alpha1.PaymentOuterClass.Payment, payment.v1alpha1.PaymentOuterClass.Payment.Builder, payment.v1alpha1.PaymentOuterClass.PaymentOrBuilder> paymentBuilder_;
+        io.cuemby.payment.v1alpha1.Payment, io.cuemby.payment.v1alpha1.Payment.Builder, io.cuemby.payment.v1alpha1.PaymentOrBuilder> paymentBuilder_;
     /**
      * <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
      * @return Whether the payment field is set.
@@ -510,9 +510,9 @@ private static final long serialVersionUID = 0L;
      * <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
      * @return The payment.
      */
-    public payment.v1alpha1.PaymentOuterClass.Payment getPayment() {
+    public io.cuemby.payment.v1alpha1.Payment getPayment() {
       if (paymentBuilder_ == null) {
-        return payment_ == null ? payment.v1alpha1.PaymentOuterClass.Payment.getDefaultInstance() : payment_;
+        return payment_ == null ? io.cuemby.payment.v1alpha1.Payment.getDefaultInstance() : payment_;
       } else {
         return paymentBuilder_.getMessage();
       }
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
      */
-    public Builder setPayment(payment.v1alpha1.PaymentOuterClass.Payment value) {
+    public Builder setPayment(io.cuemby.payment.v1alpha1.Payment value) {
       if (paymentBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -537,7 +537,7 @@ private static final long serialVersionUID = 0L;
      * <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
      */
     public Builder setPayment(
-        payment.v1alpha1.PaymentOuterClass.Payment.Builder builderForValue) {
+        io.cuemby.payment.v1alpha1.Payment.Builder builderForValue) {
       if (paymentBuilder_ == null) {
         payment_ = builderForValue.build();
         onChanged();
@@ -550,11 +550,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
      */
-    public Builder mergePayment(payment.v1alpha1.PaymentOuterClass.Payment value) {
+    public Builder mergePayment(io.cuemby.payment.v1alpha1.Payment value) {
       if (paymentBuilder_ == null) {
         if (payment_ != null) {
           payment_ =
-            payment.v1alpha1.PaymentOuterClass.Payment.newBuilder(payment_).mergeFrom(value).buildPartial();
+            io.cuemby.payment.v1alpha1.Payment.newBuilder(payment_).mergeFrom(value).buildPartial();
         } else {
           payment_ = value;
         }
@@ -582,7 +582,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
      */
-    public payment.v1alpha1.PaymentOuterClass.Payment.Builder getPaymentBuilder() {
+    public io.cuemby.payment.v1alpha1.Payment.Builder getPaymentBuilder() {
       
       onChanged();
       return getPaymentFieldBuilder().getBuilder();
@@ -590,23 +590,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
      */
-    public payment.v1alpha1.PaymentOuterClass.PaymentOrBuilder getPaymentOrBuilder() {
+    public io.cuemby.payment.v1alpha1.PaymentOrBuilder getPaymentOrBuilder() {
       if (paymentBuilder_ != null) {
         return paymentBuilder_.getMessageOrBuilder();
       } else {
         return payment_ == null ?
-            payment.v1alpha1.PaymentOuterClass.Payment.getDefaultInstance() : payment_;
+            io.cuemby.payment.v1alpha1.Payment.getDefaultInstance() : payment_;
       }
     }
     /**
      * <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        payment.v1alpha1.PaymentOuterClass.Payment, payment.v1alpha1.PaymentOuterClass.Payment.Builder, payment.v1alpha1.PaymentOuterClass.PaymentOrBuilder> 
+        io.cuemby.payment.v1alpha1.Payment, io.cuemby.payment.v1alpha1.Payment.Builder, io.cuemby.payment.v1alpha1.PaymentOrBuilder> 
         getPaymentFieldBuilder() {
       if (paymentBuilder_ == null) {
         paymentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            payment.v1alpha1.PaymentOuterClass.Payment, payment.v1alpha1.PaymentOuterClass.Payment.Builder, payment.v1alpha1.PaymentOuterClass.PaymentOrBuilder>(
+            io.cuemby.payment.v1alpha1.Payment, io.cuemby.payment.v1alpha1.Payment.Builder, io.cuemby.payment.v1alpha1.PaymentOrBuilder>(
                 getPayment(),
                 getParentForChildren(),
                 isClean());
