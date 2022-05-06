@@ -16,7 +16,7 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-æ
+»
 payment/v1alpha1/payment.protopayment.v1alpha1"°
 Payment
 id (	Rid(
@@ -33,7 +33,8 @@ expiryDate\'
 project_id (R	projectId%
 application_id	 (	RapplicationId">
 PaymentList/
-items (2.payment.v1alpha1.PaymentRitemsB7Z5github.com/cuemby/ccp-payment-service/paymentv1alpha1bproto3'
+items (2.payment.v1alpha1.PaymentRitemsB‹
+io.cuemby.payment.v1alpha1BPaymentProtoPZ1github.com/cuemby/ccp-sdk/gen/go/payment/v1alpha1¢PPXªPayment.V1Alpha1ÊPayment\\V1Alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

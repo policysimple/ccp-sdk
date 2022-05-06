@@ -16,11 +16,11 @@ public interface ListPaymentResponseOrBuilder extends
    * <code>.payment.v1alpha1.PaymentList payment_list = 1 [json_name = "paymentList"];</code>
    * @return The paymentList.
    */
-  payment.v1alpha1.PaymentOuterClass.PaymentList getPaymentList();
+  io.cuemby.payment.v1alpha1.PaymentList getPaymentList();
   /**
    * <code>.payment.v1alpha1.PaymentList payment_list = 1 [json_name = "paymentList"];</code>
    */
-  payment.v1alpha1.PaymentOuterClass.PaymentListOrBuilder getPaymentListOrBuilder();
+  io.cuemby.payment.v1alpha1.PaymentListOrBuilder getPaymentListOrBuilder();
 
   /**
    * <code>string status = 2 [json_name = "status"];</code>

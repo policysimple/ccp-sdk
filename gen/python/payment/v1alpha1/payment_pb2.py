@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='payment/v1alpha1/payment.proto',
   package='payment.v1alpha1',
   syntax='proto3',
-  serialized_options=b'Z5github.com/cuemby/ccp-payment-service/paymentv1alpha1',
+  serialized_options=b'\n\032io.cuemby.payment.v1alpha1B\014PaymentProtoP\001Z1github.com/cuemby/ccp-sdk/gen/go/payment/v1alpha1\242\002\003PPX\252\002\020Payment.V1Alpha1\312\002\020Payment\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1epayment/v1alpha1/payment.proto\x12\x10payment.v1alpha1\"\xb0\x02\n\x07Payment\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12(\n\x10\x63\x61rd_holder_name\x18\x02 \x01(\tR\x0e\x63\x61rdHolderName\x12\x1b\n\tcard_type\x18\x03 \x01(\tR\x08\x63\x61rdType\x12\x1f\n\x0b\x63\x61rd_number\x18\x04 \x01(\x05R\ncardNumber\x12\x1d\n\ncvv_number\x18\x05 \x01(\x05R\tcvvNumber\x12\x1f\n\x0b\x65xpiry_date\x18\x06 \x01(\tR\nexpiryDate\x12\'\n\x0forganization_id\x18\x07 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x08 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\t \x01(\tR\rapplicationId\">\n\x0bPaymentList\x12/\n\x05items\x18\x01 \x03(\x0b\x32\x19.payment.v1alpha1.PaymentR\x05itemsB7Z5github.com/cuemby/ccp-payment-service/paymentv1alpha1b\x06proto3'
+  serialized_pb=b'\n\x1epayment/v1alpha1/payment.proto\x12\x10payment.v1alpha1\"\xb0\x02\n\x07Payment\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12(\n\x10\x63\x61rd_holder_name\x18\x02 \x01(\tR\x0e\x63\x61rdHolderName\x12\x1b\n\tcard_type\x18\x03 \x01(\tR\x08\x63\x61rdType\x12\x1f\n\x0b\x63\x61rd_number\x18\x04 \x01(\x05R\ncardNumber\x12\x1d\n\ncvv_number\x18\x05 \x01(\x05R\tcvvNumber\x12\x1f\n\x0b\x65xpiry_date\x18\x06 \x01(\tR\nexpiryDate\x12\'\n\x0forganization_id\x18\x07 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x08 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\t \x01(\tR\rapplicationId\">\n\x0bPaymentList\x12/\n\x05items\x18\x01 \x03(\x0b\x32\x19.payment.v1alpha1.PaymentR\x05itemsB\x8b\x01\n\x1aio.cuemby.payment.v1alpha1B\x0cPaymentProtoP\x01Z1github.com/cuemby/ccp-sdk/gen/go/payment/v1alpha1\xa2\x02\x03PPX\xaa\x02\x10Payment.V1Alpha1\xca\x02\x10Payment\\V1Alpha1b\x06proto3'
 )
 
 
