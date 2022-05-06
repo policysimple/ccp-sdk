@@ -1,0 +1,13 @@
+syntax="proto3";
+
+package billing.v1alpha1;
+
+option go_package = "github.com/cuemby/ccp-billing-service/billingv1alpha1";
+
+message Billing{
+  string billing_id = 1;
+  string app_name = 2;
+  string country = 3;
+  string organization = 4;
+  string about = 5;
+}

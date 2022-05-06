@@ -1,13 +1,13 @@
 syntax = "proto3";
 
 package payment.v1alpha1;
-option csharp_namespace = "Payment.V1Alpha1";
+option csharp_namespace = "Payment.V1alpha1";
 option go_package = "github.com/cuemby/ccp-payment-service/paymentv1alpha1";
 option java_multiple_files = true;
 option java_outer_classname = "PaymentAPIProto";
 option java_package = "io.cuemby.payment.v1alpha1";
 option objc_class_prefix = "PPX";
-option php_namespace = "Payment\\V1Alpha1";
+option php_namespace = "Payment\\V1alpha1";
 
 import "payment/v1alpha1/payment.proto";
 //import "payment.proto";
@@ -50,7 +50,7 @@ message DeletePaymentRequest {
     string card_type = 3;
     int32 card_number = 4;
     int32 cvv_number = 5;
-    int32 expiry_date = 6;
+    string expiry_date = 6;
     uint32 organization_id = 7;
     uint32 project_id = 8;
     string application_id = 9;
