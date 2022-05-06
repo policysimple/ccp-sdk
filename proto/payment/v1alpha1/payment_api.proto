@@ -5,7 +5,7 @@ package payment.v1alpha1;
 option csharp_namespace = "Payment.V1Alpha1";
 option go_package = "github.com/cuemby/ccp-sdk/gen/go/payment/v1alpha1";
 option java_multiple_files = true;
-option java_outer_classname = "EnvironmentProto";
+option java_outer_classname = "Paymentproto";
 option java_package = "io.cuemby.payment.v1alpha1";
 option objc_class_prefix = "PPX";
 option php_namespace = "Payment\\V1Alpha1";

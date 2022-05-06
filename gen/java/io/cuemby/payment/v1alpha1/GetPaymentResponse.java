@@ -89,13 +89,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.cuemby.payment.v1alpha1.EnvironmentProto.internal_static_payment_v1alpha1_GetPaymentResponse_descriptor;
+    return io.cuemby.payment.v1alpha1.Paymentproto.internal_static_payment_v1alpha1_GetPaymentResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.cuemby.payment.v1alpha1.EnvironmentProto.internal_static_payment_v1alpha1_GetPaymentResponse_fieldAccessorTable
+    return io.cuemby.payment.v1alpha1.Paymentproto.internal_static_payment_v1alpha1_GetPaymentResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.cuemby.payment.v1alpha1.GetPaymentResponse.class, io.cuemby.payment.v1alpha1.GetPaymentResponse.Builder.class);
   }
@@ -343,13 +343,13 @@ private static final long serialVersionUID = 0L;
       io.cuemby.payment.v1alpha1.GetPaymentResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.cuemby.payment.v1alpha1.EnvironmentProto.internal_static_payment_v1alpha1_GetPaymentResponse_descriptor;
+      return io.cuemby.payment.v1alpha1.Paymentproto.internal_static_payment_v1alpha1_GetPaymentResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.cuemby.payment.v1alpha1.EnvironmentProto.internal_static_payment_v1alpha1_GetPaymentResponse_fieldAccessorTable
+      return io.cuemby.payment.v1alpha1.Paymentproto.internal_static_payment_v1alpha1_GetPaymentResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.cuemby.payment.v1alpha1.GetPaymentResponse.class, io.cuemby.payment.v1alpha1.GetPaymentResponse.Builder.class);
     }
@@ -386,7 +386,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.cuemby.payment.v1alpha1.EnvironmentProto.internal_static_payment_v1alpha1_GetPaymentResponse_descriptor;
+      return io.cuemby.payment.v1alpha1.Paymentproto.internal_static_payment_v1alpha1_GetPaymentResponse_descriptor;
     }
 
     @java.lang.Override
