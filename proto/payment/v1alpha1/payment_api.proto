@@ -13,7 +13,6 @@ option php_namespace = "Payment\\V1Alpha1";
 import "payment/v1alpha1/payment.proto";
 //import "payment.proto";
 
-
 service PaymentAPIService{
     rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {};
     rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {};
@@ -22,7 +21,6 @@ service PaymentAPIService{
     rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {};
   
 }
-
 message CreatePaymentRequest {
     payment.v1alpha1.Payment payment = 1;
     string status = 2;
@@ -36,8 +34,6 @@ message CreatePaymentResponse {
 message UpdatePaymentRequest {
     payment.v1alpha1.Payment payment = 1;
     string status = 2;
-   
-
 }
 
 message UpdatePaymentResponse {
@@ -63,8 +59,6 @@ message DeletePaymentResponse {
 
 message GetPaymentRequest {
     string id = 1;
-  
-
 }
 
 message GetPaymentResponse {
@@ -83,7 +77,3 @@ message ListPaymentResponse {
     payment.v1alpha1.PaymentList payment_list = 1;
     string status = 2;
 }
-
-
-
-

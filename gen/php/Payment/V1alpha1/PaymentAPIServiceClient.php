@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Payment\V1alpha1;
+namespace Payment\V1Alpha1;
 
 /**
  */
@@ -17,67 +17,67 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Payment\V1alpha1\GetPaymentRequest $argument input argument
+     * @param \Payment\V1Alpha1\GetPaymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function GetPayment(\Payment\V1alpha1\GetPaymentRequest $argument,
+    public function GetPayment(\Payment\V1Alpha1\GetPaymentRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/GetPayment',
         $argument,
-        ['\Payment\V1alpha1\GetPaymentResponse', 'decode'],
+        ['\Payment\V1Alpha1\GetPaymentResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * @param \Payment\V1alpha1\CreatePaymentRequest $argument input argument
+     * @param \Payment\V1Alpha1\CreatePaymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function CreatePayment(\Payment\V1alpha1\CreatePaymentRequest $argument,
+    public function CreatePayment(\Payment\V1Alpha1\CreatePaymentRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/CreatePayment',
         $argument,
-        ['\Payment\V1alpha1\CreatePaymentResponse', 'decode'],
+        ['\Payment\V1Alpha1\CreatePaymentResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * @param \Payment\V1alpha1\UpdatePaymentRequest $argument input argument
+     * @param \Payment\V1Alpha1\UpdatePaymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function UpdatePayment(\Payment\V1alpha1\UpdatePaymentRequest $argument,
+    public function UpdatePayment(\Payment\V1Alpha1\UpdatePaymentRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/UpdatePayment',
         $argument,
-        ['\Payment\V1alpha1\UpdatePaymentResponse', 'decode'],
+        ['\Payment\V1Alpha1\UpdatePaymentResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * @param \Payment\V1alpha1\DeletePaymentRequest $argument input argument
+     * @param \Payment\V1Alpha1\DeletePaymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function DeletePayment(\Payment\V1alpha1\DeletePaymentRequest $argument,
+    public function DeletePayment(\Payment\V1Alpha1\DeletePaymentRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/DeletePayment',
         $argument,
-        ['\Payment\V1alpha1\DeletePaymentResponse', 'decode'],
+        ['\Payment\V1Alpha1\DeletePaymentResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * @param \Payment\V1alpha1\ListPaymentRequest $argument input argument
+     * @param \Payment\V1Alpha1\ListPaymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function ListPayment(\Payment\V1alpha1\ListPaymentRequest $argument,
+    public function ListPayment(\Payment\V1Alpha1\ListPaymentRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/ListPayment',
         $argument,
-        ['\Payment\V1alpha1\ListPaymentResponse', 'decode'],
+        ['\Payment\V1Alpha1\ListPaymentResponse', 'decode'],
         $metadata, $options);
     }
 
