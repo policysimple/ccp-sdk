@@ -4,38 +4,104 @@ package billing.v1alpha1;
 
 
 option go_package = "github.com/cuemby/ccp-billing-service/billingv1alpha1";
-//import "billing.proto";
-import "billing/v1alpha1/billing.proto";
+import "billing.proto";
+//import "billing/v1alpha1/billing.proto";
 
 service BillingService{
-  rpc CreateBilling(CreateBillingRequest) returns (CreateBillingResponse) {};
-  rpc GetBilling(GetBillingRequest) returns (GetBillingResponse) {};
-  rpc UpdateBilling(UpdateBillingRequest) returns (UpdateBillingResponse) {};
+  rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse) {};
+
+  rpc GetOrganization(GetOrganizationRequest) returns (GetOrganizationResponse) {};
+
+  rpc UpdateOrganization(UpdateOrganizationRequest) returns (UpdateOrganizationResponse) {};
+
+  rpc CreateApplication(CreateApplicationRequest) returns (CreateApplicationResponse) {};
+
+  rpc GetApplication(GetApplicationRequest) returns (GetApplicationResponse){};
+
+  rpc UpdateApplication(UpdateApplicationRequest) returns (UpdateApplicationResponse){};
+
+  rpc CreateMetric(CreateMetricRequest) returns (CreateMetricResponse){};
+
+  rpc GetMetric(GetMetricRequest) returns (GetMetricResponse){};
+
+  rpc UpdateMetric(UpdateMetricRequest) returns (UpdateMetricResponse){};
 }
 
-message CreateBillingRequest{
-  billing.v1alpha1.Billing billing = 1;
+message CreateOrganizationRequest{
+  billing.v1alpha1.Organization organization = 1;
 }
 
-message CreateBillingResponse{
+message CreateOrganizationResponse{
+  string organization_id = 1;
+  string status = 2;
+}
+
+message GetOrganizationRequest{
+  string organization_id = 1;
+}
+
+message GetOrganizationResponse{
+  billing.v1alpha1.Organization organization = 1;
+}
+
+
+message UpdateOrganizationRequest{
+  string organization_id = 1;
+}
+
+message UpdateOrganizationResponse{
   string billing_id = 1;
   string status = 2;
 }
 
-message GetBillingRequest{
-  string billing_id = 1;
+message CreateApplicationRequest{
+  billing.v1alpha1.Application application = 1;
 }
 
-message GetBillingResponse{
-  billing.v1alpha1.Billing billing = 1;
+message CreateApplicationResponse{
+  string application_id = 1;
+  string status = 2;
 }
 
-
-message UpdateBillingRequest{
-  string billing_id = 1;
+message GetApplicationRequest{
+  string organization_id = 1;
 }
 
-message UpdateBillingResponse{
-  string billing_id = 1;
+message GetApplicationResponse{
+  billing.v1alpha1.Application application = 1;
+}
+
+message UpdateApplicationRequest{
+  string application_id = 1;
+}
+
+message UpdateApplicationResponse{
+  string application_id = 1;
+  string status = 2;
+}
+
+message CreateMetricRequest{
+  billing.v1alpha1.Metrics metric = 1;
+}
+
+message CreateMetricResponse{
+  string metric_id = 1;
+  string status = 2;
+}
+
+message GetMetricRequest{
+  string metric_id = 1;
+}
+
+message GetMetricResponse{
+  billing.v1alpha1.Metrics metric = 1;
+}
+
+message UpdateMetricRequest{
+  string metric_id = 1;
+}
+
+message UpdateMetricResponse{
+  string metric_id = 1;
   string status = 2;
 }
