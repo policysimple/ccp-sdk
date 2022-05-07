@@ -47,7 +47,7 @@ struct TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -56,57 +56,105 @@ struct TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
 namespace billing {
 namespace v1alpha1 {
-class CreateBillingRequest;
-struct CreateBillingRequestDefaultTypeInternal;
-extern CreateBillingRequestDefaultTypeInternal _CreateBillingRequest_default_instance_;
-class CreateBillingResponse;
-struct CreateBillingResponseDefaultTypeInternal;
-extern CreateBillingResponseDefaultTypeInternal _CreateBillingResponse_default_instance_;
-class GetBillingRequest;
-struct GetBillingRequestDefaultTypeInternal;
-extern GetBillingRequestDefaultTypeInternal _GetBillingRequest_default_instance_;
-class GetBillingResponse;
-struct GetBillingResponseDefaultTypeInternal;
-extern GetBillingResponseDefaultTypeInternal _GetBillingResponse_default_instance_;
-class UpdateBillingRequest;
-struct UpdateBillingRequestDefaultTypeInternal;
-extern UpdateBillingRequestDefaultTypeInternal _UpdateBillingRequest_default_instance_;
-class UpdateBillingResponse;
-struct UpdateBillingResponseDefaultTypeInternal;
-extern UpdateBillingResponseDefaultTypeInternal _UpdateBillingResponse_default_instance_;
+class CreateApplicationRequest;
+struct CreateApplicationRequestDefaultTypeInternal;
+extern CreateApplicationRequestDefaultTypeInternal _CreateApplicationRequest_default_instance_;
+class CreateApplicationResponse;
+struct CreateApplicationResponseDefaultTypeInternal;
+extern CreateApplicationResponseDefaultTypeInternal _CreateApplicationResponse_default_instance_;
+class CreateMetricRequest;
+struct CreateMetricRequestDefaultTypeInternal;
+extern CreateMetricRequestDefaultTypeInternal _CreateMetricRequest_default_instance_;
+class CreateMetricResponse;
+struct CreateMetricResponseDefaultTypeInternal;
+extern CreateMetricResponseDefaultTypeInternal _CreateMetricResponse_default_instance_;
+class CreateOrganizationRequest;
+struct CreateOrganizationRequestDefaultTypeInternal;
+extern CreateOrganizationRequestDefaultTypeInternal _CreateOrganizationRequest_default_instance_;
+class CreateOrganizationResponse;
+struct CreateOrganizationResponseDefaultTypeInternal;
+extern CreateOrganizationResponseDefaultTypeInternal _CreateOrganizationResponse_default_instance_;
+class GetApplicationRequest;
+struct GetApplicationRequestDefaultTypeInternal;
+extern GetApplicationRequestDefaultTypeInternal _GetApplicationRequest_default_instance_;
+class GetApplicationResponse;
+struct GetApplicationResponseDefaultTypeInternal;
+extern GetApplicationResponseDefaultTypeInternal _GetApplicationResponse_default_instance_;
+class GetMetricRequest;
+struct GetMetricRequestDefaultTypeInternal;
+extern GetMetricRequestDefaultTypeInternal _GetMetricRequest_default_instance_;
+class GetMetricResponse;
+struct GetMetricResponseDefaultTypeInternal;
+extern GetMetricResponseDefaultTypeInternal _GetMetricResponse_default_instance_;
+class GetOrganizationRequest;
+struct GetOrganizationRequestDefaultTypeInternal;
+extern GetOrganizationRequestDefaultTypeInternal _GetOrganizationRequest_default_instance_;
+class GetOrganizationResponse;
+struct GetOrganizationResponseDefaultTypeInternal;
+extern GetOrganizationResponseDefaultTypeInternal _GetOrganizationResponse_default_instance_;
+class UpdateApplicationRequest;
+struct UpdateApplicationRequestDefaultTypeInternal;
+extern UpdateApplicationRequestDefaultTypeInternal _UpdateApplicationRequest_default_instance_;
+class UpdateApplicationResponse;
+struct UpdateApplicationResponseDefaultTypeInternal;
+extern UpdateApplicationResponseDefaultTypeInternal _UpdateApplicationResponse_default_instance_;
+class UpdateMetricRequest;
+struct UpdateMetricRequestDefaultTypeInternal;
+extern UpdateMetricRequestDefaultTypeInternal _UpdateMetricRequest_default_instance_;
+class UpdateMetricResponse;
+struct UpdateMetricResponseDefaultTypeInternal;
+extern UpdateMetricResponseDefaultTypeInternal _UpdateMetricResponse_default_instance_;
+class UpdateOrganizationRequest;
+struct UpdateOrganizationRequestDefaultTypeInternal;
+extern UpdateOrganizationRequestDefaultTypeInternal _UpdateOrganizationRequest_default_instance_;
+class UpdateOrganizationResponse;
+struct UpdateOrganizationResponseDefaultTypeInternal;
+extern UpdateOrganizationResponseDefaultTypeInternal _UpdateOrganizationResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace billing
 PROTOBUF_NAMESPACE_OPEN
-template<> ::billing::v1alpha1::CreateBillingRequest* Arena::CreateMaybeMessage<::billing::v1alpha1::CreateBillingRequest>(Arena*);
-template<> ::billing::v1alpha1::CreateBillingResponse* Arena::CreateMaybeMessage<::billing::v1alpha1::CreateBillingResponse>(Arena*);
-template<> ::billing::v1alpha1::GetBillingRequest* Arena::CreateMaybeMessage<::billing::v1alpha1::GetBillingRequest>(Arena*);
-template<> ::billing::v1alpha1::GetBillingResponse* Arena::CreateMaybeMessage<::billing::v1alpha1::GetBillingResponse>(Arena*);
-template<> ::billing::v1alpha1::UpdateBillingRequest* Arena::CreateMaybeMessage<::billing::v1alpha1::UpdateBillingRequest>(Arena*);
-template<> ::billing::v1alpha1::UpdateBillingResponse* Arena::CreateMaybeMessage<::billing::v1alpha1::UpdateBillingResponse>(Arena*);
+template<> ::billing::v1alpha1::CreateApplicationRequest* Arena::CreateMaybeMessage<::billing::v1alpha1::CreateApplicationRequest>(Arena*);
+template<> ::billing::v1alpha1::CreateApplicationResponse* Arena::CreateMaybeMessage<::billing::v1alpha1::CreateApplicationResponse>(Arena*);
+template<> ::billing::v1alpha1::CreateMetricRequest* Arena::CreateMaybeMessage<::billing::v1alpha1::CreateMetricRequest>(Arena*);
+template<> ::billing::v1alpha1::CreateMetricResponse* Arena::CreateMaybeMessage<::billing::v1alpha1::CreateMetricResponse>(Arena*);
+template<> ::billing::v1alpha1::CreateOrganizationRequest* Arena::CreateMaybeMessage<::billing::v1alpha1::CreateOrganizationRequest>(Arena*);
+template<> ::billing::v1alpha1::CreateOrganizationResponse* Arena::CreateMaybeMessage<::billing::v1alpha1::CreateOrganizationResponse>(Arena*);
+template<> ::billing::v1alpha1::GetApplicationRequest* Arena::CreateMaybeMessage<::billing::v1alpha1::GetApplicationRequest>(Arena*);
+template<> ::billing::v1alpha1::GetApplicationResponse* Arena::CreateMaybeMessage<::billing::v1alpha1::GetApplicationResponse>(Arena*);
+template<> ::billing::v1alpha1::GetMetricRequest* Arena::CreateMaybeMessage<::billing::v1alpha1::GetMetricRequest>(Arena*);
+template<> ::billing::v1alpha1::GetMetricResponse* Arena::CreateMaybeMessage<::billing::v1alpha1::GetMetricResponse>(Arena*);
+template<> ::billing::v1alpha1::GetOrganizationRequest* Arena::CreateMaybeMessage<::billing::v1alpha1::GetOrganizationRequest>(Arena*);
+template<> ::billing::v1alpha1::GetOrganizationResponse* Arena::CreateMaybeMessage<::billing::v1alpha1::GetOrganizationResponse>(Arena*);
+template<> ::billing::v1alpha1::UpdateApplicationRequest* Arena::CreateMaybeMessage<::billing::v1alpha1::UpdateApplicationRequest>(Arena*);
+template<> ::billing::v1alpha1::UpdateApplicationResponse* Arena::CreateMaybeMessage<::billing::v1alpha1::UpdateApplicationResponse>(Arena*);
+template<> ::billing::v1alpha1::UpdateMetricRequest* Arena::CreateMaybeMessage<::billing::v1alpha1::UpdateMetricRequest>(Arena*);
+template<> ::billing::v1alpha1::UpdateMetricResponse* Arena::CreateMaybeMessage<::billing::v1alpha1::UpdateMetricResponse>(Arena*);
+template<> ::billing::v1alpha1::UpdateOrganizationRequest* Arena::CreateMaybeMessage<::billing::v1alpha1::UpdateOrganizationRequest>(Arena*);
+template<> ::billing::v1alpha1::UpdateOrganizationResponse* Arena::CreateMaybeMessage<::billing::v1alpha1::UpdateOrganizationResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace billing {
 namespace v1alpha1 {
 
 // ===================================================================
 
-class CreateBillingRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.CreateBillingRequest) */ {
+class CreateOrganizationRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.CreateOrganizationRequest) */ {
  public:
-  inline CreateBillingRequest() : CreateBillingRequest(nullptr) {}
-  ~CreateBillingRequest() override;
-  explicit constexpr CreateBillingRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline CreateOrganizationRequest() : CreateOrganizationRequest(nullptr) {}
+  ~CreateOrganizationRequest() override;
+  explicit constexpr CreateOrganizationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  CreateBillingRequest(const CreateBillingRequest& from);
-  CreateBillingRequest(CreateBillingRequest&& from) noexcept
-    : CreateBillingRequest() {
+  CreateOrganizationRequest(const CreateOrganizationRequest& from);
+  CreateOrganizationRequest(CreateOrganizationRequest&& from) noexcept
+    : CreateOrganizationRequest() {
     *this = ::std::move(from);
   }
 
-  inline CreateBillingRequest& operator=(const CreateBillingRequest& from) {
+  inline CreateOrganizationRequest& operator=(const CreateOrganizationRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline CreateBillingRequest& operator=(CreateBillingRequest&& from) noexcept {
+  inline CreateOrganizationRequest& operator=(CreateOrganizationRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -125,20 +173,20 @@ class CreateBillingRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const CreateBillingRequest& default_instance() {
+  static const CreateOrganizationRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const CreateBillingRequest* internal_default_instance() {
-    return reinterpret_cast<const CreateBillingRequest*>(
-               &_CreateBillingRequest_default_instance_);
+  static inline const CreateOrganizationRequest* internal_default_instance() {
+    return reinterpret_cast<const CreateOrganizationRequest*>(
+               &_CreateOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(CreateBillingRequest& a, CreateBillingRequest& b) {
+  friend void swap(CreateOrganizationRequest& a, CreateOrganizationRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(CreateBillingRequest* other) {
+  inline void Swap(CreateOrganizationRequest* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -146,7 +194,7 @@ class CreateBillingRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(CreateBillingRequest* other) {
+  void UnsafeArenaSwap(CreateOrganizationRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -154,17 +202,17 @@ class CreateBillingRequest final :
 
   // implements Message ----------------------------------------------
 
-  inline CreateBillingRequest* New() const final {
-    return new CreateBillingRequest();
+  inline CreateOrganizationRequest* New() const final {
+    return new CreateOrganizationRequest();
   }
 
-  CreateBillingRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<CreateBillingRequest>(arena);
+  CreateOrganizationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateOrganizationRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CreateBillingRequest& from);
+  void CopyFrom(const CreateOrganizationRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const CreateBillingRequest& from);
+  void MergeFrom(const CreateOrganizationRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -181,13 +229,13 @@ class CreateBillingRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(CreateBillingRequest* other);
+  void InternalSwap(CreateOrganizationRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "billing.v1alpha1.CreateBillingRequest";
+    return "billing.v1alpha1.CreateOrganizationRequest";
   }
   protected:
-  explicit CreateBillingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit CreateOrganizationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -204,57 +252,57 @@ class CreateBillingRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBillingFieldNumber = 1,
+    kOrganizationFieldNumber = 1,
   };
-  // .billing.v1alpha1.Billing billing = 1 [json_name = "billing"];
-  bool has_billing() const;
+  // .billing.v1alpha1.Organization organization = 1 [json_name = "organization"];
+  bool has_organization() const;
   private:
-  bool _internal_has_billing() const;
+  bool _internal_has_organization() const;
   public:
-  void clear_billing();
-  const ::billing::v1alpha1::Billing& billing() const;
-  PROTOBUF_MUST_USE_RESULT ::billing::v1alpha1::Billing* release_billing();
-  ::billing::v1alpha1::Billing* mutable_billing();
-  void set_allocated_billing(::billing::v1alpha1::Billing* billing);
+  void clear_organization();
+  const ::billing::v1alpha1::Organization& organization() const;
+  PROTOBUF_MUST_USE_RESULT ::billing::v1alpha1::Organization* release_organization();
+  ::billing::v1alpha1::Organization* mutable_organization();
+  void set_allocated_organization(::billing::v1alpha1::Organization* organization);
   private:
-  const ::billing::v1alpha1::Billing& _internal_billing() const;
-  ::billing::v1alpha1::Billing* _internal_mutable_billing();
+  const ::billing::v1alpha1::Organization& _internal_organization() const;
+  ::billing::v1alpha1::Organization* _internal_mutable_organization();
   public:
-  void unsafe_arena_set_allocated_billing(
-      ::billing::v1alpha1::Billing* billing);
-  ::billing::v1alpha1::Billing* unsafe_arena_release_billing();
+  void unsafe_arena_set_allocated_organization(
+      ::billing::v1alpha1::Organization* organization);
+  ::billing::v1alpha1::Organization* unsafe_arena_release_organization();
 
-  // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateBillingRequest)
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateOrganizationRequest)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::billing::v1alpha1::Billing* billing_;
+  ::billing::v1alpha1::Organization* organization_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
 };
 // -------------------------------------------------------------------
 
-class CreateBillingResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.CreateBillingResponse) */ {
+class CreateOrganizationResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.CreateOrganizationResponse) */ {
  public:
-  inline CreateBillingResponse() : CreateBillingResponse(nullptr) {}
-  ~CreateBillingResponse() override;
-  explicit constexpr CreateBillingResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline CreateOrganizationResponse() : CreateOrganizationResponse(nullptr) {}
+  ~CreateOrganizationResponse() override;
+  explicit constexpr CreateOrganizationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  CreateBillingResponse(const CreateBillingResponse& from);
-  CreateBillingResponse(CreateBillingResponse&& from) noexcept
-    : CreateBillingResponse() {
+  CreateOrganizationResponse(const CreateOrganizationResponse& from);
+  CreateOrganizationResponse(CreateOrganizationResponse&& from) noexcept
+    : CreateOrganizationResponse() {
     *this = ::std::move(from);
   }
 
-  inline CreateBillingResponse& operator=(const CreateBillingResponse& from) {
+  inline CreateOrganizationResponse& operator=(const CreateOrganizationResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline CreateBillingResponse& operator=(CreateBillingResponse&& from) noexcept {
+  inline CreateOrganizationResponse& operator=(CreateOrganizationResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -273,20 +321,20 @@ class CreateBillingResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const CreateBillingResponse& default_instance() {
+  static const CreateOrganizationResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const CreateBillingResponse* internal_default_instance() {
-    return reinterpret_cast<const CreateBillingResponse*>(
-               &_CreateBillingResponse_default_instance_);
+  static inline const CreateOrganizationResponse* internal_default_instance() {
+    return reinterpret_cast<const CreateOrganizationResponse*>(
+               &_CreateOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(CreateBillingResponse& a, CreateBillingResponse& b) {
+  friend void swap(CreateOrganizationResponse& a, CreateOrganizationResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(CreateBillingResponse* other) {
+  inline void Swap(CreateOrganizationResponse* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -294,7 +342,7 @@ class CreateBillingResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(CreateBillingResponse* other) {
+  void UnsafeArenaSwap(CreateOrganizationResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -302,17 +350,17 @@ class CreateBillingResponse final :
 
   // implements Message ----------------------------------------------
 
-  inline CreateBillingResponse* New() const final {
-    return new CreateBillingResponse();
+  inline CreateOrganizationResponse* New() const final {
+    return new CreateOrganizationResponse();
   }
 
-  CreateBillingResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<CreateBillingResponse>(arena);
+  CreateOrganizationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateOrganizationResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CreateBillingResponse& from);
+  void CopyFrom(const CreateOrganizationResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const CreateBillingResponse& from);
+  void MergeFrom(const CreateOrganizationResponse& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -329,13 +377,609 @@ class CreateBillingResponse final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(CreateBillingResponse* other);
+  void InternalSwap(CreateOrganizationResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "billing.v1alpha1.CreateBillingResponse";
+    return "billing.v1alpha1.CreateOrganizationResponse";
   }
   protected:
-  explicit CreateBillingResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit CreateOrganizationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrganizationIdFieldNumber = 1,
+    kStatusFieldNumber = 2,
+  };
+  // string organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateOrganizationResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetOrganizationRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.GetOrganizationRequest) */ {
+ public:
+  inline GetOrganizationRequest() : GetOrganizationRequest(nullptr) {}
+  ~GetOrganizationRequest() override;
+  explicit constexpr GetOrganizationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetOrganizationRequest(const GetOrganizationRequest& from);
+  GetOrganizationRequest(GetOrganizationRequest&& from) noexcept
+    : GetOrganizationRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetOrganizationRequest& operator=(const GetOrganizationRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetOrganizationRequest& operator=(GetOrganizationRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetOrganizationRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetOrganizationRequest* internal_default_instance() {
+    return reinterpret_cast<const GetOrganizationRequest*>(
+               &_GetOrganizationRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(GetOrganizationRequest& a, GetOrganizationRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetOrganizationRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetOrganizationRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetOrganizationRequest* New() const final {
+    return new GetOrganizationRequest();
+  }
+
+  GetOrganizationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetOrganizationRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetOrganizationRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetOrganizationRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetOrganizationRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "billing.v1alpha1.GetOrganizationRequest";
+  }
+  protected:
+  explicit GetOrganizationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrganizationIdFieldNumber = 1,
+  };
+  // string organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetOrganizationRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetOrganizationResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.GetOrganizationResponse) */ {
+ public:
+  inline GetOrganizationResponse() : GetOrganizationResponse(nullptr) {}
+  ~GetOrganizationResponse() override;
+  explicit constexpr GetOrganizationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetOrganizationResponse(const GetOrganizationResponse& from);
+  GetOrganizationResponse(GetOrganizationResponse&& from) noexcept
+    : GetOrganizationResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetOrganizationResponse& operator=(const GetOrganizationResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetOrganizationResponse& operator=(GetOrganizationResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetOrganizationResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetOrganizationResponse* internal_default_instance() {
+    return reinterpret_cast<const GetOrganizationResponse*>(
+               &_GetOrganizationResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(GetOrganizationResponse& a, GetOrganizationResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetOrganizationResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetOrganizationResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetOrganizationResponse* New() const final {
+    return new GetOrganizationResponse();
+  }
+
+  GetOrganizationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetOrganizationResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetOrganizationResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetOrganizationResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetOrganizationResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "billing.v1alpha1.GetOrganizationResponse";
+  }
+  protected:
+  explicit GetOrganizationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrganizationFieldNumber = 1,
+  };
+  // .billing.v1alpha1.Organization organization = 1 [json_name = "organization"];
+  bool has_organization() const;
+  private:
+  bool _internal_has_organization() const;
+  public:
+  void clear_organization();
+  const ::billing::v1alpha1::Organization& organization() const;
+  PROTOBUF_MUST_USE_RESULT ::billing::v1alpha1::Organization* release_organization();
+  ::billing::v1alpha1::Organization* mutable_organization();
+  void set_allocated_organization(::billing::v1alpha1::Organization* organization);
+  private:
+  const ::billing::v1alpha1::Organization& _internal_organization() const;
+  ::billing::v1alpha1::Organization* _internal_mutable_organization();
+  public:
+  void unsafe_arena_set_allocated_organization(
+      ::billing::v1alpha1::Organization* organization);
+  ::billing::v1alpha1::Organization* unsafe_arena_release_organization();
+
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetOrganizationResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::billing::v1alpha1::Organization* organization_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateOrganizationRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.UpdateOrganizationRequest) */ {
+ public:
+  inline UpdateOrganizationRequest() : UpdateOrganizationRequest(nullptr) {}
+  ~UpdateOrganizationRequest() override;
+  explicit constexpr UpdateOrganizationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateOrganizationRequest(const UpdateOrganizationRequest& from);
+  UpdateOrganizationRequest(UpdateOrganizationRequest&& from) noexcept
+    : UpdateOrganizationRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateOrganizationRequest& operator=(const UpdateOrganizationRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateOrganizationRequest& operator=(UpdateOrganizationRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateOrganizationRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateOrganizationRequest* internal_default_instance() {
+    return reinterpret_cast<const UpdateOrganizationRequest*>(
+               &_UpdateOrganizationRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(UpdateOrganizationRequest& a, UpdateOrganizationRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateOrganizationRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateOrganizationRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateOrganizationRequest* New() const final {
+    return new UpdateOrganizationRequest();
+  }
+
+  UpdateOrganizationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateOrganizationRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateOrganizationRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateOrganizationRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateOrganizationRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "billing.v1alpha1.UpdateOrganizationRequest";
+  }
+  protected:
+  explicit UpdateOrganizationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrganizationIdFieldNumber = 1,
+  };
+  // string organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateOrganizationRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateOrganizationResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.UpdateOrganizationResponse) */ {
+ public:
+  inline UpdateOrganizationResponse() : UpdateOrganizationResponse(nullptr) {}
+  ~UpdateOrganizationResponse() override;
+  explicit constexpr UpdateOrganizationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateOrganizationResponse(const UpdateOrganizationResponse& from);
+  UpdateOrganizationResponse(UpdateOrganizationResponse&& from) noexcept
+    : UpdateOrganizationResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateOrganizationResponse& operator=(const UpdateOrganizationResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateOrganizationResponse& operator=(UpdateOrganizationResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateOrganizationResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateOrganizationResponse* internal_default_instance() {
+    return reinterpret_cast<const UpdateOrganizationResponse*>(
+               &_UpdateOrganizationResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(UpdateOrganizationResponse& a, UpdateOrganizationResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateOrganizationResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateOrganizationResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateOrganizationResponse* New() const final {
+    return new UpdateOrganizationResponse();
+  }
+
+  UpdateOrganizationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateOrganizationResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateOrganizationResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateOrganizationResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateOrganizationResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "billing.v1alpha1.UpdateOrganizationResponse";
+  }
+  protected:
+  explicit UpdateOrganizationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -383,7 +1027,7 @@ class CreateBillingResponse final :
   std::string* _internal_mutable_status();
   public:
 
-  // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateBillingResponse)
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateOrganizationResponse)
  private:
   class _Internal;
 
@@ -397,24 +1041,24 @@ class CreateBillingResponse final :
 };
 // -------------------------------------------------------------------
 
-class GetBillingRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.GetBillingRequest) */ {
+class CreateApplicationRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.CreateApplicationRequest) */ {
  public:
-  inline GetBillingRequest() : GetBillingRequest(nullptr) {}
-  ~GetBillingRequest() override;
-  explicit constexpr GetBillingRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline CreateApplicationRequest() : CreateApplicationRequest(nullptr) {}
+  ~CreateApplicationRequest() override;
+  explicit constexpr CreateApplicationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  GetBillingRequest(const GetBillingRequest& from);
-  GetBillingRequest(GetBillingRequest&& from) noexcept
-    : GetBillingRequest() {
+  CreateApplicationRequest(const CreateApplicationRequest& from);
+  CreateApplicationRequest(CreateApplicationRequest&& from) noexcept
+    : CreateApplicationRequest() {
     *this = ::std::move(from);
   }
 
-  inline GetBillingRequest& operator=(const GetBillingRequest& from) {
+  inline CreateApplicationRequest& operator=(const CreateApplicationRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetBillingRequest& operator=(GetBillingRequest&& from) noexcept {
+  inline CreateApplicationRequest& operator=(CreateApplicationRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -433,20 +1077,20 @@ class GetBillingRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const GetBillingRequest& default_instance() {
+  static const CreateApplicationRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const GetBillingRequest* internal_default_instance() {
-    return reinterpret_cast<const GetBillingRequest*>(
-               &_GetBillingRequest_default_instance_);
+  static inline const CreateApplicationRequest* internal_default_instance() {
+    return reinterpret_cast<const CreateApplicationRequest*>(
+               &_CreateApplicationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    6;
 
-  friend void swap(GetBillingRequest& a, GetBillingRequest& b) {
+  friend void swap(CreateApplicationRequest& a, CreateApplicationRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(GetBillingRequest* other) {
+  inline void Swap(CreateApplicationRequest* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -454,7 +1098,7 @@ class GetBillingRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(GetBillingRequest* other) {
+  void UnsafeArenaSwap(CreateApplicationRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -462,17 +1106,17 @@ class GetBillingRequest final :
 
   // implements Message ----------------------------------------------
 
-  inline GetBillingRequest* New() const final {
-    return new GetBillingRequest();
+  inline CreateApplicationRequest* New() const final {
+    return new CreateApplicationRequest();
   }
 
-  GetBillingRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<GetBillingRequest>(arena);
+  CreateApplicationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateApplicationRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const GetBillingRequest& from);
+  void CopyFrom(const CreateApplicationRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const GetBillingRequest& from);
+  void MergeFrom(const CreateApplicationRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -489,13 +1133,13 @@ class GetBillingRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetBillingRequest* other);
+  void InternalSwap(CreateApplicationRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "billing.v1alpha1.GetBillingRequest";
+    return "billing.v1alpha1.CreateApplicationRequest";
   }
   protected:
-  explicit GetBillingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit CreateApplicationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -512,53 +1156,57 @@ class GetBillingRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBillingIdFieldNumber = 1,
+    kApplicationFieldNumber = 1,
   };
-  // string billing_id = 1 [json_name = "billingId"];
-  void clear_billing_id();
-  const std::string& billing_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_billing_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_billing_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_billing_id();
-  void set_allocated_billing_id(std::string* billing_id);
+  // .billing.v1alpha1.Application application = 1 [json_name = "application"];
+  bool has_application() const;
   private:
-  const std::string& _internal_billing_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_billing_id(const std::string& value);
-  std::string* _internal_mutable_billing_id();
+  bool _internal_has_application() const;
   public:
+  void clear_application();
+  const ::billing::v1alpha1::Application& application() const;
+  PROTOBUF_MUST_USE_RESULT ::billing::v1alpha1::Application* release_application();
+  ::billing::v1alpha1::Application* mutable_application();
+  void set_allocated_application(::billing::v1alpha1::Application* application);
+  private:
+  const ::billing::v1alpha1::Application& _internal_application() const;
+  ::billing::v1alpha1::Application* _internal_mutable_application();
+  public:
+  void unsafe_arena_set_allocated_application(
+      ::billing::v1alpha1::Application* application);
+  ::billing::v1alpha1::Application* unsafe_arena_release_application();
 
-  // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetBillingRequest)
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateApplicationRequest)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr billing_id_;
+  ::billing::v1alpha1::Application* application_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
 };
 // -------------------------------------------------------------------
 
-class GetBillingResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.GetBillingResponse) */ {
+class CreateApplicationResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.CreateApplicationResponse) */ {
  public:
-  inline GetBillingResponse() : GetBillingResponse(nullptr) {}
-  ~GetBillingResponse() override;
-  explicit constexpr GetBillingResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline CreateApplicationResponse() : CreateApplicationResponse(nullptr) {}
+  ~CreateApplicationResponse() override;
+  explicit constexpr CreateApplicationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  GetBillingResponse(const GetBillingResponse& from);
-  GetBillingResponse(GetBillingResponse&& from) noexcept
-    : GetBillingResponse() {
+  CreateApplicationResponse(const CreateApplicationResponse& from);
+  CreateApplicationResponse(CreateApplicationResponse&& from) noexcept
+    : CreateApplicationResponse() {
     *this = ::std::move(from);
   }
 
-  inline GetBillingResponse& operator=(const GetBillingResponse& from) {
+  inline CreateApplicationResponse& operator=(const CreateApplicationResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetBillingResponse& operator=(GetBillingResponse&& from) noexcept {
+  inline CreateApplicationResponse& operator=(CreateApplicationResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -577,20 +1225,20 @@ class GetBillingResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const GetBillingResponse& default_instance() {
+  static const CreateApplicationResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const GetBillingResponse* internal_default_instance() {
-    return reinterpret_cast<const GetBillingResponse*>(
-               &_GetBillingResponse_default_instance_);
+  static inline const CreateApplicationResponse* internal_default_instance() {
+    return reinterpret_cast<const CreateApplicationResponse*>(
+               &_CreateApplicationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    7;
 
-  friend void swap(GetBillingResponse& a, GetBillingResponse& b) {
+  friend void swap(CreateApplicationResponse& a, CreateApplicationResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(GetBillingResponse* other) {
+  inline void Swap(CreateApplicationResponse* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -598,7 +1246,7 @@ class GetBillingResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(GetBillingResponse* other) {
+  void UnsafeArenaSwap(CreateApplicationResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -606,17 +1254,17 @@ class GetBillingResponse final :
 
   // implements Message ----------------------------------------------
 
-  inline GetBillingResponse* New() const final {
-    return new GetBillingResponse();
+  inline CreateApplicationResponse* New() const final {
+    return new CreateApplicationResponse();
   }
 
-  GetBillingResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<GetBillingResponse>(arena);
+  CreateApplicationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateApplicationResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const GetBillingResponse& from);
+  void CopyFrom(const CreateApplicationResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const GetBillingResponse& from);
+  void MergeFrom(const CreateApplicationResponse& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -633,13 +1281,13 @@ class GetBillingResponse final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetBillingResponse* other);
+  void InternalSwap(CreateApplicationResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "billing.v1alpha1.GetBillingResponse";
+    return "billing.v1alpha1.CreateApplicationResponse";
   }
   protected:
-  explicit GetBillingResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit CreateApplicationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -656,313 +1304,21 @@ class GetBillingResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBillingFieldNumber = 1,
-  };
-  // .billing.v1alpha1.Billing billing = 1 [json_name = "billing"];
-  bool has_billing() const;
-  private:
-  bool _internal_has_billing() const;
-  public:
-  void clear_billing();
-  const ::billing::v1alpha1::Billing& billing() const;
-  PROTOBUF_MUST_USE_RESULT ::billing::v1alpha1::Billing* release_billing();
-  ::billing::v1alpha1::Billing* mutable_billing();
-  void set_allocated_billing(::billing::v1alpha1::Billing* billing);
-  private:
-  const ::billing::v1alpha1::Billing& _internal_billing() const;
-  ::billing::v1alpha1::Billing* _internal_mutable_billing();
-  public:
-  void unsafe_arena_set_allocated_billing(
-      ::billing::v1alpha1::Billing* billing);
-  ::billing::v1alpha1::Billing* unsafe_arena_release_billing();
-
-  // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetBillingResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::billing::v1alpha1::Billing* billing_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
-};
-// -------------------------------------------------------------------
-
-class UpdateBillingRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.UpdateBillingRequest) */ {
- public:
-  inline UpdateBillingRequest() : UpdateBillingRequest(nullptr) {}
-  ~UpdateBillingRequest() override;
-  explicit constexpr UpdateBillingRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  UpdateBillingRequest(const UpdateBillingRequest& from);
-  UpdateBillingRequest(UpdateBillingRequest&& from) noexcept
-    : UpdateBillingRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline UpdateBillingRequest& operator=(const UpdateBillingRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline UpdateBillingRequest& operator=(UpdateBillingRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const UpdateBillingRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const UpdateBillingRequest* internal_default_instance() {
-    return reinterpret_cast<const UpdateBillingRequest*>(
-               &_UpdateBillingRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    4;
-
-  friend void swap(UpdateBillingRequest& a, UpdateBillingRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(UpdateBillingRequest* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(UpdateBillingRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline UpdateBillingRequest* New() const final {
-    return new UpdateBillingRequest();
-  }
-
-  UpdateBillingRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<UpdateBillingRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const UpdateBillingRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const UpdateBillingRequest& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(UpdateBillingRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "billing.v1alpha1.UpdateBillingRequest";
-  }
-  protected:
-  explicit UpdateBillingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kBillingIdFieldNumber = 1,
-  };
-  // string billing_id = 1 [json_name = "billingId"];
-  void clear_billing_id();
-  const std::string& billing_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_billing_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_billing_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_billing_id();
-  void set_allocated_billing_id(std::string* billing_id);
-  private:
-  const std::string& _internal_billing_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_billing_id(const std::string& value);
-  std::string* _internal_mutable_billing_id();
-  public:
-
-  // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateBillingRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr billing_id_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
-};
-// -------------------------------------------------------------------
-
-class UpdateBillingResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.UpdateBillingResponse) */ {
- public:
-  inline UpdateBillingResponse() : UpdateBillingResponse(nullptr) {}
-  ~UpdateBillingResponse() override;
-  explicit constexpr UpdateBillingResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  UpdateBillingResponse(const UpdateBillingResponse& from);
-  UpdateBillingResponse(UpdateBillingResponse&& from) noexcept
-    : UpdateBillingResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline UpdateBillingResponse& operator=(const UpdateBillingResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline UpdateBillingResponse& operator=(UpdateBillingResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const UpdateBillingResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const UpdateBillingResponse* internal_default_instance() {
-    return reinterpret_cast<const UpdateBillingResponse*>(
-               &_UpdateBillingResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    5;
-
-  friend void swap(UpdateBillingResponse& a, UpdateBillingResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(UpdateBillingResponse* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(UpdateBillingResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline UpdateBillingResponse* New() const final {
-    return new UpdateBillingResponse();
-  }
-
-  UpdateBillingResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<UpdateBillingResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const UpdateBillingResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const UpdateBillingResponse& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(UpdateBillingResponse* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "billing.v1alpha1.UpdateBillingResponse";
-  }
-  protected:
-  explicit UpdateBillingResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kBillingIdFieldNumber = 1,
+    kApplicationIdFieldNumber = 1,
     kStatusFieldNumber = 2,
   };
-  // string billing_id = 1 [json_name = "billingId"];
-  void clear_billing_id();
-  const std::string& billing_id() const;
+  // string application_id = 1 [json_name = "applicationId"];
+  void clear_application_id();
+  const std::string& application_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_billing_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_billing_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_billing_id();
-  void set_allocated_billing_id(std::string* billing_id);
+  void set_application_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_application_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_application_id();
+  void set_allocated_application_id(std::string* application_id);
   private:
-  const std::string& _internal_billing_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_billing_id(const std::string& value);
-  std::string* _internal_mutable_billing_id();
+  const std::string& _internal_application_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_application_id(const std::string& value);
+  std::string* _internal_mutable_application_id();
   public:
 
   // string status = 2 [json_name = "status"];
@@ -979,14 +1335,1514 @@ class UpdateBillingResponse final :
   std::string* _internal_mutable_status();
   public:
 
-  // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateBillingResponse)
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateApplicationResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr billing_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetApplicationRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.GetApplicationRequest) */ {
+ public:
+  inline GetApplicationRequest() : GetApplicationRequest(nullptr) {}
+  ~GetApplicationRequest() override;
+  explicit constexpr GetApplicationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetApplicationRequest(const GetApplicationRequest& from);
+  GetApplicationRequest(GetApplicationRequest&& from) noexcept
+    : GetApplicationRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetApplicationRequest& operator=(const GetApplicationRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetApplicationRequest& operator=(GetApplicationRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetApplicationRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetApplicationRequest* internal_default_instance() {
+    return reinterpret_cast<const GetApplicationRequest*>(
+               &_GetApplicationRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(GetApplicationRequest& a, GetApplicationRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetApplicationRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetApplicationRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetApplicationRequest* New() const final {
+    return new GetApplicationRequest();
+  }
+
+  GetApplicationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetApplicationRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetApplicationRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetApplicationRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetApplicationRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "billing.v1alpha1.GetApplicationRequest";
+  }
+  protected:
+  explicit GetApplicationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrganizationIdFieldNumber = 1,
+  };
+  // string organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetApplicationRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetApplicationResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.GetApplicationResponse) */ {
+ public:
+  inline GetApplicationResponse() : GetApplicationResponse(nullptr) {}
+  ~GetApplicationResponse() override;
+  explicit constexpr GetApplicationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetApplicationResponse(const GetApplicationResponse& from);
+  GetApplicationResponse(GetApplicationResponse&& from) noexcept
+    : GetApplicationResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetApplicationResponse& operator=(const GetApplicationResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetApplicationResponse& operator=(GetApplicationResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetApplicationResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetApplicationResponse* internal_default_instance() {
+    return reinterpret_cast<const GetApplicationResponse*>(
+               &_GetApplicationResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(GetApplicationResponse& a, GetApplicationResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetApplicationResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetApplicationResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetApplicationResponse* New() const final {
+    return new GetApplicationResponse();
+  }
+
+  GetApplicationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetApplicationResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetApplicationResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetApplicationResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetApplicationResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "billing.v1alpha1.GetApplicationResponse";
+  }
+  protected:
+  explicit GetApplicationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kApplicationFieldNumber = 1,
+  };
+  // .billing.v1alpha1.Application application = 1 [json_name = "application"];
+  bool has_application() const;
+  private:
+  bool _internal_has_application() const;
+  public:
+  void clear_application();
+  const ::billing::v1alpha1::Application& application() const;
+  PROTOBUF_MUST_USE_RESULT ::billing::v1alpha1::Application* release_application();
+  ::billing::v1alpha1::Application* mutable_application();
+  void set_allocated_application(::billing::v1alpha1::Application* application);
+  private:
+  const ::billing::v1alpha1::Application& _internal_application() const;
+  ::billing::v1alpha1::Application* _internal_mutable_application();
+  public:
+  void unsafe_arena_set_allocated_application(
+      ::billing::v1alpha1::Application* application);
+  ::billing::v1alpha1::Application* unsafe_arena_release_application();
+
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetApplicationResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::billing::v1alpha1::Application* application_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateApplicationRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.UpdateApplicationRequest) */ {
+ public:
+  inline UpdateApplicationRequest() : UpdateApplicationRequest(nullptr) {}
+  ~UpdateApplicationRequest() override;
+  explicit constexpr UpdateApplicationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateApplicationRequest(const UpdateApplicationRequest& from);
+  UpdateApplicationRequest(UpdateApplicationRequest&& from) noexcept
+    : UpdateApplicationRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateApplicationRequest& operator=(const UpdateApplicationRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateApplicationRequest& operator=(UpdateApplicationRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateApplicationRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateApplicationRequest* internal_default_instance() {
+    return reinterpret_cast<const UpdateApplicationRequest*>(
+               &_UpdateApplicationRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(UpdateApplicationRequest& a, UpdateApplicationRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateApplicationRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateApplicationRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateApplicationRequest* New() const final {
+    return new UpdateApplicationRequest();
+  }
+
+  UpdateApplicationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateApplicationRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateApplicationRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateApplicationRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateApplicationRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "billing.v1alpha1.UpdateApplicationRequest";
+  }
+  protected:
+  explicit UpdateApplicationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kApplicationIdFieldNumber = 1,
+  };
+  // string application_id = 1 [json_name = "applicationId"];
+  void clear_application_id();
+  const std::string& application_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_application_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_application_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_application_id();
+  void set_allocated_application_id(std::string* application_id);
+  private:
+  const std::string& _internal_application_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_application_id(const std::string& value);
+  std::string* _internal_mutable_application_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateApplicationRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateApplicationResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.UpdateApplicationResponse) */ {
+ public:
+  inline UpdateApplicationResponse() : UpdateApplicationResponse(nullptr) {}
+  ~UpdateApplicationResponse() override;
+  explicit constexpr UpdateApplicationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateApplicationResponse(const UpdateApplicationResponse& from);
+  UpdateApplicationResponse(UpdateApplicationResponse&& from) noexcept
+    : UpdateApplicationResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateApplicationResponse& operator=(const UpdateApplicationResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateApplicationResponse& operator=(UpdateApplicationResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateApplicationResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateApplicationResponse* internal_default_instance() {
+    return reinterpret_cast<const UpdateApplicationResponse*>(
+               &_UpdateApplicationResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(UpdateApplicationResponse& a, UpdateApplicationResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateApplicationResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateApplicationResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateApplicationResponse* New() const final {
+    return new UpdateApplicationResponse();
+  }
+
+  UpdateApplicationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateApplicationResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateApplicationResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateApplicationResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateApplicationResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "billing.v1alpha1.UpdateApplicationResponse";
+  }
+  protected:
+  explicit UpdateApplicationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kApplicationIdFieldNumber = 1,
+    kStatusFieldNumber = 2,
+  };
+  // string application_id = 1 [json_name = "applicationId"];
+  void clear_application_id();
+  const std::string& application_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_application_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_application_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_application_id();
+  void set_allocated_application_id(std::string* application_id);
+  private:
+  const std::string& _internal_application_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_application_id(const std::string& value);
+  std::string* _internal_mutable_application_id();
+  public:
+
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateApplicationResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreateMetricRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.CreateMetricRequest) */ {
+ public:
+  inline CreateMetricRequest() : CreateMetricRequest(nullptr) {}
+  ~CreateMetricRequest() override;
+  explicit constexpr CreateMetricRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CreateMetricRequest(const CreateMetricRequest& from);
+  CreateMetricRequest(CreateMetricRequest&& from) noexcept
+    : CreateMetricRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateMetricRequest& operator=(const CreateMetricRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateMetricRequest& operator=(CreateMetricRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreateMetricRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreateMetricRequest* internal_default_instance() {
+    return reinterpret_cast<const CreateMetricRequest*>(
+               &_CreateMetricRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(CreateMetricRequest& a, CreateMetricRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateMetricRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateMetricRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateMetricRequest* New() const final {
+    return new CreateMetricRequest();
+  }
+
+  CreateMetricRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateMetricRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CreateMetricRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CreateMetricRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateMetricRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "billing.v1alpha1.CreateMetricRequest";
+  }
+  protected:
+  explicit CreateMetricRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMetricFieldNumber = 1,
+  };
+  // .billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];
+  bool has_metric() const;
+  private:
+  bool _internal_has_metric() const;
+  public:
+  void clear_metric();
+  const ::billing::v1alpha1::Metrics& metric() const;
+  PROTOBUF_MUST_USE_RESULT ::billing::v1alpha1::Metrics* release_metric();
+  ::billing::v1alpha1::Metrics* mutable_metric();
+  void set_allocated_metric(::billing::v1alpha1::Metrics* metric);
+  private:
+  const ::billing::v1alpha1::Metrics& _internal_metric() const;
+  ::billing::v1alpha1::Metrics* _internal_mutable_metric();
+  public:
+  void unsafe_arena_set_allocated_metric(
+      ::billing::v1alpha1::Metrics* metric);
+  ::billing::v1alpha1::Metrics* unsafe_arena_release_metric();
+
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateMetricRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::billing::v1alpha1::Metrics* metric_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreateMetricResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.CreateMetricResponse) */ {
+ public:
+  inline CreateMetricResponse() : CreateMetricResponse(nullptr) {}
+  ~CreateMetricResponse() override;
+  explicit constexpr CreateMetricResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CreateMetricResponse(const CreateMetricResponse& from);
+  CreateMetricResponse(CreateMetricResponse&& from) noexcept
+    : CreateMetricResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateMetricResponse& operator=(const CreateMetricResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateMetricResponse& operator=(CreateMetricResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreateMetricResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreateMetricResponse* internal_default_instance() {
+    return reinterpret_cast<const CreateMetricResponse*>(
+               &_CreateMetricResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(CreateMetricResponse& a, CreateMetricResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateMetricResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateMetricResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateMetricResponse* New() const final {
+    return new CreateMetricResponse();
+  }
+
+  CreateMetricResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateMetricResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CreateMetricResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CreateMetricResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateMetricResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "billing.v1alpha1.CreateMetricResponse";
+  }
+  protected:
+  explicit CreateMetricResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMetricIdFieldNumber = 1,
+    kStatusFieldNumber = 2,
+  };
+  // string metric_id = 1 [json_name = "metricId"];
+  void clear_metric_id();
+  const std::string& metric_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_metric_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_metric_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_metric_id();
+  void set_allocated_metric_id(std::string* metric_id);
+  private:
+  const std::string& _internal_metric_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_metric_id(const std::string& value);
+  std::string* _internal_mutable_metric_id();
+  public:
+
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateMetricResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr metric_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetMetricRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.GetMetricRequest) */ {
+ public:
+  inline GetMetricRequest() : GetMetricRequest(nullptr) {}
+  ~GetMetricRequest() override;
+  explicit constexpr GetMetricRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetMetricRequest(const GetMetricRequest& from);
+  GetMetricRequest(GetMetricRequest&& from) noexcept
+    : GetMetricRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetMetricRequest& operator=(const GetMetricRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetMetricRequest& operator=(GetMetricRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetMetricRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetMetricRequest* internal_default_instance() {
+    return reinterpret_cast<const GetMetricRequest*>(
+               &_GetMetricRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(GetMetricRequest& a, GetMetricRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetMetricRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetMetricRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetMetricRequest* New() const final {
+    return new GetMetricRequest();
+  }
+
+  GetMetricRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetMetricRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetMetricRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetMetricRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetMetricRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "billing.v1alpha1.GetMetricRequest";
+  }
+  protected:
+  explicit GetMetricRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMetricIdFieldNumber = 1,
+  };
+  // string metric_id = 1 [json_name = "metricId"];
+  void clear_metric_id();
+  const std::string& metric_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_metric_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_metric_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_metric_id();
+  void set_allocated_metric_id(std::string* metric_id);
+  private:
+  const std::string& _internal_metric_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_metric_id(const std::string& value);
+  std::string* _internal_mutable_metric_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetMetricRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr metric_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetMetricResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.GetMetricResponse) */ {
+ public:
+  inline GetMetricResponse() : GetMetricResponse(nullptr) {}
+  ~GetMetricResponse() override;
+  explicit constexpr GetMetricResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetMetricResponse(const GetMetricResponse& from);
+  GetMetricResponse(GetMetricResponse&& from) noexcept
+    : GetMetricResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetMetricResponse& operator=(const GetMetricResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetMetricResponse& operator=(GetMetricResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetMetricResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetMetricResponse* internal_default_instance() {
+    return reinterpret_cast<const GetMetricResponse*>(
+               &_GetMetricResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(GetMetricResponse& a, GetMetricResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetMetricResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetMetricResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetMetricResponse* New() const final {
+    return new GetMetricResponse();
+  }
+
+  GetMetricResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetMetricResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetMetricResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetMetricResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetMetricResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "billing.v1alpha1.GetMetricResponse";
+  }
+  protected:
+  explicit GetMetricResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMetricFieldNumber = 1,
+  };
+  // .billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];
+  bool has_metric() const;
+  private:
+  bool _internal_has_metric() const;
+  public:
+  void clear_metric();
+  const ::billing::v1alpha1::Metrics& metric() const;
+  PROTOBUF_MUST_USE_RESULT ::billing::v1alpha1::Metrics* release_metric();
+  ::billing::v1alpha1::Metrics* mutable_metric();
+  void set_allocated_metric(::billing::v1alpha1::Metrics* metric);
+  private:
+  const ::billing::v1alpha1::Metrics& _internal_metric() const;
+  ::billing::v1alpha1::Metrics* _internal_mutable_metric();
+  public:
+  void unsafe_arena_set_allocated_metric(
+      ::billing::v1alpha1::Metrics* metric);
+  ::billing::v1alpha1::Metrics* unsafe_arena_release_metric();
+
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetMetricResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::billing::v1alpha1::Metrics* metric_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateMetricRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.UpdateMetricRequest) */ {
+ public:
+  inline UpdateMetricRequest() : UpdateMetricRequest(nullptr) {}
+  ~UpdateMetricRequest() override;
+  explicit constexpr UpdateMetricRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateMetricRequest(const UpdateMetricRequest& from);
+  UpdateMetricRequest(UpdateMetricRequest&& from) noexcept
+    : UpdateMetricRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateMetricRequest& operator=(const UpdateMetricRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateMetricRequest& operator=(UpdateMetricRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateMetricRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateMetricRequest* internal_default_instance() {
+    return reinterpret_cast<const UpdateMetricRequest*>(
+               &_UpdateMetricRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(UpdateMetricRequest& a, UpdateMetricRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateMetricRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateMetricRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateMetricRequest* New() const final {
+    return new UpdateMetricRequest();
+  }
+
+  UpdateMetricRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateMetricRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateMetricRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateMetricRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateMetricRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "billing.v1alpha1.UpdateMetricRequest";
+  }
+  protected:
+  explicit UpdateMetricRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMetricIdFieldNumber = 1,
+  };
+  // string metric_id = 1 [json_name = "metricId"];
+  void clear_metric_id();
+  const std::string& metric_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_metric_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_metric_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_metric_id();
+  void set_allocated_metric_id(std::string* metric_id);
+  private:
+  const std::string& _internal_metric_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_metric_id(const std::string& value);
+  std::string* _internal_mutable_metric_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateMetricRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr metric_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateMetricResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:billing.v1alpha1.UpdateMetricResponse) */ {
+ public:
+  inline UpdateMetricResponse() : UpdateMetricResponse(nullptr) {}
+  ~UpdateMetricResponse() override;
+  explicit constexpr UpdateMetricResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateMetricResponse(const UpdateMetricResponse& from);
+  UpdateMetricResponse(UpdateMetricResponse&& from) noexcept
+    : UpdateMetricResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateMetricResponse& operator=(const UpdateMetricResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateMetricResponse& operator=(UpdateMetricResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateMetricResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateMetricResponse* internal_default_instance() {
+    return reinterpret_cast<const UpdateMetricResponse*>(
+               &_UpdateMetricResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(UpdateMetricResponse& a, UpdateMetricResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateMetricResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateMetricResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateMetricResponse* New() const final {
+    return new UpdateMetricResponse();
+  }
+
+  UpdateMetricResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateMetricResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateMetricResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateMetricResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateMetricResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "billing.v1alpha1.UpdateMetricResponse";
+  }
+  protected:
+  explicit UpdateMetricResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMetricIdFieldNumber = 1,
+    kStatusFieldNumber = 2,
+  };
+  // string metric_id = 1 [json_name = "metricId"];
+  void clear_metric_id();
+  const std::string& metric_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_metric_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_metric_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_metric_id();
+  void set_allocated_metric_id(std::string* metric_id);
+  private:
+  const std::string& _internal_metric_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_metric_id(const std::string& value);
+  std::string* _internal_mutable_metric_id();
+  public:
+
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateMetricResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr metric_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
@@ -1000,41 +2856,41 @@ class UpdateBillingResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// CreateBillingRequest
+// CreateOrganizationRequest
 
-// .billing.v1alpha1.Billing billing = 1 [json_name = "billing"];
-inline bool CreateBillingRequest::_internal_has_billing() const {
-  return this != internal_default_instance() && billing_ != nullptr;
+// .billing.v1alpha1.Organization organization = 1 [json_name = "organization"];
+inline bool CreateOrganizationRequest::_internal_has_organization() const {
+  return this != internal_default_instance() && organization_ != nullptr;
 }
-inline bool CreateBillingRequest::has_billing() const {
-  return _internal_has_billing();
+inline bool CreateOrganizationRequest::has_organization() const {
+  return _internal_has_organization();
 }
-inline const ::billing::v1alpha1::Billing& CreateBillingRequest::_internal_billing() const {
-  const ::billing::v1alpha1::Billing* p = billing_;
-  return p != nullptr ? *p : reinterpret_cast<const ::billing::v1alpha1::Billing&>(
-      ::billing::v1alpha1::_Billing_default_instance_);
+inline const ::billing::v1alpha1::Organization& CreateOrganizationRequest::_internal_organization() const {
+  const ::billing::v1alpha1::Organization* p = organization_;
+  return p != nullptr ? *p : reinterpret_cast<const ::billing::v1alpha1::Organization&>(
+      ::billing::v1alpha1::_Organization_default_instance_);
 }
-inline const ::billing::v1alpha1::Billing& CreateBillingRequest::billing() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.CreateBillingRequest.billing)
-  return _internal_billing();
+inline const ::billing::v1alpha1::Organization& CreateOrganizationRequest::organization() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.CreateOrganizationRequest.organization)
+  return _internal_organization();
 }
-inline void CreateBillingRequest::unsafe_arena_set_allocated_billing(
-    ::billing::v1alpha1::Billing* billing) {
+inline void CreateOrganizationRequest::unsafe_arena_set_allocated_organization(
+    ::billing::v1alpha1::Organization* organization) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(billing_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
   }
-  billing_ = billing;
-  if (billing) {
+  organization_ = organization;
+  if (organization) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:billing.v1alpha1.CreateBillingRequest.billing)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:billing.v1alpha1.CreateOrganizationRequest.organization)
 }
-inline ::billing::v1alpha1::Billing* CreateBillingRequest::release_billing() {
+inline ::billing::v1alpha1::Organization* CreateOrganizationRequest::release_organization() {
   
-  ::billing::v1alpha1::Billing* temp = billing_;
-  billing_ = nullptr;
+  ::billing::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1046,134 +2902,134 @@ inline ::billing::v1alpha1::Billing* CreateBillingRequest::release_billing() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::billing::v1alpha1::Billing* CreateBillingRequest::unsafe_arena_release_billing() {
-  // @@protoc_insertion_point(field_release:billing.v1alpha1.CreateBillingRequest.billing)
+inline ::billing::v1alpha1::Organization* CreateOrganizationRequest::unsafe_arena_release_organization() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.CreateOrganizationRequest.organization)
   
-  ::billing::v1alpha1::Billing* temp = billing_;
-  billing_ = nullptr;
+  ::billing::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
   return temp;
 }
-inline ::billing::v1alpha1::Billing* CreateBillingRequest::_internal_mutable_billing() {
+inline ::billing::v1alpha1::Organization* CreateOrganizationRequest::_internal_mutable_organization() {
   
-  if (billing_ == nullptr) {
-    auto* p = CreateMaybeMessage<::billing::v1alpha1::Billing>(GetArenaForAllocation());
-    billing_ = p;
+  if (organization_ == nullptr) {
+    auto* p = CreateMaybeMessage<::billing::v1alpha1::Organization>(GetArenaForAllocation());
+    organization_ = p;
   }
-  return billing_;
+  return organization_;
 }
-inline ::billing::v1alpha1::Billing* CreateBillingRequest::mutable_billing() {
-  ::billing::v1alpha1::Billing* _msg = _internal_mutable_billing();
-  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.CreateBillingRequest.billing)
+inline ::billing::v1alpha1::Organization* CreateOrganizationRequest::mutable_organization() {
+  ::billing::v1alpha1::Organization* _msg = _internal_mutable_organization();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.CreateOrganizationRequest.organization)
   return _msg;
 }
-inline void CreateBillingRequest::set_allocated_billing(::billing::v1alpha1::Billing* billing) {
+inline void CreateOrganizationRequest::set_allocated_organization(::billing::v1alpha1::Organization* organization) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(billing_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
   }
-  if (billing) {
+  if (organization) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(billing));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization));
     if (message_arena != submessage_arena) {
-      billing = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, billing, submessage_arena);
+      organization = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, organization, submessage_arena);
     }
     
   } else {
     
   }
-  billing_ = billing;
-  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.CreateBillingRequest.billing)
+  organization_ = organization;
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.CreateOrganizationRequest.organization)
 }
 
 // -------------------------------------------------------------------
 
-// CreateBillingResponse
+// CreateOrganizationResponse
 
-// string billing_id = 1 [json_name = "billingId"];
-inline void CreateBillingResponse::clear_billing_id() {
-  billing_id_.ClearToEmpty();
+// string organization_id = 1 [json_name = "organizationId"];
+inline void CreateOrganizationResponse::clear_organization_id() {
+  organization_id_.ClearToEmpty();
 }
-inline const std::string& CreateBillingResponse::billing_id() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.CreateBillingResponse.billing_id)
-  return _internal_billing_id();
+inline const std::string& CreateOrganizationResponse::organization_id() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.CreateOrganizationResponse.organization_id)
+  return _internal_organization_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void CreateBillingResponse::set_billing_id(ArgT0&& arg0, ArgT... args) {
+void CreateOrganizationResponse::set_organization_id(ArgT0&& arg0, ArgT... args) {
  
- billing_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:billing.v1alpha1.CreateBillingResponse.billing_id)
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.CreateOrganizationResponse.organization_id)
 }
-inline std::string* CreateBillingResponse::mutable_billing_id() {
-  std::string* _s = _internal_mutable_billing_id();
-  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.CreateBillingResponse.billing_id)
+inline std::string* CreateOrganizationResponse::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.CreateOrganizationResponse.organization_id)
   return _s;
 }
-inline const std::string& CreateBillingResponse::_internal_billing_id() const {
-  return billing_id_.Get();
+inline const std::string& CreateOrganizationResponse::_internal_organization_id() const {
+  return organization_id_.Get();
 }
-inline void CreateBillingResponse::_internal_set_billing_id(const std::string& value) {
+inline void CreateOrganizationResponse::_internal_set_organization_id(const std::string& value) {
   
-  billing_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* CreateBillingResponse::_internal_mutable_billing_id() {
+inline std::string* CreateOrganizationResponse::_internal_mutable_organization_id() {
   
-  return billing_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* CreateBillingResponse::release_billing_id() {
-  // @@protoc_insertion_point(field_release:billing.v1alpha1.CreateBillingResponse.billing_id)
-  return billing_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* CreateOrganizationResponse::release_organization_id() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.CreateOrganizationResponse.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void CreateBillingResponse::set_allocated_billing_id(std::string* billing_id) {
-  if (billing_id != nullptr) {
+inline void CreateOrganizationResponse::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
     
   } else {
     
   }
-  billing_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), billing_id,
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.CreateBillingResponse.billing_id)
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.CreateOrganizationResponse.organization_id)
 }
 
 // string status = 2 [json_name = "status"];
-inline void CreateBillingResponse::clear_status() {
+inline void CreateOrganizationResponse::clear_status() {
   status_.ClearToEmpty();
 }
-inline const std::string& CreateBillingResponse::status() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.CreateBillingResponse.status)
+inline const std::string& CreateOrganizationResponse::status() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.CreateOrganizationResponse.status)
   return _internal_status();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void CreateBillingResponse::set_status(ArgT0&& arg0, ArgT... args) {
+void CreateOrganizationResponse::set_status(ArgT0&& arg0, ArgT... args) {
  
  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:billing.v1alpha1.CreateBillingResponse.status)
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.CreateOrganizationResponse.status)
 }
-inline std::string* CreateBillingResponse::mutable_status() {
+inline std::string* CreateOrganizationResponse::mutable_status() {
   std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.CreateBillingResponse.status)
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.CreateOrganizationResponse.status)
   return _s;
 }
-inline const std::string& CreateBillingResponse::_internal_status() const {
+inline const std::string& CreateOrganizationResponse::_internal_status() const {
   return status_.Get();
 }
-inline void CreateBillingResponse::_internal_set_status(const std::string& value) {
+inline void CreateOrganizationResponse::_internal_set_status(const std::string& value) {
   
   status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* CreateBillingResponse::_internal_mutable_status() {
+inline std::string* CreateOrganizationResponse::_internal_mutable_status() {
   
   return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* CreateBillingResponse::release_status() {
-  // @@protoc_insertion_point(field_release:billing.v1alpha1.CreateBillingResponse.status)
+inline std::string* CreateOrganizationResponse::release_status() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.CreateOrganizationResponse.status)
   return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void CreateBillingResponse::set_allocated_status(std::string* status) {
+inline void CreateOrganizationResponse::set_allocated_status(std::string* status) {
   if (status != nullptr) {
     
   } else {
@@ -1181,96 +3037,96 @@ inline void CreateBillingResponse::set_allocated_status(std::string* status) {
   }
   status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.CreateBillingResponse.status)
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.CreateOrganizationResponse.status)
 }
 
 // -------------------------------------------------------------------
 
-// GetBillingRequest
+// GetOrganizationRequest
 
-// string billing_id = 1 [json_name = "billingId"];
-inline void GetBillingRequest::clear_billing_id() {
-  billing_id_.ClearToEmpty();
+// string organization_id = 1 [json_name = "organizationId"];
+inline void GetOrganizationRequest::clear_organization_id() {
+  organization_id_.ClearToEmpty();
 }
-inline const std::string& GetBillingRequest::billing_id() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.GetBillingRequest.billing_id)
-  return _internal_billing_id();
+inline const std::string& GetOrganizationRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.GetOrganizationRequest.organization_id)
+  return _internal_organization_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetBillingRequest::set_billing_id(ArgT0&& arg0, ArgT... args) {
+void GetOrganizationRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
  
- billing_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:billing.v1alpha1.GetBillingRequest.billing_id)
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.GetOrganizationRequest.organization_id)
 }
-inline std::string* GetBillingRequest::mutable_billing_id() {
-  std::string* _s = _internal_mutable_billing_id();
-  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.GetBillingRequest.billing_id)
+inline std::string* GetOrganizationRequest::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.GetOrganizationRequest.organization_id)
   return _s;
 }
-inline const std::string& GetBillingRequest::_internal_billing_id() const {
-  return billing_id_.Get();
+inline const std::string& GetOrganizationRequest::_internal_organization_id() const {
+  return organization_id_.Get();
 }
-inline void GetBillingRequest::_internal_set_billing_id(const std::string& value) {
+inline void GetOrganizationRequest::_internal_set_organization_id(const std::string& value) {
   
-  billing_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetBillingRequest::_internal_mutable_billing_id() {
+inline std::string* GetOrganizationRequest::_internal_mutable_organization_id() {
   
-  return billing_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetBillingRequest::release_billing_id() {
-  // @@protoc_insertion_point(field_release:billing.v1alpha1.GetBillingRequest.billing_id)
-  return billing_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetOrganizationRequest::release_organization_id() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.GetOrganizationRequest.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetBillingRequest::set_allocated_billing_id(std::string* billing_id) {
-  if (billing_id != nullptr) {
+inline void GetOrganizationRequest::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
     
   } else {
     
   }
-  billing_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), billing_id,
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.GetBillingRequest.billing_id)
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.GetOrganizationRequest.organization_id)
 }
 
 // -------------------------------------------------------------------
 
-// GetBillingResponse
+// GetOrganizationResponse
 
-// .billing.v1alpha1.Billing billing = 1 [json_name = "billing"];
-inline bool GetBillingResponse::_internal_has_billing() const {
-  return this != internal_default_instance() && billing_ != nullptr;
+// .billing.v1alpha1.Organization organization = 1 [json_name = "organization"];
+inline bool GetOrganizationResponse::_internal_has_organization() const {
+  return this != internal_default_instance() && organization_ != nullptr;
 }
-inline bool GetBillingResponse::has_billing() const {
-  return _internal_has_billing();
+inline bool GetOrganizationResponse::has_organization() const {
+  return _internal_has_organization();
 }
-inline const ::billing::v1alpha1::Billing& GetBillingResponse::_internal_billing() const {
-  const ::billing::v1alpha1::Billing* p = billing_;
-  return p != nullptr ? *p : reinterpret_cast<const ::billing::v1alpha1::Billing&>(
-      ::billing::v1alpha1::_Billing_default_instance_);
+inline const ::billing::v1alpha1::Organization& GetOrganizationResponse::_internal_organization() const {
+  const ::billing::v1alpha1::Organization* p = organization_;
+  return p != nullptr ? *p : reinterpret_cast<const ::billing::v1alpha1::Organization&>(
+      ::billing::v1alpha1::_Organization_default_instance_);
 }
-inline const ::billing::v1alpha1::Billing& GetBillingResponse::billing() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.GetBillingResponse.billing)
-  return _internal_billing();
+inline const ::billing::v1alpha1::Organization& GetOrganizationResponse::organization() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.GetOrganizationResponse.organization)
+  return _internal_organization();
 }
-inline void GetBillingResponse::unsafe_arena_set_allocated_billing(
-    ::billing::v1alpha1::Billing* billing) {
+inline void GetOrganizationResponse::unsafe_arena_set_allocated_organization(
+    ::billing::v1alpha1::Organization* organization) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(billing_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
   }
-  billing_ = billing;
-  if (billing) {
+  organization_ = organization;
+  if (organization) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:billing.v1alpha1.GetBillingResponse.billing)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:billing.v1alpha1.GetOrganizationResponse.organization)
 }
-inline ::billing::v1alpha1::Billing* GetBillingResponse::release_billing() {
+inline ::billing::v1alpha1::Organization* GetOrganizationResponse::release_organization() {
   
-  ::billing::v1alpha1::Billing* temp = billing_;
-  billing_ = nullptr;
+  ::billing::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1282,88 +3138,138 @@ inline ::billing::v1alpha1::Billing* GetBillingResponse::release_billing() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::billing::v1alpha1::Billing* GetBillingResponse::unsafe_arena_release_billing() {
-  // @@protoc_insertion_point(field_release:billing.v1alpha1.GetBillingResponse.billing)
+inline ::billing::v1alpha1::Organization* GetOrganizationResponse::unsafe_arena_release_organization() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.GetOrganizationResponse.organization)
   
-  ::billing::v1alpha1::Billing* temp = billing_;
-  billing_ = nullptr;
+  ::billing::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
   return temp;
 }
-inline ::billing::v1alpha1::Billing* GetBillingResponse::_internal_mutable_billing() {
+inline ::billing::v1alpha1::Organization* GetOrganizationResponse::_internal_mutable_organization() {
   
-  if (billing_ == nullptr) {
-    auto* p = CreateMaybeMessage<::billing::v1alpha1::Billing>(GetArenaForAllocation());
-    billing_ = p;
+  if (organization_ == nullptr) {
+    auto* p = CreateMaybeMessage<::billing::v1alpha1::Organization>(GetArenaForAllocation());
+    organization_ = p;
   }
-  return billing_;
+  return organization_;
 }
-inline ::billing::v1alpha1::Billing* GetBillingResponse::mutable_billing() {
-  ::billing::v1alpha1::Billing* _msg = _internal_mutable_billing();
-  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.GetBillingResponse.billing)
+inline ::billing::v1alpha1::Organization* GetOrganizationResponse::mutable_organization() {
+  ::billing::v1alpha1::Organization* _msg = _internal_mutable_organization();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.GetOrganizationResponse.organization)
   return _msg;
 }
-inline void GetBillingResponse::set_allocated_billing(::billing::v1alpha1::Billing* billing) {
+inline void GetOrganizationResponse::set_allocated_organization(::billing::v1alpha1::Organization* organization) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(billing_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
   }
-  if (billing) {
+  if (organization) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(billing));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization));
     if (message_arena != submessage_arena) {
-      billing = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, billing, submessage_arena);
+      organization = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, organization, submessage_arena);
     }
     
   } else {
     
   }
-  billing_ = billing;
-  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.GetBillingResponse.billing)
+  organization_ = organization;
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.GetOrganizationResponse.organization)
 }
 
 // -------------------------------------------------------------------
 
-// UpdateBillingRequest
+// UpdateOrganizationRequest
+
+// string organization_id = 1 [json_name = "organizationId"];
+inline void UpdateOrganizationRequest::clear_organization_id() {
+  organization_id_.ClearToEmpty();
+}
+inline const std::string& UpdateOrganizationRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.UpdateOrganizationRequest.organization_id)
+  return _internal_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateOrganizationRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.UpdateOrganizationRequest.organization_id)
+}
+inline std::string* UpdateOrganizationRequest::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.UpdateOrganizationRequest.organization_id)
+  return _s;
+}
+inline const std::string& UpdateOrganizationRequest::_internal_organization_id() const {
+  return organization_id_.Get();
+}
+inline void UpdateOrganizationRequest::_internal_set_organization_id(const std::string& value) {
+  
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateOrganizationRequest::_internal_mutable_organization_id() {
+  
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateOrganizationRequest::release_organization_id() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.UpdateOrganizationRequest.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateOrganizationRequest::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.UpdateOrganizationRequest.organization_id)
+}
+
+// -------------------------------------------------------------------
+
+// UpdateOrganizationResponse
 
 // string billing_id = 1 [json_name = "billingId"];
-inline void UpdateBillingRequest::clear_billing_id() {
+inline void UpdateOrganizationResponse::clear_billing_id() {
   billing_id_.ClearToEmpty();
 }
-inline const std::string& UpdateBillingRequest::billing_id() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.UpdateBillingRequest.billing_id)
+inline const std::string& UpdateOrganizationResponse::billing_id() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.UpdateOrganizationResponse.billing_id)
   return _internal_billing_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void UpdateBillingRequest::set_billing_id(ArgT0&& arg0, ArgT... args) {
+void UpdateOrganizationResponse::set_billing_id(ArgT0&& arg0, ArgT... args) {
  
  billing_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:billing.v1alpha1.UpdateBillingRequest.billing_id)
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.UpdateOrganizationResponse.billing_id)
 }
-inline std::string* UpdateBillingRequest::mutable_billing_id() {
+inline std::string* UpdateOrganizationResponse::mutable_billing_id() {
   std::string* _s = _internal_mutable_billing_id();
-  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.UpdateBillingRequest.billing_id)
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.UpdateOrganizationResponse.billing_id)
   return _s;
 }
-inline const std::string& UpdateBillingRequest::_internal_billing_id() const {
+inline const std::string& UpdateOrganizationResponse::_internal_billing_id() const {
   return billing_id_.Get();
 }
-inline void UpdateBillingRequest::_internal_set_billing_id(const std::string& value) {
+inline void UpdateOrganizationResponse::_internal_set_billing_id(const std::string& value) {
   
   billing_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* UpdateBillingRequest::_internal_mutable_billing_id() {
+inline std::string* UpdateOrganizationResponse::_internal_mutable_billing_id() {
   
   return billing_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* UpdateBillingRequest::release_billing_id() {
-  // @@protoc_insertion_point(field_release:billing.v1alpha1.UpdateBillingRequest.billing_id)
+inline std::string* UpdateOrganizationResponse::release_billing_id() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.UpdateOrganizationResponse.billing_id)
   return billing_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void UpdateBillingRequest::set_allocated_billing_id(std::string* billing_id) {
+inline void UpdateOrganizationResponse::set_allocated_billing_id(std::string* billing_id) {
   if (billing_id != nullptr) {
     
   } else {
@@ -1371,95 +3277,45 @@ inline void UpdateBillingRequest::set_allocated_billing_id(std::string* billing_
   }
   billing_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), billing_id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.UpdateBillingRequest.billing_id)
-}
-
-// -------------------------------------------------------------------
-
-// UpdateBillingResponse
-
-// string billing_id = 1 [json_name = "billingId"];
-inline void UpdateBillingResponse::clear_billing_id() {
-  billing_id_.ClearToEmpty();
-}
-inline const std::string& UpdateBillingResponse::billing_id() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.UpdateBillingResponse.billing_id)
-  return _internal_billing_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void UpdateBillingResponse::set_billing_id(ArgT0&& arg0, ArgT... args) {
- 
- billing_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:billing.v1alpha1.UpdateBillingResponse.billing_id)
-}
-inline std::string* UpdateBillingResponse::mutable_billing_id() {
-  std::string* _s = _internal_mutable_billing_id();
-  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.UpdateBillingResponse.billing_id)
-  return _s;
-}
-inline const std::string& UpdateBillingResponse::_internal_billing_id() const {
-  return billing_id_.Get();
-}
-inline void UpdateBillingResponse::_internal_set_billing_id(const std::string& value) {
-  
-  billing_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* UpdateBillingResponse::_internal_mutable_billing_id() {
-  
-  return billing_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* UpdateBillingResponse::release_billing_id() {
-  // @@protoc_insertion_point(field_release:billing.v1alpha1.UpdateBillingResponse.billing_id)
-  return billing_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void UpdateBillingResponse::set_allocated_billing_id(std::string* billing_id) {
-  if (billing_id != nullptr) {
-    
-  } else {
-    
-  }
-  billing_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), billing_id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.UpdateBillingResponse.billing_id)
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.UpdateOrganizationResponse.billing_id)
 }
 
 // string status = 2 [json_name = "status"];
-inline void UpdateBillingResponse::clear_status() {
+inline void UpdateOrganizationResponse::clear_status() {
   status_.ClearToEmpty();
 }
-inline const std::string& UpdateBillingResponse::status() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.UpdateBillingResponse.status)
+inline const std::string& UpdateOrganizationResponse::status() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.UpdateOrganizationResponse.status)
   return _internal_status();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void UpdateBillingResponse::set_status(ArgT0&& arg0, ArgT... args) {
+void UpdateOrganizationResponse::set_status(ArgT0&& arg0, ArgT... args) {
  
  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:billing.v1alpha1.UpdateBillingResponse.status)
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.UpdateOrganizationResponse.status)
 }
-inline std::string* UpdateBillingResponse::mutable_status() {
+inline std::string* UpdateOrganizationResponse::mutable_status() {
   std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.UpdateBillingResponse.status)
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.UpdateOrganizationResponse.status)
   return _s;
 }
-inline const std::string& UpdateBillingResponse::_internal_status() const {
+inline const std::string& UpdateOrganizationResponse::_internal_status() const {
   return status_.Get();
 }
-inline void UpdateBillingResponse::_internal_set_status(const std::string& value) {
+inline void UpdateOrganizationResponse::_internal_set_status(const std::string& value) {
   
   status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* UpdateBillingResponse::_internal_mutable_status() {
+inline std::string* UpdateOrganizationResponse::_internal_mutable_status() {
   
   return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* UpdateBillingResponse::release_status() {
-  // @@protoc_insertion_point(field_release:billing.v1alpha1.UpdateBillingResponse.status)
+inline std::string* UpdateOrganizationResponse::release_status() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.UpdateOrganizationResponse.status)
   return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void UpdateBillingResponse::set_allocated_status(std::string* status) {
+inline void UpdateOrganizationResponse::set_allocated_status(std::string* status) {
   if (status != nullptr) {
     
   } else {
@@ -1467,12 +3323,980 @@ inline void UpdateBillingResponse::set_allocated_status(std::string* status) {
   }
   status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.UpdateBillingResponse.status)
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.UpdateOrganizationResponse.status)
+}
+
+// -------------------------------------------------------------------
+
+// CreateApplicationRequest
+
+// .billing.v1alpha1.Application application = 1 [json_name = "application"];
+inline bool CreateApplicationRequest::_internal_has_application() const {
+  return this != internal_default_instance() && application_ != nullptr;
+}
+inline bool CreateApplicationRequest::has_application() const {
+  return _internal_has_application();
+}
+inline const ::billing::v1alpha1::Application& CreateApplicationRequest::_internal_application() const {
+  const ::billing::v1alpha1::Application* p = application_;
+  return p != nullptr ? *p : reinterpret_cast<const ::billing::v1alpha1::Application&>(
+      ::billing::v1alpha1::_Application_default_instance_);
+}
+inline const ::billing::v1alpha1::Application& CreateApplicationRequest::application() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.CreateApplicationRequest.application)
+  return _internal_application();
+}
+inline void CreateApplicationRequest::unsafe_arena_set_allocated_application(
+    ::billing::v1alpha1::Application* application) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(application_);
+  }
+  application_ = application;
+  if (application) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:billing.v1alpha1.CreateApplicationRequest.application)
+}
+inline ::billing::v1alpha1::Application* CreateApplicationRequest::release_application() {
+  
+  ::billing::v1alpha1::Application* temp = application_;
+  application_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::billing::v1alpha1::Application* CreateApplicationRequest::unsafe_arena_release_application() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.CreateApplicationRequest.application)
+  
+  ::billing::v1alpha1::Application* temp = application_;
+  application_ = nullptr;
+  return temp;
+}
+inline ::billing::v1alpha1::Application* CreateApplicationRequest::_internal_mutable_application() {
+  
+  if (application_ == nullptr) {
+    auto* p = CreateMaybeMessage<::billing::v1alpha1::Application>(GetArenaForAllocation());
+    application_ = p;
+  }
+  return application_;
+}
+inline ::billing::v1alpha1::Application* CreateApplicationRequest::mutable_application() {
+  ::billing::v1alpha1::Application* _msg = _internal_mutable_application();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.CreateApplicationRequest.application)
+  return _msg;
+}
+inline void CreateApplicationRequest::set_allocated_application(::billing::v1alpha1::Application* application) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(application_);
+  }
+  if (application) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(application));
+    if (message_arena != submessage_arena) {
+      application = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, application, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  application_ = application;
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.CreateApplicationRequest.application)
+}
+
+// -------------------------------------------------------------------
+
+// CreateApplicationResponse
+
+// string application_id = 1 [json_name = "applicationId"];
+inline void CreateApplicationResponse::clear_application_id() {
+  application_id_.ClearToEmpty();
+}
+inline const std::string& CreateApplicationResponse::application_id() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.CreateApplicationResponse.application_id)
+  return _internal_application_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateApplicationResponse::set_application_id(ArgT0&& arg0, ArgT... args) {
+ 
+ application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.CreateApplicationResponse.application_id)
+}
+inline std::string* CreateApplicationResponse::mutable_application_id() {
+  std::string* _s = _internal_mutable_application_id();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.CreateApplicationResponse.application_id)
+  return _s;
+}
+inline const std::string& CreateApplicationResponse::_internal_application_id() const {
+  return application_id_.Get();
+}
+inline void CreateApplicationResponse::_internal_set_application_id(const std::string& value) {
+  
+  application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateApplicationResponse::_internal_mutable_application_id() {
+  
+  return application_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateApplicationResponse::release_application_id() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.CreateApplicationResponse.application_id)
+  return application_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateApplicationResponse::set_allocated_application_id(std::string* application_id) {
+  if (application_id != nullptr) {
+    
+  } else {
+    
+  }
+  application_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), application_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.CreateApplicationResponse.application_id)
+}
+
+// string status = 2 [json_name = "status"];
+inline void CreateApplicationResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& CreateApplicationResponse::status() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.CreateApplicationResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateApplicationResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.CreateApplicationResponse.status)
+}
+inline std::string* CreateApplicationResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.CreateApplicationResponse.status)
+  return _s;
+}
+inline const std::string& CreateApplicationResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void CreateApplicationResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateApplicationResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateApplicationResponse::release_status() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.CreateApplicationResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateApplicationResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.CreateApplicationResponse.status)
+}
+
+// -------------------------------------------------------------------
+
+// GetApplicationRequest
+
+// string organization_id = 1 [json_name = "organizationId"];
+inline void GetApplicationRequest::clear_organization_id() {
+  organization_id_.ClearToEmpty();
+}
+inline const std::string& GetApplicationRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.GetApplicationRequest.organization_id)
+  return _internal_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetApplicationRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.GetApplicationRequest.organization_id)
+}
+inline std::string* GetApplicationRequest::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.GetApplicationRequest.organization_id)
+  return _s;
+}
+inline const std::string& GetApplicationRequest::_internal_organization_id() const {
+  return organization_id_.Get();
+}
+inline void GetApplicationRequest::_internal_set_organization_id(const std::string& value) {
+  
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetApplicationRequest::_internal_mutable_organization_id() {
+  
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetApplicationRequest::release_organization_id() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.GetApplicationRequest.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetApplicationRequest::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.GetApplicationRequest.organization_id)
+}
+
+// -------------------------------------------------------------------
+
+// GetApplicationResponse
+
+// .billing.v1alpha1.Application application = 1 [json_name = "application"];
+inline bool GetApplicationResponse::_internal_has_application() const {
+  return this != internal_default_instance() && application_ != nullptr;
+}
+inline bool GetApplicationResponse::has_application() const {
+  return _internal_has_application();
+}
+inline const ::billing::v1alpha1::Application& GetApplicationResponse::_internal_application() const {
+  const ::billing::v1alpha1::Application* p = application_;
+  return p != nullptr ? *p : reinterpret_cast<const ::billing::v1alpha1::Application&>(
+      ::billing::v1alpha1::_Application_default_instance_);
+}
+inline const ::billing::v1alpha1::Application& GetApplicationResponse::application() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.GetApplicationResponse.application)
+  return _internal_application();
+}
+inline void GetApplicationResponse::unsafe_arena_set_allocated_application(
+    ::billing::v1alpha1::Application* application) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(application_);
+  }
+  application_ = application;
+  if (application) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:billing.v1alpha1.GetApplicationResponse.application)
+}
+inline ::billing::v1alpha1::Application* GetApplicationResponse::release_application() {
+  
+  ::billing::v1alpha1::Application* temp = application_;
+  application_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::billing::v1alpha1::Application* GetApplicationResponse::unsafe_arena_release_application() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.GetApplicationResponse.application)
+  
+  ::billing::v1alpha1::Application* temp = application_;
+  application_ = nullptr;
+  return temp;
+}
+inline ::billing::v1alpha1::Application* GetApplicationResponse::_internal_mutable_application() {
+  
+  if (application_ == nullptr) {
+    auto* p = CreateMaybeMessage<::billing::v1alpha1::Application>(GetArenaForAllocation());
+    application_ = p;
+  }
+  return application_;
+}
+inline ::billing::v1alpha1::Application* GetApplicationResponse::mutable_application() {
+  ::billing::v1alpha1::Application* _msg = _internal_mutable_application();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.GetApplicationResponse.application)
+  return _msg;
+}
+inline void GetApplicationResponse::set_allocated_application(::billing::v1alpha1::Application* application) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(application_);
+  }
+  if (application) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(application));
+    if (message_arena != submessage_arena) {
+      application = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, application, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  application_ = application;
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.GetApplicationResponse.application)
+}
+
+// -------------------------------------------------------------------
+
+// UpdateApplicationRequest
+
+// string application_id = 1 [json_name = "applicationId"];
+inline void UpdateApplicationRequest::clear_application_id() {
+  application_id_.ClearToEmpty();
+}
+inline const std::string& UpdateApplicationRequest::application_id() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.UpdateApplicationRequest.application_id)
+  return _internal_application_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateApplicationRequest::set_application_id(ArgT0&& arg0, ArgT... args) {
+ 
+ application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.UpdateApplicationRequest.application_id)
+}
+inline std::string* UpdateApplicationRequest::mutable_application_id() {
+  std::string* _s = _internal_mutable_application_id();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.UpdateApplicationRequest.application_id)
+  return _s;
+}
+inline const std::string& UpdateApplicationRequest::_internal_application_id() const {
+  return application_id_.Get();
+}
+inline void UpdateApplicationRequest::_internal_set_application_id(const std::string& value) {
+  
+  application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateApplicationRequest::_internal_mutable_application_id() {
+  
+  return application_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateApplicationRequest::release_application_id() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.UpdateApplicationRequest.application_id)
+  return application_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateApplicationRequest::set_allocated_application_id(std::string* application_id) {
+  if (application_id != nullptr) {
+    
+  } else {
+    
+  }
+  application_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), application_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.UpdateApplicationRequest.application_id)
+}
+
+// -------------------------------------------------------------------
+
+// UpdateApplicationResponse
+
+// string application_id = 1 [json_name = "applicationId"];
+inline void UpdateApplicationResponse::clear_application_id() {
+  application_id_.ClearToEmpty();
+}
+inline const std::string& UpdateApplicationResponse::application_id() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.UpdateApplicationResponse.application_id)
+  return _internal_application_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateApplicationResponse::set_application_id(ArgT0&& arg0, ArgT... args) {
+ 
+ application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.UpdateApplicationResponse.application_id)
+}
+inline std::string* UpdateApplicationResponse::mutable_application_id() {
+  std::string* _s = _internal_mutable_application_id();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.UpdateApplicationResponse.application_id)
+  return _s;
+}
+inline const std::string& UpdateApplicationResponse::_internal_application_id() const {
+  return application_id_.Get();
+}
+inline void UpdateApplicationResponse::_internal_set_application_id(const std::string& value) {
+  
+  application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateApplicationResponse::_internal_mutable_application_id() {
+  
+  return application_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateApplicationResponse::release_application_id() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.UpdateApplicationResponse.application_id)
+  return application_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateApplicationResponse::set_allocated_application_id(std::string* application_id) {
+  if (application_id != nullptr) {
+    
+  } else {
+    
+  }
+  application_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), application_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.UpdateApplicationResponse.application_id)
+}
+
+// string status = 2 [json_name = "status"];
+inline void UpdateApplicationResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& UpdateApplicationResponse::status() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.UpdateApplicationResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateApplicationResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.UpdateApplicationResponse.status)
+}
+inline std::string* UpdateApplicationResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.UpdateApplicationResponse.status)
+  return _s;
+}
+inline const std::string& UpdateApplicationResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void UpdateApplicationResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateApplicationResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateApplicationResponse::release_status() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.UpdateApplicationResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateApplicationResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.UpdateApplicationResponse.status)
+}
+
+// -------------------------------------------------------------------
+
+// CreateMetricRequest
+
+// .billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];
+inline bool CreateMetricRequest::_internal_has_metric() const {
+  return this != internal_default_instance() && metric_ != nullptr;
+}
+inline bool CreateMetricRequest::has_metric() const {
+  return _internal_has_metric();
+}
+inline const ::billing::v1alpha1::Metrics& CreateMetricRequest::_internal_metric() const {
+  const ::billing::v1alpha1::Metrics* p = metric_;
+  return p != nullptr ? *p : reinterpret_cast<const ::billing::v1alpha1::Metrics&>(
+      ::billing::v1alpha1::_Metrics_default_instance_);
+}
+inline const ::billing::v1alpha1::Metrics& CreateMetricRequest::metric() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.CreateMetricRequest.metric)
+  return _internal_metric();
+}
+inline void CreateMetricRequest::unsafe_arena_set_allocated_metric(
+    ::billing::v1alpha1::Metrics* metric) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(metric_);
+  }
+  metric_ = metric;
+  if (metric) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:billing.v1alpha1.CreateMetricRequest.metric)
+}
+inline ::billing::v1alpha1::Metrics* CreateMetricRequest::release_metric() {
+  
+  ::billing::v1alpha1::Metrics* temp = metric_;
+  metric_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::billing::v1alpha1::Metrics* CreateMetricRequest::unsafe_arena_release_metric() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.CreateMetricRequest.metric)
+  
+  ::billing::v1alpha1::Metrics* temp = metric_;
+  metric_ = nullptr;
+  return temp;
+}
+inline ::billing::v1alpha1::Metrics* CreateMetricRequest::_internal_mutable_metric() {
+  
+  if (metric_ == nullptr) {
+    auto* p = CreateMaybeMessage<::billing::v1alpha1::Metrics>(GetArenaForAllocation());
+    metric_ = p;
+  }
+  return metric_;
+}
+inline ::billing::v1alpha1::Metrics* CreateMetricRequest::mutable_metric() {
+  ::billing::v1alpha1::Metrics* _msg = _internal_mutable_metric();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.CreateMetricRequest.metric)
+  return _msg;
+}
+inline void CreateMetricRequest::set_allocated_metric(::billing::v1alpha1::Metrics* metric) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(metric_);
+  }
+  if (metric) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(metric));
+    if (message_arena != submessage_arena) {
+      metric = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, metric, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  metric_ = metric;
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.CreateMetricRequest.metric)
+}
+
+// -------------------------------------------------------------------
+
+// CreateMetricResponse
+
+// string metric_id = 1 [json_name = "metricId"];
+inline void CreateMetricResponse::clear_metric_id() {
+  metric_id_.ClearToEmpty();
+}
+inline const std::string& CreateMetricResponse::metric_id() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.CreateMetricResponse.metric_id)
+  return _internal_metric_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateMetricResponse::set_metric_id(ArgT0&& arg0, ArgT... args) {
+ 
+ metric_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.CreateMetricResponse.metric_id)
+}
+inline std::string* CreateMetricResponse::mutable_metric_id() {
+  std::string* _s = _internal_mutable_metric_id();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.CreateMetricResponse.metric_id)
+  return _s;
+}
+inline const std::string& CreateMetricResponse::_internal_metric_id() const {
+  return metric_id_.Get();
+}
+inline void CreateMetricResponse::_internal_set_metric_id(const std::string& value) {
+  
+  metric_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateMetricResponse::_internal_mutable_metric_id() {
+  
+  return metric_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateMetricResponse::release_metric_id() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.CreateMetricResponse.metric_id)
+  return metric_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateMetricResponse::set_allocated_metric_id(std::string* metric_id) {
+  if (metric_id != nullptr) {
+    
+  } else {
+    
+  }
+  metric_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), metric_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.CreateMetricResponse.metric_id)
+}
+
+// string status = 2 [json_name = "status"];
+inline void CreateMetricResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& CreateMetricResponse::status() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.CreateMetricResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateMetricResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.CreateMetricResponse.status)
+}
+inline std::string* CreateMetricResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.CreateMetricResponse.status)
+  return _s;
+}
+inline const std::string& CreateMetricResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void CreateMetricResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateMetricResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateMetricResponse::release_status() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.CreateMetricResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateMetricResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.CreateMetricResponse.status)
+}
+
+// -------------------------------------------------------------------
+
+// GetMetricRequest
+
+// string metric_id = 1 [json_name = "metricId"];
+inline void GetMetricRequest::clear_metric_id() {
+  metric_id_.ClearToEmpty();
+}
+inline const std::string& GetMetricRequest::metric_id() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.GetMetricRequest.metric_id)
+  return _internal_metric_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetMetricRequest::set_metric_id(ArgT0&& arg0, ArgT... args) {
+ 
+ metric_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.GetMetricRequest.metric_id)
+}
+inline std::string* GetMetricRequest::mutable_metric_id() {
+  std::string* _s = _internal_mutable_metric_id();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.GetMetricRequest.metric_id)
+  return _s;
+}
+inline const std::string& GetMetricRequest::_internal_metric_id() const {
+  return metric_id_.Get();
+}
+inline void GetMetricRequest::_internal_set_metric_id(const std::string& value) {
+  
+  metric_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetMetricRequest::_internal_mutable_metric_id() {
+  
+  return metric_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetMetricRequest::release_metric_id() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.GetMetricRequest.metric_id)
+  return metric_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetMetricRequest::set_allocated_metric_id(std::string* metric_id) {
+  if (metric_id != nullptr) {
+    
+  } else {
+    
+  }
+  metric_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), metric_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.GetMetricRequest.metric_id)
+}
+
+// -------------------------------------------------------------------
+
+// GetMetricResponse
+
+// .billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];
+inline bool GetMetricResponse::_internal_has_metric() const {
+  return this != internal_default_instance() && metric_ != nullptr;
+}
+inline bool GetMetricResponse::has_metric() const {
+  return _internal_has_metric();
+}
+inline const ::billing::v1alpha1::Metrics& GetMetricResponse::_internal_metric() const {
+  const ::billing::v1alpha1::Metrics* p = metric_;
+  return p != nullptr ? *p : reinterpret_cast<const ::billing::v1alpha1::Metrics&>(
+      ::billing::v1alpha1::_Metrics_default_instance_);
+}
+inline const ::billing::v1alpha1::Metrics& GetMetricResponse::metric() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.GetMetricResponse.metric)
+  return _internal_metric();
+}
+inline void GetMetricResponse::unsafe_arena_set_allocated_metric(
+    ::billing::v1alpha1::Metrics* metric) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(metric_);
+  }
+  metric_ = metric;
+  if (metric) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:billing.v1alpha1.GetMetricResponse.metric)
+}
+inline ::billing::v1alpha1::Metrics* GetMetricResponse::release_metric() {
+  
+  ::billing::v1alpha1::Metrics* temp = metric_;
+  metric_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::billing::v1alpha1::Metrics* GetMetricResponse::unsafe_arena_release_metric() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.GetMetricResponse.metric)
+  
+  ::billing::v1alpha1::Metrics* temp = metric_;
+  metric_ = nullptr;
+  return temp;
+}
+inline ::billing::v1alpha1::Metrics* GetMetricResponse::_internal_mutable_metric() {
+  
+  if (metric_ == nullptr) {
+    auto* p = CreateMaybeMessage<::billing::v1alpha1::Metrics>(GetArenaForAllocation());
+    metric_ = p;
+  }
+  return metric_;
+}
+inline ::billing::v1alpha1::Metrics* GetMetricResponse::mutable_metric() {
+  ::billing::v1alpha1::Metrics* _msg = _internal_mutable_metric();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.GetMetricResponse.metric)
+  return _msg;
+}
+inline void GetMetricResponse::set_allocated_metric(::billing::v1alpha1::Metrics* metric) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(metric_);
+  }
+  if (metric) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(metric));
+    if (message_arena != submessage_arena) {
+      metric = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, metric, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  metric_ = metric;
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.GetMetricResponse.metric)
+}
+
+// -------------------------------------------------------------------
+
+// UpdateMetricRequest
+
+// string metric_id = 1 [json_name = "metricId"];
+inline void UpdateMetricRequest::clear_metric_id() {
+  metric_id_.ClearToEmpty();
+}
+inline const std::string& UpdateMetricRequest::metric_id() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.UpdateMetricRequest.metric_id)
+  return _internal_metric_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateMetricRequest::set_metric_id(ArgT0&& arg0, ArgT... args) {
+ 
+ metric_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.UpdateMetricRequest.metric_id)
+}
+inline std::string* UpdateMetricRequest::mutable_metric_id() {
+  std::string* _s = _internal_mutable_metric_id();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.UpdateMetricRequest.metric_id)
+  return _s;
+}
+inline const std::string& UpdateMetricRequest::_internal_metric_id() const {
+  return metric_id_.Get();
+}
+inline void UpdateMetricRequest::_internal_set_metric_id(const std::string& value) {
+  
+  metric_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateMetricRequest::_internal_mutable_metric_id() {
+  
+  return metric_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateMetricRequest::release_metric_id() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.UpdateMetricRequest.metric_id)
+  return metric_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateMetricRequest::set_allocated_metric_id(std::string* metric_id) {
+  if (metric_id != nullptr) {
+    
+  } else {
+    
+  }
+  metric_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), metric_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.UpdateMetricRequest.metric_id)
+}
+
+// -------------------------------------------------------------------
+
+// UpdateMetricResponse
+
+// string metric_id = 1 [json_name = "metricId"];
+inline void UpdateMetricResponse::clear_metric_id() {
+  metric_id_.ClearToEmpty();
+}
+inline const std::string& UpdateMetricResponse::metric_id() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.UpdateMetricResponse.metric_id)
+  return _internal_metric_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateMetricResponse::set_metric_id(ArgT0&& arg0, ArgT... args) {
+ 
+ metric_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.UpdateMetricResponse.metric_id)
+}
+inline std::string* UpdateMetricResponse::mutable_metric_id() {
+  std::string* _s = _internal_mutable_metric_id();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.UpdateMetricResponse.metric_id)
+  return _s;
+}
+inline const std::string& UpdateMetricResponse::_internal_metric_id() const {
+  return metric_id_.Get();
+}
+inline void UpdateMetricResponse::_internal_set_metric_id(const std::string& value) {
+  
+  metric_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateMetricResponse::_internal_mutable_metric_id() {
+  
+  return metric_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateMetricResponse::release_metric_id() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.UpdateMetricResponse.metric_id)
+  return metric_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateMetricResponse::set_allocated_metric_id(std::string* metric_id) {
+  if (metric_id != nullptr) {
+    
+  } else {
+    
+  }
+  metric_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), metric_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.UpdateMetricResponse.metric_id)
+}
+
+// string status = 2 [json_name = "status"];
+inline void UpdateMetricResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& UpdateMetricResponse::status() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.UpdateMetricResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateMetricResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.UpdateMetricResponse.status)
+}
+inline std::string* UpdateMetricResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.UpdateMetricResponse.status)
+  return _s;
+}
+inline const std::string& UpdateMetricResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void UpdateMetricResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateMetricResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateMetricResponse::release_status() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.UpdateMetricResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateMetricResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.UpdateMetricResponse.status)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

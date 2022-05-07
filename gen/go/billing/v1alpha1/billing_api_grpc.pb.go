@@ -18,9 +18,15 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type BillingServiceClient interface {
-	CreateBilling(ctx context.Context, in *CreateBillingRequest, opts ...grpc.CallOption) (*CreateBillingResponse, error)
-	GetBilling(ctx context.Context, in *GetBillingRequest, opts ...grpc.CallOption) (*GetBillingResponse, error)
-	UpdateBilling(ctx context.Context, in *UpdateBillingRequest, opts ...grpc.CallOption) (*UpdateBillingResponse, error)
+	CreateOrganization(ctx context.Context, in *CreateOrganizationRequest, opts ...grpc.CallOption) (*CreateOrganizationResponse, error)
+	GetOrganization(ctx context.Context, in *GetOrganizationRequest, opts ...grpc.CallOption) (*GetOrganizationResponse, error)
+	UpdateOrganization(ctx context.Context, in *UpdateOrganizationRequest, opts ...grpc.CallOption) (*UpdateOrganizationResponse, error)
+	CreateApplication(ctx context.Context, in *CreateApplicationRequest, opts ...grpc.CallOption) (*CreateApplicationResponse, error)
+	GetApplication(ctx context.Context, in *GetApplicationRequest, opts ...grpc.CallOption) (*GetApplicationResponse, error)
+	UpdateApplication(ctx context.Context, in *UpdateApplicationRequest, opts ...grpc.CallOption) (*UpdateApplicationResponse, error)
+	CreateMetric(ctx context.Context, in *CreateMetricRequest, opts ...grpc.CallOption) (*CreateMetricResponse, error)
+	GetMetric(ctx context.Context, in *GetMetricRequest, opts ...grpc.CallOption) (*GetMetricResponse, error)
+	UpdateMetric(ctx context.Context, in *UpdateMetricRequest, opts ...grpc.CallOption) (*UpdateMetricResponse, error)
 }
 
 type billingServiceClient struct {
@@ -31,27 +37,81 @@ func NewBillingServiceClient(cc grpc.ClientConnInterface) BillingServiceClient {
 	return &billingServiceClient{cc}
 }
 
-func (c *billingServiceClient) CreateBilling(ctx context.Context, in *CreateBillingRequest, opts ...grpc.CallOption) (*CreateBillingResponse, error) {
-	out := new(CreateBillingResponse)
-	err := c.cc.Invoke(ctx, "/billing.v1alpha1.BillingService/CreateBilling", in, out, opts...)
+func (c *billingServiceClient) CreateOrganization(ctx context.Context, in *CreateOrganizationRequest, opts ...grpc.CallOption) (*CreateOrganizationResponse, error) {
+	out := new(CreateOrganizationResponse)
+	err := c.cc.Invoke(ctx, "/billing.v1alpha1.BillingService/CreateOrganization", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *billingServiceClient) GetBilling(ctx context.Context, in *GetBillingRequest, opts ...grpc.CallOption) (*GetBillingResponse, error) {
-	out := new(GetBillingResponse)
-	err := c.cc.Invoke(ctx, "/billing.v1alpha1.BillingService/GetBilling", in, out, opts...)
+func (c *billingServiceClient) GetOrganization(ctx context.Context, in *GetOrganizationRequest, opts ...grpc.CallOption) (*GetOrganizationResponse, error) {
+	out := new(GetOrganizationResponse)
+	err := c.cc.Invoke(ctx, "/billing.v1alpha1.BillingService/GetOrganization", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *billingServiceClient) UpdateBilling(ctx context.Context, in *UpdateBillingRequest, opts ...grpc.CallOption) (*UpdateBillingResponse, error) {
-	out := new(UpdateBillingResponse)
-	err := c.cc.Invoke(ctx, "/billing.v1alpha1.BillingService/UpdateBilling", in, out, opts...)
+func (c *billingServiceClient) UpdateOrganization(ctx context.Context, in *UpdateOrganizationRequest, opts ...grpc.CallOption) (*UpdateOrganizationResponse, error) {
+	out := new(UpdateOrganizationResponse)
+	err := c.cc.Invoke(ctx, "/billing.v1alpha1.BillingService/UpdateOrganization", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *billingServiceClient) CreateApplication(ctx context.Context, in *CreateApplicationRequest, opts ...grpc.CallOption) (*CreateApplicationResponse, error) {
+	out := new(CreateApplicationResponse)
+	err := c.cc.Invoke(ctx, "/billing.v1alpha1.BillingService/CreateApplication", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *billingServiceClient) GetApplication(ctx context.Context, in *GetApplicationRequest, opts ...grpc.CallOption) (*GetApplicationResponse, error) {
+	out := new(GetApplicationResponse)
+	err := c.cc.Invoke(ctx, "/billing.v1alpha1.BillingService/GetApplication", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *billingServiceClient) UpdateApplication(ctx context.Context, in *UpdateApplicationRequest, opts ...grpc.CallOption) (*UpdateApplicationResponse, error) {
+	out := new(UpdateApplicationResponse)
+	err := c.cc.Invoke(ctx, "/billing.v1alpha1.BillingService/UpdateApplication", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *billingServiceClient) CreateMetric(ctx context.Context, in *CreateMetricRequest, opts ...grpc.CallOption) (*CreateMetricResponse, error) {
+	out := new(CreateMetricResponse)
+	err := c.cc.Invoke(ctx, "/billing.v1alpha1.BillingService/CreateMetric", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *billingServiceClient) GetMetric(ctx context.Context, in *GetMetricRequest, opts ...grpc.CallOption) (*GetMetricResponse, error) {
+	out := new(GetMetricResponse)
+	err := c.cc.Invoke(ctx, "/billing.v1alpha1.BillingService/GetMetric", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *billingServiceClient) UpdateMetric(ctx context.Context, in *UpdateMetricRequest, opts ...grpc.CallOption) (*UpdateMetricResponse, error) {
+	out := new(UpdateMetricResponse)
+	err := c.cc.Invoke(ctx, "/billing.v1alpha1.BillingService/UpdateMetric", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,23 +122,47 @@ func (c *billingServiceClient) UpdateBilling(ctx context.Context, in *UpdateBill
 // All implementations should embed UnimplementedBillingServiceServer
 // for forward compatibility
 type BillingServiceServer interface {
-	CreateBilling(context.Context, *CreateBillingRequest) (*CreateBillingResponse, error)
-	GetBilling(context.Context, *GetBillingRequest) (*GetBillingResponse, error)
-	UpdateBilling(context.Context, *UpdateBillingRequest) (*UpdateBillingResponse, error)
+	CreateOrganization(context.Context, *CreateOrganizationRequest) (*CreateOrganizationResponse, error)
+	GetOrganization(context.Context, *GetOrganizationRequest) (*GetOrganizationResponse, error)
+	UpdateOrganization(context.Context, *UpdateOrganizationRequest) (*UpdateOrganizationResponse, error)
+	CreateApplication(context.Context, *CreateApplicationRequest) (*CreateApplicationResponse, error)
+	GetApplication(context.Context, *GetApplicationRequest) (*GetApplicationResponse, error)
+	UpdateApplication(context.Context, *UpdateApplicationRequest) (*UpdateApplicationResponse, error)
+	CreateMetric(context.Context, *CreateMetricRequest) (*CreateMetricResponse, error)
+	GetMetric(context.Context, *GetMetricRequest) (*GetMetricResponse, error)
+	UpdateMetric(context.Context, *UpdateMetricRequest) (*UpdateMetricResponse, error)
 }
 
 // UnimplementedBillingServiceServer should be embedded to have forward compatible implementations.
 type UnimplementedBillingServiceServer struct {
 }
 
-func (UnimplementedBillingServiceServer) CreateBilling(context.Context, *CreateBillingRequest) (*CreateBillingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateBilling not implemented")
+func (UnimplementedBillingServiceServer) CreateOrganization(context.Context, *CreateOrganizationRequest) (*CreateOrganizationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrganization not implemented")
 }
-func (UnimplementedBillingServiceServer) GetBilling(context.Context, *GetBillingRequest) (*GetBillingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetBilling not implemented")
+func (UnimplementedBillingServiceServer) GetOrganization(context.Context, *GetOrganizationRequest) (*GetOrganizationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrganization not implemented")
 }
-func (UnimplementedBillingServiceServer) UpdateBilling(context.Context, *UpdateBillingRequest) (*UpdateBillingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateBilling not implemented")
+func (UnimplementedBillingServiceServer) UpdateOrganization(context.Context, *UpdateOrganizationRequest) (*UpdateOrganizationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrganization not implemented")
+}
+func (UnimplementedBillingServiceServer) CreateApplication(context.Context, *CreateApplicationRequest) (*CreateApplicationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateApplication not implemented")
+}
+func (UnimplementedBillingServiceServer) GetApplication(context.Context, *GetApplicationRequest) (*GetApplicationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetApplication not implemented")
+}
+func (UnimplementedBillingServiceServer) UpdateApplication(context.Context, *UpdateApplicationRequest) (*UpdateApplicationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateApplication not implemented")
+}
+func (UnimplementedBillingServiceServer) CreateMetric(context.Context, *CreateMetricRequest) (*CreateMetricResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateMetric not implemented")
+}
+func (UnimplementedBillingServiceServer) GetMetric(context.Context, *GetMetricRequest) (*GetMetricResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMetric not implemented")
+}
+func (UnimplementedBillingServiceServer) UpdateMetric(context.Context, *UpdateMetricRequest) (*UpdateMetricResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateMetric not implemented")
 }
 
 // UnsafeBillingServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -92,56 +176,164 @@ func RegisterBillingServiceServer(s grpc.ServiceRegistrar, srv BillingServiceSer
 	s.RegisterService(&BillingService_ServiceDesc, srv)
 }
 
-func _BillingService_CreateBilling_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateBillingRequest)
+func _BillingService_CreateOrganization_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOrganizationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BillingServiceServer).CreateBilling(ctx, in)
+		return srv.(BillingServiceServer).CreateOrganization(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/billing.v1alpha1.BillingService/CreateBilling",
+		FullMethod: "/billing.v1alpha1.BillingService/CreateOrganization",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BillingServiceServer).CreateBilling(ctx, req.(*CreateBillingRequest))
+		return srv.(BillingServiceServer).CreateOrganization(ctx, req.(*CreateOrganizationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BillingService_GetBilling_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetBillingRequest)
+func _BillingService_GetOrganization_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrganizationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BillingServiceServer).GetBilling(ctx, in)
+		return srv.(BillingServiceServer).GetOrganization(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/billing.v1alpha1.BillingService/GetBilling",
+		FullMethod: "/billing.v1alpha1.BillingService/GetOrganization",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BillingServiceServer).GetBilling(ctx, req.(*GetBillingRequest))
+		return srv.(BillingServiceServer).GetOrganization(ctx, req.(*GetOrganizationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BillingService_UpdateBilling_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateBillingRequest)
+func _BillingService_UpdateOrganization_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateOrganizationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BillingServiceServer).UpdateBilling(ctx, in)
+		return srv.(BillingServiceServer).UpdateOrganization(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/billing.v1alpha1.BillingService/UpdateBilling",
+		FullMethod: "/billing.v1alpha1.BillingService/UpdateOrganization",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BillingServiceServer).UpdateBilling(ctx, req.(*UpdateBillingRequest))
+		return srv.(BillingServiceServer).UpdateOrganization(ctx, req.(*UpdateOrganizationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BillingService_CreateApplication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateApplicationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BillingServiceServer).CreateApplication(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/billing.v1alpha1.BillingService/CreateApplication",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BillingServiceServer).CreateApplication(ctx, req.(*CreateApplicationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BillingService_GetApplication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetApplicationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BillingServiceServer).GetApplication(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/billing.v1alpha1.BillingService/GetApplication",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BillingServiceServer).GetApplication(ctx, req.(*GetApplicationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BillingService_UpdateApplication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateApplicationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BillingServiceServer).UpdateApplication(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/billing.v1alpha1.BillingService/UpdateApplication",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BillingServiceServer).UpdateApplication(ctx, req.(*UpdateApplicationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BillingService_CreateMetric_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateMetricRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BillingServiceServer).CreateMetric(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/billing.v1alpha1.BillingService/CreateMetric",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BillingServiceServer).CreateMetric(ctx, req.(*CreateMetricRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BillingService_GetMetric_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMetricRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BillingServiceServer).GetMetric(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/billing.v1alpha1.BillingService/GetMetric",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BillingServiceServer).GetMetric(ctx, req.(*GetMetricRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BillingService_UpdateMetric_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateMetricRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BillingServiceServer).UpdateMetric(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/billing.v1alpha1.BillingService/UpdateMetric",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BillingServiceServer).UpdateMetric(ctx, req.(*UpdateMetricRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -154,16 +346,40 @@ var BillingService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*BillingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateBilling",
-			Handler:    _BillingService_CreateBilling_Handler,
+			MethodName: "CreateOrganization",
+			Handler:    _BillingService_CreateOrganization_Handler,
 		},
 		{
-			MethodName: "GetBilling",
-			Handler:    _BillingService_GetBilling_Handler,
+			MethodName: "GetOrganization",
+			Handler:    _BillingService_GetOrganization_Handler,
 		},
 		{
-			MethodName: "UpdateBilling",
-			Handler:    _BillingService_UpdateBilling_Handler,
+			MethodName: "UpdateOrganization",
+			Handler:    _BillingService_UpdateOrganization_Handler,
+		},
+		{
+			MethodName: "CreateApplication",
+			Handler:    _BillingService_CreateApplication_Handler,
+		},
+		{
+			MethodName: "GetApplication",
+			Handler:    _BillingService_GetApplication_Handler,
+		},
+		{
+			MethodName: "UpdateApplication",
+			Handler:    _BillingService_UpdateApplication_Handler,
+		},
+		{
+			MethodName: "CreateMetric",
+			Handler:    _BillingService_CreateMetric_Handler,
+		},
+		{
+			MethodName: "GetMetric",
+			Handler:    _BillingService_GetMetric_Handler,
+		},
+		{
+			MethodName: "UpdateMetric",
+			Handler:    _BillingService_UpdateMetric_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

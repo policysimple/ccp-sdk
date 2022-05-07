@@ -14,20 +14,50 @@ class BillingServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.CreateBilling = channel.unary_unary(
-        '/billing.v1alpha1.BillingService/CreateBilling',
-        request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateBillingRequest.SerializeToString,
-        response_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateBillingResponse.FromString,
+    self.CreateOrganization = channel.unary_unary(
+        '/billing.v1alpha1.BillingService/CreateOrganization',
+        request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateOrganizationRequest.SerializeToString,
+        response_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateOrganizationResponse.FromString,
         )
-    self.GetBilling = channel.unary_unary(
-        '/billing.v1alpha1.BillingService/GetBilling',
-        request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetBillingRequest.SerializeToString,
-        response_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetBillingResponse.FromString,
+    self.GetOrganization = channel.unary_unary(
+        '/billing.v1alpha1.BillingService/GetOrganization',
+        request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetOrganizationRequest.SerializeToString,
+        response_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetOrganizationResponse.FromString,
         )
-    self.UpdateBilling = channel.unary_unary(
-        '/billing.v1alpha1.BillingService/UpdateBilling',
-        request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateBillingRequest.SerializeToString,
-        response_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateBillingResponse.FromString,
+    self.UpdateOrganization = channel.unary_unary(
+        '/billing.v1alpha1.BillingService/UpdateOrganization',
+        request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateOrganizationRequest.SerializeToString,
+        response_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateOrganizationResponse.FromString,
+        )
+    self.CreateApplication = channel.unary_unary(
+        '/billing.v1alpha1.BillingService/CreateApplication',
+        request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateApplicationRequest.SerializeToString,
+        response_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateApplicationResponse.FromString,
+        )
+    self.GetApplication = channel.unary_unary(
+        '/billing.v1alpha1.BillingService/GetApplication',
+        request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetApplicationRequest.SerializeToString,
+        response_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetApplicationResponse.FromString,
+        )
+    self.UpdateApplication = channel.unary_unary(
+        '/billing.v1alpha1.BillingService/UpdateApplication',
+        request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateApplicationRequest.SerializeToString,
+        response_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateApplicationResponse.FromString,
+        )
+    self.CreateMetric = channel.unary_unary(
+        '/billing.v1alpha1.BillingService/CreateMetric',
+        request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateMetricRequest.SerializeToString,
+        response_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateMetricResponse.FromString,
+        )
+    self.GetMetric = channel.unary_unary(
+        '/billing.v1alpha1.BillingService/GetMetric',
+        request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetMetricRequest.SerializeToString,
+        response_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetMetricResponse.FromString,
+        )
+    self.UpdateMetric = channel.unary_unary(
+        '/billing.v1alpha1.BillingService/UpdateMetric',
+        request_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateMetricRequest.SerializeToString,
+        response_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateMetricResponse.FromString,
         )
 
 
@@ -35,21 +65,63 @@ class BillingServiceServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
-  def CreateBilling(self, request, context):
+  def CreateOrganization(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetBilling(self, request, context):
+  def GetOrganization(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def UpdateBilling(self, request, context):
+  def UpdateOrganization(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateApplication(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetApplication(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdateApplication(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateMetric(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetMetric(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdateMetric(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -59,20 +131,50 @@ class BillingServiceServicer(object):
 
 def add_BillingServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'CreateBilling': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateBilling,
-          request_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateBillingRequest.FromString,
-          response_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateBillingResponse.SerializeToString,
+      'CreateOrganization': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateOrganization,
+          request_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateOrganizationRequest.FromString,
+          response_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateOrganizationResponse.SerializeToString,
       ),
-      'GetBilling': grpc.unary_unary_rpc_method_handler(
-          servicer.GetBilling,
-          request_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetBillingRequest.FromString,
-          response_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetBillingResponse.SerializeToString,
+      'GetOrganization': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOrganization,
+          request_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetOrganizationRequest.FromString,
+          response_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetOrganizationResponse.SerializeToString,
       ),
-      'UpdateBilling': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateBilling,
-          request_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateBillingRequest.FromString,
-          response_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateBillingResponse.SerializeToString,
+      'UpdateOrganization': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateOrganization,
+          request_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateOrganizationRequest.FromString,
+          response_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateOrganizationResponse.SerializeToString,
+      ),
+      'CreateApplication': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateApplication,
+          request_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateApplicationRequest.FromString,
+          response_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateApplicationResponse.SerializeToString,
+      ),
+      'GetApplication': grpc.unary_unary_rpc_method_handler(
+          servicer.GetApplication,
+          request_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetApplicationRequest.FromString,
+          response_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetApplicationResponse.SerializeToString,
+      ),
+      'UpdateApplication': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateApplication,
+          request_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateApplicationRequest.FromString,
+          response_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateApplicationResponse.SerializeToString,
+      ),
+      'CreateMetric': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateMetric,
+          request_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateMetricRequest.FromString,
+          response_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.CreateMetricResponse.SerializeToString,
+      ),
+      'GetMetric': grpc.unary_unary_rpc_method_handler(
+          servicer.GetMetric,
+          request_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetMetricRequest.FromString,
+          response_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.GetMetricResponse.SerializeToString,
+      ),
+      'UpdateMetric': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateMetric,
+          request_deserializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateMetricRequest.FromString,
+          response_serializer=billing_dot_v1alpha1_dot_billing__api__pb2.UpdateMetricResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
