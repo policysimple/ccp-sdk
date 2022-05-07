@@ -4,8 +4,8 @@ package billing.v1alpha1;
 
 
 option go_package = "github.com/cuemby/ccp-billing-service/billingv1alpha1";
-import "billing.proto";
-//import "billing/v1alpha1/billing.proto";
+//import "billing.proto";
+import "billing/v1alpha1/billing.proto";
 
 service BillingService{
   rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse) {};
