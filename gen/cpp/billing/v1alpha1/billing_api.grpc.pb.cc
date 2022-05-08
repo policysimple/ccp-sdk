@@ -19,9 +19,15 @@ namespace billing {
 namespace v1alpha1 {
 
 static const char* BillingService_method_names[] = {
-  "/billing.v1alpha1.BillingService/CreateBilling",
-  "/billing.v1alpha1.BillingService/GetBilling",
-  "/billing.v1alpha1.BillingService/UpdateBilling",
+  "/billing.v1alpha1.BillingService/CreateOrganization",
+  "/billing.v1alpha1.BillingService/GetOrganization",
+  "/billing.v1alpha1.BillingService/UpdateOrganization",
+  "/billing.v1alpha1.BillingService/CreateApplication",
+  "/billing.v1alpha1.BillingService/GetApplication",
+  "/billing.v1alpha1.BillingService/UpdateApplication",
+  "/billing.v1alpha1.BillingService/CreateMetric",
+  "/billing.v1alpha1.BillingService/GetMetric",
+  "/billing.v1alpha1.BillingService/UpdateMetric",
 };
 
 std::unique_ptr< BillingService::Stub> BillingService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -31,95 +37,269 @@ std::unique_ptr< BillingService::Stub> BillingService::NewStub(const std::shared
 }
 
 BillingService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_CreateBilling_(BillingService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetBilling_(BillingService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateBilling_(BillingService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_CreateOrganization_(BillingService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOrganization_(BillingService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateOrganization_(BillingService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateApplication_(BillingService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetApplication_(BillingService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateApplication_(BillingService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateMetric_(BillingService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetMetric_(BillingService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateMetric_(BillingService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status BillingService::Stub::CreateBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateBillingRequest& request, ::billing::v1alpha1::CreateBillingResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateBilling_, context, request, response);
+::grpc::Status BillingService::Stub::CreateOrganization(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateOrganizationRequest& request, ::billing::v1alpha1::CreateOrganizationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateOrganization_, context, request, response);
 }
 
-void BillingService::Stub::experimental_async::CreateBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateBillingRequest* request, ::billing::v1alpha1::CreateBillingResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateBilling_, context, request, response, std::move(f));
+void BillingService::Stub::experimental_async::CreateOrganization(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateOrganizationRequest* request, ::billing::v1alpha1::CreateOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateOrganization_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::CreateBillingResponse>* BillingService::Stub::AsyncCreateBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateBillingRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::CreateBillingResponse>::Create(channel_.get(), cq, rpcmethod_CreateBilling_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::CreateOrganizationResponse>* BillingService::Stub::AsyncCreateOrganizationRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::CreateOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_CreateOrganization_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::CreateBillingResponse>* BillingService::Stub::PrepareAsyncCreateBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateBillingRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::CreateBillingResponse>::Create(channel_.get(), cq, rpcmethod_CreateBilling_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::CreateOrganizationResponse>* BillingService::Stub::PrepareAsyncCreateOrganizationRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::CreateOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_CreateOrganization_, context, request, false);
 }
 
-::grpc::Status BillingService::Stub::GetBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::GetBillingRequest& request, ::billing::v1alpha1::GetBillingResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetBilling_, context, request, response);
+::grpc::Status BillingService::Stub::GetOrganization(::grpc::ClientContext* context, const ::billing::v1alpha1::GetOrganizationRequest& request, ::billing::v1alpha1::GetOrganizationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetOrganization_, context, request, response);
 }
 
-void BillingService::Stub::experimental_async::GetBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::GetBillingRequest* request, ::billing::v1alpha1::GetBillingResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetBilling_, context, request, response, std::move(f));
+void BillingService::Stub::experimental_async::GetOrganization(::grpc::ClientContext* context, const ::billing::v1alpha1::GetOrganizationRequest* request, ::billing::v1alpha1::GetOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOrganization_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::GetBillingResponse>* BillingService::Stub::AsyncGetBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::GetBillingRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::GetBillingResponse>::Create(channel_.get(), cq, rpcmethod_GetBilling_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::GetOrganizationResponse>* BillingService::Stub::AsyncGetOrganizationRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::GetOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::GetOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_GetOrganization_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::GetBillingResponse>* BillingService::Stub::PrepareAsyncGetBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::GetBillingRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::GetBillingResponse>::Create(channel_.get(), cq, rpcmethod_GetBilling_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::GetOrganizationResponse>* BillingService::Stub::PrepareAsyncGetOrganizationRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::GetOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::GetOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_GetOrganization_, context, request, false);
 }
 
-::grpc::Status BillingService::Stub::UpdateBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateBillingRequest& request, ::billing::v1alpha1::UpdateBillingResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateBilling_, context, request, response);
+::grpc::Status BillingService::Stub::UpdateOrganization(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateOrganizationRequest& request, ::billing::v1alpha1::UpdateOrganizationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateOrganization_, context, request, response);
 }
 
-void BillingService::Stub::experimental_async::UpdateBilling(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateBillingRequest* request, ::billing::v1alpha1::UpdateBillingResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateBilling_, context, request, response, std::move(f));
+void BillingService::Stub::experimental_async::UpdateOrganization(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateOrganizationRequest* request, ::billing::v1alpha1::UpdateOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateOrganization_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::UpdateBillingResponse>* BillingService::Stub::AsyncUpdateBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateBillingRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::UpdateBillingResponse>::Create(channel_.get(), cq, rpcmethod_UpdateBilling_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::UpdateOrganizationResponse>* BillingService::Stub::AsyncUpdateOrganizationRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::UpdateOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_UpdateOrganization_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::UpdateBillingResponse>* BillingService::Stub::PrepareAsyncUpdateBillingRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateBillingRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::UpdateBillingResponse>::Create(channel_.get(), cq, rpcmethod_UpdateBilling_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::UpdateOrganizationResponse>* BillingService::Stub::PrepareAsyncUpdateOrganizationRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::UpdateOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_UpdateOrganization_, context, request, false);
+}
+
+::grpc::Status BillingService::Stub::CreateApplication(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateApplicationRequest& request, ::billing::v1alpha1::CreateApplicationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateApplication_, context, request, response);
+}
+
+void BillingService::Stub::experimental_async::CreateApplication(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateApplicationRequest* request, ::billing::v1alpha1::CreateApplicationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateApplication_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::CreateApplicationResponse>* BillingService::Stub::AsyncCreateApplicationRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateApplicationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::CreateApplicationResponse>::Create(channel_.get(), cq, rpcmethod_CreateApplication_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::CreateApplicationResponse>* BillingService::Stub::PrepareAsyncCreateApplicationRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateApplicationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::CreateApplicationResponse>::Create(channel_.get(), cq, rpcmethod_CreateApplication_, context, request, false);
+}
+
+::grpc::Status BillingService::Stub::GetApplication(::grpc::ClientContext* context, const ::billing::v1alpha1::GetApplicationRequest& request, ::billing::v1alpha1::GetApplicationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetApplication_, context, request, response);
+}
+
+void BillingService::Stub::experimental_async::GetApplication(::grpc::ClientContext* context, const ::billing::v1alpha1::GetApplicationRequest* request, ::billing::v1alpha1::GetApplicationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetApplication_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::GetApplicationResponse>* BillingService::Stub::AsyncGetApplicationRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::GetApplicationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::GetApplicationResponse>::Create(channel_.get(), cq, rpcmethod_GetApplication_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::GetApplicationResponse>* BillingService::Stub::PrepareAsyncGetApplicationRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::GetApplicationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::GetApplicationResponse>::Create(channel_.get(), cq, rpcmethod_GetApplication_, context, request, false);
+}
+
+::grpc::Status BillingService::Stub::UpdateApplication(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateApplicationRequest& request, ::billing::v1alpha1::UpdateApplicationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateApplication_, context, request, response);
+}
+
+void BillingService::Stub::experimental_async::UpdateApplication(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateApplicationRequest* request, ::billing::v1alpha1::UpdateApplicationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateApplication_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::UpdateApplicationResponse>* BillingService::Stub::AsyncUpdateApplicationRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateApplicationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::UpdateApplicationResponse>::Create(channel_.get(), cq, rpcmethod_UpdateApplication_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::UpdateApplicationResponse>* BillingService::Stub::PrepareAsyncUpdateApplicationRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateApplicationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::UpdateApplicationResponse>::Create(channel_.get(), cq, rpcmethod_UpdateApplication_, context, request, false);
+}
+
+::grpc::Status BillingService::Stub::CreateMetric(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateMetricRequest& request, ::billing::v1alpha1::CreateMetricResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateMetric_, context, request, response);
+}
+
+void BillingService::Stub::experimental_async::CreateMetric(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateMetricRequest* request, ::billing::v1alpha1::CreateMetricResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateMetric_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::CreateMetricResponse>* BillingService::Stub::AsyncCreateMetricRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateMetricRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::CreateMetricResponse>::Create(channel_.get(), cq, rpcmethod_CreateMetric_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::CreateMetricResponse>* BillingService::Stub::PrepareAsyncCreateMetricRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::CreateMetricRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::CreateMetricResponse>::Create(channel_.get(), cq, rpcmethod_CreateMetric_, context, request, false);
+}
+
+::grpc::Status BillingService::Stub::GetMetric(::grpc::ClientContext* context, const ::billing::v1alpha1::GetMetricRequest& request, ::billing::v1alpha1::GetMetricResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetMetric_, context, request, response);
+}
+
+void BillingService::Stub::experimental_async::GetMetric(::grpc::ClientContext* context, const ::billing::v1alpha1::GetMetricRequest* request, ::billing::v1alpha1::GetMetricResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetMetric_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::GetMetricResponse>* BillingService::Stub::AsyncGetMetricRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::GetMetricRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::GetMetricResponse>::Create(channel_.get(), cq, rpcmethod_GetMetric_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::GetMetricResponse>* BillingService::Stub::PrepareAsyncGetMetricRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::GetMetricRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::GetMetricResponse>::Create(channel_.get(), cq, rpcmethod_GetMetric_, context, request, false);
+}
+
+::grpc::Status BillingService::Stub::UpdateMetric(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateMetricRequest& request, ::billing::v1alpha1::UpdateMetricResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateMetric_, context, request, response);
+}
+
+void BillingService::Stub::experimental_async::UpdateMetric(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateMetricRequest* request, ::billing::v1alpha1::UpdateMetricResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateMetric_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::UpdateMetricResponse>* BillingService::Stub::AsyncUpdateMetricRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateMetricRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::UpdateMetricResponse>::Create(channel_.get(), cq, rpcmethod_UpdateMetric_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::billing::v1alpha1::UpdateMetricResponse>* BillingService::Stub::PrepareAsyncUpdateMetricRaw(::grpc::ClientContext* context, const ::billing::v1alpha1::UpdateMetricRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::billing::v1alpha1::UpdateMetricResponse>::Create(channel_.get(), cq, rpcmethod_UpdateMetric_, context, request, false);
 }
 
 BillingService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       BillingService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< BillingService::Service, ::billing::v1alpha1::CreateBillingRequest, ::billing::v1alpha1::CreateBillingResponse>(
-          std::mem_fn(&BillingService::Service::CreateBilling), this)));
+      new ::grpc::internal::RpcMethodHandler< BillingService::Service, ::billing::v1alpha1::CreateOrganizationRequest, ::billing::v1alpha1::CreateOrganizationResponse>(
+          std::mem_fn(&BillingService::Service::CreateOrganization), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       BillingService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< BillingService::Service, ::billing::v1alpha1::GetBillingRequest, ::billing::v1alpha1::GetBillingResponse>(
-          std::mem_fn(&BillingService::Service::GetBilling), this)));
+      new ::grpc::internal::RpcMethodHandler< BillingService::Service, ::billing::v1alpha1::GetOrganizationRequest, ::billing::v1alpha1::GetOrganizationResponse>(
+          std::mem_fn(&BillingService::Service::GetOrganization), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       BillingService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< BillingService::Service, ::billing::v1alpha1::UpdateBillingRequest, ::billing::v1alpha1::UpdateBillingResponse>(
-          std::mem_fn(&BillingService::Service::UpdateBilling), this)));
+      new ::grpc::internal::RpcMethodHandler< BillingService::Service, ::billing::v1alpha1::UpdateOrganizationRequest, ::billing::v1alpha1::UpdateOrganizationResponse>(
+          std::mem_fn(&BillingService::Service::UpdateOrganization), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BillingService_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BillingService::Service, ::billing::v1alpha1::CreateApplicationRequest, ::billing::v1alpha1::CreateApplicationResponse>(
+          std::mem_fn(&BillingService::Service::CreateApplication), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BillingService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BillingService::Service, ::billing::v1alpha1::GetApplicationRequest, ::billing::v1alpha1::GetApplicationResponse>(
+          std::mem_fn(&BillingService::Service::GetApplication), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BillingService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BillingService::Service, ::billing::v1alpha1::UpdateApplicationRequest, ::billing::v1alpha1::UpdateApplicationResponse>(
+          std::mem_fn(&BillingService::Service::UpdateApplication), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BillingService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BillingService::Service, ::billing::v1alpha1::CreateMetricRequest, ::billing::v1alpha1::CreateMetricResponse>(
+          std::mem_fn(&BillingService::Service::CreateMetric), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BillingService_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BillingService::Service, ::billing::v1alpha1::GetMetricRequest, ::billing::v1alpha1::GetMetricResponse>(
+          std::mem_fn(&BillingService::Service::GetMetric), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BillingService_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BillingService::Service, ::billing::v1alpha1::UpdateMetricRequest, ::billing::v1alpha1::UpdateMetricResponse>(
+          std::mem_fn(&BillingService::Service::UpdateMetric), this)));
 }
 
 BillingService::Service::~Service() {
 }
 
-::grpc::Status BillingService::Service::CreateBilling(::grpc::ServerContext* context, const ::billing::v1alpha1::CreateBillingRequest* request, ::billing::v1alpha1::CreateBillingResponse* response) {
+::grpc::Status BillingService::Service::CreateOrganization(::grpc::ServerContext* context, const ::billing::v1alpha1::CreateOrganizationRequest* request, ::billing::v1alpha1::CreateOrganizationResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status BillingService::Service::GetBilling(::grpc::ServerContext* context, const ::billing::v1alpha1::GetBillingRequest* request, ::billing::v1alpha1::GetBillingResponse* response) {
+::grpc::Status BillingService::Service::GetOrganization(::grpc::ServerContext* context, const ::billing::v1alpha1::GetOrganizationRequest* request, ::billing::v1alpha1::GetOrganizationResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status BillingService::Service::UpdateBilling(::grpc::ServerContext* context, const ::billing::v1alpha1::UpdateBillingRequest* request, ::billing::v1alpha1::UpdateBillingResponse* response) {
+::grpc::Status BillingService::Service::UpdateOrganization(::grpc::ServerContext* context, const ::billing::v1alpha1::UpdateOrganizationRequest* request, ::billing::v1alpha1::UpdateOrganizationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status BillingService::Service::CreateApplication(::grpc::ServerContext* context, const ::billing::v1alpha1::CreateApplicationRequest* request, ::billing::v1alpha1::CreateApplicationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status BillingService::Service::GetApplication(::grpc::ServerContext* context, const ::billing::v1alpha1::GetApplicationRequest* request, ::billing::v1alpha1::GetApplicationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status BillingService::Service::UpdateApplication(::grpc::ServerContext* context, const ::billing::v1alpha1::UpdateApplicationRequest* request, ::billing::v1alpha1::UpdateApplicationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status BillingService::Service::CreateMetric(::grpc::ServerContext* context, const ::billing::v1alpha1::CreateMetricRequest* request, ::billing::v1alpha1::CreateMetricResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status BillingService::Service::GetMetric(::grpc::ServerContext* context, const ::billing::v1alpha1::GetMetricRequest* request, ::billing::v1alpha1::GetMetricResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status BillingService::Service::UpdateMetric(::grpc::ServerContext* context, const ::billing::v1alpha1::UpdateMetricRequest* request, ::billing::v1alpha1::UpdateMetricResponse* response) {
   (void) context;
   (void) request;
   (void) response;

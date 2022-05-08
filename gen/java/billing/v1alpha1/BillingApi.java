@@ -14,45 +14,45 @@ public final class BillingApi {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface CreateBillingRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.CreateBillingRequest)
+  public interface CreateOrganizationRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.CreateOrganizationRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
-     * @return Whether the billing field is set.
+     * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * @return Whether the organization field is set.
      */
-    boolean hasBilling();
+    boolean hasOrganization();
     /**
-     * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
-     * @return The billing.
+     * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * @return The organization.
      */
-    billing.v1alpha1.BillingOuterClass.Billing getBilling();
+    billing.v1alpha1.Billing.Organization getOrganization();
     /**
-     * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+     * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
      */
-    billing.v1alpha1.BillingOuterClass.BillingOrBuilder getBillingOrBuilder();
+    billing.v1alpha1.Billing.OrganizationOrBuilder getOrganizationOrBuilder();
   }
   /**
-   * Protobuf type {@code billing.v1alpha1.CreateBillingRequest}
+   * Protobuf type {@code billing.v1alpha1.CreateOrganizationRequest}
    */
-  public static final class CreateBillingRequest extends
+  public static final class CreateOrganizationRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:billing.v1alpha1.CreateBillingRequest)
-      CreateBillingRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.CreateOrganizationRequest)
+      CreateOrganizationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CreateBillingRequest.newBuilder() to construct.
-    private CreateBillingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CreateOrganizationRequest.newBuilder() to construct.
+    private CreateOrganizationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CreateBillingRequest() {
+    private CreateOrganizationRequest() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new CreateBillingRequest();
+      return new CreateOrganizationRequest();
     }
 
     @java.lang.Override
@@ -60,7 +60,7 @@ public final class BillingApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CreateBillingRequest(
+    private CreateOrganizationRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -79,14 +79,14 @@ public final class BillingApi {
               done = true;
               break;
             case 10: {
-              billing.v1alpha1.BillingOuterClass.Billing.Builder subBuilder = null;
-              if (billing_ != null) {
-                subBuilder = billing_.toBuilder();
+              billing.v1alpha1.Billing.Organization.Builder subBuilder = null;
+              if (organization_ != null) {
+                subBuilder = organization_.toBuilder();
               }
-              billing_ = input.readMessage(billing.v1alpha1.BillingOuterClass.Billing.parser(), extensionRegistry);
+              organization_ = input.readMessage(billing.v1alpha1.Billing.Organization.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(billing_);
-                billing_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(organization_);
+                organization_ = subBuilder.buildPartial();
               }
 
               break;
@@ -112,41 +112,41 @@ public final class BillingApi {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateBillingRequest_descriptor;
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateOrganizationRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateBillingRequest_fieldAccessorTable
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateOrganizationRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              billing.v1alpha1.BillingApi.CreateBillingRequest.class, billing.v1alpha1.BillingApi.CreateBillingRequest.Builder.class);
+              billing.v1alpha1.BillingApi.CreateOrganizationRequest.class, billing.v1alpha1.BillingApi.CreateOrganizationRequest.Builder.class);
     }
 
-    public static final int BILLING_FIELD_NUMBER = 1;
-    private billing.v1alpha1.BillingOuterClass.Billing billing_;
+    public static final int ORGANIZATION_FIELD_NUMBER = 1;
+    private billing.v1alpha1.Billing.Organization organization_;
     /**
-     * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
-     * @return Whether the billing field is set.
+     * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * @return Whether the organization field is set.
      */
     @java.lang.Override
-    public boolean hasBilling() {
-      return billing_ != null;
+    public boolean hasOrganization() {
+      return organization_ != null;
     }
     /**
-     * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
-     * @return The billing.
+     * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * @return The organization.
      */
     @java.lang.Override
-    public billing.v1alpha1.BillingOuterClass.Billing getBilling() {
-      return billing_ == null ? billing.v1alpha1.BillingOuterClass.Billing.getDefaultInstance() : billing_;
+    public billing.v1alpha1.Billing.Organization getOrganization() {
+      return organization_ == null ? billing.v1alpha1.Billing.Organization.getDefaultInstance() : organization_;
     }
     /**
-     * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+     * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
      */
     @java.lang.Override
-    public billing.v1alpha1.BillingOuterClass.BillingOrBuilder getBillingOrBuilder() {
-      return getBilling();
+    public billing.v1alpha1.Billing.OrganizationOrBuilder getOrganizationOrBuilder() {
+      return getOrganization();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -163,8 +163,8 @@ public final class BillingApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (billing_ != null) {
-        output.writeMessage(1, getBilling());
+      if (organization_ != null) {
+        output.writeMessage(1, getOrganization());
       }
       unknownFields.writeTo(output);
     }
@@ -175,9 +175,9 @@ public final class BillingApi {
       if (size != -1) return size;
 
       size = 0;
-      if (billing_ != null) {
+      if (organization_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getBilling());
+          .computeMessageSize(1, getOrganization());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -189,15 +189,15 @@ public final class BillingApi {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof billing.v1alpha1.BillingApi.CreateBillingRequest)) {
+      if (!(obj instanceof billing.v1alpha1.BillingApi.CreateOrganizationRequest)) {
         return super.equals(obj);
       }
-      billing.v1alpha1.BillingApi.CreateBillingRequest other = (billing.v1alpha1.BillingApi.CreateBillingRequest) obj;
+      billing.v1alpha1.BillingApi.CreateOrganizationRequest other = (billing.v1alpha1.BillingApi.CreateOrganizationRequest) obj;
 
-      if (hasBilling() != other.hasBilling()) return false;
-      if (hasBilling()) {
-        if (!getBilling()
-            .equals(other.getBilling())) return false;
+      if (hasOrganization() != other.hasOrganization()) return false;
+      if (hasOrganization()) {
+        if (!getOrganization()
+            .equals(other.getOrganization())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -210,78 +210,78 @@ public final class BillingApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasBilling()) {
-        hash = (37 * hash) + BILLING_FIELD_NUMBER;
-        hash = (53 * hash) + getBilling().hashCode();
+      if (hasOrganization()) {
+        hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
+        hash = (53 * hash) + getOrganization().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static billing.v1alpha1.BillingApi.CreateBillingRequest parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateOrganizationRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingRequest parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateOrganizationRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingRequest parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateOrganizationRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingRequest parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateOrganizationRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingRequest parseFrom(byte[] data)
+    public static billing.v1alpha1.BillingApi.CreateOrganizationRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingRequest parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateOrganizationRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingRequest parseFrom(java.io.InputStream input)
+    public static billing.v1alpha1.BillingApi.CreateOrganizationRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingRequest parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateOrganizationRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingRequest parseDelimitedFrom(java.io.InputStream input)
+    public static billing.v1alpha1.BillingApi.CreateOrganizationRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingRequest parseDelimitedFrom(
+    public static billing.v1alpha1.BillingApi.CreateOrganizationRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingRequest parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateOrganizationRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingRequest parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateOrganizationRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -294,7 +294,7 @@ public final class BillingApi {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(billing.v1alpha1.BillingApi.CreateBillingRequest prototype) {
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.CreateOrganizationRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -310,26 +310,26 @@ public final class BillingApi {
       return builder;
     }
     /**
-     * Protobuf type {@code billing.v1alpha1.CreateBillingRequest}
+     * Protobuf type {@code billing.v1alpha1.CreateOrganizationRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.CreateBillingRequest)
-        billing.v1alpha1.BillingApi.CreateBillingRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.CreateOrganizationRequest)
+        billing.v1alpha1.BillingApi.CreateOrganizationRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateBillingRequest_descriptor;
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateOrganizationRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateBillingRequest_fieldAccessorTable
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateOrganizationRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                billing.v1alpha1.BillingApi.CreateBillingRequest.class, billing.v1alpha1.BillingApi.CreateBillingRequest.Builder.class);
+                billing.v1alpha1.BillingApi.CreateOrganizationRequest.class, billing.v1alpha1.BillingApi.CreateOrganizationRequest.Builder.class);
       }
 
-      // Construct using billing.v1alpha1.BillingApi.CreateBillingRequest.newBuilder()
+      // Construct using billing.v1alpha1.BillingApi.CreateOrganizationRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -347,11 +347,11 @@ public final class BillingApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (billingBuilder_ == null) {
-          billing_ = null;
+        if (organizationBuilder_ == null) {
+          organization_ = null;
         } else {
-          billing_ = null;
-          billingBuilder_ = null;
+          organization_ = null;
+          organizationBuilder_ = null;
         }
         return this;
       }
@@ -359,17 +359,17 @@ public final class BillingApi {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateBillingRequest_descriptor;
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateOrganizationRequest_descriptor;
       }
 
       @java.lang.Override
-      public billing.v1alpha1.BillingApi.CreateBillingRequest getDefaultInstanceForType() {
-        return billing.v1alpha1.BillingApi.CreateBillingRequest.getDefaultInstance();
+      public billing.v1alpha1.BillingApi.CreateOrganizationRequest getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.CreateOrganizationRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public billing.v1alpha1.BillingApi.CreateBillingRequest build() {
-        billing.v1alpha1.BillingApi.CreateBillingRequest result = buildPartial();
+      public billing.v1alpha1.BillingApi.CreateOrganizationRequest build() {
+        billing.v1alpha1.BillingApi.CreateOrganizationRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -377,12 +377,12 @@ public final class BillingApi {
       }
 
       @java.lang.Override
-      public billing.v1alpha1.BillingApi.CreateBillingRequest buildPartial() {
-        billing.v1alpha1.BillingApi.CreateBillingRequest result = new billing.v1alpha1.BillingApi.CreateBillingRequest(this);
-        if (billingBuilder_ == null) {
-          result.billing_ = billing_;
+      public billing.v1alpha1.BillingApi.CreateOrganizationRequest buildPartial() {
+        billing.v1alpha1.BillingApi.CreateOrganizationRequest result = new billing.v1alpha1.BillingApi.CreateOrganizationRequest(this);
+        if (organizationBuilder_ == null) {
+          result.organization_ = organization_;
         } else {
-          result.billing_ = billingBuilder_.build();
+          result.organization_ = organizationBuilder_.build();
         }
         onBuilt();
         return result;
@@ -422,18 +422,18 @@ public final class BillingApi {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof billing.v1alpha1.BillingApi.CreateBillingRequest) {
-          return mergeFrom((billing.v1alpha1.BillingApi.CreateBillingRequest)other);
+        if (other instanceof billing.v1alpha1.BillingApi.CreateOrganizationRequest) {
+          return mergeFrom((billing.v1alpha1.BillingApi.CreateOrganizationRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(billing.v1alpha1.BillingApi.CreateBillingRequest other) {
-        if (other == billing.v1alpha1.BillingApi.CreateBillingRequest.getDefaultInstance()) return this;
-        if (other.hasBilling()) {
-          mergeBilling(other.getBilling());
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.CreateOrganizationRequest other) {
+        if (other == billing.v1alpha1.BillingApi.CreateOrganizationRequest.getDefaultInstance()) return this;
+        if (other.hasOrganization()) {
+          mergeOrganization(other.getOrganization());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -450,11 +450,11 @@ public final class BillingApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        billing.v1alpha1.BillingApi.CreateBillingRequest parsedMessage = null;
+        billing.v1alpha1.BillingApi.CreateOrganizationRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (billing.v1alpha1.BillingApi.CreateBillingRequest) e.getUnfinishedMessage();
+          parsedMessage = (billing.v1alpha1.BillingApi.CreateOrganizationRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -464,123 +464,123 @@ public final class BillingApi {
         return this;
       }
 
-      private billing.v1alpha1.BillingOuterClass.Billing billing_;
+      private billing.v1alpha1.Billing.Organization organization_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          billing.v1alpha1.BillingOuterClass.Billing, billing.v1alpha1.BillingOuterClass.Billing.Builder, billing.v1alpha1.BillingOuterClass.BillingOrBuilder> billingBuilder_;
+          billing.v1alpha1.Billing.Organization, billing.v1alpha1.Billing.Organization.Builder, billing.v1alpha1.Billing.OrganizationOrBuilder> organizationBuilder_;
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
-       * @return Whether the billing field is set.
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * @return Whether the organization field is set.
        */
-      public boolean hasBilling() {
-        return billingBuilder_ != null || billing_ != null;
+      public boolean hasOrganization() {
+        return organizationBuilder_ != null || organization_ != null;
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
-       * @return The billing.
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * @return The organization.
        */
-      public billing.v1alpha1.BillingOuterClass.Billing getBilling() {
-        if (billingBuilder_ == null) {
-          return billing_ == null ? billing.v1alpha1.BillingOuterClass.Billing.getDefaultInstance() : billing_;
+      public billing.v1alpha1.Billing.Organization getOrganization() {
+        if (organizationBuilder_ == null) {
+          return organization_ == null ? billing.v1alpha1.Billing.Organization.getDefaultInstance() : organization_;
         } else {
-          return billingBuilder_.getMessage();
+          return organizationBuilder_.getMessage();
         }
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
        */
-      public Builder setBilling(billing.v1alpha1.BillingOuterClass.Billing value) {
-        if (billingBuilder_ == null) {
+      public Builder setOrganization(billing.v1alpha1.Billing.Organization value) {
+        if (organizationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          billing_ = value;
+          organization_ = value;
           onChanged();
         } else {
-          billingBuilder_.setMessage(value);
+          organizationBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
        */
-      public Builder setBilling(
-          billing.v1alpha1.BillingOuterClass.Billing.Builder builderForValue) {
-        if (billingBuilder_ == null) {
-          billing_ = builderForValue.build();
+      public Builder setOrganization(
+          billing.v1alpha1.Billing.Organization.Builder builderForValue) {
+        if (organizationBuilder_ == null) {
+          organization_ = builderForValue.build();
           onChanged();
         } else {
-          billingBuilder_.setMessage(builderForValue.build());
+          organizationBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
        */
-      public Builder mergeBilling(billing.v1alpha1.BillingOuterClass.Billing value) {
-        if (billingBuilder_ == null) {
-          if (billing_ != null) {
-            billing_ =
-              billing.v1alpha1.BillingOuterClass.Billing.newBuilder(billing_).mergeFrom(value).buildPartial();
+      public Builder mergeOrganization(billing.v1alpha1.Billing.Organization value) {
+        if (organizationBuilder_ == null) {
+          if (organization_ != null) {
+            organization_ =
+              billing.v1alpha1.Billing.Organization.newBuilder(organization_).mergeFrom(value).buildPartial();
           } else {
-            billing_ = value;
+            organization_ = value;
           }
           onChanged();
         } else {
-          billingBuilder_.mergeFrom(value);
+          organizationBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
        */
-      public Builder clearBilling() {
-        if (billingBuilder_ == null) {
-          billing_ = null;
+      public Builder clearOrganization() {
+        if (organizationBuilder_ == null) {
+          organization_ = null;
           onChanged();
         } else {
-          billing_ = null;
-          billingBuilder_ = null;
+          organization_ = null;
+          organizationBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
        */
-      public billing.v1alpha1.BillingOuterClass.Billing.Builder getBillingBuilder() {
+      public billing.v1alpha1.Billing.Organization.Builder getOrganizationBuilder() {
         
         onChanged();
-        return getBillingFieldBuilder().getBuilder();
+        return getOrganizationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
        */
-      public billing.v1alpha1.BillingOuterClass.BillingOrBuilder getBillingOrBuilder() {
-        if (billingBuilder_ != null) {
-          return billingBuilder_.getMessageOrBuilder();
+      public billing.v1alpha1.Billing.OrganizationOrBuilder getOrganizationOrBuilder() {
+        if (organizationBuilder_ != null) {
+          return organizationBuilder_.getMessageOrBuilder();
         } else {
-          return billing_ == null ?
-              billing.v1alpha1.BillingOuterClass.Billing.getDefaultInstance() : billing_;
+          return organization_ == null ?
+              billing.v1alpha1.Billing.Organization.getDefaultInstance() : organization_;
         }
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          billing.v1alpha1.BillingOuterClass.Billing, billing.v1alpha1.BillingOuterClass.Billing.Builder, billing.v1alpha1.BillingOuterClass.BillingOrBuilder> 
-          getBillingFieldBuilder() {
-        if (billingBuilder_ == null) {
-          billingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              billing.v1alpha1.BillingOuterClass.Billing, billing.v1alpha1.BillingOuterClass.Billing.Builder, billing.v1alpha1.BillingOuterClass.BillingOrBuilder>(
-                  getBilling(),
+          billing.v1alpha1.Billing.Organization, billing.v1alpha1.Billing.Organization.Builder, billing.v1alpha1.Billing.OrganizationOrBuilder> 
+          getOrganizationFieldBuilder() {
+        if (organizationBuilder_ == null) {
+          organizationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              billing.v1alpha1.Billing.Organization, billing.v1alpha1.Billing.Organization.Builder, billing.v1alpha1.Billing.OrganizationOrBuilder>(
+                  getOrganization(),
                   getParentForChildren(),
                   isClean());
-          billing_ = null;
+          organization_ = null;
         }
-        return billingBuilder_;
+        return organizationBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -595,48 +595,2523 @@ public final class BillingApi {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.CreateBillingRequest)
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.CreateOrganizationRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateBillingRequest)
-    private static final billing.v1alpha1.BillingApi.CreateBillingRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateOrganizationRequest)
+    private static final billing.v1alpha1.BillingApi.CreateOrganizationRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.CreateBillingRequest();
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.CreateOrganizationRequest();
     }
 
-    public static billing.v1alpha1.BillingApi.CreateBillingRequest getDefaultInstance() {
+    public static billing.v1alpha1.BillingApi.CreateOrganizationRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CreateBillingRequest>
-        PARSER = new com.google.protobuf.AbstractParser<CreateBillingRequest>() {
+    private static final com.google.protobuf.Parser<CreateOrganizationRequest>
+        PARSER = new com.google.protobuf.AbstractParser<CreateOrganizationRequest>() {
       @java.lang.Override
-      public CreateBillingRequest parsePartialFrom(
+      public CreateOrganizationRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateBillingRequest(input, extensionRegistry);
+        return new CreateOrganizationRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CreateBillingRequest> parser() {
+    public static com.google.protobuf.Parser<CreateOrganizationRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CreateBillingRequest> getParserForType() {
+    public com.google.protobuf.Parser<CreateOrganizationRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public billing.v1alpha1.BillingApi.CreateBillingRequest getDefaultInstanceForType() {
+    public billing.v1alpha1.BillingApi.CreateOrganizationRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface CreateBillingResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.CreateBillingResponse)
+  public interface CreateOrganizationResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.CreateOrganizationResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
+
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+  }
+  /**
+   * Protobuf type {@code billing.v1alpha1.CreateOrganizationResponse}
+   */
+  public static final class CreateOrganizationResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.CreateOrganizationResponse)
+      CreateOrganizationResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CreateOrganizationResponse.newBuilder() to construct.
+    private CreateOrganizationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CreateOrganizationResponse() {
+      organizationId_ = "";
+      status_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CreateOrganizationResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CreateOrganizationResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              organizationId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateOrganizationResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateOrganizationResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              billing.v1alpha1.BillingApi.CreateOrganizationResponse.class, billing.v1alpha1.BillingApi.CreateOrganizationResponse.Builder.class);
+    }
+
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object organizationId_;
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    @java.lang.Override
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof billing.v1alpha1.BillingApi.CreateOrganizationResponse)) {
+        return super.equals(obj);
+      }
+      billing.v1alpha1.BillingApi.CreateOrganizationResponse other = (billing.v1alpha1.BillingApi.CreateOrganizationResponse) obj;
+
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationId().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static billing.v1alpha1.BillingApi.CreateOrganizationResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.CreateOrganizationResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateOrganizationResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.CreateOrganizationResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateOrganizationResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.CreateOrganizationResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateOrganizationResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.CreateOrganizationResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateOrganizationResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.CreateOrganizationResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateOrganizationResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.CreateOrganizationResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.CreateOrganizationResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code billing.v1alpha1.CreateOrganizationResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.CreateOrganizationResponse)
+        billing.v1alpha1.BillingApi.CreateOrganizationResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateOrganizationResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateOrganizationResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                billing.v1alpha1.BillingApi.CreateOrganizationResponse.class, billing.v1alpha1.BillingApi.CreateOrganizationResponse.Builder.class);
+      }
+
+      // Construct using billing.v1alpha1.BillingApi.CreateOrganizationResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        organizationId_ = "";
+
+        status_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateOrganizationResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.CreateOrganizationResponse getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.CreateOrganizationResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.CreateOrganizationResponse build() {
+        billing.v1alpha1.BillingApi.CreateOrganizationResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.CreateOrganizationResponse buildPartial() {
+        billing.v1alpha1.BillingApi.CreateOrganizationResponse result = new billing.v1alpha1.BillingApi.CreateOrganizationResponse(this);
+        result.organizationId_ = organizationId_;
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof billing.v1alpha1.BillingApi.CreateOrganizationResponse) {
+          return mergeFrom((billing.v1alpha1.BillingApi.CreateOrganizationResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.CreateOrganizationResponse other) {
+        if (other == billing.v1alpha1.BillingApi.CreateOrganizationResponse.getDefaultInstance()) return this;
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        billing.v1alpha1.BillingApi.CreateOrganizationResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (billing.v1alpha1.BillingApi.CreateOrganizationResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object organizationId_ = "";
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The organizationId.
+       */
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOrganizationId() {
+        
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.CreateOrganizationResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateOrganizationResponse)
+    private static final billing.v1alpha1.BillingApi.CreateOrganizationResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.CreateOrganizationResponse();
+    }
+
+    public static billing.v1alpha1.BillingApi.CreateOrganizationResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateOrganizationResponse>
+        PARSER = new com.google.protobuf.AbstractParser<CreateOrganizationResponse>() {
+      @java.lang.Override
+      public CreateOrganizationResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CreateOrganizationResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateOrganizationResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateOrganizationResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public billing.v1alpha1.BillingApi.CreateOrganizationResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetOrganizationRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.GetOrganizationRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
+  }
+  /**
+   * Protobuf type {@code billing.v1alpha1.GetOrganizationRequest}
+   */
+  public static final class GetOrganizationRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.GetOrganizationRequest)
+      GetOrganizationRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetOrganizationRequest.newBuilder() to construct.
+    private GetOrganizationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetOrganizationRequest() {
+      organizationId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetOrganizationRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetOrganizationRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              organizationId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetOrganizationRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetOrganizationRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              billing.v1alpha1.BillingApi.GetOrganizationRequest.class, billing.v1alpha1.BillingApi.GetOrganizationRequest.Builder.class);
+    }
+
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object organizationId_;
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    @java.lang.Override
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof billing.v1alpha1.BillingApi.GetOrganizationRequest)) {
+        return super.equals(obj);
+      }
+      billing.v1alpha1.BillingApi.GetOrganizationRequest other = (billing.v1alpha1.BillingApi.GetOrganizationRequest) obj;
+
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static billing.v1alpha1.BillingApi.GetOrganizationRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.GetOrganizationRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code billing.v1alpha1.GetOrganizationRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.GetOrganizationRequest)
+        billing.v1alpha1.BillingApi.GetOrganizationRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetOrganizationRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetOrganizationRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                billing.v1alpha1.BillingApi.GetOrganizationRequest.class, billing.v1alpha1.BillingApi.GetOrganizationRequest.Builder.class);
+      }
+
+      // Construct using billing.v1alpha1.BillingApi.GetOrganizationRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        organizationId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetOrganizationRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetOrganizationRequest getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.GetOrganizationRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetOrganizationRequest build() {
+        billing.v1alpha1.BillingApi.GetOrganizationRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetOrganizationRequest buildPartial() {
+        billing.v1alpha1.BillingApi.GetOrganizationRequest result = new billing.v1alpha1.BillingApi.GetOrganizationRequest(this);
+        result.organizationId_ = organizationId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof billing.v1alpha1.BillingApi.GetOrganizationRequest) {
+          return mergeFrom((billing.v1alpha1.BillingApi.GetOrganizationRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.GetOrganizationRequest other) {
+        if (other == billing.v1alpha1.BillingApi.GetOrganizationRequest.getDefaultInstance()) return this;
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        billing.v1alpha1.BillingApi.GetOrganizationRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (billing.v1alpha1.BillingApi.GetOrganizationRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object organizationId_ = "";
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The organizationId.
+       */
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOrganizationId() {
+        
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.GetOrganizationRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetOrganizationRequest)
+    private static final billing.v1alpha1.BillingApi.GetOrganizationRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.GetOrganizationRequest();
+    }
+
+    public static billing.v1alpha1.BillingApi.GetOrganizationRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetOrganizationRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetOrganizationRequest>() {
+      @java.lang.Override
+      public GetOrganizationRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetOrganizationRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetOrganizationRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetOrganizationRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public billing.v1alpha1.BillingApi.GetOrganizationRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetOrganizationResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.GetOrganizationResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * @return Whether the organization field is set.
+     */
+    boolean hasOrganization();
+    /**
+     * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * @return The organization.
+     */
+    billing.v1alpha1.Billing.Organization getOrganization();
+    /**
+     * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     */
+    billing.v1alpha1.Billing.OrganizationOrBuilder getOrganizationOrBuilder();
+  }
+  /**
+   * Protobuf type {@code billing.v1alpha1.GetOrganizationResponse}
+   */
+  public static final class GetOrganizationResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.GetOrganizationResponse)
+      GetOrganizationResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetOrganizationResponse.newBuilder() to construct.
+    private GetOrganizationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetOrganizationResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetOrganizationResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetOrganizationResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              billing.v1alpha1.Billing.Organization.Builder subBuilder = null;
+              if (organization_ != null) {
+                subBuilder = organization_.toBuilder();
+              }
+              organization_ = input.readMessage(billing.v1alpha1.Billing.Organization.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(organization_);
+                organization_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetOrganizationResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetOrganizationResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              billing.v1alpha1.BillingApi.GetOrganizationResponse.class, billing.v1alpha1.BillingApi.GetOrganizationResponse.Builder.class);
+    }
+
+    public static final int ORGANIZATION_FIELD_NUMBER = 1;
+    private billing.v1alpha1.Billing.Organization organization_;
+    /**
+     * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * @return Whether the organization field is set.
+     */
+    @java.lang.Override
+    public boolean hasOrganization() {
+      return organization_ != null;
+    }
+    /**
+     * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * @return The organization.
+     */
+    @java.lang.Override
+    public billing.v1alpha1.Billing.Organization getOrganization() {
+      return organization_ == null ? billing.v1alpha1.Billing.Organization.getDefaultInstance() : organization_;
+    }
+    /**
+     * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     */
+    @java.lang.Override
+    public billing.v1alpha1.Billing.OrganizationOrBuilder getOrganizationOrBuilder() {
+      return getOrganization();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (organization_ != null) {
+        output.writeMessage(1, getOrganization());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (organization_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getOrganization());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof billing.v1alpha1.BillingApi.GetOrganizationResponse)) {
+        return super.equals(obj);
+      }
+      billing.v1alpha1.BillingApi.GetOrganizationResponse other = (billing.v1alpha1.BillingApi.GetOrganizationResponse) obj;
+
+      if (hasOrganization() != other.hasOrganization()) return false;
+      if (hasOrganization()) {
+        if (!getOrganization()
+            .equals(other.getOrganization())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasOrganization()) {
+        hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
+        hash = (53 * hash) + getOrganization().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static billing.v1alpha1.BillingApi.GetOrganizationResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetOrganizationResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.GetOrganizationResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code billing.v1alpha1.GetOrganizationResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.GetOrganizationResponse)
+        billing.v1alpha1.BillingApi.GetOrganizationResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetOrganizationResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetOrganizationResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                billing.v1alpha1.BillingApi.GetOrganizationResponse.class, billing.v1alpha1.BillingApi.GetOrganizationResponse.Builder.class);
+      }
+
+      // Construct using billing.v1alpha1.BillingApi.GetOrganizationResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (organizationBuilder_ == null) {
+          organization_ = null;
+        } else {
+          organization_ = null;
+          organizationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetOrganizationResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetOrganizationResponse getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.GetOrganizationResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetOrganizationResponse build() {
+        billing.v1alpha1.BillingApi.GetOrganizationResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetOrganizationResponse buildPartial() {
+        billing.v1alpha1.BillingApi.GetOrganizationResponse result = new billing.v1alpha1.BillingApi.GetOrganizationResponse(this);
+        if (organizationBuilder_ == null) {
+          result.organization_ = organization_;
+        } else {
+          result.organization_ = organizationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof billing.v1alpha1.BillingApi.GetOrganizationResponse) {
+          return mergeFrom((billing.v1alpha1.BillingApi.GetOrganizationResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.GetOrganizationResponse other) {
+        if (other == billing.v1alpha1.BillingApi.GetOrganizationResponse.getDefaultInstance()) return this;
+        if (other.hasOrganization()) {
+          mergeOrganization(other.getOrganization());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        billing.v1alpha1.BillingApi.GetOrganizationResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (billing.v1alpha1.BillingApi.GetOrganizationResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private billing.v1alpha1.Billing.Organization organization_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          billing.v1alpha1.Billing.Organization, billing.v1alpha1.Billing.Organization.Builder, billing.v1alpha1.Billing.OrganizationOrBuilder> organizationBuilder_;
+      /**
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * @return Whether the organization field is set.
+       */
+      public boolean hasOrganization() {
+        return organizationBuilder_ != null || organization_ != null;
+      }
+      /**
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * @return The organization.
+       */
+      public billing.v1alpha1.Billing.Organization getOrganization() {
+        if (organizationBuilder_ == null) {
+          return organization_ == null ? billing.v1alpha1.Billing.Organization.getDefaultInstance() : organization_;
+        } else {
+          return organizationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       */
+      public Builder setOrganization(billing.v1alpha1.Billing.Organization value) {
+        if (organizationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          organization_ = value;
+          onChanged();
+        } else {
+          organizationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       */
+      public Builder setOrganization(
+          billing.v1alpha1.Billing.Organization.Builder builderForValue) {
+        if (organizationBuilder_ == null) {
+          organization_ = builderForValue.build();
+          onChanged();
+        } else {
+          organizationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       */
+      public Builder mergeOrganization(billing.v1alpha1.Billing.Organization value) {
+        if (organizationBuilder_ == null) {
+          if (organization_ != null) {
+            organization_ =
+              billing.v1alpha1.Billing.Organization.newBuilder(organization_).mergeFrom(value).buildPartial();
+          } else {
+            organization_ = value;
+          }
+          onChanged();
+        } else {
+          organizationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       */
+      public Builder clearOrganization() {
+        if (organizationBuilder_ == null) {
+          organization_ = null;
+          onChanged();
+        } else {
+          organization_ = null;
+          organizationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       */
+      public billing.v1alpha1.Billing.Organization.Builder getOrganizationBuilder() {
+        
+        onChanged();
+        return getOrganizationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       */
+      public billing.v1alpha1.Billing.OrganizationOrBuilder getOrganizationOrBuilder() {
+        if (organizationBuilder_ != null) {
+          return organizationBuilder_.getMessageOrBuilder();
+        } else {
+          return organization_ == null ?
+              billing.v1alpha1.Billing.Organization.getDefaultInstance() : organization_;
+        }
+      }
+      /**
+       * <code>.billing.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          billing.v1alpha1.Billing.Organization, billing.v1alpha1.Billing.Organization.Builder, billing.v1alpha1.Billing.OrganizationOrBuilder> 
+          getOrganizationFieldBuilder() {
+        if (organizationBuilder_ == null) {
+          organizationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              billing.v1alpha1.Billing.Organization, billing.v1alpha1.Billing.Organization.Builder, billing.v1alpha1.Billing.OrganizationOrBuilder>(
+                  getOrganization(),
+                  getParentForChildren(),
+                  isClean());
+          organization_ = null;
+        }
+        return organizationBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.GetOrganizationResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetOrganizationResponse)
+    private static final billing.v1alpha1.BillingApi.GetOrganizationResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.GetOrganizationResponse();
+    }
+
+    public static billing.v1alpha1.BillingApi.GetOrganizationResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetOrganizationResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetOrganizationResponse>() {
+      @java.lang.Override
+      public GetOrganizationResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetOrganizationResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetOrganizationResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetOrganizationResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public billing.v1alpha1.BillingApi.GetOrganizationResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateOrganizationRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.UpdateOrganizationRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
+  }
+  /**
+   * Protobuf type {@code billing.v1alpha1.UpdateOrganizationRequest}
+   */
+  public static final class UpdateOrganizationRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.UpdateOrganizationRequest)
+      UpdateOrganizationRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateOrganizationRequest.newBuilder() to construct.
+    private UpdateOrganizationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateOrganizationRequest() {
+      organizationId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateOrganizationRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateOrganizationRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              organizationId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateOrganizationRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateOrganizationRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              billing.v1alpha1.BillingApi.UpdateOrganizationRequest.class, billing.v1alpha1.BillingApi.UpdateOrganizationRequest.Builder.class);
+    }
+
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object organizationId_;
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    @java.lang.Override
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof billing.v1alpha1.BillingApi.UpdateOrganizationRequest)) {
+        return super.equals(obj);
+      }
+      billing.v1alpha1.BillingApi.UpdateOrganizationRequest other = (billing.v1alpha1.BillingApi.UpdateOrganizationRequest) obj;
+
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.UpdateOrganizationRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code billing.v1alpha1.UpdateOrganizationRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.UpdateOrganizationRequest)
+        billing.v1alpha1.BillingApi.UpdateOrganizationRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateOrganizationRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateOrganizationRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                billing.v1alpha1.BillingApi.UpdateOrganizationRequest.class, billing.v1alpha1.BillingApi.UpdateOrganizationRequest.Builder.class);
+      }
+
+      // Construct using billing.v1alpha1.BillingApi.UpdateOrganizationRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        organizationId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateOrganizationRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateOrganizationRequest getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.UpdateOrganizationRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateOrganizationRequest build() {
+        billing.v1alpha1.BillingApi.UpdateOrganizationRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateOrganizationRequest buildPartial() {
+        billing.v1alpha1.BillingApi.UpdateOrganizationRequest result = new billing.v1alpha1.BillingApi.UpdateOrganizationRequest(this);
+        result.organizationId_ = organizationId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof billing.v1alpha1.BillingApi.UpdateOrganizationRequest) {
+          return mergeFrom((billing.v1alpha1.BillingApi.UpdateOrganizationRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.UpdateOrganizationRequest other) {
+        if (other == billing.v1alpha1.BillingApi.UpdateOrganizationRequest.getDefaultInstance()) return this;
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        billing.v1alpha1.BillingApi.UpdateOrganizationRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (billing.v1alpha1.BillingApi.UpdateOrganizationRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object organizationId_ = "";
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The organizationId.
+       */
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOrganizationId() {
+        
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.UpdateOrganizationRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateOrganizationRequest)
+    private static final billing.v1alpha1.BillingApi.UpdateOrganizationRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.UpdateOrganizationRequest();
+    }
+
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateOrganizationRequest>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateOrganizationRequest>() {
+      @java.lang.Override
+      public UpdateOrganizationRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateOrganizationRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateOrganizationRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateOrganizationRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public billing.v1alpha1.BillingApi.UpdateOrganizationRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateOrganizationResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.UpdateOrganizationResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -664,18 +3139,18 @@ public final class BillingApi {
         getStatusBytes();
   }
   /**
-   * Protobuf type {@code billing.v1alpha1.CreateBillingResponse}
+   * Protobuf type {@code billing.v1alpha1.UpdateOrganizationResponse}
    */
-  public static final class CreateBillingResponse extends
+  public static final class UpdateOrganizationResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:billing.v1alpha1.CreateBillingResponse)
-      CreateBillingResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.UpdateOrganizationResponse)
+      UpdateOrganizationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CreateBillingResponse.newBuilder() to construct.
-    private CreateBillingResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UpdateOrganizationResponse.newBuilder() to construct.
+    private UpdateOrganizationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CreateBillingResponse() {
+    private UpdateOrganizationResponse() {
       billingId_ = "";
       status_ = "";
     }
@@ -684,7 +3159,7 @@ public final class BillingApi {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new CreateBillingResponse();
+      return new UpdateOrganizationResponse();
     }
 
     @java.lang.Override
@@ -692,7 +3167,7 @@ public final class BillingApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CreateBillingResponse(
+    private UpdateOrganizationResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -743,15 +3218,15 @@ public final class BillingApi {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateBillingResponse_descriptor;
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateOrganizationResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateBillingResponse_fieldAccessorTable
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateOrganizationResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              billing.v1alpha1.BillingApi.CreateBillingResponse.class, billing.v1alpha1.BillingApi.CreateBillingResponse.Builder.class);
+              billing.v1alpha1.BillingApi.UpdateOrganizationResponse.class, billing.v1alpha1.BillingApi.UpdateOrganizationResponse.Builder.class);
     }
 
     public static final int BILLING_ID_FIELD_NUMBER = 1;
@@ -875,10 +3350,10 @@ public final class BillingApi {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof billing.v1alpha1.BillingApi.CreateBillingResponse)) {
+      if (!(obj instanceof billing.v1alpha1.BillingApi.UpdateOrganizationResponse)) {
         return super.equals(obj);
       }
-      billing.v1alpha1.BillingApi.CreateBillingResponse other = (billing.v1alpha1.BillingApi.CreateBillingResponse) obj;
+      billing.v1alpha1.BillingApi.UpdateOrganizationResponse other = (billing.v1alpha1.BillingApi.UpdateOrganizationResponse) obj;
 
       if (!getBillingId()
           .equals(other.getBillingId())) return false;
@@ -904,69 +3379,69 @@ public final class BillingApi {
       return hash;
     }
 
-    public static billing.v1alpha1.BillingApi.CreateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingResponse parseFrom(byte[] data)
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingResponse parseFrom(java.io.InputStream input)
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingResponse parseDelimitedFrom(java.io.InputStream input)
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingResponse parseDelimitedFrom(
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static billing.v1alpha1.BillingApi.CreateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -979,7 +3454,7 @@ public final class BillingApi {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(billing.v1alpha1.BillingApi.CreateBillingResponse prototype) {
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.UpdateOrganizationResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -995,26 +3470,26 @@ public final class BillingApi {
       return builder;
     }
     /**
-     * Protobuf type {@code billing.v1alpha1.CreateBillingResponse}
+     * Protobuf type {@code billing.v1alpha1.UpdateOrganizationResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.CreateBillingResponse)
-        billing.v1alpha1.BillingApi.CreateBillingResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.UpdateOrganizationResponse)
+        billing.v1alpha1.BillingApi.UpdateOrganizationResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateBillingResponse_descriptor;
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateOrganizationResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateBillingResponse_fieldAccessorTable
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateOrganizationResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                billing.v1alpha1.BillingApi.CreateBillingResponse.class, billing.v1alpha1.BillingApi.CreateBillingResponse.Builder.class);
+                billing.v1alpha1.BillingApi.UpdateOrganizationResponse.class, billing.v1alpha1.BillingApi.UpdateOrganizationResponse.Builder.class);
       }
 
-      // Construct using billing.v1alpha1.BillingApi.CreateBillingResponse.newBuilder()
+      // Construct using billing.v1alpha1.BillingApi.UpdateOrganizationResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1042,17 +3517,17 @@ public final class BillingApi {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateBillingResponse_descriptor;
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateOrganizationResponse_descriptor;
       }
 
       @java.lang.Override
-      public billing.v1alpha1.BillingApi.CreateBillingResponse getDefaultInstanceForType() {
-        return billing.v1alpha1.BillingApi.CreateBillingResponse.getDefaultInstance();
+      public billing.v1alpha1.BillingApi.UpdateOrganizationResponse getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.UpdateOrganizationResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public billing.v1alpha1.BillingApi.CreateBillingResponse build() {
-        billing.v1alpha1.BillingApi.CreateBillingResponse result = buildPartial();
+      public billing.v1alpha1.BillingApi.UpdateOrganizationResponse build() {
+        billing.v1alpha1.BillingApi.UpdateOrganizationResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1060,8 +3535,8 @@ public final class BillingApi {
       }
 
       @java.lang.Override
-      public billing.v1alpha1.BillingApi.CreateBillingResponse buildPartial() {
-        billing.v1alpha1.BillingApi.CreateBillingResponse result = new billing.v1alpha1.BillingApi.CreateBillingResponse(this);
+      public billing.v1alpha1.BillingApi.UpdateOrganizationResponse buildPartial() {
+        billing.v1alpha1.BillingApi.UpdateOrganizationResponse result = new billing.v1alpha1.BillingApi.UpdateOrganizationResponse(this);
         result.billingId_ = billingId_;
         result.status_ = status_;
         onBuilt();
@@ -1102,16 +3577,16 @@ public final class BillingApi {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof billing.v1alpha1.BillingApi.CreateBillingResponse) {
-          return mergeFrom((billing.v1alpha1.BillingApi.CreateBillingResponse)other);
+        if (other instanceof billing.v1alpha1.BillingApi.UpdateOrganizationResponse) {
+          return mergeFrom((billing.v1alpha1.BillingApi.UpdateOrganizationResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(billing.v1alpha1.BillingApi.CreateBillingResponse other) {
-        if (other == billing.v1alpha1.BillingApi.CreateBillingResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.UpdateOrganizationResponse other) {
+        if (other == billing.v1alpha1.BillingApi.UpdateOrganizationResponse.getDefaultInstance()) return this;
         if (!other.getBillingId().isEmpty()) {
           billingId_ = other.billingId_;
           onChanged();
@@ -1135,11 +3610,11 @@ public final class BillingApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        billing.v1alpha1.BillingApi.CreateBillingResponse parsedMessage = null;
+        billing.v1alpha1.BillingApi.UpdateOrganizationResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (billing.v1alpha1.BillingApi.CreateBillingResponse) e.getUnfinishedMessage();
+          parsedMessage = (billing.v1alpha1.BillingApi.UpdateOrganizationResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1313,83 +3788,85 @@ public final class BillingApi {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.CreateBillingResponse)
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.UpdateOrganizationResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateBillingResponse)
-    private static final billing.v1alpha1.BillingApi.CreateBillingResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateOrganizationResponse)
+    private static final billing.v1alpha1.BillingApi.UpdateOrganizationResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.CreateBillingResponse();
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.UpdateOrganizationResponse();
     }
 
-    public static billing.v1alpha1.BillingApi.CreateBillingResponse getDefaultInstance() {
+    public static billing.v1alpha1.BillingApi.UpdateOrganizationResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CreateBillingResponse>
-        PARSER = new com.google.protobuf.AbstractParser<CreateBillingResponse>() {
+    private static final com.google.protobuf.Parser<UpdateOrganizationResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateOrganizationResponse>() {
       @java.lang.Override
-      public CreateBillingResponse parsePartialFrom(
+      public UpdateOrganizationResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateBillingResponse(input, extensionRegistry);
+        return new UpdateOrganizationResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CreateBillingResponse> parser() {
+    public static com.google.protobuf.Parser<UpdateOrganizationResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CreateBillingResponse> getParserForType() {
+    public com.google.protobuf.Parser<UpdateOrganizationResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public billing.v1alpha1.BillingApi.CreateBillingResponse getDefaultInstanceForType() {
+    public billing.v1alpha1.BillingApi.UpdateOrganizationResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface GetBillingRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.GetBillingRequest)
+  public interface CreateApplicationRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.CreateApplicationRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string billing_id = 1 [json_name = "billingId"];</code>
-     * @return The billingId.
+     * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+     * @return Whether the application field is set.
      */
-    java.lang.String getBillingId();
+    boolean hasApplication();
     /**
-     * <code>string billing_id = 1 [json_name = "billingId"];</code>
-     * @return The bytes for billingId.
+     * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+     * @return The application.
      */
-    com.google.protobuf.ByteString
-        getBillingIdBytes();
+    billing.v1alpha1.Billing.Application getApplication();
+    /**
+     * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+     */
+    billing.v1alpha1.Billing.ApplicationOrBuilder getApplicationOrBuilder();
   }
   /**
-   * Protobuf type {@code billing.v1alpha1.GetBillingRequest}
+   * Protobuf type {@code billing.v1alpha1.CreateApplicationRequest}
    */
-  public static final class GetBillingRequest extends
+  public static final class CreateApplicationRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:billing.v1alpha1.GetBillingRequest)
-      GetBillingRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.CreateApplicationRequest)
+      CreateApplicationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use GetBillingRequest.newBuilder() to construct.
-    private GetBillingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CreateApplicationRequest.newBuilder() to construct.
+    private CreateApplicationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GetBillingRequest() {
-      billingId_ = "";
+    private CreateApplicationRequest() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new GetBillingRequest();
+      return new CreateApplicationRequest();
     }
 
     @java.lang.Override
@@ -1397,7 +3874,7 @@ public final class BillingApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetBillingRequest(
+    private CreateApplicationRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1416,584 +3893,14 @@ public final class BillingApi {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              billingId_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+              billing.v1alpha1.Billing.Application.Builder subBuilder = null;
+              if (application_ != null) {
+                subBuilder = application_.toBuilder();
               }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetBillingRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetBillingRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              billing.v1alpha1.BillingApi.GetBillingRequest.class, billing.v1alpha1.BillingApi.GetBillingRequest.Builder.class);
-    }
-
-    public static final int BILLING_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object billingId_;
-    /**
-     * <code>string billing_id = 1 [json_name = "billingId"];</code>
-     * @return The billingId.
-     */
-    @java.lang.Override
-    public java.lang.String getBillingId() {
-      java.lang.Object ref = billingId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        billingId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string billing_id = 1 [json_name = "billingId"];</code>
-     * @return The bytes for billingId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBillingIdBytes() {
-      java.lang.Object ref = billingId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        billingId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getBillingIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, billingId_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getBillingIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, billingId_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof billing.v1alpha1.BillingApi.GetBillingRequest)) {
-        return super.equals(obj);
-      }
-      billing.v1alpha1.BillingApi.GetBillingRequest other = (billing.v1alpha1.BillingApi.GetBillingRequest) obj;
-
-      if (!getBillingId()
-          .equals(other.getBillingId())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BILLING_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getBillingId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static billing.v1alpha1.BillingApi.GetBillingRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static billing.v1alpha1.BillingApi.GetBillingRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static billing.v1alpha1.BillingApi.GetBillingRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static billing.v1alpha1.BillingApi.GetBillingRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static billing.v1alpha1.BillingApi.GetBillingRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static billing.v1alpha1.BillingApi.GetBillingRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static billing.v1alpha1.BillingApi.GetBillingRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static billing.v1alpha1.BillingApi.GetBillingRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static billing.v1alpha1.BillingApi.GetBillingRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static billing.v1alpha1.BillingApi.GetBillingRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static billing.v1alpha1.BillingApi.GetBillingRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static billing.v1alpha1.BillingApi.GetBillingRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(billing.v1alpha1.BillingApi.GetBillingRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code billing.v1alpha1.GetBillingRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.GetBillingRequest)
-        billing.v1alpha1.BillingApi.GetBillingRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetBillingRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetBillingRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                billing.v1alpha1.BillingApi.GetBillingRequest.class, billing.v1alpha1.BillingApi.GetBillingRequest.Builder.class);
-      }
-
-      // Construct using billing.v1alpha1.BillingApi.GetBillingRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        billingId_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetBillingRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public billing.v1alpha1.BillingApi.GetBillingRequest getDefaultInstanceForType() {
-        return billing.v1alpha1.BillingApi.GetBillingRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public billing.v1alpha1.BillingApi.GetBillingRequest build() {
-        billing.v1alpha1.BillingApi.GetBillingRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public billing.v1alpha1.BillingApi.GetBillingRequest buildPartial() {
-        billing.v1alpha1.BillingApi.GetBillingRequest result = new billing.v1alpha1.BillingApi.GetBillingRequest(this);
-        result.billingId_ = billingId_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof billing.v1alpha1.BillingApi.GetBillingRequest) {
-          return mergeFrom((billing.v1alpha1.BillingApi.GetBillingRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(billing.v1alpha1.BillingApi.GetBillingRequest other) {
-        if (other == billing.v1alpha1.BillingApi.GetBillingRequest.getDefaultInstance()) return this;
-        if (!other.getBillingId().isEmpty()) {
-          billingId_ = other.billingId_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        billing.v1alpha1.BillingApi.GetBillingRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (billing.v1alpha1.BillingApi.GetBillingRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object billingId_ = "";
-      /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
-       * @return The billingId.
-       */
-      public java.lang.String getBillingId() {
-        java.lang.Object ref = billingId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          billingId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
-       * @return The bytes for billingId.
-       */
-      public com.google.protobuf.ByteString
-          getBillingIdBytes() {
-        java.lang.Object ref = billingId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          billingId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
-       * @param value The billingId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBillingId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        billingId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBillingId() {
-        
-        billingId_ = getDefaultInstance().getBillingId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
-       * @param value The bytes for billingId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBillingIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        billingId_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.GetBillingRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetBillingRequest)
-    private static final billing.v1alpha1.BillingApi.GetBillingRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.GetBillingRequest();
-    }
-
-    public static billing.v1alpha1.BillingApi.GetBillingRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<GetBillingRequest>
-        PARSER = new com.google.protobuf.AbstractParser<GetBillingRequest>() {
-      @java.lang.Override
-      public GetBillingRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetBillingRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<GetBillingRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<GetBillingRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public billing.v1alpha1.BillingApi.GetBillingRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface GetBillingResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.GetBillingResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
-     * @return Whether the billing field is set.
-     */
-    boolean hasBilling();
-    /**
-     * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
-     * @return The billing.
-     */
-    billing.v1alpha1.BillingOuterClass.Billing getBilling();
-    /**
-     * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
-     */
-    billing.v1alpha1.BillingOuterClass.BillingOrBuilder getBillingOrBuilder();
-  }
-  /**
-   * Protobuf type {@code billing.v1alpha1.GetBillingResponse}
-   */
-  public static final class GetBillingResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:billing.v1alpha1.GetBillingResponse)
-      GetBillingResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use GetBillingResponse.newBuilder() to construct.
-    private GetBillingResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private GetBillingResponse() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new GetBillingResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private GetBillingResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              billing.v1alpha1.BillingOuterClass.Billing.Builder subBuilder = null;
-              if (billing_ != null) {
-                subBuilder = billing_.toBuilder();
-              }
-              billing_ = input.readMessage(billing.v1alpha1.BillingOuterClass.Billing.parser(), extensionRegistry);
+              application_ = input.readMessage(billing.v1alpha1.Billing.Application.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(billing_);
-                billing_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(application_);
+                application_ = subBuilder.buildPartial();
               }
 
               break;
@@ -2019,41 +3926,41 @@ public final class BillingApi {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetBillingResponse_descriptor;
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateApplicationRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetBillingResponse_fieldAccessorTable
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateApplicationRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              billing.v1alpha1.BillingApi.GetBillingResponse.class, billing.v1alpha1.BillingApi.GetBillingResponse.Builder.class);
+              billing.v1alpha1.BillingApi.CreateApplicationRequest.class, billing.v1alpha1.BillingApi.CreateApplicationRequest.Builder.class);
     }
 
-    public static final int BILLING_FIELD_NUMBER = 1;
-    private billing.v1alpha1.BillingOuterClass.Billing billing_;
+    public static final int APPLICATION_FIELD_NUMBER = 1;
+    private billing.v1alpha1.Billing.Application application_;
     /**
-     * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
-     * @return Whether the billing field is set.
+     * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+     * @return Whether the application field is set.
      */
     @java.lang.Override
-    public boolean hasBilling() {
-      return billing_ != null;
+    public boolean hasApplication() {
+      return application_ != null;
     }
     /**
-     * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
-     * @return The billing.
+     * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+     * @return The application.
      */
     @java.lang.Override
-    public billing.v1alpha1.BillingOuterClass.Billing getBilling() {
-      return billing_ == null ? billing.v1alpha1.BillingOuterClass.Billing.getDefaultInstance() : billing_;
+    public billing.v1alpha1.Billing.Application getApplication() {
+      return application_ == null ? billing.v1alpha1.Billing.Application.getDefaultInstance() : application_;
     }
     /**
-     * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+     * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
      */
     @java.lang.Override
-    public billing.v1alpha1.BillingOuterClass.BillingOrBuilder getBillingOrBuilder() {
-      return getBilling();
+    public billing.v1alpha1.Billing.ApplicationOrBuilder getApplicationOrBuilder() {
+      return getApplication();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2070,8 +3977,8 @@ public final class BillingApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (billing_ != null) {
-        output.writeMessage(1, getBilling());
+      if (application_ != null) {
+        output.writeMessage(1, getApplication());
       }
       unknownFields.writeTo(output);
     }
@@ -2082,9 +3989,9 @@ public final class BillingApi {
       if (size != -1) return size;
 
       size = 0;
-      if (billing_ != null) {
+      if (application_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getBilling());
+          .computeMessageSize(1, getApplication());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2096,15 +4003,15 @@ public final class BillingApi {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof billing.v1alpha1.BillingApi.GetBillingResponse)) {
+      if (!(obj instanceof billing.v1alpha1.BillingApi.CreateApplicationRequest)) {
         return super.equals(obj);
       }
-      billing.v1alpha1.BillingApi.GetBillingResponse other = (billing.v1alpha1.BillingApi.GetBillingResponse) obj;
+      billing.v1alpha1.BillingApi.CreateApplicationRequest other = (billing.v1alpha1.BillingApi.CreateApplicationRequest) obj;
 
-      if (hasBilling() != other.hasBilling()) return false;
-      if (hasBilling()) {
-        if (!getBilling()
-            .equals(other.getBilling())) return false;
+      if (hasApplication() != other.hasApplication()) return false;
+      if (hasApplication()) {
+        if (!getApplication()
+            .equals(other.getApplication())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -2117,78 +4024,78 @@ public final class BillingApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasBilling()) {
-        hash = (37 * hash) + BILLING_FIELD_NUMBER;
-        hash = (53 * hash) + getBilling().hashCode();
+      if (hasApplication()) {
+        hash = (37 * hash) + APPLICATION_FIELD_NUMBER;
+        hash = (53 * hash) + getApplication().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static billing.v1alpha1.BillingApi.GetBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static billing.v1alpha1.BillingApi.GetBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.GetBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static billing.v1alpha1.BillingApi.GetBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.GetBillingResponse parseFrom(byte[] data)
+    public static billing.v1alpha1.BillingApi.CreateApplicationRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static billing.v1alpha1.BillingApi.GetBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.GetBillingResponse parseFrom(java.io.InputStream input)
+    public static billing.v1alpha1.BillingApi.CreateApplicationRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static billing.v1alpha1.BillingApi.GetBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.GetBillingResponse parseDelimitedFrom(java.io.InputStream input)
+    public static billing.v1alpha1.BillingApi.CreateApplicationRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static billing.v1alpha1.BillingApi.GetBillingResponse parseDelimitedFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.GetBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static billing.v1alpha1.BillingApi.GetBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2201,7 +4108,7 @@ public final class BillingApi {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(billing.v1alpha1.BillingApi.GetBillingResponse prototype) {
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.CreateApplicationRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2217,26 +4124,26 @@ public final class BillingApi {
       return builder;
     }
     /**
-     * Protobuf type {@code billing.v1alpha1.GetBillingResponse}
+     * Protobuf type {@code billing.v1alpha1.CreateApplicationRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.GetBillingResponse)
-        billing.v1alpha1.BillingApi.GetBillingResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.CreateApplicationRequest)
+        billing.v1alpha1.BillingApi.CreateApplicationRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetBillingResponse_descriptor;
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateApplicationRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetBillingResponse_fieldAccessorTable
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateApplicationRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                billing.v1alpha1.BillingApi.GetBillingResponse.class, billing.v1alpha1.BillingApi.GetBillingResponse.Builder.class);
+                billing.v1alpha1.BillingApi.CreateApplicationRequest.class, billing.v1alpha1.BillingApi.CreateApplicationRequest.Builder.class);
       }
 
-      // Construct using billing.v1alpha1.BillingApi.GetBillingResponse.newBuilder()
+      // Construct using billing.v1alpha1.BillingApi.CreateApplicationRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2254,11 +4161,11 @@ public final class BillingApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (billingBuilder_ == null) {
-          billing_ = null;
+        if (applicationBuilder_ == null) {
+          application_ = null;
         } else {
-          billing_ = null;
-          billingBuilder_ = null;
+          application_ = null;
+          applicationBuilder_ = null;
         }
         return this;
       }
@@ -2266,17 +4173,17 @@ public final class BillingApi {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetBillingResponse_descriptor;
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateApplicationRequest_descriptor;
       }
 
       @java.lang.Override
-      public billing.v1alpha1.BillingApi.GetBillingResponse getDefaultInstanceForType() {
-        return billing.v1alpha1.BillingApi.GetBillingResponse.getDefaultInstance();
+      public billing.v1alpha1.BillingApi.CreateApplicationRequest getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.CreateApplicationRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public billing.v1alpha1.BillingApi.GetBillingResponse build() {
-        billing.v1alpha1.BillingApi.GetBillingResponse result = buildPartial();
+      public billing.v1alpha1.BillingApi.CreateApplicationRequest build() {
+        billing.v1alpha1.BillingApi.CreateApplicationRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2284,12 +4191,12 @@ public final class BillingApi {
       }
 
       @java.lang.Override
-      public billing.v1alpha1.BillingApi.GetBillingResponse buildPartial() {
-        billing.v1alpha1.BillingApi.GetBillingResponse result = new billing.v1alpha1.BillingApi.GetBillingResponse(this);
-        if (billingBuilder_ == null) {
-          result.billing_ = billing_;
+      public billing.v1alpha1.BillingApi.CreateApplicationRequest buildPartial() {
+        billing.v1alpha1.BillingApi.CreateApplicationRequest result = new billing.v1alpha1.BillingApi.CreateApplicationRequest(this);
+        if (applicationBuilder_ == null) {
+          result.application_ = application_;
         } else {
-          result.billing_ = billingBuilder_.build();
+          result.application_ = applicationBuilder_.build();
         }
         onBuilt();
         return result;
@@ -2329,18 +4236,18 @@ public final class BillingApi {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof billing.v1alpha1.BillingApi.GetBillingResponse) {
-          return mergeFrom((billing.v1alpha1.BillingApi.GetBillingResponse)other);
+        if (other instanceof billing.v1alpha1.BillingApi.CreateApplicationRequest) {
+          return mergeFrom((billing.v1alpha1.BillingApi.CreateApplicationRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(billing.v1alpha1.BillingApi.GetBillingResponse other) {
-        if (other == billing.v1alpha1.BillingApi.GetBillingResponse.getDefaultInstance()) return this;
-        if (other.hasBilling()) {
-          mergeBilling(other.getBilling());
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.CreateApplicationRequest other) {
+        if (other == billing.v1alpha1.BillingApi.CreateApplicationRequest.getDefaultInstance()) return this;
+        if (other.hasApplication()) {
+          mergeApplication(other.getApplication());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2357,11 +4264,11 @@ public final class BillingApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        billing.v1alpha1.BillingApi.GetBillingResponse parsedMessage = null;
+        billing.v1alpha1.BillingApi.CreateApplicationRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (billing.v1alpha1.BillingApi.GetBillingResponse) e.getUnfinishedMessage();
+          parsedMessage = (billing.v1alpha1.BillingApi.CreateApplicationRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2371,123 +4278,123 @@ public final class BillingApi {
         return this;
       }
 
-      private billing.v1alpha1.BillingOuterClass.Billing billing_;
+      private billing.v1alpha1.Billing.Application application_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          billing.v1alpha1.BillingOuterClass.Billing, billing.v1alpha1.BillingOuterClass.Billing.Builder, billing.v1alpha1.BillingOuterClass.BillingOrBuilder> billingBuilder_;
+          billing.v1alpha1.Billing.Application, billing.v1alpha1.Billing.Application.Builder, billing.v1alpha1.Billing.ApplicationOrBuilder> applicationBuilder_;
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
-       * @return Whether the billing field is set.
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+       * @return Whether the application field is set.
        */
-      public boolean hasBilling() {
-        return billingBuilder_ != null || billing_ != null;
+      public boolean hasApplication() {
+        return applicationBuilder_ != null || application_ != null;
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
-       * @return The billing.
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+       * @return The application.
        */
-      public billing.v1alpha1.BillingOuterClass.Billing getBilling() {
-        if (billingBuilder_ == null) {
-          return billing_ == null ? billing.v1alpha1.BillingOuterClass.Billing.getDefaultInstance() : billing_;
+      public billing.v1alpha1.Billing.Application getApplication() {
+        if (applicationBuilder_ == null) {
+          return application_ == null ? billing.v1alpha1.Billing.Application.getDefaultInstance() : application_;
         } else {
-          return billingBuilder_.getMessage();
+          return applicationBuilder_.getMessage();
         }
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
        */
-      public Builder setBilling(billing.v1alpha1.BillingOuterClass.Billing value) {
-        if (billingBuilder_ == null) {
+      public Builder setApplication(billing.v1alpha1.Billing.Application value) {
+        if (applicationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          billing_ = value;
+          application_ = value;
           onChanged();
         } else {
-          billingBuilder_.setMessage(value);
+          applicationBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
        */
-      public Builder setBilling(
-          billing.v1alpha1.BillingOuterClass.Billing.Builder builderForValue) {
-        if (billingBuilder_ == null) {
-          billing_ = builderForValue.build();
+      public Builder setApplication(
+          billing.v1alpha1.Billing.Application.Builder builderForValue) {
+        if (applicationBuilder_ == null) {
+          application_ = builderForValue.build();
           onChanged();
         } else {
-          billingBuilder_.setMessage(builderForValue.build());
+          applicationBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
        */
-      public Builder mergeBilling(billing.v1alpha1.BillingOuterClass.Billing value) {
-        if (billingBuilder_ == null) {
-          if (billing_ != null) {
-            billing_ =
-              billing.v1alpha1.BillingOuterClass.Billing.newBuilder(billing_).mergeFrom(value).buildPartial();
+      public Builder mergeApplication(billing.v1alpha1.Billing.Application value) {
+        if (applicationBuilder_ == null) {
+          if (application_ != null) {
+            application_ =
+              billing.v1alpha1.Billing.Application.newBuilder(application_).mergeFrom(value).buildPartial();
           } else {
-            billing_ = value;
+            application_ = value;
           }
           onChanged();
         } else {
-          billingBuilder_.mergeFrom(value);
+          applicationBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
        */
-      public Builder clearBilling() {
-        if (billingBuilder_ == null) {
-          billing_ = null;
+      public Builder clearApplication() {
+        if (applicationBuilder_ == null) {
+          application_ = null;
           onChanged();
         } else {
-          billing_ = null;
-          billingBuilder_ = null;
+          application_ = null;
+          applicationBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
        */
-      public billing.v1alpha1.BillingOuterClass.Billing.Builder getBillingBuilder() {
+      public billing.v1alpha1.Billing.Application.Builder getApplicationBuilder() {
         
         onChanged();
-        return getBillingFieldBuilder().getBuilder();
+        return getApplicationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
        */
-      public billing.v1alpha1.BillingOuterClass.BillingOrBuilder getBillingOrBuilder() {
-        if (billingBuilder_ != null) {
-          return billingBuilder_.getMessageOrBuilder();
+      public billing.v1alpha1.Billing.ApplicationOrBuilder getApplicationOrBuilder() {
+        if (applicationBuilder_ != null) {
+          return applicationBuilder_.getMessageOrBuilder();
         } else {
-          return billing_ == null ?
-              billing.v1alpha1.BillingOuterClass.Billing.getDefaultInstance() : billing_;
+          return application_ == null ?
+              billing.v1alpha1.Billing.Application.getDefaultInstance() : application_;
         }
       }
       /**
-       * <code>.billing.v1alpha1.Billing billing = 1 [json_name = "billing"];</code>
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          billing.v1alpha1.BillingOuterClass.Billing, billing.v1alpha1.BillingOuterClass.Billing.Builder, billing.v1alpha1.BillingOuterClass.BillingOrBuilder> 
-          getBillingFieldBuilder() {
-        if (billingBuilder_ == null) {
-          billingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              billing.v1alpha1.BillingOuterClass.Billing, billing.v1alpha1.BillingOuterClass.Billing.Builder, billing.v1alpha1.BillingOuterClass.BillingOrBuilder>(
-                  getBilling(),
+          billing.v1alpha1.Billing.Application, billing.v1alpha1.Billing.Application.Builder, billing.v1alpha1.Billing.ApplicationOrBuilder> 
+          getApplicationFieldBuilder() {
+        if (applicationBuilder_ == null) {
+          applicationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              billing.v1alpha1.Billing.Application, billing.v1alpha1.Billing.Application.Builder, billing.v1alpha1.Billing.ApplicationOrBuilder>(
+                  getApplication(),
                   getParentForChildren(),
                   isClean());
-          billing_ = null;
+          application_ = null;
         }
-        return billingBuilder_;
+        return applicationBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2502,629 +4409,61 @@ public final class BillingApi {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.GetBillingResponse)
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.CreateApplicationRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetBillingResponse)
-    private static final billing.v1alpha1.BillingApi.GetBillingResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateApplicationRequest)
+    private static final billing.v1alpha1.BillingApi.CreateApplicationRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.GetBillingResponse();
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.CreateApplicationRequest();
     }
 
-    public static billing.v1alpha1.BillingApi.GetBillingResponse getDefaultInstance() {
+    public static billing.v1alpha1.BillingApi.CreateApplicationRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GetBillingResponse>
-        PARSER = new com.google.protobuf.AbstractParser<GetBillingResponse>() {
+    private static final com.google.protobuf.Parser<CreateApplicationRequest>
+        PARSER = new com.google.protobuf.AbstractParser<CreateApplicationRequest>() {
       @java.lang.Override
-      public GetBillingResponse parsePartialFrom(
+      public CreateApplicationRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetBillingResponse(input, extensionRegistry);
+        return new CreateApplicationRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GetBillingResponse> parser() {
+    public static com.google.protobuf.Parser<CreateApplicationRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GetBillingResponse> getParserForType() {
+    public com.google.protobuf.Parser<CreateApplicationRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public billing.v1alpha1.BillingApi.GetBillingResponse getDefaultInstanceForType() {
+    public billing.v1alpha1.BillingApi.CreateApplicationRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UpdateBillingRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.UpdateBillingRequest)
+  public interface CreateApplicationResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.CreateApplicationResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string billing_id = 1 [json_name = "billingId"];</code>
-     * @return The billingId.
+     * <code>string application_id = 1 [json_name = "applicationId"];</code>
+     * @return The applicationId.
      */
-    java.lang.String getBillingId();
+    java.lang.String getApplicationId();
     /**
-     * <code>string billing_id = 1 [json_name = "billingId"];</code>
-     * @return The bytes for billingId.
+     * <code>string application_id = 1 [json_name = "applicationId"];</code>
+     * @return The bytes for applicationId.
      */
     com.google.protobuf.ByteString
-        getBillingIdBytes();
-  }
-  /**
-   * Protobuf type {@code billing.v1alpha1.UpdateBillingRequest}
-   */
-  public static final class UpdateBillingRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:billing.v1alpha1.UpdateBillingRequest)
-      UpdateBillingRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use UpdateBillingRequest.newBuilder() to construct.
-    private UpdateBillingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private UpdateBillingRequest() {
-      billingId_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new UpdateBillingRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private UpdateBillingRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              billingId_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateBillingRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateBillingRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              billing.v1alpha1.BillingApi.UpdateBillingRequest.class, billing.v1alpha1.BillingApi.UpdateBillingRequest.Builder.class);
-    }
-
-    public static final int BILLING_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object billingId_;
-    /**
-     * <code>string billing_id = 1 [json_name = "billingId"];</code>
-     * @return The billingId.
-     */
-    @java.lang.Override
-    public java.lang.String getBillingId() {
-      java.lang.Object ref = billingId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        billingId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string billing_id = 1 [json_name = "billingId"];</code>
-     * @return The bytes for billingId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBillingIdBytes() {
-      java.lang.Object ref = billingId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        billingId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getBillingIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, billingId_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getBillingIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, billingId_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof billing.v1alpha1.BillingApi.UpdateBillingRequest)) {
-        return super.equals(obj);
-      }
-      billing.v1alpha1.BillingApi.UpdateBillingRequest other = (billing.v1alpha1.BillingApi.UpdateBillingRequest) obj;
-
-      if (!getBillingId()
-          .equals(other.getBillingId())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BILLING_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getBillingId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static billing.v1alpha1.BillingApi.UpdateBillingRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static billing.v1alpha1.BillingApi.UpdateBillingRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static billing.v1alpha1.BillingApi.UpdateBillingRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static billing.v1alpha1.BillingApi.UpdateBillingRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static billing.v1alpha1.BillingApi.UpdateBillingRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static billing.v1alpha1.BillingApi.UpdateBillingRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static billing.v1alpha1.BillingApi.UpdateBillingRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static billing.v1alpha1.BillingApi.UpdateBillingRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static billing.v1alpha1.BillingApi.UpdateBillingRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static billing.v1alpha1.BillingApi.UpdateBillingRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static billing.v1alpha1.BillingApi.UpdateBillingRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static billing.v1alpha1.BillingApi.UpdateBillingRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(billing.v1alpha1.BillingApi.UpdateBillingRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code billing.v1alpha1.UpdateBillingRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.UpdateBillingRequest)
-        billing.v1alpha1.BillingApi.UpdateBillingRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateBillingRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateBillingRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                billing.v1alpha1.BillingApi.UpdateBillingRequest.class, billing.v1alpha1.BillingApi.UpdateBillingRequest.Builder.class);
-      }
-
-      // Construct using billing.v1alpha1.BillingApi.UpdateBillingRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        billingId_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateBillingRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public billing.v1alpha1.BillingApi.UpdateBillingRequest getDefaultInstanceForType() {
-        return billing.v1alpha1.BillingApi.UpdateBillingRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public billing.v1alpha1.BillingApi.UpdateBillingRequest build() {
-        billing.v1alpha1.BillingApi.UpdateBillingRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public billing.v1alpha1.BillingApi.UpdateBillingRequest buildPartial() {
-        billing.v1alpha1.BillingApi.UpdateBillingRequest result = new billing.v1alpha1.BillingApi.UpdateBillingRequest(this);
-        result.billingId_ = billingId_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof billing.v1alpha1.BillingApi.UpdateBillingRequest) {
-          return mergeFrom((billing.v1alpha1.BillingApi.UpdateBillingRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(billing.v1alpha1.BillingApi.UpdateBillingRequest other) {
-        if (other == billing.v1alpha1.BillingApi.UpdateBillingRequest.getDefaultInstance()) return this;
-        if (!other.getBillingId().isEmpty()) {
-          billingId_ = other.billingId_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        billing.v1alpha1.BillingApi.UpdateBillingRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (billing.v1alpha1.BillingApi.UpdateBillingRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object billingId_ = "";
-      /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
-       * @return The billingId.
-       */
-      public java.lang.String getBillingId() {
-        java.lang.Object ref = billingId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          billingId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
-       * @return The bytes for billingId.
-       */
-      public com.google.protobuf.ByteString
-          getBillingIdBytes() {
-        java.lang.Object ref = billingId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          billingId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
-       * @param value The billingId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBillingId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        billingId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBillingId() {
-        
-        billingId_ = getDefaultInstance().getBillingId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
-       * @param value The bytes for billingId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBillingIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        billingId_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.UpdateBillingRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateBillingRequest)
-    private static final billing.v1alpha1.BillingApi.UpdateBillingRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.UpdateBillingRequest();
-    }
-
-    public static billing.v1alpha1.BillingApi.UpdateBillingRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<UpdateBillingRequest>
-        PARSER = new com.google.protobuf.AbstractParser<UpdateBillingRequest>() {
-      @java.lang.Override
-      public UpdateBillingRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdateBillingRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<UpdateBillingRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<UpdateBillingRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public billing.v1alpha1.BillingApi.UpdateBillingRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface UpdateBillingResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.UpdateBillingResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string billing_id = 1 [json_name = "billingId"];</code>
-     * @return The billingId.
-     */
-    java.lang.String getBillingId();
-    /**
-     * <code>string billing_id = 1 [json_name = "billingId"];</code>
-     * @return The bytes for billingId.
-     */
-    com.google.protobuf.ByteString
-        getBillingIdBytes();
+        getApplicationIdBytes();
 
     /**
      * <code>string status = 2 [json_name = "status"];</code>
@@ -3139,19 +4478,19 @@ public final class BillingApi {
         getStatusBytes();
   }
   /**
-   * Protobuf type {@code billing.v1alpha1.UpdateBillingResponse}
+   * Protobuf type {@code billing.v1alpha1.CreateApplicationResponse}
    */
-  public static final class UpdateBillingResponse extends
+  public static final class CreateApplicationResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:billing.v1alpha1.UpdateBillingResponse)
-      UpdateBillingResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.CreateApplicationResponse)
+      CreateApplicationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UpdateBillingResponse.newBuilder() to construct.
-    private UpdateBillingResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CreateApplicationResponse.newBuilder() to construct.
+    private CreateApplicationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UpdateBillingResponse() {
-      billingId_ = "";
+    private CreateApplicationResponse() {
+      applicationId_ = "";
       status_ = "";
     }
 
@@ -3159,7 +4498,7 @@ public final class BillingApi {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new UpdateBillingResponse();
+      return new CreateApplicationResponse();
     }
 
     @java.lang.Override
@@ -3167,7 +4506,7 @@ public final class BillingApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UpdateBillingResponse(
+    private CreateApplicationResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3188,7 +4527,7 @@ public final class BillingApi {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              billingId_ = s;
+              applicationId_ = s;
               break;
             }
             case 18: {
@@ -3218,49 +4557,49 @@ public final class BillingApi {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateBillingResponse_descriptor;
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateApplicationResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateBillingResponse_fieldAccessorTable
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateApplicationResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              billing.v1alpha1.BillingApi.UpdateBillingResponse.class, billing.v1alpha1.BillingApi.UpdateBillingResponse.Builder.class);
+              billing.v1alpha1.BillingApi.CreateApplicationResponse.class, billing.v1alpha1.BillingApi.CreateApplicationResponse.Builder.class);
     }
 
-    public static final int BILLING_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object billingId_;
+    public static final int APPLICATION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object applicationId_;
     /**
-     * <code>string billing_id = 1 [json_name = "billingId"];</code>
-     * @return The billingId.
+     * <code>string application_id = 1 [json_name = "applicationId"];</code>
+     * @return The applicationId.
      */
     @java.lang.Override
-    public java.lang.String getBillingId() {
-      java.lang.Object ref = billingId_;
+    public java.lang.String getApplicationId() {
+      java.lang.Object ref = applicationId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        billingId_ = s;
+        applicationId_ = s;
         return s;
       }
     }
     /**
-     * <code>string billing_id = 1 [json_name = "billingId"];</code>
-     * @return The bytes for billingId.
+     * <code>string application_id = 1 [json_name = "applicationId"];</code>
+     * @return The bytes for applicationId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getBillingIdBytes() {
-      java.lang.Object ref = billingId_;
+        getApplicationIdBytes() {
+      java.lang.Object ref = applicationId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        billingId_ = b;
+        applicationId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3319,8 +4658,8 @@ public final class BillingApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getBillingIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, billingId_);
+      if (!getApplicationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, applicationId_);
       }
       if (!getStatusBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
@@ -3334,8 +4673,8 @@ public final class BillingApi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getBillingIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, billingId_);
+      if (!getApplicationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, applicationId_);
       }
       if (!getStatusBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
@@ -3350,13 +4689,13 @@ public final class BillingApi {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof billing.v1alpha1.BillingApi.UpdateBillingResponse)) {
+      if (!(obj instanceof billing.v1alpha1.BillingApi.CreateApplicationResponse)) {
         return super.equals(obj);
       }
-      billing.v1alpha1.BillingApi.UpdateBillingResponse other = (billing.v1alpha1.BillingApi.UpdateBillingResponse) obj;
+      billing.v1alpha1.BillingApi.CreateApplicationResponse other = (billing.v1alpha1.BillingApi.CreateApplicationResponse) obj;
 
-      if (!getBillingId()
-          .equals(other.getBillingId())) return false;
+      if (!getApplicationId()
+          .equals(other.getApplicationId())) return false;
       if (!getStatus()
           .equals(other.getStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -3370,8 +4709,8 @@ public final class BillingApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BILLING_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getBillingId().hashCode();
+      hash = (37 * hash) + APPLICATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getApplicationId().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -3379,69 +4718,69 @@ public final class BillingApi {
       return hash;
     }
 
-    public static billing.v1alpha1.BillingApi.UpdateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static billing.v1alpha1.BillingApi.UpdateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.UpdateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static billing.v1alpha1.BillingApi.UpdateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.UpdateBillingResponse parseFrom(byte[] data)
+    public static billing.v1alpha1.BillingApi.CreateApplicationResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static billing.v1alpha1.BillingApi.UpdateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.UpdateBillingResponse parseFrom(java.io.InputStream input)
+    public static billing.v1alpha1.BillingApi.CreateApplicationResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static billing.v1alpha1.BillingApi.UpdateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.UpdateBillingResponse parseDelimitedFrom(java.io.InputStream input)
+    public static billing.v1alpha1.BillingApi.CreateApplicationResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static billing.v1alpha1.BillingApi.UpdateBillingResponse parseDelimitedFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static billing.v1alpha1.BillingApi.UpdateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static billing.v1alpha1.BillingApi.UpdateBillingResponse parseFrom(
+    public static billing.v1alpha1.BillingApi.CreateApplicationResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3454,7 +4793,7 @@ public final class BillingApi {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(billing.v1alpha1.BillingApi.UpdateBillingResponse prototype) {
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.CreateApplicationResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3470,26 +4809,26 @@ public final class BillingApi {
       return builder;
     }
     /**
-     * Protobuf type {@code billing.v1alpha1.UpdateBillingResponse}
+     * Protobuf type {@code billing.v1alpha1.CreateApplicationResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.UpdateBillingResponse)
-        billing.v1alpha1.BillingApi.UpdateBillingResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.CreateApplicationResponse)
+        billing.v1alpha1.BillingApi.CreateApplicationResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateBillingResponse_descriptor;
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateApplicationResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateBillingResponse_fieldAccessorTable
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateApplicationResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                billing.v1alpha1.BillingApi.UpdateBillingResponse.class, billing.v1alpha1.BillingApi.UpdateBillingResponse.Builder.class);
+                billing.v1alpha1.BillingApi.CreateApplicationResponse.class, billing.v1alpha1.BillingApi.CreateApplicationResponse.Builder.class);
       }
 
-      // Construct using billing.v1alpha1.BillingApi.UpdateBillingResponse.newBuilder()
+      // Construct using billing.v1alpha1.BillingApi.CreateApplicationResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3507,7 +4846,7 @@ public final class BillingApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        billingId_ = "";
+        applicationId_ = "";
 
         status_ = "";
 
@@ -3517,17 +4856,17 @@ public final class BillingApi {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateBillingResponse_descriptor;
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateApplicationResponse_descriptor;
       }
 
       @java.lang.Override
-      public billing.v1alpha1.BillingApi.UpdateBillingResponse getDefaultInstanceForType() {
-        return billing.v1alpha1.BillingApi.UpdateBillingResponse.getDefaultInstance();
+      public billing.v1alpha1.BillingApi.CreateApplicationResponse getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.CreateApplicationResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public billing.v1alpha1.BillingApi.UpdateBillingResponse build() {
-        billing.v1alpha1.BillingApi.UpdateBillingResponse result = buildPartial();
+      public billing.v1alpha1.BillingApi.CreateApplicationResponse build() {
+        billing.v1alpha1.BillingApi.CreateApplicationResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3535,9 +4874,9 @@ public final class BillingApi {
       }
 
       @java.lang.Override
-      public billing.v1alpha1.BillingApi.UpdateBillingResponse buildPartial() {
-        billing.v1alpha1.BillingApi.UpdateBillingResponse result = new billing.v1alpha1.BillingApi.UpdateBillingResponse(this);
-        result.billingId_ = billingId_;
+      public billing.v1alpha1.BillingApi.CreateApplicationResponse buildPartial() {
+        billing.v1alpha1.BillingApi.CreateApplicationResponse result = new billing.v1alpha1.BillingApi.CreateApplicationResponse(this);
+        result.applicationId_ = applicationId_;
         result.status_ = status_;
         onBuilt();
         return result;
@@ -3577,18 +4916,18 @@ public final class BillingApi {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof billing.v1alpha1.BillingApi.UpdateBillingResponse) {
-          return mergeFrom((billing.v1alpha1.BillingApi.UpdateBillingResponse)other);
+        if (other instanceof billing.v1alpha1.BillingApi.CreateApplicationResponse) {
+          return mergeFrom((billing.v1alpha1.BillingApi.CreateApplicationResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(billing.v1alpha1.BillingApi.UpdateBillingResponse other) {
-        if (other == billing.v1alpha1.BillingApi.UpdateBillingResponse.getDefaultInstance()) return this;
-        if (!other.getBillingId().isEmpty()) {
-          billingId_ = other.billingId_;
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.CreateApplicationResponse other) {
+        if (other == billing.v1alpha1.BillingApi.CreateApplicationResponse.getDefaultInstance()) return this;
+        if (!other.getApplicationId().isEmpty()) {
+          applicationId_ = other.applicationId_;
           onChanged();
         }
         if (!other.getStatus().isEmpty()) {
@@ -3610,11 +4949,11 @@ public final class BillingApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        billing.v1alpha1.BillingApi.UpdateBillingResponse parsedMessage = null;
+        billing.v1alpha1.BillingApi.CreateApplicationResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (billing.v1alpha1.BillingApi.UpdateBillingResponse) e.getUnfinishedMessage();
+          parsedMessage = (billing.v1alpha1.BillingApi.CreateApplicationResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3624,78 +4963,78 @@ public final class BillingApi {
         return this;
       }
 
-      private java.lang.Object billingId_ = "";
+      private java.lang.Object applicationId_ = "";
       /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
-       * @return The billingId.
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
+       * @return The applicationId.
        */
-      public java.lang.String getBillingId() {
-        java.lang.Object ref = billingId_;
+      public java.lang.String getApplicationId() {
+        java.lang.Object ref = applicationId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          billingId_ = s;
+          applicationId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
-       * @return The bytes for billingId.
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
+       * @return The bytes for applicationId.
        */
       public com.google.protobuf.ByteString
-          getBillingIdBytes() {
-        java.lang.Object ref = billingId_;
+          getApplicationIdBytes() {
+        java.lang.Object ref = applicationId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          billingId_ = b;
+          applicationId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
-       * @param value The billingId to set.
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
+       * @param value The applicationId to set.
        * @return This builder for chaining.
        */
-      public Builder setBillingId(
+      public Builder setApplicationId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        billingId_ = value;
+        applicationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearBillingId() {
+      public Builder clearApplicationId() {
         
-        billingId_ = getDefaultInstance().getBillingId();
+        applicationId_ = getDefaultInstance().getApplicationId();
         onChanged();
         return this;
       }
       /**
-       * <code>string billing_id = 1 [json_name = "billingId"];</code>
-       * @param value The bytes for billingId to set.
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
+       * @param value The bytes for applicationId to set.
        * @return This builder for chaining.
        */
-      public Builder setBillingIdBytes(
+      public Builder setApplicationIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        billingId_ = value;
+        applicationId_ = value;
         onChanged();
         return this;
       }
@@ -3788,76 +5127,6425 @@ public final class BillingApi {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.UpdateBillingResponse)
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.CreateApplicationResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateBillingResponse)
-    private static final billing.v1alpha1.BillingApi.UpdateBillingResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateApplicationResponse)
+    private static final billing.v1alpha1.BillingApi.CreateApplicationResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.UpdateBillingResponse();
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.CreateApplicationResponse();
     }
 
-    public static billing.v1alpha1.BillingApi.UpdateBillingResponse getDefaultInstance() {
+    public static billing.v1alpha1.BillingApi.CreateApplicationResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UpdateBillingResponse>
-        PARSER = new com.google.protobuf.AbstractParser<UpdateBillingResponse>() {
+    private static final com.google.protobuf.Parser<CreateApplicationResponse>
+        PARSER = new com.google.protobuf.AbstractParser<CreateApplicationResponse>() {
       @java.lang.Override
-      public UpdateBillingResponse parsePartialFrom(
+      public CreateApplicationResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdateBillingResponse(input, extensionRegistry);
+        return new CreateApplicationResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UpdateBillingResponse> parser() {
+    public static com.google.protobuf.Parser<CreateApplicationResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UpdateBillingResponse> getParserForType() {
+    public com.google.protobuf.Parser<CreateApplicationResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public billing.v1alpha1.BillingApi.UpdateBillingResponse getDefaultInstanceForType() {
+    public billing.v1alpha1.BillingApi.CreateApplicationResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetApplicationRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.GetApplicationRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
+  }
+  /**
+   * Protobuf type {@code billing.v1alpha1.GetApplicationRequest}
+   */
+  public static final class GetApplicationRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.GetApplicationRequest)
+      GetApplicationRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetApplicationRequest.newBuilder() to construct.
+    private GetApplicationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetApplicationRequest() {
+      organizationId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetApplicationRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetApplicationRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              organizationId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetApplicationRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetApplicationRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              billing.v1alpha1.BillingApi.GetApplicationRequest.class, billing.v1alpha1.BillingApi.GetApplicationRequest.Builder.class);
+    }
+
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object organizationId_;
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    @java.lang.Override
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof billing.v1alpha1.BillingApi.GetApplicationRequest)) {
+        return super.equals(obj);
+      }
+      billing.v1alpha1.BillingApi.GetApplicationRequest other = (billing.v1alpha1.BillingApi.GetApplicationRequest) obj;
+
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static billing.v1alpha1.BillingApi.GetApplicationRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.GetApplicationRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code billing.v1alpha1.GetApplicationRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.GetApplicationRequest)
+        billing.v1alpha1.BillingApi.GetApplicationRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetApplicationRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetApplicationRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                billing.v1alpha1.BillingApi.GetApplicationRequest.class, billing.v1alpha1.BillingApi.GetApplicationRequest.Builder.class);
+      }
+
+      // Construct using billing.v1alpha1.BillingApi.GetApplicationRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        organizationId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetApplicationRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetApplicationRequest getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.GetApplicationRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetApplicationRequest build() {
+        billing.v1alpha1.BillingApi.GetApplicationRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetApplicationRequest buildPartial() {
+        billing.v1alpha1.BillingApi.GetApplicationRequest result = new billing.v1alpha1.BillingApi.GetApplicationRequest(this);
+        result.organizationId_ = organizationId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof billing.v1alpha1.BillingApi.GetApplicationRequest) {
+          return mergeFrom((billing.v1alpha1.BillingApi.GetApplicationRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.GetApplicationRequest other) {
+        if (other == billing.v1alpha1.BillingApi.GetApplicationRequest.getDefaultInstance()) return this;
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        billing.v1alpha1.BillingApi.GetApplicationRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (billing.v1alpha1.BillingApi.GetApplicationRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object organizationId_ = "";
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The organizationId.
+       */
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOrganizationId() {
+        
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.GetApplicationRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetApplicationRequest)
+    private static final billing.v1alpha1.BillingApi.GetApplicationRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.GetApplicationRequest();
+    }
+
+    public static billing.v1alpha1.BillingApi.GetApplicationRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetApplicationRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetApplicationRequest>() {
+      @java.lang.Override
+      public GetApplicationRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetApplicationRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetApplicationRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetApplicationRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public billing.v1alpha1.BillingApi.GetApplicationRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetApplicationResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.GetApplicationResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+     * @return Whether the application field is set.
+     */
+    boolean hasApplication();
+    /**
+     * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+     * @return The application.
+     */
+    billing.v1alpha1.Billing.Application getApplication();
+    /**
+     * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+     */
+    billing.v1alpha1.Billing.ApplicationOrBuilder getApplicationOrBuilder();
+  }
+  /**
+   * Protobuf type {@code billing.v1alpha1.GetApplicationResponse}
+   */
+  public static final class GetApplicationResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.GetApplicationResponse)
+      GetApplicationResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetApplicationResponse.newBuilder() to construct.
+    private GetApplicationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetApplicationResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetApplicationResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetApplicationResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              billing.v1alpha1.Billing.Application.Builder subBuilder = null;
+              if (application_ != null) {
+                subBuilder = application_.toBuilder();
+              }
+              application_ = input.readMessage(billing.v1alpha1.Billing.Application.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(application_);
+                application_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetApplicationResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetApplicationResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              billing.v1alpha1.BillingApi.GetApplicationResponse.class, billing.v1alpha1.BillingApi.GetApplicationResponse.Builder.class);
+    }
+
+    public static final int APPLICATION_FIELD_NUMBER = 1;
+    private billing.v1alpha1.Billing.Application application_;
+    /**
+     * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+     * @return Whether the application field is set.
+     */
+    @java.lang.Override
+    public boolean hasApplication() {
+      return application_ != null;
+    }
+    /**
+     * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+     * @return The application.
+     */
+    @java.lang.Override
+    public billing.v1alpha1.Billing.Application getApplication() {
+      return application_ == null ? billing.v1alpha1.Billing.Application.getDefaultInstance() : application_;
+    }
+    /**
+     * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+     */
+    @java.lang.Override
+    public billing.v1alpha1.Billing.ApplicationOrBuilder getApplicationOrBuilder() {
+      return getApplication();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (application_ != null) {
+        output.writeMessage(1, getApplication());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (application_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getApplication());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof billing.v1alpha1.BillingApi.GetApplicationResponse)) {
+        return super.equals(obj);
+      }
+      billing.v1alpha1.BillingApi.GetApplicationResponse other = (billing.v1alpha1.BillingApi.GetApplicationResponse) obj;
+
+      if (hasApplication() != other.hasApplication()) return false;
+      if (hasApplication()) {
+        if (!getApplication()
+            .equals(other.getApplication())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasApplication()) {
+        hash = (37 * hash) + APPLICATION_FIELD_NUMBER;
+        hash = (53 * hash) + getApplication().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static billing.v1alpha1.BillingApi.GetApplicationResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetApplicationResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.GetApplicationResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code billing.v1alpha1.GetApplicationResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.GetApplicationResponse)
+        billing.v1alpha1.BillingApi.GetApplicationResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetApplicationResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetApplicationResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                billing.v1alpha1.BillingApi.GetApplicationResponse.class, billing.v1alpha1.BillingApi.GetApplicationResponse.Builder.class);
+      }
+
+      // Construct using billing.v1alpha1.BillingApi.GetApplicationResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (applicationBuilder_ == null) {
+          application_ = null;
+        } else {
+          application_ = null;
+          applicationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetApplicationResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetApplicationResponse getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.GetApplicationResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetApplicationResponse build() {
+        billing.v1alpha1.BillingApi.GetApplicationResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetApplicationResponse buildPartial() {
+        billing.v1alpha1.BillingApi.GetApplicationResponse result = new billing.v1alpha1.BillingApi.GetApplicationResponse(this);
+        if (applicationBuilder_ == null) {
+          result.application_ = application_;
+        } else {
+          result.application_ = applicationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof billing.v1alpha1.BillingApi.GetApplicationResponse) {
+          return mergeFrom((billing.v1alpha1.BillingApi.GetApplicationResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.GetApplicationResponse other) {
+        if (other == billing.v1alpha1.BillingApi.GetApplicationResponse.getDefaultInstance()) return this;
+        if (other.hasApplication()) {
+          mergeApplication(other.getApplication());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        billing.v1alpha1.BillingApi.GetApplicationResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (billing.v1alpha1.BillingApi.GetApplicationResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private billing.v1alpha1.Billing.Application application_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          billing.v1alpha1.Billing.Application, billing.v1alpha1.Billing.Application.Builder, billing.v1alpha1.Billing.ApplicationOrBuilder> applicationBuilder_;
+      /**
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+       * @return Whether the application field is set.
+       */
+      public boolean hasApplication() {
+        return applicationBuilder_ != null || application_ != null;
+      }
+      /**
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+       * @return The application.
+       */
+      public billing.v1alpha1.Billing.Application getApplication() {
+        if (applicationBuilder_ == null) {
+          return application_ == null ? billing.v1alpha1.Billing.Application.getDefaultInstance() : application_;
+        } else {
+          return applicationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+       */
+      public Builder setApplication(billing.v1alpha1.Billing.Application value) {
+        if (applicationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          application_ = value;
+          onChanged();
+        } else {
+          applicationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+       */
+      public Builder setApplication(
+          billing.v1alpha1.Billing.Application.Builder builderForValue) {
+        if (applicationBuilder_ == null) {
+          application_ = builderForValue.build();
+          onChanged();
+        } else {
+          applicationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+       */
+      public Builder mergeApplication(billing.v1alpha1.Billing.Application value) {
+        if (applicationBuilder_ == null) {
+          if (application_ != null) {
+            application_ =
+              billing.v1alpha1.Billing.Application.newBuilder(application_).mergeFrom(value).buildPartial();
+          } else {
+            application_ = value;
+          }
+          onChanged();
+        } else {
+          applicationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+       */
+      public Builder clearApplication() {
+        if (applicationBuilder_ == null) {
+          application_ = null;
+          onChanged();
+        } else {
+          application_ = null;
+          applicationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+       */
+      public billing.v1alpha1.Billing.Application.Builder getApplicationBuilder() {
+        
+        onChanged();
+        return getApplicationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+       */
+      public billing.v1alpha1.Billing.ApplicationOrBuilder getApplicationOrBuilder() {
+        if (applicationBuilder_ != null) {
+          return applicationBuilder_.getMessageOrBuilder();
+        } else {
+          return application_ == null ?
+              billing.v1alpha1.Billing.Application.getDefaultInstance() : application_;
+        }
+      }
+      /**
+       * <code>.billing.v1alpha1.Application application = 1 [json_name = "application"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          billing.v1alpha1.Billing.Application, billing.v1alpha1.Billing.Application.Builder, billing.v1alpha1.Billing.ApplicationOrBuilder> 
+          getApplicationFieldBuilder() {
+        if (applicationBuilder_ == null) {
+          applicationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              billing.v1alpha1.Billing.Application, billing.v1alpha1.Billing.Application.Builder, billing.v1alpha1.Billing.ApplicationOrBuilder>(
+                  getApplication(),
+                  getParentForChildren(),
+                  isClean());
+          application_ = null;
+        }
+        return applicationBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.GetApplicationResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetApplicationResponse)
+    private static final billing.v1alpha1.BillingApi.GetApplicationResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.GetApplicationResponse();
+    }
+
+    public static billing.v1alpha1.BillingApi.GetApplicationResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetApplicationResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetApplicationResponse>() {
+      @java.lang.Override
+      public GetApplicationResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetApplicationResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetApplicationResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetApplicationResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public billing.v1alpha1.BillingApi.GetApplicationResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateApplicationRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.UpdateApplicationRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string application_id = 1 [json_name = "applicationId"];</code>
+     * @return The applicationId.
+     */
+    java.lang.String getApplicationId();
+    /**
+     * <code>string application_id = 1 [json_name = "applicationId"];</code>
+     * @return The bytes for applicationId.
+     */
+    com.google.protobuf.ByteString
+        getApplicationIdBytes();
+  }
+  /**
+   * Protobuf type {@code billing.v1alpha1.UpdateApplicationRequest}
+   */
+  public static final class UpdateApplicationRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.UpdateApplicationRequest)
+      UpdateApplicationRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateApplicationRequest.newBuilder() to construct.
+    private UpdateApplicationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateApplicationRequest() {
+      applicationId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateApplicationRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateApplicationRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              applicationId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateApplicationRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateApplicationRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              billing.v1alpha1.BillingApi.UpdateApplicationRequest.class, billing.v1alpha1.BillingApi.UpdateApplicationRequest.Builder.class);
+    }
+
+    public static final int APPLICATION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object applicationId_;
+    /**
+     * <code>string application_id = 1 [json_name = "applicationId"];</code>
+     * @return The applicationId.
+     */
+    @java.lang.Override
+    public java.lang.String getApplicationId() {
+      java.lang.Object ref = applicationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        applicationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string application_id = 1 [json_name = "applicationId"];</code>
+     * @return The bytes for applicationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApplicationIdBytes() {
+      java.lang.Object ref = applicationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        applicationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getApplicationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, applicationId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getApplicationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, applicationId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof billing.v1alpha1.BillingApi.UpdateApplicationRequest)) {
+        return super.equals(obj);
+      }
+      billing.v1alpha1.BillingApi.UpdateApplicationRequest other = (billing.v1alpha1.BillingApi.UpdateApplicationRequest) obj;
+
+      if (!getApplicationId()
+          .equals(other.getApplicationId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + APPLICATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getApplicationId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static billing.v1alpha1.BillingApi.UpdateApplicationRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.UpdateApplicationRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code billing.v1alpha1.UpdateApplicationRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.UpdateApplicationRequest)
+        billing.v1alpha1.BillingApi.UpdateApplicationRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateApplicationRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateApplicationRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                billing.v1alpha1.BillingApi.UpdateApplicationRequest.class, billing.v1alpha1.BillingApi.UpdateApplicationRequest.Builder.class);
+      }
+
+      // Construct using billing.v1alpha1.BillingApi.UpdateApplicationRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        applicationId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateApplicationRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateApplicationRequest getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.UpdateApplicationRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateApplicationRequest build() {
+        billing.v1alpha1.BillingApi.UpdateApplicationRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateApplicationRequest buildPartial() {
+        billing.v1alpha1.BillingApi.UpdateApplicationRequest result = new billing.v1alpha1.BillingApi.UpdateApplicationRequest(this);
+        result.applicationId_ = applicationId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof billing.v1alpha1.BillingApi.UpdateApplicationRequest) {
+          return mergeFrom((billing.v1alpha1.BillingApi.UpdateApplicationRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.UpdateApplicationRequest other) {
+        if (other == billing.v1alpha1.BillingApi.UpdateApplicationRequest.getDefaultInstance()) return this;
+        if (!other.getApplicationId().isEmpty()) {
+          applicationId_ = other.applicationId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        billing.v1alpha1.BillingApi.UpdateApplicationRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (billing.v1alpha1.BillingApi.UpdateApplicationRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object applicationId_ = "";
+      /**
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
+       * @return The applicationId.
+       */
+      public java.lang.String getApplicationId() {
+        java.lang.Object ref = applicationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          applicationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
+       * @return The bytes for applicationId.
+       */
+      public com.google.protobuf.ByteString
+          getApplicationIdBytes() {
+        java.lang.Object ref = applicationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          applicationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
+       * @param value The applicationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApplicationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        applicationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApplicationId() {
+        
+        applicationId_ = getDefaultInstance().getApplicationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
+       * @param value The bytes for applicationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApplicationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        applicationId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.UpdateApplicationRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateApplicationRequest)
+    private static final billing.v1alpha1.BillingApi.UpdateApplicationRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.UpdateApplicationRequest();
+    }
+
+    public static billing.v1alpha1.BillingApi.UpdateApplicationRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateApplicationRequest>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateApplicationRequest>() {
+      @java.lang.Override
+      public UpdateApplicationRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateApplicationRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateApplicationRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateApplicationRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public billing.v1alpha1.BillingApi.UpdateApplicationRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateApplicationResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.UpdateApplicationResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string application_id = 1 [json_name = "applicationId"];</code>
+     * @return The applicationId.
+     */
+    java.lang.String getApplicationId();
+    /**
+     * <code>string application_id = 1 [json_name = "applicationId"];</code>
+     * @return The bytes for applicationId.
+     */
+    com.google.protobuf.ByteString
+        getApplicationIdBytes();
+
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+  }
+  /**
+   * Protobuf type {@code billing.v1alpha1.UpdateApplicationResponse}
+   */
+  public static final class UpdateApplicationResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.UpdateApplicationResponse)
+      UpdateApplicationResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateApplicationResponse.newBuilder() to construct.
+    private UpdateApplicationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateApplicationResponse() {
+      applicationId_ = "";
+      status_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateApplicationResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateApplicationResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              applicationId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateApplicationResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateApplicationResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              billing.v1alpha1.BillingApi.UpdateApplicationResponse.class, billing.v1alpha1.BillingApi.UpdateApplicationResponse.Builder.class);
+    }
+
+    public static final int APPLICATION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object applicationId_;
+    /**
+     * <code>string application_id = 1 [json_name = "applicationId"];</code>
+     * @return The applicationId.
+     */
+    @java.lang.Override
+    public java.lang.String getApplicationId() {
+      java.lang.Object ref = applicationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        applicationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string application_id = 1 [json_name = "applicationId"];</code>
+     * @return The bytes for applicationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApplicationIdBytes() {
+      java.lang.Object ref = applicationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        applicationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getApplicationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, applicationId_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getApplicationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, applicationId_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof billing.v1alpha1.BillingApi.UpdateApplicationResponse)) {
+        return super.equals(obj);
+      }
+      billing.v1alpha1.BillingApi.UpdateApplicationResponse other = (billing.v1alpha1.BillingApi.UpdateApplicationResponse) obj;
+
+      if (!getApplicationId()
+          .equals(other.getApplicationId())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + APPLICATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getApplicationId().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static billing.v1alpha1.BillingApi.UpdateApplicationResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateApplicationResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.UpdateApplicationResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code billing.v1alpha1.UpdateApplicationResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.UpdateApplicationResponse)
+        billing.v1alpha1.BillingApi.UpdateApplicationResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateApplicationResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateApplicationResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                billing.v1alpha1.BillingApi.UpdateApplicationResponse.class, billing.v1alpha1.BillingApi.UpdateApplicationResponse.Builder.class);
+      }
+
+      // Construct using billing.v1alpha1.BillingApi.UpdateApplicationResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        applicationId_ = "";
+
+        status_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateApplicationResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateApplicationResponse getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.UpdateApplicationResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateApplicationResponse build() {
+        billing.v1alpha1.BillingApi.UpdateApplicationResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateApplicationResponse buildPartial() {
+        billing.v1alpha1.BillingApi.UpdateApplicationResponse result = new billing.v1alpha1.BillingApi.UpdateApplicationResponse(this);
+        result.applicationId_ = applicationId_;
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof billing.v1alpha1.BillingApi.UpdateApplicationResponse) {
+          return mergeFrom((billing.v1alpha1.BillingApi.UpdateApplicationResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.UpdateApplicationResponse other) {
+        if (other == billing.v1alpha1.BillingApi.UpdateApplicationResponse.getDefaultInstance()) return this;
+        if (!other.getApplicationId().isEmpty()) {
+          applicationId_ = other.applicationId_;
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        billing.v1alpha1.BillingApi.UpdateApplicationResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (billing.v1alpha1.BillingApi.UpdateApplicationResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object applicationId_ = "";
+      /**
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
+       * @return The applicationId.
+       */
+      public java.lang.String getApplicationId() {
+        java.lang.Object ref = applicationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          applicationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
+       * @return The bytes for applicationId.
+       */
+      public com.google.protobuf.ByteString
+          getApplicationIdBytes() {
+        java.lang.Object ref = applicationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          applicationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
+       * @param value The applicationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApplicationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        applicationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApplicationId() {
+        
+        applicationId_ = getDefaultInstance().getApplicationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string application_id = 1 [json_name = "applicationId"];</code>
+       * @param value The bytes for applicationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApplicationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        applicationId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.UpdateApplicationResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateApplicationResponse)
+    private static final billing.v1alpha1.BillingApi.UpdateApplicationResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.UpdateApplicationResponse();
+    }
+
+    public static billing.v1alpha1.BillingApi.UpdateApplicationResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateApplicationResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateApplicationResponse>() {
+      @java.lang.Override
+      public UpdateApplicationResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateApplicationResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateApplicationResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateApplicationResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public billing.v1alpha1.BillingApi.UpdateApplicationResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CreateMetricRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.CreateMetricRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+     * @return Whether the metric field is set.
+     */
+    boolean hasMetric();
+    /**
+     * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+     * @return The metric.
+     */
+    billing.v1alpha1.Billing.Metrics getMetric();
+    /**
+     * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+     */
+    billing.v1alpha1.Billing.MetricsOrBuilder getMetricOrBuilder();
+  }
+  /**
+   * Protobuf type {@code billing.v1alpha1.CreateMetricRequest}
+   */
+  public static final class CreateMetricRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.CreateMetricRequest)
+      CreateMetricRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CreateMetricRequest.newBuilder() to construct.
+    private CreateMetricRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CreateMetricRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CreateMetricRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CreateMetricRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              billing.v1alpha1.Billing.Metrics.Builder subBuilder = null;
+              if (metric_ != null) {
+                subBuilder = metric_.toBuilder();
+              }
+              metric_ = input.readMessage(billing.v1alpha1.Billing.Metrics.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metric_);
+                metric_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateMetricRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateMetricRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              billing.v1alpha1.BillingApi.CreateMetricRequest.class, billing.v1alpha1.BillingApi.CreateMetricRequest.Builder.class);
+    }
+
+    public static final int METRIC_FIELD_NUMBER = 1;
+    private billing.v1alpha1.Billing.Metrics metric_;
+    /**
+     * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+     * @return Whether the metric field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetric() {
+      return metric_ != null;
+    }
+    /**
+     * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+     * @return The metric.
+     */
+    @java.lang.Override
+    public billing.v1alpha1.Billing.Metrics getMetric() {
+      return metric_ == null ? billing.v1alpha1.Billing.Metrics.getDefaultInstance() : metric_;
+    }
+    /**
+     * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+     */
+    @java.lang.Override
+    public billing.v1alpha1.Billing.MetricsOrBuilder getMetricOrBuilder() {
+      return getMetric();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metric_ != null) {
+        output.writeMessage(1, getMetric());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metric_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetric());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof billing.v1alpha1.BillingApi.CreateMetricRequest)) {
+        return super.equals(obj);
+      }
+      billing.v1alpha1.BillingApi.CreateMetricRequest other = (billing.v1alpha1.BillingApi.CreateMetricRequest) obj;
+
+      if (hasMetric() != other.hasMetric()) return false;
+      if (hasMetric()) {
+        if (!getMetric()
+            .equals(other.getMetric())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetric()) {
+        hash = (37 * hash) + METRIC_FIELD_NUMBER;
+        hash = (53 * hash) + getMetric().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static billing.v1alpha1.BillingApi.CreateMetricRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.CreateMetricRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code billing.v1alpha1.CreateMetricRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.CreateMetricRequest)
+        billing.v1alpha1.BillingApi.CreateMetricRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateMetricRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateMetricRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                billing.v1alpha1.BillingApi.CreateMetricRequest.class, billing.v1alpha1.BillingApi.CreateMetricRequest.Builder.class);
+      }
+
+      // Construct using billing.v1alpha1.BillingApi.CreateMetricRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metricBuilder_ == null) {
+          metric_ = null;
+        } else {
+          metric_ = null;
+          metricBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateMetricRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.CreateMetricRequest getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.CreateMetricRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.CreateMetricRequest build() {
+        billing.v1alpha1.BillingApi.CreateMetricRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.CreateMetricRequest buildPartial() {
+        billing.v1alpha1.BillingApi.CreateMetricRequest result = new billing.v1alpha1.BillingApi.CreateMetricRequest(this);
+        if (metricBuilder_ == null) {
+          result.metric_ = metric_;
+        } else {
+          result.metric_ = metricBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof billing.v1alpha1.BillingApi.CreateMetricRequest) {
+          return mergeFrom((billing.v1alpha1.BillingApi.CreateMetricRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.CreateMetricRequest other) {
+        if (other == billing.v1alpha1.BillingApi.CreateMetricRequest.getDefaultInstance()) return this;
+        if (other.hasMetric()) {
+          mergeMetric(other.getMetric());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        billing.v1alpha1.BillingApi.CreateMetricRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (billing.v1alpha1.BillingApi.CreateMetricRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private billing.v1alpha1.Billing.Metrics metric_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          billing.v1alpha1.Billing.Metrics, billing.v1alpha1.Billing.Metrics.Builder, billing.v1alpha1.Billing.MetricsOrBuilder> metricBuilder_;
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       * @return Whether the metric field is set.
+       */
+      public boolean hasMetric() {
+        return metricBuilder_ != null || metric_ != null;
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       * @return The metric.
+       */
+      public billing.v1alpha1.Billing.Metrics getMetric() {
+        if (metricBuilder_ == null) {
+          return metric_ == null ? billing.v1alpha1.Billing.Metrics.getDefaultInstance() : metric_;
+        } else {
+          return metricBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       */
+      public Builder setMetric(billing.v1alpha1.Billing.Metrics value) {
+        if (metricBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metric_ = value;
+          onChanged();
+        } else {
+          metricBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       */
+      public Builder setMetric(
+          billing.v1alpha1.Billing.Metrics.Builder builderForValue) {
+        if (metricBuilder_ == null) {
+          metric_ = builderForValue.build();
+          onChanged();
+        } else {
+          metricBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       */
+      public Builder mergeMetric(billing.v1alpha1.Billing.Metrics value) {
+        if (metricBuilder_ == null) {
+          if (metric_ != null) {
+            metric_ =
+              billing.v1alpha1.Billing.Metrics.newBuilder(metric_).mergeFrom(value).buildPartial();
+          } else {
+            metric_ = value;
+          }
+          onChanged();
+        } else {
+          metricBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       */
+      public Builder clearMetric() {
+        if (metricBuilder_ == null) {
+          metric_ = null;
+          onChanged();
+        } else {
+          metric_ = null;
+          metricBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       */
+      public billing.v1alpha1.Billing.Metrics.Builder getMetricBuilder() {
+        
+        onChanged();
+        return getMetricFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       */
+      public billing.v1alpha1.Billing.MetricsOrBuilder getMetricOrBuilder() {
+        if (metricBuilder_ != null) {
+          return metricBuilder_.getMessageOrBuilder();
+        } else {
+          return metric_ == null ?
+              billing.v1alpha1.Billing.Metrics.getDefaultInstance() : metric_;
+        }
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          billing.v1alpha1.Billing.Metrics, billing.v1alpha1.Billing.Metrics.Builder, billing.v1alpha1.Billing.MetricsOrBuilder> 
+          getMetricFieldBuilder() {
+        if (metricBuilder_ == null) {
+          metricBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              billing.v1alpha1.Billing.Metrics, billing.v1alpha1.Billing.Metrics.Builder, billing.v1alpha1.Billing.MetricsOrBuilder>(
+                  getMetric(),
+                  getParentForChildren(),
+                  isClean());
+          metric_ = null;
+        }
+        return metricBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.CreateMetricRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateMetricRequest)
+    private static final billing.v1alpha1.BillingApi.CreateMetricRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.CreateMetricRequest();
+    }
+
+    public static billing.v1alpha1.BillingApi.CreateMetricRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateMetricRequest>
+        PARSER = new com.google.protobuf.AbstractParser<CreateMetricRequest>() {
+      @java.lang.Override
+      public CreateMetricRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CreateMetricRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateMetricRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateMetricRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public billing.v1alpha1.BillingApi.CreateMetricRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CreateMetricResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.CreateMetricResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The metricId.
+     */
+    java.lang.String getMetricId();
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The bytes for metricId.
+     */
+    com.google.protobuf.ByteString
+        getMetricIdBytes();
+
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+  }
+  /**
+   * Protobuf type {@code billing.v1alpha1.CreateMetricResponse}
+   */
+  public static final class CreateMetricResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.CreateMetricResponse)
+      CreateMetricResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CreateMetricResponse.newBuilder() to construct.
+    private CreateMetricResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CreateMetricResponse() {
+      metricId_ = "";
+      status_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CreateMetricResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CreateMetricResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              metricId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateMetricResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateMetricResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              billing.v1alpha1.BillingApi.CreateMetricResponse.class, billing.v1alpha1.BillingApi.CreateMetricResponse.Builder.class);
+    }
+
+    public static final int METRIC_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object metricId_;
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The metricId.
+     */
+    @java.lang.Override
+    public java.lang.String getMetricId() {
+      java.lang.Object ref = metricId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metricId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The bytes for metricId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMetricIdBytes() {
+      java.lang.Object ref = metricId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        metricId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMetricIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, metricId_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMetricIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, metricId_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof billing.v1alpha1.BillingApi.CreateMetricResponse)) {
+        return super.equals(obj);
+      }
+      billing.v1alpha1.BillingApi.CreateMetricResponse other = (billing.v1alpha1.BillingApi.CreateMetricResponse) obj;
+
+      if (!getMetricId()
+          .equals(other.getMetricId())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + METRIC_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMetricId().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static billing.v1alpha1.BillingApi.CreateMetricResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.CreateMetricResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.CreateMetricResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code billing.v1alpha1.CreateMetricResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.CreateMetricResponse)
+        billing.v1alpha1.BillingApi.CreateMetricResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateMetricResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateMetricResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                billing.v1alpha1.BillingApi.CreateMetricResponse.class, billing.v1alpha1.BillingApi.CreateMetricResponse.Builder.class);
+      }
+
+      // Construct using billing.v1alpha1.BillingApi.CreateMetricResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        metricId_ = "";
+
+        status_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_CreateMetricResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.CreateMetricResponse getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.CreateMetricResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.CreateMetricResponse build() {
+        billing.v1alpha1.BillingApi.CreateMetricResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.CreateMetricResponse buildPartial() {
+        billing.v1alpha1.BillingApi.CreateMetricResponse result = new billing.v1alpha1.BillingApi.CreateMetricResponse(this);
+        result.metricId_ = metricId_;
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof billing.v1alpha1.BillingApi.CreateMetricResponse) {
+          return mergeFrom((billing.v1alpha1.BillingApi.CreateMetricResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.CreateMetricResponse other) {
+        if (other == billing.v1alpha1.BillingApi.CreateMetricResponse.getDefaultInstance()) return this;
+        if (!other.getMetricId().isEmpty()) {
+          metricId_ = other.metricId_;
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        billing.v1alpha1.BillingApi.CreateMetricResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (billing.v1alpha1.BillingApi.CreateMetricResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object metricId_ = "";
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @return The metricId.
+       */
+      public java.lang.String getMetricId() {
+        java.lang.Object ref = metricId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          metricId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @return The bytes for metricId.
+       */
+      public com.google.protobuf.ByteString
+          getMetricIdBytes() {
+        java.lang.Object ref = metricId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          metricId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @param value The metricId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetricId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        metricId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMetricId() {
+        
+        metricId_ = getDefaultInstance().getMetricId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @param value The bytes for metricId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetricIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        metricId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.CreateMetricResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateMetricResponse)
+    private static final billing.v1alpha1.BillingApi.CreateMetricResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.CreateMetricResponse();
+    }
+
+    public static billing.v1alpha1.BillingApi.CreateMetricResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateMetricResponse>
+        PARSER = new com.google.protobuf.AbstractParser<CreateMetricResponse>() {
+      @java.lang.Override
+      public CreateMetricResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CreateMetricResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateMetricResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateMetricResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public billing.v1alpha1.BillingApi.CreateMetricResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetMetricRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.GetMetricRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The metricId.
+     */
+    java.lang.String getMetricId();
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The bytes for metricId.
+     */
+    com.google.protobuf.ByteString
+        getMetricIdBytes();
+  }
+  /**
+   * Protobuf type {@code billing.v1alpha1.GetMetricRequest}
+   */
+  public static final class GetMetricRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.GetMetricRequest)
+      GetMetricRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetMetricRequest.newBuilder() to construct.
+    private GetMetricRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetMetricRequest() {
+      metricId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetMetricRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetMetricRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              metricId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetMetricRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetMetricRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              billing.v1alpha1.BillingApi.GetMetricRequest.class, billing.v1alpha1.BillingApi.GetMetricRequest.Builder.class);
+    }
+
+    public static final int METRIC_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object metricId_;
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The metricId.
+     */
+    @java.lang.Override
+    public java.lang.String getMetricId() {
+      java.lang.Object ref = metricId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metricId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The bytes for metricId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMetricIdBytes() {
+      java.lang.Object ref = metricId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        metricId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMetricIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, metricId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMetricIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, metricId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof billing.v1alpha1.BillingApi.GetMetricRequest)) {
+        return super.equals(obj);
+      }
+      billing.v1alpha1.BillingApi.GetMetricRequest other = (billing.v1alpha1.BillingApi.GetMetricRequest) obj;
+
+      if (!getMetricId()
+          .equals(other.getMetricId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + METRIC_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMetricId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static billing.v1alpha1.BillingApi.GetMetricRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.GetMetricRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code billing.v1alpha1.GetMetricRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.GetMetricRequest)
+        billing.v1alpha1.BillingApi.GetMetricRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetMetricRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetMetricRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                billing.v1alpha1.BillingApi.GetMetricRequest.class, billing.v1alpha1.BillingApi.GetMetricRequest.Builder.class);
+      }
+
+      // Construct using billing.v1alpha1.BillingApi.GetMetricRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        metricId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetMetricRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetMetricRequest getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.GetMetricRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetMetricRequest build() {
+        billing.v1alpha1.BillingApi.GetMetricRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetMetricRequest buildPartial() {
+        billing.v1alpha1.BillingApi.GetMetricRequest result = new billing.v1alpha1.BillingApi.GetMetricRequest(this);
+        result.metricId_ = metricId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof billing.v1alpha1.BillingApi.GetMetricRequest) {
+          return mergeFrom((billing.v1alpha1.BillingApi.GetMetricRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.GetMetricRequest other) {
+        if (other == billing.v1alpha1.BillingApi.GetMetricRequest.getDefaultInstance()) return this;
+        if (!other.getMetricId().isEmpty()) {
+          metricId_ = other.metricId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        billing.v1alpha1.BillingApi.GetMetricRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (billing.v1alpha1.BillingApi.GetMetricRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object metricId_ = "";
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @return The metricId.
+       */
+      public java.lang.String getMetricId() {
+        java.lang.Object ref = metricId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          metricId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @return The bytes for metricId.
+       */
+      public com.google.protobuf.ByteString
+          getMetricIdBytes() {
+        java.lang.Object ref = metricId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          metricId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @param value The metricId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetricId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        metricId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMetricId() {
+        
+        metricId_ = getDefaultInstance().getMetricId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @param value The bytes for metricId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetricIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        metricId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.GetMetricRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetMetricRequest)
+    private static final billing.v1alpha1.BillingApi.GetMetricRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.GetMetricRequest();
+    }
+
+    public static billing.v1alpha1.BillingApi.GetMetricRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetMetricRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetMetricRequest>() {
+      @java.lang.Override
+      public GetMetricRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetMetricRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetMetricRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetMetricRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public billing.v1alpha1.BillingApi.GetMetricRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetMetricResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.GetMetricResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+     * @return Whether the metric field is set.
+     */
+    boolean hasMetric();
+    /**
+     * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+     * @return The metric.
+     */
+    billing.v1alpha1.Billing.Metrics getMetric();
+    /**
+     * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+     */
+    billing.v1alpha1.Billing.MetricsOrBuilder getMetricOrBuilder();
+  }
+  /**
+   * Protobuf type {@code billing.v1alpha1.GetMetricResponse}
+   */
+  public static final class GetMetricResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.GetMetricResponse)
+      GetMetricResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetMetricResponse.newBuilder() to construct.
+    private GetMetricResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetMetricResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetMetricResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetMetricResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              billing.v1alpha1.Billing.Metrics.Builder subBuilder = null;
+              if (metric_ != null) {
+                subBuilder = metric_.toBuilder();
+              }
+              metric_ = input.readMessage(billing.v1alpha1.Billing.Metrics.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metric_);
+                metric_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetMetricResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetMetricResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              billing.v1alpha1.BillingApi.GetMetricResponse.class, billing.v1alpha1.BillingApi.GetMetricResponse.Builder.class);
+    }
+
+    public static final int METRIC_FIELD_NUMBER = 1;
+    private billing.v1alpha1.Billing.Metrics metric_;
+    /**
+     * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+     * @return Whether the metric field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetric() {
+      return metric_ != null;
+    }
+    /**
+     * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+     * @return The metric.
+     */
+    @java.lang.Override
+    public billing.v1alpha1.Billing.Metrics getMetric() {
+      return metric_ == null ? billing.v1alpha1.Billing.Metrics.getDefaultInstance() : metric_;
+    }
+    /**
+     * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+     */
+    @java.lang.Override
+    public billing.v1alpha1.Billing.MetricsOrBuilder getMetricOrBuilder() {
+      return getMetric();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metric_ != null) {
+        output.writeMessage(1, getMetric());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metric_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetric());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof billing.v1alpha1.BillingApi.GetMetricResponse)) {
+        return super.equals(obj);
+      }
+      billing.v1alpha1.BillingApi.GetMetricResponse other = (billing.v1alpha1.BillingApi.GetMetricResponse) obj;
+
+      if (hasMetric() != other.hasMetric()) return false;
+      if (hasMetric()) {
+        if (!getMetric()
+            .equals(other.getMetric())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetric()) {
+        hash = (37 * hash) + METRIC_FIELD_NUMBER;
+        hash = (53 * hash) + getMetric().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static billing.v1alpha1.BillingApi.GetMetricResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.GetMetricResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.GetMetricResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code billing.v1alpha1.GetMetricResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.GetMetricResponse)
+        billing.v1alpha1.BillingApi.GetMetricResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetMetricResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetMetricResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                billing.v1alpha1.BillingApi.GetMetricResponse.class, billing.v1alpha1.BillingApi.GetMetricResponse.Builder.class);
+      }
+
+      // Construct using billing.v1alpha1.BillingApi.GetMetricResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metricBuilder_ == null) {
+          metric_ = null;
+        } else {
+          metric_ = null;
+          metricBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_GetMetricResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetMetricResponse getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.GetMetricResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetMetricResponse build() {
+        billing.v1alpha1.BillingApi.GetMetricResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.GetMetricResponse buildPartial() {
+        billing.v1alpha1.BillingApi.GetMetricResponse result = new billing.v1alpha1.BillingApi.GetMetricResponse(this);
+        if (metricBuilder_ == null) {
+          result.metric_ = metric_;
+        } else {
+          result.metric_ = metricBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof billing.v1alpha1.BillingApi.GetMetricResponse) {
+          return mergeFrom((billing.v1alpha1.BillingApi.GetMetricResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.GetMetricResponse other) {
+        if (other == billing.v1alpha1.BillingApi.GetMetricResponse.getDefaultInstance()) return this;
+        if (other.hasMetric()) {
+          mergeMetric(other.getMetric());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        billing.v1alpha1.BillingApi.GetMetricResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (billing.v1alpha1.BillingApi.GetMetricResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private billing.v1alpha1.Billing.Metrics metric_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          billing.v1alpha1.Billing.Metrics, billing.v1alpha1.Billing.Metrics.Builder, billing.v1alpha1.Billing.MetricsOrBuilder> metricBuilder_;
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       * @return Whether the metric field is set.
+       */
+      public boolean hasMetric() {
+        return metricBuilder_ != null || metric_ != null;
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       * @return The metric.
+       */
+      public billing.v1alpha1.Billing.Metrics getMetric() {
+        if (metricBuilder_ == null) {
+          return metric_ == null ? billing.v1alpha1.Billing.Metrics.getDefaultInstance() : metric_;
+        } else {
+          return metricBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       */
+      public Builder setMetric(billing.v1alpha1.Billing.Metrics value) {
+        if (metricBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metric_ = value;
+          onChanged();
+        } else {
+          metricBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       */
+      public Builder setMetric(
+          billing.v1alpha1.Billing.Metrics.Builder builderForValue) {
+        if (metricBuilder_ == null) {
+          metric_ = builderForValue.build();
+          onChanged();
+        } else {
+          metricBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       */
+      public Builder mergeMetric(billing.v1alpha1.Billing.Metrics value) {
+        if (metricBuilder_ == null) {
+          if (metric_ != null) {
+            metric_ =
+              billing.v1alpha1.Billing.Metrics.newBuilder(metric_).mergeFrom(value).buildPartial();
+          } else {
+            metric_ = value;
+          }
+          onChanged();
+        } else {
+          metricBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       */
+      public Builder clearMetric() {
+        if (metricBuilder_ == null) {
+          metric_ = null;
+          onChanged();
+        } else {
+          metric_ = null;
+          metricBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       */
+      public billing.v1alpha1.Billing.Metrics.Builder getMetricBuilder() {
+        
+        onChanged();
+        return getMetricFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       */
+      public billing.v1alpha1.Billing.MetricsOrBuilder getMetricOrBuilder() {
+        if (metricBuilder_ != null) {
+          return metricBuilder_.getMessageOrBuilder();
+        } else {
+          return metric_ == null ?
+              billing.v1alpha1.Billing.Metrics.getDefaultInstance() : metric_;
+        }
+      }
+      /**
+       * <code>.billing.v1alpha1.Metrics metric = 1 [json_name = "metric"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          billing.v1alpha1.Billing.Metrics, billing.v1alpha1.Billing.Metrics.Builder, billing.v1alpha1.Billing.MetricsOrBuilder> 
+          getMetricFieldBuilder() {
+        if (metricBuilder_ == null) {
+          metricBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              billing.v1alpha1.Billing.Metrics, billing.v1alpha1.Billing.Metrics.Builder, billing.v1alpha1.Billing.MetricsOrBuilder>(
+                  getMetric(),
+                  getParentForChildren(),
+                  isClean());
+          metric_ = null;
+        }
+        return metricBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.GetMetricResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetMetricResponse)
+    private static final billing.v1alpha1.BillingApi.GetMetricResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.GetMetricResponse();
+    }
+
+    public static billing.v1alpha1.BillingApi.GetMetricResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetMetricResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetMetricResponse>() {
+      @java.lang.Override
+      public GetMetricResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetMetricResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetMetricResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetMetricResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public billing.v1alpha1.BillingApi.GetMetricResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateMetricRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.UpdateMetricRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The metricId.
+     */
+    java.lang.String getMetricId();
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The bytes for metricId.
+     */
+    com.google.protobuf.ByteString
+        getMetricIdBytes();
+  }
+  /**
+   * Protobuf type {@code billing.v1alpha1.UpdateMetricRequest}
+   */
+  public static final class UpdateMetricRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.UpdateMetricRequest)
+      UpdateMetricRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateMetricRequest.newBuilder() to construct.
+    private UpdateMetricRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateMetricRequest() {
+      metricId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateMetricRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateMetricRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              metricId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateMetricRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateMetricRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              billing.v1alpha1.BillingApi.UpdateMetricRequest.class, billing.v1alpha1.BillingApi.UpdateMetricRequest.Builder.class);
+    }
+
+    public static final int METRIC_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object metricId_;
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The metricId.
+     */
+    @java.lang.Override
+    public java.lang.String getMetricId() {
+      java.lang.Object ref = metricId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metricId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The bytes for metricId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMetricIdBytes() {
+      java.lang.Object ref = metricId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        metricId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMetricIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, metricId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMetricIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, metricId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof billing.v1alpha1.BillingApi.UpdateMetricRequest)) {
+        return super.equals(obj);
+      }
+      billing.v1alpha1.BillingApi.UpdateMetricRequest other = (billing.v1alpha1.BillingApi.UpdateMetricRequest) obj;
+
+      if (!getMetricId()
+          .equals(other.getMetricId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + METRIC_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMetricId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static billing.v1alpha1.BillingApi.UpdateMetricRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.UpdateMetricRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code billing.v1alpha1.UpdateMetricRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.UpdateMetricRequest)
+        billing.v1alpha1.BillingApi.UpdateMetricRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateMetricRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateMetricRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                billing.v1alpha1.BillingApi.UpdateMetricRequest.class, billing.v1alpha1.BillingApi.UpdateMetricRequest.Builder.class);
+      }
+
+      // Construct using billing.v1alpha1.BillingApi.UpdateMetricRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        metricId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateMetricRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateMetricRequest getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.UpdateMetricRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateMetricRequest build() {
+        billing.v1alpha1.BillingApi.UpdateMetricRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateMetricRequest buildPartial() {
+        billing.v1alpha1.BillingApi.UpdateMetricRequest result = new billing.v1alpha1.BillingApi.UpdateMetricRequest(this);
+        result.metricId_ = metricId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof billing.v1alpha1.BillingApi.UpdateMetricRequest) {
+          return mergeFrom((billing.v1alpha1.BillingApi.UpdateMetricRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.UpdateMetricRequest other) {
+        if (other == billing.v1alpha1.BillingApi.UpdateMetricRequest.getDefaultInstance()) return this;
+        if (!other.getMetricId().isEmpty()) {
+          metricId_ = other.metricId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        billing.v1alpha1.BillingApi.UpdateMetricRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (billing.v1alpha1.BillingApi.UpdateMetricRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object metricId_ = "";
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @return The metricId.
+       */
+      public java.lang.String getMetricId() {
+        java.lang.Object ref = metricId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          metricId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @return The bytes for metricId.
+       */
+      public com.google.protobuf.ByteString
+          getMetricIdBytes() {
+        java.lang.Object ref = metricId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          metricId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @param value The metricId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetricId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        metricId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMetricId() {
+        
+        metricId_ = getDefaultInstance().getMetricId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @param value The bytes for metricId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetricIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        metricId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.UpdateMetricRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateMetricRequest)
+    private static final billing.v1alpha1.BillingApi.UpdateMetricRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.UpdateMetricRequest();
+    }
+
+    public static billing.v1alpha1.BillingApi.UpdateMetricRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateMetricRequest>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateMetricRequest>() {
+      @java.lang.Override
+      public UpdateMetricRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateMetricRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateMetricRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateMetricRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public billing.v1alpha1.BillingApi.UpdateMetricRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateMetricResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:billing.v1alpha1.UpdateMetricResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The metricId.
+     */
+    java.lang.String getMetricId();
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The bytes for metricId.
+     */
+    com.google.protobuf.ByteString
+        getMetricIdBytes();
+
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+  }
+  /**
+   * Protobuf type {@code billing.v1alpha1.UpdateMetricResponse}
+   */
+  public static final class UpdateMetricResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:billing.v1alpha1.UpdateMetricResponse)
+      UpdateMetricResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateMetricResponse.newBuilder() to construct.
+    private UpdateMetricResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateMetricResponse() {
+      metricId_ = "";
+      status_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateMetricResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateMetricResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              metricId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateMetricResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateMetricResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              billing.v1alpha1.BillingApi.UpdateMetricResponse.class, billing.v1alpha1.BillingApi.UpdateMetricResponse.Builder.class);
+    }
+
+    public static final int METRIC_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object metricId_;
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The metricId.
+     */
+    @java.lang.Override
+    public java.lang.String getMetricId() {
+      java.lang.Object ref = metricId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metricId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string metric_id = 1 [json_name = "metricId"];</code>
+     * @return The bytes for metricId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMetricIdBytes() {
+      java.lang.Object ref = metricId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        metricId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMetricIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, metricId_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMetricIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, metricId_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof billing.v1alpha1.BillingApi.UpdateMetricResponse)) {
+        return super.equals(obj);
+      }
+      billing.v1alpha1.BillingApi.UpdateMetricResponse other = (billing.v1alpha1.BillingApi.UpdateMetricResponse) obj;
+
+      if (!getMetricId()
+          .equals(other.getMetricId())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + METRIC_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMetricId().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static billing.v1alpha1.BillingApi.UpdateMetricResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static billing.v1alpha1.BillingApi.UpdateMetricResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(billing.v1alpha1.BillingApi.UpdateMetricResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code billing.v1alpha1.UpdateMetricResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:billing.v1alpha1.UpdateMetricResponse)
+        billing.v1alpha1.BillingApi.UpdateMetricResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateMetricResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateMetricResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                billing.v1alpha1.BillingApi.UpdateMetricResponse.class, billing.v1alpha1.BillingApi.UpdateMetricResponse.Builder.class);
+      }
+
+      // Construct using billing.v1alpha1.BillingApi.UpdateMetricResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        metricId_ = "";
+
+        status_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return billing.v1alpha1.BillingApi.internal_static_billing_v1alpha1_UpdateMetricResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateMetricResponse getDefaultInstanceForType() {
+        return billing.v1alpha1.BillingApi.UpdateMetricResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateMetricResponse build() {
+        billing.v1alpha1.BillingApi.UpdateMetricResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public billing.v1alpha1.BillingApi.UpdateMetricResponse buildPartial() {
+        billing.v1alpha1.BillingApi.UpdateMetricResponse result = new billing.v1alpha1.BillingApi.UpdateMetricResponse(this);
+        result.metricId_ = metricId_;
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof billing.v1alpha1.BillingApi.UpdateMetricResponse) {
+          return mergeFrom((billing.v1alpha1.BillingApi.UpdateMetricResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(billing.v1alpha1.BillingApi.UpdateMetricResponse other) {
+        if (other == billing.v1alpha1.BillingApi.UpdateMetricResponse.getDefaultInstance()) return this;
+        if (!other.getMetricId().isEmpty()) {
+          metricId_ = other.metricId_;
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        billing.v1alpha1.BillingApi.UpdateMetricResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (billing.v1alpha1.BillingApi.UpdateMetricResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object metricId_ = "";
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @return The metricId.
+       */
+      public java.lang.String getMetricId() {
+        java.lang.Object ref = metricId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          metricId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @return The bytes for metricId.
+       */
+      public com.google.protobuf.ByteString
+          getMetricIdBytes() {
+        java.lang.Object ref = metricId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          metricId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @param value The metricId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetricId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        metricId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMetricId() {
+        
+        metricId_ = getDefaultInstance().getMetricId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string metric_id = 1 [json_name = "metricId"];</code>
+       * @param value The bytes for metricId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetricIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        metricId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:billing.v1alpha1.UpdateMetricResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateMetricResponse)
+    private static final billing.v1alpha1.BillingApi.UpdateMetricResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new billing.v1alpha1.BillingApi.UpdateMetricResponse();
+    }
+
+    public static billing.v1alpha1.BillingApi.UpdateMetricResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateMetricResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateMetricResponse>() {
+      @java.lang.Override
+      public UpdateMetricResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateMetricResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateMetricResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateMetricResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public billing.v1alpha1.BillingApi.UpdateMetricResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_billing_v1alpha1_CreateBillingRequest_descriptor;
+    internal_static_billing_v1alpha1_CreateOrganizationRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_billing_v1alpha1_CreateBillingRequest_fieldAccessorTable;
+      internal_static_billing_v1alpha1_CreateOrganizationRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_billing_v1alpha1_CreateBillingResponse_descriptor;
+    internal_static_billing_v1alpha1_CreateOrganizationResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_billing_v1alpha1_CreateBillingResponse_fieldAccessorTable;
+      internal_static_billing_v1alpha1_CreateOrganizationResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_billing_v1alpha1_GetBillingRequest_descriptor;
+    internal_static_billing_v1alpha1_GetOrganizationRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_billing_v1alpha1_GetBillingRequest_fieldAccessorTable;
+      internal_static_billing_v1alpha1_GetOrganizationRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_billing_v1alpha1_GetBillingResponse_descriptor;
+    internal_static_billing_v1alpha1_GetOrganizationResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_billing_v1alpha1_GetBillingResponse_fieldAccessorTable;
+      internal_static_billing_v1alpha1_GetOrganizationResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_billing_v1alpha1_UpdateBillingRequest_descriptor;
+    internal_static_billing_v1alpha1_UpdateOrganizationRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_billing_v1alpha1_UpdateBillingRequest_fieldAccessorTable;
+      internal_static_billing_v1alpha1_UpdateOrganizationRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_billing_v1alpha1_UpdateBillingResponse_descriptor;
+    internal_static_billing_v1alpha1_UpdateOrganizationResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_billing_v1alpha1_UpdateBillingResponse_fieldAccessorTable;
+      internal_static_billing_v1alpha1_UpdateOrganizationResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_billing_v1alpha1_CreateApplicationRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_billing_v1alpha1_CreateApplicationRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_billing_v1alpha1_CreateApplicationResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_billing_v1alpha1_CreateApplicationResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_billing_v1alpha1_GetApplicationRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_billing_v1alpha1_GetApplicationRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_billing_v1alpha1_GetApplicationResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_billing_v1alpha1_GetApplicationResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_billing_v1alpha1_UpdateApplicationRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_billing_v1alpha1_UpdateApplicationRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_billing_v1alpha1_UpdateApplicationResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_billing_v1alpha1_UpdateApplicationResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_billing_v1alpha1_CreateMetricRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_billing_v1alpha1_CreateMetricRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_billing_v1alpha1_CreateMetricResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_billing_v1alpha1_CreateMetricResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_billing_v1alpha1_GetMetricRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_billing_v1alpha1_GetMetricRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_billing_v1alpha1_GetMetricResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_billing_v1alpha1_GetMetricResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_billing_v1alpha1_UpdateMetricRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_billing_v1alpha1_UpdateMetricRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_billing_v1alpha1_UpdateMetricResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_billing_v1alpha1_UpdateMetricResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3869,69 +11557,183 @@ public final class BillingApi {
     java.lang.String[] descriptorData = {
       "\n\"billing/v1alpha1/billing_api.proto\022\020bi" +
       "lling.v1alpha1\032\036billing/v1alpha1/billing" +
-      ".proto\"K\n\024CreateBillingRequest\0223\n\007billin" +
-      "g\030\001 \001(\0132\031.billing.v1alpha1.BillingR\007bill" +
-      "ing\"N\n\025CreateBillingResponse\022\035\n\nbilling_" +
-      "id\030\001 \001(\tR\tbillingId\022\026\n\006status\030\002 \001(\tR\006sta" +
-      "tus\"2\n\021GetBillingRequest\022\035\n\nbilling_id\030\001" +
-      " \001(\tR\tbillingId\"I\n\022GetBillingResponse\0223\n" +
-      "\007billing\030\001 \001(\0132\031.billing.v1alpha1.Billin" +
-      "gR\007billing\"5\n\024UpdateBillingRequest\022\035\n\nbi" +
-      "lling_id\030\001 \001(\tR\tbillingId\"N\n\025UpdateBilli" +
-      "ngResponse\022\035\n\nbilling_id\030\001 \001(\tR\tbillingI" +
-      "d\022\026\n\006status\030\002 \001(\tR\006status2\263\002\n\016BillingSer" +
-      "vice\022b\n\rCreateBilling\022&.billing.v1alpha1" +
-      ".CreateBillingRequest\032\'.billing.v1alpha1" +
-      ".CreateBillingResponse\"\000\022Y\n\nGetBilling\022#" +
-      ".billing.v1alpha1.GetBillingRequest\032$.bi" +
-      "lling.v1alpha1.GetBillingResponse\"\000\022b\n\rU" +
-      "pdateBilling\022&.billing.v1alpha1.UpdateBi" +
-      "llingRequest\032\'.billing.v1alpha1.UpdateBi" +
-      "llingResponse\"\000B7Z5github.com/cuemby/ccp" +
-      "-billing-service/billingv1alpha1b\006proto3"
+      ".proto\"_\n\031CreateOrganizationRequest\022B\n\014o" +
+      "rganization\030\001 \001(\0132\036.billing.v1alpha1.Org" +
+      "anizationR\014organization\"]\n\032CreateOrganiz" +
+      "ationResponse\022\'\n\017organization_id\030\001 \001(\tR\016" +
+      "organizationId\022\026\n\006status\030\002 \001(\tR\006status\"A" +
+      "\n\026GetOrganizationRequest\022\'\n\017organization" +
+      "_id\030\001 \001(\tR\016organizationId\"]\n\027GetOrganiza" +
+      "tionResponse\022B\n\014organization\030\001 \001(\0132\036.bil" +
+      "ling.v1alpha1.OrganizationR\014organization" +
+      "\"D\n\031UpdateOrganizationRequest\022\'\n\017organiz" +
+      "ation_id\030\001 \001(\tR\016organizationId\"S\n\032Update" +
+      "OrganizationResponse\022\035\n\nbilling_id\030\001 \001(\t" +
+      "R\tbillingId\022\026\n\006status\030\002 \001(\tR\006status\"[\n\030C" +
+      "reateApplicationRequest\022?\n\013application\030\001" +
+      " \001(\0132\035.billing.v1alpha1.ApplicationR\013app" +
+      "lication\"Z\n\031CreateApplicationResponse\022%\n" +
+      "\016application_id\030\001 \001(\tR\rapplicationId\022\026\n\006" +
+      "status\030\002 \001(\tR\006status\"@\n\025GetApplicationRe" +
+      "quest\022\'\n\017organization_id\030\001 \001(\tR\016organiza" +
+      "tionId\"Y\n\026GetApplicationResponse\022?\n\013appl" +
+      "ication\030\001 \001(\0132\035.billing.v1alpha1.Applica" +
+      "tionR\013application\"A\n\030UpdateApplicationRe" +
+      "quest\022%\n\016application_id\030\001 \001(\tR\rapplicati" +
+      "onId\"Z\n\031UpdateApplicationResponse\022%\n\016app" +
+      "lication_id\030\001 \001(\tR\rapplicationId\022\026\n\006stat" +
+      "us\030\002 \001(\tR\006status\"H\n\023CreateMetricRequest\022" +
+      "1\n\006metric\030\001 \001(\0132\031.billing.v1alpha1.Metri" +
+      "csR\006metric\"K\n\024CreateMetricResponse\022\033\n\tme" +
+      "tric_id\030\001 \001(\tR\010metricId\022\026\n\006status\030\002 \001(\tR" +
+      "\006status\"/\n\020GetMetricRequest\022\033\n\tmetric_id" +
+      "\030\001 \001(\tR\010metricId\"F\n\021GetMetricResponse\0221\n" +
+      "\006metric\030\001 \001(\0132\031.billing.v1alpha1.Metrics" +
+      "R\006metric\"2\n\023UpdateMetricRequest\022\033\n\tmetri" +
+      "c_id\030\001 \001(\tR\010metricId\"K\n\024UpdateMetricResp" +
+      "onse\022\033\n\tmetric_id\030\001 \001(\tR\010metricId\022\026\n\006sta" +
+      "tus\030\002 \001(\tR\006status2\301\007\n\016BillingService\022q\n\022" +
+      "CreateOrganization\022+.billing.v1alpha1.Cr" +
+      "eateOrganizationRequest\032,.billing.v1alph" +
+      "a1.CreateOrganizationResponse\"\000\022h\n\017GetOr" +
+      "ganization\022(.billing.v1alpha1.GetOrganiz" +
+      "ationRequest\032).billing.v1alpha1.GetOrgan" +
+      "izationResponse\"\000\022q\n\022UpdateOrganization\022" +
+      "+.billing.v1alpha1.UpdateOrganizationReq" +
+      "uest\032,.billing.v1alpha1.UpdateOrganizati" +
+      "onResponse\"\000\022n\n\021CreateApplication\022*.bill" +
+      "ing.v1alpha1.CreateApplicationRequest\032+." +
+      "billing.v1alpha1.CreateApplicationRespon" +
+      "se\"\000\022e\n\016GetApplication\022\'.billing.v1alpha" +
+      "1.GetApplicationRequest\032(.billing.v1alph" +
+      "a1.GetApplicationResponse\"\000\022n\n\021UpdateApp" +
+      "lication\022*.billing.v1alpha1.UpdateApplic" +
+      "ationRequest\032+.billing.v1alpha1.UpdateAp" +
+      "plicationResponse\"\000\022_\n\014CreateMetric\022%.bi" +
+      "lling.v1alpha1.CreateMetricRequest\032&.bil" +
+      "ling.v1alpha1.CreateMetricResponse\"\000\022V\n\t" +
+      "GetMetric\022\".billing.v1alpha1.GetMetricRe" +
+      "quest\032#.billing.v1alpha1.GetMetricRespon" +
+      "se\"\000\022_\n\014UpdateMetric\022%.billing.v1alpha1." +
+      "UpdateMetricRequest\032&.billing.v1alpha1.U" +
+      "pdateMetricResponse\"\000B7Z5github.com/cuem" +
+      "by/ccp-billing-service/billingv1alpha1b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          billing.v1alpha1.BillingOuterClass.getDescriptor(),
+          billing.v1alpha1.Billing.getDescriptor(),
         });
-    internal_static_billing_v1alpha1_CreateBillingRequest_descriptor =
+    internal_static_billing_v1alpha1_CreateOrganizationRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_billing_v1alpha1_CreateBillingRequest_fieldAccessorTable = new
+    internal_static_billing_v1alpha1_CreateOrganizationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_billing_v1alpha1_CreateBillingRequest_descriptor,
-        new java.lang.String[] { "Billing", });
-    internal_static_billing_v1alpha1_CreateBillingResponse_descriptor =
+        internal_static_billing_v1alpha1_CreateOrganizationRequest_descriptor,
+        new java.lang.String[] { "Organization", });
+    internal_static_billing_v1alpha1_CreateOrganizationResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_billing_v1alpha1_CreateBillingResponse_fieldAccessorTable = new
+    internal_static_billing_v1alpha1_CreateOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_billing_v1alpha1_CreateBillingResponse_descriptor,
-        new java.lang.String[] { "BillingId", "Status", });
-    internal_static_billing_v1alpha1_GetBillingRequest_descriptor =
+        internal_static_billing_v1alpha1_CreateOrganizationResponse_descriptor,
+        new java.lang.String[] { "OrganizationId", "Status", });
+    internal_static_billing_v1alpha1_GetOrganizationRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_billing_v1alpha1_GetBillingRequest_fieldAccessorTable = new
+    internal_static_billing_v1alpha1_GetOrganizationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_billing_v1alpha1_GetBillingRequest_descriptor,
-        new java.lang.String[] { "BillingId", });
-    internal_static_billing_v1alpha1_GetBillingResponse_descriptor =
+        internal_static_billing_v1alpha1_GetOrganizationRequest_descriptor,
+        new java.lang.String[] { "OrganizationId", });
+    internal_static_billing_v1alpha1_GetOrganizationResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_billing_v1alpha1_GetBillingResponse_fieldAccessorTable = new
+    internal_static_billing_v1alpha1_GetOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_billing_v1alpha1_GetBillingResponse_descriptor,
-        new java.lang.String[] { "Billing", });
-    internal_static_billing_v1alpha1_UpdateBillingRequest_descriptor =
+        internal_static_billing_v1alpha1_GetOrganizationResponse_descriptor,
+        new java.lang.String[] { "Organization", });
+    internal_static_billing_v1alpha1_UpdateOrganizationRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_billing_v1alpha1_UpdateBillingRequest_fieldAccessorTable = new
+    internal_static_billing_v1alpha1_UpdateOrganizationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_billing_v1alpha1_UpdateBillingRequest_descriptor,
-        new java.lang.String[] { "BillingId", });
-    internal_static_billing_v1alpha1_UpdateBillingResponse_descriptor =
+        internal_static_billing_v1alpha1_UpdateOrganizationRequest_descriptor,
+        new java.lang.String[] { "OrganizationId", });
+    internal_static_billing_v1alpha1_UpdateOrganizationResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_billing_v1alpha1_UpdateBillingResponse_fieldAccessorTable = new
+    internal_static_billing_v1alpha1_UpdateOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_billing_v1alpha1_UpdateBillingResponse_descriptor,
+        internal_static_billing_v1alpha1_UpdateOrganizationResponse_descriptor,
         new java.lang.String[] { "BillingId", "Status", });
-    billing.v1alpha1.BillingOuterClass.getDescriptor();
+    internal_static_billing_v1alpha1_CreateApplicationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_billing_v1alpha1_CreateApplicationRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_billing_v1alpha1_CreateApplicationRequest_descriptor,
+        new java.lang.String[] { "Application", });
+    internal_static_billing_v1alpha1_CreateApplicationResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_billing_v1alpha1_CreateApplicationResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_billing_v1alpha1_CreateApplicationResponse_descriptor,
+        new java.lang.String[] { "ApplicationId", "Status", });
+    internal_static_billing_v1alpha1_GetApplicationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_billing_v1alpha1_GetApplicationRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_billing_v1alpha1_GetApplicationRequest_descriptor,
+        new java.lang.String[] { "OrganizationId", });
+    internal_static_billing_v1alpha1_GetApplicationResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_billing_v1alpha1_GetApplicationResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_billing_v1alpha1_GetApplicationResponse_descriptor,
+        new java.lang.String[] { "Application", });
+    internal_static_billing_v1alpha1_UpdateApplicationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_billing_v1alpha1_UpdateApplicationRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_billing_v1alpha1_UpdateApplicationRequest_descriptor,
+        new java.lang.String[] { "ApplicationId", });
+    internal_static_billing_v1alpha1_UpdateApplicationResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_billing_v1alpha1_UpdateApplicationResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_billing_v1alpha1_UpdateApplicationResponse_descriptor,
+        new java.lang.String[] { "ApplicationId", "Status", });
+    internal_static_billing_v1alpha1_CreateMetricRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_billing_v1alpha1_CreateMetricRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_billing_v1alpha1_CreateMetricRequest_descriptor,
+        new java.lang.String[] { "Metric", });
+    internal_static_billing_v1alpha1_CreateMetricResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_billing_v1alpha1_CreateMetricResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_billing_v1alpha1_CreateMetricResponse_descriptor,
+        new java.lang.String[] { "MetricId", "Status", });
+    internal_static_billing_v1alpha1_GetMetricRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_billing_v1alpha1_GetMetricRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_billing_v1alpha1_GetMetricRequest_descriptor,
+        new java.lang.String[] { "MetricId", });
+    internal_static_billing_v1alpha1_GetMetricResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_billing_v1alpha1_GetMetricResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_billing_v1alpha1_GetMetricResponse_descriptor,
+        new java.lang.String[] { "Metric", });
+    internal_static_billing_v1alpha1_UpdateMetricRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_billing_v1alpha1_UpdateMetricRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_billing_v1alpha1_UpdateMetricRequest_descriptor,
+        new java.lang.String[] { "MetricId", });
+    internal_static_billing_v1alpha1_UpdateMetricResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_billing_v1alpha1_UpdateMetricResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_billing_v1alpha1_UpdateMetricResponse_descriptor,
+        new java.lang.String[] { "MetricId", "Status", });
+    billing.v1alpha1.Billing.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
