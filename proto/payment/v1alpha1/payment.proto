@@ -10,7 +10,6 @@ option java_package = "io.cuemby.payment.v1alpha1";
 option objc_class_prefix = "PPX";
 option php_namespace = "PaymentV1Alpha1";
 
-
 message Payment {
     string id = 1;
     string card_holder_name = 2;

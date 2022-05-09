@@ -13,15 +13,13 @@ option php_namespace = "Payment\\V1Alpha1";
 
 import "payment/v1alpha1/payment.proto";
 //import "payment.proto";
-
 service PaymentAPIService{
     rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse) {}
     rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {};
     rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {};
     rpc UpdatePayment(UpdatePaymentRequest) returns (UpdatePaymentResponse) {};
     rpc DeletePayment(DeletePaymentRequest) returns (DeletePaymentResponse) {};
-    rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {};
-  
+    rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {}; 
 }
 
 message CreateCustomerRequest {
