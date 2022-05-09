@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z5github.com/cuemby/ccp-billing-service/billingv1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"billing/v1alpha1/billing_api.proto\x12\x10\x62illing.v1alpha1\x1a\x1e\x62illing/v1alpha1/billing.proto\"_\n\x19\x43reateOrganizationRequest\x12\x42\n\x0corganization\x18\x01 \x01(\x0b\x32\x1e.billing.v1alpha1.OrganizationR\x0corganization\"]\n\x1a\x43reateOrganizationResponse\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"A\n\x16GetOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"]\n\x17GetOrganizationResponse\x12\x42\n\x0corganization\x18\x01 \x01(\x0b\x32\x1e.billing.v1alpha1.OrganizationR\x0corganization\"D\n\x19UpdateOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"S\n\x1aUpdateOrganizationResponse\x12\x1d\n\nbilling_id\x18\x01 \x01(\tR\tbillingId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"[\n\x18\x43reateApplicationRequest\x12?\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32\x1d.billing.v1alpha1.ApplicationR\x0b\x61pplication\"Z\n\x19\x43reateApplicationResponse\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"@\n\x15GetApplicationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"Y\n\x16GetApplicationResponse\x12?\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32\x1d.billing.v1alpha1.ApplicationR\x0b\x61pplication\"A\n\x18UpdateApplicationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\"Z\n\x19UpdateApplicationResponse\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"H\n\x13\x43reateMetricRequest\x12\x31\n\x06metric\x18\x01 \x01(\x0b\x32\x19.billing.v1alpha1.MetricsR\x06metric\"K\n\x14\x43reateMetricResponse\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"/\n\x10GetMetricRequest\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\"F\n\x11GetMetricResponse\x12\x31\n\x06metric\x18\x01 \x01(\x0b\x32\x19.billing.v1alpha1.MetricsR\x06metric\"2\n\x13UpdateMetricRequest\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\"K\n\x14UpdateMetricResponse\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xc1\x07\n\x0e\x42illingService\x12q\n\x12\x43reateOrganization\x12+.billing.v1alpha1.CreateOrganizationRequest\x1a,.billing.v1alpha1.CreateOrganizationResponse\"\x00\x12h\n\x0fGetOrganization\x12(.billing.v1alpha1.GetOrganizationRequest\x1a).billing.v1alpha1.GetOrganizationResponse\"\x00\x12q\n\x12UpdateOrganization\x12+.billing.v1alpha1.UpdateOrganizationRequest\x1a,.billing.v1alpha1.UpdateOrganizationResponse\"\x00\x12n\n\x11\x43reateApplication\x12*.billing.v1alpha1.CreateApplicationRequest\x1a+.billing.v1alpha1.CreateApplicationResponse\"\x00\x12\x65\n\x0eGetApplication\x12\'.billing.v1alpha1.GetApplicationRequest\x1a(.billing.v1alpha1.GetApplicationResponse\"\x00\x12n\n\x11UpdateApplication\x12*.billing.v1alpha1.UpdateApplicationRequest\x1a+.billing.v1alpha1.UpdateApplicationResponse\"\x00\x12_\n\x0c\x43reateMetric\x12%.billing.v1alpha1.CreateMetricRequest\x1a&.billing.v1alpha1.CreateMetricResponse\"\x00\x12V\n\tGetMetric\x12\".billing.v1alpha1.GetMetricRequest\x1a#.billing.v1alpha1.GetMetricResponse\"\x00\x12_\n\x0cUpdateMetric\x12%.billing.v1alpha1.UpdateMetricRequest\x1a&.billing.v1alpha1.UpdateMetricResponse\"\x00\x42\x37Z5github.com/cuemby/ccp-billing-service/billingv1alpha1b\x06proto3'
+  serialized_pb=b'\n\"billing/v1alpha1/billing_api.proto\x12\x10\x62illing.v1alpha1\x1a\x1e\x62illing/v1alpha1/billing.proto\"_\n\x19\x43reateOrganizationRequest\x12\x42\n\x0corganization\x18\x01 \x01(\x0b\x32\x1e.billing.v1alpha1.OrganizationR\x0corganization\"]\n\x1a\x43reateOrganizationResponse\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"A\n\x16GetOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"]\n\x17GetOrganizationResponse\x12\x42\n\x0corganization\x18\x01 \x01(\x0b\x32\x1e.billing.v1alpha1.OrganizationR\x0corganization\"D\n\x19UpdateOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"S\n\x1aUpdateOrganizationResponse\x12\x1d\n\nbilling_id\x18\x01 \x01(\tR\tbillingId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"[\n\x18\x43reateApplicationRequest\x12?\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32\x1d.billing.v1alpha1.ApplicationR\x0b\x61pplication\"Z\n\x19\x43reateApplicationResponse\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\">\n\x15GetApplicationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\"Y\n\x16GetApplicationResponse\x12?\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32\x1d.billing.v1alpha1.ApplicationR\x0b\x61pplication\"A\n\x18UpdateApplicationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\"Z\n\x19UpdateApplicationResponse\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"H\n\x13\x43reateMetricRequest\x12\x31\n\x06metric\x18\x01 \x01(\x0b\x32\x19.billing.v1alpha1.MetricsR\x06metric\"K\n\x14\x43reateMetricResponse\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"/\n\x10GetMetricRequest\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\"F\n\x11GetMetricResponse\x12\x31\n\x06metric\x18\x01 \x01(\x0b\x32\x19.billing.v1alpha1.MetricsR\x06metric\"2\n\x13UpdateMetricRequest\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\"K\n\x14UpdateMetricResponse\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xc1\x07\n\x0e\x42illingService\x12q\n\x12\x43reateOrganization\x12+.billing.v1alpha1.CreateOrganizationRequest\x1a,.billing.v1alpha1.CreateOrganizationResponse\"\x00\x12h\n\x0fGetOrganization\x12(.billing.v1alpha1.GetOrganizationRequest\x1a).billing.v1alpha1.GetOrganizationResponse\"\x00\x12q\n\x12UpdateOrganization\x12+.billing.v1alpha1.UpdateOrganizationRequest\x1a,.billing.v1alpha1.UpdateOrganizationResponse\"\x00\x12n\n\x11\x43reateApplication\x12*.billing.v1alpha1.CreateApplicationRequest\x1a+.billing.v1alpha1.CreateApplicationResponse\"\x00\x12\x65\n\x0eGetApplication\x12\'.billing.v1alpha1.GetApplicationRequest\x1a(.billing.v1alpha1.GetApplicationResponse\"\x00\x12n\n\x11UpdateApplication\x12*.billing.v1alpha1.UpdateApplicationRequest\x1a+.billing.v1alpha1.UpdateApplicationResponse\"\x00\x12_\n\x0c\x43reateMetric\x12%.billing.v1alpha1.CreateMetricRequest\x1a&.billing.v1alpha1.CreateMetricResponse\"\x00\x12V\n\tGetMetric\x12\".billing.v1alpha1.GetMetricRequest\x1a#.billing.v1alpha1.GetMetricResponse\"\x00\x12_\n\x0cUpdateMetric\x12%.billing.v1alpha1.UpdateMetricRequest\x1a&.billing.v1alpha1.UpdateMetricResponse\"\x00\x42\x37Z5github.com/cuemby/ccp-billing-service/billingv1alpha1b\x06proto3'
   ,
   dependencies=[billing_dot_v1alpha1_dot_billing__pb2.DESCRIPTOR,])
 
@@ -313,12 +313,12 @@ _GETAPPLICATIONREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='organization_id', full_name='billing.v1alpha1.GetApplicationRequest.organization_id', index=0,
+      name='application_id', full_name='billing.v1alpha1.GetApplicationRequest.application_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='applicationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -332,7 +332,7 @@ _GETAPPLICATIONREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=782,
-  serialized_end=846,
+  serialized_end=844,
 )
 
 
@@ -363,8 +363,8 @@ _GETAPPLICATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=848,
-  serialized_end=937,
+  serialized_start=846,
+  serialized_end=935,
 )
 
 
@@ -395,8 +395,8 @@ _UPDATEAPPLICATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=939,
-  serialized_end=1004,
+  serialized_start=937,
+  serialized_end=1002,
 )
 
 
@@ -434,8 +434,8 @@ _UPDATEAPPLICATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1006,
-  serialized_end=1096,
+  serialized_start=1004,
+  serialized_end=1094,
 )
 
 
@@ -466,8 +466,8 @@ _CREATEMETRICREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1098,
-  serialized_end=1170,
+  serialized_start=1096,
+  serialized_end=1168,
 )
 
 
@@ -505,8 +505,8 @@ _CREATEMETRICRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1172,
-  serialized_end=1247,
+  serialized_start=1170,
+  serialized_end=1245,
 )
 
 
@@ -537,8 +537,8 @@ _GETMETRICREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1249,
-  serialized_end=1296,
+  serialized_start=1247,
+  serialized_end=1294,
 )
 
 
@@ -569,8 +569,8 @@ _GETMETRICRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1298,
-  serialized_end=1368,
+  serialized_start=1296,
+  serialized_end=1366,
 )
 
 
@@ -601,8 +601,8 @@ _UPDATEMETRICREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1370,
-  serialized_end=1420,
+  serialized_start=1368,
+  serialized_end=1418,
 )
 
 
@@ -640,8 +640,8 @@ _UPDATEMETRICRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1422,
-  serialized_end=1497,
+  serialized_start=1420,
+  serialized_end=1495,
 )
 
 _CREATEORGANIZATIONREQUEST.fields_by_name['organization'].message_type = billing_dot_v1alpha1_dot_billing__pb2._ORGANIZATION
@@ -806,8 +806,8 @@ _BILLINGSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1500,
-  serialized_end=2461,
+  serialized_start=1498,
+  serialized_end=2459,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateOrganization',

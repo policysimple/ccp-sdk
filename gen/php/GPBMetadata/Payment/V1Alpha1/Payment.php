@@ -37,7 +37,7 @@ project_id (R	projectId%
 email (	Remail">
 PaymentList/
 items (2.payment.v1alpha1.PaymentRitemsBê
-io.cuemby.payment.v1alpha1BPaymentProtoPZ6github.com/cuemby/ccp-payment-service/payment/v1alpha1¢PPX™Payment.V1Alpha1 Payment\\V1Alpha1bproto3'
+io.cuemby.payment.v1alpha1BPaymentProtoPZ6github.com/cuemby/ccp-payment-service/payment/v1alpha1¢PPX™PPayment.V1Alpha1 PaymentV1Alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

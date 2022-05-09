@@ -1,13 +1,14 @@
 syntax = "proto3";
  
 package payment.v1alpha1;
-option csharp_namespace = "Payment.V1Alpha1";
+
+option csharp_namespace = "PPayment.V1Alpha1";
 option go_package = "github.com/cuemby/ccp-payment-service/payment/v1alpha1";
 option java_multiple_files = true;
 option java_outer_classname = "PaymentProto";
 option java_package = "io.cuemby.payment.v1alpha1";
 option objc_class_prefix = "PPX";
-option php_namespace = "Payment\\V1Alpha1";
+option php_namespace = "PaymentV1Alpha1";
 
 
 message Payment {
@@ -27,7 +28,7 @@ message User {
   string email = 2;
 }
   
-  message PaymentList {
-    repeated Payment items = 1;
-  }
+message PaymentList {
+  repeated Payment items = 1;
+}
   

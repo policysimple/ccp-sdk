@@ -52,8 +52,8 @@ public final class PaymentProto {
       "payment.v1alpha1.PaymentR\005itemsB\220\001\n\032io.c" +
       "uemby.payment.v1alpha1B\014PaymentProtoP\001Z6" +
       "github.com/cuemby/ccp-payment-service/pa" +
-      "yment/v1alpha1\242\002\003PPX\252\002\020Payment.V1Alpha1\312" +
-      "\002\020Payment\\V1Alpha1b\006proto3"
+      "yment/v1alpha1\242\002\003PPX\252\002\021PPayment.V1Alpha1" +
+      "\312\002\017PaymentV1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

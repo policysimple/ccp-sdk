@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetApplicationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string application_id = 1 [json_name = "applicationId"];</code>
      */
-    protected $organization_id = '';
+    protected $application_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class GetApplicationRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $organization_id
+     *     @type string $application_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class GetApplicationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string application_id = 1 [json_name = "applicationId"];</code>
      * @return string
      */
-    public function getOrganizationId()
+    public function getApplicationId()
     {
-        return $this->organization_id;
+        return $this->application_id;
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string application_id = 1 [json_name = "applicationId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setOrganizationId($var)
+    public function setApplicationId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->organization_id = $var;
+        $this->application_id = $var;
 
         return $this;
     }

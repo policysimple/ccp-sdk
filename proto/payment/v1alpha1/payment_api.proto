@@ -1,19 +1,18 @@
 syntax = "proto3";
 
-
 package payment.v1alpha1;
+
 option csharp_namespace = "Payment.V1Alpha1";
 option go_package = "github.com/cuemby/ccp-payment-service/payment/v1alpha1";
 option java_multiple_files = true;
 option java_outer_classname = "PaymentAPIProto";
-option java_package = "io.cuemby.pipelines.payment.v1alpha1";
+option java_package = "io.cuemby.payment.v1alpha1";
 option objc_class_prefix = "PPX";
 option php_namespace = "Payment\\V1Alpha1";
 
 
-
-//import "payment/v1alpha1/payment.proto";
-import "payment.proto";
+import "payment/v1alpha1/payment.proto";
+//import "payment.proto";
 
 service PaymentAPIService{
     rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse) {}

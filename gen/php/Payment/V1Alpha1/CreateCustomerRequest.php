@@ -28,7 +28,7 @@ class CreateCustomerRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1Alpha1\User $user
+     *     @type \PaymentV1Alpha1\User $user
      *     @type string $status
      * }
      */
@@ -39,7 +39,7 @@ class CreateCustomerRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
-     * @return \Payment\V1Alpha1\User|null
+     * @return \PaymentV1Alpha1\User|null
      */
     public function getUser()
     {
@@ -58,12 +58,12 @@ class CreateCustomerRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
-     * @param \Payment\V1Alpha1\User $var
+     * @param \PaymentV1Alpha1\User $var
      * @return $this
      */
     public function setUser($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1Alpha1\User::class);
+        GPBUtil::checkMessage($var, \PaymentV1Alpha1\User::class);
         $this->user = $var;
 
         return $this;
