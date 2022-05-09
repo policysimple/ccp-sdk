@@ -47,7 +47,7 @@ struct TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[10]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -56,6 +56,12 @@ struct TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 namespace payment {
 namespace v1alpha1 {
+class CreateCustomerRequest;
+struct CreateCustomerRequestDefaultTypeInternal;
+extern CreateCustomerRequestDefaultTypeInternal _CreateCustomerRequest_default_instance_;
+class CreateCustomerResponse;
+struct CreateCustomerResponseDefaultTypeInternal;
+extern CreateCustomerResponseDefaultTypeInternal _CreateCustomerResponse_default_instance_;
 class CreatePaymentRequest;
 struct CreatePaymentRequestDefaultTypeInternal;
 extern CreatePaymentRequestDefaultTypeInternal _CreatePaymentRequest_default_instance_;
@@ -89,6 +95,8 @@ extern UpdatePaymentResponseDefaultTypeInternal _UpdatePaymentResponse_default_i
 }  // namespace v1alpha1
 }  // namespace payment
 PROTOBUF_NAMESPACE_OPEN
+template<> ::payment::v1alpha1::CreateCustomerRequest* Arena::CreateMaybeMessage<::payment::v1alpha1::CreateCustomerRequest>(Arena*);
+template<> ::payment::v1alpha1::CreateCustomerResponse* Arena::CreateMaybeMessage<::payment::v1alpha1::CreateCustomerResponse>(Arena*);
 template<> ::payment::v1alpha1::CreatePaymentRequest* Arena::CreateMaybeMessage<::payment::v1alpha1::CreatePaymentRequest>(Arena*);
 template<> ::payment::v1alpha1::CreatePaymentResponse* Arena::CreateMaybeMessage<::payment::v1alpha1::CreatePaymentResponse>(Arena*);
 template<> ::payment::v1alpha1::DeletePaymentRequest* Arena::CreateMaybeMessage<::payment::v1alpha1::DeletePaymentRequest>(Arena*);
@@ -104,6 +112,330 @@ namespace payment {
 namespace v1alpha1 {
 
 // ===================================================================
+
+class CreateCustomerRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.CreateCustomerRequest) */ {
+ public:
+  inline CreateCustomerRequest() : CreateCustomerRequest(nullptr) {}
+  ~CreateCustomerRequest() override;
+  explicit constexpr CreateCustomerRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CreateCustomerRequest(const CreateCustomerRequest& from);
+  CreateCustomerRequest(CreateCustomerRequest&& from) noexcept
+    : CreateCustomerRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateCustomerRequest& operator=(const CreateCustomerRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateCustomerRequest& operator=(CreateCustomerRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreateCustomerRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreateCustomerRequest* internal_default_instance() {
+    return reinterpret_cast<const CreateCustomerRequest*>(
+               &_CreateCustomerRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(CreateCustomerRequest& a, CreateCustomerRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateCustomerRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateCustomerRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateCustomerRequest* New() const final {
+    return new CreateCustomerRequest();
+  }
+
+  CreateCustomerRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateCustomerRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CreateCustomerRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CreateCustomerRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateCustomerRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "payment.v1alpha1.CreateCustomerRequest";
+  }
+  protected:
+  explicit CreateCustomerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStatusFieldNumber = 2,
+    kUserFieldNumber = 1,
+  };
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // .payment.v1alpha1.User user = 1 [json_name = "user"];
+  bool has_user() const;
+  private:
+  bool _internal_has_user() const;
+  public:
+  void clear_user();
+  const ::payment::v1alpha1::User& user() const;
+  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::User* release_user();
+  ::payment::v1alpha1::User* mutable_user();
+  void set_allocated_user(::payment::v1alpha1::User* user);
+  private:
+  const ::payment::v1alpha1::User& _internal_user() const;
+  ::payment::v1alpha1::User* _internal_mutable_user();
+  public:
+  void unsafe_arena_set_allocated_user(
+      ::payment::v1alpha1::User* user);
+  ::payment::v1alpha1::User* unsafe_arena_release_user();
+
+  // @@protoc_insertion_point(class_scope:payment.v1alpha1.CreateCustomerRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::payment::v1alpha1::User* user_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreateCustomerResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.CreateCustomerResponse) */ {
+ public:
+  inline CreateCustomerResponse() : CreateCustomerResponse(nullptr) {}
+  ~CreateCustomerResponse() override;
+  explicit constexpr CreateCustomerResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CreateCustomerResponse(const CreateCustomerResponse& from);
+  CreateCustomerResponse(CreateCustomerResponse&& from) noexcept
+    : CreateCustomerResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateCustomerResponse& operator=(const CreateCustomerResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateCustomerResponse& operator=(CreateCustomerResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreateCustomerResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreateCustomerResponse* internal_default_instance() {
+    return reinterpret_cast<const CreateCustomerResponse*>(
+               &_CreateCustomerResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(CreateCustomerResponse& a, CreateCustomerResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateCustomerResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateCustomerResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateCustomerResponse* New() const final {
+    return new CreateCustomerResponse();
+  }
+
+  CreateCustomerResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateCustomerResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CreateCustomerResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CreateCustomerResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateCustomerResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "payment.v1alpha1.CreateCustomerResponse";
+  }
+  protected:
+  explicit CreateCustomerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStatusFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // string status = 1 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // @@protoc_insertion_point(class_scope:payment.v1alpha1.CreateCustomerResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
 
 class CreatePaymentRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.CreatePaymentRequest) */ {
@@ -149,7 +481,7 @@ class CreatePaymentRequest final :
                &_CreatePaymentRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   friend void swap(CreatePaymentRequest& a, CreatePaymentRequest& b) {
     a.Swap(&b);
@@ -313,7 +645,7 @@ class CreatePaymentResponse final :
                &_CreatePaymentResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(CreatePaymentResponse& a, CreatePaymentResponse& b) {
     a.Swap(&b);
@@ -477,7 +809,7 @@ class UpdatePaymentRequest final :
                &_UpdatePaymentRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(UpdatePaymentRequest& a, UpdatePaymentRequest& b) {
     a.Swap(&b);
@@ -641,7 +973,7 @@ class UpdatePaymentResponse final :
                &_UpdatePaymentResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(UpdatePaymentResponse& a, UpdatePaymentResponse& b) {
     a.Swap(&b);
@@ -805,7 +1137,7 @@ class DeletePaymentRequest final :
                &_DeletePaymentRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(DeletePaymentRequest& a, DeletePaymentRequest& b) {
     a.Swap(&b);
@@ -1057,7 +1389,7 @@ class DeletePaymentResponse final :
                &_DeletePaymentResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(DeletePaymentResponse& a, DeletePaymentResponse& b) {
     a.Swap(&b);
@@ -1201,7 +1533,7 @@ class GetPaymentRequest final :
                &_GetPaymentRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(GetPaymentRequest& a, GetPaymentRequest& b) {
     a.Swap(&b);
@@ -1345,7 +1677,7 @@ class GetPaymentResponse final :
                &_GetPaymentResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(GetPaymentResponse& a, GetPaymentResponse& b) {
     a.Swap(&b);
@@ -1509,7 +1841,7 @@ class ListPaymentRequest final :
                &_ListPaymentRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(ListPaymentRequest& a, ListPaymentRequest& b) {
     a.Swap(&b);
@@ -1691,7 +2023,7 @@ class ListPaymentResponse final :
                &_ListPaymentResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(ListPaymentResponse& a, ListPaymentResponse& b) {
     a.Swap(&b);
@@ -1818,6 +2150,238 @@ class ListPaymentResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// CreateCustomerRequest
+
+// .payment.v1alpha1.User user = 1 [json_name = "user"];
+inline bool CreateCustomerRequest::_internal_has_user() const {
+  return this != internal_default_instance() && user_ != nullptr;
+}
+inline bool CreateCustomerRequest::has_user() const {
+  return _internal_has_user();
+}
+inline const ::payment::v1alpha1::User& CreateCustomerRequest::_internal_user() const {
+  const ::payment::v1alpha1::User* p = user_;
+  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::User&>(
+      ::payment::v1alpha1::_User_default_instance_);
+}
+inline const ::payment::v1alpha1::User& CreateCustomerRequest::user() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.CreateCustomerRequest.user)
+  return _internal_user();
+}
+inline void CreateCustomerRequest::unsafe_arena_set_allocated_user(
+    ::payment::v1alpha1::User* user) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(user_);
+  }
+  user_ = user;
+  if (user) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.CreateCustomerRequest.user)
+}
+inline ::payment::v1alpha1::User* CreateCustomerRequest::release_user() {
+  
+  ::payment::v1alpha1::User* temp = user_;
+  user_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::payment::v1alpha1::User* CreateCustomerRequest::unsafe_arena_release_user() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.CreateCustomerRequest.user)
+  
+  ::payment::v1alpha1::User* temp = user_;
+  user_ = nullptr;
+  return temp;
+}
+inline ::payment::v1alpha1::User* CreateCustomerRequest::_internal_mutable_user() {
+  
+  if (user_ == nullptr) {
+    auto* p = CreateMaybeMessage<::payment::v1alpha1::User>(GetArenaForAllocation());
+    user_ = p;
+  }
+  return user_;
+}
+inline ::payment::v1alpha1::User* CreateCustomerRequest::mutable_user() {
+  ::payment::v1alpha1::User* _msg = _internal_mutable_user();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.CreateCustomerRequest.user)
+  return _msg;
+}
+inline void CreateCustomerRequest::set_allocated_user(::payment::v1alpha1::User* user) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(user_);
+  }
+  if (user) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(user));
+    if (message_arena != submessage_arena) {
+      user = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, user, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  user_ = user;
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CreateCustomerRequest.user)
+}
+
+// string status = 2 [json_name = "status"];
+inline void CreateCustomerRequest::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& CreateCustomerRequest::status() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.CreateCustomerRequest.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateCustomerRequest::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.CreateCustomerRequest.status)
+}
+inline std::string* CreateCustomerRequest::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.CreateCustomerRequest.status)
+  return _s;
+}
+inline const std::string& CreateCustomerRequest::_internal_status() const {
+  return status_.Get();
+}
+inline void CreateCustomerRequest::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateCustomerRequest::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateCustomerRequest::release_status() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.CreateCustomerRequest.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateCustomerRequest::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CreateCustomerRequest.status)
+}
+
+// -------------------------------------------------------------------
+
+// CreateCustomerResponse
+
+// string status = 1 [json_name = "status"];
+inline void CreateCustomerResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& CreateCustomerResponse::status() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.CreateCustomerResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateCustomerResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.CreateCustomerResponse.status)
+}
+inline std::string* CreateCustomerResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.CreateCustomerResponse.status)
+  return _s;
+}
+inline const std::string& CreateCustomerResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void CreateCustomerResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateCustomerResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateCustomerResponse::release_status() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.CreateCustomerResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateCustomerResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CreateCustomerResponse.status)
+}
+
+// string error = 2 [json_name = "error"];
+inline void CreateCustomerResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& CreateCustomerResponse::error() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.CreateCustomerResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateCustomerResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.CreateCustomerResponse.error)
+}
+inline std::string* CreateCustomerResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.CreateCustomerResponse.error)
+  return _s;
+}
+inline const std::string& CreateCustomerResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void CreateCustomerResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateCustomerResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateCustomerResponse::release_error() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.CreateCustomerResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateCustomerResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CreateCustomerResponse.error)
+}
+
+// -------------------------------------------------------------------
+
 // CreatePaymentRequest
 
 // .payment.v1alpha1.Payment payment = 1 [json_name = "payment"];
@@ -3185,6 +3749,10 @@ inline void ListPaymentResponse::set_allocated_status(std::string* status) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

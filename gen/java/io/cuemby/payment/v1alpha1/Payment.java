@@ -4,10 +4,6 @@
 package io.cuemby.payment.v1alpha1;
 
 /**
- * <pre>
- * Paymentoption go_package = "github.com/cuemby/ccp-payment-service/paymentv1alpha1";
- * </pre>
- *
  * Protobuf type {@code payment.v1alpha1.Payment}
  */
 public final class Payment extends
@@ -612,10 +608,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * Paymentoption go_package = "github.com/cuemby/ccp-payment-service/paymentv1alpha1";
-   * </pre>
-   *
    * Protobuf type {@code payment.v1alpha1.Payment}
    */
   public static final class Builder extends

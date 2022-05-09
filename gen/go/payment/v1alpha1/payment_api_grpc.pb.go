@@ -18,6 +18,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type PaymentAPIServiceClient interface {
+	CreateCustomer(ctx context.Context, in *CreateCustomerRequest, opts ...grpc.CallOption) (*CreateCustomerResponse, error)
 	GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error)
 	CreatePayment(ctx context.Context, in *CreatePaymentRequest, opts ...grpc.CallOption) (*CreatePaymentResponse, error)
 	UpdatePayment(ctx context.Context, in *UpdatePaymentRequest, opts ...grpc.CallOption) (*UpdatePaymentResponse, error)
@@ -31,6 +32,15 @@ type paymentAPIServiceClient struct {
 
 func NewPaymentAPIServiceClient(cc grpc.ClientConnInterface) PaymentAPIServiceClient {
 	return &paymentAPIServiceClient{cc}
+}
+
+func (c *paymentAPIServiceClient) CreateCustomer(ctx context.Context, in *CreateCustomerRequest, opts ...grpc.CallOption) (*CreateCustomerResponse, error) {
+	out := new(CreateCustomerResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/CreateCustomer", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *paymentAPIServiceClient) GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error) {
@@ -82,6 +92,7 @@ func (c *paymentAPIServiceClient) ListPayment(ctx context.Context, in *ListPayme
 // All implementations should embed UnimplementedPaymentAPIServiceServer
 // for forward compatibility
 type PaymentAPIServiceServer interface {
+	CreateCustomer(context.Context, *CreateCustomerRequest) (*CreateCustomerResponse, error)
 	GetPayment(context.Context, *GetPaymentRequest) (*GetPaymentResponse, error)
 	CreatePayment(context.Context, *CreatePaymentRequest) (*CreatePaymentResponse, error)
 	UpdatePayment(context.Context, *UpdatePaymentRequest) (*UpdatePaymentResponse, error)
@@ -93,6 +104,9 @@ type PaymentAPIServiceServer interface {
 type UnimplementedPaymentAPIServiceServer struct {
 }
 
+func (UnimplementedPaymentAPIServiceServer) CreateCustomer(context.Context, *CreateCustomerRequest) (*CreateCustomerResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCustomer not implemented")
+}
 func (UnimplementedPaymentAPIServiceServer) GetPayment(context.Context, *GetPaymentRequest) (*GetPaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPayment not implemented")
 }
@@ -118,6 +132,24 @@ type UnsafePaymentAPIServiceServer interface {
 
 func RegisterPaymentAPIServiceServer(s grpc.ServiceRegistrar, srv PaymentAPIServiceServer) {
 	s.RegisterService(&PaymentAPIService_ServiceDesc, srv)
+}
+
+func _PaymentAPIService_CreateCustomer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCustomerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).CreateCustomer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/CreateCustomer",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).CreateCustomer(ctx, req.(*CreateCustomerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _PaymentAPIService_GetPayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -217,6 +249,10 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "payment.v1alpha1.PaymentAPIService",
 	HandlerType: (*PaymentAPIServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateCustomer",
+			Handler:    _PaymentAPIService_CreateCustomer_Handler,
+		},
 		{
 			MethodName: "GetPayment",
 			Handler:    _PaymentAPIService_GetPayment_Handler,

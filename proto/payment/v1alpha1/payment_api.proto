@@ -1,26 +1,37 @@
 syntax = "proto3";
 
-
 package payment.v1alpha1;
+
 option csharp_namespace = "Payment.V1Alpha1";
-option go_package = "github.com/cuemby/ccp-sdk/gen/go/payment/v1alpha1";
+option go_package = "github.com/cuemby/ccp-payment-service/payment/v1alpha1";
 option java_multiple_files = true;
-option java_outer_classname = "Paymentproto";
+option java_outer_classname = "PaymentAPIProto";
 option java_package = "io.cuemby.payment.v1alpha1";
 option objc_class_prefix = "PPX";
 option php_namespace = "Payment\\V1Alpha1";
 
+
 import "payment/v1alpha1/payment.proto";
 //import "payment.proto";
-
 service PaymentAPIService{
+    rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse) {}
     rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {};
     rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {};
     rpc UpdatePayment(UpdatePaymentRequest) returns (UpdatePaymentResponse) {};
     rpc DeletePayment(DeletePaymentRequest) returns (DeletePaymentResponse) {};
-    rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {};
-  
+    rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {}; 
 }
+
+message CreateCustomerRequest {
+    payment.v1alpha1.User user = 1;
+    string status = 2;
+}
+
+message CreateCustomerResponse {
+    string status = 1;
+    string error = 2;
+}
+
 message CreatePaymentRequest {
     payment.v1alpha1.Payment payment = 1;
     string status = 2;

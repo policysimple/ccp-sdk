@@ -1638,7 +1638,7 @@ proto.billing.v1alpha1.GetApplicationRequest.prototype.toObject = function(opt_i
  */
 proto.billing.v1alpha1.GetApplicationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    applicationId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1677,7 +1677,7 @@ proto.billing.v1alpha1.GetApplicationRequest.deserializeBinaryFromReader = funct
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOrganizationId(value);
+      msg.setApplicationId(value);
       break;
     default:
       reader.skipField();
@@ -1708,7 +1708,7 @@ proto.billing.v1alpha1.GetApplicationRequest.prototype.serializeBinary = functio
  */
 proto.billing.v1alpha1.GetApplicationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrganizationId();
+  f = message.getApplicationId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1719,10 +1719,10 @@ proto.billing.v1alpha1.GetApplicationRequest.serializeBinaryToWriter = function(
 
 
 /**
- * optional string organization_id = 1;
+ * optional string application_id = 1;
  * @return {string}
  */
-proto.billing.v1alpha1.GetApplicationRequest.prototype.getOrganizationId = function() {
+proto.billing.v1alpha1.GetApplicationRequest.prototype.getApplicationId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1731,7 +1731,7 @@ proto.billing.v1alpha1.GetApplicationRequest.prototype.getOrganizationId = funct
  * @param {string} value
  * @return {!proto.billing.v1alpha1.GetApplicationRequest} returns this
  */
-proto.billing.v1alpha1.GetApplicationRequest.prototype.setOrganizationId = function(value) {
+proto.billing.v1alpha1.GetApplicationRequest.prototype.setApplicationId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

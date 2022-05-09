@@ -1,15 +1,15 @@
 syntax = "proto3";
  
 package payment.v1alpha1;
-option csharp_namespace = "Payment.V1Alpha1";
-option go_package = "github.com/cuemby/ccp-sdk/gen/go/payment/v1alpha1";
+
+option csharp_namespace = "PPayment.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-payment-service/payment/v1alpha1";
 option java_multiple_files = true;
 option java_outer_classname = "PaymentProto";
 option java_package = "io.cuemby.payment.v1alpha1";
 option objc_class_prefix = "PPX";
-option php_namespace = "Payment\\V1Alpha1";
+option php_namespace = "PaymentV1Alpha1";
 
-// Paymentoption go_package = "github.com/cuemby/ccp-payment-service/paymentv1alpha1";
 message Payment {
     string id = 1;
     string card_holder_name = 2;
@@ -20,10 +20,14 @@ message Payment {
     uint32 organization_id = 7;
     uint32 project_id = 8;
     string application_id = 9;
+  }
 
-  }
+message User {
+  string name = 1;
+  string email = 2;
+}
   
-  message PaymentList {
-    repeated Payment items = 1;
-  }
+message PaymentList {
+  repeated Payment items = 1;
+}
   
