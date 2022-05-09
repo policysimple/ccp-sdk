@@ -17,7 +17,7 @@ class RegistryQuotasApi
         \GPBMetadata\Artifacts\Quotas\V1Alpha1\RegistryQuotas::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ö
+™
 3artifacts/quotas/v1alpha1/registry_quotas_api.protoartifacts.quotas.v1alpha1"è
 !ListQuotaArtifactRegistryResponseR
 quotas_registry (2).artifacts.quotas.v1alpha1.QuotasRegistryRquotasRegistry
@@ -36,26 +36,27 @@ project_id (R	projectId\'
 page (Rpage
 	page_size (RpageSize
 sort (	Rsort!
-reference_id (	RreferenceId"û
- ListQuotaArtifactRegistryRequest\'
-organization_id (RorganizationId
+reference_id (	RreferenceId"Æ
+ ListQuotaArtifactRegistryRequest
+id (	Rid\'
+organization_id (RorganizationId
 
-project_id (R	projectId\'
-repository_name (	RrepositoryName
-query (	Rquery
-page (Rpage
-	page_size (RpageSize
-sort (	Rsort!
-reference_id (	RreferenceId!
-project_name	 (	RprojectName
-with_tag
- (RwithTag
+project_id (R	projectId\'
+repository_name (	RrepositoryName
+query (	Rquery
+page (Rpage
+	page_size (RpageSize
+sort (	Rsort!
+reference_id	 (	RreferenceId!
+project_name
+ (	RprojectName
+with_tag (RwithTag
 
-with_label (R	withLabel,
-with_scan_overview (RwithScanOverview%
-with_signature (RwithSignature2
-with_immutable_status (RwithImmutableStatus%
-with_accessory (RwithAccessory"à
+with_label (R	withLabel,
+with_scan_overview (RwithScanOverview%
+with_signature (RwithSignature2
+with_immutable_status (RwithImmutableStatus%
+with_accessory (RwithAccessory"à
 ListQuotasRegistryResponseR
 quotas_registry (2).artifacts.quotas.v1alpha1.QuotasRegistryRquotasRegistry
 status (	Rstatus2æ

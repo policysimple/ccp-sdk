@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#io.cuemby.artifacts.quotas.v1alpha1B\026RegistryQuotasProtoAPIP\001Z:github.com/cuemby/ccp-sdk/gen/go/artifacts/quotas/v1alpha1\242\002\003PPX\252\002\031Artifacts.Quotas.V1Alpha1\312\002\031Artifacts\\Quotas\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3artifacts/quotas/v1alpha1/registry_quotas_api.proto\x12\x19\x61rtifacts.quotas.v1alpha1\x1a/artifacts/quotas/v1alpha1/registry_quotas.proto\"\x8f\x01\n!ListQuotaArtifactRegistryResponse\x12R\n\x0fquotas_registry\x18\x01 \x03(\x0b\x32).artifacts.quotas.v1alpha1.QuotasRegistryR\x0equotasRegistry\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"n\n\x1aUpdateQuotaRegistryRequest\x12P\n\x0equota_registry\x18\x01 \x01(\x0b\x32).artifacts.quotas.v1alpha1.QuotasRegistryR\rquotaRegistry\"\x87\x01\n\x1bUpdateQuotaRegistryResponse\x12P\n\x0equota_registry\x18\x01 \x01(\x0b\x32).artifacts.quotas.v1alpha1.QuotasRegistryR\rquotaRegistry\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\x8a\x02\n\x19ListQuotasRegistryRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\x12\'\n\x0frepository_name\x18\x03 \x01(\tR\x0erepositoryName\x12\x14\n\x05query\x18\x04 \x01(\tR\x05query\x12\x12\n\x04page\x18\x05 \x01(\rR\x04page\x12\x1b\n\tpage_size\x18\x06 \x01(\rR\x08pageSize\x12\x12\n\x04sort\x18\x07 \x01(\tR\x04sort\x12!\n\x0creference_id\x18\x08 \x01(\tR\x0breferenceId\"\x9e\x04\n ListQuotaArtifactRegistryRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\x12\'\n\x0frepository_name\x18\x03 \x01(\tR\x0erepositoryName\x12\x14\n\x05query\x18\x04 \x01(\tR\x05query\x12\x12\n\x04page\x18\x05 \x01(\rR\x04page\x12\x1b\n\tpage_size\x18\x06 \x01(\rR\x08pageSize\x12\x12\n\x04sort\x18\x07 \x01(\tR\x04sort\x12!\n\x0creference_id\x18\x08 \x01(\tR\x0breferenceId\x12!\n\x0cproject_name\x18\t \x01(\tR\x0bprojectName\x12\x19\n\x08with_tag\x18\n \x01(\x08R\x07withTag\x12\x1d\n\nwith_label\x18\x0b \x01(\x08R\twithLabel\x12,\n\x12with_scan_overview\x18\x0c \x01(\x08R\x10withScanOverview\x12%\n\x0ewith_signature\x18\r \x01(\x08R\rwithSignature\x12\x32\n\x15with_immutable_status\x18\x0e \x01(\x08R\x13withImmutableStatus\x12%\n\x0ewith_accessory\x18\x0f \x01(\x08R\rwithAccessory\"\x88\x01\n\x1aListQuotasRegistryResponse\x12R\n\x0fquotas_registry\x18\x01 \x03(\x0b\x32).artifacts.quotas.v1alpha1.QuotasRegistryR\x0equotasRegistry\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xbe\x03\n\x18RegistryQuotasAPIService\x12\x81\x01\n\x12ListQuotasRegistry\x12\x34.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest\x1a\x35.artifacts.quotas.v1alpha1.ListQuotasRegistryResponse\x12\x84\x01\n\x13UpdateQuotaRegistry\x12\x35.artifacts.quotas.v1alpha1.UpdateQuotaRegistryRequest\x1a\x36.artifacts.quotas.v1alpha1.UpdateQuotaRegistryResponse\x12\x96\x01\n\x19ListQuotaArtifactRegistry\x12;.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest\x1a<.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponseB\xb9\x01\n#io.cuemby.artifacts.quotas.v1alpha1B\x16RegistryQuotasProtoAPIP\x01Z:github.com/cuemby/ccp-sdk/gen/go/artifacts/quotas/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19\x41rtifacts.Quotas.V1Alpha1\xca\x02\x19\x41rtifacts\\Quotas\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n3artifacts/quotas/v1alpha1/registry_quotas_api.proto\x12\x19\x61rtifacts.quotas.v1alpha1\x1a/artifacts/quotas/v1alpha1/registry_quotas.proto\"\x8f\x01\n!ListQuotaArtifactRegistryResponse\x12R\n\x0fquotas_registry\x18\x01 \x03(\x0b\x32).artifacts.quotas.v1alpha1.QuotasRegistryR\x0equotasRegistry\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"n\n\x1aUpdateQuotaRegistryRequest\x12P\n\x0equota_registry\x18\x01 \x01(\x0b\x32).artifacts.quotas.v1alpha1.QuotasRegistryR\rquotaRegistry\"\x87\x01\n\x1bUpdateQuotaRegistryResponse\x12P\n\x0equota_registry\x18\x01 \x01(\x0b\x32).artifacts.quotas.v1alpha1.QuotasRegistryR\rquotaRegistry\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\x8a\x02\n\x19ListQuotasRegistryRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\x12\'\n\x0frepository_name\x18\x03 \x01(\tR\x0erepositoryName\x12\x14\n\x05query\x18\x04 \x01(\tR\x05query\x12\x12\n\x04page\x18\x05 \x01(\rR\x04page\x12\x1b\n\tpage_size\x18\x06 \x01(\rR\x08pageSize\x12\x12\n\x04sort\x18\x07 \x01(\tR\x04sort\x12!\n\x0creference_id\x18\x08 \x01(\tR\x0breferenceId\"\xae\x04\n ListQuotaArtifactRegistryRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12\'\n\x0frepository_name\x18\x04 \x01(\tR\x0erepositoryName\x12\x14\n\x05query\x18\x05 \x01(\tR\x05query\x12\x12\n\x04page\x18\x06 \x01(\rR\x04page\x12\x1b\n\tpage_size\x18\x07 \x01(\rR\x08pageSize\x12\x12\n\x04sort\x18\x08 \x01(\tR\x04sort\x12!\n\x0creference_id\x18\t \x01(\tR\x0breferenceId\x12!\n\x0cproject_name\x18\n \x01(\tR\x0bprojectName\x12\x19\n\x08with_tag\x18\x0b \x01(\x08R\x07withTag\x12\x1d\n\nwith_label\x18\x0c \x01(\x08R\twithLabel\x12,\n\x12with_scan_overview\x18\r \x01(\x08R\x10withScanOverview\x12%\n\x0ewith_signature\x18\x0e \x01(\x08R\rwithSignature\x12\x32\n\x15with_immutable_status\x18\x0f \x01(\x08R\x13withImmutableStatus\x12%\n\x0ewith_accessory\x18\x10 \x01(\x08R\rwithAccessory\"\x88\x01\n\x1aListQuotasRegistryResponse\x12R\n\x0fquotas_registry\x18\x01 \x03(\x0b\x32).artifacts.quotas.v1alpha1.QuotasRegistryR\x0equotasRegistry\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xbe\x03\n\x18RegistryQuotasAPIService\x12\x81\x01\n\x12ListQuotasRegistry\x12\x34.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest\x1a\x35.artifacts.quotas.v1alpha1.ListQuotasRegistryResponse\x12\x84\x01\n\x13UpdateQuotaRegistry\x12\x35.artifacts.quotas.v1alpha1.UpdateQuotaRegistryRequest\x1a\x36.artifacts.quotas.v1alpha1.UpdateQuotaRegistryResponse\x12\x96\x01\n\x19ListQuotaArtifactRegistry\x12;.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest\x1a<.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryResponseB\xb9\x01\n#io.cuemby.artifacts.quotas.v1alpha1B\x16RegistryQuotasProtoAPIP\x01Z:github.com/cuemby/ccp-sdk/gen/go/artifacts/quotas/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19\x41rtifacts.Quotas.V1Alpha1\xca\x02\x19\x41rtifacts\\Quotas\\V1Alpha1b\x06proto3'
   ,
   dependencies=[artifacts_dot_quotas_dot_v1alpha1_dot_registry__quotas__pb2.DESCRIPTOR,])
 
@@ -227,106 +227,113 @@ _LISTQUOTAARTIFACTREGISTRYREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='organization_id', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.organization_id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
+      name='id', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='organization_id', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.organization_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='project_id', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.project_id', index=1,
-      number=2, type=13, cpp_type=3, label=1,
+      name='project_id', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.project_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='projectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='repository_name', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.repository_name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
+      name='repository_name', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.repository_name', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='repositoryName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='query', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.query', index=3,
-      number=4, type=9, cpp_type=9, label=1,
+      name='query', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.query', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='query', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='page', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.page', index=4,
-      number=5, type=13, cpp_type=3, label=1,
+      name='page', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.page', index=5,
+      number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='page', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='page_size', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.page_size', index=5,
-      number=6, type=13, cpp_type=3, label=1,
+      name='page_size', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.page_size', index=6,
+      number=7, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='pageSize', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sort', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.sort', index=6,
-      number=7, type=9, cpp_type=9, label=1,
+      name='sort', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.sort', index=7,
+      number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='sort', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reference_id', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.reference_id', index=7,
-      number=8, type=9, cpp_type=9, label=1,
+      name='reference_id', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.reference_id', index=8,
+      number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='referenceId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='project_name', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.project_name', index=8,
-      number=9, type=9, cpp_type=9, label=1,
+      name='project_name', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.project_name', index=9,
+      number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='projectName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='with_tag', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_tag', index=9,
-      number=10, type=8, cpp_type=7, label=1,
+      name='with_tag', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_tag', index=10,
+      number=11, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='withTag', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='with_label', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_label', index=10,
-      number=11, type=8, cpp_type=7, label=1,
+      name='with_label', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_label', index=11,
+      number=12, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='withLabel', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='with_scan_overview', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_scan_overview', index=11,
-      number=12, type=8, cpp_type=7, label=1,
+      name='with_scan_overview', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_scan_overview', index=12,
+      number=13, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='withScanOverview', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='with_signature', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_signature', index=12,
-      number=13, type=8, cpp_type=7, label=1,
+      name='with_signature', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_signature', index=13,
+      number=14, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='withSignature', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='with_immutable_status', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_immutable_status', index=13,
-      number=14, type=8, cpp_type=7, label=1,
+      name='with_immutable_status', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_immutable_status', index=14,
+      number=15, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='withImmutableStatus', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='with_accessory', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_accessory', index=14,
-      number=15, type=8, cpp_type=7, label=1,
+      name='with_accessory', full_name='artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.with_accessory', index=15,
+      number=16, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -344,7 +351,7 @@ _LISTQUOTAARTIFACTREGISTRYREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=797,
-  serialized_end=1339,
+  serialized_end=1355,
 )
 
 
@@ -382,8 +389,8 @@ _LISTQUOTASREGISTRYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1342,
-  serialized_end=1478,
+  serialized_start=1358,
+  serialized_end=1494,
 )
 
 _LISTQUOTAARTIFACTREGISTRYRESPONSE.fields_by_name['quotas_registry'].message_type = artifacts_dot_quotas_dot_v1alpha1_dot_registry__quotas__pb2._QUOTASREGISTRY
@@ -450,8 +457,8 @@ _REGISTRYQUOTASAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1481,
-  serialized_end=1927,
+  serialized_start=1497,
+  serialized_end=1943,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListQuotasRegistry',

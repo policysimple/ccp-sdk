@@ -14,63 +14,67 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     */
+    protected $id = '';
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
      */
     protected $organization_id = 0;
     /**
-     * Generated from protobuf field <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
      */
     protected $project_id = 0;
     /**
-     * Generated from protobuf field <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+     * Generated from protobuf field <code>string repository_name = 4 [json_name = "repositoryName"];</code>
      */
     protected $repository_name = '';
     /**
-     * Generated from protobuf field <code>string query = 4 [json_name = "query"];</code>
+     * Generated from protobuf field <code>string query = 5 [json_name = "query"];</code>
      */
     protected $query = '';
     /**
-     * Generated from protobuf field <code>uint32 page = 5 [json_name = "page"];</code>
+     * Generated from protobuf field <code>uint32 page = 6 [json_name = "page"];</code>
      */
     protected $page = 0;
     /**
-     * Generated from protobuf field <code>uint32 page_size = 6 [json_name = "pageSize"];</code>
+     * Generated from protobuf field <code>uint32 page_size = 7 [json_name = "pageSize"];</code>
      */
     protected $page_size = 0;
     /**
-     * Generated from protobuf field <code>string sort = 7 [json_name = "sort"];</code>
+     * Generated from protobuf field <code>string sort = 8 [json_name = "sort"];</code>
      */
     protected $sort = '';
     /**
-     * Generated from protobuf field <code>string reference_id = 8 [json_name = "referenceId"];</code>
+     * Generated from protobuf field <code>string reference_id = 9 [json_name = "referenceId"];</code>
      */
     protected $reference_id = '';
     /**
-     * Generated from protobuf field <code>string project_name = 9 [json_name = "projectName"];</code>
+     * Generated from protobuf field <code>string project_name = 10 [json_name = "projectName"];</code>
      */
     protected $project_name = '';
     /**
-     * Generated from protobuf field <code>bool with_tag = 10 [json_name = "withTag"];</code>
+     * Generated from protobuf field <code>bool with_tag = 11 [json_name = "withTag"];</code>
      */
     protected $with_tag = false;
     /**
-     * Generated from protobuf field <code>bool with_label = 11 [json_name = "withLabel"];</code>
+     * Generated from protobuf field <code>bool with_label = 12 [json_name = "withLabel"];</code>
      */
     protected $with_label = false;
     /**
-     * Generated from protobuf field <code>bool with_scan_overview = 12 [json_name = "withScanOverview"];</code>
+     * Generated from protobuf field <code>bool with_scan_overview = 13 [json_name = "withScanOverview"];</code>
      */
     protected $with_scan_overview = false;
     /**
-     * Generated from protobuf field <code>bool with_signature = 13 [json_name = "withSignature"];</code>
+     * Generated from protobuf field <code>bool with_signature = 14 [json_name = "withSignature"];</code>
      */
     protected $with_signature = false;
     /**
-     * Generated from protobuf field <code>bool with_immutable_status = 14 [json_name = "withImmutableStatus"];</code>
+     * Generated from protobuf field <code>bool with_immutable_status = 15 [json_name = "withImmutableStatus"];</code>
      */
     protected $with_immutable_status = false;
     /**
-     * Generated from protobuf field <code>bool with_accessory = 15 [json_name = "withAccessory"];</code>
+     * Generated from protobuf field <code>bool with_accessory = 16 [json_name = "withAccessory"];</code>
      */
     protected $with_accessory = false;
 
@@ -80,6 +84,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $id
      *     @type int $organization_id
      *     @type int $project_id
      *     @type string $repository_name
@@ -103,7 +108,29 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
      * @return int
      */
     public function getOrganizationId()
@@ -112,7 +139,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
      * @param int $var
      * @return $this
      */
@@ -125,7 +152,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
      * @return int
      */
     public function getProjectId()
@@ -134,7 +161,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
      * @param int $var
      * @return $this
      */
@@ -147,7 +174,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+     * Generated from protobuf field <code>string repository_name = 4 [json_name = "repositoryName"];</code>
      * @return string
      */
     public function getRepositoryName()
@@ -156,7 +183,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+     * Generated from protobuf field <code>string repository_name = 4 [json_name = "repositoryName"];</code>
      * @param string $var
      * @return $this
      */
@@ -169,7 +196,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string query = 4 [json_name = "query"];</code>
+     * Generated from protobuf field <code>string query = 5 [json_name = "query"];</code>
      * @return string
      */
     public function getQuery()
@@ -178,7 +205,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string query = 4 [json_name = "query"];</code>
+     * Generated from protobuf field <code>string query = 5 [json_name = "query"];</code>
      * @param string $var
      * @return $this
      */
@@ -191,7 +218,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 page = 5 [json_name = "page"];</code>
+     * Generated from protobuf field <code>uint32 page = 6 [json_name = "page"];</code>
      * @return int
      */
     public function getPage()
@@ -200,7 +227,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 page = 5 [json_name = "page"];</code>
+     * Generated from protobuf field <code>uint32 page = 6 [json_name = "page"];</code>
      * @param int $var
      * @return $this
      */
@@ -213,7 +240,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 page_size = 6 [json_name = "pageSize"];</code>
+     * Generated from protobuf field <code>uint32 page_size = 7 [json_name = "pageSize"];</code>
      * @return int
      */
     public function getPageSize()
@@ -222,7 +249,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 page_size = 6 [json_name = "pageSize"];</code>
+     * Generated from protobuf field <code>uint32 page_size = 7 [json_name = "pageSize"];</code>
      * @param int $var
      * @return $this
      */
@@ -235,7 +262,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string sort = 7 [json_name = "sort"];</code>
+     * Generated from protobuf field <code>string sort = 8 [json_name = "sort"];</code>
      * @return string
      */
     public function getSort()
@@ -244,7 +271,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string sort = 7 [json_name = "sort"];</code>
+     * Generated from protobuf field <code>string sort = 8 [json_name = "sort"];</code>
      * @param string $var
      * @return $this
      */
@@ -257,7 +284,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string reference_id = 8 [json_name = "referenceId"];</code>
+     * Generated from protobuf field <code>string reference_id = 9 [json_name = "referenceId"];</code>
      * @return string
      */
     public function getReferenceId()
@@ -266,7 +293,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string reference_id = 8 [json_name = "referenceId"];</code>
+     * Generated from protobuf field <code>string reference_id = 9 [json_name = "referenceId"];</code>
      * @param string $var
      * @return $this
      */
@@ -279,7 +306,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_name = 9 [json_name = "projectName"];</code>
+     * Generated from protobuf field <code>string project_name = 10 [json_name = "projectName"];</code>
      * @return string
      */
     public function getProjectName()
@@ -288,7 +315,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_name = 9 [json_name = "projectName"];</code>
+     * Generated from protobuf field <code>string project_name = 10 [json_name = "projectName"];</code>
      * @param string $var
      * @return $this
      */
@@ -301,7 +328,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool with_tag = 10 [json_name = "withTag"];</code>
+     * Generated from protobuf field <code>bool with_tag = 11 [json_name = "withTag"];</code>
      * @return bool
      */
     public function getWithTag()
@@ -310,7 +337,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool with_tag = 10 [json_name = "withTag"];</code>
+     * Generated from protobuf field <code>bool with_tag = 11 [json_name = "withTag"];</code>
      * @param bool $var
      * @return $this
      */
@@ -323,7 +350,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool with_label = 11 [json_name = "withLabel"];</code>
+     * Generated from protobuf field <code>bool with_label = 12 [json_name = "withLabel"];</code>
      * @return bool
      */
     public function getWithLabel()
@@ -332,7 +359,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool with_label = 11 [json_name = "withLabel"];</code>
+     * Generated from protobuf field <code>bool with_label = 12 [json_name = "withLabel"];</code>
      * @param bool $var
      * @return $this
      */
@@ -345,7 +372,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool with_scan_overview = 12 [json_name = "withScanOverview"];</code>
+     * Generated from protobuf field <code>bool with_scan_overview = 13 [json_name = "withScanOverview"];</code>
      * @return bool
      */
     public function getWithScanOverview()
@@ -354,7 +381,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool with_scan_overview = 12 [json_name = "withScanOverview"];</code>
+     * Generated from protobuf field <code>bool with_scan_overview = 13 [json_name = "withScanOverview"];</code>
      * @param bool $var
      * @return $this
      */
@@ -367,7 +394,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool with_signature = 13 [json_name = "withSignature"];</code>
+     * Generated from protobuf field <code>bool with_signature = 14 [json_name = "withSignature"];</code>
      * @return bool
      */
     public function getWithSignature()
@@ -376,7 +403,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool with_signature = 13 [json_name = "withSignature"];</code>
+     * Generated from protobuf field <code>bool with_signature = 14 [json_name = "withSignature"];</code>
      * @param bool $var
      * @return $this
      */
@@ -389,7 +416,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool with_immutable_status = 14 [json_name = "withImmutableStatus"];</code>
+     * Generated from protobuf field <code>bool with_immutable_status = 15 [json_name = "withImmutableStatus"];</code>
      * @return bool
      */
     public function getWithImmutableStatus()
@@ -398,7 +425,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool with_immutable_status = 14 [json_name = "withImmutableStatus"];</code>
+     * Generated from protobuf field <code>bool with_immutable_status = 15 [json_name = "withImmutableStatus"];</code>
      * @param bool $var
      * @return $this
      */
@@ -411,7 +438,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool with_accessory = 15 [json_name = "withAccessory"];</code>
+     * Generated from protobuf field <code>bool with_accessory = 16 [json_name = "withAccessory"];</code>
      * @return bool
      */
     public function getWithAccessory()
@@ -420,7 +447,7 @@ class ListQuotaArtifactRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool with_accessory = 15 [json_name = "withAccessory"];</code>
+     * Generated from protobuf field <code>bool with_accessory = 16 [json_name = "withAccessory"];</code>
      * @param bool $var
      * @return $this
      */
