@@ -20,11 +20,6 @@ public final class PaymentProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_payment_v1alpha1_Payment_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_payment_v1alpha1_User_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_payment_v1alpha1_User_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_payment_v1alpha1_PaymentList_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -46,14 +41,13 @@ public final class PaymentProto {
       "(\005R\tcvvNumber\022\037\n\013expiry_date\030\006 \001(\tR\nexpi" +
       "ryDate\022\'\n\017organization_id\030\007 \001(\rR\016organiz" +
       "ationId\022\035\n\nproject_id\030\010 \001(\rR\tprojectId\022%" +
-      "\n\016application_id\030\t \001(\tR\rapplicationId\"0\n" +
-      "\004User\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005email\030\002 \001(\t" +
-      "R\005email\">\n\013PaymentList\022/\n\005items\030\001 \003(\0132\031." +
-      "payment.v1alpha1.PaymentR\005itemsB\220\001\n\032io.c" +
-      "uemby.payment.v1alpha1B\014PaymentProtoP\001Z6" +
-      "github.com/cuemby/ccp-payment-service/pa" +
-      "yment/v1alpha1\242\002\003PPX\252\002\021PPayment.V1Alpha1" +
-      "\312\002\017PaymentV1Alpha1b\006proto3"
+      "\n\016application_id\030\t \001(\tR\rapplicationId\">\n" +
+      "\013PaymentList\022/\n\005items\030\001 \003(\0132\031.payment.v1" +
+      "alpha1.PaymentR\005itemsB\213\001\n\032io.cuemby.paym" +
+      "ent.v1alpha1B\014PaymentProtoP\001Z1github.com" +
+      "/cuemby/ccp-sdk/gen/go/payment/v1alpha1\242" +
+      "\002\003PPX\252\002\020Payment.V1Alpha1\312\002\020Payment\\V1Alp" +
+      "ha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -65,14 +59,8 @@ public final class PaymentProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Payment_descriptor,
         new java.lang.String[] { "Id", "CardHolderName", "CardType", "CardNumber", "CvvNumber", "ExpiryDate", "OrganizationId", "ProjectId", "ApplicationId", });
-    internal_static_payment_v1alpha1_User_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_payment_v1alpha1_User_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_payment_v1alpha1_User_descriptor,
-        new java.lang.String[] { "Name", "Email", });
     internal_static_payment_v1alpha1_PaymentList_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_payment_v1alpha1_PaymentList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_PaymentList_descriptor,
