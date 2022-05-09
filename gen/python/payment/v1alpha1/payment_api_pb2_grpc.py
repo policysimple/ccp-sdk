@@ -14,6 +14,11 @@ class PaymentAPIServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
+    self.CreateCustomer = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/CreateCustomer',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCustomerRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCustomerResponse.FromString,
+        )
     self.GetPayment = channel.unary_unary(
         '/payment.v1alpha1.PaymentAPIService/GetPayment',
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetPaymentRequest.SerializeToString,
@@ -44,6 +49,13 @@ class PaymentAPIServiceStub(object):
 class PaymentAPIServiceServicer(object):
   # missing associated documentation comment in .proto file
   pass
+
+  def CreateCustomer(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
 
   def GetPayment(self, request, context):
     # missing associated documentation comment in .proto file
@@ -83,6 +95,11 @@ class PaymentAPIServiceServicer(object):
 
 def add_PaymentAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
+      'CreateCustomer': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateCustomer,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCustomerRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCustomerResponse.SerializeToString,
+      ),
       'GetPayment': grpc.unary_unary_rpc_method_handler(
           servicer.GetPayment,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetPaymentRequest.FromString,

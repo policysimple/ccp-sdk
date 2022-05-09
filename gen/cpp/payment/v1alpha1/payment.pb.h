@@ -46,7 +46,7 @@ struct TableStruct_payment_2fv1alpha1_2fpayment_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -61,11 +61,15 @@ extern PaymentDefaultTypeInternal _Payment_default_instance_;
 class PaymentList;
 struct PaymentListDefaultTypeInternal;
 extern PaymentListDefaultTypeInternal _PaymentList_default_instance_;
+class User;
+struct UserDefaultTypeInternal;
+extern UserDefaultTypeInternal _User_default_instance_;
 }  // namespace v1alpha1
 }  // namespace payment
 PROTOBUF_NAMESPACE_OPEN
 template<> ::payment::v1alpha1::Payment* Arena::CreateMaybeMessage<::payment::v1alpha1::Payment>(Arena*);
 template<> ::payment::v1alpha1::PaymentList* Arena::CreateMaybeMessage<::payment::v1alpha1::PaymentList>(Arena*);
+template<> ::payment::v1alpha1::User* Arena::CreateMaybeMessage<::payment::v1alpha1::User>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace payment {
 namespace v1alpha1 {
@@ -324,6 +328,166 @@ class Payment final :
 };
 // -------------------------------------------------------------------
 
+class User final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.User) */ {
+ public:
+  inline User() : User(nullptr) {}
+  ~User() override;
+  explicit constexpr User(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  User(const User& from);
+  User(User&& from) noexcept
+    : User() {
+    *this = ::std::move(from);
+  }
+
+  inline User& operator=(const User& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline User& operator=(User&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const User& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const User* internal_default_instance() {
+    return reinterpret_cast<const User*>(
+               &_User_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(User& a, User& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(User* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(User* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline User* New() const final {
+    return new User();
+  }
+
+  User* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<User>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const User& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const User& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(User* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "payment.v1alpha1.User";
+  }
+  protected:
+  explicit User(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameFieldNumber = 1,
+    kEmailFieldNumber = 2,
+  };
+  // string name = 1 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string email = 2 [json_name = "email"];
+  void clear_email();
+  const std::string& email() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_email(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_email();
+  PROTOBUF_MUST_USE_RESULT std::string* release_email();
+  void set_allocated_email(std::string* email);
+  private:
+  const std::string& _internal_email() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_email(const std::string& value);
+  std::string* _internal_mutable_email();
+  public:
+
+  // @@protoc_insertion_point(class_scope:payment.v1alpha1.User)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_2eproto;
+};
+// -------------------------------------------------------------------
+
 class PaymentList final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.PaymentList) */ {
  public:
@@ -368,7 +532,7 @@ class PaymentList final :
                &_PaymentList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(PaymentList& a, PaymentList& b) {
     a.Swap(&b);
@@ -793,6 +957,102 @@ inline void Payment::set_allocated_application_id(std::string* application_id) {
 
 // -------------------------------------------------------------------
 
+// User
+
+// string name = 1 [json_name = "name"];
+inline void User::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& User::name() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.User.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void User::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.User.name)
+}
+inline std::string* User::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.User.name)
+  return _s;
+}
+inline const std::string& User::_internal_name() const {
+  return name_.Get();
+}
+inline void User::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* User::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* User::release_name() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.User.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void User::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.User.name)
+}
+
+// string email = 2 [json_name = "email"];
+inline void User::clear_email() {
+  email_.ClearToEmpty();
+}
+inline const std::string& User::email() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.User.email)
+  return _internal_email();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void User::set_email(ArgT0&& arg0, ArgT... args) {
+ 
+ email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.User.email)
+}
+inline std::string* User::mutable_email() {
+  std::string* _s = _internal_mutable_email();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.User.email)
+  return _s;
+}
+inline const std::string& User::_internal_email() const {
+  return email_.Get();
+}
+inline void User::_internal_set_email(const std::string& value) {
+  
+  email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* User::_internal_mutable_email() {
+  
+  return email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* User::release_email() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.User.email)
+  return email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void User::set_allocated_email(std::string* email) {
+  if (email != nullptr) {
+    
+  } else {
+    
+  }
+  email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.User.email)
+}
+
+// -------------------------------------------------------------------
+
 // PaymentList
 
 // repeated .payment.v1alpha1.Payment items = 1 [json_name = "items"];
@@ -838,6 +1098,8 @@ PaymentList::items() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

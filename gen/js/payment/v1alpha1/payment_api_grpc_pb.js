@@ -5,6 +5,28 @@ var grpc = require('grpc');
 var payment_v1alpha1_payment_api_pb = require('../../payment/v1alpha1/payment_api_pb.js');
 var payment_v1alpha1_payment_pb = require('../../payment/v1alpha1/payment_pb.js');
 
+function serialize_payment_v1alpha1_CreateCustomerRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.CreateCustomerRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.CreateCustomerRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_CreateCustomerRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.CreateCustomerRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_CreateCustomerResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.CreateCustomerResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.CreateCustomerResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_CreateCustomerResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.CreateCustomerResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_payment_v1alpha1_CreatePaymentRequest(arg) {
   if (!(arg instanceof payment_v1alpha1_payment_api_pb.CreatePaymentRequest)) {
     throw new Error('Expected argument of type payment.v1alpha1.CreatePaymentRequest');
@@ -117,6 +139,17 @@ function deserialize_payment_v1alpha1_UpdatePaymentResponse(buffer_arg) {
 
 
 var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
+  createCustomer: {
+    path: '/payment.v1alpha1.PaymentAPIService/CreateCustomer',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.CreateCustomerRequest,
+    responseType: payment_v1alpha1_payment_api_pb.CreateCustomerResponse,
+    requestSerialize: serialize_payment_v1alpha1_CreateCustomerRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_CreateCustomerRequest,
+    responseSerialize: serialize_payment_v1alpha1_CreateCustomerResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_CreateCustomerResponse,
+  },
   getPayment: {
     path: '/payment.v1alpha1.PaymentAPIService/GetPayment',
     requestStream: false,

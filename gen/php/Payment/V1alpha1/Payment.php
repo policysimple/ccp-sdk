@@ -9,8 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Paymentoption go_package = "github.com/cuemby/ccp-payment-service/paymentv1alpha1";
- *
  * Generated from protobuf message <code>payment.v1alpha1.Payment</code>
  */
 class Payment extends \Google\Protobuf\Internal\Message
