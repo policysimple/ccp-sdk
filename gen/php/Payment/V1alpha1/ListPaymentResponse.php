@@ -28,7 +28,7 @@ class ListPaymentResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \PaymentV1Alpha1\PaymentList $payment_list
+     *     @type \Payment\V1Alpha1\PaymentList $payment_list
      *     @type string $status
      * }
      */
@@ -39,7 +39,7 @@ class ListPaymentResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.payment.v1alpha1.PaymentList payment_list = 1 [json_name = "paymentList"];</code>
-     * @return \PaymentV1Alpha1\PaymentList|null
+     * @return \Payment\V1Alpha1\PaymentList|null
      */
     public function getPaymentList()
     {
@@ -58,12 +58,12 @@ class ListPaymentResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.payment.v1alpha1.PaymentList payment_list = 1 [json_name = "paymentList"];</code>
-     * @param \PaymentV1Alpha1\PaymentList $var
+     * @param \Payment\V1Alpha1\PaymentList $var
      * @return $this
      */
     public function setPaymentList($var)
     {
-        GPBUtil::checkMessage($var, \PaymentV1Alpha1\PaymentList::class);
+        GPBUtil::checkMessage($var, \Payment\V1Alpha1\PaymentList::class);
         $this->payment_list = $var;
 
         return $this;
