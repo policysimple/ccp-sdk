@@ -125,8 +125,8 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROT
   "payment.v1alpha1.PaymentR\005itemsB\220\001\n\032io.c"
   "uemby.payment.v1alpha1B\014PaymentProtoP\001Z6"
   "github.com/cuemby/ccp-payment-service/pa"
-  "yment/v1alpha1\242\002\003PPX\252\002\020Payment.V1Alpha1\312"
-  "\002\020Payment\\V1Alpha1b\006proto3"
+  "yment/v1alpha1\242\002\003PPX\252\002\021PPayment.V1Alpha1"
+  "\312\002\017PaymentV1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_2eproto = {

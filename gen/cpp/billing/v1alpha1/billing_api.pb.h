@@ -1464,20 +1464,20 @@ class GetApplicationRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOrganizationIdFieldNumber = 1,
+    kApplicationIdFieldNumber = 1,
   };
-  // string organization_id = 1 [json_name = "organizationId"];
-  void clear_organization_id();
-  const std::string& organization_id() const;
+  // string application_id = 1 [json_name = "applicationId"];
+  void clear_application_id();
+  const std::string& application_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_organization_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_organization_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
-  void set_allocated_organization_id(std::string* organization_id);
+  void set_application_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_application_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_application_id();
+  void set_allocated_application_id(std::string* application_id);
   private:
-  const std::string& _internal_organization_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
-  std::string* _internal_mutable_organization_id();
+  const std::string& _internal_application_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_application_id(const std::string& value);
+  std::string* _internal_mutable_application_id();
   public:
 
   // @@protoc_insertion_point(class_scope:billing.v1alpha1.GetApplicationRequest)
@@ -1487,7 +1487,7 @@ class GetApplicationRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_5fapi_2eproto;
 };
@@ -3516,50 +3516,50 @@ inline void CreateApplicationResponse::set_allocated_status(std::string* status)
 
 // GetApplicationRequest
 
-// string organization_id = 1 [json_name = "organizationId"];
-inline void GetApplicationRequest::clear_organization_id() {
-  organization_id_.ClearToEmpty();
+// string application_id = 1 [json_name = "applicationId"];
+inline void GetApplicationRequest::clear_application_id() {
+  application_id_.ClearToEmpty();
 }
-inline const std::string& GetApplicationRequest::organization_id() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.GetApplicationRequest.organization_id)
-  return _internal_organization_id();
+inline const std::string& GetApplicationRequest::application_id() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.GetApplicationRequest.application_id)
+  return _internal_application_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetApplicationRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
+void GetApplicationRequest::set_application_id(ArgT0&& arg0, ArgT... args) {
  
- organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:billing.v1alpha1.GetApplicationRequest.organization_id)
+ application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.GetApplicationRequest.application_id)
 }
-inline std::string* GetApplicationRequest::mutable_organization_id() {
-  std::string* _s = _internal_mutable_organization_id();
-  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.GetApplicationRequest.organization_id)
+inline std::string* GetApplicationRequest::mutable_application_id() {
+  std::string* _s = _internal_mutable_application_id();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.GetApplicationRequest.application_id)
   return _s;
 }
-inline const std::string& GetApplicationRequest::_internal_organization_id() const {
-  return organization_id_.Get();
+inline const std::string& GetApplicationRequest::_internal_application_id() const {
+  return application_id_.Get();
 }
-inline void GetApplicationRequest::_internal_set_organization_id(const std::string& value) {
+inline void GetApplicationRequest::_internal_set_application_id(const std::string& value) {
   
-  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetApplicationRequest::_internal_mutable_organization_id() {
+inline std::string* GetApplicationRequest::_internal_mutable_application_id() {
   
-  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return application_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetApplicationRequest::release_organization_id() {
-  // @@protoc_insertion_point(field_release:billing.v1alpha1.GetApplicationRequest.organization_id)
-  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetApplicationRequest::release_application_id() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.GetApplicationRequest.application_id)
+  return application_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetApplicationRequest::set_allocated_organization_id(std::string* organization_id) {
-  if (organization_id != nullptr) {
+inline void GetApplicationRequest::set_allocated_application_id(std::string* application_id) {
+  if (application_id != nullptr) {
     
   } else {
     
   }
-  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+  application_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), application_id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.GetApplicationRequest.organization_id)
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.GetApplicationRequest.application_id)
 }
 
 // -------------------------------------------------------------------
