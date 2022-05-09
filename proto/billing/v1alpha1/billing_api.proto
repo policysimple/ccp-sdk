@@ -64,7 +64,7 @@ message CreateApplicationResponse{
 }
 
 message GetApplicationRequest{
-  string organization_id = 1;
+  string application_id = 1;
 }
 
 message GetApplicationResponse{
