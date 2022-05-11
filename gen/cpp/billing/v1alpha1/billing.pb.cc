@@ -50,12 +50,10 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ApplicationDefaultTypeInternal 
 constexpr Metrics::Metrics(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : metric_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , unit_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , duration_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , unit_value_(0)
-  , chargeable_(0)
-  , used_(0)
-  , charged_(0){}
+  , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , cpu_(int64_t{0})
+  , ram_(int64_t{0})
+  , storage_(int64_t{0}){}
 struct MetricsDefaultTypeInternal {
   constexpr MetricsDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -95,12 +93,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_billing_2fv1alpha1_2fbilling_2
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, metric_id_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, unit_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, duration_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, unit_value_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, chargeable_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, used_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, charged_),
+  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, organization_id_),
+  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, cpu_),
+  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, ram_),
+  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, storage_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::billing::v1alpha1::Organization)},
@@ -122,18 +118,17 @@ const char descriptor_table_protodef_billing_2fv1alpha1_2fbilling_2eproto[] PROT
   "lication\022%\n\016application_id\030\001 \001(\tR\rapplic"
   "ationId\022\'\n\017organization_id\030\002 \001(\tR\016organi"
   "zationId\022\022\n\004name\030\003 \001(\tR\004name\022\030\n\007country\030"
-  "\004 \001(\tR\007country\022\024\n\005about\030\005 \001(\tR\005about\"\303\001\n"
-  "\007Metrics\022\033\n\tmetric_id\030\001 \001(\tR\010metricId\022\022\n"
-  "\004unit\030\002 \001(\tR\004unit\022\032\n\010duration\030\003 \001(\tR\010dur"
-  "ation\022\035\n\nunit_value\030\004 \001(\005R\tunitValue\022\036\n\n"
-  "chargeable\030\005 \001(\005R\nchargeable\022\022\n\004used\030\006 \001"
-  "(\005R\004used\022\030\n\007charged\030\007 \001(\005R\007chargedB7Z5gi"
-  "thub.com/cuemby/ccp-billing-service/bill"
-  "ingv1alpha1b\006proto3"
+  "\004 \001(\tR\007country\022\024\n\005about\030\005 \001(\tR\005about\"\215\001\n"
+  "\007Metrics\022\033\n\tmetric_id\030\001 \001(\tR\010metricId\022\'\n"
+  "\017organization_id\030\002 \001(\tR\016organizationId\022\020"
+  "\n\003cpu\030\003 \001(\003R\003cpu\022\020\n\003ram\030\004 \001(\003R\003ram\022\030\n\007st"
+  "orage\030\005 \001(\003R\007storageB7Z5github.com/cuemb"
+  "y/ccp-billing-service/billingv1alpha1b\006p"
+  "roto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_billing_2fv1alpha1_2fbilling_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_billing_2fv1alpha1_2fbilling_2eproto = {
-  false, false, 579, descriptor_table_protodef_billing_2fv1alpha1_2fbilling_2eproto, "billing/v1alpha1/billing.proto", 
+  false, false, 525, descriptor_table_protodef_billing_2fv1alpha1_2fbilling_2eproto, "billing/v1alpha1/billing.proto", 
   &descriptor_table_billing_2fv1alpha1_2fbilling_2eproto_once, nullptr, 0, 3,
   schemas, file_default_instances, TableStruct_billing_2fv1alpha1_2fbilling_2eproto::offsets,
   file_level_metadata_billing_2fv1alpha1_2fbilling_2eproto, file_level_enum_descriptors_billing_2fv1alpha1_2fbilling_2eproto, file_level_service_descriptors_billing_2fv1alpha1_2fbilling_2eproto,
@@ -780,30 +775,24 @@ Metrics::Metrics(const Metrics& from)
     metric_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_metric_id(), 
       GetArenaForAllocation());
   }
-  unit_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_unit().empty()) {
-    unit_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_unit(), 
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
       GetArenaForAllocation());
   }
-  duration_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_duration().empty()) {
-    duration_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_duration(), 
-      GetArenaForAllocation());
-  }
-  ::memcpy(&unit_value_, &from.unit_value_,
-    static_cast<size_t>(reinterpret_cast<char*>(&charged_) -
-    reinterpret_cast<char*>(&unit_value_)) + sizeof(charged_));
+  ::memcpy(&cpu_, &from.cpu_,
+    static_cast<size_t>(reinterpret_cast<char*>(&storage_) -
+    reinterpret_cast<char*>(&cpu_)) + sizeof(storage_));
   // @@protoc_insertion_point(copy_constructor:billing.v1alpha1.Metrics)
 }
 
 inline void Metrics::SharedCtor() {
 metric_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-unit_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-duration_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&unit_value_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&charged_) -
-    reinterpret_cast<char*>(&unit_value_)) + sizeof(charged_));
+    reinterpret_cast<char*>(&cpu_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&storage_) -
+    reinterpret_cast<char*>(&cpu_)) + sizeof(storage_));
 }
 
 Metrics::~Metrics() {
@@ -816,8 +805,7 @@ Metrics::~Metrics() {
 inline void Metrics::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   metric_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  unit_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  duration_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Metrics::ArenaDtor(void* object) {
@@ -837,11 +825,10 @@ void Metrics::Clear() {
   (void) cached_has_bits;
 
   metric_id_.ClearToEmpty();
-  unit_.ClearToEmpty();
-  duration_.ClearToEmpty();
-  ::memset(&unit_value_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&charged_) -
-      reinterpret_cast<char*>(&unit_value_)) + sizeof(charged_));
+  organization_id_.ClearToEmpty();
+  ::memset(&cpu_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&storage_) -
+      reinterpret_cast<char*>(&cpu_)) + sizeof(storage_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -860,49 +847,33 @@ const char* Metrics::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string unit = 2 [json_name = "unit"];
+      // string organization_id = 2 [json_name = "organizationId"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_unit();
+          auto str = _internal_mutable_organization_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "billing.v1alpha1.Metrics.unit"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "billing.v1alpha1.Metrics.organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string duration = 3 [json_name = "duration"];
+      // int64 cpu = 3 [json_name = "cpu"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_duration();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "billing.v1alpha1.Metrics.duration"));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          cpu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int32 unit_value = 4 [json_name = "unitValue"];
+      // int64 ram = 4 [json_name = "ram"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          unit_value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          ram_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int32 chargeable = 5 [json_name = "chargeable"];
+      // int64 storage = 5 [json_name = "storage"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          chargeable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // int32 used = 6 [json_name = "used"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          used_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // int32 charged = 7 [json_name = "charged"];
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
-          charged_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          storage_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -945,48 +916,32 @@ failure:
         1, this->_internal_metric_id(), target);
   }
 
-  // string unit = 2 [json_name = "unit"];
-  if (!this->_internal_unit().empty()) {
+  // string organization_id = 2 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_unit().data(), static_cast<int>(this->_internal_unit().length()),
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "billing.v1alpha1.Metrics.unit");
+      "billing.v1alpha1.Metrics.organization_id");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_unit(), target);
+        2, this->_internal_organization_id(), target);
   }
 
-  // string duration = 3 [json_name = "duration"];
-  if (!this->_internal_duration().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_duration().data(), static_cast<int>(this->_internal_duration().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "billing.v1alpha1.Metrics.duration");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_duration(), target);
-  }
-
-  // int32 unit_value = 4 [json_name = "unitValue"];
-  if (this->_internal_unit_value() != 0) {
+  // int64 cpu = 3 [json_name = "cpu"];
+  if (this->_internal_cpu() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_unit_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_cpu(), target);
   }
 
-  // int32 chargeable = 5 [json_name = "chargeable"];
-  if (this->_internal_chargeable() != 0) {
+  // int64 ram = 4 [json_name = "ram"];
+  if (this->_internal_ram() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_chargeable(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_ram(), target);
   }
 
-  // int32 used = 6 [json_name = "used"];
-  if (this->_internal_used() != 0) {
+  // int64 storage = 5 [json_name = "storage"];
+  if (this->_internal_storage() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_used(), target);
-  }
-
-  // int32 charged = 7 [json_name = "charged"];
-  if (this->_internal_charged() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_charged(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_storage(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1012,46 +967,32 @@ size_t Metrics::ByteSizeLong() const {
         this->_internal_metric_id());
   }
 
-  // string unit = 2 [json_name = "unit"];
-  if (!this->_internal_unit().empty()) {
+  // string organization_id = 2 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_unit());
+        this->_internal_organization_id());
   }
 
-  // string duration = 3 [json_name = "duration"];
-  if (!this->_internal_duration().empty()) {
+  // int64 cpu = 3 [json_name = "cpu"];
+  if (this->_internal_cpu() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_duration());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_cpu());
   }
 
-  // int32 unit_value = 4 [json_name = "unitValue"];
-  if (this->_internal_unit_value() != 0) {
+  // int64 ram = 4 [json_name = "ram"];
+  if (this->_internal_ram() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_unit_value());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_ram());
   }
 
-  // int32 chargeable = 5 [json_name = "chargeable"];
-  if (this->_internal_chargeable() != 0) {
+  // int64 storage = 5 [json_name = "storage"];
+  if (this->_internal_storage() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_chargeable());
-  }
-
-  // int32 used = 6 [json_name = "used"];
-  if (this->_internal_used() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_used());
-  }
-
-  // int32 charged = 7 [json_name = "charged"];
-  if (this->_internal_charged() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_charged());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_storage());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1085,23 +1026,17 @@ void Metrics::MergeFrom(const Metrics& from) {
   if (!from._internal_metric_id().empty()) {
     _internal_set_metric_id(from._internal_metric_id());
   }
-  if (!from._internal_unit().empty()) {
-    _internal_set_unit(from._internal_unit());
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
   }
-  if (!from._internal_duration().empty()) {
-    _internal_set_duration(from._internal_duration());
+  if (from._internal_cpu() != 0) {
+    _internal_set_cpu(from._internal_cpu());
   }
-  if (from._internal_unit_value() != 0) {
-    _internal_set_unit_value(from._internal_unit_value());
+  if (from._internal_ram() != 0) {
+    _internal_set_ram(from._internal_ram());
   }
-  if (from._internal_chargeable() != 0) {
-    _internal_set_chargeable(from._internal_chargeable());
-  }
-  if (from._internal_used() != 0) {
-    _internal_set_used(from._internal_used());
-  }
-  if (from._internal_charged() != 0) {
-    _internal_set_charged(from._internal_charged());
+  if (from._internal_storage() != 0) {
+    _internal_set_storage(from._internal_storage());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1127,20 +1062,15 @@ void Metrics::InternalSwap(Metrics* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &unit_, GetArenaForAllocation(),
-      &other->unit_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &duration_, GetArenaForAllocation(),
-      &other->duration_, other->GetArenaForAllocation()
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Metrics, charged_)
-      + sizeof(Metrics::charged_)
-      - PROTOBUF_FIELD_OFFSET(Metrics, unit_value_)>(
-          reinterpret_cast<char*>(&unit_value_),
-          reinterpret_cast<char*>(&other->unit_value_));
+      PROTOBUF_FIELD_OFFSET(Metrics, storage_)
+      + sizeof(Metrics::storage_)
+      - PROTOBUF_FIELD_OFFSET(Metrics, cpu_)>(
+          reinterpret_cast<char*>(&cpu_),
+          reinterpret_cast<char*>(&other->cpu_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Metrics::GetMetadata() const {

@@ -18,29 +18,21 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $metric_id = '';
     /**
-     * Generated from protobuf field <code>string unit = 2 [json_name = "unit"];</code>
+     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
      */
-    protected $unit = '';
+    protected $organization_id = '';
     /**
-     * Generated from protobuf field <code>string duration = 3 [json_name = "duration"];</code>
+     * Generated from protobuf field <code>int64 cpu = 3 [json_name = "cpu"];</code>
      */
-    protected $duration = '';
+    protected $cpu = 0;
     /**
-     * Generated from protobuf field <code>int32 unit_value = 4 [json_name = "unitValue"];</code>
+     * Generated from protobuf field <code>int64 ram = 4 [json_name = "ram"];</code>
      */
-    protected $unit_value = 0;
+    protected $ram = 0;
     /**
-     * Generated from protobuf field <code>int32 chargeable = 5 [json_name = "chargeable"];</code>
+     * Generated from protobuf field <code>int64 storage = 5 [json_name = "storage"];</code>
      */
-    protected $chargeable = 0;
-    /**
-     * Generated from protobuf field <code>int32 used = 6 [json_name = "used"];</code>
-     */
-    protected $used = 0;
-    /**
-     * Generated from protobuf field <code>int32 charged = 7 [json_name = "charged"];</code>
-     */
-    protected $charged = 0;
+    protected $storage = 0;
 
     /**
      * Constructor.
@@ -49,12 +41,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $metric_id
-     *     @type string $unit
-     *     @type string $duration
-     *     @type int $unit_value
-     *     @type int $chargeable
-     *     @type int $used
-     *     @type int $charged
+     *     @type string $organization_id
+     *     @type int|string $cpu
+     *     @type int|string $ram
+     *     @type int|string $storage
      * }
      */
     public function __construct($data = NULL) {
@@ -85,133 +75,89 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string unit = 2 [json_name = "unit"];</code>
+     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @return string
      */
-    public function getUnit()
+    public function getOrganizationId()
     {
-        return $this->unit;
+        return $this->organization_id;
     }
 
     /**
-     * Generated from protobuf field <code>string unit = 2 [json_name = "unit"];</code>
+     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setUnit($var)
+    public function setOrganizationId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->unit = $var;
+        $this->organization_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string duration = 3 [json_name = "duration"];</code>
-     * @return string
+     * Generated from protobuf field <code>int64 cpu = 3 [json_name = "cpu"];</code>
+     * @return int|string
      */
-    public function getDuration()
+    public function getCpu()
     {
-        return $this->duration;
+        return $this->cpu;
     }
 
     /**
-     * Generated from protobuf field <code>string duration = 3 [json_name = "duration"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>int64 cpu = 3 [json_name = "cpu"];</code>
+     * @param int|string $var
      * @return $this
      */
-    public function setDuration($var)
+    public function setCpu($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->duration = $var;
+        GPBUtil::checkInt64($var);
+        $this->cpu = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int32 unit_value = 4 [json_name = "unitValue"];</code>
-     * @return int
+     * Generated from protobuf field <code>int64 ram = 4 [json_name = "ram"];</code>
+     * @return int|string
      */
-    public function getUnitValue()
+    public function getRam()
     {
-        return $this->unit_value;
+        return $this->ram;
     }
 
     /**
-     * Generated from protobuf field <code>int32 unit_value = 4 [json_name = "unitValue"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>int64 ram = 4 [json_name = "ram"];</code>
+     * @param int|string $var
      * @return $this
      */
-    public function setUnitValue($var)
+    public function setRam($var)
     {
-        GPBUtil::checkInt32($var);
-        $this->unit_value = $var;
+        GPBUtil::checkInt64($var);
+        $this->ram = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int32 chargeable = 5 [json_name = "chargeable"];</code>
-     * @return int
+     * Generated from protobuf field <code>int64 storage = 5 [json_name = "storage"];</code>
+     * @return int|string
      */
-    public function getChargeable()
+    public function getStorage()
     {
-        return $this->chargeable;
+        return $this->storage;
     }
 
     /**
-     * Generated from protobuf field <code>int32 chargeable = 5 [json_name = "chargeable"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>int64 storage = 5 [json_name = "storage"];</code>
+     * @param int|string $var
      * @return $this
      */
-    public function setChargeable($var)
+    public function setStorage($var)
     {
-        GPBUtil::checkInt32($var);
-        $this->chargeable = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 used = 6 [json_name = "used"];</code>
-     * @return int
-     */
-    public function getUsed()
-    {
-        return $this->used;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 used = 6 [json_name = "used"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setUsed($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->used = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 charged = 7 [json_name = "charged"];</code>
-     * @return int
-     */
-    public function getCharged()
-    {
-        return $this->charged;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 charged = 7 [json_name = "charged"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setCharged($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->charged = $var;
+        GPBUtil::checkInt64($var);
+        $this->storage = $var;
 
         return $this;
     }

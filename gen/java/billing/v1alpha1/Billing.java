@@ -1917,52 +1917,34 @@ public final class Billing {
         getMetricIdBytes();
 
     /**
-     * <code>string unit = 2 [json_name = "unit"];</code>
-     * @return The unit.
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * @return The organizationId.
      */
-    java.lang.String getUnit();
+    java.lang.String getOrganizationId();
     /**
-     * <code>string unit = 2 [json_name = "unit"];</code>
-     * @return The bytes for unit.
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
      */
     com.google.protobuf.ByteString
-        getUnitBytes();
+        getOrganizationIdBytes();
 
     /**
-     * <code>string duration = 3 [json_name = "duration"];</code>
-     * @return The duration.
+     * <code>int64 cpu = 3 [json_name = "cpu"];</code>
+     * @return The cpu.
      */
-    java.lang.String getDuration();
-    /**
-     * <code>string duration = 3 [json_name = "duration"];</code>
-     * @return The bytes for duration.
-     */
-    com.google.protobuf.ByteString
-        getDurationBytes();
+    long getCpu();
 
     /**
-     * <code>int32 unit_value = 4 [json_name = "unitValue"];</code>
-     * @return The unitValue.
+     * <code>int64 ram = 4 [json_name = "ram"];</code>
+     * @return The ram.
      */
-    int getUnitValue();
+    long getRam();
 
     /**
-     * <code>int32 chargeable = 5 [json_name = "chargeable"];</code>
-     * @return The chargeable.
+     * <code>int64 storage = 5 [json_name = "storage"];</code>
+     * @return The storage.
      */
-    int getChargeable();
-
-    /**
-     * <code>int32 used = 6 [json_name = "used"];</code>
-     * @return The used.
-     */
-    int getUsed();
-
-    /**
-     * <code>int32 charged = 7 [json_name = "charged"];</code>
-     * @return The charged.
-     */
-    int getCharged();
+    long getStorage();
   }
   /**
    * Protobuf type {@code billing.v1alpha1.Metrics}
@@ -1978,8 +1960,7 @@ public final class Billing {
     }
     private Metrics() {
       metricId_ = "";
-      unit_ = "";
-      duration_ = "";
+      organizationId_ = "";
     }
 
     @java.lang.Override
@@ -2021,33 +2002,22 @@ public final class Billing {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              unit_ = s;
+              organizationId_ = s;
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
 
-              duration_ = s;
+              cpu_ = input.readInt64();
               break;
             }
             case 32: {
 
-              unitValue_ = input.readInt32();
+              ram_ = input.readInt64();
               break;
             }
             case 40: {
 
-              chargeable_ = input.readInt32();
-              break;
-            }
-            case 48: {
-
-              used_ = input.readInt32();
-              break;
-            }
-            case 56: {
-
-              charged_ = input.readInt32();
+              storage_ = input.readInt64();
               break;
             }
             default: {
@@ -2120,124 +2090,75 @@ public final class Billing {
       }
     }
 
-    public static final int UNIT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object unit_;
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>string unit = 2 [json_name = "unit"];</code>
-     * @return The unit.
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * @return The organizationId.
      */
     @java.lang.Override
-    public java.lang.String getUnit() {
-      java.lang.Object ref = unit_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        unit_ = s;
+        organizationId_ = s;
         return s;
       }
     }
     /**
-     * <code>string unit = 2 [json_name = "unit"];</code>
-     * @return The bytes for unit.
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getUnitBytes() {
-      java.lang.Object ref = unit_;
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        unit_ = b;
+        organizationId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int DURATION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object duration_;
+    public static final int CPU_FIELD_NUMBER = 3;
+    private long cpu_;
     /**
-     * <code>string duration = 3 [json_name = "duration"];</code>
-     * @return The duration.
+     * <code>int64 cpu = 3 [json_name = "cpu"];</code>
+     * @return The cpu.
      */
     @java.lang.Override
-    public java.lang.String getDuration() {
-      java.lang.Object ref = duration_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        duration_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string duration = 3 [json_name = "duration"];</code>
-     * @return The bytes for duration.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDurationBytes() {
-      java.lang.Object ref = duration_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        duration_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getCpu() {
+      return cpu_;
     }
 
-    public static final int UNIT_VALUE_FIELD_NUMBER = 4;
-    private int unitValue_;
+    public static final int RAM_FIELD_NUMBER = 4;
+    private long ram_;
     /**
-     * <code>int32 unit_value = 4 [json_name = "unitValue"];</code>
-     * @return The unitValue.
+     * <code>int64 ram = 4 [json_name = "ram"];</code>
+     * @return The ram.
      */
     @java.lang.Override
-    public int getUnitValue() {
-      return unitValue_;
+    public long getRam() {
+      return ram_;
     }
 
-    public static final int CHARGEABLE_FIELD_NUMBER = 5;
-    private int chargeable_;
+    public static final int STORAGE_FIELD_NUMBER = 5;
+    private long storage_;
     /**
-     * <code>int32 chargeable = 5 [json_name = "chargeable"];</code>
-     * @return The chargeable.
+     * <code>int64 storage = 5 [json_name = "storage"];</code>
+     * @return The storage.
      */
     @java.lang.Override
-    public int getChargeable() {
-      return chargeable_;
-    }
-
-    public static final int USED_FIELD_NUMBER = 6;
-    private int used_;
-    /**
-     * <code>int32 used = 6 [json_name = "used"];</code>
-     * @return The used.
-     */
-    @java.lang.Override
-    public int getUsed() {
-      return used_;
-    }
-
-    public static final int CHARGED_FIELD_NUMBER = 7;
-    private int charged_;
-    /**
-     * <code>int32 charged = 7 [json_name = "charged"];</code>
-     * @return The charged.
-     */
-    @java.lang.Override
-    public int getCharged() {
-      return charged_;
+    public long getStorage() {
+      return storage_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2257,23 +2178,17 @@ public final class Billing {
       if (!getMetricIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, metricId_);
       }
-      if (!getUnitBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, unit_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, organizationId_);
       }
-      if (!getDurationBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, duration_);
+      if (cpu_ != 0L) {
+        output.writeInt64(3, cpu_);
       }
-      if (unitValue_ != 0) {
-        output.writeInt32(4, unitValue_);
+      if (ram_ != 0L) {
+        output.writeInt64(4, ram_);
       }
-      if (chargeable_ != 0) {
-        output.writeInt32(5, chargeable_);
-      }
-      if (used_ != 0) {
-        output.writeInt32(6, used_);
-      }
-      if (charged_ != 0) {
-        output.writeInt32(7, charged_);
+      if (storage_ != 0L) {
+        output.writeInt64(5, storage_);
       }
       unknownFields.writeTo(output);
     }
@@ -2287,27 +2202,20 @@ public final class Billing {
       if (!getMetricIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, metricId_);
       }
-      if (!getUnitBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, unit_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, organizationId_);
       }
-      if (!getDurationBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, duration_);
-      }
-      if (unitValue_ != 0) {
+      if (cpu_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, unitValue_);
+          .computeInt64Size(3, cpu_);
       }
-      if (chargeable_ != 0) {
+      if (ram_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, chargeable_);
+          .computeInt64Size(4, ram_);
       }
-      if (used_ != 0) {
+      if (storage_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, used_);
-      }
-      if (charged_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, charged_);
+          .computeInt64Size(5, storage_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2326,18 +2234,14 @@ public final class Billing {
 
       if (!getMetricId()
           .equals(other.getMetricId())) return false;
-      if (!getUnit()
-          .equals(other.getUnit())) return false;
-      if (!getDuration()
-          .equals(other.getDuration())) return false;
-      if (getUnitValue()
-          != other.getUnitValue()) return false;
-      if (getChargeable()
-          != other.getChargeable()) return false;
-      if (getUsed()
-          != other.getUsed()) return false;
-      if (getCharged()
-          != other.getCharged()) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+      if (getCpu()
+          != other.getCpu()) return false;
+      if (getRam()
+          != other.getRam()) return false;
+      if (getStorage()
+          != other.getStorage()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2351,18 +2255,17 @@ public final class Billing {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + METRIC_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMetricId().hashCode();
-      hash = (37 * hash) + UNIT_FIELD_NUMBER;
-      hash = (53 * hash) + getUnit().hashCode();
-      hash = (37 * hash) + DURATION_FIELD_NUMBER;
-      hash = (53 * hash) + getDuration().hashCode();
-      hash = (37 * hash) + UNIT_VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getUnitValue();
-      hash = (37 * hash) + CHARGEABLE_FIELD_NUMBER;
-      hash = (53 * hash) + getChargeable();
-      hash = (37 * hash) + USED_FIELD_NUMBER;
-      hash = (53 * hash) + getUsed();
-      hash = (37 * hash) + CHARGED_FIELD_NUMBER;
-      hash = (53 * hash) + getCharged();
+      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationId().hashCode();
+      hash = (37 * hash) + CPU_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCpu());
+      hash = (37 * hash) + RAM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRam());
+      hash = (37 * hash) + STORAGE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStorage());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2498,17 +2401,13 @@ public final class Billing {
         super.clear();
         metricId_ = "";
 
-        unit_ = "";
+        organizationId_ = "";
 
-        duration_ = "";
+        cpu_ = 0L;
 
-        unitValue_ = 0;
+        ram_ = 0L;
 
-        chargeable_ = 0;
-
-        used_ = 0;
-
-        charged_ = 0;
+        storage_ = 0L;
 
         return this;
       }
@@ -2537,12 +2436,10 @@ public final class Billing {
       public billing.v1alpha1.Billing.Metrics buildPartial() {
         billing.v1alpha1.Billing.Metrics result = new billing.v1alpha1.Billing.Metrics(this);
         result.metricId_ = metricId_;
-        result.unit_ = unit_;
-        result.duration_ = duration_;
-        result.unitValue_ = unitValue_;
-        result.chargeable_ = chargeable_;
-        result.used_ = used_;
-        result.charged_ = charged_;
+        result.organizationId_ = organizationId_;
+        result.cpu_ = cpu_;
+        result.ram_ = ram_;
+        result.storage_ = storage_;
         onBuilt();
         return result;
       }
@@ -2595,25 +2492,18 @@ public final class Billing {
           metricId_ = other.metricId_;
           onChanged();
         }
-        if (!other.getUnit().isEmpty()) {
-          unit_ = other.unit_;
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
           onChanged();
         }
-        if (!other.getDuration().isEmpty()) {
-          duration_ = other.duration_;
-          onChanged();
+        if (other.getCpu() != 0L) {
+          setCpu(other.getCpu());
         }
-        if (other.getUnitValue() != 0) {
-          setUnitValue(other.getUnitValue());
+        if (other.getRam() != 0L) {
+          setRam(other.getRam());
         }
-        if (other.getChargeable() != 0) {
-          setChargeable(other.getChargeable());
-        }
-        if (other.getUsed() != 0) {
-          setUsed(other.getUsed());
-        }
-        if (other.getCharged() != 0) {
-          setCharged(other.getCharged());
+        if (other.getStorage() != 0L) {
+          setStorage(other.getStorage());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2720,278 +2610,171 @@ public final class Billing {
         return this;
       }
 
-      private java.lang.Object unit_ = "";
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>string unit = 2 [json_name = "unit"];</code>
-       * @return The unit.
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+       * @return The organizationId.
        */
-      public java.lang.String getUnit() {
-        java.lang.Object ref = unit_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          unit_ = s;
+          organizationId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string unit = 2 [json_name = "unit"];</code>
-       * @return The bytes for unit.
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
        */
       public com.google.protobuf.ByteString
-          getUnitBytes() {
-        java.lang.Object ref = unit_;
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          unit_ = b;
+          organizationId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string unit = 2 [json_name = "unit"];</code>
-       * @param value The unit to set.
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+       * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setUnit(
+      public Builder setOrganizationId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        unit_ = value;
+        organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string unit = 2 [json_name = "unit"];</code>
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnit() {
+      public Builder clearOrganizationId() {
         
-        unit_ = getDefaultInstance().getUnit();
+        organizationId_ = getDefaultInstance().getOrganizationId();
         onChanged();
         return this;
       }
       /**
-       * <code>string unit = 2 [json_name = "unit"];</code>
-       * @param value The bytes for unit to set.
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setUnitBytes(
+      public Builder setOrganizationIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        unit_ = value;
+        organizationId_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object duration_ = "";
+      private long cpu_ ;
       /**
-       * <code>string duration = 3 [json_name = "duration"];</code>
-       * @return The duration.
-       */
-      public java.lang.String getDuration() {
-        java.lang.Object ref = duration_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          duration_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string duration = 3 [json_name = "duration"];</code>
-       * @return The bytes for duration.
-       */
-      public com.google.protobuf.ByteString
-          getDurationBytes() {
-        java.lang.Object ref = duration_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          duration_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string duration = 3 [json_name = "duration"];</code>
-       * @param value The duration to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDuration(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        duration_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string duration = 3 [json_name = "duration"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDuration() {
-        
-        duration_ = getDefaultInstance().getDuration();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string duration = 3 [json_name = "duration"];</code>
-       * @param value The bytes for duration to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDurationBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        duration_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int unitValue_ ;
-      /**
-       * <code>int32 unit_value = 4 [json_name = "unitValue"];</code>
-       * @return The unitValue.
+       * <code>int64 cpu = 3 [json_name = "cpu"];</code>
+       * @return The cpu.
        */
       @java.lang.Override
-      public int getUnitValue() {
-        return unitValue_;
+      public long getCpu() {
+        return cpu_;
       }
       /**
-       * <code>int32 unit_value = 4 [json_name = "unitValue"];</code>
-       * @param value The unitValue to set.
+       * <code>int64 cpu = 3 [json_name = "cpu"];</code>
+       * @param value The cpu to set.
        * @return This builder for chaining.
        */
-      public Builder setUnitValue(int value) {
+      public Builder setCpu(long value) {
         
-        unitValue_ = value;
+        cpu_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 unit_value = 4 [json_name = "unitValue"];</code>
+       * <code>int64 cpu = 3 [json_name = "cpu"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnitValue() {
+      public Builder clearCpu() {
         
-        unitValue_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int chargeable_ ;
-      /**
-       * <code>int32 chargeable = 5 [json_name = "chargeable"];</code>
-       * @return The chargeable.
-       */
-      @java.lang.Override
-      public int getChargeable() {
-        return chargeable_;
-      }
-      /**
-       * <code>int32 chargeable = 5 [json_name = "chargeable"];</code>
-       * @param value The chargeable to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChargeable(int value) {
-        
-        chargeable_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 chargeable = 5 [json_name = "chargeable"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChargeable() {
-        
-        chargeable_ = 0;
+        cpu_ = 0L;
         onChanged();
         return this;
       }
 
-      private int used_ ;
+      private long ram_ ;
       /**
-       * <code>int32 used = 6 [json_name = "used"];</code>
-       * @return The used.
+       * <code>int64 ram = 4 [json_name = "ram"];</code>
+       * @return The ram.
        */
       @java.lang.Override
-      public int getUsed() {
-        return used_;
+      public long getRam() {
+        return ram_;
       }
       /**
-       * <code>int32 used = 6 [json_name = "used"];</code>
-       * @param value The used to set.
+       * <code>int64 ram = 4 [json_name = "ram"];</code>
+       * @param value The ram to set.
        * @return This builder for chaining.
        */
-      public Builder setUsed(int value) {
+      public Builder setRam(long value) {
         
-        used_ = value;
+        ram_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 used = 6 [json_name = "used"];</code>
+       * <code>int64 ram = 4 [json_name = "ram"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearUsed() {
+      public Builder clearRam() {
         
-        used_ = 0;
+        ram_ = 0L;
         onChanged();
         return this;
       }
 
-      private int charged_ ;
+      private long storage_ ;
       /**
-       * <code>int32 charged = 7 [json_name = "charged"];</code>
-       * @return The charged.
+       * <code>int64 storage = 5 [json_name = "storage"];</code>
+       * @return The storage.
        */
       @java.lang.Override
-      public int getCharged() {
-        return charged_;
+      public long getStorage() {
+        return storage_;
       }
       /**
-       * <code>int32 charged = 7 [json_name = "charged"];</code>
-       * @param value The charged to set.
+       * <code>int64 storage = 5 [json_name = "storage"];</code>
+       * @param value The storage to set.
        * @return This builder for chaining.
        */
-      public Builder setCharged(int value) {
+      public Builder setStorage(long value) {
         
-        charged_ = value;
+        storage_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 charged = 7 [json_name = "charged"];</code>
+       * <code>int64 storage = 5 [json_name = "storage"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearCharged() {
+      public Builder clearStorage() {
         
-        charged_ = 0;
+        storage_ = 0L;
         onChanged();
         return this;
       }
@@ -3079,14 +2862,13 @@ public final class Billing {
       "lication\022%\n\016application_id\030\001 \001(\tR\rapplic" +
       "ationId\022\'\n\017organization_id\030\002 \001(\tR\016organi" +
       "zationId\022\022\n\004name\030\003 \001(\tR\004name\022\030\n\007country\030" +
-      "\004 \001(\tR\007country\022\024\n\005about\030\005 \001(\tR\005about\"\303\001\n" +
-      "\007Metrics\022\033\n\tmetric_id\030\001 \001(\tR\010metricId\022\022\n" +
-      "\004unit\030\002 \001(\tR\004unit\022\032\n\010duration\030\003 \001(\tR\010dur" +
-      "ation\022\035\n\nunit_value\030\004 \001(\005R\tunitValue\022\036\n\n" +
-      "chargeable\030\005 \001(\005R\nchargeable\022\022\n\004used\030\006 \001" +
-      "(\005R\004used\022\030\n\007charged\030\007 \001(\005R\007chargedB7Z5gi" +
-      "thub.com/cuemby/ccp-billing-service/bill" +
-      "ingv1alpha1b\006proto3"
+      "\004 \001(\tR\007country\022\024\n\005about\030\005 \001(\tR\005about\"\215\001\n" +
+      "\007Metrics\022\033\n\tmetric_id\030\001 \001(\tR\010metricId\022\'\n" +
+      "\017organization_id\030\002 \001(\tR\016organizationId\022\020" +
+      "\n\003cpu\030\003 \001(\003R\003cpu\022\020\n\003ram\030\004 \001(\003R\003ram\022\030\n\007st" +
+      "orage\030\005 \001(\003R\007storageB7Z5github.com/cuemb" +
+      "y/ccp-billing-service/billingv1alpha1b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3109,7 +2891,7 @@ public final class Billing {
     internal_static_billing_v1alpha1_Metrics_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_billing_v1alpha1_Metrics_descriptor,
-        new java.lang.String[] { "MetricId", "Unit", "Duration", "UnitValue", "Chargeable", "Used", "Charged", });
+        new java.lang.String[] { "MetricId", "OrganizationId", "Cpu", "Ram", "Storage", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

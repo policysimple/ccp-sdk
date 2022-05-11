@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z5github.com/cuemby/ccp-billing-service/billingv1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1e\x62illing/v1alpha1/billing.proto\x12\x10\x62illing.v1alpha1\"d\n\x0cOrganization\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12+\n\x11organization_name\x18\x02 \x01(\tR\x10organizationName\"\xa1\x01\n\x0b\x41pplication\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x18\n\x07\x63ountry\x18\x04 \x01(\tR\x07\x63ountry\x12\x14\n\x05\x61\x62out\x18\x05 \x01(\tR\x05\x61\x62out\"\xc3\x01\n\x07Metrics\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\x12\x12\n\x04unit\x18\x02 \x01(\tR\x04unit\x12\x1a\n\x08\x64uration\x18\x03 \x01(\tR\x08\x64uration\x12\x1d\n\nunit_value\x18\x04 \x01(\x05R\tunitValue\x12\x1e\n\nchargeable\x18\x05 \x01(\x05R\nchargeable\x12\x12\n\x04used\x18\x06 \x01(\x05R\x04used\x12\x18\n\x07\x63harged\x18\x07 \x01(\x05R\x07\x63hargedB7Z5github.com/cuemby/ccp-billing-service/billingv1alpha1b\x06proto3'
+  serialized_pb=b'\n\x1e\x62illing/v1alpha1/billing.proto\x12\x10\x62illing.v1alpha1\"d\n\x0cOrganization\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12+\n\x11organization_name\x18\x02 \x01(\tR\x10organizationName\"\xa1\x01\n\x0b\x41pplication\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x18\n\x07\x63ountry\x18\x04 \x01(\tR\x07\x63ountry\x12\x14\n\x05\x61\x62out\x18\x05 \x01(\tR\x05\x61\x62out\"\x8d\x01\n\x07Metrics\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\x12\x10\n\x03\x63pu\x18\x03 \x01(\x03R\x03\x63pu\x12\x10\n\x03ram\x18\x04 \x01(\x03R\x03ram\x12\x18\n\x07storage\x18\x05 \x01(\x03R\x07storageB7Z5github.com/cuemby/ccp-billing-service/billingv1alpha1b\x06proto3'
 )
 
 
@@ -140,47 +140,33 @@ _METRICS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='metricId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='unit', full_name='billing.v1alpha1.Metrics.unit', index=1,
+      name='organization_id', full_name='billing.v1alpha1.Metrics.organization_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='unit', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='duration', full_name='billing.v1alpha1.Metrics.duration', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='duration', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='unit_value', full_name='billing.v1alpha1.Metrics.unit_value', index=3,
-      number=4, type=5, cpp_type=1, label=1,
+      name='cpu', full_name='billing.v1alpha1.Metrics.cpu', index=2,
+      number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='unitValue', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='cpu', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='chargeable', full_name='billing.v1alpha1.Metrics.chargeable', index=4,
-      number=5, type=5, cpp_type=1, label=1,
+      name='ram', full_name='billing.v1alpha1.Metrics.ram', index=3,
+      number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='chargeable', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='ram', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='used', full_name='billing.v1alpha1.Metrics.used', index=5,
-      number=6, type=5, cpp_type=1, label=1,
+      name='storage', full_name='billing.v1alpha1.Metrics.storage', index=4,
+      number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='used', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='charged', full_name='billing.v1alpha1.Metrics.charged', index=6,
-      number=7, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='charged', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='storage', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -194,7 +180,7 @@ _METRICS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=319,
-  serialized_end=514,
+  serialized_end=460,
 )
 
 DESCRIPTOR.message_types_by_name['Organization'] = _ORGANIZATION

@@ -560,12 +560,10 @@ class Metrics final :
 
   enum : int {
     kMetricIdFieldNumber = 1,
-    kUnitFieldNumber = 2,
-    kDurationFieldNumber = 3,
-    kUnitValueFieldNumber = 4,
-    kChargeableFieldNumber = 5,
-    kUsedFieldNumber = 6,
-    kChargedFieldNumber = 7,
+    kOrganizationIdFieldNumber = 2,
+    kCpuFieldNumber = 3,
+    kRamFieldNumber = 4,
+    kStorageFieldNumber = 5,
   };
   // string metric_id = 1 [json_name = "metricId"];
   void clear_metric_id();
@@ -581,68 +579,45 @@ class Metrics final :
   std::string* _internal_mutable_metric_id();
   public:
 
-  // string unit = 2 [json_name = "unit"];
-  void clear_unit();
-  const std::string& unit() const;
+  // string organization_id = 2 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_unit(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_unit();
-  PROTOBUF_MUST_USE_RESULT std::string* release_unit();
-  void set_allocated_unit(std::string* unit);
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
   private:
-  const std::string& _internal_unit() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_unit(const std::string& value);
-  std::string* _internal_mutable_unit();
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
   public:
 
-  // string duration = 3 [json_name = "duration"];
-  void clear_duration();
-  const std::string& duration() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_duration(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_duration();
-  PROTOBUF_MUST_USE_RESULT std::string* release_duration();
-  void set_allocated_duration(std::string* duration);
+  // int64 cpu = 3 [json_name = "cpu"];
+  void clear_cpu();
+  ::PROTOBUF_NAMESPACE_ID::int64 cpu() const;
+  void set_cpu(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  const std::string& _internal_duration() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_duration(const std::string& value);
-  std::string* _internal_mutable_duration();
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_cpu() const;
+  void _internal_set_cpu(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // int32 unit_value = 4 [json_name = "unitValue"];
-  void clear_unit_value();
-  ::PROTOBUF_NAMESPACE_ID::int32 unit_value() const;
-  void set_unit_value(::PROTOBUF_NAMESPACE_ID::int32 value);
+  // int64 ram = 4 [json_name = "ram"];
+  void clear_ram();
+  ::PROTOBUF_NAMESPACE_ID::int64 ram() const;
+  void set_ram(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_unit_value() const;
-  void _internal_set_unit_value(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_ram() const;
+  void _internal_set_ram(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // int32 chargeable = 5 [json_name = "chargeable"];
-  void clear_chargeable();
-  ::PROTOBUF_NAMESPACE_ID::int32 chargeable() const;
-  void set_chargeable(::PROTOBUF_NAMESPACE_ID::int32 value);
+  // int64 storage = 5 [json_name = "storage"];
+  void clear_storage();
+  ::PROTOBUF_NAMESPACE_ID::int64 storage() const;
+  void set_storage(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_chargeable() const;
-  void _internal_set_chargeable(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
-  // int32 used = 6 [json_name = "used"];
-  void clear_used();
-  ::PROTOBUF_NAMESPACE_ID::int32 used() const;
-  void set_used(::PROTOBUF_NAMESPACE_ID::int32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_used() const;
-  void _internal_set_used(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
-  // int32 charged = 7 [json_name = "charged"];
-  void clear_charged();
-  ::PROTOBUF_NAMESPACE_ID::int32 charged() const;
-  void set_charged(::PROTOBUF_NAMESPACE_ID::int32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_charged() const;
-  void _internal_set_charged(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_storage() const;
+  void _internal_set_storage(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:billing.v1alpha1.Metrics)
@@ -653,12 +628,10 @@ class Metrics final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr metric_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr unit_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr duration_;
-  ::PROTOBUF_NAMESPACE_ID::int32 unit_value_;
-  ::PROTOBUF_NAMESPACE_ID::int32 chargeable_;
-  ::PROTOBUF_NAMESPACE_ID::int32 used_;
-  ::PROTOBUF_NAMESPACE_ID::int32 charged_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::int64 cpu_;
+  ::PROTOBUF_NAMESPACE_ID::int64 ram_;
+  ::PROTOBUF_NAMESPACE_ID::int64 storage_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_billing_2fv1alpha1_2fbilling_2eproto;
 };
@@ -1049,176 +1022,110 @@ inline void Metrics::set_allocated_metric_id(std::string* metric_id) {
   // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.Metrics.metric_id)
 }
 
-// string unit = 2 [json_name = "unit"];
-inline void Metrics::clear_unit() {
-  unit_.ClearToEmpty();
+// string organization_id = 2 [json_name = "organizationId"];
+inline void Metrics::clear_organization_id() {
+  organization_id_.ClearToEmpty();
 }
-inline const std::string& Metrics::unit() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.Metrics.unit)
-  return _internal_unit();
+inline const std::string& Metrics::organization_id() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.Metrics.organization_id)
+  return _internal_organization_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void Metrics::set_unit(ArgT0&& arg0, ArgT... args) {
+void Metrics::set_organization_id(ArgT0&& arg0, ArgT... args) {
  
- unit_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:billing.v1alpha1.Metrics.unit)
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.Metrics.organization_id)
 }
-inline std::string* Metrics::mutable_unit() {
-  std::string* _s = _internal_mutable_unit();
-  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.Metrics.unit)
+inline std::string* Metrics::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.Metrics.organization_id)
   return _s;
 }
-inline const std::string& Metrics::_internal_unit() const {
-  return unit_.Get();
+inline const std::string& Metrics::_internal_organization_id() const {
+  return organization_id_.Get();
 }
-inline void Metrics::_internal_set_unit(const std::string& value) {
+inline void Metrics::_internal_set_organization_id(const std::string& value) {
   
-  unit_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* Metrics::_internal_mutable_unit() {
+inline std::string* Metrics::_internal_mutable_organization_id() {
   
-  return unit_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* Metrics::release_unit() {
-  // @@protoc_insertion_point(field_release:billing.v1alpha1.Metrics.unit)
-  return unit_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* Metrics::release_organization_id() {
+  // @@protoc_insertion_point(field_release:billing.v1alpha1.Metrics.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void Metrics::set_allocated_unit(std::string* unit) {
-  if (unit != nullptr) {
+inline void Metrics::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
     
   } else {
     
   }
-  unit_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), unit,
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.Metrics.unit)
+  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.Metrics.organization_id)
 }
 
-// string duration = 3 [json_name = "duration"];
-inline void Metrics::clear_duration() {
-  duration_.ClearToEmpty();
+// int64 cpu = 3 [json_name = "cpu"];
+inline void Metrics::clear_cpu() {
+  cpu_ = int64_t{0};
 }
-inline const std::string& Metrics::duration() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.Metrics.duration)
-  return _internal_duration();
+inline ::PROTOBUF_NAMESPACE_ID::int64 Metrics::_internal_cpu() const {
+  return cpu_;
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Metrics::set_duration(ArgT0&& arg0, ArgT... args) {
- 
- duration_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:billing.v1alpha1.Metrics.duration)
+inline ::PROTOBUF_NAMESPACE_ID::int64 Metrics::cpu() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.Metrics.cpu)
+  return _internal_cpu();
 }
-inline std::string* Metrics::mutable_duration() {
-  std::string* _s = _internal_mutable_duration();
-  // @@protoc_insertion_point(field_mutable:billing.v1alpha1.Metrics.duration)
-  return _s;
-}
-inline const std::string& Metrics::_internal_duration() const {
-  return duration_.Get();
-}
-inline void Metrics::_internal_set_duration(const std::string& value) {
+inline void Metrics::_internal_set_cpu(::PROTOBUF_NAMESPACE_ID::int64 value) {
   
-  duration_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  cpu_ = value;
 }
-inline std::string* Metrics::_internal_mutable_duration() {
-  
-  return duration_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Metrics::release_duration() {
-  // @@protoc_insertion_point(field_release:billing.v1alpha1.Metrics.duration)
-  return duration_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Metrics::set_allocated_duration(std::string* duration) {
-  if (duration != nullptr) {
-    
-  } else {
-    
-  }
-  duration_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), duration,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:billing.v1alpha1.Metrics.duration)
+inline void Metrics::set_cpu(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_cpu(value);
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.Metrics.cpu)
 }
 
-// int32 unit_value = 4 [json_name = "unitValue"];
-inline void Metrics::clear_unit_value() {
-  unit_value_ = 0;
+// int64 ram = 4 [json_name = "ram"];
+inline void Metrics::clear_ram() {
+  ram_ = int64_t{0};
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Metrics::_internal_unit_value() const {
-  return unit_value_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 Metrics::_internal_ram() const {
+  return ram_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Metrics::unit_value() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.Metrics.unit_value)
-  return _internal_unit_value();
+inline ::PROTOBUF_NAMESPACE_ID::int64 Metrics::ram() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.Metrics.ram)
+  return _internal_ram();
 }
-inline void Metrics::_internal_set_unit_value(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void Metrics::_internal_set_ram(::PROTOBUF_NAMESPACE_ID::int64 value) {
   
-  unit_value_ = value;
+  ram_ = value;
 }
-inline void Metrics::set_unit_value(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_unit_value(value);
-  // @@protoc_insertion_point(field_set:billing.v1alpha1.Metrics.unit_value)
+inline void Metrics::set_ram(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_ram(value);
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.Metrics.ram)
 }
 
-// int32 chargeable = 5 [json_name = "chargeable"];
-inline void Metrics::clear_chargeable() {
-  chargeable_ = 0;
+// int64 storage = 5 [json_name = "storage"];
+inline void Metrics::clear_storage() {
+  storage_ = int64_t{0};
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Metrics::_internal_chargeable() const {
-  return chargeable_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 Metrics::_internal_storage() const {
+  return storage_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Metrics::chargeable() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.Metrics.chargeable)
-  return _internal_chargeable();
+inline ::PROTOBUF_NAMESPACE_ID::int64 Metrics::storage() const {
+  // @@protoc_insertion_point(field_get:billing.v1alpha1.Metrics.storage)
+  return _internal_storage();
 }
-inline void Metrics::_internal_set_chargeable(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void Metrics::_internal_set_storage(::PROTOBUF_NAMESPACE_ID::int64 value) {
   
-  chargeable_ = value;
+  storage_ = value;
 }
-inline void Metrics::set_chargeable(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_chargeable(value);
-  // @@protoc_insertion_point(field_set:billing.v1alpha1.Metrics.chargeable)
-}
-
-// int32 used = 6 [json_name = "used"];
-inline void Metrics::clear_used() {
-  used_ = 0;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 Metrics::_internal_used() const {
-  return used_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 Metrics::used() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.Metrics.used)
-  return _internal_used();
-}
-inline void Metrics::_internal_set_used(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  used_ = value;
-}
-inline void Metrics::set_used(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_used(value);
-  // @@protoc_insertion_point(field_set:billing.v1alpha1.Metrics.used)
-}
-
-// int32 charged = 7 [json_name = "charged"];
-inline void Metrics::clear_charged() {
-  charged_ = 0;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 Metrics::_internal_charged() const {
-  return charged_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 Metrics::charged() const {
-  // @@protoc_insertion_point(field_get:billing.v1alpha1.Metrics.charged)
-  return _internal_charged();
-}
-inline void Metrics::_internal_set_charged(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  charged_ = value;
-}
-inline void Metrics::set_charged(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_charged(value);
-  // @@protoc_insertion_point(field_set:billing.v1alpha1.Metrics.charged)
+inline void Metrics::set_storage(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_storage(value);
+  // @@protoc_insertion_point(field_set:billing.v1alpha1.Metrics.storage)
 }
 
 #ifdef __GNUC__
