@@ -17,6 +17,10 @@ class AccountsProvidersRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string integration_id = 1 [json_name = "integrationId"];</code>
      */
     protected $integration_id = '';
+    /**
+     * Generated from protobuf field <code>uint32 page = 2 [json_name = "page"];</code>
+     */
+    protected $page = 0;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class AccountsProvidersRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $integration_id
+     *     @type int $page
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class AccountsProvidersRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->integration_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 page = 2 [json_name = "page"];</code>
+     * @return int
+     */
+    public function getPage()
+    {
+        return $this->page;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 page = 2 [json_name = "page"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->page = $var;
 
         return $this;
     }

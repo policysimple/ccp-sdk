@@ -61,10 +61,13 @@ message AccountProvider{
 
 message AccountsProvidersRequest {
     string integration_id = 1;
+    uint32 page = 2;
 }
 
 message AccountsProvidersResponse {
     repeated AccountProvider accounts = 1;
+    uint32 count = 2;
+    uint32 total_pages = 3;
 }
 
 /*
@@ -102,10 +105,13 @@ message Branch {
 
 message ListRepositoriesProviderRequest {
     string integration_id = 1;
+    uint32 page = 2;
 }
 
 message ListRepositoriesProviderResponse {
     repeated Repository repositories = 1;
+    uint32 total_pages = 2;
+    uint32 count = 3;
 }
 
 message GetRepositoryProviderRequest {
@@ -369,4 +375,7 @@ message ListProvidersRequest {
 
 message ListProvidersResponse {
     repeated Provider providers = 1;
+    uint32 total_pages = 2;
+    uint32 count = 3;
+
 }
