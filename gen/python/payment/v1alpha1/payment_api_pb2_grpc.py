@@ -5,8 +5,8 @@ from payment.v1alpha1 import payment_api_pb2 as payment_dot_v1alpha1_dot_payment
 
 
 class PaymentAPIServiceStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """import "payment.proto";
+  """
 
   def __init__(self, channel):
     """Constructor.
@@ -14,10 +14,35 @@ class PaymentAPIServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
+    self.CreateSuscription = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/CreateSuscription',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateSuscriptionRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateSuscriptionResponse.FromString,
+        )
+    self.UpdateSuscription = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/UpdateSuscription',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSuscriptionRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSuscriptionResponse.FromString,
+        )
+    self.CancelSuscription = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/CancelSuscription',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CancelSuscriptionRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CancelSuscriptionResponse.FromString,
+        )
+    self.GetSuscription = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/GetSuscription',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetSuscriptionRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetSuscriptionResponse.FromString,
+        )
     self.CreateCustomer = channel.unary_unary(
         '/payment.v1alpha1.PaymentAPIService/CreateCustomer',
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCustomerRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCustomerResponse.FromString,
+        )
+    self.DeleteCustomer = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/DeleteCustomer',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.DeleteCustomerRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.DeleteCustomerResponse.FromString,
         )
     self.GetPayment = channel.unary_unary(
         '/payment.v1alpha1.PaymentAPIService/GetPayment',
@@ -47,10 +72,45 @@ class PaymentAPIServiceStub(object):
 
 
 class PaymentAPIServiceServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """import "payment.proto";
+  """
+
+  def CreateSuscription(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdateSuscription(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CancelSuscription(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetSuscription(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
 
   def CreateCustomer(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteCustomer(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -95,10 +155,35 @@ class PaymentAPIServiceServicer(object):
 
 def add_PaymentAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
+      'CreateSuscription': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateSuscription,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateSuscriptionRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateSuscriptionResponse.SerializeToString,
+      ),
+      'UpdateSuscription': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateSuscription,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSuscriptionRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSuscriptionResponse.SerializeToString,
+      ),
+      'CancelSuscription': grpc.unary_unary_rpc_method_handler(
+          servicer.CancelSuscription,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CancelSuscriptionRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CancelSuscriptionResponse.SerializeToString,
+      ),
+      'GetSuscription': grpc.unary_unary_rpc_method_handler(
+          servicer.GetSuscription,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetSuscriptionRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetSuscriptionResponse.SerializeToString,
+      ),
       'CreateCustomer': grpc.unary_unary_rpc_method_handler(
           servicer.CreateCustomer,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCustomerRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCustomerResponse.SerializeToString,
+      ),
+      'DeleteCustomer': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteCustomer,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.DeleteCustomerRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.DeleteCustomerResponse.SerializeToString,
       ),
       'GetPayment': grpc.unary_unary_rpc_method_handler(
           servicer.GetPayment,

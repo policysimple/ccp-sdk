@@ -5,6 +5,28 @@ var grpc = require('grpc');
 var payment_v1alpha1_payment_api_pb = require('../../payment/v1alpha1/payment_api_pb.js');
 var payment_v1alpha1_payment_pb = require('../../payment/v1alpha1/payment_pb.js');
 
+function serialize_payment_v1alpha1_CancelSuscriptionRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.CancelSuscriptionRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.CancelSuscriptionRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_CancelSuscriptionRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.CancelSuscriptionRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_CancelSuscriptionResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.CancelSuscriptionResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.CancelSuscriptionResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_CancelSuscriptionResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.CancelSuscriptionResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_payment_v1alpha1_CreateCustomerRequest(arg) {
   if (!(arg instanceof payment_v1alpha1_payment_api_pb.CreateCustomerRequest)) {
     throw new Error('Expected argument of type payment.v1alpha1.CreateCustomerRequest');
@@ -47,6 +69,50 @@ function serialize_payment_v1alpha1_CreatePaymentResponse(arg) {
 
 function deserialize_payment_v1alpha1_CreatePaymentResponse(buffer_arg) {
   return payment_v1alpha1_payment_api_pb.CreatePaymentResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_CreateSuscriptionRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.CreateSuscriptionRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.CreateSuscriptionRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_CreateSuscriptionRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.CreateSuscriptionRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_CreateSuscriptionResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.CreateSuscriptionResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.CreateSuscriptionResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_CreateSuscriptionResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.CreateSuscriptionResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_DeleteCustomerRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.DeleteCustomerRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.DeleteCustomerRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_DeleteCustomerRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.DeleteCustomerRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_DeleteCustomerResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.DeleteCustomerResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.DeleteCustomerResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_DeleteCustomerResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.DeleteCustomerResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_payment_v1alpha1_DeletePaymentRequest(arg) {
@@ -93,6 +159,28 @@ function deserialize_payment_v1alpha1_GetPaymentResponse(buffer_arg) {
   return payment_v1alpha1_payment_api_pb.GetPaymentResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_payment_v1alpha1_GetSuscriptionRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.GetSuscriptionRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.GetSuscriptionRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_GetSuscriptionRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.GetSuscriptionRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_GetSuscriptionResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.GetSuscriptionResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.GetSuscriptionResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_GetSuscriptionResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.GetSuscriptionResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_payment_v1alpha1_ListPaymentRequest(arg) {
   if (!(arg instanceof payment_v1alpha1_payment_api_pb.ListPaymentRequest)) {
     throw new Error('Expected argument of type payment.v1alpha1.ListPaymentRequest');
@@ -137,8 +225,75 @@ function deserialize_payment_v1alpha1_UpdatePaymentResponse(buffer_arg) {
   return payment_v1alpha1_payment_api_pb.UpdatePaymentResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_payment_v1alpha1_UpdateSuscriptionRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.UpdateSuscriptionRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.UpdateSuscriptionRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
 
+function deserialize_payment_v1alpha1_UpdateSuscriptionRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.UpdateSuscriptionRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_UpdateSuscriptionResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.UpdateSuscriptionResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.UpdateSuscriptionResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_UpdateSuscriptionResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.UpdateSuscriptionResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+
+// import "payment.proto";
 var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
+  createSuscription: {
+    path: '/payment.v1alpha1.PaymentAPIService/CreateSuscription',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.CreateSuscriptionRequest,
+    responseType: payment_v1alpha1_payment_api_pb.CreateSuscriptionResponse,
+    requestSerialize: serialize_payment_v1alpha1_CreateSuscriptionRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_CreateSuscriptionRequest,
+    responseSerialize: serialize_payment_v1alpha1_CreateSuscriptionResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_CreateSuscriptionResponse,
+  },
+  updateSuscription: {
+    path: '/payment.v1alpha1.PaymentAPIService/UpdateSuscription',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.UpdateSuscriptionRequest,
+    responseType: payment_v1alpha1_payment_api_pb.UpdateSuscriptionResponse,
+    requestSerialize: serialize_payment_v1alpha1_UpdateSuscriptionRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_UpdateSuscriptionRequest,
+    responseSerialize: serialize_payment_v1alpha1_UpdateSuscriptionResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_UpdateSuscriptionResponse,
+  },
+  cancelSuscription: {
+    path: '/payment.v1alpha1.PaymentAPIService/CancelSuscription',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.CancelSuscriptionRequest,
+    responseType: payment_v1alpha1_payment_api_pb.CancelSuscriptionResponse,
+    requestSerialize: serialize_payment_v1alpha1_CancelSuscriptionRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_CancelSuscriptionRequest,
+    responseSerialize: serialize_payment_v1alpha1_CancelSuscriptionResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_CancelSuscriptionResponse,
+  },
+  getSuscription: {
+    path: '/payment.v1alpha1.PaymentAPIService/GetSuscription',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.GetSuscriptionRequest,
+    responseType: payment_v1alpha1_payment_api_pb.GetSuscriptionResponse,
+    requestSerialize: serialize_payment_v1alpha1_GetSuscriptionRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_GetSuscriptionRequest,
+    responseSerialize: serialize_payment_v1alpha1_GetSuscriptionResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_GetSuscriptionResponse,
+  },
   createCustomer: {
     path: '/payment.v1alpha1.PaymentAPIService/CreateCustomer',
     requestStream: false,
@@ -149,6 +304,17 @@ var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
     requestDeserialize: deserialize_payment_v1alpha1_CreateCustomerRequest,
     responseSerialize: serialize_payment_v1alpha1_CreateCustomerResponse,
     responseDeserialize: deserialize_payment_v1alpha1_CreateCustomerResponse,
+  },
+  deleteCustomer: {
+    path: '/payment.v1alpha1.PaymentAPIService/DeleteCustomer',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.DeleteCustomerRequest,
+    responseType: payment_v1alpha1_payment_api_pb.DeleteCustomerResponse,
+    requestSerialize: serialize_payment_v1alpha1_DeleteCustomerRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_DeleteCustomerRequest,
+    responseSerialize: serialize_payment_v1alpha1_DeleteCustomerResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_DeleteCustomerResponse,
   },
   getPayment: {
     path: '/payment.v1alpha1.PaymentAPIService/GetPayment',

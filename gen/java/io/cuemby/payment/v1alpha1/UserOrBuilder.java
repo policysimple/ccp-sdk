@@ -8,24 +8,36 @@ public interface UserOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string name = 1 [json_name = "name"];</code>
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
+
+  /**
+   * <code>string name = 2 [json_name = "name"];</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
-   * <code>string name = 1 [json_name = "name"];</code>
+   * <code>string name = 2 [json_name = "name"];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
-   * <code>string email = 2 [json_name = "email"];</code>
+   * <code>string email = 3 [json_name = "email"];</code>
    * @return The email.
    */
   java.lang.String getEmail();
   /**
-   * <code>string email = 2 [json_name = "email"];</code>
+   * <code>string email = 3 [json_name = "email"];</code>
    * @return The bytes for email.
    */
   com.google.protobuf.ByteString
