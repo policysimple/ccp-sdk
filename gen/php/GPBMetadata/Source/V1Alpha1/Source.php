@@ -16,15 +16,19 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-’@
+•B
 source/v1alpha1/source.protosource.v1alpha1"9
 AccountProvider
 name (	Rname
-type (	Rtype"A
+type (	Rtype"U
 AccountsProvidersRequest%
-integration_id (	RintegrationId"Y
+integration_id (	RintegrationId
+page (Rpage"ê
 AccountsProvidersResponse<
-accounts (2 .source.v1alpha1.AccountProviderRaccounts"R
+accounts (2 .source.v1alpha1.AccountProviderRaccounts
+count (Rcount
+total_pages (R
+totalPages"R
 \'DeleteIntegrationsByOrganizationRequest\'
 organization_id (	RorganizationId"<
 (DeleteIntegrationsByOrganizationResponse
@@ -36,11 +40,15 @@ class Source
 Branch
 name (	Rname
 sha (	Rsha
-url (	Rurl"H
+url (	Rurl"\\
 ListRepositoriesProviderRequest%
-integration_id (	RintegrationId"c
+integration_id (	RintegrationId
+page (Rpage"ö
  ListRepositoriesProviderResponse?
-repositories (2.source.v1alpha1.RepositoryRrepositories"Y
+repositories (2.source.v1alpha1.RepositoryRrepositories
+total_pages (R
+totalPages
+count (Rcount"Y
 GetRepositoryProviderRequest%
 integration_id (	RintegrationId
 name (	Rname"R
@@ -226,9 +234,12 @@ providerId=
 CreateProviderResponse
 msg (	Rmsg
 error (	Rerror"
-ListProvidersRequest"P
+ListProvidersRequest"á
 ListProvidersResponse7
-	providers (2.source.v1alpha1.ProviderR	providers2˙
+	providers (2.source.v1alpha1.ProviderR	providers
+total_pages (R
+totalPages
+count (Rcount2˙
 SourceServicea
 CreateProvider&.source.v1alpha1.CreateProviderRequest\'.source.v1alpha1.CreateProviderResponse^
 ListProviders%.source.v1alpha1.ListProvidersRequest&.source.v1alpha1.ListProvidersResponseX
