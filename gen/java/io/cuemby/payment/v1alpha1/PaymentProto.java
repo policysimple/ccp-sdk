@@ -20,6 +20,16 @@ public final class PaymentProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_payment_v1alpha1_Payment_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_v1alpha1_User_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_v1alpha1_User_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_v1alpha1_Suscription_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_v1alpha1_Suscription_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_payment_v1alpha1_PaymentList_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -34,20 +44,26 @@ public final class PaymentProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\036payment/v1alpha1/payment.proto\022\020paymen" +
-      "t.v1alpha1\"\260\002\n\007Payment\022\016\n\002id\030\001 \001(\tR\002id\022(" +
+      "t.v1alpha1\"\356\002\n\007Payment\022\016\n\002id\030\001 \001(\tR\002id\022(" +
       "\n\020card_holder_name\030\002 \001(\tR\016cardHolderName" +
       "\022\033\n\tcard_type\030\003 \001(\tR\010cardType\022\037\n\013card_nu" +
-      "mber\030\004 \001(\005R\ncardNumber\022\035\n\ncvv_number\030\005 \001" +
-      "(\005R\tcvvNumber\022\037\n\013expiry_date\030\006 \001(\tR\nexpi" +
-      "ryDate\022\'\n\017organization_id\030\007 \001(\rR\016organiz" +
-      "ationId\022\035\n\nproject_id\030\010 \001(\rR\tprojectId\022%" +
-      "\n\016application_id\030\t \001(\tR\rapplicationId\">\n" +
-      "\013PaymentList\022/\n\005items\030\001 \003(\0132\031.payment.v1" +
-      "alpha1.PaymentR\005itemsB\213\001\n\032io.cuemby.paym" +
-      "ent.v1alpha1B\014PaymentProtoP\001Z1github.com" +
-      "/cuemby/ccp-sdk/gen/go/payment/v1alpha1\242" +
-      "\002\003PPX\252\002\020Payment.V1Alpha1\312\002\020Payment\\V1Alp" +
-      "ha1b\006proto3"
+      "mber\030\004 \001(\tR\ncardNumber\022\035\n\ncvv_number\030\005 \001" +
+      "(\tR\tcvvNumber\022\031\n\010exp_year\030\006 \001(\tR\007expYear" +
+      "\022\033\n\texp_month\030\007 \001(\tR\010expMonth\022\'\n\017organiz" +
+      "ation_id\030\010 \001(\rR\016organizationId\022\035\n\nprojec" +
+      "t_id\030\t \001(\rR\tprojectId\022%\n\016application_id\030" +
+      "\n \001(\tR\rapplicationId\022%\n\016suscription_id\030\013" +
+      " \001(\tR\rsuscriptionId\"@\n\004User\022\016\n\002id\030\001 \001(\tR" +
+      "\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005email\030\003 \001(\tR\005" +
+      "email\"g\n\013Suscription\022\016\n\002id\030\001 \001(\tR\002id\022\032\n\010" +
+      "customer\030\002 \001(\tR\010customer\022\024\n\005price\030\003 \001(\tR" +
+      "\005price\022\026\n\006cancel\030\004 \001(\010R\006cancel\">\n\013Paymen" +
+      "tList\022/\n\005items\030\001 \003(\0132\031.payment.v1alpha1." +
+      "PaymentR\005itemsB\220\001\n\032io.cuemby.payment.v1a" +
+      "lpha1B\014PaymentProtoP\001Z6github.com/cuemby" +
+      "/ccp-payment-service/payment/v1alpha1\242\002\003" +
+      "PPX\252\002\021PPayment.V1Alpha1\312\002\017PaymentV1Alpha" +
+      "1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -58,9 +74,21 @@ public final class PaymentProto {
     internal_static_payment_v1alpha1_Payment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Payment_descriptor,
-        new java.lang.String[] { "Id", "CardHolderName", "CardType", "CardNumber", "CvvNumber", "ExpiryDate", "OrganizationId", "ProjectId", "ApplicationId", });
-    internal_static_payment_v1alpha1_PaymentList_descriptor =
+        new java.lang.String[] { "Id", "CardHolderName", "CardType", "CardNumber", "CvvNumber", "ExpYear", "ExpMonth", "OrganizationId", "ProjectId", "ApplicationId", "SuscriptionId", });
+    internal_static_payment_v1alpha1_User_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_payment_v1alpha1_User_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_v1alpha1_User_descriptor,
+        new java.lang.String[] { "Id", "Name", "Email", });
+    internal_static_payment_v1alpha1_Suscription_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_payment_v1alpha1_Suscription_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_v1alpha1_Suscription_descriptor,
+        new java.lang.String[] { "Id", "Customer", "Price", "Cancel", });
+    internal_static_payment_v1alpha1_PaymentList_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_payment_v1alpha1_PaymentList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_PaymentList_descriptor,

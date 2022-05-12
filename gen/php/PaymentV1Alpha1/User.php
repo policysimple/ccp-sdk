@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class User extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     */
+    protected $id = '';
+    /**
+     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string email = 2 [json_name = "email"];</code>
+     * Generated from protobuf field <code>string email = 3 [json_name = "email"];</code>
      */
     protected $email = '';
 
@@ -28,6 +32,7 @@ class User extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $id
      *     @type string $name
      *     @type string $email
      * }
@@ -38,7 +43,29 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      * @return string
      */
     public function getName()
@@ -47,7 +74,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email = 2 [json_name = "email"];</code>
+     * Generated from protobuf field <code>string email = 3 [json_name = "email"];</code>
      * @return string
      */
     public function getEmail()
@@ -69,7 +96,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email = 2 [json_name = "email"];</code>
+     * Generated from protobuf field <code>string email = 3 [json_name = "email"];</code>
      * @param string $var
      * @return $this
      */

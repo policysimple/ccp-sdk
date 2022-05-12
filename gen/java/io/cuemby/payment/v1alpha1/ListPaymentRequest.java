@@ -16,8 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListPaymentRequest() {
-    cardHolderName_ = "";
-    cardType_ = "";
+    suscriptionId_ = "";
   }
 
   @java.lang.Override
@@ -50,26 +49,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-
-            id_ = input.readUInt32();
-            break;
-          }
-          case 18: {
+          case 90: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            cardHolderName_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            cardType_ = s;
-            break;
-          }
-          case 32: {
-
-            cardNumber_ = input.readInt32();
+            suscriptionId_ = s;
             break;
           }
           default: {
@@ -104,102 +87,42 @@ private static final long serialVersionUID = 0L;
             io.cuemby.payment.v1alpha1.ListPaymentRequest.class, io.cuemby.payment.v1alpha1.ListPaymentRequest.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private int id_;
+  public static final int SUSCRIPTION_ID_FIELD_NUMBER = 11;
+  private volatile java.lang.Object suscriptionId_;
   /**
-   * <code>uint32 id = 1 [json_name = "id"];</code>
-   * @return The id.
+   * <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
+   * @return The suscriptionId.
    */
   @java.lang.Override
-  public int getId() {
-    return id_;
-  }
-
-  public static final int CARD_HOLDER_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object cardHolderName_;
-  /**
-   * <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-   * @return The cardHolderName.
-   */
-  @java.lang.Override
-  public java.lang.String getCardHolderName() {
-    java.lang.Object ref = cardHolderName_;
+  public java.lang.String getSuscriptionId() {
+    java.lang.Object ref = suscriptionId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      cardHolderName_ = s;
+      suscriptionId_ = s;
       return s;
     }
   }
   /**
-   * <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-   * @return The bytes for cardHolderName.
+   * <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
+   * @return The bytes for suscriptionId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getCardHolderNameBytes() {
-    java.lang.Object ref = cardHolderName_;
+      getSuscriptionIdBytes() {
+    java.lang.Object ref = suscriptionId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      cardHolderName_ = b;
+      suscriptionId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int CARD_TYPE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object cardType_;
-  /**
-   * <code>string card_type = 3 [json_name = "cardType"];</code>
-   * @return The cardType.
-   */
-  @java.lang.Override
-  public java.lang.String getCardType() {
-    java.lang.Object ref = cardType_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      cardType_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string card_type = 3 [json_name = "cardType"];</code>
-   * @return The bytes for cardType.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCardTypeBytes() {
-    java.lang.Object ref = cardType_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      cardType_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int CARD_NUMBER_FIELD_NUMBER = 4;
-  private int cardNumber_;
-  /**
-   * <code>int32 card_number = 4 [json_name = "cardNumber"];</code>
-   * @return The cardNumber.
-   */
-  @java.lang.Override
-  public int getCardNumber() {
-    return cardNumber_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -216,17 +139,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0) {
-      output.writeUInt32(1, id_);
-    }
-    if (!getCardHolderNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cardHolderName_);
-    }
-    if (!getCardTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cardType_);
-    }
-    if (cardNumber_ != 0) {
-      output.writeInt32(4, cardNumber_);
+    if (!getSuscriptionIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, suscriptionId_);
     }
     unknownFields.writeTo(output);
   }
@@ -237,19 +151,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(1, id_);
-    }
-    if (!getCardHolderNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cardHolderName_);
-    }
-    if (!getCardTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, cardType_);
-    }
-    if (cardNumber_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, cardNumber_);
+    if (!getSuscriptionIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, suscriptionId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -266,14 +169,8 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.payment.v1alpha1.ListPaymentRequest other = (io.cuemby.payment.v1alpha1.ListPaymentRequest) obj;
 
-    if (getId()
-        != other.getId()) return false;
-    if (!getCardHolderName()
-        .equals(other.getCardHolderName())) return false;
-    if (!getCardType()
-        .equals(other.getCardType())) return false;
-    if (getCardNumber()
-        != other.getCardNumber()) return false;
+    if (!getSuscriptionId()
+        .equals(other.getSuscriptionId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -285,14 +182,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId();
-    hash = (37 * hash) + CARD_HOLDER_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getCardHolderName().hashCode();
-    hash = (37 * hash) + CARD_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getCardType().hashCode();
-    hash = (37 * hash) + CARD_NUMBER_FIELD_NUMBER;
-    hash = (53 * hash) + getCardNumber();
+    hash = (37 * hash) + SUSCRIPTION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getSuscriptionId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -426,13 +317,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id_ = 0;
-
-      cardHolderName_ = "";
-
-      cardType_ = "";
-
-      cardNumber_ = 0;
+      suscriptionId_ = "";
 
       return this;
     }
@@ -460,10 +345,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.payment.v1alpha1.ListPaymentRequest buildPartial() {
       io.cuemby.payment.v1alpha1.ListPaymentRequest result = new io.cuemby.payment.v1alpha1.ListPaymentRequest(this);
-      result.id_ = id_;
-      result.cardHolderName_ = cardHolderName_;
-      result.cardType_ = cardType_;
-      result.cardNumber_ = cardNumber_;
+      result.suscriptionId_ = suscriptionId_;
       onBuilt();
       return result;
     }
@@ -512,19 +394,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.payment.v1alpha1.ListPaymentRequest other) {
       if (other == io.cuemby.payment.v1alpha1.ListPaymentRequest.getDefaultInstance()) return this;
-      if (other.getId() != 0) {
-        setId(other.getId());
-      }
-      if (!other.getCardHolderName().isEmpty()) {
-        cardHolderName_ = other.cardHolderName_;
+      if (!other.getSuscriptionId().isEmpty()) {
+        suscriptionId_ = other.suscriptionId_;
         onChanged();
-      }
-      if (!other.getCardType().isEmpty()) {
-        cardType_ = other.cardType_;
-        onChanged();
-      }
-      if (other.getCardNumber() != 0) {
-        setCardNumber(other.getCardNumber());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -555,216 +427,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int id_ ;
+    private java.lang.Object suscriptionId_ = "";
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
+     * @return The suscriptionId.
      */
-    @java.lang.Override
-    public int getId() {
-      return id_;
-    }
-    /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @param value The id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setId(int value) {
-      
-      id_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearId() {
-      
-      id_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object cardHolderName_ = "";
-    /**
-     * <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-     * @return The cardHolderName.
-     */
-    public java.lang.String getCardHolderName() {
-      java.lang.Object ref = cardHolderName_;
+    public java.lang.String getSuscriptionId() {
+      java.lang.Object ref = suscriptionId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        cardHolderName_ = s;
+        suscriptionId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-     * @return The bytes for cardHolderName.
+     * <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
+     * @return The bytes for suscriptionId.
      */
     public com.google.protobuf.ByteString
-        getCardHolderNameBytes() {
-      java.lang.Object ref = cardHolderName_;
+        getSuscriptionIdBytes() {
+      java.lang.Object ref = suscriptionId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        cardHolderName_ = b;
+        suscriptionId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-     * @param value The cardHolderName to set.
+     * <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
+     * @param value The suscriptionId to set.
      * @return This builder for chaining.
      */
-    public Builder setCardHolderName(
+    public Builder setSuscriptionId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      cardHolderName_ = value;
+      suscriptionId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
+     * <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearCardHolderName() {
+    public Builder clearSuscriptionId() {
       
-      cardHolderName_ = getDefaultInstance().getCardHolderName();
+      suscriptionId_ = getDefaultInstance().getSuscriptionId();
       onChanged();
       return this;
     }
     /**
-     * <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-     * @param value The bytes for cardHolderName to set.
+     * <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
+     * @param value The bytes for suscriptionId to set.
      * @return This builder for chaining.
      */
-    public Builder setCardHolderNameBytes(
+    public Builder setSuscriptionIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      cardHolderName_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object cardType_ = "";
-    /**
-     * <code>string card_type = 3 [json_name = "cardType"];</code>
-     * @return The cardType.
-     */
-    public java.lang.String getCardType() {
-      java.lang.Object ref = cardType_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        cardType_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string card_type = 3 [json_name = "cardType"];</code>
-     * @return The bytes for cardType.
-     */
-    public com.google.protobuf.ByteString
-        getCardTypeBytes() {
-      java.lang.Object ref = cardType_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        cardType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string card_type = 3 [json_name = "cardType"];</code>
-     * @param value The cardType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCardType(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      cardType_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string card_type = 3 [json_name = "cardType"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCardType() {
-      
-      cardType_ = getDefaultInstance().getCardType();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string card_type = 3 [json_name = "cardType"];</code>
-     * @param value The bytes for cardType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCardTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      cardType_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int cardNumber_ ;
-    /**
-     * <code>int32 card_number = 4 [json_name = "cardNumber"];</code>
-     * @return The cardNumber.
-     */
-    @java.lang.Override
-    public int getCardNumber() {
-      return cardNumber_;
-    }
-    /**
-     * <code>int32 card_number = 4 [json_name = "cardNumber"];</code>
-     * @param value The cardNumber to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCardNumber(int value) {
-      
-      cardNumber_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 card_number = 4 [json_name = "cardNumber"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCardNumber() {
-      
-      cardNumber_ = 0;
+      suscriptionId_ = value;
       onChanged();
       return this;
     }

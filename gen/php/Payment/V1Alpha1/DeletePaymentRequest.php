@@ -26,29 +26,37 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
      */
     protected $card_type = '';
     /**
-     * Generated from protobuf field <code>int32 card_number = 4 [json_name = "cardNumber"];</code>
+     * Generated from protobuf field <code>string card_number = 4 [json_name = "cardNumber"];</code>
      */
-    protected $card_number = 0;
+    protected $card_number = '';
     /**
-     * Generated from protobuf field <code>int32 cvv_number = 5 [json_name = "cvvNumber"];</code>
+     * Generated from protobuf field <code>string cvv_number = 5 [json_name = "cvvNumber"];</code>
      */
-    protected $cvv_number = 0;
+    protected $cvv_number = '';
     /**
-     * Generated from protobuf field <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
+     * Generated from protobuf field <code>string exp_year = 6 [json_name = "expYear"];</code>
      */
-    protected $expiry_date = '';
+    protected $exp_year = '';
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string exp_month = 7 [json_name = "expMonth"];</code>
+     */
+    protected $exp_month = '';
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 8 [json_name = "organizationId"];</code>
      */
     protected $organization_id = 0;
     /**
-     * Generated from protobuf field <code>uint32 project_id = 8 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 9 [json_name = "projectId"];</code>
      */
     protected $project_id = 0;
     /**
-     * Generated from protobuf field <code>string application_id = 9 [json_name = "applicationId"];</code>
+     * Generated from protobuf field <code>string application_id = 10 [json_name = "applicationId"];</code>
      */
     protected $application_id = '';
+    /**
+     * Generated from protobuf field <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
+     */
+    protected $suscription_id = '';
 
     /**
      * Constructor.
@@ -59,12 +67,14 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $card_holder_name
      *     @type string $card_type
-     *     @type int $card_number
-     *     @type int $cvv_number
-     *     @type string $expiry_date
+     *     @type string $card_number
+     *     @type string $cvv_number
+     *     @type string $exp_year
+     *     @type string $exp_month
      *     @type int $organization_id
      *     @type int $project_id
      *     @type string $application_id
+     *     @type string $suscription_id
      * }
      */
     public function __construct($data = NULL) {
@@ -139,8 +149,8 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 card_number = 4 [json_name = "cardNumber"];</code>
-     * @return int
+     * Generated from protobuf field <code>string card_number = 4 [json_name = "cardNumber"];</code>
+     * @return string
      */
     public function getCardNumber()
     {
@@ -148,21 +158,21 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 card_number = 4 [json_name = "cardNumber"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string card_number = 4 [json_name = "cardNumber"];</code>
+     * @param string $var
      * @return $this
      */
     public function setCardNumber($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkString($var, True);
         $this->card_number = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int32 cvv_number = 5 [json_name = "cvvNumber"];</code>
-     * @return int
+     * Generated from protobuf field <code>string cvv_number = 5 [json_name = "cvvNumber"];</code>
+     * @return string
      */
     public function getCvvNumber()
     {
@@ -170,42 +180,64 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 cvv_number = 5 [json_name = "cvvNumber"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string cvv_number = 5 [json_name = "cvvNumber"];</code>
+     * @param string $var
      * @return $this
      */
     public function setCvvNumber($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkString($var, True);
         $this->cvv_number = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
+     * Generated from protobuf field <code>string exp_year = 6 [json_name = "expYear"];</code>
      * @return string
      */
-    public function getExpiryDate()
+    public function getExpYear()
     {
-        return $this->expiry_date;
+        return $this->exp_year;
     }
 
     /**
-     * Generated from protobuf field <code>string expiry_date = 6 [json_name = "expiryDate"];</code>
+     * Generated from protobuf field <code>string exp_year = 6 [json_name = "expYear"];</code>
      * @param string $var
      * @return $this
      */
-    public function setExpiryDate($var)
+    public function setExpYear($var)
     {
         GPBUtil::checkString($var, True);
-        $this->expiry_date = $var;
+        $this->exp_year = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string exp_month = 7 [json_name = "expMonth"];</code>
+     * @return string
+     */
+    public function getExpMonth()
+    {
+        return $this->exp_month;
+    }
+
+    /**
+     * Generated from protobuf field <code>string exp_month = 7 [json_name = "expMonth"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExpMonth($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->exp_month = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 8 [json_name = "organizationId"];</code>
      * @return int
      */
     public function getOrganizationId()
@@ -214,7 +246,7 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 8 [json_name = "organizationId"];</code>
      * @param int $var
      * @return $this
      */
@@ -227,7 +259,7 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 8 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 9 [json_name = "projectId"];</code>
      * @return int
      */
     public function getProjectId()
@@ -236,7 +268,7 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 8 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 9 [json_name = "projectId"];</code>
      * @param int $var
      * @return $this
      */
@@ -249,7 +281,7 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string application_id = 9 [json_name = "applicationId"];</code>
+     * Generated from protobuf field <code>string application_id = 10 [json_name = "applicationId"];</code>
      * @return string
      */
     public function getApplicationId()
@@ -258,7 +290,7 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string application_id = 9 [json_name = "applicationId"];</code>
+     * Generated from protobuf field <code>string application_id = 10 [json_name = "applicationId"];</code>
      * @param string $var
      * @return $this
      */
@@ -266,6 +298,28 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->application_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
+     * @return string
+     */
+    public function getSuscriptionId()
+    {
+        return $this->suscription_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSuscriptionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->suscription_id = $var;
 
         return $this;
     }

@@ -8,38 +8,14 @@ public interface ListPaymentRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 id = 1 [json_name = "id"];</code>
-   * @return The id.
+   * <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
+   * @return The suscriptionId.
    */
-  int getId();
-
+  java.lang.String getSuscriptionId();
   /**
-   * <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-   * @return The cardHolderName.
-   */
-  java.lang.String getCardHolderName();
-  /**
-   * <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-   * @return The bytes for cardHolderName.
+   * <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
+   * @return The bytes for suscriptionId.
    */
   com.google.protobuf.ByteString
-      getCardHolderNameBytes();
-
-  /**
-   * <code>string card_type = 3 [json_name = "cardType"];</code>
-   * @return The cardType.
-   */
-  java.lang.String getCardType();
-  /**
-   * <code>string card_type = 3 [json_name = "cardType"];</code>
-   * @return The bytes for cardType.
-   */
-  com.google.protobuf.ByteString
-      getCardTypeBytes();
-
-  /**
-   * <code>int32 card_number = 4 [json_name = "cardNumber"];</code>
-   * @return The cardNumber.
-   */
-  int getCardNumber();
+      getSuscriptionIdBytes();
 }
