@@ -159,15 +159,12 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROT
   "customer\030\002 \001(\tR\010customer\022\024\n\005price\030\003 \001(\tR"
   "\005price\022\026\n\006cancel\030\004 \001(\010R\006cancel\">\n\013Paymen"
   "tList\022/\n\005items\030\001 \003(\0132\031.payment.v1alpha1."
-  "PaymentR\005itemsB\220\001\n\032io.cuemby.payment.v1a"
-  "lpha1B\014PaymentProtoP\001Z6github.com/cuemby"
-  "/ccp-payment-service/payment/v1alpha1\242\002\003"
-  "PPX\252\002\021PPayment.V1Alpha1\312\002\017PaymentV1Alpha"
-  "1b\006proto3"
+  "PaymentR\005itemsB8Z6github.com/cuemby/ccp-"
+  "payment-service/payment/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_2eproto = {
-  false, false, 809, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
+  false, false, 720, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
   &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once, nullptr, 0, 4,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_2eproto,

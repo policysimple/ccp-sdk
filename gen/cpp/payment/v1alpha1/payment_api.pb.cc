@@ -229,17 +229,7 @@ struct UpdatePaymentResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdatePaymentResponseDefaultTypeInternal _UpdatePaymentResponse_default_instance_;
 constexpr DeletePaymentRequest::DeletePaymentRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , card_holder_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , card_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , card_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , cvv_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , exp_year_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , exp_month_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , suscription_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_id_(0u)
-  , project_id_(0u){}
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct DeletePaymentRequestDefaultTypeInternal {
   constexpr DeletePaymentRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -437,16 +427,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_5
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::DeletePaymentRequest, id_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::DeletePaymentRequest, card_holder_name_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::DeletePaymentRequest, card_type_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::DeletePaymentRequest, card_number_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::DeletePaymentRequest, cvv_number_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::DeletePaymentRequest, exp_year_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::DeletePaymentRequest, exp_month_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::DeletePaymentRequest, organization_id_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::DeletePaymentRequest, project_id_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::DeletePaymentRequest, application_id_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::DeletePaymentRequest, suscription_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::DeletePaymentResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -498,11 +478,11 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 99, -1, sizeof(::payment::v1alpha1::UpdatePaymentRequest)},
   { 106, -1, sizeof(::payment::v1alpha1::UpdatePaymentResponse)},
   { 113, -1, sizeof(::payment::v1alpha1::DeletePaymentRequest)},
-  { 129, -1, sizeof(::payment::v1alpha1::DeletePaymentResponse)},
-  { 135, -1, sizeof(::payment::v1alpha1::GetPaymentRequest)},
-  { 141, -1, sizeof(::payment::v1alpha1::GetPaymentResponse)},
-  { 148, -1, sizeof(::payment::v1alpha1::ListPaymentRequest)},
-  { 154, -1, sizeof(::payment::v1alpha1::ListPaymentResponse)},
+  { 119, -1, sizeof(::payment::v1alpha1::DeletePaymentResponse)},
+  { 125, -1, sizeof(::payment::v1alpha1::GetPaymentRequest)},
+  { 131, -1, sizeof(::payment::v1alpha1::GetPaymentResponse)},
+  { 138, -1, sizeof(::payment::v1alpha1::ListPaymentRequest)},
+  { 144, -1, sizeof(::payment::v1alpha1::ListPaymentResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -570,65 +550,54 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto[
   "nt\022\026\n\006status\030\002 \001(\tR\006status\"d\n\025UpdatePaym"
   "entResponse\0223\n\007payment\030\001 \001(\0132\031.payment.v"
   "1alpha1.PaymentR\007payment\022\026\n\006status\030\002 \001(\t"
-  "R\006status\"\373\002\n\024DeletePaymentRequest\022\016\n\002id\030"
-  "\001 \001(\tR\002id\022(\n\020card_holder_name\030\002 \001(\tR\016car"
-  "dHolderName\022\033\n\tcard_type\030\003 \001(\tR\010cardType"
-  "\022\037\n\013card_number\030\004 \001(\tR\ncardNumber\022\035\n\ncvv"
-  "_number\030\005 \001(\tR\tcvvNumber\022\031\n\010exp_year\030\006 \001"
-  "(\tR\007expYear\022\033\n\texp_month\030\007 \001(\tR\010expMonth"
-  "\022\'\n\017organization_id\030\010 \001(\rR\016organizationI"
-  "d\022\035\n\nproject_id\030\t \001(\rR\tprojectId\022%\n\016appl"
-  "ication_id\030\n \001(\tR\rapplicationId\022%\n\016suscr"
-  "iption_id\030\013 \001(\tR\rsuscriptionId\"/\n\025Delete"
-  "PaymentResponse\022\026\n\006status\030\001 \001(\tR\006status\""
-  "#\n\021GetPaymentRequest\022\016\n\002id\030\001 \001(\tR\002id\"a\n\022"
-  "GetPaymentResponse\0223\n\007payment\030\001 \001(\0132\031.pa"
-  "yment.v1alpha1.PaymentR\007payment\022\026\n\006statu"
-  "s\030\002 \001(\tR\006status\";\n\022ListPaymentRequest\022%\n"
-  "\016suscription_id\030\013 \001(\tR\rsuscriptionId\"o\n\023"
-  "ListPaymentResponse\022@\n\014payment_list\030\001 \001("
-  "\0132\035.payment.v1alpha1.PaymentListR\013paymen"
-  "tList\022\026\n\006status\030\002 \001(\tR\006status2\375\010\n\021Paymen"
-  "tAPIService\022n\n\021CreateSuscription\022*.payme"
-  "nt.v1alpha1.CreateSuscriptionRequest\032+.p"
-  "ayment.v1alpha1.CreateSuscriptionRespons"
-  "e\"\000\022n\n\021UpdateSuscription\022*.payment.v1alp"
-  "ha1.UpdateSuscriptionRequest\032+.payment.v"
-  "1alpha1.UpdateSuscriptionResponse\"\000\022n\n\021C"
-  "ancelSuscription\022*.payment.v1alpha1.Canc"
-  "elSuscriptionRequest\032+.payment.v1alpha1."
-  "CancelSuscriptionResponse\"\000\022e\n\016GetSuscri"
-  "ption\022\'.payment.v1alpha1.GetSuscriptionR"
-  "equest\032(.payment.v1alpha1.GetSuscription"
-  "Response\"\000\022e\n\016CreateCustomer\022\'.payment.v"
-  "1alpha1.CreateCustomerRequest\032(.payment."
-  "v1alpha1.CreateCustomerResponse\"\000\022e\n\016Del"
-  "eteCustomer\022\'.payment.v1alpha1.DeleteCus"
-  "tomerRequest\032(.payment.v1alpha1.DeleteCu"
-  "stomerResponse\"\000\022Y\n\nGetPayment\022#.payment"
-  ".v1alpha1.GetPaymentRequest\032$.payment.v1"
-  "alpha1.GetPaymentResponse\"\000\022b\n\rCreatePay"
-  "ment\022&.payment.v1alpha1.CreatePaymentReq"
-  "uest\032\'.payment.v1alpha1.CreatePaymentRes"
-  "ponse\"\000\022b\n\rUpdatePayment\022&.payment.v1alp"
-  "ha1.UpdatePaymentRequest\032\'.payment.v1alp"
-  "ha1.UpdatePaymentResponse\"\000\022b\n\rDeletePay"
-  "ment\022&.payment.v1alpha1.DeletePaymentReq"
-  "uest\032\'.payment.v1alpha1.DeletePaymentRes"
-  "ponse\"\000\022\\\n\013ListPayment\022$.payment.v1alpha"
-  "1.ListPaymentRequest\032%.payment.v1alpha1."
-  "ListPaymentResponse\"\000B\223\001\n\032io.cuemby.paym"
-  "ent.v1alpha1B\017PaymentAPIProtoP\001Z6github."
-  "com/cuemby/ccp-payment-service/payment/v"
-  "1alpha1\242\002\003PPX\252\002\020Payment.V1Alpha1\312\002\020Payme"
-  "nt\\V1Alpha1b\006proto3"
+  "R\006status\"&\n\024DeletePaymentRequest\022\016\n\002id\030\001"
+  " \001(\tR\002id\"/\n\025DeletePaymentResponse\022\026\n\006sta"
+  "tus\030\001 \001(\tR\006status\"#\n\021GetPaymentRequest\022\016"
+  "\n\002id\030\001 \001(\tR\002id\"a\n\022GetPaymentResponse\0223\n\007"
+  "payment\030\001 \001(\0132\031.payment.v1alpha1.Payment"
+  "R\007payment\022\026\n\006status\030\002 \001(\tR\006status\";\n\022Lis"
+  "tPaymentRequest\022%\n\016suscription_id\030\001 \001(\tR"
+  "\rsuscriptionId\"o\n\023ListPaymentResponse\022@\n"
+  "\014payment_list\030\001 \001(\0132\035.payment.v1alpha1.P"
+  "aymentListR\013paymentList\022\026\n\006status\030\002 \001(\tR"
+  "\006status2\375\010\n\021PaymentAPIService\022n\n\021CreateS"
+  "uscription\022*.payment.v1alpha1.CreateSusc"
+  "riptionRequest\032+.payment.v1alpha1.Create"
+  "SuscriptionResponse\"\000\022n\n\021UpdateSuscripti"
+  "on\022*.payment.v1alpha1.UpdateSuscriptionR"
+  "equest\032+.payment.v1alpha1.UpdateSuscript"
+  "ionResponse\"\000\022n\n\021CancelSuscription\022*.pay"
+  "ment.v1alpha1.CancelSuscriptionRequest\032+"
+  ".payment.v1alpha1.CancelSuscriptionRespo"
+  "nse\"\000\022e\n\016GetSuscription\022\'.payment.v1alph"
+  "a1.GetSuscriptionRequest\032(.payment.v1alp"
+  "ha1.GetSuscriptionResponse\"\000\022e\n\016CreateCu"
+  "stomer\022\'.payment.v1alpha1.CreateCustomer"
+  "Request\032(.payment.v1alpha1.CreateCustome"
+  "rResponse\"\000\022e\n\016DeleteCustomer\022\'.payment."
+  "v1alpha1.DeleteCustomerRequest\032(.payment"
+  ".v1alpha1.DeleteCustomerResponse\"\000\022Y\n\nGe"
+  "tPayment\022#.payment.v1alpha1.GetPaymentRe"
+  "quest\032$.payment.v1alpha1.GetPaymentRespo"
+  "nse\"\000\022b\n\rCreatePayment\022&.payment.v1alpha"
+  "1.CreatePaymentRequest\032\'.payment.v1alpha"
+  "1.CreatePaymentResponse\"\000\022b\n\rUpdatePayme"
+  "nt\022&.payment.v1alpha1.UpdatePaymentReque"
+  "st\032\'.payment.v1alpha1.UpdatePaymentRespo"
+  "nse\"\000\022b\n\rDeletePayment\022&.payment.v1alpha"
+  "1.DeletePaymentRequest\032\'.payment.v1alpha"
+  "1.DeletePaymentResponse\"\000\022\\\n\013ListPayment"
+  "\022$.payment.v1alpha1.ListPaymentRequest\032%"
+  ".payment.v1alpha1.ListPaymentResponse\"\000B"
+  "8Z6github.com/cuemby/ccp-payment-service"
+  "/payment/v1alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_deps[1] = {
   &::descriptor_table_payment_2fv1alpha1_2fpayment_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto = {
-  false, false, 3619, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto, "payment/v1alpha1/payment_api.proto", 
+  false, false, 3185, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto, "payment/v1alpha1/payment_api.proto", 
   &descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_once, descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_deps, 1, 22,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_5fapi_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_5fapi_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_5fapi_2eproto,
@@ -4599,66 +4568,11 @@ DeletePaymentRequest::DeletePaymentRequest(const DeletePaymentRequest& from)
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArenaForAllocation());
   }
-  card_holder_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_card_holder_name().empty()) {
-    card_holder_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_card_holder_name(), 
-      GetArenaForAllocation());
-  }
-  card_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_card_type().empty()) {
-    card_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_card_type(), 
-      GetArenaForAllocation());
-  }
-  card_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_card_number().empty()) {
-    card_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_card_number(), 
-      GetArenaForAllocation());
-  }
-  cvv_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_cvv_number().empty()) {
-    cvv_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_cvv_number(), 
-      GetArenaForAllocation());
-  }
-  exp_year_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_exp_year().empty()) {
-    exp_year_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_exp_year(), 
-      GetArenaForAllocation());
-  }
-  exp_month_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_exp_month().empty()) {
-    exp_month_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_exp_month(), 
-      GetArenaForAllocation());
-  }
-  application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_application_id().empty()) {
-    application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_application_id(), 
-      GetArenaForAllocation());
-  }
-  suscription_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_suscription_id().empty()) {
-    suscription_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_suscription_id(), 
-      GetArenaForAllocation());
-  }
-  ::memcpy(&organization_id_, &from.organization_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&project_id_) -
-    reinterpret_cast<char*>(&organization_id_)) + sizeof(project_id_));
   // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.DeletePaymentRequest)
 }
 
 inline void DeletePaymentRequest::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-card_holder_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-card_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-card_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-cvv_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-exp_year_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-exp_month_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-suscription_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&organization_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&project_id_) -
-    reinterpret_cast<char*>(&organization_id_)) + sizeof(project_id_));
 }
 
 DeletePaymentRequest::~DeletePaymentRequest() {
@@ -4671,14 +4585,6 @@ DeletePaymentRequest::~DeletePaymentRequest() {
 inline void DeletePaymentRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  card_holder_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  card_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  card_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  cvv_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  exp_year_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  exp_month_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  application_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  suscription_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeletePaymentRequest::ArenaDtor(void* object) {
@@ -4698,17 +4604,6 @@ void DeletePaymentRequest::Clear() {
   (void) cached_has_bits;
 
   id_.ClearToEmpty();
-  card_holder_name_.ClearToEmpty();
-  card_type_.ClearToEmpty();
-  card_number_.ClearToEmpty();
-  cvv_number_.ClearToEmpty();
-  exp_year_.ClearToEmpty();
-  exp_month_.ClearToEmpty();
-  application_id_.ClearToEmpty();
-  suscription_id_.ClearToEmpty();
-  ::memset(&organization_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&project_id_) -
-      reinterpret_cast<char*>(&organization_id_)) + sizeof(project_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4724,92 +4619,6 @@ const char* DeletePaymentRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           auto str = _internal_mutable_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.DeletePaymentRequest.id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string card_holder_name = 2 [json_name = "cardHolderName"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_card_holder_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.DeletePaymentRequest.card_holder_name"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string card_type = 3 [json_name = "cardType"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_card_type();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.DeletePaymentRequest.card_type"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string card_number = 4 [json_name = "cardNumber"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_card_number();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.DeletePaymentRequest.card_number"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string cvv_number = 5 [json_name = "cvvNumber"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          auto str = _internal_mutable_cvv_number();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.DeletePaymentRequest.cvv_number"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string exp_year = 6 [json_name = "expYear"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
-          auto str = _internal_mutable_exp_year();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.DeletePaymentRequest.exp_year"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string exp_month = 7 [json_name = "expMonth"];
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
-          auto str = _internal_mutable_exp_month();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.DeletePaymentRequest.exp_month"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint32 organization_id = 8 [json_name = "organizationId"];
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint32 project_id = 9 [json_name = "projectId"];
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
-          project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string application_id = 10 [json_name = "applicationId"];
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
-          auto str = _internal_mutable_application_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.DeletePaymentRequest.application_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string suscription_id = 11 [json_name = "suscriptionId"];
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
-          auto str = _internal_mutable_suscription_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.DeletePaymentRequest.suscription_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4852,98 +4661,6 @@ failure:
         1, this->_internal_id(), target);
   }
 
-  // string card_holder_name = 2 [json_name = "cardHolderName"];
-  if (!this->_internal_card_holder_name().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_card_holder_name().data(), static_cast<int>(this->_internal_card_holder_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.DeletePaymentRequest.card_holder_name");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_card_holder_name(), target);
-  }
-
-  // string card_type = 3 [json_name = "cardType"];
-  if (!this->_internal_card_type().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_card_type().data(), static_cast<int>(this->_internal_card_type().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.DeletePaymentRequest.card_type");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_card_type(), target);
-  }
-
-  // string card_number = 4 [json_name = "cardNumber"];
-  if (!this->_internal_card_number().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_card_number().data(), static_cast<int>(this->_internal_card_number().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.DeletePaymentRequest.card_number");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_card_number(), target);
-  }
-
-  // string cvv_number = 5 [json_name = "cvvNumber"];
-  if (!this->_internal_cvv_number().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_cvv_number().data(), static_cast<int>(this->_internal_cvv_number().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.DeletePaymentRequest.cvv_number");
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_cvv_number(), target);
-  }
-
-  // string exp_year = 6 [json_name = "expYear"];
-  if (!this->_internal_exp_year().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_exp_year().data(), static_cast<int>(this->_internal_exp_year().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.DeletePaymentRequest.exp_year");
-    target = stream->WriteStringMaybeAliased(
-        6, this->_internal_exp_year(), target);
-  }
-
-  // string exp_month = 7 [json_name = "expMonth"];
-  if (!this->_internal_exp_month().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_exp_month().data(), static_cast<int>(this->_internal_exp_month().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.DeletePaymentRequest.exp_month");
-    target = stream->WriteStringMaybeAliased(
-        7, this->_internal_exp_month(), target);
-  }
-
-  // uint32 organization_id = 8 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(8, this->_internal_organization_id(), target);
-  }
-
-  // uint32 project_id = 9 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(9, this->_internal_project_id(), target);
-  }
-
-  // string application_id = 10 [json_name = "applicationId"];
-  if (!this->_internal_application_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_application_id().data(), static_cast<int>(this->_internal_application_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.DeletePaymentRequest.application_id");
-    target = stream->WriteStringMaybeAliased(
-        10, this->_internal_application_id(), target);
-  }
-
-  // string suscription_id = 11 [json_name = "suscriptionId"];
-  if (!this->_internal_suscription_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_suscription_id().data(), static_cast<int>(this->_internal_suscription_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.DeletePaymentRequest.suscription_id");
-    target = stream->WriteStringMaybeAliased(
-        11, this->_internal_suscription_id(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -4965,76 +4682,6 @@ size_t DeletePaymentRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_id());
-  }
-
-  // string card_holder_name = 2 [json_name = "cardHolderName"];
-  if (!this->_internal_card_holder_name().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_card_holder_name());
-  }
-
-  // string card_type = 3 [json_name = "cardType"];
-  if (!this->_internal_card_type().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_card_type());
-  }
-
-  // string card_number = 4 [json_name = "cardNumber"];
-  if (!this->_internal_card_number().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_card_number());
-  }
-
-  // string cvv_number = 5 [json_name = "cvvNumber"];
-  if (!this->_internal_cvv_number().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_cvv_number());
-  }
-
-  // string exp_year = 6 [json_name = "expYear"];
-  if (!this->_internal_exp_year().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_exp_year());
-  }
-
-  // string exp_month = 7 [json_name = "expMonth"];
-  if (!this->_internal_exp_month().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_exp_month());
-  }
-
-  // string application_id = 10 [json_name = "applicationId"];
-  if (!this->_internal_application_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_application_id());
-  }
-
-  // string suscription_id = 11 [json_name = "suscriptionId"];
-  if (!this->_internal_suscription_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_suscription_id());
-  }
-
-  // uint32 organization_id = 8 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_organization_id());
-  }
-
-  // uint32 project_id = 9 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_project_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5068,36 +4715,6 @@ void DeletePaymentRequest::MergeFrom(const DeletePaymentRequest& from) {
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
-  if (!from._internal_card_holder_name().empty()) {
-    _internal_set_card_holder_name(from._internal_card_holder_name());
-  }
-  if (!from._internal_card_type().empty()) {
-    _internal_set_card_type(from._internal_card_type());
-  }
-  if (!from._internal_card_number().empty()) {
-    _internal_set_card_number(from._internal_card_number());
-  }
-  if (!from._internal_cvv_number().empty()) {
-    _internal_set_cvv_number(from._internal_cvv_number());
-  }
-  if (!from._internal_exp_year().empty()) {
-    _internal_set_exp_year(from._internal_exp_year());
-  }
-  if (!from._internal_exp_month().empty()) {
-    _internal_set_exp_month(from._internal_exp_month());
-  }
-  if (!from._internal_application_id().empty()) {
-    _internal_set_application_id(from._internal_application_id());
-  }
-  if (!from._internal_suscription_id().empty()) {
-    _internal_set_suscription_id(from._internal_suscription_id());
-  }
-  if (from._internal_organization_id() != 0) {
-    _internal_set_organization_id(from._internal_organization_id());
-  }
-  if (from._internal_project_id() != 0) {
-    _internal_set_project_id(from._internal_project_id());
-  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -5120,52 +4737,6 @@ void DeletePaymentRequest::InternalSwap(DeletePaymentRequest* other) {
       &id_, GetArenaForAllocation(),
       &other->id_, other->GetArenaForAllocation()
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &card_holder_name_, GetArenaForAllocation(),
-      &other->card_holder_name_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &card_type_, GetArenaForAllocation(),
-      &other->card_type_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &card_number_, GetArenaForAllocation(),
-      &other->card_number_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &cvv_number_, GetArenaForAllocation(),
-      &other->cvv_number_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &exp_year_, GetArenaForAllocation(),
-      &other->exp_year_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &exp_month_, GetArenaForAllocation(),
-      &other->exp_month_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &application_id_, GetArenaForAllocation(),
-      &other->application_id_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &suscription_id_, GetArenaForAllocation(),
-      &other->suscription_id_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(DeletePaymentRequest, project_id_)
-      + sizeof(DeletePaymentRequest::project_id_)
-      - PROTOBUF_FIELD_OFFSET(DeletePaymentRequest, organization_id_)>(
-          reinterpret_cast<char*>(&organization_id_),
-          reinterpret_cast<char*>(&other->organization_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeletePaymentRequest::GetMetadata() const {
@@ -5890,9 +5461,9 @@ const char* ListPaymentRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string suscription_id = 11 [json_name = "suscriptionId"];
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+      // string suscription_id = 1 [json_name = "suscriptionId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_suscription_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.ListPaymentRequest.suscription_id"));
@@ -5928,14 +5499,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string suscription_id = 11 [json_name = "suscriptionId"];
+  // string suscription_id = 1 [json_name = "suscriptionId"];
   if (!this->_internal_suscription_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_suscription_id().data(), static_cast<int>(this->_internal_suscription_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "payment.v1alpha1.ListPaymentRequest.suscription_id");
     target = stream->WriteStringMaybeAliased(
-        11, this->_internal_suscription_id(), target);
+        1, this->_internal_suscription_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5954,7 +5525,7 @@ size_t ListPaymentRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string suscription_id = 11 [json_name = "suscriptionId"];
+  // string suscription_id = 1 [json_name = "suscriptionId"];
   if (!this->_internal_suscription_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
