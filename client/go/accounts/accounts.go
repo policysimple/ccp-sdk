@@ -35,7 +35,7 @@ func init() {
 		client = accountpkgv1.NewAccountServiceClient(con)
 	})
 }
-func ListOrganization(in *accountpkgv1.ListOrganizationRequest) (*accountpkgv1.ListOrganizationResponse, error) {
+func ListOrganization() (*accountpkgv1.ListOrganizationResponse, error) {
 	bylogs.LogInfo("ListOrganization Client Sdk")
 	d, err := time.ParseDuration(accountServiceTimeout)
 	if err != nil {

@@ -524,12 +524,10 @@ proto.billing.v1alpha1.Metrics.prototype.toObject = function(opt_includeInstance
 proto.billing.v1alpha1.Metrics.toObject = function(includeInstance, msg) {
   var f, obj = {
     metricId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    unit: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    duration: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    unitValue: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    chargeable: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    used: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    charged: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    organizationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    cpu: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    ram: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    storage: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -572,27 +570,19 @@ proto.billing.v1alpha1.Metrics.deserializeBinaryFromReader = function(msg, reade
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUnit(value);
+      msg.setOrganizationId(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDuration(value);
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setCpu(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setUnitValue(value);
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setRam(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setChargeable(value);
-      break;
-    case 6:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setUsed(value);
-      break;
-    case 7:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setCharged(value);
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setStorage(value);
       break;
     default:
       reader.skipField();
@@ -630,45 +620,31 @@ proto.billing.v1alpha1.Metrics.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getUnit();
+  f = message.getOrganizationId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getDuration();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getCpu();
+  if (f !== 0) {
+    writer.writeInt64(
       3,
       f
     );
   }
-  f = message.getUnitValue();
+  f = message.getRam();
   if (f !== 0) {
-    writer.writeInt32(
+    writer.writeInt64(
       4,
       f
     );
   }
-  f = message.getChargeable();
+  f = message.getStorage();
   if (f !== 0) {
-    writer.writeInt32(
+    writer.writeInt64(
       5,
-      f
-    );
-  }
-  f = message.getUsed();
-  if (f !== 0) {
-    writer.writeInt32(
-      6,
-      f
-    );
-  }
-  f = message.getCharged();
-  if (f !== 0) {
-    writer.writeInt32(
-      7,
       f
     );
   }
@@ -694,10 +670,10 @@ proto.billing.v1alpha1.Metrics.prototype.setMetricId = function(value) {
 
 
 /**
- * optional string unit = 2;
+ * optional string organization_id = 2;
  * @return {string}
  */
-proto.billing.v1alpha1.Metrics.prototype.getUnit = function() {
+proto.billing.v1alpha1.Metrics.prototype.getOrganizationId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -706,34 +682,34 @@ proto.billing.v1alpha1.Metrics.prototype.getUnit = function() {
  * @param {string} value
  * @return {!proto.billing.v1alpha1.Metrics} returns this
  */
-proto.billing.v1alpha1.Metrics.prototype.setUnit = function(value) {
+proto.billing.v1alpha1.Metrics.prototype.setOrganizationId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string duration = 3;
- * @return {string}
- */
-proto.billing.v1alpha1.Metrics.prototype.getDuration = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.billing.v1alpha1.Metrics} returns this
- */
-proto.billing.v1alpha1.Metrics.prototype.setDuration = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional int32 unit_value = 4;
+ * optional int64 cpu = 3;
  * @return {number}
  */
-proto.billing.v1alpha1.Metrics.prototype.getUnitValue = function() {
+proto.billing.v1alpha1.Metrics.prototype.getCpu = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.billing.v1alpha1.Metrics} returns this
+ */
+proto.billing.v1alpha1.Metrics.prototype.setCpu = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional int64 ram = 4;
+ * @return {number}
+ */
+proto.billing.v1alpha1.Metrics.prototype.getRam = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -742,16 +718,16 @@ proto.billing.v1alpha1.Metrics.prototype.getUnitValue = function() {
  * @param {number} value
  * @return {!proto.billing.v1alpha1.Metrics} returns this
  */
-proto.billing.v1alpha1.Metrics.prototype.setUnitValue = function(value) {
+proto.billing.v1alpha1.Metrics.prototype.setRam = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional int32 chargeable = 5;
+ * optional int64 storage = 5;
  * @return {number}
  */
-proto.billing.v1alpha1.Metrics.prototype.getChargeable = function() {
+proto.billing.v1alpha1.Metrics.prototype.getStorage = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -760,44 +736,8 @@ proto.billing.v1alpha1.Metrics.prototype.getChargeable = function() {
  * @param {number} value
  * @return {!proto.billing.v1alpha1.Metrics} returns this
  */
-proto.billing.v1alpha1.Metrics.prototype.setChargeable = function(value) {
+proto.billing.v1alpha1.Metrics.prototype.setStorage = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
-};
-
-
-/**
- * optional int32 used = 6;
- * @return {number}
- */
-proto.billing.v1alpha1.Metrics.prototype.getUsed = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.billing.v1alpha1.Metrics} returns this
- */
-proto.billing.v1alpha1.Metrics.prototype.setUsed = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
-};
-
-
-/**
- * optional int32 charged = 7;
- * @return {number}
- */
-proto.billing.v1alpha1.Metrics.prototype.getCharged = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.billing.v1alpha1.Metrics} returns this
- */
-proto.billing.v1alpha1.Metrics.prototype.setCharged = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
