@@ -55,6 +55,9 @@ struct TableStruct_payment_2fv1alpha1_2fpayment_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_2eproto;
 namespace payment {
 namespace v1alpha1 {
+class Customer;
+struct CustomerDefaultTypeInternal;
+extern CustomerDefaultTypeInternal _Customer_default_instance_;
 class Payment;
 struct PaymentDefaultTypeInternal;
 extern PaymentDefaultTypeInternal _Payment_default_instance_;
@@ -64,16 +67,13 @@ extern PaymentListDefaultTypeInternal _PaymentList_default_instance_;
 class Suscription;
 struct SuscriptionDefaultTypeInternal;
 extern SuscriptionDefaultTypeInternal _Suscription_default_instance_;
-class User;
-struct UserDefaultTypeInternal;
-extern UserDefaultTypeInternal _User_default_instance_;
 }  // namespace v1alpha1
 }  // namespace payment
 PROTOBUF_NAMESPACE_OPEN
+template<> ::payment::v1alpha1::Customer* Arena::CreateMaybeMessage<::payment::v1alpha1::Customer>(Arena*);
 template<> ::payment::v1alpha1::Payment* Arena::CreateMaybeMessage<::payment::v1alpha1::Payment>(Arena*);
 template<> ::payment::v1alpha1::PaymentList* Arena::CreateMaybeMessage<::payment::v1alpha1::PaymentList>(Arena*);
 template<> ::payment::v1alpha1::Suscription* Arena::CreateMaybeMessage<::payment::v1alpha1::Suscription>(Arena*);
-template<> ::payment::v1alpha1::User* Arena::CreateMaybeMessage<::payment::v1alpha1::User>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace payment {
 namespace v1alpha1 {
@@ -204,6 +204,7 @@ class Payment final :
     kExpMonthFieldNumber = 7,
     kApplicationIdFieldNumber = 10,
     kSuscriptionIdFieldNumber = 11,
+    kCustomerIdFieldNumber = 12,
     kOrganizationIdFieldNumber = 8,
     kProjectIdFieldNumber = 9,
   };
@@ -333,6 +334,20 @@ class Payment final :
   std::string* _internal_mutable_suscription_id();
   public:
 
+  // string customer_id = 12 [json_name = "customerId"];
+  void clear_customer_id();
+  const std::string& customer_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_customer_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_customer_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_customer_id();
+  void set_allocated_customer_id(std::string* customer_id);
+  private:
+  const std::string& _internal_customer_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_customer_id(const std::string& value);
+  std::string* _internal_mutable_customer_id();
+  public:
+
   // uint32 organization_id = 8 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
@@ -367,6 +382,7 @@ class Payment final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr exp_month_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr suscription_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr customer_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -374,24 +390,24 @@ class Payment final :
 };
 // -------------------------------------------------------------------
 
-class User final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.User) */ {
+class Customer final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.Customer) */ {
  public:
-  inline User() : User(nullptr) {}
-  ~User() override;
-  explicit constexpr User(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline Customer() : Customer(nullptr) {}
+  ~Customer() override;
+  explicit constexpr Customer(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  User(const User& from);
-  User(User&& from) noexcept
-    : User() {
+  Customer(const Customer& from);
+  Customer(Customer&& from) noexcept
+    : Customer() {
     *this = ::std::move(from);
   }
 
-  inline User& operator=(const User& from) {
+  inline Customer& operator=(const Customer& from) {
     CopyFrom(from);
     return *this;
   }
-  inline User& operator=(User&& from) noexcept {
+  inline Customer& operator=(Customer&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -410,20 +426,20 @@ class User final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const User& default_instance() {
+  static const Customer& default_instance() {
     return *internal_default_instance();
   }
-  static inline const User* internal_default_instance() {
-    return reinterpret_cast<const User*>(
-               &_User_default_instance_);
+  static inline const Customer* internal_default_instance() {
+    return reinterpret_cast<const Customer*>(
+               &_Customer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(User& a, User& b) {
+  friend void swap(Customer& a, Customer& b) {
     a.Swap(&b);
   }
-  inline void Swap(User* other) {
+  inline void Swap(Customer* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -431,7 +447,7 @@ class User final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(User* other) {
+  void UnsafeArenaSwap(Customer* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -439,17 +455,17 @@ class User final :
 
   // implements Message ----------------------------------------------
 
-  inline User* New() const final {
-    return new User();
+  inline Customer* New() const final {
+    return new Customer();
   }
 
-  User* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<User>(arena);
+  Customer* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Customer>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const User& from);
+  void CopyFrom(const Customer& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const User& from);
+  void MergeFrom(const Customer& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -466,13 +482,13 @@ class User final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(User* other);
+  void InternalSwap(Customer* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "payment.v1alpha1.User";
+    return "payment.v1alpha1.Customer";
   }
   protected:
-  explicit User(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit Customer(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -535,7 +551,7 @@ class User final :
   std::string* _internal_mutable_email();
   public:
 
-  // @@protoc_insertion_point(class_scope:payment.v1alpha1.User)
+  // @@protoc_insertion_point(class_scope:payment.v1alpha1.Customer)
  private:
   class _Internal;
 
@@ -666,7 +682,7 @@ class Suscription final :
 
   enum : int {
     kIdFieldNumber = 1,
-    kCustomerFieldNumber = 2,
+    kCustomerIdFieldNumber = 2,
     kPriceFieldNumber = 3,
     kCancelFieldNumber = 4,
   };
@@ -684,18 +700,18 @@ class Suscription final :
   std::string* _internal_mutable_id();
   public:
 
-  // string customer = 2 [json_name = "customer"];
-  void clear_customer();
-  const std::string& customer() const;
+  // string customer_id = 2 [json_name = "customerId"];
+  void clear_customer_id();
+  const std::string& customer_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_customer(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_customer();
-  PROTOBUF_MUST_USE_RESULT std::string* release_customer();
-  void set_allocated_customer(std::string* customer);
+  void set_customer_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_customer_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_customer_id();
+  void set_allocated_customer_id(std::string* customer_id);
   private:
-  const std::string& _internal_customer() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_customer(const std::string& value);
-  std::string* _internal_mutable_customer();
+  const std::string& _internal_customer_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_customer_id(const std::string& value);
+  std::string* _internal_mutable_customer_id();
   public:
 
   // string price = 3 [json_name = "price"];
@@ -729,7 +745,7 @@ class Suscription final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr customer_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr customer_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_;
   bool cancel_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1348,46 +1364,92 @@ inline void Payment::set_allocated_suscription_id(std::string* suscription_id) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Payment.suscription_id)
 }
 
+// string customer_id = 12 [json_name = "customerId"];
+inline void Payment::clear_customer_id() {
+  customer_id_.ClearToEmpty();
+}
+inline const std::string& Payment::customer_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Payment.customer_id)
+  return _internal_customer_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Payment::set_customer_id(ArgT0&& arg0, ArgT... args) {
+ 
+ customer_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Payment.customer_id)
+}
+inline std::string* Payment::mutable_customer_id() {
+  std::string* _s = _internal_mutable_customer_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Payment.customer_id)
+  return _s;
+}
+inline const std::string& Payment::_internal_customer_id() const {
+  return customer_id_.Get();
+}
+inline void Payment::_internal_set_customer_id(const std::string& value) {
+  
+  customer_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Payment::_internal_mutable_customer_id() {
+  
+  return customer_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Payment::release_customer_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Payment.customer_id)
+  return customer_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Payment::set_allocated_customer_id(std::string* customer_id) {
+  if (customer_id != nullptr) {
+    
+  } else {
+    
+  }
+  customer_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), customer_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Payment.customer_id)
+}
+
 // -------------------------------------------------------------------
 
-// User
+// Customer
 
 // string id = 1 [json_name = "id"];
-inline void User::clear_id() {
+inline void Customer::clear_id() {
   id_.ClearToEmpty();
 }
-inline const std::string& User::id() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.User.id)
+inline const std::string& Customer::id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Customer.id)
   return _internal_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void User::set_id(ArgT0&& arg0, ArgT... args) {
+void Customer::set_id(ArgT0&& arg0, ArgT... args) {
  
  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.User.id)
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Customer.id)
 }
-inline std::string* User::mutable_id() {
+inline std::string* Customer::mutable_id() {
   std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.User.id)
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Customer.id)
   return _s;
 }
-inline const std::string& User::_internal_id() const {
+inline const std::string& Customer::_internal_id() const {
   return id_.Get();
 }
-inline void User::_internal_set_id(const std::string& value) {
+inline void Customer::_internal_set_id(const std::string& value) {
   
   id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* User::_internal_mutable_id() {
+inline std::string* Customer::_internal_mutable_id() {
   
   return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* User::release_id() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.User.id)
+inline std::string* Customer::release_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Customer.id)
   return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void User::set_allocated_id(std::string* id) {
+inline void Customer::set_allocated_id(std::string* id) {
   if (id != nullptr) {
     
   } else {
@@ -1395,45 +1457,45 @@ inline void User::set_allocated_id(std::string* id) {
   }
   id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.User.id)
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Customer.id)
 }
 
 // string name = 2 [json_name = "name"];
-inline void User::clear_name() {
+inline void Customer::clear_name() {
   name_.ClearToEmpty();
 }
-inline const std::string& User::name() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.User.name)
+inline const std::string& Customer::name() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Customer.name)
   return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void User::set_name(ArgT0&& arg0, ArgT... args) {
+void Customer::set_name(ArgT0&& arg0, ArgT... args) {
  
  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.User.name)
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Customer.name)
 }
-inline std::string* User::mutable_name() {
+inline std::string* Customer::mutable_name() {
   std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.User.name)
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Customer.name)
   return _s;
 }
-inline const std::string& User::_internal_name() const {
+inline const std::string& Customer::_internal_name() const {
   return name_.Get();
 }
-inline void User::_internal_set_name(const std::string& value) {
+inline void Customer::_internal_set_name(const std::string& value) {
   
   name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* User::_internal_mutable_name() {
+inline std::string* Customer::_internal_mutable_name() {
   
   return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* User::release_name() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.User.name)
+inline std::string* Customer::release_name() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Customer.name)
   return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void User::set_allocated_name(std::string* name) {
+inline void Customer::set_allocated_name(std::string* name) {
   if (name != nullptr) {
     
   } else {
@@ -1441,45 +1503,45 @@ inline void User::set_allocated_name(std::string* name) {
   }
   name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.User.name)
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Customer.name)
 }
 
 // string email = 3 [json_name = "email"];
-inline void User::clear_email() {
+inline void Customer::clear_email() {
   email_.ClearToEmpty();
 }
-inline const std::string& User::email() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.User.email)
+inline const std::string& Customer::email() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Customer.email)
   return _internal_email();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void User::set_email(ArgT0&& arg0, ArgT... args) {
+void Customer::set_email(ArgT0&& arg0, ArgT... args) {
  
  email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.User.email)
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Customer.email)
 }
-inline std::string* User::mutable_email() {
+inline std::string* Customer::mutable_email() {
   std::string* _s = _internal_mutable_email();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.User.email)
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Customer.email)
   return _s;
 }
-inline const std::string& User::_internal_email() const {
+inline const std::string& Customer::_internal_email() const {
   return email_.Get();
 }
-inline void User::_internal_set_email(const std::string& value) {
+inline void Customer::_internal_set_email(const std::string& value) {
   
   email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* User::_internal_mutable_email() {
+inline std::string* Customer::_internal_mutable_email() {
   
   return email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* User::release_email() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.User.email)
+inline std::string* Customer::release_email() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Customer.email)
   return email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void User::set_allocated_email(std::string* email) {
+inline void Customer::set_allocated_email(std::string* email) {
   if (email != nullptr) {
     
   } else {
@@ -1487,7 +1549,7 @@ inline void User::set_allocated_email(std::string* email) {
   }
   email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.User.email)
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Customer.email)
 }
 
 // -------------------------------------------------------------------
@@ -1540,50 +1602,50 @@ inline void Suscription::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Suscription.id)
 }
 
-// string customer = 2 [json_name = "customer"];
-inline void Suscription::clear_customer() {
-  customer_.ClearToEmpty();
+// string customer_id = 2 [json_name = "customerId"];
+inline void Suscription::clear_customer_id() {
+  customer_id_.ClearToEmpty();
 }
-inline const std::string& Suscription::customer() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.Suscription.customer)
-  return _internal_customer();
+inline const std::string& Suscription::customer_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Suscription.customer_id)
+  return _internal_customer_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void Suscription::set_customer(ArgT0&& arg0, ArgT... args) {
+void Suscription::set_customer_id(ArgT0&& arg0, ArgT... args) {
  
- customer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.Suscription.customer)
+ customer_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Suscription.customer_id)
 }
-inline std::string* Suscription::mutable_customer() {
-  std::string* _s = _internal_mutable_customer();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Suscription.customer)
+inline std::string* Suscription::mutable_customer_id() {
+  std::string* _s = _internal_mutable_customer_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Suscription.customer_id)
   return _s;
 }
-inline const std::string& Suscription::_internal_customer() const {
-  return customer_.Get();
+inline const std::string& Suscription::_internal_customer_id() const {
+  return customer_id_.Get();
 }
-inline void Suscription::_internal_set_customer(const std::string& value) {
+inline void Suscription::_internal_set_customer_id(const std::string& value) {
   
-  customer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  customer_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* Suscription::_internal_mutable_customer() {
+inline std::string* Suscription::_internal_mutable_customer_id() {
   
-  return customer_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return customer_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* Suscription::release_customer() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.Suscription.customer)
-  return customer_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* Suscription::release_customer_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Suscription.customer_id)
+  return customer_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void Suscription::set_allocated_customer(std::string* customer) {
-  if (customer != nullptr) {
+inline void Suscription::set_allocated_customer_id(std::string* customer_id) {
+  if (customer_id != nullptr) {
     
   } else {
     
   }
-  customer_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), customer,
+  customer_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), customer_id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Suscription.customer)
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Suscription.customer_id)
 }
 
 // string price = 3 [json_name = "price"];

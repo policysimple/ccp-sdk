@@ -16,8 +16,8 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-©
-payment/v1alpha1/payment.protopayment.v1alpha1"Ó
+˙
+payment/v1alpha1/payment.protopayment.v1alpha1"è
 Payment
 id (	Rid(
 card_holder_name (	RcardHolderName
@@ -33,19 +33,21 @@ cvv_number (	R	cvvNumber
 project_id	 (R	projectId%
 application_id
  (	RapplicationId%
-suscription_id (	RsuscriptionId"@
-User
+suscription_id (	RsuscriptionId
+customer_id (	R
+customerId"D
+Customer
 id (	Rid
 name (	Rname
-email (	Remail"g
+email (	Remail"l
 Suscription
-id (	Rid
-customer (	Rcustomer
+id (	Rid
+customer_id (	R
+customerId
 price (	Rprice
 cancel (Rcancel">
 PaymentList/
-items (2.payment.v1alpha1.PaymentRitemsBê
-io.cuemby.payment.v1alpha1BPaymentProtoPZ6github.com/cuemby/ccp-payment-service/payment/v1alpha1¢PPX™PPayment.V1Alpha1 PaymentV1Alpha1bproto3'
+items (2.payment.v1alpha1.PaymentRitemsB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

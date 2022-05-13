@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>payment.v1alpha1.DeletePaymentResponse</code>
+ * Generated from protobuf message <code>payment.v1alpha1.CancelSuscriptionResponse</code>
  */
-class DeletePaymentResponse extends \Google\Protobuf\Internal\Message
+class CancelSuscriptionResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>

@@ -2,13 +2,7 @@ syntax = "proto3";
  
 package payment.v1alpha1;
 
-option csharp_namespace = "PPayment.V1Alpha1";
 option go_package = "github.com/cuemby/ccp-payment-service/payment/v1alpha1";
-option java_multiple_files = true;
-option java_outer_classname = "PaymentProto";
-option java_package = "io.cuemby.payment.v1alpha1";
-option objc_class_prefix = "PPX";
-option php_namespace = "PaymentV1Alpha1";
 
 message Payment {
     string id = 1;
@@ -22,9 +16,10 @@ message Payment {
     uint32 project_id = 9;
     string application_id = 10;
     string suscription_id = 11;
+    string customer_id = 12;
   }
 
-message User {
+message Customer {
   string id =1;
   string name = 2;
   string email = 3;
@@ -32,12 +27,12 @@ message User {
 
 message Suscription {
   string id =1;
-  string customer= 2;
+  string customer_id = 2;
   string price = 3;
   bool cancel = 4;
 }
 
 message PaymentList {
   repeated Payment items = 1;
-}
-  
+
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
