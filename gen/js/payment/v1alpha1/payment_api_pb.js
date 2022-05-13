@@ -2247,7 +2247,7 @@ proto.payment.v1alpha1.CreateCustomerRequest.prototype.toObject = function(opt_i
  */
 proto.payment.v1alpha1.CreateCustomerRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    user: (f = msg.getUser()) && payment_v1alpha1_payment_pb.User.toObject(includeInstance, f),
+    customer: (f = msg.getCustomer()) && payment_v1alpha1_payment_pb.Customer.toObject(includeInstance, f),
     status: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -2286,9 +2286,9 @@ proto.payment.v1alpha1.CreateCustomerRequest.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new payment_v1alpha1_payment_pb.User;
-      reader.readMessage(value,payment_v1alpha1_payment_pb.User.deserializeBinaryFromReader);
-      msg.setUser(value);
+      var value = new payment_v1alpha1_payment_pb.Customer;
+      reader.readMessage(value,payment_v1alpha1_payment_pb.Customer.deserializeBinaryFromReader);
+      msg.setCustomer(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -2323,12 +2323,12 @@ proto.payment.v1alpha1.CreateCustomerRequest.prototype.serializeBinary = functio
  */
 proto.payment.v1alpha1.CreateCustomerRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getUser();
+  f = message.getCustomer();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      payment_v1alpha1_payment_pb.User.serializeBinaryToWriter
+      payment_v1alpha1_payment_pb.Customer.serializeBinaryToWriter
     );
   }
   f = message.getStatus();
@@ -2342,20 +2342,20 @@ proto.payment.v1alpha1.CreateCustomerRequest.serializeBinaryToWriter = function(
 
 
 /**
- * optional User user = 1;
- * @return {?proto.payment.v1alpha1.User}
+ * optional Customer customer = 1;
+ * @return {?proto.payment.v1alpha1.Customer}
  */
-proto.payment.v1alpha1.CreateCustomerRequest.prototype.getUser = function() {
-  return /** @type{?proto.payment.v1alpha1.User} */ (
-    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.User, 1));
+proto.payment.v1alpha1.CreateCustomerRequest.prototype.getCustomer = function() {
+  return /** @type{?proto.payment.v1alpha1.Customer} */ (
+    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Customer, 1));
 };
 
 
 /**
- * @param {?proto.payment.v1alpha1.User|undefined} value
+ * @param {?proto.payment.v1alpha1.Customer|undefined} value
  * @return {!proto.payment.v1alpha1.CreateCustomerRequest} returns this
 */
-proto.payment.v1alpha1.CreateCustomerRequest.prototype.setUser = function(value) {
+proto.payment.v1alpha1.CreateCustomerRequest.prototype.setCustomer = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -2364,8 +2364,8 @@ proto.payment.v1alpha1.CreateCustomerRequest.prototype.setUser = function(value)
  * Clears the message field making it undefined.
  * @return {!proto.payment.v1alpha1.CreateCustomerRequest} returns this
  */
-proto.payment.v1alpha1.CreateCustomerRequest.prototype.clearUser = function() {
-  return this.setUser(undefined);
+proto.payment.v1alpha1.CreateCustomerRequest.prototype.clearCustomer = function() {
+  return this.setCustomer(undefined);
 };
 
 
@@ -2373,7 +2373,7 @@ proto.payment.v1alpha1.CreateCustomerRequest.prototype.clearUser = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.payment.v1alpha1.CreateCustomerRequest.prototype.hasUser = function() {
+proto.payment.v1alpha1.CreateCustomerRequest.prototype.hasCustomer = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

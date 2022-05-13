@@ -7403,19 +7403,19 @@ public final class PaymentApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
-     * @return Whether the user field is set.
+     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @return Whether the customer field is set.
      */
-    boolean hasUser();
+    boolean hasCustomer();
     /**
-     * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
-     * @return The user.
+     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @return The customer.
      */
-    payment.v1alpha1.PaymentOuterClass.User getUser();
+    payment.v1alpha1.PaymentOuterClass.Customer getCustomer();
     /**
-     * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
+     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
      */
-    payment.v1alpha1.PaymentOuterClass.UserOrBuilder getUserOrBuilder();
+    payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder getCustomerOrBuilder();
 
     /**
      * <code>string status = 2 [json_name = "status"];</code>
@@ -7476,14 +7476,14 @@ public final class PaymentApi {
               done = true;
               break;
             case 10: {
-              payment.v1alpha1.PaymentOuterClass.User.Builder subBuilder = null;
-              if (user_ != null) {
-                subBuilder = user_.toBuilder();
+              payment.v1alpha1.PaymentOuterClass.Customer.Builder subBuilder = null;
+              if (customer_ != null) {
+                subBuilder = customer_.toBuilder();
               }
-              user_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.User.parser(), extensionRegistry);
+              customer_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.Customer.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(user_);
-                user_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(customer_);
+                customer_ = subBuilder.buildPartial();
               }
 
               break;
@@ -7526,30 +7526,30 @@ public final class PaymentApi {
               payment.v1alpha1.PaymentApi.CreateCustomerRequest.class, payment.v1alpha1.PaymentApi.CreateCustomerRequest.Builder.class);
     }
 
-    public static final int USER_FIELD_NUMBER = 1;
-    private payment.v1alpha1.PaymentOuterClass.User user_;
+    public static final int CUSTOMER_FIELD_NUMBER = 1;
+    private payment.v1alpha1.PaymentOuterClass.Customer customer_;
     /**
-     * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
-     * @return Whether the user field is set.
+     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @return Whether the customer field is set.
      */
     @java.lang.Override
-    public boolean hasUser() {
-      return user_ != null;
+    public boolean hasCustomer() {
+      return customer_ != null;
     }
     /**
-     * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
-     * @return The user.
+     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @return The customer.
      */
     @java.lang.Override
-    public payment.v1alpha1.PaymentOuterClass.User getUser() {
-      return user_ == null ? payment.v1alpha1.PaymentOuterClass.User.getDefaultInstance() : user_;
+    public payment.v1alpha1.PaymentOuterClass.Customer getCustomer() {
+      return customer_ == null ? payment.v1alpha1.PaymentOuterClass.Customer.getDefaultInstance() : customer_;
     }
     /**
-     * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
+     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
      */
     @java.lang.Override
-    public payment.v1alpha1.PaymentOuterClass.UserOrBuilder getUserOrBuilder() {
-      return getUser();
+    public payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder getCustomerOrBuilder() {
+      return getCustomer();
     }
 
     public static final int STATUS_FIELD_NUMBER = 2;
@@ -7604,8 +7604,8 @@ public final class PaymentApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (user_ != null) {
-        output.writeMessage(1, getUser());
+      if (customer_ != null) {
+        output.writeMessage(1, getCustomer());
       }
       if (!getStatusBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
@@ -7619,9 +7619,9 @@ public final class PaymentApi {
       if (size != -1) return size;
 
       size = 0;
-      if (user_ != null) {
+      if (customer_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getUser());
+          .computeMessageSize(1, getCustomer());
       }
       if (!getStatusBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
@@ -7641,10 +7641,10 @@ public final class PaymentApi {
       }
       payment.v1alpha1.PaymentApi.CreateCustomerRequest other = (payment.v1alpha1.PaymentApi.CreateCustomerRequest) obj;
 
-      if (hasUser() != other.hasUser()) return false;
-      if (hasUser()) {
-        if (!getUser()
-            .equals(other.getUser())) return false;
+      if (hasCustomer() != other.hasCustomer()) return false;
+      if (hasCustomer()) {
+        if (!getCustomer()
+            .equals(other.getCustomer())) return false;
       }
       if (!getStatus()
           .equals(other.getStatus())) return false;
@@ -7659,9 +7659,9 @@ public final class PaymentApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasUser()) {
-        hash = (37 * hash) + USER_FIELD_NUMBER;
-        hash = (53 * hash) + getUser().hashCode();
+      if (hasCustomer()) {
+        hash = (37 * hash) + CUSTOMER_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomer().hashCode();
       }
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
@@ -7798,11 +7798,11 @@ public final class PaymentApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (userBuilder_ == null) {
-          user_ = null;
+        if (customerBuilder_ == null) {
+          customer_ = null;
         } else {
-          user_ = null;
-          userBuilder_ = null;
+          customer_ = null;
+          customerBuilder_ = null;
         }
         status_ = "";
 
@@ -7832,10 +7832,10 @@ public final class PaymentApi {
       @java.lang.Override
       public payment.v1alpha1.PaymentApi.CreateCustomerRequest buildPartial() {
         payment.v1alpha1.PaymentApi.CreateCustomerRequest result = new payment.v1alpha1.PaymentApi.CreateCustomerRequest(this);
-        if (userBuilder_ == null) {
-          result.user_ = user_;
+        if (customerBuilder_ == null) {
+          result.customer_ = customer_;
         } else {
-          result.user_ = userBuilder_.build();
+          result.customer_ = customerBuilder_.build();
         }
         result.status_ = status_;
         onBuilt();
@@ -7886,8 +7886,8 @@ public final class PaymentApi {
 
       public Builder mergeFrom(payment.v1alpha1.PaymentApi.CreateCustomerRequest other) {
         if (other == payment.v1alpha1.PaymentApi.CreateCustomerRequest.getDefaultInstance()) return this;
-        if (other.hasUser()) {
-          mergeUser(other.getUser());
+        if (other.hasCustomer()) {
+          mergeCustomer(other.getCustomer());
         }
         if (!other.getStatus().isEmpty()) {
           status_ = other.status_;
@@ -7922,123 +7922,123 @@ public final class PaymentApi {
         return this;
       }
 
-      private payment.v1alpha1.PaymentOuterClass.User user_;
+      private payment.v1alpha1.PaymentOuterClass.Customer customer_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          payment.v1alpha1.PaymentOuterClass.User, payment.v1alpha1.PaymentOuterClass.User.Builder, payment.v1alpha1.PaymentOuterClass.UserOrBuilder> userBuilder_;
+          payment.v1alpha1.PaymentOuterClass.Customer, payment.v1alpha1.PaymentOuterClass.Customer.Builder, payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder> customerBuilder_;
       /**
-       * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
-       * @return Whether the user field is set.
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+       * @return Whether the customer field is set.
        */
-      public boolean hasUser() {
-        return userBuilder_ != null || user_ != null;
+      public boolean hasCustomer() {
+        return customerBuilder_ != null || customer_ != null;
       }
       /**
-       * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
-       * @return The user.
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+       * @return The customer.
        */
-      public payment.v1alpha1.PaymentOuterClass.User getUser() {
-        if (userBuilder_ == null) {
-          return user_ == null ? payment.v1alpha1.PaymentOuterClass.User.getDefaultInstance() : user_;
+      public payment.v1alpha1.PaymentOuterClass.Customer getCustomer() {
+        if (customerBuilder_ == null) {
+          return customer_ == null ? payment.v1alpha1.PaymentOuterClass.Customer.getDefaultInstance() : customer_;
         } else {
-          return userBuilder_.getMessage();
+          return customerBuilder_.getMessage();
         }
       }
       /**
-       * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
        */
-      public Builder setUser(payment.v1alpha1.PaymentOuterClass.User value) {
-        if (userBuilder_ == null) {
+      public Builder setCustomer(payment.v1alpha1.PaymentOuterClass.Customer value) {
+        if (customerBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          user_ = value;
+          customer_ = value;
           onChanged();
         } else {
-          userBuilder_.setMessage(value);
+          customerBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
        */
-      public Builder setUser(
-          payment.v1alpha1.PaymentOuterClass.User.Builder builderForValue) {
-        if (userBuilder_ == null) {
-          user_ = builderForValue.build();
+      public Builder setCustomer(
+          payment.v1alpha1.PaymentOuterClass.Customer.Builder builderForValue) {
+        if (customerBuilder_ == null) {
+          customer_ = builderForValue.build();
           onChanged();
         } else {
-          userBuilder_.setMessage(builderForValue.build());
+          customerBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
        */
-      public Builder mergeUser(payment.v1alpha1.PaymentOuterClass.User value) {
-        if (userBuilder_ == null) {
-          if (user_ != null) {
-            user_ =
-              payment.v1alpha1.PaymentOuterClass.User.newBuilder(user_).mergeFrom(value).buildPartial();
+      public Builder mergeCustomer(payment.v1alpha1.PaymentOuterClass.Customer value) {
+        if (customerBuilder_ == null) {
+          if (customer_ != null) {
+            customer_ =
+              payment.v1alpha1.PaymentOuterClass.Customer.newBuilder(customer_).mergeFrom(value).buildPartial();
           } else {
-            user_ = value;
+            customer_ = value;
           }
           onChanged();
         } else {
-          userBuilder_.mergeFrom(value);
+          customerBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
        */
-      public Builder clearUser() {
-        if (userBuilder_ == null) {
-          user_ = null;
+      public Builder clearCustomer() {
+        if (customerBuilder_ == null) {
+          customer_ = null;
           onChanged();
         } else {
-          user_ = null;
-          userBuilder_ = null;
+          customer_ = null;
+          customerBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
        */
-      public payment.v1alpha1.PaymentOuterClass.User.Builder getUserBuilder() {
+      public payment.v1alpha1.PaymentOuterClass.Customer.Builder getCustomerBuilder() {
         
         onChanged();
-        return getUserFieldBuilder().getBuilder();
+        return getCustomerFieldBuilder().getBuilder();
       }
       /**
-       * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
        */
-      public payment.v1alpha1.PaymentOuterClass.UserOrBuilder getUserOrBuilder() {
-        if (userBuilder_ != null) {
-          return userBuilder_.getMessageOrBuilder();
+      public payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder getCustomerOrBuilder() {
+        if (customerBuilder_ != null) {
+          return customerBuilder_.getMessageOrBuilder();
         } else {
-          return user_ == null ?
-              payment.v1alpha1.PaymentOuterClass.User.getDefaultInstance() : user_;
+          return customer_ == null ?
+              payment.v1alpha1.PaymentOuterClass.Customer.getDefaultInstance() : customer_;
         }
       }
       /**
-       * <code>.payment.v1alpha1.User user = 1 [json_name = "user"];</code>
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          payment.v1alpha1.PaymentOuterClass.User, payment.v1alpha1.PaymentOuterClass.User.Builder, payment.v1alpha1.PaymentOuterClass.UserOrBuilder> 
-          getUserFieldBuilder() {
-        if (userBuilder_ == null) {
-          userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              payment.v1alpha1.PaymentOuterClass.User, payment.v1alpha1.PaymentOuterClass.User.Builder, payment.v1alpha1.PaymentOuterClass.UserOrBuilder>(
-                  getUser(),
+          payment.v1alpha1.PaymentOuterClass.Customer, payment.v1alpha1.PaymentOuterClass.Customer.Builder, payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder> 
+          getCustomerFieldBuilder() {
+        if (customerBuilder_ == null) {
+          customerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              payment.v1alpha1.PaymentOuterClass.Customer, payment.v1alpha1.PaymentOuterClass.Customer.Builder, payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder>(
+                  getCustomer(),
                   getParentForChildren(),
                   isClean());
-          user_ = null;
+          customer_ = null;
         }
-        return userBuilder_;
+        return customerBuilder_;
       }
 
       private java.lang.Object status_ = "";
@@ -15928,62 +15928,62 @@ public final class PaymentApi {
       "riptionRequest\022\016\n\002id\030\001 \001(\tR\002id\022\032\n\010custom" +
       "er\030\002 \001(\tR\010customer\022\024\n\005price\030\003 \001(\tR\005price" +
       "\022\026\n\006cancel\030\004 \001(\010R\006cancel\"3\n\031CancelSuscri" +
-      "ptionResponse\022\026\n\006status\030\001 \001(\tR\006status\"[\n" +
-      "\025CreateCustomerRequest\022*\n\004user\030\001 \001(\0132\026.p" +
-      "ayment.v1alpha1.UserR\004user\022\026\n\006status\030\002 \001" +
-      "(\tR\006status\"F\n\026CreateCustomerResponse\022\026\n\006" +
-      "status\030\001 \001(\tR\006status\022\024\n\005error\030\002 \001(\tR\005err" +
-      "or\"c\n\024CreatePaymentRequest\0223\n\007payment\030\001 " +
-      "\001(\0132\031.payment.v1alpha1.PaymentR\007payment\022" +
-      "\026\n\006status\030\002 \001(\tR\006status\"d\n\025CreatePayment" +
+      "ptionResponse\022\026\n\006status\030\001 \001(\tR\006status\"g\n" +
+      "\025CreateCustomerRequest\0226\n\010customer\030\001 \001(\013" +
+      "2\032.payment.v1alpha1.CustomerR\010customer\022\026" +
+      "\n\006status\030\002 \001(\tR\006status\"F\n\026CreateCustomer" +
+      "Response\022\026\n\006status\030\001 \001(\tR\006status\022\024\n\005erro" +
+      "r\030\002 \001(\tR\005error\"c\n\024CreatePaymentRequest\0223" +
+      "\n\007payment\030\001 \001(\0132\031.payment.v1alpha1.Payme" +
+      "ntR\007payment\022\026\n\006status\030\002 \001(\tR\006status\"d\n\025C" +
+      "reatePaymentResponse\0223\n\007payment\030\001 \001(\0132\031." +
+      "payment.v1alpha1.PaymentR\007payment\022\026\n\006sta" +
+      "tus\030\002 \001(\tR\006status\"c\n\024UpdatePaymentReques" +
+      "t\0223\n\007payment\030\001 \001(\0132\031.payment.v1alpha1.Pa" +
+      "ymentR\007payment\022\026\n\006status\030\002 \001(\tR\006status\"d" +
+      "\n\025UpdatePaymentResponse\0223\n\007payment\030\001 \001(\013" +
+      "2\031.payment.v1alpha1.PaymentR\007payment\022\026\n\006" +
+      "status\030\002 \001(\tR\006status\"&\n\024DeletePaymentReq" +
+      "uest\022\016\n\002id\030\001 \001(\tR\002id\"/\n\025DeletePaymentRes" +
+      "ponse\022\026\n\006status\030\001 \001(\tR\006status\"#\n\021GetPaym" +
+      "entRequest\022\016\n\002id\030\001 \001(\tR\002id\"a\n\022GetPayment" +
       "Response\0223\n\007payment\030\001 \001(\0132\031.payment.v1al" +
       "pha1.PaymentR\007payment\022\026\n\006status\030\002 \001(\tR\006s" +
-      "tatus\"c\n\024UpdatePaymentRequest\0223\n\007payment" +
-      "\030\001 \001(\0132\031.payment.v1alpha1.PaymentR\007payme" +
-      "nt\022\026\n\006status\030\002 \001(\tR\006status\"d\n\025UpdatePaym" +
-      "entResponse\0223\n\007payment\030\001 \001(\0132\031.payment.v" +
-      "1alpha1.PaymentR\007payment\022\026\n\006status\030\002 \001(\t" +
-      "R\006status\"&\n\024DeletePaymentRequest\022\016\n\002id\030\001" +
-      " \001(\tR\002id\"/\n\025DeletePaymentResponse\022\026\n\006sta" +
-      "tus\030\001 \001(\tR\006status\"#\n\021GetPaymentRequest\022\016" +
-      "\n\002id\030\001 \001(\tR\002id\"a\n\022GetPaymentResponse\0223\n\007" +
-      "payment\030\001 \001(\0132\031.payment.v1alpha1.Payment" +
-      "R\007payment\022\026\n\006status\030\002 \001(\tR\006status\";\n\022Lis" +
-      "tPaymentRequest\022%\n\016suscription_id\030\001 \001(\tR" +
-      "\rsuscriptionId\"o\n\023ListPaymentResponse\022@\n" +
-      "\014payment_list\030\001 \001(\0132\035.payment.v1alpha1.P" +
-      "aymentListR\013paymentList\022\026\n\006status\030\002 \001(\tR" +
-      "\006status2\375\010\n\021PaymentAPIService\022n\n\021CreateS" +
-      "uscription\022*.payment.v1alpha1.CreateSusc" +
-      "riptionRequest\032+.payment.v1alpha1.Create" +
-      "SuscriptionResponse\"\000\022n\n\021UpdateSuscripti" +
-      "on\022*.payment.v1alpha1.UpdateSuscriptionR" +
-      "equest\032+.payment.v1alpha1.UpdateSuscript" +
-      "ionResponse\"\000\022n\n\021CancelSuscription\022*.pay" +
-      "ment.v1alpha1.CancelSuscriptionRequest\032+" +
-      ".payment.v1alpha1.CancelSuscriptionRespo" +
-      "nse\"\000\022e\n\016GetSuscription\022\'.payment.v1alph" +
-      "a1.GetSuscriptionRequest\032(.payment.v1alp" +
-      "ha1.GetSuscriptionResponse\"\000\022e\n\016CreateCu" +
-      "stomer\022\'.payment.v1alpha1.CreateCustomer" +
-      "Request\032(.payment.v1alpha1.CreateCustome" +
-      "rResponse\"\000\022e\n\016DeleteCustomer\022\'.payment." +
-      "v1alpha1.DeleteCustomerRequest\032(.payment" +
-      ".v1alpha1.DeleteCustomerResponse\"\000\022Y\n\nGe" +
-      "tPayment\022#.payment.v1alpha1.GetPaymentRe" +
-      "quest\032$.payment.v1alpha1.GetPaymentRespo" +
-      "nse\"\000\022b\n\rCreatePayment\022&.payment.v1alpha" +
-      "1.CreatePaymentRequest\032\'.payment.v1alpha" +
-      "1.CreatePaymentResponse\"\000\022b\n\rUpdatePayme" +
-      "nt\022&.payment.v1alpha1.UpdatePaymentReque" +
-      "st\032\'.payment.v1alpha1.UpdatePaymentRespo" +
-      "nse\"\000\022b\n\rDeletePayment\022&.payment.v1alpha" +
-      "1.DeletePaymentRequest\032\'.payment.v1alpha" +
-      "1.DeletePaymentResponse\"\000\022\\\n\013ListPayment" +
-      "\022$.payment.v1alpha1.ListPaymentRequest\032%" +
-      ".payment.v1alpha1.ListPaymentResponse\"\000B" +
-      "8Z6github.com/cuemby/ccp-payment-service" +
-      "/payment/v1alpha1b\006proto3"
+      "tatus\";\n\022ListPaymentRequest\022%\n\016suscripti" +
+      "on_id\030\001 \001(\tR\rsuscriptionId\"o\n\023ListPaymen" +
+      "tResponse\022@\n\014payment_list\030\001 \001(\0132\035.paymen" +
+      "t.v1alpha1.PaymentListR\013paymentList\022\026\n\006s" +
+      "tatus\030\002 \001(\tR\006status2\375\010\n\021PaymentAPIServic" +
+      "e\022n\n\021CreateSuscription\022*.payment.v1alpha" +
+      "1.CreateSuscriptionRequest\032+.payment.v1a" +
+      "lpha1.CreateSuscriptionResponse\"\000\022n\n\021Upd" +
+      "ateSuscription\022*.payment.v1alpha1.Update" +
+      "SuscriptionRequest\032+.payment.v1alpha1.Up" +
+      "dateSuscriptionResponse\"\000\022n\n\021CancelSuscr" +
+      "iption\022*.payment.v1alpha1.CancelSuscript" +
+      "ionRequest\032+.payment.v1alpha1.CancelSusc" +
+      "riptionResponse\"\000\022e\n\016GetSuscription\022\'.pa" +
+      "yment.v1alpha1.GetSuscriptionRequest\032(.p" +
+      "ayment.v1alpha1.GetSuscriptionResponse\"\000" +
+      "\022e\n\016CreateCustomer\022\'.payment.v1alpha1.Cr" +
+      "eateCustomerRequest\032(.payment.v1alpha1.C" +
+      "reateCustomerResponse\"\000\022e\n\016DeleteCustome" +
+      "r\022\'.payment.v1alpha1.DeleteCustomerReque" +
+      "st\032(.payment.v1alpha1.DeleteCustomerResp" +
+      "onse\"\000\022Y\n\nGetPayment\022#.payment.v1alpha1." +
+      "GetPaymentRequest\032$.payment.v1alpha1.Get" +
+      "PaymentResponse\"\000\022b\n\rCreatePayment\022&.pay" +
+      "ment.v1alpha1.CreatePaymentRequest\032\'.pay" +
+      "ment.v1alpha1.CreatePaymentResponse\"\000\022b\n" +
+      "\rUpdatePayment\022&.payment.v1alpha1.Update" +
+      "PaymentRequest\032\'.payment.v1alpha1.Update" +
+      "PaymentResponse\"\000\022b\n\rDeletePayment\022&.pay" +
+      "ment.v1alpha1.DeletePaymentRequest\032\'.pay" +
+      "ment.v1alpha1.DeletePaymentResponse\"\000\022\\\n" +
+      "\013ListPayment\022$.payment.v1alpha1.ListPaym" +
+      "entRequest\032%.payment.v1alpha1.ListPaymen" +
+      "tResponse\"\000B8Z6github.com/cuemby/ccp-pay" +
+      "ment-service/payment/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -16055,7 +16055,7 @@ public final class PaymentApi {
     internal_static_payment_v1alpha1_CreateCustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateCustomerRequest_descriptor,
-        new java.lang.String[] { "User", "Status", });
+        new java.lang.String[] { "Customer", "Status", });
     internal_static_payment_v1alpha1_CreateCustomerResponse_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_payment_v1alpha1_CreateCustomerResponse_fieldAccessorTable = new

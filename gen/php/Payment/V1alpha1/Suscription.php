@@ -18,9 +18,9 @@ class Suscription extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string customer = 2 [json_name = "customer"];</code>
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
      */
-    protected $customer = '';
+    protected $customer_id = '';
     /**
      * Generated from protobuf field <code>string price = 3 [json_name = "price"];</code>
      */
@@ -37,7 +37,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $customer
+     *     @type string $customer_id
      *     @type string $price
      *     @type bool $cancel
      * }
@@ -70,23 +70,23 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string customer = 2 [json_name = "customer"];</code>
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
      * @return string
      */
-    public function getCustomer()
+    public function getCustomerId()
     {
-        return $this->customer;
+        return $this->customer_id;
     }
 
     /**
-     * Generated from protobuf field <code>string customer = 2 [json_name = "customer"];</code>
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setCustomer($var)
+    public function setCustomerId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->customer = $var;
+        $this->customer_id = $var;
 
         return $this;
     }

@@ -16,8 +16,8 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-Ð
-payment/v1alpha1/payment.protopayment.v1alpha1"î
+ú
+payment/v1alpha1/payment.protopayment.v1alpha1"
 Payment
 id (	Rid(
 card_holder_name (	RcardHolderName
@@ -33,14 +33,17 @@ cvv_number (	R	cvvNumber
 project_id	 (R	projectId%
 application_id
  (	RapplicationId%
-suscription_id (	RsuscriptionId"@
-User
+suscription_id (	RsuscriptionId
+customer_id (	R
+customerId"D
+Customer
 id (	Rid
 name (	Rname
-email (	Remail"g
+email (	Remail"l
 Suscription
-id (	Rid
-customer (	Rcustomer
+id (	Rid
+customer_id (	R
+customerId
 price (	Rprice
 cancel (Rcancel">
 PaymentList/

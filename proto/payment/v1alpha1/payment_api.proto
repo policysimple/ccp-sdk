@@ -23,7 +23,7 @@ message DeleteCustomerRequest {
     string id =1;
     string name = 2;
     string email = 3;
-    bool cancel = 4;
+    bool   cancel = 4;
 }
 
 message DeleteCustomerResponse {
@@ -63,7 +63,7 @@ message CancelSuscriptionRequest {
     string id =1;
     string customer= 2;
     string price = 3;
-    bool cancel = 4;
+    bool   cancel = 4;
 }
 
 message  CancelSuscriptionResponse {
@@ -71,7 +71,7 @@ message  CancelSuscriptionResponse {
 }
 
 message CreateCustomerRequest {
-    payment.v1alpha1.User user = 1;
+    payment.v1alpha1.Customer customer = 1;
     string status = 2;
 }
 

@@ -1891,7 +1891,7 @@ class CreateCustomerRequest final :
 
   enum : int {
     kStatusFieldNumber = 2,
-    kUserFieldNumber = 1,
+    kCustomerFieldNumber = 1,
   };
   // string status = 2 [json_name = "status"];
   void clear_status();
@@ -1907,23 +1907,23 @@ class CreateCustomerRequest final :
   std::string* _internal_mutable_status();
   public:
 
-  // .payment.v1alpha1.User user = 1 [json_name = "user"];
-  bool has_user() const;
+  // .payment.v1alpha1.Customer customer = 1 [json_name = "customer"];
+  bool has_customer() const;
   private:
-  bool _internal_has_user() const;
+  bool _internal_has_customer() const;
   public:
-  void clear_user();
-  const ::payment::v1alpha1::User& user() const;
-  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::User* release_user();
-  ::payment::v1alpha1::User* mutable_user();
-  void set_allocated_user(::payment::v1alpha1::User* user);
+  void clear_customer();
+  const ::payment::v1alpha1::Customer& customer() const;
+  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::Customer* release_customer();
+  ::payment::v1alpha1::Customer* mutable_customer();
+  void set_allocated_customer(::payment::v1alpha1::Customer* customer);
   private:
-  const ::payment::v1alpha1::User& _internal_user() const;
-  ::payment::v1alpha1::User* _internal_mutable_user();
+  const ::payment::v1alpha1::Customer& _internal_customer() const;
+  ::payment::v1alpha1::Customer* _internal_mutable_customer();
   public:
-  void unsafe_arena_set_allocated_user(
-      ::payment::v1alpha1::User* user);
-  ::payment::v1alpha1::User* unsafe_arena_release_user();
+  void unsafe_arena_set_allocated_customer(
+      ::payment::v1alpha1::Customer* customer);
+  ::payment::v1alpha1::Customer* unsafe_arena_release_customer();
 
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.CreateCustomerRequest)
  private:
@@ -1933,7 +1933,7 @@ class CreateCustomerRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
-  ::payment::v1alpha1::User* user_;
+  ::payment::v1alpha1::Customer* customer_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 };
@@ -4782,39 +4782,39 @@ inline void CancelSuscriptionResponse::set_allocated_status(std::string* status)
 
 // CreateCustomerRequest
 
-// .payment.v1alpha1.User user = 1 [json_name = "user"];
-inline bool CreateCustomerRequest::_internal_has_user() const {
-  return this != internal_default_instance() && user_ != nullptr;
+// .payment.v1alpha1.Customer customer = 1 [json_name = "customer"];
+inline bool CreateCustomerRequest::_internal_has_customer() const {
+  return this != internal_default_instance() && customer_ != nullptr;
 }
-inline bool CreateCustomerRequest::has_user() const {
-  return _internal_has_user();
+inline bool CreateCustomerRequest::has_customer() const {
+  return _internal_has_customer();
 }
-inline const ::payment::v1alpha1::User& CreateCustomerRequest::_internal_user() const {
-  const ::payment::v1alpha1::User* p = user_;
-  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::User&>(
-      ::payment::v1alpha1::_User_default_instance_);
+inline const ::payment::v1alpha1::Customer& CreateCustomerRequest::_internal_customer() const {
+  const ::payment::v1alpha1::Customer* p = customer_;
+  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::Customer&>(
+      ::payment::v1alpha1::_Customer_default_instance_);
 }
-inline const ::payment::v1alpha1::User& CreateCustomerRequest::user() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.CreateCustomerRequest.user)
-  return _internal_user();
+inline const ::payment::v1alpha1::Customer& CreateCustomerRequest::customer() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.CreateCustomerRequest.customer)
+  return _internal_customer();
 }
-inline void CreateCustomerRequest::unsafe_arena_set_allocated_user(
-    ::payment::v1alpha1::User* user) {
+inline void CreateCustomerRequest::unsafe_arena_set_allocated_customer(
+    ::payment::v1alpha1::Customer* customer) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(user_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer_);
   }
-  user_ = user;
-  if (user) {
+  customer_ = customer;
+  if (customer) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.CreateCustomerRequest.user)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.CreateCustomerRequest.customer)
 }
-inline ::payment::v1alpha1::User* CreateCustomerRequest::release_user() {
+inline ::payment::v1alpha1::Customer* CreateCustomerRequest::release_customer() {
   
-  ::payment::v1alpha1::User* temp = user_;
-  user_ = nullptr;
+  ::payment::v1alpha1::Customer* temp = customer_;
+  customer_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -4826,46 +4826,46 @@ inline ::payment::v1alpha1::User* CreateCustomerRequest::release_user() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::payment::v1alpha1::User* CreateCustomerRequest::unsafe_arena_release_user() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.CreateCustomerRequest.user)
+inline ::payment::v1alpha1::Customer* CreateCustomerRequest::unsafe_arena_release_customer() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.CreateCustomerRequest.customer)
   
-  ::payment::v1alpha1::User* temp = user_;
-  user_ = nullptr;
+  ::payment::v1alpha1::Customer* temp = customer_;
+  customer_ = nullptr;
   return temp;
 }
-inline ::payment::v1alpha1::User* CreateCustomerRequest::_internal_mutable_user() {
+inline ::payment::v1alpha1::Customer* CreateCustomerRequest::_internal_mutable_customer() {
   
-  if (user_ == nullptr) {
-    auto* p = CreateMaybeMessage<::payment::v1alpha1::User>(GetArenaForAllocation());
-    user_ = p;
+  if (customer_ == nullptr) {
+    auto* p = CreateMaybeMessage<::payment::v1alpha1::Customer>(GetArenaForAllocation());
+    customer_ = p;
   }
-  return user_;
+  return customer_;
 }
-inline ::payment::v1alpha1::User* CreateCustomerRequest::mutable_user() {
-  ::payment::v1alpha1::User* _msg = _internal_mutable_user();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.CreateCustomerRequest.user)
+inline ::payment::v1alpha1::Customer* CreateCustomerRequest::mutable_customer() {
+  ::payment::v1alpha1::Customer* _msg = _internal_mutable_customer();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.CreateCustomerRequest.customer)
   return _msg;
 }
-inline void CreateCustomerRequest::set_allocated_user(::payment::v1alpha1::User* user) {
+inline void CreateCustomerRequest::set_allocated_customer(::payment::v1alpha1::Customer* customer) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(user_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer_);
   }
-  if (user) {
+  if (customer) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(user));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer));
     if (message_arena != submessage_arena) {
-      user = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, user, submessage_arena);
+      customer = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, customer, submessage_arena);
     }
     
   } else {
     
   }
-  user_ = user;
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CreateCustomerRequest.user)
+  customer_ = customer;
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CreateCustomerRequest.customer)
 }
 
 // string status = 2 [json_name = "status"];

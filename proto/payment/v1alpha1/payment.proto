@@ -16,10 +16,10 @@ message Payment {
     uint32 project_id = 9;
     string application_id = 10;
     string suscription_id = 11;
+    string customer_id = 12;
   }
 
-//Customer
-message User {
+message Customer {
   string id =1;
   string name = 2;
   string email = 3;
@@ -27,11 +27,12 @@ message User {
 
 message Suscription {
   string id =1;
-  string customer= 2;
+  string customer_id = 2;
   string price = 3;
   bool cancel = 4;
 }
 
 message PaymentList {
   repeated Payment items = 1;
-}  
+
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
