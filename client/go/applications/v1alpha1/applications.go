@@ -51,7 +51,7 @@ func ListApplication(projectId uint32) (response *applicationpkgv1.ListApplicati
 		bylogs.LogErr("ListApplication-clientSdk", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			bylogs.GetErrorMessage(err),
+			err.Error(),
 		)
 	} else {
 		bylogs.LogInfo("ListApplication-clientSdk", "response", response)
