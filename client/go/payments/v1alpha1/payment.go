@@ -58,3 +58,223 @@ func CreateCustomer(in *paymentpkgv1.CreateCustomerRequest) (response *paymentpk
 	}
 	return response, nil
 }
+
+func DeleteCustomer(in *paymentpkgv1.DeleteCustomerRequest) (response *paymentpkgv1.DeleteCustomerResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.DeleteCustomer(ctx, &paymentpkgv1.DeleteCustomerRequest{
+		Id: in.Id,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error delete customer", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error delete customer", err),
+		)
+	}
+	return response, nil
+}
+
+func CreateSuscription(in *paymentpkgv1.CreateSuscriptionRequest) (response *paymentpkgv1.CreateSuscriptionResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.CreateSuscription(ctx, &paymentpkgv1.CreateSuscriptionRequest{
+		Suscription: in.Suscription,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error create subscription", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error create subscription", err),
+		)
+	}
+	return response, nil
+}
+
+func UpdateSuscription(in *paymentpkgv1.UpdateSuscriptionRequest) (response *paymentpkgv1.UpdateSuscriptionResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.UpdateSuscription(ctx, &paymentpkgv1.UpdateSuscriptionRequest{
+		Suscription: in.Suscription,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error update subscription", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error update subscription", err),
+		)
+	}
+	return response, nil
+}
+
+func CancelSuscription(in *paymentpkgv1.CancelSuscriptionRequest) (response *paymentpkgv1.CancelSuscriptionResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.CancelSuscription(ctx, &paymentpkgv1.CancelSuscriptionRequest{
+		Id: in.Id,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error cancel subscription", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error cancel subscription", err),
+		)
+	}
+	return response, nil
+}
+
+func GetSuscription(in *paymentpkgv1.GetSuscriptionRequest) (response *paymentpkgv1.GetSuscriptionResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetSuscription(ctx, &paymentpkgv1.GetSuscriptionRequest{
+		Id: in.Id,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error get suscription", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error get suscription", err),
+		)
+	}
+	return response, nil
+}
+
+func CreatePayment(in *paymentpkgv1.CreatePaymentRequest) (response *paymentpkgv1.CreatePaymentResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.CreatePayment(ctx, &paymentpkgv1.CreatePaymentRequest{
+		Payment: in.Payment,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error create payment", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error create payment", err),
+		)
+	}
+	return response, nil
+}
+
+func GetPayment(in *paymentpkgv1.GetPaymentRequest) (response *paymentpkgv1.GetPaymentResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetPayment(ctx, &paymentpkgv1.GetPaymentRequest{
+		Id: in.Id,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error get payment", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error get payment", err),
+		)
+	}
+	return response, nil
+}
+
+func UpdatePayment(in *paymentpkgv1.UpdatePaymentRequest) (response *paymentpkgv1.UpdatePaymentResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.UpdatePayment(ctx, &paymentpkgv1.UpdatePaymentRequest{
+		Payment: in.Payment,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error update payment", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error update payment", err),
+		)
+	}
+	return response, nil
+}
+
+func DeletePayment(in *paymentpkgv1.DeletePaymentRequest) (response *paymentpkgv1.DeletePaymentResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.DeletePayment(ctx, &paymentpkgv1.DeletePaymentRequest{
+		Id: in.Id,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error delete payment", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error delete payment", err),
+		)
+	}
+	return response, nil
+}
+
+func ListPayment(in *paymentpkgv1.ListPaymentRequest) (response *paymentpkgv1.ListPaymentResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ListPayment(ctx, &paymentpkgv1.ListPaymentRequest{
+		SuscriptionId: in.SuscriptionId,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error list payment", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error list payment", err),
+		)
+	}
+	return response, nil
+}
