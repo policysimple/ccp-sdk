@@ -34,7 +34,7 @@ func init() {
 		client = applicationpkgv1.NewApplicationServiceClient(con)
 	})
 }
-func ListApplication(in *applicationpkgv1.ListApplicationRequest) (response *applicationpkgv1.ListApplicationResponse, err error) {
+func ListApplication(projectId uint32) (response *applicationpkgv1.ListApplicationResponse, err error) {
 	bylogs.LogInfo("ListApplication-clientSdk")
 	d, err := time.ParseDuration(applicationServiceTimeout)
 	if err != nil {
@@ -44,7 +44,7 @@ func ListApplication(in *applicationpkgv1.ListApplicationRequest) (response *app
 	defer cancel()
 
 	response, err = client.ListApplication(ctx, &applicationpkgv1.ListApplicationRequest{
-		ProjectId: in.ProjectId,
+		ProjectId: projectId,
 	})
 
 	if err != nil {
