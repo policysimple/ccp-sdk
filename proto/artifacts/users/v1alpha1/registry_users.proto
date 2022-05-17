@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package artifacts.users.v1alpha1;
+
+option csharp_namespace = "Artifacts.Users.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/artifacts/users/v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "RegistryUsersProto";
+option java_package = "io.cuemby.artifacts.users.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Artifacts\\Users\\V1Alpha1";
+
+message AccessHarbor {
+    string action = 1;
+    string resource = 2;
+    string effect = 3;
+}
+
+message PermissionsHarbor {
+    repeated AccessHarbor access=1;
+    string kind = 2;
+    string namespace = 3;
+}
+
+message Harbor {
+    string secret = 1;
+    bool disable = 2;
+    string name = 3;
+    string level = 4;
+    uint32 duration = 5;
+    string description = 6;
+    repeated PermissionsHarbor permissions_harbor = 7;
+}
+
+// Environment ...
+message UsersRegistry {
+    string id = 1;
+    uint32 organization_id = 2;
+    uint32 project_id = 3;
+    string environment_id = 4;
+    bool active = 6;
+    Harbor harbor = 7;
+}

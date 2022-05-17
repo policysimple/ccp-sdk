@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package artifacts.projects.v1alpha1;
+
+option csharp_namespace = "Artifacts.Projects.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/artifacts/projects/v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "RegistryProjectsProtoAPI";
+option java_package = "io.cuemby.artifacts.projects.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Artifacts\\Projects\\V1Alpha1";
+
+import "artifacts/projects/v1alpha1/registry_projects.proto";
+// import "registry_projects.proto";
+
+service RegistryProjectsAPIService{
+    rpc CreateProjectRegistry(CreateProjectRegistryRequest) returns (CreateProjectRegistryResponse);
+    rpc ListProjectsRegistry(ListProjectsRegistryRequest) returns (ListProjectsRegistryResponse);
+    rpc UpdateProjectRegistry(UpdateProjectRegistryRequest) returns (UpdateProjectRegistryResponse);
+    rpc DeleteProjectRegistry(DeleteProjectRegistryRequest) returns (DeleteProjectRegistryResponse);
+}
+
+message CreateProjectRegistryRequest {
+    artifacts.projects.v1alpha1.ProjectsRegistry project_registry = 1;
+}
+
+message CreateProjectRegistryResponse {
+    artifacts.projects.v1alpha1.ProjectsRegistry project_registry = 1;
+    string status = 2;
+}
+
+message UpdateProjectRegistryRequest {
+    artifacts.projects.v1alpha1.ProjectsRegistry project_registry = 1;
+}
+
+message UpdateProjectRegistryResponse {
+    artifacts.projects.v1alpha1.ProjectsRegistry project_registry = 1;
+    string status = 2;
+}
+
+message ListProjectsRegistryRequest {
+    uint32 organization_id = 1;
+    uint32 project_id = 2;
+    string query = 3;
+    uint32 page = 4;
+    uint32 size = 5;
+    string sort = 6;
+    bool public = 7;
+    bool with_detail = 8;
+}
+
+message ListProjectsRegistryResponse {
+    repeated artifacts.projects.v1alpha1.ProjectsRegistry project_registry = 1;
+    string status = 2;
+}
+
+message DeleteProjectRegistryRequest {
+    uint32 project_registry_id = 1;
+}
+
+message DeleteProjectRegistryResponse {
+    string status = 2;
+}

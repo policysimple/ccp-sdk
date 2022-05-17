@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package artifacts.quotas.v1alpha1;
+
+option csharp_namespace = "Artifacts.Quotas.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/artifacts/quotas/v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "RegistryQuotasProtoAPI";
+option java_package = "io.cuemby.artifacts.quotas.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Artifacts\\Quotas\\V1Alpha1";
+
+import "artifacts/quotas/v1alpha1/registry_quotas.proto";
+//import "registry_quotas.proto";
+
+service RegistryQuotasAPIService{
+    rpc ListQuotasRegistry(ListQuotasRegistryRequest) returns (ListQuotasRegistryResponse);
+    rpc UpdateQuotaRegistry(UpdateQuotaRegistryRequest) returns (UpdateQuotaRegistryResponse);
+    rpc ListQuotaArtifactRegistry(ListQuotaArtifactRegistryRequest) returns (ListQuotaArtifactRegistryResponse);
+  }
+
+message ListQuotaArtifactRegistryResponse {
+  repeated artifacts.quotas.v1alpha1.QuotasRegistry quotas_registry = 1;
+  string status = 2;}
+
+message UpdateQuotaRegistryRequest {
+    artifacts.quotas.v1alpha1.QuotasRegistry quota_registry = 1;
+}
+
+message UpdateQuotaRegistryResponse {
+    artifacts.quotas.v1alpha1.QuotasRegistry quota_registry = 1;
+    string status = 2;
+}
+
+message ListQuotasRegistryRequest {
+    uint32 organization_id = 1;
+    uint32 project_id = 2;
+    string repository_name = 3;
+    string query = 4;
+    uint32 page = 5;
+    uint32 page_size = 6;
+    string sort = 7;
+    string reference_id = 8;
+}
+
+message ListQuotaArtifactRegistryRequest {
+  string id  = 1;
+  uint32 organization_id = 2;
+  uint32 project_id = 3;
+  string repository_name = 4;
+  string query = 5;
+  uint32 page = 6;
+  uint32 page_size = 7;
+  string sort = 8;
+  string reference_id = 9;
+  string project_name = 10;
+  bool with_tag = 11;
+  bool with_label = 12;
+  bool with_scan_overview = 13;
+  bool with_signature = 14;
+  bool with_immutable_status = 15;
+  bool with_accessory = 16;
+}
+
+message ListQuotasRegistryResponse {
+    repeated artifacts.quotas.v1alpha1.QuotasRegistry quotas_registry = 1;
+    string status = 2;
+}
