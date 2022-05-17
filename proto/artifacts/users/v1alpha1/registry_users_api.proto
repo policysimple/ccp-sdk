@@ -10,8 +10,8 @@ option java_package = "io.cuemby.artifacts.users.v1alpha1";
 option objc_class_prefix = "PPX";
 option php_namespace = "Artifacts\\Users\\V1Alpha1";
 
-//import "artifacts/users/v1alpha1/registry_users.proto";
-import "registry_users.proto";
+import "artifacts/users/v1alpha1/registry_users.proto";
+//import "registry_users.proto";
 
 service RegistryUsersAPIService{
     rpc CreateUserRegistry(CreateUserRegistryRequest) returns (CreateUserRegistryResponse);
