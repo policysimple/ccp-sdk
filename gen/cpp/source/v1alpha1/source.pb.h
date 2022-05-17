@@ -571,6 +571,7 @@ class AccountsProvidersRequest final :
 
   enum : int {
     kIntegrationIdFieldNumber = 1,
+    kPageFieldNumber = 2,
   };
   // string integration_id = 1 [json_name = "integrationId"];
   void clear_integration_id();
@@ -586,6 +587,15 @@ class AccountsProvidersRequest final :
   std::string* _internal_mutable_integration_id();
   public:
 
+  // uint32 page = 2 [json_name = "page"];
+  void clear_page();
+  ::PROTOBUF_NAMESPACE_ID::uint32 page() const;
+  void set_page(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_page() const;
+  void _internal_set_page(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:source.v1alpha1.AccountsProvidersRequest)
  private:
   class _Internal;
@@ -594,6 +604,7 @@ class AccountsProvidersRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 page_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
 };
@@ -715,6 +726,8 @@ class AccountsProvidersResponse final :
 
   enum : int {
     kAccountsFieldNumber = 1,
+    kCountFieldNumber = 2,
+    kTotalPagesFieldNumber = 3,
   };
   // repeated .source.v1alpha1.AccountProvider accounts = 1 [json_name = "accounts"];
   int accounts_size() const;
@@ -734,6 +747,24 @@ class AccountsProvidersResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::AccountProvider >&
       accounts() const;
 
+  // uint32 count = 2 [json_name = "count"];
+  void clear_count();
+  ::PROTOBUF_NAMESPACE_ID::uint32 count() const;
+  void set_count(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_count() const;
+  void _internal_set_count(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 total_pages = 3 [json_name = "totalPages"];
+  void clear_total_pages();
+  ::PROTOBUF_NAMESPACE_ID::uint32 total_pages() const;
+  void set_total_pages(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_total_pages() const;
+  void _internal_set_total_pages(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:source.v1alpha1.AccountsProvidersResponse)
  private:
   class _Internal;
@@ -742,6 +773,8 @@ class AccountsProvidersResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::AccountProvider > accounts_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 count_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 total_pages_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
 };
@@ -1619,6 +1652,7 @@ class ListRepositoriesProviderRequest final :
 
   enum : int {
     kIntegrationIdFieldNumber = 1,
+    kPageFieldNumber = 2,
   };
   // string integration_id = 1 [json_name = "integrationId"];
   void clear_integration_id();
@@ -1634,6 +1668,15 @@ class ListRepositoriesProviderRequest final :
   std::string* _internal_mutable_integration_id();
   public:
 
+  // uint32 page = 2 [json_name = "page"];
+  void clear_page();
+  ::PROTOBUF_NAMESPACE_ID::uint32 page() const;
+  void set_page(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_page() const;
+  void _internal_set_page(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:source.v1alpha1.ListRepositoriesProviderRequest)
  private:
   class _Internal;
@@ -1642,6 +1685,7 @@ class ListRepositoriesProviderRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 page_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
 };
@@ -1763,6 +1807,8 @@ class ListRepositoriesProviderResponse final :
 
   enum : int {
     kRepositoriesFieldNumber = 1,
+    kTotalPagesFieldNumber = 2,
+    kCountFieldNumber = 3,
   };
   // repeated .source.v1alpha1.Repository repositories = 1 [json_name = "repositories"];
   int repositories_size() const;
@@ -1782,6 +1828,24 @@ class ListRepositoriesProviderResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::Repository >&
       repositories() const;
 
+  // uint32 total_pages = 2 [json_name = "totalPages"];
+  void clear_total_pages();
+  ::PROTOBUF_NAMESPACE_ID::uint32 total_pages() const;
+  void set_total_pages(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_total_pages() const;
+  void _internal_set_total_pages(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 count = 3 [json_name = "count"];
+  void clear_count();
+  ::PROTOBUF_NAMESPACE_ID::uint32 count() const;
+  void set_count(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_count() const;
+  void _internal_set_count(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:source.v1alpha1.ListRepositoriesProviderResponse)
  private:
   class _Internal;
@@ -1790,6 +1854,8 @@ class ListRepositoriesProviderResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::Repository > repositories_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 total_pages_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 count_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
 };
@@ -8771,6 +8837,8 @@ class ListProvidersResponse final :
 
   enum : int {
     kProvidersFieldNumber = 1,
+    kTotalPagesFieldNumber = 2,
+    kCountFieldNumber = 3,
   };
   // repeated .source.v1alpha1.Provider providers = 1 [json_name = "providers"];
   int providers_size() const;
@@ -8790,6 +8858,24 @@ class ListProvidersResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::Provider >&
       providers() const;
 
+  // uint32 total_pages = 2 [json_name = "totalPages"];
+  void clear_total_pages();
+  ::PROTOBUF_NAMESPACE_ID::uint32 total_pages() const;
+  void set_total_pages(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_total_pages() const;
+  void _internal_set_total_pages(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 count = 3 [json_name = "count"];
+  void clear_count();
+  ::PROTOBUF_NAMESPACE_ID::uint32 count() const;
+  void set_count(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_count() const;
+  void _internal_set_count(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:source.v1alpha1.ListProvidersResponse)
  private:
   class _Internal;
@@ -8798,6 +8884,8 @@ class ListProvidersResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::Provider > providers_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 total_pages_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 count_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
 };
@@ -8954,6 +9042,26 @@ inline void AccountsProvidersRequest::set_allocated_integration_id(std::string* 
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.AccountsProvidersRequest.integration_id)
 }
 
+// uint32 page = 2 [json_name = "page"];
+inline void AccountsProvidersRequest::clear_page() {
+  page_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AccountsProvidersRequest::_internal_page() const {
+  return page_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AccountsProvidersRequest::page() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.AccountsProvidersRequest.page)
+  return _internal_page();
+}
+inline void AccountsProvidersRequest::_internal_set_page(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  page_ = value;
+}
+inline void AccountsProvidersRequest::set_page(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_page(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.AccountsProvidersRequest.page)
+}
+
 // -------------------------------------------------------------------
 
 // AccountsProvidersResponse
@@ -8996,6 +9104,46 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::Acco
 AccountsProvidersResponse::accounts() const {
   // @@protoc_insertion_point(field_list:source.v1alpha1.AccountsProvidersResponse.accounts)
   return accounts_;
+}
+
+// uint32 count = 2 [json_name = "count"];
+inline void AccountsProvidersResponse::clear_count() {
+  count_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AccountsProvidersResponse::_internal_count() const {
+  return count_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AccountsProvidersResponse::count() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.AccountsProvidersResponse.count)
+  return _internal_count();
+}
+inline void AccountsProvidersResponse::_internal_set_count(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  count_ = value;
+}
+inline void AccountsProvidersResponse::set_count(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_count(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.AccountsProvidersResponse.count)
+}
+
+// uint32 total_pages = 3 [json_name = "totalPages"];
+inline void AccountsProvidersResponse::clear_total_pages() {
+  total_pages_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AccountsProvidersResponse::_internal_total_pages() const {
+  return total_pages_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AccountsProvidersResponse::total_pages() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.AccountsProvidersResponse.total_pages)
+  return _internal_total_pages();
+}
+inline void AccountsProvidersResponse::_internal_set_total_pages(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  total_pages_ = value;
+}
+inline void AccountsProvidersResponse::set_total_pages(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_total_pages(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.AccountsProvidersResponse.total_pages)
 }
 
 // -------------------------------------------------------------------
@@ -9434,6 +9582,26 @@ inline void ListRepositoriesProviderRequest::set_allocated_integration_id(std::s
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.ListRepositoriesProviderRequest.integration_id)
 }
 
+// uint32 page = 2 [json_name = "page"];
+inline void ListRepositoriesProviderRequest::clear_page() {
+  page_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListRepositoriesProviderRequest::_internal_page() const {
+  return page_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListRepositoriesProviderRequest::page() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.ListRepositoriesProviderRequest.page)
+  return _internal_page();
+}
+inline void ListRepositoriesProviderRequest::_internal_set_page(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  page_ = value;
+}
+inline void ListRepositoriesProviderRequest::set_page(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_page(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.ListRepositoriesProviderRequest.page)
+}
+
 // -------------------------------------------------------------------
 
 // ListRepositoriesProviderResponse
@@ -9476,6 +9644,46 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::Repo
 ListRepositoriesProviderResponse::repositories() const {
   // @@protoc_insertion_point(field_list:source.v1alpha1.ListRepositoriesProviderResponse.repositories)
   return repositories_;
+}
+
+// uint32 total_pages = 2 [json_name = "totalPages"];
+inline void ListRepositoriesProviderResponse::clear_total_pages() {
+  total_pages_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListRepositoriesProviderResponse::_internal_total_pages() const {
+  return total_pages_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListRepositoriesProviderResponse::total_pages() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.ListRepositoriesProviderResponse.total_pages)
+  return _internal_total_pages();
+}
+inline void ListRepositoriesProviderResponse::_internal_set_total_pages(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  total_pages_ = value;
+}
+inline void ListRepositoriesProviderResponse::set_total_pages(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_total_pages(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.ListRepositoriesProviderResponse.total_pages)
+}
+
+// uint32 count = 3 [json_name = "count"];
+inline void ListRepositoriesProviderResponse::clear_count() {
+  count_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListRepositoriesProviderResponse::_internal_count() const {
+  return count_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListRepositoriesProviderResponse::count() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.ListRepositoriesProviderResponse.count)
+  return _internal_count();
+}
+inline void ListRepositoriesProviderResponse::_internal_set_count(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  count_ = value;
+}
+inline void ListRepositoriesProviderResponse::set_count(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_count(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.ListRepositoriesProviderResponse.count)
 }
 
 // -------------------------------------------------------------------
@@ -14543,6 +14751,46 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::Prov
 ListProvidersResponse::providers() const {
   // @@protoc_insertion_point(field_list:source.v1alpha1.ListProvidersResponse.providers)
   return providers_;
+}
+
+// uint32 total_pages = 2 [json_name = "totalPages"];
+inline void ListProvidersResponse::clear_total_pages() {
+  total_pages_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListProvidersResponse::_internal_total_pages() const {
+  return total_pages_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListProvidersResponse::total_pages() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.ListProvidersResponse.total_pages)
+  return _internal_total_pages();
+}
+inline void ListProvidersResponse::_internal_set_total_pages(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  total_pages_ = value;
+}
+inline void ListProvidersResponse::set_total_pages(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_total_pages(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.ListProvidersResponse.total_pages)
+}
+
+// uint32 count = 3 [json_name = "count"];
+inline void ListProvidersResponse::clear_count() {
+  count_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListProvidersResponse::_internal_count() const {
+  return count_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListProvidersResponse::count() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.ListProvidersResponse.count)
+  return _internal_count();
+}
+inline void ListProvidersResponse::_internal_set_count(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  count_ = value;
+}
+inline void ListProvidersResponse::set_count(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_count(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.ListProvidersResponse.count)
 }
 
 #ifdef __GNUC__

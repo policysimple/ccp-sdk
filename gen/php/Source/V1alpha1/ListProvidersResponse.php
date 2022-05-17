@@ -17,6 +17,14 @@ class ListProvidersResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .source.v1alpha1.Provider providers = 1 [json_name = "providers"];</code>
      */
     private $providers;
+    /**
+     * Generated from protobuf field <code>uint32 total_pages = 2 [json_name = "totalPages"];</code>
+     */
+    protected $total_pages = 0;
+    /**
+     * Generated from protobuf field <code>uint32 count = 3 [json_name = "count"];</code>
+     */
+    protected $count = 0;
 
     /**
      * Constructor.
@@ -25,6 +33,8 @@ class ListProvidersResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Source\V1alpha1\Provider[]|\Google\Protobuf\Internal\RepeatedField $providers
+     *     @type int $total_pages
+     *     @type int $count
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +60,50 @@ class ListProvidersResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Source\V1alpha1\Provider::class);
         $this->providers = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 total_pages = 2 [json_name = "totalPages"];</code>
+     * @return int
+     */
+    public function getTotalPages()
+    {
+        return $this->total_pages;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 total_pages = 2 [json_name = "totalPages"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTotalPages($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->total_pages = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 count = 3 [json_name = "count"];</code>
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 count = 3 [json_name = "count"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->count = $var;
 
         return $this;
     }

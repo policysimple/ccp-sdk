@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package artifacts.users.v1alpha1;
+
+option csharp_namespace = "Artifacts.Users.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/artifacts/users/v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "RegistryUsersProtoAPI";
+option java_package = "io.cuemby.artifacts.users.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Artifacts\\Users\\V1Alpha1";
+
+import "artifacts/users/v1alpha1/registry_users.proto";
+//import "registry_users.proto";
+
+service RegistryUsersAPIService{
+    rpc CreateUserRegistry(CreateUserRegistryRequest) returns (CreateUserRegistryResponse);
+    rpc DeleteUserRegistry(DeleteUserRegistryRequest) returns (DeleteUserRegistryResponse);
+}
+
+message CreateUserRegistryRequest {
+    artifacts.users.v1alpha1.UsersRegistry user_registry = 1;
+}
+
+message CreateUserRegistryResponse {
+    artifacts.users.v1alpha1.UsersRegistry user_registry = 1;
+    string status = 2;
+}
+
+message DeleteUserRegistryRequest {
+    uint32 user_registry_id = 1;
+}
+
+message DeleteUserRegistryResponse {
+    string status = 2;
+}
