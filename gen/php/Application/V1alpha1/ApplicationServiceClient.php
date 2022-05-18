@@ -95,4 +95,17 @@ class ApplicationServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Application\V1alpha1\ListApplicationsByOrganizationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListApplicationsByOrganization(\Application\V1alpha1\ListApplicationsByOrganizationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/application.v1alpha1.ApplicationService/ListApplicationsByOrganization',
+        $argument,
+        ['\Application\V1alpha1\ListApplicationsByOrganizationResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

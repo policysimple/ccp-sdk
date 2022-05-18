@@ -16,12 +16,8 @@ class Application
         }
         $pool->internalAddGeneratedFile(
             '
-â
-&application/v1alpha1/application.protoapplication.v1alpha1"O
-&DeleteApplicationsByIntegrationRequest%
-integration_id (	RintegrationId";
-\'DeleteApplicationsByIntegrationResponse
-msg (	Rmsg"ª
+¢	
+&application/v1alpha1/application.protoapplication.v1alpha1"ª
 
 Repository
 name (	Rname
@@ -41,18 +37,7 @@ Repository
 envs (2.application.v1alpha1.EnvRenvs9
 commands (2.application.v1alpha1.CommandRcommands
 port (Rport!
-runtime_type (	RruntimeType"¸
-Application
-id (	Rid
-name (	Rname 
-integration (	Rintegration@
-
-repository (2 .application.v1alpha1.RepositoryR
-repositoryI
-configuration (2#.application.v1alpha1.ConfigurationRconfiguration
-
-project_id (R	projectId7
-scaling (2.application.v1alpha1.ScalingRscaling"Ü
+runtime_type (	RruntimeType"Ü
 Scaling
 cpu_rule (	RcpuRule(
 cool_down_period (	RcoolDownPeriod)
@@ -62,48 +47,19 @@ minReplica
 max_replica (	R
 maxReplica
 memory_rule (	R
-memoryRule"µ
-CreateApplicationRequest
-name (	Rname 
-integration (	Rintegration@
+memoryRule"á
+Application
+id (	Rid
+name (	Rname 
+integration (	Rintegration@
 
-repository (2 .application.v1alpha1.RepositoryR
+repository (2 .application.v1alpha1.RepositoryR
 repositoryI
-configuration (2#.application.v1alpha1.ConfigurationRconfiguration
+configuration (2#.application.v1alpha1.ConfigurationRconfiguration
 
-project_id (R	projectId7
-scaling (2.application.v1alpha1.ScalingRscaling"S
-CreateApplicationResponse
-msg (	Rmsg
-error (	Rerror
-id (	Rid"7
-ListApplicationRequest
-
-project_id (R	projectId"`
-ListApplicationResponseE
-applications (2!.application.v1alpha1.ApplicationRapplications"\'
-GetApplicationRequest
-id (	Rid"]
-GetApplicationResponseC
-application (2!.application.v1alpha1.ApplicationRapplication"*
-DeleteApplicationRequest
-id (	Rid"C
-DeleteApplicationResponse
-msg (	Rmsg
-error (	Rerror"|
-UpdateApplicationRequest
-id (	RidP
-application (2..application.v1alpha1.CreateApplicationRequestRapplication"C
-UpdateApplicationResponse
-msg (	Rmsg
-error (	Rerror2ô
-ApplicationServicet
-CreateApplication..application.v1alpha1.CreateApplicationRequest/.application.v1alpha1.CreateApplicationResponsen
-ListApplication,.application.v1alpha1.ListApplicationRequest-.application.v1alpha1.ListApplicationResponsek
-GetApplication+.application.v1alpha1.GetApplicationRequest,.application.v1alpha1.GetApplicationResponset
-DeleteApplication..application.v1alpha1.DeleteApplicationRequest/.application.v1alpha1.DeleteApplicationResponset
-UpdateApplication..application.v1alpha1.UpdateApplicationRequest/.application.v1alpha1.UpdateApplicationResponsež
-DeleteApplicationsByIntegration<.application.v1alpha1.DeleteApplicationsByIntegrationRequest=.application.v1alpha1.DeleteApplicationsByIntegrationResponseB7Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1bproto3'
+project_id (R	projectId\'
+organization_id (RorganizationId7
+scaling (2.application.v1alpha1.ScalingRscalingB7Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

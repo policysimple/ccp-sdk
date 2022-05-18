@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>application.v1alpha1.UpdateApplicationResponse</code>
+ * Generated from protobuf message <code>application.v1alpha1.ListApplicationsByOrganizationResponse</code>
  */
-class UpdateApplicationResponse extends \Google\Protobuf\Internal\Message
+class ListApplicationsByOrganizationResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
+     * Generated from protobuf field <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
      */
-    protected $msg = '';
+    private $applications;
     /**
      * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      */
@@ -28,7 +28,7 @@ class UpdateApplicationResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $msg
+     *     @type \Application\V1alpha1\Application[]|\Google\Protobuf\Internal\RepeatedField $applications
      *     @type string $error
      * }
      */
@@ -38,23 +38,23 @@ class UpdateApplicationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
-     * @return string
+     * Generated from protobuf field <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getMsg()
+    public function getApplications()
     {
-        return $this->msg;
+        return $this->applications;
     }
 
     /**
-     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     * @param \Application\V1alpha1\Application[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setMsg($var)
+    public function setApplications($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->msg = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Application\V1alpha1\Application::class);
+        $this->applications = $arr;
 
         return $this;
     }

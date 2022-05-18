@@ -46,7 +46,7 @@ struct TableStruct_application_2fv1alpha1_2fapplication_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -64,365 +64,29 @@ extern CommandDefaultTypeInternal _Command_default_instance_;
 class Configuration;
 struct ConfigurationDefaultTypeInternal;
 extern ConfigurationDefaultTypeInternal _Configuration_default_instance_;
-class CreateApplicationRequest;
-struct CreateApplicationRequestDefaultTypeInternal;
-extern CreateApplicationRequestDefaultTypeInternal _CreateApplicationRequest_default_instance_;
-class CreateApplicationResponse;
-struct CreateApplicationResponseDefaultTypeInternal;
-extern CreateApplicationResponseDefaultTypeInternal _CreateApplicationResponse_default_instance_;
-class DeleteApplicationRequest;
-struct DeleteApplicationRequestDefaultTypeInternal;
-extern DeleteApplicationRequestDefaultTypeInternal _DeleteApplicationRequest_default_instance_;
-class DeleteApplicationResponse;
-struct DeleteApplicationResponseDefaultTypeInternal;
-extern DeleteApplicationResponseDefaultTypeInternal _DeleteApplicationResponse_default_instance_;
-class DeleteApplicationsByIntegrationRequest;
-struct DeleteApplicationsByIntegrationRequestDefaultTypeInternal;
-extern DeleteApplicationsByIntegrationRequestDefaultTypeInternal _DeleteApplicationsByIntegrationRequest_default_instance_;
-class DeleteApplicationsByIntegrationResponse;
-struct DeleteApplicationsByIntegrationResponseDefaultTypeInternal;
-extern DeleteApplicationsByIntegrationResponseDefaultTypeInternal _DeleteApplicationsByIntegrationResponse_default_instance_;
 class Env;
 struct EnvDefaultTypeInternal;
 extern EnvDefaultTypeInternal _Env_default_instance_;
-class GetApplicationRequest;
-struct GetApplicationRequestDefaultTypeInternal;
-extern GetApplicationRequestDefaultTypeInternal _GetApplicationRequest_default_instance_;
-class GetApplicationResponse;
-struct GetApplicationResponseDefaultTypeInternal;
-extern GetApplicationResponseDefaultTypeInternal _GetApplicationResponse_default_instance_;
-class ListApplicationRequest;
-struct ListApplicationRequestDefaultTypeInternal;
-extern ListApplicationRequestDefaultTypeInternal _ListApplicationRequest_default_instance_;
-class ListApplicationResponse;
-struct ListApplicationResponseDefaultTypeInternal;
-extern ListApplicationResponseDefaultTypeInternal _ListApplicationResponse_default_instance_;
 class Repository;
 struct RepositoryDefaultTypeInternal;
 extern RepositoryDefaultTypeInternal _Repository_default_instance_;
 class Scaling;
 struct ScalingDefaultTypeInternal;
 extern ScalingDefaultTypeInternal _Scaling_default_instance_;
-class UpdateApplicationRequest;
-struct UpdateApplicationRequestDefaultTypeInternal;
-extern UpdateApplicationRequestDefaultTypeInternal _UpdateApplicationRequest_default_instance_;
-class UpdateApplicationResponse;
-struct UpdateApplicationResponseDefaultTypeInternal;
-extern UpdateApplicationResponseDefaultTypeInternal _UpdateApplicationResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace application
 PROTOBUF_NAMESPACE_OPEN
 template<> ::application::v1alpha1::Application* Arena::CreateMaybeMessage<::application::v1alpha1::Application>(Arena*);
 template<> ::application::v1alpha1::Command* Arena::CreateMaybeMessage<::application::v1alpha1::Command>(Arena*);
 template<> ::application::v1alpha1::Configuration* Arena::CreateMaybeMessage<::application::v1alpha1::Configuration>(Arena*);
-template<> ::application::v1alpha1::CreateApplicationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::CreateApplicationRequest>(Arena*);
-template<> ::application::v1alpha1::CreateApplicationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::CreateApplicationResponse>(Arena*);
-template<> ::application::v1alpha1::DeleteApplicationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::DeleteApplicationRequest>(Arena*);
-template<> ::application::v1alpha1::DeleteApplicationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::DeleteApplicationResponse>(Arena*);
-template<> ::application::v1alpha1::DeleteApplicationsByIntegrationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::DeleteApplicationsByIntegrationRequest>(Arena*);
-template<> ::application::v1alpha1::DeleteApplicationsByIntegrationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::DeleteApplicationsByIntegrationResponse>(Arena*);
 template<> ::application::v1alpha1::Env* Arena::CreateMaybeMessage<::application::v1alpha1::Env>(Arena*);
-template<> ::application::v1alpha1::GetApplicationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::GetApplicationRequest>(Arena*);
-template<> ::application::v1alpha1::GetApplicationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::GetApplicationResponse>(Arena*);
-template<> ::application::v1alpha1::ListApplicationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::ListApplicationRequest>(Arena*);
-template<> ::application::v1alpha1::ListApplicationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::ListApplicationResponse>(Arena*);
 template<> ::application::v1alpha1::Repository* Arena::CreateMaybeMessage<::application::v1alpha1::Repository>(Arena*);
 template<> ::application::v1alpha1::Scaling* Arena::CreateMaybeMessage<::application::v1alpha1::Scaling>(Arena*);
-template<> ::application::v1alpha1::UpdateApplicationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::UpdateApplicationRequest>(Arena*);
-template<> ::application::v1alpha1::UpdateApplicationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::UpdateApplicationResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace application {
 namespace v1alpha1 {
 
 // ===================================================================
-
-class DeleteApplicationsByIntegrationRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.DeleteApplicationsByIntegrationRequest) */ {
- public:
-  inline DeleteApplicationsByIntegrationRequest() : DeleteApplicationsByIntegrationRequest(nullptr) {}
-  ~DeleteApplicationsByIntegrationRequest() override;
-  explicit constexpr DeleteApplicationsByIntegrationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  DeleteApplicationsByIntegrationRequest(const DeleteApplicationsByIntegrationRequest& from);
-  DeleteApplicationsByIntegrationRequest(DeleteApplicationsByIntegrationRequest&& from) noexcept
-    : DeleteApplicationsByIntegrationRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline DeleteApplicationsByIntegrationRequest& operator=(const DeleteApplicationsByIntegrationRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline DeleteApplicationsByIntegrationRequest& operator=(DeleteApplicationsByIntegrationRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const DeleteApplicationsByIntegrationRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const DeleteApplicationsByIntegrationRequest* internal_default_instance() {
-    return reinterpret_cast<const DeleteApplicationsByIntegrationRequest*>(
-               &_DeleteApplicationsByIntegrationRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    0;
-
-  friend void swap(DeleteApplicationsByIntegrationRequest& a, DeleteApplicationsByIntegrationRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(DeleteApplicationsByIntegrationRequest* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(DeleteApplicationsByIntegrationRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline DeleteApplicationsByIntegrationRequest* New() const final {
-    return new DeleteApplicationsByIntegrationRequest();
-  }
-
-  DeleteApplicationsByIntegrationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<DeleteApplicationsByIntegrationRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const DeleteApplicationsByIntegrationRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const DeleteApplicationsByIntegrationRequest& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(DeleteApplicationsByIntegrationRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.DeleteApplicationsByIntegrationRequest";
-  }
-  protected:
-  explicit DeleteApplicationsByIntegrationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kIntegrationIdFieldNumber = 1,
-  };
-  // string integration_id = 1 [json_name = "integrationId"];
-  void clear_integration_id();
-  const std::string& integration_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_integration_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_integration_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_integration_id();
-  void set_allocated_integration_id(std::string* integration_id);
-  private:
-  const std::string& _internal_integration_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_integration_id(const std::string& value);
-  std::string* _internal_mutable_integration_id();
-  public:
-
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.DeleteApplicationsByIntegrationRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
-};
-// -------------------------------------------------------------------
-
-class DeleteApplicationsByIntegrationResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.DeleteApplicationsByIntegrationResponse) */ {
- public:
-  inline DeleteApplicationsByIntegrationResponse() : DeleteApplicationsByIntegrationResponse(nullptr) {}
-  ~DeleteApplicationsByIntegrationResponse() override;
-  explicit constexpr DeleteApplicationsByIntegrationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  DeleteApplicationsByIntegrationResponse(const DeleteApplicationsByIntegrationResponse& from);
-  DeleteApplicationsByIntegrationResponse(DeleteApplicationsByIntegrationResponse&& from) noexcept
-    : DeleteApplicationsByIntegrationResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline DeleteApplicationsByIntegrationResponse& operator=(const DeleteApplicationsByIntegrationResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline DeleteApplicationsByIntegrationResponse& operator=(DeleteApplicationsByIntegrationResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const DeleteApplicationsByIntegrationResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const DeleteApplicationsByIntegrationResponse* internal_default_instance() {
-    return reinterpret_cast<const DeleteApplicationsByIntegrationResponse*>(
-               &_DeleteApplicationsByIntegrationResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    1;
-
-  friend void swap(DeleteApplicationsByIntegrationResponse& a, DeleteApplicationsByIntegrationResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(DeleteApplicationsByIntegrationResponse* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(DeleteApplicationsByIntegrationResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline DeleteApplicationsByIntegrationResponse* New() const final {
-    return new DeleteApplicationsByIntegrationResponse();
-  }
-
-  DeleteApplicationsByIntegrationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<DeleteApplicationsByIntegrationResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const DeleteApplicationsByIntegrationResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const DeleteApplicationsByIntegrationResponse& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(DeleteApplicationsByIntegrationResponse* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.DeleteApplicationsByIntegrationResponse";
-  }
-  protected:
-  explicit DeleteApplicationsByIntegrationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kMsgFieldNumber = 1,
-  };
-  // string msg = 1 [json_name = "msg"];
-  void clear_msg();
-  const std::string& msg() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_msg(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_msg();
-  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
-  void set_allocated_msg(std::string* msg);
-  private:
-  const std::string& _internal_msg() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
-  std::string* _internal_mutable_msg();
-  public:
-
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.DeleteApplicationsByIntegrationResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
-};
-// -------------------------------------------------------------------
 
 class Repository final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.Repository) */ {
@@ -468,7 +132,7 @@ class Repository final :
                &_Repository_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    0;
 
   friend void swap(Repository& a, Repository& b) {
     a.Swap(&b);
@@ -682,7 +346,7 @@ class Command final :
                &_Command_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    1;
 
   friend void swap(Command& a, Command& b) {
     a.Swap(&b);
@@ -842,7 +506,7 @@ class Env final :
                &_Env_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    2;
 
   friend void swap(Env& a, Env& b) {
     a.Swap(&b);
@@ -1013,7 +677,7 @@ class Configuration final :
                &_Configuration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    3;
 
   friend void swap(Configuration& a, Configuration& b) {
     a.Swap(&b);
@@ -1164,253 +828,6 @@ class Configuration final :
 };
 // -------------------------------------------------------------------
 
-class Application final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.Application) */ {
- public:
-  inline Application() : Application(nullptr) {}
-  ~Application() override;
-  explicit constexpr Application(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  Application(const Application& from);
-  Application(Application&& from) noexcept
-    : Application() {
-    *this = ::std::move(from);
-  }
-
-  inline Application& operator=(const Application& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline Application& operator=(Application&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const Application& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const Application* internal_default_instance() {
-    return reinterpret_cast<const Application*>(
-               &_Application_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    6;
-
-  friend void swap(Application& a, Application& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(Application* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(Application* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Application* New() const final {
-    return new Application();
-  }
-
-  Application* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<Application>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const Application& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const Application& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Application* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.Application";
-  }
-  protected:
-  explicit Application(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kIdFieldNumber = 1,
-    kNameFieldNumber = 2,
-    kIntegrationFieldNumber = 3,
-    kRepositoryFieldNumber = 4,
-    kConfigurationFieldNumber = 5,
-    kScalingFieldNumber = 7,
-    kProjectIdFieldNumber = 6,
-  };
-  // string id = 1 [json_name = "id"];
-  void clear_id();
-  const std::string& id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_id();
-  void set_allocated_id(std::string* id);
-  private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
-  public:
-
-  // string name = 2 [json_name = "name"];
-  void clear_name();
-  const std::string& name() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_name();
-  PROTOBUF_MUST_USE_RESULT std::string* release_name();
-  void set_allocated_name(std::string* name);
-  private:
-  const std::string& _internal_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
-  public:
-
-  // string integration = 3 [json_name = "integration"];
-  void clear_integration();
-  const std::string& integration() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_integration(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_integration();
-  PROTOBUF_MUST_USE_RESULT std::string* release_integration();
-  void set_allocated_integration(std::string* integration);
-  private:
-  const std::string& _internal_integration() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_integration(const std::string& value);
-  std::string* _internal_mutable_integration();
-  public:
-
-  // .application.v1alpha1.Repository repository = 4 [json_name = "repository"];
-  bool has_repository() const;
-  private:
-  bool _internal_has_repository() const;
-  public:
-  void clear_repository();
-  const ::application::v1alpha1::Repository& repository() const;
-  PROTOBUF_MUST_USE_RESULT ::application::v1alpha1::Repository* release_repository();
-  ::application::v1alpha1::Repository* mutable_repository();
-  void set_allocated_repository(::application::v1alpha1::Repository* repository);
-  private:
-  const ::application::v1alpha1::Repository& _internal_repository() const;
-  ::application::v1alpha1::Repository* _internal_mutable_repository();
-  public:
-  void unsafe_arena_set_allocated_repository(
-      ::application::v1alpha1::Repository* repository);
-  ::application::v1alpha1::Repository* unsafe_arena_release_repository();
-
-  // .application.v1alpha1.Configuration configuration = 5 [json_name = "configuration"];
-  bool has_configuration() const;
-  private:
-  bool _internal_has_configuration() const;
-  public:
-  void clear_configuration();
-  const ::application::v1alpha1::Configuration& configuration() const;
-  PROTOBUF_MUST_USE_RESULT ::application::v1alpha1::Configuration* release_configuration();
-  ::application::v1alpha1::Configuration* mutable_configuration();
-  void set_allocated_configuration(::application::v1alpha1::Configuration* configuration);
-  private:
-  const ::application::v1alpha1::Configuration& _internal_configuration() const;
-  ::application::v1alpha1::Configuration* _internal_mutable_configuration();
-  public:
-  void unsafe_arena_set_allocated_configuration(
-      ::application::v1alpha1::Configuration* configuration);
-  ::application::v1alpha1::Configuration* unsafe_arena_release_configuration();
-
-  // .application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];
-  bool has_scaling() const;
-  private:
-  bool _internal_has_scaling() const;
-  public:
-  void clear_scaling();
-  const ::application::v1alpha1::Scaling& scaling() const;
-  PROTOBUF_MUST_USE_RESULT ::application::v1alpha1::Scaling* release_scaling();
-  ::application::v1alpha1::Scaling* mutable_scaling();
-  void set_allocated_scaling(::application::v1alpha1::Scaling* scaling);
-  private:
-  const ::application::v1alpha1::Scaling& _internal_scaling() const;
-  ::application::v1alpha1::Scaling* _internal_mutable_scaling();
-  public:
-  void unsafe_arena_set_allocated_scaling(
-      ::application::v1alpha1::Scaling* scaling);
-  ::application::v1alpha1::Scaling* unsafe_arena_release_scaling();
-
-  // uint32 project_id = 6 [json_name = "projectId"];
-  void clear_project_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
-  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
-  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.Application)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_;
-  ::application::v1alpha1::Repository* repository_;
-  ::application::v1alpha1::Configuration* configuration_;
-  ::application::v1alpha1::Scaling* scaling_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
-};
-// -------------------------------------------------------------------
-
 class Scaling final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.Scaling) */ {
  public:
@@ -1455,7 +872,7 @@ class Scaling final :
                &_Scaling_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    4;
 
   friend void swap(Scaling& a, Scaling& b) {
     a.Swap(&b);
@@ -1635,24 +1052,24 @@ class Scaling final :
 };
 // -------------------------------------------------------------------
 
-class CreateApplicationRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.CreateApplicationRequest) */ {
+class Application final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.Application) */ {
  public:
-  inline CreateApplicationRequest() : CreateApplicationRequest(nullptr) {}
-  ~CreateApplicationRequest() override;
-  explicit constexpr CreateApplicationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline Application() : Application(nullptr) {}
+  ~Application() override;
+  explicit constexpr Application(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  CreateApplicationRequest(const CreateApplicationRequest& from);
-  CreateApplicationRequest(CreateApplicationRequest&& from) noexcept
-    : CreateApplicationRequest() {
+  Application(const Application& from);
+  Application(Application&& from) noexcept
+    : Application() {
     *this = ::std::move(from);
   }
 
-  inline CreateApplicationRequest& operator=(const CreateApplicationRequest& from) {
+  inline Application& operator=(const Application& from) {
     CopyFrom(from);
     return *this;
   }
-  inline CreateApplicationRequest& operator=(CreateApplicationRequest&& from) noexcept {
+  inline Application& operator=(Application&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -1671,20 +1088,20 @@ class CreateApplicationRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const CreateApplicationRequest& default_instance() {
+  static const Application& default_instance() {
     return *internal_default_instance();
   }
-  static inline const CreateApplicationRequest* internal_default_instance() {
-    return reinterpret_cast<const CreateApplicationRequest*>(
-               &_CreateApplicationRequest_default_instance_);
+  static inline const Application* internal_default_instance() {
+    return reinterpret_cast<const Application*>(
+               &_Application_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    5;
 
-  friend void swap(CreateApplicationRequest& a, CreateApplicationRequest& b) {
+  friend void swap(Application& a, Application& b) {
     a.Swap(&b);
   }
-  inline void Swap(CreateApplicationRequest* other) {
+  inline void Swap(Application* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -1692,7 +1109,7 @@ class CreateApplicationRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(CreateApplicationRequest* other) {
+  void UnsafeArenaSwap(Application* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1700,17 +1117,17 @@ class CreateApplicationRequest final :
 
   // implements Message ----------------------------------------------
 
-  inline CreateApplicationRequest* New() const final {
-    return new CreateApplicationRequest();
+  inline Application* New() const final {
+    return new Application();
   }
 
-  CreateApplicationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<CreateApplicationRequest>(arena);
+  Application* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Application>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CreateApplicationRequest& from);
+  void CopyFrom(const Application& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const CreateApplicationRequest& from);
+  void MergeFrom(const Application& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -1727,13 +1144,13 @@ class CreateApplicationRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(CreateApplicationRequest* other);
+  void InternalSwap(Application* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.CreateApplicationRequest";
+    return "application.v1alpha1.Application";
   }
   protected:
-  explicit CreateApplicationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit Application(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -1750,14 +1167,30 @@ class CreateApplicationRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 1,
-    kIntegrationFieldNumber = 2,
-    kRepositoryFieldNumber = 3,
-    kConfigurationFieldNumber = 4,
-    kScalingFieldNumber = 6,
-    kProjectIdFieldNumber = 5,
+    kIdFieldNumber = 1,
+    kNameFieldNumber = 2,
+    kIntegrationFieldNumber = 3,
+    kRepositoryFieldNumber = 4,
+    kConfigurationFieldNumber = 5,
+    kScalingFieldNumber = 8,
+    kProjectIdFieldNumber = 6,
+    kOrganizationIdFieldNumber = 7,
   };
-  // string name = 1 [json_name = "name"];
+  // string id = 1 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // string name = 2 [json_name = "name"];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1771,7 +1204,7 @@ class CreateApplicationRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // string integration = 2 [json_name = "integration"];
+  // string integration = 3 [json_name = "integration"];
   void clear_integration();
   const std::string& integration() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1785,7 +1218,7 @@ class CreateApplicationRequest final :
   std::string* _internal_mutable_integration();
   public:
 
-  // .application.v1alpha1.Repository repository = 3 [json_name = "repository"];
+  // .application.v1alpha1.Repository repository = 4 [json_name = "repository"];
   bool has_repository() const;
   private:
   bool _internal_has_repository() const;
@@ -1803,7 +1236,7 @@ class CreateApplicationRequest final :
       ::application::v1alpha1::Repository* repository);
   ::application::v1alpha1::Repository* unsafe_arena_release_repository();
 
-  // .application.v1alpha1.Configuration configuration = 4 [json_name = "configuration"];
+  // .application.v1alpha1.Configuration configuration = 5 [json_name = "configuration"];
   bool has_configuration() const;
   private:
   bool _internal_has_configuration() const;
@@ -1821,7 +1254,7 @@ class CreateApplicationRequest final :
       ::application::v1alpha1::Configuration* configuration);
   ::application::v1alpha1::Configuration* unsafe_arena_release_configuration();
 
-  // .application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];
+  // .application.v1alpha1.Scaling scaling = 8 [json_name = "scaling"];
   bool has_scaling() const;
   private:
   bool _internal_has_scaling() const;
@@ -1839,7 +1272,7 @@ class CreateApplicationRequest final :
       ::application::v1alpha1::Scaling* scaling);
   ::application::v1alpha1::Scaling* unsafe_arena_release_scaling();
 
-  // uint32 project_id = 5 [json_name = "projectId"];
+  // uint32 project_id = 6 [json_name = "projectId"];
   void clear_project_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
   void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -1848,1402 +1281,30 @@ class CreateApplicationRequest final :
   void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.CreateApplicationRequest)
+  // uint32 organization_id = 7 [json_name = "organizationId"];
+  void clear_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:application.v1alpha1.Application)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_;
   ::application::v1alpha1::Repository* repository_;
   ::application::v1alpha1::Configuration* configuration_;
   ::application::v1alpha1::Scaling* scaling_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
-};
-// -------------------------------------------------------------------
-
-class CreateApplicationResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.CreateApplicationResponse) */ {
- public:
-  inline CreateApplicationResponse() : CreateApplicationResponse(nullptr) {}
-  ~CreateApplicationResponse() override;
-  explicit constexpr CreateApplicationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CreateApplicationResponse(const CreateApplicationResponse& from);
-  CreateApplicationResponse(CreateApplicationResponse&& from) noexcept
-    : CreateApplicationResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline CreateApplicationResponse& operator=(const CreateApplicationResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CreateApplicationResponse& operator=(CreateApplicationResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CreateApplicationResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CreateApplicationResponse* internal_default_instance() {
-    return reinterpret_cast<const CreateApplicationResponse*>(
-               &_CreateApplicationResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    9;
-
-  friend void swap(CreateApplicationResponse& a, CreateApplicationResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CreateApplicationResponse* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CreateApplicationResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline CreateApplicationResponse* New() const final {
-    return new CreateApplicationResponse();
-  }
-
-  CreateApplicationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<CreateApplicationResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CreateApplicationResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const CreateApplicationResponse& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(CreateApplicationResponse* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.CreateApplicationResponse";
-  }
-  protected:
-  explicit CreateApplicationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kMsgFieldNumber = 1,
-    kErrorFieldNumber = 2,
-    kIdFieldNumber = 3,
-  };
-  // string msg = 1 [json_name = "msg"];
-  void clear_msg();
-  const std::string& msg() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_msg(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_msg();
-  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
-  void set_allocated_msg(std::string* msg);
-  private:
-  const std::string& _internal_msg() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
-  std::string* _internal_mutable_msg();
-  public:
-
-  // string error = 2 [json_name = "error"];
-  void clear_error();
-  const std::string& error() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_error(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_error();
-  PROTOBUF_MUST_USE_RESULT std::string* release_error();
-  void set_allocated_error(std::string* error);
-  private:
-  const std::string& _internal_error() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
-  std::string* _internal_mutable_error();
-  public:
-
-  // string id = 3 [json_name = "id"];
-  void clear_id();
-  const std::string& id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_id();
-  void set_allocated_id(std::string* id);
-  private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
-  public:
-
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.CreateApplicationResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
-};
-// -------------------------------------------------------------------
-
-class ListApplicationRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.ListApplicationRequest) */ {
- public:
-  inline ListApplicationRequest() : ListApplicationRequest(nullptr) {}
-  ~ListApplicationRequest() override;
-  explicit constexpr ListApplicationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  ListApplicationRequest(const ListApplicationRequest& from);
-  ListApplicationRequest(ListApplicationRequest&& from) noexcept
-    : ListApplicationRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline ListApplicationRequest& operator=(const ListApplicationRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ListApplicationRequest& operator=(ListApplicationRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const ListApplicationRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const ListApplicationRequest* internal_default_instance() {
-    return reinterpret_cast<const ListApplicationRequest*>(
-               &_ListApplicationRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    10;
-
-  friend void swap(ListApplicationRequest& a, ListApplicationRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(ListApplicationRequest* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ListApplicationRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline ListApplicationRequest* New() const final {
-    return new ListApplicationRequest();
-  }
-
-  ListApplicationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<ListApplicationRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const ListApplicationRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const ListApplicationRequest& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(ListApplicationRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.ListApplicationRequest";
-  }
-  protected:
-  explicit ListApplicationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kProjectIdFieldNumber = 1,
-  };
-  // uint32 project_id = 1 [json_name = "projectId"];
-  void clear_project_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
-  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
-  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.ListApplicationRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
-};
-// -------------------------------------------------------------------
-
-class ListApplicationResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.ListApplicationResponse) */ {
- public:
-  inline ListApplicationResponse() : ListApplicationResponse(nullptr) {}
-  ~ListApplicationResponse() override;
-  explicit constexpr ListApplicationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  ListApplicationResponse(const ListApplicationResponse& from);
-  ListApplicationResponse(ListApplicationResponse&& from) noexcept
-    : ListApplicationResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline ListApplicationResponse& operator=(const ListApplicationResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ListApplicationResponse& operator=(ListApplicationResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const ListApplicationResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const ListApplicationResponse* internal_default_instance() {
-    return reinterpret_cast<const ListApplicationResponse*>(
-               &_ListApplicationResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    11;
-
-  friend void swap(ListApplicationResponse& a, ListApplicationResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(ListApplicationResponse* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ListApplicationResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline ListApplicationResponse* New() const final {
-    return new ListApplicationResponse();
-  }
-
-  ListApplicationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<ListApplicationResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const ListApplicationResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const ListApplicationResponse& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(ListApplicationResponse* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.ListApplicationResponse";
-  }
-  protected:
-  explicit ListApplicationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kApplicationsFieldNumber = 1,
-  };
-  // repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];
-  int applications_size() const;
-  private:
-  int _internal_applications_size() const;
-  public:
-  void clear_applications();
-  ::application::v1alpha1::Application* mutable_applications(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application >*
-      mutable_applications();
-  private:
-  const ::application::v1alpha1::Application& _internal_applications(int index) const;
-  ::application::v1alpha1::Application* _internal_add_applications();
-  public:
-  const ::application::v1alpha1::Application& applications(int index) const;
-  ::application::v1alpha1::Application* add_applications();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application >&
-      applications() const;
-
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.ListApplicationResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application > applications_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
-};
-// -------------------------------------------------------------------
-
-class GetApplicationRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.GetApplicationRequest) */ {
- public:
-  inline GetApplicationRequest() : GetApplicationRequest(nullptr) {}
-  ~GetApplicationRequest() override;
-  explicit constexpr GetApplicationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  GetApplicationRequest(const GetApplicationRequest& from);
-  GetApplicationRequest(GetApplicationRequest&& from) noexcept
-    : GetApplicationRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline GetApplicationRequest& operator=(const GetApplicationRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline GetApplicationRequest& operator=(GetApplicationRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const GetApplicationRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const GetApplicationRequest* internal_default_instance() {
-    return reinterpret_cast<const GetApplicationRequest*>(
-               &_GetApplicationRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    12;
-
-  friend void swap(GetApplicationRequest& a, GetApplicationRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(GetApplicationRequest* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(GetApplicationRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline GetApplicationRequest* New() const final {
-    return new GetApplicationRequest();
-  }
-
-  GetApplicationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<GetApplicationRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const GetApplicationRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const GetApplicationRequest& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(GetApplicationRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.GetApplicationRequest";
-  }
-  protected:
-  explicit GetApplicationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kIdFieldNumber = 1,
-  };
-  // string id = 1 [json_name = "id"];
-  void clear_id();
-  const std::string& id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_id();
-  void set_allocated_id(std::string* id);
-  private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
-  public:
-
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.GetApplicationRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
-};
-// -------------------------------------------------------------------
-
-class GetApplicationResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.GetApplicationResponse) */ {
- public:
-  inline GetApplicationResponse() : GetApplicationResponse(nullptr) {}
-  ~GetApplicationResponse() override;
-  explicit constexpr GetApplicationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  GetApplicationResponse(const GetApplicationResponse& from);
-  GetApplicationResponse(GetApplicationResponse&& from) noexcept
-    : GetApplicationResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline GetApplicationResponse& operator=(const GetApplicationResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline GetApplicationResponse& operator=(GetApplicationResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const GetApplicationResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const GetApplicationResponse* internal_default_instance() {
-    return reinterpret_cast<const GetApplicationResponse*>(
-               &_GetApplicationResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    13;
-
-  friend void swap(GetApplicationResponse& a, GetApplicationResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(GetApplicationResponse* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(GetApplicationResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline GetApplicationResponse* New() const final {
-    return new GetApplicationResponse();
-  }
-
-  GetApplicationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<GetApplicationResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const GetApplicationResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const GetApplicationResponse& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(GetApplicationResponse* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.GetApplicationResponse";
-  }
-  protected:
-  explicit GetApplicationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kApplicationFieldNumber = 1,
-  };
-  // .application.v1alpha1.Application application = 1 [json_name = "application"];
-  bool has_application() const;
-  private:
-  bool _internal_has_application() const;
-  public:
-  void clear_application();
-  const ::application::v1alpha1::Application& application() const;
-  PROTOBUF_MUST_USE_RESULT ::application::v1alpha1::Application* release_application();
-  ::application::v1alpha1::Application* mutable_application();
-  void set_allocated_application(::application::v1alpha1::Application* application);
-  private:
-  const ::application::v1alpha1::Application& _internal_application() const;
-  ::application::v1alpha1::Application* _internal_mutable_application();
-  public:
-  void unsafe_arena_set_allocated_application(
-      ::application::v1alpha1::Application* application);
-  ::application::v1alpha1::Application* unsafe_arena_release_application();
-
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.GetApplicationResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::application::v1alpha1::Application* application_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
-};
-// -------------------------------------------------------------------
-
-class DeleteApplicationRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.DeleteApplicationRequest) */ {
- public:
-  inline DeleteApplicationRequest() : DeleteApplicationRequest(nullptr) {}
-  ~DeleteApplicationRequest() override;
-  explicit constexpr DeleteApplicationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  DeleteApplicationRequest(const DeleteApplicationRequest& from);
-  DeleteApplicationRequest(DeleteApplicationRequest&& from) noexcept
-    : DeleteApplicationRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline DeleteApplicationRequest& operator=(const DeleteApplicationRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline DeleteApplicationRequest& operator=(DeleteApplicationRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const DeleteApplicationRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const DeleteApplicationRequest* internal_default_instance() {
-    return reinterpret_cast<const DeleteApplicationRequest*>(
-               &_DeleteApplicationRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    14;
-
-  friend void swap(DeleteApplicationRequest& a, DeleteApplicationRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(DeleteApplicationRequest* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(DeleteApplicationRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline DeleteApplicationRequest* New() const final {
-    return new DeleteApplicationRequest();
-  }
-
-  DeleteApplicationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<DeleteApplicationRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const DeleteApplicationRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const DeleteApplicationRequest& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(DeleteApplicationRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.DeleteApplicationRequest";
-  }
-  protected:
-  explicit DeleteApplicationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kIdFieldNumber = 1,
-  };
-  // string id = 1 [json_name = "id"];
-  void clear_id();
-  const std::string& id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_id();
-  void set_allocated_id(std::string* id);
-  private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
-  public:
-
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.DeleteApplicationRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
-};
-// -------------------------------------------------------------------
-
-class DeleteApplicationResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.DeleteApplicationResponse) */ {
- public:
-  inline DeleteApplicationResponse() : DeleteApplicationResponse(nullptr) {}
-  ~DeleteApplicationResponse() override;
-  explicit constexpr DeleteApplicationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  DeleteApplicationResponse(const DeleteApplicationResponse& from);
-  DeleteApplicationResponse(DeleteApplicationResponse&& from) noexcept
-    : DeleteApplicationResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline DeleteApplicationResponse& operator=(const DeleteApplicationResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline DeleteApplicationResponse& operator=(DeleteApplicationResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const DeleteApplicationResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const DeleteApplicationResponse* internal_default_instance() {
-    return reinterpret_cast<const DeleteApplicationResponse*>(
-               &_DeleteApplicationResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    15;
-
-  friend void swap(DeleteApplicationResponse& a, DeleteApplicationResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(DeleteApplicationResponse* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(DeleteApplicationResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline DeleteApplicationResponse* New() const final {
-    return new DeleteApplicationResponse();
-  }
-
-  DeleteApplicationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<DeleteApplicationResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const DeleteApplicationResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const DeleteApplicationResponse& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(DeleteApplicationResponse* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.DeleteApplicationResponse";
-  }
-  protected:
-  explicit DeleteApplicationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kMsgFieldNumber = 1,
-    kErrorFieldNumber = 2,
-  };
-  // string msg = 1 [json_name = "msg"];
-  void clear_msg();
-  const std::string& msg() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_msg(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_msg();
-  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
-  void set_allocated_msg(std::string* msg);
-  private:
-  const std::string& _internal_msg() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
-  std::string* _internal_mutable_msg();
-  public:
-
-  // string error = 2 [json_name = "error"];
-  void clear_error();
-  const std::string& error() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_error(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_error();
-  PROTOBUF_MUST_USE_RESULT std::string* release_error();
-  void set_allocated_error(std::string* error);
-  private:
-  const std::string& _internal_error() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
-  std::string* _internal_mutable_error();
-  public:
-
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.DeleteApplicationResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
-};
-// -------------------------------------------------------------------
-
-class UpdateApplicationRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.UpdateApplicationRequest) */ {
- public:
-  inline UpdateApplicationRequest() : UpdateApplicationRequest(nullptr) {}
-  ~UpdateApplicationRequest() override;
-  explicit constexpr UpdateApplicationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  UpdateApplicationRequest(const UpdateApplicationRequest& from);
-  UpdateApplicationRequest(UpdateApplicationRequest&& from) noexcept
-    : UpdateApplicationRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline UpdateApplicationRequest& operator=(const UpdateApplicationRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline UpdateApplicationRequest& operator=(UpdateApplicationRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const UpdateApplicationRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const UpdateApplicationRequest* internal_default_instance() {
-    return reinterpret_cast<const UpdateApplicationRequest*>(
-               &_UpdateApplicationRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    16;
-
-  friend void swap(UpdateApplicationRequest& a, UpdateApplicationRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(UpdateApplicationRequest* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(UpdateApplicationRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline UpdateApplicationRequest* New() const final {
-    return new UpdateApplicationRequest();
-  }
-
-  UpdateApplicationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<UpdateApplicationRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const UpdateApplicationRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const UpdateApplicationRequest& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(UpdateApplicationRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.UpdateApplicationRequest";
-  }
-  protected:
-  explicit UpdateApplicationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kIdFieldNumber = 1,
-    kApplicationFieldNumber = 2,
-  };
-  // string id = 1 [json_name = "id"];
-  void clear_id();
-  const std::string& id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_id();
-  void set_allocated_id(std::string* id);
-  private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
-  public:
-
-  // .application.v1alpha1.CreateApplicationRequest application = 2 [json_name = "application"];
-  bool has_application() const;
-  private:
-  bool _internal_has_application() const;
-  public:
-  void clear_application();
-  const ::application::v1alpha1::CreateApplicationRequest& application() const;
-  PROTOBUF_MUST_USE_RESULT ::application::v1alpha1::CreateApplicationRequest* release_application();
-  ::application::v1alpha1::CreateApplicationRequest* mutable_application();
-  void set_allocated_application(::application::v1alpha1::CreateApplicationRequest* application);
-  private:
-  const ::application::v1alpha1::CreateApplicationRequest& _internal_application() const;
-  ::application::v1alpha1::CreateApplicationRequest* _internal_mutable_application();
-  public:
-  void unsafe_arena_set_allocated_application(
-      ::application::v1alpha1::CreateApplicationRequest* application);
-  ::application::v1alpha1::CreateApplicationRequest* unsafe_arena_release_application();
-
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.UpdateApplicationRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::application::v1alpha1::CreateApplicationRequest* application_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
-};
-// -------------------------------------------------------------------
-
-class UpdateApplicationResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.UpdateApplicationResponse) */ {
- public:
-  inline UpdateApplicationResponse() : UpdateApplicationResponse(nullptr) {}
-  ~UpdateApplicationResponse() override;
-  explicit constexpr UpdateApplicationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  UpdateApplicationResponse(const UpdateApplicationResponse& from);
-  UpdateApplicationResponse(UpdateApplicationResponse&& from) noexcept
-    : UpdateApplicationResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline UpdateApplicationResponse& operator=(const UpdateApplicationResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline UpdateApplicationResponse& operator=(UpdateApplicationResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const UpdateApplicationResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const UpdateApplicationResponse* internal_default_instance() {
-    return reinterpret_cast<const UpdateApplicationResponse*>(
-               &_UpdateApplicationResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    17;
-
-  friend void swap(UpdateApplicationResponse& a, UpdateApplicationResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(UpdateApplicationResponse* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(UpdateApplicationResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline UpdateApplicationResponse* New() const final {
-    return new UpdateApplicationResponse();
-  }
-
-  UpdateApplicationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<UpdateApplicationResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const UpdateApplicationResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const UpdateApplicationResponse& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(UpdateApplicationResponse* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "application.v1alpha1.UpdateApplicationResponse";
-  }
-  protected:
-  explicit UpdateApplicationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kMsgFieldNumber = 1,
-    kErrorFieldNumber = 2,
-  };
-  // string msg = 1 [json_name = "msg"];
-  void clear_msg();
-  const std::string& msg() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_msg(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_msg();
-  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
-  void set_allocated_msg(std::string* msg);
-  private:
-  const std::string& _internal_msg() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
-  std::string* _internal_mutable_msg();
-  public:
-
-  // string error = 2 [json_name = "error"];
-  void clear_error();
-  const std::string& error() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_error(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_error();
-  PROTOBUF_MUST_USE_RESULT std::string* release_error();
-  void set_allocated_error(std::string* error);
-  private:
-  const std::string& _internal_error() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
-  std::string* _internal_mutable_error();
-  public:
-
-  // @@protoc_insertion_point(class_scope:application.v1alpha1.UpdateApplicationResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
 };
@@ -3256,106 +1317,6 @@ class UpdateApplicationResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// DeleteApplicationsByIntegrationRequest
-
-// string integration_id = 1 [json_name = "integrationId"];
-inline void DeleteApplicationsByIntegrationRequest::clear_integration_id() {
-  integration_id_.ClearToEmpty();
-}
-inline const std::string& DeleteApplicationsByIntegrationRequest::integration_id() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.DeleteApplicationsByIntegrationRequest.integration_id)
-  return _internal_integration_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void DeleteApplicationsByIntegrationRequest::set_integration_id(ArgT0&& arg0, ArgT... args) {
- 
- integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.DeleteApplicationsByIntegrationRequest.integration_id)
-}
-inline std::string* DeleteApplicationsByIntegrationRequest::mutable_integration_id() {
-  std::string* _s = _internal_mutable_integration_id();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.DeleteApplicationsByIntegrationRequest.integration_id)
-  return _s;
-}
-inline const std::string& DeleteApplicationsByIntegrationRequest::_internal_integration_id() const {
-  return integration_id_.Get();
-}
-inline void DeleteApplicationsByIntegrationRequest::_internal_set_integration_id(const std::string& value) {
-  
-  integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* DeleteApplicationsByIntegrationRequest::_internal_mutable_integration_id() {
-  
-  return integration_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* DeleteApplicationsByIntegrationRequest::release_integration_id() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.DeleteApplicationsByIntegrationRequest.integration_id)
-  return integration_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void DeleteApplicationsByIntegrationRequest::set_allocated_integration_id(std::string* integration_id) {
-  if (integration_id != nullptr) {
-    
-  } else {
-    
-  }
-  integration_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration_id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.DeleteApplicationsByIntegrationRequest.integration_id)
-}
-
-// -------------------------------------------------------------------
-
-// DeleteApplicationsByIntegrationResponse
-
-// string msg = 1 [json_name = "msg"];
-inline void DeleteApplicationsByIntegrationResponse::clear_msg() {
-  msg_.ClearToEmpty();
-}
-inline const std::string& DeleteApplicationsByIntegrationResponse::msg() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.DeleteApplicationsByIntegrationResponse.msg)
-  return _internal_msg();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void DeleteApplicationsByIntegrationResponse::set_msg(ArgT0&& arg0, ArgT... args) {
- 
- msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.DeleteApplicationsByIntegrationResponse.msg)
-}
-inline std::string* DeleteApplicationsByIntegrationResponse::mutable_msg() {
-  std::string* _s = _internal_mutable_msg();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.DeleteApplicationsByIntegrationResponse.msg)
-  return _s;
-}
-inline const std::string& DeleteApplicationsByIntegrationResponse::_internal_msg() const {
-  return msg_.Get();
-}
-inline void DeleteApplicationsByIntegrationResponse::_internal_set_msg(const std::string& value) {
-  
-  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* DeleteApplicationsByIntegrationResponse::_internal_mutable_msg() {
-  
-  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* DeleteApplicationsByIntegrationResponse::release_msg() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.DeleteApplicationsByIntegrationResponse.msg)
-  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void DeleteApplicationsByIntegrationResponse::set_allocated_msg(std::string* msg) {
-  if (msg != nullptr) {
-    
-  } else {
-    
-  }
-  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.DeleteApplicationsByIntegrationResponse.msg)
-}
-
-// -------------------------------------------------------------------
-
 // Repository
 
 // string name = 1 [json_name = "name"];
@@ -3946,6 +1907,286 @@ inline void Configuration::set_allocated_runtime_type(std::string* runtime_type)
 
 // -------------------------------------------------------------------
 
+// Scaling
+
+// string cpu_rule = 1 [json_name = "cpuRule"];
+inline void Scaling::clear_cpu_rule() {
+  cpu_rule_.ClearToEmpty();
+}
+inline const std::string& Scaling::cpu_rule() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.cpu_rule)
+  return _internal_cpu_rule();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Scaling::set_cpu_rule(ArgT0&& arg0, ArgT... args) {
+ 
+ cpu_rule_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.cpu_rule)
+}
+inline std::string* Scaling::mutable_cpu_rule() {
+  std::string* _s = _internal_mutable_cpu_rule();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.cpu_rule)
+  return _s;
+}
+inline const std::string& Scaling::_internal_cpu_rule() const {
+  return cpu_rule_.Get();
+}
+inline void Scaling::_internal_set_cpu_rule(const std::string& value) {
+  
+  cpu_rule_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Scaling::_internal_mutable_cpu_rule() {
+  
+  return cpu_rule_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Scaling::release_cpu_rule() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.cpu_rule)
+  return cpu_rule_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Scaling::set_allocated_cpu_rule(std::string* cpu_rule) {
+  if (cpu_rule != nullptr) {
+    
+  } else {
+    
+  }
+  cpu_rule_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), cpu_rule,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.cpu_rule)
+}
+
+// string cool_down_period = 2 [json_name = "coolDownPeriod"];
+inline void Scaling::clear_cool_down_period() {
+  cool_down_period_.ClearToEmpty();
+}
+inline const std::string& Scaling::cool_down_period() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.cool_down_period)
+  return _internal_cool_down_period();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Scaling::set_cool_down_period(ArgT0&& arg0, ArgT... args) {
+ 
+ cool_down_period_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.cool_down_period)
+}
+inline std::string* Scaling::mutable_cool_down_period() {
+  std::string* _s = _internal_mutable_cool_down_period();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.cool_down_period)
+  return _s;
+}
+inline const std::string& Scaling::_internal_cool_down_period() const {
+  return cool_down_period_.Get();
+}
+inline void Scaling::_internal_set_cool_down_period(const std::string& value) {
+  
+  cool_down_period_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Scaling::_internal_mutable_cool_down_period() {
+  
+  return cool_down_period_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Scaling::release_cool_down_period() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.cool_down_period)
+  return cool_down_period_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Scaling::set_allocated_cool_down_period(std::string* cool_down_period) {
+  if (cool_down_period != nullptr) {
+    
+  } else {
+    
+  }
+  cool_down_period_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), cool_down_period,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.cool_down_period)
+}
+
+// string polling_interval = 3 [json_name = "pollingInterval"];
+inline void Scaling::clear_polling_interval() {
+  polling_interval_.ClearToEmpty();
+}
+inline const std::string& Scaling::polling_interval() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.polling_interval)
+  return _internal_polling_interval();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Scaling::set_polling_interval(ArgT0&& arg0, ArgT... args) {
+ 
+ polling_interval_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.polling_interval)
+}
+inline std::string* Scaling::mutable_polling_interval() {
+  std::string* _s = _internal_mutable_polling_interval();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.polling_interval)
+  return _s;
+}
+inline const std::string& Scaling::_internal_polling_interval() const {
+  return polling_interval_.Get();
+}
+inline void Scaling::_internal_set_polling_interval(const std::string& value) {
+  
+  polling_interval_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Scaling::_internal_mutable_polling_interval() {
+  
+  return polling_interval_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Scaling::release_polling_interval() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.polling_interval)
+  return polling_interval_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Scaling::set_allocated_polling_interval(std::string* polling_interval) {
+  if (polling_interval != nullptr) {
+    
+  } else {
+    
+  }
+  polling_interval_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), polling_interval,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.polling_interval)
+}
+
+// string min_replica = 4 [json_name = "minReplica"];
+inline void Scaling::clear_min_replica() {
+  min_replica_.ClearToEmpty();
+}
+inline const std::string& Scaling::min_replica() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.min_replica)
+  return _internal_min_replica();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Scaling::set_min_replica(ArgT0&& arg0, ArgT... args) {
+ 
+ min_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.min_replica)
+}
+inline std::string* Scaling::mutable_min_replica() {
+  std::string* _s = _internal_mutable_min_replica();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.min_replica)
+  return _s;
+}
+inline const std::string& Scaling::_internal_min_replica() const {
+  return min_replica_.Get();
+}
+inline void Scaling::_internal_set_min_replica(const std::string& value) {
+  
+  min_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Scaling::_internal_mutable_min_replica() {
+  
+  return min_replica_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Scaling::release_min_replica() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.min_replica)
+  return min_replica_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Scaling::set_allocated_min_replica(std::string* min_replica) {
+  if (min_replica != nullptr) {
+    
+  } else {
+    
+  }
+  min_replica_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), min_replica,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.min_replica)
+}
+
+// string max_replica = 5 [json_name = "maxReplica"];
+inline void Scaling::clear_max_replica() {
+  max_replica_.ClearToEmpty();
+}
+inline const std::string& Scaling::max_replica() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.max_replica)
+  return _internal_max_replica();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Scaling::set_max_replica(ArgT0&& arg0, ArgT... args) {
+ 
+ max_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.max_replica)
+}
+inline std::string* Scaling::mutable_max_replica() {
+  std::string* _s = _internal_mutable_max_replica();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.max_replica)
+  return _s;
+}
+inline const std::string& Scaling::_internal_max_replica() const {
+  return max_replica_.Get();
+}
+inline void Scaling::_internal_set_max_replica(const std::string& value) {
+  
+  max_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Scaling::_internal_mutable_max_replica() {
+  
+  return max_replica_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Scaling::release_max_replica() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.max_replica)
+  return max_replica_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Scaling::set_allocated_max_replica(std::string* max_replica) {
+  if (max_replica != nullptr) {
+    
+  } else {
+    
+  }
+  max_replica_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), max_replica,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.max_replica)
+}
+
+// string memory_rule = 6 [json_name = "memoryRule"];
+inline void Scaling::clear_memory_rule() {
+  memory_rule_.ClearToEmpty();
+}
+inline const std::string& Scaling::memory_rule() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.memory_rule)
+  return _internal_memory_rule();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Scaling::set_memory_rule(ArgT0&& arg0, ArgT... args) {
+ 
+ memory_rule_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.memory_rule)
+}
+inline std::string* Scaling::mutable_memory_rule() {
+  std::string* _s = _internal_mutable_memory_rule();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.memory_rule)
+  return _s;
+}
+inline const std::string& Scaling::_internal_memory_rule() const {
+  return memory_rule_.Get();
+}
+inline void Scaling::_internal_set_memory_rule(const std::string& value) {
+  
+  memory_rule_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Scaling::_internal_mutable_memory_rule() {
+  
+  return memory_rule_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Scaling::release_memory_rule() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.memory_rule)
+  return memory_rule_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Scaling::set_allocated_memory_rule(std::string* memory_rule) {
+  if (memory_rule != nullptr) {
+    
+  } else {
+    
+  }
+  memory_rule_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), memory_rule,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.memory_rule)
+}
+
+// -------------------------------------------------------------------
+
 // Application
 
 // string id = 1 [json_name = "id"];
@@ -4286,7 +2527,27 @@ inline void Application::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:application.v1alpha1.Application.project_id)
 }
 
-// .application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];
+// uint32 organization_id = 7 [json_name = "organizationId"];
+inline void Application::clear_organization_id() {
+  organization_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Application::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Application::organization_id() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Application.organization_id)
+  return _internal_organization_id();
+}
+inline void Application::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void Application::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Application.organization_id)
+}
+
+// .application.v1alpha1.Scaling scaling = 8 [json_name = "scaling"];
 inline bool Application::_internal_has_scaling() const {
   return this != internal_default_instance() && scaling_ != nullptr;
 }
@@ -4376,1435 +2637,9 @@ inline void Application::set_allocated_scaling(::application::v1alpha1::Scaling*
   // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Application.scaling)
 }
 
-// -------------------------------------------------------------------
-
-// Scaling
-
-// string cpu_rule = 1 [json_name = "cpuRule"];
-inline void Scaling::clear_cpu_rule() {
-  cpu_rule_.ClearToEmpty();
-}
-inline const std::string& Scaling::cpu_rule() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.cpu_rule)
-  return _internal_cpu_rule();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Scaling::set_cpu_rule(ArgT0&& arg0, ArgT... args) {
- 
- cpu_rule_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.cpu_rule)
-}
-inline std::string* Scaling::mutable_cpu_rule() {
-  std::string* _s = _internal_mutable_cpu_rule();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.cpu_rule)
-  return _s;
-}
-inline const std::string& Scaling::_internal_cpu_rule() const {
-  return cpu_rule_.Get();
-}
-inline void Scaling::_internal_set_cpu_rule(const std::string& value) {
-  
-  cpu_rule_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Scaling::_internal_mutable_cpu_rule() {
-  
-  return cpu_rule_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Scaling::release_cpu_rule() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.cpu_rule)
-  return cpu_rule_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Scaling::set_allocated_cpu_rule(std::string* cpu_rule) {
-  if (cpu_rule != nullptr) {
-    
-  } else {
-    
-  }
-  cpu_rule_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), cpu_rule,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.cpu_rule)
-}
-
-// string cool_down_period = 2 [json_name = "coolDownPeriod"];
-inline void Scaling::clear_cool_down_period() {
-  cool_down_period_.ClearToEmpty();
-}
-inline const std::string& Scaling::cool_down_period() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.cool_down_period)
-  return _internal_cool_down_period();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Scaling::set_cool_down_period(ArgT0&& arg0, ArgT... args) {
- 
- cool_down_period_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.cool_down_period)
-}
-inline std::string* Scaling::mutable_cool_down_period() {
-  std::string* _s = _internal_mutable_cool_down_period();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.cool_down_period)
-  return _s;
-}
-inline const std::string& Scaling::_internal_cool_down_period() const {
-  return cool_down_period_.Get();
-}
-inline void Scaling::_internal_set_cool_down_period(const std::string& value) {
-  
-  cool_down_period_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Scaling::_internal_mutable_cool_down_period() {
-  
-  return cool_down_period_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Scaling::release_cool_down_period() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.cool_down_period)
-  return cool_down_period_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Scaling::set_allocated_cool_down_period(std::string* cool_down_period) {
-  if (cool_down_period != nullptr) {
-    
-  } else {
-    
-  }
-  cool_down_period_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), cool_down_period,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.cool_down_period)
-}
-
-// string polling_interval = 3 [json_name = "pollingInterval"];
-inline void Scaling::clear_polling_interval() {
-  polling_interval_.ClearToEmpty();
-}
-inline const std::string& Scaling::polling_interval() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.polling_interval)
-  return _internal_polling_interval();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Scaling::set_polling_interval(ArgT0&& arg0, ArgT... args) {
- 
- polling_interval_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.polling_interval)
-}
-inline std::string* Scaling::mutable_polling_interval() {
-  std::string* _s = _internal_mutable_polling_interval();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.polling_interval)
-  return _s;
-}
-inline const std::string& Scaling::_internal_polling_interval() const {
-  return polling_interval_.Get();
-}
-inline void Scaling::_internal_set_polling_interval(const std::string& value) {
-  
-  polling_interval_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Scaling::_internal_mutable_polling_interval() {
-  
-  return polling_interval_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Scaling::release_polling_interval() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.polling_interval)
-  return polling_interval_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Scaling::set_allocated_polling_interval(std::string* polling_interval) {
-  if (polling_interval != nullptr) {
-    
-  } else {
-    
-  }
-  polling_interval_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), polling_interval,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.polling_interval)
-}
-
-// string min_replica = 4 [json_name = "minReplica"];
-inline void Scaling::clear_min_replica() {
-  min_replica_.ClearToEmpty();
-}
-inline const std::string& Scaling::min_replica() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.min_replica)
-  return _internal_min_replica();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Scaling::set_min_replica(ArgT0&& arg0, ArgT... args) {
- 
- min_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.min_replica)
-}
-inline std::string* Scaling::mutable_min_replica() {
-  std::string* _s = _internal_mutable_min_replica();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.min_replica)
-  return _s;
-}
-inline const std::string& Scaling::_internal_min_replica() const {
-  return min_replica_.Get();
-}
-inline void Scaling::_internal_set_min_replica(const std::string& value) {
-  
-  min_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Scaling::_internal_mutable_min_replica() {
-  
-  return min_replica_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Scaling::release_min_replica() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.min_replica)
-  return min_replica_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Scaling::set_allocated_min_replica(std::string* min_replica) {
-  if (min_replica != nullptr) {
-    
-  } else {
-    
-  }
-  min_replica_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), min_replica,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.min_replica)
-}
-
-// string max_replica = 5 [json_name = "maxReplica"];
-inline void Scaling::clear_max_replica() {
-  max_replica_.ClearToEmpty();
-}
-inline const std::string& Scaling::max_replica() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.max_replica)
-  return _internal_max_replica();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Scaling::set_max_replica(ArgT0&& arg0, ArgT... args) {
- 
- max_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.max_replica)
-}
-inline std::string* Scaling::mutable_max_replica() {
-  std::string* _s = _internal_mutable_max_replica();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.max_replica)
-  return _s;
-}
-inline const std::string& Scaling::_internal_max_replica() const {
-  return max_replica_.Get();
-}
-inline void Scaling::_internal_set_max_replica(const std::string& value) {
-  
-  max_replica_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Scaling::_internal_mutable_max_replica() {
-  
-  return max_replica_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Scaling::release_max_replica() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.max_replica)
-  return max_replica_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Scaling::set_allocated_max_replica(std::string* max_replica) {
-  if (max_replica != nullptr) {
-    
-  } else {
-    
-  }
-  max_replica_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), max_replica,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.max_replica)
-}
-
-// string memory_rule = 6 [json_name = "memoryRule"];
-inline void Scaling::clear_memory_rule() {
-  memory_rule_.ClearToEmpty();
-}
-inline const std::string& Scaling::memory_rule() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.Scaling.memory_rule)
-  return _internal_memory_rule();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Scaling::set_memory_rule(ArgT0&& arg0, ArgT... args) {
- 
- memory_rule_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.Scaling.memory_rule)
-}
-inline std::string* Scaling::mutable_memory_rule() {
-  std::string* _s = _internal_mutable_memory_rule();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Scaling.memory_rule)
-  return _s;
-}
-inline const std::string& Scaling::_internal_memory_rule() const {
-  return memory_rule_.Get();
-}
-inline void Scaling::_internal_set_memory_rule(const std::string& value) {
-  
-  memory_rule_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Scaling::_internal_mutable_memory_rule() {
-  
-  return memory_rule_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Scaling::release_memory_rule() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.Scaling.memory_rule)
-  return memory_rule_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Scaling::set_allocated_memory_rule(std::string* memory_rule) {
-  if (memory_rule != nullptr) {
-    
-  } else {
-    
-  }
-  memory_rule_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), memory_rule,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Scaling.memory_rule)
-}
-
-// -------------------------------------------------------------------
-
-// CreateApplicationRequest
-
-// string name = 1 [json_name = "name"];
-inline void CreateApplicationRequest::clear_name() {
-  name_.ClearToEmpty();
-}
-inline const std::string& CreateApplicationRequest::name() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.CreateApplicationRequest.name)
-  return _internal_name();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateApplicationRequest::set_name(ArgT0&& arg0, ArgT... args) {
- 
- name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.CreateApplicationRequest.name)
-}
-inline std::string* CreateApplicationRequest::mutable_name() {
-  std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.CreateApplicationRequest.name)
-  return _s;
-}
-inline const std::string& CreateApplicationRequest::_internal_name() const {
-  return name_.Get();
-}
-inline void CreateApplicationRequest::_internal_set_name(const std::string& value) {
-  
-  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateApplicationRequest::_internal_mutable_name() {
-  
-  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateApplicationRequest::release_name() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.CreateApplicationRequest.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateApplicationRequest::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
-    
-  } else {
-    
-  }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.CreateApplicationRequest.name)
-}
-
-// string integration = 2 [json_name = "integration"];
-inline void CreateApplicationRequest::clear_integration() {
-  integration_.ClearToEmpty();
-}
-inline const std::string& CreateApplicationRequest::integration() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.CreateApplicationRequest.integration)
-  return _internal_integration();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateApplicationRequest::set_integration(ArgT0&& arg0, ArgT... args) {
- 
- integration_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.CreateApplicationRequest.integration)
-}
-inline std::string* CreateApplicationRequest::mutable_integration() {
-  std::string* _s = _internal_mutable_integration();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.CreateApplicationRequest.integration)
-  return _s;
-}
-inline const std::string& CreateApplicationRequest::_internal_integration() const {
-  return integration_.Get();
-}
-inline void CreateApplicationRequest::_internal_set_integration(const std::string& value) {
-  
-  integration_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateApplicationRequest::_internal_mutable_integration() {
-  
-  return integration_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateApplicationRequest::release_integration() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.CreateApplicationRequest.integration)
-  return integration_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateApplicationRequest::set_allocated_integration(std::string* integration) {
-  if (integration != nullptr) {
-    
-  } else {
-    
-  }
-  integration_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.CreateApplicationRequest.integration)
-}
-
-// .application.v1alpha1.Repository repository = 3 [json_name = "repository"];
-inline bool CreateApplicationRequest::_internal_has_repository() const {
-  return this != internal_default_instance() && repository_ != nullptr;
-}
-inline bool CreateApplicationRequest::has_repository() const {
-  return _internal_has_repository();
-}
-inline void CreateApplicationRequest::clear_repository() {
-  if (GetArenaForAllocation() == nullptr && repository_ != nullptr) {
-    delete repository_;
-  }
-  repository_ = nullptr;
-}
-inline const ::application::v1alpha1::Repository& CreateApplicationRequest::_internal_repository() const {
-  const ::application::v1alpha1::Repository* p = repository_;
-  return p != nullptr ? *p : reinterpret_cast<const ::application::v1alpha1::Repository&>(
-      ::application::v1alpha1::_Repository_default_instance_);
-}
-inline const ::application::v1alpha1::Repository& CreateApplicationRequest::repository() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.CreateApplicationRequest.repository)
-  return _internal_repository();
-}
-inline void CreateApplicationRequest::unsafe_arena_set_allocated_repository(
-    ::application::v1alpha1::Repository* repository) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(repository_);
-  }
-  repository_ = repository;
-  if (repository) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:application.v1alpha1.CreateApplicationRequest.repository)
-}
-inline ::application::v1alpha1::Repository* CreateApplicationRequest::release_repository() {
-  
-  ::application::v1alpha1::Repository* temp = repository_;
-  repository_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::application::v1alpha1::Repository* CreateApplicationRequest::unsafe_arena_release_repository() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.CreateApplicationRequest.repository)
-  
-  ::application::v1alpha1::Repository* temp = repository_;
-  repository_ = nullptr;
-  return temp;
-}
-inline ::application::v1alpha1::Repository* CreateApplicationRequest::_internal_mutable_repository() {
-  
-  if (repository_ == nullptr) {
-    auto* p = CreateMaybeMessage<::application::v1alpha1::Repository>(GetArenaForAllocation());
-    repository_ = p;
-  }
-  return repository_;
-}
-inline ::application::v1alpha1::Repository* CreateApplicationRequest::mutable_repository() {
-  ::application::v1alpha1::Repository* _msg = _internal_mutable_repository();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.CreateApplicationRequest.repository)
-  return _msg;
-}
-inline void CreateApplicationRequest::set_allocated_repository(::application::v1alpha1::Repository* repository) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete repository_;
-  }
-  if (repository) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::application::v1alpha1::Repository>::GetOwningArena(repository);
-    if (message_arena != submessage_arena) {
-      repository = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, repository, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  repository_ = repository;
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.CreateApplicationRequest.repository)
-}
-
-// .application.v1alpha1.Configuration configuration = 4 [json_name = "configuration"];
-inline bool CreateApplicationRequest::_internal_has_configuration() const {
-  return this != internal_default_instance() && configuration_ != nullptr;
-}
-inline bool CreateApplicationRequest::has_configuration() const {
-  return _internal_has_configuration();
-}
-inline void CreateApplicationRequest::clear_configuration() {
-  if (GetArenaForAllocation() == nullptr && configuration_ != nullptr) {
-    delete configuration_;
-  }
-  configuration_ = nullptr;
-}
-inline const ::application::v1alpha1::Configuration& CreateApplicationRequest::_internal_configuration() const {
-  const ::application::v1alpha1::Configuration* p = configuration_;
-  return p != nullptr ? *p : reinterpret_cast<const ::application::v1alpha1::Configuration&>(
-      ::application::v1alpha1::_Configuration_default_instance_);
-}
-inline const ::application::v1alpha1::Configuration& CreateApplicationRequest::configuration() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.CreateApplicationRequest.configuration)
-  return _internal_configuration();
-}
-inline void CreateApplicationRequest::unsafe_arena_set_allocated_configuration(
-    ::application::v1alpha1::Configuration* configuration) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(configuration_);
-  }
-  configuration_ = configuration;
-  if (configuration) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:application.v1alpha1.CreateApplicationRequest.configuration)
-}
-inline ::application::v1alpha1::Configuration* CreateApplicationRequest::release_configuration() {
-  
-  ::application::v1alpha1::Configuration* temp = configuration_;
-  configuration_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::application::v1alpha1::Configuration* CreateApplicationRequest::unsafe_arena_release_configuration() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.CreateApplicationRequest.configuration)
-  
-  ::application::v1alpha1::Configuration* temp = configuration_;
-  configuration_ = nullptr;
-  return temp;
-}
-inline ::application::v1alpha1::Configuration* CreateApplicationRequest::_internal_mutable_configuration() {
-  
-  if (configuration_ == nullptr) {
-    auto* p = CreateMaybeMessage<::application::v1alpha1::Configuration>(GetArenaForAllocation());
-    configuration_ = p;
-  }
-  return configuration_;
-}
-inline ::application::v1alpha1::Configuration* CreateApplicationRequest::mutable_configuration() {
-  ::application::v1alpha1::Configuration* _msg = _internal_mutable_configuration();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.CreateApplicationRequest.configuration)
-  return _msg;
-}
-inline void CreateApplicationRequest::set_allocated_configuration(::application::v1alpha1::Configuration* configuration) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete configuration_;
-  }
-  if (configuration) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::application::v1alpha1::Configuration>::GetOwningArena(configuration);
-    if (message_arena != submessage_arena) {
-      configuration = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, configuration, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  configuration_ = configuration;
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.CreateApplicationRequest.configuration)
-}
-
-// uint32 project_id = 5 [json_name = "projectId"];
-inline void CreateApplicationRequest::clear_project_id() {
-  project_id_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateApplicationRequest::_internal_project_id() const {
-  return project_id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateApplicationRequest::project_id() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.CreateApplicationRequest.project_id)
-  return _internal_project_id();
-}
-inline void CreateApplicationRequest::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  project_id_ = value;
-}
-inline void CreateApplicationRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_project_id(value);
-  // @@protoc_insertion_point(field_set:application.v1alpha1.CreateApplicationRequest.project_id)
-}
-
-// .application.v1alpha1.Scaling scaling = 6 [json_name = "scaling"];
-inline bool CreateApplicationRequest::_internal_has_scaling() const {
-  return this != internal_default_instance() && scaling_ != nullptr;
-}
-inline bool CreateApplicationRequest::has_scaling() const {
-  return _internal_has_scaling();
-}
-inline void CreateApplicationRequest::clear_scaling() {
-  if (GetArenaForAllocation() == nullptr && scaling_ != nullptr) {
-    delete scaling_;
-  }
-  scaling_ = nullptr;
-}
-inline const ::application::v1alpha1::Scaling& CreateApplicationRequest::_internal_scaling() const {
-  const ::application::v1alpha1::Scaling* p = scaling_;
-  return p != nullptr ? *p : reinterpret_cast<const ::application::v1alpha1::Scaling&>(
-      ::application::v1alpha1::_Scaling_default_instance_);
-}
-inline const ::application::v1alpha1::Scaling& CreateApplicationRequest::scaling() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.CreateApplicationRequest.scaling)
-  return _internal_scaling();
-}
-inline void CreateApplicationRequest::unsafe_arena_set_allocated_scaling(
-    ::application::v1alpha1::Scaling* scaling) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(scaling_);
-  }
-  scaling_ = scaling;
-  if (scaling) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:application.v1alpha1.CreateApplicationRequest.scaling)
-}
-inline ::application::v1alpha1::Scaling* CreateApplicationRequest::release_scaling() {
-  
-  ::application::v1alpha1::Scaling* temp = scaling_;
-  scaling_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::application::v1alpha1::Scaling* CreateApplicationRequest::unsafe_arena_release_scaling() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.CreateApplicationRequest.scaling)
-  
-  ::application::v1alpha1::Scaling* temp = scaling_;
-  scaling_ = nullptr;
-  return temp;
-}
-inline ::application::v1alpha1::Scaling* CreateApplicationRequest::_internal_mutable_scaling() {
-  
-  if (scaling_ == nullptr) {
-    auto* p = CreateMaybeMessage<::application::v1alpha1::Scaling>(GetArenaForAllocation());
-    scaling_ = p;
-  }
-  return scaling_;
-}
-inline ::application::v1alpha1::Scaling* CreateApplicationRequest::mutable_scaling() {
-  ::application::v1alpha1::Scaling* _msg = _internal_mutable_scaling();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.CreateApplicationRequest.scaling)
-  return _msg;
-}
-inline void CreateApplicationRequest::set_allocated_scaling(::application::v1alpha1::Scaling* scaling) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete scaling_;
-  }
-  if (scaling) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::application::v1alpha1::Scaling>::GetOwningArena(scaling);
-    if (message_arena != submessage_arena) {
-      scaling = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, scaling, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  scaling_ = scaling;
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.CreateApplicationRequest.scaling)
-}
-
-// -------------------------------------------------------------------
-
-// CreateApplicationResponse
-
-// string msg = 1 [json_name = "msg"];
-inline void CreateApplicationResponse::clear_msg() {
-  msg_.ClearToEmpty();
-}
-inline const std::string& CreateApplicationResponse::msg() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.CreateApplicationResponse.msg)
-  return _internal_msg();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateApplicationResponse::set_msg(ArgT0&& arg0, ArgT... args) {
- 
- msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.CreateApplicationResponse.msg)
-}
-inline std::string* CreateApplicationResponse::mutable_msg() {
-  std::string* _s = _internal_mutable_msg();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.CreateApplicationResponse.msg)
-  return _s;
-}
-inline const std::string& CreateApplicationResponse::_internal_msg() const {
-  return msg_.Get();
-}
-inline void CreateApplicationResponse::_internal_set_msg(const std::string& value) {
-  
-  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateApplicationResponse::_internal_mutable_msg() {
-  
-  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateApplicationResponse::release_msg() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.CreateApplicationResponse.msg)
-  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateApplicationResponse::set_allocated_msg(std::string* msg) {
-  if (msg != nullptr) {
-    
-  } else {
-    
-  }
-  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.CreateApplicationResponse.msg)
-}
-
-// string error = 2 [json_name = "error"];
-inline void CreateApplicationResponse::clear_error() {
-  error_.ClearToEmpty();
-}
-inline const std::string& CreateApplicationResponse::error() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.CreateApplicationResponse.error)
-  return _internal_error();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateApplicationResponse::set_error(ArgT0&& arg0, ArgT... args) {
- 
- error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.CreateApplicationResponse.error)
-}
-inline std::string* CreateApplicationResponse::mutable_error() {
-  std::string* _s = _internal_mutable_error();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.CreateApplicationResponse.error)
-  return _s;
-}
-inline const std::string& CreateApplicationResponse::_internal_error() const {
-  return error_.Get();
-}
-inline void CreateApplicationResponse::_internal_set_error(const std::string& value) {
-  
-  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateApplicationResponse::_internal_mutable_error() {
-  
-  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateApplicationResponse::release_error() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.CreateApplicationResponse.error)
-  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateApplicationResponse::set_allocated_error(std::string* error) {
-  if (error != nullptr) {
-    
-  } else {
-    
-  }
-  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.CreateApplicationResponse.error)
-}
-
-// string id = 3 [json_name = "id"];
-inline void CreateApplicationResponse::clear_id() {
-  id_.ClearToEmpty();
-}
-inline const std::string& CreateApplicationResponse::id() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.CreateApplicationResponse.id)
-  return _internal_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateApplicationResponse::set_id(ArgT0&& arg0, ArgT... args) {
- 
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.CreateApplicationResponse.id)
-}
-inline std::string* CreateApplicationResponse::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.CreateApplicationResponse.id)
-  return _s;
-}
-inline const std::string& CreateApplicationResponse::_internal_id() const {
-  return id_.Get();
-}
-inline void CreateApplicationResponse::_internal_set_id(const std::string& value) {
-  
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateApplicationResponse::_internal_mutable_id() {
-  
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateApplicationResponse::release_id() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.CreateApplicationResponse.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateApplicationResponse::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
-    
-  } else {
-    
-  }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.CreateApplicationResponse.id)
-}
-
-// -------------------------------------------------------------------
-
-// ListApplicationRequest
-
-// uint32 project_id = 1 [json_name = "projectId"];
-inline void ListApplicationRequest::clear_project_id() {
-  project_id_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 ListApplicationRequest::_internal_project_id() const {
-  return project_id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 ListApplicationRequest::project_id() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.ListApplicationRequest.project_id)
-  return _internal_project_id();
-}
-inline void ListApplicationRequest::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  project_id_ = value;
-}
-inline void ListApplicationRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_project_id(value);
-  // @@protoc_insertion_point(field_set:application.v1alpha1.ListApplicationRequest.project_id)
-}
-
-// -------------------------------------------------------------------
-
-// ListApplicationResponse
-
-// repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];
-inline int ListApplicationResponse::_internal_applications_size() const {
-  return applications_.size();
-}
-inline int ListApplicationResponse::applications_size() const {
-  return _internal_applications_size();
-}
-inline void ListApplicationResponse::clear_applications() {
-  applications_.Clear();
-}
-inline ::application::v1alpha1::Application* ListApplicationResponse::mutable_applications(int index) {
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.ListApplicationResponse.applications)
-  return applications_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application >*
-ListApplicationResponse::mutable_applications() {
-  // @@protoc_insertion_point(field_mutable_list:application.v1alpha1.ListApplicationResponse.applications)
-  return &applications_;
-}
-inline const ::application::v1alpha1::Application& ListApplicationResponse::_internal_applications(int index) const {
-  return applications_.Get(index);
-}
-inline const ::application::v1alpha1::Application& ListApplicationResponse::applications(int index) const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.ListApplicationResponse.applications)
-  return _internal_applications(index);
-}
-inline ::application::v1alpha1::Application* ListApplicationResponse::_internal_add_applications() {
-  return applications_.Add();
-}
-inline ::application::v1alpha1::Application* ListApplicationResponse::add_applications() {
-  ::application::v1alpha1::Application* _add = _internal_add_applications();
-  // @@protoc_insertion_point(field_add:application.v1alpha1.ListApplicationResponse.applications)
-  return _add;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application >&
-ListApplicationResponse::applications() const {
-  // @@protoc_insertion_point(field_list:application.v1alpha1.ListApplicationResponse.applications)
-  return applications_;
-}
-
-// -------------------------------------------------------------------
-
-// GetApplicationRequest
-
-// string id = 1 [json_name = "id"];
-inline void GetApplicationRequest::clear_id() {
-  id_.ClearToEmpty();
-}
-inline const std::string& GetApplicationRequest::id() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.GetApplicationRequest.id)
-  return _internal_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void GetApplicationRequest::set_id(ArgT0&& arg0, ArgT... args) {
- 
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.GetApplicationRequest.id)
-}
-inline std::string* GetApplicationRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.GetApplicationRequest.id)
-  return _s;
-}
-inline const std::string& GetApplicationRequest::_internal_id() const {
-  return id_.Get();
-}
-inline void GetApplicationRequest::_internal_set_id(const std::string& value) {
-  
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* GetApplicationRequest::_internal_mutable_id() {
-  
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* GetApplicationRequest::release_id() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.GetApplicationRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void GetApplicationRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
-    
-  } else {
-    
-  }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.GetApplicationRequest.id)
-}
-
-// -------------------------------------------------------------------
-
-// GetApplicationResponse
-
-// .application.v1alpha1.Application application = 1 [json_name = "application"];
-inline bool GetApplicationResponse::_internal_has_application() const {
-  return this != internal_default_instance() && application_ != nullptr;
-}
-inline bool GetApplicationResponse::has_application() const {
-  return _internal_has_application();
-}
-inline void GetApplicationResponse::clear_application() {
-  if (GetArenaForAllocation() == nullptr && application_ != nullptr) {
-    delete application_;
-  }
-  application_ = nullptr;
-}
-inline const ::application::v1alpha1::Application& GetApplicationResponse::_internal_application() const {
-  const ::application::v1alpha1::Application* p = application_;
-  return p != nullptr ? *p : reinterpret_cast<const ::application::v1alpha1::Application&>(
-      ::application::v1alpha1::_Application_default_instance_);
-}
-inline const ::application::v1alpha1::Application& GetApplicationResponse::application() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.GetApplicationResponse.application)
-  return _internal_application();
-}
-inline void GetApplicationResponse::unsafe_arena_set_allocated_application(
-    ::application::v1alpha1::Application* application) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(application_);
-  }
-  application_ = application;
-  if (application) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:application.v1alpha1.GetApplicationResponse.application)
-}
-inline ::application::v1alpha1::Application* GetApplicationResponse::release_application() {
-  
-  ::application::v1alpha1::Application* temp = application_;
-  application_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::application::v1alpha1::Application* GetApplicationResponse::unsafe_arena_release_application() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.GetApplicationResponse.application)
-  
-  ::application::v1alpha1::Application* temp = application_;
-  application_ = nullptr;
-  return temp;
-}
-inline ::application::v1alpha1::Application* GetApplicationResponse::_internal_mutable_application() {
-  
-  if (application_ == nullptr) {
-    auto* p = CreateMaybeMessage<::application::v1alpha1::Application>(GetArenaForAllocation());
-    application_ = p;
-  }
-  return application_;
-}
-inline ::application::v1alpha1::Application* GetApplicationResponse::mutable_application() {
-  ::application::v1alpha1::Application* _msg = _internal_mutable_application();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.GetApplicationResponse.application)
-  return _msg;
-}
-inline void GetApplicationResponse::set_allocated_application(::application::v1alpha1::Application* application) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete application_;
-  }
-  if (application) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::application::v1alpha1::Application>::GetOwningArena(application);
-    if (message_arena != submessage_arena) {
-      application = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, application, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  application_ = application;
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.GetApplicationResponse.application)
-}
-
-// -------------------------------------------------------------------
-
-// DeleteApplicationRequest
-
-// string id = 1 [json_name = "id"];
-inline void DeleteApplicationRequest::clear_id() {
-  id_.ClearToEmpty();
-}
-inline const std::string& DeleteApplicationRequest::id() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.DeleteApplicationRequest.id)
-  return _internal_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void DeleteApplicationRequest::set_id(ArgT0&& arg0, ArgT... args) {
- 
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.DeleteApplicationRequest.id)
-}
-inline std::string* DeleteApplicationRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.DeleteApplicationRequest.id)
-  return _s;
-}
-inline const std::string& DeleteApplicationRequest::_internal_id() const {
-  return id_.Get();
-}
-inline void DeleteApplicationRequest::_internal_set_id(const std::string& value) {
-  
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* DeleteApplicationRequest::_internal_mutable_id() {
-  
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* DeleteApplicationRequest::release_id() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.DeleteApplicationRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void DeleteApplicationRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
-    
-  } else {
-    
-  }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.DeleteApplicationRequest.id)
-}
-
-// -------------------------------------------------------------------
-
-// DeleteApplicationResponse
-
-// string msg = 1 [json_name = "msg"];
-inline void DeleteApplicationResponse::clear_msg() {
-  msg_.ClearToEmpty();
-}
-inline const std::string& DeleteApplicationResponse::msg() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.DeleteApplicationResponse.msg)
-  return _internal_msg();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void DeleteApplicationResponse::set_msg(ArgT0&& arg0, ArgT... args) {
- 
- msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.DeleteApplicationResponse.msg)
-}
-inline std::string* DeleteApplicationResponse::mutable_msg() {
-  std::string* _s = _internal_mutable_msg();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.DeleteApplicationResponse.msg)
-  return _s;
-}
-inline const std::string& DeleteApplicationResponse::_internal_msg() const {
-  return msg_.Get();
-}
-inline void DeleteApplicationResponse::_internal_set_msg(const std::string& value) {
-  
-  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* DeleteApplicationResponse::_internal_mutable_msg() {
-  
-  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* DeleteApplicationResponse::release_msg() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.DeleteApplicationResponse.msg)
-  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void DeleteApplicationResponse::set_allocated_msg(std::string* msg) {
-  if (msg != nullptr) {
-    
-  } else {
-    
-  }
-  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.DeleteApplicationResponse.msg)
-}
-
-// string error = 2 [json_name = "error"];
-inline void DeleteApplicationResponse::clear_error() {
-  error_.ClearToEmpty();
-}
-inline const std::string& DeleteApplicationResponse::error() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.DeleteApplicationResponse.error)
-  return _internal_error();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void DeleteApplicationResponse::set_error(ArgT0&& arg0, ArgT... args) {
- 
- error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.DeleteApplicationResponse.error)
-}
-inline std::string* DeleteApplicationResponse::mutable_error() {
-  std::string* _s = _internal_mutable_error();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.DeleteApplicationResponse.error)
-  return _s;
-}
-inline const std::string& DeleteApplicationResponse::_internal_error() const {
-  return error_.Get();
-}
-inline void DeleteApplicationResponse::_internal_set_error(const std::string& value) {
-  
-  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* DeleteApplicationResponse::_internal_mutable_error() {
-  
-  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* DeleteApplicationResponse::release_error() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.DeleteApplicationResponse.error)
-  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void DeleteApplicationResponse::set_allocated_error(std::string* error) {
-  if (error != nullptr) {
-    
-  } else {
-    
-  }
-  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.DeleteApplicationResponse.error)
-}
-
-// -------------------------------------------------------------------
-
-// UpdateApplicationRequest
-
-// string id = 1 [json_name = "id"];
-inline void UpdateApplicationRequest::clear_id() {
-  id_.ClearToEmpty();
-}
-inline const std::string& UpdateApplicationRequest::id() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.UpdateApplicationRequest.id)
-  return _internal_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void UpdateApplicationRequest::set_id(ArgT0&& arg0, ArgT... args) {
- 
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.UpdateApplicationRequest.id)
-}
-inline std::string* UpdateApplicationRequest::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.UpdateApplicationRequest.id)
-  return _s;
-}
-inline const std::string& UpdateApplicationRequest::_internal_id() const {
-  return id_.Get();
-}
-inline void UpdateApplicationRequest::_internal_set_id(const std::string& value) {
-  
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* UpdateApplicationRequest::_internal_mutable_id() {
-  
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* UpdateApplicationRequest::release_id() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.UpdateApplicationRequest.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void UpdateApplicationRequest::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
-    
-  } else {
-    
-  }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.UpdateApplicationRequest.id)
-}
-
-// .application.v1alpha1.CreateApplicationRequest application = 2 [json_name = "application"];
-inline bool UpdateApplicationRequest::_internal_has_application() const {
-  return this != internal_default_instance() && application_ != nullptr;
-}
-inline bool UpdateApplicationRequest::has_application() const {
-  return _internal_has_application();
-}
-inline void UpdateApplicationRequest::clear_application() {
-  if (GetArenaForAllocation() == nullptr && application_ != nullptr) {
-    delete application_;
-  }
-  application_ = nullptr;
-}
-inline const ::application::v1alpha1::CreateApplicationRequest& UpdateApplicationRequest::_internal_application() const {
-  const ::application::v1alpha1::CreateApplicationRequest* p = application_;
-  return p != nullptr ? *p : reinterpret_cast<const ::application::v1alpha1::CreateApplicationRequest&>(
-      ::application::v1alpha1::_CreateApplicationRequest_default_instance_);
-}
-inline const ::application::v1alpha1::CreateApplicationRequest& UpdateApplicationRequest::application() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.UpdateApplicationRequest.application)
-  return _internal_application();
-}
-inline void UpdateApplicationRequest::unsafe_arena_set_allocated_application(
-    ::application::v1alpha1::CreateApplicationRequest* application) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(application_);
-  }
-  application_ = application;
-  if (application) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:application.v1alpha1.UpdateApplicationRequest.application)
-}
-inline ::application::v1alpha1::CreateApplicationRequest* UpdateApplicationRequest::release_application() {
-  
-  ::application::v1alpha1::CreateApplicationRequest* temp = application_;
-  application_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::application::v1alpha1::CreateApplicationRequest* UpdateApplicationRequest::unsafe_arena_release_application() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.UpdateApplicationRequest.application)
-  
-  ::application::v1alpha1::CreateApplicationRequest* temp = application_;
-  application_ = nullptr;
-  return temp;
-}
-inline ::application::v1alpha1::CreateApplicationRequest* UpdateApplicationRequest::_internal_mutable_application() {
-  
-  if (application_ == nullptr) {
-    auto* p = CreateMaybeMessage<::application::v1alpha1::CreateApplicationRequest>(GetArenaForAllocation());
-    application_ = p;
-  }
-  return application_;
-}
-inline ::application::v1alpha1::CreateApplicationRequest* UpdateApplicationRequest::mutable_application() {
-  ::application::v1alpha1::CreateApplicationRequest* _msg = _internal_mutable_application();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.UpdateApplicationRequest.application)
-  return _msg;
-}
-inline void UpdateApplicationRequest::set_allocated_application(::application::v1alpha1::CreateApplicationRequest* application) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete application_;
-  }
-  if (application) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::application::v1alpha1::CreateApplicationRequest>::GetOwningArena(application);
-    if (message_arena != submessage_arena) {
-      application = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, application, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  application_ = application;
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.UpdateApplicationRequest.application)
-}
-
-// -------------------------------------------------------------------
-
-// UpdateApplicationResponse
-
-// string msg = 1 [json_name = "msg"];
-inline void UpdateApplicationResponse::clear_msg() {
-  msg_.ClearToEmpty();
-}
-inline const std::string& UpdateApplicationResponse::msg() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.UpdateApplicationResponse.msg)
-  return _internal_msg();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void UpdateApplicationResponse::set_msg(ArgT0&& arg0, ArgT... args) {
- 
- msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.UpdateApplicationResponse.msg)
-}
-inline std::string* UpdateApplicationResponse::mutable_msg() {
-  std::string* _s = _internal_mutable_msg();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.UpdateApplicationResponse.msg)
-  return _s;
-}
-inline const std::string& UpdateApplicationResponse::_internal_msg() const {
-  return msg_.Get();
-}
-inline void UpdateApplicationResponse::_internal_set_msg(const std::string& value) {
-  
-  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* UpdateApplicationResponse::_internal_mutable_msg() {
-  
-  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* UpdateApplicationResponse::release_msg() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.UpdateApplicationResponse.msg)
-  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void UpdateApplicationResponse::set_allocated_msg(std::string* msg) {
-  if (msg != nullptr) {
-    
-  } else {
-    
-  }
-  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.UpdateApplicationResponse.msg)
-}
-
-// string error = 2 [json_name = "error"];
-inline void UpdateApplicationResponse::clear_error() {
-  error_.ClearToEmpty();
-}
-inline const std::string& UpdateApplicationResponse::error() const {
-  // @@protoc_insertion_point(field_get:application.v1alpha1.UpdateApplicationResponse.error)
-  return _internal_error();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void UpdateApplicationResponse::set_error(ArgT0&& arg0, ArgT... args) {
- 
- error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:application.v1alpha1.UpdateApplicationResponse.error)
-}
-inline std::string* UpdateApplicationResponse::mutable_error() {
-  std::string* _s = _internal_mutable_error();
-  // @@protoc_insertion_point(field_mutable:application.v1alpha1.UpdateApplicationResponse.error)
-  return _s;
-}
-inline const std::string& UpdateApplicationResponse::_internal_error() const {
-  return error_.Get();
-}
-inline void UpdateApplicationResponse::_internal_set_error(const std::string& value) {
-  
-  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* UpdateApplicationResponse::_internal_mutable_error() {
-  
-  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* UpdateApplicationResponse::release_error() {
-  // @@protoc_insertion_point(field_release:application.v1alpha1.UpdateApplicationResponse.error)
-  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void UpdateApplicationResponse::set_allocated_error(std::string* error) {
-  if (error != nullptr) {
-    
-  } else {
-    
-  }
-  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.UpdateApplicationResponse.error)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -25,6 +25,7 @@ type ApplicationServiceClient interface {
 	DeleteApplication(ctx context.Context, in *DeleteApplicationRequest, opts ...grpc.CallOption) (*DeleteApplicationResponse, error)
 	UpdateApplication(ctx context.Context, in *UpdateApplicationRequest, opts ...grpc.CallOption) (*UpdateApplicationResponse, error)
 	DeleteApplicationsByIntegration(ctx context.Context, in *DeleteApplicationsByIntegrationRequest, opts ...grpc.CallOption) (*DeleteApplicationsByIntegrationResponse, error)
+	ListApplicationsByOrganization(ctx context.Context, in *ListApplicationsByOrganizationRequest, opts ...grpc.CallOption) (*ListApplicationsByOrganizationResponse, error)
 }
 
 type applicationServiceClient struct {
@@ -89,6 +90,15 @@ func (c *applicationServiceClient) DeleteApplicationsByIntegration(ctx context.C
 	return out, nil
 }
 
+func (c *applicationServiceClient) ListApplicationsByOrganization(ctx context.Context, in *ListApplicationsByOrganizationRequest, opts ...grpc.CallOption) (*ListApplicationsByOrganizationResponse, error) {
+	out := new(ListApplicationsByOrganizationResponse)
+	err := c.cc.Invoke(ctx, "/application.v1alpha1.ApplicationService/ListApplicationsByOrganization", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ApplicationServiceServer is the server API for ApplicationService service.
 // All implementations should embed UnimplementedApplicationServiceServer
 // for forward compatibility
@@ -100,6 +110,7 @@ type ApplicationServiceServer interface {
 	DeleteApplication(context.Context, *DeleteApplicationRequest) (*DeleteApplicationResponse, error)
 	UpdateApplication(context.Context, *UpdateApplicationRequest) (*UpdateApplicationResponse, error)
 	DeleteApplicationsByIntegration(context.Context, *DeleteApplicationsByIntegrationRequest) (*DeleteApplicationsByIntegrationResponse, error)
+	ListApplicationsByOrganization(context.Context, *ListApplicationsByOrganizationRequest) (*ListApplicationsByOrganizationResponse, error)
 }
 
 // UnimplementedApplicationServiceServer should be embedded to have forward compatible implementations.
@@ -123,6 +134,9 @@ func (UnimplementedApplicationServiceServer) UpdateApplication(context.Context, 
 }
 func (UnimplementedApplicationServiceServer) DeleteApplicationsByIntegration(context.Context, *DeleteApplicationsByIntegrationRequest) (*DeleteApplicationsByIntegrationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteApplicationsByIntegration not implemented")
+}
+func (UnimplementedApplicationServiceServer) ListApplicationsByOrganization(context.Context, *ListApplicationsByOrganizationRequest) (*ListApplicationsByOrganizationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListApplicationsByOrganization not implemented")
 }
 
 // UnsafeApplicationServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -244,6 +258,24 @@ func _ApplicationService_DeleteApplicationsByIntegration_Handler(srv interface{}
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ApplicationService_ListApplicationsByOrganization_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListApplicationsByOrganizationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).ListApplicationsByOrganization(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/application.v1alpha1.ApplicationService/ListApplicationsByOrganization",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).ListApplicationsByOrganization(ctx, req.(*ListApplicationsByOrganizationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ApplicationService_ServiceDesc is the grpc.ServiceDesc for ApplicationService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -275,7 +307,11 @@ var ApplicationService_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "DeleteApplicationsByIntegration",
 			Handler:    _ApplicationService_DeleteApplicationsByIntegration_Handler,
 		},
+		{
+			MethodName: "ListApplicationsByOrganization",
+			Handler:    _ApplicationService_ListApplicationsByOrganization_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "application/v1alpha1/application.proto",
+	Metadata: "application/v1alpha1/application_api.proto",
 }

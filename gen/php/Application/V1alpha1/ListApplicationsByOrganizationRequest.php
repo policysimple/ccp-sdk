@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * LIST 
+ *List Application by organization
  *
- * Generated from protobuf message <code>application.v1alpha1.ListApplicationRequest</code>
+ * Generated from protobuf message <code>application.v1alpha1.ListApplicationsByOrganizationRequest</code>
  */
-class ListApplicationRequest extends \Google\Protobuf\Internal\Message
+class ListApplicationsByOrganizationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
      */
-    protected $project_id = 0;
+    protected $organization_id = 0;
 
     /**
      * Constructor.
@@ -26,7 +26,7 @@ class ListApplicationRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $project_id
+     *     @type int $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -35,23 +35,23 @@ class ListApplicationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
      * @return int
      */
-    public function getProjectId()
+    public function getOrganizationId()
     {
-        return $this->project_id;
+        return $this->organization_id;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
      * @param int $var
      * @return $this
      */
-    public function setProjectId($var)
+    public function setOrganizationId($var)
     {
         GPBUtil::checkUint32($var);
-        $this->project_id = $var;
+        $this->organization_id = $var;
 
         return $this;
     }

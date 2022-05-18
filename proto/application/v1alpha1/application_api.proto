@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package application.v1alpha1;
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1";
+
+import "application/v1alpha1/application.proto";
+
+service ApplicationService {
+    //Application
+    rpc CreateApplication(CreateApplicationRequest) returns (CreateApplicationResponse);
+    rpc ListApplication(ListApplicationRequest) returns (ListApplicationResponse);
+    rpc GetApplication(GetApplicationRequest) returns (GetApplicationResponse);
+    rpc DeleteApplication(DeleteApplicationRequest) returns (DeleteApplicationResponse);
+    rpc UpdateApplication(UpdateApplicationRequest) returns (UpdateApplicationResponse);
+    rpc DeleteApplicationsByIntegration(DeleteApplicationsByIntegrationRequest) returns (DeleteApplicationsByIntegrationResponse);
+    rpc ListApplicationsByOrganization(ListApplicationsByOrganizationRequest) returns (ListApplicationsByOrganizationResponse);
+}
+
+/* Integration with the application service */
+message DeleteApplicationsByIntegrationRequest {
+    string integration_id = 1;
+}
+
+message DeleteApplicationsByIntegrationResponse {
+    string msg = 1;
+}
+
+message CreateApplicationRequest {
+    Application application = 1;
+}
+
+message CreateApplicationResponse {
+    string msg = 1;
+    string error = 2;
+    string id = 3;
+}
+
+/* LIST */
+message ListApplicationRequest {
+    uint32 project_id = 1;
+}
+
+message ListApplicationResponse {
+    repeated Application applications = 1;
+}
+
+/* GET */
+message GetApplicationRequest{
+    string id = 1;
+}
+
+message GetApplicationResponse {
+    Application application = 1;
+}
+
+/* DELETE */
+message DeleteApplicationRequest {
+    string id = 1;
+}
+
+message DeleteApplicationResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+/* UPDATE */
+message UpdateApplicationRequest {
+    string id = 1;
+    CreateApplicationRequest application = 2;
+}
+
+message UpdateApplicationResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+//List Application by organization
+message ListApplicationsByOrganizationRequest {
+    uint32 organization_id = 1;
+}
+
+message ListApplicationsByOrganizationResponse {
+    repeated Application applications = 1;
+    string error = 2;
+}
