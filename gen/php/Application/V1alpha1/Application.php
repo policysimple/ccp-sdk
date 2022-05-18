@@ -38,7 +38,11 @@ class Application extends \Google\Protobuf\Internal\Message
      */
     protected $project_id = 0;
     /**
-     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 8 [json_name = "scaling"];</code>
      */
     protected $scaling = null;
 
@@ -54,6 +58,7 @@ class Application extends \Google\Protobuf\Internal\Message
      *     @type \Application\V1alpha1\Repository $repository
      *     @type \Application\V1alpha1\Configuration $configuration
      *     @type int $project_id
+     *     @type int $organization_id
      *     @type \Application\V1alpha1\Scaling $scaling
      * }
      */
@@ -215,7 +220,29 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 8 [json_name = "scaling"];</code>
      * @return \Application\V1alpha1\Scaling|null
      */
     public function getScaling()
@@ -234,7 +261,7 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 7 [json_name = "scaling"];</code>
+     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 8 [json_name = "scaling"];</code>
      * @param \Application\V1alpha1\Scaling $var
      * @return $this
      */
