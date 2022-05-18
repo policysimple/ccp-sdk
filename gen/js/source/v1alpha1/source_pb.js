@@ -1285,7 +1285,8 @@ proto.source.v1alpha1.AccountsProvidersRequest.prototype.toObject = function(opt
  */
 proto.source.v1alpha1.AccountsProvidersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    integrationId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    integrationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    page: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1326,6 +1327,10 @@ proto.source.v1alpha1.AccountsProvidersRequest.deserializeBinaryFromReader = fun
       var value = /** @type {string} */ (reader.readString());
       msg.setIntegrationId(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setPage(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1362,6 +1367,13 @@ proto.source.v1alpha1.AccountsProvidersRequest.serializeBinaryToWriter = functio
       f
     );
   }
+  f = message.getPage();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -1380,6 +1392,24 @@ proto.source.v1alpha1.AccountsProvidersRequest.prototype.getIntegrationId = func
  */
 proto.source.v1alpha1.AccountsProvidersRequest.prototype.setIntegrationId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional uint32 page = 2;
+ * @return {number}
+ */
+proto.source.v1alpha1.AccountsProvidersRequest.prototype.getPage = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.source.v1alpha1.AccountsProvidersRequest} returns this
+ */
+proto.source.v1alpha1.AccountsProvidersRequest.prototype.setPage = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -1423,7 +1453,9 @@ proto.source.v1alpha1.AccountsProvidersResponse.prototype.toObject = function(op
 proto.source.v1alpha1.AccountsProvidersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     accountsList: jspb.Message.toObjectList(msg.getAccountsList(),
-    proto.source.v1alpha1.AccountProvider.toObject, includeInstance)
+    proto.source.v1alpha1.AccountProvider.toObject, includeInstance),
+    count: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    totalPages: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1465,6 +1497,14 @@ proto.source.v1alpha1.AccountsProvidersResponse.deserializeBinaryFromReader = fu
       reader.readMessage(value,proto.source.v1alpha1.AccountProvider.deserializeBinaryFromReader);
       msg.addAccounts(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setCount(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setTotalPages(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1500,6 +1540,20 @@ proto.source.v1alpha1.AccountsProvidersResponse.serializeBinaryToWriter = functi
       1,
       f,
       proto.source.v1alpha1.AccountProvider.serializeBinaryToWriter
+    );
+  }
+  f = message.getCount();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = message.getTotalPages();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
+      f
     );
   }
 };
@@ -1540,6 +1594,42 @@ proto.source.v1alpha1.AccountsProvidersResponse.prototype.addAccounts = function
  */
 proto.source.v1alpha1.AccountsProvidersResponse.prototype.clearAccountsList = function() {
   return this.setAccountsList([]);
+};
+
+
+/**
+ * optional uint32 count = 2;
+ * @return {number}
+ */
+proto.source.v1alpha1.AccountsProvidersResponse.prototype.getCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.source.v1alpha1.AccountsProvidersResponse} returns this
+ */
+proto.source.v1alpha1.AccountsProvidersResponse.prototype.setCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 total_pages = 3;
+ * @return {number}
+ */
+proto.source.v1alpha1.AccountsProvidersResponse.prototype.getTotalPages = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.source.v1alpha1.AccountsProvidersResponse} returns this
+ */
+proto.source.v1alpha1.AccountsProvidersResponse.prototype.setTotalPages = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -2306,7 +2396,8 @@ proto.source.v1alpha1.ListRepositoriesProviderRequest.prototype.toObject = funct
  */
 proto.source.v1alpha1.ListRepositoriesProviderRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    integrationId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    integrationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    page: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -2347,6 +2438,10 @@ proto.source.v1alpha1.ListRepositoriesProviderRequest.deserializeBinaryFromReade
       var value = /** @type {string} */ (reader.readString());
       msg.setIntegrationId(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setPage(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2383,6 +2478,13 @@ proto.source.v1alpha1.ListRepositoriesProviderRequest.serializeBinaryToWriter = 
       f
     );
   }
+  f = message.getPage();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -2401,6 +2503,24 @@ proto.source.v1alpha1.ListRepositoriesProviderRequest.prototype.getIntegrationId
  */
 proto.source.v1alpha1.ListRepositoriesProviderRequest.prototype.setIntegrationId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional uint32 page = 2;
+ * @return {number}
+ */
+proto.source.v1alpha1.ListRepositoriesProviderRequest.prototype.getPage = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.source.v1alpha1.ListRepositoriesProviderRequest} returns this
+ */
+proto.source.v1alpha1.ListRepositoriesProviderRequest.prototype.setPage = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -2444,7 +2564,9 @@ proto.source.v1alpha1.ListRepositoriesProviderResponse.prototype.toObject = func
 proto.source.v1alpha1.ListRepositoriesProviderResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     repositoriesList: jspb.Message.toObjectList(msg.getRepositoriesList(),
-    proto.source.v1alpha1.Repository.toObject, includeInstance)
+    proto.source.v1alpha1.Repository.toObject, includeInstance),
+    totalPages: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    count: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2486,6 +2608,14 @@ proto.source.v1alpha1.ListRepositoriesProviderResponse.deserializeBinaryFromRead
       reader.readMessage(value,proto.source.v1alpha1.Repository.deserializeBinaryFromReader);
       msg.addRepositories(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setTotalPages(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setCount(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2521,6 +2651,20 @@ proto.source.v1alpha1.ListRepositoriesProviderResponse.serializeBinaryToWriter =
       1,
       f,
       proto.source.v1alpha1.Repository.serializeBinaryToWriter
+    );
+  }
+  f = message.getTotalPages();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = message.getCount();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
+      f
     );
   }
 };
@@ -2561,6 +2705,42 @@ proto.source.v1alpha1.ListRepositoriesProviderResponse.prototype.addRepositories
  */
 proto.source.v1alpha1.ListRepositoriesProviderResponse.prototype.clearRepositoriesList = function() {
   return this.setRepositoriesList([]);
+};
+
+
+/**
+ * optional uint32 total_pages = 2;
+ * @return {number}
+ */
+proto.source.v1alpha1.ListRepositoriesProviderResponse.prototype.getTotalPages = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.source.v1alpha1.ListRepositoriesProviderResponse} returns this
+ */
+proto.source.v1alpha1.ListRepositoriesProviderResponse.prototype.setTotalPages = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 count = 3;
+ * @return {number}
+ */
+proto.source.v1alpha1.ListRepositoriesProviderResponse.prototype.getCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.source.v1alpha1.ListRepositoriesProviderResponse} returns this
+ */
+proto.source.v1alpha1.ListRepositoriesProviderResponse.prototype.setCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -10055,7 +10235,9 @@ proto.source.v1alpha1.ListProvidersResponse.prototype.toObject = function(opt_in
 proto.source.v1alpha1.ListProvidersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     providersList: jspb.Message.toObjectList(msg.getProvidersList(),
-    proto.source.v1alpha1.Provider.toObject, includeInstance)
+    proto.source.v1alpha1.Provider.toObject, includeInstance),
+    totalPages: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    count: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -10097,6 +10279,14 @@ proto.source.v1alpha1.ListProvidersResponse.deserializeBinaryFromReader = functi
       reader.readMessage(value,proto.source.v1alpha1.Provider.deserializeBinaryFromReader);
       msg.addProviders(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setTotalPages(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setCount(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -10132,6 +10322,20 @@ proto.source.v1alpha1.ListProvidersResponse.serializeBinaryToWriter = function(m
       1,
       f,
       proto.source.v1alpha1.Provider.serializeBinaryToWriter
+    );
+  }
+  f = message.getTotalPages();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = message.getCount();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
+      f
     );
   }
 };
@@ -10172,6 +10376,42 @@ proto.source.v1alpha1.ListProvidersResponse.prototype.addProviders = function(op
  */
 proto.source.v1alpha1.ListProvidersResponse.prototype.clearProvidersList = function() {
   return this.setProvidersList([]);
+};
+
+
+/**
+ * optional uint32 total_pages = 2;
+ * @return {number}
+ */
+proto.source.v1alpha1.ListProvidersResponse.prototype.getTotalPages = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.source.v1alpha1.ListProvidersResponse} returns this
+ */
+proto.source.v1alpha1.ListProvidersResponse.prototype.setTotalPages = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 count = 3;
+ * @return {number}
+ */
+proto.source.v1alpha1.ListProvidersResponse.prototype.getCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.source.v1alpha1.ListProvidersResponse} returns this
+ */
+proto.source.v1alpha1.ListProvidersResponse.prototype.setCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 

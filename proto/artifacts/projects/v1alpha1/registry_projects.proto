@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package artifacts.projects.v1alpha1;
+
+option csharp_namespace = "Artifacts.Projects.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/artifacts/projects/v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "RegistryProjectsProto";
+option java_package = "io.cuemby.artifacts.projects.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Artifacts\\Projects\\V1Alpha1";
+
+message HarborProject {
+    string project_name = 1;
+    uint32 registry_id = 2;
+    bool public = 3;
+    uint32 storage_limit = 4;
+}
+
+message ProjectsRegistry {
+    string id = 1;
+    uint32 organization_id = 2;
+    uint32 project_id = 3;
+    string environment_id = 4;
+    bool active = 6;
+    HarborProject harbor = 7;
+}

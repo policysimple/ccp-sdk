@@ -50,7 +50,7 @@ struct TableStruct_accounts_2fv1alpha1_2faccounts_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[109]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[111]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -302,6 +302,9 @@ extern ListUserResponseDefaultTypeInternal _ListUserResponse_default_instance_;
 class Member;
 struct MemberDefaultTypeInternal;
 extern MemberDefaultTypeInternal _Member_default_instance_;
+class MenberProject;
+struct MenberProjectDefaultTypeInternal;
+extern MenberProjectDefaultTypeInternal _MenberProject_default_instance_;
 class MenberRol;
 struct MenberRolDefaultTypeInternal;
 extern MenberRolDefaultTypeInternal _MenberRol_default_instance_;
@@ -317,6 +320,9 @@ extern PermissionDefaultTypeInternal _Permission_default_instance_;
 class Project;
 struct ProjectDefaultTypeInternal;
 extern ProjectDefaultTypeInternal _Project_default_instance_;
+class ProjectList;
+struct ProjectListDefaultTypeInternal;
+extern ProjectListDefaultTypeInternal _ProjectList_default_instance_;
 class ProjectOrganization;
 struct ProjectOrganizationDefaultTypeInternal;
 extern ProjectOrganizationDefaultTypeInternal _ProjectOrganization_default_instance_;
@@ -470,11 +476,13 @@ template<> ::accounts::v1alpha1::ListUserPaginationResponse* Arena::CreateMaybeM
 template<> ::accounts::v1alpha1::ListUserRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::ListUserRequest>(Arena*);
 template<> ::accounts::v1alpha1::ListUserResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::ListUserResponse>(Arena*);
 template<> ::accounts::v1alpha1::Member* Arena::CreateMaybeMessage<::accounts::v1alpha1::Member>(Arena*);
+template<> ::accounts::v1alpha1::MenberProject* Arena::CreateMaybeMessage<::accounts::v1alpha1::MenberProject>(Arena*);
 template<> ::accounts::v1alpha1::MenberRol* Arena::CreateMaybeMessage<::accounts::v1alpha1::MenberRol>(Arena*);
 template<> ::accounts::v1alpha1::Organization* Arena::CreateMaybeMessage<::accounts::v1alpha1::Organization>(Arena*);
 template<> ::accounts::v1alpha1::OrganizationInvitation* Arena::CreateMaybeMessage<::accounts::v1alpha1::OrganizationInvitation>(Arena*);
 template<> ::accounts::v1alpha1::Permission* Arena::CreateMaybeMessage<::accounts::v1alpha1::Permission>(Arena*);
 template<> ::accounts::v1alpha1::Project* Arena::CreateMaybeMessage<::accounts::v1alpha1::Project>(Arena*);
+template<> ::accounts::v1alpha1::ProjectList* Arena::CreateMaybeMessage<::accounts::v1alpha1::ProjectList>(Arena*);
 template<> ::accounts::v1alpha1::ProjectOrganization* Arena::CreateMaybeMessage<::accounts::v1alpha1::ProjectOrganization>(Arena*);
 template<> ::accounts::v1alpha1::Rol* Arena::CreateMaybeMessage<::accounts::v1alpha1::Rol>(Arena*);
 template<> ::accounts::v1alpha1::SendInvitationUserRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::SendInvitationUserRequest>(Arena*);
@@ -13269,6 +13277,416 @@ class MenberRol final :
 };
 // -------------------------------------------------------------------
 
+class ProjectList final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.ProjectList) */ {
+ public:
+  inline ProjectList() : ProjectList(nullptr) {}
+  ~ProjectList() override;
+  explicit constexpr ProjectList(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ProjectList(const ProjectList& from);
+  ProjectList(ProjectList&& from) noexcept
+    : ProjectList() {
+    *this = ::std::move(from);
+  }
+
+  inline ProjectList& operator=(const ProjectList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ProjectList& operator=(ProjectList&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ProjectList& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ProjectList* internal_default_instance() {
+    return reinterpret_cast<const ProjectList*>(
+               &_ProjectList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    71;
+
+  friend void swap(ProjectList& a, ProjectList& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ProjectList* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ProjectList* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ProjectList* New() const final {
+    return new ProjectList();
+  }
+
+  ProjectList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ProjectList>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ProjectList& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ProjectList& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ProjectList* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "accounts.v1alpha1.ProjectList";
+  }
+  protected:
+  explicit ProjectList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameFieldNumber = 1,
+    kImageFieldNumber = 2,
+  };
+  // string name = 1 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string image = 2 [json_name = "image"];
+  void clear_image();
+  const std::string& image() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_image(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_image();
+  PROTOBUF_MUST_USE_RESULT std::string* release_image();
+  void set_allocated_image(std::string* image);
+  private:
+  const std::string& _internal_image() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_image(const std::string& value);
+  std::string* _internal_mutable_image();
+  public:
+
+  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.ProjectList)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class MenberProject final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.MenberProject) */ {
+ public:
+  inline MenberProject() : MenberProject(nullptr) {}
+  ~MenberProject() override;
+  explicit constexpr MenberProject(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  MenberProject(const MenberProject& from);
+  MenberProject(MenberProject&& from) noexcept
+    : MenberProject() {
+    *this = ::std::move(from);
+  }
+
+  inline MenberProject& operator=(const MenberProject& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline MenberProject& operator=(MenberProject&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const MenberProject& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const MenberProject* internal_default_instance() {
+    return reinterpret_cast<const MenberProject*>(
+               &_MenberProject_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    72;
+
+  friend void swap(MenberProject& a, MenberProject& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(MenberProject* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(MenberProject* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline MenberProject* New() const final {
+    return new MenberProject();
+  }
+
+  MenberProject* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<MenberProject>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const MenberProject& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const MenberProject& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MenberProject* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "accounts.v1alpha1.MenberProject";
+  }
+  protected:
+  explicit MenberProject(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kProjectsFieldNumber = 8,
+    kUserIdFieldNumber = 2,
+    kFirstNameFieldNumber = 3,
+    kLastNameFieldNumber = 4,
+    kImageFieldNumber = 6,
+    kRoleFieldNumber = 7,
+    kIdFieldNumber = 1,
+    kIsActiveFieldNumber = 5,
+  };
+  // repeated .accounts.v1alpha1.ProjectList projects = 8 [json_name = "projects"];
+  int projects_size() const;
+  private:
+  int _internal_projects_size() const;
+  public:
+  void clear_projects();
+  ::accounts::v1alpha1::ProjectList* mutable_projects(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::ProjectList >*
+      mutable_projects();
+  private:
+  const ::accounts::v1alpha1::ProjectList& _internal_projects(int index) const;
+  ::accounts::v1alpha1::ProjectList* _internal_add_projects();
+  public:
+  const ::accounts::v1alpha1::ProjectList& projects(int index) const;
+  ::accounts::v1alpha1::ProjectList* add_projects();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::ProjectList >&
+      projects() const;
+
+  // string user_id = 2 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
+  // string first_name = 3 [json_name = "firstName"];
+  void clear_first_name();
+  const std::string& first_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_first_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_first_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_first_name();
+  void set_allocated_first_name(std::string* first_name);
+  private:
+  const std::string& _internal_first_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_first_name(const std::string& value);
+  std::string* _internal_mutable_first_name();
+  public:
+
+  // string last_name = 4 [json_name = "lastName"];
+  void clear_last_name();
+  const std::string& last_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_last_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_last_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_last_name();
+  void set_allocated_last_name(std::string* last_name);
+  private:
+  const std::string& _internal_last_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_last_name(const std::string& value);
+  std::string* _internal_mutable_last_name();
+  public:
+
+  // string image = 6 [json_name = "image"];
+  void clear_image();
+  const std::string& image() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_image(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_image();
+  PROTOBUF_MUST_USE_RESULT std::string* release_image();
+  void set_allocated_image(std::string* image);
+  private:
+  const std::string& _internal_image() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_image(const std::string& value);
+  std::string* _internal_mutable_image();
+  public:
+
+  // string role = 7 [json_name = "role"];
+  void clear_role();
+  const std::string& role() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_role(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_role();
+  PROTOBUF_MUST_USE_RESULT std::string* release_role();
+  void set_allocated_role(std::string* role);
+  private:
+  const std::string& _internal_role() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_role(const std::string& value);
+  std::string* _internal_mutable_role();
+  public:
+
+  // uint32 id = 1 [json_name = "id"];
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // bool is_active = 5 [json_name = "isActive"];
+  void clear_is_active();
+  bool is_active() const;
+  void set_is_active(bool value);
+  private:
+  bool _internal_is_active() const;
+  void _internal_set_is_active(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.MenberProject)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::ProjectList > projects_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr role_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
+  bool is_active_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CreateProjectResponse final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.CreateProjectResponse) */ {
  public:
@@ -13313,7 +13731,7 @@ class CreateProjectResponse final :
                &_CreateProjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    73;
 
   friend void swap(CreateProjectResponse& a, CreateProjectResponse& b) {
     a.Swap(&b);
@@ -13484,7 +13902,7 @@ class UpdateProjectResponse final :
                &_UpdateProjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    74;
 
   friend void swap(UpdateProjectResponse& a, UpdateProjectResponse& b) {
     a.Swap(&b);
@@ -13644,7 +14062,7 @@ class DeleteProjectResponse final :
                &_DeleteProjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    75;
 
   friend void swap(DeleteProjectResponse& a, DeleteProjectResponse& b) {
     a.Swap(&b);
@@ -13804,7 +14222,7 @@ class GetOneProjectResponse final :
                &_GetOneProjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    76;
 
   friend void swap(GetOneProjectResponse& a, GetOneProjectResponse& b) {
     a.Swap(&b);
@@ -13885,22 +14303,22 @@ class GetOneProjectResponse final :
     kIdFieldNumber = 1,
     kOrganizationIdFieldNumber = 4,
   };
-  // repeated .accounts.v1alpha1.Member members = 8 [json_name = "members"];
+  // repeated .accounts.v1alpha1.MenberProject members = 8 [json_name = "members"];
   int members_size() const;
   private:
   int _internal_members_size() const;
   public:
   void clear_members();
-  ::accounts::v1alpha1::Member* mutable_members(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Member >*
+  ::accounts::v1alpha1::MenberProject* mutable_members(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::MenberProject >*
       mutable_members();
   private:
-  const ::accounts::v1alpha1::Member& _internal_members(int index) const;
-  ::accounts::v1alpha1::Member* _internal_add_members();
+  const ::accounts::v1alpha1::MenberProject& _internal_members(int index) const;
+  ::accounts::v1alpha1::MenberProject* _internal_add_members();
   public:
-  const ::accounts::v1alpha1::Member& members(int index) const;
-  ::accounts::v1alpha1::Member* add_members();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Member >&
+  const ::accounts::v1alpha1::MenberProject& members(int index) const;
+  ::accounts::v1alpha1::MenberProject* add_members();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::MenberProject >&
       members() const;
 
   // string name = 2 [json_name = "name"];
@@ -14016,7 +14434,7 @@ class GetOneProjectResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Member > members_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::MenberProject > members_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
@@ -14074,7 +14492,7 @@ class ListProjectResponse final :
                &_ListProjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    77;
 
   friend void swap(ListProjectResponse& a, ListProjectResponse& b) {
     a.Swap(&b);
@@ -14222,7 +14640,7 @@ class ListProjectPaginationRequest final :
                &_ListProjectPaginationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    78;
 
   friend void swap(ListProjectPaginationRequest& a, ListProjectPaginationRequest& b) {
     a.Swap(&b);
@@ -14372,7 +14790,7 @@ class ListProjectPaginationResponse final :
                &_ListProjectPaginationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    79;
 
   friend void swap(ListProjectPaginationResponse& a, ListProjectPaginationResponse& b) {
     a.Swap(&b);
@@ -14531,7 +14949,7 @@ class Permission final :
                &_Permission_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    80;
 
   friend void swap(Permission& a, Permission& b) {
     a.Swap(&b);
@@ -14734,7 +15152,7 @@ class GroupPermission final :
                &_GroupPermission_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    81;
 
   friend void swap(GroupPermission& a, GroupPermission& b) {
     a.Swap(&b);
@@ -14898,7 +15316,7 @@ class CategoryPermission final :
                &_CategoryPermission_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    82;
 
   friend void swap(CategoryPermission& a, CategoryPermission& b) {
     a.Swap(&b);
@@ -15078,7 +15496,7 @@ class ListPermissionResponse final :
                &_ListPermissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    83;
 
   friend void swap(ListPermissionResponse& a, ListPermissionResponse& b) {
     a.Swap(&b);
@@ -15226,7 +15644,7 @@ class AssignPermissionRequest final :
                &_AssignPermissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    84;
 
   friend void swap(AssignPermissionRequest& a, AssignPermissionRequest& b) {
     a.Swap(&b);
@@ -15376,7 +15794,7 @@ class ListPermissionRequest final :
                &_ListPermissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    85;
 
   friend void swap(ListPermissionRequest& a, ListPermissionRequest& b) {
     a.Swap(&b);
@@ -15502,7 +15920,7 @@ class CreatePermissionRequest final :
                &_CreatePermissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    86;
 
   friend void swap(CreatePermissionRequest& a, CreatePermissionRequest& b) {
     a.Swap(&b);
@@ -15694,7 +16112,7 @@ class UpdatePermissionRequest final :
                &_UpdatePermissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    87;
 
   friend void swap(UpdatePermissionRequest& a, UpdatePermissionRequest& b) {
     a.Swap(&b);
@@ -15865,7 +16283,7 @@ class GetOnePermissionRequest final :
                &_GetOnePermissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    88;
 
   friend void swap(GetOnePermissionRequest& a, GetOnePermissionRequest& b) {
     a.Swap(&b);
@@ -16004,7 +16422,7 @@ class GetOnePermissionResponse final :
                &_GetOnePermissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    89;
 
   friend void swap(GetOnePermissionResponse& a, GetOnePermissionResponse& b) {
     a.Swap(&b);
@@ -16175,7 +16593,7 @@ class DeletePermissionRequest final :
                &_DeletePermissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    90;
 
   friend void swap(DeletePermissionRequest& a, DeletePermissionRequest& b) {
     a.Swap(&b);
@@ -16314,7 +16732,7 @@ class UpdatePermissionResponse final :
                &_UpdatePermissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    89;
+    91;
 
   friend void swap(UpdatePermissionResponse& a, UpdatePermissionResponse& b) {
     a.Swap(&b);
@@ -16474,7 +16892,7 @@ class DeletePermissionResponse final :
                &_DeletePermissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    90;
+    92;
 
   friend void swap(DeletePermissionResponse& a, DeletePermissionResponse& b) {
     a.Swap(&b);
@@ -16634,7 +17052,7 @@ class CreatePermissionResponse final :
                &_CreatePermissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    91;
+    93;
 
   friend void swap(CreatePermissionResponse& a, CreatePermissionResponse& b) {
     a.Swap(&b);
@@ -16794,7 +17212,7 @@ class Member final :
                &_Member_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    92;
+    94;
 
   friend void swap(Member& a, Member& b) {
     a.Swap(&b);
@@ -17012,7 +17430,7 @@ class ProjectOrganization final :
                &_ProjectOrganization_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    93;
+    95;
 
   friend void swap(ProjectOrganization& a, ProjectOrganization& b) {
     a.Swap(&b);
@@ -17199,7 +17617,7 @@ class Organization final :
                &_Organization_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    94;
+    96;
 
   friend void swap(Organization& a, Organization& b) {
     a.Swap(&b);
@@ -17426,7 +17844,7 @@ class CreateOrganizationRequest final :
                &_CreateOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    95;
+    97;
 
   friend void swap(CreateOrganizationRequest& a, CreateOrganizationRequest& b) {
     a.Swap(&b);
@@ -17618,7 +18036,7 @@ class ListOrganizationRequest final :
                &_ListOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    96;
+    98;
 
   friend void swap(ListOrganizationRequest& a, ListOrganizationRequest& b) {
     a.Swap(&b);
@@ -17744,7 +18162,7 @@ class GetOneOrganizationRequest final :
                &_GetOneOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    97;
+    99;
 
   friend void swap(GetOneOrganizationRequest& a, GetOneOrganizationRequest& b) {
     a.Swap(&b);
@@ -17883,7 +18301,7 @@ class UpdateOrganizationRequest final :
                &_UpdateOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    98;
+    100;
 
   friend void swap(UpdateOrganizationRequest& a, UpdateOrganizationRequest& b) {
     a.Swap(&b);
@@ -18070,7 +18488,7 @@ class DeleteOrganizationRequest final :
                &_DeleteOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    99;
+    101;
 
   friend void swap(DeleteOrganizationRequest& a, DeleteOrganizationRequest& b) {
     a.Swap(&b);
@@ -18209,7 +18627,7 @@ class GetOneOrganizationResponse final :
                &_GetOneOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    100;
+    102;
 
   friend void swap(GetOneOrganizationResponse& a, GetOneOrganizationResponse& b) {
     a.Swap(&b);
@@ -18456,7 +18874,7 @@ class ListOrganizationResponse final :
                &_ListOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    101;
+    103;
 
   friend void swap(ListOrganizationResponse& a, ListOrganizationResponse& b) {
     a.Swap(&b);
@@ -18604,7 +19022,7 @@ class CreateOrganizationResponse final :
                &_CreateOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    102;
+    104;
 
   friend void swap(CreateOrganizationResponse& a, CreateOrganizationResponse& b) {
     a.Swap(&b);
@@ -18786,7 +19204,7 @@ class UpdateOrganizationResponse final :
                &_UpdateOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    103;
+    105;
 
   friend void swap(UpdateOrganizationResponse& a, UpdateOrganizationResponse& b) {
     a.Swap(&b);
@@ -18946,7 +19364,7 @@ class DeleteOrganizationResponse final :
                &_DeleteOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    104;
+    106;
 
   friend void swap(DeleteOrganizationResponse& a, DeleteOrganizationResponse& b) {
     a.Swap(&b);
@@ -19106,7 +19524,7 @@ class GetListUserDexRequest final :
                &_GetListUserDexRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    105;
+    107;
 
   friend void swap(GetListUserDexRequest& a, GetListUserDexRequest& b) {
     a.Swap(&b);
@@ -19232,7 +19650,7 @@ class GetListUserDexResponse final :
                &_GetListUserDexResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    106;
+    108;
 
   friend void swap(GetListUserDexResponse& a, GetListUserDexResponse& b) {
     a.Swap(&b);
@@ -19380,7 +19798,7 @@ class GetOneUserDexRequest final :
                &_GetOneUserDexRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    107;
+    109;
 
   friend void swap(GetOneUserDexRequest& a, GetOneUserDexRequest& b) {
     a.Swap(&b);
@@ -19544,7 +19962,7 @@ class GetOneUserDexResponse final :
                &_GetOneUserDexResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    108;
+    110;
 
   friend void swap(GetOneUserDexResponse& a, GetOneUserDexResponse& b) {
     a.Swap(&b);
@@ -29612,6 +30030,416 @@ inline void MenberRol::set_is_admin(bool value) {
 
 // -------------------------------------------------------------------
 
+// ProjectList
+
+// string name = 1 [json_name = "name"];
+inline void ProjectList::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& ProjectList::name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.ProjectList.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ProjectList::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.ProjectList.name)
+}
+inline std::string* ProjectList::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.ProjectList.name)
+  return _s;
+}
+inline const std::string& ProjectList::_internal_name() const {
+  return name_.Get();
+}
+inline void ProjectList::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ProjectList::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ProjectList::release_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.ProjectList.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ProjectList::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.ProjectList.name)
+}
+
+// string image = 2 [json_name = "image"];
+inline void ProjectList::clear_image() {
+  image_.ClearToEmpty();
+}
+inline const std::string& ProjectList::image() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.ProjectList.image)
+  return _internal_image();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ProjectList::set_image(ArgT0&& arg0, ArgT... args) {
+ 
+ image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.ProjectList.image)
+}
+inline std::string* ProjectList::mutable_image() {
+  std::string* _s = _internal_mutable_image();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.ProjectList.image)
+  return _s;
+}
+inline const std::string& ProjectList::_internal_image() const {
+  return image_.Get();
+}
+inline void ProjectList::_internal_set_image(const std::string& value) {
+  
+  image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ProjectList::_internal_mutable_image() {
+  
+  return image_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ProjectList::release_image() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.ProjectList.image)
+  return image_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ProjectList::set_allocated_image(std::string* image) {
+  if (image != nullptr) {
+    
+  } else {
+    
+  }
+  image_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), image,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.ProjectList.image)
+}
+
+// -------------------------------------------------------------------
+
+// MenberProject
+
+// uint32 id = 1 [json_name = "id"];
+inline void MenberProject::clear_id() {
+  id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 MenberProject::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 MenberProject::id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MenberProject.id)
+  return _internal_id();
+}
+inline void MenberProject::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  id_ = value;
+}
+inline void MenberProject::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MenberProject.id)
+}
+
+// string user_id = 2 [json_name = "userId"];
+inline void MenberProject::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& MenberProject::user_id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MenberProject.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MenberProject::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MenberProject.user_id)
+}
+inline std::string* MenberProject::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.MenberProject.user_id)
+  return _s;
+}
+inline const std::string& MenberProject::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void MenberProject::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* MenberProject::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* MenberProject::release_user_id() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.MenberProject.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void MenberProject::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.MenberProject.user_id)
+}
+
+// string first_name = 3 [json_name = "firstName"];
+inline void MenberProject::clear_first_name() {
+  first_name_.ClearToEmpty();
+}
+inline const std::string& MenberProject::first_name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MenberProject.first_name)
+  return _internal_first_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MenberProject::set_first_name(ArgT0&& arg0, ArgT... args) {
+ 
+ first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MenberProject.first_name)
+}
+inline std::string* MenberProject::mutable_first_name() {
+  std::string* _s = _internal_mutable_first_name();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.MenberProject.first_name)
+  return _s;
+}
+inline const std::string& MenberProject::_internal_first_name() const {
+  return first_name_.Get();
+}
+inline void MenberProject::_internal_set_first_name(const std::string& value) {
+  
+  first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* MenberProject::_internal_mutable_first_name() {
+  
+  return first_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* MenberProject::release_first_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.MenberProject.first_name)
+  return first_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void MenberProject::set_allocated_first_name(std::string* first_name) {
+  if (first_name != nullptr) {
+    
+  } else {
+    
+  }
+  first_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), first_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.MenberProject.first_name)
+}
+
+// string last_name = 4 [json_name = "lastName"];
+inline void MenberProject::clear_last_name() {
+  last_name_.ClearToEmpty();
+}
+inline const std::string& MenberProject::last_name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MenberProject.last_name)
+  return _internal_last_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MenberProject::set_last_name(ArgT0&& arg0, ArgT... args) {
+ 
+ last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MenberProject.last_name)
+}
+inline std::string* MenberProject::mutable_last_name() {
+  std::string* _s = _internal_mutable_last_name();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.MenberProject.last_name)
+  return _s;
+}
+inline const std::string& MenberProject::_internal_last_name() const {
+  return last_name_.Get();
+}
+inline void MenberProject::_internal_set_last_name(const std::string& value) {
+  
+  last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* MenberProject::_internal_mutable_last_name() {
+  
+  return last_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* MenberProject::release_last_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.MenberProject.last_name)
+  return last_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void MenberProject::set_allocated_last_name(std::string* last_name) {
+  if (last_name != nullptr) {
+    
+  } else {
+    
+  }
+  last_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), last_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.MenberProject.last_name)
+}
+
+// bool is_active = 5 [json_name = "isActive"];
+inline void MenberProject::clear_is_active() {
+  is_active_ = false;
+}
+inline bool MenberProject::_internal_is_active() const {
+  return is_active_;
+}
+inline bool MenberProject::is_active() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MenberProject.is_active)
+  return _internal_is_active();
+}
+inline void MenberProject::_internal_set_is_active(bool value) {
+  
+  is_active_ = value;
+}
+inline void MenberProject::set_is_active(bool value) {
+  _internal_set_is_active(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MenberProject.is_active)
+}
+
+// string image = 6 [json_name = "image"];
+inline void MenberProject::clear_image() {
+  image_.ClearToEmpty();
+}
+inline const std::string& MenberProject::image() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MenberProject.image)
+  return _internal_image();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MenberProject::set_image(ArgT0&& arg0, ArgT... args) {
+ 
+ image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MenberProject.image)
+}
+inline std::string* MenberProject::mutable_image() {
+  std::string* _s = _internal_mutable_image();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.MenberProject.image)
+  return _s;
+}
+inline const std::string& MenberProject::_internal_image() const {
+  return image_.Get();
+}
+inline void MenberProject::_internal_set_image(const std::string& value) {
+  
+  image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* MenberProject::_internal_mutable_image() {
+  
+  return image_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* MenberProject::release_image() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.MenberProject.image)
+  return image_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void MenberProject::set_allocated_image(std::string* image) {
+  if (image != nullptr) {
+    
+  } else {
+    
+  }
+  image_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), image,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.MenberProject.image)
+}
+
+// string role = 7 [json_name = "role"];
+inline void MenberProject::clear_role() {
+  role_.ClearToEmpty();
+}
+inline const std::string& MenberProject::role() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MenberProject.role)
+  return _internal_role();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MenberProject::set_role(ArgT0&& arg0, ArgT... args) {
+ 
+ role_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MenberProject.role)
+}
+inline std::string* MenberProject::mutable_role() {
+  std::string* _s = _internal_mutable_role();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.MenberProject.role)
+  return _s;
+}
+inline const std::string& MenberProject::_internal_role() const {
+  return role_.Get();
+}
+inline void MenberProject::_internal_set_role(const std::string& value) {
+  
+  role_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* MenberProject::_internal_mutable_role() {
+  
+  return role_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* MenberProject::release_role() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.MenberProject.role)
+  return role_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void MenberProject::set_allocated_role(std::string* role) {
+  if (role != nullptr) {
+    
+  } else {
+    
+  }
+  role_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), role,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.MenberProject.role)
+}
+
+// repeated .accounts.v1alpha1.ProjectList projects = 8 [json_name = "projects"];
+inline int MenberProject::_internal_projects_size() const {
+  return projects_.size();
+}
+inline int MenberProject::projects_size() const {
+  return _internal_projects_size();
+}
+inline void MenberProject::clear_projects() {
+  projects_.Clear();
+}
+inline ::accounts::v1alpha1::ProjectList* MenberProject::mutable_projects(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.MenberProject.projects)
+  return projects_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::ProjectList >*
+MenberProject::mutable_projects() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.MenberProject.projects)
+  return &projects_;
+}
+inline const ::accounts::v1alpha1::ProjectList& MenberProject::_internal_projects(int index) const {
+  return projects_.Get(index);
+}
+inline const ::accounts::v1alpha1::ProjectList& MenberProject::projects(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MenberProject.projects)
+  return _internal_projects(index);
+}
+inline ::accounts::v1alpha1::ProjectList* MenberProject::_internal_add_projects() {
+  return projects_.Add();
+}
+inline ::accounts::v1alpha1::ProjectList* MenberProject::add_projects() {
+  ::accounts::v1alpha1::ProjectList* _add = _internal_add_projects();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.MenberProject.projects)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::ProjectList >&
+MenberProject::projects() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.MenberProject.projects)
+  return projects_;
+}
+
+// -------------------------------------------------------------------
+
 // CreateProjectResponse
 
 // string msg = 1 [json_name = "msg"];
@@ -30192,7 +31020,7 @@ inline void GetOneProjectResponse::set_allocated_updated_at(std::string* updated
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneProjectResponse.updated_at)
 }
 
-// repeated .accounts.v1alpha1.Member members = 8 [json_name = "members"];
+// repeated .accounts.v1alpha1.MenberProject members = 8 [json_name = "members"];
 inline int GetOneProjectResponse::_internal_members_size() const {
   return members_.size();
 }
@@ -30202,31 +31030,31 @@ inline int GetOneProjectResponse::members_size() const {
 inline void GetOneProjectResponse::clear_members() {
   members_.Clear();
 }
-inline ::accounts::v1alpha1::Member* GetOneProjectResponse::mutable_members(int index) {
+inline ::accounts::v1alpha1::MenberProject* GetOneProjectResponse::mutable_members(int index) {
   // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneProjectResponse.members)
   return members_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Member >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::MenberProject >*
 GetOneProjectResponse::mutable_members() {
   // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.GetOneProjectResponse.members)
   return &members_;
 }
-inline const ::accounts::v1alpha1::Member& GetOneProjectResponse::_internal_members(int index) const {
+inline const ::accounts::v1alpha1::MenberProject& GetOneProjectResponse::_internal_members(int index) const {
   return members_.Get(index);
 }
-inline const ::accounts::v1alpha1::Member& GetOneProjectResponse::members(int index) const {
+inline const ::accounts::v1alpha1::MenberProject& GetOneProjectResponse::members(int index) const {
   // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneProjectResponse.members)
   return _internal_members(index);
 }
-inline ::accounts::v1alpha1::Member* GetOneProjectResponse::_internal_add_members() {
+inline ::accounts::v1alpha1::MenberProject* GetOneProjectResponse::_internal_add_members() {
   return members_.Add();
 }
-inline ::accounts::v1alpha1::Member* GetOneProjectResponse::add_members() {
-  ::accounts::v1alpha1::Member* _add = _internal_add_members();
+inline ::accounts::v1alpha1::MenberProject* GetOneProjectResponse::add_members() {
+  ::accounts::v1alpha1::MenberProject* _add = _internal_add_members();
   // @@protoc_insertion_point(field_add:accounts.v1alpha1.GetOneProjectResponse.members)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Member >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::MenberProject >&
 GetOneProjectResponse::members() const {
   // @@protoc_insertion_point(field_list:accounts.v1alpha1.GetOneProjectResponse.members)
   return members_;
@@ -34597,6 +35425,10 @@ inline void GetOneUserDexResponse::set_allocated_emoji_country(std::string* emoj
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

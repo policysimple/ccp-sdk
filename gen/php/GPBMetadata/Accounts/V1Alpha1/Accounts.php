@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-©‘
+ã“
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"{
 GetRolesByOrgUserRequest\'
 organization_id (RorganizationId
@@ -355,7 +355,20 @@ updated_at (	R	updatedAt,
 	MenberRol
 id (Rid
 name (	Rname
-is_admin (RisAdmin"O
+is_admin (RisAdmin"7
+ProjectList
+name (	Rname
+image (	Rimage"÷
+MenberProject
+id (Rid
+user_id (	RuserId
+
+first_name (	R	firstName
+	last_name (	RlastName
+	is_active (RisActive
+image (	Rimage
+role (	Rrole:
+projects (2.accounts.v1alpha1.ProjectListRprojects"O
 CreateProjectResponse
 msg (	Rmsg
 error (	Rerror
@@ -365,7 +378,7 @@ updated_at (	R	updatedAt,
 error (	Rerror"?
 DeleteProjectResponse
 msg (	Rmsg
-error (	Rerror"Â
+error (	Rerror"É
 GetOneProjectResponse
 id (Rid
 name (	Rname
@@ -375,8 +388,8 @@ updated_at (	R	updatedAt,
 
 created_at (	R	createdAt
 
-updated_at (	R	updatedAt3
-members (2.accounts.v1alpha1.MemberRmembers1
+updated_at (	R	updatedAt:
+members (2 .accounts.v1alpha1.MenberProjectRmembers1
 owner	 (2.accounts.v1alpha1.UserListRowner"M
 ListProjectResponse6
 projects (2.accounts.v1alpha1.ProjectRprojects"L

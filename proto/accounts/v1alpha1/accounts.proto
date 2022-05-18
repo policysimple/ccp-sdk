@@ -36,8 +36,6 @@ service AccountService {
     rpc GetOneRole(GetOneRoleRequest) returns (GetOneRoleResponse);
     rpc GetRolesByUser(GetRolesByUserRequest) returns (GetRolesByUserResponse);
     rpc GetRolesByOrgUser(GetRolesByOrgUserRequest) returns (GetRolesByOrgUserResponse);
-
-
     rpc DeleteRole(DeleteRoleRequest) returns (DeleteRoleResponse);
     //CRUD Project
     rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse);
@@ -61,7 +59,6 @@ service AccountService {
     rpc ListApiKey(ListApiKeyRequest) returns (ListApiKeyResponse);
     rpc UpdateApiKey(UpdateApiKeyRequest) returns (UpdateApiKeyResponse);
     rpc DeleteApiKey(DeleteApiKeyRequest) returns (DeleteApiKeyResponse);
-    
 }
 
 /*
@@ -615,8 +612,30 @@ message MenberRol {
     uint32 id = 1;
     string name = 2;
     bool is_admin = 3;
-    
 }
+
+
+/* PROJECTS */
+
+message ProjectList{
+    string name = 1;
+    string image = 2;
+}
+
+message MenberProject {
+
+    uint32 id = 1;
+    string user_id = 2;
+    string first_name = 3;
+    string last_name = 4;
+    bool is_active = 5;
+    string image = 6;
+    string role = 7;
+    repeated ProjectList projects = 8;
+
+}
+
+
 
 message CreateProjectResponse {
     string msg = 1;
@@ -642,7 +661,7 @@ message GetOneProjectResponse {
     string description = 5;
     string created_at = 6;
     string updated_at = 7;
-    repeated Member members = 8;
+    repeated MenberProject members = 8;
     UserList owner = 9;
 
 }
@@ -661,6 +680,11 @@ message ListProjectPaginationResponse {
     repeated Project projects = 1;
     int64 count = 2;
 }
+
+/* PROJECTS */
+
+
+
 /*
     PERMISSIONS
 */
