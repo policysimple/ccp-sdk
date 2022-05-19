@@ -98,7 +98,7 @@ func GetRuntime(projectId uint32, runtimeId string, namespace string) (response 
 	return response, nil
 }
 
-func UpdateRuntime(in *runtimepkgv1.CreateRuntimeRequest) (response *runtimepkgv1.UpdateRuntimeResponse, err error) {
+func UpdateRuntime(in *runtimepkgv1.UpdateRuntimeRequest) (response *runtimepkgv1.UpdateRuntimeResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
 		return
