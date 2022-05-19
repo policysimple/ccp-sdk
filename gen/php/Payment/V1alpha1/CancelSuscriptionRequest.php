@@ -17,18 +17,6 @@ class CancelSuscriptionRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      */
     protected $id = '';
-    /**
-     * Generated from protobuf field <code>string customer = 2 [json_name = "customer"];</code>
-     */
-    protected $customer = '';
-    /**
-     * Generated from protobuf field <code>string price = 3 [json_name = "price"];</code>
-     */
-    protected $price = '';
-    /**
-     * Generated from protobuf field <code>bool cancel = 4 [json_name = "cancel"];</code>
-     */
-    protected $cancel = false;
 
     /**
      * Constructor.
@@ -37,9 +25,6 @@ class CancelSuscriptionRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $customer
-     *     @type string $price
-     *     @type bool $cancel
      * }
      */
     public function __construct($data = NULL) {
@@ -65,72 +50,6 @@ class CancelSuscriptionRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string customer = 2 [json_name = "customer"];</code>
-     * @return string
-     */
-    public function getCustomer()
-    {
-        return $this->customer;
-    }
-
-    /**
-     * Generated from protobuf field <code>string customer = 2 [json_name = "customer"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCustomer($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->customer = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string price = 3 [json_name = "price"];</code>
-     * @return string
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    /**
-     * Generated from protobuf field <code>string price = 3 [json_name = "price"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPrice($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->price = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool cancel = 4 [json_name = "cancel"];</code>
-     * @return bool
-     */
-    public function getCancel()
-    {
-        return $this->cancel;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool cancel = 4 [json_name = "cancel"];</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setCancel($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->cancel = $var;
 
         return $this;
     }

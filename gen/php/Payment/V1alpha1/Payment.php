@@ -18,49 +18,29 @@ class Payment extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-     */
-    protected $card_holder_name = '';
-    /**
-     * Generated from protobuf field <code>string card_type = 3 [json_name = "cardType"];</code>
-     */
-    protected $card_type = '';
-    /**
-     * Generated from protobuf field <code>string card_number = 4 [json_name = "cardNumber"];</code>
-     */
-    protected $card_number = '';
-    /**
-     * Generated from protobuf field <code>string cvv_number = 5 [json_name = "cvvNumber"];</code>
-     */
-    protected $cvv_number = '';
-    /**
-     * Generated from protobuf field <code>string exp_year = 6 [json_name = "expYear"];</code>
-     */
-    protected $exp_year = '';
-    /**
-     * Generated from protobuf field <code>string exp_month = 7 [json_name = "expMonth"];</code>
-     */
-    protected $exp_month = '';
-    /**
-     * Generated from protobuf field <code>uint32 organization_id = 8 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
      */
     protected $organization_id = 0;
     /**
-     * Generated from protobuf field <code>uint32 project_id = 9 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
      */
     protected $project_id = 0;
     /**
-     * Generated from protobuf field <code>string application_id = 10 [json_name = "applicationId"];</code>
+     * Generated from protobuf field <code>string application_id = 4 [json_name = "applicationId"];</code>
      */
     protected $application_id = '';
     /**
-     * Generated from protobuf field <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
+     * Generated from protobuf field <code>string suscription_id = 5 [json_name = "suscriptionId"];</code>
      */
     protected $suscription_id = '';
     /**
-     * Generated from protobuf field <code>string customer_id = 12 [json_name = "customerId"];</code>
+     * Generated from protobuf field <code>string customer_id = 6 [json_name = "customerId"];</code>
      */
     protected $customer_id = '';
+    /**
+     * Generated from protobuf field <code>string token_card = 7 [json_name = "tokenCard"];</code>
+     */
+    protected $token_card = '';
 
     /**
      * Constructor.
@@ -69,17 +49,12 @@ class Payment extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $card_holder_name
-     *     @type string $card_type
-     *     @type string $card_number
-     *     @type string $cvv_number
-     *     @type string $exp_year
-     *     @type string $exp_month
      *     @type int $organization_id
      *     @type int $project_id
      *     @type string $application_id
      *     @type string $suscription_id
      *     @type string $customer_id
+     *     @type string $token_card
      * }
      */
     public function __construct($data = NULL) {
@@ -110,139 +85,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-     * @return string
-     */
-    public function getCardHolderName()
-    {
-        return $this->card_holder_name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string card_holder_name = 2 [json_name = "cardHolderName"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCardHolderName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->card_holder_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string card_type = 3 [json_name = "cardType"];</code>
-     * @return string
-     */
-    public function getCardType()
-    {
-        return $this->card_type;
-    }
-
-    /**
-     * Generated from protobuf field <code>string card_type = 3 [json_name = "cardType"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCardType($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->card_type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string card_number = 4 [json_name = "cardNumber"];</code>
-     * @return string
-     */
-    public function getCardNumber()
-    {
-        return $this->card_number;
-    }
-
-    /**
-     * Generated from protobuf field <code>string card_number = 4 [json_name = "cardNumber"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCardNumber($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->card_number = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string cvv_number = 5 [json_name = "cvvNumber"];</code>
-     * @return string
-     */
-    public function getCvvNumber()
-    {
-        return $this->cvv_number;
-    }
-
-    /**
-     * Generated from protobuf field <code>string cvv_number = 5 [json_name = "cvvNumber"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCvvNumber($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->cvv_number = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string exp_year = 6 [json_name = "expYear"];</code>
-     * @return string
-     */
-    public function getExpYear()
-    {
-        return $this->exp_year;
-    }
-
-    /**
-     * Generated from protobuf field <code>string exp_year = 6 [json_name = "expYear"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setExpYear($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->exp_year = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string exp_month = 7 [json_name = "expMonth"];</code>
-     * @return string
-     */
-    public function getExpMonth()
-    {
-        return $this->exp_month;
-    }
-
-    /**
-     * Generated from protobuf field <code>string exp_month = 7 [json_name = "expMonth"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setExpMonth($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->exp_month = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 organization_id = 8 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
      * @return int
      */
     public function getOrganizationId()
@@ -251,7 +94,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 8 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
      * @param int $var
      * @return $this
      */
@@ -264,7 +107,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 9 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
      * @return int
      */
     public function getProjectId()
@@ -273,7 +116,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 9 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
      * @param int $var
      * @return $this
      */
@@ -286,7 +129,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string application_id = 10 [json_name = "applicationId"];</code>
+     * Generated from protobuf field <code>string application_id = 4 [json_name = "applicationId"];</code>
      * @return string
      */
     public function getApplicationId()
@@ -295,7 +138,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string application_id = 10 [json_name = "applicationId"];</code>
+     * Generated from protobuf field <code>string application_id = 4 [json_name = "applicationId"];</code>
      * @param string $var
      * @return $this
      */
@@ -308,7 +151,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
+     * Generated from protobuf field <code>string suscription_id = 5 [json_name = "suscriptionId"];</code>
      * @return string
      */
     public function getSuscriptionId()
@@ -317,7 +160,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string suscription_id = 11 [json_name = "suscriptionId"];</code>
+     * Generated from protobuf field <code>string suscription_id = 5 [json_name = "suscriptionId"];</code>
      * @param string $var
      * @return $this
      */
@@ -330,7 +173,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string customer_id = 12 [json_name = "customerId"];</code>
+     * Generated from protobuf field <code>string customer_id = 6 [json_name = "customerId"];</code>
      * @return string
      */
     public function getCustomerId()
@@ -339,7 +182,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string customer_id = 12 [json_name = "customerId"];</code>
+     * Generated from protobuf field <code>string customer_id = 6 [json_name = "customerId"];</code>
      * @param string $var
      * @return $this
      */
@@ -347,6 +190,28 @@ class Payment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->customer_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token_card = 7 [json_name = "tokenCard"];</code>
+     * @return string
+     */
+    public function getTokenCard()
+    {
+        return $this->token_card;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token_card = 7 [json_name = "tokenCard"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTokenCard($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->token_card = $var;
 
         return $this;
     }

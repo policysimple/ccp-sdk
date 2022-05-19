@@ -109,6 +109,19 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Payment\V1alpha1\GetPaymentsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetPayments(\Payment\V1alpha1\GetPaymentsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/GetPayments',
+        $argument,
+        ['\Payment\V1alpha1\GetPaymentsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Payment\V1alpha1\CreatePaymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

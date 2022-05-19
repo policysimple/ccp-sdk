@@ -25,6 +25,10 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string email = 3 [json_name = "email"];</code>
      */
     protected $email = '';
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $name
      *     @type string $email
+     *     @type int $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class Customer extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
 
         return $this;
     }

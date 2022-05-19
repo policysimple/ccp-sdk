@@ -14,6 +14,7 @@ service PaymentAPIService{
     rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse) {}
     rpc DeleteCustomer(DeleteCustomerRequest) returns (DeleteCustomerResponse) {}
     rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {};
+    rpc GetPayments(GetPaymentsRequest) returns (GetPaymentsResponse) {};
     rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {};
     rpc UpdatePayment(UpdatePaymentRequest) returns (UpdatePaymentResponse) {};
     rpc DeletePayment(DeletePaymentRequest) returns (DeletePaymentResponse) {};
@@ -21,9 +22,7 @@ service PaymentAPIService{
 }
 message DeleteCustomerRequest {
     string id =1;
-    string name = 2;
-    string email = 3;
-    bool   cancel = 4;
+ 
 }
 
 message DeleteCustomerResponse {
@@ -38,7 +37,14 @@ message GetSuscriptionResponse {
     payment.v1alpha1.Suscription suscription = 1;
     string status = 2;
 }
+message GetPaymentsRequest {
+    string customer_id = 1;
+}
 
+message GetPaymentsResponse {
+    payment.v1alpha1.Suscription payment = 1;
+    string status = 2;
+}
 message UpdateSuscriptionRequest {
     payment.v1alpha1.Suscription suscription = 1;
     string status = 2;
@@ -61,9 +67,7 @@ message CreateSuscriptionResponse {
 
 message CancelSuscriptionRequest {
     string id =1;
-    string customer= 2;
-    string price = 3;
-    bool   cancel = 4;
+ 
 }
 
 message  CancelSuscriptionResponse {
