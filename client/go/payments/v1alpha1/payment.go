@@ -213,6 +213,28 @@ func GetPayment(in *paymentpkgv1.GetPaymentRequest) (response *paymentpkgv1.GetP
 	return response, nil
 }
 
+func GetPayments(in *paymentpkgv1.GetPaymentsRequest) (response *paymentpkgv1.GetPaymentsResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetPayments(ctx, &paymentpkgv1.GetPaymentsRequest{
+		CustomerId: in.CustomerId,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error get payments", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error get payments", err),
+		)
+	}
+	return response, nil
+}
+
 func UpdatePayment(in *paymentpkgv1.UpdatePaymentRequest) (response *paymentpkgv1.UpdatePaymentResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
