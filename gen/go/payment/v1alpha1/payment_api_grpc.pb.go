@@ -25,6 +25,7 @@ type PaymentAPIServiceClient interface {
 	CreateCustomer(ctx context.Context, in *CreateCustomerRequest, opts ...grpc.CallOption) (*CreateCustomerResponse, error)
 	DeleteCustomer(ctx context.Context, in *DeleteCustomerRequest, opts ...grpc.CallOption) (*DeleteCustomerResponse, error)
 	GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error)
+	GetPayments(ctx context.Context, in *GetPaymentsRequest, opts ...grpc.CallOption) (*GetPaymentsResponse, error)
 	CreatePayment(ctx context.Context, in *CreatePaymentRequest, opts ...grpc.CallOption) (*CreatePaymentResponse, error)
 	UpdatePayment(ctx context.Context, in *UpdatePaymentRequest, opts ...grpc.CallOption) (*UpdatePaymentResponse, error)
 	DeletePayment(ctx context.Context, in *DeletePaymentRequest, opts ...grpc.CallOption) (*DeletePaymentResponse, error)
@@ -102,6 +103,15 @@ func (c *paymentAPIServiceClient) GetPayment(ctx context.Context, in *GetPayment
 	return out, nil
 }
 
+func (c *paymentAPIServiceClient) GetPayments(ctx context.Context, in *GetPaymentsRequest, opts ...grpc.CallOption) (*GetPaymentsResponse, error) {
+	out := new(GetPaymentsResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/GetPayments", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *paymentAPIServiceClient) CreatePayment(ctx context.Context, in *CreatePaymentRequest, opts ...grpc.CallOption) (*CreatePaymentResponse, error) {
 	out := new(CreatePaymentResponse)
 	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/CreatePayment", in, out, opts...)
@@ -149,6 +159,7 @@ type PaymentAPIServiceServer interface {
 	CreateCustomer(context.Context, *CreateCustomerRequest) (*CreateCustomerResponse, error)
 	DeleteCustomer(context.Context, *DeleteCustomerRequest) (*DeleteCustomerResponse, error)
 	GetPayment(context.Context, *GetPaymentRequest) (*GetPaymentResponse, error)
+	GetPayments(context.Context, *GetPaymentsRequest) (*GetPaymentsResponse, error)
 	CreatePayment(context.Context, *CreatePaymentRequest) (*CreatePaymentResponse, error)
 	UpdatePayment(context.Context, *UpdatePaymentRequest) (*UpdatePaymentResponse, error)
 	DeletePayment(context.Context, *DeletePaymentRequest) (*DeletePaymentResponse, error)
@@ -179,6 +190,9 @@ func (UnimplementedPaymentAPIServiceServer) DeleteCustomer(context.Context, *Del
 }
 func (UnimplementedPaymentAPIServiceServer) GetPayment(context.Context, *GetPaymentRequest) (*GetPaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPayment not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) GetPayments(context.Context, *GetPaymentsRequest) (*GetPaymentsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPayments not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) CreatePayment(context.Context, *CreatePaymentRequest) (*CreatePaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePayment not implemented")
@@ -330,6 +344,24 @@ func _PaymentAPIService_GetPayment_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PaymentAPIService_GetPayments_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPaymentsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).GetPayments(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/GetPayments",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).GetPayments(ctx, req.(*GetPaymentsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _PaymentAPIService_CreatePayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreatePaymentRequest)
 	if err := dec(in); err != nil {
@@ -436,6 +468,10 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetPayment",
 			Handler:    _PaymentAPIService_GetPayment_Handler,
+		},
+		{
+			MethodName: "GetPayments",
+			Handler:    _PaymentAPIService_GetPayments_Handler,
 		},
 		{
 			MethodName: "CreatePayment",

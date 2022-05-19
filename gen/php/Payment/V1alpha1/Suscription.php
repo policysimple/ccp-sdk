@@ -29,6 +29,10 @@ class Suscription extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool cancel = 4 [json_name = "cancel"];</code>
      */
     protected $cancel = false;
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
      *     @type string $customer_id
      *     @type string $price
      *     @type bool $cancel
+     *     @type int $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class Suscription extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->cancel = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
 
         return $this;
     }

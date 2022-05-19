@@ -16,36 +16,31 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-ú
-payment/v1alpha1/payment.protopayment.v1alpha1"
+­
+payment/v1alpha1/payment.protopayment.v1alpha1"ï
 Payment
-id (	Rid(
-card_holder_name (	RcardHolderName
-	card_type (	RcardType
-card_number (	R
-cardNumber
+id (	Rid\'
+organization_id (RorganizationId
 
-cvv_number (	R	cvvNumber
-exp_year (	RexpYear
-	exp_month (	RexpMonth\'
-organization_id (RorganizationId
+project_id (R	projectId%
+application_id (	RapplicationId%
+suscription_id (	RsuscriptionId
+customer_id (	R
+customerId
 
-project_id	 (R	projectId%
-application_id
- (	RapplicationId%
-suscription_id (	RsuscriptionId
-customer_id (	R
-customerId"D
+token_card (	R	tokenCard"m
 Customer
 id (	Rid
 name (	Rname
-email (	Remail"l
+email (	Remail\'
+organization_id (RorganizationId"•
 Suscription
 id (	Rid
 customer_id (	R
 customerId
 price (	Rprice
-cancel (Rcancel">
+cancel (Rcancel\'
+organization_id (RorganizationId">
 PaymentList/
 items (2.payment.v1alpha1.PaymentRitemsB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1bproto3'
         , true);
