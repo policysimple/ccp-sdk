@@ -16,8 +16,8 @@ class Runtime
         }
         $pool->internalAddGeneratedFile(
             '
-†
-(pipelines/runtime/v1alpha1/runtime.protopipelines.runtime.v1alpha1"»
+¥
+(pipelines/runtime/v1alpha1/runtime.protopipelines.runtime.v1alpha1"Ú
 Runtime
 id (	Rid
 name (	Rname
@@ -30,13 +30,15 @@ project_id (R	projectId%
 workspace_id (	RworkspaceId%
 environment_id	 (	RenvironmentId
 scaler
- (	RscalerV
-integration (24.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryRintegrationr
-environment_variables (2=.pipelines.runtime.v1alpha1.Runtime.EnvironmentVariablesEntryRenvironmentVariablesM
-commands (21.pipelines.runtime.v1alpha1.Runtime.CommandsEntryRcommandsJ
-secrets (20.pipelines.runtime.v1alpha1.Runtime.SecretsEntryRsecretsQ
+ (	Rscaler
 
-extra_args (22.pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntryR	extraArgs>
+pod_status (	R	podStatusV
+integration (24.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryRintegrationr
+environment_variables (2=.pipelines.runtime.v1alpha1.Runtime.EnvironmentVariablesEntryRenvironmentVariablesM
+commands (21.pipelines.runtime.v1alpha1.Runtime.CommandsEntryRcommandsJ
+secrets (20.pipelines.runtime.v1alpha1.Runtime.SecretsEntryRsecretsQ
+
+extra_args (22.pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntryR	extraArgs>
 IntegrationEntry
 key (	Rkey
 value (	Rvalue:8G

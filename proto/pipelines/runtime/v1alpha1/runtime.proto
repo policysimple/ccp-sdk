@@ -22,11 +22,12 @@ message Runtime {
   string workspace_id = 8;
   string environment_id = 9;
   string scaler = 10;
-  map<string, string> integration = 11;
-  map<string, string> environment_variables = 12;
-  map<string, string> commands = 13;
-  map<string, string> secrets = 14;
-  map<string, string> extra_args = 15;
+  string pod_status = 11;
+  map<string, string> integration = 12;
+  map<string, string> environment_variables = 13;
+  map<string, string> commands = 14;
+  map<string, string> secrets = 15;
+  map<string, string> extra_args = 16;
 }
 
 message RuntimeList {

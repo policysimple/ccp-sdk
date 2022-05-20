@@ -101,6 +101,7 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     workspaceId: jspb.Message.getFieldWithDefault(msg, 8, ""),
     environmentId: jspb.Message.getFieldWithDefault(msg, 9, ""),
     scaler: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    podStatus: jspb.Message.getFieldWithDefault(msg, 11, ""),
     integrationMap: (f = msg.getIntegrationMap()) ? f.toObject(includeInstance, undefined) : [],
     environmentVariablesMap: (f = msg.getEnvironmentVariablesMap()) ? f.toObject(includeInstance, undefined) : [],
     commandsMap: (f = msg.getCommandsMap()) ? f.toObject(includeInstance, undefined) : [],
@@ -183,30 +184,34 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
       msg.setScaler(value);
       break;
     case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPodStatus(value);
+      break;
+    case 12:
       var value = msg.getIntegrationMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 12:
+    case 13:
       var value = msg.getEnvironmentVariablesMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 13:
+    case 14:
       var value = msg.getCommandsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 14:
+    case 15:
       var value = msg.getSecretsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 15:
+    case 16:
       var value = msg.getExtraArgsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
@@ -311,25 +316,32 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getIntegrationMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  f = message.getPodStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
   }
-  f = message.getEnvironmentVariablesMap(true);
+  f = message.getIntegrationMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(12, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = message.getCommandsMap(true);
+  f = message.getEnvironmentVariablesMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(13, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = message.getSecretsMap(true);
+  f = message.getCommandsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(14, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = message.getExtraArgsMap(true);
+  f = message.getSecretsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(15, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getExtraArgsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(16, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -515,14 +527,32 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.setScaler = function(value) {
 
 
 /**
- * map<string, string> integration = 11;
+ * optional string pod_status = 11;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getPodStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setPodStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * map<string, string> integration = 12;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getIntegrationMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 11, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 12, opt_noLazyCreate,
       null));
 };
 
@@ -537,14 +567,14 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearIntegrationMap = functio
 
 
 /**
- * map<string, string> environment_variables = 12;
+ * map<string, string> environment_variables = 13;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getEnvironmentVariablesMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 12, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 13, opt_noLazyCreate,
       null));
 };
 
@@ -559,14 +589,14 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearEnvironmentVariablesMap 
 
 
 /**
- * map<string, string> commands = 13;
+ * map<string, string> commands = 14;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getCommandsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 13, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 14, opt_noLazyCreate,
       null));
 };
 
@@ -581,14 +611,14 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearCommandsMap = function()
 
 
 /**
- * map<string, string> secrets = 14;
+ * map<string, string> secrets = 15;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getSecretsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 14, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 15, opt_noLazyCreate,
       null));
 };
 
@@ -603,14 +633,14 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearSecretsMap = function() 
 
 
 /**
- * map<string, string> extra_args = 15;
+ * map<string, string> extra_args = 16;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getExtraArgsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 15, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 16, opt_noLazyCreate,
       null));
 };
 

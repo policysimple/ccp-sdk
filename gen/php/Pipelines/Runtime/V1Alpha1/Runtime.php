@@ -56,23 +56,27 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     protected $scaler = '';
     /**
-     * Generated from protobuf field <code>map<string, string> integration = 11 [json_name = "integration"];</code>
+     * Generated from protobuf field <code>string pod_status = 11 [json_name = "podStatus"];</code>
+     */
+    protected $pod_status = '';
+    /**
+     * Generated from protobuf field <code>map<string, string> integration = 12 [json_name = "integration"];</code>
      */
     private $integration;
     /**
-     * Generated from protobuf field <code>map<string, string> environment_variables = 12 [json_name = "environmentVariables"];</code>
+     * Generated from protobuf field <code>map<string, string> environment_variables = 13 [json_name = "environmentVariables"];</code>
      */
     private $environment_variables;
     /**
-     * Generated from protobuf field <code>map<string, string> commands = 13 [json_name = "commands"];</code>
+     * Generated from protobuf field <code>map<string, string> commands = 14 [json_name = "commands"];</code>
      */
     private $commands;
     /**
-     * Generated from protobuf field <code>map<string, string> secrets = 14 [json_name = "secrets"];</code>
+     * Generated from protobuf field <code>map<string, string> secrets = 15 [json_name = "secrets"];</code>
      */
     private $secrets;
     /**
-     * Generated from protobuf field <code>map<string, string> extra_args = 15 [json_name = "extraArgs"];</code>
+     * Generated from protobuf field <code>map<string, string> extra_args = 16 [json_name = "extraArgs"];</code>
      */
     private $extra_args;
 
@@ -92,6 +96,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type string $workspace_id
      *     @type string $environment_id
      *     @type string $scaler
+     *     @type string $pod_status
      *     @type array|\Google\Protobuf\Internal\MapField $integration
      *     @type array|\Google\Protobuf\Internal\MapField $environment_variables
      *     @type array|\Google\Protobuf\Internal\MapField $commands
@@ -325,7 +330,29 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> integration = 11 [json_name = "integration"];</code>
+     * Generated from protobuf field <code>string pod_status = 11 [json_name = "podStatus"];</code>
+     * @return string
+     */
+    public function getPodStatus()
+    {
+        return $this->pod_status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pod_status = 11 [json_name = "podStatus"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPodStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->pod_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> integration = 12 [json_name = "integration"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getIntegration()
@@ -334,7 +361,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> integration = 11 [json_name = "integration"];</code>
+     * Generated from protobuf field <code>map<string, string> integration = 12 [json_name = "integration"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -347,7 +374,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> environment_variables = 12 [json_name = "environmentVariables"];</code>
+     * Generated from protobuf field <code>map<string, string> environment_variables = 13 [json_name = "environmentVariables"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getEnvironmentVariables()
@@ -356,7 +383,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> environment_variables = 12 [json_name = "environmentVariables"];</code>
+     * Generated from protobuf field <code>map<string, string> environment_variables = 13 [json_name = "environmentVariables"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -369,7 +396,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> commands = 13 [json_name = "commands"];</code>
+     * Generated from protobuf field <code>map<string, string> commands = 14 [json_name = "commands"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getCommands()
@@ -378,7 +405,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> commands = 13 [json_name = "commands"];</code>
+     * Generated from protobuf field <code>map<string, string> commands = 14 [json_name = "commands"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -391,7 +418,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> secrets = 14 [json_name = "secrets"];</code>
+     * Generated from protobuf field <code>map<string, string> secrets = 15 [json_name = "secrets"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getSecrets()
@@ -400,7 +427,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> secrets = 14 [json_name = "secrets"];</code>
+     * Generated from protobuf field <code>map<string, string> secrets = 15 [json_name = "secrets"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -413,7 +440,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> extra_args = 15 [json_name = "extraArgs"];</code>
+     * Generated from protobuf field <code>map<string, string> extra_args = 16 [json_name = "extraArgs"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getExtraArgs()
@@ -422,7 +449,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> extra_args = 15 [json_name = "extraArgs"];</code>
+     * Generated from protobuf field <code>map<string, string> extra_args = 16 [json_name = "extraArgs"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
