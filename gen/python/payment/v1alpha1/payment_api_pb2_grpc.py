@@ -29,6 +29,11 @@ class PaymentAPIServiceStub(object):
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CancelSuscriptionRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CancelSuscriptionResponse.FromString,
         )
+    self.GetOrganizationPayment = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/GetOrganizationPayment',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetOrganizationPaymentRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetOrganizationPaymentResponse.FromString,
+        )
     self.GetSuscription = channel.unary_unary(
         '/payment.v1alpha1.PaymentAPIService/GetSuscription',
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetSuscriptionRequest.SerializeToString,
@@ -95,6 +100,13 @@ class PaymentAPIServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def CancelSuscription(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetOrganizationPayment(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -181,6 +193,11 @@ def add_PaymentAPIServiceServicer_to_server(servicer, server):
           servicer.CancelSuscription,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CancelSuscriptionRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CancelSuscriptionResponse.SerializeToString,
+      ),
+      'GetOrganizationPayment': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOrganizationPayment,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetOrganizationPaymentRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetOrganizationPaymentResponse.SerializeToString,
       ),
       'GetSuscription': grpc.unary_unary_rpc_method_handler(
           servicer.GetSuscription,

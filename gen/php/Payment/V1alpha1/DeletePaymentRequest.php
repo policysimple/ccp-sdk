@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
      */
-    protected $id = '';
+    protected $card_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $id
+     *     @type string $card_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
      * @return string
      */
-    public function getId()
+    public function getCardId()
     {
-        return $this->id;
+        return $this->card_id;
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setCardId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->id = $var;
+        $this->card_id = $var;
 
         return $this;
     }

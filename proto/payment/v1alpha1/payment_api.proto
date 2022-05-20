@@ -4,12 +4,14 @@ package payment.v1alpha1;
 option go_package = "github.com/cuemby/ccp-payment-service/payment/v1alpha1";
 
 
-import "payment/v1alpha1/payment.proto";
-//import "payment.proto";
+//import "payment/v1alpha1/payment.proto";
+import "payment.proto";
+
 service PaymentAPIService{
     rpc CreateSuscription(CreateSuscriptionRequest) returns (CreateSuscriptionResponse) {}; 
     rpc UpdateSuscription(UpdateSuscriptionRequest) returns (UpdateSuscriptionResponse) {}; 
     rpc CancelSuscription(CancelSuscriptionRequest) returns (CancelSuscriptionResponse) {}; 
+    rpc GetOrganizationPayment(GetOrganizationPaymentRequest) returns (GetOrganizationPaymentResponse) {}; 
     rpc GetSuscription(GetSuscriptionRequest) returns (GetSuscriptionResponse) {}; 
     rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse) {}
     rpc DeleteCustomer(DeleteCustomerRequest) returns (DeleteCustomerResponse) {}
@@ -30,13 +32,23 @@ message DeleteCustomerResponse {
 }
 
 message GetSuscriptionRequest {
-    string id = 1;
+    string suscription_id = 1;
 }
 
 message GetSuscriptionResponse {
     payment.v1alpha1.Suscription suscription = 1;
     string status = 2;
 }
+message GetOrganizationPaymentRequest {
+    string organization_id = 1;
+}
+
+message GetOrganizationPaymentResponse {
+    payment.v1alpha1.Suscription suscription = 1;
+    string status = 2;
+}
+
+
 message GetPaymentsRequest {
     string customer_id = 1;
 }
@@ -61,12 +73,12 @@ message CreateSuscriptionRequest {
 }
 
 message CreateSuscriptionResponse {
-    string status = 1;
+    string suscription_id =1;
     string error = 2;
 }
 
 message CancelSuscriptionRequest {
-    string id =1;
+    string suscription_id =1;
  
 }
 
@@ -80,7 +92,7 @@ message CreateCustomerRequest {
 }
 
 message CreateCustomerResponse {
-    string status = 1;
+    string customer_id =1;
     string error = 2;
 }
 
@@ -90,8 +102,8 @@ message CreatePaymentRequest {
 }
 
 message CreatePaymentResponse {
-    payment.v1alpha1.Payment payment = 1;
-    string status = 2;
+    string card_id =1;
+    string error = 2;
 }
 
 message UpdatePaymentRequest {
@@ -105,7 +117,7 @@ message UpdatePaymentResponse {
 }
 
 message DeletePaymentRequest {
-    string id = 1;
+    string card_id = 1;
 }
 
 message DeletePaymentResponse {
@@ -113,7 +125,7 @@ message DeletePaymentResponse {
 }
 
 message GetPaymentRequest {
-    string id = 1;
+    string card_id = 1;
 }
 
 message GetPaymentResponse {
