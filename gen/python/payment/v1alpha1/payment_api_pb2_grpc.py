@@ -5,8 +5,8 @@ from payment.v1alpha1 import payment_api_pb2 as payment_dot_v1alpha1_dot_payment
 
 
 class PaymentAPIServiceStub(object):
-  """import "payment.proto";
-  """
+  # missing associated documentation comment in .proto file
+  pass
 
   def __init__(self, channel):
     """Constructor.
@@ -82,8 +82,8 @@ class PaymentAPIServiceStub(object):
 
 
 class PaymentAPIServiceServicer(object):
-  """import "payment.proto";
-  """
+  # missing associated documentation comment in .proto file
+  pass
 
   def CreateSuscription(self, request, context):
     # missing associated documentation comment in .proto file
