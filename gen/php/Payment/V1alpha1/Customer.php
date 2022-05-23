@@ -26,7 +26,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     protected $email = '';
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
      */
     protected $organization_id = 0;
 
@@ -114,7 +114,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
      * @return int
      */
     public function getOrganizationId()
@@ -123,7 +123,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
      * @param int $var
      * @return $this
      */
