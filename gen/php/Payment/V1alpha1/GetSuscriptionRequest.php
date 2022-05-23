@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetSuscriptionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string suscription_id = 1 [json_name = "suscriptionId"];</code>
      */
-    protected $id = '';
+    protected $suscription_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class GetSuscriptionRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $id
+     *     @type string $suscription_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class GetSuscriptionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string suscription_id = 1 [json_name = "suscriptionId"];</code>
      * @return string
      */
-    public function getId()
+    public function getSuscriptionId()
     {
-        return $this->id;
+        return $this->suscription_id;
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string suscription_id = 1 [json_name = "suscriptionId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setSuscriptionId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->id = $var;
+        $this->suscription_id = $var;
 
         return $this;
     }

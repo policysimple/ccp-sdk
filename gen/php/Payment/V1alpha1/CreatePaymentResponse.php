@@ -14,13 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreatePaymentResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
+     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
      */
-    protected $payment = null;
+    protected $card_id = '';
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      */
-    protected $status = '';
+    protected $error = '';
 
     /**
      * Constructor.
@@ -28,8 +28,8 @@ class CreatePaymentResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Payment $payment
-     *     @type string $status
+     *     @type string $card_id
+     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -38,55 +38,45 @@ class CreatePaymentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
-     * @return \Payment\V1alpha1\Payment|null
+     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
+     * @return string
      */
-    public function getPayment()
+    public function getCardId()
     {
-        return $this->payment;
-    }
-
-    public function hasPayment()
-    {
-        return isset($this->payment);
-    }
-
-    public function clearPayment()
-    {
-        unset($this->payment);
+        return $this->card_id;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
-     * @param \Payment\V1alpha1\Payment $var
+     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setPayment($var)
+    public function setCardId($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Payment::class);
-        $this->payment = $var;
+        GPBUtil::checkString($var, True);
+        $this->card_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      * @return string
      */
-    public function getStatus()
+    public function getError()
     {
-        return $this->status;
+        return $this->error;
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      * @param string $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setError($var)
     {
         GPBUtil::checkString($var, True);
-        $this->status = $var;
+        $this->error = $var;
 
         return $this;
     }

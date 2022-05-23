@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateSuscriptionResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string suscription_id = 1 [json_name = "suscriptionId"];</code>
      */
-    protected $status = '';
+    protected $suscription_id = '';
     /**
      * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      */
@@ -28,7 +28,7 @@ class CreateSuscriptionResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $status
+     *     @type string $suscription_id
      *     @type string $error
      * }
      */
@@ -38,23 +38,23 @@ class CreateSuscriptionResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string suscription_id = 1 [json_name = "suscriptionId"];</code>
      * @return string
      */
-    public function getStatus()
+    public function getSuscriptionId()
     {
-        return $this->status;
+        return $this->suscription_id;
     }
 
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string suscription_id = 1 [json_name = "suscriptionId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setSuscriptionId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->status = $var;
+        $this->suscription_id = $var;
 
         return $this;
     }
