@@ -77,8 +77,7 @@ message CreateSuscriptionResponse {
 }
 
 message CancelSuscriptionRequest {
-    string suscription_id =1;
- 
+    string suscription_id =1; 
 }
 
 message  CancelSuscriptionResponse {

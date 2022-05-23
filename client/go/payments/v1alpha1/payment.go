@@ -134,7 +134,7 @@ func CancelSuscription(in *paymentpkgv1.CancelSuscriptionRequest) (response *pay
 	defer cancel()
 
 	response, err = client.CancelSuscription(ctx, &paymentpkgv1.CancelSuscriptionRequest{
-		Id: in.Id,
+		SuscriptionId: in.SuscriptionId,
 	})
 
 	if err != nil {
@@ -156,7 +156,7 @@ func GetSuscription(in *paymentpkgv1.GetSuscriptionRequest) (response *paymentpk
 	defer cancel()
 
 	response, err = client.GetSuscription(ctx, &paymentpkgv1.GetSuscriptionRequest{
-		Id: in.Id,
+		SuscriptionId: in.SuscriptionId,
 	})
 
 	if err != nil {
@@ -200,7 +200,7 @@ func GetPayment(in *paymentpkgv1.GetPaymentRequest) (response *paymentpkgv1.GetP
 	defer cancel()
 
 	response, err = client.GetPayment(ctx, &paymentpkgv1.GetPaymentRequest{
-		Id: in.Id,
+		CardId: in.CardId,
 	})
 
 	if err != nil {
@@ -266,7 +266,7 @@ func DeletePayment(in *paymentpkgv1.DeletePaymentRequest) (response *paymentpkgv
 	defer cancel()
 
 	response, err = client.DeletePayment(ctx, &paymentpkgv1.DeletePaymentRequest{
-		Id: in.Id,
+		CardId: in.CardId,
 	})
 
 	if err != nil {
