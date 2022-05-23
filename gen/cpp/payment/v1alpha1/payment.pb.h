@@ -428,7 +428,7 @@ class Customer final :
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kEmailFieldNumber = 3,
-    kOrganizationIdFieldNumber = 5,
+    kOrganizationIdFieldNumber = 4,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -472,7 +472,7 @@ class Customer final :
   std::string* _internal_mutable_email();
   public:
 
-  // uint32 organization_id = 5 [json_name = "organizationId"];
+  // uint32 organization_id = 4 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
   void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -1264,7 +1264,7 @@ inline void Customer::set_allocated_email(std::string* email) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Customer.email)
 }
 
-// uint32 organization_id = 5 [json_name = "organizationId"];
+// uint32 organization_id = 4 [json_name = "organizationId"];
 inline void Customer::clear_organization_id() {
   organization_id_ = 0u;
 }

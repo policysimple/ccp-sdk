@@ -33,7 +33,7 @@ token_card (	R	tokenCard"m
 id (	Rid
 name (	Rname
 email (	Remail\'
-organization_id (RorganizationId"•
+organization_id (RorganizationId"•
 Suscription
 id (	Rid
 customer_id (	R

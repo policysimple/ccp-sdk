@@ -448,7 +448,7 @@ proto.payment.v1alpha1.Customer.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     email: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    organizationId: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -497,7 +497,7 @@ proto.payment.v1alpha1.Customer.deserializeBinaryFromReader = function(msg, read
       var value = /** @type {string} */ (reader.readString());
       msg.setEmail(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setOrganizationId(value);
       break;
@@ -554,7 +554,7 @@ proto.payment.v1alpha1.Customer.serializeBinaryToWriter = function(message, writ
   f = message.getOrganizationId();
   if (f !== 0) {
     writer.writeUint32(
-      5,
+      4,
       f
     );
   }
@@ -616,11 +616,11 @@ proto.payment.v1alpha1.Customer.prototype.setEmail = function(value) {
 
 
 /**
- * optional uint32 organization_id = 5;
+ * optional uint32 organization_id = 4;
  * @return {number}
  */
 proto.payment.v1alpha1.Customer.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -629,7 +629,7 @@ proto.payment.v1alpha1.Customer.prototype.getOrganizationId = function() {
  * @return {!proto.payment.v1alpha1.Customer} returns this
  */
 proto.payment.v1alpha1.Customer.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 

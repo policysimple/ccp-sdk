@@ -23,8 +23,7 @@ service PaymentAPIService{
     rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {}; 
 }
 message DeleteCustomerRequest {
-    string id =1;
- 
+    string id =1; 
 }
 
 message DeleteCustomerResponse {
