@@ -118,6 +118,7 @@ message UpdatePaymentResponse {
 
 message DeletePaymentRequest {
     string card_id = 1;
+    string customer_id = 2;
 }
 
 message DeletePaymentResponse {
@@ -126,6 +127,7 @@ message DeletePaymentResponse {
 
 message GetPaymentRequest {
     string card_id = 1;
+    string customer_id = 2;
 }
 
 message GetPaymentResponse {
