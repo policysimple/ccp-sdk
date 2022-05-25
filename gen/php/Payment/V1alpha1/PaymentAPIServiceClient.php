@@ -4,7 +4,6 @@
 namespace Payment\V1alpha1;
 
 /**
- * import "payment.proto";
  */
 class PaymentAPIServiceClient extends \Grpc\BaseStub {
 

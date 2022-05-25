@@ -28,7 +28,6 @@ class ServerContext;
 namespace payment {
 namespace v1alpha1 {
 
-// import "payment.proto";
 class PaymentAPIService final {
  public:
   static constexpr char const* service_full_name() {

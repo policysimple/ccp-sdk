@@ -134,7 +134,7 @@ func CancelSuscription(in *paymentpkgv1.CancelSuscriptionRequest) (response *pay
 	defer cancel()
 
 	response, err = client.CancelSuscription(ctx, &paymentpkgv1.CancelSuscriptionRequest{
-		Id: in.Id,
+		SuscriptionId: in.SuscriptionId,
 	})
 
 	if err != nil {
@@ -156,7 +156,7 @@ func GetSuscription(in *paymentpkgv1.GetSuscriptionRequest) (response *paymentpk
 	defer cancel()
 
 	response, err = client.GetSuscription(ctx, &paymentpkgv1.GetSuscriptionRequest{
-		Id: in.Id,
+		SuscriptionId: in.SuscriptionId,
 	})
 
 	if err != nil {
@@ -200,7 +200,7 @@ func GetPayment(in *paymentpkgv1.GetPaymentRequest) (response *paymentpkgv1.GetP
 	defer cancel()
 
 	response, err = client.GetPayment(ctx, &paymentpkgv1.GetPaymentRequest{
-		Id: in.Id,
+		CardId: in.CardId,
 	})
 
 	if err != nil {
@@ -223,6 +223,28 @@ func GetPayments(in *paymentpkgv1.GetPaymentsRequest) (response *paymentpkgv1.Ge
 
 	response, err = client.GetPayments(ctx, &paymentpkgv1.GetPaymentsRequest{
 		CustomerId: in.CustomerId,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error get payments", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error get payments", err),
+		)
+	}
+	return response, nil
+}
+
+func GetOrganizationPayments(in *paymentpkgv1.GetOrganizationPaymentRequest) (response *paymentpkgv1.GetOrganizationPaymentResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetOrganizationPayment(ctx, &paymentpkgv1.GetOrganizationPaymentRequest{
+		OrganizationId: in.OrganizationId,
 	})
 
 	if err != nil {
@@ -266,7 +288,7 @@ func DeletePayment(in *paymentpkgv1.DeletePaymentRequest) (response *paymentpkgv
 	defer cancel()
 
 	response, err = client.DeletePayment(ctx, &paymentpkgv1.DeletePaymentRequest{
-		Id: in.Id,
+		CardId: in.CardId,
 	})
 
 	if err != nil {

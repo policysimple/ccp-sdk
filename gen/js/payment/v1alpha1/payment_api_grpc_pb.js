@@ -292,7 +292,6 @@ function deserialize_payment_v1alpha1_UpdateSuscriptionResponse(buffer_arg) {
 }
 
 
-// import "payment.proto";
 var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
   createSuscription: {
     path: '/payment.v1alpha1.PaymentAPIService/CreateSuscription',
