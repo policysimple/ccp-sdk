@@ -3821,7 +3821,8 @@ proto.payment.v1alpha1.DeletePaymentRequest.prototype.toObject = function(opt_in
  */
 proto.payment.v1alpha1.DeletePaymentRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cardId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    cardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    customerId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3862,6 +3863,10 @@ proto.payment.v1alpha1.DeletePaymentRequest.deserializeBinaryFromReader = functi
       var value = /** @type {string} */ (reader.readString());
       msg.setCardId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3898,6 +3903,13 @@ proto.payment.v1alpha1.DeletePaymentRequest.serializeBinaryToWriter = function(m
       f
     );
   }
+  f = message.getCustomerId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -3916,6 +3928,24 @@ proto.payment.v1alpha1.DeletePaymentRequest.prototype.getCardId = function() {
  */
 proto.payment.v1alpha1.DeletePaymentRequest.prototype.setCardId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string customer_id = 2;
+ * @return {string}
+ */
+proto.payment.v1alpha1.DeletePaymentRequest.prototype.getCustomerId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.DeletePaymentRequest} returns this
+ */
+proto.payment.v1alpha1.DeletePaymentRequest.prototype.setCustomerId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -4081,7 +4111,8 @@ proto.payment.v1alpha1.GetPaymentRequest.prototype.toObject = function(opt_inclu
  */
 proto.payment.v1alpha1.GetPaymentRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cardId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    cardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    customerId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -4122,6 +4153,10 @@ proto.payment.v1alpha1.GetPaymentRequest.deserializeBinaryFromReader = function(
       var value = /** @type {string} */ (reader.readString());
       msg.setCardId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4158,6 +4193,13 @@ proto.payment.v1alpha1.GetPaymentRequest.serializeBinaryToWriter = function(mess
       f
     );
   }
+  f = message.getCustomerId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -4176,6 +4218,24 @@ proto.payment.v1alpha1.GetPaymentRequest.prototype.getCardId = function() {
  */
 proto.payment.v1alpha1.GetPaymentRequest.prototype.setCardId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string customer_id = 2;
+ * @return {string}
+ */
+proto.payment.v1alpha1.GetPaymentRequest.prototype.getCustomerId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.GetPaymentRequest} returns this
+ */
+proto.payment.v1alpha1.GetPaymentRequest.prototype.setCustomerId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
