@@ -29,6 +29,13 @@ message Suscription {
   uint32 organization_id = 5;
 }
 
+message Invoice {
+  string id =1;
+  string customer_id = 2;
+  uint32 organization_id = 5;
+  string suscription_id = 6;
+}
+
 message PaymentList {
   repeated Payment items = 1;
 }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     

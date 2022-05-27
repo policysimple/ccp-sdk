@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1epayment/v1alpha1/payment.proto\x12\x10payment.v1alpha1\"\xef\x01\n\x07Payment\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x04 \x01(\tR\rapplicationId\x12%\n\x0esuscription_id\x18\x05 \x01(\tR\rsuscriptionId\x12\x1f\n\x0b\x63ustomer_id\x18\x06 \x01(\tR\ncustomerId\x12\x1d\n\ntoken_card\x18\x07 \x01(\tR\ttokenCard\"m\n\x08\x43ustomer\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05\x65mail\x18\x03 \x01(\tR\x05\x65mail\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\"\x95\x01\n\x0bSuscription\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n\x0b\x63ustomer_id\x18\x02 \x01(\tR\ncustomerId\x12\x14\n\x05price\x18\x03 \x01(\tR\x05price\x12\x16\n\x06\x63\x61ncel\x18\x04 \x01(\x08R\x06\x63\x61ncel\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\">\n\x0bPaymentList\x12/\n\x05items\x18\x01 \x03(\x0b\x32\x19.payment.v1alpha1.PaymentR\x05itemsB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1b\x06proto3'
+  serialized_pb=b'\n\x1epayment/v1alpha1/payment.proto\x12\x10payment.v1alpha1\"\xef\x01\n\x07Payment\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x04 \x01(\tR\rapplicationId\x12%\n\x0esuscription_id\x18\x05 \x01(\tR\rsuscriptionId\x12\x1f\n\x0b\x63ustomer_id\x18\x06 \x01(\tR\ncustomerId\x12\x1d\n\ntoken_card\x18\x07 \x01(\tR\ttokenCard\"m\n\x08\x43ustomer\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05\x65mail\x18\x03 \x01(\tR\x05\x65mail\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\"\x95\x01\n\x0bSuscription\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n\x0b\x63ustomer_id\x18\x02 \x01(\tR\ncustomerId\x12\x14\n\x05price\x18\x03 \x01(\tR\x05price\x12\x16\n\x06\x63\x61ncel\x18\x04 \x01(\x08R\x06\x63\x61ncel\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\"\x8a\x01\n\x07Invoice\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n\x0b\x63ustomer_id\x18\x02 \x01(\tR\ncustomerId\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\x12%\n\x0esuscription_id\x18\x06 \x01(\tR\rsuscriptionId\">\n\x0bPaymentList\x12/\n\x05items\x18\x01 \x03(\x0b\x32\x19.payment.v1alpha1.PaymentR\x05itemsB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1b\x06proto3'
 )
 
 
@@ -212,6 +212,59 @@ _SUSCRIPTION = _descriptor.Descriptor(
 )
 
 
+_INVOICE = _descriptor.Descriptor(
+  name='Invoice',
+  full_name='payment.v1alpha1.Invoice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='payment.v1alpha1.Invoice.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='customer_id', full_name='payment.v1alpha1.Invoice.customer_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='customerId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='organization_id', full_name='payment.v1alpha1.Invoice.organization_id', index=2,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='suscription_id', full_name='payment.v1alpha1.Invoice.suscription_id', index=3,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='suscriptionId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=558,
+  serialized_end=696,
+)
+
+
 _PAYMENTLIST = _descriptor.Descriptor(
   name='PaymentList',
   full_name='payment.v1alpha1.PaymentList',
@@ -239,14 +292,15 @@ _PAYMENTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=557,
-  serialized_end=619,
+  serialized_start=698,
+  serialized_end=760,
 )
 
 _PAYMENTLIST.fields_by_name['items'].message_type = _PAYMENT
 DESCRIPTOR.message_types_by_name['Payment'] = _PAYMENT
 DESCRIPTOR.message_types_by_name['Customer'] = _CUSTOMER
 DESCRIPTOR.message_types_by_name['Suscription'] = _SUSCRIPTION
+DESCRIPTOR.message_types_by_name['Invoice'] = _INVOICE
 DESCRIPTOR.message_types_by_name['PaymentList'] = _PAYMENTLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -270,6 +324,13 @@ Suscription = _reflection.GeneratedProtocolMessageType('Suscription', (_message.
   # @@protoc_insertion_point(class_scope:payment.v1alpha1.Suscription)
   })
 _sym_db.RegisterMessage(Suscription)
+
+Invoice = _reflection.GeneratedProtocolMessageType('Invoice', (_message.Message,), {
+  'DESCRIPTOR' : _INVOICE,
+  '__module__' : 'payment.v1alpha1.payment_pb2'
+  # @@protoc_insertion_point(class_scope:payment.v1alpha1.Invoice)
+  })
+_sym_db.RegisterMessage(Invoice)
 
 PaymentList = _reflection.GeneratedProtocolMessageType('PaymentList', (_message.Message,), {
   'DESCRIPTOR' : _PAYMENTLIST,
