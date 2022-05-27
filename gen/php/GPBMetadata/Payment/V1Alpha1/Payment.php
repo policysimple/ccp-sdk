@@ -16,7 +16,7 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-­
+º
 payment/v1alpha1/payment.protopayment.v1alpha1"ï
 Payment
 id (	Rid\'
@@ -40,7 +40,13 @@ token_card (	R	tokenCard"m
 customerId
 price (	Rprice
 cancel (Rcancel\'
-organization_id (RorganizationId">
+organization_id (RorganizationId"Š
+Invoice
+id (	Rid
+customer_id (	R
+customerId\'
+organization_id (RorganizationId%
+suscription_id (	RsuscriptionId">
 PaymentList/
 items (2.payment.v1alpha1.PaymentRitemsB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1bproto3'
         , true);
