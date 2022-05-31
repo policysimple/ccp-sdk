@@ -16,6 +16,7 @@ service PaymentAPIService{
     rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse) {}
     rpc DeleteCustomer(DeleteCustomerRequest) returns (DeleteCustomerResponse) {}
     rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {};
+    rpc GetCustomer(GetCustomerRequest) returns (GetCustomerResponse) {};
     rpc GetPayments(GetPaymentsRequest) returns (GetPaymentsResponse) {};
     rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {};
     rpc UpdatePayment(UpdatePaymentRequest) returns (UpdatePaymentResponse) {};
@@ -44,6 +45,15 @@ message GetOrganizationPaymentRequest {
 
 message GetOrganizationPaymentResponse {
     payment.v1alpha1.Suscription suscription = 1;
+    string status = 2;
+}
+
+message GetCustomerRequest {
+    string customer_id =1;
+}
+
+message GetCustomerResponse {
+    payment.v1alpha1.Customer customer = 1;
     string status = 2;
 }
 

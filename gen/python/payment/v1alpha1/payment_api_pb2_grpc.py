@@ -54,6 +54,11 @@ class PaymentAPIServiceStub(object):
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetPaymentRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetPaymentResponse.FromString,
         )
+    self.GetCustomer = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/GetCustomer',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetCustomerRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetCustomerResponse.FromString,
+        )
     self.GetPayments = channel.unary_unary(
         '/payment.v1alpha1.PaymentAPIService/GetPayments',
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetPaymentsRequest.SerializeToString,
@@ -141,6 +146,13 @@ class PaymentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetCustomer(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def GetPayments(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -218,6 +230,11 @@ def add_PaymentAPIServiceServicer_to_server(servicer, server):
           servicer.GetPayment,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetPaymentRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetPaymentResponse.SerializeToString,
+      ),
+      'GetCustomer': grpc.unary_unary_rpc_method_handler(
+          servicer.GetCustomer,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetCustomerRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetCustomerResponse.SerializeToString,
       ),
       'GetPayments': grpc.unary_unary_rpc_method_handler(
           servicer.GetPayments,
