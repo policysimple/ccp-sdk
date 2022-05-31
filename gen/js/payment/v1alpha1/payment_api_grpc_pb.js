@@ -137,6 +137,28 @@ function deserialize_payment_v1alpha1_DeletePaymentResponse(buffer_arg) {
   return payment_v1alpha1_payment_api_pb.DeletePaymentResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_payment_v1alpha1_GetCustomerRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.GetCustomerRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.GetCustomerRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_GetCustomerRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.GetCustomerRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_GetCustomerResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.GetCustomerResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.GetCustomerResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_GetCustomerResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.GetCustomerResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_payment_v1alpha1_GetOrganizationPaymentRequest(arg) {
   if (!(arg instanceof payment_v1alpha1_payment_api_pb.GetOrganizationPaymentRequest)) {
     throw new Error('Expected argument of type payment.v1alpha1.GetOrganizationPaymentRequest');
@@ -380,6 +402,17 @@ var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
     requestDeserialize: deserialize_payment_v1alpha1_GetPaymentRequest,
     responseSerialize: serialize_payment_v1alpha1_GetPaymentResponse,
     responseDeserialize: deserialize_payment_v1alpha1_GetPaymentResponse,
+  },
+  getCustomer: {
+    path: '/payment.v1alpha1.PaymentAPIService/GetCustomer',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.GetCustomerRequest,
+    responseType: payment_v1alpha1_payment_api_pb.GetCustomerResponse,
+    requestSerialize: serialize_payment_v1alpha1_GetCustomerRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_GetCustomerRequest,
+    responseSerialize: serialize_payment_v1alpha1_GetCustomerResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_GetCustomerResponse,
   },
   getPayments: {
     path: '/payment.v1alpha1.PaymentAPIService/GetPayments',
