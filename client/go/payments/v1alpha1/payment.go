@@ -169,6 +169,28 @@ func GetSuscription(in *paymentpkgv1.GetSuscriptionRequest) (response *paymentpk
 	return response, nil
 }
 
+func GetCustomer(in *paymentpkgv1.GetCustomerRequest) (response *paymentpkgv1.GetCustomerResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetCustomer(ctx, &paymentpkgv1.GetCustomerRequest{
+		CustomerId: in.CustomerId,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error get Customer", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error get Customer", err),
+		)
+	}
+	return response, nil
+}
+
 func CreatePayment(in *paymentpkgv1.CreatePaymentRequest) (response *paymentpkgv1.CreatePaymentResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
