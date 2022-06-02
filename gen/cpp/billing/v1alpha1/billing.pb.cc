@@ -18,118 +18,70 @@
 PROTOBUF_PRAGMA_INIT_SEG
 namespace billing {
 namespace v1alpha1 {
-constexpr Organization::Organization(
+constexpr Billing::Billing(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
-struct OrganizationDefaultTypeInternal {
-  constexpr OrganizationDefaultTypeInternal()
+  , cpu_metric_(0)
+  , cpu_bill_(0)
+  , ram_metric_(0)
+  , ram_bill_(0)
+  , storage_metric_(0)
+  , storage_bill_(0)
+  , total_to_pay_(0){}
+struct BillingDefaultTypeInternal {
+  constexpr BillingDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~OrganizationDefaultTypeInternal() {}
+  ~BillingDefaultTypeInternal() {}
   union {
-    Organization _instance;
+    Billing _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OrganizationDefaultTypeInternal _Organization_default_instance_;
-constexpr Application::Application(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , country_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , about_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
-struct ApplicationDefaultTypeInternal {
-  constexpr ApplicationDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~ApplicationDefaultTypeInternal() {}
-  union {
-    Application _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ApplicationDefaultTypeInternal _Application_default_instance_;
-constexpr Metrics::Metrics(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : metric_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , cpu_(int64_t{0})
-  , ram_(int64_t{0})
-  , storage_(int64_t{0}){}
-struct MetricsDefaultTypeInternal {
-  constexpr MetricsDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~MetricsDefaultTypeInternal() {}
-  union {
-    Metrics _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT MetricsDefaultTypeInternal _Metrics_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BillingDefaultTypeInternal _Billing_default_instance_;
 }  // namespace v1alpha1
 }  // namespace billing
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_billing_2fv1alpha1_2fbilling_2eproto[3];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_billing_2fv1alpha1_2fbilling_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_billing_2fv1alpha1_2fbilling_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_billing_2fv1alpha1_2fbilling_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_billing_2fv1alpha1_2fbilling_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Organization, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Billing, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Organization, organization_id_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Organization, organization_name_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Application, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Application, application_id_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Application, organization_id_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Application, name_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Application, country_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Application, about_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, metric_id_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, organization_id_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, cpu_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, ram_),
-  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Metrics, storage_),
+  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Billing, organization_id_),
+  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Billing, cpu_metric_),
+  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Billing, cpu_bill_),
+  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Billing, ram_metric_),
+  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Billing, ram_bill_),
+  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Billing, storage_metric_),
+  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Billing, storage_bill_),
+  PROTOBUF_FIELD_OFFSET(::billing::v1alpha1::Billing, total_to_pay_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::billing::v1alpha1::Organization)},
-  { 7, -1, sizeof(::billing::v1alpha1::Application)},
-  { 17, -1, sizeof(::billing::v1alpha1::Metrics)},
+  { 0, -1, sizeof(::billing::v1alpha1::Billing)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::billing::v1alpha1::_Organization_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::billing::v1alpha1::_Application_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::billing::v1alpha1::_Metrics_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::billing::v1alpha1::_Billing_default_instance_),
 };
 
 const char descriptor_table_protodef_billing_2fv1alpha1_2fbilling_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\036billing/v1alpha1/billing.proto\022\020billin"
-  "g.v1alpha1\"d\n\014Organization\022\'\n\017organizati"
-  "on_id\030\001 \001(\tR\016organizationId\022+\n\021organizat"
-  "ion_name\030\002 \001(\tR\020organizationName\"\241\001\n\013App"
-  "lication\022%\n\016application_id\030\001 \001(\tR\rapplic"
-  "ationId\022\'\n\017organization_id\030\002 \001(\tR\016organi"
-  "zationId\022\022\n\004name\030\003 \001(\tR\004name\022\030\n\007country\030"
-  "\004 \001(\tR\007country\022\024\n\005about\030\005 \001(\tR\005about\"\215\001\n"
-  "\007Metrics\022\033\n\tmetric_id\030\001 \001(\tR\010metricId\022\'\n"
-  "\017organization_id\030\002 \001(\tR\016organizationId\022\020"
-  "\n\003cpu\030\003 \001(\003R\003cpu\022\020\n\003ram\030\004 \001(\003R\003ram\022\030\n\007st"
-  "orage\030\005 \001(\003R\007storageB7Z5github.com/cuemb"
-  "y/ccp-billing-service/billingv1alpha1b\006p"
-  "roto3"
+  "g.v1alpha1\"\222\002\n\007Billing\022\'\n\017organization_i"
+  "d\030\001 \001(\tR\016organizationId\022\035\n\ncpu_metric\030\002 "
+  "\001(\001R\tcpuMetric\022\031\n\010cpu_bill\030\003 \001(\001R\007cpuBil"
+  "l\022\035\n\nram_metric\030\004 \001(\001R\tramMetric\022\031\n\010ram_"
+  "bill\030\005 \001(\001R\007ramBill\022%\n\016storage_metric\030\006 "
+  "\001(\001R\rstorageMetric\022!\n\014storage_bill\030\007 \001(\001"
+  "R\013storageBill\022 \n\014total_to_pay\030\010 \001(\001R\ntot"
+  "alToPayB7Z5github.com/cuemby/ccp-billing"
+  "-service/billingv1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_billing_2fv1alpha1_2fbilling_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_billing_2fv1alpha1_2fbilling_2eproto = {
-  false, false, 525, descriptor_table_protodef_billing_2fv1alpha1_2fbilling_2eproto, "billing/v1alpha1/billing.proto", 
-  &descriptor_table_billing_2fv1alpha1_2fbilling_2eproto_once, nullptr, 0, 3,
+  false, false, 392, descriptor_table_protodef_billing_2fv1alpha1_2fbilling_2eproto, "billing/v1alpha1/billing.proto", 
+  &descriptor_table_billing_2fv1alpha1_2fbilling_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_billing_2fv1alpha1_2fbilling_2eproto::offsets,
   file_level_metadata_billing_2fv1alpha1_2fbilling_2eproto, file_level_enum_descriptors_billing_2fv1alpha1_2fbilling_2eproto, file_level_service_descriptors_billing_2fv1alpha1_2fbilling_2eproto,
 };
@@ -144,20 +96,20 @@ namespace v1alpha1 {
 
 // ===================================================================
 
-class Organization::_Internal {
+class Billing::_Internal {
  public:
 };
 
-Organization::Organization(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+Billing::Billing(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
   }
-  // @@protoc_insertion_point(arena_constructor:billing.v1alpha1.Organization)
+  // @@protoc_insertion_point(arena_constructor:billing.v1alpha1.Billing)
 }
-Organization::Organization(const Organization& from)
+Billing::Billing(const Billing& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -165,54 +117,56 @@ Organization::Organization(const Organization& from)
     organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
       GetArenaForAllocation());
   }
-  organization_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_organization_name().empty()) {
-    organization_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_name(), 
-      GetArenaForAllocation());
-  }
-  // @@protoc_insertion_point(copy_constructor:billing.v1alpha1.Organization)
+  ::memcpy(&cpu_metric_, &from.cpu_metric_,
+    static_cast<size_t>(reinterpret_cast<char*>(&total_to_pay_) -
+    reinterpret_cast<char*>(&cpu_metric_)) + sizeof(total_to_pay_));
+  // @@protoc_insertion_point(copy_constructor:billing.v1alpha1.Billing)
 }
 
-inline void Organization::SharedCtor() {
+inline void Billing::SharedCtor() {
 organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-organization_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&cpu_metric_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&total_to_pay_) -
+    reinterpret_cast<char*>(&cpu_metric_)) + sizeof(total_to_pay_));
 }
 
-Organization::~Organization() {
-  // @@protoc_insertion_point(destructor:billing.v1alpha1.Organization)
+Billing::~Billing() {
+  // @@protoc_insertion_point(destructor:billing.v1alpha1.Billing)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void Organization::SharedDtor() {
+inline void Billing::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  organization_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void Organization::ArenaDtor(void* object) {
-  Organization* _this = reinterpret_cast< Organization* >(object);
+void Billing::ArenaDtor(void* object) {
+  Billing* _this = reinterpret_cast< Billing* >(object);
   (void)_this;
 }
-void Organization::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void Billing::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void Organization::SetCachedSize(int size) const {
+void Billing::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void Organization::Clear() {
-// @@protoc_insertion_point(message_clear_start:billing.v1alpha1.Organization)
+void Billing::Clear() {
+// @@protoc_insertion_point(message_clear_start:billing.v1alpha1.Billing)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   organization_id_.ClearToEmpty();
-  organization_name_.ClearToEmpty();
+  ::memset(&cpu_metric_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&total_to_pay_) -
+      reinterpret_cast<char*>(&cpu_metric_)) + sizeof(total_to_pay_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Organization::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Billing::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -223,17 +177,57 @@ const char* Organization::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_organization_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "billing.v1alpha1.Organization.organization_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "billing.v1alpha1.Billing.organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string organization_name = 2 [json_name = "organizationName"];
+      // double cpu_metric = 2 [json_name = "cpuMetric"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_organization_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "billing.v1alpha1.Organization.organization_name"));
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
+          cpu_metric_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
+      // double cpu_bill = 3 [json_name = "cpuBill"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 25)) {
+          cpu_bill_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
+      // double ram_metric = 4 [json_name = "ramMetric"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 33)) {
+          ram_metric_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
+      // double ram_bill = 5 [json_name = "ramBill"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 41)) {
+          ram_bill_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
+      // double storage_metric = 6 [json_name = "storageMetric"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 49)) {
+          storage_metric_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
+      // double storage_bill = 7 [json_name = "storageBill"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 57)) {
+          storage_bill_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
+      // double total_to_pay = 8 [json_name = "totalToPay"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 65)) {
+          total_to_pay_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
       default: {
@@ -259,9 +253,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Organization::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* Billing::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:billing.v1alpha1.Organization)
+  // @@protoc_insertion_point(serialize_to_array_start:billing.v1alpha1.Billing)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -270,31 +264,63 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "billing.v1alpha1.Organization.organization_id");
+      "billing.v1alpha1.Billing.organization_id");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_organization_id(), target);
   }
 
-  // string organization_name = 2 [json_name = "organizationName"];
-  if (!this->_internal_organization_name().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_organization_name().data(), static_cast<int>(this->_internal_organization_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "billing.v1alpha1.Organization.organization_name");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_organization_name(), target);
+  // double cpu_metric = 2 [json_name = "cpuMetric"];
+  if (!(this->_internal_cpu_metric() <= 0 && this->_internal_cpu_metric() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_cpu_metric(), target);
+  }
+
+  // double cpu_bill = 3 [json_name = "cpuBill"];
+  if (!(this->_internal_cpu_bill() <= 0 && this->_internal_cpu_bill() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_cpu_bill(), target);
+  }
+
+  // double ram_metric = 4 [json_name = "ramMetric"];
+  if (!(this->_internal_ram_metric() <= 0 && this->_internal_ram_metric() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(4, this->_internal_ram_metric(), target);
+  }
+
+  // double ram_bill = 5 [json_name = "ramBill"];
+  if (!(this->_internal_ram_bill() <= 0 && this->_internal_ram_bill() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(5, this->_internal_ram_bill(), target);
+  }
+
+  // double storage_metric = 6 [json_name = "storageMetric"];
+  if (!(this->_internal_storage_metric() <= 0 && this->_internal_storage_metric() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(6, this->_internal_storage_metric(), target);
+  }
+
+  // double storage_bill = 7 [json_name = "storageBill"];
+  if (!(this->_internal_storage_bill() <= 0 && this->_internal_storage_bill() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(7, this->_internal_storage_bill(), target);
+  }
+
+  // double total_to_pay = 8 [json_name = "totalToPay"];
+  if (!(this->_internal_total_to_pay() <= 0 && this->_internal_total_to_pay() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(8, this->_internal_total_to_pay(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:billing.v1alpha1.Organization)
+  // @@protoc_insertion_point(serialize_to_array_end:billing.v1alpha1.Billing)
   return target;
 }
 
-size_t Organization::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:billing.v1alpha1.Organization)
+size_t Billing::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:billing.v1alpha1.Billing)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -308,11 +334,39 @@ size_t Organization::ByteSizeLong() const {
         this->_internal_organization_id());
   }
 
-  // string organization_name = 2 [json_name = "organizationName"];
-  if (!this->_internal_organization_name().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_organization_name());
+  // double cpu_metric = 2 [json_name = "cpuMetric"];
+  if (!(this->_internal_cpu_metric() <= 0 && this->_internal_cpu_metric() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  // double cpu_bill = 3 [json_name = "cpuBill"];
+  if (!(this->_internal_cpu_bill() <= 0 && this->_internal_cpu_bill() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  // double ram_metric = 4 [json_name = "ramMetric"];
+  if (!(this->_internal_ram_metric() <= 0 && this->_internal_ram_metric() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  // double ram_bill = 5 [json_name = "ramBill"];
+  if (!(this->_internal_ram_bill() <= 0 && this->_internal_ram_bill() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  // double storage_metric = 6 [json_name = "storageMetric"];
+  if (!(this->_internal_storage_metric() <= 0 && this->_internal_storage_metric() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  // double storage_bill = 7 [json_name = "storageBill"];
+  if (!(this->_internal_storage_bill() <= 0 && this->_internal_storage_bill() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  // double total_to_pay = 8 [json_name = "totalToPay"];
+  if (!(this->_internal_total_to_pay() <= 0 && this->_internal_total_to_pay() >= 0)) {
+    total_size += 1 + 8;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -324,21 +378,21 @@ size_t Organization::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Organization::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Billing::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Organization::MergeImpl
+    Billing::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Organization::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Billing::GetClassData() const { return &_class_data_; }
 
-void Organization::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+void Billing::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
                       const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<Organization *>(to)->MergeFrom(
-      static_cast<const Organization &>(from));
+  static_cast<Billing *>(to)->MergeFrom(
+      static_cast<const Billing &>(from));
 }
 
 
-void Organization::MergeFrom(const Organization& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:billing.v1alpha1.Organization)
+void Billing::MergeFrom(const Billing& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:billing.v1alpha1.Billing)
   GOOGLE_DCHECK_NE(&from, this);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
@@ -346,751 +400,69 @@ void Organization::MergeFrom(const Organization& from) {
   if (!from._internal_organization_id().empty()) {
     _internal_set_organization_id(from._internal_organization_id());
   }
-  if (!from._internal_organization_name().empty()) {
-    _internal_set_organization_name(from._internal_organization_name());
+  if (!(from._internal_cpu_metric() <= 0 && from._internal_cpu_metric() >= 0)) {
+    _internal_set_cpu_metric(from._internal_cpu_metric());
+  }
+  if (!(from._internal_cpu_bill() <= 0 && from._internal_cpu_bill() >= 0)) {
+    _internal_set_cpu_bill(from._internal_cpu_bill());
+  }
+  if (!(from._internal_ram_metric() <= 0 && from._internal_ram_metric() >= 0)) {
+    _internal_set_ram_metric(from._internal_ram_metric());
+  }
+  if (!(from._internal_ram_bill() <= 0 && from._internal_ram_bill() >= 0)) {
+    _internal_set_ram_bill(from._internal_ram_bill());
+  }
+  if (!(from._internal_storage_metric() <= 0 && from._internal_storage_metric() >= 0)) {
+    _internal_set_storage_metric(from._internal_storage_metric());
+  }
+  if (!(from._internal_storage_bill() <= 0 && from._internal_storage_bill() >= 0)) {
+    _internal_set_storage_bill(from._internal_storage_bill());
+  }
+  if (!(from._internal_total_to_pay() <= 0 && from._internal_total_to_pay() >= 0)) {
+    _internal_set_total_to_pay(from._internal_total_to_pay());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void Organization::CopyFrom(const Organization& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:billing.v1alpha1.Organization)
+void Billing::CopyFrom(const Billing& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:billing.v1alpha1.Billing)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Organization::IsInitialized() const {
+bool Billing::IsInitialized() const {
   return true;
 }
 
-void Organization::InternalSwap(Organization* other) {
+void Billing::InternalSwap(Billing* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &organization_id_, GetArenaForAllocation(),
-      &other->organization_id_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &organization_name_, GetArenaForAllocation(),
-      &other->organization_name_, other->GetArenaForAllocation()
-  );
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata Organization::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_billing_2fv1alpha1_2fbilling_2eproto_getter, &descriptor_table_billing_2fv1alpha1_2fbilling_2eproto_once,
-      file_level_metadata_billing_2fv1alpha1_2fbilling_2eproto[0]);
-}
-
-// ===================================================================
-
-class Application::_Internal {
- public:
-};
-
-Application::Application(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:billing.v1alpha1.Application)
-}
-Application::Application(const Application& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_application_id().empty()) {
-    application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_application_id(), 
-      GetArenaForAllocation());
-  }
-  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_organization_id().empty()) {
-    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
-      GetArenaForAllocation());
-  }
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
-  }
-  country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_country().empty()) {
-    country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_country(), 
-      GetArenaForAllocation());
-  }
-  about_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_about().empty()) {
-    about_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_about(), 
-      GetArenaForAllocation());
-  }
-  // @@protoc_insertion_point(copy_constructor:billing.v1alpha1.Application)
-}
-
-inline void Application::SharedCtor() {
-application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-about_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-Application::~Application() {
-  // @@protoc_insertion_point(destructor:billing.v1alpha1.Application)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void Application::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  application_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  country_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  about_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-void Application::ArenaDtor(void* object) {
-  Application* _this = reinterpret_cast< Application* >(object);
-  (void)_this;
-}
-void Application::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void Application::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void Application::Clear() {
-// @@protoc_insertion_point(message_clear_start:billing.v1alpha1.Application)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  application_id_.ClearToEmpty();
-  organization_id_.ClearToEmpty();
-  name_.ClearToEmpty();
-  country_.ClearToEmpty();
-  about_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* Application::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string application_id = 1 [json_name = "applicationId"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_application_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "billing.v1alpha1.Application.application_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string organization_id = 2 [json_name = "organizationId"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_organization_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "billing.v1alpha1.Application.organization_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string name = 3 [json_name = "name"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "billing.v1alpha1.Application.name"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string country = 4 [json_name = "country"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_country();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "billing.v1alpha1.Application.country"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string about = 5 [json_name = "about"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          auto str = _internal_mutable_about();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "billing.v1alpha1.Application.about"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* Application::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:billing.v1alpha1.Application)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string application_id = 1 [json_name = "applicationId"];
-  if (!this->_internal_application_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_application_id().data(), static_cast<int>(this->_internal_application_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "billing.v1alpha1.Application.application_id");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_application_id(), target);
-  }
-
-  // string organization_id = 2 [json_name = "organizationId"];
-  if (!this->_internal_organization_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "billing.v1alpha1.Application.organization_id");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_organization_id(), target);
-  }
-
-  // string name = 3 [json_name = "name"];
-  if (!this->_internal_name().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "billing.v1alpha1.Application.name");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_name(), target);
-  }
-
-  // string country = 4 [json_name = "country"];
-  if (!this->_internal_country().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_country().data(), static_cast<int>(this->_internal_country().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "billing.v1alpha1.Application.country");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_country(), target);
-  }
-
-  // string about = 5 [json_name = "about"];
-  if (!this->_internal_about().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_about().data(), static_cast<int>(this->_internal_about().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "billing.v1alpha1.Application.about");
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_about(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:billing.v1alpha1.Application)
-  return target;
-}
-
-size_t Application::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:billing.v1alpha1.Application)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string application_id = 1 [json_name = "applicationId"];
-  if (!this->_internal_application_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_application_id());
-  }
-
-  // string organization_id = 2 [json_name = "organizationId"];
-  if (!this->_internal_organization_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_organization_id());
-  }
-
-  // string name = 3 [json_name = "name"];
-  if (!this->_internal_name().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_name());
-  }
-
-  // string country = 4 [json_name = "country"];
-  if (!this->_internal_country().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_country());
-  }
-
-  // string about = 5 [json_name = "about"];
-  if (!this->_internal_about().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_about());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Application::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Application::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Application::GetClassData() const { return &_class_data_; }
-
-void Application::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<Application *>(to)->MergeFrom(
-      static_cast<const Application &>(from));
-}
-
-
-void Application::MergeFrom(const Application& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:billing.v1alpha1.Application)
-  GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_application_id().empty()) {
-    _internal_set_application_id(from._internal_application_id());
-  }
-  if (!from._internal_organization_id().empty()) {
-    _internal_set_organization_id(from._internal_organization_id());
-  }
-  if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
-  }
-  if (!from._internal_country().empty()) {
-    _internal_set_country(from._internal_country());
-  }
-  if (!from._internal_about().empty()) {
-    _internal_set_about(from._internal_about());
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void Application::CopyFrom(const Application& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:billing.v1alpha1.Application)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Application::IsInitialized() const {
-  return true;
-}
-
-void Application::InternalSwap(Application* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &application_id_, GetArenaForAllocation(),
-      &other->application_id_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &organization_id_, GetArenaForAllocation(),
-      &other->organization_id_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, GetArenaForAllocation(),
-      &other->name_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &country_, GetArenaForAllocation(),
-      &other->country_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &about_, GetArenaForAllocation(),
-      &other->about_, other->GetArenaForAllocation()
-  );
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata Application::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_billing_2fv1alpha1_2fbilling_2eproto_getter, &descriptor_table_billing_2fv1alpha1_2fbilling_2eproto_once,
-      file_level_metadata_billing_2fv1alpha1_2fbilling_2eproto[1]);
-}
-
-// ===================================================================
-
-class Metrics::_Internal {
- public:
-};
-
-Metrics::Metrics(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:billing.v1alpha1.Metrics)
-}
-Metrics::Metrics(const Metrics& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  metric_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_metric_id().empty()) {
-    metric_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_metric_id(), 
-      GetArenaForAllocation());
-  }
-  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_organization_id().empty()) {
-    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
-      GetArenaForAllocation());
-  }
-  ::memcpy(&cpu_, &from.cpu_,
-    static_cast<size_t>(reinterpret_cast<char*>(&storage_) -
-    reinterpret_cast<char*>(&cpu_)) + sizeof(storage_));
-  // @@protoc_insertion_point(copy_constructor:billing.v1alpha1.Metrics)
-}
-
-inline void Metrics::SharedCtor() {
-metric_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&cpu_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&storage_) -
-    reinterpret_cast<char*>(&cpu_)) + sizeof(storage_));
-}
-
-Metrics::~Metrics() {
-  // @@protoc_insertion_point(destructor:billing.v1alpha1.Metrics)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void Metrics::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  metric_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-void Metrics::ArenaDtor(void* object) {
-  Metrics* _this = reinterpret_cast< Metrics* >(object);
-  (void)_this;
-}
-void Metrics::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void Metrics::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void Metrics::Clear() {
-// @@protoc_insertion_point(message_clear_start:billing.v1alpha1.Metrics)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  metric_id_.ClearToEmpty();
-  organization_id_.ClearToEmpty();
-  ::memset(&cpu_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&storage_) -
-      reinterpret_cast<char*>(&cpu_)) + sizeof(storage_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* Metrics::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string metric_id = 1 [json_name = "metricId"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_metric_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "billing.v1alpha1.Metrics.metric_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string organization_id = 2 [json_name = "organizationId"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_organization_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "billing.v1alpha1.Metrics.organization_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // int64 cpu = 3 [json_name = "cpu"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          cpu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // int64 ram = 4 [json_name = "ram"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          ram_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // int64 storage = 5 [json_name = "storage"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          storage_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* Metrics::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:billing.v1alpha1.Metrics)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string metric_id = 1 [json_name = "metricId"];
-  if (!this->_internal_metric_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_metric_id().data(), static_cast<int>(this->_internal_metric_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "billing.v1alpha1.Metrics.metric_id");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_metric_id(), target);
-  }
-
-  // string organization_id = 2 [json_name = "organizationId"];
-  if (!this->_internal_organization_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "billing.v1alpha1.Metrics.organization_id");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_organization_id(), target);
-  }
-
-  // int64 cpu = 3 [json_name = "cpu"];
-  if (this->_internal_cpu() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_cpu(), target);
-  }
-
-  // int64 ram = 4 [json_name = "ram"];
-  if (this->_internal_ram() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_ram(), target);
-  }
-
-  // int64 storage = 5 [json_name = "storage"];
-  if (this->_internal_storage() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_storage(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:billing.v1alpha1.Metrics)
-  return target;
-}
-
-size_t Metrics::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:billing.v1alpha1.Metrics)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string metric_id = 1 [json_name = "metricId"];
-  if (!this->_internal_metric_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_metric_id());
-  }
-
-  // string organization_id = 2 [json_name = "organizationId"];
-  if (!this->_internal_organization_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_organization_id());
-  }
-
-  // int64 cpu = 3 [json_name = "cpu"];
-  if (this->_internal_cpu() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_cpu());
-  }
-
-  // int64 ram = 4 [json_name = "ram"];
-  if (this->_internal_ram() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_ram());
-  }
-
-  // int64 storage = 5 [json_name = "storage"];
-  if (this->_internal_storage() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_storage());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Metrics::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Metrics::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Metrics::GetClassData() const { return &_class_data_; }
-
-void Metrics::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<Metrics *>(to)->MergeFrom(
-      static_cast<const Metrics &>(from));
-}
-
-
-void Metrics::MergeFrom(const Metrics& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:billing.v1alpha1.Metrics)
-  GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_metric_id().empty()) {
-    _internal_set_metric_id(from._internal_metric_id());
-  }
-  if (!from._internal_organization_id().empty()) {
-    _internal_set_organization_id(from._internal_organization_id());
-  }
-  if (from._internal_cpu() != 0) {
-    _internal_set_cpu(from._internal_cpu());
-  }
-  if (from._internal_ram() != 0) {
-    _internal_set_ram(from._internal_ram());
-  }
-  if (from._internal_storage() != 0) {
-    _internal_set_storage(from._internal_storage());
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void Metrics::CopyFrom(const Metrics& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:billing.v1alpha1.Metrics)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Metrics::IsInitialized() const {
-  return true;
-}
-
-void Metrics::InternalSwap(Metrics* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &metric_id_, GetArenaForAllocation(),
-      &other->metric_id_, other->GetArenaForAllocation()
-  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &organization_id_, GetArenaForAllocation(),
       &other->organization_id_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Metrics, storage_)
-      + sizeof(Metrics::storage_)
-      - PROTOBUF_FIELD_OFFSET(Metrics, cpu_)>(
-          reinterpret_cast<char*>(&cpu_),
-          reinterpret_cast<char*>(&other->cpu_));
+      PROTOBUF_FIELD_OFFSET(Billing, total_to_pay_)
+      + sizeof(Billing::total_to_pay_)
+      - PROTOBUF_FIELD_OFFSET(Billing, cpu_metric_)>(
+          reinterpret_cast<char*>(&cpu_metric_),
+          reinterpret_cast<char*>(&other->cpu_metric_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Metrics::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Billing::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_billing_2fv1alpha1_2fbilling_2eproto_getter, &descriptor_table_billing_2fv1alpha1_2fbilling_2eproto_once,
-      file_level_metadata_billing_2fv1alpha1_2fbilling_2eproto[2]);
+      file_level_metadata_billing_2fv1alpha1_2fbilling_2eproto[0]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace billing
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::billing::v1alpha1::Organization* Arena::CreateMaybeMessage< ::billing::v1alpha1::Organization >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::billing::v1alpha1::Organization >(arena);
-}
-template<> PROTOBUF_NOINLINE ::billing::v1alpha1::Application* Arena::CreateMaybeMessage< ::billing::v1alpha1::Application >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::billing::v1alpha1::Application >(arena);
-}
-template<> PROTOBUF_NOINLINE ::billing::v1alpha1::Metrics* Arena::CreateMaybeMessage< ::billing::v1alpha1::Metrics >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::billing::v1alpha1::Metrics >(arena);
+template<> PROTOBUF_NOINLINE ::billing::v1alpha1::Billing* Arena::CreateMaybeMessage< ::billing::v1alpha1::Billing >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::billing::v1alpha1::Billing >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
