@@ -4,23 +4,14 @@ package billing.v1alpha1;
 
 option go_package = "github.com/cuemby/ccp-billing-service/billingv1alpha1";
 
-message Organization{
+
+message Billing{
   string organization_id = 1;
-  string organization_name = 2;
-  }
-
-message Application{
-  string application_id = 1;
-  string organization_id = 2;
-  string name = 3;
-  string country = 4;
-  string about = 5;
-}
-
-message Metrics{
-  string metric_id = 1;
-  string organization_id = 2;
-  int64 cpu = 3;
-  int64 ram = 4;
-  int64 storage = 5;
+  double cpu_metric = 2;
+  double cpu_bill = 3;
+  double ram_metric = 4;
+  double ram_bill = 5;
+  double storage_metric = 6;
+  double storage_bill = 7;
+  double total_to_pay = 8;
 }

@@ -20,16 +20,16 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type CreateOrganizationRequest struct {
+type ReadBillingRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Organization *Organization `protobuf:"bytes,1,opt,name=organization,proto3" json:"organization,omitempty"`
+	OrganizationId string `protobuf:"bytes,1,opt,name=organization_id,json=organizationId,proto3" json:"organization_id,omitempty"`
 }
 
-func (x *CreateOrganizationRequest) Reset() {
-	*x = CreateOrganizationRequest{}
+func (x *ReadBillingRequest) Reset() {
+	*x = ReadBillingRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -37,13 +37,13 @@ func (x *CreateOrganizationRequest) Reset() {
 	}
 }
 
-func (x *CreateOrganizationRequest) String() string {
+func (x *ReadBillingRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateOrganizationRequest) ProtoMessage() {}
+func (*ReadBillingRequest) ProtoMessage() {}
 
-func (x *CreateOrganizationRequest) ProtoReflect() protoreflect.Message {
+func (x *ReadBillingRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -55,29 +55,28 @@ func (x *CreateOrganizationRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateOrganizationRequest.ProtoReflect.Descriptor instead.
-func (*CreateOrganizationRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ReadBillingRequest.ProtoReflect.Descriptor instead.
+func (*ReadBillingRequest) Descriptor() ([]byte, []int) {
 	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *CreateOrganizationRequest) GetOrganization() *Organization {
+func (x *ReadBillingRequest) GetOrganizationId() string {
 	if x != nil {
-		return x.Organization
+		return x.OrganizationId
 	}
-	return nil
+	return ""
 }
 
-type CreateOrganizationResponse struct {
+type ReadBillingResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	OrganizationId string `protobuf:"bytes,1,opt,name=organization_id,json=organizationId,proto3" json:"organization_id,omitempty"`
-	Status         string `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	Billing *Billing `protobuf:"bytes,1,opt,name=billing,proto3" json:"billing,omitempty"`
 }
 
-func (x *CreateOrganizationResponse) Reset() {
-	*x = CreateOrganizationResponse{}
+func (x *ReadBillingResponse) Reset() {
+	*x = ReadBillingResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -85,13 +84,13 @@ func (x *CreateOrganizationResponse) Reset() {
 	}
 }
 
-func (x *CreateOrganizationResponse) String() string {
+func (x *ReadBillingResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateOrganizationResponse) ProtoMessage() {}
+func (*ReadBillingResponse) ProtoMessage() {}
 
-func (x *CreateOrganizationResponse) ProtoReflect() protoreflect.Message {
+func (x *ReadBillingResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -103,815 +102,16 @@ func (x *CreateOrganizationResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateOrganizationResponse.ProtoReflect.Descriptor instead.
-func (*CreateOrganizationResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ReadBillingResponse.ProtoReflect.Descriptor instead.
+func (*ReadBillingResponse) Descriptor() ([]byte, []int) {
 	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CreateOrganizationResponse) GetOrganizationId() string {
+func (x *ReadBillingResponse) GetBilling() *Billing {
 	if x != nil {
-		return x.OrganizationId
-	}
-	return ""
-}
-
-func (x *CreateOrganizationResponse) GetStatus() string {
-	if x != nil {
-		return x.Status
-	}
-	return ""
-}
-
-type GetOrganizationRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	OrganizationId string `protobuf:"bytes,1,opt,name=organization_id,json=organizationId,proto3" json:"organization_id,omitempty"`
-}
-
-func (x *GetOrganizationRequest) Reset() {
-	*x = GetOrganizationRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetOrganizationRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetOrganizationRequest) ProtoMessage() {}
-
-func (x *GetOrganizationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetOrganizationRequest.ProtoReflect.Descriptor instead.
-func (*GetOrganizationRequest) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *GetOrganizationRequest) GetOrganizationId() string {
-	if x != nil {
-		return x.OrganizationId
-	}
-	return ""
-}
-
-type GetOrganizationResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Organization *Organization `protobuf:"bytes,1,opt,name=organization,proto3" json:"organization,omitempty"`
-}
-
-func (x *GetOrganizationResponse) Reset() {
-	*x = GetOrganizationResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetOrganizationResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetOrganizationResponse) ProtoMessage() {}
-
-func (x *GetOrganizationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetOrganizationResponse.ProtoReflect.Descriptor instead.
-func (*GetOrganizationResponse) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *GetOrganizationResponse) GetOrganization() *Organization {
-	if x != nil {
-		return x.Organization
+		return x.Billing
 	}
 	return nil
-}
-
-type UpdateOrganizationRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	OrganizationId string `protobuf:"bytes,1,opt,name=organization_id,json=organizationId,proto3" json:"organization_id,omitempty"`
-}
-
-func (x *UpdateOrganizationRequest) Reset() {
-	*x = UpdateOrganizationRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UpdateOrganizationRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateOrganizationRequest) ProtoMessage() {}
-
-func (x *UpdateOrganizationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateOrganizationRequest.ProtoReflect.Descriptor instead.
-func (*UpdateOrganizationRequest) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *UpdateOrganizationRequest) GetOrganizationId() string {
-	if x != nil {
-		return x.OrganizationId
-	}
-	return ""
-}
-
-type UpdateOrganizationResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	BillingId string `protobuf:"bytes,1,opt,name=billing_id,json=billingId,proto3" json:"billing_id,omitempty"`
-	Status    string `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
-}
-
-func (x *UpdateOrganizationResponse) Reset() {
-	*x = UpdateOrganizationResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UpdateOrganizationResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateOrganizationResponse) ProtoMessage() {}
-
-func (x *UpdateOrganizationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateOrganizationResponse.ProtoReflect.Descriptor instead.
-func (*UpdateOrganizationResponse) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *UpdateOrganizationResponse) GetBillingId() string {
-	if x != nil {
-		return x.BillingId
-	}
-	return ""
-}
-
-func (x *UpdateOrganizationResponse) GetStatus() string {
-	if x != nil {
-		return x.Status
-	}
-	return ""
-}
-
-type CreateApplicationRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Application *Application `protobuf:"bytes,1,opt,name=application,proto3" json:"application,omitempty"`
-}
-
-func (x *CreateApplicationRequest) Reset() {
-	*x = CreateApplicationRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateApplicationRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateApplicationRequest) ProtoMessage() {}
-
-func (x *CreateApplicationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateApplicationRequest.ProtoReflect.Descriptor instead.
-func (*CreateApplicationRequest) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *CreateApplicationRequest) GetApplication() *Application {
-	if x != nil {
-		return x.Application
-	}
-	return nil
-}
-
-type CreateApplicationResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
-	Status        string `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
-}
-
-func (x *CreateApplicationResponse) Reset() {
-	*x = CreateApplicationResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[7]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateApplicationResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateApplicationResponse) ProtoMessage() {}
-
-func (x *CreateApplicationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[7]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateApplicationResponse.ProtoReflect.Descriptor instead.
-func (*CreateApplicationResponse) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{7}
-}
-
-func (x *CreateApplicationResponse) GetApplicationId() string {
-	if x != nil {
-		return x.ApplicationId
-	}
-	return ""
-}
-
-func (x *CreateApplicationResponse) GetStatus() string {
-	if x != nil {
-		return x.Status
-	}
-	return ""
-}
-
-type GetApplicationRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
-}
-
-func (x *GetApplicationRequest) Reset() {
-	*x = GetApplicationRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[8]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetApplicationRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetApplicationRequest) ProtoMessage() {}
-
-func (x *GetApplicationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[8]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetApplicationRequest.ProtoReflect.Descriptor instead.
-func (*GetApplicationRequest) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{8}
-}
-
-func (x *GetApplicationRequest) GetApplicationId() string {
-	if x != nil {
-		return x.ApplicationId
-	}
-	return ""
-}
-
-type GetApplicationResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Application *Application `protobuf:"bytes,1,opt,name=application,proto3" json:"application,omitempty"`
-}
-
-func (x *GetApplicationResponse) Reset() {
-	*x = GetApplicationResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[9]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetApplicationResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetApplicationResponse) ProtoMessage() {}
-
-func (x *GetApplicationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[9]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetApplicationResponse.ProtoReflect.Descriptor instead.
-func (*GetApplicationResponse) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{9}
-}
-
-func (x *GetApplicationResponse) GetApplication() *Application {
-	if x != nil {
-		return x.Application
-	}
-	return nil
-}
-
-type UpdateApplicationRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
-}
-
-func (x *UpdateApplicationRequest) Reset() {
-	*x = UpdateApplicationRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[10]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UpdateApplicationRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateApplicationRequest) ProtoMessage() {}
-
-func (x *UpdateApplicationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[10]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateApplicationRequest.ProtoReflect.Descriptor instead.
-func (*UpdateApplicationRequest) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{10}
-}
-
-func (x *UpdateApplicationRequest) GetApplicationId() string {
-	if x != nil {
-		return x.ApplicationId
-	}
-	return ""
-}
-
-type UpdateApplicationResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
-	Status        string `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
-}
-
-func (x *UpdateApplicationResponse) Reset() {
-	*x = UpdateApplicationResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[11]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UpdateApplicationResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateApplicationResponse) ProtoMessage() {}
-
-func (x *UpdateApplicationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[11]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateApplicationResponse.ProtoReflect.Descriptor instead.
-func (*UpdateApplicationResponse) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{11}
-}
-
-func (x *UpdateApplicationResponse) GetApplicationId() string {
-	if x != nil {
-		return x.ApplicationId
-	}
-	return ""
-}
-
-func (x *UpdateApplicationResponse) GetStatus() string {
-	if x != nil {
-		return x.Status
-	}
-	return ""
-}
-
-type CreateMetricRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Metric *Metrics `protobuf:"bytes,1,opt,name=metric,proto3" json:"metric,omitempty"`
-}
-
-func (x *CreateMetricRequest) Reset() {
-	*x = CreateMetricRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[12]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateMetricRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateMetricRequest) ProtoMessage() {}
-
-func (x *CreateMetricRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[12]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateMetricRequest.ProtoReflect.Descriptor instead.
-func (*CreateMetricRequest) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{12}
-}
-
-func (x *CreateMetricRequest) GetMetric() *Metrics {
-	if x != nil {
-		return x.Metric
-	}
-	return nil
-}
-
-type CreateMetricResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	MetricId string `protobuf:"bytes,1,opt,name=metric_id,json=metricId,proto3" json:"metric_id,omitempty"`
-	Status   string `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
-}
-
-func (x *CreateMetricResponse) Reset() {
-	*x = CreateMetricResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[13]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *CreateMetricResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateMetricResponse) ProtoMessage() {}
-
-func (x *CreateMetricResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[13]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateMetricResponse.ProtoReflect.Descriptor instead.
-func (*CreateMetricResponse) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{13}
-}
-
-func (x *CreateMetricResponse) GetMetricId() string {
-	if x != nil {
-		return x.MetricId
-	}
-	return ""
-}
-
-func (x *CreateMetricResponse) GetStatus() string {
-	if x != nil {
-		return x.Status
-	}
-	return ""
-}
-
-type GetMetricRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	MetricId string `protobuf:"bytes,1,opt,name=metric_id,json=metricId,proto3" json:"metric_id,omitempty"`
-}
-
-func (x *GetMetricRequest) Reset() {
-	*x = GetMetricRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[14]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetMetricRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetMetricRequest) ProtoMessage() {}
-
-func (x *GetMetricRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[14]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetMetricRequest.ProtoReflect.Descriptor instead.
-func (*GetMetricRequest) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{14}
-}
-
-func (x *GetMetricRequest) GetMetricId() string {
-	if x != nil {
-		return x.MetricId
-	}
-	return ""
-}
-
-type GetMetricResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Metric *Metrics `protobuf:"bytes,1,opt,name=metric,proto3" json:"metric,omitempty"`
-}
-
-func (x *GetMetricResponse) Reset() {
-	*x = GetMetricResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[15]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetMetricResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetMetricResponse) ProtoMessage() {}
-
-func (x *GetMetricResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[15]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetMetricResponse.ProtoReflect.Descriptor instead.
-func (*GetMetricResponse) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{15}
-}
-
-func (x *GetMetricResponse) GetMetric() *Metrics {
-	if x != nil {
-		return x.Metric
-	}
-	return nil
-}
-
-type UpdateMetricRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	MetricId string `protobuf:"bytes,1,opt,name=metric_id,json=metricId,proto3" json:"metric_id,omitempty"`
-}
-
-func (x *UpdateMetricRequest) Reset() {
-	*x = UpdateMetricRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[16]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UpdateMetricRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateMetricRequest) ProtoMessage() {}
-
-func (x *UpdateMetricRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[16]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateMetricRequest.ProtoReflect.Descriptor instead.
-func (*UpdateMetricRequest) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{16}
-}
-
-func (x *UpdateMetricRequest) GetMetricId() string {
-	if x != nil {
-		return x.MetricId
-	}
-	return ""
-}
-
-type UpdateMetricResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	MetricId string `protobuf:"bytes,1,opt,name=metric_id,json=metricId,proto3" json:"metric_id,omitempty"`
-	Status   string `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
-}
-
-func (x *UpdateMetricResponse) Reset() {
-	*x = UpdateMetricResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[17]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UpdateMetricResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateMetricResponse) ProtoMessage() {}
-
-func (x *UpdateMetricResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_billing_v1alpha1_billing_api_proto_msgTypes[17]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateMetricResponse.ProtoReflect.Descriptor instead.
-func (*UpdateMetricResponse) Descriptor() ([]byte, []int) {
-	return file_billing_v1alpha1_billing_api_proto_rawDescGZIP(), []int{17}
-}
-
-func (x *UpdateMetricResponse) GetMetricId() string {
-	if x != nil {
-		return x.MetricId
-	}
-	return ""
-}
-
-func (x *UpdateMetricResponse) GetStatus() string {
-	if x != nil {
-		return x.Status
-	}
-	return ""
 }
 
 var File_billing_v1alpha1_billing_api_proto protoreflect.FileDescriptor
@@ -922,159 +122,27 @@ var file_billing_v1alpha1_billing_api_proto_rawDesc = []byte{
 	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x10, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31,
 	0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x1a, 0x1e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2f,
 	0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x5f, 0x0a, 0x19, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x42, 0x0a, 0x0c, 0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x62, 0x69, 0x6c, 0x6c,
-	0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4f, 0x72, 0x67,
-	0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0c, 0x6f, 0x72, 0x67, 0x61, 0x6e,
-	0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x5d, 0x0a, 0x1a, 0x43, 0x72, 0x65, 0x61, 0x74,
-	0x65, 0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x27, 0x0a, 0x0f, 0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e,
-	0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x12, 0x16,
-	0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
-	0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x22, 0x41, 0x0a, 0x16, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x67,
-	0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x12, 0x27, 0x0a, 0x0f, 0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x6f, 0x72, 0x67, 0x61, 0x6e,
-	0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x5d, 0x0a, 0x17, 0x47, 0x65, 0x74,
-	0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x42, 0x0a, 0x0c, 0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x62, 0x69, 0x6c,
-	0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4f, 0x72,
-	0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0c, 0x6f, 0x72, 0x67, 0x61,
-	0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x44, 0x0a, 0x19, 0x55, 0x70, 0x64, 0x61,
-	0x74, 0x65, 0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x27, 0x0a, 0x0f, 0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e,
-	0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x53,
-	0x0a, 0x1a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1d, 0x0a, 0x0a,
-	0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x09, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x73,
-	0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x74, 0x61,
-	0x74, 0x75, 0x73, 0x22, 0x5b, 0x0a, 0x18, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70,
-	0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
-	0x3f, 0x0a, 0x0b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76,
-	0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x22, 0x5a, 0x0a, 0x19, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x25, 0x0a,
-	0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x22, 0x3e, 0x0a, 0x15,
-	0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61,
-	0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x59, 0x0a, 0x16,
-	0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3f, 0x0a, 0x0b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x62, 0x69,
-	0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x41,
-	0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x61, 0x70, 0x70, 0x6c,
-	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x41, 0x0a, 0x18, 0x55, 0x70, 0x64, 0x61, 0x74,
-	0x65, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70,
-	0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x5a, 0x0a, 0x19, 0x55, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69,
-	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x12, 0x16,
-	0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
-	0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x22, 0x48, 0x0a, 0x13, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x31, 0x0a,
-	0x06, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x3d, 0x0a, 0x12, 0x52, 0x65, 0x61, 0x64, 0x42, 0x69,
+	0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x27, 0x0a, 0x0f,
+	0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x4a, 0x0a, 0x13, 0x52, 0x65, 0x61, 0x64, 0x42, 0x69, 0x6c,
+	0x6c, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x33, 0x0a, 0x07,
+	0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e,
 	0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31,
-	0x2e, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x73, 0x52, 0x06, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63,
-	0x22, 0x4b, 0x0a, 0x14, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1b, 0x0a, 0x09, 0x6d, 0x65, 0x74, 0x72,
-	0x69, 0x63, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6d, 0x65, 0x74,
-	0x72, 0x69, 0x63, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x22, 0x2f, 0x0a,
-	0x10, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x1b, 0x0a, 0x09, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x5f, 0x69, 0x64, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x49, 0x64, 0x22, 0x46,
-	0x0a, 0x11, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x12, 0x31, 0x0a, 0x06, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31,
-	0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x73, 0x52, 0x06,
-	0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x22, 0x32, 0x0a, 0x13, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
-	0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1b, 0x0a,
-	0x09, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x08, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x49, 0x64, 0x22, 0x4b, 0x0a, 0x14, 0x55, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x12, 0x1b, 0x0a, 0x09, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x5f, 0x69, 0x64, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x49, 0x64, 0x12,
-	0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x32, 0xc1, 0x07, 0x0a, 0x0e, 0x42, 0x69, 0x6c, 0x6c,
-	0x69, 0x6e, 0x67, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x71, 0x0a, 0x12, 0x43, 0x72,
-	0x65, 0x61, 0x74, 0x65, 0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x12, 0x2b, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70,
-	0x68, 0x61, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69,
-	0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e,
-	0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31,
-	0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x68, 0x0a,
-	0x0f, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x12, 0x28, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70,
-	0x68, 0x61, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x29, 0x2e, 0x62, 0x69, 0x6c,
-	0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x47, 0x65,
-	0x74, 0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x71, 0x0a, 0x12, 0x55, 0x70, 0x64, 0x61, 0x74,
-	0x65, 0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2b, 0x2e,
-	0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31,
-	0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x62, 0x69, 0x6c,
-	0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x55, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6e, 0x0a, 0x11, 0x43, 0x72,
-	0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12,
-	0x2a, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68,
-	0x61, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x62, 0x69,
-	0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x43,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x65, 0x0a, 0x0e, 0x47, 0x65,
-	0x74, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x27, 0x2e, 0x62,
-	0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e,
-	0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e,
-	0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70, 0x70, 0x6c,
-	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x12, 0x6e, 0x0a, 0x11, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x6c, 0x69,
-	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2a, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67,
-	0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
-	0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x2b, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61,
-	0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x6c,
-	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x12, 0x5f, 0x0a, 0x0c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x72, 0x69,
-	0x63, 0x12, 0x25, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c,
-	0x70, 0x68, 0x61, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x72, 0x69,
-	0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x26, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69,
-	0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x12, 0x56, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x12,
-	0x22, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68,
-	0x61, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x23, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31,
-	0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x5f, 0x0a, 0x0c, 0x55, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x12, 0x25, 0x2e, 0x62, 0x69, 0x6c,
-	0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x55, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x26, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c,
-	0x70, 0x68, 0x61, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x72, 0x69,
-	0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x37, 0x5a, 0x35, 0x67,
-	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79,
-	0x2f, 0x63, 0x63, 0x70, 0x2d, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2d, 0x73, 0x65, 0x72,
-	0x76, 0x69, 0x63, 0x65, 0x2f, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x76, 0x31, 0x61, 0x6c,
-	0x70, 0x68, 0x61, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x2e, 0x42, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x52, 0x07, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
+	0x67, 0x32, 0x6e, 0x0a, 0x0e, 0x42, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x53, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x12, 0x5c, 0x0a, 0x0b, 0x52, 0x65, 0x61, 0x64, 0x42, 0x69, 0x6c, 0x6c, 0x69,
+	0x6e, 0x67, 0x12, 0x24, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61,
+	0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x52, 0x65, 0x61, 0x64, 0x42, 0x69, 0x6c, 0x6c, 0x69, 0x6e,
+	0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x25, 0x2e, 0x62, 0x69, 0x6c, 0x6c, 0x69,
+	0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x52, 0x65, 0x61, 0x64,
+	0x42, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x42, 0x37, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
+	0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2f, 0x63, 0x63, 0x70, 0x2d, 0x62, 0x69, 0x6c, 0x6c, 0x69,
+	0x6e, 0x67, 0x2d, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x62, 0x69, 0x6c, 0x6c, 0x69,
+	0x6e, 0x67, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -1089,60 +157,21 @@ func file_billing_v1alpha1_billing_api_proto_rawDescGZIP() []byte {
 	return file_billing_v1alpha1_billing_api_proto_rawDescData
 }
 
-var file_billing_v1alpha1_billing_api_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
+var file_billing_v1alpha1_billing_api_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_billing_v1alpha1_billing_api_proto_goTypes = []interface{}{
-	(*CreateOrganizationRequest)(nil),  // 0: billing.v1alpha1.CreateOrganizationRequest
-	(*CreateOrganizationResponse)(nil), // 1: billing.v1alpha1.CreateOrganizationResponse
-	(*GetOrganizationRequest)(nil),     // 2: billing.v1alpha1.GetOrganizationRequest
-	(*GetOrganizationResponse)(nil),    // 3: billing.v1alpha1.GetOrganizationResponse
-	(*UpdateOrganizationRequest)(nil),  // 4: billing.v1alpha1.UpdateOrganizationRequest
-	(*UpdateOrganizationResponse)(nil), // 5: billing.v1alpha1.UpdateOrganizationResponse
-	(*CreateApplicationRequest)(nil),   // 6: billing.v1alpha1.CreateApplicationRequest
-	(*CreateApplicationResponse)(nil),  // 7: billing.v1alpha1.CreateApplicationResponse
-	(*GetApplicationRequest)(nil),      // 8: billing.v1alpha1.GetApplicationRequest
-	(*GetApplicationResponse)(nil),     // 9: billing.v1alpha1.GetApplicationResponse
-	(*UpdateApplicationRequest)(nil),   // 10: billing.v1alpha1.UpdateApplicationRequest
-	(*UpdateApplicationResponse)(nil),  // 11: billing.v1alpha1.UpdateApplicationResponse
-	(*CreateMetricRequest)(nil),        // 12: billing.v1alpha1.CreateMetricRequest
-	(*CreateMetricResponse)(nil),       // 13: billing.v1alpha1.CreateMetricResponse
-	(*GetMetricRequest)(nil),           // 14: billing.v1alpha1.GetMetricRequest
-	(*GetMetricResponse)(nil),          // 15: billing.v1alpha1.GetMetricResponse
-	(*UpdateMetricRequest)(nil),        // 16: billing.v1alpha1.UpdateMetricRequest
-	(*UpdateMetricResponse)(nil),       // 17: billing.v1alpha1.UpdateMetricResponse
-	(*Organization)(nil),               // 18: billing.v1alpha1.Organization
-	(*Application)(nil),                // 19: billing.v1alpha1.Application
-	(*Metrics)(nil),                    // 20: billing.v1alpha1.Metrics
+	(*ReadBillingRequest)(nil),  // 0: billing.v1alpha1.ReadBillingRequest
+	(*ReadBillingResponse)(nil), // 1: billing.v1alpha1.ReadBillingResponse
+	(*Billing)(nil),             // 2: billing.v1alpha1.Billing
 }
 var file_billing_v1alpha1_billing_api_proto_depIdxs = []int32{
-	18, // 0: billing.v1alpha1.CreateOrganizationRequest.organization:type_name -> billing.v1alpha1.Organization
-	18, // 1: billing.v1alpha1.GetOrganizationResponse.organization:type_name -> billing.v1alpha1.Organization
-	19, // 2: billing.v1alpha1.CreateApplicationRequest.application:type_name -> billing.v1alpha1.Application
-	19, // 3: billing.v1alpha1.GetApplicationResponse.application:type_name -> billing.v1alpha1.Application
-	20, // 4: billing.v1alpha1.CreateMetricRequest.metric:type_name -> billing.v1alpha1.Metrics
-	20, // 5: billing.v1alpha1.GetMetricResponse.metric:type_name -> billing.v1alpha1.Metrics
-	0,  // 6: billing.v1alpha1.BillingService.CreateOrganization:input_type -> billing.v1alpha1.CreateOrganizationRequest
-	2,  // 7: billing.v1alpha1.BillingService.GetOrganization:input_type -> billing.v1alpha1.GetOrganizationRequest
-	4,  // 8: billing.v1alpha1.BillingService.UpdateOrganization:input_type -> billing.v1alpha1.UpdateOrganizationRequest
-	6,  // 9: billing.v1alpha1.BillingService.CreateApplication:input_type -> billing.v1alpha1.CreateApplicationRequest
-	8,  // 10: billing.v1alpha1.BillingService.GetApplication:input_type -> billing.v1alpha1.GetApplicationRequest
-	10, // 11: billing.v1alpha1.BillingService.UpdateApplication:input_type -> billing.v1alpha1.UpdateApplicationRequest
-	12, // 12: billing.v1alpha1.BillingService.CreateMetric:input_type -> billing.v1alpha1.CreateMetricRequest
-	14, // 13: billing.v1alpha1.BillingService.GetMetric:input_type -> billing.v1alpha1.GetMetricRequest
-	16, // 14: billing.v1alpha1.BillingService.UpdateMetric:input_type -> billing.v1alpha1.UpdateMetricRequest
-	1,  // 15: billing.v1alpha1.BillingService.CreateOrganization:output_type -> billing.v1alpha1.CreateOrganizationResponse
-	3,  // 16: billing.v1alpha1.BillingService.GetOrganization:output_type -> billing.v1alpha1.GetOrganizationResponse
-	5,  // 17: billing.v1alpha1.BillingService.UpdateOrganization:output_type -> billing.v1alpha1.UpdateOrganizationResponse
-	7,  // 18: billing.v1alpha1.BillingService.CreateApplication:output_type -> billing.v1alpha1.CreateApplicationResponse
-	9,  // 19: billing.v1alpha1.BillingService.GetApplication:output_type -> billing.v1alpha1.GetApplicationResponse
-	11, // 20: billing.v1alpha1.BillingService.UpdateApplication:output_type -> billing.v1alpha1.UpdateApplicationResponse
-	13, // 21: billing.v1alpha1.BillingService.CreateMetric:output_type -> billing.v1alpha1.CreateMetricResponse
-	15, // 22: billing.v1alpha1.BillingService.GetMetric:output_type -> billing.v1alpha1.GetMetricResponse
-	17, // 23: billing.v1alpha1.BillingService.UpdateMetric:output_type -> billing.v1alpha1.UpdateMetricResponse
-	15, // [15:24] is the sub-list for method output_type
-	6,  // [6:15] is the sub-list for method input_type
-	6,  // [6:6] is the sub-list for extension type_name
-	6,  // [6:6] is the sub-list for extension extendee
-	0,  // [0:6] is the sub-list for field type_name
+	2, // 0: billing.v1alpha1.ReadBillingResponse.billing:type_name -> billing.v1alpha1.Billing
+	0, // 1: billing.v1alpha1.BillingService.ReadBilling:input_type -> billing.v1alpha1.ReadBillingRequest
+	1, // 2: billing.v1alpha1.BillingService.ReadBilling:output_type -> billing.v1alpha1.ReadBillingResponse
+	2, // [2:3] is the sub-list for method output_type
+	1, // [1:2] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_billing_v1alpha1_billing_api_proto_init() }
@@ -1153,7 +182,7 @@ func file_billing_v1alpha1_billing_api_proto_init() {
 	file_billing_v1alpha1_billing_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_billing_v1alpha1_billing_api_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateOrganizationRequest); i {
+			switch v := v.(*ReadBillingRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1165,199 +194,7 @@ func file_billing_v1alpha1_billing_api_proto_init() {
 			}
 		}
 		file_billing_v1alpha1_billing_api_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateOrganizationResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetOrganizationRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetOrganizationResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateOrganizationRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateOrganizationResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateApplicationRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateApplicationResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetApplicationRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetApplicationResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateApplicationRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateApplicationResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateMetricRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateMetricResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMetricRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMetricResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateMetricRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_billing_v1alpha1_billing_api_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateMetricResponse); i {
+			switch v := v.(*ReadBillingResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1375,7 +212,7 @@ func file_billing_v1alpha1_billing_api_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_billing_v1alpha1_billing_api_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   18,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

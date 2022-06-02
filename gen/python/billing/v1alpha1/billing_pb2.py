@@ -19,34 +19,76 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z5github.com/cuemby/ccp-billing-service/billingv1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1e\x62illing/v1alpha1/billing.proto\x12\x10\x62illing.v1alpha1\"d\n\x0cOrganization\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12+\n\x11organization_name\x18\x02 \x01(\tR\x10organizationName\"\xa1\x01\n\x0b\x41pplication\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x18\n\x07\x63ountry\x18\x04 \x01(\tR\x07\x63ountry\x12\x14\n\x05\x61\x62out\x18\x05 \x01(\tR\x05\x61\x62out\"\x8d\x01\n\x07Metrics\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\x12\x10\n\x03\x63pu\x18\x03 \x01(\x03R\x03\x63pu\x12\x10\n\x03ram\x18\x04 \x01(\x03R\x03ram\x12\x18\n\x07storage\x18\x05 \x01(\x03R\x07storageB7Z5github.com/cuemby/ccp-billing-service/billingv1alpha1b\x06proto3'
+  serialized_pb=b'\n\x1e\x62illing/v1alpha1/billing.proto\x12\x10\x62illing.v1alpha1\"\x92\x02\n\x07\x42illing\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\ncpu_metric\x18\x02 \x01(\x01R\tcpuMetric\x12\x19\n\x08\x63pu_bill\x18\x03 \x01(\x01R\x07\x63puBill\x12\x1d\n\nram_metric\x18\x04 \x01(\x01R\tramMetric\x12\x19\n\x08ram_bill\x18\x05 \x01(\x01R\x07ramBill\x12%\n\x0estorage_metric\x18\x06 \x01(\x01R\rstorageMetric\x12!\n\x0cstorage_bill\x18\x07 \x01(\x01R\x0bstorageBill\x12 \n\x0ctotal_to_pay\x18\x08 \x01(\x01R\ntotalToPayB7Z5github.com/cuemby/ccp-billing-service/billingv1alpha1b\x06proto3'
 )
 
 
 
 
-_ORGANIZATION = _descriptor.Descriptor(
-  name='Organization',
-  full_name='billing.v1alpha1.Organization',
+_BILLING = _descriptor.Descriptor(
+  name='Billing',
+  full_name='billing.v1alpha1.Billing',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='organization_id', full_name='billing.v1alpha1.Organization.organization_id', index=0,
+      name='organization_id', full_name='billing.v1alpha1.Billing.organization_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='organization_name', full_name='billing.v1alpha1.Organization.organization_name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='cpu_metric', full_name='billing.v1alpha1.Billing.cpu_metric', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='cpuMetric', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cpu_bill', full_name='billing.v1alpha1.Billing.cpu_bill', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='cpuBill', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ram_metric', full_name='billing.v1alpha1.Billing.ram_metric', index=3,
+      number=4, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='ramMetric', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ram_bill', full_name='billing.v1alpha1.Billing.ram_bill', index=4,
+      number=5, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='ramBill', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='storage_metric', full_name='billing.v1alpha1.Billing.storage_metric', index=5,
+      number=6, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='storageMetric', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='storage_bill', full_name='billing.v1alpha1.Billing.storage_bill', index=6,
+      number=7, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='storageBill', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='total_to_pay', full_name='billing.v1alpha1.Billing.total_to_pay', index=7,
+      number=8, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='totalToPay', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -59,155 +101,19 @@ _ORGANIZATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=52,
-  serialized_end=152,
+  serialized_start=53,
+  serialized_end=327,
 )
 
-
-_APPLICATION = _descriptor.Descriptor(
-  name='Application',
-  full_name='billing.v1alpha1.Application',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='application_id', full_name='billing.v1alpha1.Application.application_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='organization_id', full_name='billing.v1alpha1.Application.organization_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='billing.v1alpha1.Application.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='country', full_name='billing.v1alpha1.Application.country', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='country', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='about', full_name='billing.v1alpha1.Application.about', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='about', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=155,
-  serialized_end=316,
-)
-
-
-_METRICS = _descriptor.Descriptor(
-  name='Metrics',
-  full_name='billing.v1alpha1.Metrics',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='metric_id', full_name='billing.v1alpha1.Metrics.metric_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='metricId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='organization_id', full_name='billing.v1alpha1.Metrics.organization_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cpu', full_name='billing.v1alpha1.Metrics.cpu', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='cpu', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='ram', full_name='billing.v1alpha1.Metrics.ram', index=3,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='ram', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='storage', full_name='billing.v1alpha1.Metrics.storage', index=4,
-      number=5, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='storage', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=319,
-  serialized_end=460,
-)
-
-DESCRIPTOR.message_types_by_name['Organization'] = _ORGANIZATION
-DESCRIPTOR.message_types_by_name['Application'] = _APPLICATION
-DESCRIPTOR.message_types_by_name['Metrics'] = _METRICS
+DESCRIPTOR.message_types_by_name['Billing'] = _BILLING
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Organization = _reflection.GeneratedProtocolMessageType('Organization', (_message.Message,), {
-  'DESCRIPTOR' : _ORGANIZATION,
+Billing = _reflection.GeneratedProtocolMessageType('Billing', (_message.Message,), {
+  'DESCRIPTOR' : _BILLING,
   '__module__' : 'billing.v1alpha1.billing_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.Organization)
+  # @@protoc_insertion_point(class_scope:billing.v1alpha1.Billing)
   })
-_sym_db.RegisterMessage(Organization)
-
-Application = _reflection.GeneratedProtocolMessageType('Application', (_message.Message,), {
-  'DESCRIPTOR' : _APPLICATION,
-  '__module__' : 'billing.v1alpha1.billing_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.Application)
-  })
-_sym_db.RegisterMessage(Application)
-
-Metrics = _reflection.GeneratedProtocolMessageType('Metrics', (_message.Message,), {
-  'DESCRIPTOR' : _METRICS,
-  '__module__' : 'billing.v1alpha1.billing_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.Metrics)
-  })
-_sym_db.RegisterMessage(Metrics)
+_sym_db.RegisterMessage(Billing)
 
 
 DESCRIPTOR._options = None

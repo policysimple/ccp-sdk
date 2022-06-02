@@ -20,28 +20,28 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z5github.com/cuemby/ccp-billing-service/billingv1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"billing/v1alpha1/billing_api.proto\x12\x10\x62illing.v1alpha1\x1a\x1e\x62illing/v1alpha1/billing.proto\"_\n\x19\x43reateOrganizationRequest\x12\x42\n\x0corganization\x18\x01 \x01(\x0b\x32\x1e.billing.v1alpha1.OrganizationR\x0corganization\"]\n\x1a\x43reateOrganizationResponse\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"A\n\x16GetOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"]\n\x17GetOrganizationResponse\x12\x42\n\x0corganization\x18\x01 \x01(\x0b\x32\x1e.billing.v1alpha1.OrganizationR\x0corganization\"D\n\x19UpdateOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"S\n\x1aUpdateOrganizationResponse\x12\x1d\n\nbilling_id\x18\x01 \x01(\tR\tbillingId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"[\n\x18\x43reateApplicationRequest\x12?\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32\x1d.billing.v1alpha1.ApplicationR\x0b\x61pplication\"Z\n\x19\x43reateApplicationResponse\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\">\n\x15GetApplicationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\"Y\n\x16GetApplicationResponse\x12?\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32\x1d.billing.v1alpha1.ApplicationR\x0b\x61pplication\"A\n\x18UpdateApplicationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\"Z\n\x19UpdateApplicationResponse\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"H\n\x13\x43reateMetricRequest\x12\x31\n\x06metric\x18\x01 \x01(\x0b\x32\x19.billing.v1alpha1.MetricsR\x06metric\"K\n\x14\x43reateMetricResponse\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"/\n\x10GetMetricRequest\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\"F\n\x11GetMetricResponse\x12\x31\n\x06metric\x18\x01 \x01(\x0b\x32\x19.billing.v1alpha1.MetricsR\x06metric\"2\n\x13UpdateMetricRequest\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\"K\n\x14UpdateMetricResponse\x12\x1b\n\tmetric_id\x18\x01 \x01(\tR\x08metricId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xc1\x07\n\x0e\x42illingService\x12q\n\x12\x43reateOrganization\x12+.billing.v1alpha1.CreateOrganizationRequest\x1a,.billing.v1alpha1.CreateOrganizationResponse\"\x00\x12h\n\x0fGetOrganization\x12(.billing.v1alpha1.GetOrganizationRequest\x1a).billing.v1alpha1.GetOrganizationResponse\"\x00\x12q\n\x12UpdateOrganization\x12+.billing.v1alpha1.UpdateOrganizationRequest\x1a,.billing.v1alpha1.UpdateOrganizationResponse\"\x00\x12n\n\x11\x43reateApplication\x12*.billing.v1alpha1.CreateApplicationRequest\x1a+.billing.v1alpha1.CreateApplicationResponse\"\x00\x12\x65\n\x0eGetApplication\x12\'.billing.v1alpha1.GetApplicationRequest\x1a(.billing.v1alpha1.GetApplicationResponse\"\x00\x12n\n\x11UpdateApplication\x12*.billing.v1alpha1.UpdateApplicationRequest\x1a+.billing.v1alpha1.UpdateApplicationResponse\"\x00\x12_\n\x0c\x43reateMetric\x12%.billing.v1alpha1.CreateMetricRequest\x1a&.billing.v1alpha1.CreateMetricResponse\"\x00\x12V\n\tGetMetric\x12\".billing.v1alpha1.GetMetricRequest\x1a#.billing.v1alpha1.GetMetricResponse\"\x00\x12_\n\x0cUpdateMetric\x12%.billing.v1alpha1.UpdateMetricRequest\x1a&.billing.v1alpha1.UpdateMetricResponse\"\x00\x42\x37Z5github.com/cuemby/ccp-billing-service/billingv1alpha1b\x06proto3'
+  serialized_pb=b'\n\"billing/v1alpha1/billing_api.proto\x12\x10\x62illing.v1alpha1\x1a\x1e\x62illing/v1alpha1/billing.proto\"=\n\x12ReadBillingRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"J\n\x13ReadBillingResponse\x12\x33\n\x07\x62illing\x18\x01 \x01(\x0b\x32\x19.billing.v1alpha1.BillingR\x07\x62illing2n\n\x0e\x42illingService\x12\\\n\x0bReadBilling\x12$.billing.v1alpha1.ReadBillingRequest\x1a%.billing.v1alpha1.ReadBillingResponse\"\x00\x42\x37Z5github.com/cuemby/ccp-billing-service/billingv1alpha1b\x06proto3'
   ,
   dependencies=[billing_dot_v1alpha1_dot_billing__pb2.DESCRIPTOR,])
 
 
 
 
-_CREATEORGANIZATIONREQUEST = _descriptor.Descriptor(
-  name='CreateOrganizationRequest',
-  full_name='billing.v1alpha1.CreateOrganizationRequest',
+_READBILLINGREQUEST = _descriptor.Descriptor(
+  name='ReadBillingRequest',
+  full_name='billing.v1alpha1.ReadBillingRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='organization', full_name='billing.v1alpha1.CreateOrganizationRequest.organization', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='organization_id', full_name='billing.v1alpha1.ReadBillingRequest.organization_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organization', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -55,96 +55,25 @@ _CREATEORGANIZATIONREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=88,
-  serialized_end=183,
+  serialized_end=149,
 )
 
 
-_CREATEORGANIZATIONRESPONSE = _descriptor.Descriptor(
-  name='CreateOrganizationResponse',
-  full_name='billing.v1alpha1.CreateOrganizationResponse',
+_READBILLINGRESPONSE = _descriptor.Descriptor(
+  name='ReadBillingResponse',
+  full_name='billing.v1alpha1.ReadBillingResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='organization_id', full_name='billing.v1alpha1.CreateOrganizationResponse.organization_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='billing.v1alpha1.CreateOrganizationResponse.status', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=185,
-  serialized_end=278,
-)
-
-
-_GETORGANIZATIONREQUEST = _descriptor.Descriptor(
-  name='GetOrganizationRequest',
-  full_name='billing.v1alpha1.GetOrganizationRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='organization_id', full_name='billing.v1alpha1.GetOrganizationRequest.organization_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=280,
-  serialized_end=345,
-)
-
-
-_GETORGANIZATIONRESPONSE = _descriptor.Descriptor(
-  name='GetOrganizationResponse',
-  full_name='billing.v1alpha1.GetOrganizationResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='organization', full_name='billing.v1alpha1.GetOrganizationResponse.organization', index=0,
+      name='billing', full_name='billing.v1alpha1.ReadBillingResponse.billing', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organization', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='billing', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -157,644 +86,28 @@ _GETORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=347,
-  serialized_end=440,
+  serialized_start=151,
+  serialized_end=225,
 )
 
-
-_UPDATEORGANIZATIONREQUEST = _descriptor.Descriptor(
-  name='UpdateOrganizationRequest',
-  full_name='billing.v1alpha1.UpdateOrganizationRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='organization_id', full_name='billing.v1alpha1.UpdateOrganizationRequest.organization_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=442,
-  serialized_end=510,
-)
-
-
-_UPDATEORGANIZATIONRESPONSE = _descriptor.Descriptor(
-  name='UpdateOrganizationResponse',
-  full_name='billing.v1alpha1.UpdateOrganizationResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='billing_id', full_name='billing.v1alpha1.UpdateOrganizationResponse.billing_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='billingId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='billing.v1alpha1.UpdateOrganizationResponse.status', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=512,
-  serialized_end=595,
-)
-
-
-_CREATEAPPLICATIONREQUEST = _descriptor.Descriptor(
-  name='CreateApplicationRequest',
-  full_name='billing.v1alpha1.CreateApplicationRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='application', full_name='billing.v1alpha1.CreateApplicationRequest.application', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='application', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=597,
-  serialized_end=688,
-)
-
-
-_CREATEAPPLICATIONRESPONSE = _descriptor.Descriptor(
-  name='CreateApplicationResponse',
-  full_name='billing.v1alpha1.CreateApplicationResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='application_id', full_name='billing.v1alpha1.CreateApplicationResponse.application_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='billing.v1alpha1.CreateApplicationResponse.status', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=690,
-  serialized_end=780,
-)
-
-
-_GETAPPLICATIONREQUEST = _descriptor.Descriptor(
-  name='GetApplicationRequest',
-  full_name='billing.v1alpha1.GetApplicationRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='application_id', full_name='billing.v1alpha1.GetApplicationRequest.application_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=782,
-  serialized_end=844,
-)
-
-
-_GETAPPLICATIONRESPONSE = _descriptor.Descriptor(
-  name='GetApplicationResponse',
-  full_name='billing.v1alpha1.GetApplicationResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='application', full_name='billing.v1alpha1.GetApplicationResponse.application', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='application', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=846,
-  serialized_end=935,
-)
-
-
-_UPDATEAPPLICATIONREQUEST = _descriptor.Descriptor(
-  name='UpdateApplicationRequest',
-  full_name='billing.v1alpha1.UpdateApplicationRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='application_id', full_name='billing.v1alpha1.UpdateApplicationRequest.application_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=937,
-  serialized_end=1002,
-)
-
-
-_UPDATEAPPLICATIONRESPONSE = _descriptor.Descriptor(
-  name='UpdateApplicationResponse',
-  full_name='billing.v1alpha1.UpdateApplicationResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='application_id', full_name='billing.v1alpha1.UpdateApplicationResponse.application_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='billing.v1alpha1.UpdateApplicationResponse.status', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1004,
-  serialized_end=1094,
-)
-
-
-_CREATEMETRICREQUEST = _descriptor.Descriptor(
-  name='CreateMetricRequest',
-  full_name='billing.v1alpha1.CreateMetricRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='metric', full_name='billing.v1alpha1.CreateMetricRequest.metric', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='metric', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1096,
-  serialized_end=1168,
-)
-
-
-_CREATEMETRICRESPONSE = _descriptor.Descriptor(
-  name='CreateMetricResponse',
-  full_name='billing.v1alpha1.CreateMetricResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='metric_id', full_name='billing.v1alpha1.CreateMetricResponse.metric_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='metricId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='billing.v1alpha1.CreateMetricResponse.status', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1170,
-  serialized_end=1245,
-)
-
-
-_GETMETRICREQUEST = _descriptor.Descriptor(
-  name='GetMetricRequest',
-  full_name='billing.v1alpha1.GetMetricRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='metric_id', full_name='billing.v1alpha1.GetMetricRequest.metric_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='metricId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1247,
-  serialized_end=1294,
-)
-
-
-_GETMETRICRESPONSE = _descriptor.Descriptor(
-  name='GetMetricResponse',
-  full_name='billing.v1alpha1.GetMetricResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='metric', full_name='billing.v1alpha1.GetMetricResponse.metric', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='metric', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1296,
-  serialized_end=1366,
-)
-
-
-_UPDATEMETRICREQUEST = _descriptor.Descriptor(
-  name='UpdateMetricRequest',
-  full_name='billing.v1alpha1.UpdateMetricRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='metric_id', full_name='billing.v1alpha1.UpdateMetricRequest.metric_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='metricId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1368,
-  serialized_end=1418,
-)
-
-
-_UPDATEMETRICRESPONSE = _descriptor.Descriptor(
-  name='UpdateMetricResponse',
-  full_name='billing.v1alpha1.UpdateMetricResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='metric_id', full_name='billing.v1alpha1.UpdateMetricResponse.metric_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='metricId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='billing.v1alpha1.UpdateMetricResponse.status', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1420,
-  serialized_end=1495,
-)
-
-_CREATEORGANIZATIONREQUEST.fields_by_name['organization'].message_type = billing_dot_v1alpha1_dot_billing__pb2._ORGANIZATION
-_GETORGANIZATIONRESPONSE.fields_by_name['organization'].message_type = billing_dot_v1alpha1_dot_billing__pb2._ORGANIZATION
-_CREATEAPPLICATIONREQUEST.fields_by_name['application'].message_type = billing_dot_v1alpha1_dot_billing__pb2._APPLICATION
-_GETAPPLICATIONRESPONSE.fields_by_name['application'].message_type = billing_dot_v1alpha1_dot_billing__pb2._APPLICATION
-_CREATEMETRICREQUEST.fields_by_name['metric'].message_type = billing_dot_v1alpha1_dot_billing__pb2._METRICS
-_GETMETRICRESPONSE.fields_by_name['metric'].message_type = billing_dot_v1alpha1_dot_billing__pb2._METRICS
-DESCRIPTOR.message_types_by_name['CreateOrganizationRequest'] = _CREATEORGANIZATIONREQUEST
-DESCRIPTOR.message_types_by_name['CreateOrganizationResponse'] = _CREATEORGANIZATIONRESPONSE
-DESCRIPTOR.message_types_by_name['GetOrganizationRequest'] = _GETORGANIZATIONREQUEST
-DESCRIPTOR.message_types_by_name['GetOrganizationResponse'] = _GETORGANIZATIONRESPONSE
-DESCRIPTOR.message_types_by_name['UpdateOrganizationRequest'] = _UPDATEORGANIZATIONREQUEST
-DESCRIPTOR.message_types_by_name['UpdateOrganizationResponse'] = _UPDATEORGANIZATIONRESPONSE
-DESCRIPTOR.message_types_by_name['CreateApplicationRequest'] = _CREATEAPPLICATIONREQUEST
-DESCRIPTOR.message_types_by_name['CreateApplicationResponse'] = _CREATEAPPLICATIONRESPONSE
-DESCRIPTOR.message_types_by_name['GetApplicationRequest'] = _GETAPPLICATIONREQUEST
-DESCRIPTOR.message_types_by_name['GetApplicationResponse'] = _GETAPPLICATIONRESPONSE
-DESCRIPTOR.message_types_by_name['UpdateApplicationRequest'] = _UPDATEAPPLICATIONREQUEST
-DESCRIPTOR.message_types_by_name['UpdateApplicationResponse'] = _UPDATEAPPLICATIONRESPONSE
-DESCRIPTOR.message_types_by_name['CreateMetricRequest'] = _CREATEMETRICREQUEST
-DESCRIPTOR.message_types_by_name['CreateMetricResponse'] = _CREATEMETRICRESPONSE
-DESCRIPTOR.message_types_by_name['GetMetricRequest'] = _GETMETRICREQUEST
-DESCRIPTOR.message_types_by_name['GetMetricResponse'] = _GETMETRICRESPONSE
-DESCRIPTOR.message_types_by_name['UpdateMetricRequest'] = _UPDATEMETRICREQUEST
-DESCRIPTOR.message_types_by_name['UpdateMetricResponse'] = _UPDATEMETRICRESPONSE
+_READBILLINGRESPONSE.fields_by_name['billing'].message_type = billing_dot_v1alpha1_dot_billing__pb2._BILLING
+DESCRIPTOR.message_types_by_name['ReadBillingRequest'] = _READBILLINGREQUEST
+DESCRIPTOR.message_types_by_name['ReadBillingResponse'] = _READBILLINGRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-CreateOrganizationRequest = _reflection.GeneratedProtocolMessageType('CreateOrganizationRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEORGANIZATIONREQUEST,
+ReadBillingRequest = _reflection.GeneratedProtocolMessageType('ReadBillingRequest', (_message.Message,), {
+  'DESCRIPTOR' : _READBILLINGREQUEST,
   '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateOrganizationRequest)
+  # @@protoc_insertion_point(class_scope:billing.v1alpha1.ReadBillingRequest)
   })
-_sym_db.RegisterMessage(CreateOrganizationRequest)
+_sym_db.RegisterMessage(ReadBillingRequest)
 
-CreateOrganizationResponse = _reflection.GeneratedProtocolMessageType('CreateOrganizationResponse', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEORGANIZATIONRESPONSE,
+ReadBillingResponse = _reflection.GeneratedProtocolMessageType('ReadBillingResponse', (_message.Message,), {
+  'DESCRIPTOR' : _READBILLINGRESPONSE,
   '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateOrganizationResponse)
+  # @@protoc_insertion_point(class_scope:billing.v1alpha1.ReadBillingResponse)
   })
-_sym_db.RegisterMessage(CreateOrganizationResponse)
-
-GetOrganizationRequest = _reflection.GeneratedProtocolMessageType('GetOrganizationRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETORGANIZATIONREQUEST,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.GetOrganizationRequest)
-  })
-_sym_db.RegisterMessage(GetOrganizationRequest)
-
-GetOrganizationResponse = _reflection.GeneratedProtocolMessageType('GetOrganizationResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETORGANIZATIONRESPONSE,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.GetOrganizationResponse)
-  })
-_sym_db.RegisterMessage(GetOrganizationResponse)
-
-UpdateOrganizationRequest = _reflection.GeneratedProtocolMessageType('UpdateOrganizationRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEORGANIZATIONREQUEST,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateOrganizationRequest)
-  })
-_sym_db.RegisterMessage(UpdateOrganizationRequest)
-
-UpdateOrganizationResponse = _reflection.GeneratedProtocolMessageType('UpdateOrganizationResponse', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEORGANIZATIONRESPONSE,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateOrganizationResponse)
-  })
-_sym_db.RegisterMessage(UpdateOrganizationResponse)
-
-CreateApplicationRequest = _reflection.GeneratedProtocolMessageType('CreateApplicationRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEAPPLICATIONREQUEST,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateApplicationRequest)
-  })
-_sym_db.RegisterMessage(CreateApplicationRequest)
-
-CreateApplicationResponse = _reflection.GeneratedProtocolMessageType('CreateApplicationResponse', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEAPPLICATIONRESPONSE,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateApplicationResponse)
-  })
-_sym_db.RegisterMessage(CreateApplicationResponse)
-
-GetApplicationRequest = _reflection.GeneratedProtocolMessageType('GetApplicationRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETAPPLICATIONREQUEST,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.GetApplicationRequest)
-  })
-_sym_db.RegisterMessage(GetApplicationRequest)
-
-GetApplicationResponse = _reflection.GeneratedProtocolMessageType('GetApplicationResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETAPPLICATIONRESPONSE,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.GetApplicationResponse)
-  })
-_sym_db.RegisterMessage(GetApplicationResponse)
-
-UpdateApplicationRequest = _reflection.GeneratedProtocolMessageType('UpdateApplicationRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEAPPLICATIONREQUEST,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateApplicationRequest)
-  })
-_sym_db.RegisterMessage(UpdateApplicationRequest)
-
-UpdateApplicationResponse = _reflection.GeneratedProtocolMessageType('UpdateApplicationResponse', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEAPPLICATIONRESPONSE,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateApplicationResponse)
-  })
-_sym_db.RegisterMessage(UpdateApplicationResponse)
-
-CreateMetricRequest = _reflection.GeneratedProtocolMessageType('CreateMetricRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEMETRICREQUEST,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateMetricRequest)
-  })
-_sym_db.RegisterMessage(CreateMetricRequest)
-
-CreateMetricResponse = _reflection.GeneratedProtocolMessageType('CreateMetricResponse', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEMETRICRESPONSE,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.CreateMetricResponse)
-  })
-_sym_db.RegisterMessage(CreateMetricResponse)
-
-GetMetricRequest = _reflection.GeneratedProtocolMessageType('GetMetricRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETMETRICREQUEST,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.GetMetricRequest)
-  })
-_sym_db.RegisterMessage(GetMetricRequest)
-
-GetMetricResponse = _reflection.GeneratedProtocolMessageType('GetMetricResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETMETRICRESPONSE,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.GetMetricResponse)
-  })
-_sym_db.RegisterMessage(GetMetricResponse)
-
-UpdateMetricRequest = _reflection.GeneratedProtocolMessageType('UpdateMetricRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEMETRICREQUEST,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateMetricRequest)
-  })
-_sym_db.RegisterMessage(UpdateMetricRequest)
-
-UpdateMetricResponse = _reflection.GeneratedProtocolMessageType('UpdateMetricResponse', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEMETRICRESPONSE,
-  '__module__' : 'billing.v1alpha1.billing_api_pb2'
-  # @@protoc_insertion_point(class_scope:billing.v1alpha1.UpdateMetricResponse)
-  })
-_sym_db.RegisterMessage(UpdateMetricResponse)
+_sym_db.RegisterMessage(ReadBillingResponse)
 
 
 DESCRIPTOR._options = None
@@ -806,96 +119,16 @@ _BILLINGSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1498,
-  serialized_end=2459,
+  serialized_start=227,
+  serialized_end=337,
   methods=[
   _descriptor.MethodDescriptor(
-    name='CreateOrganization',
-    full_name='billing.v1alpha1.BillingService.CreateOrganization',
+    name='ReadBilling',
+    full_name='billing.v1alpha1.BillingService.ReadBilling',
     index=0,
     containing_service=None,
-    input_type=_CREATEORGANIZATIONREQUEST,
-    output_type=_CREATEORGANIZATIONRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetOrganization',
-    full_name='billing.v1alpha1.BillingService.GetOrganization',
-    index=1,
-    containing_service=None,
-    input_type=_GETORGANIZATIONREQUEST,
-    output_type=_GETORGANIZATIONRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateOrganization',
-    full_name='billing.v1alpha1.BillingService.UpdateOrganization',
-    index=2,
-    containing_service=None,
-    input_type=_UPDATEORGANIZATIONREQUEST,
-    output_type=_UPDATEORGANIZATIONRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateApplication',
-    full_name='billing.v1alpha1.BillingService.CreateApplication',
-    index=3,
-    containing_service=None,
-    input_type=_CREATEAPPLICATIONREQUEST,
-    output_type=_CREATEAPPLICATIONRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetApplication',
-    full_name='billing.v1alpha1.BillingService.GetApplication',
-    index=4,
-    containing_service=None,
-    input_type=_GETAPPLICATIONREQUEST,
-    output_type=_GETAPPLICATIONRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateApplication',
-    full_name='billing.v1alpha1.BillingService.UpdateApplication',
-    index=5,
-    containing_service=None,
-    input_type=_UPDATEAPPLICATIONREQUEST,
-    output_type=_UPDATEAPPLICATIONRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateMetric',
-    full_name='billing.v1alpha1.BillingService.CreateMetric',
-    index=6,
-    containing_service=None,
-    input_type=_CREATEMETRICREQUEST,
-    output_type=_CREATEMETRICRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetMetric',
-    full_name='billing.v1alpha1.BillingService.GetMetric',
-    index=7,
-    containing_service=None,
-    input_type=_GETMETRICREQUEST,
-    output_type=_GETMETRICRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateMetric',
-    full_name='billing.v1alpha1.BillingService.UpdateMetric',
-    index=8,
-    containing_service=None,
-    input_type=_UPDATEMETRICREQUEST,
-    output_type=_UPDATEMETRICRESPONSE,
+    input_type=_READBILLINGREQUEST,
+    output_type=_READBILLINGRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

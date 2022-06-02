@@ -16,23 +16,20 @@ class Billing
         }
         $pool->internalAddGeneratedFile(
             '
-ç
-billing/v1alpha1/billing.protobilling.v1alpha1"d
-Organization\'
-organization_id (	RorganizationId+
-organization_name (	RorganizationName"°
-Application%
-application_id (	RapplicationId\'
-organization_id (	RorganizationId
-name (	Rname
-country (	Rcountry
-about (	Rabout"ç
-Metrics
-	metric_id (	RmetricId\'
-organization_id (	RorganizationId
-cpu (Rcpu
-ram (Rram
-storage (RstorageB7Z5github.com/cuemby/ccp-billing-service/billingv1alpha1bproto3'
+à
+billing/v1alpha1/billing.protobilling.v1alpha1"í
+Billing\'
+organization_id (	RorganizationId
+
+cpu_metric (R	cpuMetric
+cpu_bill (RcpuBill
+
+ram_metric (R	ramMetric
+ram_bill (RramBill%
+storage_metric (RstorageMetric!
+storage_bill (RstorageBill 
+total_to_pay (R
+totalToPayB7Z5github.com/cuemby/ccp-billing-service/billingv1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;
