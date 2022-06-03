@@ -71,6 +71,10 @@ type AccountServiceClient interface {
 	ListApiKey(ctx context.Context, in *ListApiKeyRequest, opts ...grpc.CallOption) (*ListApiKeyResponse, error)
 	UpdateApiKey(ctx context.Context, in *UpdateApiKeyRequest, opts ...grpc.CallOption) (*UpdateApiKeyResponse, error)
 	DeleteApiKey(ctx context.Context, in *DeleteApiKeyRequest, opts ...grpc.CallOption) (*DeleteApiKeyResponse, error)
+	//TOKEN CCP
+	CreateTokenCCP(ctx context.Context, in *CreateTokenCCPRequest, opts ...grpc.CallOption) (*CreateTokenCCPResponse, error)
+	GetOneTokenCCP(ctx context.Context, in *GetOneTokenCCPRequest, opts ...grpc.CallOption) (*GetOneTokenCCPResponse, error)
+	Logs(ctx context.Context, in *LogsRequest, opts ...grpc.CallOption) (*LogsResponse, error)
 }
 
 type accountServiceClient struct {
@@ -477,6 +481,33 @@ func (c *accountServiceClient) DeleteApiKey(ctx context.Context, in *DeleteApiKe
 	return out, nil
 }
 
+func (c *accountServiceClient) CreateTokenCCP(ctx context.Context, in *CreateTokenCCPRequest, opts ...grpc.CallOption) (*CreateTokenCCPResponse, error) {
+	out := new(CreateTokenCCPResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/CreateTokenCCP", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountServiceClient) GetOneTokenCCP(ctx context.Context, in *GetOneTokenCCPRequest, opts ...grpc.CallOption) (*GetOneTokenCCPResponse, error) {
+	out := new(GetOneTokenCCPResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/GetOneTokenCCP", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountServiceClient) Logs(ctx context.Context, in *LogsRequest, opts ...grpc.CallOption) (*LogsResponse, error) {
+	out := new(LogsResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/Logs", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AccountServiceServer is the server API for AccountService service.
 // All implementations should embed UnimplementedAccountServiceServer
 // for forward compatibility
@@ -534,6 +565,10 @@ type AccountServiceServer interface {
 	ListApiKey(context.Context, *ListApiKeyRequest) (*ListApiKeyResponse, error)
 	UpdateApiKey(context.Context, *UpdateApiKeyRequest) (*UpdateApiKeyResponse, error)
 	DeleteApiKey(context.Context, *DeleteApiKeyRequest) (*DeleteApiKeyResponse, error)
+	//TOKEN CCP
+	CreateTokenCCP(context.Context, *CreateTokenCCPRequest) (*CreateTokenCCPResponse, error)
+	GetOneTokenCCP(context.Context, *GetOneTokenCCPRequest) (*GetOneTokenCCPResponse, error)
+	Logs(context.Context, *LogsRequest) (*LogsResponse, error)
 }
 
 // UnimplementedAccountServiceServer should be embedded to have forward compatible implementations.
@@ -671,6 +706,15 @@ func (UnimplementedAccountServiceServer) UpdateApiKey(context.Context, *UpdateAp
 }
 func (UnimplementedAccountServiceServer) DeleteApiKey(context.Context, *DeleteApiKeyRequest) (*DeleteApiKeyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteApiKey not implemented")
+}
+func (UnimplementedAccountServiceServer) CreateTokenCCP(context.Context, *CreateTokenCCPRequest) (*CreateTokenCCPResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTokenCCP not implemented")
+}
+func (UnimplementedAccountServiceServer) GetOneTokenCCP(context.Context, *GetOneTokenCCPRequest) (*GetOneTokenCCPResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOneTokenCCP not implemented")
+}
+func (UnimplementedAccountServiceServer) Logs(context.Context, *LogsRequest) (*LogsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Logs not implemented")
 }
 
 // UnsafeAccountServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -1476,6 +1520,60 @@ func _AccountService_DeleteApiKey_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AccountService_CreateTokenCCP_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTokenCCPRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).CreateTokenCCP(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/CreateTokenCCP",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).CreateTokenCCP(ctx, req.(*CreateTokenCCPRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountService_GetOneTokenCCP_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOneTokenCCPRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).GetOneTokenCCP(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/GetOneTokenCCP",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).GetOneTokenCCP(ctx, req.(*GetOneTokenCCPRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountService_Logs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LogsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).Logs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/Logs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).Logs(ctx, req.(*LogsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AccountService_ServiceDesc is the grpc.ServiceDesc for AccountService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1658,6 +1756,18 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteApiKey",
 			Handler:    _AccountService_DeleteApiKey_Handler,
+		},
+		{
+			MethodName: "CreateTokenCCP",
+			Handler:    _AccountService_CreateTokenCCP_Handler,
+		},
+		{
+			MethodName: "GetOneTokenCCP",
+			Handler:    _AccountService_GetOneTokenCCP_Handler,
+		},
+		{
+			MethodName: "Logs",
+			Handler:    _AccountService_Logs_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

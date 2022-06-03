@@ -353,6 +353,28 @@ class AccountService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::DeleteApiKeyResponse>> PrepareAsyncDeleteApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::DeleteApiKeyResponse>>(PrepareAsyncDeleteApiKeyRaw(context, request, cq));
     }
+    // TOKEN CCP
+    virtual ::grpc::Status CreateTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest& request, ::accounts::v1alpha1::CreateTokenCCPResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CreateTokenCCPResponse>> AsyncCreateTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CreateTokenCCPResponse>>(AsyncCreateTokenCCPRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CreateTokenCCPResponse>> PrepareAsyncCreateTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CreateTokenCCPResponse>>(PrepareAsyncCreateTokenCCPRaw(context, request, cq));
+    }
+    virtual ::grpc::Status GetOneTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest& request, ::accounts::v1alpha1::GetOneTokenCCPResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneTokenCCPResponse>> AsyncGetOneTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneTokenCCPResponse>>(AsyncGetOneTokenCCPRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneTokenCCPResponse>> PrepareAsyncGetOneTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneTokenCCPResponse>>(PrepareAsyncGetOneTokenCCPRaw(context, request, cq));
+    }
+    virtual ::grpc::Status Logs(::grpc::ClientContext* context, const ::accounts::v1alpha1::LogsRequest& request, ::accounts::v1alpha1::LogsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::LogsResponse>> AsyncLogs(::grpc::ClientContext* context, const ::accounts::v1alpha1::LogsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::LogsResponse>>(AsyncLogsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::LogsResponse>> PrepareAsyncLogs(::grpc::ClientContext* context, const ::accounts::v1alpha1::LogsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::LogsResponse>>(PrepareAsyncLogsRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -409,6 +431,10 @@ class AccountService final {
       virtual void ListApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListApiKeyRequest* request, ::accounts::v1alpha1::ListApiKeyResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateApiKeyRequest* request, ::accounts::v1alpha1::UpdateApiKeyResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest* request, ::accounts::v1alpha1::DeleteApiKeyResponse* response, std::function<void(::grpc::Status)>) = 0;
+      // TOKEN CCP
+      virtual void CreateTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest* request, ::accounts::v1alpha1::CreateTokenCCPResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetOneTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest* request, ::accounts::v1alpha1::GetOneTokenCCPResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Logs(::grpc::ClientContext* context, const ::accounts::v1alpha1::LogsRequest* request, ::accounts::v1alpha1::LogsResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -500,6 +526,12 @@ class AccountService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::UpdateApiKeyResponse>* PrepareAsyncUpdateApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateApiKeyRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::DeleteApiKeyResponse>* AsyncDeleteApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::DeleteApiKeyResponse>* PrepareAsyncDeleteApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CreateTokenCCPResponse>* AsyncCreateTokenCCPRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CreateTokenCCPResponse>* PrepareAsyncCreateTokenCCPRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneTokenCCPResponse>* AsyncGetOneTokenCCPRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneTokenCCPResponse>* PrepareAsyncGetOneTokenCCPRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::LogsResponse>* AsyncLogsRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::LogsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::LogsResponse>* PrepareAsyncLogsRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::LogsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -812,6 +844,27 @@ class AccountService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteApiKeyResponse>> PrepareAsyncDeleteApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteApiKeyResponse>>(PrepareAsyncDeleteApiKeyRaw(context, request, cq));
     }
+    ::grpc::Status CreateTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest& request, ::accounts::v1alpha1::CreateTokenCCPResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CreateTokenCCPResponse>> AsyncCreateTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CreateTokenCCPResponse>>(AsyncCreateTokenCCPRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CreateTokenCCPResponse>> PrepareAsyncCreateTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CreateTokenCCPResponse>>(PrepareAsyncCreateTokenCCPRaw(context, request, cq));
+    }
+    ::grpc::Status GetOneTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest& request, ::accounts::v1alpha1::GetOneTokenCCPResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneTokenCCPResponse>> AsyncGetOneTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneTokenCCPResponse>>(AsyncGetOneTokenCCPRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneTokenCCPResponse>> PrepareAsyncGetOneTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneTokenCCPResponse>>(PrepareAsyncGetOneTokenCCPRaw(context, request, cq));
+    }
+    ::grpc::Status Logs(::grpc::ClientContext* context, const ::accounts::v1alpha1::LogsRequest& request, ::accounts::v1alpha1::LogsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::LogsResponse>> AsyncLogs(::grpc::ClientContext* context, const ::accounts::v1alpha1::LogsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::LogsResponse>>(AsyncLogsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::LogsResponse>> PrepareAsyncLogs(::grpc::ClientContext* context, const ::accounts::v1alpha1::LogsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::LogsResponse>>(PrepareAsyncLogsRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -859,6 +912,9 @@ class AccountService final {
       void ListApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListApiKeyRequest* request, ::accounts::v1alpha1::ListApiKeyResponse* response, std::function<void(::grpc::Status)>) override;
       void UpdateApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateApiKeyRequest* request, ::accounts::v1alpha1::UpdateApiKeyResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest* request, ::accounts::v1alpha1::DeleteApiKeyResponse* response, std::function<void(::grpc::Status)>) override;
+      void CreateTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest* request, ::accounts::v1alpha1::CreateTokenCCPResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetOneTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest* request, ::accounts::v1alpha1::GetOneTokenCCPResponse* response, std::function<void(::grpc::Status)>) override;
+      void Logs(::grpc::ClientContext* context, const ::accounts::v1alpha1::LogsRequest* request, ::accounts::v1alpha1::LogsResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -958,6 +1014,12 @@ class AccountService final {
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::UpdateApiKeyResponse>* PrepareAsyncUpdateApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::UpdateApiKeyRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteApiKeyResponse>* AsyncDeleteApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteApiKeyResponse>* PrepareAsyncDeleteApiKeyRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CreateTokenCCPResponse>* AsyncCreateTokenCCPRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::CreateTokenCCPResponse>* PrepareAsyncCreateTokenCCPRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneTokenCCPResponse>* AsyncGetOneTokenCCPRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::GetOneTokenCCPResponse>* PrepareAsyncGetOneTokenCCPRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::LogsResponse>* AsyncLogsRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::LogsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::LogsResponse>* PrepareAsyncLogsRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::LogsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateUser_;
     const ::grpc::internal::RpcMethod rpcmethod_ListUser_;
     const ::grpc::internal::RpcMethod rpcmethod_GetOneUser_;
@@ -1002,6 +1064,9 @@ class AccountService final {
     const ::grpc::internal::RpcMethod rpcmethod_ListApiKey_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateApiKey_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteApiKey_;
+    const ::grpc::internal::RpcMethod rpcmethod_CreateTokenCCP_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetOneTokenCCP_;
+    const ::grpc::internal::RpcMethod rpcmethod_Logs_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -1062,6 +1127,10 @@ class AccountService final {
     virtual ::grpc::Status ListApiKey(::grpc::ServerContext* context, const ::accounts::v1alpha1::ListApiKeyRequest* request, ::accounts::v1alpha1::ListApiKeyResponse* response);
     virtual ::grpc::Status UpdateApiKey(::grpc::ServerContext* context, const ::accounts::v1alpha1::UpdateApiKeyRequest* request, ::accounts::v1alpha1::UpdateApiKeyResponse* response);
     virtual ::grpc::Status DeleteApiKey(::grpc::ServerContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest* request, ::accounts::v1alpha1::DeleteApiKeyResponse* response);
+    // TOKEN CCP
+    virtual ::grpc::Status CreateTokenCCP(::grpc::ServerContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest* request, ::accounts::v1alpha1::CreateTokenCCPResponse* response);
+    virtual ::grpc::Status GetOneTokenCCP(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest* request, ::accounts::v1alpha1::GetOneTokenCCPResponse* response);
+    virtual ::grpc::Status Logs(::grpc::ServerContext* context, const ::accounts::v1alpha1::LogsRequest* request, ::accounts::v1alpha1::LogsResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateUser : public BaseClass {
@@ -1943,7 +2012,67 @@ class AccountService final {
       ::grpc::Service::RequestAsyncUnary(43, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateUser<WithAsyncMethod_ListUser<WithAsyncMethod_GetOneUser<WithAsyncMethod_UpdateUser<WithAsyncMethod_DeleteUser<WithAsyncMethod_ListUserPagination<WithAsyncMethod_SendInvitationUser<WithAsyncMethod_GetInvitationUser<WithAsyncMethod_AgreeInvitationUser<WithAsyncMethod_ListInvitationUser<WithAsyncMethod_CreatePermission<WithAsyncMethod_ListPermission<WithAsyncMethod_GetOnePermission<WithAsyncMethod_UpdatePermission<WithAsyncMethod_DeletePermission<WithAsyncMethod_CreateOrganization<WithAsyncMethod_ListOrganization<WithAsyncMethod_GetOneOrganization<WithAsyncMethod_UpdateOrganization<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_CreateRole<WithAsyncMethod_ListRoles<WithAsyncMethod_UpdateRole<WithAsyncMethod_GetOneRole<WithAsyncMethod_GetRolesByUser<WithAsyncMethod_GetRolesByOrgUser<WithAsyncMethod_DeleteRole<WithAsyncMethod_CreateProject<WithAsyncMethod_GetOneProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_DeleteProject<WithAsyncMethod_ListProject<WithAsyncMethod_GetListUserDex<WithAsyncMethod_GetOneUserDex<WithAsyncMethod_CheckUser<WithAsyncMethod_SendVerificationEmail<WithAsyncMethod_VerifyEmail<WithAsyncMethod_ListCountries<WithAsyncMethod_GetOneCountry<WithAsyncMethod_CreateApiKey<WithAsyncMethod_GetOneApiKey<WithAsyncMethod_ListApiKey<WithAsyncMethod_UpdateApiKey<WithAsyncMethod_DeleteApiKey<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_CreateTokenCCP : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_CreateTokenCCP() {
+      ::grpc::Service::MarkMethodAsync(44);
+    }
+    ~WithAsyncMethod_CreateTokenCCP() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateTokenCCP(::grpc::ServerContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest* request, ::accounts::v1alpha1::CreateTokenCCPResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCreateTokenCCP(::grpc::ServerContext* context, ::accounts::v1alpha1::CreateTokenCCPRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::CreateTokenCCPResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(44, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetOneTokenCCP : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetOneTokenCCP() {
+      ::grpc::Service::MarkMethodAsync(45);
+    }
+    ~WithAsyncMethod_GetOneTokenCCP() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOneTokenCCP(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest* request, ::accounts::v1alpha1::GetOneTokenCCPResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetOneTokenCCP(::grpc::ServerContext* context, ::accounts::v1alpha1::GetOneTokenCCPRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::GetOneTokenCCPResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(45, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_Logs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_Logs() {
+      ::grpc::Service::MarkMethodAsync(46);
+    }
+    ~WithAsyncMethod_Logs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Logs(::grpc::ServerContext* context, const ::accounts::v1alpha1::LogsRequest* request, ::accounts::v1alpha1::LogsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestLogs(::grpc::ServerContext* context, ::accounts::v1alpha1::LogsRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::LogsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(46, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateUser<WithAsyncMethod_ListUser<WithAsyncMethod_GetOneUser<WithAsyncMethod_UpdateUser<WithAsyncMethod_DeleteUser<WithAsyncMethod_ListUserPagination<WithAsyncMethod_SendInvitationUser<WithAsyncMethod_GetInvitationUser<WithAsyncMethod_AgreeInvitationUser<WithAsyncMethod_ListInvitationUser<WithAsyncMethod_CreatePermission<WithAsyncMethod_ListPermission<WithAsyncMethod_GetOnePermission<WithAsyncMethod_UpdatePermission<WithAsyncMethod_DeletePermission<WithAsyncMethod_CreateOrganization<WithAsyncMethod_ListOrganization<WithAsyncMethod_GetOneOrganization<WithAsyncMethod_UpdateOrganization<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_CreateRole<WithAsyncMethod_ListRoles<WithAsyncMethod_UpdateRole<WithAsyncMethod_GetOneRole<WithAsyncMethod_GetRolesByUser<WithAsyncMethod_GetRolesByOrgUser<WithAsyncMethod_DeleteRole<WithAsyncMethod_CreateProject<WithAsyncMethod_GetOneProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_DeleteProject<WithAsyncMethod_ListProject<WithAsyncMethod_GetListUserDex<WithAsyncMethod_GetOneUserDex<WithAsyncMethod_CheckUser<WithAsyncMethod_SendVerificationEmail<WithAsyncMethod_VerifyEmail<WithAsyncMethod_ListCountries<WithAsyncMethod_GetOneCountry<WithAsyncMethod_CreateApiKey<WithAsyncMethod_GetOneApiKey<WithAsyncMethod_ListApiKey<WithAsyncMethod_UpdateApiKey<WithAsyncMethod_DeleteApiKey<WithAsyncMethod_CreateTokenCCP<WithAsyncMethod_GetOneTokenCCP<WithAsyncMethod_Logs<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateUser : public BaseClass {
    private:
@@ -2688,6 +2817,57 @@ class AccountService final {
     }
     // disable synchronous version of this method
     ::grpc::Status DeleteApiKey(::grpc::ServerContext* context, const ::accounts::v1alpha1::DeleteApiKeyRequest* request, ::accounts::v1alpha1::DeleteApiKeyResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_CreateTokenCCP : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_CreateTokenCCP() {
+      ::grpc::Service::MarkMethodGeneric(44);
+    }
+    ~WithGenericMethod_CreateTokenCCP() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateTokenCCP(::grpc::ServerContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest* request, ::accounts::v1alpha1::CreateTokenCCPResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetOneTokenCCP : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetOneTokenCCP() {
+      ::grpc::Service::MarkMethodGeneric(45);
+    }
+    ~WithGenericMethod_GetOneTokenCCP() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOneTokenCCP(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest* request, ::accounts::v1alpha1::GetOneTokenCCPResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_Logs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_Logs() {
+      ::grpc::Service::MarkMethodGeneric(46);
+    }
+    ~WithGenericMethod_Logs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Logs(::grpc::ServerContext* context, const ::accounts::v1alpha1::LogsRequest* request, ::accounts::v1alpha1::LogsResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3573,6 +3753,66 @@ class AccountService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_CreateTokenCCP : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_CreateTokenCCP() {
+      ::grpc::Service::MarkMethodRaw(44);
+    }
+    ~WithRawMethod_CreateTokenCCP() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateTokenCCP(::grpc::ServerContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest* request, ::accounts::v1alpha1::CreateTokenCCPResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCreateTokenCCP(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(44, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetOneTokenCCP : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetOneTokenCCP() {
+      ::grpc::Service::MarkMethodRaw(45);
+    }
+    ~WithRawMethod_GetOneTokenCCP() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOneTokenCCP(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest* request, ::accounts::v1alpha1::GetOneTokenCCPResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetOneTokenCCP(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(45, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_Logs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_Logs() {
+      ::grpc::Service::MarkMethodRaw(46);
+    }
+    ~WithRawMethod_Logs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Logs(::grpc::ServerContext* context, const ::accounts::v1alpha1::LogsRequest* request, ::accounts::v1alpha1::LogsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestLogs(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(46, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateUser : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -4452,9 +4692,69 @@ class AccountService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedDeleteApiKey(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::DeleteApiKeyRequest,::accounts::v1alpha1::DeleteApiKeyResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_ListInvitationUser<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_GetRolesByUser<WithStreamedUnaryMethod_GetRolesByOrgUser<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<WithStreamedUnaryMethod_ListCountries<WithStreamedUnaryMethod_GetOneCountry<WithStreamedUnaryMethod_CreateApiKey<WithStreamedUnaryMethod_GetOneApiKey<WithStreamedUnaryMethod_ListApiKey<WithStreamedUnaryMethod_UpdateApiKey<WithStreamedUnaryMethod_DeleteApiKey<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_CreateTokenCCP : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_CreateTokenCCP() {
+      ::grpc::Service::MarkMethodStreamed(44,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::CreateTokenCCPRequest, ::accounts::v1alpha1::CreateTokenCCPResponse>(std::bind(&WithStreamedUnaryMethod_CreateTokenCCP<BaseClass>::StreamedCreateTokenCCP, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_CreateTokenCCP() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status CreateTokenCCP(::grpc::ServerContext* context, const ::accounts::v1alpha1::CreateTokenCCPRequest* request, ::accounts::v1alpha1::CreateTokenCCPResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedCreateTokenCCP(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::CreateTokenCCPRequest,::accounts::v1alpha1::CreateTokenCCPResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetOneTokenCCP : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetOneTokenCCP() {
+      ::grpc::Service::MarkMethodStreamed(45,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::GetOneTokenCCPRequest, ::accounts::v1alpha1::GetOneTokenCCPResponse>(std::bind(&WithStreamedUnaryMethod_GetOneTokenCCP<BaseClass>::StreamedGetOneTokenCCP, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetOneTokenCCP() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetOneTokenCCP(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneTokenCCPRequest* request, ::accounts::v1alpha1::GetOneTokenCCPResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetOneTokenCCP(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::GetOneTokenCCPRequest,::accounts::v1alpha1::GetOneTokenCCPResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_Logs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_Logs() {
+      ::grpc::Service::MarkMethodStreamed(46,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::LogsRequest, ::accounts::v1alpha1::LogsResponse>(std::bind(&WithStreamedUnaryMethod_Logs<BaseClass>::StreamedLogs, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_Logs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status Logs(::grpc::ServerContext* context, const ::accounts::v1alpha1::LogsRequest* request, ::accounts::v1alpha1::LogsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedLogs(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::LogsRequest,::accounts::v1alpha1::LogsResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_ListInvitationUser<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_GetRolesByUser<WithStreamedUnaryMethod_GetRolesByOrgUser<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<WithStreamedUnaryMethod_ListCountries<WithStreamedUnaryMethod_GetOneCountry<WithStreamedUnaryMethod_CreateApiKey<WithStreamedUnaryMethod_GetOneApiKey<WithStreamedUnaryMethod_ListApiKey<WithStreamedUnaryMethod_UpdateApiKey<WithStreamedUnaryMethod_DeleteApiKey<WithStreamedUnaryMethod_CreateTokenCCP<WithStreamedUnaryMethod_GetOneTokenCCP<WithStreamedUnaryMethod_Logs<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_ListInvitationUser<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_GetRolesByUser<WithStreamedUnaryMethod_GetRolesByOrgUser<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<WithStreamedUnaryMethod_ListCountries<WithStreamedUnaryMethod_GetOneCountry<WithStreamedUnaryMethod_CreateApiKey<WithStreamedUnaryMethod_GetOneApiKey<WithStreamedUnaryMethod_ListApiKey<WithStreamedUnaryMethod_UpdateApiKey<WithStreamedUnaryMethod_DeleteApiKey<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_ListInvitationUser<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_GetRolesByUser<WithStreamedUnaryMethod_GetRolesByOrgUser<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<WithStreamedUnaryMethod_ListCountries<WithStreamedUnaryMethod_GetOneCountry<WithStreamedUnaryMethod_CreateApiKey<WithStreamedUnaryMethod_GetOneApiKey<WithStreamedUnaryMethod_ListApiKey<WithStreamedUnaryMethod_UpdateApiKey<WithStreamedUnaryMethod_DeleteApiKey<WithStreamedUnaryMethod_CreateTokenCCP<WithStreamedUnaryMethod_GetOneTokenCCP<WithStreamedUnaryMethod_Logs<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

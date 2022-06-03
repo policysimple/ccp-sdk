@@ -59,6 +59,49 @@ service AccountService {
     rpc ListApiKey(ListApiKeyRequest) returns (ListApiKeyResponse);
     rpc UpdateApiKey(UpdateApiKeyRequest) returns (UpdateApiKeyResponse);
     rpc DeleteApiKey(DeleteApiKeyRequest) returns (DeleteApiKeyResponse);
+
+    //TOKEN CCP
+    rpc CreateTokenCCP(CreateTokenCCPRequest) returns (CreateTokenCCPResponse);
+    rpc GetOneTokenCCP(GetOneTokenCCPRequest) returns (GetOneTokenCCPResponse);
+
+    rpc Logs(LogsRequest) returns (LogsResponse);
+}
+
+
+message LogsRequest {
+    string user_id = 1;
+    string systems = 2;
+}
+
+message LogsResponse {
+    repeated string logs = 1;
+}
+
+/*
+    TOKEN AUTH CCP
+*/
+
+message GetOneTokenCCPRequest {
+    string token = 1;
+}
+
+message GetOneTokenCCPResponse {
+    uint32 user_id = 1;
+    string token = 2;
+    string email = 3;
+    string user_id_dex = 4;
+    string first_name = 5;
+    bool email_verified = 6;
+}
+
+message CreateTokenCCPRequest {
+    string token_dex = 1;
+}
+
+
+message CreateTokenCCPResponse {
+    string token_ccp = 1;
+    string msg = 2;
 }
 
 /*
@@ -286,6 +329,13 @@ message CheckUserRequest {
 
     string api_key_value = 11;
 
+    /*
+        replace dex by ccp
+    */
+    string token_ccp_admin = 12;
+    string token_ccp_user_id = 13;
+
+
 }
 
 message CheckUserResponse {
@@ -405,6 +455,8 @@ message GetOneUserResponse {
     string address = 18;
     string state = 19;
     string emoji_country = 20;
+    bool email_verified = 21;
+
 }
 
 
@@ -878,6 +930,7 @@ message GetListUserDexResponse {
 message GetOneUserDexRequest {
     string user_id=1;
     CreateUserRequest user = 2;
+
 }
 
 message GetOneUserDexResponse {
@@ -904,5 +957,9 @@ message GetOneUserDexResponse {
     string address = 19;
     string state = 20;
     string emoji_country = 21;
-	
+
+    //multi-factor
+    bool is_mfa_enabled = 22;
+    string token_ccp = 23;
+    bool email_verified = 24;
 }

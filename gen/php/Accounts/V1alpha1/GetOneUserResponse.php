@@ -95,6 +95,10 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string emoji_country = 20 [json_name = "emojiCountry"];</code>
      */
     protected $emoji_country = '';
+    /**
+     * Generated from protobuf field <code>bool email_verified = 21 [json_name = "emailVerified"];</code>
+     */
+    protected $email_verified = false;
 
     /**
      * Constructor.
@@ -123,6 +127,7 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
      *     @type string $address
      *     @type string $state
      *     @type string $emoji_country
+     *     @type bool $email_verified
      * }
      */
     public function __construct($data = NULL) {
@@ -570,6 +575,28 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->emoji_country = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool email_verified = 21 [json_name = "emailVerified"];</code>
+     * @return bool
+     */
+    public function getEmailVerified()
+    {
+        return $this->email_verified;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool email_verified = 21 [json_name = "emailVerified"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEmailVerified($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->email_verified = $var;
 
         return $this;
     }

@@ -597,4 +597,44 @@ class AccountServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * TOKEN CCP
+     * @param \Accounts\V1alpha1\CreateTokenCCPRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function CreateTokenCCP(\Accounts\V1alpha1\CreateTokenCCPRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/CreateTokenCCP',
+        $argument,
+        ['\Accounts\V1alpha1\CreateTokenCCPResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\GetOneTokenCCPRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetOneTokenCCP(\Accounts\V1alpha1\GetOneTokenCCPRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/GetOneTokenCCP',
+        $argument,
+        ['\Accounts\V1alpha1\GetOneTokenCCPResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\LogsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function Logs(\Accounts\V1alpha1\LogsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/Logs',
+        $argument,
+        ['\Accounts\V1alpha1\LogsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

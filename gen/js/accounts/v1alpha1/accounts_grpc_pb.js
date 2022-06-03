@@ -158,6 +158,28 @@ function deserialize_accounts_v1alpha1_CreateRoleResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.CreateRoleResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_CreateTokenCCPRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.CreateTokenCCPRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.CreateTokenCCPRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_CreateTokenCCPRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.CreateTokenCCPRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_CreateTokenCCPResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.CreateTokenCCPResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.CreateTokenCCPResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_CreateTokenCCPResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.CreateTokenCCPResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_CreateUserRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.CreateUserRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.CreateUserRequest');
@@ -488,6 +510,28 @@ function deserialize_accounts_v1alpha1_GetOneRoleResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.GetOneRoleResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_GetOneTokenCCPRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneTokenCCPRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetOneTokenCCPRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetOneTokenCCPRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetOneTokenCCPRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_GetOneTokenCCPResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneTokenCCPResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetOneTokenCCPResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetOneTokenCCPResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetOneTokenCCPResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_GetOneUserDexRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetOneUserDexRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.GetOneUserDexRequest');
@@ -772,6 +816,28 @@ function serialize_accounts_v1alpha1_ListUserResponse(arg) {
 
 function deserialize_accounts_v1alpha1_ListUserResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.ListUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_LogsRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.LogsRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.LogsRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_LogsRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.LogsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_LogsResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.LogsResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.LogsResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_LogsResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.LogsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_accounts_v1alpha1_SendInvitationUserRequest(arg) {
@@ -1466,6 +1532,40 @@ var AccountServiceService = exports.AccountServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_DeleteApiKeyRequest,
     responseSerialize: serialize_accounts_v1alpha1_DeleteApiKeyResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_DeleteApiKeyResponse,
+  },
+  // TOKEN CCP
+  createTokenCCP: {
+    path: '/accounts.v1alpha1.AccountService/CreateTokenCCP',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.CreateTokenCCPRequest,
+    responseType: accounts_v1alpha1_accounts_pb.CreateTokenCCPResponse,
+    requestSerialize: serialize_accounts_v1alpha1_CreateTokenCCPRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_CreateTokenCCPRequest,
+    responseSerialize: serialize_accounts_v1alpha1_CreateTokenCCPResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_CreateTokenCCPResponse,
+  },
+  getOneTokenCCP: {
+    path: '/accounts.v1alpha1.AccountService/GetOneTokenCCP',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.GetOneTokenCCPRequest,
+    responseType: accounts_v1alpha1_accounts_pb.GetOneTokenCCPResponse,
+    requestSerialize: serialize_accounts_v1alpha1_GetOneTokenCCPRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_GetOneTokenCCPRequest,
+    responseSerialize: serialize_accounts_v1alpha1_GetOneTokenCCPResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_GetOneTokenCCPResponse,
+  },
+  logs: {
+    path: '/accounts.v1alpha1.AccountService/Logs',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.LogsRequest,
+    responseType: accounts_v1alpha1_accounts_pb.LogsResponse,
+    requestSerialize: serialize_accounts_v1alpha1_LogsRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_LogsRequest,
+    responseSerialize: serialize_accounts_v1alpha1_LogsResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_LogsResponse,
   },
 };
 

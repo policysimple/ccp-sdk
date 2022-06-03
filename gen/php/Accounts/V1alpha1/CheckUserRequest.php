@@ -55,6 +55,17 @@ class CheckUserRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string api_key_value = 11 [json_name = "apiKeyValue"];</code>
      */
     protected $api_key_value = '';
+    /**
+     *
+     * replace dex by ccp
+     *
+     * Generated from protobuf field <code>string token_ccp_admin = 12 [json_name = "tokenCcpAdmin"];</code>
+     */
+    protected $token_ccp_admin = '';
+    /**
+     * Generated from protobuf field <code>string token_ccp_user_id = 13 [json_name = "tokenCcpUserId"];</code>
+     */
+    protected $token_ccp_user_id = '';
 
     /**
      * Constructor.
@@ -73,6 +84,10 @@ class CheckUserRequest extends \Google\Protobuf\Internal\Message
      *     @type string $type_permission
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $roles_ids
      *     @type string $api_key_value
+     *     @type string $token_ccp_admin
+     *          
+     *           replace dex by ccp
+     *     @type string $token_ccp_user_id
      * }
      */
     public function __construct($data = NULL) {
@@ -300,6 +315,56 @@ class CheckUserRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->api_key_value = $var;
+
+        return $this;
+    }
+
+    /**
+     *
+     * replace dex by ccp
+     *
+     * Generated from protobuf field <code>string token_ccp_admin = 12 [json_name = "tokenCcpAdmin"];</code>
+     * @return string
+     */
+    public function getTokenCcpAdmin()
+    {
+        return $this->token_ccp_admin;
+    }
+
+    /**
+     *
+     * replace dex by ccp
+     *
+     * Generated from protobuf field <code>string token_ccp_admin = 12 [json_name = "tokenCcpAdmin"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTokenCcpAdmin($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->token_ccp_admin = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token_ccp_user_id = 13 [json_name = "tokenCcpUserId"];</code>
+     * @return string
+     */
+    public function getTokenCcpUserId()
+    {
+        return $this->token_ccp_user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token_ccp_user_id = 13 [json_name = "tokenCcpUserId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTokenCcpUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->token_ccp_user_id = $var;
 
         return $this;
     }

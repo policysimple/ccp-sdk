@@ -234,6 +234,21 @@ class AccountServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteApiKeyRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteApiKeyResponse.FromString,
         )
+    self.CreateTokenCCP = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/CreateTokenCCP',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateTokenCCPRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateTokenCCPResponse.FromString,
+        )
+    self.GetOneTokenCCP = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/GetOneTokenCCP',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenCCPRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenCCPResponse.FromString,
+        )
+    self.Logs = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/Logs',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.LogsRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.LogsResponse.FromString,
+        )
 
 
 class AccountServiceServicer(object):
@@ -548,6 +563,27 @@ class AccountServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateTokenCCP(self, request, context):
+    """TOKEN CCP
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetOneTokenCCP(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Logs(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AccountServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -770,6 +806,21 @@ def add_AccountServiceServicer_to_server(servicer, server):
           servicer.DeleteApiKey,
           request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteApiKeyRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteApiKeyResponse.SerializeToString,
+      ),
+      'CreateTokenCCP': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateTokenCCP,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateTokenCCPRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreateTokenCCPResponse.SerializeToString,
+      ),
+      'GetOneTokenCCP': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOneTokenCCP,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenCCPRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenCCPResponse.SerializeToString,
+      ),
+      'Logs': grpc.unary_unary_rpc_method_handler(
+          servicer.Logs,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.LogsRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.LogsResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
