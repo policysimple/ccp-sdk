@@ -99,6 +99,20 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string emoji_country = 21 [json_name = "emojiCountry"];</code>
      */
     protected $emoji_country = '';
+    /**
+     *multi-factor
+     *
+     * Generated from protobuf field <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
+     */
+    protected $is_mfa_enabled = false;
+    /**
+     * Generated from protobuf field <code>string token_ccp = 23 [json_name = "tokenCcp"];</code>
+     */
+    protected $token_ccp = '';
+    /**
+     * Generated from protobuf field <code>bool email_verified = 24 [json_name = "emailVerified"];</code>
+     */
+    protected $email_verified = false;
 
     /**
      * Constructor.
@@ -128,6 +142,10 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      *     @type string $address
      *     @type string $state
      *     @type string $emoji_country
+     *     @type bool $is_mfa_enabled
+     *          multi-factor
+     *     @type string $token_ccp
+     *     @type bool $email_verified
      * }
      */
     public function __construct($data = NULL) {
@@ -597,6 +615,76 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->emoji_country = $var;
+
+        return $this;
+    }
+
+    /**
+     *multi-factor
+     *
+     * Generated from protobuf field <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
+     * @return bool
+     */
+    public function getIsMfaEnabled()
+    {
+        return $this->is_mfa_enabled;
+    }
+
+    /**
+     *multi-factor
+     *
+     * Generated from protobuf field <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsMfaEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_mfa_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token_ccp = 23 [json_name = "tokenCcp"];</code>
+     * @return string
+     */
+    public function getTokenCcp()
+    {
+        return $this->token_ccp;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token_ccp = 23 [json_name = "tokenCcp"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTokenCcp($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->token_ccp = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool email_verified = 24 [json_name = "emailVerified"];</code>
+     * @return bool
+     */
+    public function getEmailVerified()
+    {
+        return $this->email_verified;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool email_verified = 24 [json_name = "emailVerified"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEmailVerified($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->email_verified = $var;
 
         return $this;
     }

@@ -16,8 +16,28 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-ã“
- accounts/v1alpha1/accounts.protoaccounts.v1alpha1"{
+¸›
+ accounts/v1alpha1/accounts.protoaccounts.v1alpha1"@
+LogsRequest
+user_id (	RuserId
+systems (	Rsystems""
+LogsResponse
+logs (	Rlogs"-
+GetOneTokenCCPRequest
+token (	Rtoken"Ã
+GetOneTokenCCPResponse
+user_id (RuserId
+token (	Rtoken
+email (	Remail
+user_id_dex (	R	userIdDex
+
+first_name (	R	firstName%
+email_verified (RemailVerified"4
+CreateTokenCCPRequest
+	token_dex (	RtokenDex"G
+CreateTokenCCPResponse
+	token_ccp (	RtokenCcp
+msg (	Rmsg"{
 GetRolesByOrgUserRequest\'
 organization_id (RorganizationId
 
@@ -130,7 +150,7 @@ htmlResult
 token (	Rtoken"=
 VerifyEmailResponse
 msg (	Rmsg
-error (	Rerror"„
+error (	Rerror"×
 CheckUserRequest\'
 organization_id (RorganizationId
 
@@ -145,7 +165,9 @@ permission
 type_permission	 (	RtypePermission
 	roles_ids
  (RrolesIds"
-api_key_value (	RapiKeyValue"s
+api_key_value (	RapiKeyValue&
+token_ccp_admin (	RtokenCcpAdmin)
+token_ccp_user_id (	RtokenCcpUserId"s
 CheckUserResponse
 	is_exists (RisExists
 error (	Rerror
@@ -203,7 +225,7 @@ first_name (	R	firstName
 is_super_user (RisSuperUser"L
 GetOneUserRequest
 id (Rid\'
-organization_id (RorganizationId"½
+organization_id (RorganizationId"ä
 GetOneUserResponse
 id (Rid
 user_id (	RuserId
@@ -228,7 +250,8 @@ updated_at (	R	updatedAt,
 zip_code (	RzipCode
 address (	Raddress
 state (	Rstate#
-emoji_country (	RemojiCountry"E
+emoji_country (	RemojiCountry%
+email_verified (RemailVerified"E
 ListUserResponse1
 users (2.accounts.v1alpha1.UserListRusers"I
 ListUserPaginationRequest
@@ -506,7 +529,7 @@ first_name (	R	firstName
 	users_dex (2.accounts.v1alpha1.UsersDexRusersDex"i
 GetOneUserDexRequest
 user_id (	RuserId8
-user (2$.accounts.v1alpha1.CreateUserRequestRuser"Ò
+user (2$.accounts.v1alpha1.CreateUserRequestRuser"¼
 GetOneUserDexResponse
 id (Rid
 user_id (	RuserId
@@ -532,10 +555,13 @@ updated_at (	R	updatedAt,
 zip_code (	RzipCode
 address (	Raddress
 state (	Rstate#
-emoji_country (	RemojiCountry*d
+emoji_country (	RemojiCountry$
+is_mfa_enabled (RisMfaEnabled
+	token_ccp (	RtokenCcp%
+email_verified (RemailVerified*d
 InvitationResponse,
 (INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED  
-INVITATION_RESPONSE_REJECTED2‘#
+INVITATION_RESPONSE_REJECTED2¨%
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
@@ -589,7 +615,10 @@ DeleteRole$.accounts.v1alpha1.DeleteRoleRequest%.accounts.v1alpha1.DeleteRoleR
 
 ListApiKey$.accounts.v1alpha1.ListApiKeyRequest%.accounts.v1alpha1.ListApiKeyResponse_
 UpdateApiKey&.accounts.v1alpha1.UpdateApiKeyRequest\'.accounts.v1alpha1.UpdateApiKeyResponse_
-DeleteApiKey&.accounts.v1alpha1.DeleteApiKeyRequest\'.accounts.v1alpha1.DeleteApiKeyResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
+DeleteApiKey&.accounts.v1alpha1.DeleteApiKeyRequest\'.accounts.v1alpha1.DeleteApiKeyResponsee
+CreateTokenCCP(.accounts.v1alpha1.CreateTokenCCPRequest).accounts.v1alpha1.CreateTokenCCPResponsee
+GetOneTokenCCP(.accounts.v1alpha1.GetOneTokenCCPRequest).accounts.v1alpha1.GetOneTokenCCPResponseG
+Logs.accounts.v1alpha1.LogsRequest.accounts.v1alpha1.LogsResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;
