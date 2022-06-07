@@ -24,7 +24,7 @@ service PaymentAPIService{
     rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {}; 
 }
 message DeleteCustomerRequest {
-    string id =1; 
+    string customer_id =1; 
 }
 
 message DeleteCustomerResponse {
@@ -40,7 +40,7 @@ message GetSuscriptionResponse {
     string status = 2;
 }
 message GetOrganizationPaymentRequest {
-    string organization_id = 1;
+    uint32 organization_id = 1;
 }
 
 message GetOrganizationPaymentResponse {
@@ -77,12 +77,11 @@ message UpdateSuscriptionResponse {
 
 message CreateSuscriptionRequest {
     payment.v1alpha1.Suscription suscription= 1;
-    string status = 2;
 }
 
 message CreateSuscriptionResponse {
     string suscription_id =1;
-    string error = 2;
+    string status = 2;
 }
 
 message CancelSuscriptionRequest {
@@ -95,27 +94,24 @@ message  CancelSuscriptionResponse {
 
 message CreateCustomerRequest {
     payment.v1alpha1.Customer customer = 1;
-    string status = 2;
 }
 
 message CreateCustomerResponse {
     string customer_id =1;
-    string error = 2;
+    string status = 2;
 }
 
 message CreatePaymentRequest {
     payment.v1alpha1.Payment payment = 1;
-    string status = 2;
 }
 
 message CreatePaymentResponse {
     string card_id =1;
-    string error = 2;
+    string status = 2;
 }
 
 message UpdatePaymentRequest {
     payment.v1alpha1.Payment payment = 1;
-    string status = 2;
 }
 
 message UpdatePaymentResponse {

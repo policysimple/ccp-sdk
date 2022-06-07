@@ -18,9 +18,9 @@ class Suscription extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
      */
-    protected $customer_id = '';
+    protected $customer = null;
     /**
      * Generated from protobuf field <code>string price = 3 [json_name = "price"];</code>
      */
@@ -29,10 +29,6 @@ class Suscription extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool cancel = 4 [json_name = "cancel"];</code>
      */
     protected $cancel = false;
-    /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
-     */
-    protected $organization_id = 0;
 
     /**
      * Constructor.
@@ -41,10 +37,9 @@ class Suscription extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $customer_id
+     *     @type \Payment\V1alpha1\Customer $customer
      *     @type string $price
      *     @type bool $cancel
-     *     @type int $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -75,23 +70,33 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
-     * @return string
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
+     * @return \Payment\V1alpha1\Customer|null
      */
-    public function getCustomerId()
+    public function getCustomer()
     {
-        return $this->customer_id;
+        return $this->customer;
+    }
+
+    public function hasCustomer()
+    {
+        return isset($this->customer);
+    }
+
+    public function clearCustomer()
+    {
+        unset($this->customer);
     }
 
     /**
-     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
+     * @param \Payment\V1alpha1\Customer $var
      * @return $this
      */
-    public function setCustomerId($var)
+    public function setCustomer($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->customer_id = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
+        $this->customer = $var;
 
         return $this;
     }
@@ -136,28 +141,6 @@ class Suscription extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->cancel = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
-     * @return int
-     */
-    public function getOrganizationId()
-    {
-        return $this->organization_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setOrganizationId($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->organization_id = $var;
 
         return $this;
     }
