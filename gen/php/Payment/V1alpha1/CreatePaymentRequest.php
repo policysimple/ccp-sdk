@@ -17,10 +17,6 @@ class CreatePaymentRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
      */
     protected $payment = null;
-    /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
-     */
-    protected $status = '';
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class CreatePaymentRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Payment\V1alpha1\Payment $payment
-     *     @type string $status
      * }
      */
     public function __construct($data = NULL) {
@@ -65,28 +60,6 @@ class CreatePaymentRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Payment\V1alpha1\Payment::class);
         $this->payment = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setStatus($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->status = $var;
 
         return $this;
     }

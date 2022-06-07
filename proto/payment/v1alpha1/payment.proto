@@ -4,16 +4,6 @@ package payment.v1alpha1;
 
 option go_package = "github.com/cuemby/ccp-payment-service/payment/v1alpha1";
 
-message Payment {
-    string id = 1;
-    uint32 organization_id = 2;
-    uint32 project_id = 3;
-    string application_id = 4;
-    string suscription_id = 5;
-    string customer_id = 6;
-    string token_card = 7;
-  }
-
 message Customer {
   string id =1;
   string name = 2;
@@ -23,17 +13,22 @@ message Customer {
 
 message Suscription {
   string id =1;
-  string customer_id = 2;
+  Customer customer = 2;
   string price = 3;
   bool cancel = 4;
-  uint32 organization_id = 5;
+}
+
+message Payment {
+  string id = 1;
+  Customer customer = 2;
+  Suscription suscription = 3;
+  string token_card = 4;
 }
 
 message Invoice {
   string id =1;
-  string customer_id = 2;
-  uint32 organization_id = 5;
-  string suscription_id = 6;
+  Customer customer = 2;
+  Suscription suscription = 3;
 }
 
 message PaymentList {

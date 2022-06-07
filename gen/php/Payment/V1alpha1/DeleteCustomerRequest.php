@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteCustomerRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
      */
-    protected $id = '';
+    protected $customer_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DeleteCustomerRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $id
+     *     @type string $customer_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class DeleteCustomerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
      * @return string
      */
-    public function getId()
+    public function getCustomerId()
     {
-        return $this->id;
+        return $this->customer_id;
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setCustomerId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->id = $var;
+        $this->customer_id = $var;
 
         return $this;
     }

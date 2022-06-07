@@ -18,27 +18,15 @@ class Payment extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
      */
-    protected $organization_id = 0;
+    protected $customer = null;
     /**
-     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];</code>
      */
-    protected $project_id = 0;
+    protected $suscription = null;
     /**
-     * Generated from protobuf field <code>string application_id = 4 [json_name = "applicationId"];</code>
-     */
-    protected $application_id = '';
-    /**
-     * Generated from protobuf field <code>string suscription_id = 5 [json_name = "suscriptionId"];</code>
-     */
-    protected $suscription_id = '';
-    /**
-     * Generated from protobuf field <code>string customer_id = 6 [json_name = "customerId"];</code>
-     */
-    protected $customer_id = '';
-    /**
-     * Generated from protobuf field <code>string token_card = 7 [json_name = "tokenCard"];</code>
+     * Generated from protobuf field <code>string token_card = 4 [json_name = "tokenCard"];</code>
      */
     protected $token_card = '';
 
@@ -49,11 +37,8 @@ class Payment extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type int $organization_id
-     *     @type int $project_id
-     *     @type string $application_id
-     *     @type string $suscription_id
-     *     @type string $customer_id
+     *     @type \Payment\V1alpha1\Customer $customer
+     *     @type \Payment\V1alpha1\Suscription $suscription
      *     @type string $token_card
      * }
      */
@@ -85,117 +70,71 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
-     * @return int
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
+     * @return \Payment\V1alpha1\Customer|null
      */
-    public function getOrganizationId()
+    public function getCustomer()
     {
-        return $this->organization_id;
+        return $this->customer;
+    }
+
+    public function hasCustomer()
+    {
+        return isset($this->customer);
+    }
+
+    public function clearCustomer()
+    {
+        unset($this->customer);
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
+     * @param \Payment\V1alpha1\Customer $var
      * @return $this
      */
-    public function setOrganizationId($var)
+    public function setCustomer($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->organization_id = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
+        $this->customer = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-     * @return int
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];</code>
+     * @return \Payment\V1alpha1\Suscription|null
      */
-    public function getProjectId()
+    public function getSuscription()
     {
-        return $this->project_id;
+        return $this->suscription;
+    }
+
+    public function hasSuscription()
+    {
+        return isset($this->suscription);
+    }
+
+    public function clearSuscription()
+    {
+        unset($this->suscription);
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];</code>
+     * @param \Payment\V1alpha1\Suscription $var
      * @return $this
      */
-    public function setProjectId($var)
+    public function setSuscription($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->project_id = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Suscription::class);
+        $this->suscription = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string application_id = 4 [json_name = "applicationId"];</code>
-     * @return string
-     */
-    public function getApplicationId()
-    {
-        return $this->application_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string application_id = 4 [json_name = "applicationId"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setApplicationId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->application_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string suscription_id = 5 [json_name = "suscriptionId"];</code>
-     * @return string
-     */
-    public function getSuscriptionId()
-    {
-        return $this->suscription_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string suscription_id = 5 [json_name = "suscriptionId"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSuscriptionId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->suscription_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string customer_id = 6 [json_name = "customerId"];</code>
-     * @return string
-     */
-    public function getCustomerId()
-    {
-        return $this->customer_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string customer_id = 6 [json_name = "customerId"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCustomerId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->customer_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string token_card = 7 [json_name = "tokenCard"];</code>
+     * Generated from protobuf field <code>string token_card = 4 [json_name = "tokenCard"];</code>
      * @return string
      */
     public function getTokenCard()
@@ -204,7 +143,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string token_card = 7 [json_name = "tokenCard"];</code>
+     * Generated from protobuf field <code>string token_card = 4 [json_name = "tokenCard"];</code>
      * @param string $var
      * @return $this
      */

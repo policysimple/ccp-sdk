@@ -19,16 +19,16 @@ public final class PaymentApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string customer_id = 1 [json_name = "customerId"];</code>
+     * @return The customerId.
      */
-    java.lang.String getId();
+    java.lang.String getCustomerId();
     /**
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The bytes for id.
+     * <code>string customer_id = 1 [json_name = "customerId"];</code>
+     * @return The bytes for customerId.
      */
     com.google.protobuf.ByteString
-        getIdBytes();
+        getCustomerIdBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.DeleteCustomerRequest}
@@ -43,7 +43,7 @@ public final class PaymentApi {
       super(builder);
     }
     private DeleteCustomerRequest() {
-      id_ = "";
+      customerId_ = "";
     }
 
     @java.lang.Override
@@ -79,7 +79,7 @@ public final class PaymentApi {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = s;
+              customerId_ = s;
               break;
             }
             default: {
@@ -114,38 +114,38 @@ public final class PaymentApi {
               payment.v1alpha1.PaymentApi.DeleteCustomerRequest.class, payment.v1alpha1.PaymentApi.DeleteCustomerRequest.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    public static final int CUSTOMER_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object customerId_;
     /**
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string customer_id = 1 [json_name = "customerId"];</code>
+     * @return The customerId.
      */
     @java.lang.Override
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
+    public java.lang.String getCustomerId() {
+      java.lang.Object ref = customerId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        customerId_ = s;
         return s;
       }
     }
     /**
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The bytes for id.
+     * <code>string customer_id = 1 [json_name = "customerId"];</code>
+     * @return The bytes for customerId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
+        getCustomerIdBytes() {
+      java.lang.Object ref = customerId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        id_ = b;
+        customerId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -166,8 +166,8 @@ public final class PaymentApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      if (!getCustomerIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, customerId_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,8 +178,8 @@ public final class PaymentApi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      if (!getCustomerIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, customerId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,8 +196,8 @@ public final class PaymentApi {
       }
       payment.v1alpha1.PaymentApi.DeleteCustomerRequest other = (payment.v1alpha1.PaymentApi.DeleteCustomerRequest) obj;
 
-      if (!getId()
-          .equals(other.getId())) return false;
+      if (!getCustomerId()
+          .equals(other.getCustomerId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -209,8 +209,8 @@ public final class PaymentApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + CUSTOMER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomerId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -344,7 +344,7 @@ public final class PaymentApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = "";
+        customerId_ = "";
 
         return this;
       }
@@ -372,7 +372,7 @@ public final class PaymentApi {
       @java.lang.Override
       public payment.v1alpha1.PaymentApi.DeleteCustomerRequest buildPartial() {
         payment.v1alpha1.PaymentApi.DeleteCustomerRequest result = new payment.v1alpha1.PaymentApi.DeleteCustomerRequest(this);
-        result.id_ = id_;
+        result.customerId_ = customerId_;
         onBuilt();
         return result;
       }
@@ -421,8 +421,8 @@ public final class PaymentApi {
 
       public Builder mergeFrom(payment.v1alpha1.PaymentApi.DeleteCustomerRequest other) {
         if (other == payment.v1alpha1.PaymentApi.DeleteCustomerRequest.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
+        if (!other.getCustomerId().isEmpty()) {
+          customerId_ = other.customerId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -454,78 +454,78 @@ public final class PaymentApi {
         return this;
       }
 
-      private java.lang.Object id_ = "";
+      private java.lang.Object customerId_ = "";
       /**
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @return The id.
+       * <code>string customer_id = 1 [json_name = "customerId"];</code>
+       * @return The customerId.
        */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
+      public java.lang.String getCustomerId() {
+        java.lang.Object ref = customerId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          id_ = s;
+          customerId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @return The bytes for id.
+       * <code>string customer_id = 1 [json_name = "customerId"];</code>
+       * @return The bytes for customerId.
        */
       public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
+          getCustomerIdBytes() {
+        java.lang.Object ref = customerId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          id_ = b;
+          customerId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @param value The id to set.
+       * <code>string customer_id = 1 [json_name = "customerId"];</code>
+       * @param value The customerId to set.
        * @return This builder for chaining.
        */
-      public Builder setId(
+      public Builder setCustomerId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        id_ = value;
+        customerId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string id = 1 [json_name = "id"];</code>
+       * <code>string customer_id = 1 [json_name = "customerId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearId() {
+      public Builder clearCustomerId() {
         
-        id_ = getDefaultInstance().getId();
+        customerId_ = getDefaultInstance().getCustomerId();
         onChanged();
         return this;
       }
       /**
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @param value The bytes for id to set.
+       * <code>string customer_id = 1 [json_name = "customerId"];</code>
+       * @param value The bytes for customerId to set.
        * @return This builder for chaining.
        */
-      public Builder setIdBytes(
+      public Builder setCustomerIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        id_ = value;
+        customerId_ = value;
         onChanged();
         return this;
       }
@@ -2494,16 +2494,10 @@ public final class PaymentApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    java.lang.String getOrganizationId();
-    /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-     * @return The bytes for organizationId.
-     */
-    com.google.protobuf.ByteString
-        getOrganizationIdBytes();
+    int getOrganizationId();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.GetOrganizationPaymentRequest}
@@ -2518,7 +2512,6 @@ public final class PaymentApi {
       super(builder);
     }
     private GetOrganizationPaymentRequest() {
-      organizationId_ = "";
     }
 
     @java.lang.Override
@@ -2551,10 +2544,9 @@ public final class PaymentApi {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              organizationId_ = s;
+              organizationId_ = input.readUInt32();
               break;
             }
             default: {
@@ -2590,41 +2582,14 @@ public final class PaymentApi {
     }
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object organizationId_;
+    private int organizationId_;
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public java.lang.String getOrganizationId() {
-      java.lang.Object ref = organizationId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        organizationId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-     * @return The bytes for organizationId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOrganizationIdBytes() {
-      java.lang.Object ref = organizationId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        organizationId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getOrganizationId() {
+      return organizationId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2641,8 +2606,8 @@ public final class PaymentApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getOrganizationIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
+      if (organizationId_ != 0) {
+        output.writeUInt32(1, organizationId_);
       }
       unknownFields.writeTo(output);
     }
@@ -2653,8 +2618,9 @@ public final class PaymentApi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getOrganizationIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
+      if (organizationId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, organizationId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2671,8 +2637,8 @@ public final class PaymentApi {
       }
       payment.v1alpha1.PaymentApi.GetOrganizationPaymentRequest other = (payment.v1alpha1.PaymentApi.GetOrganizationPaymentRequest) obj;
 
-      if (!getOrganizationId()
-          .equals(other.getOrganizationId())) return false;
+      if (getOrganizationId()
+          != other.getOrganizationId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2685,7 +2651,7 @@ public final class PaymentApi {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId().hashCode();
+      hash = (53 * hash) + getOrganizationId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2819,7 +2785,7 @@ public final class PaymentApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        organizationId_ = "";
+        organizationId_ = 0;
 
         return this;
       }
@@ -2896,9 +2862,8 @@ public final class PaymentApi {
 
       public Builder mergeFrom(payment.v1alpha1.PaymentApi.GetOrganizationPaymentRequest other) {
         if (other == payment.v1alpha1.PaymentApi.GetOrganizationPaymentRequest.getDefaultInstance()) return this;
-        if (!other.getOrganizationId().isEmpty()) {
-          organizationId_ = other.organizationId_;
-          onChanged();
+        if (other.getOrganizationId() != 0) {
+          setOrganizationId(other.getOrganizationId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2929,78 +2894,33 @@ public final class PaymentApi {
         return this;
       }
 
-      private java.lang.Object organizationId_ = "";
+      private int organizationId_ ;
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      public java.lang.String getOrganizationId() {
-        java.lang.Object ref = organizationId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          organizationId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getOrganizationId() {
+        return organizationId_;
       }
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-       * @return The bytes for organizationId.
-       */
-      public com.google.protobuf.ByteString
-          getOrganizationIdBytes() {
-        java.lang.Object ref = organizationId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          organizationId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setOrganizationId(int value) {
+        
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = getDefaultInstance().getOrganizationId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-       * @param value The bytes for organizationId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOrganizationIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        organizationId_ = value;
+        organizationId_ = 0;
         onChanged();
         return this;
       }
@@ -8066,18 +7986,6 @@ public final class PaymentApi {
      * <code>.payment.v1alpha1.Suscription suscription = 1 [json_name = "suscription"];</code>
      */
     payment.v1alpha1.PaymentOuterClass.SuscriptionOrBuilder getSuscriptionOrBuilder();
-
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
-     */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.CreateSuscriptionRequest}
@@ -8092,7 +8000,6 @@ public final class PaymentApi {
       super(builder);
     }
     private CreateSuscriptionRequest() {
-      status_ = "";
     }
 
     @java.lang.Override
@@ -8136,12 +8043,6 @@ public final class PaymentApi {
                 suscription_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              status_ = s;
               break;
             }
             default: {
@@ -8202,44 +8103,6 @@ public final class PaymentApi {
       return getSuscription();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object status_;
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8257,9 +8120,6 @@ public final class PaymentApi {
       if (suscription_ != null) {
         output.writeMessage(1, getSuscription());
       }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -8272,9 +8132,6 @@ public final class PaymentApi {
       if (suscription_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getSuscription());
-      }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8296,8 +8153,6 @@ public final class PaymentApi {
         if (!getSuscription()
             .equals(other.getSuscription())) return false;
       }
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8313,8 +8168,6 @@ public final class PaymentApi {
         hash = (37 * hash) + SUSCRIPTION_FIELD_NUMBER;
         hash = (53 * hash) + getSuscription().hashCode();
       }
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8454,8 +8307,6 @@ public final class PaymentApi {
           suscription_ = null;
           suscriptionBuilder_ = null;
         }
-        status_ = "";
-
         return this;
       }
 
@@ -8487,7 +8338,6 @@ public final class PaymentApi {
         } else {
           result.suscription_ = suscriptionBuilder_.build();
         }
-        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -8538,10 +8388,6 @@ public final class PaymentApi {
         if (other == payment.v1alpha1.PaymentApi.CreateSuscriptionRequest.getDefaultInstance()) return this;
         if (other.hasSuscription()) {
           mergeSuscription(other.getSuscription());
-        }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8690,82 +8536,6 @@ public final class PaymentApi {
         }
         return suscriptionBuilder_;
       }
-
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return The status.
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -8836,16 +8606,16 @@ public final class PaymentApi {
         getSuscriptionIdBytes();
 
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
      */
-    java.lang.String getError();
+    java.lang.String getStatus();
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
      */
     com.google.protobuf.ByteString
-        getErrorBytes();
+        getStatusBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.CreateSuscriptionResponse}
@@ -8861,7 +8631,7 @@ public final class PaymentApi {
     }
     private CreateSuscriptionResponse() {
       suscriptionId_ = "";
-      error_ = "";
+      status_ = "";
     }
 
     @java.lang.Override
@@ -8903,7 +8673,7 @@ public final class PaymentApi {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              error_ = s;
+              status_ = s;
               break;
             }
             default: {
@@ -8976,38 +8746,38 @@ public final class PaymentApi {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object status_;
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
      */
     @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        error_ = s;
+        status_ = s;
         return s;
       }
     }
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
+        getStatusBytes() {
+      java.lang.Object ref = status_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        error_ = b;
+        status_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -9031,8 +8801,8 @@ public final class PaymentApi {
       if (!getSuscriptionIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, suscriptionId_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
       }
       unknownFields.writeTo(output);
     }
@@ -9046,8 +8816,8 @@ public final class PaymentApi {
       if (!getSuscriptionIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, suscriptionId_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9066,8 +8836,8 @@ public final class PaymentApi {
 
       if (!getSuscriptionId()
           .equals(other.getSuscriptionId())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9081,8 +8851,8 @@ public final class PaymentApi {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SUSCRIPTION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSuscriptionId().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9218,7 +8988,7 @@ public final class PaymentApi {
         super.clear();
         suscriptionId_ = "";
 
-        error_ = "";
+        status_ = "";
 
         return this;
       }
@@ -9247,7 +9017,7 @@ public final class PaymentApi {
       public payment.v1alpha1.PaymentApi.CreateSuscriptionResponse buildPartial() {
         payment.v1alpha1.PaymentApi.CreateSuscriptionResponse result = new payment.v1alpha1.PaymentApi.CreateSuscriptionResponse(this);
         result.suscriptionId_ = suscriptionId_;
-        result.error_ = error_;
+        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -9300,8 +9070,8 @@ public final class PaymentApi {
           suscriptionId_ = other.suscriptionId_;
           onChanged();
         }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -9409,78 +9179,78 @@ public final class PaymentApi {
         return this;
       }
 
-      private java.lang.Object error_ = "";
+      private java.lang.Object status_ = "";
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return The status.
        */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          error_ = s;
+          status_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return The bytes for status.
        */
       public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
+          getStatusBytes() {
+        java.lang.Object ref = status_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          error_ = b;
+          status_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @param value The status to set.
        * @return This builder for chaining.
        */
-      public Builder setError(
+      public Builder setStatus(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        error_ = value;
+        status_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
+       * <code>string status = 2 [json_name = "status"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearError() {
+      public Builder clearStatus() {
         
-        error_ = getDefaultInstance().getError();
+        status_ = getDefaultInstance().getStatus();
         onChanged();
         return this;
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
        * @return This builder for chaining.
        */
-      public Builder setErrorBytes(
+      public Builder setStatusBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        error_ = value;
+        status_ = value;
         onChanged();
         return this;
       }
@@ -10691,18 +10461,6 @@ public final class PaymentApi {
      * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
      */
     payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder getCustomerOrBuilder();
-
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
-     */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.CreateCustomerRequest}
@@ -10717,7 +10475,6 @@ public final class PaymentApi {
       super(builder);
     }
     private CreateCustomerRequest() {
-      status_ = "";
     }
 
     @java.lang.Override
@@ -10761,12 +10518,6 @@ public final class PaymentApi {
                 customer_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              status_ = s;
               break;
             }
             default: {
@@ -10827,44 +10578,6 @@ public final class PaymentApi {
       return getCustomer();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object status_;
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10882,9 +10595,6 @@ public final class PaymentApi {
       if (customer_ != null) {
         output.writeMessage(1, getCustomer());
       }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -10897,9 +10607,6 @@ public final class PaymentApi {
       if (customer_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getCustomer());
-      }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10921,8 +10628,6 @@ public final class PaymentApi {
         if (!getCustomer()
             .equals(other.getCustomer())) return false;
       }
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10938,8 +10643,6 @@ public final class PaymentApi {
         hash = (37 * hash) + CUSTOMER_FIELD_NUMBER;
         hash = (53 * hash) + getCustomer().hashCode();
       }
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11079,8 +10782,6 @@ public final class PaymentApi {
           customer_ = null;
           customerBuilder_ = null;
         }
-        status_ = "";
-
         return this;
       }
 
@@ -11112,7 +10813,6 @@ public final class PaymentApi {
         } else {
           result.customer_ = customerBuilder_.build();
         }
-        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -11163,10 +10863,6 @@ public final class PaymentApi {
         if (other == payment.v1alpha1.PaymentApi.CreateCustomerRequest.getDefaultInstance()) return this;
         if (other.hasCustomer()) {
           mergeCustomer(other.getCustomer());
-        }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11315,82 +11011,6 @@ public final class PaymentApi {
         }
         return customerBuilder_;
       }
-
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return The status.
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -11461,16 +11081,16 @@ public final class PaymentApi {
         getCustomerIdBytes();
 
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
      */
-    java.lang.String getError();
+    java.lang.String getStatus();
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
      */
     com.google.protobuf.ByteString
-        getErrorBytes();
+        getStatusBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.CreateCustomerResponse}
@@ -11486,7 +11106,7 @@ public final class PaymentApi {
     }
     private CreateCustomerResponse() {
       customerId_ = "";
-      error_ = "";
+      status_ = "";
     }
 
     @java.lang.Override
@@ -11528,7 +11148,7 @@ public final class PaymentApi {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              error_ = s;
+              status_ = s;
               break;
             }
             default: {
@@ -11601,38 +11221,38 @@ public final class PaymentApi {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object status_;
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
      */
     @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        error_ = s;
+        status_ = s;
         return s;
       }
     }
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
+        getStatusBytes() {
+      java.lang.Object ref = status_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        error_ = b;
+        status_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -11656,8 +11276,8 @@ public final class PaymentApi {
       if (!getCustomerIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, customerId_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
       }
       unknownFields.writeTo(output);
     }
@@ -11671,8 +11291,8 @@ public final class PaymentApi {
       if (!getCustomerIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, customerId_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11691,8 +11311,8 @@ public final class PaymentApi {
 
       if (!getCustomerId()
           .equals(other.getCustomerId())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11706,8 +11326,8 @@ public final class PaymentApi {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CUSTOMER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCustomerId().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11843,7 +11463,7 @@ public final class PaymentApi {
         super.clear();
         customerId_ = "";
 
-        error_ = "";
+        status_ = "";
 
         return this;
       }
@@ -11872,7 +11492,7 @@ public final class PaymentApi {
       public payment.v1alpha1.PaymentApi.CreateCustomerResponse buildPartial() {
         payment.v1alpha1.PaymentApi.CreateCustomerResponse result = new payment.v1alpha1.PaymentApi.CreateCustomerResponse(this);
         result.customerId_ = customerId_;
-        result.error_ = error_;
+        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -11925,8 +11545,8 @@ public final class PaymentApi {
           customerId_ = other.customerId_;
           onChanged();
         }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -12034,78 +11654,78 @@ public final class PaymentApi {
         return this;
       }
 
-      private java.lang.Object error_ = "";
+      private java.lang.Object status_ = "";
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return The status.
        */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          error_ = s;
+          status_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return The bytes for status.
        */
       public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
+          getStatusBytes() {
+        java.lang.Object ref = status_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          error_ = b;
+          status_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @param value The status to set.
        * @return This builder for chaining.
        */
-      public Builder setError(
+      public Builder setStatus(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        error_ = value;
+        status_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
+       * <code>string status = 2 [json_name = "status"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearError() {
+      public Builder clearStatus() {
         
-        error_ = getDefaultInstance().getError();
+        status_ = getDefaultInstance().getStatus();
         onChanged();
         return this;
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
        * @return This builder for chaining.
        */
-      public Builder setErrorBytes(
+      public Builder setStatusBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        error_ = value;
+        status_ = value;
         onChanged();
         return this;
       }
@@ -12180,18 +11800,6 @@ public final class PaymentApi {
      * <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
      */
     payment.v1alpha1.PaymentOuterClass.PaymentOrBuilder getPaymentOrBuilder();
-
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
-     */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.CreatePaymentRequest}
@@ -12206,7 +11814,6 @@ public final class PaymentApi {
       super(builder);
     }
     private CreatePaymentRequest() {
-      status_ = "";
     }
 
     @java.lang.Override
@@ -12250,12 +11857,6 @@ public final class PaymentApi {
                 payment_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              status_ = s;
               break;
             }
             default: {
@@ -12316,44 +11917,6 @@ public final class PaymentApi {
       return getPayment();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object status_;
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -12371,9 +11934,6 @@ public final class PaymentApi {
       if (payment_ != null) {
         output.writeMessage(1, getPayment());
       }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -12386,9 +11946,6 @@ public final class PaymentApi {
       if (payment_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getPayment());
-      }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12410,8 +11967,6 @@ public final class PaymentApi {
         if (!getPayment()
             .equals(other.getPayment())) return false;
       }
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12427,8 +11982,6 @@ public final class PaymentApi {
         hash = (37 * hash) + PAYMENT_FIELD_NUMBER;
         hash = (53 * hash) + getPayment().hashCode();
       }
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -12568,8 +12121,6 @@ public final class PaymentApi {
           payment_ = null;
           paymentBuilder_ = null;
         }
-        status_ = "";
-
         return this;
       }
 
@@ -12601,7 +12152,6 @@ public final class PaymentApi {
         } else {
           result.payment_ = paymentBuilder_.build();
         }
-        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -12652,10 +12202,6 @@ public final class PaymentApi {
         if (other == payment.v1alpha1.PaymentApi.CreatePaymentRequest.getDefaultInstance()) return this;
         if (other.hasPayment()) {
           mergePayment(other.getPayment());
-        }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -12804,82 +12350,6 @@ public final class PaymentApi {
         }
         return paymentBuilder_;
       }
-
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return The status.
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -12950,16 +12420,16 @@ public final class PaymentApi {
         getCardIdBytes();
 
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
      */
-    java.lang.String getError();
+    java.lang.String getStatus();
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
      */
     com.google.protobuf.ByteString
-        getErrorBytes();
+        getStatusBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.CreatePaymentResponse}
@@ -12975,7 +12445,7 @@ public final class PaymentApi {
     }
     private CreatePaymentResponse() {
       cardId_ = "";
-      error_ = "";
+      status_ = "";
     }
 
     @java.lang.Override
@@ -13017,7 +12487,7 @@ public final class PaymentApi {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              error_ = s;
+              status_ = s;
               break;
             }
             default: {
@@ -13090,38 +12560,38 @@ public final class PaymentApi {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object status_;
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The status.
      */
     @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        error_ = s;
+        status_ = s;
         return s;
       }
     }
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
+     * <code>string status = 2 [json_name = "status"];</code>
+     * @return The bytes for status.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
+        getStatusBytes() {
+      java.lang.Object ref = status_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        error_ = b;
+        status_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -13145,8 +12615,8 @@ public final class PaymentApi {
       if (!getCardIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cardId_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
       }
       unknownFields.writeTo(output);
     }
@@ -13160,8 +12630,8 @@ public final class PaymentApi {
       if (!getCardIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cardId_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -13180,8 +12650,8 @@ public final class PaymentApi {
 
       if (!getCardId()
           .equals(other.getCardId())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -13195,8 +12665,8 @@ public final class PaymentApi {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCardId().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -13332,7 +12802,7 @@ public final class PaymentApi {
         super.clear();
         cardId_ = "";
 
-        error_ = "";
+        status_ = "";
 
         return this;
       }
@@ -13361,7 +12831,7 @@ public final class PaymentApi {
       public payment.v1alpha1.PaymentApi.CreatePaymentResponse buildPartial() {
         payment.v1alpha1.PaymentApi.CreatePaymentResponse result = new payment.v1alpha1.PaymentApi.CreatePaymentResponse(this);
         result.cardId_ = cardId_;
-        result.error_ = error_;
+        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -13414,8 +12884,8 @@ public final class PaymentApi {
           cardId_ = other.cardId_;
           onChanged();
         }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -13523,78 +12993,78 @@ public final class PaymentApi {
         return this;
       }
 
-      private java.lang.Object error_ = "";
+      private java.lang.Object status_ = "";
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return The status.
        */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          error_ = s;
+          status_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @return The bytes for status.
        */
       public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
+          getStatusBytes() {
+        java.lang.Object ref = status_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          error_ = b;
+          status_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @param value The status to set.
        * @return This builder for chaining.
        */
-      public Builder setError(
+      public Builder setStatus(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        error_ = value;
+        status_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
+       * <code>string status = 2 [json_name = "status"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearError() {
+      public Builder clearStatus() {
         
-        error_ = getDefaultInstance().getError();
+        status_ = getDefaultInstance().getStatus();
         onChanged();
         return this;
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
+       * <code>string status = 2 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
        * @return This builder for chaining.
        */
-      public Builder setErrorBytes(
+      public Builder setStatusBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        error_ = value;
+        status_ = value;
         onChanged();
         return this;
       }
@@ -13669,18 +13139,6 @@ public final class PaymentApi {
      * <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
      */
     payment.v1alpha1.PaymentOuterClass.PaymentOrBuilder getPaymentOrBuilder();
-
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
-     */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.UpdatePaymentRequest}
@@ -13695,7 +13153,6 @@ public final class PaymentApi {
       super(builder);
     }
     private UpdatePaymentRequest() {
-      status_ = "";
     }
 
     @java.lang.Override
@@ -13739,12 +13196,6 @@ public final class PaymentApi {
                 payment_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              status_ = s;
               break;
             }
             default: {
@@ -13805,44 +13256,6 @@ public final class PaymentApi {
       return getPayment();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object status_;
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -13860,9 +13273,6 @@ public final class PaymentApi {
       if (payment_ != null) {
         output.writeMessage(1, getPayment());
       }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -13875,9 +13285,6 @@ public final class PaymentApi {
       if (payment_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getPayment());
-      }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -13899,8 +13306,6 @@ public final class PaymentApi {
         if (!getPayment()
             .equals(other.getPayment())) return false;
       }
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -13916,8 +13321,6 @@ public final class PaymentApi {
         hash = (37 * hash) + PAYMENT_FIELD_NUMBER;
         hash = (53 * hash) + getPayment().hashCode();
       }
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -14057,8 +13460,6 @@ public final class PaymentApi {
           payment_ = null;
           paymentBuilder_ = null;
         }
-        status_ = "";
-
         return this;
       }
 
@@ -14090,7 +13491,6 @@ public final class PaymentApi {
         } else {
           result.payment_ = paymentBuilder_.build();
         }
-        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -14141,10 +13541,6 @@ public final class PaymentApi {
         if (other == payment.v1alpha1.PaymentApi.UpdatePaymentRequest.getDefaultInstance()) return this;
         if (other.hasPayment()) {
           mergePayment(other.getPayment());
-        }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -14292,82 +13688,6 @@ public final class PaymentApi {
           payment_ = null;
         }
         return paymentBuilder_;
-      }
-
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return The status.
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -19458,105 +18778,103 @@ public final class PaymentApi {
     java.lang.String[] descriptorData = {
       "\n\"payment/v1alpha1/payment_api.proto\022\020pa" +
       "yment.v1alpha1\032\036payment/v1alpha1/payment" +
-      ".proto\"\'\n\025DeleteCustomerRequest\022\016\n\002id\030\001 " +
-      "\001(\tR\002id\"0\n\026DeleteCustomerResponse\022\026\n\006sta" +
-      "tus\030\001 \001(\tR\006status\">\n\025GetSuscriptionReque" +
-      "st\022%\n\016suscription_id\030\001 \001(\tR\rsuscriptionI" +
-      "d\"q\n\026GetSuscriptionResponse\022?\n\013suscripti" +
-      "on\030\001 \001(\0132\035.payment.v1alpha1.SuscriptionR" +
-      "\013suscription\022\026\n\006status\030\002 \001(\tR\006status\"H\n\035" +
-      "GetOrganizationPaymentRequest\022\'\n\017organiz" +
-      "ation_id\030\001 \001(\tR\016organizationId\"y\n\036GetOrg" +
-      "anizationPaymentResponse\022?\n\013suscription\030" +
-      "\001 \001(\0132\035.payment.v1alpha1.SuscriptionR\013su" +
-      "scription\022\026\n\006status\030\002 \001(\tR\006status\"5\n\022Get" +
-      "CustomerRequest\022\037\n\013customer_id\030\001 \001(\tR\ncu" +
-      "stomerId\"e\n\023GetCustomerResponse\0226\n\010custo" +
-      "mer\030\001 \001(\0132\032.payment.v1alpha1.CustomerR\010c" +
-      "ustomer\022\026\n\006status\030\002 \001(\tR\006status\"5\n\022GetPa" +
-      "ymentsRequest\022\037\n\013customer_id\030\001 \001(\tR\ncust" +
-      "omerId\"f\n\023GetPaymentsResponse\0227\n\007payment" +
-      "\030\001 \001(\0132\035.payment.v1alpha1.SuscriptionR\007p" +
-      "ayment\022\026\n\006status\030\002 \001(\tR\006status\"s\n\030Update" +
-      "SuscriptionRequest\022?\n\013suscription\030\001 \001(\0132" +
-      "\035.payment.v1alpha1.SuscriptionR\013suscript" +
-      "ion\022\026\n\006status\030\002 \001(\tR\006status\"t\n\031UpdateSus" +
-      "criptionResponse\022?\n\013suscription\030\001 \001(\0132\035." +
-      "payment.v1alpha1.SuscriptionR\013suscriptio" +
-      "n\022\026\n\006status\030\002 \001(\tR\006status\"s\n\030CreateSuscr" +
-      "iptionRequest\022?\n\013suscription\030\001 \001(\0132\035.pay" +
-      "ment.v1alpha1.SuscriptionR\013suscription\022\026" +
-      "\n\006status\030\002 \001(\tR\006status\"X\n\031CreateSuscript" +
-      "ionResponse\022%\n\016suscription_id\030\001 \001(\tR\rsus" +
-      "criptionId\022\024\n\005error\030\002 \001(\tR\005error\"A\n\030Canc" +
-      "elSuscriptionRequest\022%\n\016suscription_id\030\001" +
-      " \001(\tR\rsuscriptionId\"3\n\031CancelSuscription" +
-      "Response\022\026\n\006status\030\001 \001(\tR\006status\"g\n\025Crea" +
-      "teCustomerRequest\0226\n\010customer\030\001 \001(\0132\032.pa" +
-      "yment.v1alpha1.CustomerR\010customer\022\026\n\006sta" +
-      "tus\030\002 \001(\tR\006status\"O\n\026CreateCustomerRespo" +
-      "nse\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\022\024\n\005" +
-      "error\030\002 \001(\tR\005error\"c\n\024CreatePaymentReque" +
-      "st\0223\n\007payment\030\001 \001(\0132\031.payment.v1alpha1.P" +
-      "aymentR\007payment\022\026\n\006status\030\002 \001(\tR\006status\"" +
-      "F\n\025CreatePaymentResponse\022\027\n\007card_id\030\001 \001(" +
-      "\tR\006cardId\022\024\n\005error\030\002 \001(\tR\005error\"c\n\024Updat" +
+      ".proto\"8\n\025DeleteCustomerRequest\022\037\n\013custo" +
+      "mer_id\030\001 \001(\tR\ncustomerId\"0\n\026DeleteCustom" +
+      "erResponse\022\026\n\006status\030\001 \001(\tR\006status\">\n\025Ge" +
+      "tSuscriptionRequest\022%\n\016suscription_id\030\001 " +
+      "\001(\tR\rsuscriptionId\"q\n\026GetSuscriptionResp" +
+      "onse\022?\n\013suscription\030\001 \001(\0132\035.payment.v1al" +
+      "pha1.SuscriptionR\013suscription\022\026\n\006status\030" +
+      "\002 \001(\tR\006status\"H\n\035GetOrganizationPaymentR" +
+      "equest\022\'\n\017organization_id\030\001 \001(\rR\016organiz" +
+      "ationId\"y\n\036GetOrganizationPaymentRespons" +
+      "e\022?\n\013suscription\030\001 \001(\0132\035.payment.v1alpha" +
+      "1.SuscriptionR\013suscription\022\026\n\006status\030\002 \001" +
+      "(\tR\006status\"5\n\022GetCustomerRequest\022\037\n\013cust" +
+      "omer_id\030\001 \001(\tR\ncustomerId\"e\n\023GetCustomer" +
+      "Response\0226\n\010customer\030\001 \001(\0132\032.payment.v1a" +
+      "lpha1.CustomerR\010customer\022\026\n\006status\030\002 \001(\t" +
+      "R\006status\"5\n\022GetPaymentsRequest\022\037\n\013custom" +
+      "er_id\030\001 \001(\tR\ncustomerId\"f\n\023GetPaymentsRe" +
+      "sponse\0227\n\007payment\030\001 \001(\0132\035.payment.v1alph" +
+      "a1.SuscriptionR\007payment\022\026\n\006status\030\002 \001(\tR" +
+      "\006status\"s\n\030UpdateSuscriptionRequest\022?\n\013s" +
+      "uscription\030\001 \001(\0132\035.payment.v1alpha1.Susc" +
+      "riptionR\013suscription\022\026\n\006status\030\002 \001(\tR\006st" +
+      "atus\"t\n\031UpdateSuscriptionResponse\022?\n\013sus" +
+      "cription\030\001 \001(\0132\035.payment.v1alpha1.Suscri" +
+      "ptionR\013suscription\022\026\n\006status\030\002 \001(\tR\006stat" +
+      "us\"[\n\030CreateSuscriptionRequest\022?\n\013suscri" +
+      "ption\030\001 \001(\0132\035.payment.v1alpha1.Suscripti" +
+      "onR\013suscription\"Z\n\031CreateSuscriptionResp" +
+      "onse\022%\n\016suscription_id\030\001 \001(\tR\rsuscriptio" +
+      "nId\022\026\n\006status\030\002 \001(\tR\006status\"A\n\030CancelSus" +
+      "criptionRequest\022%\n\016suscription_id\030\001 \001(\tR" +
+      "\rsuscriptionId\"3\n\031CancelSuscriptionRespo" +
+      "nse\022\026\n\006status\030\001 \001(\tR\006status\"O\n\025CreateCus" +
+      "tomerRequest\0226\n\010customer\030\001 \001(\0132\032.payment" +
+      ".v1alpha1.CustomerR\010customer\"Q\n\026CreateCu" +
+      "stomerResponse\022\037\n\013customer_id\030\001 \001(\tR\ncus" +
+      "tomerId\022\026\n\006status\030\002 \001(\tR\006status\"K\n\024Creat" +
       "ePaymentRequest\0223\n\007payment\030\001 \001(\0132\031.payme" +
-      "nt.v1alpha1.PaymentR\007payment\022\026\n\006status\030\002" +
-      " \001(\tR\006status\"d\n\025UpdatePaymentResponse\0223\n" +
-      "\007payment\030\001 \001(\0132\031.payment.v1alpha1.Paymen" +
-      "tR\007payment\022\026\n\006status\030\002 \001(\tR\006status\"P\n\024De" +
-      "letePaymentRequest\022\027\n\007card_id\030\001 \001(\tR\006car" +
-      "dId\022\037\n\013customer_id\030\002 \001(\tR\ncustomerId\"/\n\025" +
-      "DeletePaymentResponse\022\026\n\006status\030\001 \001(\tR\006s" +
-      "tatus\"M\n\021GetPaymentRequest\022\027\n\007card_id\030\001 " +
-      "\001(\tR\006cardId\022\037\n\013customer_id\030\002 \001(\tR\ncustom" +
-      "erId\"a\n\022GetPaymentResponse\0223\n\007payment\030\001 " +
-      "\001(\0132\031.payment.v1alpha1.PaymentR\007payment\022" +
-      "\026\n\006status\030\002 \001(\tR\006status\";\n\022ListPaymentRe" +
-      "quest\022%\n\016suscription_id\030\001 \001(\tR\rsuscripti" +
-      "onId\"o\n\023ListPaymentResponse\022@\n\014payment_l" +
-      "ist\030\001 \001(\0132\035.payment.v1alpha1.PaymentList" +
-      "R\013paymentList\022\026\n\006status\030\002 \001(\tR\006status2\270\013" +
-      "\n\021PaymentAPIService\022n\n\021CreateSuscription" +
-      "\022*.payment.v1alpha1.CreateSuscriptionReq" +
-      "uest\032+.payment.v1alpha1.CreateSuscriptio" +
-      "nResponse\"\000\022n\n\021UpdateSuscription\022*.payme" +
-      "nt.v1alpha1.UpdateSuscriptionRequest\032+.p" +
-      "ayment.v1alpha1.UpdateSuscriptionRespons" +
-      "e\"\000\022n\n\021CancelSuscription\022*.payment.v1alp" +
-      "ha1.CancelSuscriptionRequest\032+.payment.v" +
-      "1alpha1.CancelSuscriptionResponse\"\000\022}\n\026G" +
-      "etOrganizationPayment\022/.payment.v1alpha1" +
-      ".GetOrganizationPaymentRequest\0320.payment" +
-      ".v1alpha1.GetOrganizationPaymentResponse" +
-      "\"\000\022e\n\016GetSuscription\022\'.payment.v1alpha1." +
-      "GetSuscriptionRequest\032(.payment.v1alpha1" +
-      ".GetSuscriptionResponse\"\000\022e\n\016CreateCusto" +
-      "mer\022\'.payment.v1alpha1.CreateCustomerReq" +
-      "uest\032(.payment.v1alpha1.CreateCustomerRe" +
-      "sponse\"\000\022e\n\016DeleteCustomer\022\'.payment.v1a" +
-      "lpha1.DeleteCustomerRequest\032(.payment.v1" +
-      "alpha1.DeleteCustomerResponse\"\000\022Y\n\nGetPa" +
-      "yment\022#.payment.v1alpha1.GetPaymentReque" +
-      "st\032$.payment.v1alpha1.GetPaymentResponse" +
-      "\"\000\022\\\n\013GetCustomer\022$.payment.v1alpha1.Get" +
-      "CustomerRequest\032%.payment.v1alpha1.GetCu" +
-      "stomerResponse\"\000\022\\\n\013GetPayments\022$.paymen" +
-      "t.v1alpha1.GetPaymentsRequest\032%.payment." +
-      "v1alpha1.GetPaymentsResponse\"\000\022b\n\rCreate" +
-      "Payment\022&.payment.v1alpha1.CreatePayment" +
-      "Request\032\'.payment.v1alpha1.CreatePayment" +
-      "Response\"\000\022b\n\rUpdatePayment\022&.payment.v1" +
-      "alpha1.UpdatePaymentRequest\032\'.payment.v1" +
-      "alpha1.UpdatePaymentResponse\"\000\022b\n\rDelete" +
-      "Payment\022&.payment.v1alpha1.DeletePayment" +
-      "Request\032\'.payment.v1alpha1.DeletePayment" +
-      "Response\"\000\022\\\n\013ListPayment\022$.payment.v1al" +
-      "pha1.ListPaymentRequest\032%.payment.v1alph" +
-      "a1.ListPaymentResponse\"\000B8Z6github.com/c" +
-      "uemby/ccp-payment-service/payment/v1alph" +
-      "a1b\006proto3"
+      "nt.v1alpha1.PaymentR\007payment\"H\n\025CreatePa" +
+      "ymentResponse\022\027\n\007card_id\030\001 \001(\tR\006cardId\022\026" +
+      "\n\006status\030\002 \001(\tR\006status\"K\n\024UpdatePaymentR" +
+      "equest\0223\n\007payment\030\001 \001(\0132\031.payment.v1alph" +
+      "a1.PaymentR\007payment\"d\n\025UpdatePaymentResp" +
+      "onse\0223\n\007payment\030\001 \001(\0132\031.payment.v1alpha1" +
+      ".PaymentR\007payment\022\026\n\006status\030\002 \001(\tR\006statu" +
+      "s\"P\n\024DeletePaymentRequest\022\027\n\007card_id\030\001 \001" +
+      "(\tR\006cardId\022\037\n\013customer_id\030\002 \001(\tR\ncustome" +
+      "rId\"/\n\025DeletePaymentResponse\022\026\n\006status\030\001" +
+      " \001(\tR\006status\"M\n\021GetPaymentRequest\022\027\n\007car" +
+      "d_id\030\001 \001(\tR\006cardId\022\037\n\013customer_id\030\002 \001(\tR" +
+      "\ncustomerId\"a\n\022GetPaymentResponse\0223\n\007pay" +
+      "ment\030\001 \001(\0132\031.payment.v1alpha1.PaymentR\007p" +
+      "ayment\022\026\n\006status\030\002 \001(\tR\006status\";\n\022ListPa" +
+      "ymentRequest\022%\n\016suscription_id\030\001 \001(\tR\rsu" +
+      "scriptionId\"o\n\023ListPaymentResponse\022@\n\014pa" +
+      "yment_list\030\001 \001(\0132\035.payment.v1alpha1.Paym" +
+      "entListR\013paymentList\022\026\n\006status\030\002 \001(\tR\006st" +
+      "atus2\270\013\n\021PaymentAPIService\022n\n\021CreateSusc" +
+      "ription\022*.payment.v1alpha1.CreateSuscrip" +
+      "tionRequest\032+.payment.v1alpha1.CreateSus" +
+      "criptionResponse\"\000\022n\n\021UpdateSuscription\022" +
+      "*.payment.v1alpha1.UpdateSuscriptionRequ" +
+      "est\032+.payment.v1alpha1.UpdateSuscription" +
+      "Response\"\000\022n\n\021CancelSuscription\022*.paymen" +
+      "t.v1alpha1.CancelSuscriptionRequest\032+.pa" +
+      "yment.v1alpha1.CancelSuscriptionResponse" +
+      "\"\000\022}\n\026GetOrganizationPayment\022/.payment.v" +
+      "1alpha1.GetOrganizationPaymentRequest\0320." +
+      "payment.v1alpha1.GetOrganizationPaymentR" +
+      "esponse\"\000\022e\n\016GetSuscription\022\'.payment.v1" +
+      "alpha1.GetSuscriptionRequest\032(.payment.v" +
+      "1alpha1.GetSuscriptionResponse\"\000\022e\n\016Crea" +
+      "teCustomer\022\'.payment.v1alpha1.CreateCust" +
+      "omerRequest\032(.payment.v1alpha1.CreateCus" +
+      "tomerResponse\"\000\022e\n\016DeleteCustomer\022\'.paym" +
+      "ent.v1alpha1.DeleteCustomerRequest\032(.pay" +
+      "ment.v1alpha1.DeleteCustomerResponse\"\000\022Y" +
+      "\n\nGetPayment\022#.payment.v1alpha1.GetPayme" +
+      "ntRequest\032$.payment.v1alpha1.GetPaymentR" +
+      "esponse\"\000\022\\\n\013GetCustomer\022$.payment.v1alp" +
+      "ha1.GetCustomerRequest\032%.payment.v1alpha" +
+      "1.GetCustomerResponse\"\000\022\\\n\013GetPayments\022$" +
+      ".payment.v1alpha1.GetPaymentsRequest\032%.p" +
+      "ayment.v1alpha1.GetPaymentsResponse\"\000\022b\n" +
+      "\rCreatePayment\022&.payment.v1alpha1.Create" +
+      "PaymentRequest\032\'.payment.v1alpha1.Create" +
+      "PaymentResponse\"\000\022b\n\rUpdatePayment\022&.pay" +
+      "ment.v1alpha1.UpdatePaymentRequest\032\'.pay" +
+      "ment.v1alpha1.UpdatePaymentResponse\"\000\022b\n" +
+      "\rDeletePayment\022&.payment.v1alpha1.Delete" +
+      "PaymentRequest\032\'.payment.v1alpha1.Delete" +
+      "PaymentResponse\"\000\022\\\n\013ListPayment\022$.payme" +
+      "nt.v1alpha1.ListPaymentRequest\032%.payment" +
+      ".v1alpha1.ListPaymentResponse\"\000B8Z6githu" +
+      "b.com/cuemby/ccp-payment-service/payment" +
+      "/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19568,7 +18886,7 @@ public final class PaymentApi {
     internal_static_payment_v1alpha1_DeleteCustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_DeleteCustomerRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "CustomerId", });
     internal_static_payment_v1alpha1_DeleteCustomerResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_payment_v1alpha1_DeleteCustomerResponse_fieldAccessorTable = new
@@ -19640,13 +18958,13 @@ public final class PaymentApi {
     internal_static_payment_v1alpha1_CreateSuscriptionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateSuscriptionRequest_descriptor,
-        new java.lang.String[] { "Suscription", "Status", });
+        new java.lang.String[] { "Suscription", });
     internal_static_payment_v1alpha1_CreateSuscriptionResponse_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_payment_v1alpha1_CreateSuscriptionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateSuscriptionResponse_descriptor,
-        new java.lang.String[] { "SuscriptionId", "Error", });
+        new java.lang.String[] { "SuscriptionId", "Status", });
     internal_static_payment_v1alpha1_CancelSuscriptionRequest_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_payment_v1alpha1_CancelSuscriptionRequest_fieldAccessorTable = new
@@ -19664,31 +18982,31 @@ public final class PaymentApi {
     internal_static_payment_v1alpha1_CreateCustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateCustomerRequest_descriptor,
-        new java.lang.String[] { "Customer", "Status", });
+        new java.lang.String[] { "Customer", });
     internal_static_payment_v1alpha1_CreateCustomerResponse_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_payment_v1alpha1_CreateCustomerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateCustomerResponse_descriptor,
-        new java.lang.String[] { "CustomerId", "Error", });
+        new java.lang.String[] { "CustomerId", "Status", });
     internal_static_payment_v1alpha1_CreatePaymentRequest_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_payment_v1alpha1_CreatePaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreatePaymentRequest_descriptor,
-        new java.lang.String[] { "Payment", "Status", });
+        new java.lang.String[] { "Payment", });
     internal_static_payment_v1alpha1_CreatePaymentResponse_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_payment_v1alpha1_CreatePaymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreatePaymentResponse_descriptor,
-        new java.lang.String[] { "CardId", "Error", });
+        new java.lang.String[] { "CardId", "Status", });
     internal_static_payment_v1alpha1_UpdatePaymentRequest_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_payment_v1alpha1_UpdatePaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_UpdatePaymentRequest_descriptor,
-        new java.lang.String[] { "Payment", "Status", });
+        new java.lang.String[] { "Payment", });
     internal_static_payment_v1alpha1_UpdatePaymentResponse_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_payment_v1alpha1_UpdatePaymentResponse_fieldAccessorTable = new
