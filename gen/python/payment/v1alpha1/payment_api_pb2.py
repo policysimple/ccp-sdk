@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"payment/v1alpha1/payment_api.proto\x12\x10payment.v1alpha1\x1a\x1epayment/v1alpha1/payment.proto\"8\n\x15\x44\x65leteCustomerRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\"0\n\x16\x44\x65leteCustomerResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\">\n\x15GetSuscriptionRequest\x12%\n\x0esuscription_id\x18\x01 \x01(\tR\rsuscriptionId\"q\n\x16GetSuscriptionResponse\x12?\n\x0bsuscription\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"H\n\x1dGetOrganizationPaymentRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"y\n\x1eGetOrganizationPaymentResponse\x12?\n\x0bsuscription\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"5\n\x12GetCustomerRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\"e\n\x13GetCustomerResponse\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"5\n\x12GetPaymentsRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\"f\n\x13GetPaymentsResponse\x12\x37\n\x07payment\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"s\n\x18UpdateSuscriptionRequest\x12?\n\x0bsuscription\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"t\n\x19UpdateSuscriptionResponse\x12?\n\x0bsuscription\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"[\n\x18\x43reateSuscriptionRequest\x12?\n\x0bsuscription\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\"Z\n\x19\x43reateSuscriptionResponse\x12%\n\x0esuscription_id\x18\x01 \x01(\tR\rsuscriptionId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"A\n\x18\x43\x61ncelSuscriptionRequest\x12%\n\x0esuscription_id\x18\x01 \x01(\tR\rsuscriptionId\"3\n\x19\x43\x61ncelSuscriptionResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"O\n\x15\x43reateCustomerRequest\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\"Q\n\x16\x43reateCustomerResponse\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"K\n\x14\x43reatePaymentRequest\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\"H\n\x15\x43reatePaymentResponse\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"K\n\x14UpdatePaymentRequest\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\"d\n\x15UpdatePaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"P\n\x14\x44\x65letePaymentRequest\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12\x1f\n\x0b\x63ustomer_id\x18\x02 \x01(\tR\ncustomerId\"/\n\x15\x44\x65letePaymentResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"M\n\x11GetPaymentRequest\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12\x1f\n\x0b\x63ustomer_id\x18\x02 \x01(\tR\ncustomerId\"a\n\x12GetPaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\";\n\x12ListPaymentRequest\x12%\n\x0esuscription_id\x18\x01 \x01(\tR\rsuscriptionId\"o\n\x13ListPaymentResponse\x12@\n\x0cpayment_list\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.PaymentListR\x0bpaymentList\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xb8\x0b\n\x11PaymentAPIService\x12n\n\x11\x43reateSuscription\x12*.payment.v1alpha1.CreateSuscriptionRequest\x1a+.payment.v1alpha1.CreateSuscriptionResponse\"\x00\x12n\n\x11UpdateSuscription\x12*.payment.v1alpha1.UpdateSuscriptionRequest\x1a+.payment.v1alpha1.UpdateSuscriptionResponse\"\x00\x12n\n\x11\x43\x61ncelSuscription\x12*.payment.v1alpha1.CancelSuscriptionRequest\x1a+.payment.v1alpha1.CancelSuscriptionResponse\"\x00\x12}\n\x16GetOrganizationPayment\x12/.payment.v1alpha1.GetOrganizationPaymentRequest\x1a\x30.payment.v1alpha1.GetOrganizationPaymentResponse\"\x00\x12\x65\n\x0eGetSuscription\x12\'.payment.v1alpha1.GetSuscriptionRequest\x1a(.payment.v1alpha1.GetSuscriptionResponse\"\x00\x12\x65\n\x0e\x43reateCustomer\x12\'.payment.v1alpha1.CreateCustomerRequest\x1a(.payment.v1alpha1.CreateCustomerResponse\"\x00\x12\x65\n\x0e\x44\x65leteCustomer\x12\'.payment.v1alpha1.DeleteCustomerRequest\x1a(.payment.v1alpha1.DeleteCustomerResponse\"\x00\x12Y\n\nGetPayment\x12#.payment.v1alpha1.GetPaymentRequest\x1a$.payment.v1alpha1.GetPaymentResponse\"\x00\x12\\\n\x0bGetCustomer\x12$.payment.v1alpha1.GetCustomerRequest\x1a%.payment.v1alpha1.GetCustomerResponse\"\x00\x12\\\n\x0bGetPayments\x12$.payment.v1alpha1.GetPaymentsRequest\x1a%.payment.v1alpha1.GetPaymentsResponse\"\x00\x12\x62\n\rCreatePayment\x12&.payment.v1alpha1.CreatePaymentRequest\x1a\'.payment.v1alpha1.CreatePaymentResponse\"\x00\x12\x62\n\rUpdatePayment\x12&.payment.v1alpha1.UpdatePaymentRequest\x1a\'.payment.v1alpha1.UpdatePaymentResponse\"\x00\x12\x62\n\rDeletePayment\x12&.payment.v1alpha1.DeletePaymentRequest\x1a\'.payment.v1alpha1.DeletePaymentResponse\"\x00\x12\\\n\x0bListPayment\x12$.payment.v1alpha1.ListPaymentRequest\x1a%.payment.v1alpha1.ListPaymentResponse\"\x00\x42\x38Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1b\x06proto3'
+  serialized_pb=b'\n\"payment/v1alpha1/payment_api.proto\x12\x10payment.v1alpha1\x1a\x1epayment/v1alpha1/payment.proto\"8\n\x15\x44\x65leteCustomerRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\"0\n\x16\x44\x65leteCustomerResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\">\n\x15GetSuscriptionRequest\x12%\n\x0esuscription_id\x18\x01 \x01(\tR\rsuscriptionId\"q\n\x16GetSuscriptionResponse\x12?\n\x0bsuscription\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"H\n\x1dGetOrganizationPaymentRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"p\n\x1eGetOrganizationPaymentResponse\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"5\n\x12GetCustomerRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\"e\n\x13GetCustomerResponse\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"5\n\x12GetPaymentsRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\"b\n\x13GetPaymentsResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"|\n\x18UpdateSuscriptionRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12?\n\x0bsuscription\x18\x02 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\"t\n\x19UpdateSuscriptionResponse\x12?\n\x0bsuscription\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"|\n\x18\x43reateSuscriptionRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12?\n\x0bsuscription\x18\x02 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\"Z\n\x19\x43reateSuscriptionResponse\x12%\n\x0esuscription_id\x18\x01 \x01(\tR\rsuscriptionId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"b\n\x18\x43\x61ncelSuscriptionRequest\x12%\n\x0esuscription_id\x18\x01 \x01(\tR\rsuscriptionId\x12\x1f\n\x0b\x63ustomer_id\x18\x02 \x01(\tR\ncustomerId\"3\n\x19\x43\x61ncelSuscriptionResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"O\n\x15\x43reateCustomerRequest\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\"Q\n\x16\x43reateCustomerResponse\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"l\n\x14\x43reatePaymentRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12\x33\n\x07payment\x18\x02 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\"H\n\x15\x43reatePaymentResponse\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"l\n\x14UpdatePaymentRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12\x33\n\x07payment\x18\x02 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\"d\n\x15UpdatePaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"P\n\x14\x44\x65letePaymentRequest\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12\x1f\n\x0b\x63ustomer_id\x18\x02 \x01(\tR\ncustomerId\"/\n\x15\x44\x65letePaymentResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"M\n\x11GetPaymentRequest\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12\x1f\n\x0b\x63ustomer_id\x18\x02 \x01(\tR\ncustomerId\"a\n\x12GetPaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\\\n\x12ListPaymentRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12%\n\x0esuscription_id\x18\x02 \x01(\tR\rsuscriptionId\"o\n\x13ListPaymentResponse\x12@\n\x0cpayment_list\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.PaymentListR\x0bpaymentList\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xb8\x0b\n\x11PaymentAPIService\x12n\n\x11\x43reateSuscription\x12*.payment.v1alpha1.CreateSuscriptionRequest\x1a+.payment.v1alpha1.CreateSuscriptionResponse\"\x00\x12n\n\x11UpdateSuscription\x12*.payment.v1alpha1.UpdateSuscriptionRequest\x1a+.payment.v1alpha1.UpdateSuscriptionResponse\"\x00\x12n\n\x11\x43\x61ncelSuscription\x12*.payment.v1alpha1.CancelSuscriptionRequest\x1a+.payment.v1alpha1.CancelSuscriptionResponse\"\x00\x12}\n\x16GetOrganizationPayment\x12/.payment.v1alpha1.GetOrganizationPaymentRequest\x1a\x30.payment.v1alpha1.GetOrganizationPaymentResponse\"\x00\x12\x65\n\x0eGetSuscription\x12\'.payment.v1alpha1.GetSuscriptionRequest\x1a(.payment.v1alpha1.GetSuscriptionResponse\"\x00\x12\x65\n\x0e\x43reateCustomer\x12\'.payment.v1alpha1.CreateCustomerRequest\x1a(.payment.v1alpha1.CreateCustomerResponse\"\x00\x12\x65\n\x0e\x44\x65leteCustomer\x12\'.payment.v1alpha1.DeleteCustomerRequest\x1a(.payment.v1alpha1.DeleteCustomerResponse\"\x00\x12Y\n\nGetPayment\x12#.payment.v1alpha1.GetPaymentRequest\x1a$.payment.v1alpha1.GetPaymentResponse\"\x00\x12\\\n\x0bGetCustomer\x12$.payment.v1alpha1.GetCustomerRequest\x1a%.payment.v1alpha1.GetCustomerResponse\"\x00\x12\\\n\x0bGetPayments\x12$.payment.v1alpha1.GetPaymentsRequest\x1a%.payment.v1alpha1.GetPaymentsResponse\"\x00\x12\x62\n\rCreatePayment\x12&.payment.v1alpha1.CreatePaymentRequest\x1a\'.payment.v1alpha1.CreatePaymentResponse\"\x00\x12\x62\n\rUpdatePayment\x12&.payment.v1alpha1.UpdatePaymentRequest\x1a\'.payment.v1alpha1.UpdatePaymentResponse\"\x00\x12\x62\n\rDeletePayment\x12&.payment.v1alpha1.DeletePaymentRequest\x1a\'.payment.v1alpha1.DeletePaymentResponse\"\x00\x12\\\n\x0bListPayment\x12$.payment.v1alpha1.ListPaymentRequest\x1a%.payment.v1alpha1.ListPaymentResponse\"\x00\x42\x38Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1b\x06proto3'
   ,
   dependencies=[payment_dot_v1alpha1_dot_payment__pb2.DESCRIPTOR,])
 
@@ -203,12 +203,12 @@ _GETORGANIZATIONPAYMENTRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='suscription', full_name='payment.v1alpha1.GetOrganizationPaymentResponse.suscription', index=0,
+      name='customer', full_name='payment.v1alpha1.GetOrganizationPaymentResponse.customer', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='suscription', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='customer', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='status', full_name='payment.v1alpha1.GetOrganizationPaymentResponse.status', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -229,7 +229,7 @@ _GETORGANIZATIONPAYMENTRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=449,
-  serialized_end=570,
+  serialized_end=561,
 )
 
 
@@ -260,8 +260,8 @@ _GETCUSTOMERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=572,
-  serialized_end=625,
+  serialized_start=563,
+  serialized_end=616,
 )
 
 
@@ -299,8 +299,8 @@ _GETCUSTOMERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=627,
-  serialized_end=728,
+  serialized_start=618,
+  serialized_end=719,
 )
 
 
@@ -331,8 +331,8 @@ _GETPAYMENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=730,
-  serialized_end=783,
+  serialized_start=721,
+  serialized_end=774,
 )
 
 
@@ -370,8 +370,8 @@ _GETPAYMENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=785,
-  serialized_end=887,
+  serialized_start=776,
+  serialized_end=874,
 )
 
 
@@ -384,19 +384,19 @@ _UPDATESUSCRIPTIONREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='suscription', full_name='payment.v1alpha1.UpdateSuscriptionRequest.suscription', index=0,
-      number=1, type=11, cpp_type=10, label=1,
+      name='customer_id', full_name='payment.v1alpha1.UpdateSuscriptionRequest.customer_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='customerId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='suscription', full_name='payment.v1alpha1.UpdateSuscriptionRequest.suscription', index=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='suscription', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='payment.v1alpha1.UpdateSuscriptionRequest.status', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -409,8 +409,8 @@ _UPDATESUSCRIPTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=889,
-  serialized_end=1004,
+  serialized_start=876,
+  serialized_end=1000,
 )
 
 
@@ -448,8 +448,8 @@ _UPDATESUSCRIPTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1006,
-  serialized_end=1122,
+  serialized_start=1002,
+  serialized_end=1118,
 )
 
 
@@ -462,8 +462,15 @@ _CREATESUSCRIPTIONREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='suscription', full_name='payment.v1alpha1.CreateSuscriptionRequest.suscription', index=0,
-      number=1, type=11, cpp_type=10, label=1,
+      name='customer_id', full_name='payment.v1alpha1.CreateSuscriptionRequest.customer_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='customerId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='suscription', full_name='payment.v1alpha1.CreateSuscriptionRequest.suscription', index=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -480,8 +487,8 @@ _CREATESUSCRIPTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1124,
-  serialized_end=1215,
+  serialized_start=1120,
+  serialized_end=1244,
 )
 
 
@@ -519,8 +526,8 @@ _CREATESUSCRIPTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1217,
-  serialized_end=1307,
+  serialized_start=1246,
+  serialized_end=1336,
 )
 
 
@@ -539,6 +546,13 @@ _CANCELSUSCRIPTIONREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='suscriptionId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='customer_id', full_name='payment.v1alpha1.CancelSuscriptionRequest.customer_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='customerId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -551,8 +565,8 @@ _CANCELSUSCRIPTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1309,
-  serialized_end=1374,
+  serialized_start=1338,
+  serialized_end=1436,
 )
 
 
@@ -583,8 +597,8 @@ _CANCELSUSCRIPTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1376,
-  serialized_end=1427,
+  serialized_start=1438,
+  serialized_end=1489,
 )
 
 
@@ -615,8 +629,8 @@ _CREATECUSTOMERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1429,
-  serialized_end=1508,
+  serialized_start=1491,
+  serialized_end=1570,
 )
 
 
@@ -654,8 +668,8 @@ _CREATECUSTOMERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1510,
-  serialized_end=1591,
+  serialized_start=1572,
+  serialized_end=1653,
 )
 
 
@@ -668,8 +682,15 @@ _CREATEPAYMENTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='payment', full_name='payment.v1alpha1.CreatePaymentRequest.payment', index=0,
-      number=1, type=11, cpp_type=10, label=1,
+      name='customer_id', full_name='payment.v1alpha1.CreatePaymentRequest.customer_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='customerId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='payment', full_name='payment.v1alpha1.CreatePaymentRequest.payment', index=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -686,8 +707,8 @@ _CREATEPAYMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1593,
-  serialized_end=1668,
+  serialized_start=1655,
+  serialized_end=1763,
 )
 
 
@@ -725,8 +746,8 @@ _CREATEPAYMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1670,
-  serialized_end=1742,
+  serialized_start=1765,
+  serialized_end=1837,
 )
 
 
@@ -739,8 +760,15 @@ _UPDATEPAYMENTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='payment', full_name='payment.v1alpha1.UpdatePaymentRequest.payment', index=0,
-      number=1, type=11, cpp_type=10, label=1,
+      name='customer_id', full_name='payment.v1alpha1.UpdatePaymentRequest.customer_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='customerId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='payment', full_name='payment.v1alpha1.UpdatePaymentRequest.payment', index=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -757,8 +785,8 @@ _UPDATEPAYMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1744,
-  serialized_end=1819,
+  serialized_start=1839,
+  serialized_end=1947,
 )
 
 
@@ -796,8 +824,8 @@ _UPDATEPAYMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1821,
-  serialized_end=1921,
+  serialized_start=1949,
+  serialized_end=2049,
 )
 
 
@@ -835,8 +863,8 @@ _DELETEPAYMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1923,
-  serialized_end=2003,
+  serialized_start=2051,
+  serialized_end=2131,
 )
 
 
@@ -867,8 +895,8 @@ _DELETEPAYMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2005,
-  serialized_end=2052,
+  serialized_start=2133,
+  serialized_end=2180,
 )
 
 
@@ -906,8 +934,8 @@ _GETPAYMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2054,
-  serialized_end=2131,
+  serialized_start=2182,
+  serialized_end=2259,
 )
 
 
@@ -945,8 +973,8 @@ _GETPAYMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2133,
-  serialized_end=2230,
+  serialized_start=2261,
+  serialized_end=2358,
 )
 
 
@@ -959,8 +987,15 @@ _LISTPAYMENTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='suscription_id', full_name='payment.v1alpha1.ListPaymentRequest.suscription_id', index=0,
+      name='customer_id', full_name='payment.v1alpha1.ListPaymentRequest.customer_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='customerId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='suscription_id', full_name='payment.v1alpha1.ListPaymentRequest.suscription_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -977,8 +1012,8 @@ _LISTPAYMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2232,
-  serialized_end=2291,
+  serialized_start=2360,
+  serialized_end=2452,
 )
 
 
@@ -1016,14 +1051,14 @@ _LISTPAYMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2293,
-  serialized_end=2404,
+  serialized_start=2454,
+  serialized_end=2565,
 )
 
 _GETSUSCRIPTIONRESPONSE.fields_by_name['suscription'].message_type = payment_dot_v1alpha1_dot_payment__pb2._SUSCRIPTION
-_GETORGANIZATIONPAYMENTRESPONSE.fields_by_name['suscription'].message_type = payment_dot_v1alpha1_dot_payment__pb2._SUSCRIPTION
+_GETORGANIZATIONPAYMENTRESPONSE.fields_by_name['customer'].message_type = payment_dot_v1alpha1_dot_payment__pb2._CUSTOMER
 _GETCUSTOMERRESPONSE.fields_by_name['customer'].message_type = payment_dot_v1alpha1_dot_payment__pb2._CUSTOMER
-_GETPAYMENTSRESPONSE.fields_by_name['payment'].message_type = payment_dot_v1alpha1_dot_payment__pb2._SUSCRIPTION
+_GETPAYMENTSRESPONSE.fields_by_name['payment'].message_type = payment_dot_v1alpha1_dot_payment__pb2._PAYMENT
 _UPDATESUSCRIPTIONREQUEST.fields_by_name['suscription'].message_type = payment_dot_v1alpha1_dot_payment__pb2._SUSCRIPTION
 _UPDATESUSCRIPTIONRESPONSE.fields_by_name['suscription'].message_type = payment_dot_v1alpha1_dot_payment__pb2._SUSCRIPTION
 _CREATESUSCRIPTIONREQUEST.fields_by_name['suscription'].message_type = payment_dot_v1alpha1_dot_payment__pb2._SUSCRIPTION
@@ -1269,8 +1304,8 @@ _PAYMENTAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2407,
-  serialized_end=3871,
+  serialized_start=2568,
+  serialized_end=4032,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateSuscription',

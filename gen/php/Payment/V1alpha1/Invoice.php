@@ -18,13 +18,9 @@ class Invoice extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
+     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
      */
-    protected $customer = null;
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];</code>
-     */
-    protected $suscription = null;
+    protected $account_name = '';
 
     /**
      * Constructor.
@@ -33,8 +29,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type \Payment\V1alpha1\Customer $customer
-     *     @type \Payment\V1alpha1\Suscription $suscription
+     *     @type string $account_name
      * }
      */
     public function __construct($data = NULL) {
@@ -65,65 +60,23 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
-     * @return \Payment\V1alpha1\Customer|null
+     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
+     * @return string
      */
-    public function getCustomer()
+    public function getAccountName()
     {
-        return $this->customer;
-    }
-
-    public function hasCustomer()
-    {
-        return isset($this->customer);
-    }
-
-    public function clearCustomer()
-    {
-        unset($this->customer);
+        return $this->account_name;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
-     * @param \Payment\V1alpha1\Customer $var
+     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setCustomer($var)
+    public function setAccountName($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
-        $this->customer = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];</code>
-     * @return \Payment\V1alpha1\Suscription|null
-     */
-    public function getSuscription()
-    {
-        return $this->suscription;
-    }
-
-    public function hasSuscription()
-    {
-        return isset($this->suscription);
-    }
-
-    public function clearSuscription()
-    {
-        unset($this->suscription);
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];</code>
-     * @param \Payment\V1alpha1\Suscription $var
-     * @return $this
-     */
-    public function setSuscription($var)
-    {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Suscription::class);
-        $this->suscription = $var;
+        GPBUtil::checkString($var, True);
+        $this->account_name = $var;
 
         return $this;
     }

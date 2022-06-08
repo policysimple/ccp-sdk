@@ -18,15 +18,19 @@ class Payment extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
+     * Generated from protobuf field <code>bool default = 2 [json_name = "default"];</code>
      */
-    protected $customer = null;
+    protected $default = false;
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];</code>
+     * Generated from protobuf field <code>bool enabled = 3 [json_name = "enabled"];</code>
      */
-    protected $suscription = null;
+    protected $enabled = false;
     /**
-     * Generated from protobuf field <code>string token_card = 4 [json_name = "tokenCard"];</code>
+     * Generated from protobuf field <code>string alias = 4 [json_name = "alias"];</code>
+     */
+    protected $alias = '';
+    /**
+     * Generated from protobuf field <code>string token_card = 5 [json_name = "tokenCard"];</code>
      */
     protected $token_card = '';
 
@@ -37,8 +41,9 @@ class Payment extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type \Payment\V1alpha1\Customer $customer
-     *     @type \Payment\V1alpha1\Suscription $suscription
+     *     @type bool $default
+     *     @type bool $enabled
+     *     @type string $alias
      *     @type string $token_card
      * }
      */
@@ -70,71 +75,73 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
-     * @return \Payment\V1alpha1\Customer|null
+     * Generated from protobuf field <code>bool default = 2 [json_name = "default"];</code>
+     * @return bool
      */
-    public function getCustomer()
+    public function getDefault()
     {
-        return $this->customer;
-    }
-
-    public function hasCustomer()
-    {
-        return isset($this->customer);
-    }
-
-    public function clearCustomer()
-    {
-        unset($this->customer);
+        return $this->default;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
-     * @param \Payment\V1alpha1\Customer $var
+     * Generated from protobuf field <code>bool default = 2 [json_name = "default"];</code>
+     * @param bool $var
      * @return $this
      */
-    public function setCustomer($var)
+    public function setDefault($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
-        $this->customer = $var;
+        GPBUtil::checkBool($var);
+        $this->default = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];</code>
-     * @return \Payment\V1alpha1\Suscription|null
+     * Generated from protobuf field <code>bool enabled = 3 [json_name = "enabled"];</code>
+     * @return bool
      */
-    public function getSuscription()
+    public function getEnabled()
     {
-        return $this->suscription;
-    }
-
-    public function hasSuscription()
-    {
-        return isset($this->suscription);
-    }
-
-    public function clearSuscription()
-    {
-        unset($this->suscription);
+        return $this->enabled;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];</code>
-     * @param \Payment\V1alpha1\Suscription $var
+     * Generated from protobuf field <code>bool enabled = 3 [json_name = "enabled"];</code>
+     * @param bool $var
      * @return $this
      */
-    public function setSuscription($var)
+    public function setEnabled($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Suscription::class);
-        $this->suscription = $var;
+        GPBUtil::checkBool($var);
+        $this->enabled = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string token_card = 4 [json_name = "tokenCard"];</code>
+     * Generated from protobuf field <code>string alias = 4 [json_name = "alias"];</code>
+     * @return string
+     */
+    public function getAlias()
+    {
+        return $this->alias;
+    }
+
+    /**
+     * Generated from protobuf field <code>string alias = 4 [json_name = "alias"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAlias($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->alias = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token_card = 5 [json_name = "tokenCard"];</code>
      * @return string
      */
     public function getTokenCard()
@@ -143,7 +150,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string token_card = 4 [json_name = "tokenCard"];</code>
+     * Generated from protobuf field <code>string token_card = 5 [json_name = "tokenCard"];</code>
      * @param string $var
      * @return $this
      */

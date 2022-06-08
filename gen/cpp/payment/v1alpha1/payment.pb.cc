@@ -20,9 +20,12 @@ namespace payment {
 namespace v1alpha1 {
 constexpr Customer::Customer(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : payment_()
+  , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , suscription_(nullptr)
+  , invoice_(nullptr)
   , organization_id_(0u){}
 struct CustomerDefaultTypeInternal {
   constexpr CustomerDefaultTypeInternal()
@@ -37,7 +40,6 @@ constexpr Suscription::Suscription(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , price_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , customer_(nullptr)
   , cancel_(false){}
 struct SuscriptionDefaultTypeInternal {
   constexpr SuscriptionDefaultTypeInternal()
@@ -51,9 +53,10 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SuscriptionDefaultTypeInternal 
 constexpr Payment::Payment(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , alias_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , token_card_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , customer_(nullptr)
-  , suscription_(nullptr){}
+  , default__(false)
+  , enabled_(false){}
 struct PaymentDefaultTypeInternal {
   constexpr PaymentDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -66,8 +69,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PaymentDefaultTypeInternal _Pay
 constexpr Invoice::Invoice(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , customer_(nullptr)
-  , suscription_(nullptr){}
+  , account_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct InvoiceDefaultTypeInternal {
   constexpr InvoiceDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -105,13 +107,15 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_2
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Customer, name_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Customer, email_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Customer, organization_id_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Customer, suscription_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Customer, payment_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Customer, invoice_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Suscription, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Suscription, id_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Suscription, customer_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Suscription, price_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Suscription, cancel_),
   ~0u,  // no _has_bits_
@@ -120,8 +124,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_2
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, id_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, customer_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, suscription_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, default__),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, enabled_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, alias_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, token_card_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Invoice, _internal_metadata_),
@@ -129,8 +134,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_2
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Invoice, id_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Invoice, customer_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Invoice, suscription_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Invoice, account_name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::PaymentList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -140,10 +144,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_2
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::payment::v1alpha1::Customer)},
-  { 9, -1, sizeof(::payment::v1alpha1::Suscription)},
-  { 18, -1, sizeof(::payment::v1alpha1::Payment)},
-  { 27, -1, sizeof(::payment::v1alpha1::Invoice)},
-  { 35, -1, sizeof(::payment::v1alpha1::PaymentList)},
+  { 12, -1, sizeof(::payment::v1alpha1::Suscription)},
+  { 20, -1, sizeof(::payment::v1alpha1::Payment)},
+  { 30, -1, sizeof(::payment::v1alpha1::Invoice)},
+  { 37, -1, sizeof(::payment::v1alpha1::PaymentList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -156,28 +160,28 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\036payment/v1alpha1/payment.proto\022\020paymen"
-  "t.v1alpha1\"m\n\010Customer\022\016\n\002id\030\001 \001(\tR\002id\022\022"
-  "\n\004name\030\002 \001(\tR\004name\022\024\n\005email\030\003 \001(\tR\005email"
-  "\022\'\n\017organization_id\030\004 \001(\rR\016organizationI"
-  "d\"\203\001\n\013Suscription\022\016\n\002id\030\001 \001(\tR\002id\0226\n\010cus"
-  "tomer\030\002 \001(\0132\032.payment.v1alpha1.CustomerR"
-  "\010customer\022\024\n\005price\030\003 \001(\tR\005price\022\026\n\006cance"
-  "l\030\004 \001(\010R\006cancel\"\261\001\n\007Payment\022\016\n\002id\030\001 \001(\tR"
-  "\002id\0226\n\010customer\030\002 \001(\0132\032.payment.v1alpha1"
-  ".CustomerR\010customer\022\?\n\013suscription\030\003 \001(\013"
-  "2\035.payment.v1alpha1.SuscriptionR\013suscrip"
-  "tion\022\035\n\ntoken_card\030\004 \001(\tR\ttokenCard\"\222\001\n\007"
-  "Invoice\022\016\n\002id\030\001 \001(\tR\002id\0226\n\010customer\030\002 \001("
-  "\0132\032.payment.v1alpha1.CustomerR\010customer\022"
-  "\?\n\013suscription\030\003 \001(\0132\035.payment.v1alpha1."
-  "SuscriptionR\013suscription\">\n\013PaymentList\022"
-  "/\n\005items\030\001 \003(\0132\031.payment.v1alpha1.Paymen"
-  "tR\005itemsB8Z6github.com/cuemby/ccp-paymen"
-  "t-service/payment/v1alpha1b\006proto3"
+  "t.v1alpha1\"\230\002\n\010Customer\022\016\n\002id\030\001 \001(\tR\002id\022"
+  "\022\n\004name\030\002 \001(\tR\004name\022\024\n\005email\030\003 \001(\tR\005emai"
+  "l\022\'\n\017organization_id\030\004 \001(\rR\016organization"
+  "Id\022\?\n\013suscription\030\005 \001(\0132\035.payment.v1alph"
+  "a1.SuscriptionR\013suscription\0223\n\007payment\030\006"
+  " \003(\0132\031.payment.v1alpha1.PaymentR\007payment"
+  "\0223\n\007invoice\030\007 \001(\0132\031.payment.v1alpha1.Inv"
+  "oiceR\007invoice\"K\n\013Suscription\022\016\n\002id\030\001 \001(\t"
+  "R\002id\022\024\n\005price\030\003 \001(\tR\005price\022\026\n\006cancel\030\004 \001"
+  "(\010R\006cancel\"\202\001\n\007Payment\022\016\n\002id\030\001 \001(\tR\002id\022\030"
+  "\n\007default\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 \001("
+  "\010R\007enabled\022\024\n\005alias\030\004 \001(\tR\005alias\022\035\n\ntoke"
+  "n_card\030\005 \001(\tR\ttokenCard\"<\n\007Invoice\022\016\n\002id"
+  "\030\001 \001(\tR\002id\022!\n\014account_name\030\002 \001(\tR\013accoun"
+  "tName\">\n\013PaymentList\022/\n\005items\030\001 \003(\0132\031.pa"
+  "yment.v1alpha1.PaymentR\005itemsB8Z6github."
+  "com/cuemby/ccp-payment-service/payment/v"
+  "1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_2eproto = {
-  false, false, 754, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
+  false, false, 735, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
   &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once, nullptr, 0, 5,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_2eproto,
@@ -195,11 +199,22 @@ namespace v1alpha1 {
 
 class Customer::_Internal {
  public:
+  static const ::payment::v1alpha1::Suscription& suscription(const Customer* msg);
+  static const ::payment::v1alpha1::Invoice& invoice(const Customer* msg);
 };
 
+const ::payment::v1alpha1::Suscription&
+Customer::_Internal::suscription(const Customer* msg) {
+  return *msg->suscription_;
+}
+const ::payment::v1alpha1::Invoice&
+Customer::_Internal::invoice(const Customer* msg) {
+  return *msg->invoice_;
+}
 Customer::Customer(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  payment_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -207,7 +222,8 @@ Customer::Customer(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:payment.v1alpha1.Customer)
 }
 Customer::Customer(const Customer& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      payment_(from.payment_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
@@ -224,6 +240,16 @@ Customer::Customer(const Customer& from)
     email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_email(), 
       GetArenaForAllocation());
   }
+  if (from._internal_has_suscription()) {
+    suscription_ = new ::payment::v1alpha1::Suscription(*from.suscription_);
+  } else {
+    suscription_ = nullptr;
+  }
+  if (from._internal_has_invoice()) {
+    invoice_ = new ::payment::v1alpha1::Invoice(*from.invoice_);
+  } else {
+    invoice_ = nullptr;
+  }
   organization_id_ = from.organization_id_;
   // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.Customer)
 }
@@ -232,7 +258,10 @@ inline void Customer::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-organization_id_ = 0u;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&suscription_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&organization_id_) -
+    reinterpret_cast<char*>(&suscription_)) + sizeof(organization_id_));
 }
 
 Customer::~Customer() {
@@ -247,6 +276,8 @@ inline void Customer::SharedDtor() {
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete suscription_;
+  if (this != internal_default_instance()) delete invoice_;
 }
 
 void Customer::ArenaDtor(void* object) {
@@ -265,9 +296,18 @@ void Customer::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  payment_.Clear();
   id_.ClearToEmpty();
   name_.ClearToEmpty();
   email_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && suscription_ != nullptr) {
+    delete suscription_;
+  }
+  suscription_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && invoice_ != nullptr) {
+    delete invoice_;
+  }
+  invoice_ = nullptr;
   organization_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -309,6 +349,32 @@ const char* Customer::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .payment.v1alpha1.Suscription suscription = 5 [json_name = "suscription"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          ptr = ctx->ParseMessage(_internal_mutable_suscription(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .payment.v1alpha1.Payment payment = 6 [json_name = "payment"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_payment(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // .payment.v1alpha1.Invoice invoice = 7 [json_name = "invoice"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          ptr = ctx->ParseMessage(_internal_mutable_invoice(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -377,6 +443,30 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_organization_id(), target);
   }
 
+  // .payment.v1alpha1.Suscription suscription = 5 [json_name = "suscription"];
+  if (this->_internal_has_suscription()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        5, _Internal::suscription(this), target, stream);
+  }
+
+  // repeated .payment.v1alpha1.Payment payment = 6 [json_name = "payment"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_payment_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(6, this->_internal_payment(i), target, stream);
+  }
+
+  // .payment.v1alpha1.Invoice invoice = 7 [json_name = "invoice"];
+  if (this->_internal_has_invoice()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        7, _Internal::invoice(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -392,6 +482,13 @@ size_t Customer::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated .payment.v1alpha1.Payment payment = 6 [json_name = "payment"];
+  total_size += 1UL * this->_internal_payment_size();
+  for (const auto& msg : this->payment_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
 
   // string id = 1 [json_name = "id"];
   if (!this->_internal_id().empty()) {
@@ -412,6 +509,20 @@ size_t Customer::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_email());
+  }
+
+  // .payment.v1alpha1.Suscription suscription = 5 [json_name = "suscription"];
+  if (this->_internal_has_suscription()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *suscription_);
+  }
+
+  // .payment.v1alpha1.Invoice invoice = 7 [json_name = "invoice"];
+  if (this->_internal_has_invoice()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *invoice_);
   }
 
   // uint32 organization_id = 4 [json_name = "organizationId"];
@@ -449,6 +560,7 @@ void Customer::MergeFrom(const Customer& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  payment_.MergeFrom(from.payment_);
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
@@ -457,6 +569,12 @@ void Customer::MergeFrom(const Customer& from) {
   }
   if (!from._internal_email().empty()) {
     _internal_set_email(from._internal_email());
+  }
+  if (from._internal_has_suscription()) {
+    _internal_mutable_suscription()->::payment::v1alpha1::Suscription::MergeFrom(from._internal_suscription());
+  }
+  if (from._internal_has_invoice()) {
+    _internal_mutable_invoice()->::payment::v1alpha1::Invoice::MergeFrom(from._internal_invoice());
   }
   if (from._internal_organization_id() != 0) {
     _internal_set_organization_id(from._internal_organization_id());
@@ -478,6 +596,7 @@ bool Customer::IsInitialized() const {
 void Customer::InternalSwap(Customer* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  payment_.InternalSwap(&other->payment_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),
@@ -493,7 +612,12 @@ void Customer::InternalSwap(Customer* other) {
       &email_, GetArenaForAllocation(),
       &other->email_, other->GetArenaForAllocation()
   );
-  swap(organization_id_, other->organization_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Customer, organization_id_)
+      + sizeof(Customer::organization_id_)
+      - PROTOBUF_FIELD_OFFSET(Customer, suscription_)>(
+          reinterpret_cast<char*>(&suscription_),
+          reinterpret_cast<char*>(&other->suscription_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Customer::GetMetadata() const {
@@ -506,13 +630,8 @@ void Customer::InternalSwap(Customer* other) {
 
 class Suscription::_Internal {
  public:
-  static const ::payment::v1alpha1::Customer& customer(const Suscription* msg);
 };
 
-const ::payment::v1alpha1::Customer&
-Suscription::_Internal::customer(const Suscription* msg) {
-  return *msg->customer_;
-}
 Suscription::Suscription(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -535,11 +654,6 @@ Suscription::Suscription(const Suscription& from)
     price_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_price(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_customer()) {
-    customer_ = new ::payment::v1alpha1::Customer(*from.customer_);
-  } else {
-    customer_ = nullptr;
-  }
   cancel_ = from.cancel_;
   // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.Suscription)
 }
@@ -547,10 +661,7 @@ Suscription::Suscription(const Suscription& from)
 inline void Suscription::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 price_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&customer_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&cancel_) -
-    reinterpret_cast<char*>(&customer_)) + sizeof(cancel_));
+cancel_ = false;
 }
 
 Suscription::~Suscription() {
@@ -564,7 +675,6 @@ inline void Suscription::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   price_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete customer_;
 }
 
 void Suscription::ArenaDtor(void* object) {
@@ -585,10 +695,6 @@ void Suscription::Clear() {
 
   id_.ClearToEmpty();
   price_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && customer_ != nullptr) {
-    delete customer_;
-  }
-  customer_ = nullptr;
   cancel_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -605,13 +711,6 @@ const char* Suscription::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           auto str = _internal_mutable_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Suscription.id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .payment.v1alpha1.Customer customer = 2 [json_name = "customer"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_customer(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -670,14 +769,6 @@ failure:
         1, this->_internal_id(), target);
   }
 
-  // .payment.v1alpha1.Customer customer = 2 [json_name = "customer"];
-  if (this->_internal_has_customer()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::customer(this), target, stream);
-  }
-
   // string price = 3 [json_name = "price"];
   if (!this->_internal_price().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
@@ -724,13 +815,6 @@ size_t Suscription::ByteSizeLong() const {
         this->_internal_price());
   }
 
-  // .payment.v1alpha1.Customer customer = 2 [json_name = "customer"];
-  if (this->_internal_has_customer()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *customer_);
-  }
-
   // bool cancel = 4 [json_name = "cancel"];
   if (this->_internal_cancel() != 0) {
     total_size += 1 + 1;
@@ -770,9 +854,6 @@ void Suscription::MergeFrom(const Suscription& from) {
   if (!from._internal_price().empty()) {
     _internal_set_price(from._internal_price());
   }
-  if (from._internal_has_customer()) {
-    _internal_mutable_customer()->::payment::v1alpha1::Customer::MergeFrom(from._internal_customer());
-  }
   if (from._internal_cancel() != 0) {
     _internal_set_cancel(from._internal_cancel());
   }
@@ -803,12 +884,7 @@ void Suscription::InternalSwap(Suscription* other) {
       &price_, GetArenaForAllocation(),
       &other->price_, other->GetArenaForAllocation()
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Suscription, cancel_)
-      + sizeof(Suscription::cancel_)
-      - PROTOBUF_FIELD_OFFSET(Suscription, customer_)>(
-          reinterpret_cast<char*>(&customer_),
-          reinterpret_cast<char*>(&other->customer_));
+  swap(cancel_, other->cancel_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Suscription::GetMetadata() const {
@@ -821,18 +897,8 @@ void Suscription::InternalSwap(Suscription* other) {
 
 class Payment::_Internal {
  public:
-  static const ::payment::v1alpha1::Customer& customer(const Payment* msg);
-  static const ::payment::v1alpha1::Suscription& suscription(const Payment* msg);
 };
 
-const ::payment::v1alpha1::Customer&
-Payment::_Internal::customer(const Payment* msg) {
-  return *msg->customer_;
-}
-const ::payment::v1alpha1::Suscription&
-Payment::_Internal::suscription(const Payment* msg) {
-  return *msg->suscription_;
-}
 Payment::Payment(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -850,31 +916,30 @@ Payment::Payment(const Payment& from)
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArenaForAllocation());
   }
+  alias_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_alias().empty()) {
+    alias_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_alias(), 
+      GetArenaForAllocation());
+  }
   token_card_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_token_card().empty()) {
     token_card_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_token_card(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_customer()) {
-    customer_ = new ::payment::v1alpha1::Customer(*from.customer_);
-  } else {
-    customer_ = nullptr;
-  }
-  if (from._internal_has_suscription()) {
-    suscription_ = new ::payment::v1alpha1::Suscription(*from.suscription_);
-  } else {
-    suscription_ = nullptr;
-  }
+  ::memcpy(&default__, &from.default__,
+    static_cast<size_t>(reinterpret_cast<char*>(&enabled_) -
+    reinterpret_cast<char*>(&default__)) + sizeof(enabled_));
   // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.Payment)
 }
 
 inline void Payment::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+alias_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 token_card_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&customer_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&suscription_) -
-    reinterpret_cast<char*>(&customer_)) + sizeof(suscription_));
+    reinterpret_cast<char*>(&default__) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&enabled_) -
+    reinterpret_cast<char*>(&default__)) + sizeof(enabled_));
 }
 
 Payment::~Payment() {
@@ -887,9 +952,8 @@ Payment::~Payment() {
 inline void Payment::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  alias_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   token_card_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete customer_;
-  if (this != internal_default_instance()) delete suscription_;
 }
 
 void Payment::ArenaDtor(void* object) {
@@ -909,15 +973,11 @@ void Payment::Clear() {
   (void) cached_has_bits;
 
   id_.ClearToEmpty();
+  alias_.ClearToEmpty();
   token_card_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && customer_ != nullptr) {
-    delete customer_;
-  }
-  customer_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && suscription_ != nullptr) {
-    delete suscription_;
-  }
-  suscription_ = nullptr;
+  ::memset(&default__, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&enabled_) -
+      reinterpret_cast<char*>(&default__)) + sizeof(enabled_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -936,23 +996,32 @@ const char* Payment::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .payment.v1alpha1.Customer customer = 2 [json_name = "customer"];
+      // bool default = 2 [json_name = "default"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_customer(), ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          default__ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];
+      // bool enabled = 3 [json_name = "enabled"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_suscription(), ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string token_card = 4 [json_name = "tokenCard"];
+      // string alias = 4 [json_name = "alias"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_alias();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Payment.alias"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string token_card = 5 [json_name = "tokenCard"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_token_card();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Payment.token_card"));
@@ -998,30 +1067,36 @@ failure:
         1, this->_internal_id(), target);
   }
 
-  // .payment.v1alpha1.Customer customer = 2 [json_name = "customer"];
-  if (this->_internal_has_customer()) {
+  // bool default = 2 [json_name = "default"];
+  if (this->_internal_default_() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::customer(this), target, stream);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_default_(), target);
   }
 
-  // .payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];
-  if (this->_internal_has_suscription()) {
+  // bool enabled = 3 [json_name = "enabled"];
+  if (this->_internal_enabled() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::suscription(this), target, stream);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_enabled(), target);
   }
 
-  // string token_card = 4 [json_name = "tokenCard"];
+  // string alias = 4 [json_name = "alias"];
+  if (!this->_internal_alias().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_alias().data(), static_cast<int>(this->_internal_alias().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Payment.alias");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_alias(), target);
+  }
+
+  // string token_card = 5 [json_name = "tokenCard"];
   if (!this->_internal_token_card().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_token_card().data(), static_cast<int>(this->_internal_token_card().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "payment.v1alpha1.Payment.token_card");
     target = stream->WriteStringMaybeAliased(
-        4, this->_internal_token_card(), target);
+        5, this->_internal_token_card(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1047,25 +1122,28 @@ size_t Payment::ByteSizeLong() const {
         this->_internal_id());
   }
 
-  // string token_card = 4 [json_name = "tokenCard"];
+  // string alias = 4 [json_name = "alias"];
+  if (!this->_internal_alias().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_alias());
+  }
+
+  // string token_card = 5 [json_name = "tokenCard"];
   if (!this->_internal_token_card().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_token_card());
   }
 
-  // .payment.v1alpha1.Customer customer = 2 [json_name = "customer"];
-  if (this->_internal_has_customer()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *customer_);
+  // bool default = 2 [json_name = "default"];
+  if (this->_internal_default_() != 0) {
+    total_size += 1 + 1;
   }
 
-  // .payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];
-  if (this->_internal_has_suscription()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *suscription_);
+  // bool enabled = 3 [json_name = "enabled"];
+  if (this->_internal_enabled() != 0) {
+    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1099,14 +1177,17 @@ void Payment::MergeFrom(const Payment& from) {
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
+  if (!from._internal_alias().empty()) {
+    _internal_set_alias(from._internal_alias());
+  }
   if (!from._internal_token_card().empty()) {
     _internal_set_token_card(from._internal_token_card());
   }
-  if (from._internal_has_customer()) {
-    _internal_mutable_customer()->::payment::v1alpha1::Customer::MergeFrom(from._internal_customer());
+  if (from._internal_default_() != 0) {
+    _internal_set_default_(from._internal_default_());
   }
-  if (from._internal_has_suscription()) {
-    _internal_mutable_suscription()->::payment::v1alpha1::Suscription::MergeFrom(from._internal_suscription());
+  if (from._internal_enabled() != 0) {
+    _internal_set_enabled(from._internal_enabled());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1132,15 +1213,20 @@ void Payment::InternalSwap(Payment* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &alias_, GetArenaForAllocation(),
+      &other->alias_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &token_card_, GetArenaForAllocation(),
       &other->token_card_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Payment, suscription_)
-      + sizeof(Payment::suscription_)
-      - PROTOBUF_FIELD_OFFSET(Payment, customer_)>(
-          reinterpret_cast<char*>(&customer_),
-          reinterpret_cast<char*>(&other->customer_));
+      PROTOBUF_FIELD_OFFSET(Payment, enabled_)
+      + sizeof(Payment::enabled_)
+      - PROTOBUF_FIELD_OFFSET(Payment, default__)>(
+          reinterpret_cast<char*>(&default__),
+          reinterpret_cast<char*>(&other->default__));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Payment::GetMetadata() const {
@@ -1153,18 +1239,8 @@ void Payment::InternalSwap(Payment* other) {
 
 class Invoice::_Internal {
  public:
-  static const ::payment::v1alpha1::Customer& customer(const Invoice* msg);
-  static const ::payment::v1alpha1::Suscription& suscription(const Invoice* msg);
 };
 
-const ::payment::v1alpha1::Customer&
-Invoice::_Internal::customer(const Invoice* msg) {
-  return *msg->customer_;
-}
-const ::payment::v1alpha1::Suscription&
-Invoice::_Internal::suscription(const Invoice* msg) {
-  return *msg->suscription_;
-}
 Invoice::Invoice(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -1182,25 +1258,17 @@ Invoice::Invoice(const Invoice& from)
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_customer()) {
-    customer_ = new ::payment::v1alpha1::Customer(*from.customer_);
-  } else {
-    customer_ = nullptr;
-  }
-  if (from._internal_has_suscription()) {
-    suscription_ = new ::payment::v1alpha1::Suscription(*from.suscription_);
-  } else {
-    suscription_ = nullptr;
+  account_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_account_name().empty()) {
+    account_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_account_name(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.Invoice)
 }
 
 inline void Invoice::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&customer_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&suscription_) -
-    reinterpret_cast<char*>(&customer_)) + sizeof(suscription_));
+account_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Invoice::~Invoice() {
@@ -1213,8 +1281,7 @@ Invoice::~Invoice() {
 inline void Invoice::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete customer_;
-  if (this != internal_default_instance()) delete suscription_;
+  account_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Invoice::ArenaDtor(void* object) {
@@ -1234,14 +1301,7 @@ void Invoice::Clear() {
   (void) cached_has_bits;
 
   id_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && customer_ != nullptr) {
-    delete customer_;
-  }
-  customer_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && suscription_ != nullptr) {
-    delete suscription_;
-  }
-  suscription_ = nullptr;
+  account_name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1260,17 +1320,12 @@ const char* Invoice::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .payment.v1alpha1.Customer customer = 2 [json_name = "customer"];
+      // string account_name = 2 [json_name = "accountName"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_customer(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_suscription(), ptr);
+          auto str = _internal_mutable_account_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Invoice.account_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1313,20 +1368,14 @@ failure:
         1, this->_internal_id(), target);
   }
 
-  // .payment.v1alpha1.Customer customer = 2 [json_name = "customer"];
-  if (this->_internal_has_customer()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::customer(this), target, stream);
-  }
-
-  // .payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];
-  if (this->_internal_has_suscription()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::suscription(this), target, stream);
+  // string account_name = 2 [json_name = "accountName"];
+  if (!this->_internal_account_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_account_name().data(), static_cast<int>(this->_internal_account_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Invoice.account_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_account_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1352,18 +1401,11 @@ size_t Invoice::ByteSizeLong() const {
         this->_internal_id());
   }
 
-  // .payment.v1alpha1.Customer customer = 2 [json_name = "customer"];
-  if (this->_internal_has_customer()) {
+  // string account_name = 2 [json_name = "accountName"];
+  if (!this->_internal_account_name().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *customer_);
-  }
-
-  // .payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];
-  if (this->_internal_has_suscription()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *suscription_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_account_name());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1397,11 +1439,8 @@ void Invoice::MergeFrom(const Invoice& from) {
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
-  if (from._internal_has_customer()) {
-    _internal_mutable_customer()->::payment::v1alpha1::Customer::MergeFrom(from._internal_customer());
-  }
-  if (from._internal_has_suscription()) {
-    _internal_mutable_suscription()->::payment::v1alpha1::Suscription::MergeFrom(from._internal_suscription());
+  if (!from._internal_account_name().empty()) {
+    _internal_set_account_name(from._internal_account_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1425,12 +1464,11 @@ void Invoice::InternalSwap(Invoice* other) {
       &id_, GetArenaForAllocation(),
       &other->id_, other->GetArenaForAllocation()
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Invoice, suscription_)
-      + sizeof(Invoice::suscription_)
-      - PROTOBUF_FIELD_OFFSET(Invoice, customer_)>(
-          reinterpret_cast<char*>(&customer_),
-          reinterpret_cast<char*>(&other->customer_));
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &account_name_, GetArenaForAllocation(),
+      &other->account_name_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Invoice::GetMetadata() const {

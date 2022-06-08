@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetOrganizationPaymentResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 1 [json_name = "suscription"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
      */
-    protected $suscription = null;
+    protected $customer = null;
     /**
      * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
@@ -28,7 +28,7 @@ class GetOrganizationPaymentResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Suscription $suscription
+     *     @type \Payment\V1alpha1\Customer $customer
      *     @type string $status
      * }
      */
@@ -38,33 +38,33 @@ class GetOrganizationPaymentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 1 [json_name = "suscription"];</code>
-     * @return \Payment\V1alpha1\Suscription|null
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @return \Payment\V1alpha1\Customer|null
      */
-    public function getSuscription()
+    public function getCustomer()
     {
-        return $this->suscription;
+        return $this->customer;
     }
 
-    public function hasSuscription()
+    public function hasCustomer()
     {
-        return isset($this->suscription);
+        return isset($this->customer);
     }
 
-    public function clearSuscription()
+    public function clearCustomer()
     {
-        unset($this->suscription);
+        unset($this->customer);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 1 [json_name = "suscription"];</code>
-     * @param \Payment\V1alpha1\Suscription $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @param \Payment\V1alpha1\Customer $var
      * @return $this
      */
-    public function setSuscription($var)
+    public function setCustomer($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Suscription::class);
-        $this->suscription = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
+        $this->customer = $var;
 
         return $this;
     }
