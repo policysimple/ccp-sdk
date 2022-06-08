@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetPaymentsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription payment = 1 [json_name = "payment"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
      */
     protected $payment = null;
     /**
@@ -28,7 +28,7 @@ class GetPaymentsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Suscription $payment
+     *     @type \Payment\V1alpha1\Payment $payment
      *     @type string $status
      * }
      */
@@ -38,8 +38,8 @@ class GetPaymentsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription payment = 1 [json_name = "payment"];</code>
-     * @return \Payment\V1alpha1\Suscription|null
+     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
+     * @return \Payment\V1alpha1\Payment|null
      */
     public function getPayment()
     {
@@ -57,13 +57,13 @@ class GetPaymentsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription payment = 1 [json_name = "payment"];</code>
-     * @param \Payment\V1alpha1\Suscription $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
+     * @param \Payment\V1alpha1\Payment $var
      * @return $this
      */
     public function setPayment($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Suscription::class);
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Payment::class);
         $this->payment = $var;
 
         return $this;

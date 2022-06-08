@@ -44,7 +44,7 @@ message GetOrganizationPaymentRequest {
 }
 
 message GetOrganizationPaymentResponse {
-    payment.v1alpha1.Suscription suscription = 1;
+    payment.v1alpha1.Customer customer = 1;
     string status = 2;
 }
 
@@ -62,12 +62,12 @@ message GetPaymentsRequest {
 }
 
 message GetPaymentsResponse {
-    payment.v1alpha1.Suscription payment = 1;
+    payment.v1alpha1.Payment payment = 1;
     string status = 2;
 }
 message UpdateSuscriptionRequest {
-    payment.v1alpha1.Suscription suscription = 1;
-    string status = 2;
+    string customer_id = 1;
+    Suscription suscription = 2;
 }
 
 message UpdateSuscriptionResponse {
@@ -76,7 +76,8 @@ message UpdateSuscriptionResponse {
 }
 
 message CreateSuscriptionRequest {
-    payment.v1alpha1.Suscription suscription= 1;
+    string customer_id = 1;
+    payment.v1alpha1.Suscription suscription = 2;
 }
 
 message CreateSuscriptionResponse {
@@ -85,7 +86,8 @@ message CreateSuscriptionResponse {
 }
 
 message CancelSuscriptionRequest {
-    string suscription_id =1; 
+    string suscription_id =1;
+    string customer_id = 2; 
 }
 
 message  CancelSuscriptionResponse {
@@ -102,7 +104,8 @@ message CreateCustomerResponse {
 }
 
 message CreatePaymentRequest {
-    payment.v1alpha1.Payment payment = 1;
+    string customer_id = 1;
+    payment.v1alpha1.Payment payment = 2;
 }
 
 message CreatePaymentResponse {
@@ -111,7 +114,8 @@ message CreatePaymentResponse {
 }
 
 message UpdatePaymentRequest {
-    payment.v1alpha1.Payment payment = 1;
+    string customer_id = 1;
+    payment.v1alpha1.Payment payment = 2;
 }
 
 message UpdatePaymentResponse {
@@ -139,7 +143,8 @@ message GetPaymentResponse {
 }
 
 message ListPaymentRequest {
-    string suscription_id = 1;
+    string customer_id = 1;
+    string suscription_id = 2;
 }
 
 message ListPaymentResponse {

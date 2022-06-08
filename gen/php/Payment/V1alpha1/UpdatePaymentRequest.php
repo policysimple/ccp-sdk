@@ -14,7 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdatePaymentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
+     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
+     */
+    protected $customer_id = '';
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 2 [json_name = "payment"];</code>
      */
     protected $payment = null;
 
@@ -24,6 +28,7 @@ class UpdatePaymentRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $customer_id
      *     @type \Payment\V1alpha1\Payment $payment
      * }
      */
@@ -33,7 +38,29 @@ class UpdatePaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
+     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
+     * @return string
+     */
+    public function getCustomerId()
+    {
+        return $this->customer_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCustomerId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->customer_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 2 [json_name = "payment"];</code>
      * @return \Payment\V1alpha1\Payment|null
      */
     public function getPayment()
@@ -52,7 +79,7 @@ class UpdatePaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 2 [json_name = "payment"];</code>
      * @param \Payment\V1alpha1\Payment $var
      * @return $this
      */

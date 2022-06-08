@@ -29,6 +29,18 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
      */
     protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 5 [json_name = "suscription"];</code>
+     */
+    protected $suscription = null;
+    /**
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 6 [json_name = "payment"];</code>
+     */
+    private $payment;
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 7 [json_name = "invoice"];</code>
+     */
+    protected $invoice = null;
 
     /**
      * Constructor.
@@ -40,6 +52,9 @@ class Customer extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $email
      *     @type int $organization_id
+     *     @type \Payment\V1alpha1\Suscription $suscription
+     *     @type \Payment\V1alpha1\Payment[]|\Google\Protobuf\Internal\RepeatedField $payment
+     *     @type \Payment\V1alpha1\Invoice $invoice
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +146,92 @@ class Customer extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 5 [json_name = "suscription"];</code>
+     * @return \Payment\V1alpha1\Suscription|null
+     */
+    public function getSuscription()
+    {
+        return $this->suscription;
+    }
+
+    public function hasSuscription()
+    {
+        return isset($this->suscription);
+    }
+
+    public function clearSuscription()
+    {
+        unset($this->suscription);
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 5 [json_name = "suscription"];</code>
+     * @param \Payment\V1alpha1\Suscription $var
+     * @return $this
+     */
+    public function setSuscription($var)
+    {
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Suscription::class);
+        $this->suscription = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 6 [json_name = "payment"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPayment()
+    {
+        return $this->payment;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 6 [json_name = "payment"];</code>
+     * @param \Payment\V1alpha1\Payment[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPayment($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Payment\V1alpha1\Payment::class);
+        $this->payment = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 7 [json_name = "invoice"];</code>
+     * @return \Payment\V1alpha1\Invoice|null
+     */
+    public function getInvoice()
+    {
+        return $this->invoice;
+    }
+
+    public function hasInvoice()
+    {
+        return isset($this->invoice);
+    }
+
+    public function clearInvoice()
+    {
+        unset($this->invoice);
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 7 [json_name = "invoice"];</code>
+     * @param \Payment\V1alpha1\Invoice $var
+     * @return $this
+     */
+    public function setInvoice($var)
+    {
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Invoice::class);
+        $this->invoice = $var;
 
         return $this;
     }
