@@ -22,6 +22,7 @@ service PaymentAPIService{
     rpc UpdatePayment(UpdatePaymentRequest) returns (UpdatePaymentResponse) {};
     rpc DeletePayment(DeletePaymentRequest) returns (DeletePaymentResponse) {};
     rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {}; 
+    rpc CreateInvoice(CreateInvoiceRequest) returns (CreateInvoiceResponse) {}; 
 }
 message DeleteCustomerRequest {
     string customer_id =1; 
@@ -82,6 +83,15 @@ message CreateSuscriptionRequest {
 
 message CreateSuscriptionResponse {
     string suscription_id =1;
+    string status = 2;
+}
+
+message CreateInvoiceRequest {
+    string customer_id = 1;
+}
+
+message CreateInvoiceResponse {
+    string customer_id =1;
     string status = 2;
 }
 

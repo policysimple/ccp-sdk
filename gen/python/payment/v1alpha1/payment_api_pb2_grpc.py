@@ -84,6 +84,11 @@ class PaymentAPIServiceStub(object):
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListPaymentRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListPaymentResponse.FromString,
         )
+    self.CreateInvoice = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/CreateInvoice',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateInvoiceRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateInvoiceResponse.FromString,
+        )
 
 
 class PaymentAPIServiceServicer(object):
@@ -188,6 +193,13 @@ class PaymentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateInvoice(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_PaymentAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -260,6 +272,11 @@ def add_PaymentAPIServiceServicer_to_server(servicer, server):
           servicer.ListPayment,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListPaymentRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListPaymentResponse.SerializeToString,
+      ),
+      'CreateInvoice': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateInvoice,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateInvoiceRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateInvoiceResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
