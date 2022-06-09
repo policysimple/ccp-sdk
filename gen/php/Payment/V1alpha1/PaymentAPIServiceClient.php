@@ -198,4 +198,17 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Payment\V1alpha1\CreateInvoiceRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function CreateInvoice(\Payment\V1alpha1\CreateInvoiceRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/CreateInvoice',
+        $argument,
+        ['\Payment\V1alpha1\CreateInvoiceResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }
