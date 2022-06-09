@@ -279,7 +279,7 @@ func GetPayments(in *paymentpkgv1.GetPaymentsRequest) (response *paymentpkgv1.Ge
 	return response, nil
 }
 
-func GetOrganizationPayments(in *paymentpkgv1.GetOrganizationPaymentRequest) (response *paymentpkgv1.GetOrganizationPaymentResponse, err error) {
+func GetOrganizationPayments(organizationId uint32) (response *paymentpkgv1.GetOrganizationPaymentResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
 		return
@@ -288,7 +288,7 @@ func GetOrganizationPayments(in *paymentpkgv1.GetOrganizationPaymentRequest) (re
 	defer cancel()
 
 	response, err = client.GetOrganizationPayment(ctx, &paymentpkgv1.GetOrganizationPaymentRequest{
-		OrganizationId: in.OrganizationId,
+		OrganizationId: organizationId,
 	})
 
 	if err != nil {
