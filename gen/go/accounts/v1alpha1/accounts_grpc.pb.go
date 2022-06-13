@@ -29,6 +29,7 @@ type AccountServiceClient interface {
 	GetInvitationUser(ctx context.Context, in *GetInvitationUserRequest, opts ...grpc.CallOption) (*GetInvitationUserResponse, error)
 	AgreeInvitationUser(ctx context.Context, in *AgreeInvitationUserRequest, opts ...grpc.CallOption) (*AgreeInvitationUserResponse, error)
 	ListInvitationUser(ctx context.Context, in *ListInvitationUserRequest, opts ...grpc.CallOption) (*ListInvitationUserResponse, error)
+	EnableOrDisableMFA(ctx context.Context, in *EnableOrDisableMFARequest, opts ...grpc.CallOption) (*EnableOrDisableMFAResponse, error)
 	///PERMISSION
 	CreatePermission(ctx context.Context, in *CreatePermissionRequest, opts ...grpc.CallOption) (*CreatePermissionResponse, error)
 	ListPermission(ctx context.Context, in *ListPermissionRequest, opts ...grpc.CallOption) (*ListPermissionResponse, error)
@@ -74,7 +75,12 @@ type AccountServiceClient interface {
 	//TOKEN CCP
 	CreateTokenCCP(ctx context.Context, in *CreateTokenCCPRequest, opts ...grpc.CallOption) (*CreateTokenCCPResponse, error)
 	GetOneTokenCCP(ctx context.Context, in *GetOneTokenCCPRequest, opts ...grpc.CallOption) (*GetOneTokenCCPResponse, error)
+	//Get Users Email filter
+	GetUsersEmailFilter(ctx context.Context, in *GetUsersEmailFilterRequest, opts ...grpc.CallOption) (*GetUsersEmailFilterResponse, error)
+	//Logs
 	Logs(ctx context.Context, in *LogsRequest, opts ...grpc.CallOption) (*LogsResponse, error)
+	SaveLogs(ctx context.Context, in *SaveLogsRequest, opts ...grpc.CallOption) (*SaveLogsResponse, error)
+	MFA(ctx context.Context, in *MFARequest, opts ...grpc.CallOption) (*MFAResponse, error)
 }
 
 type accountServiceClient struct {
@@ -169,6 +175,15 @@ func (c *accountServiceClient) AgreeInvitationUser(ctx context.Context, in *Agre
 func (c *accountServiceClient) ListInvitationUser(ctx context.Context, in *ListInvitationUserRequest, opts ...grpc.CallOption) (*ListInvitationUserResponse, error) {
 	out := new(ListInvitationUserResponse)
 	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/ListInvitationUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountServiceClient) EnableOrDisableMFA(ctx context.Context, in *EnableOrDisableMFARequest, opts ...grpc.CallOption) (*EnableOrDisableMFAResponse, error) {
+	out := new(EnableOrDisableMFAResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/EnableOrDisableMFA", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -499,9 +514,36 @@ func (c *accountServiceClient) GetOneTokenCCP(ctx context.Context, in *GetOneTok
 	return out, nil
 }
 
+func (c *accountServiceClient) GetUsersEmailFilter(ctx context.Context, in *GetUsersEmailFilterRequest, opts ...grpc.CallOption) (*GetUsersEmailFilterResponse, error) {
+	out := new(GetUsersEmailFilterResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/GetUsersEmailFilter", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *accountServiceClient) Logs(ctx context.Context, in *LogsRequest, opts ...grpc.CallOption) (*LogsResponse, error) {
 	out := new(LogsResponse)
 	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/Logs", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountServiceClient) SaveLogs(ctx context.Context, in *SaveLogsRequest, opts ...grpc.CallOption) (*SaveLogsResponse, error) {
+	out := new(SaveLogsResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/SaveLogs", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountServiceClient) MFA(ctx context.Context, in *MFARequest, opts ...grpc.CallOption) (*MFAResponse, error) {
+	out := new(MFAResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/MFA", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -523,6 +565,7 @@ type AccountServiceServer interface {
 	GetInvitationUser(context.Context, *GetInvitationUserRequest) (*GetInvitationUserResponse, error)
 	AgreeInvitationUser(context.Context, *AgreeInvitationUserRequest) (*AgreeInvitationUserResponse, error)
 	ListInvitationUser(context.Context, *ListInvitationUserRequest) (*ListInvitationUserResponse, error)
+	EnableOrDisableMFA(context.Context, *EnableOrDisableMFARequest) (*EnableOrDisableMFAResponse, error)
 	///PERMISSION
 	CreatePermission(context.Context, *CreatePermissionRequest) (*CreatePermissionResponse, error)
 	ListPermission(context.Context, *ListPermissionRequest) (*ListPermissionResponse, error)
@@ -568,7 +611,12 @@ type AccountServiceServer interface {
 	//TOKEN CCP
 	CreateTokenCCP(context.Context, *CreateTokenCCPRequest) (*CreateTokenCCPResponse, error)
 	GetOneTokenCCP(context.Context, *GetOneTokenCCPRequest) (*GetOneTokenCCPResponse, error)
+	//Get Users Email filter
+	GetUsersEmailFilter(context.Context, *GetUsersEmailFilterRequest) (*GetUsersEmailFilterResponse, error)
+	//Logs
 	Logs(context.Context, *LogsRequest) (*LogsResponse, error)
+	SaveLogs(context.Context, *SaveLogsRequest) (*SaveLogsResponse, error)
+	MFA(context.Context, *MFARequest) (*MFAResponse, error)
 }
 
 // UnimplementedAccountServiceServer should be embedded to have forward compatible implementations.
@@ -604,6 +652,9 @@ func (UnimplementedAccountServiceServer) AgreeInvitationUser(context.Context, *A
 }
 func (UnimplementedAccountServiceServer) ListInvitationUser(context.Context, *ListInvitationUserRequest) (*ListInvitationUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListInvitationUser not implemented")
+}
+func (UnimplementedAccountServiceServer) EnableOrDisableMFA(context.Context, *EnableOrDisableMFARequest) (*EnableOrDisableMFAResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EnableOrDisableMFA not implemented")
 }
 func (UnimplementedAccountServiceServer) CreatePermission(context.Context, *CreatePermissionRequest) (*CreatePermissionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePermission not implemented")
@@ -713,8 +764,17 @@ func (UnimplementedAccountServiceServer) CreateTokenCCP(context.Context, *Create
 func (UnimplementedAccountServiceServer) GetOneTokenCCP(context.Context, *GetOneTokenCCPRequest) (*GetOneTokenCCPResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOneTokenCCP not implemented")
 }
+func (UnimplementedAccountServiceServer) GetUsersEmailFilter(context.Context, *GetUsersEmailFilterRequest) (*GetUsersEmailFilterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUsersEmailFilter not implemented")
+}
 func (UnimplementedAccountServiceServer) Logs(context.Context, *LogsRequest) (*LogsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Logs not implemented")
+}
+func (UnimplementedAccountServiceServer) SaveLogs(context.Context, *SaveLogsRequest) (*SaveLogsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SaveLogs not implemented")
+}
+func (UnimplementedAccountServiceServer) MFA(context.Context, *MFARequest) (*MFAResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MFA not implemented")
 }
 
 // UnsafeAccountServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -904,6 +964,24 @@ func _AccountService_ListInvitationUser_Handler(srv interface{}, ctx context.Con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).ListInvitationUser(ctx, req.(*ListInvitationUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountService_EnableOrDisableMFA_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EnableOrDisableMFARequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).EnableOrDisableMFA(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/EnableOrDisableMFA",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).EnableOrDisableMFA(ctx, req.(*EnableOrDisableMFARequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1556,6 +1634,24 @@ func _AccountService_GetOneTokenCCP_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AccountService_GetUsersEmailFilter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUsersEmailFilterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).GetUsersEmailFilter(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/GetUsersEmailFilter",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).GetUsersEmailFilter(ctx, req.(*GetUsersEmailFilterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AccountService_Logs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(LogsRequest)
 	if err := dec(in); err != nil {
@@ -1570,6 +1666,42 @@ func _AccountService_Logs_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).Logs(ctx, req.(*LogsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountService_SaveLogs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveLogsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).SaveLogs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/SaveLogs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).SaveLogs(ctx, req.(*SaveLogsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountService_MFA_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MFARequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).MFA(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/MFA",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).MFA(ctx, req.(*MFARequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1620,6 +1752,10 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListInvitationUser",
 			Handler:    _AccountService_ListInvitationUser_Handler,
+		},
+		{
+			MethodName: "EnableOrDisableMFA",
+			Handler:    _AccountService_EnableOrDisableMFA_Handler,
 		},
 		{
 			MethodName: "CreatePermission",
@@ -1766,8 +1902,20 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AccountService_GetOneTokenCCP_Handler,
 		},
 		{
+			MethodName: "GetUsersEmailFilter",
+			Handler:    _AccountService_GetUsersEmailFilter_Handler,
+		},
+		{
 			MethodName: "Logs",
 			Handler:    _AccountService_Logs_Handler,
+		},
+		{
+			MethodName: "SaveLogs",
+			Handler:    _AccountService_SaveLogs_Handler,
+		},
+		{
+			MethodName: "MFA",
+			Handler:    _AccountService_MFA_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

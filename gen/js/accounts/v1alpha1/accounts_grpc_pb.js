@@ -334,6 +334,28 @@ function deserialize_accounts_v1alpha1_DeleteUserResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.DeleteUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_EnableOrDisableMFARequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.EnableOrDisableMFARequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.EnableOrDisableMFARequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_EnableOrDisableMFARequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.EnableOrDisableMFARequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_EnableOrDisableMFAResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.EnableOrDisableMFAResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.EnableOrDisableMFAResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_EnableOrDisableMFAResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.EnableOrDisableMFAResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_GetInvitationUserRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetInvitationUserRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.GetInvitationUserRequest');
@@ -620,6 +642,28 @@ function deserialize_accounts_v1alpha1_GetRolesByUserResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.GetRolesByUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_GetUsersEmailFilterRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetUsersEmailFilterRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetUsersEmailFilterRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetUsersEmailFilterRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetUsersEmailFilterRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_GetUsersEmailFilterResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.GetUsersEmailFilterResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.GetUsersEmailFilterResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_GetUsersEmailFilterResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.GetUsersEmailFilterResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_ListApiKeyRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.ListApiKeyRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.ListApiKeyRequest');
@@ -838,6 +882,50 @@ function serialize_accounts_v1alpha1_LogsResponse(arg) {
 
 function deserialize_accounts_v1alpha1_LogsResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.LogsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_MFARequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.MFARequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.MFARequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_MFARequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.MFARequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_MFAResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.MFAResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.MFAResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_MFAResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.MFAResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_SaveLogsRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.SaveLogsRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.SaveLogsRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_SaveLogsRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.SaveLogsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_SaveLogsResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.SaveLogsResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.SaveLogsResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_SaveLogsResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.SaveLogsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_accounts_v1alpha1_SendInvitationUserRequest(arg) {
@@ -1150,6 +1238,17 @@ var AccountServiceService = exports.AccountServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_ListInvitationUserRequest,
     responseSerialize: serialize_accounts_v1alpha1_ListInvitationUserResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_ListInvitationUserResponse,
+  },
+  enableOrDisableMFA: {
+    path: '/accounts.v1alpha1.AccountService/EnableOrDisableMFA',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.EnableOrDisableMFARequest,
+    responseType: accounts_v1alpha1_accounts_pb.EnableOrDisableMFAResponse,
+    requestSerialize: serialize_accounts_v1alpha1_EnableOrDisableMFARequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_EnableOrDisableMFARequest,
+    responseSerialize: serialize_accounts_v1alpha1_EnableOrDisableMFAResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_EnableOrDisableMFAResponse,
   },
   // /PERMISSION
   createPermission: {
@@ -1556,6 +1655,19 @@ var AccountServiceService = exports.AccountServiceService = {
     responseSerialize: serialize_accounts_v1alpha1_GetOneTokenCCPResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_GetOneTokenCCPResponse,
   },
+  // Get Users Email filter
+  getUsersEmailFilter: {
+    path: '/accounts.v1alpha1.AccountService/GetUsersEmailFilter',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.GetUsersEmailFilterRequest,
+    responseType: accounts_v1alpha1_accounts_pb.GetUsersEmailFilterResponse,
+    requestSerialize: serialize_accounts_v1alpha1_GetUsersEmailFilterRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_GetUsersEmailFilterRequest,
+    responseSerialize: serialize_accounts_v1alpha1_GetUsersEmailFilterResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_GetUsersEmailFilterResponse,
+  },
+  // Logs 
   logs: {
     path: '/accounts.v1alpha1.AccountService/Logs',
     requestStream: false,
@@ -1566,6 +1678,28 @@ var AccountServiceService = exports.AccountServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_LogsRequest,
     responseSerialize: serialize_accounts_v1alpha1_LogsResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_LogsResponse,
+  },
+  saveLogs: {
+    path: '/accounts.v1alpha1.AccountService/SaveLogs',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.SaveLogsRequest,
+    responseType: accounts_v1alpha1_accounts_pb.SaveLogsResponse,
+    requestSerialize: serialize_accounts_v1alpha1_SaveLogsRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_SaveLogsRequest,
+    responseSerialize: serialize_accounts_v1alpha1_SaveLogsResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_SaveLogsResponse,
+  },
+  mFA: {
+    path: '/accounts.v1alpha1.AccountService/MFA',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.MFARequest,
+    responseType: accounts_v1alpha1_accounts_pb.MFAResponse,
+    requestSerialize: serialize_accounts_v1alpha1_MFARequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_MFARequest,
+    responseSerialize: serialize_accounts_v1alpha1_MFAResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_MFAResponse,
   },
 };
 

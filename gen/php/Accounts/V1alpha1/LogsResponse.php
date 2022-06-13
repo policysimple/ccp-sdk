@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class LogsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated string logs = 1 [json_name = "logs"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Log logs = 1 [json_name = "logs"];</code>
      */
     private $logs;
 
@@ -24,7 +24,7 @@ class LogsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $logs
+     *     @type \Accounts\V1alpha1\Log[]|\Google\Protobuf\Internal\RepeatedField $logs
      * }
      */
     public function __construct($data = NULL) {
@@ -33,7 +33,7 @@ class LogsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string logs = 1 [json_name = "logs"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Log logs = 1 [json_name = "logs"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLogs()
@@ -42,13 +42,13 @@ class LogsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string logs = 1 [json_name = "logs"];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Log logs = 1 [json_name = "logs"];</code>
+     * @param \Accounts\V1alpha1\Log[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLogs($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Log::class);
         $this->logs = $arr;
 
         return $this;

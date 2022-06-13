@@ -64,6 +64,11 @@ class AccountServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListInvitationUserRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListInvitationUserResponse.FromString,
         )
+    self.EnableOrDisableMFA = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/EnableOrDisableMFA',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.EnableOrDisableMFARequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.EnableOrDisableMFAResponse.FromString,
+        )
     self.CreatePermission = channel.unary_unary(
         '/accounts.v1alpha1.AccountService/CreatePermission',
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.CreatePermissionRequest.SerializeToString,
@@ -244,10 +249,25 @@ class AccountServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenCCPRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenCCPResponse.FromString,
         )
+    self.GetUsersEmailFilter = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/GetUsersEmailFilter',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetUsersEmailFilterRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetUsersEmailFilterResponse.FromString,
+        )
     self.Logs = channel.unary_unary(
         '/accounts.v1alpha1.AccountService/Logs',
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.LogsRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.LogsResponse.FromString,
+        )
+    self.SaveLogs = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/SaveLogs',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.SaveLogsRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.SaveLogsResponse.FromString,
+        )
+    self.MFA = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/MFA',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.MFARequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.MFAResponse.FromString,
         )
 
 
@@ -319,6 +339,13 @@ class AccountServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def ListInvitationUser(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def EnableOrDisableMFA(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -577,7 +604,28 @@ class AccountServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetUsersEmailFilter(self, request, context):
+    """Get Users Email filter
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def Logs(self, request, context):
+    """Logs 
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def SaveLogs(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def MFA(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -636,6 +684,11 @@ def add_AccountServiceServicer_to_server(servicer, server):
           servicer.ListInvitationUser,
           request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListInvitationUserRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.ListInvitationUserResponse.SerializeToString,
+      ),
+      'EnableOrDisableMFA': grpc.unary_unary_rpc_method_handler(
+          servicer.EnableOrDisableMFA,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.EnableOrDisableMFARequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.EnableOrDisableMFAResponse.SerializeToString,
       ),
       'CreatePermission': grpc.unary_unary_rpc_method_handler(
           servicer.CreatePermission,
@@ -817,10 +870,25 @@ def add_AccountServiceServicer_to_server(servicer, server):
           request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenCCPRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetOneTokenCCPResponse.SerializeToString,
       ),
+      'GetUsersEmailFilter': grpc.unary_unary_rpc_method_handler(
+          servicer.GetUsersEmailFilter,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetUsersEmailFilterRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.GetUsersEmailFilterResponse.SerializeToString,
+      ),
       'Logs': grpc.unary_unary_rpc_method_handler(
           servicer.Logs,
           request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.LogsRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.LogsResponse.SerializeToString,
+      ),
+      'SaveLogs': grpc.unary_unary_rpc_method_handler(
+          servicer.SaveLogs,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.SaveLogsRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.SaveLogsResponse.SerializeToString,
+      ),
+      'MFA': grpc.unary_unary_rpc_method_handler(
+          servicer.MFA,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.MFARequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.MFAResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
