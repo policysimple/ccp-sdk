@@ -22,9 +22,10 @@ service PaymentAPIService{
     rpc UpdatePayment(UpdatePaymentRequest) returns (UpdatePaymentResponse) {};
     rpc DeletePayment(DeletePaymentRequest) returns (DeletePaymentResponse) {};
     rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {}; 
+    rpc CreateInvoice(CreateInvoiceRequest) returns (CreateInvoiceResponse) {}; 
 }
 message DeleteCustomerRequest {
-    string id =1; 
+    string customer_id =1; 
 }
 
 message DeleteCustomerResponse {
@@ -40,11 +41,11 @@ message GetSuscriptionResponse {
     string status = 2;
 }
 message GetOrganizationPaymentRequest {
-    string organization_id = 1;
+    uint32 organization_id = 1;
 }
 
 message GetOrganizationPaymentResponse {
-    payment.v1alpha1.Suscription suscription = 1;
+    payment.v1alpha1.Customer customer = 1;
     string status = 2;
 }
 
@@ -62,12 +63,12 @@ message GetPaymentsRequest {
 }
 
 message GetPaymentsResponse {
-    payment.v1alpha1.Suscription payment = 1;
+    payment.v1alpha1.Payment payment = 1;
     string status = 2;
 }
 message UpdateSuscriptionRequest {
-    payment.v1alpha1.Suscription suscription = 1;
-    string status = 2;
+    string customer_id = 1;
+    Suscription suscription = 2;
 }
 
 message UpdateSuscriptionResponse {
@@ -76,17 +77,27 @@ message UpdateSuscriptionResponse {
 }
 
 message CreateSuscriptionRequest {
-    payment.v1alpha1.Suscription suscription= 1;
-    string status = 2;
+    string customer_id = 1;
+    payment.v1alpha1.Suscription suscription = 2;
 }
 
 message CreateSuscriptionResponse {
     string suscription_id =1;
-    string error = 2;
+    string status = 2;
+}
+
+message CreateInvoiceRequest {
+    string customer_id = 1;
+}
+
+message CreateInvoiceResponse {
+    string customer_id =1;
+    string status = 2;
 }
 
 message CancelSuscriptionRequest {
-    string suscription_id =1; 
+    string suscription_id =1;
+    string customer_id = 2; 
 }
 
 message  CancelSuscriptionResponse {
@@ -95,27 +106,26 @@ message  CancelSuscriptionResponse {
 
 message CreateCustomerRequest {
     payment.v1alpha1.Customer customer = 1;
-    string status = 2;
 }
 
 message CreateCustomerResponse {
     string customer_id =1;
-    string error = 2;
+    string status = 2;
 }
 
 message CreatePaymentRequest {
-    payment.v1alpha1.Payment payment = 1;
-    string status = 2;
+    string customer_id = 1;
+    payment.v1alpha1.Payment payment = 2;
 }
 
 message CreatePaymentResponse {
     string card_id =1;
-    string error = 2;
+    string status = 2;
 }
 
 message UpdatePaymentRequest {
-    payment.v1alpha1.Payment payment = 1;
-    string status = 2;
+    string customer_id = 1;
+    payment.v1alpha1.Payment payment = 2;
 }
 
 message UpdatePaymentResponse {
@@ -143,7 +153,8 @@ message GetPaymentResponse {
 }
 
 message ListPaymentRequest {
-    string suscription_id = 1;
+    string customer_id = 1;
+    string suscription_id = 2;
 }
 
 message ListPaymentResponse {

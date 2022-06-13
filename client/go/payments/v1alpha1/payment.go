@@ -68,7 +68,7 @@ func DeleteCustomer(in *paymentpkgv1.DeleteCustomerRequest) (response *paymentpk
 	defer cancel()
 
 	response, err = client.DeleteCustomer(ctx, &paymentpkgv1.DeleteCustomerRequest{
-		Id: in.Id,
+		CustomerId: in.CustomerId,
 	})
 
 	if err != nil {
@@ -91,6 +91,28 @@ func CreateSuscription(in *paymentpkgv1.CreateSuscriptionRequest) (response *pay
 
 	response, err = client.CreateSuscription(ctx, &paymentpkgv1.CreateSuscriptionRequest{
 		Suscription: in.Suscription,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error create subscription", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error create subscription", err),
+		)
+	}
+	return response, nil
+}
+
+func CreateInvoice(in *paymentpkgv1.CreateInvoiceRequest) (response *paymentpkgv1.CreateInvoiceResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.CreateInvoice(ctx, &paymentpkgv1.CreateInvoiceRequest{
+		CustomerId: in.CustomerId,
 	})
 
 	if err != nil {
@@ -257,7 +279,7 @@ func GetPayments(in *paymentpkgv1.GetPaymentsRequest) (response *paymentpkgv1.Ge
 	return response, nil
 }
 
-func GetOrganizationPayments(in *paymentpkgv1.GetOrganizationPaymentRequest) (response *paymentpkgv1.GetOrganizationPaymentResponse, err error) {
+func GetOrganizationPayments(organizationId uint32) (response *paymentpkgv1.GetOrganizationPaymentResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
 		return
@@ -266,7 +288,7 @@ func GetOrganizationPayments(in *paymentpkgv1.GetOrganizationPaymentRequest) (re
 	defer cancel()
 
 	response, err = client.GetOrganizationPayment(ctx, &paymentpkgv1.GetOrganizationPaymentRequest{
-		OrganizationId: in.OrganizationId,
+		OrganizationId: organizationId,
 	})
 
 	if err != nil {

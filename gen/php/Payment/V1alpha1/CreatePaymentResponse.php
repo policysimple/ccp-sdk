@@ -18,9 +18,9 @@ class CreatePaymentResponse extends \Google\Protobuf\Internal\Message
      */
     protected $card_id = '';
     /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
-    protected $error = '';
+    protected $status = '';
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class CreatePaymentResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $card_id
-     *     @type string $error
+     *     @type string $status
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +60,23 @@ class CreatePaymentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      * @return string
      */
-    public function getError()
+    public function getStatus()
     {
-        return $this->error;
+        return $this->status;
     }
 
     /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */
-    public function setError($var)
+    public function setStatus($var)
     {
         GPBUtil::checkString($var, True);
-        $this->error = $var;
+        $this->status = $var;
 
         return $this;
     }
