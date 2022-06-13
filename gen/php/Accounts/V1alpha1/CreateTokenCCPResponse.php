@@ -21,6 +21,10 @@ class CreateTokenCCPResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string msg = 2 [json_name = "msg"];</code>
      */
     protected $msg = '';
+    /**
+     * Generated from protobuf field <code>string code_mfa = 3 [json_name = "codeMfa"];</code>
+     */
+    protected $code_mfa = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class CreateTokenCCPResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type string $token_ccp
      *     @type string $msg
+     *     @type string $code_mfa
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class CreateTokenCCPResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->msg = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string code_mfa = 3 [json_name = "codeMfa"];</code>
+     * @return string
+     */
+    public function getCodeMfa()
+    {
+        return $this->code_mfa;
+    }
+
+    /**
+     * Generated from protobuf field <code>string code_mfa = 3 [json_name = "codeMfa"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCodeMfa($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->code_mfa = $var;
 
         return $this;
     }

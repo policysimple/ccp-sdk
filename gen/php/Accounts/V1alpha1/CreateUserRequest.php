@@ -81,6 +81,10 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string invitation_code = 16 [json_name = "invitationCode"];</code>
      */
     protected $invitation_code = '';
+    /**
+     * Generated from protobuf field <code>bool is_mfa_enabled = 17 [json_name = "isMfaEnabled"];</code>
+     */
+    protected $is_mfa_enabled = false;
 
     /**
      * Constructor.
@@ -105,6 +109,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      *     @type string $state
      *     @type string $emoji_country
      *     @type string $invitation_code
+     *     @type bool $is_mfa_enabled
      * }
      */
     public function __construct($data = NULL) {
@@ -464,6 +469,28 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->invitation_code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_mfa_enabled = 17 [json_name = "isMfaEnabled"];</code>
+     * @return bool
+     */
+    public function getIsMfaEnabled()
+    {
+        return $this->is_mfa_enabled;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_mfa_enabled = 17 [json_name = "isMfaEnabled"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsMfaEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_mfa_enabled = $var;
 
         return $this;
     }

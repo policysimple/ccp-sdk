@@ -17,10 +17,6 @@ class LogsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
      */
     protected $user_id = '';
-    /**
-     * Generated from protobuf field <code>string systems = 2 [json_name = "systems"];</code>
-     */
-    protected $systems = '';
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class LogsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $user_id
-     *     @type string $systems
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class LogsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string systems = 2 [json_name = "systems"];</code>
-     * @return string
-     */
-    public function getSystems()
-    {
-        return $this->systems;
-    }
-
-    /**
-     * Generated from protobuf field <code>string systems = 2 [json_name = "systems"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSystems($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->systems = $var;
 
         return $this;
     }

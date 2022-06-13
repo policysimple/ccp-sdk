@@ -99,6 +99,10 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool email_verified = 21 [json_name = "emailVerified"];</code>
      */
     protected $email_verified = false;
+    /**
+     * Generated from protobuf field <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
+     */
+    protected $is_mfa_enabled = false;
 
     /**
      * Constructor.
@@ -128,6 +132,7 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
      *     @type string $state
      *     @type string $emoji_country
      *     @type bool $email_verified
+     *     @type bool $is_mfa_enabled
      * }
      */
     public function __construct($data = NULL) {
@@ -597,6 +602,28 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->email_verified = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
+     * @return bool
+     */
+    public function getIsMfaEnabled()
+    {
+        return $this->is_mfa_enabled;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsMfaEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_mfa_enabled = $var;
 
         return $this;
     }
