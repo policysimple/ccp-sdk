@@ -19,6 +19,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type PaymentAPIServiceClient interface {
 	CreateSuscription(ctx context.Context, in *CreateSuscriptionRequest, opts ...grpc.CallOption) (*CreateSuscriptionResponse, error)
+	CreateCard(ctx context.Context, in *CreateCardRequest, opts ...grpc.CallOption) (*CreateCardResponse, error)
 	UpdateSuscription(ctx context.Context, in *UpdateSuscriptionRequest, opts ...grpc.CallOption) (*UpdateSuscriptionResponse, error)
 	CancelSuscription(ctx context.Context, in *CancelSuscriptionRequest, opts ...grpc.CallOption) (*CancelSuscriptionResponse, error)
 	GetOrganizationPayment(ctx context.Context, in *GetOrganizationPaymentRequest, opts ...grpc.CallOption) (*GetOrganizationPaymentResponse, error)
@@ -27,6 +28,7 @@ type PaymentAPIServiceClient interface {
 	DeleteCustomer(ctx context.Context, in *DeleteCustomerRequest, opts ...grpc.CallOption) (*DeleteCustomerResponse, error)
 	GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error)
 	GetCustomer(ctx context.Context, in *GetCustomerRequest, opts ...grpc.CallOption) (*GetCustomerResponse, error)
+	GetBilingMonth(ctx context.Context, in *GetBilingMonthRequest, opts ...grpc.CallOption) (*GetBilingMonthResponse, error)
 	GetPayments(ctx context.Context, in *GetPaymentsRequest, opts ...grpc.CallOption) (*GetPaymentsResponse, error)
 	CreatePayment(ctx context.Context, in *CreatePaymentRequest, opts ...grpc.CallOption) (*CreatePaymentResponse, error)
 	UpdatePayment(ctx context.Context, in *UpdatePaymentRequest, opts ...grpc.CallOption) (*UpdatePaymentResponse, error)
@@ -46,6 +48,15 @@ func NewPaymentAPIServiceClient(cc grpc.ClientConnInterface) PaymentAPIServiceCl
 func (c *paymentAPIServiceClient) CreateSuscription(ctx context.Context, in *CreateSuscriptionRequest, opts ...grpc.CallOption) (*CreateSuscriptionResponse, error) {
 	out := new(CreateSuscriptionResponse)
 	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/CreateSuscription", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *paymentAPIServiceClient) CreateCard(ctx context.Context, in *CreateCardRequest, opts ...grpc.CallOption) (*CreateCardResponse, error) {
+	out := new(CreateCardResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/CreateCard", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -124,6 +135,15 @@ func (c *paymentAPIServiceClient) GetCustomer(ctx context.Context, in *GetCustom
 	return out, nil
 }
 
+func (c *paymentAPIServiceClient) GetBilingMonth(ctx context.Context, in *GetBilingMonthRequest, opts ...grpc.CallOption) (*GetBilingMonthResponse, error) {
+	out := new(GetBilingMonthResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/GetBilingMonth", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *paymentAPIServiceClient) GetPayments(ctx context.Context, in *GetPaymentsRequest, opts ...grpc.CallOption) (*GetPaymentsResponse, error) {
 	out := new(GetPaymentsResponse)
 	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/GetPayments", in, out, opts...)
@@ -183,6 +203,7 @@ func (c *paymentAPIServiceClient) CreateInvoice(ctx context.Context, in *CreateI
 // for forward compatibility
 type PaymentAPIServiceServer interface {
 	CreateSuscription(context.Context, *CreateSuscriptionRequest) (*CreateSuscriptionResponse, error)
+	CreateCard(context.Context, *CreateCardRequest) (*CreateCardResponse, error)
 	UpdateSuscription(context.Context, *UpdateSuscriptionRequest) (*UpdateSuscriptionResponse, error)
 	CancelSuscription(context.Context, *CancelSuscriptionRequest) (*CancelSuscriptionResponse, error)
 	GetOrganizationPayment(context.Context, *GetOrganizationPaymentRequest) (*GetOrganizationPaymentResponse, error)
@@ -191,6 +212,7 @@ type PaymentAPIServiceServer interface {
 	DeleteCustomer(context.Context, *DeleteCustomerRequest) (*DeleteCustomerResponse, error)
 	GetPayment(context.Context, *GetPaymentRequest) (*GetPaymentResponse, error)
 	GetCustomer(context.Context, *GetCustomerRequest) (*GetCustomerResponse, error)
+	GetBilingMonth(context.Context, *GetBilingMonthRequest) (*GetBilingMonthResponse, error)
 	GetPayments(context.Context, *GetPaymentsRequest) (*GetPaymentsResponse, error)
 	CreatePayment(context.Context, *CreatePaymentRequest) (*CreatePaymentResponse, error)
 	UpdatePayment(context.Context, *UpdatePaymentRequest) (*UpdatePaymentResponse, error)
@@ -205,6 +227,9 @@ type UnimplementedPaymentAPIServiceServer struct {
 
 func (UnimplementedPaymentAPIServiceServer) CreateSuscription(context.Context, *CreateSuscriptionRequest) (*CreateSuscriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateSuscription not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) CreateCard(context.Context, *CreateCardRequest) (*CreateCardResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCard not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) UpdateSuscription(context.Context, *UpdateSuscriptionRequest) (*UpdateSuscriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateSuscription not implemented")
@@ -229,6 +254,9 @@ func (UnimplementedPaymentAPIServiceServer) GetPayment(context.Context, *GetPaym
 }
 func (UnimplementedPaymentAPIServiceServer) GetCustomer(context.Context, *GetCustomerRequest) (*GetCustomerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCustomer not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) GetBilingMonth(context.Context, *GetBilingMonthRequest) (*GetBilingMonthResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBilingMonth not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) GetPayments(context.Context, *GetPaymentsRequest) (*GetPaymentsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPayments not implemented")
@@ -274,6 +302,24 @@ func _PaymentAPIService_CreateSuscription_Handler(srv interface{}, ctx context.C
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PaymentAPIServiceServer).CreateSuscription(ctx, req.(*CreateSuscriptionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PaymentAPIService_CreateCard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).CreateCard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/CreateCard",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).CreateCard(ctx, req.(*CreateCardRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -422,6 +468,24 @@ func _PaymentAPIService_GetCustomer_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PaymentAPIService_GetBilingMonth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBilingMonthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).GetBilingMonth(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/GetBilingMonth",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).GetBilingMonth(ctx, req.(*GetBilingMonthRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _PaymentAPIService_GetPayments_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetPaymentsRequest)
 	if err := dec(in); err != nil {
@@ -542,6 +606,10 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _PaymentAPIService_CreateSuscription_Handler,
 		},
 		{
+			MethodName: "CreateCard",
+			Handler:    _PaymentAPIService_CreateCard_Handler,
+		},
+		{
 			MethodName: "UpdateSuscription",
 			Handler:    _PaymentAPIService_UpdateSuscription_Handler,
 		},
@@ -572,6 +640,10 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCustomer",
 			Handler:    _PaymentAPIService_GetCustomer_Handler,
+		},
+		{
+			MethodName: "GetBilingMonth",
+			Handler:    _PaymentAPIService_GetBilingMonth_Handler,
 		},
 		{
 			MethodName: "GetPayments",

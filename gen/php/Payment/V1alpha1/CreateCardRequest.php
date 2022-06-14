@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>payment.v1alpha1.CreateInvoiceRequest</code>
+ * Generated from protobuf message <code>payment.v1alpha1.CreateCardRequest</code>
  */
-class CreateInvoiceRequest extends \Google\Protobuf\Internal\Message
+class CreateCardRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Card card = 1 [json_name = "card"];</code>
      */
-    protected $customer = null;
+    protected $card = null;
     /**
      * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
@@ -28,7 +28,7 @@ class CreateInvoiceRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Customer $customer
+     *     @type \Payment\V1alpha1\Card $card
      *     @type string $status
      * }
      */
@@ -38,33 +38,33 @@ class CreateInvoiceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @return \Payment\V1alpha1\Customer|null
+     * Generated from protobuf field <code>.payment.v1alpha1.Card card = 1 [json_name = "card"];</code>
+     * @return \Payment\V1alpha1\Card|null
      */
-    public function getCustomer()
+    public function getCard()
     {
-        return $this->customer;
+        return $this->card;
     }
 
-    public function hasCustomer()
+    public function hasCard()
     {
-        return isset($this->customer);
+        return isset($this->card);
     }
 
-    public function clearCustomer()
+    public function clearCard()
     {
-        unset($this->customer);
+        unset($this->card);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @param \Payment\V1alpha1\Customer $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Card card = 1 [json_name = "card"];</code>
+     * @param \Payment\V1alpha1\Card $var
      * @return $this
      */
-    public function setCustomer($var)
+    public function setCard($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
-        $this->customer = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Card::class);
+        $this->card = $var;
 
         return $this;
     }

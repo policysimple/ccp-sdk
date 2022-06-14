@@ -19,6 +19,11 @@ class PaymentAPIServiceStub(object):
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateSuscriptionRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateSuscriptionResponse.FromString,
         )
+    self.CreateCard = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/CreateCard',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCardRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCardResponse.FromString,
+        )
     self.UpdateSuscription = channel.unary_unary(
         '/payment.v1alpha1.PaymentAPIService/UpdateSuscription',
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSuscriptionRequest.SerializeToString,
@@ -59,6 +64,11 @@ class PaymentAPIServiceStub(object):
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetCustomerRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetCustomerResponse.FromString,
         )
+    self.GetBilingMonth = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/GetBilingMonth',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetBilingMonthRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetBilingMonthResponse.FromString,
+        )
     self.GetPayments = channel.unary_unary(
         '/payment.v1alpha1.PaymentAPIService/GetPayments',
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetPaymentsRequest.SerializeToString,
@@ -96,6 +106,13 @@ class PaymentAPIServiceServicer(object):
   pass
 
   def CreateSuscription(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateCard(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -158,6 +175,13 @@ class PaymentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetBilingMonth(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def GetPayments(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -208,6 +232,11 @@ def add_PaymentAPIServiceServicer_to_server(servicer, server):
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateSuscriptionRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateSuscriptionResponse.SerializeToString,
       ),
+      'CreateCard': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateCard,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCardRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCardResponse.SerializeToString,
+      ),
       'UpdateSuscription': grpc.unary_unary_rpc_method_handler(
           servicer.UpdateSuscription,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSuscriptionRequest.FromString,
@@ -247,6 +276,11 @@ def add_PaymentAPIServiceServicer_to_server(servicer, server):
           servicer.GetCustomer,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetCustomerRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetCustomerResponse.SerializeToString,
+      ),
+      'GetBilingMonth': grpc.unary_unary_rpc_method_handler(
+          servicer.GetBilingMonth,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetBilingMonthRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetBilingMonthResponse.SerializeToString,
       ),
       'GetPayments': grpc.unary_unary_rpc_method_handler(
           servicer.GetPayments,

@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>payment.v1alpha1.CreateInvoiceRequest</code>
+ * Generated from protobuf message <code>payment.v1alpha1.GetBilingMonthResponse</code>
  */
-class CreateInvoiceRequest extends \Google\Protobuf\Internal\Message
+class GetBilingMonthResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * Generated from protobuf field <code>int64 totalusage = 1 [json_name = "totalusage"];</code>
      */
-    protected $customer = null;
+    protected $totalusage = 0;
     /**
      * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
@@ -28,7 +28,7 @@ class CreateInvoiceRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Customer $customer
+     *     @type int|string $totalusage
      *     @type string $status
      * }
      */
@@ -38,33 +38,23 @@ class CreateInvoiceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @return \Payment\V1alpha1\Customer|null
+     * Generated from protobuf field <code>int64 totalusage = 1 [json_name = "totalusage"];</code>
+     * @return int|string
      */
-    public function getCustomer()
+    public function getTotalusage()
     {
-        return $this->customer;
-    }
-
-    public function hasCustomer()
-    {
-        return isset($this->customer);
-    }
-
-    public function clearCustomer()
-    {
-        unset($this->customer);
+        return $this->totalusage;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @param \Payment\V1alpha1\Customer $var
+     * Generated from protobuf field <code>int64 totalusage = 1 [json_name = "totalusage"];</code>
+     * @param int|string $var
      * @return $this
      */
-    public function setCustomer($var)
+    public function setTotalusage($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
-        $this->customer = $var;
+        GPBUtil::checkInt64($var);
+        $this->totalusage = $var;
 
         return $this;
     }
