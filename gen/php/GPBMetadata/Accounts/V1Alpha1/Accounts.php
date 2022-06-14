@@ -16,13 +16,38 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-¸›
- accounts/v1alpha1/accounts.protoaccounts.v1alpha1"@
-LogsRequest
+­¤
+ accounts/v1alpha1/accounts.protoaccounts.v1alpha1"4
+EnableOrDisableMFARequest
+user_id (	RuserId".
+EnableOrDisableMFAResponse
+msg (	Rmsg"S
+
+MFARequest
+user_id (	RuserId
+code (	Rcode
+numbers (Rnumbers"R
+MFAResponse
+	token_ccp (	RtokenCcp
+msg (	Rmsg
+error (	Rerror"2
+GetUsersEmailFilterRequest
+value (	Rvalue"P
+GetUsersEmailFilterResponse1
+users (2.accounts.v1alpha1.UserListRusers"f
+Log
 user_id (	RuserId
-systems (	Rsystems""
-LogsResponse
-logs (	Rlogs"-
+systems (	Rsystems
+	navegator (	R	navegator
+ip (	Rip";
+SaveLogsRequest(
+log (2.accounts.v1alpha1.LogRlog"$
+SaveLogsResponse
+msg (	Rmsg"&
+LogsRequest
+user_id (	RuserId":
+LogsResponse*
+logs (2.accounts.v1alpha1.LogRlogs"-
 GetOneTokenCCPRequest
 token (	Rtoken"Ã
 GetOneTokenCCPResponse
@@ -34,10 +59,12 @@ class Accounts
 first_name (	R	firstName%
 email_verified (RemailVerified"4
 CreateTokenCCPRequest
-	token_dex (	RtokenDex"G
+	token_dex (	RtokenDex"x
 CreateTokenCCPResponse
 	token_ccp (	RtokenCcp
-msg (	Rmsg"{
+msg (	Rmsg
+code_mfa (	RcodeMfa
+error (	Rerror"{
 GetRolesByOrgUserRequest\'
 organization_id (RorganizationId
 
@@ -188,7 +215,7 @@ permission
 ListUserRequest\'
 organization_id (RorganizationId
 
-project_id (R	projectId"ø
+project_id (R	projectId"ž
 CreateUserRequest
 user_id (	RuserId
 
@@ -207,7 +234,8 @@ first_name (	R	firstName
 address (	Raddress
 state (	Rstate#
 emoji_country (	RemojiCountry\'
-invitation_code (	RinvitationCode"f
+invitation_code (	RinvitationCode$
+is_mfa_enabled (RisMfaEnabled"f
 UpdateUserRequest
 auth_id (RauthId8
 auth (2$.accounts.v1alpha1.CreateUserRequestRauth"U
@@ -225,7 +253,7 @@ first_name (	R	firstName
 is_super_user (RisSuperUser"L
 GetOneUserRequest
 id (Rid\'
-organization_id (RorganizationId"ä
+organization_id (RorganizationId"Š
 GetOneUserResponse
 id (Rid
 user_id (	RuserId
@@ -251,7 +279,8 @@ updated_at (	R	updatedAt,
 address (	Raddress
 state (	Rstate#
 emoji_country (	RemojiCountry%
-email_verified (RemailVerified"E
+email_verified (RemailVerified$
+is_mfa_enabled (RisMfaEnabled"E
 ListUserResponse1
 users (2.accounts.v1alpha1.UserListRusers"I
 ListUserPaginationRequest
@@ -529,7 +558,7 @@ first_name (	R	firstName
 	users_dex (2.accounts.v1alpha1.UsersDexRusersDex"i
 GetOneUserDexRequest
 user_id (	RuserId8
-user (2$.accounts.v1alpha1.CreateUserRequestRuser"¼
+user (2$.accounts.v1alpha1.CreateUserRequestRuser"Ò
 GetOneUserDexResponse
 id (Rid
 user_id (	RuserId
@@ -558,10 +587,11 @@ updated_at (	R	updatedAt,
 emoji_country (	RemojiCountry$
 is_mfa_enabled (RisMfaEnabled
 	token_ccp (	RtokenCcp%
-email_verified (RemailVerified*d
+email_verified (RemailVerified
+error (	Rerror*d
 InvitationResponse,
 (INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED  
-INVITATION_RESPONSE_REJECTED2¨%
+INVITATION_RESPONSE_REJECTED2¬(
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
@@ -576,7 +606,8 @@ DeleteUser$.accounts.v1alpha1.DeleteUserRequest%.accounts.v1alpha1.DeleteUserR
 SendInvitationUser,.accounts.v1alpha1.SendInvitationUserRequest-.accounts.v1alpha1.SendInvitationUserResponsen
 GetInvitationUser+.accounts.v1alpha1.GetInvitationUserRequest,.accounts.v1alpha1.GetInvitationUserResponset
 AgreeInvitationUser-.accounts.v1alpha1.AgreeInvitationUserRequest..accounts.v1alpha1.AgreeInvitationUserResponseq
-ListInvitationUser,.accounts.v1alpha1.ListInvitationUserRequest-.accounts.v1alpha1.ListInvitationUserResponsek
+ListInvitationUser,.accounts.v1alpha1.ListInvitationUserRequest-.accounts.v1alpha1.ListInvitationUserResponseq
+EnableOrDisableMFA,.accounts.v1alpha1.EnableOrDisableMFARequest-.accounts.v1alpha1.EnableOrDisableMFAResponsek
 CreatePermission*.accounts.v1alpha1.CreatePermissionRequest+.accounts.v1alpha1.CreatePermissionResponsee
 ListPermission(.accounts.v1alpha1.ListPermissionRequest).accounts.v1alpha1.ListPermissionResponsek
 GetOnePermission*.accounts.v1alpha1.GetOnePermissionRequest+.accounts.v1alpha1.GetOnePermissionResponsek
@@ -617,8 +648,11 @@ ListApiKey$.accounts.v1alpha1.ListApiKeyRequest%.accounts.v1alpha1.ListApiKeyR
 UpdateApiKey&.accounts.v1alpha1.UpdateApiKeyRequest\'.accounts.v1alpha1.UpdateApiKeyResponse_
 DeleteApiKey&.accounts.v1alpha1.DeleteApiKeyRequest\'.accounts.v1alpha1.DeleteApiKeyResponsee
 CreateTokenCCP(.accounts.v1alpha1.CreateTokenCCPRequest).accounts.v1alpha1.CreateTokenCCPResponsee
-GetOneTokenCCP(.accounts.v1alpha1.GetOneTokenCCPRequest).accounts.v1alpha1.GetOneTokenCCPResponseG
-Logs.accounts.v1alpha1.LogsRequest.accounts.v1alpha1.LogsResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
+GetOneTokenCCP(.accounts.v1alpha1.GetOneTokenCCPRequest).accounts.v1alpha1.GetOneTokenCCPResponset
+GetUsersEmailFilter-.accounts.v1alpha1.GetUsersEmailFilterRequest..accounts.v1alpha1.GetUsersEmailFilterResponseG
+Logs.accounts.v1alpha1.LogsRequest.accounts.v1alpha1.LogsResponseS
+SaveLogs".accounts.v1alpha1.SaveLogsRequest#.accounts.v1alpha1.SaveLogsResponseD
+MFA.accounts.v1alpha1.MFARequest.accounts.v1alpha1.MFAResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

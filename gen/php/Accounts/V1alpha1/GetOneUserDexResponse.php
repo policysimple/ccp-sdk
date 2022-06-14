@@ -113,6 +113,10 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool email_verified = 24 [json_name = "emailVerified"];</code>
      */
     protected $email_verified = false;
+    /**
+     * Generated from protobuf field <code>string error = 25 [json_name = "error"];</code>
+     */
+    protected $error = '';
 
     /**
      * Constructor.
@@ -146,6 +150,7 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      *          multi-factor
      *     @type string $token_ccp
      *     @type bool $email_verified
+     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -685,6 +690,28 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->email_verified = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error = 25 [json_name = "error"];</code>
+     * @return string
+     */
+    public function getError()
+    {
+        return $this->error;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error = 25 [json_name = "error"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setError($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->error = $var;
 
         return $this;
     }

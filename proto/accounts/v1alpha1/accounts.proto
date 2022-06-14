@@ -17,6 +17,8 @@ service AccountService {
     rpc GetInvitationUser(GetInvitationUserRequest) returns (GetInvitationUserResponse);
     rpc AgreeInvitationUser(AgreeInvitationUserRequest) returns (AgreeInvitationUserResponse);
     rpc ListInvitationUser(ListInvitationUserRequest) returns (ListInvitationUserResponse);
+
+    rpc EnableOrDisableMFA(EnableOrDisableMFARequest) returns (EnableOrDisableMFAResponse);
     ///PERMISSION
     rpc CreatePermission(CreatePermissionRequest) returns (CreatePermissionResponse);
     rpc ListPermission(ListPermissionRequest) returns (ListPermissionResponse);
@@ -59,22 +61,77 @@ service AccountService {
     rpc ListApiKey(ListApiKeyRequest) returns (ListApiKeyResponse);
     rpc UpdateApiKey(UpdateApiKeyRequest) returns (UpdateApiKeyResponse);
     rpc DeleteApiKey(DeleteApiKeyRequest) returns (DeleteApiKeyResponse);
-
     //TOKEN CCP
     rpc CreateTokenCCP(CreateTokenCCPRequest) returns (CreateTokenCCPResponse);
     rpc GetOneTokenCCP(GetOneTokenCCPRequest) returns (GetOneTokenCCPResponse);
-
+    //Get Users Email filter
+    rpc GetUsersEmailFilter(GetUsersEmailFilterRequest) returns (GetUsersEmailFilterResponse);
+    //Logs 
     rpc Logs(LogsRequest) returns (LogsResponse);
+    rpc SaveLogs(SaveLogsRequest) returns (SaveLogsResponse);
+
+    rpc MFA(MFARequest) returns (MFAResponse);
+
 }
 
+
+message EnableOrDisableMFARequest {
+    string user_id = 1;
+}
+
+message EnableOrDisableMFAResponse {
+    string msg = 1;
+}
+
+message MFARequest {
+    string user_id = 1;
+    string code = 2;
+    repeated int32 numbers = 3;
+}
+
+message  MFAResponse {
+    string token_ccp = 1;
+    string msg = 2;
+    string error = 3;
+}
+
+
+/*
+
+    FILTER BY EMAIL
+*/
+
+message GetUsersEmailFilterRequest {
+    string value = 1;
+}
+message GetUsersEmailFilterResponse {
+    repeated UserList users = 1;
+}
+
+
+
+/*
+    LOGS 
+*/
+
+message Log{
+    string user_id = 1;
+    string systems = 2;
+    string navegator = 3;
+    string ip = 4;
+}
+message SaveLogsRequest {
+    Log log = 1;
+}
+message SaveLogsResponse {
+    string msg = 1;
+}
 
 message LogsRequest {
     string user_id = 1;
-    string systems = 2;
 }
-
 message LogsResponse {
-    repeated string logs = 1;
+    repeated Log logs = 1;
 }
 
 /*
@@ -102,6 +159,8 @@ message CreateTokenCCPRequest {
 message CreateTokenCCPResponse {
     string token_ccp = 1;
     string msg = 2;
+    string code_mfa = 3;
+    string error = 4;
 }
 
 /*
@@ -398,6 +457,8 @@ message CreateUserRequest {
     string state = 14;
     string emoji_country = 15;
     string invitation_code  = 16;
+
+    bool is_mfa_enabled = 17;
 }
 
 //Update
@@ -456,6 +517,8 @@ message GetOneUserResponse {
     string state = 19;
     string emoji_country = 20;
     bool email_verified = 21;
+
+    bool is_mfa_enabled = 22;
 
 }
 
@@ -962,4 +1025,6 @@ message GetOneUserDexResponse {
     bool is_mfa_enabled = 22;
     string token_ccp = 23;
     bool email_verified = 24;
+
+    string error = 25;
 }

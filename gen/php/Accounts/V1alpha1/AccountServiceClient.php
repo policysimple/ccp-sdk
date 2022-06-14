@@ -148,6 +148,19 @@ class AccountServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Accounts\V1alpha1\EnableOrDisableMFARequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function EnableOrDisableMFA(\Accounts\V1alpha1\EnableOrDisableMFARequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/EnableOrDisableMFA',
+        $argument,
+        ['\Accounts\V1alpha1\EnableOrDisableMFAResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * /PERMISSION
      * @param \Accounts\V1alpha1\CreatePermissionRequest $argument input argument
      * @param array $metadata metadata
@@ -625,6 +638,21 @@ class AccountServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Get Users Email filter
+     * @param \Accounts\V1alpha1\GetUsersEmailFilterRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetUsersEmailFilter(\Accounts\V1alpha1\GetUsersEmailFilterRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/GetUsersEmailFilter',
+        $argument,
+        ['\Accounts\V1alpha1\GetUsersEmailFilterResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Logs 
      * @param \Accounts\V1alpha1\LogsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -634,6 +662,32 @@ class AccountServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/accounts.v1alpha1.AccountService/Logs',
         $argument,
         ['\Accounts\V1alpha1\LogsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\SaveLogsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function SaveLogs(\Accounts\V1alpha1\SaveLogsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/SaveLogs',
+        $argument,
+        ['\Accounts\V1alpha1\SaveLogsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\MFARequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function MFA(\Accounts\V1alpha1\MFARequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/MFA',
+        $argument,
+        ['\Accounts\V1alpha1\MFAResponse', 'decode'],
         $metadata, $options);
     }
 
