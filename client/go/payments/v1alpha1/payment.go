@@ -112,7 +112,7 @@ func CreateInvoice(in *paymentpkgv1.CreateInvoiceRequest) (response *paymentpkgv
 	defer cancel()
 
 	response, err = client.CreateInvoice(ctx, &paymentpkgv1.CreateInvoiceRequest{
-		CustomerId: in.CustomerId,
+		Customer: in.Customer,
 	})
 
 	if err != nil {
