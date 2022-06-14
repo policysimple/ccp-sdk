@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-—¤
+­¤
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"4
 EnableOrDisableMFARequest
 user_id (	RuserId".
@@ -59,11 +59,12 @@ MFARequest
 first_name (	R	firstName%
 email_verified (RemailVerified"4
 CreateTokenCCPRequest
-	token_dex (	RtokenDex"b
+	token_dex (	RtokenDex"x
 CreateTokenCCPResponse
 	token_ccp (	RtokenCcp
 msg (	Rmsg
-code_mfa (	RcodeMfa"{
+code_mfa (	RcodeMfa
+error (	Rerror"{
 GetRolesByOrgUserRequest\'
 organization_id (RorganizationId
 

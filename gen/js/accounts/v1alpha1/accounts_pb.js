@@ -5089,7 +5089,8 @@ proto.accounts.v1alpha1.CreateTokenCCPResponse.toObject = function(includeInstan
   var f, obj = {
     tokenCcp: jspb.Message.getFieldWithDefault(msg, 1, ""),
     msg: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    codeMfa: jspb.Message.getFieldWithDefault(msg, 3, "")
+    codeMfa: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    error: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -5138,6 +5139,10 @@ proto.accounts.v1alpha1.CreateTokenCCPResponse.deserializeBinaryFromReader = fun
       var value = /** @type {string} */ (reader.readString());
       msg.setCodeMfa(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5185,6 +5190,13 @@ proto.accounts.v1alpha1.CreateTokenCCPResponse.serializeBinaryToWriter = functio
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -5242,6 +5254,24 @@ proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.getCodeMfa = function()
  */
 proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.setCodeMfa = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string error = 4;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.CreateTokenCCPResponse} returns this
+ */
+proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

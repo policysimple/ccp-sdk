@@ -2934,6 +2934,7 @@ class CreateTokenCCPResponse final :
     kTokenCcpFieldNumber = 1,
     kMsgFieldNumber = 2,
     kCodeMfaFieldNumber = 3,
+    kErrorFieldNumber = 4,
   };
   // string token_ccp = 1 [json_name = "tokenCcp"];
   void clear_token_ccp();
@@ -2977,6 +2978,20 @@ class CreateTokenCCPResponse final :
   std::string* _internal_mutable_code_mfa();
   public:
 
+  // string error = 4 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.CreateTokenCCPResponse)
  private:
   class _Internal;
@@ -2987,6 +3002,7 @@ class CreateTokenCCPResponse final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_ccp_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr code_mfa_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -24335,6 +24351,52 @@ inline void CreateTokenCCPResponse::set_allocated_code_mfa(std::string* code_mfa
   code_mfa_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), code_mfa,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.CreateTokenCCPResponse.code_mfa)
+}
+
+// string error = 4 [json_name = "error"];
+inline void CreateTokenCCPResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& CreateTokenCCPResponse::error() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateTokenCCPResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateTokenCCPResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateTokenCCPResponse.error)
+}
+inline std::string* CreateTokenCCPResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.CreateTokenCCPResponse.error)
+  return _s;
+}
+inline const std::string& CreateTokenCCPResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void CreateTokenCCPResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateTokenCCPResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateTokenCCPResponse::release_error() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.CreateTokenCCPResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateTokenCCPResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.CreateTokenCCPResponse.error)
 }
 
 // -------------------------------------------------------------------
