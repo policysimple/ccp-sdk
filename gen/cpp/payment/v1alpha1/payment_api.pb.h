@@ -2786,23 +2786,8 @@ class CreateInvoiceRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 2,
     kCustomerFieldNumber = 1,
   };
-  // string status = 2 [json_name = "status"];
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
   // .payment.v1alpha1.Customer customer = 1 [json_name = "customer"];
   bool has_customer() const;
   private:
@@ -2828,7 +2813,6 @@ class CreateInvoiceRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::payment::v1alpha1::Customer* customer_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
@@ -3127,23 +3111,8 @@ class CreateCardRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 2,
     kCardFieldNumber = 1,
   };
-  // string status = 2 [json_name = "status"];
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
   // .payment.v1alpha1.Card card = 1 [json_name = "card"];
   bool has_card() const;
   private:
@@ -3169,7 +3138,6 @@ class CreateCardRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::payment::v1alpha1::Card* card_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
@@ -7129,52 +7097,6 @@ inline void CreateInvoiceRequest::set_allocated_customer(::payment::v1alpha1::Cu
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CreateInvoiceRequest.customer)
 }
 
-// string status = 2 [json_name = "status"];
-inline void CreateInvoiceRequest::clear_status() {
-  status_.ClearToEmpty();
-}
-inline const std::string& CreateInvoiceRequest::status() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.CreateInvoiceRequest.status)
-  return _internal_status();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateInvoiceRequest::set_status(ArgT0&& arg0, ArgT... args) {
- 
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.CreateInvoiceRequest.status)
-}
-inline std::string* CreateInvoiceRequest::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.CreateInvoiceRequest.status)
-  return _s;
-}
-inline const std::string& CreateInvoiceRequest::_internal_status() const {
-  return status_.Get();
-}
-inline void CreateInvoiceRequest::_internal_set_status(const std::string& value) {
-  
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateInvoiceRequest::_internal_mutable_status() {
-  
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateInvoiceRequest::release_status() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.CreateInvoiceRequest.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateInvoiceRequest::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CreateInvoiceRequest.status)
-}
-
 // -------------------------------------------------------------------
 
 // CreateInvoiceResponse
@@ -7373,52 +7295,6 @@ inline void CreateCardRequest::set_allocated_card(::payment::v1alpha1::Card* car
   }
   card_ = card;
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CreateCardRequest.card)
-}
-
-// string status = 2 [json_name = "status"];
-inline void CreateCardRequest::clear_status() {
-  status_.ClearToEmpty();
-}
-inline const std::string& CreateCardRequest::status() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.CreateCardRequest.status)
-  return _internal_status();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateCardRequest::set_status(ArgT0&& arg0, ArgT... args) {
- 
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.CreateCardRequest.status)
-}
-inline std::string* CreateCardRequest::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.CreateCardRequest.status)
-  return _s;
-}
-inline const std::string& CreateCardRequest::_internal_status() const {
-  return status_.Get();
-}
-inline void CreateCardRequest::_internal_set_status(const std::string& value) {
-  
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateCardRequest::_internal_mutable_status() {
-  
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateCardRequest::release_status() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.CreateCardRequest.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateCardRequest::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CreateCardRequest.status)
 }
 
 // -------------------------------------------------------------------

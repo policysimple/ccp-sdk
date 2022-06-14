@@ -10735,18 +10735,6 @@ public final class PaymentApi {
      * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
      */
     payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder getCustomerOrBuilder();
-
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
-     */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.CreateInvoiceRequest}
@@ -10761,7 +10749,6 @@ public final class PaymentApi {
       super(builder);
     }
     private CreateInvoiceRequest() {
-      status_ = "";
     }
 
     @java.lang.Override
@@ -10805,12 +10792,6 @@ public final class PaymentApi {
                 customer_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              status_ = s;
               break;
             }
             default: {
@@ -10871,44 +10852,6 @@ public final class PaymentApi {
       return getCustomer();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object status_;
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10926,9 +10869,6 @@ public final class PaymentApi {
       if (customer_ != null) {
         output.writeMessage(1, getCustomer());
       }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -10941,9 +10881,6 @@ public final class PaymentApi {
       if (customer_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getCustomer());
-      }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10965,8 +10902,6 @@ public final class PaymentApi {
         if (!getCustomer()
             .equals(other.getCustomer())) return false;
       }
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10982,8 +10917,6 @@ public final class PaymentApi {
         hash = (37 * hash) + CUSTOMER_FIELD_NUMBER;
         hash = (53 * hash) + getCustomer().hashCode();
       }
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11123,8 +11056,6 @@ public final class PaymentApi {
           customer_ = null;
           customerBuilder_ = null;
         }
-        status_ = "";
-
         return this;
       }
 
@@ -11156,7 +11087,6 @@ public final class PaymentApi {
         } else {
           result.customer_ = customerBuilder_.build();
         }
-        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -11207,10 +11137,6 @@ public final class PaymentApi {
         if (other == payment.v1alpha1.PaymentApi.CreateInvoiceRequest.getDefaultInstance()) return this;
         if (other.hasCustomer()) {
           mergeCustomer(other.getCustomer());
-        }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11358,82 +11284,6 @@ public final class PaymentApi {
           customer_ = null;
         }
         return customerBuilder_;
-      }
-
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return The status.
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -12287,18 +12137,6 @@ public final class PaymentApi {
      * <code>.payment.v1alpha1.Card card = 1 [json_name = "card"];</code>
      */
     payment.v1alpha1.PaymentOuterClass.CardOrBuilder getCardOrBuilder();
-
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
-     */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.CreateCardRequest}
@@ -12313,7 +12151,6 @@ public final class PaymentApi {
       super(builder);
     }
     private CreateCardRequest() {
-      status_ = "";
     }
 
     @java.lang.Override
@@ -12357,12 +12194,6 @@ public final class PaymentApi {
                 card_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              status_ = s;
               break;
             }
             default: {
@@ -12423,44 +12254,6 @@ public final class PaymentApi {
       return getCard();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object status_;
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -12478,9 +12271,6 @@ public final class PaymentApi {
       if (card_ != null) {
         output.writeMessage(1, getCard());
       }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -12493,9 +12283,6 @@ public final class PaymentApi {
       if (card_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getCard());
-      }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12517,8 +12304,6 @@ public final class PaymentApi {
         if (!getCard()
             .equals(other.getCard())) return false;
       }
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12534,8 +12319,6 @@ public final class PaymentApi {
         hash = (37 * hash) + CARD_FIELD_NUMBER;
         hash = (53 * hash) + getCard().hashCode();
       }
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -12675,8 +12458,6 @@ public final class PaymentApi {
           card_ = null;
           cardBuilder_ = null;
         }
-        status_ = "";
-
         return this;
       }
 
@@ -12708,7 +12489,6 @@ public final class PaymentApi {
         } else {
           result.card_ = cardBuilder_.build();
         }
-        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -12759,10 +12539,6 @@ public final class PaymentApi {
         if (other == payment.v1alpha1.PaymentApi.CreateCardRequest.getDefaultInstance()) return this;
         if (other.hasCard()) {
           mergeCard(other.getCard());
-        }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -12910,82 +12686,6 @@ public final class PaymentApi {
           card_ = null;
         }
         return cardBuilder_;
-      }
-
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return The status.
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -23894,93 +23594,91 @@ public final class PaymentApi {
       "\001(\0132\035.payment.v1alpha1.SuscriptionR\013susc" +
       "ription\"Z\n\031CreateSuscriptionResponse\022%\n\016" +
       "suscription_id\030\001 \001(\tR\rsuscriptionId\022\026\n\006s" +
-      "tatus\030\002 \001(\tR\006status\"f\n\024CreateInvoiceRequ" +
+      "tatus\030\002 \001(\tR\006status\"N\n\024CreateInvoiceRequ" +
       "est\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1" +
-      ".CustomerR\010customer\022\026\n\006status\030\002 \001(\tR\006sta" +
-      "tus\"g\n\025CreateInvoiceResponse\022\022\n\004paid\030\001 \001" +
-      "(\003R\004paid\022\020\n\003due\030\002 \001(\003R\003due\022\020\n\003tax\030\003 \001(\003R" +
-      "\003tax\022\026\n\006status\030\004 \001(\tR\006status\"W\n\021CreateCa" +
-      "rdRequest\022*\n\004card\030\001 \001(\0132\026.payment.v1alph" +
-      "a1.CardR\004card\022\026\n\006status\030\002 \001(\tR\006status\"G\n" +
-      "\022CreateCardResponse\022\031\n\010token_id\030\001 \001(\tR\007t" +
-      "okenId\022\026\n\006status\030\002 \001(\tR\006status\"b\n\030Cancel" +
-      "SuscriptionRequest\022%\n\016suscription_id\030\001 \001" +
-      "(\tR\rsuscriptionId\022\037\n\013customer_id\030\002 \001(\tR\n" +
-      "customerId\"3\n\031CancelSuscriptionResponse\022" +
-      "\026\n\006status\030\001 \001(\tR\006status\"O\n\025CreateCustome" +
-      "rRequest\0226\n\010customer\030\001 \001(\0132\032.payment.v1a" +
-      "lpha1.CustomerR\010customer\"Q\n\026CreateCustom" +
-      "erResponse\022\037\n\013customer_id\030\001 \001(\tR\ncustome" +
-      "rId\022\026\n\006status\030\002 \001(\tR\006status\"l\n\024CreatePay" +
-      "mentRequest\022\037\n\013customer_id\030\001 \001(\tR\ncustom" +
-      "erId\0223\n\007payment\030\002 \001(\0132\031.payment.v1alpha1" +
-      ".PaymentR\007payment\"H\n\025CreatePaymentRespon" +
-      "se\022\027\n\007card_id\030\001 \001(\tR\006cardId\022\026\n\006status\030\002 " +
-      "\001(\tR\006status\"l\n\024UpdatePaymentRequest\022\037\n\013c" +
-      "ustomer_id\030\001 \001(\tR\ncustomerId\0223\n\007payment\030" +
-      "\002 \001(\0132\031.payment.v1alpha1.PaymentR\007paymen" +
-      "t\"d\n\025UpdatePaymentResponse\0223\n\007payment\030\001 " +
-      "\001(\0132\031.payment.v1alpha1.PaymentR\007payment\022" +
-      "\026\n\006status\030\002 \001(\tR\006status\"P\n\024DeletePayment" +
+      ".CustomerR\010customer\"g\n\025CreateInvoiceResp" +
+      "onse\022\022\n\004paid\030\001 \001(\003R\004paid\022\020\n\003due\030\002 \001(\003R\003d" +
+      "ue\022\020\n\003tax\030\003 \001(\003R\003tax\022\026\n\006status\030\004 \001(\tR\006st" +
+      "atus\"?\n\021CreateCardRequest\022*\n\004card\030\001 \001(\0132" +
+      "\026.payment.v1alpha1.CardR\004card\"G\n\022CreateC" +
+      "ardResponse\022\031\n\010token_id\030\001 \001(\tR\007tokenId\022\026" +
+      "\n\006status\030\002 \001(\tR\006status\"b\n\030CancelSuscript" +
+      "ionRequest\022%\n\016suscription_id\030\001 \001(\tR\rsusc" +
+      "riptionId\022\037\n\013customer_id\030\002 \001(\tR\ncustomer" +
+      "Id\"3\n\031CancelSuscriptionResponse\022\026\n\006statu" +
+      "s\030\001 \001(\tR\006status\"O\n\025CreateCustomerRequest" +
+      "\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.Cu" +
+      "stomerR\010customer\"Q\n\026CreateCustomerRespon" +
+      "se\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\022\026\n\006s" +
+      "tatus\030\002 \001(\tR\006status\"l\n\024CreatePaymentRequ" +
+      "est\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\0223\n\007" +
+      "payment\030\002 \001(\0132\031.payment.v1alpha1.Payment" +
+      "R\007payment\"H\n\025CreatePaymentResponse\022\027\n\007ca" +
+      "rd_id\030\001 \001(\tR\006cardId\022\026\n\006status\030\002 \001(\tR\006sta" +
+      "tus\"l\n\024UpdatePaymentRequest\022\037\n\013customer_" +
+      "id\030\001 \001(\tR\ncustomerId\0223\n\007payment\030\002 \001(\0132\031." +
+      "payment.v1alpha1.PaymentR\007payment\"d\n\025Upd" +
+      "atePaymentResponse\0223\n\007payment\030\001 \001(\0132\031.pa" +
+      "yment.v1alpha1.PaymentR\007payment\022\026\n\006statu" +
+      "s\030\002 \001(\tR\006status\"P\n\024DeletePaymentRequest\022" +
+      "\027\n\007card_id\030\001 \001(\tR\006cardId\022\037\n\013customer_id\030" +
+      "\002 \001(\tR\ncustomerId\"/\n\025DeletePaymentRespon" +
+      "se\022\026\n\006status\030\001 \001(\tR\006status\"M\n\021GetPayment" +
       "Request\022\027\n\007card_id\030\001 \001(\tR\006cardId\022\037\n\013cust" +
-      "omer_id\030\002 \001(\tR\ncustomerId\"/\n\025DeletePayme" +
-      "ntResponse\022\026\n\006status\030\001 \001(\tR\006status\"M\n\021Ge" +
-      "tPaymentRequest\022\027\n\007card_id\030\001 \001(\tR\006cardId" +
-      "\022\037\n\013customer_id\030\002 \001(\tR\ncustomerId\"a\n\022Get" +
-      "PaymentResponse\0223\n\007payment\030\001 \001(\0132\031.payme" +
-      "nt.v1alpha1.PaymentR\007payment\022\026\n\006status\030\002" +
-      " \001(\tR\006status\"\\\n\022ListPaymentRequest\022\037\n\013cu" +
-      "stomer_id\030\001 \001(\tR\ncustomerId\022%\n\016suscripti" +
-      "on_id\030\002 \001(\tR\rsuscriptionId\"o\n\023ListPaymen" +
-      "tResponse\022@\n\014payment_list\030\001 \001(\0132\035.paymen" +
-      "t.v1alpha1.PaymentListR\013paymentList\022\026\n\006s" +
-      "tatus\030\002 \001(\tR\006status2\336\r\n\021PaymentAPIServic" +
-      "e\022n\n\021CreateSuscription\022*.payment.v1alpha" +
-      "1.CreateSuscriptionRequest\032+.payment.v1a" +
-      "lpha1.CreateSuscriptionResponse\"\000\022Y\n\nCre" +
-      "ateCard\022#.payment.v1alpha1.CreateCardReq" +
-      "uest\032$.payment.v1alpha1.CreateCardRespon" +
-      "se\"\000\022n\n\021UpdateSuscription\022*.payment.v1al" +
-      "pha1.UpdateSuscriptionRequest\032+.payment." +
-      "v1alpha1.UpdateSuscriptionResponse\"\000\022n\n\021" +
-      "CancelSuscription\022*.payment.v1alpha1.Can" +
-      "celSuscriptionRequest\032+.payment.v1alpha1" +
-      ".CancelSuscriptionResponse\"\000\022}\n\026GetOrgan" +
-      "izationPayment\022/.payment.v1alpha1.GetOrg" +
-      "anizationPaymentRequest\0320.payment.v1alph" +
-      "a1.GetOrganizationPaymentResponse\"\000\022e\n\016G" +
-      "etSuscription\022\'.payment.v1alpha1.GetSusc" +
-      "riptionRequest\032(.payment.v1alpha1.GetSus" +
-      "criptionResponse\"\000\022e\n\016CreateCustomer\022\'.p" +
-      "ayment.v1alpha1.CreateCustomerRequest\032(." +
-      "payment.v1alpha1.CreateCustomerResponse\"" +
-      "\000\022e\n\016DeleteCustomer\022\'.payment.v1alpha1.D" +
-      "eleteCustomerRequest\032(.payment.v1alpha1." +
-      "DeleteCustomerResponse\"\000\022Y\n\nGetPayment\022#" +
-      ".payment.v1alpha1.GetPaymentRequest\032$.pa" +
-      "yment.v1alpha1.GetPaymentResponse\"\000\022\\\n\013G" +
-      "etCustomer\022$.payment.v1alpha1.GetCustome" +
-      "rRequest\032%.payment.v1alpha1.GetCustomerR" +
-      "esponse\"\000\022e\n\016GetBilingMonth\022\'.payment.v1" +
-      "alpha1.GetBilingMonthRequest\032(.payment.v" +
-      "1alpha1.GetBilingMonthResponse\"\000\022\\\n\013GetP" +
-      "ayments\022$.payment.v1alpha1.GetPaymentsRe" +
-      "quest\032%.payment.v1alpha1.GetPaymentsResp" +
-      "onse\"\000\022b\n\rCreatePayment\022&.payment.v1alph" +
-      "a1.CreatePaymentRequest\032\'.payment.v1alph" +
-      "a1.CreatePaymentResponse\"\000\022b\n\rUpdatePaym" +
-      "ent\022&.payment.v1alpha1.UpdatePaymentRequ" +
-      "est\032\'.payment.v1alpha1.UpdatePaymentResp" +
-      "onse\"\000\022b\n\rDeletePayment\022&.payment.v1alph" +
-      "a1.DeletePaymentRequest\032\'.payment.v1alph" +
-      "a1.DeletePaymentResponse\"\000\022\\\n\013ListPaymen" +
-      "t\022$.payment.v1alpha1.ListPaymentRequest\032" +
-      "%.payment.v1alpha1.ListPaymentResponse\"\000" +
-      "\022b\n\rCreateInvoice\022&.payment.v1alpha1.Cre" +
-      "ateInvoiceRequest\032\'.payment.v1alpha1.Cre" +
-      "ateInvoiceResponse\"\000B8Z6github.com/cuemb" +
-      "y/ccp-payment-service/payment/v1alpha1b\006" +
-      "proto3"
+      "omer_id\030\002 \001(\tR\ncustomerId\"a\n\022GetPaymentR" +
+      "esponse\0223\n\007payment\030\001 \001(\0132\031.payment.v1alp" +
+      "ha1.PaymentR\007payment\022\026\n\006status\030\002 \001(\tR\006st" +
+      "atus\"\\\n\022ListPaymentRequest\022\037\n\013customer_i" +
+      "d\030\001 \001(\tR\ncustomerId\022%\n\016suscription_id\030\002 " +
+      "\001(\tR\rsuscriptionId\"o\n\023ListPaymentRespons" +
+      "e\022@\n\014payment_list\030\001 \001(\0132\035.payment.v1alph" +
+      "a1.PaymentListR\013paymentList\022\026\n\006status\030\002 " +
+      "\001(\tR\006status2\336\r\n\021PaymentAPIService\022n\n\021Cre" +
+      "ateSuscription\022*.payment.v1alpha1.Create" +
+      "SuscriptionRequest\032+.payment.v1alpha1.Cr" +
+      "eateSuscriptionResponse\"\000\022Y\n\nCreateCard\022" +
+      "#.payment.v1alpha1.CreateCardRequest\032$.p" +
+      "ayment.v1alpha1.CreateCardResponse\"\000\022n\n\021" +
+      "UpdateSuscription\022*.payment.v1alpha1.Upd" +
+      "ateSuscriptionRequest\032+.payment.v1alpha1" +
+      ".UpdateSuscriptionResponse\"\000\022n\n\021CancelSu" +
+      "scription\022*.payment.v1alpha1.CancelSuscr" +
+      "iptionRequest\032+.payment.v1alpha1.CancelS" +
+      "uscriptionResponse\"\000\022}\n\026GetOrganizationP" +
+      "ayment\022/.payment.v1alpha1.GetOrganizatio" +
+      "nPaymentRequest\0320.payment.v1alpha1.GetOr" +
+      "ganizationPaymentResponse\"\000\022e\n\016GetSuscri" +
+      "ption\022\'.payment.v1alpha1.GetSuscriptionR" +
+      "equest\032(.payment.v1alpha1.GetSuscription" +
+      "Response\"\000\022e\n\016CreateCustomer\022\'.payment.v" +
+      "1alpha1.CreateCustomerRequest\032(.payment." +
+      "v1alpha1.CreateCustomerResponse\"\000\022e\n\016Del" +
+      "eteCustomer\022\'.payment.v1alpha1.DeleteCus" +
+      "tomerRequest\032(.payment.v1alpha1.DeleteCu" +
+      "stomerResponse\"\000\022Y\n\nGetPayment\022#.payment" +
+      ".v1alpha1.GetPaymentRequest\032$.payment.v1" +
+      "alpha1.GetPaymentResponse\"\000\022\\\n\013GetCustom" +
+      "er\022$.payment.v1alpha1.GetCustomerRequest" +
+      "\032%.payment.v1alpha1.GetCustomerResponse\"" +
+      "\000\022e\n\016GetBilingMonth\022\'.payment.v1alpha1.G" +
+      "etBilingMonthRequest\032(.payment.v1alpha1." +
+      "GetBilingMonthResponse\"\000\022\\\n\013GetPayments\022" +
+      "$.payment.v1alpha1.GetPaymentsRequest\032%." +
+      "payment.v1alpha1.GetPaymentsResponse\"\000\022b" +
+      "\n\rCreatePayment\022&.payment.v1alpha1.Creat" +
+      "ePaymentRequest\032\'.payment.v1alpha1.Creat" +
+      "ePaymentResponse\"\000\022b\n\rUpdatePayment\022&.pa" +
+      "yment.v1alpha1.UpdatePaymentRequest\032\'.pa" +
+      "yment.v1alpha1.UpdatePaymentResponse\"\000\022b" +
+      "\n\rDeletePayment\022&.payment.v1alpha1.Delet" +
+      "ePaymentRequest\032\'.payment.v1alpha1.Delet" +
+      "ePaymentResponse\"\000\022\\\n\013ListPayment\022$.paym" +
+      "ent.v1alpha1.ListPaymentRequest\032%.paymen" +
+      "t.v1alpha1.ListPaymentResponse\"\000\022b\n\rCrea" +
+      "teInvoice\022&.payment.v1alpha1.CreateInvoi" +
+      "ceRequest\032\'.payment.v1alpha1.CreateInvoi" +
+      "ceResponse\"\000B8Z6github.com/cuemby/ccp-pa" +
+      "yment-service/payment/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -24088,7 +23786,7 @@ public final class PaymentApi {
     internal_static_payment_v1alpha1_CreateInvoiceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateInvoiceRequest_descriptor,
-        new java.lang.String[] { "Customer", "Status", });
+        new java.lang.String[] { "Customer", });
     internal_static_payment_v1alpha1_CreateInvoiceResponse_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_payment_v1alpha1_CreateInvoiceResponse_fieldAccessorTable = new
@@ -24100,7 +23798,7 @@ public final class PaymentApi {
     internal_static_payment_v1alpha1_CreateCardRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateCardRequest_descriptor,
-        new java.lang.String[] { "Card", "Status", });
+        new java.lang.String[] { "Card", });
     internal_static_payment_v1alpha1_CreateCardResponse_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_payment_v1alpha1_CreateCardResponse_fieldAccessorTable = new
