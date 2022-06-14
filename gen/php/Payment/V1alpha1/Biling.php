@@ -9,22 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>payment.v1alpha1.Invoice</code>
+ * Generated from protobuf message <code>payment.v1alpha1.Biling</code>
  */
-class Invoice extends \Google\Protobuf\Internal\Message
+class Biling extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
+     * Generated from protobuf field <code>string listparams = 2 [json_name = "listparams"];</code>
      */
-    protected $account_name = '';
-    /**
-     * Generated from protobuf field <code>string invoice_id = 3 [json_name = "invoiceId"];</code>
-     */
-    protected $invoice_id = '';
+    protected $listparams = '';
 
     /**
      * Constructor.
@@ -33,8 +29,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $account_name
-     *     @type string $invoice_id
+     *     @type string $listparams
      * }
      */
     public function __construct($data = NULL) {
@@ -65,45 +60,23 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
+     * Generated from protobuf field <code>string listparams = 2 [json_name = "listparams"];</code>
      * @return string
      */
-    public function getAccountName()
+    public function getListparams()
     {
-        return $this->account_name;
+        return $this->listparams;
     }
 
     /**
-     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
+     * Generated from protobuf field <code>string listparams = 2 [json_name = "listparams"];</code>
      * @param string $var
      * @return $this
      */
-    public function setAccountName($var)
+    public function setListparams($var)
     {
         GPBUtil::checkString($var, True);
-        $this->account_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string invoice_id = 3 [json_name = "invoiceId"];</code>
-     * @return string
-     */
-    public function getInvoiceId()
-    {
-        return $this->invoice_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string invoice_id = 3 [json_name = "invoiceId"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setInvoiceId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->invoice_id = $var;
+        $this->listparams = $var;
 
         return $this;
     }

@@ -12,6 +12,7 @@ message Customer {
   Suscription suscription = 5;
   repeated Payment payment = 6;
   Invoice invoice = 7;
+  Biling biling = 8;
 }
 
 message Suscription {
@@ -25,12 +26,27 @@ message Payment {
   bool default = 2;
   bool enabled = 3;
   string alias = 4;
-  string token_card = 5;
+  Card card = 6;
+}
+
+message Card {
+  string id = 1;
+  string number = 2;
+  string expmonth = 3;
+  string expyear = 4;
+  string cvc = 5;
+  
 }
 
 message Invoice {
   string id =1;
   string account_name = 2;
+  string invoice_id =3;
+}
+
+message Biling {
+  string id =1;
+  string listparams = 2;
 }
 
 message PaymentList {

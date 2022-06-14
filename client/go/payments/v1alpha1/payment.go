@@ -112,7 +112,7 @@ func CreateInvoice(in *paymentpkgv1.CreateInvoiceRequest) (response *paymentpkgv
 	defer cancel()
 
 	response, err = client.CreateInvoice(ctx, &paymentpkgv1.CreateInvoiceRequest{
-		CustomerId: in.CustomerId,
+		Customer: in.Customer,
 	})
 
 	if err != nil {
@@ -186,6 +186,28 @@ func GetSuscription(in *paymentpkgv1.GetSuscriptionRequest) (response *paymentpk
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: %v", "Error get suscription", err),
+		)
+	}
+	return response, nil
+}
+
+func GetBilingMonth(in *paymentpkgv1.GetBilingMonthRequest) (response *paymentpkgv1.GetBilingMonthResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetBilingMonth(ctx, &paymentpkgv1.GetBilingMonthRequest{
+		Customer: in.Customer,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error get GetBilingMonth", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error get GetBilingMonth", err),
 		)
 	}
 	return response, nil
