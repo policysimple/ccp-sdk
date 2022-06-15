@@ -244,6 +244,7 @@ func CreatePayment(in *paymentpkgv1.CreatePaymentRequest) (response *paymentpkgv
 	defer cancel()
 
 	response, err = client.CreatePayment(ctx, &paymentpkgv1.CreatePaymentRequest{
+		CustomerId: in.CustomerId,
 		Payment: in.Payment,
 	})
 
