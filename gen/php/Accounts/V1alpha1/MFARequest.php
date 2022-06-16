@@ -18,10 +18,6 @@ class MFARequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_id = '';
     /**
-     * Generated from protobuf field <code>string code = 2 [json_name = "code"];</code>
-     */
-    protected $code = '';
-    /**
      * Generated from protobuf field <code>repeated int32 numbers = 3 [json_name = "numbers"];</code>
      */
     private $numbers;
@@ -33,7 +29,6 @@ class MFARequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $user_id
-     *     @type string $code
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $numbers
      * }
      */
@@ -60,28 +55,6 @@ class MFARequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string code = 2 [json_name = "code"];</code>
-     * @return string
-     */
-    public function getCode()
-    {
-        return $this->code;
-    }
-
-    /**
-     * Generated from protobuf field <code>string code = 2 [json_name = "code"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCode($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->code = $var;
 
         return $this;
     }

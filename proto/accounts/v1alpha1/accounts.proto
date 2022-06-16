@@ -85,7 +85,6 @@ message EnableOrDisableMFAResponse {
 
 message MFARequest {
     string user_id = 1;
-    string code = 2;
     repeated int32 numbers = 3;
 }
 
@@ -159,8 +158,10 @@ message CreateTokenCCPRequest {
 message CreateTokenCCPResponse {
     string token_ccp = 1;
     string msg = 2;
-    string code_mfa = 3;
     string error = 4;
+    //tiempo de expiracion fma
+    uint32 time_expiration_mfa = 5;
+    string user_id = 6;
 }
 
 /*
