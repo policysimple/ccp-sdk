@@ -14,11 +14,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateInvoiceResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
+     * Generated from protobuf field <code>int64 paid = 1 [json_name = "paid"];</code>
      */
-    protected $customer_id = '';
+    protected $paid = 0;
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>int64 due = 2 [json_name = "due"];</code>
+     */
+    protected $due = 0;
+    /**
+     * Generated from protobuf field <code>int64 tax = 3 [json_name = "tax"];</code>
+     */
+    protected $tax = 0;
+    /**
+     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
      */
     protected $status = '';
 
@@ -28,7 +36,9 @@ class CreateInvoiceResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $customer_id
+     *     @type int|string $paid
+     *     @type int|string $due
+     *     @type int|string $tax
      *     @type string $status
      * }
      */
@@ -38,29 +48,73 @@ class CreateInvoiceResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
-     * @return string
+     * Generated from protobuf field <code>int64 paid = 1 [json_name = "paid"];</code>
+     * @return int|string
      */
-    public function getCustomerId()
+    public function getPaid()
     {
-        return $this->customer_id;
+        return $this->paid;
     }
 
     /**
-     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>int64 paid = 1 [json_name = "paid"];</code>
+     * @param int|string $var
      * @return $this
      */
-    public function setCustomerId($var)
+    public function setPaid($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->customer_id = $var;
+        GPBUtil::checkInt64($var);
+        $this->paid = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>int64 due = 2 [json_name = "due"];</code>
+     * @return int|string
+     */
+    public function getDue()
+    {
+        return $this->due;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 due = 2 [json_name = "due"];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setDue($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->due = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 tax = 3 [json_name = "tax"];</code>
+     * @return int|string
+     */
+    public function getTax()
+    {
+        return $this->tax;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 tax = 3 [json_name = "tax"];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setTax($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->tax = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
      * @return string
      */
     public function getStatus()
@@ -69,7 +123,7 @@ class CreateInvoiceResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */

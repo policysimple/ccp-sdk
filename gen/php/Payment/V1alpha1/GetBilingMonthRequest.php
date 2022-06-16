@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>payment.v1alpha1.CreateInvoiceRequest</code>
+ * Generated from protobuf message <code>payment.v1alpha1.GetBilingMonthRequest</code>
  */
-class CreateInvoiceRequest extends \Google\Protobuf\Internal\Message
+class GetBilingMonthRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>

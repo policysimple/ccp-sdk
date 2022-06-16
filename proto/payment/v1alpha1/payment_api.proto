@@ -9,6 +9,7 @@ import "payment/v1alpha1/payment.proto";
 
 service PaymentAPIService{
     rpc CreateSuscription(CreateSuscriptionRequest) returns (CreateSuscriptionResponse) {}; 
+    rpc CreateCard(CreateCardRequest) returns (CreateCardResponse) {}; 
     rpc UpdateSuscription(UpdateSuscriptionRequest) returns (UpdateSuscriptionResponse) {}; 
     rpc CancelSuscription(CancelSuscriptionRequest) returns (CancelSuscriptionResponse) {}; 
     rpc GetOrganizationPayment(GetOrganizationPaymentRequest) returns (GetOrganizationPaymentResponse) {}; 
@@ -17,12 +18,15 @@ service PaymentAPIService{
     rpc DeleteCustomer(DeleteCustomerRequest) returns (DeleteCustomerResponse) {}
     rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {};
     rpc GetCustomer(GetCustomerRequest) returns (GetCustomerResponse) {};
+    rpc GetBilingMonth(GetBilingMonthRequest) returns (GetBilingMonthResponse) {};
     rpc GetPayments(GetPaymentsRequest) returns (GetPaymentsResponse) {};
     rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {};
     rpc UpdatePayment(UpdatePaymentRequest) returns (UpdatePaymentResponse) {};
     rpc DeletePayment(DeletePaymentRequest) returns (DeletePaymentResponse) {};
     rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {}; 
     rpc CreateInvoice(CreateInvoiceRequest) returns (CreateInvoiceResponse) {}; 
+
+
 }
 message DeleteCustomerRequest {
     string customer_id =1; 
@@ -58,6 +62,15 @@ message GetCustomerResponse {
     string status = 2;
 }
 
+message GetBilingMonthRequest {
+    payment.v1alpha1.Customer customer = 1;
+}
+
+message GetBilingMonthResponse {
+    int64 totalusage = 1;
+    string status = 2;
+}
+
 message GetPaymentsRequest {
     string customer_id = 1;
 }
@@ -87,14 +100,26 @@ message CreateSuscriptionResponse {
 }
 
 message CreateInvoiceRequest {
-    string customer_id = 1;
+    payment.v1alpha1.Customer customer = 1;
+
 }
 
 message CreateInvoiceResponse {
-    string customer_id =1;
-    string status = 2;
+    int64 paid = 1;
+    int64 due = 2;
+    int64 tax = 3;
+    string status = 4;
 }
 
+message CreateCardRequest {
+    payment.v1alpha1.Card card = 1;
+
+}
+
+message CreateCardResponse {
+    string token_id =1;
+    string status = 2;
+}
 message CancelSuscriptionRequest {
     string suscription_id =1;
     string customer_id = 2; 
@@ -116,6 +141,7 @@ message CreateCustomerResponse {
 message CreatePaymentRequest {
     string customer_id = 1;
     payment.v1alpha1.Payment payment = 2;
+
 }
 
 message CreatePaymentResponse {

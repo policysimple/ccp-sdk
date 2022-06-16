@@ -20,6 +20,7 @@ namespace v1alpha1 {
 
 static const char* PaymentAPIService_method_names[] = {
   "/payment.v1alpha1.PaymentAPIService/CreateSuscription",
+  "/payment.v1alpha1.PaymentAPIService/CreateCard",
   "/payment.v1alpha1.PaymentAPIService/UpdateSuscription",
   "/payment.v1alpha1.PaymentAPIService/CancelSuscription",
   "/payment.v1alpha1.PaymentAPIService/GetOrganizationPayment",
@@ -28,6 +29,7 @@ static const char* PaymentAPIService_method_names[] = {
   "/payment.v1alpha1.PaymentAPIService/DeleteCustomer",
   "/payment.v1alpha1.PaymentAPIService/GetPayment",
   "/payment.v1alpha1.PaymentAPIService/GetCustomer",
+  "/payment.v1alpha1.PaymentAPIService/GetBilingMonth",
   "/payment.v1alpha1.PaymentAPIService/GetPayments",
   "/payment.v1alpha1.PaymentAPIService/CreatePayment",
   "/payment.v1alpha1.PaymentAPIService/UpdatePayment",
@@ -44,20 +46,22 @@ std::unique_ptr< PaymentAPIService::Stub> PaymentAPIService::NewStub(const std::
 
 PaymentAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_CreateSuscription_(PaymentAPIService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateSuscription_(PaymentAPIService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CancelSuscription_(PaymentAPIService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetOrganizationPayment_(PaymentAPIService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetSuscription_(PaymentAPIService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateCustomer_(PaymentAPIService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteCustomer_(PaymentAPIService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetPayment_(PaymentAPIService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetCustomer_(PaymentAPIService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetPayments_(PaymentAPIService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreatePayment_(PaymentAPIService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdatePayment_(PaymentAPIService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeletePayment_(PaymentAPIService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListPayment_(PaymentAPIService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateInvoice_(PaymentAPIService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateCard_(PaymentAPIService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateSuscription_(PaymentAPIService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CancelSuscription_(PaymentAPIService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOrganizationPayment_(PaymentAPIService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetSuscription_(PaymentAPIService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateCustomer_(PaymentAPIService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteCustomer_(PaymentAPIService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetPayment_(PaymentAPIService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetCustomer_(PaymentAPIService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetBilingMonth_(PaymentAPIService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetPayments_(PaymentAPIService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreatePayment_(PaymentAPIService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdatePayment_(PaymentAPIService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeletePayment_(PaymentAPIService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListPayment_(PaymentAPIService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateInvoice_(PaymentAPIService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status PaymentAPIService::Stub::CreateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest& request, ::payment::v1alpha1::CreateSuscriptionResponse* response) {
@@ -74,6 +78,22 @@ void PaymentAPIService::Stub::experimental_async::CreateSuscription(::grpc::Clie
 
 ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateSuscriptionResponse>* PaymentAPIService::Stub::PrepareAsyncCreateSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::CreateSuscriptionResponse>::Create(channel_.get(), cq, rpcmethod_CreateSuscription_, context, request, false);
+}
+
+::grpc::Status PaymentAPIService::Stub::CreateCard(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest& request, ::payment::v1alpha1::CreateCardResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateCard_, context, request, response);
+}
+
+void PaymentAPIService::Stub::experimental_async::CreateCard(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest* request, ::payment::v1alpha1::CreateCardResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateCard_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateCardResponse>* PaymentAPIService::Stub::AsyncCreateCardRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::CreateCardResponse>::Create(channel_.get(), cq, rpcmethod_CreateCard_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateCardResponse>* PaymentAPIService::Stub::PrepareAsyncCreateCardRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::CreateCardResponse>::Create(channel_.get(), cq, rpcmethod_CreateCard_, context, request, false);
 }
 
 ::grpc::Status PaymentAPIService::Stub::UpdateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest& request, ::payment::v1alpha1::UpdateSuscriptionResponse* response) {
@@ -204,6 +224,22 @@ void PaymentAPIService::Stub::experimental_async::GetCustomer(::grpc::ClientCont
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::GetCustomerResponse>::Create(channel_.get(), cq, rpcmethod_GetCustomer_, context, request, false);
 }
 
+::grpc::Status PaymentAPIService::Stub::GetBilingMonth(::grpc::ClientContext* context, const ::payment::v1alpha1::GetBilingMonthRequest& request, ::payment::v1alpha1::GetBilingMonthResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetBilingMonth_, context, request, response);
+}
+
+void PaymentAPIService::Stub::experimental_async::GetBilingMonth(::grpc::ClientContext* context, const ::payment::v1alpha1::GetBilingMonthRequest* request, ::payment::v1alpha1::GetBilingMonthResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetBilingMonth_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetBilingMonthResponse>* PaymentAPIService::Stub::AsyncGetBilingMonthRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetBilingMonthRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::GetBilingMonthResponse>::Create(channel_.get(), cq, rpcmethod_GetBilingMonth_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetBilingMonthResponse>* PaymentAPIService::Stub::PrepareAsyncGetBilingMonthRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetBilingMonthRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::GetBilingMonthResponse>::Create(channel_.get(), cq, rpcmethod_GetBilingMonth_, context, request, false);
+}
+
 ::grpc::Status PaymentAPIService::Stub::GetPayments(::grpc::ClientContext* context, const ::payment::v1alpha1::GetPaymentsRequest& request, ::payment::v1alpha1::GetPaymentsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetPayments_, context, request, response);
 }
@@ -309,70 +345,80 @@ PaymentAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       PaymentAPIService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::CreateCardRequest, ::payment::v1alpha1::CreateCardResponse>(
+          std::mem_fn(&PaymentAPIService::Service::CreateCard), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PaymentAPIService_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::UpdateSuscriptionRequest, ::payment::v1alpha1::UpdateSuscriptionResponse>(
           std::mem_fn(&PaymentAPIService::Service::UpdateSuscription), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[2],
+      PaymentAPIService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::CancelSuscriptionRequest, ::payment::v1alpha1::CancelSuscriptionResponse>(
           std::mem_fn(&PaymentAPIService::Service::CancelSuscription), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[3],
+      PaymentAPIService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::GetOrganizationPaymentRequest, ::payment::v1alpha1::GetOrganizationPaymentResponse>(
           std::mem_fn(&PaymentAPIService::Service::GetOrganizationPayment), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[4],
+      PaymentAPIService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::GetSuscriptionRequest, ::payment::v1alpha1::GetSuscriptionResponse>(
           std::mem_fn(&PaymentAPIService::Service::GetSuscription), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[5],
+      PaymentAPIService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::CreateCustomerRequest, ::payment::v1alpha1::CreateCustomerResponse>(
           std::mem_fn(&PaymentAPIService::Service::CreateCustomer), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[6],
+      PaymentAPIService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::DeleteCustomerRequest, ::payment::v1alpha1::DeleteCustomerResponse>(
           std::mem_fn(&PaymentAPIService::Service::DeleteCustomer), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[7],
+      PaymentAPIService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::GetPaymentRequest, ::payment::v1alpha1::GetPaymentResponse>(
           std::mem_fn(&PaymentAPIService::Service::GetPayment), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[8],
+      PaymentAPIService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::GetCustomerRequest, ::payment::v1alpha1::GetCustomerResponse>(
           std::mem_fn(&PaymentAPIService::Service::GetCustomer), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[9],
+      PaymentAPIService_method_names[10],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::GetBilingMonthRequest, ::payment::v1alpha1::GetBilingMonthResponse>(
+          std::mem_fn(&PaymentAPIService::Service::GetBilingMonth), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PaymentAPIService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::GetPaymentsRequest, ::payment::v1alpha1::GetPaymentsResponse>(
           std::mem_fn(&PaymentAPIService::Service::GetPayments), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[10],
+      PaymentAPIService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::CreatePaymentRequest, ::payment::v1alpha1::CreatePaymentResponse>(
           std::mem_fn(&PaymentAPIService::Service::CreatePayment), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[11],
+      PaymentAPIService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::UpdatePaymentRequest, ::payment::v1alpha1::UpdatePaymentResponse>(
           std::mem_fn(&PaymentAPIService::Service::UpdatePayment), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[12],
+      PaymentAPIService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::DeletePaymentRequest, ::payment::v1alpha1::DeletePaymentResponse>(
           std::mem_fn(&PaymentAPIService::Service::DeletePayment), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[13],
+      PaymentAPIService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::ListPaymentRequest, ::payment::v1alpha1::ListPaymentResponse>(
           std::mem_fn(&PaymentAPIService::Service::ListPayment), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[14],
+      PaymentAPIService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::CreateInvoiceRequest, ::payment::v1alpha1::CreateInvoiceResponse>(
           std::mem_fn(&PaymentAPIService::Service::CreateInvoice), this)));
@@ -382,6 +428,13 @@ PaymentAPIService::Service::~Service() {
 }
 
 ::grpc::Status PaymentAPIService::Service::CreateSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest* request, ::payment::v1alpha1::CreateSuscriptionResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PaymentAPIService::Service::CreateCard(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateCardRequest* request, ::payment::v1alpha1::CreateCardResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -438,6 +491,13 @@ PaymentAPIService::Service::~Service() {
 }
 
 ::grpc::Status PaymentAPIService::Service::GetCustomer(::grpc::ServerContext* context, const ::payment::v1alpha1::GetCustomerRequest* request, ::payment::v1alpha1::GetCustomerResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PaymentAPIService::Service::GetBilingMonth(::grpc::ServerContext* context, const ::payment::v1alpha1::GetBilingMonthRequest* request, ::payment::v1alpha1::GetBilingMonthResponse* response) {
   (void) context;
   (void) request;
   (void) response;

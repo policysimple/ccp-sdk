@@ -41,6 +41,10 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 7 [json_name = "invoice"];</code>
      */
     protected $invoice = null;
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 8 [json_name = "biling"];</code>
+     */
+    protected $biling = null;
 
     /**
      * Constructor.
@@ -55,6 +59,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      *     @type \Payment\V1alpha1\Suscription $suscription
      *     @type \Payment\V1alpha1\Payment[]|\Google\Protobuf\Internal\RepeatedField $payment
      *     @type \Payment\V1alpha1\Invoice $invoice
+     *     @type \Payment\V1alpha1\Biling $biling
      * }
      */
     public function __construct($data = NULL) {
@@ -232,6 +237,38 @@ class Customer extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Payment\V1alpha1\Invoice::class);
         $this->invoice = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 8 [json_name = "biling"];</code>
+     * @return \Payment\V1alpha1\Biling|null
+     */
+    public function getBiling()
+    {
+        return $this->biling;
+    }
+
+    public function hasBiling()
+    {
+        return isset($this->biling);
+    }
+
+    public function clearBiling()
+    {
+        unset($this->biling);
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 8 [json_name = "biling"];</code>
+     * @param \Payment\V1alpha1\Biling $var
+     * @return $this
+     */
+    public function setBiling($var)
+    {
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Biling::class);
+        $this->biling = $var;
 
         return $this;
     }

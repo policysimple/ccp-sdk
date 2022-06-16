@@ -30,6 +30,19 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Payment\V1alpha1\CreateCardRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function CreateCard(\Payment\V1alpha1\CreateCardRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/CreateCard',
+        $argument,
+        ['\Payment\V1alpha1\CreateCardResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Payment\V1alpha1\UpdateSuscriptionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -130,6 +143,19 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/GetCustomer',
         $argument,
         ['\Payment\V1alpha1\GetCustomerResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Payment\V1alpha1\GetBilingMonthRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetBilingMonth(\Payment\V1alpha1\GetBilingMonthRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/GetBilingMonth',
+        $argument,
+        ['\Payment\V1alpha1\GetBilingMonthResponse', 'decode'],
         $metadata, $options);
     }
 

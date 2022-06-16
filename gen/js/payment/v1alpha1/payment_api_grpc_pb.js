@@ -27,6 +27,28 @@ function deserialize_payment_v1alpha1_CancelSuscriptionResponse(buffer_arg) {
   return payment_v1alpha1_payment_api_pb.CancelSuscriptionResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_payment_v1alpha1_CreateCardRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.CreateCardRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.CreateCardRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_CreateCardRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.CreateCardRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_CreateCardResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.CreateCardResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.CreateCardResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_CreateCardResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.CreateCardResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_payment_v1alpha1_CreateCustomerRequest(arg) {
   if (!(arg instanceof payment_v1alpha1_payment_api_pb.CreateCustomerRequest)) {
     throw new Error('Expected argument of type payment.v1alpha1.CreateCustomerRequest');
@@ -157,6 +179,28 @@ function serialize_payment_v1alpha1_DeletePaymentResponse(arg) {
 
 function deserialize_payment_v1alpha1_DeletePaymentResponse(buffer_arg) {
   return payment_v1alpha1_payment_api_pb.DeletePaymentResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_GetBilingMonthRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.GetBilingMonthRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.GetBilingMonthRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_GetBilingMonthRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.GetBilingMonthRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_GetBilingMonthResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.GetBilingMonthResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.GetBilingMonthResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_GetBilingMonthResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.GetBilingMonthResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_payment_v1alpha1_GetCustomerRequest(arg) {
@@ -348,6 +392,17 @@ var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
     responseSerialize: serialize_payment_v1alpha1_CreateSuscriptionResponse,
     responseDeserialize: deserialize_payment_v1alpha1_CreateSuscriptionResponse,
   },
+  createCard: {
+    path: '/payment.v1alpha1.PaymentAPIService/CreateCard',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.CreateCardRequest,
+    responseType: payment_v1alpha1_payment_api_pb.CreateCardResponse,
+    requestSerialize: serialize_payment_v1alpha1_CreateCardRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_CreateCardRequest,
+    responseSerialize: serialize_payment_v1alpha1_CreateCardResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_CreateCardResponse,
+  },
   updateSuscription: {
     path: '/payment.v1alpha1.PaymentAPIService/UpdateSuscription',
     requestStream: false,
@@ -435,6 +490,17 @@ var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
     requestDeserialize: deserialize_payment_v1alpha1_GetCustomerRequest,
     responseSerialize: serialize_payment_v1alpha1_GetCustomerResponse,
     responseDeserialize: deserialize_payment_v1alpha1_GetCustomerResponse,
+  },
+  getBilingMonth: {
+    path: '/payment.v1alpha1.PaymentAPIService/GetBilingMonth',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.GetBilingMonthRequest,
+    responseType: payment_v1alpha1_payment_api_pb.GetBilingMonthResponse,
+    requestSerialize: serialize_payment_v1alpha1_GetBilingMonthRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_GetBilingMonthRequest,
+    responseSerialize: serialize_payment_v1alpha1_GetBilingMonthResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_GetBilingMonthResponse,
   },
   getPayments: {
     path: '/payment.v1alpha1.PaymentAPIService/GetPayments',

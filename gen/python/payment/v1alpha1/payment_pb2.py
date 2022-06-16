@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1epayment/v1alpha1/payment.proto\x12\x10payment.v1alpha1\"\x98\x02\n\x08\x43ustomer\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05\x65mail\x18\x03 \x01(\tR\x05\x65mail\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12?\n\x0bsuscription\x18\x05 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\x12\x33\n\x07payment\x18\x06 \x03(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x33\n\x07invoice\x18\x07 \x01(\x0b\x32\x19.payment.v1alpha1.InvoiceR\x07invoice\"K\n\x0bSuscription\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n\x05price\x18\x03 \x01(\tR\x05price\x12\x16\n\x06\x63\x61ncel\x18\x04 \x01(\x08R\x06\x63\x61ncel\"\x82\x01\n\x07Payment\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n\x07\x64\x65\x66\x61ult\x18\x02 \x01(\x08R\x07\x64\x65\x66\x61ult\x12\x18\n\x07\x65nabled\x18\x03 \x01(\x08R\x07\x65nabled\x12\x14\n\x05\x61lias\x18\x04 \x01(\tR\x05\x61lias\x12\x1d\n\ntoken_card\x18\x05 \x01(\tR\ttokenCard\"<\n\x07Invoice\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0c\x61\x63\x63ount_name\x18\x02 \x01(\tR\x0b\x61\x63\x63ountName\">\n\x0bPaymentList\x12/\n\x05items\x18\x01 \x03(\x0b\x32\x19.payment.v1alpha1.PaymentR\x05itemsB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1b\x06proto3'
+  serialized_pb=b'\n\x1epayment/v1alpha1/payment.proto\x12\x10payment.v1alpha1\"\xca\x02\n\x08\x43ustomer\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05\x65mail\x18\x03 \x01(\tR\x05\x65mail\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12?\n\x0bsuscription\x18\x05 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\x12\x33\n\x07payment\x18\x06 \x03(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x33\n\x07invoice\x18\x07 \x01(\x0b\x32\x19.payment.v1alpha1.InvoiceR\x07invoice\x12\x30\n\x06\x62iling\x18\x08 \x01(\x0b\x32\x18.payment.v1alpha1.BilingR\x06\x62iling\"K\n\x0bSuscription\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n\x05price\x18\x03 \x01(\tR\x05price\x12\x16\n\x06\x63\x61ncel\x18\x04 \x01(\x08R\x06\x63\x61ncel\"\x8f\x01\n\x07Payment\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n\x07\x64\x65\x66\x61ult\x18\x02 \x01(\x08R\x07\x64\x65\x66\x61ult\x12\x18\n\x07\x65nabled\x18\x03 \x01(\x08R\x07\x65nabled\x12\x14\n\x05\x61lias\x18\x04 \x01(\tR\x05\x61lias\x12*\n\x04\x63\x61rd\x18\x06 \x01(\x0b\x32\x16.payment.v1alpha1.CardR\x04\x63\x61rd\"v\n\x04\x43\x61rd\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n\x06number\x18\x02 \x01(\tR\x06number\x12\x1a\n\x08\x65xpmonth\x18\x03 \x01(\tR\x08\x65xpmonth\x12\x18\n\x07\x65xpyear\x18\x04 \x01(\tR\x07\x65xpyear\x12\x10\n\x03\x63vc\x18\x05 \x01(\tR\x03\x63vc\"[\n\x07Invoice\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0c\x61\x63\x63ount_name\x18\x02 \x01(\tR\x0b\x61\x63\x63ountName\x12\x1d\n\ninvoice_id\x18\x03 \x01(\tR\tinvoiceId\"8\n\x06\x42iling\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1e\n\nlistparams\x18\x02 \x01(\tR\nlistparams\">\n\x0bPaymentList\x12/\n\x05items\x18\x01 \x03(\x0b\x32\x19.payment.v1alpha1.PaymentR\x05itemsB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1b\x06proto3'
 )
 
 
@@ -82,6 +82,13 @@ _CUSTOMER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='invoice', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='biling', full_name='payment.v1alpha1.Customer.biling', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='biling', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -95,7 +102,7 @@ _CUSTOMER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=53,
-  serialized_end=333,
+  serialized_end=383,
 )
 
 
@@ -140,8 +147,8 @@ _SUSCRIPTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=335,
-  serialized_end=410,
+  serialized_start=385,
+  serialized_end=460,
 )
 
 
@@ -182,12 +189,12 @@ _PAYMENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='alias', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='token_card', full_name='payment.v1alpha1.Payment.token_card', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='card', full_name='payment.v1alpha1.Payment.card', index=4,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='tokenCard', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='card', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -200,8 +207,68 @@ _PAYMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=413,
-  serialized_end=543,
+  serialized_start=463,
+  serialized_end=606,
+)
+
+
+_CARD = _descriptor.Descriptor(
+  name='Card',
+  full_name='payment.v1alpha1.Card',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='payment.v1alpha1.Card.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='number', full_name='payment.v1alpha1.Card.number', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='number', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='expmonth', full_name='payment.v1alpha1.Card.expmonth', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='expmonth', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='expyear', full_name='payment.v1alpha1.Card.expyear', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='expyear', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cvc', full_name='payment.v1alpha1.Card.cvc', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='cvc', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=608,
+  serialized_end=726,
 )
 
 
@@ -227,6 +294,13 @@ _INVOICE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='accountName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='invoice_id', full_name='payment.v1alpha1.Invoice.invoice_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='invoiceId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -239,8 +313,47 @@ _INVOICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=545,
-  serialized_end=605,
+  serialized_start=728,
+  serialized_end=819,
+)
+
+
+_BILING = _descriptor.Descriptor(
+  name='Biling',
+  full_name='payment.v1alpha1.Biling',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='payment.v1alpha1.Biling.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='listparams', full_name='payment.v1alpha1.Biling.listparams', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='listparams', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=821,
+  serialized_end=877,
 )
 
 
@@ -271,18 +384,22 @@ _PAYMENTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=607,
-  serialized_end=669,
+  serialized_start=879,
+  serialized_end=941,
 )
 
 _CUSTOMER.fields_by_name['suscription'].message_type = _SUSCRIPTION
 _CUSTOMER.fields_by_name['payment'].message_type = _PAYMENT
 _CUSTOMER.fields_by_name['invoice'].message_type = _INVOICE
+_CUSTOMER.fields_by_name['biling'].message_type = _BILING
+_PAYMENT.fields_by_name['card'].message_type = _CARD
 _PAYMENTLIST.fields_by_name['items'].message_type = _PAYMENT
 DESCRIPTOR.message_types_by_name['Customer'] = _CUSTOMER
 DESCRIPTOR.message_types_by_name['Suscription'] = _SUSCRIPTION
 DESCRIPTOR.message_types_by_name['Payment'] = _PAYMENT
+DESCRIPTOR.message_types_by_name['Card'] = _CARD
 DESCRIPTOR.message_types_by_name['Invoice'] = _INVOICE
+DESCRIPTOR.message_types_by_name['Biling'] = _BILING
 DESCRIPTOR.message_types_by_name['PaymentList'] = _PAYMENTLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -307,12 +424,26 @@ Payment = _reflection.GeneratedProtocolMessageType('Payment', (_message.Message,
   })
 _sym_db.RegisterMessage(Payment)
 
+Card = _reflection.GeneratedProtocolMessageType('Card', (_message.Message,), {
+  'DESCRIPTOR' : _CARD,
+  '__module__' : 'payment.v1alpha1.payment_pb2'
+  # @@protoc_insertion_point(class_scope:payment.v1alpha1.Card)
+  })
+_sym_db.RegisterMessage(Card)
+
 Invoice = _reflection.GeneratedProtocolMessageType('Invoice', (_message.Message,), {
   'DESCRIPTOR' : _INVOICE,
   '__module__' : 'payment.v1alpha1.payment_pb2'
   # @@protoc_insertion_point(class_scope:payment.v1alpha1.Invoice)
   })
 _sym_db.RegisterMessage(Invoice)
+
+Biling = _reflection.GeneratedProtocolMessageType('Biling', (_message.Message,), {
+  'DESCRIPTOR' : _BILING,
+  '__module__' : 'payment.v1alpha1.payment_pb2'
+  # @@protoc_insertion_point(class_scope:payment.v1alpha1.Biling)
+  })
+_sym_db.RegisterMessage(Biling)
 
 PaymentList = _reflection.GeneratedProtocolMessageType('PaymentList', (_message.Message,), {
   'DESCRIPTOR' : _PAYMENTLIST,
