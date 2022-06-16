@@ -16,43 +16,27 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-‡
-
-payment/v1alpha1/payment.protopayment.v1alpha1"ı
+Ô
+payment/v1alpha1/payment.protopayment.v1alpha1" 
 Customer
 id (	Rid
 name (	Rname
 email (	Remail\'
-organization_id (RorganizationIdM
-suscription (2+.payment.v1alpha1.Customer.SuscriptionEntryRsuscriptionA
-payment (2\'.payment.v1alpha1.Customer.PaymentEntryRpaymentA
-invoice (2\'.payment.v1alpha1.Customer.InvoiceEntryRinvoice>
-biling (2&.payment.v1alpha1.Customer.BilingEntryRbiling>
-SuscriptionEntry
-key (	Rkey
-value (	Rvalue:8:
-PaymentEntry
-key (	Rkey
-value (	Rvalue:8:
-InvoiceEntry
-key (	Rkey
-value (	Rvalue:89
-BilingEntry
-key (	Rkey
-value (	Rvalue:8"K
+organization_id (RorganizationId?
+suscription (2.payment.v1alpha1.SuscriptionRsuscription3
+payment (2.payment.v1alpha1.PaymentRpayment3
+invoice (2.payment.v1alpha1.InvoiceRinvoice0
+biling (2.payment.v1alpha1.BilingRbiling"K
 Suscription
 id (	Rid
 price (	Rprice
-cancel (Rcancel"’
+cancel (Rcancel"è
 Payment
 id (	Rid
 default (Rdefault
 enabled (Renabled
-alias (	Ralias7
-card (2#.payment.v1alpha1.Payment.CardEntryRcard7
-	CardEntry
-key (	Rkey
-value (	Rvalue:8"v
+alias (	Ralias*
+card (2.payment.v1alpha1.CardRcard"v
 Card
 id (	Rid
 number (	Rnumber
