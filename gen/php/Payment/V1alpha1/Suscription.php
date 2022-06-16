@@ -18,11 +18,11 @@ class Suscription extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string price = 3 [json_name = "price"];</code>
+     * Generated from protobuf field <code>string price = 2 [json_name = "price"];</code>
      */
     protected $price = '';
     /**
-     * Generated from protobuf field <code>bool cancel = 4 [json_name = "cancel"];</code>
+     * Generated from protobuf field <code>bool cancel = 3 [json_name = "cancel"];</code>
      */
     protected $cancel = false;
 
@@ -65,7 +65,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string price = 3 [json_name = "price"];</code>
+     * Generated from protobuf field <code>string price = 2 [json_name = "price"];</code>
      * @return string
      */
     public function getPrice()
@@ -74,7 +74,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string price = 3 [json_name = "price"];</code>
+     * Generated from protobuf field <code>string price = 2 [json_name = "price"];</code>
      * @param string $var
      * @return $this
      */
@@ -87,7 +87,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool cancel = 4 [json_name = "cancel"];</code>
+     * Generated from protobuf field <code>bool cancel = 3 [json_name = "cancel"];</code>
      * @return bool
      */
     public function getCancel()
@@ -96,7 +96,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool cancel = 4 [json_name = "cancel"];</code>
+     * Generated from protobuf field <code>bool cancel = 3 [json_name = "cancel"];</code>
      * @param bool $var
      * @return $this
      */

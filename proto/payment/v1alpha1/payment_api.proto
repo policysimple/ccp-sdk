@@ -101,7 +101,6 @@ message CreateSuscriptionResponse {
 
 message CreateInvoiceRequest {
     payment.v1alpha1.Customer customer = 1;
-
 }
 
 message CreateInvoiceResponse {

@@ -9,16 +9,16 @@ message Customer {
   string name = 2;
   string email = 3;
   uint32 organization_id = 4;
-  Suscription suscription = 5;
-  repeated Payment payment = 6;
-  Invoice invoice = 7;
-  Biling biling = 8;
+  map<string, string> suscription = 5;
+  map<string, string> payment = 6;
+  map<string, string> invoice = 7;
+  map<string, string> biling = 8;
 }
 
 message Suscription {
   string id =1;
-  string price = 3;
-  bool cancel = 4;
+  string price = 2;
+  bool cancel = 3;
 }
 
 message Payment {
@@ -26,7 +26,7 @@ message Payment {
   bool default = 2;
   bool enabled = 3;
   string alias = 4;
-  Card card = 6;
+  map<string, string> card = 5;
 }
 
 message Card {
@@ -35,7 +35,6 @@ message Card {
   string expmonth = 3;
   string expyear = 4;
   string cvc = 5;
-  
 }
 
 message Invoice {
