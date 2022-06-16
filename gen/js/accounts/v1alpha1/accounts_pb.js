@@ -3066,7 +3066,6 @@ proto.accounts.v1alpha1.MFARequest.prototype.toObject = function(opt_includeInst
 proto.accounts.v1alpha1.MFARequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    code: jspb.Message.getFieldWithDefault(msg, 2, ""),
     numbersList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
@@ -3107,10 +3106,6 @@ proto.accounts.v1alpha1.MFARequest.deserializeBinaryFromReader = function(msg, r
     case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCode(value);
       break;
     case 3:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
@@ -3154,13 +3149,6 @@ proto.accounts.v1alpha1.MFARequest.serializeBinaryToWriter = function(message, w
       f
     );
   }
-  f = message.getCode();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getNumbersList();
   if (f.length > 0) {
     writer.writePackedInt32(
@@ -3186,24 +3174,6 @@ proto.accounts.v1alpha1.MFARequest.prototype.getUserId = function() {
  */
 proto.accounts.v1alpha1.MFARequest.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string code = 2;
- * @return {string}
- */
-proto.accounts.v1alpha1.MFARequest.prototype.getCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.MFARequest} returns this
- */
-proto.accounts.v1alpha1.MFARequest.prototype.setCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -5089,8 +5059,9 @@ proto.accounts.v1alpha1.CreateTokenCCPResponse.toObject = function(includeInstan
   var f, obj = {
     tokenCcp: jspb.Message.getFieldWithDefault(msg, 1, ""),
     msg: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    codeMfa: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 4, "")
+    error: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    timeExpirationMfa: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    userId: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -5135,13 +5106,17 @@ proto.accounts.v1alpha1.CreateTokenCCPResponse.deserializeBinaryFromReader = fun
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCodeMfa(value);
-      break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setError(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setTimeExpirationMfa(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
       break;
     default:
       reader.skipField();
@@ -5186,17 +5161,24 @@ proto.accounts.v1alpha1.CreateTokenCCPResponse.serializeBinaryToWriter = functio
       f
     );
   }
-  f = message.getCodeMfa();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getError();
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getTimeExpirationMfa();
+  if (f !== 0) {
+    writer.writeUint32(
+      5,
+      f
+    );
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -5240,24 +5222,6 @@ proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.setMsg = function(value
 
 
 /**
- * optional string code_mfa = 3;
- * @return {string}
- */
-proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.getCodeMfa = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.CreateTokenCCPResponse} returns this
- */
-proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.setCodeMfa = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
  * optional string error = 4;
  * @return {string}
  */
@@ -5272,6 +5236,42 @@ proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.getError = function() {
  */
 proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.setError = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional uint32 time_expiration_mfa = 5;
+ * @return {number}
+ */
+proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.getTimeExpirationMfa = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.accounts.v1alpha1.CreateTokenCCPResponse} returns this
+ */
+proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.setTimeExpirationMfa = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional string user_id = 6;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.CreateTokenCCPResponse} returns this
+ */
+proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
