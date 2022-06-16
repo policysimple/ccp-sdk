@@ -30,21 +30,21 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     protected $organization_id = 0;
     /**
-     * Generated from protobuf field <code>map<string, string> suscription = 5 [json_name = "suscription"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 5 [json_name = "suscription"];</code>
      */
-    private $suscription;
+    protected $suscription = null;
     /**
-     * Generated from protobuf field <code>map<string, string> payment = 6 [json_name = "payment"];</code>
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 6 [json_name = "payment"];</code>
      */
     private $payment;
     /**
-     * Generated from protobuf field <code>map<string, string> invoice = 7 [json_name = "invoice"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 7 [json_name = "invoice"];</code>
      */
-    private $invoice;
+    protected $invoice = null;
     /**
-     * Generated from protobuf field <code>map<string, string> biling = 8 [json_name = "biling"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 8 [json_name = "biling"];</code>
      */
-    private $biling;
+    protected $biling = null;
 
     /**
      * Constructor.
@@ -56,10 +56,10 @@ class Customer extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $email
      *     @type int $organization_id
-     *     @type array|\Google\Protobuf\Internal\MapField $suscription
-     *     @type array|\Google\Protobuf\Internal\MapField $payment
-     *     @type array|\Google\Protobuf\Internal\MapField $invoice
-     *     @type array|\Google\Protobuf\Internal\MapField $biling
+     *     @type \Payment\V1alpha1\Suscription $suscription
+     *     @type \Payment\V1alpha1\Payment[]|\Google\Protobuf\Internal\RepeatedField $payment
+     *     @type \Payment\V1alpha1\Invoice $invoice
+     *     @type \Payment\V1alpha1\Biling $biling
      * }
      */
     public function __construct($data = NULL) {
@@ -156,30 +156,40 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> suscription = 5 [json_name = "suscription"];</code>
-     * @return \Google\Protobuf\Internal\MapField
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 5 [json_name = "suscription"];</code>
+     * @return \Payment\V1alpha1\Suscription|null
      */
     public function getSuscription()
     {
         return $this->suscription;
     }
 
+    public function hasSuscription()
+    {
+        return isset($this->suscription);
+    }
+
+    public function clearSuscription()
+    {
+        unset($this->suscription);
+    }
+
     /**
-     * Generated from protobuf field <code>map<string, string> suscription = 5 [json_name = "suscription"];</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 5 [json_name = "suscription"];</code>
+     * @param \Payment\V1alpha1\Suscription $var
      * @return $this
      */
     public function setSuscription($var)
     {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->suscription = $arr;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Suscription::class);
+        $this->suscription = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> payment = 6 [json_name = "payment"];</code>
-     * @return \Google\Protobuf\Internal\MapField
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 6 [json_name = "payment"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPayment()
     {
@@ -187,58 +197,78 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> payment = 6 [json_name = "payment"];</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 6 [json_name = "payment"];</code>
+     * @param \Payment\V1alpha1\Payment[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPayment($var)
     {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Payment\V1alpha1\Payment::class);
         $this->payment = $arr;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> invoice = 7 [json_name = "invoice"];</code>
-     * @return \Google\Protobuf\Internal\MapField
+     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 7 [json_name = "invoice"];</code>
+     * @return \Payment\V1alpha1\Invoice|null
      */
     public function getInvoice()
     {
         return $this->invoice;
     }
 
+    public function hasInvoice()
+    {
+        return isset($this->invoice);
+    }
+
+    public function clearInvoice()
+    {
+        unset($this->invoice);
+    }
+
     /**
-     * Generated from protobuf field <code>map<string, string> invoice = 7 [json_name = "invoice"];</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 7 [json_name = "invoice"];</code>
+     * @param \Payment\V1alpha1\Invoice $var
      * @return $this
      */
     public function setInvoice($var)
     {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->invoice = $arr;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Invoice::class);
+        $this->invoice = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> biling = 8 [json_name = "biling"];</code>
-     * @return \Google\Protobuf\Internal\MapField
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 8 [json_name = "biling"];</code>
+     * @return \Payment\V1alpha1\Biling|null
      */
     public function getBiling()
     {
         return $this->biling;
     }
 
+    public function hasBiling()
+    {
+        return isset($this->biling);
+    }
+
+    public function clearBiling()
+    {
+        unset($this->biling);
+    }
+
     /**
-     * Generated from protobuf field <code>map<string, string> biling = 8 [json_name = "biling"];</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 8 [json_name = "biling"];</code>
+     * @param \Payment\V1alpha1\Biling $var
      * @return $this
      */
     public function setBiling($var)
     {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->biling = $arr;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Biling::class);
+        $this->biling = $var;
 
         return $this;
     }
