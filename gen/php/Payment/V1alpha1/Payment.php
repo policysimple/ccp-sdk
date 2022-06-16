@@ -30,7 +30,7 @@ class Payment extends \Google\Protobuf\Internal\Message
      */
     protected $alias = '';
     /**
-     * Generated from protobuf field <code>map<string, string> card = 6 [json_name = "card"];</code>
+     * Generated from protobuf field <code>map<string, string> card = 5 [json_name = "card"];</code>
      */
     private $card;
 
@@ -141,7 +141,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> card = 6 [json_name = "card"];</code>
+     * Generated from protobuf field <code>map<string, string> card = 5 [json_name = "card"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getCard()
@@ -150,7 +150,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> card = 6 [json_name = "card"];</code>
+     * Generated from protobuf field <code>map<string, string> card = 5 [json_name = "card"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */

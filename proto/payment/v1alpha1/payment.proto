@@ -17,8 +17,8 @@ message Customer {
 
 message Suscription {
   string id =1;
-  string price = 3;
-  bool cancel = 4;
+  string price = 2;
+  bool cancel = 3;
 }
 
 message Payment {
@@ -26,7 +26,7 @@ message Payment {
   bool default = 2;
   bool enabled = 3;
   string alias = 4;
-  map<string, string> card = 6;
+  map<string, string> card = 5;
 }
 
 message Card {

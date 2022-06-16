@@ -42,14 +42,14 @@ class Payment
 value (	Rvalue:8"K
 Suscription
 id (	Rid
-price (	Rprice
-cancel (Rcancel"Õ
+price (	Rprice
+cancel (Rcancel"Õ
 Payment
 id (	Rid
 default (Rdefault
 enabled (Renabled
 alias (	Ralias7
-card (2#.payment.v1alpha1.Payment.CardEntryRcard7
+card (2#.payment.v1alpha1.Payment.CardEntryRcard7
 	CardEntry
 key (	Rkey
 value (	Rvalue:8"v

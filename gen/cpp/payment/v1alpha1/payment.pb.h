@@ -619,8 +619,8 @@ class Suscription final :
 
   enum : int {
     kIdFieldNumber = 1,
-    kPriceFieldNumber = 3,
-    kCancelFieldNumber = 4,
+    kPriceFieldNumber = 2,
+    kCancelFieldNumber = 3,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -636,7 +636,7 @@ class Suscription final :
   std::string* _internal_mutable_id();
   public:
 
-  // string price = 3 [json_name = "price"];
+  // string price = 2 [json_name = "price"];
   void clear_price();
   const std::string& price() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -650,7 +650,7 @@ class Suscription final :
   std::string* _internal_mutable_price();
   public:
 
-  // bool cancel = 4 [json_name = "cancel"];
+  // bool cancel = 3 [json_name = "cancel"];
   void clear_cancel();
   bool cancel() const;
   void set_cancel(bool value);
@@ -817,13 +817,13 @@ class Payment final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCardFieldNumber = 6,
+    kCardFieldNumber = 5,
     kIdFieldNumber = 1,
     kAliasFieldNumber = 4,
     kDefaultFieldNumber = 2,
     kEnabledFieldNumber = 3,
   };
-  // map<string, string> card = 6 [json_name = "card"];
+  // map<string, string> card = 5 [json_name = "card"];
   int card_size() const;
   private:
   int _internal_card_size() const;
@@ -1940,7 +1940,7 @@ inline void Suscription::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Suscription.id)
 }
 
-// string price = 3 [json_name = "price"];
+// string price = 2 [json_name = "price"];
 inline void Suscription::clear_price() {
   price_.ClearToEmpty();
 }
@@ -1986,7 +1986,7 @@ inline void Suscription::set_allocated_price(std::string* price) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Suscription.price)
 }
 
-// bool cancel = 4 [json_name = "cancel"];
+// bool cancel = 3 [json_name = "cancel"];
 inline void Suscription::clear_cancel() {
   cancel_ = false;
 }
@@ -2144,7 +2144,7 @@ inline void Payment::set_allocated_alias(std::string* alias) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Payment.alias)
 }
 
-// map<string, string> card = 6 [json_name = "card"];
+// map<string, string> card = 5 [json_name = "card"];
 inline int Payment::_internal_card_size() const {
   return card_.size();
 }

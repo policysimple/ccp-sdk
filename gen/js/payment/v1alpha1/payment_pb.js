@@ -554,8 +554,8 @@ proto.payment.v1alpha1.Suscription.prototype.toObject = function(opt_includeInst
 proto.payment.v1alpha1.Suscription.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    price: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    cancel: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+    price: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    cancel: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -596,11 +596,11 @@ proto.payment.v1alpha1.Suscription.deserializeBinaryFromReader = function(msg, r
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
-    case 3:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setPrice(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCancel(value);
       break;
@@ -643,14 +643,14 @@ proto.payment.v1alpha1.Suscription.serializeBinaryToWriter = function(message, w
   f = message.getPrice();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
   f = message.getCancel();
   if (f) {
     writer.writeBool(
-      4,
+      3,
       f
     );
   }
@@ -676,11 +676,11 @@ proto.payment.v1alpha1.Suscription.prototype.setId = function(value) {
 
 
 /**
- * optional string price = 3;
+ * optional string price = 2;
  * @return {string}
  */
 proto.payment.v1alpha1.Suscription.prototype.getPrice = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -689,16 +689,16 @@ proto.payment.v1alpha1.Suscription.prototype.getPrice = function() {
  * @return {!proto.payment.v1alpha1.Suscription} returns this
  */
 proto.payment.v1alpha1.Suscription.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional bool cancel = 4;
+ * optional bool cancel = 3;
  * @return {boolean}
  */
 proto.payment.v1alpha1.Suscription.prototype.getCancel = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
@@ -707,7 +707,7 @@ proto.payment.v1alpha1.Suscription.prototype.getCancel = function() {
  * @return {!proto.payment.v1alpha1.Suscription} returns this
  */
 proto.payment.v1alpha1.Suscription.prototype.setCancel = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 4, value);
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
@@ -800,7 +800,7 @@ proto.payment.v1alpha1.Payment.deserializeBinaryFromReader = function(msg, reade
       var value = /** @type {string} */ (reader.readString());
       msg.setAlias(value);
       break;
-    case 6:
+    case 5:
       var value = msg.getCardMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
@@ -865,7 +865,7 @@ proto.payment.v1alpha1.Payment.serializeBinaryToWriter = function(message, write
   }
   f = message.getCardMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -943,14 +943,14 @@ proto.payment.v1alpha1.Payment.prototype.setAlias = function(value) {
 
 
 /**
- * map<string, string> card = 6;
+ * map<string, string> card = 5;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.payment.v1alpha1.Payment.prototype.getCardMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
       null));
 };
 
