@@ -30,9 +30,9 @@ class Payment extends \Google\Protobuf\Internal\Message
      */
     protected $alias = '';
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+     * Generated from protobuf field <code>map<string, string> card = 6 [json_name = "card"];</code>
      */
-    protected $card = null;
+    private $card;
 
     /**
      * Constructor.
@@ -44,7 +44,7 @@ class Payment extends \Google\Protobuf\Internal\Message
      *     @type bool $default
      *     @type bool $enabled
      *     @type string $alias
-     *     @type \Payment\V1alpha1\Card $card
+     *     @type array|\Google\Protobuf\Internal\MapField $card
      * }
      */
     public function __construct($data = NULL) {
@@ -141,33 +141,23 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
-     * @return \Payment\V1alpha1\Card|null
+     * Generated from protobuf field <code>map<string, string> card = 6 [json_name = "card"];</code>
+     * @return \Google\Protobuf\Internal\MapField
      */
     public function getCard()
     {
         return $this->card;
     }
 
-    public function hasCard()
-    {
-        return isset($this->card);
-    }
-
-    public function clearCard()
-    {
-        unset($this->card);
-    }
-
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
-     * @param \Payment\V1alpha1\Card $var
+     * Generated from protobuf field <code>map<string, string> card = 6 [json_name = "card"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
     public function setCard($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Card::class);
-        $this->card = $var;
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->card = $arr;
 
         return $this;
     }
