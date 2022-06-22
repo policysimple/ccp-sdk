@@ -248,6 +248,7 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROT
   " \003(\0132\031.payment.v1alpha1.PaymentR\007payment"
   "\0223\n\007invoice\030\007 \001(\0132\031.payment.v1alpha1.Inv"
   "oiceR\007invoice\0220\n\006biling\030\010 \001(\0132\030.payment."
+<<<<<<< HEAD
   "v1alpha1.BilingR\006biling\"\370\001\n\013Suscription\022"
   "\016\n\002id\030\001 \001(\tR\002id\022\024\n\005price\030\002 \001(\tR\005price\022\033\n"
   "\tprice_cpu\030\003 \001(\tR\010priceCpu\022\037\n\013price_byte"
@@ -274,6 +275,25 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROT
   ".PaymentR\005itemsB8Z6github.com/cuemby/ccp"
   "-payment-service/payment/v1alpha1b\006proto"
   "3"
+=======
+  "v1alpha1.BilingR\006biling\"K\n\013Suscription\022\016"
+  "\n\002id\030\001 \001(\tR\002id\022\024\n\005price\030\002 \001(\tR\005price\022\026\n\006"
+  "cancel\030\003 \001(\010R\006cancel\"\217\001\n\007Payment\022\016\n\002id\030\001"
+  " \001(\tR\002id\022\030\n\007default\030\002 \001(\010R\007default\022\030\n\007en"
+  "abled\030\003 \001(\010R\007enabled\022\024\n\005alias\030\004 \001(\tR\005ali"
+  "as\022*\n\004card\030\005 \001(\0132\026.payment.v1alpha1.Card"
+  "R\004card\"v\n\004Card\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006number"
+  "\030\002 \001(\tR\006number\022\032\n\010expmonth\030\003 \001(\tR\010expmon"
+  "th\022\030\n\007expyear\030\004 \001(\tR\007expyear\022\020\n\003cvc\030\005 \001("
+  "\tR\003cvc\"[\n\007Invoice\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014acc"
+  "ount_name\030\002 \001(\tR\013accountName\022\035\n\ninvoice_"
+  "id\030\003 \001(\tR\tinvoiceId\"8\n\006Biling\022\016\n\002id\030\001 \001("
+  "\tR\002id\022\036\n\nlistparams\030\002 \001(\tR\nlistparams\">\n"
+  "\013PaymentList\022/\n\005items\030\001 \003(\0132\031.payment.v1"
+  "alpha1.PaymentR\005itemsB8Z6github.com/cuem"
+  "by/ccp-payment-service/payment/v1alpha1b"
+  "\006proto3"
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_2eproto = {
@@ -904,6 +924,7 @@ const char* Suscription::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+<<<<<<< HEAD
       // string price_cpu = 3 [json_name = "priceCpu"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
@@ -955,6 +976,12 @@ const char* Suscription::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           auto str = _internal_mutable_invoice_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Suscription.invoice_id"));
+=======
+      // bool cancel = 3 [json_name = "cancel"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          cancel_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1007,6 +1034,7 @@ failure:
         2, this->_internal_price(), target);
   }
 
+<<<<<<< HEAD
   // string price_cpu = 3 [json_name = "priceCpu"];
   if (!this->_internal_price_cpu().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
@@ -1065,6 +1093,12 @@ failure:
       "payment.v1alpha1.Suscription.invoice_id");
     target = stream->WriteStringMaybeAliased(
         8, this->_internal_invoice_id(), target);
+=======
+  // bool cancel = 3 [json_name = "cancel"];
+  if (this->_internal_cancel() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_cancel(), target);
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1097,6 +1131,7 @@ size_t Suscription::ByteSizeLong() const {
         this->_internal_price());
   }
 
+<<<<<<< HEAD
   // string price_cpu = 3 [json_name = "priceCpu"];
   if (!this->_internal_price_cpu().empty()) {
     total_size += 1 +
@@ -1137,6 +1172,11 @@ size_t Suscription::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_invoice_id());
+=======
+  // bool cancel = 3 [json_name = "cancel"];
+  if (this->_internal_cancel() != 0) {
+    total_size += 1 + 1;
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1389,9 +1429,9 @@ const char* Payment::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .payment.v1alpha1.Card card = 6 [json_name = "card"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+      // .payment.v1alpha1.Card card = 5 [json_name = "card"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_card(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -1457,12 +1497,12 @@ failure:
         4, this->_internal_alias(), target);
   }
 
-  // .payment.v1alpha1.Card card = 6 [json_name = "card"];
+  // .payment.v1alpha1.Card card = 5 [json_name = "card"];
   if (this->_internal_has_card()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        6, _Internal::card(this), target, stream);
+        5, _Internal::card(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1495,7 +1535,7 @@ size_t Payment::ByteSizeLong() const {
         this->_internal_alias());
   }
 
-  // .payment.v1alpha1.Card card = 6 [json_name = "card"];
+  // .payment.v1alpha1.Card card = 5 [json_name = "card"];
   if (this->_internal_has_card()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(

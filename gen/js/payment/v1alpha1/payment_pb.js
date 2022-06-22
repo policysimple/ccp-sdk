@@ -636,12 +636,16 @@ proto.payment.v1alpha1.Suscription.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     price: jspb.Message.getFieldWithDefault(msg, 2, ""),
+<<<<<<< HEAD
     priceCpu: jspb.Message.getFieldWithDefault(msg, 3, ""),
     priceBytes: jspb.Message.getFieldWithDefault(msg, 4, ""),
     currency: jspb.Message.getFieldWithDefault(msg, 5, ""),
     interval: jspb.Message.getFieldWithDefault(msg, 6, ""),
     suscriptionItemId: jspb.Message.getFieldWithDefault(msg, 7, ""),
     invoiceId: jspb.Message.getFieldWithDefault(msg, 8, "")
+=======
+    cancel: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
   };
 
   if (includeInstance) {
@@ -687,6 +691,7 @@ proto.payment.v1alpha1.Suscription.deserializeBinaryFromReader = function(msg, r
       msg.setPrice(value);
       break;
     case 3:
+<<<<<<< HEAD
       var value = /** @type {string} */ (reader.readString());
       msg.setPriceCpu(value);
       break;
@@ -709,6 +714,10 @@ proto.payment.v1alpha1.Suscription.deserializeBinaryFromReader = function(msg, r
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setInvoiceId(value);
+=======
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCancel(value);
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
       break;
     default:
       reader.skipField();
@@ -750,6 +759,7 @@ proto.payment.v1alpha1.Suscription.serializeBinaryToWriter = function(message, w
   if (f.length > 0) {
     writer.writeString(
       2,
+<<<<<<< HEAD
       f
     );
   }
@@ -764,6 +774,15 @@ proto.payment.v1alpha1.Suscription.serializeBinaryToWriter = function(message, w
   if (f.length > 0) {
     writer.writeString(
       4,
+=======
+      f
+    );
+  }
+  f = message.getCancel();
+  if (f) {
+    writer.writeBool(
+      3,
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
       f
     );
   }
@@ -831,6 +850,7 @@ proto.payment.v1alpha1.Suscription.prototype.getPrice = function() {
  */
 proto.payment.v1alpha1.Suscription.prototype.setPrice = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+<<<<<<< HEAD
 };
 
 
@@ -849,15 +869,25 @@ proto.payment.v1alpha1.Suscription.prototype.getPriceCpu = function() {
  */
 proto.payment.v1alpha1.Suscription.prototype.setPriceCpu = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+=======
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
 };
 
 
 /**
+<<<<<<< HEAD
  * optional string price_bytes = 4;
  * @return {string}
  */
 proto.payment.v1alpha1.Suscription.prototype.getPriceBytes = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+=======
+ * optional bool cancel = 3;
+ * @return {boolean}
+ */
+proto.payment.v1alpha1.Suscription.prototype.getCancel = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
 };
 
 
@@ -865,6 +895,7 @@ proto.payment.v1alpha1.Suscription.prototype.getPriceBytes = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Suscription} returns this
  */
+<<<<<<< HEAD
 proto.payment.v1alpha1.Suscription.prototype.setPriceBytes = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
@@ -939,6 +970,10 @@ proto.payment.v1alpha1.Suscription.prototype.getInvoiceId = function() {
  */
 proto.payment.v1alpha1.Suscription.prototype.setInvoiceId = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+=======
+proto.payment.v1alpha1.Suscription.prototype.setCancel = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
 };
 
 
@@ -1031,7 +1066,7 @@ proto.payment.v1alpha1.Payment.deserializeBinaryFromReader = function(msg, reade
       var value = /** @type {string} */ (reader.readString());
       msg.setAlias(value);
       break;
-    case 6:
+    case 5:
       var value = new proto.payment.v1alpha1.Card;
       reader.readMessage(value,proto.payment.v1alpha1.Card.deserializeBinaryFromReader);
       msg.setCard(value);
@@ -1096,7 +1131,7 @@ proto.payment.v1alpha1.Payment.serializeBinaryToWriter = function(message, write
   f = message.getCard();
   if (f != null) {
     writer.writeMessage(
-      6,
+      5,
       f,
       proto.payment.v1alpha1.Card.serializeBinaryToWriter
     );
@@ -1177,12 +1212,12 @@ proto.payment.v1alpha1.Payment.prototype.setAlias = function(value) {
 
 
 /**
- * optional Card card = 6;
+ * optional Card card = 5;
  * @return {?proto.payment.v1alpha1.Card}
  */
 proto.payment.v1alpha1.Payment.prototype.getCard = function() {
   return /** @type{?proto.payment.v1alpha1.Card} */ (
-    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.Card, 6));
+    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.Card, 5));
 };
 
 
@@ -1191,7 +1226,7 @@ proto.payment.v1alpha1.Payment.prototype.getCard = function() {
  * @return {!proto.payment.v1alpha1.Payment} returns this
 */
 proto.payment.v1alpha1.Payment.prototype.setCard = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -1209,7 +1244,7 @@ proto.payment.v1alpha1.Payment.prototype.clearCard = function() {
  * @return {boolean}
  */
 proto.payment.v1alpha1.Payment.prototype.hasCard = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

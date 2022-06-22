@@ -90,6 +90,7 @@ func CreateSuscription(in *paymentpkgv1.CreateSuscriptionRequest) (response *pay
 	defer cancel()
 
 	response, err = client.CreateSuscription(ctx, &paymentpkgv1.CreateSuscriptionRequest{
+		CustomerId:  in.CustomerId,
 		Suscription: in.Suscription,
 	})
 
@@ -244,7 +245,8 @@ func CreatePayment(in *paymentpkgv1.CreatePaymentRequest) (response *paymentpkgv
 	defer cancel()
 
 	response, err = client.CreatePayment(ctx, &paymentpkgv1.CreatePaymentRequest{
-		Payment: in.Payment,
+		CustomerId: in.CustomerId,
+		Payment:    in.Payment,
 	})
 
 	if err != nil {

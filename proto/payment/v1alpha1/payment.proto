@@ -17,6 +17,7 @@ message Customer {
 
 message Suscription {
   string id =1;
+<<<<<<< HEAD
   string price= 2;
   string price_cpu =3;
   string price_bytes =4;
@@ -24,6 +25,10 @@ message Suscription {
   string interval =6;
   string suscription_item_id = 7;
   string invoice_id = 8;
+=======
+  string price = 2;
+  bool cancel = 3;
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
 }
 
 message Payment {
@@ -31,7 +36,7 @@ message Payment {
   bool default = 2;
   bool enabled = 3;
   string alias = 4;
-  Card card = 6;
+  Card card = 5;
 }
 
 message Card {

@@ -30,6 +30,7 @@ class Payment
 biling (2.payment.v1alpha1.BilingRbiling"ø
 Suscription
 id (	Rid
+<<<<<<< HEAD
 price (	Rprice
 	price_cpu (	RpriceCpu
 price_bytes (	R
@@ -39,12 +40,16 @@ priceBytes
 suscription_item_id (	RsuscriptionItemId
 
 invoice_id (	R	invoiceId"
+=======
+price (	Rprice
+cancel (Rcancel"
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
 Payment
 id (	Rid
 default (Rdefault
 enabled (Renabled
 alias (	Ralias*
-card (2.payment.v1alpha1.CardRcard"v
+card (2.payment.v1alpha1.CardRcard"v
 Card
 id (	Rid
 number (	Rnumber

@@ -1965,8 +1965,13 @@ public final class PaymentOuterClass {
         getPriceBytes();
 
     /**
+<<<<<<< HEAD
      * <code>string price_cpu = 3 [json_name = "priceCpu"];</code>
      * @return The priceCpu.
+=======
+     * <code>bool cancel = 3 [json_name = "cancel"];</code>
+     * @return The cancel.
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
      */
     java.lang.String getPriceCpu();
     /**
@@ -2101,6 +2106,7 @@ public final class PaymentOuterClass {
               price_ = s;
               break;
             }
+<<<<<<< HEAD
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -2133,6 +2139,9 @@ public final class PaymentOuterClass {
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
+=======
+            case 24: {
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
 
               invoiceId_ = s;
               break;
@@ -2245,6 +2254,7 @@ public final class PaymentOuterClass {
       }
     }
 
+<<<<<<< HEAD
     public static final int PRICE_CPU_FIELD_NUMBER = 3;
     private volatile java.lang.Object priceCpu_;
     /**
@@ -2457,6 +2467,13 @@ public final class PaymentOuterClass {
     /**
      * <code>string invoice_id = 8 [json_name = "invoiceId"];</code>
      * @return The bytes for invoiceId.
+=======
+    public static final int CANCEL_FIELD_NUMBER = 3;
+    private boolean cancel_;
+    /**
+     * <code>bool cancel = 3 [json_name = "cancel"];</code>
+     * @return The cancel.
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
@@ -2492,6 +2509,7 @@ public final class PaymentOuterClass {
       }
       if (!getPriceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, price_);
+<<<<<<< HEAD
       }
       if (!getPriceCpuBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, priceCpu_);
@@ -2510,6 +2528,11 @@ public final class PaymentOuterClass {
       }
       if (!getInvoiceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, invoiceId_);
+=======
+      }
+      if (cancel_ != false) {
+        output.writeBool(3, cancel_);
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
       }
       unknownFields.writeTo(output);
     }
@@ -2526,6 +2549,7 @@ public final class PaymentOuterClass {
       if (!getPriceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, price_);
       }
+<<<<<<< HEAD
       if (!getPriceCpuBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, priceCpu_);
       }
@@ -2543,6 +2567,11 @@ public final class PaymentOuterClass {
       }
       if (!getInvoiceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, invoiceId_);
+=======
+      if (cancel_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, cancel_);
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3048,8 +3077,13 @@ public final class PaymentOuterClass {
 
       private java.lang.Object priceCpu_ = "";
       /**
+<<<<<<< HEAD
        * <code>string price_cpu = 3 [json_name = "priceCpu"];</code>
        * @return The priceCpu.
+=======
+       * <code>bool cancel = 3 [json_name = "cancel"];</code>
+       * @return The cancel.
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
        */
       public java.lang.String getPriceCpu() {
         java.lang.Object ref = priceCpu_;
@@ -3476,7 +3510,12 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
+<<<<<<< HEAD
        * <code>string invoice_id = 8 [json_name = "invoiceId"];</code>
+=======
+       * <code>bool cancel = 3 [json_name = "cancel"];</code>
+       * @param value The cancel to set.
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
        * @return This builder for chaining.
        */
       public Builder clearInvoiceId() {
@@ -3486,8 +3525,12 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
+<<<<<<< HEAD
        * <code>string invoice_id = 8 [json_name = "invoiceId"];</code>
        * @param value The bytes for invoiceId to set.
+=======
+       * <code>bool cancel = 3 [json_name = "cancel"];</code>
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
        * @return This builder for chaining.
        */
       public Builder setInvoiceIdBytes(
@@ -3595,17 +3638,17 @@ public final class PaymentOuterClass {
         getAliasBytes();
 
     /**
-     * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+     * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
      * @return Whether the card field is set.
      */
     boolean hasCard();
     /**
-     * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+     * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
      * @return The card.
      */
     payment.v1alpha1.PaymentOuterClass.Card getCard();
     /**
-     * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+     * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
      */
     payment.v1alpha1.PaymentOuterClass.CardOrBuilder getCardOrBuilder();
   }
@@ -3678,7 +3721,7 @@ public final class PaymentOuterClass {
               alias_ = s;
               break;
             }
-            case 50: {
+            case 42: {
               payment.v1alpha1.PaymentOuterClass.Card.Builder subBuilder = null;
               if (card_ != null) {
                 subBuilder = card_.toBuilder();
@@ -3821,10 +3864,10 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int CARD_FIELD_NUMBER = 6;
+    public static final int CARD_FIELD_NUMBER = 5;
     private payment.v1alpha1.PaymentOuterClass.Card card_;
     /**
-     * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+     * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
      * @return Whether the card field is set.
      */
     @java.lang.Override
@@ -3832,7 +3875,7 @@ public final class PaymentOuterClass {
       return card_ != null;
     }
     /**
-     * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+     * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
      * @return The card.
      */
     @java.lang.Override
@@ -3840,7 +3883,7 @@ public final class PaymentOuterClass {
       return card_ == null ? payment.v1alpha1.PaymentOuterClass.Card.getDefaultInstance() : card_;
     }
     /**
-     * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+     * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
      */
     @java.lang.Override
     public payment.v1alpha1.PaymentOuterClass.CardOrBuilder getCardOrBuilder() {
@@ -3874,7 +3917,7 @@ public final class PaymentOuterClass {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, alias_);
       }
       if (card_ != null) {
-        output.writeMessage(6, getCard());
+        output.writeMessage(5, getCard());
       }
       unknownFields.writeTo(output);
     }
@@ -3901,7 +3944,7 @@ public final class PaymentOuterClass {
       }
       if (card_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getCard());
+          .computeMessageSize(5, getCard());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4450,14 +4493,14 @@ public final class PaymentOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           payment.v1alpha1.PaymentOuterClass.Card, payment.v1alpha1.PaymentOuterClass.Card.Builder, payment.v1alpha1.PaymentOuterClass.CardOrBuilder> cardBuilder_;
       /**
-       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
        * @return Whether the card field is set.
        */
       public boolean hasCard() {
         return cardBuilder_ != null || card_ != null;
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
        * @return The card.
        */
       public payment.v1alpha1.PaymentOuterClass.Card getCard() {
@@ -4468,7 +4511,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
        */
       public Builder setCard(payment.v1alpha1.PaymentOuterClass.Card value) {
         if (cardBuilder_ == null) {
@@ -4484,7 +4527,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
        */
       public Builder setCard(
           payment.v1alpha1.PaymentOuterClass.Card.Builder builderForValue) {
@@ -4498,7 +4541,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
        */
       public Builder mergeCard(payment.v1alpha1.PaymentOuterClass.Card value) {
         if (cardBuilder_ == null) {
@@ -4516,7 +4559,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
        */
       public Builder clearCard() {
         if (cardBuilder_ == null) {
@@ -4530,7 +4573,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
        */
       public payment.v1alpha1.PaymentOuterClass.Card.Builder getCardBuilder() {
         
@@ -4538,7 +4581,7 @@ public final class PaymentOuterClass {
         return getCardFieldBuilder().getBuilder();
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
        */
       public payment.v1alpha1.PaymentOuterClass.CardOrBuilder getCardOrBuilder() {
         if (cardBuilder_ != null) {
@@ -4549,7 +4592,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           payment.v1alpha1.PaymentOuterClass.Card, payment.v1alpha1.PaymentOuterClass.Card.Builder, payment.v1alpha1.PaymentOuterClass.CardOrBuilder> 
@@ -9101,6 +9144,7 @@ public final class PaymentOuterClass {
       " \003(\0132\031.payment.v1alpha1.PaymentR\007payment" +
       "\0223\n\007invoice\030\007 \001(\0132\031.payment.v1alpha1.Inv" +
       "oiceR\007invoice\0220\n\006biling\030\010 \001(\0132\030.payment." +
+<<<<<<< HEAD
       "v1alpha1.BilingR\006biling\"\370\001\n\013Suscription\022" +
       "\016\n\002id\030\001 \001(\tR\002id\022\024\n\005price\030\002 \001(\tR\005price\022\033\n" +
       "\tprice_cpu\030\003 \001(\tR\010priceCpu\022\037\n\013price_byte" +
@@ -9127,6 +9171,25 @@ public final class PaymentOuterClass {
       ".PaymentR\005itemsB8Z6github.com/cuemby/ccp" +
       "-payment-service/payment/v1alpha1b\006proto" +
       "3"
+=======
+      "v1alpha1.BilingR\006biling\"K\n\013Suscription\022\016" +
+      "\n\002id\030\001 \001(\tR\002id\022\024\n\005price\030\002 \001(\tR\005price\022\026\n\006" +
+      "cancel\030\003 \001(\010R\006cancel\"\217\001\n\007Payment\022\016\n\002id\030\001" +
+      " \001(\tR\002id\022\030\n\007default\030\002 \001(\010R\007default\022\030\n\007en" +
+      "abled\030\003 \001(\010R\007enabled\022\024\n\005alias\030\004 \001(\tR\005ali" +
+      "as\022*\n\004card\030\005 \001(\0132\026.payment.v1alpha1.Card" +
+      "R\004card\"v\n\004Card\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006number" +
+      "\030\002 \001(\tR\006number\022\032\n\010expmonth\030\003 \001(\tR\010expmon" +
+      "th\022\030\n\007expyear\030\004 \001(\tR\007expyear\022\020\n\003cvc\030\005 \001(" +
+      "\tR\003cvc\"[\n\007Invoice\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014acc" +
+      "ount_name\030\002 \001(\tR\013accountName\022\035\n\ninvoice_" +
+      "id\030\003 \001(\tR\tinvoiceId\"8\n\006Biling\022\016\n\002id\030\001 \001(" +
+      "\tR\002id\022\036\n\nlistparams\030\002 \001(\tR\nlistparams\">\n" +
+      "\013PaymentList\022/\n\005items\030\001 \003(\0132\031.payment.v1" +
+      "alpha1.PaymentR\005itemsB8Z6github.com/cuem" +
+      "by/ccp-payment-service/payment/v1alpha1b" +
+      "\006proto3"
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
