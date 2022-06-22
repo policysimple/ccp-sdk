@@ -2141,7 +2141,7 @@ proto.payment.v1alpha1.GetBilingMonthResponse.prototype.toObject = function(opt_
  */
 proto.payment.v1alpha1.GetBilingMonthResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    totalusage: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    customer: (f = msg.getCustomer()) && payment_v1alpha1_payment_pb.Customer.toObject(includeInstance, f),
     status: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -2180,8 +2180,9 @@ proto.payment.v1alpha1.GetBilingMonthResponse.deserializeBinaryFromReader = func
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setTotalusage(value);
+      var value = new payment_v1alpha1_payment_pb.Customer;
+      reader.readMessage(value,payment_v1alpha1_payment_pb.Customer.deserializeBinaryFromReader);
+      msg.setCustomer(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -2216,11 +2217,12 @@ proto.payment.v1alpha1.GetBilingMonthResponse.prototype.serializeBinary = functi
  */
 proto.payment.v1alpha1.GetBilingMonthResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTotalusage();
-  if (f !== 0) {
-    writer.writeInt64(
+  f = message.getCustomer();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      payment_v1alpha1_payment_pb.Customer.serializeBinaryToWriter
     );
   }
   f = message.getStatus();
@@ -2234,20 +2236,39 @@ proto.payment.v1alpha1.GetBilingMonthResponse.serializeBinaryToWriter = function
 
 
 /**
- * optional int64 totalusage = 1;
- * @return {number}
+ * optional Customer customer = 1;
+ * @return {?proto.payment.v1alpha1.Customer}
  */
-proto.payment.v1alpha1.GetBilingMonthResponse.prototype.getTotalusage = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.payment.v1alpha1.GetBilingMonthResponse.prototype.getCustomer = function() {
+  return /** @type{?proto.payment.v1alpha1.Customer} */ (
+    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Customer, 1));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.payment.v1alpha1.Customer|undefined} value
+ * @return {!proto.payment.v1alpha1.GetBilingMonthResponse} returns this
+*/
+proto.payment.v1alpha1.GetBilingMonthResponse.prototype.setCustomer = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.payment.v1alpha1.GetBilingMonthResponse} returns this
  */
-proto.payment.v1alpha1.GetBilingMonthResponse.prototype.setTotalusage = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+proto.payment.v1alpha1.GetBilingMonthResponse.prototype.clearCustomer = function() {
+  return this.setCustomer(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.payment.v1alpha1.GetBilingMonthResponse.prototype.hasCustomer = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -3155,7 +3176,7 @@ proto.payment.v1alpha1.CreateSuscriptionResponse.prototype.toObject = function(o
  */
 proto.payment.v1alpha1.CreateSuscriptionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    suscriptionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    customer: (f = msg.getCustomer()) && payment_v1alpha1_payment_pb.Customer.toObject(includeInstance, f),
     status: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -3194,8 +3215,9 @@ proto.payment.v1alpha1.CreateSuscriptionResponse.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSuscriptionId(value);
+      var value = new payment_v1alpha1_payment_pb.Customer;
+      reader.readMessage(value,payment_v1alpha1_payment_pb.Customer.deserializeBinaryFromReader);
+      msg.setCustomer(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -3230,11 +3252,12 @@ proto.payment.v1alpha1.CreateSuscriptionResponse.prototype.serializeBinary = fun
  */
 proto.payment.v1alpha1.CreateSuscriptionResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSuscriptionId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getCustomer();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      payment_v1alpha1_payment_pb.Customer.serializeBinaryToWriter
     );
   }
   f = message.getStatus();
@@ -3248,20 +3271,39 @@ proto.payment.v1alpha1.CreateSuscriptionResponse.serializeBinaryToWriter = funct
 
 
 /**
- * optional string suscription_id = 1;
- * @return {string}
+ * optional Customer customer = 1;
+ * @return {?proto.payment.v1alpha1.Customer}
  */
-proto.payment.v1alpha1.CreateSuscriptionResponse.prototype.getSuscriptionId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.payment.v1alpha1.CreateSuscriptionResponse.prototype.getCustomer = function() {
+  return /** @type{?proto.payment.v1alpha1.Customer} */ (
+    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Customer, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.payment.v1alpha1.Customer|undefined} value
+ * @return {!proto.payment.v1alpha1.CreateSuscriptionResponse} returns this
+*/
+proto.payment.v1alpha1.CreateSuscriptionResponse.prototype.setCustomer = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.payment.v1alpha1.CreateSuscriptionResponse} returns this
  */
-proto.payment.v1alpha1.CreateSuscriptionResponse.prototype.setSuscriptionId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.payment.v1alpha1.CreateSuscriptionResponse.prototype.clearCustomer = function() {
+  return this.setCustomer(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.payment.v1alpha1.CreateSuscriptionResponse.prototype.hasCustomer = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -3315,7 +3357,8 @@ proto.payment.v1alpha1.CreateInvoiceRequest.prototype.toObject = function(opt_in
  */
 proto.payment.v1alpha1.CreateInvoiceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    customer: (f = msg.getCustomer()) && payment_v1alpha1_payment_pb.Customer.toObject(includeInstance, f)
+    invoiceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3353,9 +3396,12 @@ proto.payment.v1alpha1.CreateInvoiceRequest.deserializeBinaryFromReader = functi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new payment_v1alpha1_payment_pb.Customer;
-      reader.readMessage(value,payment_v1alpha1_payment_pb.Customer.deserializeBinaryFromReader);
-      msg.setCustomer(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInvoiceId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -3386,51 +3432,56 @@ proto.payment.v1alpha1.CreateInvoiceRequest.prototype.serializeBinary = function
  */
 proto.payment.v1alpha1.CreateInvoiceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCustomer();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getInvoiceId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      payment_v1alpha1_payment_pb.Customer.serializeBinaryToWriter
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
 
 
 /**
- * optional Customer customer = 1;
- * @return {?proto.payment.v1alpha1.Customer}
+ * optional string invoice_id = 1;
+ * @return {string}
  */
-proto.payment.v1alpha1.CreateInvoiceRequest.prototype.getCustomer = function() {
-  return /** @type{?proto.payment.v1alpha1.Customer} */ (
-    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Customer, 1));
+proto.payment.v1alpha1.CreateInvoiceRequest.prototype.getInvoiceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.payment.v1alpha1.Customer|undefined} value
- * @return {!proto.payment.v1alpha1.CreateInvoiceRequest} returns this
-*/
-proto.payment.v1alpha1.CreateInvoiceRequest.prototype.setCustomer = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.payment.v1alpha1.CreateInvoiceRequest} returns this
  */
-proto.payment.v1alpha1.CreateInvoiceRequest.prototype.clearCustomer = function() {
-  return this.setCustomer(undefined);
+proto.payment.v1alpha1.CreateInvoiceRequest.prototype.setInvoiceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {boolean}
+ * optional string status = 2;
+ * @return {string}
  */
-proto.payment.v1alpha1.CreateInvoiceRequest.prototype.hasCustomer = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.payment.v1alpha1.CreateInvoiceRequest.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.CreateInvoiceRequest} returns this
+ */
+proto.payment.v1alpha1.CreateInvoiceRequest.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -3466,9 +3517,7 @@ proto.payment.v1alpha1.CreateInvoiceResponse.prototype.toObject = function(opt_i
  */
 proto.payment.v1alpha1.CreateInvoiceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    due: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    tax: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    customer: (f = msg.getCustomer()) && payment_v1alpha1_payment_pb.Customer.toObject(includeInstance, f),
     status: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
@@ -3507,16 +3556,9 @@ proto.payment.v1alpha1.CreateInvoiceResponse.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setPaid(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setDue(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setTax(value);
+      var value = new payment_v1alpha1_payment_pb.Customer;
+      reader.readMessage(value,payment_v1alpha1_payment_pb.Customer.deserializeBinaryFromReader);
+      msg.setCustomer(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -3551,25 +3593,12 @@ proto.payment.v1alpha1.CreateInvoiceResponse.prototype.serializeBinary = functio
  */
 proto.payment.v1alpha1.CreateInvoiceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPaid();
-  if (f !== 0) {
-    writer.writeInt64(
+  f = message.getCustomer();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
-    );
-  }
-  f = message.getDue();
-  if (f !== 0) {
-    writer.writeInt64(
-      2,
-      f
-    );
-  }
-  f = message.getTax();
-  if (f !== 0) {
-    writer.writeInt64(
-      3,
-      f
+      f,
+      payment_v1alpha1_payment_pb.Customer.serializeBinaryToWriter
     );
   }
   f = message.getStatus();
@@ -3583,56 +3612,39 @@ proto.payment.v1alpha1.CreateInvoiceResponse.serializeBinaryToWriter = function(
 
 
 /**
- * optional int64 paid = 1;
- * @return {number}
+ * optional Customer customer = 1;
+ * @return {?proto.payment.v1alpha1.Customer}
  */
-proto.payment.v1alpha1.CreateInvoiceResponse.prototype.getPaid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.payment.v1alpha1.CreateInvoiceResponse.prototype.getCustomer = function() {
+  return /** @type{?proto.payment.v1alpha1.Customer} */ (
+    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Customer, 1));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.payment.v1alpha1.Customer|undefined} value
+ * @return {!proto.payment.v1alpha1.CreateInvoiceResponse} returns this
+*/
+proto.payment.v1alpha1.CreateInvoiceResponse.prototype.setCustomer = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.payment.v1alpha1.CreateInvoiceResponse} returns this
  */
-proto.payment.v1alpha1.CreateInvoiceResponse.prototype.setPaid = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+proto.payment.v1alpha1.CreateInvoiceResponse.prototype.clearCustomer = function() {
+  return this.setCustomer(undefined);
 };
 
 
 /**
- * optional int64 due = 2;
- * @return {number}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.payment.v1alpha1.CreateInvoiceResponse.prototype.getDue = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.payment.v1alpha1.CreateInvoiceResponse} returns this
- */
-proto.payment.v1alpha1.CreateInvoiceResponse.prototype.setDue = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
-};
-
-
-/**
- * optional int64 tax = 3;
- * @return {number}
- */
-proto.payment.v1alpha1.CreateInvoiceResponse.prototype.getTax = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.payment.v1alpha1.CreateInvoiceResponse} returns this
- */
-proto.payment.v1alpha1.CreateInvoiceResponse.prototype.setTax = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+proto.payment.v1alpha1.CreateInvoiceResponse.prototype.hasCustomer = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

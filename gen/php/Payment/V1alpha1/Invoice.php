@@ -18,13 +18,25 @@ class Invoice extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
+     * Generated from protobuf field <code>int64 amount = 3 [json_name = "amount"];</code>
      */
-    protected $account_name = '';
+    protected $amount = 0;
     /**
-     * Generated from protobuf field <code>string invoice_id = 3 [json_name = "invoiceId"];</code>
+     * Generated from protobuf field <code>string period = 4 [json_name = "period"];</code>
      */
-    protected $invoice_id = '';
+    protected $period = '';
+    /**
+     * Generated from protobuf field <code>string statuspay = 5 [json_name = "statuspay"];</code>
+     */
+    protected $statuspay = '';
+    /**
+     * Generated from protobuf field <code>string date = 6 [json_name = "date"];</code>
+     */
+    protected $date = '';
+    /**
+     * Generated from protobuf field <code>string product = 7 [json_name = "product"];</code>
+     */
+    protected $product = '';
 
     /**
      * Constructor.
@@ -33,8 +45,11 @@ class Invoice extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $account_name
-     *     @type string $invoice_id
+     *     @type int|string $amount
+     *     @type string $period
+     *     @type string $statuspay
+     *     @type string $date
+     *     @type string $product
      * }
      */
     public function __construct($data = NULL) {
@@ -65,45 +80,111 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
-     * @return string
+     * Generated from protobuf field <code>int64 amount = 3 [json_name = "amount"];</code>
+     * @return int|string
      */
-    public function getAccountName()
+    public function getAmount()
     {
-        return $this->account_name;
+        return $this->amount;
     }
 
     /**
-     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>int64 amount = 3 [json_name = "amount"];</code>
+     * @param int|string $var
      * @return $this
      */
-    public function setAccountName($var)
+    public function setAmount($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->account_name = $var;
+        GPBUtil::checkInt64($var);
+        $this->amount = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string invoice_id = 3 [json_name = "invoiceId"];</code>
+     * Generated from protobuf field <code>string period = 4 [json_name = "period"];</code>
      * @return string
      */
-    public function getInvoiceId()
+    public function getPeriod()
     {
-        return $this->invoice_id;
+        return $this->period;
     }
 
     /**
-     * Generated from protobuf field <code>string invoice_id = 3 [json_name = "invoiceId"];</code>
+     * Generated from protobuf field <code>string period = 4 [json_name = "period"];</code>
      * @param string $var
      * @return $this
      */
-    public function setInvoiceId($var)
+    public function setPeriod($var)
     {
         GPBUtil::checkString($var, True);
-        $this->invoice_id = $var;
+        $this->period = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string statuspay = 5 [json_name = "statuspay"];</code>
+     * @return string
+     */
+    public function getStatuspay()
+    {
+        return $this->statuspay;
+    }
+
+    /**
+     * Generated from protobuf field <code>string statuspay = 5 [json_name = "statuspay"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatuspay($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->statuspay = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string date = 6 [json_name = "date"];</code>
+     * @return string
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Generated from protobuf field <code>string date = 6 [json_name = "date"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDate($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->date = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string product = 7 [json_name = "product"];</code>
+     * @return string
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * Generated from protobuf field <code>string product = 7 [json_name = "product"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProduct($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->product = $var;
 
         return $this;
     }

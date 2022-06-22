@@ -67,7 +67,7 @@ message GetBilingMonthRequest {
 }
 
 message GetBilingMonthResponse {
-    int64 totalusage = 1;
+    payment.v1alpha1.Customer customer = 1;
     string status = 2;
 }
 
@@ -95,19 +95,18 @@ message CreateSuscriptionRequest {
 }
 
 message CreateSuscriptionResponse {
-    string suscription_id =1;
+    payment.v1alpha1.Customer customer = 1;
     string status = 2;
 }
 
 message CreateInvoiceRequest {
-    payment.v1alpha1.Customer customer = 1;
+    string invoice_id = 1;
+    string status = 2;
 
 }
 
 message CreateInvoiceResponse {
-    int64 paid = 1;
-    int64 due = 2;
-    int64 tax = 3;
+    payment.v1alpha1.Customer customer = 1;
     string status = 4;
 }
 

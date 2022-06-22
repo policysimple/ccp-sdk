@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetBilingMonthResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int64 totalusage = 1 [json_name = "totalusage"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
      */
-    protected $totalusage = 0;
+    protected $customer = null;
     /**
      * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
@@ -28,7 +28,7 @@ class GetBilingMonthResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int|string $totalusage
+     *     @type \Payment\V1alpha1\Customer $customer
      *     @type string $status
      * }
      */
@@ -38,23 +38,33 @@ class GetBilingMonthResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 totalusage = 1 [json_name = "totalusage"];</code>
-     * @return int|string
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @return \Payment\V1alpha1\Customer|null
      */
-    public function getTotalusage()
+    public function getCustomer()
     {
-        return $this->totalusage;
+        return $this->customer;
+    }
+
+    public function hasCustomer()
+    {
+        return isset($this->customer);
+    }
+
+    public function clearCustomer()
+    {
+        unset($this->customer);
     }
 
     /**
-     * Generated from protobuf field <code>int64 totalusage = 1 [json_name = "totalusage"];</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @param \Payment\V1alpha1\Customer $var
      * @return $this
      */
-    public function setTotalusage($var)
+    public function setCustomer($var)
     {
-        GPBUtil::checkInt64($var);
-        $this->totalusage = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
+        $this->customer = $var;
 
         return $this;
     }

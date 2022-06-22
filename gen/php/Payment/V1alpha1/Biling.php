@@ -18,9 +18,29 @@ class Biling extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string listparams = 2 [json_name = "listparams"];</code>
+     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
      */
-    protected $listparams = '';
+    protected $account_name = '';
+    /**
+     * Generated from protobuf field <code>string invoice_id = 3 [json_name = "invoiceId"];</code>
+     */
+    protected $invoice_id = '';
+    /**
+     * Generated from protobuf field <code>int64 totalusage = 4 [json_name = "totalusage"];</code>
+     */
+    protected $totalusage = 0;
+    /**
+     * Generated from protobuf field <code>int64 cpu = 5 [json_name = "cpu"];</code>
+     */
+    protected $cpu = 0;
+    /**
+     * Generated from protobuf field <code>int64 ram = 6 [json_name = "ram"];</code>
+     */
+    protected $ram = 0;
+    /**
+     * Generated from protobuf field <code>string mes = 7 [json_name = "mes"];</code>
+     */
+    protected $mes = '';
 
     /**
      * Constructor.
@@ -29,7 +49,12 @@ class Biling extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $listparams
+     *     @type string $account_name
+     *     @type string $invoice_id
+     *     @type int|string $totalusage
+     *     @type int|string $cpu
+     *     @type int|string $ram
+     *     @type string $mes
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +85,133 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string listparams = 2 [json_name = "listparams"];</code>
+     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
      * @return string
      */
-    public function getListparams()
+    public function getAccountName()
     {
-        return $this->listparams;
+        return $this->account_name;
     }
 
     /**
-     * Generated from protobuf field <code>string listparams = 2 [json_name = "listparams"];</code>
+     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
      * @param string $var
      * @return $this
      */
-    public function setListparams($var)
+    public function setAccountName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->listparams = $var;
+        $this->account_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string invoice_id = 3 [json_name = "invoiceId"];</code>
+     * @return string
+     */
+    public function getInvoiceId()
+    {
+        return $this->invoice_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string invoice_id = 3 [json_name = "invoiceId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInvoiceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->invoice_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 totalusage = 4 [json_name = "totalusage"];</code>
+     * @return int|string
+     */
+    public function getTotalusage()
+    {
+        return $this->totalusage;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 totalusage = 4 [json_name = "totalusage"];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setTotalusage($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->totalusage = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 cpu = 5 [json_name = "cpu"];</code>
+     * @return int|string
+     */
+    public function getCpu()
+    {
+        return $this->cpu;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 cpu = 5 [json_name = "cpu"];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setCpu($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->cpu = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 ram = 6 [json_name = "ram"];</code>
+     * @return int|string
+     */
+    public function getRam()
+    {
+        return $this->ram;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 ram = 6 [json_name = "ram"];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setRam($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->ram = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string mes = 7 [json_name = "mes"];</code>
+     * @return string
+     */
+    public function getMes()
+    {
+        return $this->mes;
+    }
+
+    /**
+     * Generated from protobuf field <code>string mes = 7 [json_name = "mes"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMes($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->mes = $var;
 
         return $this;
     }

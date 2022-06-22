@@ -14,17 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateInvoiceResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int64 paid = 1 [json_name = "paid"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
      */
-    protected $paid = 0;
-    /**
-     * Generated from protobuf field <code>int64 due = 2 [json_name = "due"];</code>
-     */
-    protected $due = 0;
-    /**
-     * Generated from protobuf field <code>int64 tax = 3 [json_name = "tax"];</code>
-     */
-    protected $tax = 0;
+    protected $customer = null;
     /**
      * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
      */
@@ -36,9 +28,7 @@ class CreateInvoiceResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int|string $paid
-     *     @type int|string $due
-     *     @type int|string $tax
+     *     @type \Payment\V1alpha1\Customer $customer
      *     @type string $status
      * }
      */
@@ -48,67 +38,33 @@ class CreateInvoiceResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 paid = 1 [json_name = "paid"];</code>
-     * @return int|string
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @return \Payment\V1alpha1\Customer|null
      */
-    public function getPaid()
+    public function getCustomer()
     {
-        return $this->paid;
+        return $this->customer;
+    }
+
+    public function hasCustomer()
+    {
+        return isset($this->customer);
+    }
+
+    public function clearCustomer()
+    {
+        unset($this->customer);
     }
 
     /**
-     * Generated from protobuf field <code>int64 paid = 1 [json_name = "paid"];</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @param \Payment\V1alpha1\Customer $var
      * @return $this
      */
-    public function setPaid($var)
+    public function setCustomer($var)
     {
-        GPBUtil::checkInt64($var);
-        $this->paid = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 due = 2 [json_name = "due"];</code>
-     * @return int|string
-     */
-    public function getDue()
-    {
-        return $this->due;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 due = 2 [json_name = "due"];</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setDue($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->due = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 tax = 3 [json_name = "tax"];</code>
-     * @return int|string
-     */
-    public function getTax()
-    {
-        return $this->tax;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 tax = 3 [json_name = "tax"];</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setTax($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->tax = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
+        $this->customer = $var;
 
         return $this;
     }
