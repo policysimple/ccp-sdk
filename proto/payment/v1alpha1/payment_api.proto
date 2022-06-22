@@ -100,13 +100,9 @@ message CreateSuscriptionResponse {
 }
 
 message CreateInvoiceRequest {
-<<<<<<< HEAD
     string invoice_id = 1;
     string status = 2;
 
-=======
-    payment.v1alpha1.Customer customer = 1;
->>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
 }
 
 message CreateInvoiceResponse {
