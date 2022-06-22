@@ -178,11 +178,4 @@ message GetPaymentResponse {
 }
 
 message ListPaymentRequest {
-    string customer_id = 1;
-    string suscription_id = 2;
-}
-
-message ListPaymentResponse {
-    payment.v1alpha1.PaymentList payment_list = 1;
-    string status = 2;
-}
+    string customer_id = 1;Arocha-fix-suscription
