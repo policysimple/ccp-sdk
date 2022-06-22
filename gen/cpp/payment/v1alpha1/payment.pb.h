@@ -476,16 +476,12 @@ class Suscription final :
   enum : int {
     kIdFieldNumber = 1,
     kPriceFieldNumber = 2,
-<<<<<<< HEAD
     kPriceCpuFieldNumber = 3,
     kPriceBytesFieldNumber = 4,
     kCurrencyFieldNumber = 5,
     kIntervalFieldNumber = 6,
     kSuscriptionItemIdFieldNumber = 7,
     kInvoiceIdFieldNumber = 8,
-=======
-    kCancelFieldNumber = 3,
->>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -515,7 +511,6 @@ class Suscription final :
   std::string* _internal_mutable_price();
   public:
 
-<<<<<<< HEAD
   // string price_cpu = 3 [json_name = "priceCpu"];
   void clear_price_cpu();
   const std::string& price_cpu() const;
@@ -594,12 +589,6 @@ class Suscription final :
   std::string* mutable_invoice_id();
   PROTOBUF_MUST_USE_RESULT std::string* release_invoice_id();
   void set_allocated_invoice_id(std::string* invoice_id);
-=======
-  // bool cancel = 3 [json_name = "cancel"];
-  void clear_cancel();
-  bool cancel() const;
-  void set_cancel(bool value);
->>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
   private:
   const std::string& _internal_invoice_id() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_invoice_id(const std::string& value);
@@ -2201,7 +2190,6 @@ inline void Suscription::set_allocated_price(std::string* price) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Suscription.price)
 }
 
-<<<<<<< HEAD
 // string price_cpu = 3 [json_name = "priceCpu"];
 inline void Suscription::clear_price_cpu() {
   price_cpu_.ClearToEmpty();
@@ -2297,11 +2285,6 @@ inline void Suscription::set_allocated_price_bytes(std::string* price_bytes) {
 // string currency = 5 [json_name = "currency"];
 inline void Suscription::clear_currency() {
   currency_.ClearToEmpty();
-=======
-// bool cancel = 3 [json_name = "cancel"];
-inline void Suscription::clear_cancel() {
-  cancel_ = false;
->>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
 }
 inline const std::string& Suscription::currency() const {
   // @@protoc_insertion_point(field_get:payment.v1alpha1.Suscription.currency)
