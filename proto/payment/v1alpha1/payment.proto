@@ -16,7 +16,7 @@ message Customer {
 }
 
 message Suscription {
-.3
+
 +  string id =1;
   string price= 2;
   string price_cpu =3;

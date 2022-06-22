@@ -22,11 +22,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
      */
     protected $price = '';
     /**
-<<<<<<< HEAD
      * Generated from protobuf field <code>string price_cpu = 3 [json_name = "priceCpu"];</code>
-=======
-     * Generated from protobuf field <code>bool cancel = 3 [json_name = "cancel"];</code>
->>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
      */
     protected $price_cpu = '';
     /**
@@ -116,13 +112,8 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-<<<<<<< HEAD
      * Generated from protobuf field <code>string price_cpu = 3 [json_name = "priceCpu"];</code>
      * @return string
-=======
-     * Generated from protobuf field <code>bool cancel = 3 [json_name = "cancel"];</code>
-     * @return bool
->>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
      */
     public function getPriceCpu()
     {
@@ -130,13 +121,8 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-<<<<<<< HEAD
      * Generated from protobuf field <code>string price_cpu = 3 [json_name = "priceCpu"];</code>
      * @param string $var
-=======
-     * Generated from protobuf field <code>bool cancel = 3 [json_name = "cancel"];</code>
-     * @param bool $var
->>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
      * @return $this
      */
     public function setPriceCpu($var)
