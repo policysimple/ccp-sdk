@@ -636,7 +636,16 @@ proto.payment.v1alpha1.Suscription.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     price: jspb.Message.getFieldWithDefault(msg, 2, ""),
+<<<<<<< HEAD
+    priceCpu: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    priceBytes: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    currency: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    interval: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    suscriptionItemId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    invoiceId: jspb.Message.getFieldWithDefault(msg, 8, "")
+=======
     cancel: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
   };
 
   if (includeInstance) {
@@ -682,8 +691,33 @@ proto.payment.v1alpha1.Suscription.deserializeBinaryFromReader = function(msg, r
       msg.setPrice(value);
       break;
     case 3:
+<<<<<<< HEAD
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPriceCpu(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPriceBytes(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCurrency(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInterval(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSuscriptionItemId(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInvoiceId(value);
+=======
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCancel(value);
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
       break;
     default:
       reader.skipField();
@@ -725,6 +759,22 @@ proto.payment.v1alpha1.Suscription.serializeBinaryToWriter = function(message, w
   if (f.length > 0) {
     writer.writeString(
       2,
+<<<<<<< HEAD
+      f
+    );
+  }
+  f = message.getPriceCpu();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getPriceBytes();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+=======
       f
     );
   }
@@ -732,6 +782,35 @@ proto.payment.v1alpha1.Suscription.serializeBinaryToWriter = function(message, w
   if (f) {
     writer.writeBool(
       3,
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
+      f
+    );
+  }
+  f = message.getCurrency();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getInterval();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getSuscriptionItemId();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getInvoiceId();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -771,24 +850,130 @@ proto.payment.v1alpha1.Suscription.prototype.getPrice = function() {
  */
 proto.payment.v1alpha1.Suscription.prototype.setPrice = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+<<<<<<< HEAD
 };
 
 
 /**
+ * optional string price_cpu = 3;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Suscription.prototype.getPriceCpu = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Suscription} returns this
+ */
+proto.payment.v1alpha1.Suscription.prototype.setPriceCpu = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+=======
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
+};
+
+
+/**
+<<<<<<< HEAD
+ * optional string price_bytes = 4;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Suscription.prototype.getPriceBytes = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+=======
  * optional bool cancel = 3;
  * @return {boolean}
  */
 proto.payment.v1alpha1.Suscription.prototype.getCancel = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.payment.v1alpha1.Suscription} returns this
  */
+<<<<<<< HEAD
+proto.payment.v1alpha1.Suscription.prototype.setPriceBytes = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string currency = 5;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Suscription.prototype.getCurrency = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Suscription} returns this
+ */
+proto.payment.v1alpha1.Suscription.prototype.setCurrency = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string interval = 6;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Suscription.prototype.getInterval = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Suscription} returns this
+ */
+proto.payment.v1alpha1.Suscription.prototype.setInterval = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string suscription_item_id = 7;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Suscription.prototype.getSuscriptionItemId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Suscription} returns this
+ */
+proto.payment.v1alpha1.Suscription.prototype.setSuscriptionItemId = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string invoice_id = 8;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Suscription.prototype.getInvoiceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Suscription} returns this
+ */
+proto.payment.v1alpha1.Suscription.prototype.setInvoiceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+=======
 proto.payment.v1alpha1.Suscription.prototype.setCancel = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
 };
 
 
@@ -1346,8 +1531,11 @@ proto.payment.v1alpha1.Invoice.prototype.toObject = function(opt_includeInstance
 proto.payment.v1alpha1.Invoice.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    accountName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    invoiceId: jspb.Message.getFieldWithDefault(msg, 3, "")
+    amount: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    period: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    statuspay: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    date: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    product: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -1388,13 +1576,25 @@ proto.payment.v1alpha1.Invoice.deserializeBinaryFromReader = function(msg, reade
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAccountName(value);
-      break;
     case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setAmount(value);
+      break;
+    case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setInvoiceId(value);
+      msg.setPeriod(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatuspay(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDate(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProduct(value);
       break;
     default:
       reader.skipField();
@@ -1432,17 +1632,38 @@ proto.payment.v1alpha1.Invoice.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getAccountName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
+  f = message.getAmount();
+  if (f !== 0) {
+    writer.writeInt64(
+      3,
       f
     );
   }
-  f = message.getInvoiceId();
+  f = message.getPeriod();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      4,
+      f
+    );
+  }
+  f = message.getStatuspay();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getDate();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getProduct();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -1468,11 +1689,29 @@ proto.payment.v1alpha1.Invoice.prototype.setId = function(value) {
 
 
 /**
- * optional string account_name = 2;
+ * optional int64 amount = 3;
+ * @return {number}
+ */
+proto.payment.v1alpha1.Invoice.prototype.getAmount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.payment.v1alpha1.Invoice} returns this
+ */
+proto.payment.v1alpha1.Invoice.prototype.setAmount = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string period = 4;
  * @return {string}
  */
-proto.payment.v1alpha1.Invoice.prototype.getAccountName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.payment.v1alpha1.Invoice.prototype.getPeriod = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -1480,17 +1719,17 @@ proto.payment.v1alpha1.Invoice.prototype.getAccountName = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Invoice} returns this
  */
-proto.payment.v1alpha1.Invoice.prototype.setAccountName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.payment.v1alpha1.Invoice.prototype.setPeriod = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string invoice_id = 3;
+ * optional string statuspay = 5;
  * @return {string}
  */
-proto.payment.v1alpha1.Invoice.prototype.getInvoiceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.payment.v1alpha1.Invoice.prototype.getStatuspay = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -1498,8 +1737,44 @@ proto.payment.v1alpha1.Invoice.prototype.getInvoiceId = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Invoice} returns this
  */
-proto.payment.v1alpha1.Invoice.prototype.setInvoiceId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+proto.payment.v1alpha1.Invoice.prototype.setStatuspay = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string date = 6;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Invoice.prototype.getDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Invoice} returns this
+ */
+proto.payment.v1alpha1.Invoice.prototype.setDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string product = 7;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Invoice.prototype.getProduct = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Invoice} returns this
+ */
+proto.payment.v1alpha1.Invoice.prototype.setProduct = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -1536,7 +1811,12 @@ proto.payment.v1alpha1.Biling.prototype.toObject = function(opt_includeInstance)
 proto.payment.v1alpha1.Biling.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    listparams: jspb.Message.getFieldWithDefault(msg, 2, "")
+    accountName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    invoiceId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    totalusage: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    cpu: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    ram: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    mes: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -1579,7 +1859,27 @@ proto.payment.v1alpha1.Biling.deserializeBinaryFromReader = function(msg, reader
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setListparams(value);
+      msg.setAccountName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInvoiceId(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTotalusage(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setCpu(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setRam(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMes(value);
       break;
     default:
       reader.skipField();
@@ -1617,10 +1917,45 @@ proto.payment.v1alpha1.Biling.serializeBinaryToWriter = function(message, writer
       f
     );
   }
-  f = message.getListparams();
+  f = message.getAccountName();
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getInvoiceId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getTotalusage();
+  if (f !== 0) {
+    writer.writeInt64(
+      4,
+      f
+    );
+  }
+  f = message.getCpu();
+  if (f !== 0) {
+    writer.writeInt64(
+      5,
+      f
+    );
+  }
+  f = message.getRam();
+  if (f !== 0) {
+    writer.writeInt64(
+      6,
+      f
+    );
+  }
+  f = message.getMes();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -1646,10 +1981,10 @@ proto.payment.v1alpha1.Biling.prototype.setId = function(value) {
 
 
 /**
- * optional string listparams = 2;
+ * optional string account_name = 2;
  * @return {string}
  */
-proto.payment.v1alpha1.Biling.prototype.getListparams = function() {
+proto.payment.v1alpha1.Biling.prototype.getAccountName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1658,8 +1993,98 @@ proto.payment.v1alpha1.Biling.prototype.getListparams = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Biling} returns this
  */
-proto.payment.v1alpha1.Biling.prototype.setListparams = function(value) {
+proto.payment.v1alpha1.Biling.prototype.setAccountName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string invoice_id = 3;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Biling.prototype.getInvoiceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Biling} returns this
+ */
+proto.payment.v1alpha1.Biling.prototype.setInvoiceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional int64 totalusage = 4;
+ * @return {number}
+ */
+proto.payment.v1alpha1.Biling.prototype.getTotalusage = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.payment.v1alpha1.Biling} returns this
+ */
+proto.payment.v1alpha1.Biling.prototype.setTotalusage = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional int64 cpu = 5;
+ * @return {number}
+ */
+proto.payment.v1alpha1.Biling.prototype.getCpu = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.payment.v1alpha1.Biling} returns this
+ */
+proto.payment.v1alpha1.Biling.prototype.setCpu = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional int64 ram = 6;
+ * @return {number}
+ */
+proto.payment.v1alpha1.Biling.prototype.getRam = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.payment.v1alpha1.Biling} returns this
+ */
+proto.payment.v1alpha1.Biling.prototype.setRam = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * optional string mes = 7;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Biling.prototype.getMes = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Biling} returns this
+ */
+proto.payment.v1alpha1.Biling.prototype.setMes = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

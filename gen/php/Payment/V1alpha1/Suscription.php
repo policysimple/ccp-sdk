@@ -22,9 +22,33 @@ class Suscription extends \Google\Protobuf\Internal\Message
      */
     protected $price = '';
     /**
+<<<<<<< HEAD
+     * Generated from protobuf field <code>string price_cpu = 3 [json_name = "priceCpu"];</code>
+=======
      * Generated from protobuf field <code>bool cancel = 3 [json_name = "cancel"];</code>
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
      */
-    protected $cancel = false;
+    protected $price_cpu = '';
+    /**
+     * Generated from protobuf field <code>string price_bytes = 4 [json_name = "priceBytes"];</code>
+     */
+    protected $price_bytes = '';
+    /**
+     * Generated from protobuf field <code>string currency = 5 [json_name = "currency"];</code>
+     */
+    protected $currency = '';
+    /**
+     * Generated from protobuf field <code>string interval = 6 [json_name = "interval"];</code>
+     */
+    protected $interval = '';
+    /**
+     * Generated from protobuf field <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     */
+    protected $suscription_item_id = '';
+    /**
+     * Generated from protobuf field <code>string invoice_id = 8 [json_name = "invoiceId"];</code>
+     */
+    protected $invoice_id = '';
 
     /**
      * Constructor.
@@ -34,7 +58,12 @@ class Suscription extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $price
-     *     @type bool $cancel
+     *     @type string $price_cpu
+     *     @type string $price_bytes
+     *     @type string $currency
+     *     @type string $interval
+     *     @type string $suscription_item_id
+     *     @type string $invoice_id
      * }
      */
     public function __construct($data = NULL) {
@@ -87,23 +116,143 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
+<<<<<<< HEAD
+     * Generated from protobuf field <code>string price_cpu = 3 [json_name = "priceCpu"];</code>
+     * @return string
+=======
      * Generated from protobuf field <code>bool cancel = 3 [json_name = "cancel"];</code>
      * @return bool
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
      */
-    public function getCancel()
+    public function getPriceCpu()
     {
-        return $this->cancel;
+        return $this->price_cpu;
     }
 
     /**
+<<<<<<< HEAD
+     * Generated from protobuf field <code>string price_cpu = 3 [json_name = "priceCpu"];</code>
+     * @param string $var
+=======
      * Generated from protobuf field <code>bool cancel = 3 [json_name = "cancel"];</code>
      * @param bool $var
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
      * @return $this
      */
-    public function setCancel($var)
+    public function setPriceCpu($var)
     {
-        GPBUtil::checkBool($var);
-        $this->cancel = $var;
+        GPBUtil::checkString($var, True);
+        $this->price_cpu = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price_bytes = 4 [json_name = "priceBytes"];</code>
+     * @return string
+     */
+    public function getPriceBytes()
+    {
+        return $this->price_bytes;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price_bytes = 4 [json_name = "priceBytes"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPriceBytes($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->price_bytes = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string currency = 5 [json_name = "currency"];</code>
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->currency;
+    }
+
+    /**
+     * Generated from protobuf field <code>string currency = 5 [json_name = "currency"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCurrency($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->currency = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string interval = 6 [json_name = "interval"];</code>
+     * @return string
+     */
+    public function getInterval()
+    {
+        return $this->interval;
+    }
+
+    /**
+     * Generated from protobuf field <code>string interval = 6 [json_name = "interval"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInterval($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->interval = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     * @return string
+     */
+    public function getSuscriptionItemId()
+    {
+        return $this->suscription_item_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSuscriptionItemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->suscription_item_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string invoice_id = 8 [json_name = "invoiceId"];</code>
+     * @return string
+     */
+    public function getInvoiceId()
+    {
+        return $this->invoice_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string invoice_id = 8 [json_name = "invoiceId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInvoiceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->invoice_id = $var;
 
         return $this;
     }

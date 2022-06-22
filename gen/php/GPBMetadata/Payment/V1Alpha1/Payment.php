@@ -16,7 +16,8 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-ï
+Ñ
+
 payment/v1alpha1/payment.protopayment.v1alpha1"Ê
 Customer
 id (	Rid
@@ -26,11 +27,23 @@ class Payment
 suscription (2.payment.v1alpha1.SuscriptionRsuscription3
 payment (2.payment.v1alpha1.PaymentRpayment3
 invoice (2.payment.v1alpha1.InvoiceRinvoice0
-biling (2.payment.v1alpha1.BilingRbiling"K
+biling (2.payment.v1alpha1.BilingRbiling"ø
 Suscription
 id (	Rid
+<<<<<<< HEAD
+price (	Rprice
+	price_cpu (	RpriceCpu
+price_bytes (	R
+priceBytes
+currency (	Rcurrency
+interval (	Rinterval.
+suscription_item_id (	RsuscriptionItemId
+
+invoice_id (	R	invoiceId"
+=======
 price (	Rprice
 cancel (Rcancel"
+>>>>>>> b498c06a3e0dc3b1c303fd3e6634ee45211704b0
 Payment
 id (	Rid
 default (Rdefault
@@ -42,17 +55,25 @@ class Payment
 number (	Rnumber
 expmonth (	Rexpmonth
 expyear (	Rexpyear
-cvc (	Rcvc"[
+cvc (	Rcvc"•
 Invoice
+id (	Rid
+amount (Ramount
+period (	Rperiod
+	statuspay (	R	statuspay
+date (	Rdate
+product (	Rproduct"°
+Biling
 id (	Rid!
 account_name (	RaccountName
 
-invoice_id (	R	invoiceId"8
-Biling
-id (	Rid
+invoice_id (	R	invoiceId
 
-listparams (	R
-listparams">
+totalusage (R
+totalusage
+cpu (Rcpu
+ram (Rram
+mes (	Rmes">
 PaymentList/
 items (2.payment.v1alpha1.PaymentRitemsB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1bproto3'
         , true);
