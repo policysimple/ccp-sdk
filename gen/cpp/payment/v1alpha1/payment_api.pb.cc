@@ -119,7 +119,7 @@ struct GetCustomerResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetCustomerResponseDefaultTypeInternal _GetCustomerResponse_default_instance_;
 constexpr GetBilingMonthRequest::GetBilingMonthRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : suscription_item_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : invoice_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetBilingMonthRequestDefaultTypeInternal {
   constexpr GetBilingMonthRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -511,7 +511,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_5
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::GetBilingMonthRequest, suscription_item_id_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::GetBilingMonthRequest, invoice_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::GetBilingMonthResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -775,117 +775,117 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto[
   " \001(\tR\ncustomerId\"e\n\023GetCustomerResponse\022"
   "6\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.Cus"
   "tomerR\010customer\022\026\n\006status\030\002 \001(\tR\006status\""
-  "G\n\025GetBilingMonthRequest\022.\n\023suscription_"
-  "item_id\030\001 \001(\tR\021suscriptionItemId\"h\n\026GetB"
-  "ilingMonthResponse\0226\n\010customer\030\001 \001(\0132\032.p"
-  "ayment.v1alpha1.CustomerR\010customer\022\026\n\006st"
-  "atus\030\002 \001(\tR\006status\"5\n\022GetPaymentsRequest"
-  "\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\"b\n\023Get"
-  "PaymentsResponse\0223\n\007payment\030\001 \001(\0132\031.paym"
-  "ent.v1alpha1.PaymentR\007payment\022\026\n\006status\030"
-  "\002 \001(\tR\006status\"|\n\030UpdateSuscriptionReques"
-  "t\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\022\?\n\013su"
-  "scription\030\002 \001(\0132\035.payment.v1alpha1.Suscr"
-  "iptionR\013suscription\"t\n\031UpdateSuscription"
-  "Response\022\?\n\013suscription\030\001 \001(\0132\035.payment."
-  "v1alpha1.SuscriptionR\013suscription\022\026\n\006sta"
-  "tus\030\002 \001(\tR\006status\"|\n\030CreateSuscriptionRe"
-  "quest\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\022\?"
-  "\n\013suscription\030\002 \001(\0132\035.payment.v1alpha1.S"
-  "uscriptionR\013suscription\"k\n\031CreateSuscrip"
-  "tionResponse\0226\n\010customer\030\001 \001(\0132\032.payment"
-  ".v1alpha1.CustomerR\010customer\022\026\n\006status\030\002"
-  " \001(\tR\006status\"M\n\024CreateInvoiceRequest\022\035\n\n"
-  "invoice_id\030\001 \001(\tR\tinvoiceId\022\026\n\006status\030\002 "
-  "\001(\tR\006status\"g\n\025CreateInvoiceResponse\0226\n\010"
-  "customer\030\001 \001(\0132\032.payment.v1alpha1.Custom"
-  "erR\010customer\022\026\n\006status\030\004 \001(\tR\006status\"\?\n\021"
-  "CreateCardRequest\022*\n\004card\030\001 \001(\0132\026.paymen"
-  "t.v1alpha1.CardR\004card\"G\n\022CreateCardRespo"
-  "nse\022\031\n\010token_id\030\001 \001(\tR\007tokenId\022\026\n\006status"
-  "\030\002 \001(\tR\006status\"b\n\030CancelSuscriptionReque"
-  "st\022%\n\016suscription_id\030\001 \001(\tR\rsuscriptionI"
-  "d\022\037\n\013customer_id\030\002 \001(\tR\ncustomerId\"3\n\031Ca"
-  "ncelSuscriptionResponse\022\026\n\006status\030\001 \001(\tR"
-  "\006status\"O\n\025CreateCustomerRequest\0226\n\010cust"
-  "omer\030\001 \001(\0132\032.payment.v1alpha1.CustomerR\010"
-  "customer\"Q\n\026CreateCustomerResponse\022\037\n\013cu"
-  "stomer_id\030\001 \001(\tR\ncustomerId\022\026\n\006status\030\002 "
-  "\001(\tR\006status\"l\n\024CreatePaymentRequest\022\037\n\013c"
-  "ustomer_id\030\001 \001(\tR\ncustomerId\0223\n\007payment\030"
-  "\002 \001(\0132\031.payment.v1alpha1.PaymentR\007paymen"
-  "t\"H\n\025CreatePaymentResponse\022\027\n\007card_id\030\001 "
-  "\001(\tR\006cardId\022\026\n\006status\030\002 \001(\tR\006status\"l\n\024U"
-  "pdatePaymentRequest\022\037\n\013customer_id\030\001 \001(\t"
-  "R\ncustomerId\0223\n\007payment\030\002 \001(\0132\031.payment."
-  "v1alpha1.PaymentR\007payment\"d\n\025UpdatePayme"
-  "ntResponse\0223\n\007payment\030\001 \001(\0132\031.payment.v1"
-  "alpha1.PaymentR\007payment\022\026\n\006status\030\002 \001(\tR"
-  "\006status\"P\n\024DeletePaymentRequest\022\027\n\007card_"
-  "id\030\001 \001(\tR\006cardId\022\037\n\013customer_id\030\002 \001(\tR\nc"
-  "ustomerId\"/\n\025DeletePaymentResponse\022\026\n\006st"
-  "atus\030\001 \001(\tR\006status\"M\n\021GetPaymentRequest\022"
-  "\027\n\007card_id\030\001 \001(\tR\006cardId\022\037\n\013customer_id\030"
-  "\002 \001(\tR\ncustomerId\"a\n\022GetPaymentResponse\022"
+  "6\n\025GetBilingMonthRequest\022\035\n\ninvoice_id\030\001"
+  " \001(\tR\tinvoiceId\"h\n\026GetBilingMonthRespons"
+  "e\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.C"
+  "ustomerR\010customer\022\026\n\006status\030\002 \001(\tR\006statu"
+  "s\"5\n\022GetPaymentsRequest\022\037\n\013customer_id\030\001"
+  " \001(\tR\ncustomerId\"b\n\023GetPaymentsResponse\022"
   "3\n\007payment\030\001 \001(\0132\031.payment.v1alpha1.Paym"
-  "entR\007payment\022\026\n\006status\030\002 \001(\tR\006status\"5\n\022"
-  "ListPaymentRequest\022\037\n\013customer_id\030\001 \001(\tR"
-  "\ncustomerId\"b\n\023ListPaymentResponse\0223\n\007pa"
-  "yment\030\001 \001(\0132\031.payment.v1alpha1.PaymentR\007"
-  "payment\022\026\n\006status\030\002 \001(\tR\006status2\336\r\n\021Paym"
-  "entAPIService\022n\n\021CreateSuscription\022*.pay"
-  "ment.v1alpha1.CreateSuscriptionRequest\032+"
-  ".payment.v1alpha1.CreateSuscriptionRespo"
-  "nse\"\000\022Y\n\nCreateCard\022#.payment.v1alpha1.C"
-  "reateCardRequest\032$.payment.v1alpha1.Crea"
-  "teCardResponse\"\000\022n\n\021UpdateSuscription\022*."
-  "payment.v1alpha1.UpdateSuscriptionReques"
-  "t\032+.payment.v1alpha1.UpdateSuscriptionRe"
-  "sponse\"\000\022n\n\021CancelSuscription\022*.payment."
-  "v1alpha1.CancelSuscriptionRequest\032+.paym"
-  "ent.v1alpha1.CancelSuscriptionResponse\"\000"
-  "\022}\n\026GetOrganizationPayment\022/.payment.v1a"
-  "lpha1.GetOrganizationPaymentRequest\0320.pa"
-  "yment.v1alpha1.GetOrganizationPaymentRes"
-  "ponse\"\000\022e\n\016GetSuscription\022\'.payment.v1al"
-  "pha1.GetSuscriptionRequest\032(.payment.v1a"
-  "lpha1.GetSuscriptionResponse\"\000\022e\n\016Create"
-  "Customer\022\'.payment.v1alpha1.CreateCustom"
-  "erRequest\032(.payment.v1alpha1.CreateCusto"
-  "merResponse\"\000\022e\n\016DeleteCustomer\022\'.paymen"
-  "t.v1alpha1.DeleteCustomerRequest\032(.payme"
-  "nt.v1alpha1.DeleteCustomerResponse\"\000\022Y\n\n"
-  "GetPayment\022#.payment.v1alpha1.GetPayment"
-  "Request\032$.payment.v1alpha1.GetPaymentRes"
-  "ponse\"\000\022\\\n\013GetCustomer\022$.payment.v1alpha"
-  "1.GetCustomerRequest\032%.payment.v1alpha1."
-  "GetCustomerResponse\"\000\022e\n\016GetBilingMonth\022"
-  "\'.payment.v1alpha1.GetBilingMonthRequest"
-  "\032(.payment.v1alpha1.GetBilingMonthRespon"
-  "se\"\000\022\\\n\013GetPayments\022$.payment.v1alpha1.G"
-  "etPaymentsRequest\032%.payment.v1alpha1.Get"
-  "PaymentsResponse\"\000\022b\n\rCreatePayment\022&.pa"
-  "yment.v1alpha1.CreatePaymentRequest\032\'.pa"
-  "yment.v1alpha1.CreatePaymentResponse\"\000\022b"
-  "\n\rUpdatePayment\022&.payment.v1alpha1.Updat"
-  "ePaymentRequest\032\'.payment.v1alpha1.Updat"
-  "ePaymentResponse\"\000\022b\n\rDeletePayment\022&.pa"
-  "yment.v1alpha1.DeletePaymentRequest\032\'.pa"
-  "yment.v1alpha1.DeletePaymentResponse\"\000\022\\"
-  "\n\013ListPayment\022$.payment.v1alpha1.ListPay"
-  "mentRequest\032%.payment.v1alpha1.ListPayme"
-  "ntResponse\"\000\022b\n\rCreateInvoice\022&.payment."
-  "v1alpha1.CreateInvoiceRequest\032\'.payment."
-  "v1alpha1.CreateInvoiceResponse\"\000B8Z6gith"
-  "ub.com/cuemby/ccp-payment-service/paymen"
-  "t/v1alpha1b\006proto3"
+  "entR\007payment\022\026\n\006status\030\002 \001(\tR\006status\"|\n\030"
+  "UpdateSuscriptionRequest\022\037\n\013customer_id\030"
+  "\001 \001(\tR\ncustomerId\022\?\n\013suscription\030\002 \001(\0132\035"
+  ".payment.v1alpha1.SuscriptionR\013suscripti"
+  "on\"t\n\031UpdateSuscriptionResponse\022\?\n\013suscr"
+  "iption\030\001 \001(\0132\035.payment.v1alpha1.Suscript"
+  "ionR\013suscription\022\026\n\006status\030\002 \001(\tR\006status"
+  "\"|\n\030CreateSuscriptionRequest\022\037\n\013customer"
+  "_id\030\001 \001(\tR\ncustomerId\022\?\n\013suscription\030\002 \001"
+  "(\0132\035.payment.v1alpha1.SuscriptionR\013suscr"
+  "iption\"k\n\031CreateSuscriptionResponse\0226\n\010c"
+  "ustomer\030\001 \001(\0132\032.payment.v1alpha1.Custome"
+  "rR\010customer\022\026\n\006status\030\002 \001(\tR\006status\"M\n\024C"
+  "reateInvoiceRequest\022\035\n\ninvoice_id\030\001 \001(\tR"
+  "\tinvoiceId\022\026\n\006status\030\002 \001(\tR\006status\"g\n\025Cr"
+  "eateInvoiceResponse\0226\n\010customer\030\001 \001(\0132\032."
+  "payment.v1alpha1.CustomerR\010customer\022\026\n\006s"
+  "tatus\030\004 \001(\tR\006status\"\?\n\021CreateCardRequest"
+  "\022*\n\004card\030\001 \001(\0132\026.payment.v1alpha1.CardR\004"
+  "card\"G\n\022CreateCardResponse\022\031\n\010token_id\030\001"
+  " \001(\tR\007tokenId\022\026\n\006status\030\002 \001(\tR\006status\"b\n"
+  "\030CancelSuscriptionRequest\022%\n\016suscription"
+  "_id\030\001 \001(\tR\rsuscriptionId\022\037\n\013customer_id\030"
+  "\002 \001(\tR\ncustomerId\"3\n\031CancelSuscriptionRe"
+  "sponse\022\026\n\006status\030\001 \001(\tR\006status\"O\n\025Create"
+  "CustomerRequest\0226\n\010customer\030\001 \001(\0132\032.paym"
+  "ent.v1alpha1.CustomerR\010customer\"Q\n\026Creat"
+  "eCustomerResponse\022\037\n\013customer_id\030\001 \001(\tR\n"
+  "customerId\022\026\n\006status\030\002 \001(\tR\006status\"l\n\024Cr"
+  "eatePaymentRequest\022\037\n\013customer_id\030\001 \001(\tR"
+  "\ncustomerId\0223\n\007payment\030\002 \001(\0132\031.payment.v"
+  "1alpha1.PaymentR\007payment\"H\n\025CreatePaymen"
+  "tResponse\022\027\n\007card_id\030\001 \001(\tR\006cardId\022\026\n\006st"
+  "atus\030\002 \001(\tR\006status\"l\n\024UpdatePaymentReque"
+  "st\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\0223\n\007p"
+  "ayment\030\002 \001(\0132\031.payment.v1alpha1.PaymentR"
+  "\007payment\"d\n\025UpdatePaymentResponse\0223\n\007pay"
+  "ment\030\001 \001(\0132\031.payment.v1alpha1.PaymentR\007p"
+  "ayment\022\026\n\006status\030\002 \001(\tR\006status\"P\n\024Delete"
+  "PaymentRequest\022\027\n\007card_id\030\001 \001(\tR\006cardId\022"
+  "\037\n\013customer_id\030\002 \001(\tR\ncustomerId\"/\n\025Dele"
+  "tePaymentResponse\022\026\n\006status\030\001 \001(\tR\006statu"
+  "s\"M\n\021GetPaymentRequest\022\027\n\007card_id\030\001 \001(\tR"
+  "\006cardId\022\037\n\013customer_id\030\002 \001(\tR\ncustomerId"
+  "\"a\n\022GetPaymentResponse\0223\n\007payment\030\001 \001(\0132"
+  "\031.payment.v1alpha1.PaymentR\007payment\022\026\n\006s"
+  "tatus\030\002 \001(\tR\006status\"5\n\022ListPaymentReques"
+  "t\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\"b\n\023Li"
+  "stPaymentResponse\0223\n\007payment\030\001 \001(\0132\031.pay"
+  "ment.v1alpha1.PaymentR\007payment\022\026\n\006status"
+  "\030\002 \001(\tR\006status2\336\r\n\021PaymentAPIService\022n\n\021"
+  "CreateSuscription\022*.payment.v1alpha1.Cre"
+  "ateSuscriptionRequest\032+.payment.v1alpha1"
+  ".CreateSuscriptionResponse\"\000\022Y\n\nCreateCa"
+  "rd\022#.payment.v1alpha1.CreateCardRequest\032"
+  "$.payment.v1alpha1.CreateCardResponse\"\000\022"
+  "n\n\021UpdateSuscription\022*.payment.v1alpha1."
+  "UpdateSuscriptionRequest\032+.payment.v1alp"
+  "ha1.UpdateSuscriptionResponse\"\000\022n\n\021Cance"
+  "lSuscription\022*.payment.v1alpha1.CancelSu"
+  "scriptionRequest\032+.payment.v1alpha1.Canc"
+  "elSuscriptionResponse\"\000\022}\n\026GetOrganizati"
+  "onPayment\022/.payment.v1alpha1.GetOrganiza"
+  "tionPaymentRequest\0320.payment.v1alpha1.Ge"
+  "tOrganizationPaymentResponse\"\000\022e\n\016GetSus"
+  "cription\022\'.payment.v1alpha1.GetSuscripti"
+  "onRequest\032(.payment.v1alpha1.GetSuscript"
+  "ionResponse\"\000\022e\n\016CreateCustomer\022\'.paymen"
+  "t.v1alpha1.CreateCustomerRequest\032(.payme"
+  "nt.v1alpha1.CreateCustomerResponse\"\000\022e\n\016"
+  "DeleteCustomer\022\'.payment.v1alpha1.Delete"
+  "CustomerRequest\032(.payment.v1alpha1.Delet"
+  "eCustomerResponse\"\000\022Y\n\nGetPayment\022#.paym"
+  "ent.v1alpha1.GetPaymentRequest\032$.payment"
+  ".v1alpha1.GetPaymentResponse\"\000\022\\\n\013GetCus"
+  "tomer\022$.payment.v1alpha1.GetCustomerRequ"
+  "est\032%.payment.v1alpha1.GetCustomerRespon"
+  "se\"\000\022e\n\016GetBilingMonth\022\'.payment.v1alpha"
+  "1.GetBilingMonthRequest\032(.payment.v1alph"
+  "a1.GetBilingMonthResponse\"\000\022\\\n\013GetPaymen"
+  "ts\022$.payment.v1alpha1.GetPaymentsRequest"
+  "\032%.payment.v1alpha1.GetPaymentsResponse\""
+  "\000\022b\n\rCreatePayment\022&.payment.v1alpha1.Cr"
+  "eatePaymentRequest\032\'.payment.v1alpha1.Cr"
+  "eatePaymentResponse\"\000\022b\n\rUpdatePayment\022&"
+  ".payment.v1alpha1.UpdatePaymentRequest\032\'"
+  ".payment.v1alpha1.UpdatePaymentResponse\""
+  "\000\022b\n\rDeletePayment\022&.payment.v1alpha1.De"
+  "letePaymentRequest\032\'.payment.v1alpha1.De"
+  "letePaymentResponse\"\000\022\\\n\013ListPayment\022$.p"
+  "ayment.v1alpha1.ListPaymentRequest\032%.pay"
+  "ment.v1alpha1.ListPaymentResponse\"\000\022b\n\rC"
+  "reateInvoice\022&.payment.v1alpha1.CreateIn"
+  "voiceRequest\032\'.payment.v1alpha1.CreateIn"
+  "voiceResponse\"\000B8Z6github.com/cuemby/ccp"
+  "-payment-service/payment/v1alpha1b\006proto"
+  "3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_deps[1] = {
   &::descriptor_table_payment_2fv1alpha1_2fpayment_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto = {
-  false, false, 4858, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto, "payment/v1alpha1/payment_api.proto", 
+  false, false, 4841, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto, "payment/v1alpha1/payment_api.proto", 
   &descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_once, descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_deps, 1, 34,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_5fapi_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_5fapi_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_5fapi_2eproto,
@@ -2646,16 +2646,16 @@ GetBilingMonthRequest::GetBilingMonthRequest(::PROTOBUF_NAMESPACE_ID::Arena* are
 GetBilingMonthRequest::GetBilingMonthRequest(const GetBilingMonthRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  suscription_item_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_suscription_item_id().empty()) {
-    suscription_item_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_suscription_item_id(), 
+  invoice_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_invoice_id().empty()) {
+    invoice_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_invoice_id(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.GetBilingMonthRequest)
 }
 
 inline void GetBilingMonthRequest::SharedCtor() {
-suscription_item_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+invoice_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 GetBilingMonthRequest::~GetBilingMonthRequest() {
@@ -2667,7 +2667,7 @@ GetBilingMonthRequest::~GetBilingMonthRequest() {
 
 inline void GetBilingMonthRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  suscription_item_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  invoice_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetBilingMonthRequest::ArenaDtor(void* object) {
@@ -2686,7 +2686,7 @@ void GetBilingMonthRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  suscription_item_id_.ClearToEmpty();
+  invoice_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2696,12 +2696,12 @@ const char* GetBilingMonthRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string suscription_item_id = 1 [json_name = "suscriptionItemId"];
+      // string invoice_id = 1 [json_name = "invoiceId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_suscription_item_id();
+          auto str = _internal_mutable_invoice_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.GetBilingMonthRequest.suscription_item_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.GetBilingMonthRequest.invoice_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2734,14 +2734,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string suscription_item_id = 1 [json_name = "suscriptionItemId"];
-  if (!this->_internal_suscription_item_id().empty()) {
+  // string invoice_id = 1 [json_name = "invoiceId"];
+  if (!this->_internal_invoice_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_suscription_item_id().data(), static_cast<int>(this->_internal_suscription_item_id().length()),
+      this->_internal_invoice_id().data(), static_cast<int>(this->_internal_invoice_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.GetBilingMonthRequest.suscription_item_id");
+      "payment.v1alpha1.GetBilingMonthRequest.invoice_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_suscription_item_id(), target);
+        1, this->_internal_invoice_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2760,11 +2760,11 @@ size_t GetBilingMonthRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string suscription_item_id = 1 [json_name = "suscriptionItemId"];
-  if (!this->_internal_suscription_item_id().empty()) {
+  // string invoice_id = 1 [json_name = "invoiceId"];
+  if (!this->_internal_invoice_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_suscription_item_id());
+        this->_internal_invoice_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2795,8 +2795,8 @@ void GetBilingMonthRequest::MergeFrom(const GetBilingMonthRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_suscription_item_id().empty()) {
-    _internal_set_suscription_item_id(from._internal_suscription_item_id());
+  if (!from._internal_invoice_id().empty()) {
+    _internal_set_invoice_id(from._internal_invoice_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2817,8 +2817,8 @@ void GetBilingMonthRequest::InternalSwap(GetBilingMonthRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &suscription_item_id_, GetArenaForAllocation(),
-      &other->suscription_item_id_, other->GetArenaForAllocation()
+      &invoice_id_, GetArenaForAllocation(),
+      &other->invoice_id_, other->GetArenaForAllocation()
   );
 }
 

@@ -63,7 +63,7 @@ message GetCustomerResponse {
 }
 
 message GetBilingMonthRequest {
-    string suscription_item_id = 1;
+    string invoice_id = 1;
 }
 
 message GetBilingMonthResponse {

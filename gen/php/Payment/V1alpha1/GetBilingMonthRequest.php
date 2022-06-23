@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetBilingMonthRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
+     * Generated from protobuf field <code>string invoice_id = 1 [json_name = "invoiceId"];</code>
      */
-    protected $suscription_item_id = '';
+    protected $invoice_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class GetBilingMonthRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $suscription_item_id
+     *     @type string $invoice_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class GetBilingMonthRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
+     * Generated from protobuf field <code>string invoice_id = 1 [json_name = "invoiceId"];</code>
      * @return string
      */
-    public function getSuscriptionItemId()
+    public function getInvoiceId()
     {
-        return $this->suscription_item_id;
+        return $this->invoice_id;
     }
 
     /**
-     * Generated from protobuf field <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
+     * Generated from protobuf field <code>string invoice_id = 1 [json_name = "invoiceId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setSuscriptionItemId($var)
+    public function setInvoiceId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->suscription_item_id = $var;
+        $this->invoice_id = $var;
 
         return $this;
     }
