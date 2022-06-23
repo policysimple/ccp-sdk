@@ -38,9 +38,9 @@ class Suscription extends \Google\Protobuf\Internal\Message
      */
     protected $interval = '';
     /**
-     * Generated from protobuf field <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     * Generated from protobuf field <code>map<string, string> suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
      */
-    protected $suscription_item_id = '';
+    private $suscription_item_id;
     /**
      * Generated from protobuf field <code>string invoice_id = 8 [json_name = "invoiceId"];</code>
      */
@@ -58,7 +58,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
      *     @type string $price_bytes
      *     @type string $currency
      *     @type string $interval
-     *     @type string $suscription_item_id
+     *     @type array|\Google\Protobuf\Internal\MapField $suscription_item_id
      *     @type string $invoice_id
      * }
      */
@@ -200,8 +200,8 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
-     * @return string
+     * Generated from protobuf field <code>map<string, string> suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     * @return \Google\Protobuf\Internal\MapField
      */
     public function getSuscriptionItemId()
     {
@@ -209,14 +209,14 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>map<string, string> suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
     public function setSuscriptionItemId($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->suscription_item_id = $var;
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->suscription_item_id = $arr;
 
         return $this;
     }

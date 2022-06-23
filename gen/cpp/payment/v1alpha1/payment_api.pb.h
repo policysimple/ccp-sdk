@@ -5324,7 +5324,6 @@ class ListPaymentRequest final :
 
   enum : int {
     kCustomerIdFieldNumber = 1,
-    kSuscriptionIdFieldNumber = 2,
   };
   // string customer_id = 1 [json_name = "customerId"];
   void clear_customer_id();
@@ -5340,20 +5339,6 @@ class ListPaymentRequest final :
   std::string* _internal_mutable_customer_id();
   public:
 
-  // string suscription_id = 2 [json_name = "suscriptionId"];
-  void clear_suscription_id();
-  const std::string& suscription_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_suscription_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_suscription_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_suscription_id();
-  void set_allocated_suscription_id(std::string* suscription_id);
-  private:
-  const std::string& _internal_suscription_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_suscription_id(const std::string& value);
-  std::string* _internal_mutable_suscription_id();
-  public:
-
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.ListPaymentRequest)
  private:
   class _Internal;
@@ -5362,7 +5347,6 @@ class ListPaymentRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr customer_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr suscription_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 };
@@ -5484,7 +5468,7 @@ class ListPaymentResponse final :
 
   enum : int {
     kStatusFieldNumber = 2,
-    kPaymentListFieldNumber = 1,
+    kPaymentFieldNumber = 1,
   };
   // string status = 2 [json_name = "status"];
   void clear_status();
@@ -5500,23 +5484,23 @@ class ListPaymentResponse final :
   std::string* _internal_mutable_status();
   public:
 
-  // .payment.v1alpha1.PaymentList payment_list = 1 [json_name = "paymentList"];
-  bool has_payment_list() const;
+  // .payment.v1alpha1.Payment payment = 1 [json_name = "payment"];
+  bool has_payment() const;
   private:
-  bool _internal_has_payment_list() const;
+  bool _internal_has_payment() const;
   public:
-  void clear_payment_list();
-  const ::payment::v1alpha1::PaymentList& payment_list() const;
-  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::PaymentList* release_payment_list();
-  ::payment::v1alpha1::PaymentList* mutable_payment_list();
-  void set_allocated_payment_list(::payment::v1alpha1::PaymentList* payment_list);
+  void clear_payment();
+  const ::payment::v1alpha1::Payment& payment() const;
+  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::Payment* release_payment();
+  ::payment::v1alpha1::Payment* mutable_payment();
+  void set_allocated_payment(::payment::v1alpha1::Payment* payment);
   private:
-  const ::payment::v1alpha1::PaymentList& _internal_payment_list() const;
-  ::payment::v1alpha1::PaymentList* _internal_mutable_payment_list();
+  const ::payment::v1alpha1::Payment& _internal_payment() const;
+  ::payment::v1alpha1::Payment* _internal_mutable_payment();
   public:
-  void unsafe_arena_set_allocated_payment_list(
-      ::payment::v1alpha1::PaymentList* payment_list);
-  ::payment::v1alpha1::PaymentList* unsafe_arena_release_payment_list();
+  void unsafe_arena_set_allocated_payment(
+      ::payment::v1alpha1::Payment* payment);
+  ::payment::v1alpha1::Payment* unsafe_arena_release_payment();
 
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.ListPaymentResponse)
  private:
@@ -5526,7 +5510,7 @@ class ListPaymentResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
-  ::payment::v1alpha1::PaymentList* payment_list_;
+  ::payment::v1alpha1::Payment* payment_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 };
@@ -8807,89 +8791,43 @@ inline void ListPaymentRequest::set_allocated_customer_id(std::string* customer_
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ListPaymentRequest.customer_id)
 }
 
-// string suscription_id = 2 [json_name = "suscriptionId"];
-inline void ListPaymentRequest::clear_suscription_id() {
-  suscription_id_.ClearToEmpty();
-}
-inline const std::string& ListPaymentRequest::suscription_id() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.ListPaymentRequest.suscription_id)
-  return _internal_suscription_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void ListPaymentRequest::set_suscription_id(ArgT0&& arg0, ArgT... args) {
- 
- suscription_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.ListPaymentRequest.suscription_id)
-}
-inline std::string* ListPaymentRequest::mutable_suscription_id() {
-  std::string* _s = _internal_mutable_suscription_id();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ListPaymentRequest.suscription_id)
-  return _s;
-}
-inline const std::string& ListPaymentRequest::_internal_suscription_id() const {
-  return suscription_id_.Get();
-}
-inline void ListPaymentRequest::_internal_set_suscription_id(const std::string& value) {
-  
-  suscription_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* ListPaymentRequest::_internal_mutable_suscription_id() {
-  
-  return suscription_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* ListPaymentRequest::release_suscription_id() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.ListPaymentRequest.suscription_id)
-  return suscription_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void ListPaymentRequest::set_allocated_suscription_id(std::string* suscription_id) {
-  if (suscription_id != nullptr) {
-    
-  } else {
-    
-  }
-  suscription_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), suscription_id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ListPaymentRequest.suscription_id)
-}
-
 // -------------------------------------------------------------------
 
 // ListPaymentResponse
 
-// .payment.v1alpha1.PaymentList payment_list = 1 [json_name = "paymentList"];
-inline bool ListPaymentResponse::_internal_has_payment_list() const {
-  return this != internal_default_instance() && payment_list_ != nullptr;
+// .payment.v1alpha1.Payment payment = 1 [json_name = "payment"];
+inline bool ListPaymentResponse::_internal_has_payment() const {
+  return this != internal_default_instance() && payment_ != nullptr;
 }
-inline bool ListPaymentResponse::has_payment_list() const {
-  return _internal_has_payment_list();
+inline bool ListPaymentResponse::has_payment() const {
+  return _internal_has_payment();
 }
-inline const ::payment::v1alpha1::PaymentList& ListPaymentResponse::_internal_payment_list() const {
-  const ::payment::v1alpha1::PaymentList* p = payment_list_;
-  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::PaymentList&>(
-      ::payment::v1alpha1::_PaymentList_default_instance_);
+inline const ::payment::v1alpha1::Payment& ListPaymentResponse::_internal_payment() const {
+  const ::payment::v1alpha1::Payment* p = payment_;
+  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::Payment&>(
+      ::payment::v1alpha1::_Payment_default_instance_);
 }
-inline const ::payment::v1alpha1::PaymentList& ListPaymentResponse::payment_list() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.ListPaymentResponse.payment_list)
-  return _internal_payment_list();
+inline const ::payment::v1alpha1::Payment& ListPaymentResponse::payment() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.ListPaymentResponse.payment)
+  return _internal_payment();
 }
-inline void ListPaymentResponse::unsafe_arena_set_allocated_payment_list(
-    ::payment::v1alpha1::PaymentList* payment_list) {
+inline void ListPaymentResponse::unsafe_arena_set_allocated_payment(
+    ::payment::v1alpha1::Payment* payment) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(payment_list_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(payment_);
   }
-  payment_list_ = payment_list;
-  if (payment_list) {
+  payment_ = payment;
+  if (payment) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.ListPaymentResponse.payment_list)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.ListPaymentResponse.payment)
 }
-inline ::payment::v1alpha1::PaymentList* ListPaymentResponse::release_payment_list() {
+inline ::payment::v1alpha1::Payment* ListPaymentResponse::release_payment() {
   
-  ::payment::v1alpha1::PaymentList* temp = payment_list_;
-  payment_list_ = nullptr;
+  ::payment::v1alpha1::Payment* temp = payment_;
+  payment_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -8901,46 +8839,46 @@ inline ::payment::v1alpha1::PaymentList* ListPaymentResponse::release_payment_li
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::payment::v1alpha1::PaymentList* ListPaymentResponse::unsafe_arena_release_payment_list() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.ListPaymentResponse.payment_list)
+inline ::payment::v1alpha1::Payment* ListPaymentResponse::unsafe_arena_release_payment() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.ListPaymentResponse.payment)
   
-  ::payment::v1alpha1::PaymentList* temp = payment_list_;
-  payment_list_ = nullptr;
+  ::payment::v1alpha1::Payment* temp = payment_;
+  payment_ = nullptr;
   return temp;
 }
-inline ::payment::v1alpha1::PaymentList* ListPaymentResponse::_internal_mutable_payment_list() {
+inline ::payment::v1alpha1::Payment* ListPaymentResponse::_internal_mutable_payment() {
   
-  if (payment_list_ == nullptr) {
-    auto* p = CreateMaybeMessage<::payment::v1alpha1::PaymentList>(GetArenaForAllocation());
-    payment_list_ = p;
+  if (payment_ == nullptr) {
+    auto* p = CreateMaybeMessage<::payment::v1alpha1::Payment>(GetArenaForAllocation());
+    payment_ = p;
   }
-  return payment_list_;
+  return payment_;
 }
-inline ::payment::v1alpha1::PaymentList* ListPaymentResponse::mutable_payment_list() {
-  ::payment::v1alpha1::PaymentList* _msg = _internal_mutable_payment_list();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ListPaymentResponse.payment_list)
+inline ::payment::v1alpha1::Payment* ListPaymentResponse::mutable_payment() {
+  ::payment::v1alpha1::Payment* _msg = _internal_mutable_payment();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ListPaymentResponse.payment)
   return _msg;
 }
-inline void ListPaymentResponse::set_allocated_payment_list(::payment::v1alpha1::PaymentList* payment_list) {
+inline void ListPaymentResponse::set_allocated_payment(::payment::v1alpha1::Payment* payment) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(payment_list_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(payment_);
   }
-  if (payment_list) {
+  if (payment) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(payment_list));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(payment));
     if (message_arena != submessage_arena) {
-      payment_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, payment_list, submessage_arena);
+      payment = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, payment, submessage_arena);
     }
     
   } else {
     
   }
-  payment_list_ = payment_list;
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ListPaymentResponse.payment_list)
+  payment_ = payment;
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ListPaymentResponse.payment)
 }
 
 // string status = 2 [json_name = "status"];
