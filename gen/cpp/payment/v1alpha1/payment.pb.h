@@ -30,9 +30,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/map.h>  // IWYU pragma: export
-#include <google/protobuf/map_entry.h>
-#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -49,7 +46,7 @@ struct TableStruct_payment_2fv1alpha1_2fpayment_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -79,9 +76,6 @@ extern PaymentListDefaultTypeInternal _PaymentList_default_instance_;
 class Suscription;
 struct SuscriptionDefaultTypeInternal;
 extern SuscriptionDefaultTypeInternal _Suscription_default_instance_;
-class Suscription_SuscriptionItemIdEntry_DoNotUse;
-struct Suscription_SuscriptionItemIdEntry_DoNotUseDefaultTypeInternal;
-extern Suscription_SuscriptionItemIdEntry_DoNotUseDefaultTypeInternal _Suscription_SuscriptionItemIdEntry_DoNotUse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace payment
 PROTOBUF_NAMESPACE_OPEN
@@ -92,7 +86,6 @@ template<> ::payment::v1alpha1::Invoice* Arena::CreateMaybeMessage<::payment::v1
 template<> ::payment::v1alpha1::Payment* Arena::CreateMaybeMessage<::payment::v1alpha1::Payment>(Arena*);
 template<> ::payment::v1alpha1::PaymentList* Arena::CreateMaybeMessage<::payment::v1alpha1::PaymentList>(Arena*);
 template<> ::payment::v1alpha1::Suscription* Arena::CreateMaybeMessage<::payment::v1alpha1::Suscription>(Arena*);
-template<> ::payment::v1alpha1::Suscription_SuscriptionItemIdEntry_DoNotUse* Arena::CreateMaybeMessage<::payment::v1alpha1::Suscription_SuscriptionItemIdEntry_DoNotUse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace payment {
 namespace v1alpha1 {
@@ -366,33 +359,6 @@ class Customer final :
 };
 // -------------------------------------------------------------------
 
-class Suscription_SuscriptionItemIdEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Suscription_SuscriptionItemIdEntry_DoNotUse, 
-    std::string, std::string,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
-public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Suscription_SuscriptionItemIdEntry_DoNotUse, 
-    std::string, std::string,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
-  Suscription_SuscriptionItemIdEntry_DoNotUse();
-  explicit constexpr Suscription_SuscriptionItemIdEntry_DoNotUse(
-      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-  explicit Suscription_SuscriptionItemIdEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const Suscription_SuscriptionItemIdEntry_DoNotUse& other);
-  static const Suscription_SuscriptionItemIdEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Suscription_SuscriptionItemIdEntry_DoNotUse*>(&_Suscription_SuscriptionItemIdEntry_DoNotUse_default_instance_); }
-  static bool ValidateKey(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "payment.v1alpha1.Suscription.SuscriptionItemIdEntry.key");
- }
-  static bool ValidateValue(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "payment.v1alpha1.Suscription.SuscriptionItemIdEntry.value");
- }
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-};
-
-// -------------------------------------------------------------------
-
 class Suscription final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.Suscription) */ {
  public:
@@ -437,7 +403,7 @@ class Suscription final :
                &_Suscription_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    1;
 
   friend void swap(Suscription& a, Suscription& b) {
     a.Swap(&b);
@@ -505,36 +471,18 @@ class Suscription final :
 
   // nested types ----------------------------------------------------
 
-
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSuscriptionItemIdFieldNumber = 7,
     kIdFieldNumber = 1,
     kPriceFieldNumber = 2,
     kPriceCpuFieldNumber = 3,
     kPriceBytesFieldNumber = 4,
     kCurrencyFieldNumber = 5,
     kIntervalFieldNumber = 6,
+    kSuscriptionItemIdFieldNumber = 7,
     kInvoiceIdFieldNumber = 8,
   };
-  // map<string, string> suscription_item_id = 7 [json_name = "suscriptionItemId"];
-  int suscription_item_id_size() const;
-  private:
-  int _internal_suscription_item_id_size() const;
-  public:
-  void clear_suscription_item_id();
-  private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      _internal_suscription_item_id() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      _internal_mutable_suscription_item_id();
-  public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      suscription_item_id() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      mutable_suscription_item_id();
-
   // string id = 1 [json_name = "id"];
   void clear_id();
   const std::string& id() const;
@@ -619,6 +567,20 @@ class Suscription final :
   std::string* _internal_mutable_interval();
   public:
 
+  // string suscription_item_id = 7 [json_name = "suscriptionItemId"];
+  void clear_suscription_item_id();
+  const std::string& suscription_item_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_suscription_item_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_suscription_item_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_suscription_item_id();
+  void set_allocated_suscription_item_id(std::string* suscription_item_id);
+  private:
+  const std::string& _internal_suscription_item_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_suscription_item_id(const std::string& value);
+  std::string* _internal_mutable_suscription_item_id();
+  public:
+
   // string invoice_id = 8 [json_name = "invoiceId"];
   void clear_invoice_id();
   const std::string& invoice_id() const;
@@ -640,17 +602,13 @@ class Suscription final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-      Suscription_SuscriptionItemIdEntry_DoNotUse,
-      std::string, std::string,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> suscription_item_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_cpu_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_bytes_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr currency_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr interval_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr suscription_item_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invoice_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_2eproto;
@@ -701,7 +659,7 @@ class Payment final :
                &_Payment_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    2;
 
   friend void swap(Payment& a, Payment& b) {
     a.Swap(&b);
@@ -903,7 +861,7 @@ class Card final :
                &_Card_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
   friend void swap(Card& a, Card& b) {
     a.Swap(&b);
@@ -1111,7 +1069,7 @@ class Invoice final :
                &_Invoice_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    4;
 
   friend void swap(Invoice& a, Invoice& b) {
     a.Swap(&b);
@@ -1330,7 +1288,7 @@ class Biling final :
                &_Biling_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   friend void swap(Biling& a, Biling& b) {
     a.Swap(&b);
@@ -1555,7 +1513,7 @@ class PaymentList final :
                &_PaymentList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   friend void swap(PaymentList& a, PaymentList& b) {
     a.Swap(&b);
@@ -2138,8 +2096,6 @@ inline void Customer::set_allocated_biling(::payment::v1alpha1::Biling* biling) 
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
 // Suscription
 
 // string id = 1 [json_name = "id"];
@@ -2418,33 +2374,50 @@ inline void Suscription::set_allocated_interval(std::string* interval) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Suscription.interval)
 }
 
-// map<string, string> suscription_item_id = 7 [json_name = "suscriptionItemId"];
-inline int Suscription::_internal_suscription_item_id_size() const {
-  return suscription_item_id_.size();
-}
-inline int Suscription::suscription_item_id_size() const {
-  return _internal_suscription_item_id_size();
-}
+// string suscription_item_id = 7 [json_name = "suscriptionItemId"];
 inline void Suscription::clear_suscription_item_id() {
-  suscription_item_id_.Clear();
+  suscription_item_id_.ClearToEmpty();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-Suscription::_internal_suscription_item_id() const {
-  return suscription_item_id_.GetMap();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-Suscription::suscription_item_id() const {
-  // @@protoc_insertion_point(field_map:payment.v1alpha1.Suscription.suscription_item_id)
+inline const std::string& Suscription::suscription_item_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Suscription.suscription_item_id)
   return _internal_suscription_item_id();
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-Suscription::_internal_mutable_suscription_item_id() {
-  return suscription_item_id_.MutableMap();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Suscription::set_suscription_item_id(ArgT0&& arg0, ArgT... args) {
+ 
+ suscription_item_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Suscription.suscription_item_id)
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-Suscription::mutable_suscription_item_id() {
-  // @@protoc_insertion_point(field_mutable_map:payment.v1alpha1.Suscription.suscription_item_id)
-  return _internal_mutable_suscription_item_id();
+inline std::string* Suscription::mutable_suscription_item_id() {
+  std::string* _s = _internal_mutable_suscription_item_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Suscription.suscription_item_id)
+  return _s;
+}
+inline const std::string& Suscription::_internal_suscription_item_id() const {
+  return suscription_item_id_.Get();
+}
+inline void Suscription::_internal_set_suscription_item_id(const std::string& value) {
+  
+  suscription_item_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Suscription::_internal_mutable_suscription_item_id() {
+  
+  return suscription_item_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Suscription::release_suscription_item_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Suscription.suscription_item_id)
+  return suscription_item_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Suscription::set_allocated_suscription_item_id(std::string* suscription_item_id) {
+  if (suscription_item_id != nullptr) {
+    
+  } else {
+    
+  }
+  suscription_item_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), suscription_item_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Suscription.suscription_item_id)
 }
 
 // string invoice_id = 8 [json_name = "invoiceId"];
@@ -3502,8 +3475,6 @@ PaymentList::items() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -2013,38 +2013,16 @@ public final class PaymentOuterClass {
         getIntervalBytes();
 
     /**
-     * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     * <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     * @return The suscriptionItemId.
      */
-    int getSuscriptionItemIdCount();
+    java.lang.String getSuscriptionItemId();
     /**
-     * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     * <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     * @return The bytes for suscriptionItemId.
      */
-    boolean containsSuscriptionItemId(
-        java.lang.String key);
-    /**
-     * Use {@link #getSuscriptionItemIdMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getSuscriptionItemId();
-    /**
-     * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getSuscriptionItemIdMap();
-    /**
-     * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
-     */
-
-    java.lang.String getSuscriptionItemIdOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
-     */
-
-    java.lang.String getSuscriptionItemIdOrThrow(
-        java.lang.String key);
+    com.google.protobuf.ByteString
+        getSuscriptionItemIdBytes();
 
     /**
      * <code>string invoice_id = 8 [json_name = "invoiceId"];</code>
@@ -2077,6 +2055,7 @@ public final class PaymentOuterClass {
       priceBytes_ = "";
       currency_ = "";
       interval_ = "";
+      suscriptionItemId_ = "";
       invoiceId_ = "";
     }
 
@@ -2100,7 +2079,6 @@ public final class PaymentOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2148,16 +2126,9 @@ public final class PaymentOuterClass {
               break;
             }
             case 58: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                suscriptionItemId_ = com.google.protobuf.MapField.newMapField(
-                    SuscriptionItemIdDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              suscriptionItemId__ = input.readMessage(
-                  SuscriptionItemIdDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              suscriptionItemId_.getMutableMap().put(
-                  suscriptionItemId__.getKey(), suscriptionItemId__.getValue());
+              java.lang.String s = input.readStringRequireUtf8();
+
+              suscriptionItemId_ = s;
               break;
             }
             case 66: {
@@ -2190,18 +2161,6 @@ public final class PaymentOuterClass {
       return payment.v1alpha1.PaymentOuterClass.internal_static_payment_v1alpha1_Suscription_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 7:
-          return internalGetSuscriptionItemId();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -2439,84 +2398,41 @@ public final class PaymentOuterClass {
     }
 
     public static final int SUSCRIPTION_ITEM_ID_FIELD_NUMBER = 7;
-    private static final class SuscriptionItemIdDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  payment.v1alpha1.PaymentOuterClass.internal_static_payment_v1alpha1_Suscription_SuscriptionItemIdEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> suscriptionItemId_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetSuscriptionItemId() {
-      if (suscriptionItemId_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            SuscriptionItemIdDefaultEntryHolder.defaultEntry);
+    private volatile java.lang.Object suscriptionItemId_;
+    /**
+     * <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     * @return The suscriptionItemId.
+     */
+    @java.lang.Override
+    public java.lang.String getSuscriptionItemId() {
+      java.lang.Object ref = suscriptionItemId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        suscriptionItemId_ = s;
+        return s;
       }
-      return suscriptionItemId_;
-    }
-
-    public int getSuscriptionItemIdCount() {
-      return internalGetSuscriptionItemId().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
-     */
-
-    @java.lang.Override
-    public boolean containsSuscriptionItemId(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetSuscriptionItemId().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getSuscriptionItemIdMap()} instead.
+     * <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     * @return The bytes for suscriptionItemId.
      */
     @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getSuscriptionItemId() {
-      return getSuscriptionItemIdMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
-     */
-    @java.lang.Override
-
-    public java.util.Map<java.lang.String, java.lang.String> getSuscriptionItemIdMap() {
-      return internalGetSuscriptionItemId().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
-     */
-    @java.lang.Override
-
-    public java.lang.String getSuscriptionItemIdOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetSuscriptionItemId().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
-     */
-    @java.lang.Override
-
-    public java.lang.String getSuscriptionItemIdOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetSuscriptionItemId().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
+    public com.google.protobuf.ByteString
+        getSuscriptionItemIdBytes() {
+      java.lang.Object ref = suscriptionItemId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        suscriptionItemId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
-      return map.get(key);
     }
 
     public static final int INVOICE_ID_FIELD_NUMBER = 8;
@@ -2589,12 +2505,9 @@ public final class PaymentOuterClass {
       if (!getIntervalBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, interval_);
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetSuscriptionItemId(),
-          SuscriptionItemIdDefaultEntryHolder.defaultEntry,
-          7);
+      if (!getSuscriptionItemIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, suscriptionItemId_);
+      }
       if (!getInvoiceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, invoiceId_);
       }
@@ -2625,15 +2538,8 @@ public final class PaymentOuterClass {
       if (!getIntervalBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, interval_);
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetSuscriptionItemId().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        suscriptionItemId__ = SuscriptionItemIdDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(7, suscriptionItemId__);
+      if (!getSuscriptionItemIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, suscriptionItemId_);
       }
       if (!getInvoiceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, invoiceId_);
@@ -2665,8 +2571,8 @@ public final class PaymentOuterClass {
           .equals(other.getCurrency())) return false;
       if (!getInterval()
           .equals(other.getInterval())) return false;
-      if (!internalGetSuscriptionItemId().equals(
-          other.internalGetSuscriptionItemId())) return false;
+      if (!getSuscriptionItemId()
+          .equals(other.getSuscriptionItemId())) return false;
       if (!getInvoiceId()
           .equals(other.getInvoiceId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2692,10 +2598,8 @@ public final class PaymentOuterClass {
       hash = (53 * hash) + getCurrency().hashCode();
       hash = (37 * hash) + INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getInterval().hashCode();
-      if (!internalGetSuscriptionItemId().getMap().isEmpty()) {
-        hash = (37 * hash) + SUSCRIPTION_ITEM_ID_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetSuscriptionItemId().hashCode();
-      }
+      hash = (37 * hash) + SUSCRIPTION_ITEM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSuscriptionItemId().hashCode();
       hash = (37 * hash) + INVOICE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getInvoiceId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2805,28 +2709,6 @@ public final class PaymentOuterClass {
         return payment.v1alpha1.PaymentOuterClass.internal_static_payment_v1alpha1_Suscription_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 7:
-            return internalGetSuscriptionItemId();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 7:
-            return internalGetMutableSuscriptionItemId();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -2865,7 +2747,8 @@ public final class PaymentOuterClass {
 
         interval_ = "";
 
-        internalGetMutableSuscriptionItemId().clear();
+        suscriptionItemId_ = "";
+
         invoiceId_ = "";
 
         return this;
@@ -2894,15 +2777,13 @@ public final class PaymentOuterClass {
       @java.lang.Override
       public payment.v1alpha1.PaymentOuterClass.Suscription buildPartial() {
         payment.v1alpha1.PaymentOuterClass.Suscription result = new payment.v1alpha1.PaymentOuterClass.Suscription(this);
-        int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.price_ = price_;
         result.priceCpu_ = priceCpu_;
         result.priceBytes_ = priceBytes_;
         result.currency_ = currency_;
         result.interval_ = interval_;
-        result.suscriptionItemId_ = internalGetSuscriptionItemId();
-        result.suscriptionItemId_.makeImmutable();
+        result.suscriptionItemId_ = suscriptionItemId_;
         result.invoiceId_ = invoiceId_;
         onBuilt();
         return result;
@@ -2976,8 +2857,10 @@ public final class PaymentOuterClass {
           interval_ = other.interval_;
           onChanged();
         }
-        internalGetMutableSuscriptionItemId().mergeFrom(
-            other.internalGetSuscriptionItemId());
+        if (!other.getSuscriptionItemId().isEmpty()) {
+          suscriptionItemId_ = other.suscriptionItemId_;
+          onChanged();
+        }
         if (!other.getInvoiceId().isEmpty()) {
           invoiceId_ = other.invoiceId_;
           onChanged();
@@ -3010,7 +2893,6 @@ public final class PaymentOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -3468,131 +3350,79 @@ public final class PaymentOuterClass {
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> suscriptionItemId_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetSuscriptionItemId() {
-        if (suscriptionItemId_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              SuscriptionItemIdDefaultEntryHolder.defaultEntry);
+      private java.lang.Object suscriptionItemId_ = "";
+      /**
+       * <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+       * @return The suscriptionItemId.
+       */
+      public java.lang.String getSuscriptionItemId() {
+        java.lang.Object ref = suscriptionItemId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          suscriptionItemId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
         }
-        return suscriptionItemId_;
       }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableSuscriptionItemId() {
-        onChanged();;
-        if (suscriptionItemId_ == null) {
-          suscriptionItemId_ = com.google.protobuf.MapField.newMapField(
-              SuscriptionItemIdDefaultEntryHolder.defaultEntry);
+      /**
+       * <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+       * @return The bytes for suscriptionItemId.
+       */
+      public com.google.protobuf.ByteString
+          getSuscriptionItemIdBytes() {
+        java.lang.Object ref = suscriptionItemId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          suscriptionItemId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
-        if (!suscriptionItemId_.isMutable()) {
-          suscriptionItemId_ = suscriptionItemId_.copy();
-        }
-        return suscriptionItemId_;
-      }
-
-      public int getSuscriptionItemIdCount() {
-        return internalGetSuscriptionItemId().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+       * <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+       * @param value The suscriptionItemId to set.
+       * @return This builder for chaining.
        */
-
-      @java.lang.Override
-      public boolean containsSuscriptionItemId(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetSuscriptionItemId().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getSuscriptionItemIdMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getSuscriptionItemId() {
-        return getSuscriptionItemIdMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.String, java.lang.String> getSuscriptionItemIdMap() {
-        return internalGetSuscriptionItemId().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
-       */
-      @java.lang.Override
-
-      public java.lang.String getSuscriptionItemIdOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetSuscriptionItemId().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
-       */
-      @java.lang.Override
-
-      public java.lang.String getSuscriptionItemIdOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetSuscriptionItemId().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearSuscriptionItemId() {
-        internalGetMutableSuscriptionItemId().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
-       */
-
-      public Builder removeSuscriptionItemId(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableSuscriptionItemId().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableSuscriptionItemId() {
-        return internalGetMutableSuscriptionItemId().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
-       */
-      public Builder putSuscriptionItemId(
-          java.lang.String key,
+      public Builder setSuscriptionItemId(
           java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableSuscriptionItemId().getMutableMap()
-            .put(key, value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        suscriptionItemId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+       * <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+       * @return This builder for chaining.
        */
-
-      public Builder putAllSuscriptionItemId(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableSuscriptionItemId().getMutableMap()
-            .putAll(values);
+      public Builder clearSuscriptionItemId() {
+        
+        suscriptionItemId_ = getDefaultInstance().getSuscriptionItemId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+       * @param value The bytes for suscriptionItemId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSuscriptionItemIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        suscriptionItemId_ = value;
+        onChanged();
         return this;
       }
 
@@ -9229,11 +9059,6 @@ public final class PaymentOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_payment_v1alpha1_Suscription_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_payment_v1alpha1_Suscription_SuscriptionItemIdEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_payment_v1alpha1_Suscription_SuscriptionItemIdEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_payment_v1alpha1_Payment_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -9276,35 +9101,32 @@ public final class PaymentOuterClass {
       " \003(\0132\031.payment.v1alpha1.PaymentR\007payment" +
       "\0223\n\007invoice\030\007 \001(\0132\031.payment.v1alpha1.Inv" +
       "oiceR\007invoice\0220\n\006biling\030\010 \001(\0132\030.payment." +
-      "v1alpha1.BilingR\006biling\"\364\002\n\013Suscription\022" +
+      "v1alpha1.BilingR\006biling\"\370\001\n\013Suscription\022" +
       "\016\n\002id\030\001 \001(\tR\002id\022\024\n\005price\030\002 \001(\tR\005price\022\033\n" +
       "\tprice_cpu\030\003 \001(\tR\010priceCpu\022\037\n\013price_byte" +
       "s\030\004 \001(\tR\npriceBytes\022\032\n\010currency\030\005 \001(\tR\010c" +
-      "urrency\022\032\n\010interval\030\006 \001(\tR\010interval\022d\n\023s" +
-      "uscription_item_id\030\007 \003(\01324.payment.v1alp" +
-      "ha1.Suscription.SuscriptionItemIdEntryR\021" +
-      "suscriptionItemId\022\035\n\ninvoice_id\030\010 \001(\tR\ti" +
-      "nvoiceId\032D\n\026SuscriptionItemIdEntry\022\020\n\003ke" +
-      "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\217" +
-      "\001\n\007Payment\022\016\n\002id\030\001 \001(\tR\002id\022\030\n\007default\030\002 " +
-      "\001(\010R\007default\022\030\n\007enabled\030\003 \001(\010R\007enabled\022\024" +
-      "\n\005alias\030\004 \001(\tR\005alias\022*\n\004card\030\005 \001(\0132\026.pay" +
-      "ment.v1alpha1.CardR\004card\"v\n\004Card\022\016\n\002id\030\001" +
-      " \001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006number\022\032\n\010expm" +
-      "onth\030\003 \001(\tR\010expmonth\022\030\n\007expyear\030\004 \001(\tR\007e" +
-      "xpyear\022\020\n\003cvc\030\005 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002" +
-      "id\030\001 \001(\tR\002id\022\026\n\006amount\030\003 \001(\003R\006amount\022\026\n\006" +
-      "period\030\004 \001(\tR\006period\022\034\n\tstatuspay\030\005 \001(\tR" +
-      "\tstatuspay\022\022\n\004date\030\006 \001(\tR\004date\022\030\n\007produc" +
-      "t\030\007 \001(\tR\007product\"\260\001\n\006Biling\022\016\n\002id\030\001 \001(\tR" +
-      "\002id\022!\n\014account_name\030\002 \001(\tR\013accountName\022\035" +
-      "\n\ninvoice_id\030\003 \001(\tR\tinvoiceId\022\036\n\ntotalus" +
-      "age\030\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\003R\003cpu\022" +
-      "\020\n\003ram\030\006 \001(\003R\003ram\022\020\n\003mes\030\007 \001(\tR\003mes\">\n\013P" +
-      "aymentList\022/\n\005items\030\001 \003(\0132\031.payment.v1al" +
-      "pha1.PaymentR\005itemsB8Z6github.com/cuemby" +
-      "/ccp-payment-service/payment/v1alpha1b\006p" +
-      "roto3"
+      "urrency\022\032\n\010interval\030\006 \001(\tR\010interval\022.\n\023s" +
+      "uscription_item_id\030\007 \001(\tR\021suscriptionIte" +
+      "mId\022\035\n\ninvoice_id\030\010 \001(\tR\tinvoiceId\"\217\001\n\007P" +
+      "ayment\022\016\n\002id\030\001 \001(\tR\002id\022\030\n\007default\030\002 \001(\010R" +
+      "\007default\022\030\n\007enabled\030\003 \001(\010R\007enabled\022\024\n\005al" +
+      "ias\030\004 \001(\tR\005alias\022*\n\004card\030\005 \001(\0132\026.payment" +
+      ".v1alpha1.CardR\004card\"v\n\004Card\022\016\n\002id\030\001 \001(\t" +
+      "R\002id\022\026\n\006number\030\002 \001(\tR\006number\022\032\n\010expmonth" +
+      "\030\003 \001(\tR\010expmonth\022\030\n\007expyear\030\004 \001(\tR\007expye" +
+      "ar\022\020\n\003cvc\030\005 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002id\030\001" +
+      " \001(\tR\002id\022\026\n\006amount\030\003 \001(\003R\006amount\022\026\n\006peri" +
+      "od\030\004 \001(\tR\006period\022\034\n\tstatuspay\030\005 \001(\tR\tsta" +
+      "tuspay\022\022\n\004date\030\006 \001(\tR\004date\022\030\n\007product\030\007 " +
+      "\001(\tR\007product\"\260\001\n\006Biling\022\016\n\002id\030\001 \001(\tR\002id\022" +
+      "!\n\014account_name\030\002 \001(\tR\013accountName\022\035\n\nin" +
+      "voice_id\030\003 \001(\tR\tinvoiceId\022\036\n\ntotalusage\030" +
+      "\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\003R\003cpu\022\020\n\003r" +
+      "am\030\006 \001(\003R\003ram\022\020\n\003mes\030\007 \001(\tR\003mes\">\n\013Payme" +
+      "ntList\022/\n\005items\030\001 \003(\0132\031.payment.v1alpha1" +
+      ".PaymentR\005itemsB8Z6github.com/cuemby/ccp" +
+      "-payment-service/payment/v1alpha1b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9322,12 +9144,6 @@ public final class PaymentOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Suscription_descriptor,
         new java.lang.String[] { "Id", "Price", "PriceCpu", "PriceBytes", "Currency", "Interval", "SuscriptionItemId", "InvoiceId", });
-    internal_static_payment_v1alpha1_Suscription_SuscriptionItemIdEntry_descriptor =
-      internal_static_payment_v1alpha1_Suscription_descriptor.getNestedTypes().get(0);
-    internal_static_payment_v1alpha1_Suscription_SuscriptionItemIdEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_payment_v1alpha1_Suscription_SuscriptionItemIdEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     internal_static_payment_v1alpha1_Payment_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_payment_v1alpha1_Payment_fieldAccessorTable = new
