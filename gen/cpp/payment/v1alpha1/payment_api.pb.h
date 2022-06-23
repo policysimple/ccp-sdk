@@ -1523,20 +1523,20 @@ class GetBilingMonthRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSuscriptionItemIdFieldNumber = 1,
+    kInvoiceIdFieldNumber = 1,
   };
-  // string suscription_item_id = 1 [json_name = "suscriptionItemId"];
-  void clear_suscription_item_id();
-  const std::string& suscription_item_id() const;
+  // string invoice_id = 1 [json_name = "invoiceId"];
+  void clear_invoice_id();
+  const std::string& invoice_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_suscription_item_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_suscription_item_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_suscription_item_id();
-  void set_allocated_suscription_item_id(std::string* suscription_item_id);
+  void set_invoice_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_invoice_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_invoice_id();
+  void set_allocated_invoice_id(std::string* invoice_id);
   private:
-  const std::string& _internal_suscription_item_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_suscription_item_id(const std::string& value);
-  std::string* _internal_mutable_suscription_item_id();
+  const std::string& _internal_invoice_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_invoice_id(const std::string& value);
+  std::string* _internal_mutable_invoice_id();
   public:
 
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.GetBilingMonthRequest)
@@ -1546,7 +1546,7 @@ class GetBilingMonthRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr suscription_item_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invoice_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 };
@@ -6153,50 +6153,50 @@ inline void GetCustomerResponse::set_allocated_status(std::string* status) {
 
 // GetBilingMonthRequest
 
-// string suscription_item_id = 1 [json_name = "suscriptionItemId"];
-inline void GetBilingMonthRequest::clear_suscription_item_id() {
-  suscription_item_id_.ClearToEmpty();
+// string invoice_id = 1 [json_name = "invoiceId"];
+inline void GetBilingMonthRequest::clear_invoice_id() {
+  invoice_id_.ClearToEmpty();
 }
-inline const std::string& GetBilingMonthRequest::suscription_item_id() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.GetBilingMonthRequest.suscription_item_id)
-  return _internal_suscription_item_id();
+inline const std::string& GetBilingMonthRequest::invoice_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.GetBilingMonthRequest.invoice_id)
+  return _internal_invoice_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetBilingMonthRequest::set_suscription_item_id(ArgT0&& arg0, ArgT... args) {
+void GetBilingMonthRequest::set_invoice_id(ArgT0&& arg0, ArgT... args) {
  
- suscription_item_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.GetBilingMonthRequest.suscription_item_id)
+ invoice_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.GetBilingMonthRequest.invoice_id)
 }
-inline std::string* GetBilingMonthRequest::mutable_suscription_item_id() {
-  std::string* _s = _internal_mutable_suscription_item_id();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.GetBilingMonthRequest.suscription_item_id)
+inline std::string* GetBilingMonthRequest::mutable_invoice_id() {
+  std::string* _s = _internal_mutable_invoice_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.GetBilingMonthRequest.invoice_id)
   return _s;
 }
-inline const std::string& GetBilingMonthRequest::_internal_suscription_item_id() const {
-  return suscription_item_id_.Get();
+inline const std::string& GetBilingMonthRequest::_internal_invoice_id() const {
+  return invoice_id_.Get();
 }
-inline void GetBilingMonthRequest::_internal_set_suscription_item_id(const std::string& value) {
+inline void GetBilingMonthRequest::_internal_set_invoice_id(const std::string& value) {
   
-  suscription_item_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  invoice_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetBilingMonthRequest::_internal_mutable_suscription_item_id() {
+inline std::string* GetBilingMonthRequest::_internal_mutable_invoice_id() {
   
-  return suscription_item_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return invoice_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetBilingMonthRequest::release_suscription_item_id() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.GetBilingMonthRequest.suscription_item_id)
-  return suscription_item_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetBilingMonthRequest::release_invoice_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.GetBilingMonthRequest.invoice_id)
+  return invoice_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetBilingMonthRequest::set_allocated_suscription_item_id(std::string* suscription_item_id) {
-  if (suscription_item_id != nullptr) {
+inline void GetBilingMonthRequest::set_allocated_invoice_id(std::string* invoice_id) {
+  if (invoice_id != nullptr) {
     
   } else {
     
   }
-  suscription_item_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), suscription_item_id,
+  invoice_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), invoice_id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.GetBilingMonthRequest.suscription_item_id)
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.GetBilingMonthRequest.invoice_id)
 }
 
 // -------------------------------------------------------------------

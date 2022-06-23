@@ -1990,7 +1990,7 @@ proto.payment.v1alpha1.GetBilingMonthRequest.prototype.toObject = function(opt_i
  */
 proto.payment.v1alpha1.GetBilingMonthRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    suscriptionItemId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    invoiceId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2029,7 +2029,7 @@ proto.payment.v1alpha1.GetBilingMonthRequest.deserializeBinaryFromReader = funct
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSuscriptionItemId(value);
+      msg.setInvoiceId(value);
       break;
     default:
       reader.skipField();
@@ -2060,7 +2060,7 @@ proto.payment.v1alpha1.GetBilingMonthRequest.prototype.serializeBinary = functio
  */
 proto.payment.v1alpha1.GetBilingMonthRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSuscriptionItemId();
+  f = message.getInvoiceId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -2071,10 +2071,10 @@ proto.payment.v1alpha1.GetBilingMonthRequest.serializeBinaryToWriter = function(
 
 
 /**
- * optional string suscription_item_id = 1;
+ * optional string invoice_id = 1;
  * @return {string}
  */
-proto.payment.v1alpha1.GetBilingMonthRequest.prototype.getSuscriptionItemId = function() {
+proto.payment.v1alpha1.GetBilingMonthRequest.prototype.getInvoiceId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -2083,7 +2083,7 @@ proto.payment.v1alpha1.GetBilingMonthRequest.prototype.getSuscriptionItemId = fu
  * @param {string} value
  * @return {!proto.payment.v1alpha1.GetBilingMonthRequest} returns this
  */
-proto.payment.v1alpha1.GetBilingMonthRequest.prototype.setSuscriptionItemId = function(value) {
+proto.payment.v1alpha1.GetBilingMonthRequest.prototype.setInvoiceId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
