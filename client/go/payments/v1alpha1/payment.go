@@ -201,7 +201,7 @@ func GetBilingMonth(in *paymentpkgv1.GetBilingMonthRequest) (response *paymentpk
 	defer cancel()
 
 	response, err = client.GetBilingMonth(ctx, &paymentpkgv1.GetBilingMonthRequest{
-		SuscriptionItemId: in.SuscriptionItemId,
+		InvoiceId: in.InvoiceId,
 	})
 
 	if err != nil {
