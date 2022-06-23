@@ -23,7 +23,7 @@ message Suscription {
   string price_bytes =4;
   string currency =5;
   string interval =6;
-  map<string, string> suscription_item_id = 7;
+  string suscription_item_id = 7;
   string invoice_id = 8;
 }
 
