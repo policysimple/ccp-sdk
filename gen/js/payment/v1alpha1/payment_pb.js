@@ -640,7 +640,7 @@ proto.payment.v1alpha1.Suscription.toObject = function(includeInstance, msg) {
     priceBytes: jspb.Message.getFieldWithDefault(msg, 4, ""),
     currency: jspb.Message.getFieldWithDefault(msg, 5, ""),
     interval: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    suscriptionItemId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    suscriptionItemIdMap: (f = msg.getSuscriptionItemIdMap()) ? f.toObject(includeInstance, undefined) : [],
     invoiceId: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
@@ -703,8 +703,10 @@ proto.payment.v1alpha1.Suscription.deserializeBinaryFromReader = function(msg, r
       msg.setInterval(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSuscriptionItemId(value);
+      var value = msg.getSuscriptionItemIdMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
@@ -781,12 +783,9 @@ proto.payment.v1alpha1.Suscription.serializeBinaryToWriter = function(message, w
       f
     );
   }
-  f = message.getSuscriptionItemId();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
-      f
-    );
+  f = message.getSuscriptionItemIdMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getInvoiceId();
   if (f.length > 0) {
@@ -907,21 +906,25 @@ proto.payment.v1alpha1.Suscription.prototype.setInterval = function(value) {
 
 
 /**
- * optional string suscription_item_id = 7;
- * @return {string}
+ * map<string, string> suscription_item_id = 7;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
  */
-proto.payment.v1alpha1.Suscription.prototype.getSuscriptionItemId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+proto.payment.v1alpha1.Suscription.prototype.getSuscriptionItemIdMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
+      null));
 };
 
 
 /**
- * @param {string} value
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.payment.v1alpha1.Suscription} returns this
  */
-proto.payment.v1alpha1.Suscription.prototype.setSuscriptionItemId = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
-};
+proto.payment.v1alpha1.Suscription.prototype.clearSuscriptionItemIdMap = function() {
+  this.getSuscriptionItemIdMap().clear();
+  return this;};
 
 
 /**

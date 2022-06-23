@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListPaymentResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.PaymentList payment_list = 1 [json_name = "paymentList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
      */
-    protected $payment_list = null;
+    protected $payment = null;
     /**
      * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
@@ -28,7 +28,7 @@ class ListPaymentResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\PaymentList $payment_list
+     *     @type \Payment\V1alpha1\Payment $payment
      *     @type string $status
      * }
      */
@@ -38,33 +38,33 @@ class ListPaymentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.PaymentList payment_list = 1 [json_name = "paymentList"];</code>
-     * @return \Payment\V1alpha1\PaymentList|null
+     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
+     * @return \Payment\V1alpha1\Payment|null
      */
-    public function getPaymentList()
+    public function getPayment()
     {
-        return $this->payment_list;
+        return $this->payment;
     }
 
-    public function hasPaymentList()
+    public function hasPayment()
     {
-        return isset($this->payment_list);
+        return isset($this->payment);
     }
 
-    public function clearPaymentList()
+    public function clearPayment()
     {
-        unset($this->payment_list);
+        unset($this->payment);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.PaymentList payment_list = 1 [json_name = "paymentList"];</code>
-     * @param \Payment\V1alpha1\PaymentList $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 1 [json_name = "payment"];</code>
+     * @param \Payment\V1alpha1\Payment $var
      * @return $this
      */
-    public function setPaymentList($var)
+    public function setPayment($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\PaymentList::class);
-        $this->payment_list = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Payment::class);
+        $this->payment = $var;
 
         return $this;
     }

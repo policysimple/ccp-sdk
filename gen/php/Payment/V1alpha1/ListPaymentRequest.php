@@ -17,10 +17,6 @@ class ListPaymentRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
      */
     protected $customer_id = '';
-    /**
-     * Generated from protobuf field <code>string suscription_id = 2 [json_name = "suscriptionId"];</code>
-     */
-    protected $suscription_id = '';
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class ListPaymentRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *     @type string $suscription_id
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class ListPaymentRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->customer_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string suscription_id = 2 [json_name = "suscriptionId"];</code>
-     * @return string
-     */
-    public function getSuscriptionId()
-    {
-        return $this->suscription_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string suscription_id = 2 [json_name = "suscriptionId"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSuscriptionId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->suscription_id = $var;
 
         return $this;
     }
