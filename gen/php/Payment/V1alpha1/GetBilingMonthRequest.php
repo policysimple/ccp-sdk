@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetBilingMonthRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * Generated from protobuf field <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
      */
-    protected $customer = null;
+    protected $suscription_item_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class GetBilingMonthRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Customer $customer
+     *     @type string $suscription_item_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,33 +33,23 @@ class GetBilingMonthRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @return \Payment\V1alpha1\Customer|null
+     * Generated from protobuf field <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
+     * @return string
      */
-    public function getCustomer()
+    public function getSuscriptionItemId()
     {
-        return $this->customer;
-    }
-
-    public function hasCustomer()
-    {
-        return isset($this->customer);
-    }
-
-    public function clearCustomer()
-    {
-        unset($this->customer);
+        return $this->suscription_item_id;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @param \Payment\V1alpha1\Customer $var
+     * Generated from protobuf field <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setCustomer($var)
+    public function setSuscriptionItemId($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
-        $this->customer = $var;
+        GPBUtil::checkString($var, True);
+        $this->suscription_item_id = $var;
 
         return $this;
     }

@@ -1990,7 +1990,7 @@ proto.payment.v1alpha1.GetBilingMonthRequest.prototype.toObject = function(opt_i
  */
 proto.payment.v1alpha1.GetBilingMonthRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    customer: (f = msg.getCustomer()) && payment_v1alpha1_payment_pb.Customer.toObject(includeInstance, f)
+    suscriptionItemId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2028,9 +2028,8 @@ proto.payment.v1alpha1.GetBilingMonthRequest.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new payment_v1alpha1_payment_pb.Customer;
-      reader.readMessage(value,payment_v1alpha1_payment_pb.Customer.deserializeBinaryFromReader);
-      msg.setCustomer(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSuscriptionItemId(value);
       break;
     default:
       reader.skipField();
@@ -2061,51 +2060,31 @@ proto.payment.v1alpha1.GetBilingMonthRequest.prototype.serializeBinary = functio
  */
 proto.payment.v1alpha1.GetBilingMonthRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCustomer();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getSuscriptionItemId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      payment_v1alpha1_payment_pb.Customer.serializeBinaryToWriter
+      f
     );
   }
 };
 
 
 /**
- * optional Customer customer = 1;
- * @return {?proto.payment.v1alpha1.Customer}
+ * optional string suscription_item_id = 1;
+ * @return {string}
  */
-proto.payment.v1alpha1.GetBilingMonthRequest.prototype.getCustomer = function() {
-  return /** @type{?proto.payment.v1alpha1.Customer} */ (
-    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Customer, 1));
+proto.payment.v1alpha1.GetBilingMonthRequest.prototype.getSuscriptionItemId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.payment.v1alpha1.Customer|undefined} value
- * @return {!proto.payment.v1alpha1.GetBilingMonthRequest} returns this
-*/
-proto.payment.v1alpha1.GetBilingMonthRequest.prototype.setCustomer = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.payment.v1alpha1.GetBilingMonthRequest} returns this
  */
-proto.payment.v1alpha1.GetBilingMonthRequest.prototype.clearCustomer = function() {
-  return this.setCustomer(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.payment.v1alpha1.GetBilingMonthRequest.prototype.hasCustomer = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.payment.v1alpha1.GetBilingMonthRequest.prototype.setSuscriptionItemId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

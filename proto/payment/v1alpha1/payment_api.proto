@@ -63,7 +63,7 @@ message GetCustomerResponse {
 }
 
 message GetBilingMonthRequest {
-    payment.v1alpha1.Customer customer = 1;
+    string suscription_item_id = 1;
 }
 
 message GetBilingMonthResponse {

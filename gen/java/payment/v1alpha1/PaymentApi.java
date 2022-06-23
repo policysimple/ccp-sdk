@@ -5092,19 +5092,16 @@ public final class PaymentApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @return Whether the customer field is set.
+     * <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
+     * @return The suscriptionItemId.
      */
-    boolean hasCustomer();
+    java.lang.String getSuscriptionItemId();
     /**
-     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @return The customer.
+     * <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
+     * @return The bytes for suscriptionItemId.
      */
-    payment.v1alpha1.PaymentOuterClass.Customer getCustomer();
-    /**
-     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     */
-    payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder getCustomerOrBuilder();
+    com.google.protobuf.ByteString
+        getSuscriptionItemIdBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.GetBilingMonthRequest}
@@ -5119,6 +5116,7 @@ public final class PaymentApi {
       super(builder);
     }
     private GetBilingMonthRequest() {
+      suscriptionItemId_ = "";
     }
 
     @java.lang.Override
@@ -5152,16 +5150,9 @@ public final class PaymentApi {
               done = true;
               break;
             case 10: {
-              payment.v1alpha1.PaymentOuterClass.Customer.Builder subBuilder = null;
-              if (customer_ != null) {
-                subBuilder = customer_.toBuilder();
-              }
-              customer_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.Customer.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(customer_);
-                customer_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              suscriptionItemId_ = s;
               break;
             }
             default: {
@@ -5196,30 +5187,42 @@ public final class PaymentApi {
               payment.v1alpha1.PaymentApi.GetBilingMonthRequest.class, payment.v1alpha1.PaymentApi.GetBilingMonthRequest.Builder.class);
     }
 
-    public static final int CUSTOMER_FIELD_NUMBER = 1;
-    private payment.v1alpha1.PaymentOuterClass.Customer customer_;
+    public static final int SUSCRIPTION_ITEM_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object suscriptionItemId_;
     /**
-     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @return Whether the customer field is set.
+     * <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
+     * @return The suscriptionItemId.
      */
     @java.lang.Override
-    public boolean hasCustomer() {
-      return customer_ != null;
+    public java.lang.String getSuscriptionItemId() {
+      java.lang.Object ref = suscriptionItemId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        suscriptionItemId_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @return The customer.
+     * <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
+     * @return The bytes for suscriptionItemId.
      */
     @java.lang.Override
-    public payment.v1alpha1.PaymentOuterClass.Customer getCustomer() {
-      return customer_ == null ? payment.v1alpha1.PaymentOuterClass.Customer.getDefaultInstance() : customer_;
-    }
-    /**
-     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     */
-    @java.lang.Override
-    public payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder getCustomerOrBuilder() {
-      return getCustomer();
+    public com.google.protobuf.ByteString
+        getSuscriptionItemIdBytes() {
+      java.lang.Object ref = suscriptionItemId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        suscriptionItemId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5236,8 +5239,8 @@ public final class PaymentApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (customer_ != null) {
-        output.writeMessage(1, getCustomer());
+      if (!getSuscriptionItemIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, suscriptionItemId_);
       }
       unknownFields.writeTo(output);
     }
@@ -5248,9 +5251,8 @@ public final class PaymentApi {
       if (size != -1) return size;
 
       size = 0;
-      if (customer_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getCustomer());
+      if (!getSuscriptionItemIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, suscriptionItemId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5267,11 +5269,8 @@ public final class PaymentApi {
       }
       payment.v1alpha1.PaymentApi.GetBilingMonthRequest other = (payment.v1alpha1.PaymentApi.GetBilingMonthRequest) obj;
 
-      if (hasCustomer() != other.hasCustomer()) return false;
-      if (hasCustomer()) {
-        if (!getCustomer()
-            .equals(other.getCustomer())) return false;
-      }
+      if (!getSuscriptionItemId()
+          .equals(other.getSuscriptionItemId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5283,10 +5282,8 @@ public final class PaymentApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasCustomer()) {
-        hash = (37 * hash) + CUSTOMER_FIELD_NUMBER;
-        hash = (53 * hash) + getCustomer().hashCode();
-      }
+      hash = (37 * hash) + SUSCRIPTION_ITEM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSuscriptionItemId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5420,12 +5417,8 @@ public final class PaymentApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (customerBuilder_ == null) {
-          customer_ = null;
-        } else {
-          customer_ = null;
-          customerBuilder_ = null;
-        }
+        suscriptionItemId_ = "";
+
         return this;
       }
 
@@ -5452,11 +5445,7 @@ public final class PaymentApi {
       @java.lang.Override
       public payment.v1alpha1.PaymentApi.GetBilingMonthRequest buildPartial() {
         payment.v1alpha1.PaymentApi.GetBilingMonthRequest result = new payment.v1alpha1.PaymentApi.GetBilingMonthRequest(this);
-        if (customerBuilder_ == null) {
-          result.customer_ = customer_;
-        } else {
-          result.customer_ = customerBuilder_.build();
-        }
+        result.suscriptionItemId_ = suscriptionItemId_;
         onBuilt();
         return result;
       }
@@ -5505,8 +5494,9 @@ public final class PaymentApi {
 
       public Builder mergeFrom(payment.v1alpha1.PaymentApi.GetBilingMonthRequest other) {
         if (other == payment.v1alpha1.PaymentApi.GetBilingMonthRequest.getDefaultInstance()) return this;
-        if (other.hasCustomer()) {
-          mergeCustomer(other.getCustomer());
+        if (!other.getSuscriptionItemId().isEmpty()) {
+          suscriptionItemId_ = other.suscriptionItemId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5537,123 +5527,80 @@ public final class PaymentApi {
         return this;
       }
 
-      private payment.v1alpha1.PaymentOuterClass.Customer customer_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          payment.v1alpha1.PaymentOuterClass.Customer, payment.v1alpha1.PaymentOuterClass.Customer.Builder, payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder> customerBuilder_;
+      private java.lang.Object suscriptionItemId_ = "";
       /**
-       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-       * @return Whether the customer field is set.
+       * <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
+       * @return The suscriptionItemId.
        */
-      public boolean hasCustomer() {
-        return customerBuilder_ != null || customer_ != null;
-      }
-      /**
-       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-       * @return The customer.
-       */
-      public payment.v1alpha1.PaymentOuterClass.Customer getCustomer() {
-        if (customerBuilder_ == null) {
-          return customer_ == null ? payment.v1alpha1.PaymentOuterClass.Customer.getDefaultInstance() : customer_;
+      public java.lang.String getSuscriptionItemId() {
+        java.lang.Object ref = suscriptionItemId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          suscriptionItemId_ = s;
+          return s;
         } else {
-          return customerBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+       * <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
+       * @return The bytes for suscriptionItemId.
        */
-      public Builder setCustomer(payment.v1alpha1.PaymentOuterClass.Customer value) {
-        if (customerBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          customer_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getSuscriptionItemIdBytes() {
+        java.lang.Object ref = suscriptionItemId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          suscriptionItemId_ = b;
+          return b;
         } else {
-          customerBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
-       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+       * <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
+       * @param value The suscriptionItemId to set.
+       * @return This builder for chaining.
        */
-      public Builder setCustomer(
-          payment.v1alpha1.PaymentOuterClass.Customer.Builder builderForValue) {
-        if (customerBuilder_ == null) {
-          customer_ = builderForValue.build();
-          onChanged();
-        } else {
-          customerBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-       */
-      public Builder mergeCustomer(payment.v1alpha1.PaymentOuterClass.Customer value) {
-        if (customerBuilder_ == null) {
-          if (customer_ != null) {
-            customer_ =
-              payment.v1alpha1.PaymentOuterClass.Customer.newBuilder(customer_).mergeFrom(value).buildPartial();
-          } else {
-            customer_ = value;
-          }
-          onChanged();
-        } else {
-          customerBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-       */
-      public Builder clearCustomer() {
-        if (customerBuilder_ == null) {
-          customer_ = null;
-          onChanged();
-        } else {
-          customer_ = null;
-          customerBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-       */
-      public payment.v1alpha1.PaymentOuterClass.Customer.Builder getCustomerBuilder() {
-        
+      public Builder setSuscriptionItemId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        suscriptionItemId_ = value;
         onChanged();
-        return getCustomerFieldBuilder().getBuilder();
+        return this;
       }
       /**
-       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+       * <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
+       * @return This builder for chaining.
        */
-      public payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder getCustomerOrBuilder() {
-        if (customerBuilder_ != null) {
-          return customerBuilder_.getMessageOrBuilder();
-        } else {
-          return customer_ == null ?
-              payment.v1alpha1.PaymentOuterClass.Customer.getDefaultInstance() : customer_;
-        }
+      public Builder clearSuscriptionItemId() {
+        
+        suscriptionItemId_ = getDefaultInstance().getSuscriptionItemId();
+        onChanged();
+        return this;
       }
       /**
-       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+       * <code>string suscription_item_id = 1 [json_name = "suscriptionItemId"];</code>
+       * @param value The bytes for suscriptionItemId to set.
+       * @return This builder for chaining.
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          payment.v1alpha1.PaymentOuterClass.Customer, payment.v1alpha1.PaymentOuterClass.Customer.Builder, payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder> 
-          getCustomerFieldBuilder() {
-        if (customerBuilder_ == null) {
-          customerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              payment.v1alpha1.PaymentOuterClass.Customer, payment.v1alpha1.PaymentOuterClass.Customer.Builder, payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder>(
-                  getCustomer(),
-                  getParentForChildren(),
-                  isClean());
-          customer_ = null;
-        }
-        return customerBuilder_;
+      public Builder setSuscriptionItemIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        suscriptionItemId_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -23697,110 +23644,110 @@ public final class PaymentApi {
       " \001(\tR\ncustomerId\"e\n\023GetCustomerResponse\022" +
       "6\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.Cus" +
       "tomerR\010customer\022\026\n\006status\030\002 \001(\tR\006status\"" +
-      "O\n\025GetBilingMonthRequest\0226\n\010customer\030\001 \001" +
-      "(\0132\032.payment.v1alpha1.CustomerR\010customer" +
-      "\"h\n\026GetBilingMonthResponse\0226\n\010customer\030\001" +
-      " \001(\0132\032.payment.v1alpha1.CustomerR\010custom" +
-      "er\022\026\n\006status\030\002 \001(\tR\006status\"5\n\022GetPayment" +
-      "sRequest\022\037\n\013customer_id\030\001 \001(\tR\ncustomerI" +
-      "d\"b\n\023GetPaymentsResponse\0223\n\007payment\030\001 \001(" +
-      "\0132\031.payment.v1alpha1.PaymentR\007payment\022\026\n" +
-      "\006status\030\002 \001(\tR\006status\"|\n\030UpdateSuscripti" +
-      "onRequest\022\037\n\013customer_id\030\001 \001(\tR\ncustomer" +
-      "Id\022?\n\013suscription\030\002 \001(\0132\035.payment.v1alph" +
-      "a1.SuscriptionR\013suscription\"t\n\031UpdateSus" +
-      "criptionResponse\022?\n\013suscription\030\001 \001(\0132\035." +
-      "payment.v1alpha1.SuscriptionR\013suscriptio" +
-      "n\022\026\n\006status\030\002 \001(\tR\006status\"|\n\030CreateSuscr" +
-      "iptionRequest\022\037\n\013customer_id\030\001 \001(\tR\ncust" +
-      "omerId\022?\n\013suscription\030\002 \001(\0132\035.payment.v1" +
-      "alpha1.SuscriptionR\013suscription\"k\n\031Creat" +
-      "eSuscriptionResponse\0226\n\010customer\030\001 \001(\0132\032" +
-      ".payment.v1alpha1.CustomerR\010customer\022\026\n\006" +
-      "status\030\002 \001(\tR\006status\"M\n\024CreateInvoiceReq" +
-      "uest\022\035\n\ninvoice_id\030\001 \001(\tR\tinvoiceId\022\026\n\006s" +
-      "tatus\030\002 \001(\tR\006status\"g\n\025CreateInvoiceResp" +
-      "onse\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha" +
-      "1.CustomerR\010customer\022\026\n\006status\030\004 \001(\tR\006st" +
-      "atus\"?\n\021CreateCardRequest\022*\n\004card\030\001 \001(\0132" +
-      "\026.payment.v1alpha1.CardR\004card\"G\n\022CreateC" +
-      "ardResponse\022\031\n\010token_id\030\001 \001(\tR\007tokenId\022\026" +
-      "\n\006status\030\002 \001(\tR\006status\"b\n\030CancelSuscript" +
-      "ionRequest\022%\n\016suscription_id\030\001 \001(\tR\rsusc" +
-      "riptionId\022\037\n\013customer_id\030\002 \001(\tR\ncustomer" +
-      "Id\"3\n\031CancelSuscriptionResponse\022\026\n\006statu" +
-      "s\030\001 \001(\tR\006status\"O\n\025CreateCustomerRequest" +
-      "\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.Cu" +
-      "stomerR\010customer\"Q\n\026CreateCustomerRespon" +
-      "se\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\022\026\n\006s" +
-      "tatus\030\002 \001(\tR\006status\"l\n\024CreatePaymentRequ" +
-      "est\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\0223\n\007" +
-      "payment\030\002 \001(\0132\031.payment.v1alpha1.Payment" +
-      "R\007payment\"H\n\025CreatePaymentResponse\022\027\n\007ca" +
-      "rd_id\030\001 \001(\tR\006cardId\022\026\n\006status\030\002 \001(\tR\006sta" +
-      "tus\"l\n\024UpdatePaymentRequest\022\037\n\013customer_" +
-      "id\030\001 \001(\tR\ncustomerId\0223\n\007payment\030\002 \001(\0132\031." +
-      "payment.v1alpha1.PaymentR\007payment\"d\n\025Upd" +
-      "atePaymentResponse\0223\n\007payment\030\001 \001(\0132\031.pa" +
-      "yment.v1alpha1.PaymentR\007payment\022\026\n\006statu" +
-      "s\030\002 \001(\tR\006status\"P\n\024DeletePaymentRequest\022" +
+      "G\n\025GetBilingMonthRequest\022.\n\023suscription_" +
+      "item_id\030\001 \001(\tR\021suscriptionItemId\"h\n\026GetB" +
+      "ilingMonthResponse\0226\n\010customer\030\001 \001(\0132\032.p" +
+      "ayment.v1alpha1.CustomerR\010customer\022\026\n\006st" +
+      "atus\030\002 \001(\tR\006status\"5\n\022GetPaymentsRequest" +
+      "\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\"b\n\023Get" +
+      "PaymentsResponse\0223\n\007payment\030\001 \001(\0132\031.paym" +
+      "ent.v1alpha1.PaymentR\007payment\022\026\n\006status\030" +
+      "\002 \001(\tR\006status\"|\n\030UpdateSuscriptionReques" +
+      "t\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\022?\n\013su" +
+      "scription\030\002 \001(\0132\035.payment.v1alpha1.Suscr" +
+      "iptionR\013suscription\"t\n\031UpdateSuscription" +
+      "Response\022?\n\013suscription\030\001 \001(\0132\035.payment." +
+      "v1alpha1.SuscriptionR\013suscription\022\026\n\006sta" +
+      "tus\030\002 \001(\tR\006status\"|\n\030CreateSuscriptionRe" +
+      "quest\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\022?" +
+      "\n\013suscription\030\002 \001(\0132\035.payment.v1alpha1.S" +
+      "uscriptionR\013suscription\"k\n\031CreateSuscrip" +
+      "tionResponse\0226\n\010customer\030\001 \001(\0132\032.payment" +
+      ".v1alpha1.CustomerR\010customer\022\026\n\006status\030\002" +
+      " \001(\tR\006status\"M\n\024CreateInvoiceRequest\022\035\n\n" +
+      "invoice_id\030\001 \001(\tR\tinvoiceId\022\026\n\006status\030\002 " +
+      "\001(\tR\006status\"g\n\025CreateInvoiceResponse\0226\n\010" +
+      "customer\030\001 \001(\0132\032.payment.v1alpha1.Custom" +
+      "erR\010customer\022\026\n\006status\030\004 \001(\tR\006status\"?\n\021" +
+      "CreateCardRequest\022*\n\004card\030\001 \001(\0132\026.paymen" +
+      "t.v1alpha1.CardR\004card\"G\n\022CreateCardRespo" +
+      "nse\022\031\n\010token_id\030\001 \001(\tR\007tokenId\022\026\n\006status" +
+      "\030\002 \001(\tR\006status\"b\n\030CancelSuscriptionReque" +
+      "st\022%\n\016suscription_id\030\001 \001(\tR\rsuscriptionI" +
+      "d\022\037\n\013customer_id\030\002 \001(\tR\ncustomerId\"3\n\031Ca" +
+      "ncelSuscriptionResponse\022\026\n\006status\030\001 \001(\tR" +
+      "\006status\"O\n\025CreateCustomerRequest\0226\n\010cust" +
+      "omer\030\001 \001(\0132\032.payment.v1alpha1.CustomerR\010" +
+      "customer\"Q\n\026CreateCustomerResponse\022\037\n\013cu" +
+      "stomer_id\030\001 \001(\tR\ncustomerId\022\026\n\006status\030\002 " +
+      "\001(\tR\006status\"l\n\024CreatePaymentRequest\022\037\n\013c" +
+      "ustomer_id\030\001 \001(\tR\ncustomerId\0223\n\007payment\030" +
+      "\002 \001(\0132\031.payment.v1alpha1.PaymentR\007paymen" +
+      "t\"H\n\025CreatePaymentResponse\022\027\n\007card_id\030\001 " +
+      "\001(\tR\006cardId\022\026\n\006status\030\002 \001(\tR\006status\"l\n\024U" +
+      "pdatePaymentRequest\022\037\n\013customer_id\030\001 \001(\t" +
+      "R\ncustomerId\0223\n\007payment\030\002 \001(\0132\031.payment." +
+      "v1alpha1.PaymentR\007payment\"d\n\025UpdatePayme" +
+      "ntResponse\0223\n\007payment\030\001 \001(\0132\031.payment.v1" +
+      "alpha1.PaymentR\007payment\022\026\n\006status\030\002 \001(\tR" +
+      "\006status\"P\n\024DeletePaymentRequest\022\027\n\007card_" +
+      "id\030\001 \001(\tR\006cardId\022\037\n\013customer_id\030\002 \001(\tR\nc" +
+      "ustomerId\"/\n\025DeletePaymentResponse\022\026\n\006st" +
+      "atus\030\001 \001(\tR\006status\"M\n\021GetPaymentRequest\022" +
       "\027\n\007card_id\030\001 \001(\tR\006cardId\022\037\n\013customer_id\030" +
-      "\002 \001(\tR\ncustomerId\"/\n\025DeletePaymentRespon" +
-      "se\022\026\n\006status\030\001 \001(\tR\006status\"M\n\021GetPayment" +
-      "Request\022\027\n\007card_id\030\001 \001(\tR\006cardId\022\037\n\013cust" +
-      "omer_id\030\002 \001(\tR\ncustomerId\"a\n\022GetPaymentR" +
-      "esponse\0223\n\007payment\030\001 \001(\0132\031.payment.v1alp" +
-      "ha1.PaymentR\007payment\022\026\n\006status\030\002 \001(\tR\006st" +
-      "atus\"5\n\022ListPaymentRequest\022\037\n\013customer_i" +
-      "d\030\001 \001(\tR\ncustomerId\"b\n\023ListPaymentRespon" +
-      "se\0223\n\007payment\030\001 \001(\0132\031.payment.v1alpha1.P" +
-      "aymentR\007payment\022\026\n\006status\030\002 \001(\tR\006status2" +
-      "\336\r\n\021PaymentAPIService\022n\n\021CreateSuscripti" +
-      "on\022*.payment.v1alpha1.CreateSuscriptionR" +
-      "equest\032+.payment.v1alpha1.CreateSuscript" +
-      "ionResponse\"\000\022Y\n\nCreateCard\022#.payment.v1" +
-      "alpha1.CreateCardRequest\032$.payment.v1alp" +
-      "ha1.CreateCardResponse\"\000\022n\n\021UpdateSuscri" +
-      "ption\022*.payment.v1alpha1.UpdateSuscripti" +
-      "onRequest\032+.payment.v1alpha1.UpdateSuscr" +
-      "iptionResponse\"\000\022n\n\021CancelSuscription\022*." +
-      "payment.v1alpha1.CancelSuscriptionReques" +
-      "t\032+.payment.v1alpha1.CancelSuscriptionRe" +
-      "sponse\"\000\022}\n\026GetOrganizationPayment\022/.pay" +
-      "ment.v1alpha1.GetOrganizationPaymentRequ" +
-      "est\0320.payment.v1alpha1.GetOrganizationPa" +
-      "ymentResponse\"\000\022e\n\016GetSuscription\022\'.paym" +
-      "ent.v1alpha1.GetSuscriptionRequest\032(.pay" +
-      "ment.v1alpha1.GetSuscriptionResponse\"\000\022e" +
-      "\n\016CreateCustomer\022\'.payment.v1alpha1.Crea" +
-      "teCustomerRequest\032(.payment.v1alpha1.Cre" +
-      "ateCustomerResponse\"\000\022e\n\016DeleteCustomer\022" +
-      "\'.payment.v1alpha1.DeleteCustomerRequest" +
-      "\032(.payment.v1alpha1.DeleteCustomerRespon" +
-      "se\"\000\022Y\n\nGetPayment\022#.payment.v1alpha1.Ge" +
-      "tPaymentRequest\032$.payment.v1alpha1.GetPa" +
-      "ymentResponse\"\000\022\\\n\013GetCustomer\022$.payment" +
-      ".v1alpha1.GetCustomerRequest\032%.payment.v" +
-      "1alpha1.GetCustomerResponse\"\000\022e\n\016GetBili" +
-      "ngMonth\022\'.payment.v1alpha1.GetBilingMont" +
-      "hRequest\032(.payment.v1alpha1.GetBilingMon" +
-      "thResponse\"\000\022\\\n\013GetPayments\022$.payment.v1" +
-      "alpha1.GetPaymentsRequest\032%.payment.v1al" +
-      "pha1.GetPaymentsResponse\"\000\022b\n\rCreatePaym" +
-      "ent\022&.payment.v1alpha1.CreatePaymentRequ" +
-      "est\032\'.payment.v1alpha1.CreatePaymentResp" +
-      "onse\"\000\022b\n\rUpdatePayment\022&.payment.v1alph" +
-      "a1.UpdatePaymentRequest\032\'.payment.v1alph" +
-      "a1.UpdatePaymentResponse\"\000\022b\n\rDeletePaym" +
-      "ent\022&.payment.v1alpha1.DeletePaymentRequ" +
-      "est\032\'.payment.v1alpha1.DeletePaymentResp" +
-      "onse\"\000\022\\\n\013ListPayment\022$.payment.v1alpha1" +
-      ".ListPaymentRequest\032%.payment.v1alpha1.L" +
-      "istPaymentResponse\"\000\022b\n\rCreateInvoice\022&." +
-      "payment.v1alpha1.CreateInvoiceRequest\032\'." +
-      "payment.v1alpha1.CreateInvoiceResponse\"\000" +
-      "B8Z6github.com/cuemby/ccp-payment-servic" +
-      "e/payment/v1alpha1b\006proto3"
+      "\002 \001(\tR\ncustomerId\"a\n\022GetPaymentResponse\022" +
+      "3\n\007payment\030\001 \001(\0132\031.payment.v1alpha1.Paym" +
+      "entR\007payment\022\026\n\006status\030\002 \001(\tR\006status\"5\n\022" +
+      "ListPaymentRequest\022\037\n\013customer_id\030\001 \001(\tR" +
+      "\ncustomerId\"b\n\023ListPaymentResponse\0223\n\007pa" +
+      "yment\030\001 \001(\0132\031.payment.v1alpha1.PaymentR\007" +
+      "payment\022\026\n\006status\030\002 \001(\tR\006status2\336\r\n\021Paym" +
+      "entAPIService\022n\n\021CreateSuscription\022*.pay" +
+      "ment.v1alpha1.CreateSuscriptionRequest\032+" +
+      ".payment.v1alpha1.CreateSuscriptionRespo" +
+      "nse\"\000\022Y\n\nCreateCard\022#.payment.v1alpha1.C" +
+      "reateCardRequest\032$.payment.v1alpha1.Crea" +
+      "teCardResponse\"\000\022n\n\021UpdateSuscription\022*." +
+      "payment.v1alpha1.UpdateSuscriptionReques" +
+      "t\032+.payment.v1alpha1.UpdateSuscriptionRe" +
+      "sponse\"\000\022n\n\021CancelSuscription\022*.payment." +
+      "v1alpha1.CancelSuscriptionRequest\032+.paym" +
+      "ent.v1alpha1.CancelSuscriptionResponse\"\000" +
+      "\022}\n\026GetOrganizationPayment\022/.payment.v1a" +
+      "lpha1.GetOrganizationPaymentRequest\0320.pa" +
+      "yment.v1alpha1.GetOrganizationPaymentRes" +
+      "ponse\"\000\022e\n\016GetSuscription\022\'.payment.v1al" +
+      "pha1.GetSuscriptionRequest\032(.payment.v1a" +
+      "lpha1.GetSuscriptionResponse\"\000\022e\n\016Create" +
+      "Customer\022\'.payment.v1alpha1.CreateCustom" +
+      "erRequest\032(.payment.v1alpha1.CreateCusto" +
+      "merResponse\"\000\022e\n\016DeleteCustomer\022\'.paymen" +
+      "t.v1alpha1.DeleteCustomerRequest\032(.payme" +
+      "nt.v1alpha1.DeleteCustomerResponse\"\000\022Y\n\n" +
+      "GetPayment\022#.payment.v1alpha1.GetPayment" +
+      "Request\032$.payment.v1alpha1.GetPaymentRes" +
+      "ponse\"\000\022\\\n\013GetCustomer\022$.payment.v1alpha" +
+      "1.GetCustomerRequest\032%.payment.v1alpha1." +
+      "GetCustomerResponse\"\000\022e\n\016GetBilingMonth\022" +
+      "\'.payment.v1alpha1.GetBilingMonthRequest" +
+      "\032(.payment.v1alpha1.GetBilingMonthRespon" +
+      "se\"\000\022\\\n\013GetPayments\022$.payment.v1alpha1.G" +
+      "etPaymentsRequest\032%.payment.v1alpha1.Get" +
+      "PaymentsResponse\"\000\022b\n\rCreatePayment\022&.pa" +
+      "yment.v1alpha1.CreatePaymentRequest\032\'.pa" +
+      "yment.v1alpha1.CreatePaymentResponse\"\000\022b" +
+      "\n\rUpdatePayment\022&.payment.v1alpha1.Updat" +
+      "ePaymentRequest\032\'.payment.v1alpha1.Updat" +
+      "ePaymentResponse\"\000\022b\n\rDeletePayment\022&.pa" +
+      "yment.v1alpha1.DeletePaymentRequest\032\'.pa" +
+      "yment.v1alpha1.DeletePaymentResponse\"\000\022\\" +
+      "\n\013ListPayment\022$.payment.v1alpha1.ListPay" +
+      "mentRequest\032%.payment.v1alpha1.ListPayme" +
+      "ntResponse\"\000\022b\n\rCreateInvoice\022&.payment." +
+      "v1alpha1.CreateInvoiceRequest\032\'.payment." +
+      "v1alpha1.CreateInvoiceResponse\"\000B8Z6gith" +
+      "ub.com/cuemby/ccp-payment-service/paymen" +
+      "t/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -23860,7 +23807,7 @@ public final class PaymentApi {
     internal_static_payment_v1alpha1_GetBilingMonthRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetBilingMonthRequest_descriptor,
-        new java.lang.String[] { "Customer", });
+        new java.lang.String[] { "SuscriptionItemId", });
     internal_static_payment_v1alpha1_GetBilingMonthResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_payment_v1alpha1_GetBilingMonthResponse_fieldAccessorTable = new

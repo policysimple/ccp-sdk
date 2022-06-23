@@ -1523,25 +1523,21 @@ class GetBilingMonthRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCustomerFieldNumber = 1,
+    kSuscriptionItemIdFieldNumber = 1,
   };
-  // .payment.v1alpha1.Customer customer = 1 [json_name = "customer"];
-  bool has_customer() const;
+  // string suscription_item_id = 1 [json_name = "suscriptionItemId"];
+  void clear_suscription_item_id();
+  const std::string& suscription_item_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_suscription_item_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_suscription_item_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_suscription_item_id();
+  void set_allocated_suscription_item_id(std::string* suscription_item_id);
   private:
-  bool _internal_has_customer() const;
+  const std::string& _internal_suscription_item_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_suscription_item_id(const std::string& value);
+  std::string* _internal_mutable_suscription_item_id();
   public:
-  void clear_customer();
-  const ::payment::v1alpha1::Customer& customer() const;
-  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::Customer* release_customer();
-  ::payment::v1alpha1::Customer* mutable_customer();
-  void set_allocated_customer(::payment::v1alpha1::Customer* customer);
-  private:
-  const ::payment::v1alpha1::Customer& _internal_customer() const;
-  ::payment::v1alpha1::Customer* _internal_mutable_customer();
-  public:
-  void unsafe_arena_set_allocated_customer(
-      ::payment::v1alpha1::Customer* customer);
-  ::payment::v1alpha1::Customer* unsafe_arena_release_customer();
 
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.GetBilingMonthRequest)
  private:
@@ -1550,7 +1546,7 @@ class GetBilingMonthRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::payment::v1alpha1::Customer* customer_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr suscription_item_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 };
@@ -6157,90 +6153,50 @@ inline void GetCustomerResponse::set_allocated_status(std::string* status) {
 
 // GetBilingMonthRequest
 
-// .payment.v1alpha1.Customer customer = 1 [json_name = "customer"];
-inline bool GetBilingMonthRequest::_internal_has_customer() const {
-  return this != internal_default_instance() && customer_ != nullptr;
+// string suscription_item_id = 1 [json_name = "suscriptionItemId"];
+inline void GetBilingMonthRequest::clear_suscription_item_id() {
+  suscription_item_id_.ClearToEmpty();
 }
-inline bool GetBilingMonthRequest::has_customer() const {
-  return _internal_has_customer();
+inline const std::string& GetBilingMonthRequest::suscription_item_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.GetBilingMonthRequest.suscription_item_id)
+  return _internal_suscription_item_id();
 }
-inline const ::payment::v1alpha1::Customer& GetBilingMonthRequest::_internal_customer() const {
-  const ::payment::v1alpha1::Customer* p = customer_;
-  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::Customer&>(
-      ::payment::v1alpha1::_Customer_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetBilingMonthRequest::set_suscription_item_id(ArgT0&& arg0, ArgT... args) {
+ 
+ suscription_item_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.GetBilingMonthRequest.suscription_item_id)
 }
-inline const ::payment::v1alpha1::Customer& GetBilingMonthRequest::customer() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.GetBilingMonthRequest.customer)
-  return _internal_customer();
+inline std::string* GetBilingMonthRequest::mutable_suscription_item_id() {
+  std::string* _s = _internal_mutable_suscription_item_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.GetBilingMonthRequest.suscription_item_id)
+  return _s;
 }
-inline void GetBilingMonthRequest::unsafe_arena_set_allocated_customer(
-    ::payment::v1alpha1::Customer* customer) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer_);
-  }
-  customer_ = customer;
-  if (customer) {
+inline const std::string& GetBilingMonthRequest::_internal_suscription_item_id() const {
+  return suscription_item_id_.Get();
+}
+inline void GetBilingMonthRequest::_internal_set_suscription_item_id(const std::string& value) {
+  
+  suscription_item_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetBilingMonthRequest::_internal_mutable_suscription_item_id() {
+  
+  return suscription_item_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetBilingMonthRequest::release_suscription_item_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.GetBilingMonthRequest.suscription_item_id)
+  return suscription_item_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetBilingMonthRequest::set_allocated_suscription_item_id(std::string* suscription_item_id) {
+  if (suscription_item_id != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.GetBilingMonthRequest.customer)
-}
-inline ::payment::v1alpha1::Customer* GetBilingMonthRequest::release_customer() {
-  
-  ::payment::v1alpha1::Customer* temp = customer_;
-  customer_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::payment::v1alpha1::Customer* GetBilingMonthRequest::unsafe_arena_release_customer() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.GetBilingMonthRequest.customer)
-  
-  ::payment::v1alpha1::Customer* temp = customer_;
-  customer_ = nullptr;
-  return temp;
-}
-inline ::payment::v1alpha1::Customer* GetBilingMonthRequest::_internal_mutable_customer() {
-  
-  if (customer_ == nullptr) {
-    auto* p = CreateMaybeMessage<::payment::v1alpha1::Customer>(GetArenaForAllocation());
-    customer_ = p;
-  }
-  return customer_;
-}
-inline ::payment::v1alpha1::Customer* GetBilingMonthRequest::mutable_customer() {
-  ::payment::v1alpha1::Customer* _msg = _internal_mutable_customer();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.GetBilingMonthRequest.customer)
-  return _msg;
-}
-inline void GetBilingMonthRequest::set_allocated_customer(::payment::v1alpha1::Customer* customer) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer_);
-  }
-  if (customer) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer));
-    if (message_arena != submessage_arena) {
-      customer = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, customer, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  customer_ = customer;
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.GetBilingMonthRequest.customer)
+  suscription_item_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), suscription_item_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.GetBilingMonthRequest.suscription_item_id)
 }
 
 // -------------------------------------------------------------------
