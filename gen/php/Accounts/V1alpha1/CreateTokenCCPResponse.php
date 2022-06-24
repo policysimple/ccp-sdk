@@ -28,7 +28,7 @@ class CreateTokenCCPResponse extends \Google\Protobuf\Internal\Message
     /**
      *tiempo de expiracion fma
      *
-     * Generated from protobuf field <code>uint32 time_expiration_mfa = 5 [json_name = "timeExpirationMfa"];</code>
+     * Generated from protobuf field <code>int64 time_expiration_mfa = 5 [json_name = "timeExpirationMfa"];</code>
      */
     protected $time_expiration_mfa = 0;
     /**
@@ -45,7 +45,7 @@ class CreateTokenCCPResponse extends \Google\Protobuf\Internal\Message
      *     @type string $token_ccp
      *     @type string $msg
      *     @type string $error
-     *     @type int $time_expiration_mfa
+     *     @type int|string $time_expiration_mfa
      *          tiempo de expiracion fma
      *     @type string $user_id
      * }
@@ -124,8 +124,8 @@ class CreateTokenCCPResponse extends \Google\Protobuf\Internal\Message
     /**
      *tiempo de expiracion fma
      *
-     * Generated from protobuf field <code>uint32 time_expiration_mfa = 5 [json_name = "timeExpirationMfa"];</code>
-     * @return int
+     * Generated from protobuf field <code>int64 time_expiration_mfa = 5 [json_name = "timeExpirationMfa"];</code>
+     * @return int|string
      */
     public function getTimeExpirationMfa()
     {
@@ -135,13 +135,13 @@ class CreateTokenCCPResponse extends \Google\Protobuf\Internal\Message
     /**
      *tiempo de expiracion fma
      *
-     * Generated from protobuf field <code>uint32 time_expiration_mfa = 5 [json_name = "timeExpirationMfa"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>int64 time_expiration_mfa = 5 [json_name = "timeExpirationMfa"];</code>
+     * @param int|string $var
      * @return $this
      */
     public function setTimeExpirationMfa($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkInt64($var);
         $this->time_expiration_mfa = $var;
 
         return $this;

@@ -3727,8 +3727,8 @@ proto.accounts.v1alpha1.Log.prototype.toObject = function(opt_includeInstance) {
 proto.accounts.v1alpha1.Log.toObject = function(includeInstance, msg) {
   var f, obj = {
     userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    systems: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    navegator: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    system: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    clientWeb: jspb.Message.getFieldWithDefault(msg, 3, ""),
     ip: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
@@ -3772,11 +3772,11 @@ proto.accounts.v1alpha1.Log.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSystems(value);
+      msg.setSystem(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNavegator(value);
+      msg.setClientWeb(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -3818,14 +3818,14 @@ proto.accounts.v1alpha1.Log.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getSystems();
+  f = message.getSystem();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getNavegator();
+  f = message.getClientWeb();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -3861,10 +3861,10 @@ proto.accounts.v1alpha1.Log.prototype.setUserId = function(value) {
 
 
 /**
- * optional string systems = 2;
+ * optional string system = 2;
  * @return {string}
  */
-proto.accounts.v1alpha1.Log.prototype.getSystems = function() {
+proto.accounts.v1alpha1.Log.prototype.getSystem = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -3873,16 +3873,16 @@ proto.accounts.v1alpha1.Log.prototype.getSystems = function() {
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.Log} returns this
  */
-proto.accounts.v1alpha1.Log.prototype.setSystems = function(value) {
+proto.accounts.v1alpha1.Log.prototype.setSystem = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string navegator = 3;
+ * optional string client_web = 3;
  * @return {string}
  */
-proto.accounts.v1alpha1.Log.prototype.getNavegator = function() {
+proto.accounts.v1alpha1.Log.prototype.getClientWeb = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -3891,7 +3891,7 @@ proto.accounts.v1alpha1.Log.prototype.getNavegator = function() {
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.Log} returns this
  */
-proto.accounts.v1alpha1.Log.prototype.setNavegator = function(value) {
+proto.accounts.v1alpha1.Log.prototype.setClientWeb = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -5111,7 +5111,7 @@ proto.accounts.v1alpha1.CreateTokenCCPResponse.deserializeBinaryFromReader = fun
       msg.setError(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setTimeExpirationMfa(value);
       break;
     case 6:
@@ -5170,7 +5170,7 @@ proto.accounts.v1alpha1.CreateTokenCCPResponse.serializeBinaryToWriter = functio
   }
   f = message.getTimeExpirationMfa();
   if (f !== 0) {
-    writer.writeUint32(
+    writer.writeInt64(
       5,
       f
     );
@@ -5240,7 +5240,7 @@ proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.setError = function(val
 
 
 /**
- * optional uint32 time_expiration_mfa = 5;
+ * optional int64 time_expiration_mfa = 5;
  * @return {number}
  */
 proto.accounts.v1alpha1.CreateTokenCCPResponse.prototype.getTimeExpirationMfa = function() {
@@ -12539,7 +12539,16 @@ proto.accounts.v1alpha1.CreateUserRequest.toObject = function(includeInstance, m
     state: jspb.Message.getFieldWithDefault(msg, 14, ""),
     emojiCountry: jspb.Message.getFieldWithDefault(msg, 15, ""),
     invitationCode: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    isMfaEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 17, false)
+    isMfaEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
+    language: jspb.Message.getFieldWithDefault(msg, 18, ""),
+    pushNotification: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
+    emailNotification: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
+    newLoginNotification: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
+    createNotification: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
+    updateNotification: jspb.Message.getBooleanFieldWithDefault(msg, 23, false),
+    deleteNotification: jspb.Message.getBooleanFieldWithDefault(msg, 24, false),
+    applicationNotification: jspb.Message.getBooleanFieldWithDefault(msg, 25, false),
+    readNotification: jspb.Message.getBooleanFieldWithDefault(msg, 26, false)
   };
 
   if (includeInstance) {
@@ -12649,6 +12658,42 @@ proto.accounts.v1alpha1.CreateUserRequest.deserializeBinaryFromReader = function
     case 17:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsMfaEnabled(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLanguage(value);
+      break;
+    case 19:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPushNotification(value);
+      break;
+    case 20:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailNotification(value);
+      break;
+    case 21:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setNewLoginNotification(value);
+      break;
+    case 22:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCreateNotification(value);
+      break;
+    case 23:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUpdateNotification(value);
+      break;
+    case 24:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDeleteNotification(value);
+      break;
+    case 25:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setApplicationNotification(value);
+      break;
+    case 26:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setReadNotification(value);
       break;
     default:
       reader.skipField();
@@ -12795,6 +12840,69 @@ proto.accounts.v1alpha1.CreateUserRequest.serializeBinaryToWriter = function(mes
   if (f) {
     writer.writeBool(
       17,
+      f
+    );
+  }
+  f = message.getLanguage();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
+      f
+    );
+  }
+  f = message.getPushNotification();
+  if (f) {
+    writer.writeBool(
+      19,
+      f
+    );
+  }
+  f = message.getEmailNotification();
+  if (f) {
+    writer.writeBool(
+      20,
+      f
+    );
+  }
+  f = message.getNewLoginNotification();
+  if (f) {
+    writer.writeBool(
+      21,
+      f
+    );
+  }
+  f = message.getCreateNotification();
+  if (f) {
+    writer.writeBool(
+      22,
+      f
+    );
+  }
+  f = message.getUpdateNotification();
+  if (f) {
+    writer.writeBool(
+      23,
+      f
+    );
+  }
+  f = message.getDeleteNotification();
+  if (f) {
+    writer.writeBool(
+      24,
+      f
+    );
+  }
+  f = message.getApplicationNotification();
+  if (f) {
+    writer.writeBool(
+      25,
+      f
+    );
+  }
+  f = message.getReadNotification();
+  if (f) {
+    writer.writeBool(
+      26,
       f
     );
   }
@@ -13161,6 +13269,168 @@ proto.accounts.v1alpha1.CreateUserRequest.prototype.getIsMfaEnabled = function()
  */
 proto.accounts.v1alpha1.CreateUserRequest.prototype.setIsMfaEnabled = function(value) {
   return jspb.Message.setProto3BooleanField(this, 17, value);
+};
+
+
+/**
+ * optional string language = 18;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.getLanguage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.setLanguage = function(value) {
+  return jspb.Message.setProto3StringField(this, 18, value);
+};
+
+
+/**
+ * optional bool push_notification = 19;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.getPushNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.setPushNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 19, value);
+};
+
+
+/**
+ * optional bool email_notification = 20;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.getEmailNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.setEmailNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 20, value);
+};
+
+
+/**
+ * optional bool new_login_notification = 21;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.getNewLoginNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 21, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.setNewLoginNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 21, value);
+};
+
+
+/**
+ * optional bool create_notification = 22;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.getCreateNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 22, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.setCreateNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 22, value);
+};
+
+
+/**
+ * optional bool update_notification = 23;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.getUpdateNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 23, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.setUpdateNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 23, value);
+};
+
+
+/**
+ * optional bool delete_notification = 24;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.getDeleteNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 24, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.setDeleteNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 24, value);
+};
+
+
+/**
+ * optional bool application_notification = 25;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.getApplicationNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 25, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.setApplicationNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 25, value);
+};
+
+
+/**
+ * optional bool read_notification = 26;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.getReadNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 26, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.CreateUserRequest} returns this
+ */
+proto.accounts.v1alpha1.CreateUserRequest.prototype.setReadNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 26, value);
 };
 
 
@@ -14039,7 +14309,16 @@ proto.accounts.v1alpha1.GetOneUserResponse.toObject = function(includeInstance, 
     state: jspb.Message.getFieldWithDefault(msg, 19, ""),
     emojiCountry: jspb.Message.getFieldWithDefault(msg, 20, ""),
     emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
-    isMfaEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 22, false)
+    isMfaEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
+    language: jspb.Message.getFieldWithDefault(msg, 23, ""),
+    pushNotification: jspb.Message.getBooleanFieldWithDefault(msg, 24, false),
+    emailNotification: jspb.Message.getBooleanFieldWithDefault(msg, 25, false),
+    newLoginNotification: jspb.Message.getBooleanFieldWithDefault(msg, 26, false),
+    createNotification: jspb.Message.getBooleanFieldWithDefault(msg, 27, false),
+    updateNotification: jspb.Message.getBooleanFieldWithDefault(msg, 28, false),
+    deleteNotification: jspb.Message.getBooleanFieldWithDefault(msg, 29, false),
+    applicationNotification: jspb.Message.getBooleanFieldWithDefault(msg, 30, false),
+    readNotification: jspb.Message.getBooleanFieldWithDefault(msg, 31, false)
   };
 
   if (includeInstance) {
@@ -14167,6 +14446,42 @@ proto.accounts.v1alpha1.GetOneUserResponse.deserializeBinaryFromReader = functio
     case 22:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsMfaEnabled(value);
+      break;
+    case 23:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLanguage(value);
+      break;
+    case 24:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPushNotification(value);
+      break;
+    case 25:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailNotification(value);
+      break;
+    case 26:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setNewLoginNotification(value);
+      break;
+    case 27:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCreateNotification(value);
+      break;
+    case 28:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUpdateNotification(value);
+      break;
+    case 29:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDeleteNotification(value);
+      break;
+    case 30:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setApplicationNotification(value);
+      break;
+    case 31:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setReadNotification(value);
       break;
     default:
       reader.skipField();
@@ -14352,6 +14667,69 @@ proto.accounts.v1alpha1.GetOneUserResponse.serializeBinaryToWriter = function(me
   if (f) {
     writer.writeBool(
       22,
+      f
+    );
+  }
+  f = message.getLanguage();
+  if (f.length > 0) {
+    writer.writeString(
+      23,
+      f
+    );
+  }
+  f = message.getPushNotification();
+  if (f) {
+    writer.writeBool(
+      24,
+      f
+    );
+  }
+  f = message.getEmailNotification();
+  if (f) {
+    writer.writeBool(
+      25,
+      f
+    );
+  }
+  f = message.getNewLoginNotification();
+  if (f) {
+    writer.writeBool(
+      26,
+      f
+    );
+  }
+  f = message.getCreateNotification();
+  if (f) {
+    writer.writeBool(
+      27,
+      f
+    );
+  }
+  f = message.getUpdateNotification();
+  if (f) {
+    writer.writeBool(
+      28,
+      f
+    );
+  }
+  f = message.getDeleteNotification();
+  if (f) {
+    writer.writeBool(
+      29,
+      f
+    );
+  }
+  f = message.getApplicationNotification();
+  if (f) {
+    writer.writeBool(
+      30,
+      f
+    );
+  }
+  f = message.getReadNotification();
+  if (f) {
+    writer.writeBool(
+      31,
       f
     );
   }
@@ -14831,6 +15209,168 @@ proto.accounts.v1alpha1.GetOneUserResponse.prototype.getIsMfaEnabled = function(
  */
 proto.accounts.v1alpha1.GetOneUserResponse.prototype.setIsMfaEnabled = function(value) {
   return jspb.Message.setProto3BooleanField(this, 22, value);
+};
+
+
+/**
+ * optional string language = 23;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getLanguage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setLanguage = function(value) {
+  return jspb.Message.setProto3StringField(this, 23, value);
+};
+
+
+/**
+ * optional bool push_notification = 24;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getPushNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 24, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setPushNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 24, value);
+};
+
+
+/**
+ * optional bool email_notification = 25;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getEmailNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 25, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setEmailNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 25, value);
+};
+
+
+/**
+ * optional bool new_login_notification = 26;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getNewLoginNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 26, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setNewLoginNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 26, value);
+};
+
+
+/**
+ * optional bool create_notification = 27;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getCreateNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 27, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setCreateNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 27, value);
+};
+
+
+/**
+ * optional bool update_notification = 28;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getUpdateNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 28, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setUpdateNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 28, value);
+};
+
+
+/**
+ * optional bool delete_notification = 29;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getDeleteNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 29, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setDeleteNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 29, value);
+};
+
+
+/**
+ * optional bool application_notification = 30;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getApplicationNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 30, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setApplicationNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 30, value);
+};
+
+
+/**
+ * optional bool read_notification = 31;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.getReadNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 31, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserResponse.prototype.setReadNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 31, value);
 };
 
 
@@ -28471,9 +29011,9 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.toObject = function(includeInstanc
     isSuperUser: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     organizationsList: jspb.Message.toObjectList(msg.getOrganizationsList(),
     proto.accounts.v1alpha1.Organization.toObject, includeInstance),
+    msg: jspb.Message.getFieldWithDefault(msg, 13, ""),
     projectsList: jspb.Message.toObjectList(msg.getProjectsList(),
     proto.accounts.v1alpha1.Project.toObject, includeInstance),
-    msg: jspb.Message.getFieldWithDefault(msg, 13, ""),
     phoneNumber: jspb.Message.getFieldWithDefault(msg, 15, ""),
     country: jspb.Message.getFieldWithDefault(msg, 16, ""),
     city: jspb.Message.getFieldWithDefault(msg, 17, ""),
@@ -28484,7 +29024,16 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.toObject = function(includeInstanc
     isMfaEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
     tokenCcp: jspb.Message.getFieldWithDefault(msg, 23, ""),
     emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 24, false),
-    error: jspb.Message.getFieldWithDefault(msg, 25, "")
+    error: jspb.Message.getFieldWithDefault(msg, 25, ""),
+    language: jspb.Message.getFieldWithDefault(msg, 26, ""),
+    pushNotification: jspb.Message.getBooleanFieldWithDefault(msg, 27, false),
+    emailNotification: jspb.Message.getBooleanFieldWithDefault(msg, 28, false),
+    newLoginNotification: jspb.Message.getBooleanFieldWithDefault(msg, 29, false),
+    createNotification: jspb.Message.getBooleanFieldWithDefault(msg, 30, false),
+    updateNotification: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
+    deleteNotification: jspb.Message.getBooleanFieldWithDefault(msg, 32, false),
+    applicationNotification: jspb.Message.getBooleanFieldWithDefault(msg, 33, false),
+    readNotification: jspb.Message.getBooleanFieldWithDefault(msg, 34, false)
   };
 
   if (includeInstance) {
@@ -28572,14 +29121,14 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.deserializeBinaryFromReader = func
       reader.readMessage(value,proto.accounts.v1alpha1.Organization.deserializeBinaryFromReader);
       msg.addOrganizations(value);
       break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMsg(value);
+      break;
     case 14:
       var value = new proto.accounts.v1alpha1.Project;
       reader.readMessage(value,proto.accounts.v1alpha1.Project.deserializeBinaryFromReader);
       msg.addProjects(value);
-      break;
-    case 13:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMsg(value);
       break;
     case 15:
       var value = /** @type {string} */ (reader.readString());
@@ -28624,6 +29173,42 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.deserializeBinaryFromReader = func
     case 25:
       var value = /** @type {string} */ (reader.readString());
       msg.setError(value);
+      break;
+    case 26:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLanguage(value);
+      break;
+    case 27:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPushNotification(value);
+      break;
+    case 28:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailNotification(value);
+      break;
+    case 29:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setNewLoginNotification(value);
+      break;
+    case 30:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCreateNotification(value);
+      break;
+    case 31:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUpdateNotification(value);
+      break;
+    case 32:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDeleteNotification(value);
+      break;
+    case 33:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setApplicationNotification(value);
+      break;
+    case 34:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setReadNotification(value);
       break;
     default:
       reader.skipField();
@@ -28741,19 +29326,19 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.serializeBinaryToWriter = function
       proto.accounts.v1alpha1.Organization.serializeBinaryToWriter
     );
   }
+  f = message.getMsg();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
   f = message.getProjectsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       14,
       f,
       proto.accounts.v1alpha1.Project.serializeBinaryToWriter
-    );
-  }
-  f = message.getMsg();
-  if (f.length > 0) {
-    writer.writeString(
-      13,
-      f
     );
   }
   f = message.getPhoneNumber();
@@ -28830,6 +29415,69 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.serializeBinaryToWriter = function
   if (f.length > 0) {
     writer.writeString(
       25,
+      f
+    );
+  }
+  f = message.getLanguage();
+  if (f.length > 0) {
+    writer.writeString(
+      26,
+      f
+    );
+  }
+  f = message.getPushNotification();
+  if (f) {
+    writer.writeBool(
+      27,
+      f
+    );
+  }
+  f = message.getEmailNotification();
+  if (f) {
+    writer.writeBool(
+      28,
+      f
+    );
+  }
+  f = message.getNewLoginNotification();
+  if (f) {
+    writer.writeBool(
+      29,
+      f
+    );
+  }
+  f = message.getCreateNotification();
+  if (f) {
+    writer.writeBool(
+      30,
+      f
+    );
+  }
+  f = message.getUpdateNotification();
+  if (f) {
+    writer.writeBool(
+      31,
+      f
+    );
+  }
+  f = message.getDeleteNotification();
+  if (f) {
+    writer.writeBool(
+      32,
+      f
+    );
+  }
+  f = message.getApplicationNotification();
+  if (f) {
+    writer.writeBool(
+      33,
+      f
+    );
+  }
+  f = message.getReadNotification();
+  if (f) {
+    writer.writeBool(
+      34,
       f
     );
   }
@@ -29113,6 +29761,24 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.clearOrganizationsList =
 
 
 /**
+ * optional string msg = 13;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getMsg = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setMsg = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
  * repeated Project projects = 14;
  * @return {!Array<!proto.accounts.v1alpha1.Project>}
  */
@@ -29147,24 +29813,6 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.addProjects = function(o
  */
 proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.clearProjectsList = function() {
   return this.setProjectsList([]);
-};
-
-
-/**
- * optional string msg = 13;
- * @return {string}
- */
-proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getMsg = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setMsg = function(value) {
-  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
@@ -29363,6 +30011,168 @@ proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getError = function() {
  */
 proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setError = function(value) {
   return jspb.Message.setProto3StringField(this, 25, value);
+};
+
+
+/**
+ * optional string language = 26;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getLanguage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 26, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setLanguage = function(value) {
+  return jspb.Message.setProto3StringField(this, 26, value);
+};
+
+
+/**
+ * optional bool push_notification = 27;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getPushNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 27, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setPushNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 27, value);
+};
+
+
+/**
+ * optional bool email_notification = 28;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getEmailNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 28, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setEmailNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 28, value);
+};
+
+
+/**
+ * optional bool new_login_notification = 29;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getNewLoginNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 29, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setNewLoginNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 29, value);
+};
+
+
+/**
+ * optional bool create_notification = 30;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getCreateNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 30, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setCreateNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 30, value);
+};
+
+
+/**
+ * optional bool update_notification = 31;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getUpdateNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 31, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setUpdateNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 31, value);
+};
+
+
+/**
+ * optional bool delete_notification = 32;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getDeleteNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 32, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setDeleteNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 32, value);
+};
+
+
+/**
+ * optional bool application_notification = 33;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getApplicationNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 33, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setApplicationNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 33, value);
+};
+
+
+/**
+ * optional bool read_notification = 34;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.getReadNotification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 34, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.GetOneUserDexResponse} returns this
+ */
+proto.accounts.v1alpha1.GetOneUserDexResponse.prototype.setReadNotification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 34, value);
 };
 
 

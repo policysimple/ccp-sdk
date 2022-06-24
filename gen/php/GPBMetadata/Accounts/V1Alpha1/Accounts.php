@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-È¤
+Â®
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"4
 EnableOrDisableMFARequest
 user_id (	RuserId".
@@ -33,11 +33,12 @@ MFARequest
 GetUsersEmailFilterRequest
 value (	Rvalue"P
 GetUsersEmailFilterResponse1
-users (2.accounts.v1alpha1.UserListRusers"f
+users (2.accounts.v1alpha1.UserListRusers"e
 Log
-user_id (	RuserId
-systems (	Rsystems
-	navegator (	R	navegator
+user_id (	RuserId
+system (	Rsystem
+
+client_web (	R	clientWeb
 ip (	Rip";
 SaveLogsRequest(
 log (2.accounts.v1alpha1.LogRlog"$
@@ -63,7 +64,7 @@ first_name (	R	firstName%
 	token_ccp (	RtokenCcp
 msg (	Rmsg
 error (	Rerror.
-time_expiration_mfa (RtimeExpirationMfa
+time_expiration_mfa (RtimeExpirationMfa
 user_id (	RuserId"{
 GetRolesByOrgUserRequest\'
 organization_id (RorganizationId
@@ -215,7 +216,7 @@ permission
 ListUserRequest\'
 organization_id (RorganizationId
 
-project_id (R	projectId"ž
+project_id (R	projectId"Ç
 CreateUserRequest
 user_id (	RuserId
 
@@ -235,7 +236,16 @@ first_name (	R	firstName
 state (	Rstate#
 emoji_country (	RemojiCountry\'
 invitation_code (	RinvitationCode$
-is_mfa_enabled (RisMfaEnabled"f
+is_mfa_enabled (RisMfaEnabled
+language (	Rlanguage+
+push_notification (RpushNotification-
+email_notification (RemailNotification4
+new_login_notification (RnewLoginNotification/
+create_notification (RcreateNotification/
+update_notification (RupdateNotification/
+delete_notification (RdeleteNotification9
+application_notification (RapplicationNotification+
+read_notification (RreadNotification"f
 UpdateUserRequest
 auth_id (RauthId8
 auth (2$.accounts.v1alpha1.CreateUserRequestRauth"U
@@ -253,7 +263,7 @@ first_name (	R	firstName
 is_super_user (RisSuperUser"L
 GetOneUserRequest
 id (Rid\'
-organization_id (RorganizationId"Š
+organization_id (RorganizationId"³	
 GetOneUserResponse
 id (Rid
 user_id (	RuserId
@@ -280,7 +290,16 @@ updated_at (	R	updatedAt,
 state (	Rstate#
 emoji_country (	RemojiCountry%
 email_verified (RemailVerified$
-is_mfa_enabled (RisMfaEnabled"E
+is_mfa_enabled (RisMfaEnabled
+language (	Rlanguage+
+push_notification (RpushNotification-
+email_notification (RemailNotification4
+new_login_notification (RnewLoginNotification/
+create_notification (RcreateNotification/
+update_notification (RupdateNotification/
+delete_notification (RdeleteNotification9
+application_notification (RapplicationNotification+
+read_notification (RreadNotification"E
 ListUserResponse1
 users (2.accounts.v1alpha1.UserListRusers"I
 ListUserPaginationRequest
@@ -558,7 +577,7 @@ first_name (	R	firstName
 	users_dex (2.accounts.v1alpha1.UsersDexRusersDex"i
 GetOneUserDexRequest
 user_id (	RuserId8
-user (2$.accounts.v1alpha1.CreateUserRequestRuser"Ò
+user (2$.accounts.v1alpha1.CreateUserRequestRuser"û	
 GetOneUserDexResponse
 id (Rid
 user_id (	RuserId
@@ -575,9 +594,9 @@ updated_at (	R	updatedAt,
 permissions
  (2.accounts.v1alpha1.PermissionRpermissions"
 is_super_user (RisSuperUserE
-organizations (2.accounts.v1alpha1.OrganizationRorganizations6
-projects (2.accounts.v1alpha1.ProjectRprojects
-msg (	Rmsg!
+organizations (2.accounts.v1alpha1.OrganizationRorganizations
+msg (	Rmsg6
+projects (2.accounts.v1alpha1.ProjectRprojects!
 phone_number (	RphoneNumber
 country (	Rcountry
 city (	Rcity
@@ -588,7 +607,16 @@ updated_at (	R	updatedAt,
 is_mfa_enabled (RisMfaEnabled
 	token_ccp (	RtokenCcp%
 email_verified (RemailVerified
-error (	Rerror*d
+error (	Rerror
+language (	Rlanguage+
+push_notification (RpushNotification-
+email_notification (RemailNotification4
+new_login_notification (RnewLoginNotification/
+create_notification (RcreateNotification/
+update_notification (RupdateNotification/
+delete_notification  (RdeleteNotification9
+application_notification! (RapplicationNotification+
+read_notification" (RreadNotification*d
 InvitationResponse,
 (INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED  
 INVITATION_RESPONSE_REJECTED2¬(
