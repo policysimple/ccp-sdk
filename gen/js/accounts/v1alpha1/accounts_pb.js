@@ -3729,7 +3729,8 @@ proto.accounts.v1alpha1.Log.toObject = function(includeInstance, msg) {
     userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     system: jspb.Message.getFieldWithDefault(msg, 2, ""),
     clientWeb: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    ip: jspb.Message.getFieldWithDefault(msg, 4, "")
+    ip: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    date: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -3781,6 +3782,10 @@ proto.accounts.v1alpha1.Log.deserializeBinaryFromReader = function(msg, reader) 
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setIp(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDate(value);
       break;
     default:
       reader.skipField();
@@ -3836,6 +3841,13 @@ proto.accounts.v1alpha1.Log.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getDate();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -3911,6 +3923,24 @@ proto.accounts.v1alpha1.Log.prototype.getIp = function() {
  */
 proto.accounts.v1alpha1.Log.prototype.setIp = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string date = 5;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.Log.prototype.getDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.Log} returns this
+ */
+proto.accounts.v1alpha1.Log.prototype.setDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
