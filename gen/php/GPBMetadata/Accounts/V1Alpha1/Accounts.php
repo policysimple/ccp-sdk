@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-®
+֮
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"4
 EnableOrDisableMFARequest
 user_id (	RuserId".
@@ -33,13 +33,14 @@ MFARequest
 GetUsersEmailFilterRequest
 value (	Rvalue"P
 GetUsersEmailFilterResponse1
-users (2.accounts.v1alpha1.UserListRusers"e
+users (2.accounts.v1alpha1.UserListRusers"y
 Log
 user_id (	RuserId
 system (	Rsystem
 
 client_web (	R	clientWeb
-ip (	Rip";
+ip (	Rip
+date (	Rdate";
 SaveLogsRequest(
 log (2.accounts.v1alpha1.LogRlog"$
 SaveLogsResponse

@@ -1641,6 +1641,7 @@ class Log final :
     kSystemFieldNumber = 2,
     kClientWebFieldNumber = 3,
     kIpFieldNumber = 4,
+    kDateFieldNumber = 5,
   };
   // string user_id = 1 [json_name = "userId"];
   void clear_user_id();
@@ -1698,6 +1699,20 @@ class Log final :
   std::string* _internal_mutable_ip();
   public:
 
+  // string date = 5 [json_name = "date"];
+  void clear_date();
+  const std::string& date() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_date(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_date();
+  PROTOBUF_MUST_USE_RESULT std::string* release_date();
+  void set_allocated_date(std::string* date);
+  private:
+  const std::string& _internal_date() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_date(const std::string& value);
+  std::string* _internal_mutable_date();
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.Log)
  private:
   class _Internal;
@@ -1709,6 +1724,7 @@ class Log final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr system_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_web_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ip_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr date_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -23904,6 +23920,52 @@ inline void Log::set_allocated_ip(std::string* ip) {
   ip_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ip,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.Log.ip)
+}
+
+// string date = 5 [json_name = "date"];
+inline void Log::clear_date() {
+  date_.ClearToEmpty();
+}
+inline const std::string& Log::date() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.Log.date)
+  return _internal_date();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Log::set_date(ArgT0&& arg0, ArgT... args) {
+ 
+ date_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.Log.date)
+}
+inline std::string* Log::mutable_date() {
+  std::string* _s = _internal_mutable_date();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.Log.date)
+  return _s;
+}
+inline const std::string& Log::_internal_date() const {
+  return date_.Get();
+}
+inline void Log::_internal_set_date(const std::string& value) {
+  
+  date_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Log::_internal_mutable_date() {
+  
+  return date_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Log::release_date() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.Log.date)
+  return date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Log::set_allocated_date(std::string* date) {
+  if (date != nullptr) {
+    
+  } else {
+    
+  }
+  date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), date,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.Log.date)
 }
 
 // -------------------------------------------------------------------
