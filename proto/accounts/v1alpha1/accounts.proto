@@ -115,8 +115,8 @@ message GetUsersEmailFilterResponse {
 
 message Log{
     string user_id = 1;
-    string systems = 2;
-    string navegator = 3;
+    string system = 2;
+    string client_web = 3;
     string ip = 4;
 }
 message SaveLogsRequest {
@@ -160,7 +160,7 @@ message CreateTokenCCPResponse {
     string msg = 2;
     string error = 4;
     //tiempo de expiracion fma
-    uint32 time_expiration_mfa = 5;
+    int64 time_expiration_mfa = 5;
     string user_id = 6;
 }
 
@@ -448,7 +448,6 @@ message CreateUserRequest {
     repeated uint32 roles_ids = 6;
     repeated uint32 permissions_ids = 7;
     repeated uint32 organizations_ids = 8;
-
     // details
     string phone_number = 9;
     string country = 10;
@@ -460,6 +459,18 @@ message CreateUserRequest {
     string invitation_code  = 16;
 
     bool is_mfa_enabled = 17;
+
+    //preferences
+    string language = 18;
+    bool push_notification  = 19;
+    bool email_notification = 20;
+    bool new_login_notification = 21;
+    bool create_notification = 22;
+    bool update_notification = 23;
+    bool delete_notification = 24;
+    bool application_notification = 25;
+    bool read_notification = 26;
+
 }
 
 //Update
@@ -508,7 +519,6 @@ message GetOneUserResponse {
     bool is_super_user = 11;
     repeated Organization organizations = 12;
     repeated Project projects = 13;
-
     // details
     string phone_number = 14;
     string country = 15;
@@ -519,7 +529,17 @@ message GetOneUserResponse {
     string emoji_country = 20;
     bool email_verified = 21;
 
+    // preferences
     bool is_mfa_enabled = 22;
+    string language = 23;
+    bool push_notification  = 24;
+    bool email_notification = 25;
+    bool new_login_notification = 26;
+    bool create_notification = 27;
+    bool update_notification = 28;
+    bool delete_notification = 29;
+    bool application_notification = 30;
+    bool read_notification = 31;
 
 }
 
@@ -1010,8 +1030,9 @@ message GetOneUserDexResponse {
     repeated Permission permissions = 10;
     bool is_super_user = 11;
     repeated Organization organizations = 12;
-    repeated Project projects = 14;
     string msg = 13;
+    repeated Project projects = 14;
+
 
     // details
     string phone_number = 15;
@@ -1021,11 +1042,22 @@ message GetOneUserDexResponse {
     string address = 19;
     string state = 20;
     string emoji_country = 21;
-
     //multi-factor
     bool is_mfa_enabled = 22;
     string token_ccp = 23;
     bool email_verified = 24;
-
     string error = 25;
+
+
+    //preferences
+    string language = 26;
+    bool push_notification  = 27;
+    bool email_notification = 28;
+    bool new_login_notification = 29;
+    bool create_notification = 30;
+    bool update_notification = 31;
+    bool delete_notification = 32;
+    bool application_notification = 33;
+    bool read_notification = 34;
+
 }

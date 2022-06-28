@@ -18,13 +18,13 @@ class Log extends \Google\Protobuf\Internal\Message
      */
     protected $user_id = '';
     /**
-     * Generated from protobuf field <code>string systems = 2 [json_name = "systems"];</code>
+     * Generated from protobuf field <code>string system = 2 [json_name = "system"];</code>
      */
-    protected $systems = '';
+    protected $system = '';
     /**
-     * Generated from protobuf field <code>string navegator = 3 [json_name = "navegator"];</code>
+     * Generated from protobuf field <code>string client_web = 3 [json_name = "clientWeb"];</code>
      */
-    protected $navegator = '';
+    protected $client_web = '';
     /**
      * Generated from protobuf field <code>string ip = 4 [json_name = "ip"];</code>
      */
@@ -37,8 +37,8 @@ class Log extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $user_id
-     *     @type string $systems
-     *     @type string $navegator
+     *     @type string $system
+     *     @type string $client_web
      *     @type string $ip
      * }
      */
@@ -70,45 +70,45 @@ class Log extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string systems = 2 [json_name = "systems"];</code>
+     * Generated from protobuf field <code>string system = 2 [json_name = "system"];</code>
      * @return string
      */
-    public function getSystems()
+    public function getSystem()
     {
-        return $this->systems;
+        return $this->system;
     }
 
     /**
-     * Generated from protobuf field <code>string systems = 2 [json_name = "systems"];</code>
+     * Generated from protobuf field <code>string system = 2 [json_name = "system"];</code>
      * @param string $var
      * @return $this
      */
-    public function setSystems($var)
+    public function setSystem($var)
     {
         GPBUtil::checkString($var, True);
-        $this->systems = $var;
+        $this->system = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string navegator = 3 [json_name = "navegator"];</code>
+     * Generated from protobuf field <code>string client_web = 3 [json_name = "clientWeb"];</code>
      * @return string
      */
-    public function getNavegator()
+    public function getClientWeb()
     {
-        return $this->navegator;
+        return $this->client_web;
     }
 
     /**
-     * Generated from protobuf field <code>string navegator = 3 [json_name = "navegator"];</code>
+     * Generated from protobuf field <code>string client_web = 3 [json_name = "clientWeb"];</code>
      * @param string $var
      * @return $this
      */
-    public function setNavegator($var)
+    public function setClientWeb($var)
     {
         GPBUtil::checkString($var, True);
-        $this->navegator = $var;
+        $this->client_web = $var;
 
         return $this;
     }

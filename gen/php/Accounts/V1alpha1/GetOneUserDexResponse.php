@@ -62,13 +62,13 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      */
     private $organizations;
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    private $projects;
-    /**
      * Generated from protobuf field <code>string msg = 13 [json_name = "msg"];</code>
      */
     protected $msg = '';
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     */
+    private $projects;
     /**
      * details
      *
@@ -117,6 +117,44 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string error = 25 [json_name = "error"];</code>
      */
     protected $error = '';
+    /**
+     *preferences
+     *
+     * Generated from protobuf field <code>string language = 26 [json_name = "language"];</code>
+     */
+    protected $language = '';
+    /**
+     * Generated from protobuf field <code>bool push_notification = 27 [json_name = "pushNotification"];</code>
+     */
+    protected $push_notification = false;
+    /**
+     * Generated from protobuf field <code>bool email_notification = 28 [json_name = "emailNotification"];</code>
+     */
+    protected $email_notification = false;
+    /**
+     * Generated from protobuf field <code>bool new_login_notification = 29 [json_name = "newLoginNotification"];</code>
+     */
+    protected $new_login_notification = false;
+    /**
+     * Generated from protobuf field <code>bool create_notification = 30 [json_name = "createNotification"];</code>
+     */
+    protected $create_notification = false;
+    /**
+     * Generated from protobuf field <code>bool update_notification = 31 [json_name = "updateNotification"];</code>
+     */
+    protected $update_notification = false;
+    /**
+     * Generated from protobuf field <code>bool delete_notification = 32 [json_name = "deleteNotification"];</code>
+     */
+    protected $delete_notification = false;
+    /**
+     * Generated from protobuf field <code>bool application_notification = 33 [json_name = "applicationNotification"];</code>
+     */
+    protected $application_notification = false;
+    /**
+     * Generated from protobuf field <code>bool read_notification = 34 [json_name = "readNotification"];</code>
+     */
+    protected $read_notification = false;
 
     /**
      * Constructor.
@@ -136,8 +174,8 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
      *     @type bool $is_super_user
      *     @type \Accounts\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $organizations
-     *     @type \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type string $msg
+     *     @type \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type string $phone_number
      *           details
      *     @type string $country
@@ -151,6 +189,16 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
      *     @type string $token_ccp
      *     @type bool $email_verified
      *     @type string $error
+     *     @type string $language
+     *          preferences
+     *     @type bool $push_notification
+     *     @type bool $email_notification
+     *     @type bool $new_login_notification
+     *     @type bool $create_notification
+     *     @type bool $update_notification
+     *     @type bool $delete_notification
+     *     @type bool $application_notification
+     *     @type bool $read_notification
      * }
      */
     public function __construct($data = NULL) {
@@ -423,28 +471,6 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getProjects()
-    {
-        return $this->projects;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     * @param \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setProjects($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Project::class);
-        $this->projects = $arr;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string msg = 13 [json_name = "msg"];</code>
      * @return string
      */
@@ -462,6 +488,28 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->msg = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getProjects()
+    {
+        return $this->projects;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
+     * @param \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProjects($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Project::class);
+        $this->projects = $arr;
 
         return $this;
     }
@@ -712,6 +760,208 @@ class GetOneUserDexResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->error = $var;
+
+        return $this;
+    }
+
+    /**
+     *preferences
+     *
+     * Generated from protobuf field <code>string language = 26 [json_name = "language"];</code>
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    /**
+     *preferences
+     *
+     * Generated from protobuf field <code>string language = 26 [json_name = "language"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLanguage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->language = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool push_notification = 27 [json_name = "pushNotification"];</code>
+     * @return bool
+     */
+    public function getPushNotification()
+    {
+        return $this->push_notification;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool push_notification = 27 [json_name = "pushNotification"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPushNotification($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->push_notification = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool email_notification = 28 [json_name = "emailNotification"];</code>
+     * @return bool
+     */
+    public function getEmailNotification()
+    {
+        return $this->email_notification;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool email_notification = 28 [json_name = "emailNotification"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEmailNotification($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->email_notification = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool new_login_notification = 29 [json_name = "newLoginNotification"];</code>
+     * @return bool
+     */
+    public function getNewLoginNotification()
+    {
+        return $this->new_login_notification;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool new_login_notification = 29 [json_name = "newLoginNotification"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setNewLoginNotification($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->new_login_notification = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool create_notification = 30 [json_name = "createNotification"];</code>
+     * @return bool
+     */
+    public function getCreateNotification()
+    {
+        return $this->create_notification;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool create_notification = 30 [json_name = "createNotification"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setCreateNotification($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->create_notification = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool update_notification = 31 [json_name = "updateNotification"];</code>
+     * @return bool
+     */
+    public function getUpdateNotification()
+    {
+        return $this->update_notification;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool update_notification = 31 [json_name = "updateNotification"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUpdateNotification($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->update_notification = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool delete_notification = 32 [json_name = "deleteNotification"];</code>
+     * @return bool
+     */
+    public function getDeleteNotification()
+    {
+        return $this->delete_notification;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool delete_notification = 32 [json_name = "deleteNotification"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDeleteNotification($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->delete_notification = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool application_notification = 33 [json_name = "applicationNotification"];</code>
+     * @return bool
+     */
+    public function getApplicationNotification()
+    {
+        return $this->application_notification;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool application_notification = 33 [json_name = "applicationNotification"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setApplicationNotification($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->application_notification = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool read_notification = 34 [json_name = "readNotification"];</code>
+     * @return bool
+     */
+    public function getReadNotification()
+    {
+        return $this->read_notification;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool read_notification = 34 [json_name = "readNotification"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setReadNotification($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->read_notification = $var;
 
         return $this;
     }

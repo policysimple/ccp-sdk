@@ -1638,8 +1638,8 @@ class Log final :
 
   enum : int {
     kUserIdFieldNumber = 1,
-    kSystemsFieldNumber = 2,
-    kNavegatorFieldNumber = 3,
+    kSystemFieldNumber = 2,
+    kClientWebFieldNumber = 3,
     kIpFieldNumber = 4,
   };
   // string user_id = 1 [json_name = "userId"];
@@ -1656,32 +1656,32 @@ class Log final :
   std::string* _internal_mutable_user_id();
   public:
 
-  // string systems = 2 [json_name = "systems"];
-  void clear_systems();
-  const std::string& systems() const;
+  // string system = 2 [json_name = "system"];
+  void clear_system();
+  const std::string& system() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_systems(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_systems();
-  PROTOBUF_MUST_USE_RESULT std::string* release_systems();
-  void set_allocated_systems(std::string* systems);
+  void set_system(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_system();
+  PROTOBUF_MUST_USE_RESULT std::string* release_system();
+  void set_allocated_system(std::string* system);
   private:
-  const std::string& _internal_systems() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_systems(const std::string& value);
-  std::string* _internal_mutable_systems();
+  const std::string& _internal_system() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_system(const std::string& value);
+  std::string* _internal_mutable_system();
   public:
 
-  // string navegator = 3 [json_name = "navegator"];
-  void clear_navegator();
-  const std::string& navegator() const;
+  // string client_web = 3 [json_name = "clientWeb"];
+  void clear_client_web();
+  const std::string& client_web() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_navegator(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_navegator();
-  PROTOBUF_MUST_USE_RESULT std::string* release_navegator();
-  void set_allocated_navegator(std::string* navegator);
+  void set_client_web(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_client_web();
+  PROTOBUF_MUST_USE_RESULT std::string* release_client_web();
+  void set_allocated_client_web(std::string* client_web);
   private:
-  const std::string& _internal_navegator() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_navegator(const std::string& value);
-  std::string* _internal_mutable_navegator();
+  const std::string& _internal_client_web() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_client_web(const std::string& value);
+  std::string* _internal_mutable_client_web();
   public:
 
   // string ip = 4 [json_name = "ip"];
@@ -1706,8 +1706,8 @@ class Log final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr systems_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr navegator_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr system_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_web_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ip_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
@@ -2977,13 +2977,13 @@ class CreateTokenCCPResponse final :
   std::string* _internal_mutable_user_id();
   public:
 
-  // uint32 time_expiration_mfa = 5 [json_name = "timeExpirationMfa"];
+  // int64 time_expiration_mfa = 5 [json_name = "timeExpirationMfa"];
   void clear_time_expiration_mfa();
-  ::PROTOBUF_NAMESPACE_ID::uint32 time_expiration_mfa() const;
-  void set_time_expiration_mfa(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 time_expiration_mfa() const;
+  void set_time_expiration_mfa(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_time_expiration_mfa() const;
-  void _internal_set_time_expiration_mfa(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_time_expiration_mfa() const;
+  void _internal_set_time_expiration_mfa(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.CreateTokenCCPResponse)
@@ -2997,7 +2997,7 @@ class CreateTokenCCPResponse final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 time_expiration_mfa_;
+  ::PROTOBUF_NAMESPACE_ID::int64 time_expiration_mfa_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -9385,8 +9385,17 @@ class CreateUserRequest final :
     kStateFieldNumber = 14,
     kEmojiCountryFieldNumber = 15,
     kInvitationCodeFieldNumber = 16,
+    kLanguageFieldNumber = 18,
     kIsActiveFieldNumber = 5,
     kIsMfaEnabledFieldNumber = 17,
+    kPushNotificationFieldNumber = 19,
+    kEmailNotificationFieldNumber = 20,
+    kNewLoginNotificationFieldNumber = 21,
+    kCreateNotificationFieldNumber = 22,
+    kUpdateNotificationFieldNumber = 23,
+    kDeleteNotificationFieldNumber = 24,
+    kApplicationNotificationFieldNumber = 25,
+    kReadNotificationFieldNumber = 26,
   };
   // repeated uint32 roles_ids = 6 [json_name = "rolesIds"];
   int roles_ids_size() const;
@@ -9622,6 +9631,20 @@ class CreateUserRequest final :
   std::string* _internal_mutable_invitation_code();
   public:
 
+  // string language = 18 [json_name = "language"];
+  void clear_language();
+  const std::string& language() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_language(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_language();
+  PROTOBUF_MUST_USE_RESULT std::string* release_language();
+  void set_allocated_language(std::string* language);
+  private:
+  const std::string& _internal_language() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_language(const std::string& value);
+  std::string* _internal_mutable_language();
+  public:
+
   // bool is_active = 5 [json_name = "isActive"];
   void clear_is_active();
   bool is_active() const;
@@ -9638,6 +9661,78 @@ class CreateUserRequest final :
   private:
   bool _internal_is_mfa_enabled() const;
   void _internal_set_is_mfa_enabled(bool value);
+  public:
+
+  // bool push_notification = 19 [json_name = "pushNotification"];
+  void clear_push_notification();
+  bool push_notification() const;
+  void set_push_notification(bool value);
+  private:
+  bool _internal_push_notification() const;
+  void _internal_set_push_notification(bool value);
+  public:
+
+  // bool email_notification = 20 [json_name = "emailNotification"];
+  void clear_email_notification();
+  bool email_notification() const;
+  void set_email_notification(bool value);
+  private:
+  bool _internal_email_notification() const;
+  void _internal_set_email_notification(bool value);
+  public:
+
+  // bool new_login_notification = 21 [json_name = "newLoginNotification"];
+  void clear_new_login_notification();
+  bool new_login_notification() const;
+  void set_new_login_notification(bool value);
+  private:
+  bool _internal_new_login_notification() const;
+  void _internal_set_new_login_notification(bool value);
+  public:
+
+  // bool create_notification = 22 [json_name = "createNotification"];
+  void clear_create_notification();
+  bool create_notification() const;
+  void set_create_notification(bool value);
+  private:
+  bool _internal_create_notification() const;
+  void _internal_set_create_notification(bool value);
+  public:
+
+  // bool update_notification = 23 [json_name = "updateNotification"];
+  void clear_update_notification();
+  bool update_notification() const;
+  void set_update_notification(bool value);
+  private:
+  bool _internal_update_notification() const;
+  void _internal_set_update_notification(bool value);
+  public:
+
+  // bool delete_notification = 24 [json_name = "deleteNotification"];
+  void clear_delete_notification();
+  bool delete_notification() const;
+  void set_delete_notification(bool value);
+  private:
+  bool _internal_delete_notification() const;
+  void _internal_set_delete_notification(bool value);
+  public:
+
+  // bool application_notification = 25 [json_name = "applicationNotification"];
+  void clear_application_notification();
+  bool application_notification() const;
+  void set_application_notification(bool value);
+  private:
+  bool _internal_application_notification() const;
+  void _internal_set_application_notification(bool value);
+  public:
+
+  // bool read_notification = 26 [json_name = "readNotification"];
+  void clear_read_notification();
+  bool read_notification() const;
+  void set_read_notification(bool value);
+  private:
+  bool _internal_read_notification() const;
+  void _internal_set_read_notification(bool value);
   public:
 
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.CreateUserRequest)
@@ -9665,8 +9760,17 @@ class CreateUserRequest final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr state_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr emoji_country_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invitation_code_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr language_;
   bool is_active_;
   bool is_mfa_enabled_;
+  bool push_notification_;
+  bool email_notification_;
+  bool new_login_notification_;
+  bool create_notification_;
+  bool update_notification_;
+  bool delete_notification_;
+  bool application_notification_;
+  bool read_notification_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -10488,11 +10592,20 @@ class GetOneUserResponse final :
     kAddressFieldNumber = 18,
     kStateFieldNumber = 19,
     kEmojiCountryFieldNumber = 20,
+    kLanguageFieldNumber = 23,
     kIdFieldNumber = 1,
     kIsActiveFieldNumber = 6,
     kIsSuperUserFieldNumber = 11,
     kEmailVerifiedFieldNumber = 21,
     kIsMfaEnabledFieldNumber = 22,
+    kPushNotificationFieldNumber = 24,
+    kEmailNotificationFieldNumber = 25,
+    kNewLoginNotificationFieldNumber = 26,
+    kCreateNotificationFieldNumber = 27,
+    kUpdateNotificationFieldNumber = 28,
+    kDeleteNotificationFieldNumber = 29,
+    kApplicationNotificationFieldNumber = 30,
+    kReadNotificationFieldNumber = 31,
   };
   // repeated .accounts.v1alpha1.Rol roles = 9 [json_name = "roles"];
   int roles_size() const;
@@ -10748,6 +10861,20 @@ class GetOneUserResponse final :
   std::string* _internal_mutable_emoji_country();
   public:
 
+  // string language = 23 [json_name = "language"];
+  void clear_language();
+  const std::string& language() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_language(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_language();
+  PROTOBUF_MUST_USE_RESULT std::string* release_language();
+  void set_allocated_language(std::string* language);
+  private:
+  const std::string& _internal_language() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_language(const std::string& value);
+  std::string* _internal_mutable_language();
+  public:
+
   // uint32 id = 1 [json_name = "id"];
   void clear_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
@@ -10793,6 +10920,78 @@ class GetOneUserResponse final :
   void _internal_set_is_mfa_enabled(bool value);
   public:
 
+  // bool push_notification = 24 [json_name = "pushNotification"];
+  void clear_push_notification();
+  bool push_notification() const;
+  void set_push_notification(bool value);
+  private:
+  bool _internal_push_notification() const;
+  void _internal_set_push_notification(bool value);
+  public:
+
+  // bool email_notification = 25 [json_name = "emailNotification"];
+  void clear_email_notification();
+  bool email_notification() const;
+  void set_email_notification(bool value);
+  private:
+  bool _internal_email_notification() const;
+  void _internal_set_email_notification(bool value);
+  public:
+
+  // bool new_login_notification = 26 [json_name = "newLoginNotification"];
+  void clear_new_login_notification();
+  bool new_login_notification() const;
+  void set_new_login_notification(bool value);
+  private:
+  bool _internal_new_login_notification() const;
+  void _internal_set_new_login_notification(bool value);
+  public:
+
+  // bool create_notification = 27 [json_name = "createNotification"];
+  void clear_create_notification();
+  bool create_notification() const;
+  void set_create_notification(bool value);
+  private:
+  bool _internal_create_notification() const;
+  void _internal_set_create_notification(bool value);
+  public:
+
+  // bool update_notification = 28 [json_name = "updateNotification"];
+  void clear_update_notification();
+  bool update_notification() const;
+  void set_update_notification(bool value);
+  private:
+  bool _internal_update_notification() const;
+  void _internal_set_update_notification(bool value);
+  public:
+
+  // bool delete_notification = 29 [json_name = "deleteNotification"];
+  void clear_delete_notification();
+  bool delete_notification() const;
+  void set_delete_notification(bool value);
+  private:
+  bool _internal_delete_notification() const;
+  void _internal_set_delete_notification(bool value);
+  public:
+
+  // bool application_notification = 30 [json_name = "applicationNotification"];
+  void clear_application_notification();
+  bool application_notification() const;
+  void set_application_notification(bool value);
+  private:
+  bool _internal_application_notification() const;
+  void _internal_set_application_notification(bool value);
+  public:
+
+  // bool read_notification = 31 [json_name = "readNotification"];
+  void clear_read_notification();
+  bool read_notification() const;
+  void set_read_notification(bool value);
+  private:
+  bool _internal_read_notification() const;
+  void _internal_set_read_notification(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.GetOneUserResponse)
  private:
   class _Internal;
@@ -10817,11 +11016,20 @@ class GetOneUserResponse final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr address_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr state_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr emoji_country_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr language_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   bool is_active_;
   bool is_super_user_;
   bool email_verified_;
   bool is_mfa_enabled_;
+  bool push_notification_;
+  bool email_notification_;
+  bool new_login_notification_;
+  bool create_notification_;
+  bool update_notification_;
+  bool delete_notification_;
+  bool application_notification_;
+  bool read_notification_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -22584,11 +22792,20 @@ class GetOneUserDexResponse final :
     kEmojiCountryFieldNumber = 21,
     kTokenCcpFieldNumber = 23,
     kErrorFieldNumber = 25,
+    kLanguageFieldNumber = 26,
     kIdFieldNumber = 1,
     kIsActiveFieldNumber = 6,
     kIsSuperUserFieldNumber = 11,
     kIsMfaEnabledFieldNumber = 22,
     kEmailVerifiedFieldNumber = 24,
+    kPushNotificationFieldNumber = 27,
+    kEmailNotificationFieldNumber = 28,
+    kNewLoginNotificationFieldNumber = 29,
+    kCreateNotificationFieldNumber = 30,
+    kUpdateNotificationFieldNumber = 31,
+    kDeleteNotificationFieldNumber = 32,
+    kApplicationNotificationFieldNumber = 33,
+    kReadNotificationFieldNumber = 34,
   };
   // repeated .accounts.v1alpha1.Rol roles = 9 [json_name = "roles"];
   int roles_size() const;
@@ -22886,6 +23103,20 @@ class GetOneUserDexResponse final :
   std::string* _internal_mutable_error();
   public:
 
+  // string language = 26 [json_name = "language"];
+  void clear_language();
+  const std::string& language() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_language(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_language();
+  PROTOBUF_MUST_USE_RESULT std::string* release_language();
+  void set_allocated_language(std::string* language);
+  private:
+  const std::string& _internal_language() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_language(const std::string& value);
+  std::string* _internal_mutable_language();
+  public:
+
   // uint32 id = 1 [json_name = "id"];
   void clear_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
@@ -22931,6 +23162,78 @@ class GetOneUserDexResponse final :
   void _internal_set_email_verified(bool value);
   public:
 
+  // bool push_notification = 27 [json_name = "pushNotification"];
+  void clear_push_notification();
+  bool push_notification() const;
+  void set_push_notification(bool value);
+  private:
+  bool _internal_push_notification() const;
+  void _internal_set_push_notification(bool value);
+  public:
+
+  // bool email_notification = 28 [json_name = "emailNotification"];
+  void clear_email_notification();
+  bool email_notification() const;
+  void set_email_notification(bool value);
+  private:
+  bool _internal_email_notification() const;
+  void _internal_set_email_notification(bool value);
+  public:
+
+  // bool new_login_notification = 29 [json_name = "newLoginNotification"];
+  void clear_new_login_notification();
+  bool new_login_notification() const;
+  void set_new_login_notification(bool value);
+  private:
+  bool _internal_new_login_notification() const;
+  void _internal_set_new_login_notification(bool value);
+  public:
+
+  // bool create_notification = 30 [json_name = "createNotification"];
+  void clear_create_notification();
+  bool create_notification() const;
+  void set_create_notification(bool value);
+  private:
+  bool _internal_create_notification() const;
+  void _internal_set_create_notification(bool value);
+  public:
+
+  // bool update_notification = 31 [json_name = "updateNotification"];
+  void clear_update_notification();
+  bool update_notification() const;
+  void set_update_notification(bool value);
+  private:
+  bool _internal_update_notification() const;
+  void _internal_set_update_notification(bool value);
+  public:
+
+  // bool delete_notification = 32 [json_name = "deleteNotification"];
+  void clear_delete_notification();
+  bool delete_notification() const;
+  void set_delete_notification(bool value);
+  private:
+  bool _internal_delete_notification() const;
+  void _internal_set_delete_notification(bool value);
+  public:
+
+  // bool application_notification = 33 [json_name = "applicationNotification"];
+  void clear_application_notification();
+  bool application_notification() const;
+  void set_application_notification(bool value);
+  private:
+  bool _internal_application_notification() const;
+  void _internal_set_application_notification(bool value);
+  public:
+
+  // bool read_notification = 34 [json_name = "readNotification"];
+  void clear_read_notification();
+  bool read_notification() const;
+  void set_read_notification(bool value);
+  private:
+  bool _internal_read_notification() const;
+  void _internal_set_read_notification(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.GetOneUserDexResponse)
  private:
   class _Internal;
@@ -22958,11 +23261,20 @@ class GetOneUserDexResponse final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr emoji_country_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_ccp_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr language_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   bool is_active_;
   bool is_super_user_;
   bool is_mfa_enabled_;
   bool email_verified_;
+  bool push_notification_;
+  bool email_notification_;
+  bool new_login_notification_;
+  bool create_notification_;
+  bool update_notification_;
+  bool delete_notification_;
+  bool application_notification_;
+  bool read_notification_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -23456,96 +23768,96 @@ inline void Log::set_allocated_user_id(std::string* user_id) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.Log.user_id)
 }
 
-// string systems = 2 [json_name = "systems"];
-inline void Log::clear_systems() {
-  systems_.ClearToEmpty();
+// string system = 2 [json_name = "system"];
+inline void Log::clear_system() {
+  system_.ClearToEmpty();
 }
-inline const std::string& Log::systems() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.Log.systems)
-  return _internal_systems();
+inline const std::string& Log::system() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.Log.system)
+  return _internal_system();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void Log::set_systems(ArgT0&& arg0, ArgT... args) {
+void Log::set_system(ArgT0&& arg0, ArgT... args) {
  
- systems_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.Log.systems)
+ system_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.Log.system)
 }
-inline std::string* Log::mutable_systems() {
-  std::string* _s = _internal_mutable_systems();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.Log.systems)
+inline std::string* Log::mutable_system() {
+  std::string* _s = _internal_mutable_system();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.Log.system)
   return _s;
 }
-inline const std::string& Log::_internal_systems() const {
-  return systems_.Get();
+inline const std::string& Log::_internal_system() const {
+  return system_.Get();
 }
-inline void Log::_internal_set_systems(const std::string& value) {
+inline void Log::_internal_set_system(const std::string& value) {
   
-  systems_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  system_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* Log::_internal_mutable_systems() {
+inline std::string* Log::_internal_mutable_system() {
   
-  return systems_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return system_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* Log::release_systems() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.Log.systems)
-  return systems_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* Log::release_system() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.Log.system)
+  return system_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void Log::set_allocated_systems(std::string* systems) {
-  if (systems != nullptr) {
+inline void Log::set_allocated_system(std::string* system) {
+  if (system != nullptr) {
     
   } else {
     
   }
-  systems_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), systems,
+  system_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), system,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.Log.systems)
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.Log.system)
 }
 
-// string navegator = 3 [json_name = "navegator"];
-inline void Log::clear_navegator() {
-  navegator_.ClearToEmpty();
+// string client_web = 3 [json_name = "clientWeb"];
+inline void Log::clear_client_web() {
+  client_web_.ClearToEmpty();
 }
-inline const std::string& Log::navegator() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.Log.navegator)
-  return _internal_navegator();
+inline const std::string& Log::client_web() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.Log.client_web)
+  return _internal_client_web();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void Log::set_navegator(ArgT0&& arg0, ArgT... args) {
+void Log::set_client_web(ArgT0&& arg0, ArgT... args) {
  
- navegator_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.Log.navegator)
+ client_web_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.Log.client_web)
 }
-inline std::string* Log::mutable_navegator() {
-  std::string* _s = _internal_mutable_navegator();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.Log.navegator)
+inline std::string* Log::mutable_client_web() {
+  std::string* _s = _internal_mutable_client_web();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.Log.client_web)
   return _s;
 }
-inline const std::string& Log::_internal_navegator() const {
-  return navegator_.Get();
+inline const std::string& Log::_internal_client_web() const {
+  return client_web_.Get();
 }
-inline void Log::_internal_set_navegator(const std::string& value) {
+inline void Log::_internal_set_client_web(const std::string& value) {
   
-  navegator_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  client_web_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* Log::_internal_mutable_navegator() {
+inline std::string* Log::_internal_mutable_client_web() {
   
-  return navegator_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return client_web_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* Log::release_navegator() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.Log.navegator)
-  return navegator_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* Log::release_client_web() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.Log.client_web)
+  return client_web_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void Log::set_allocated_navegator(std::string* navegator) {
-  if (navegator != nullptr) {
+inline void Log::set_allocated_client_web(std::string* client_web) {
+  if (client_web != nullptr) {
     
   } else {
     
   }
-  navegator_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), navegator,
+  client_web_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), client_web,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.Log.navegator)
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.Log.client_web)
 }
 
 // string ip = 4 [json_name = "ip"];
@@ -24302,22 +24614,22 @@ inline void CreateTokenCCPResponse::set_allocated_error(std::string* error) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.CreateTokenCCPResponse.error)
 }
 
-// uint32 time_expiration_mfa = 5 [json_name = "timeExpirationMfa"];
+// int64 time_expiration_mfa = 5 [json_name = "timeExpirationMfa"];
 inline void CreateTokenCCPResponse::clear_time_expiration_mfa() {
-  time_expiration_mfa_ = 0u;
+  time_expiration_mfa_ = int64_t{0};
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateTokenCCPResponse::_internal_time_expiration_mfa() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 CreateTokenCCPResponse::_internal_time_expiration_mfa() const {
   return time_expiration_mfa_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateTokenCCPResponse::time_expiration_mfa() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 CreateTokenCCPResponse::time_expiration_mfa() const {
   // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateTokenCCPResponse.time_expiration_mfa)
   return _internal_time_expiration_mfa();
 }
-inline void CreateTokenCCPResponse::_internal_set_time_expiration_mfa(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void CreateTokenCCPResponse::_internal_set_time_expiration_mfa(::PROTOBUF_NAMESPACE_ID::int64 value) {
   
   time_expiration_mfa_ = value;
 }
-inline void CreateTokenCCPResponse::set_time_expiration_mfa(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void CreateTokenCCPResponse::set_time_expiration_mfa(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_time_expiration_mfa(value);
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateTokenCCPResponse.time_expiration_mfa)
 }
@@ -29362,6 +29674,212 @@ inline void CreateUserRequest::set_is_mfa_enabled(bool value) {
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateUserRequest.is_mfa_enabled)
 }
 
+// string language = 18 [json_name = "language"];
+inline void CreateUserRequest::clear_language() {
+  language_.ClearToEmpty();
+}
+inline const std::string& CreateUserRequest::language() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateUserRequest.language)
+  return _internal_language();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateUserRequest::set_language(ArgT0&& arg0, ArgT... args) {
+ 
+ language_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateUserRequest.language)
+}
+inline std::string* CreateUserRequest::mutable_language() {
+  std::string* _s = _internal_mutable_language();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.CreateUserRequest.language)
+  return _s;
+}
+inline const std::string& CreateUserRequest::_internal_language() const {
+  return language_.Get();
+}
+inline void CreateUserRequest::_internal_set_language(const std::string& value) {
+  
+  language_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateUserRequest::_internal_mutable_language() {
+  
+  return language_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateUserRequest::release_language() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.CreateUserRequest.language)
+  return language_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateUserRequest::set_allocated_language(std::string* language) {
+  if (language != nullptr) {
+    
+  } else {
+    
+  }
+  language_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), language,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.CreateUserRequest.language)
+}
+
+// bool push_notification = 19 [json_name = "pushNotification"];
+inline void CreateUserRequest::clear_push_notification() {
+  push_notification_ = false;
+}
+inline bool CreateUserRequest::_internal_push_notification() const {
+  return push_notification_;
+}
+inline bool CreateUserRequest::push_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateUserRequest.push_notification)
+  return _internal_push_notification();
+}
+inline void CreateUserRequest::_internal_set_push_notification(bool value) {
+  
+  push_notification_ = value;
+}
+inline void CreateUserRequest::set_push_notification(bool value) {
+  _internal_set_push_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateUserRequest.push_notification)
+}
+
+// bool email_notification = 20 [json_name = "emailNotification"];
+inline void CreateUserRequest::clear_email_notification() {
+  email_notification_ = false;
+}
+inline bool CreateUserRequest::_internal_email_notification() const {
+  return email_notification_;
+}
+inline bool CreateUserRequest::email_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateUserRequest.email_notification)
+  return _internal_email_notification();
+}
+inline void CreateUserRequest::_internal_set_email_notification(bool value) {
+  
+  email_notification_ = value;
+}
+inline void CreateUserRequest::set_email_notification(bool value) {
+  _internal_set_email_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateUserRequest.email_notification)
+}
+
+// bool new_login_notification = 21 [json_name = "newLoginNotification"];
+inline void CreateUserRequest::clear_new_login_notification() {
+  new_login_notification_ = false;
+}
+inline bool CreateUserRequest::_internal_new_login_notification() const {
+  return new_login_notification_;
+}
+inline bool CreateUserRequest::new_login_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateUserRequest.new_login_notification)
+  return _internal_new_login_notification();
+}
+inline void CreateUserRequest::_internal_set_new_login_notification(bool value) {
+  
+  new_login_notification_ = value;
+}
+inline void CreateUserRequest::set_new_login_notification(bool value) {
+  _internal_set_new_login_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateUserRequest.new_login_notification)
+}
+
+// bool create_notification = 22 [json_name = "createNotification"];
+inline void CreateUserRequest::clear_create_notification() {
+  create_notification_ = false;
+}
+inline bool CreateUserRequest::_internal_create_notification() const {
+  return create_notification_;
+}
+inline bool CreateUserRequest::create_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateUserRequest.create_notification)
+  return _internal_create_notification();
+}
+inline void CreateUserRequest::_internal_set_create_notification(bool value) {
+  
+  create_notification_ = value;
+}
+inline void CreateUserRequest::set_create_notification(bool value) {
+  _internal_set_create_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateUserRequest.create_notification)
+}
+
+// bool update_notification = 23 [json_name = "updateNotification"];
+inline void CreateUserRequest::clear_update_notification() {
+  update_notification_ = false;
+}
+inline bool CreateUserRequest::_internal_update_notification() const {
+  return update_notification_;
+}
+inline bool CreateUserRequest::update_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateUserRequest.update_notification)
+  return _internal_update_notification();
+}
+inline void CreateUserRequest::_internal_set_update_notification(bool value) {
+  
+  update_notification_ = value;
+}
+inline void CreateUserRequest::set_update_notification(bool value) {
+  _internal_set_update_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateUserRequest.update_notification)
+}
+
+// bool delete_notification = 24 [json_name = "deleteNotification"];
+inline void CreateUserRequest::clear_delete_notification() {
+  delete_notification_ = false;
+}
+inline bool CreateUserRequest::_internal_delete_notification() const {
+  return delete_notification_;
+}
+inline bool CreateUserRequest::delete_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateUserRequest.delete_notification)
+  return _internal_delete_notification();
+}
+inline void CreateUserRequest::_internal_set_delete_notification(bool value) {
+  
+  delete_notification_ = value;
+}
+inline void CreateUserRequest::set_delete_notification(bool value) {
+  _internal_set_delete_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateUserRequest.delete_notification)
+}
+
+// bool application_notification = 25 [json_name = "applicationNotification"];
+inline void CreateUserRequest::clear_application_notification() {
+  application_notification_ = false;
+}
+inline bool CreateUserRequest::_internal_application_notification() const {
+  return application_notification_;
+}
+inline bool CreateUserRequest::application_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateUserRequest.application_notification)
+  return _internal_application_notification();
+}
+inline void CreateUserRequest::_internal_set_application_notification(bool value) {
+  
+  application_notification_ = value;
+}
+inline void CreateUserRequest::set_application_notification(bool value) {
+  _internal_set_application_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateUserRequest.application_notification)
+}
+
+// bool read_notification = 26 [json_name = "readNotification"];
+inline void CreateUserRequest::clear_read_notification() {
+  read_notification_ = false;
+}
+inline bool CreateUserRequest::_internal_read_notification() const {
+  return read_notification_;
+}
+inline bool CreateUserRequest::read_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.CreateUserRequest.read_notification)
+  return _internal_read_notification();
+}
+inline void CreateUserRequest::_internal_set_read_notification(bool value) {
+  
+  read_notification_ = value;
+}
+inline void CreateUserRequest::set_read_notification(bool value) {
+  _internal_set_read_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.CreateUserRequest.read_notification)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateUserRequest
@@ -30672,6 +31190,212 @@ inline void GetOneUserResponse::_internal_set_is_mfa_enabled(bool value) {
 inline void GetOneUserResponse::set_is_mfa_enabled(bool value) {
   _internal_set_is_mfa_enabled(value);
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserResponse.is_mfa_enabled)
+}
+
+// string language = 23 [json_name = "language"];
+inline void GetOneUserResponse::clear_language() {
+  language_.ClearToEmpty();
+}
+inline const std::string& GetOneUserResponse::language() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserResponse.language)
+  return _internal_language();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetOneUserResponse::set_language(ArgT0&& arg0, ArgT... args) {
+ 
+ language_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserResponse.language)
+}
+inline std::string* GetOneUserResponse::mutable_language() {
+  std::string* _s = _internal_mutable_language();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneUserResponse.language)
+  return _s;
+}
+inline const std::string& GetOneUserResponse::_internal_language() const {
+  return language_.Get();
+}
+inline void GetOneUserResponse::_internal_set_language(const std::string& value) {
+  
+  language_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetOneUserResponse::_internal_mutable_language() {
+  
+  return language_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetOneUserResponse::release_language() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.GetOneUserResponse.language)
+  return language_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetOneUserResponse::set_allocated_language(std::string* language) {
+  if (language != nullptr) {
+    
+  } else {
+    
+  }
+  language_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), language,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserResponse.language)
+}
+
+// bool push_notification = 24 [json_name = "pushNotification"];
+inline void GetOneUserResponse::clear_push_notification() {
+  push_notification_ = false;
+}
+inline bool GetOneUserResponse::_internal_push_notification() const {
+  return push_notification_;
+}
+inline bool GetOneUserResponse::push_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserResponse.push_notification)
+  return _internal_push_notification();
+}
+inline void GetOneUserResponse::_internal_set_push_notification(bool value) {
+  
+  push_notification_ = value;
+}
+inline void GetOneUserResponse::set_push_notification(bool value) {
+  _internal_set_push_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserResponse.push_notification)
+}
+
+// bool email_notification = 25 [json_name = "emailNotification"];
+inline void GetOneUserResponse::clear_email_notification() {
+  email_notification_ = false;
+}
+inline bool GetOneUserResponse::_internal_email_notification() const {
+  return email_notification_;
+}
+inline bool GetOneUserResponse::email_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserResponse.email_notification)
+  return _internal_email_notification();
+}
+inline void GetOneUserResponse::_internal_set_email_notification(bool value) {
+  
+  email_notification_ = value;
+}
+inline void GetOneUserResponse::set_email_notification(bool value) {
+  _internal_set_email_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserResponse.email_notification)
+}
+
+// bool new_login_notification = 26 [json_name = "newLoginNotification"];
+inline void GetOneUserResponse::clear_new_login_notification() {
+  new_login_notification_ = false;
+}
+inline bool GetOneUserResponse::_internal_new_login_notification() const {
+  return new_login_notification_;
+}
+inline bool GetOneUserResponse::new_login_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserResponse.new_login_notification)
+  return _internal_new_login_notification();
+}
+inline void GetOneUserResponse::_internal_set_new_login_notification(bool value) {
+  
+  new_login_notification_ = value;
+}
+inline void GetOneUserResponse::set_new_login_notification(bool value) {
+  _internal_set_new_login_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserResponse.new_login_notification)
+}
+
+// bool create_notification = 27 [json_name = "createNotification"];
+inline void GetOneUserResponse::clear_create_notification() {
+  create_notification_ = false;
+}
+inline bool GetOneUserResponse::_internal_create_notification() const {
+  return create_notification_;
+}
+inline bool GetOneUserResponse::create_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserResponse.create_notification)
+  return _internal_create_notification();
+}
+inline void GetOneUserResponse::_internal_set_create_notification(bool value) {
+  
+  create_notification_ = value;
+}
+inline void GetOneUserResponse::set_create_notification(bool value) {
+  _internal_set_create_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserResponse.create_notification)
+}
+
+// bool update_notification = 28 [json_name = "updateNotification"];
+inline void GetOneUserResponse::clear_update_notification() {
+  update_notification_ = false;
+}
+inline bool GetOneUserResponse::_internal_update_notification() const {
+  return update_notification_;
+}
+inline bool GetOneUserResponse::update_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserResponse.update_notification)
+  return _internal_update_notification();
+}
+inline void GetOneUserResponse::_internal_set_update_notification(bool value) {
+  
+  update_notification_ = value;
+}
+inline void GetOneUserResponse::set_update_notification(bool value) {
+  _internal_set_update_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserResponse.update_notification)
+}
+
+// bool delete_notification = 29 [json_name = "deleteNotification"];
+inline void GetOneUserResponse::clear_delete_notification() {
+  delete_notification_ = false;
+}
+inline bool GetOneUserResponse::_internal_delete_notification() const {
+  return delete_notification_;
+}
+inline bool GetOneUserResponse::delete_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserResponse.delete_notification)
+  return _internal_delete_notification();
+}
+inline void GetOneUserResponse::_internal_set_delete_notification(bool value) {
+  
+  delete_notification_ = value;
+}
+inline void GetOneUserResponse::set_delete_notification(bool value) {
+  _internal_set_delete_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserResponse.delete_notification)
+}
+
+// bool application_notification = 30 [json_name = "applicationNotification"];
+inline void GetOneUserResponse::clear_application_notification() {
+  application_notification_ = false;
+}
+inline bool GetOneUserResponse::_internal_application_notification() const {
+  return application_notification_;
+}
+inline bool GetOneUserResponse::application_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserResponse.application_notification)
+  return _internal_application_notification();
+}
+inline void GetOneUserResponse::_internal_set_application_notification(bool value) {
+  
+  application_notification_ = value;
+}
+inline void GetOneUserResponse::set_application_notification(bool value) {
+  _internal_set_application_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserResponse.application_notification)
+}
+
+// bool read_notification = 31 [json_name = "readNotification"];
+inline void GetOneUserResponse::clear_read_notification() {
+  read_notification_ = false;
+}
+inline bool GetOneUserResponse::_internal_read_notification() const {
+  return read_notification_;
+}
+inline bool GetOneUserResponse::read_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserResponse.read_notification)
+  return _internal_read_notification();
+}
+inline void GetOneUserResponse::_internal_set_read_notification(bool value) {
+  
+  read_notification_ = value;
+}
+inline void GetOneUserResponse::set_read_notification(bool value) {
+  _internal_set_read_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserResponse.read_notification)
 }
 
 // -------------------------------------------------------------------
@@ -39146,46 +39870,6 @@ GetOneUserDexResponse::organizations() const {
   return organizations_;
 }
 
-// repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
-inline int GetOneUserDexResponse::_internal_projects_size() const {
-  return projects_.size();
-}
-inline int GetOneUserDexResponse::projects_size() const {
-  return _internal_projects_size();
-}
-inline void GetOneUserDexResponse::clear_projects() {
-  projects_.Clear();
-}
-inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::mutable_projects(int index) {
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneUserDexResponse.projects)
-  return projects_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >*
-GetOneUserDexResponse::mutable_projects() {
-  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.GetOneUserDexResponse.projects)
-  return &projects_;
-}
-inline const ::accounts::v1alpha1::Project& GetOneUserDexResponse::_internal_projects(int index) const {
-  return projects_.Get(index);
-}
-inline const ::accounts::v1alpha1::Project& GetOneUserDexResponse::projects(int index) const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.projects)
-  return _internal_projects(index);
-}
-inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::_internal_add_projects() {
-  return projects_.Add();
-}
-inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::add_projects() {
-  ::accounts::v1alpha1::Project* _add = _internal_add_projects();
-  // @@protoc_insertion_point(field_add:accounts.v1alpha1.GetOneUserDexResponse.projects)
-  return _add;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >&
-GetOneUserDexResponse::projects() const {
-  // @@protoc_insertion_point(field_list:accounts.v1alpha1.GetOneUserDexResponse.projects)
-  return projects_;
-}
-
 // string msg = 13 [json_name = "msg"];
 inline void GetOneUserDexResponse::clear_msg() {
   msg_.ClearToEmpty();
@@ -39230,6 +39914,46 @@ inline void GetOneUserDexResponse::set_allocated_msg(std::string* msg) {
   msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserDexResponse.msg)
+}
+
+// repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
+inline int GetOneUserDexResponse::_internal_projects_size() const {
+  return projects_.size();
+}
+inline int GetOneUserDexResponse::projects_size() const {
+  return _internal_projects_size();
+}
+inline void GetOneUserDexResponse::clear_projects() {
+  projects_.Clear();
+}
+inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::mutable_projects(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return projects_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >*
+GetOneUserDexResponse::mutable_projects() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return &projects_;
+}
+inline const ::accounts::v1alpha1::Project& GetOneUserDexResponse::_internal_projects(int index) const {
+  return projects_.Get(index);
+}
+inline const ::accounts::v1alpha1::Project& GetOneUserDexResponse::projects(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return _internal_projects(index);
+}
+inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::_internal_add_projects() {
+  return projects_.Add();
+}
+inline ::accounts::v1alpha1::Project* GetOneUserDexResponse::add_projects() {
+  ::accounts::v1alpha1::Project* _add = _internal_add_projects();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >&
+GetOneUserDexResponse::projects() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.GetOneUserDexResponse.projects)
+  return projects_;
 }
 
 // string phone_number = 15 [json_name = "phoneNumber"];
@@ -39684,6 +40408,212 @@ inline void GetOneUserDexResponse::set_allocated_error(std::string* error) {
   error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserDexResponse.error)
+}
+
+// string language = 26 [json_name = "language"];
+inline void GetOneUserDexResponse::clear_language() {
+  language_.ClearToEmpty();
+}
+inline const std::string& GetOneUserDexResponse::language() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.language)
+  return _internal_language();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetOneUserDexResponse::set_language(ArgT0&& arg0, ArgT... args) {
+ 
+ language_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserDexResponse.language)
+}
+inline std::string* GetOneUserDexResponse::mutable_language() {
+  std::string* _s = _internal_mutable_language();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.GetOneUserDexResponse.language)
+  return _s;
+}
+inline const std::string& GetOneUserDexResponse::_internal_language() const {
+  return language_.Get();
+}
+inline void GetOneUserDexResponse::_internal_set_language(const std::string& value) {
+  
+  language_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetOneUserDexResponse::_internal_mutable_language() {
+  
+  return language_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetOneUserDexResponse::release_language() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.GetOneUserDexResponse.language)
+  return language_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetOneUserDexResponse::set_allocated_language(std::string* language) {
+  if (language != nullptr) {
+    
+  } else {
+    
+  }
+  language_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), language,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.GetOneUserDexResponse.language)
+}
+
+// bool push_notification = 27 [json_name = "pushNotification"];
+inline void GetOneUserDexResponse::clear_push_notification() {
+  push_notification_ = false;
+}
+inline bool GetOneUserDexResponse::_internal_push_notification() const {
+  return push_notification_;
+}
+inline bool GetOneUserDexResponse::push_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.push_notification)
+  return _internal_push_notification();
+}
+inline void GetOneUserDexResponse::_internal_set_push_notification(bool value) {
+  
+  push_notification_ = value;
+}
+inline void GetOneUserDexResponse::set_push_notification(bool value) {
+  _internal_set_push_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserDexResponse.push_notification)
+}
+
+// bool email_notification = 28 [json_name = "emailNotification"];
+inline void GetOneUserDexResponse::clear_email_notification() {
+  email_notification_ = false;
+}
+inline bool GetOneUserDexResponse::_internal_email_notification() const {
+  return email_notification_;
+}
+inline bool GetOneUserDexResponse::email_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.email_notification)
+  return _internal_email_notification();
+}
+inline void GetOneUserDexResponse::_internal_set_email_notification(bool value) {
+  
+  email_notification_ = value;
+}
+inline void GetOneUserDexResponse::set_email_notification(bool value) {
+  _internal_set_email_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserDexResponse.email_notification)
+}
+
+// bool new_login_notification = 29 [json_name = "newLoginNotification"];
+inline void GetOneUserDexResponse::clear_new_login_notification() {
+  new_login_notification_ = false;
+}
+inline bool GetOneUserDexResponse::_internal_new_login_notification() const {
+  return new_login_notification_;
+}
+inline bool GetOneUserDexResponse::new_login_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.new_login_notification)
+  return _internal_new_login_notification();
+}
+inline void GetOneUserDexResponse::_internal_set_new_login_notification(bool value) {
+  
+  new_login_notification_ = value;
+}
+inline void GetOneUserDexResponse::set_new_login_notification(bool value) {
+  _internal_set_new_login_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserDexResponse.new_login_notification)
+}
+
+// bool create_notification = 30 [json_name = "createNotification"];
+inline void GetOneUserDexResponse::clear_create_notification() {
+  create_notification_ = false;
+}
+inline bool GetOneUserDexResponse::_internal_create_notification() const {
+  return create_notification_;
+}
+inline bool GetOneUserDexResponse::create_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.create_notification)
+  return _internal_create_notification();
+}
+inline void GetOneUserDexResponse::_internal_set_create_notification(bool value) {
+  
+  create_notification_ = value;
+}
+inline void GetOneUserDexResponse::set_create_notification(bool value) {
+  _internal_set_create_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserDexResponse.create_notification)
+}
+
+// bool update_notification = 31 [json_name = "updateNotification"];
+inline void GetOneUserDexResponse::clear_update_notification() {
+  update_notification_ = false;
+}
+inline bool GetOneUserDexResponse::_internal_update_notification() const {
+  return update_notification_;
+}
+inline bool GetOneUserDexResponse::update_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.update_notification)
+  return _internal_update_notification();
+}
+inline void GetOneUserDexResponse::_internal_set_update_notification(bool value) {
+  
+  update_notification_ = value;
+}
+inline void GetOneUserDexResponse::set_update_notification(bool value) {
+  _internal_set_update_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserDexResponse.update_notification)
+}
+
+// bool delete_notification = 32 [json_name = "deleteNotification"];
+inline void GetOneUserDexResponse::clear_delete_notification() {
+  delete_notification_ = false;
+}
+inline bool GetOneUserDexResponse::_internal_delete_notification() const {
+  return delete_notification_;
+}
+inline bool GetOneUserDexResponse::delete_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.delete_notification)
+  return _internal_delete_notification();
+}
+inline void GetOneUserDexResponse::_internal_set_delete_notification(bool value) {
+  
+  delete_notification_ = value;
+}
+inline void GetOneUserDexResponse::set_delete_notification(bool value) {
+  _internal_set_delete_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserDexResponse.delete_notification)
+}
+
+// bool application_notification = 33 [json_name = "applicationNotification"];
+inline void GetOneUserDexResponse::clear_application_notification() {
+  application_notification_ = false;
+}
+inline bool GetOneUserDexResponse::_internal_application_notification() const {
+  return application_notification_;
+}
+inline bool GetOneUserDexResponse::application_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.application_notification)
+  return _internal_application_notification();
+}
+inline void GetOneUserDexResponse::_internal_set_application_notification(bool value) {
+  
+  application_notification_ = value;
+}
+inline void GetOneUserDexResponse::set_application_notification(bool value) {
+  _internal_set_application_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserDexResponse.application_notification)
+}
+
+// bool read_notification = 34 [json_name = "readNotification"];
+inline void GetOneUserDexResponse::clear_read_notification() {
+  read_notification_ = false;
+}
+inline bool GetOneUserDexResponse::_internal_read_notification() const {
+  return read_notification_;
+}
+inline bool GetOneUserDexResponse::read_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.GetOneUserDexResponse.read_notification)
+  return _internal_read_notification();
+}
+inline void GetOneUserDexResponse::_internal_set_read_notification(bool value) {
+  
+  read_notification_ = value;
+}
+inline void GetOneUserDexResponse::set_read_notification(bool value) {
+  _internal_set_read_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.GetOneUserDexResponse.read_notification)
 }
 
 #ifdef __GNUC__
