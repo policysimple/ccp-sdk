@@ -38,9 +38,13 @@ class Biling extends \Google\Protobuf\Internal\Message
      */
     protected $ram = 0;
     /**
-     * Generated from protobuf field <code>string mes = 7 [json_name = "mes"];</code>
+     * Generated from protobuf field <code>string month = 7 [json_name = "month"];</code>
      */
-    protected $mes = '';
+    protected $month = '';
+    /**
+     * Generated from protobuf field <code>string year = 8 [json_name = "year"];</code>
+     */
+    protected $year = '';
 
     /**
      * Constructor.
@@ -54,7 +58,8 @@ class Biling extends \Google\Protobuf\Internal\Message
      *     @type int|string $totalusage
      *     @type int|string $cpu
      *     @type int|string $ram
-     *     @type string $mes
+     *     @type string $month
+     *     @type string $year
      * }
      */
     public function __construct($data = NULL) {
@@ -195,23 +200,45 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string mes = 7 [json_name = "mes"];</code>
+     * Generated from protobuf field <code>string month = 7 [json_name = "month"];</code>
      * @return string
      */
-    public function getMes()
+    public function getMonth()
     {
-        return $this->mes;
+        return $this->month;
     }
 
     /**
-     * Generated from protobuf field <code>string mes = 7 [json_name = "mes"];</code>
+     * Generated from protobuf field <code>string month = 7 [json_name = "month"];</code>
      * @param string $var
      * @return $this
      */
-    public function setMes($var)
+    public function setMonth($var)
     {
         GPBUtil::checkString($var, True);
-        $this->mes = $var;
+        $this->month = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string year = 8 [json_name = "year"];</code>
+     * @return string
+     */
+    public function getYear()
+    {
+        return $this->year;
+    }
+
+    /**
+     * Generated from protobuf field <code>string year = 8 [json_name = "year"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setYear($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->year = $var;
 
         return $this;
     }

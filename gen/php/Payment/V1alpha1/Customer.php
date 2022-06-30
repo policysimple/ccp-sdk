@@ -26,23 +26,27 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     protected $email = '';
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string customer_id = 4 [json_name = "customerId"];</code>
+     */
+    protected $customer_id = '';
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
      */
     protected $organization_id = 0;
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 5 [json_name = "suscription"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 6 [json_name = "suscription"];</code>
      */
     protected $suscription = null;
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 6 [json_name = "payment"];</code>
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 7 [json_name = "payment"];</code>
      */
     private $payment;
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 7 [json_name = "invoice"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 8 [json_name = "invoice"];</code>
      */
     protected $invoice = null;
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 8 [json_name = "biling"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 9 [json_name = "biling"];</code>
      */
     protected $biling = null;
 
@@ -55,6 +59,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $name
      *     @type string $email
+     *     @type string $customer_id
      *     @type int $organization_id
      *     @type \Payment\V1alpha1\Suscription $suscription
      *     @type \Payment\V1alpha1\Payment[]|\Google\Protobuf\Internal\RepeatedField $payment
@@ -134,7 +139,29 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string customer_id = 4 [json_name = "customerId"];</code>
+     * @return string
+     */
+    public function getCustomerId()
+    {
+        return $this->customer_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string customer_id = 4 [json_name = "customerId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCustomerId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->customer_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
      * @return int
      */
     public function getOrganizationId()
@@ -143,7 +170,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
      * @param int $var
      * @return $this
      */
@@ -156,7 +183,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 5 [json_name = "suscription"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 6 [json_name = "suscription"];</code>
      * @return \Payment\V1alpha1\Suscription|null
      */
     public function getSuscription()
@@ -175,7 +202,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 5 [json_name = "suscription"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 6 [json_name = "suscription"];</code>
      * @param \Payment\V1alpha1\Suscription $var
      * @return $this
      */
@@ -188,7 +215,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 6 [json_name = "payment"];</code>
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 7 [json_name = "payment"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPayment()
@@ -197,7 +224,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 6 [json_name = "payment"];</code>
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 7 [json_name = "payment"];</code>
      * @param \Payment\V1alpha1\Payment[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -210,7 +237,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 7 [json_name = "invoice"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 8 [json_name = "invoice"];</code>
      * @return \Payment\V1alpha1\Invoice|null
      */
     public function getInvoice()
@@ -229,7 +256,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 7 [json_name = "invoice"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 8 [json_name = "invoice"];</code>
      * @param \Payment\V1alpha1\Invoice $var
      * @return $this
      */
@@ -242,7 +269,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 8 [json_name = "biling"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 9 [json_name = "biling"];</code>
      * @return \Payment\V1alpha1\Biling|null
      */
     public function getBiling()
@@ -261,7 +288,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 8 [json_name = "biling"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 9 [json_name = "biling"];</code>
      * @param \Payment\V1alpha1\Biling $var
      * @return $this
      */

@@ -35,6 +35,7 @@ type PaymentAPIServiceClient interface {
 	DeletePayment(ctx context.Context, in *DeletePaymentRequest, opts ...grpc.CallOption) (*DeletePaymentResponse, error)
 	ListPayment(ctx context.Context, in *ListPaymentRequest, opts ...grpc.CallOption) (*ListPaymentResponse, error)
 	CreateInvoice(ctx context.Context, in *CreateInvoiceRequest, opts ...grpc.CallOption) (*CreateInvoiceResponse, error)
+	InvoiceFilter(ctx context.Context, in *InvoiceFilterRequest, opts ...grpc.CallOption) (*InvoiceFilterResponse, error)
 }
 
 type paymentAPIServiceClient struct {
@@ -198,6 +199,15 @@ func (c *paymentAPIServiceClient) CreateInvoice(ctx context.Context, in *CreateI
 	return out, nil
 }
 
+func (c *paymentAPIServiceClient) InvoiceFilter(ctx context.Context, in *InvoiceFilterRequest, opts ...grpc.CallOption) (*InvoiceFilterResponse, error) {
+	out := new(InvoiceFilterResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/InvoiceFilter", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // PaymentAPIServiceServer is the server API for PaymentAPIService service.
 // All implementations should embed UnimplementedPaymentAPIServiceServer
 // for forward compatibility
@@ -219,6 +229,7 @@ type PaymentAPIServiceServer interface {
 	DeletePayment(context.Context, *DeletePaymentRequest) (*DeletePaymentResponse, error)
 	ListPayment(context.Context, *ListPaymentRequest) (*ListPaymentResponse, error)
 	CreateInvoice(context.Context, *CreateInvoiceRequest) (*CreateInvoiceResponse, error)
+	InvoiceFilter(context.Context, *InvoiceFilterRequest) (*InvoiceFilterResponse, error)
 }
 
 // UnimplementedPaymentAPIServiceServer should be embedded to have forward compatible implementations.
@@ -275,6 +286,9 @@ func (UnimplementedPaymentAPIServiceServer) ListPayment(context.Context, *ListPa
 }
 func (UnimplementedPaymentAPIServiceServer) CreateInvoice(context.Context, *CreateInvoiceRequest) (*CreateInvoiceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateInvoice not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) InvoiceFilter(context.Context, *InvoiceFilterRequest) (*InvoiceFilterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method InvoiceFilter not implemented")
 }
 
 // UnsafePaymentAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -594,6 +608,24 @@ func _PaymentAPIService_CreateInvoice_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PaymentAPIService_InvoiceFilter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(InvoiceFilterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).InvoiceFilter(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/InvoiceFilter",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).InvoiceFilter(ctx, req.(*InvoiceFilterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // PaymentAPIService_ServiceDesc is the grpc.ServiceDesc for PaymentAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -668,6 +700,10 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateInvoice",
 			Handler:    _PaymentAPIService_CreateInvoice_Handler,
+		},
+		{
+			MethodName: "InvoiceFilter",
+			Handler:    _PaymentAPIService_InvoiceFilter_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -16,18 +16,19 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-Ñ
-
-payment/v1alpha1/payment.protopayment.v1alpha1"Ê
+Š
+payment/v1alpha1/payment.protopayment.v1alpha1"ë
 Customer
 id (	Rid
 name (	Rname
-email (	Remail\'
-organization_id (RorganizationId?
-suscription (2.payment.v1alpha1.SuscriptionRsuscription3
-payment (2.payment.v1alpha1.PaymentRpayment3
-invoice (2.payment.v1alpha1.InvoiceRinvoice0
-biling (2.payment.v1alpha1.BilingRbiling"ø
+email (	Remail
+customer_id (	R
+customerId\'
+organization_id (RorganizationId?
+suscription (2.payment.v1alpha1.SuscriptionRsuscription3
+payment (2.payment.v1alpha1.PaymentRpayment3
+invoice (2.payment.v1alpha1.InvoiceRinvoice0
+biling	 (2.payment.v1alpha1.BilingRbiling"ø
 Suscription
 id (	Rid
 price (	Rprice
@@ -53,11 +54,11 @@ invoice_id (	R	invoiceId"
 cvc (	Rcvc"•
 Invoice
 id (	Rid
-amount (Ramount
-period (	Rperiod
-	statuspay (	R	statuspay
-date (	Rdate
-product (	Rproduct"°
+amount (Ramount
+period (	Rperiod
+	statuspay (	R	statuspay
+date (	Rdate
+product (	Rproduct"È
 Biling
 id (	Rid!
 account_name (	RaccountName
@@ -67,10 +68,16 @@ invoice_id (	R	invoiceId
 totalusage (R
 totalusage
 cpu (Rcpu
-ram (Rram
-mes (	Rmes">
-PaymentList/
-items (2.payment.v1alpha1.PaymentRitemsB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1bproto3'
+ram (Rram
+month (	Rmonth
+year (	Ryear">
+InvoiceList/
+items (2.payment.v1alpha1.InvoiceRitems"@
+CustomerList0
+items (2.payment.v1alpha1.CustomerRitems"<
+
+BilingList.
+items (2.payment.v1alpha1.BilingRitemsB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;
