@@ -103,7 +103,9 @@ constexpr Application::Application(
   , configuration_(nullptr)
   , scaling_(nullptr)
   , project_id_(0u)
-  , organization_id_(0u){}
+  , organization_id_(0u)
+  , traffic_type_(0)
+{}
 struct ApplicationDefaultTypeInternal {
   constexpr ApplicationDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -116,7 +118,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ApplicationDefaultTypeInternal 
 }  // namespace v1alpha1
 }  // namespace application
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[6];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_application_2fv1alpha1_2fapplication_2eproto = nullptr;
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_application_2fv1alpha1_2fapplication_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_application_2fv1alpha1_2fapplication_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fapplication_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -179,6 +181,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fappli
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, project_id_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, organization_id_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, scaling_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, traffic_type_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::application::v1alpha1::Repository)},
@@ -218,7 +221,7 @@ const char descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eprot
   "val\030\003 \001(\tR\017pollingInterval\022\037\n\013min_replic"
   "a\030\004 \001(\tR\nminReplica\022\037\n\013max_replica\030\005 \001(\t"
   "R\nmaxReplica\022\037\n\013memory_rule\030\006 \001(\tR\nmemor"
-  "yRule\"\341\002\n\013Application\022\016\n\002id\030\001 \001(\tR\002id\022\022\n"
+  "yRule\"\247\003\n\013Application\022\016\n\002id\030\001 \001(\tR\002id\022\022\n"
   "\004name\030\002 \001(\tR\004name\022 \n\013integration\030\003 \001(\tR\013"
   "integration\022@\n\nrepository\030\004 \001(\0132 .applic"
   "ation.v1alpha1.RepositoryR\nrepository\022I\n"
@@ -227,12 +230,16 @@ const char descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eprot
   "ect_id\030\006 \001(\rR\tprojectId\022\'\n\017organization_"
   "id\030\007 \001(\rR\016organizationId\0227\n\007scaling\030\010 \001("
   "\0132\035.application.v1alpha1.ScalingR\007scalin"
-  "gB7Z5github.com/cuemby/ccp-sdk/gen/go/ap"
-  "plication/v1alpha1b\006proto3"
+  "g\022D\n\014traffic_type\030\t \001(\0162!.application.v1"
+  "alpha1.TrafficTypeR\013trafficType*a\n\013Traff"
+  "icType\022\034\n\030TRAFFIC_TYPE_UNSPECIFIED\020\000\022\031\n\025"
+  "TRAFFIC_TYPE_EXTERNAL\020\001\022\031\n\025TRAFFIC_TYPE_"
+  "INTERNAL\020\002B7Z5github.com/cuemby/ccp-sdk/"
+  "gen/go/application/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_application_2fv1alpha1_2fapplication_2eproto = {
-  false, false, 1186, descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto, "application/v1alpha1/application.proto", 
+  false, false, 1355, descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto, "application/v1alpha1/application.proto", 
   &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once, nullptr, 0, 6,
   schemas, file_default_instances, TableStruct_application_2fv1alpha1_2fapplication_2eproto::offsets,
   file_level_metadata_application_2fv1alpha1_2fapplication_2eproto, file_level_enum_descriptors_application_2fv1alpha1_2fapplication_2eproto, file_level_service_descriptors_application_2fv1alpha1_2fapplication_2eproto,
@@ -245,6 +252,21 @@ PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_application_2fv1alpha1_2fapplication_2eproto(&descriptor_table_application_2fv1alpha1_2fapplication_2eproto);
 namespace application {
 namespace v1alpha1 {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TrafficType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_application_2fv1alpha1_2fapplication_2eproto);
+  return file_level_enum_descriptors_application_2fv1alpha1_2fapplication_2eproto[0];
+}
+bool TrafficType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 
@@ -1904,8 +1926,8 @@ Application::Application(const Application& from)
     scaling_ = nullptr;
   }
   ::memcpy(&project_id_, &from.project_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&organization_id_) -
-    reinterpret_cast<char*>(&project_id_)) + sizeof(organization_id_));
+    static_cast<size_t>(reinterpret_cast<char*>(&traffic_type_) -
+    reinterpret_cast<char*>(&project_id_)) + sizeof(traffic_type_));
   // @@protoc_insertion_point(copy_constructor:application.v1alpha1.Application)
 }
 
@@ -1915,8 +1937,8 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 integration_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&repository_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&organization_id_) -
-    reinterpret_cast<char*>(&repository_)) + sizeof(organization_id_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&traffic_type_) -
+    reinterpret_cast<char*>(&repository_)) + sizeof(traffic_type_));
 }
 
 Application::~Application() {
@@ -1968,8 +1990,8 @@ void Application::Clear() {
   }
   scaling_ = nullptr;
   ::memset(&project_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&organization_id_) -
-      reinterpret_cast<char*>(&project_id_)) + sizeof(organization_id_));
+      reinterpret_cast<char*>(&traffic_type_) -
+      reinterpret_cast<char*>(&project_id_)) + sizeof(traffic_type_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2039,6 +2061,14 @@ const char* Application::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           ptr = ctx->ParseMessage(_internal_mutable_scaling(), ptr);
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_traffic_type(static_cast<::application::v1alpha1::TrafficType>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -2136,6 +2166,13 @@ failure:
         8, _Internal::scaling(this), target, stream);
   }
 
+  // .application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];
+  if (this->_internal_traffic_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      9, this->_internal_traffic_type(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2208,6 +2245,12 @@ size_t Application::ByteSizeLong() const {
         this->_internal_organization_id());
   }
 
+  // .application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];
+  if (this->_internal_traffic_type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_traffic_type());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -2260,6 +2303,9 @@ void Application::MergeFrom(const Application& from) {
   if (from._internal_organization_id() != 0) {
     _internal_set_organization_id(from._internal_organization_id());
   }
+  if (from._internal_traffic_type() != 0) {
+    _internal_set_traffic_type(from._internal_traffic_type());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2293,8 +2339,8 @@ void Application::InternalSwap(Application* other) {
       &other->integration_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Application, organization_id_)
-      + sizeof(Application::organization_id_)
+      PROTOBUF_FIELD_OFFSET(Application, traffic_type_)
+      + sizeof(Application::traffic_type_)
       - PROTOBUF_FIELD_OFFSET(Application, repository_)>(
           reinterpret_cast<char*>(&repository_),
           reinterpret_cast<char*>(&other->repository_));

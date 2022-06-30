@@ -350,4 +350,10 @@ public interface PipelineOrBuilder extends
    */
   io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder getWorkspacesMainOrBuilder(
       int index);
+
+  /**
+   * <code>int32 traffic_type = 19 [json_name = "trafficType"];</code>
+   * @return The trafficType.
+   */
+  int getTrafficType();
 }

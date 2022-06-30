@@ -1278,7 +1278,8 @@ proto.pipelines.tekton.v1alpha1.Pipeline.toObject = function(includeInstance, ms
     active: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
     instanceType: jspb.Message.getFieldWithDefault(msg, 17, ""),
     workspacesMainList: jspb.Message.toObjectList(msg.getWorkspacesMainList(),
-    proto.pipelines.tekton.v1alpha1.Workspaces.toObject, includeInstance)
+    proto.pipelines.tekton.v1alpha1.Workspaces.toObject, includeInstance),
+    trafficType: jspb.Message.getFieldWithDefault(msg, 19, 0)
   };
 
   if (includeInstance) {
@@ -1399,6 +1400,10 @@ proto.pipelines.tekton.v1alpha1.Pipeline.deserializeBinaryFromReader = function(
       var value = new proto.pipelines.tekton.v1alpha1.Workspaces;
       reader.readMessage(value,proto.pipelines.tekton.v1alpha1.Workspaces.deserializeBinaryFromReader);
       msg.addWorkspacesMain(value);
+      break;
+    case 19:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTrafficType(value);
       break;
     default:
       reader.skipField();
@@ -1541,6 +1546,13 @@ proto.pipelines.tekton.v1alpha1.Pipeline.serializeBinaryToWriter = function(mess
       18,
       f,
       proto.pipelines.tekton.v1alpha1.Workspaces.serializeBinaryToWriter
+    );
+  }
+  f = message.getTrafficType();
+  if (f !== 0) {
+    writer.writeInt32(
+      19,
+      f
     );
   }
 };
@@ -1947,6 +1959,24 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.addWorkspacesMain = function(
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.clearWorkspacesMainList = function() {
   return this.setWorkspacesMainList([]);
+};
+
+
+/**
+ * optional int32 traffic_type = 19;
+ * @return {number}
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getTrafficType = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setTrafficType = function(value) {
+  return jspb.Message.setProto3IntField(this, 19, value);
 };
 
 

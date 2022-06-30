@@ -79,6 +79,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> extra_args = 16 [json_name = "extraArgs"];</code>
      */
     private $extra_args;
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];</code>
+     */
+    protected $traffic_type = 0;
 
     /**
      * Constructor.
@@ -102,6 +106,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $commands
      *     @type array|\Google\Protobuf\Internal\MapField $secrets
      *     @type array|\Google\Protobuf\Internal\MapField $extra_args
+     *     @type int $traffic_type
      * }
      */
     public function __construct($data = NULL) {
@@ -457,6 +462,28 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->extra_args = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];</code>
+     * @return int
+     */
+    public function getTrafficType()
+    {
+        return $this->traffic_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTrafficType($var)
+    {
+        GPBUtil::checkEnum($var, \Pipelines\Runtime\V1Alpha1\TrafficType::class);
+        $this->traffic_type = $var;
 
         return $this;
     }

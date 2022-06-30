@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -86,6 +87,32 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace application {
 namespace v1alpha1 {
 
+enum TrafficType : int {
+  TRAFFIC_TYPE_UNSPECIFIED = 0,
+  TRAFFIC_TYPE_EXTERNAL = 1,
+  TRAFFIC_TYPE_INTERNAL = 2,
+  TrafficType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  TrafficType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool TrafficType_IsValid(int value);
+constexpr TrafficType TrafficType_MIN = TRAFFIC_TYPE_UNSPECIFIED;
+constexpr TrafficType TrafficType_MAX = TRAFFIC_TYPE_INTERNAL;
+constexpr int TrafficType_ARRAYSIZE = TrafficType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TrafficType_descriptor();
+template<typename T>
+inline const std::string& TrafficType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, TrafficType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function TrafficType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    TrafficType_descriptor(), enum_t_value);
+}
+inline bool TrafficType_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, TrafficType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<TrafficType>(
+    TrafficType_descriptor(), name, value);
+}
 // ===================================================================
 
 class Repository final :
@@ -1175,6 +1202,7 @@ class Application final :
     kScalingFieldNumber = 8,
     kProjectIdFieldNumber = 6,
     kOrganizationIdFieldNumber = 7,
+    kTrafficTypeFieldNumber = 9,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -1290,6 +1318,15 @@ class Application final :
   void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
+  // .application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];
+  void clear_traffic_type();
+  ::application::v1alpha1::TrafficType traffic_type() const;
+  void set_traffic_type(::application::v1alpha1::TrafficType value);
+  private:
+  ::application::v1alpha1::TrafficType _internal_traffic_type() const;
+  void _internal_set_traffic_type(::application::v1alpha1::TrafficType value);
+  public:
+
   // @@protoc_insertion_point(class_scope:application.v1alpha1.Application)
  private:
   class _Internal;
@@ -1305,6 +1342,7 @@ class Application final :
   ::application::v1alpha1::Scaling* scaling_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
+  int traffic_type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
 };
@@ -2637,6 +2675,26 @@ inline void Application::set_allocated_scaling(::application::v1alpha1::Scaling*
   // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Application.scaling)
 }
 
+// .application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];
+inline void Application::clear_traffic_type() {
+  traffic_type_ = 0;
+}
+inline ::application::v1alpha1::TrafficType Application::_internal_traffic_type() const {
+  return static_cast< ::application::v1alpha1::TrafficType >(traffic_type_);
+}
+inline ::application::v1alpha1::TrafficType Application::traffic_type() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Application.traffic_type)
+  return _internal_traffic_type();
+}
+inline void Application::_internal_set_traffic_type(::application::v1alpha1::TrafficType value) {
+  
+  traffic_type_ = value;
+}
+inline void Application::set_traffic_type(::application::v1alpha1::TrafficType value) {
+  _internal_set_traffic_type(value);
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Application.traffic_type)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
@@ -2655,6 +2713,16 @@ inline void Application::set_allocated_scaling(::application::v1alpha1::Scaling*
 
 }  // namespace v1alpha1
 }  // namespace application
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::application::v1alpha1::TrafficType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::application::v1alpha1::TrafficType>() {
+  return ::application::v1alpha1::TrafficType_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

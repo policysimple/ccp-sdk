@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     environmentId_ = "";
     scaler_ = "";
     podStatus_ = "";
+    trafficType_ = 0;
   }
 
   @java.lang.Override
@@ -189,6 +190,12 @@ private static final long serialVersionUID = 0L;
                 ExtraArgsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             extraArgs_.getMutableMap().put(
                 extraArgs__.getKey(), extraArgs__.getValue());
+            break;
+          }
+          case 136: {
+            int rawValue = input.readEnum();
+
+            trafficType_ = rawValue;
             break;
           }
           default: {
@@ -1012,6 +1019,25 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int TRAFFIC_TYPE_FIELD_NUMBER = 17;
+  private int trafficType_;
+  /**
+   * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];</code>
+   * @return The enum numeric value on the wire for trafficType.
+   */
+  @java.lang.Override public int getTrafficTypeValue() {
+    return trafficType_;
+  }
+  /**
+   * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];</code>
+   * @return The trafficType.
+   */
+  @java.lang.Override public io.cuemby.pipelines.runtime.v1alpha1.TrafficType getTrafficType() {
+    @SuppressWarnings("deprecation")
+    io.cuemby.pipelines.runtime.v1alpha1.TrafficType result = io.cuemby.pipelines.runtime.v1alpha1.TrafficType.valueOf(trafficType_);
+    return result == null ? io.cuemby.pipelines.runtime.v1alpha1.TrafficType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1089,6 +1115,9 @@ private static final long serialVersionUID = 0L;
         internalGetExtraArgs(),
         ExtraArgsDefaultEntryHolder.defaultEntry,
         16);
+    if (trafficType_ != io.cuemby.pipelines.runtime.v1alpha1.TrafficType.TRAFFIC_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(17, trafficType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1183,6 +1212,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(16, extraArgs__);
     }
+    if (trafficType_ != io.cuemby.pipelines.runtime.v1alpha1.TrafficType.TRAFFIC_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(17, trafficType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1230,6 +1263,7 @@ private static final long serialVersionUID = 0L;
         other.internalGetSecrets())) return false;
     if (!internalGetExtraArgs().equals(
         other.internalGetExtraArgs())) return false;
+    if (trafficType_ != other.trafficType_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1283,6 +1317,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + EXTRA_ARGS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetExtraArgs().hashCode();
     }
+    hash = (37 * hash) + TRAFFIC_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + trafficType_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1485,6 +1521,8 @@ private static final long serialVersionUID = 0L;
       internalGetMutableCommands().clear();
       internalGetMutableSecrets().clear();
       internalGetMutableExtraArgs().clear();
+      trafficType_ = 0;
+
       return this;
     }
 
@@ -1533,6 +1571,7 @@ private static final long serialVersionUID = 0L;
       result.secrets_.makeImmutable();
       result.extraArgs_ = internalGetExtraArgs();
       result.extraArgs_.makeImmutable();
+      result.trafficType_ = trafficType_;
       onBuilt();
       return result;
     }
@@ -1633,6 +1672,9 @@ private static final long serialVersionUID = 0L;
           other.internalGetSecrets());
       internalGetMutableExtraArgs().mergeFrom(
           other.internalGetExtraArgs());
+      if (other.trafficType_ != 0) {
+        setTrafficTypeValue(other.getTrafficTypeValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -3046,6 +3088,60 @@ private static final long serialVersionUID = 0L;
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableExtraArgs().getMutableMap()
           .putAll(values);
+      return this;
+    }
+
+    private int trafficType_ = 0;
+    /**
+     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];</code>
+     * @return The enum numeric value on the wire for trafficType.
+     */
+    @java.lang.Override public int getTrafficTypeValue() {
+      return trafficType_;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];</code>
+     * @param value The enum numeric value on the wire for trafficType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrafficTypeValue(int value) {
+      
+      trafficType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];</code>
+     * @return The trafficType.
+     */
+    @java.lang.Override
+    public io.cuemby.pipelines.runtime.v1alpha1.TrafficType getTrafficType() {
+      @SuppressWarnings("deprecation")
+      io.cuemby.pipelines.runtime.v1alpha1.TrafficType result = io.cuemby.pipelines.runtime.v1alpha1.TrafficType.valueOf(trafficType_);
+      return result == null ? io.cuemby.pipelines.runtime.v1alpha1.TrafficType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];</code>
+     * @param value The trafficType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrafficType(io.cuemby.pipelines.runtime.v1alpha1.TrafficType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      trafficType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTrafficType() {
+      
+      trafficType_ = 0;
+      onChanged();
       return this;
     }
     @java.lang.Override

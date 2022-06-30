@@ -45,6 +45,10 @@ class Application extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 8 [json_name = "scaling"];</code>
      */
     protected $scaling = null;
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+     */
+    protected $traffic_type = 0;
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class Application extends \Google\Protobuf\Internal\Message
      *     @type int $project_id
      *     @type int $organization_id
      *     @type \Application\V1alpha1\Scaling $scaling
+     *     @type int $traffic_type
      * }
      */
     public function __construct($data = NULL) {
@@ -269,6 +274,28 @@ class Application extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Application\V1alpha1\Scaling::class);
         $this->scaling = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+     * @return int
+     */
+    public function getTrafficType()
+    {
+        return $this->traffic_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTrafficType($var)
+    {
+        GPBUtil::checkEnum($var, \Application\V1alpha1\TrafficType::class);
+        $this->traffic_type = $var;
 
         return $this;
     }

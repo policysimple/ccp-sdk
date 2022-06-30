@@ -59,7 +59,7 @@ public final class RuntimeProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(pipelines/runtime/v1alpha1/runtime.pro" +
-      "to\022\032pipelines.runtime.v1alpha1\"\332\010\n\007Runti" +
+      "to\022\032pipelines.runtime.v1alpha1\"\246\t\n\007Runti" +
       "me\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\034" +
       "\n\tnamespace\030\003 \001(\tR\tnamespace\022#\n\rinstance" +
       "_type\030\004 \001(\tR\014instanceType\022\'\n\017organizatio" +
@@ -79,22 +79,26 @@ public final class RuntimeProto {
       "\017 \003(\01320.pipelines.runtime.v1alpha1.Runti" +
       "me.SecretsEntryR\007secrets\022Q\n\nextra_args\030\020" +
       " \003(\01322.pipelines.runtime.v1alpha1.Runtim" +
-      "e.ExtraArgsEntryR\textraArgs\032>\n\020Integrati" +
-      "onEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t" +
-      "R\005value:\0028\001\032G\n\031EnvironmentVariablesEntry" +
-      "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value" +
-      ":\0028\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022" +
-      "\024\n\005value\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntr" +
-      "y\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005valu" +
-      "e:\0028\001\032<\n\016ExtraArgsEntry\022\020\n\003key\030\001 \001(\tR\003ke" +
-      "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"H\n\013RuntimeLi" +
-      "st\0229\n\005items\030\001 \003(\0132#.pipelines.runtime.v1" +
-      "alpha1.RuntimeR\005itemsB\255\001\n$io.cuemby.pipe" +
-      "lines.runtime.v1alpha1B\014RuntimeProtoP\001Z5" +
-      "github.com/cuemby/ccp-runtime-service/ru" +
-      "ntimev1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime." +
-      "V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1b\006p" +
-      "roto3"
+      "e.ExtraArgsEntryR\textraArgs\022J\n\014traffic_t" +
+      "ype\030\021 \001(\0162\'.pipelines.runtime.v1alpha1.T" +
+      "rafficTypeR\013trafficType\032>\n\020IntegrationEn" +
+      "try\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005va" +
+      "lue:\0028\001\032G\n\031EnvironmentVariablesEntry\022\020\n\003" +
+      "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001" +
+      "\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005v" +
+      "alue\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntry\022\020\n" +
+      "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028" +
+      "\001\032<\n\016ExtraArgsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n" +
+      "\005value\030\002 \001(\tR\005value:\0028\001\"H\n\013RuntimeList\0229" +
+      "\n\005items\030\001 \003(\0132#.pipelines.runtime.v1alph" +
+      "a1.RuntimeR\005items*a\n\013TrafficType\022\034\n\030TRAF" +
+      "FIC_TYPE_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_E" +
+      "XTERNAL\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002B\255\001\n" +
+      "$io.cuemby.pipelines.runtime.v1alpha1B\014R" +
+      "untimeProtoP\001Z5github.com/cuemby/ccp-run" +
+      "time-service/runtimev1alpha1\242\002\003PPX\252\002\032Pip" +
+      "elines.Runtime.V1Alpha1\312\002\032Pipelines\\Runt" +
+      "ime\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -105,7 +109,7 @@ public final class RuntimeProto {
     internal_static_pipelines_runtime_v1alpha1_Runtime_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor,
-        new java.lang.String[] { "Id", "Name", "Namespace", "InstanceType", "OrganizationId", "ProjectId", "ApplicationId", "WorkspaceId", "EnvironmentId", "Scaler", "PodStatus", "Integration", "EnvironmentVariables", "Commands", "Secrets", "ExtraArgs", });
+        new java.lang.String[] { "Id", "Name", "Namespace", "InstanceType", "OrganizationId", "ProjectId", "ApplicationId", "WorkspaceId", "EnvironmentId", "Scaler", "PodStatus", "Integration", "EnvironmentVariables", "Commands", "Secrets", "ExtraArgs", "TrafficType", });
     internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_descriptor =
       internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor.getNestedTypes().get(0);
     internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_fieldAccessorTable = new
