@@ -33,6 +33,7 @@
 #include <google/protobuf/map.h>  // IWYU pragma: export
 #include <google/protobuf/map_entry.h>
 #include <google/protobuf/map_field_inl.h>
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -96,6 +97,32 @@ namespace pipelines {
 namespace runtime {
 namespace v1alpha1 {
 
+enum TrafficType : int {
+  TRAFFIC_TYPE_UNSPECIFIED = 0,
+  TRAFFIC_TYPE_EXTERNAL = 1,
+  TRAFFIC_TYPE_INTERNAL = 2,
+  TrafficType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  TrafficType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool TrafficType_IsValid(int value);
+constexpr TrafficType TrafficType_MIN = TRAFFIC_TYPE_UNSPECIFIED;
+constexpr TrafficType TrafficType_MAX = TRAFFIC_TYPE_INTERNAL;
+constexpr int TrafficType_ARRAYSIZE = TrafficType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TrafficType_descriptor();
+template<typename T>
+inline const std::string& TrafficType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, TrafficType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function TrafficType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    TrafficType_descriptor(), enum_t_value);
+}
+inline bool TrafficType_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, TrafficType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<TrafficType>(
+    TrafficType_descriptor(), name, value);
+}
 // ===================================================================
 
 class Runtime_IntegrationEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_IntegrationEntry_DoNotUse, 
@@ -365,6 +392,7 @@ class Runtime final :
     kPodStatusFieldNumber = 11,
     kOrganizationIdFieldNumber = 5,
     kProjectIdFieldNumber = 6,
+    kTrafficTypeFieldNumber = 17,
   };
   // map<string, string> integration = 12 [json_name = "integration"];
   int integration_size() const;
@@ -595,6 +623,15 @@ class Runtime final :
   void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
+  // .pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];
+  void clear_traffic_type();
+  ::pipelines::runtime::v1alpha1::TrafficType traffic_type() const;
+  void set_traffic_type(::pipelines::runtime::v1alpha1::TrafficType value);
+  private:
+  ::pipelines::runtime::v1alpha1::TrafficType _internal_traffic_type() const;
+  void _internal_set_traffic_type(::pipelines::runtime::v1alpha1::TrafficType value);
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Runtime)
  private:
   class _Internal;
@@ -638,6 +675,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pod_status_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
+  int traffic_type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto;
 };
@@ -1409,6 +1447,26 @@ Runtime::mutable_extra_args() {
   return _internal_mutable_extra_args();
 }
 
+// .pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];
+inline void Runtime::clear_traffic_type() {
+  traffic_type_ = 0;
+}
+inline ::pipelines::runtime::v1alpha1::TrafficType Runtime::_internal_traffic_type() const {
+  return static_cast< ::pipelines::runtime::v1alpha1::TrafficType >(traffic_type_);
+}
+inline ::pipelines::runtime::v1alpha1::TrafficType Runtime::traffic_type() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.traffic_type)
+  return _internal_traffic_type();
+}
+inline void Runtime::_internal_set_traffic_type(::pipelines::runtime::v1alpha1::TrafficType value) {
+  
+  traffic_type_ = value;
+}
+inline void Runtime::set_traffic_type(::pipelines::runtime::v1alpha1::TrafficType value) {
+  _internal_set_traffic_type(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.traffic_type)
+}
+
 // -------------------------------------------------------------------
 
 // RuntimeList
@@ -1474,6 +1532,16 @@ RuntimeList::items() const {
 }  // namespace v1alpha1
 }  // namespace runtime
 }  // namespace pipelines
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::pipelines::runtime::v1alpha1::TrafficType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::pipelines::runtime::v1alpha1::TrafficType>() {
+  return ::pipelines::runtime::v1alpha1::TrafficType_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

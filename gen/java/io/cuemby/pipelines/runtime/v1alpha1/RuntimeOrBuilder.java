@@ -296,4 +296,15 @@ public interface RuntimeOrBuilder extends
 
   java.lang.String getExtraArgsOrThrow(
       java.lang.String key);
+
+  /**
+   * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];</code>
+   * @return The enum numeric value on the wire for trafficType.
+   */
+  int getTrafficTypeValue();
+  /**
+   * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];</code>
+   * @return The trafficType.
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.TrafficType getTrafficType();
 }

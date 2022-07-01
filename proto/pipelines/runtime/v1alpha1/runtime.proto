@@ -10,6 +10,13 @@ option java_package = "io.cuemby.pipelines.runtime.v1alpha1";
 option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Runtime\\V1Alpha1";
 
+
+enum TrafficType {
+  TRAFFIC_TYPE_UNSPECIFIED = 0;
+  TRAFFIC_TYPE_EXTERNAL = 1;
+  TRAFFIC_TYPE_INTERNAL = 2;
+}
+
 // Runtime ...
 message Runtime {
   string id = 1;
@@ -28,6 +35,7 @@ message Runtime {
   map<string, string> commands = 14;
   map<string, string> secrets = 15;
   map<string, string> extra_args = 16;
+  TrafficType traffic_type = 17;
 }
 
 message RuntimeList {

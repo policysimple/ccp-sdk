@@ -1233,6 +1233,7 @@ class Pipeline final :
     kOrganizationIdFieldNumber = 2,
     kProjectIdFieldNumber = 3,
     kActiveFieldNumber = 16,
+    kTrafficTypeFieldNumber = 19,
   };
   // repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];
   int params_size() const;
@@ -1498,6 +1499,15 @@ class Pipeline final :
   void _internal_set_active(bool value);
   public:
 
+  // int32 traffic_type = 19 [json_name = "trafficType"];
+  void clear_traffic_type();
+  ::PROTOBUF_NAMESPACE_ID::int32 traffic_type() const;
+  void set_traffic_type(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_traffic_type() const;
+  void _internal_set_traffic_type(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.Pipeline)
  private:
   class _Internal;
@@ -1543,6 +1553,7 @@ class Pipeline final :
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   bool active_;
+  ::PROTOBUF_NAMESPACE_ID::int32 traffic_type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto;
 };
@@ -3177,6 +3188,26 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1a
 Pipeline::workspaces_main() const {
   // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.Pipeline.workspaces_main)
   return workspaces_main_;
+}
+
+// int32 traffic_type = 19 [json_name = "trafficType"];
+inline void Pipeline::clear_traffic_type() {
+  traffic_type_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Pipeline::_internal_traffic_type() const {
+  return traffic_type_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Pipeline::traffic_type() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Pipeline.traffic_type)
+  return _internal_traffic_type();
+}
+inline void Pipeline::_internal_set_traffic_type(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  traffic_type_ = value;
+}
+inline void Pipeline::set_traffic_type(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_traffic_type(value);
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.traffic_type)
 }
 
 #ifdef __GNUC__

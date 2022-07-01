@@ -212,6 +212,11 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Workspaces.parser(), extensionRegistry));
             break;
           }
+          case 152: {
+
+            trafficType_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1097,6 +1102,17 @@ private static final long serialVersionUID = 0L;
     return workspacesMain_.get(index);
   }
 
+  public static final int TRAFFIC_TYPE_FIELD_NUMBER = 19;
+  private int trafficType_;
+  /**
+   * <code>int32 traffic_type = 19 [json_name = "trafficType"];</code>
+   * @return The trafficType.
+   */
+  @java.lang.Override
+  public int getTrafficType() {
+    return trafficType_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1179,6 +1195,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < workspacesMain_.size(); i++) {
       output.writeMessage(18, workspacesMain_.get(i));
+    }
+    if (trafficType_ != 0) {
+      output.writeInt32(19, trafficType_);
     }
     unknownFields.writeTo(output);
   }
@@ -1284,6 +1303,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, workspacesMain_.get(i));
     }
+    if (trafficType_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(19, trafficType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1335,6 +1358,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getInstanceType())) return false;
     if (!getWorkspacesMainList()
         .equals(other.getWorkspacesMainList())) return false;
+    if (getTrafficType()
+        != other.getTrafficType()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1399,6 +1424,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + WORKSPACES_MAIN_FIELD_NUMBER;
       hash = (53 * hash) + getWorkspacesMainList().hashCode();
     }
+    hash = (37 * hash) + TRAFFIC_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getTrafficType();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1620,6 +1647,8 @@ private static final long serialVersionUID = 0L;
       } else {
         workspacesMainBuilder_.clear();
       }
+      trafficType_ = 0;
+
       return this;
     }
 
@@ -1694,6 +1723,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.workspacesMain_ = workspacesMainBuilder_.build();
       }
+      result.trafficType_ = trafficType_;
       onBuilt();
       return result;
     }
@@ -1866,6 +1896,9 @@ private static final long serialVersionUID = 0L;
             workspacesMainBuilder_.addAllMessages(other.workspacesMain_);
           }
         }
+      }
+      if (other.getTrafficType() != 0) {
+        setTrafficType(other.getTrafficType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3880,6 +3913,37 @@ private static final long serialVersionUID = 0L;
         workspacesMain_ = null;
       }
       return workspacesMainBuilder_;
+    }
+
+    private int trafficType_ ;
+    /**
+     * <code>int32 traffic_type = 19 [json_name = "trafficType"];</code>
+     * @return The trafficType.
+     */
+    @java.lang.Override
+    public int getTrafficType() {
+      return trafficType_;
+    }
+    /**
+     * <code>int32 traffic_type = 19 [json_name = "trafficType"];</code>
+     * @param value The trafficType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrafficType(int value) {
+      
+      trafficType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 traffic_type = 19 [json_name = "trafficType"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTrafficType() {
+      
+      trafficType_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

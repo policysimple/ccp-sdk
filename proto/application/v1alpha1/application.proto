@@ -40,6 +40,13 @@ message Scaling  {
     string memory_rule = 6;
 }
 
+
+enum TrafficType {
+    TRAFFIC_TYPE_UNSPECIFIED = 0;
+    TRAFFIC_TYPE_EXTERNAL = 1;
+    TRAFFIC_TYPE_INTERNAL = 2;
+}
+
 message Application {
     string id = 1;
     string name = 2;
@@ -49,4 +56,5 @@ message Application {
     uint32 project_id = 6;
     uint32 organization_id = 7;
     Scaling scaling = 8;
+    TrafficType traffic_type = 9;
 }

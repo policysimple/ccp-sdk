@@ -14,6 +14,123 @@ public final class ApplicationOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code application.v1alpha1.TrafficType}
+   */
+  public enum TrafficType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>TRAFFIC_TYPE_UNSPECIFIED = 0;</code>
+     */
+    TRAFFIC_TYPE_UNSPECIFIED(0),
+    /**
+     * <code>TRAFFIC_TYPE_EXTERNAL = 1;</code>
+     */
+    TRAFFIC_TYPE_EXTERNAL(1),
+    /**
+     * <code>TRAFFIC_TYPE_INTERNAL = 2;</code>
+     */
+    TRAFFIC_TYPE_INTERNAL(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>TRAFFIC_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int TRAFFIC_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <code>TRAFFIC_TYPE_EXTERNAL = 1;</code>
+     */
+    public static final int TRAFFIC_TYPE_EXTERNAL_VALUE = 1;
+    /**
+     * <code>TRAFFIC_TYPE_INTERNAL = 2;</code>
+     */
+    public static final int TRAFFIC_TYPE_INTERNAL_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TrafficType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TrafficType forNumber(int value) {
+      switch (value) {
+        case 0: return TRAFFIC_TYPE_UNSPECIFIED;
+        case 1: return TRAFFIC_TYPE_EXTERNAL;
+        case 2: return TRAFFIC_TYPE_INTERNAL;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TrafficType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        TrafficType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TrafficType>() {
+            public TrafficType findValueByNumber(int number) {
+              return TrafficType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return application.v1alpha1.ApplicationOuterClass.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final TrafficType[] VALUES = values();
+
+    public static TrafficType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TrafficType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:application.v1alpha1.TrafficType)
+  }
+
   public interface RepositoryOrBuilder extends
       // @@protoc_insertion_point(interface_extends:application.v1alpha1.Repository)
       com.google.protobuf.MessageOrBuilder {
@@ -5480,6 +5597,17 @@ public final class ApplicationOuterClass {
      * <code>.application.v1alpha1.Scaling scaling = 8 [json_name = "scaling"];</code>
      */
     application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder getScalingOrBuilder();
+
+    /**
+     * <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+     * @return The enum numeric value on the wire for trafficType.
+     */
+    int getTrafficTypeValue();
+    /**
+     * <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+     * @return The trafficType.
+     */
+    application.v1alpha1.ApplicationOuterClass.TrafficType getTrafficType();
   }
   /**
    * Protobuf type {@code application.v1alpha1.Application}
@@ -5497,6 +5625,7 @@ public final class ApplicationOuterClass {
       id_ = "";
       name_ = "";
       integration_ = "";
+      trafficType_ = 0;
     }
 
     @java.lang.Override
@@ -5594,6 +5723,12 @@ public final class ApplicationOuterClass {
                 scaling_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              trafficType_ = rawValue;
               break;
             }
             default: {
@@ -5842,6 +5977,25 @@ public final class ApplicationOuterClass {
       return getScaling();
     }
 
+    public static final int TRAFFIC_TYPE_FIELD_NUMBER = 9;
+    private int trafficType_;
+    /**
+     * <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+     * @return The enum numeric value on the wire for trafficType.
+     */
+    @java.lang.Override public int getTrafficTypeValue() {
+      return trafficType_;
+    }
+    /**
+     * <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+     * @return The trafficType.
+     */
+    @java.lang.Override public application.v1alpha1.ApplicationOuterClass.TrafficType getTrafficType() {
+      @SuppressWarnings("deprecation")
+      application.v1alpha1.ApplicationOuterClass.TrafficType result = application.v1alpha1.ApplicationOuterClass.TrafficType.valueOf(trafficType_);
+      return result == null ? application.v1alpha1.ApplicationOuterClass.TrafficType.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5880,6 +6034,9 @@ public final class ApplicationOuterClass {
       if (scaling_ != null) {
         output.writeMessage(8, getScaling());
       }
+      if (trafficType_ != application.v1alpha1.ApplicationOuterClass.TrafficType.TRAFFIC_TYPE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(9, trafficType_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5917,6 +6074,10 @@ public final class ApplicationOuterClass {
       if (scaling_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getScaling());
+      }
+      if (trafficType_ != application.v1alpha1.ApplicationOuterClass.TrafficType.TRAFFIC_TYPE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, trafficType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5958,6 +6119,7 @@ public final class ApplicationOuterClass {
         if (!getScaling()
             .equals(other.getScaling())) return false;
       }
+      if (trafficType_ != other.trafficType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5991,6 +6153,8 @@ public final class ApplicationOuterClass {
         hash = (37 * hash) + SCALING_FIELD_NUMBER;
         hash = (53 * hash) + getScaling().hashCode();
       }
+      hash = (37 * hash) + TRAFFIC_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + trafficType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6152,6 +6316,8 @@ public final class ApplicationOuterClass {
           scaling_ = null;
           scalingBuilder_ = null;
         }
+        trafficType_ = 0;
+
         return this;
       }
 
@@ -6198,6 +6364,7 @@ public final class ApplicationOuterClass {
         } else {
           result.scaling_ = scalingBuilder_.build();
         }
+        result.trafficType_ = trafficType_;
         onBuilt();
         return result;
       }
@@ -6272,6 +6439,9 @@ public final class ApplicationOuterClass {
         }
         if (other.hasScaling()) {
           mergeScaling(other.getScaling());
+        }
+        if (other.trafficType_ != 0) {
+          setTrafficTypeValue(other.getTrafficTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6948,6 +7118,60 @@ public final class ApplicationOuterClass {
         }
         return scalingBuilder_;
       }
+
+      private int trafficType_ = 0;
+      /**
+       * <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+       * @return The enum numeric value on the wire for trafficType.
+       */
+      @java.lang.Override public int getTrafficTypeValue() {
+        return trafficType_;
+      }
+      /**
+       * <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+       * @param value The enum numeric value on the wire for trafficType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrafficTypeValue(int value) {
+        
+        trafficType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+       * @return The trafficType.
+       */
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.TrafficType getTrafficType() {
+        @SuppressWarnings("deprecation")
+        application.v1alpha1.ApplicationOuterClass.TrafficType result = application.v1alpha1.ApplicationOuterClass.TrafficType.valueOf(trafficType_);
+        return result == null ? application.v1alpha1.ApplicationOuterClass.TrafficType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+       * @param value The trafficType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrafficType(application.v1alpha1.ApplicationOuterClass.TrafficType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        trafficType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTrafficType() {
+        
+        trafficType_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7059,7 +7283,7 @@ public final class ApplicationOuterClass {
       "val\030\003 \001(\tR\017pollingInterval\022\037\n\013min_replic" +
       "a\030\004 \001(\tR\nminReplica\022\037\n\013max_replica\030\005 \001(\t" +
       "R\nmaxReplica\022\037\n\013memory_rule\030\006 \001(\tR\nmemor" +
-      "yRule\"\341\002\n\013Application\022\016\n\002id\030\001 \001(\tR\002id\022\022\n" +
+      "yRule\"\247\003\n\013Application\022\016\n\002id\030\001 \001(\tR\002id\022\022\n" +
       "\004name\030\002 \001(\tR\004name\022 \n\013integration\030\003 \001(\tR\013" +
       "integration\022@\n\nrepository\030\004 \001(\0132 .applic" +
       "ation.v1alpha1.RepositoryR\nrepository\022I\n" +
@@ -7068,8 +7292,12 @@ public final class ApplicationOuterClass {
       "ect_id\030\006 \001(\rR\tprojectId\022\'\n\017organization_" +
       "id\030\007 \001(\rR\016organizationId\0227\n\007scaling\030\010 \001(" +
       "\0132\035.application.v1alpha1.ScalingR\007scalin" +
-      "gB7Z5github.com/cuemby/ccp-sdk/gen/go/ap" +
-      "plication/v1alpha1b\006proto3"
+      "g\022D\n\014traffic_type\030\t \001(\0162!.application.v1" +
+      "alpha1.TrafficTypeR\013trafficType*a\n\013Traff" +
+      "icType\022\034\n\030TRAFFIC_TYPE_UNSPECIFIED\020\000\022\031\n\025" +
+      "TRAFFIC_TYPE_EXTERNAL\020\001\022\031\n\025TRAFFIC_TYPE_" +
+      "INTERNAL\020\002B7Z5github.com/cuemby/ccp-sdk/" +
+      "gen/go/application/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7110,7 +7338,7 @@ public final class ApplicationOuterClass {
     internal_static_application_v1alpha1_Application_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Application_descriptor,
-        new java.lang.String[] { "Id", "Name", "Integration", "Repository", "Configuration", "ProjectId", "OrganizationId", "Scaling", });
+        new java.lang.String[] { "Id", "Name", "Integration", "Repository", "Configuration", "ProjectId", "OrganizationId", "Scaling", "TrafficType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

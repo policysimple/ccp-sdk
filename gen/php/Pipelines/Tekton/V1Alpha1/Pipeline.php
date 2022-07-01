@@ -87,6 +87,10 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
      */
     private $workspaces_main;
+    /**
+     * Generated from protobuf field <code>int32 traffic_type = 19 [json_name = "trafficType"];</code>
+     */
+    protected $traffic_type = 0;
 
     /**
      * Constructor.
@@ -112,6 +116,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      *     @type bool $active
      *     @type string $instance_type
      *     @type \Pipelines\Tekton\V1Alpha1\Workspaces[]|\Google\Protobuf\Internal\RepeatedField $workspaces_main
+     *     @type int $traffic_type
      * }
      */
     public function __construct($data = NULL) {
@@ -511,6 +516,28 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Workspaces::class);
         $this->workspaces_main = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 traffic_type = 19 [json_name = "trafficType"];</code>
+     * @return int
+     */
+    public function getTrafficType()
+    {
+        return $this->traffic_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 traffic_type = 19 [json_name = "trafficType"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTrafficType($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->traffic_type = $var;
 
         return $this;
     }
