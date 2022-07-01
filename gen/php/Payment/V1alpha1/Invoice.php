@@ -18,23 +18,23 @@ class Invoice extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>int64 amount = 3 [json_name = "amount"];</code>
+     * Generated from protobuf field <code>int64 amount = 2 [json_name = "amount"];</code>
      */
     protected $amount = 0;
     /**
-     * Generated from protobuf field <code>string period = 4 [json_name = "period"];</code>
+     * Generated from protobuf field <code>string period = 3 [json_name = "period"];</code>
      */
     protected $period = '';
     /**
-     * Generated from protobuf field <code>string statuspay = 5 [json_name = "statuspay"];</code>
+     * Generated from protobuf field <code>string statuspay = 4 [json_name = "statuspay"];</code>
      */
     protected $statuspay = '';
     /**
-     * Generated from protobuf field <code>string date = 6 [json_name = "date"];</code>
+     * Generated from protobuf field <code>string date = 5 [json_name = "date"];</code>
      */
     protected $date = '';
     /**
-     * Generated from protobuf field <code>string product = 7 [json_name = "product"];</code>
+     * Generated from protobuf field <code>string product = 6 [json_name = "product"];</code>
      */
     protected $product = '';
 
@@ -80,7 +80,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 amount = 3 [json_name = "amount"];</code>
+     * Generated from protobuf field <code>int64 amount = 2 [json_name = "amount"];</code>
      * @return int|string
      */
     public function getAmount()
@@ -89,7 +89,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 amount = 3 [json_name = "amount"];</code>
+     * Generated from protobuf field <code>int64 amount = 2 [json_name = "amount"];</code>
      * @param int|string $var
      * @return $this
      */
@@ -102,7 +102,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string period = 4 [json_name = "period"];</code>
+     * Generated from protobuf field <code>string period = 3 [json_name = "period"];</code>
      * @return string
      */
     public function getPeriod()
@@ -111,7 +111,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string period = 4 [json_name = "period"];</code>
+     * Generated from protobuf field <code>string period = 3 [json_name = "period"];</code>
      * @param string $var
      * @return $this
      */
@@ -124,7 +124,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string statuspay = 5 [json_name = "statuspay"];</code>
+     * Generated from protobuf field <code>string statuspay = 4 [json_name = "statuspay"];</code>
      * @return string
      */
     public function getStatuspay()
@@ -133,7 +133,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string statuspay = 5 [json_name = "statuspay"];</code>
+     * Generated from protobuf field <code>string statuspay = 4 [json_name = "statuspay"];</code>
      * @param string $var
      * @return $this
      */
@@ -146,7 +146,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string date = 6 [json_name = "date"];</code>
+     * Generated from protobuf field <code>string date = 5 [json_name = "date"];</code>
      * @return string
      */
     public function getDate()
@@ -155,7 +155,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string date = 6 [json_name = "date"];</code>
+     * Generated from protobuf field <code>string date = 5 [json_name = "date"];</code>
      * @param string $var
      * @return $this
      */
@@ -168,7 +168,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string product = 7 [json_name = "product"];</code>
+     * Generated from protobuf field <code>string product = 6 [json_name = "product"];</code>
      * @return string
      */
     public function getProduct()
@@ -177,7 +177,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string product = 7 [json_name = "product"];</code>
+     * Generated from protobuf field <code>string product = 6 [json_name = "product"];</code>
      * @param string $var
      * @return $this
      */

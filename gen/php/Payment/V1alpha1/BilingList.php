@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>payment.v1alpha1.PaymentList</code>
+ * Generated from protobuf message <code>payment.v1alpha1.BilingList</code>
  */
-class PaymentList extends \Google\Protobuf\Internal\Message
+class BilingList extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment items = 1 [json_name = "items"];</code>
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Biling items = 1 [json_name = "items"];</code>
      */
     private $items;
 
@@ -24,7 +24,7 @@ class PaymentList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Payment[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Payment\V1alpha1\Biling[]|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -33,7 +33,7 @@ class PaymentList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment items = 1 [json_name = "items"];</code>
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Biling items = 1 [json_name = "items"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -42,13 +42,13 @@ class PaymentList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment items = 1 [json_name = "items"];</code>
-     * @param \Payment\V1alpha1\Payment[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Biling items = 1 [json_name = "items"];</code>
+     * @param \Payment\V1alpha1\Biling[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Payment\V1alpha1\Payment::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Payment\V1alpha1\Biling::class);
         $this->items = $arr;
 
         return $this;

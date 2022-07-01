@@ -237,4 +237,17 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Payment\V1alpha1\InvoiceFilterRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function InvoiceFilter(\Payment\V1alpha1\InvoiceFilterRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/InvoiceFilter',
+        $argument,
+        ['\Payment\V1alpha1\InvoiceFilterResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }
