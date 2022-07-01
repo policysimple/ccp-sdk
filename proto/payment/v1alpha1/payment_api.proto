@@ -25,9 +25,25 @@ service PaymentAPIService{
     rpc DeletePayment(DeletePaymentRequest) returns (DeletePaymentResponse) {};
     rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {}; 
     rpc CreateInvoice(CreateInvoiceRequest) returns (CreateInvoiceResponse) {}; 
+    rpc InvoiceFilter(InvoiceFilterRequest) returns (InvoiceFilterResponse) {}; 
 
 
 }
+message InvoiceFilterRequest {
+        string year = 1;
+        string month = 2;
+        payment.v1alpha1.CustomerList customer_list = 3;
+        uint32  organization_id = 4;
+       
+    }
+    
+message InvoiceFilterResponse {
+    payment.v1alpha1.CustomerList customer_list = 1;
+    payment.v1alpha1.InvoiceList invoice_list = 2;
+    payment.v1alpha1.BilingList biling_list = 3;
+        string status = 4;
+    }
+
 message DeleteCustomerRequest {
     string customer_id =1; 
 }
@@ -49,7 +65,7 @@ message GetOrganizationPaymentRequest {
 }
 
 message GetOrganizationPaymentResponse {
-    payment.v1alpha1.Customer customer = 1;
+    payment.v1alpha1.CustomerList customer_list = 1;
     string status = 2;
 }
 

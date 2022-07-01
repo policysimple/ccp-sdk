@@ -8,11 +8,12 @@ message Customer {
   string id =1;
   string name = 2;
   string email = 3;
-  uint32 organization_id = 4;
-  Suscription suscription = 5;
-  repeated Payment payment = 6;
-  Invoice invoice = 7;
-  Biling biling = 8;
+  string customer_id = 4;
+  uint32 organization_id = 5;
+  Suscription suscription = 6;
+  repeated Payment payment = 7;
+  Invoice invoice = 8;
+  Biling biling = 9;
 }
 
 message Suscription {
@@ -25,6 +26,7 @@ message Suscription {
   string interval =6;
   string suscription_item_id = 7;
   string invoice_id = 8;
+
 }
 
 message Payment {
@@ -46,11 +48,11 @@ message Card {
 
 message Invoice {
   string id =1;
-  int64 amount = 3;
-  string period = 4;
-  string statuspay = 5;
-  string date = 6;
-  string product = 7;
+  int64 amount = 2;
+  string period = 3;
+  string statuspay = 4;
+  string date = 5;
+  string product = 6;
 }
 
 message Biling {
@@ -60,9 +62,18 @@ message Biling {
   int64 totalusage = 4;
   int64 cpu = 5;
   int64 ram = 6;
-  string mes = 7;
-}
+  string month = 7;
+  string year = 8;
 
-message PaymentList {
-  repeated Payment items = 1;
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+} 
+message InvoiceList {
+  repeated Invoice items = 1;
+} 
+
+message CustomerList {
+  repeated Customer items = 1;
+} 
+
+message BilingList{
+  repeated Biling items = 1;
+} 

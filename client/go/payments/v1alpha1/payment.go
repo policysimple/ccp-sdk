@@ -390,3 +390,28 @@ func ListPayment(in *paymentpkgv1.ListPaymentRequest) (response *paymentpkgv1.Li
 	}
 	return response, nil
 }
+
+func InvoiceFilter(in *paymentpkgv1.InvoiceFilterRequest) (response *paymentpkgv1.InvoiceFilterResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.InvoiceFilter(ctx, &paymentpkgv1.InvoiceFilterRequest{
+		Year:           in.Year,
+		Month:          in.Month,
+		CustomerList:   in.CustomerList,
+		OrganizationId: in.OrganizationId,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error get InvoiceFilter", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error get InvoiceFilter", err),
+		)
+	}
+	return response, nil
+}

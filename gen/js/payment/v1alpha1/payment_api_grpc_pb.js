@@ -313,6 +313,28 @@ function deserialize_payment_v1alpha1_GetSuscriptionResponse(buffer_arg) {
   return payment_v1alpha1_payment_api_pb.GetSuscriptionResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_payment_v1alpha1_InvoiceFilterRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.InvoiceFilterRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.InvoiceFilterRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_InvoiceFilterRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.InvoiceFilterRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_InvoiceFilterResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.InvoiceFilterResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.InvoiceFilterResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_InvoiceFilterResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.InvoiceFilterResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_payment_v1alpha1_ListPaymentRequest(arg) {
   if (!(arg instanceof payment_v1alpha1_payment_api_pb.ListPaymentRequest)) {
     throw new Error('Expected argument of type payment.v1alpha1.ListPaymentRequest');
@@ -567,6 +589,17 @@ var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
     requestDeserialize: deserialize_payment_v1alpha1_CreateInvoiceRequest,
     responseSerialize: serialize_payment_v1alpha1_CreateInvoiceResponse,
     responseDeserialize: deserialize_payment_v1alpha1_CreateInvoiceResponse,
+  },
+  invoiceFilter: {
+    path: '/payment.v1alpha1.PaymentAPIService/InvoiceFilter',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.InvoiceFilterRequest,
+    responseType: payment_v1alpha1_payment_api_pb.InvoiceFilterResponse,
+    requestSerialize: serialize_payment_v1alpha1_InvoiceFilterRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_InvoiceFilterRequest,
+    responseSerialize: serialize_payment_v1alpha1_InvoiceFilterResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_InvoiceFilterResponse,
   },
 };
 
