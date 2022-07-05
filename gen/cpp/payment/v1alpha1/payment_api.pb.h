@@ -3831,7 +3831,6 @@ class CancelSuscriptionRequest final :
 
   enum : int {
     kSuscriptionIdFieldNumber = 1,
-    kCustomerIdFieldNumber = 2,
   };
   // string suscription_id = 1 [json_name = "suscriptionId"];
   void clear_suscription_id();
@@ -3847,20 +3846,6 @@ class CancelSuscriptionRequest final :
   std::string* _internal_mutable_suscription_id();
   public:
 
-  // string customer_id = 2 [json_name = "customerId"];
-  void clear_customer_id();
-  const std::string& customer_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_customer_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_customer_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_customer_id();
-  void set_allocated_customer_id(std::string* customer_id);
-  private:
-  const std::string& _internal_customer_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_customer_id(const std::string& value);
-  std::string* _internal_mutable_customer_id();
-  public:
-
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.CancelSuscriptionRequest)
  private:
   class _Internal;
@@ -3869,7 +3854,6 @@ class CancelSuscriptionRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr suscription_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr customer_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 };
@@ -8444,52 +8428,6 @@ inline void CancelSuscriptionRequest::set_allocated_suscription_id(std::string* 
   suscription_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), suscription_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CancelSuscriptionRequest.suscription_id)
-}
-
-// string customer_id = 2 [json_name = "customerId"];
-inline void CancelSuscriptionRequest::clear_customer_id() {
-  customer_id_.ClearToEmpty();
-}
-inline const std::string& CancelSuscriptionRequest::customer_id() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.CancelSuscriptionRequest.customer_id)
-  return _internal_customer_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CancelSuscriptionRequest::set_customer_id(ArgT0&& arg0, ArgT... args) {
- 
- customer_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.CancelSuscriptionRequest.customer_id)
-}
-inline std::string* CancelSuscriptionRequest::mutable_customer_id() {
-  std::string* _s = _internal_mutable_customer_id();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.CancelSuscriptionRequest.customer_id)
-  return _s;
-}
-inline const std::string& CancelSuscriptionRequest::_internal_customer_id() const {
-  return customer_id_.Get();
-}
-inline void CancelSuscriptionRequest::_internal_set_customer_id(const std::string& value) {
-  
-  customer_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CancelSuscriptionRequest::_internal_mutable_customer_id() {
-  
-  return customer_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CancelSuscriptionRequest::release_customer_id() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.CancelSuscriptionRequest.customer_id)
-  return customer_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CancelSuscriptionRequest::set_allocated_customer_id(std::string* customer_id) {
-  if (customer_id != nullptr) {
-    
-  } else {
-    
-  }
-  customer_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), customer_id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CancelSuscriptionRequest.customer_id)
 }
 
 // -------------------------------------------------------------------
