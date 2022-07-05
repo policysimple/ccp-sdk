@@ -26,6 +26,7 @@ message Suscription {
   string interval =6;
   string suscription_item_id = 7;
   string invoice_id = 8;
+  string suscription_id =9;
 
 }
 
@@ -76,4 +77,8 @@ message CustomerList {
 
 message BilingList{
   repeated Biling items = 1;
+} 
+
+message SuscriptionList {
+  repeated Suscription items = 1;
 } 

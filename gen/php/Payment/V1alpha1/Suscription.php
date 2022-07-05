@@ -45,6 +45,10 @@ class Suscription extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string invoice_id = 8 [json_name = "invoiceId"];</code>
      */
     protected $invoice_id = '';
+    /**
+     * Generated from protobuf field <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
+     */
+    protected $suscription_id = '';
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
      *     @type string $interval
      *     @type string $suscription_item_id
      *     @type string $invoice_id
+     *     @type string $suscription_id
      * }
      */
     public function __construct($data = NULL) {
@@ -239,6 +244,28 @@ class Suscription extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->invoice_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
+     * @return string
+     */
+    public function getSuscriptionId()
+    {
+        return $this->suscription_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSuscriptionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->suscription_id = $var;
 
         return $this;
     }

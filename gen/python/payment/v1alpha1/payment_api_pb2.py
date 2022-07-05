@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"payment/v1alpha1/payment_api.proto\x12\x10payment.v1alpha1\x1a\x1epayment/v1alpha1/payment.proto\"\xae\x01\n\x14InvoiceFilterRequest\x12\x12\n\x04year\x18\x01 \x01(\tR\x04year\x12\x14\n\x05month\x18\x02 \x01(\tR\x05month\x12\x43\n\rcustomer_list\x18\x03 \x01(\x0b\x32\x1e.payment.v1alpha1.CustomerListR\x0c\x63ustomerList\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\"\xf5\x01\n\x15InvoiceFilterResponse\x12\x43\n\rcustomer_list\x18\x01 \x01(\x0b\x32\x1e.payment.v1alpha1.CustomerListR\x0c\x63ustomerList\x12@\n\x0cinvoice_list\x18\x02 \x01(\x0b\x32\x1d.payment.v1alpha1.InvoiceListR\x0binvoiceList\x12=\n\x0b\x62iling_list\x18\x03 \x01(\x0b\x32\x1c.payment.v1alpha1.BilingListR\nbilingList\x12\x16\n\x06status\x18\x04 \x01(\tR\x06status\"8\n\x15\x44\x65leteCustomerRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\"0\n\x16\x44\x65leteCustomerResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\">\n\x15GetSuscriptionRequest\x12%\n\x0esuscription_id\x18\x01 \x01(\tR\rsuscriptionId\"q\n\x16GetSuscriptionResponse\x12?\n\x0bsuscription\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"H\n\x1dGetOrganizationPaymentRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"}\n\x1eGetOrganizationPaymentResponse\x12\x43\n\rcustomer_list\x18\x01 \x01(\x0b\x32\x1e.payment.v1alpha1.CustomerListR\x0c\x63ustomerList\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"5\n\x12GetCustomerRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\"e\n\x13GetCustomerResponse\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"6\n\x15GetBilingMonthRequest\x12\x1d\n\ninvoice_id\x18\x01 \x01(\tR\tinvoiceId\"h\n\x16GetBilingMonthResponse\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"5\n\x12GetPaymentsRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\"b\n\x13GetPaymentsResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"|\n\x18UpdateSuscriptionRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12?\n\x0bsuscription\x18\x02 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\"t\n\x19UpdateSuscriptionResponse\x12?\n\x0bsuscription\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"|\n\x18\x43reateSuscriptionRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12?\n\x0bsuscription\x18\x02 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\"k\n\x19\x43reateSuscriptionResponse\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"M\n\x14\x43reateInvoiceRequest\x12\x1d\n\ninvoice_id\x18\x01 \x01(\tR\tinvoiceId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"g\n\x15\x43reateInvoiceResponse\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\x12\x16\n\x06status\x18\x04 \x01(\tR\x06status\"?\n\x11\x43reateCardRequest\x12*\n\x04\x63\x61rd\x18\x01 \x01(\x0b\x32\x16.payment.v1alpha1.CardR\x04\x63\x61rd\"G\n\x12\x43reateCardResponse\x12\x19\n\x08token_id\x18\x01 \x01(\tR\x07tokenId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"A\n\x18\x43\x61ncelSuscriptionRequest\x12%\n\x0esuscription_id\x18\x01 \x01(\tR\rsuscriptionId\"3\n\x19\x43\x61ncelSuscriptionResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"O\n\x15\x43reateCustomerRequest\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\"Q\n\x16\x43reateCustomerResponse\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"l\n\x14\x43reatePaymentRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12\x33\n\x07payment\x18\x02 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\"H\n\x15\x43reatePaymentResponse\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"l\n\x14UpdatePaymentRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12\x33\n\x07payment\x18\x02 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\"d\n\x15UpdatePaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"P\n\x14\x44\x65letePaymentRequest\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12\x1f\n\x0b\x63ustomer_id\x18\x02 \x01(\tR\ncustomerId\"/\n\x15\x44\x65letePaymentResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"M\n\x11GetPaymentRequest\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12\x1f\n\x0b\x63ustomer_id\x18\x02 \x01(\tR\ncustomerId\"a\n\x12GetPaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"5\n\x12ListPaymentRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\"b\n\x13ListPaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xc2\x0e\n\x11PaymentAPIService\x12n\n\x11\x43reateSuscription\x12*.payment.v1alpha1.CreateSuscriptionRequest\x1a+.payment.v1alpha1.CreateSuscriptionResponse\"\x00\x12Y\n\nCreateCard\x12#.payment.v1alpha1.CreateCardRequest\x1a$.payment.v1alpha1.CreateCardResponse\"\x00\x12n\n\x11UpdateSuscription\x12*.payment.v1alpha1.UpdateSuscriptionRequest\x1a+.payment.v1alpha1.UpdateSuscriptionResponse\"\x00\x12n\n\x11\x43\x61ncelSuscription\x12*.payment.v1alpha1.CancelSuscriptionRequest\x1a+.payment.v1alpha1.CancelSuscriptionResponse\"\x00\x12}\n\x16GetOrganizationPayment\x12/.payment.v1alpha1.GetOrganizationPaymentRequest\x1a\x30.payment.v1alpha1.GetOrganizationPaymentResponse\"\x00\x12\x65\n\x0eGetSuscription\x12\'.payment.v1alpha1.GetSuscriptionRequest\x1a(.payment.v1alpha1.GetSuscriptionResponse\"\x00\x12\x65\n\x0e\x43reateCustomer\x12\'.payment.v1alpha1.CreateCustomerRequest\x1a(.payment.v1alpha1.CreateCustomerResponse\"\x00\x12\x65\n\x0e\x44\x65leteCustomer\x12\'.payment.v1alpha1.DeleteCustomerRequest\x1a(.payment.v1alpha1.DeleteCustomerResponse\"\x00\x12Y\n\nGetPayment\x12#.payment.v1alpha1.GetPaymentRequest\x1a$.payment.v1alpha1.GetPaymentResponse\"\x00\x12\\\n\x0bGetCustomer\x12$.payment.v1alpha1.GetCustomerRequest\x1a%.payment.v1alpha1.GetCustomerResponse\"\x00\x12\x65\n\x0eGetBilingMonth\x12\'.payment.v1alpha1.GetBilingMonthRequest\x1a(.payment.v1alpha1.GetBilingMonthResponse\"\x00\x12\\\n\x0bGetPayments\x12$.payment.v1alpha1.GetPaymentsRequest\x1a%.payment.v1alpha1.GetPaymentsResponse\"\x00\x12\x62\n\rCreatePayment\x12&.payment.v1alpha1.CreatePaymentRequest\x1a\'.payment.v1alpha1.CreatePaymentResponse\"\x00\x12\x62\n\rUpdatePayment\x12&.payment.v1alpha1.UpdatePaymentRequest\x1a\'.payment.v1alpha1.UpdatePaymentResponse\"\x00\x12\x62\n\rDeletePayment\x12&.payment.v1alpha1.DeletePaymentRequest\x1a\'.payment.v1alpha1.DeletePaymentResponse\"\x00\x12\\\n\x0bListPayment\x12$.payment.v1alpha1.ListPaymentRequest\x1a%.payment.v1alpha1.ListPaymentResponse\"\x00\x12\x62\n\rCreateInvoice\x12&.payment.v1alpha1.CreateInvoiceRequest\x1a\'.payment.v1alpha1.CreateInvoiceResponse\"\x00\x12\x62\n\rInvoiceFilter\x12&.payment.v1alpha1.InvoiceFilterRequest\x1a\'.payment.v1alpha1.InvoiceFilterResponse\"\x00\x42\x38Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1b\x06proto3'
+  serialized_pb=b'\n\"payment/v1alpha1/payment_api.proto\x12\x10payment.v1alpha1\x1a\x1epayment/v1alpha1/payment.proto\"\xae\x01\n\x14InvoiceFilterRequest\x12\x12\n\x04year\x18\x01 \x01(\tR\x04year\x12\x14\n\x05month\x18\x02 \x01(\tR\x05month\x12\x43\n\rcustomer_list\x18\x03 \x01(\x0b\x32\x1e.payment.v1alpha1.CustomerListR\x0c\x63ustomerList\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\"\xf5\x01\n\x15InvoiceFilterResponse\x12\x43\n\rcustomer_list\x18\x01 \x01(\x0b\x32\x1e.payment.v1alpha1.CustomerListR\x0c\x63ustomerList\x12@\n\x0cinvoice_list\x18\x02 \x01(\x0b\x32\x1d.payment.v1alpha1.InvoiceListR\x0binvoiceList\x12=\n\x0b\x62iling_list\x18\x03 \x01(\x0b\x32\x1c.payment.v1alpha1.BilingListR\nbilingList\x12\x16\n\x06status\x18\x04 \x01(\tR\x06status\"8\n\x15\x44\x65leteCustomerRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\"0\n\x16\x44\x65leteCustomerResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\">\n\x15GetSuscriptionRequest\x12%\n\x0esuscription_id\x18\x01 \x01(\tR\rsuscriptionId\"q\n\x16GetSuscriptionResponse\x12?\n\x0bsuscription\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"H\n\x1dGetOrganizationPaymentRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"p\n\x1eGetOrganizationPaymentResponse\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\x12\x16\n\x06status\x18\x03 \x01(\tR\x06status\"5\n\x12GetCustomerRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\"e\n\x13GetCustomerResponse\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"6\n\x15GetBilingMonthRequest\x12\x1d\n\ninvoice_id\x18\x01 \x01(\tR\tinvoiceId\"h\n\x16GetBilingMonthResponse\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"5\n\x12GetPaymentsRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\"b\n\x13GetPaymentsResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"|\n\x18UpdateSuscriptionRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12?\n\x0bsuscription\x18\x02 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\"t\n\x19UpdateSuscriptionResponse\x12?\n\x0bsuscription\x18\x01 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"|\n\x18\x43reateSuscriptionRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12?\n\x0bsuscription\x18\x02 \x01(\x0b\x32\x1d.payment.v1alpha1.SuscriptionR\x0bsuscription\"k\n\x19\x43reateSuscriptionResponse\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"M\n\x14\x43reateInvoiceRequest\x12\x1d\n\ninvoice_id\x18\x01 \x01(\tR\tinvoiceId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"g\n\x15\x43reateInvoiceResponse\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\x12\x16\n\x06status\x18\x04 \x01(\tR\x06status\"?\n\x11\x43reateCardRequest\x12*\n\x04\x63\x61rd\x18\x01 \x01(\x0b\x32\x16.payment.v1alpha1.CardR\x04\x63\x61rd\"G\n\x12\x43reateCardResponse\x12\x19\n\x08token_id\x18\x01 \x01(\tR\x07tokenId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"A\n\x18\x43\x61ncelSuscriptionRequest\x12%\n\x0esuscription_id\x18\x01 \x01(\tR\rsuscriptionId\"3\n\x19\x43\x61ncelSuscriptionResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"O\n\x15\x43reateCustomerRequest\x12\x36\n\x08\x63ustomer\x18\x01 \x01(\x0b\x32\x1a.payment.v1alpha1.CustomerR\x08\x63ustomer\"Q\n\x16\x43reateCustomerResponse\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"l\n\x14\x43reatePaymentRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12\x33\n\x07payment\x18\x02 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\"H\n\x15\x43reatePaymentResponse\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"l\n\x14UpdatePaymentRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\x12\x33\n\x07payment\x18\x02 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\"d\n\x15UpdatePaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"P\n\x14\x44\x65letePaymentRequest\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12\x1f\n\x0b\x63ustomer_id\x18\x02 \x01(\tR\ncustomerId\"/\n\x15\x44\x65letePaymentResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"M\n\x11GetPaymentRequest\x12\x17\n\x07\x63\x61rd_id\x18\x01 \x01(\tR\x06\x63\x61rdId\x12\x1f\n\x0b\x63ustomer_id\x18\x02 \x01(\tR\ncustomerId\"a\n\x12GetPaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"5\n\x12ListPaymentRequest\x12\x1f\n\x0b\x63ustomer_id\x18\x01 \x01(\tR\ncustomerId\"b\n\x13ListPaymentResponse\x12\x33\n\x07payment\x18\x01 \x01(\x0b\x32\x19.payment.v1alpha1.PaymentR\x07payment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xc2\x0e\n\x11PaymentAPIService\x12n\n\x11\x43reateSuscription\x12*.payment.v1alpha1.CreateSuscriptionRequest\x1a+.payment.v1alpha1.CreateSuscriptionResponse\"\x00\x12Y\n\nCreateCard\x12#.payment.v1alpha1.CreateCardRequest\x1a$.payment.v1alpha1.CreateCardResponse\"\x00\x12n\n\x11UpdateSuscription\x12*.payment.v1alpha1.UpdateSuscriptionRequest\x1a+.payment.v1alpha1.UpdateSuscriptionResponse\"\x00\x12n\n\x11\x43\x61ncelSuscription\x12*.payment.v1alpha1.CancelSuscriptionRequest\x1a+.payment.v1alpha1.CancelSuscriptionResponse\"\x00\x12}\n\x16GetOrganizationPayment\x12/.payment.v1alpha1.GetOrganizationPaymentRequest\x1a\x30.payment.v1alpha1.GetOrganizationPaymentResponse\"\x00\x12\x65\n\x0eGetSuscription\x12\'.payment.v1alpha1.GetSuscriptionRequest\x1a(.payment.v1alpha1.GetSuscriptionResponse\"\x00\x12\x65\n\x0e\x43reateCustomer\x12\'.payment.v1alpha1.CreateCustomerRequest\x1a(.payment.v1alpha1.CreateCustomerResponse\"\x00\x12\x65\n\x0e\x44\x65leteCustomer\x12\'.payment.v1alpha1.DeleteCustomerRequest\x1a(.payment.v1alpha1.DeleteCustomerResponse\"\x00\x12Y\n\nGetPayment\x12#.payment.v1alpha1.GetPaymentRequest\x1a$.payment.v1alpha1.GetPaymentResponse\"\x00\x12\\\n\x0bGetCustomer\x12$.payment.v1alpha1.GetCustomerRequest\x1a%.payment.v1alpha1.GetCustomerResponse\"\x00\x12\x65\n\x0eGetBilingMonth\x12\'.payment.v1alpha1.GetBilingMonthRequest\x1a(.payment.v1alpha1.GetBilingMonthResponse\"\x00\x12\\\n\x0bGetPayments\x12$.payment.v1alpha1.GetPaymentsRequest\x1a%.payment.v1alpha1.GetPaymentsResponse\"\x00\x12\x62\n\rCreatePayment\x12&.payment.v1alpha1.CreatePaymentRequest\x1a\'.payment.v1alpha1.CreatePaymentResponse\"\x00\x12\x62\n\rUpdatePayment\x12&.payment.v1alpha1.UpdatePaymentRequest\x1a\'.payment.v1alpha1.UpdatePaymentResponse\"\x00\x12\x62\n\rDeletePayment\x12&.payment.v1alpha1.DeletePaymentRequest\x1a\'.payment.v1alpha1.DeletePaymentResponse\"\x00\x12\\\n\x0bListPayment\x12$.payment.v1alpha1.ListPaymentRequest\x1a%.payment.v1alpha1.ListPaymentResponse\"\x00\x12\x62\n\rCreateInvoice\x12&.payment.v1alpha1.CreateInvoiceRequest\x1a\'.payment.v1alpha1.CreateInvoiceResponse\"\x00\x12\x62\n\rInvoiceFilter\x12&.payment.v1alpha1.InvoiceFilterRequest\x1a\'.payment.v1alpha1.InvoiceFilterResponse\"\x00\x42\x38Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1b\x06proto3'
   ,
   dependencies=[payment_dot_v1alpha1_dot_payment__pb2.DESCRIPTOR,])
 
@@ -309,15 +309,15 @@ _GETORGANIZATIONPAYMENTRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='customer_list', full_name='payment.v1alpha1.GetOrganizationPaymentResponse.customer_list', index=0,
+      name='customer', full_name='payment.v1alpha1.GetOrganizationPaymentResponse.customer', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='customerList', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='customer', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='status', full_name='payment.v1alpha1.GetOrganizationPaymentResponse.status', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -335,7 +335,7 @@ _GETORGANIZATIONPAYMENTRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=874,
-  serialized_end=999,
+  serialized_end=986,
 )
 
 
@@ -366,8 +366,8 @@ _GETCUSTOMERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1001,
-  serialized_end=1054,
+  serialized_start=988,
+  serialized_end=1041,
 )
 
 
@@ -405,8 +405,8 @@ _GETCUSTOMERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1056,
-  serialized_end=1157,
+  serialized_start=1043,
+  serialized_end=1144,
 )
 
 
@@ -437,8 +437,8 @@ _GETBILINGMONTHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1159,
-  serialized_end=1213,
+  serialized_start=1146,
+  serialized_end=1200,
 )
 
 
@@ -476,8 +476,8 @@ _GETBILINGMONTHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1215,
-  serialized_end=1319,
+  serialized_start=1202,
+  serialized_end=1306,
 )
 
 
@@ -508,8 +508,8 @@ _GETPAYMENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1321,
-  serialized_end=1374,
+  serialized_start=1308,
+  serialized_end=1361,
 )
 
 
@@ -547,8 +547,8 @@ _GETPAYMENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1376,
-  serialized_end=1474,
+  serialized_start=1363,
+  serialized_end=1461,
 )
 
 
@@ -586,8 +586,8 @@ _UPDATESUSCRIPTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1476,
-  serialized_end=1600,
+  serialized_start=1463,
+  serialized_end=1587,
 )
 
 
@@ -625,8 +625,8 @@ _UPDATESUSCRIPTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1602,
-  serialized_end=1718,
+  serialized_start=1589,
+  serialized_end=1705,
 )
 
 
@@ -664,8 +664,8 @@ _CREATESUSCRIPTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1720,
-  serialized_end=1844,
+  serialized_start=1707,
+  serialized_end=1831,
 )
 
 
@@ -703,8 +703,8 @@ _CREATESUSCRIPTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1846,
-  serialized_end=1953,
+  serialized_start=1833,
+  serialized_end=1940,
 )
 
 
@@ -742,8 +742,8 @@ _CREATEINVOICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1955,
-  serialized_end=2032,
+  serialized_start=1942,
+  serialized_end=2019,
 )
 
 
@@ -781,8 +781,8 @@ _CREATEINVOICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2034,
-  serialized_end=2137,
+  serialized_start=2021,
+  serialized_end=2124,
 )
 
 
@@ -813,8 +813,8 @@ _CREATECARDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2139,
-  serialized_end=2202,
+  serialized_start=2126,
+  serialized_end=2189,
 )
 
 
@@ -852,8 +852,8 @@ _CREATECARDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2204,
-  serialized_end=2275,
+  serialized_start=2191,
+  serialized_end=2262,
 )
 
 
@@ -884,8 +884,8 @@ _CANCELSUSCRIPTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2277,
-  serialized_end=2342,
+  serialized_start=2264,
+  serialized_end=2329,
 )
 
 
@@ -916,8 +916,8 @@ _CANCELSUSCRIPTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2344,
-  serialized_end=2395,
+  serialized_start=2331,
+  serialized_end=2382,
 )
 
 
@@ -948,8 +948,8 @@ _CREATECUSTOMERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2397,
-  serialized_end=2476,
+  serialized_start=2384,
+  serialized_end=2463,
 )
 
 
@@ -987,8 +987,8 @@ _CREATECUSTOMERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2478,
-  serialized_end=2559,
+  serialized_start=2465,
+  serialized_end=2546,
 )
 
 
@@ -1026,8 +1026,8 @@ _CREATEPAYMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2561,
-  serialized_end=2669,
+  serialized_start=2548,
+  serialized_end=2656,
 )
 
 
@@ -1065,8 +1065,8 @@ _CREATEPAYMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2671,
-  serialized_end=2743,
+  serialized_start=2658,
+  serialized_end=2730,
 )
 
 
@@ -1104,8 +1104,8 @@ _UPDATEPAYMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2745,
-  serialized_end=2853,
+  serialized_start=2732,
+  serialized_end=2840,
 )
 
 
@@ -1143,8 +1143,8 @@ _UPDATEPAYMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2855,
-  serialized_end=2955,
+  serialized_start=2842,
+  serialized_end=2942,
 )
 
 
@@ -1182,8 +1182,8 @@ _DELETEPAYMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2957,
-  serialized_end=3037,
+  serialized_start=2944,
+  serialized_end=3024,
 )
 
 
@@ -1214,8 +1214,8 @@ _DELETEPAYMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3039,
-  serialized_end=3086,
+  serialized_start=3026,
+  serialized_end=3073,
 )
 
 
@@ -1253,8 +1253,8 @@ _GETPAYMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3088,
-  serialized_end=3165,
+  serialized_start=3075,
+  serialized_end=3152,
 )
 
 
@@ -1292,8 +1292,8 @@ _GETPAYMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3167,
-  serialized_end=3264,
+  serialized_start=3154,
+  serialized_end=3251,
 )
 
 
@@ -1324,8 +1324,8 @@ _LISTPAYMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3266,
-  serialized_end=3319,
+  serialized_start=3253,
+  serialized_end=3306,
 )
 
 
@@ -1363,8 +1363,8 @@ _LISTPAYMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3321,
-  serialized_end=3419,
+  serialized_start=3308,
+  serialized_end=3406,
 )
 
 _INVOICEFILTERREQUEST.fields_by_name['customer_list'].message_type = payment_dot_v1alpha1_dot_payment__pb2._CUSTOMERLIST
@@ -1372,7 +1372,7 @@ _INVOICEFILTERRESPONSE.fields_by_name['customer_list'].message_type = payment_do
 _INVOICEFILTERRESPONSE.fields_by_name['invoice_list'].message_type = payment_dot_v1alpha1_dot_payment__pb2._INVOICELIST
 _INVOICEFILTERRESPONSE.fields_by_name['biling_list'].message_type = payment_dot_v1alpha1_dot_payment__pb2._BILINGLIST
 _GETSUSCRIPTIONRESPONSE.fields_by_name['suscription'].message_type = payment_dot_v1alpha1_dot_payment__pb2._SUSCRIPTION
-_GETORGANIZATIONPAYMENTRESPONSE.fields_by_name['customer_list'].message_type = payment_dot_v1alpha1_dot_payment__pb2._CUSTOMERLIST
+_GETORGANIZATIONPAYMENTRESPONSE.fields_by_name['customer'].message_type = payment_dot_v1alpha1_dot_payment__pb2._CUSTOMER
 _GETCUSTOMERRESPONSE.fields_by_name['customer'].message_type = payment_dot_v1alpha1_dot_payment__pb2._CUSTOMER
 _GETBILINGMONTHRESPONSE.fields_by_name['customer'].message_type = payment_dot_v1alpha1_dot_payment__pb2._CUSTOMER
 _GETPAYMENTSRESPONSE.fields_by_name['payment'].message_type = payment_dot_v1alpha1_dot_payment__pb2._PAYMENT
@@ -1688,8 +1688,8 @@ _PAYMENTAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3422,
-  serialized_end=5280,
+  serialized_start=3409,
+  serialized_end=5267,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateSuscription',

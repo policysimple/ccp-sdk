@@ -1454,10 +1454,10 @@ class GetOrganizationPaymentResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 2,
-    kCustomerListFieldNumber = 1,
+    kStatusFieldNumber = 3,
+    kCustomerFieldNumber = 1,
   };
-  // string status = 2 [json_name = "status"];
+  // string status = 3 [json_name = "status"];
   void clear_status();
   const std::string& status() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1471,23 +1471,23 @@ class GetOrganizationPaymentResponse final :
   std::string* _internal_mutable_status();
   public:
 
-  // .payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];
-  bool has_customer_list() const;
+  // .payment.v1alpha1.Customer customer = 1 [json_name = "customer"];
+  bool has_customer() const;
   private:
-  bool _internal_has_customer_list() const;
+  bool _internal_has_customer() const;
   public:
-  void clear_customer_list();
-  const ::payment::v1alpha1::CustomerList& customer_list() const;
-  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::CustomerList* release_customer_list();
-  ::payment::v1alpha1::CustomerList* mutable_customer_list();
-  void set_allocated_customer_list(::payment::v1alpha1::CustomerList* customer_list);
+  void clear_customer();
+  const ::payment::v1alpha1::Customer& customer() const;
+  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::Customer* release_customer();
+  ::payment::v1alpha1::Customer* mutable_customer();
+  void set_allocated_customer(::payment::v1alpha1::Customer* customer);
   private:
-  const ::payment::v1alpha1::CustomerList& _internal_customer_list() const;
-  ::payment::v1alpha1::CustomerList* _internal_mutable_customer_list();
+  const ::payment::v1alpha1::Customer& _internal_customer() const;
+  ::payment::v1alpha1::Customer* _internal_mutable_customer();
   public:
-  void unsafe_arena_set_allocated_customer_list(
-      ::payment::v1alpha1::CustomerList* customer_list);
-  ::payment::v1alpha1::CustomerList* unsafe_arena_release_customer_list();
+  void unsafe_arena_set_allocated_customer(
+      ::payment::v1alpha1::Customer* customer);
+  ::payment::v1alpha1::Customer* unsafe_arena_release_customer();
 
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.GetOrganizationPaymentResponse)
  private:
@@ -1497,7 +1497,7 @@ class GetOrganizationPaymentResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
-  ::payment::v1alpha1::CustomerList* customer_list_;
+  ::payment::v1alpha1::Customer* customer_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 };
@@ -6728,39 +6728,39 @@ inline void GetOrganizationPaymentRequest::set_organization_id(::PROTOBUF_NAMESP
 
 // GetOrganizationPaymentResponse
 
-// .payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];
-inline bool GetOrganizationPaymentResponse::_internal_has_customer_list() const {
-  return this != internal_default_instance() && customer_list_ != nullptr;
+// .payment.v1alpha1.Customer customer = 1 [json_name = "customer"];
+inline bool GetOrganizationPaymentResponse::_internal_has_customer() const {
+  return this != internal_default_instance() && customer_ != nullptr;
 }
-inline bool GetOrganizationPaymentResponse::has_customer_list() const {
-  return _internal_has_customer_list();
+inline bool GetOrganizationPaymentResponse::has_customer() const {
+  return _internal_has_customer();
 }
-inline const ::payment::v1alpha1::CustomerList& GetOrganizationPaymentResponse::_internal_customer_list() const {
-  const ::payment::v1alpha1::CustomerList* p = customer_list_;
-  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::CustomerList&>(
-      ::payment::v1alpha1::_CustomerList_default_instance_);
+inline const ::payment::v1alpha1::Customer& GetOrganizationPaymentResponse::_internal_customer() const {
+  const ::payment::v1alpha1::Customer* p = customer_;
+  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::Customer&>(
+      ::payment::v1alpha1::_Customer_default_instance_);
 }
-inline const ::payment::v1alpha1::CustomerList& GetOrganizationPaymentResponse::customer_list() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.GetOrganizationPaymentResponse.customer_list)
-  return _internal_customer_list();
+inline const ::payment::v1alpha1::Customer& GetOrganizationPaymentResponse::customer() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.GetOrganizationPaymentResponse.customer)
+  return _internal_customer();
 }
-inline void GetOrganizationPaymentResponse::unsafe_arena_set_allocated_customer_list(
-    ::payment::v1alpha1::CustomerList* customer_list) {
+inline void GetOrganizationPaymentResponse::unsafe_arena_set_allocated_customer(
+    ::payment::v1alpha1::Customer* customer) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer_list_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer_);
   }
-  customer_list_ = customer_list;
-  if (customer_list) {
+  customer_ = customer;
+  if (customer) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.GetOrganizationPaymentResponse.customer_list)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.GetOrganizationPaymentResponse.customer)
 }
-inline ::payment::v1alpha1::CustomerList* GetOrganizationPaymentResponse::release_customer_list() {
+inline ::payment::v1alpha1::Customer* GetOrganizationPaymentResponse::release_customer() {
   
-  ::payment::v1alpha1::CustomerList* temp = customer_list_;
-  customer_list_ = nullptr;
+  ::payment::v1alpha1::Customer* temp = customer_;
+  customer_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -6772,49 +6772,49 @@ inline ::payment::v1alpha1::CustomerList* GetOrganizationPaymentResponse::releas
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::payment::v1alpha1::CustomerList* GetOrganizationPaymentResponse::unsafe_arena_release_customer_list() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.GetOrganizationPaymentResponse.customer_list)
+inline ::payment::v1alpha1::Customer* GetOrganizationPaymentResponse::unsafe_arena_release_customer() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.GetOrganizationPaymentResponse.customer)
   
-  ::payment::v1alpha1::CustomerList* temp = customer_list_;
-  customer_list_ = nullptr;
+  ::payment::v1alpha1::Customer* temp = customer_;
+  customer_ = nullptr;
   return temp;
 }
-inline ::payment::v1alpha1::CustomerList* GetOrganizationPaymentResponse::_internal_mutable_customer_list() {
+inline ::payment::v1alpha1::Customer* GetOrganizationPaymentResponse::_internal_mutable_customer() {
   
-  if (customer_list_ == nullptr) {
-    auto* p = CreateMaybeMessage<::payment::v1alpha1::CustomerList>(GetArenaForAllocation());
-    customer_list_ = p;
+  if (customer_ == nullptr) {
+    auto* p = CreateMaybeMessage<::payment::v1alpha1::Customer>(GetArenaForAllocation());
+    customer_ = p;
   }
-  return customer_list_;
+  return customer_;
 }
-inline ::payment::v1alpha1::CustomerList* GetOrganizationPaymentResponse::mutable_customer_list() {
-  ::payment::v1alpha1::CustomerList* _msg = _internal_mutable_customer_list();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.GetOrganizationPaymentResponse.customer_list)
+inline ::payment::v1alpha1::Customer* GetOrganizationPaymentResponse::mutable_customer() {
+  ::payment::v1alpha1::Customer* _msg = _internal_mutable_customer();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.GetOrganizationPaymentResponse.customer)
   return _msg;
 }
-inline void GetOrganizationPaymentResponse::set_allocated_customer_list(::payment::v1alpha1::CustomerList* customer_list) {
+inline void GetOrganizationPaymentResponse::set_allocated_customer(::payment::v1alpha1::Customer* customer) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer_list_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer_);
   }
-  if (customer_list) {
+  if (customer) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer_list));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer));
     if (message_arena != submessage_arena) {
-      customer_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, customer_list, submessage_arena);
+      customer = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, customer, submessage_arena);
     }
     
   } else {
     
   }
-  customer_list_ = customer_list;
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.GetOrganizationPaymentResponse.customer_list)
+  customer_ = customer;
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.GetOrganizationPaymentResponse.customer)
 }
 
-// string status = 2 [json_name = "status"];
+// string status = 3 [json_name = "status"];
 inline void GetOrganizationPaymentResponse::clear_status() {
   status_.ClearToEmpty();
 }

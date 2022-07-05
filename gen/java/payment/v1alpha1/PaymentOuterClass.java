@@ -2185,6 +2185,18 @@ public final class PaymentOuterClass {
      */
     com.google.protobuf.ByteString
         getInvoiceIdBytes();
+
+    /**
+     * <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
+     * @return The suscriptionId.
+     */
+    java.lang.String getSuscriptionId();
+    /**
+     * <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
+     * @return The bytes for suscriptionId.
+     */
+    com.google.protobuf.ByteString
+        getSuscriptionIdBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.Suscription}
@@ -2207,6 +2219,7 @@ public final class PaymentOuterClass {
       interval_ = "";
       suscriptionItemId_ = "";
       invoiceId_ = "";
+      suscriptionId_ = "";
     }
 
     @java.lang.Override
@@ -2285,6 +2298,12 @@ public final class PaymentOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               invoiceId_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              suscriptionId_ = s;
               break;
             }
             default: {
@@ -2623,6 +2642,44 @@ public final class PaymentOuterClass {
       }
     }
 
+    public static final int SUSCRIPTION_ID_FIELD_NUMBER = 9;
+    private volatile java.lang.Object suscriptionId_;
+    /**
+     * <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
+     * @return The suscriptionId.
+     */
+    @java.lang.Override
+    public java.lang.String getSuscriptionId() {
+      java.lang.Object ref = suscriptionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        suscriptionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
+     * @return The bytes for suscriptionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSuscriptionIdBytes() {
+      java.lang.Object ref = suscriptionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        suscriptionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2661,6 +2718,9 @@ public final class PaymentOuterClass {
       if (!getInvoiceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, invoiceId_);
       }
+      if (!getSuscriptionIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, suscriptionId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2694,6 +2754,9 @@ public final class PaymentOuterClass {
       if (!getInvoiceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, invoiceId_);
       }
+      if (!getSuscriptionIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, suscriptionId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2725,6 +2788,8 @@ public final class PaymentOuterClass {
           .equals(other.getSuscriptionItemId())) return false;
       if (!getInvoiceId()
           .equals(other.getInvoiceId())) return false;
+      if (!getSuscriptionId()
+          .equals(other.getSuscriptionId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2752,6 +2817,8 @@ public final class PaymentOuterClass {
       hash = (53 * hash) + getSuscriptionItemId().hashCode();
       hash = (37 * hash) + INVOICE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getInvoiceId().hashCode();
+      hash = (37 * hash) + SUSCRIPTION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSuscriptionId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2901,6 +2968,8 @@ public final class PaymentOuterClass {
 
         invoiceId_ = "";
 
+        suscriptionId_ = "";
+
         return this;
       }
 
@@ -2935,6 +3004,7 @@ public final class PaymentOuterClass {
         result.interval_ = interval_;
         result.suscriptionItemId_ = suscriptionItemId_;
         result.invoiceId_ = invoiceId_;
+        result.suscriptionId_ = suscriptionId_;
         onBuilt();
         return result;
       }
@@ -3013,6 +3083,10 @@ public final class PaymentOuterClass {
         }
         if (!other.getInvoiceId().isEmpty()) {
           invoiceId_ = other.invoiceId_;
+          onChanged();
+        }
+        if (!other.getSuscriptionId().isEmpty()) {
+          suscriptionId_ = other.suscriptionId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3648,6 +3722,82 @@ public final class PaymentOuterClass {
   checkByteStringIsUtf8(value);
         
         invoiceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object suscriptionId_ = "";
+      /**
+       * <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
+       * @return The suscriptionId.
+       */
+      public java.lang.String getSuscriptionId() {
+        java.lang.Object ref = suscriptionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          suscriptionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
+       * @return The bytes for suscriptionId.
+       */
+      public com.google.protobuf.ByteString
+          getSuscriptionIdBytes() {
+        java.lang.Object ref = suscriptionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          suscriptionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
+       * @param value The suscriptionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSuscriptionId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        suscriptionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSuscriptionId() {
+        
+        suscriptionId_ = getDefaultInstance().getSuscriptionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
+       * @param value The bytes for suscriptionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSuscriptionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        suscriptionId_ = value;
         onChanged();
         return this;
       }
@@ -10934,6 +11084,799 @@ public final class PaymentOuterClass {
 
   }
 
+  public interface SuscriptionListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payment.v1alpha1.SuscriptionList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+     */
+    java.util.List<payment.v1alpha1.PaymentOuterClass.Suscription> 
+        getItemsList();
+    /**
+     * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+     */
+    payment.v1alpha1.PaymentOuterClass.Suscription getItems(int index);
+    /**
+     * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+     */
+    int getItemsCount();
+    /**
+     * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+     */
+    java.util.List<? extends payment.v1alpha1.PaymentOuterClass.SuscriptionOrBuilder> 
+        getItemsOrBuilderList();
+    /**
+     * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+     */
+    payment.v1alpha1.PaymentOuterClass.SuscriptionOrBuilder getItemsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code payment.v1alpha1.SuscriptionList}
+   */
+  public static final class SuscriptionList extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:payment.v1alpha1.SuscriptionList)
+      SuscriptionListOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SuscriptionList.newBuilder() to construct.
+    private SuscriptionList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SuscriptionList() {
+      items_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SuscriptionList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SuscriptionList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                items_ = new java.util.ArrayList<payment.v1alpha1.PaymentOuterClass.Suscription>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              items_.add(
+                  input.readMessage(payment.v1alpha1.PaymentOuterClass.Suscription.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          items_ = java.util.Collections.unmodifiableList(items_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return payment.v1alpha1.PaymentOuterClass.internal_static_payment_v1alpha1_SuscriptionList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return payment.v1alpha1.PaymentOuterClass.internal_static_payment_v1alpha1_SuscriptionList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              payment.v1alpha1.PaymentOuterClass.SuscriptionList.class, payment.v1alpha1.PaymentOuterClass.SuscriptionList.Builder.class);
+    }
+
+    public static final int ITEMS_FIELD_NUMBER = 1;
+    private java.util.List<payment.v1alpha1.PaymentOuterClass.Suscription> items_;
+    /**
+     * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<payment.v1alpha1.PaymentOuterClass.Suscription> getItemsList() {
+      return items_;
+    }
+    /**
+     * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends payment.v1alpha1.PaymentOuterClass.SuscriptionOrBuilder> 
+        getItemsOrBuilderList() {
+      return items_;
+    }
+    /**
+     * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+     */
+    @java.lang.Override
+    public int getItemsCount() {
+      return items_.size();
+    }
+    /**
+     * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+     */
+    @java.lang.Override
+    public payment.v1alpha1.PaymentOuterClass.Suscription getItems(int index) {
+      return items_.get(index);
+    }
+    /**
+     * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+     */
+    @java.lang.Override
+    public payment.v1alpha1.PaymentOuterClass.SuscriptionOrBuilder getItemsOrBuilder(
+        int index) {
+      return items_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < items_.size(); i++) {
+        output.writeMessage(1, items_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < items_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, items_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof payment.v1alpha1.PaymentOuterClass.SuscriptionList)) {
+        return super.equals(obj);
+      }
+      payment.v1alpha1.PaymentOuterClass.SuscriptionList other = (payment.v1alpha1.PaymentOuterClass.SuscriptionList) obj;
+
+      if (!getItemsList()
+          .equals(other.getItemsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getItemsCount() > 0) {
+        hash = (37 * hash) + ITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + getItemsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static payment.v1alpha1.PaymentOuterClass.SuscriptionList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentOuterClass.SuscriptionList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentOuterClass.SuscriptionList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentOuterClass.SuscriptionList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentOuterClass.SuscriptionList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentOuterClass.SuscriptionList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentOuterClass.SuscriptionList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentOuterClass.SuscriptionList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentOuterClass.SuscriptionList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentOuterClass.SuscriptionList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentOuterClass.SuscriptionList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentOuterClass.SuscriptionList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(payment.v1alpha1.PaymentOuterClass.SuscriptionList prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code payment.v1alpha1.SuscriptionList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:payment.v1alpha1.SuscriptionList)
+        payment.v1alpha1.PaymentOuterClass.SuscriptionListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return payment.v1alpha1.PaymentOuterClass.internal_static_payment_v1alpha1_SuscriptionList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return payment.v1alpha1.PaymentOuterClass.internal_static_payment_v1alpha1_SuscriptionList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                payment.v1alpha1.PaymentOuterClass.SuscriptionList.class, payment.v1alpha1.PaymentOuterClass.SuscriptionList.Builder.class);
+      }
+
+      // Construct using payment.v1alpha1.PaymentOuterClass.SuscriptionList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getItemsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          itemsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return payment.v1alpha1.PaymentOuterClass.internal_static_payment_v1alpha1_SuscriptionList_descriptor;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentOuterClass.SuscriptionList getDefaultInstanceForType() {
+        return payment.v1alpha1.PaymentOuterClass.SuscriptionList.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentOuterClass.SuscriptionList build() {
+        payment.v1alpha1.PaymentOuterClass.SuscriptionList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentOuterClass.SuscriptionList buildPartial() {
+        payment.v1alpha1.PaymentOuterClass.SuscriptionList result = new payment.v1alpha1.PaymentOuterClass.SuscriptionList(this);
+        int from_bitField0_ = bitField0_;
+        if (itemsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            items_ = java.util.Collections.unmodifiableList(items_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.items_ = items_;
+        } else {
+          result.items_ = itemsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof payment.v1alpha1.PaymentOuterClass.SuscriptionList) {
+          return mergeFrom((payment.v1alpha1.PaymentOuterClass.SuscriptionList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(payment.v1alpha1.PaymentOuterClass.SuscriptionList other) {
+        if (other == payment.v1alpha1.PaymentOuterClass.SuscriptionList.getDefaultInstance()) return this;
+        if (itemsBuilder_ == null) {
+          if (!other.items_.isEmpty()) {
+            if (items_.isEmpty()) {
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureItemsIsMutable();
+              items_.addAll(other.items_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.items_.isEmpty()) {
+            if (itemsBuilder_.isEmpty()) {
+              itemsBuilder_.dispose();
+              itemsBuilder_ = null;
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              itemsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getItemsFieldBuilder() : null;
+            } else {
+              itemsBuilder_.addAllMessages(other.items_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        payment.v1alpha1.PaymentOuterClass.SuscriptionList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (payment.v1alpha1.PaymentOuterClass.SuscriptionList) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<payment.v1alpha1.PaymentOuterClass.Suscription> items_ =
+        java.util.Collections.emptyList();
+      private void ensureItemsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          items_ = new java.util.ArrayList<payment.v1alpha1.PaymentOuterClass.Suscription>(items_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          payment.v1alpha1.PaymentOuterClass.Suscription, payment.v1alpha1.PaymentOuterClass.Suscription.Builder, payment.v1alpha1.PaymentOuterClass.SuscriptionOrBuilder> itemsBuilder_;
+
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public java.util.List<payment.v1alpha1.PaymentOuterClass.Suscription> getItemsList() {
+        if (itemsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(items_);
+        } else {
+          return itemsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public int getItemsCount() {
+        if (itemsBuilder_ == null) {
+          return items_.size();
+        } else {
+          return itemsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.Suscription getItems(int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);
+        } else {
+          return itemsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public Builder setItems(
+          int index, payment.v1alpha1.PaymentOuterClass.Suscription value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.set(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public Builder setItems(
+          int index, payment.v1alpha1.PaymentOuterClass.Suscription.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public Builder addItems(payment.v1alpha1.PaymentOuterClass.Suscription value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public Builder addItems(
+          int index, payment.v1alpha1.PaymentOuterClass.Suscription value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public Builder addItems(
+          payment.v1alpha1.PaymentOuterClass.Suscription.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public Builder addItems(
+          int index, payment.v1alpha1.PaymentOuterClass.Suscription.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public Builder addAllItems(
+          java.lang.Iterable<? extends payment.v1alpha1.PaymentOuterClass.Suscription> values) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, items_);
+          onChanged();
+        } else {
+          itemsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public Builder clearItems() {
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          itemsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public Builder removeItems(int index) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.remove(index);
+          onChanged();
+        } else {
+          itemsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.Suscription.Builder getItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.SuscriptionOrBuilder getItemsOrBuilder(
+          int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);  } else {
+          return itemsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public java.util.List<? extends payment.v1alpha1.PaymentOuterClass.SuscriptionOrBuilder> 
+           getItemsOrBuilderList() {
+        if (itemsBuilder_ != null) {
+          return itemsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(items_);
+        }
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.Suscription.Builder addItemsBuilder() {
+        return getItemsFieldBuilder().addBuilder(
+            payment.v1alpha1.PaymentOuterClass.Suscription.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.Suscription.Builder addItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().addBuilder(
+            index, payment.v1alpha1.PaymentOuterClass.Suscription.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];</code>
+       */
+      public java.util.List<payment.v1alpha1.PaymentOuterClass.Suscription.Builder> 
+           getItemsBuilderList() {
+        return getItemsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          payment.v1alpha1.PaymentOuterClass.Suscription, payment.v1alpha1.PaymentOuterClass.Suscription.Builder, payment.v1alpha1.PaymentOuterClass.SuscriptionOrBuilder> 
+          getItemsFieldBuilder() {
+        if (itemsBuilder_ == null) {
+          itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              payment.v1alpha1.PaymentOuterClass.Suscription, payment.v1alpha1.PaymentOuterClass.Suscription.Builder, payment.v1alpha1.PaymentOuterClass.SuscriptionOrBuilder>(
+                  items_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          items_ = null;
+        }
+        return itemsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:payment.v1alpha1.SuscriptionList)
+    }
+
+    // @@protoc_insertion_point(class_scope:payment.v1alpha1.SuscriptionList)
+    private static final payment.v1alpha1.PaymentOuterClass.SuscriptionList DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new payment.v1alpha1.PaymentOuterClass.SuscriptionList();
+    }
+
+    public static payment.v1alpha1.PaymentOuterClass.SuscriptionList getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SuscriptionList>
+        PARSER = new com.google.protobuf.AbstractParser<SuscriptionList>() {
+      @java.lang.Override
+      public SuscriptionList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SuscriptionList(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SuscriptionList> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SuscriptionList> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public payment.v1alpha1.PaymentOuterClass.SuscriptionList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_payment_v1alpha1_Customer_descriptor;
   private static final 
@@ -10979,6 +11922,11 @@ public final class PaymentOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_payment_v1alpha1_BilingList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_v1alpha1_SuscriptionList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_v1alpha1_SuscriptionList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -10998,35 +11946,38 @@ public final class PaymentOuterClass {
       "payment.v1alpha1.PaymentR\007payment\0223\n\007inv" +
       "oice\030\010 \001(\0132\031.payment.v1alpha1.InvoiceR\007i" +
       "nvoice\0220\n\006biling\030\t \001(\0132\030.payment.v1alpha" +
-      "1.BilingR\006biling\"\370\001\n\013Suscription\022\016\n\002id\030\001" +
+      "1.BilingR\006biling\"\237\002\n\013Suscription\022\016\n\002id\030\001" +
       " \001(\tR\002id\022\024\n\005price\030\002 \001(\tR\005price\022\033\n\tprice_" +
       "cpu\030\003 \001(\tR\010priceCpu\022\037\n\013price_bytes\030\004 \001(\t" +
       "R\npriceBytes\022\032\n\010currency\030\005 \001(\tR\010currency" +
       "\022\032\n\010interval\030\006 \001(\tR\010interval\022.\n\023suscript" +
       "ion_item_id\030\007 \001(\tR\021suscriptionItemId\022\035\n\n" +
-      "invoice_id\030\010 \001(\tR\tinvoiceId\"\217\001\n\007Payment\022" +
-      "\016\n\002id\030\001 \001(\tR\002id\022\030\n\007default\030\002 \001(\010R\007defaul" +
-      "t\022\030\n\007enabled\030\003 \001(\010R\007enabled\022\024\n\005alias\030\004 \001" +
-      "(\tR\005alias\022*\n\004card\030\005 \001(\0132\026.payment.v1alph" +
-      "a1.CardR\004card\"v\n\004Card\022\016\n\002id\030\001 \001(\tR\002id\022\026\n" +
-      "\006number\030\002 \001(\tR\006number\022\032\n\010expmonth\030\003 \001(\tR" +
-      "\010expmonth\022\030\n\007expyear\030\004 \001(\tR\007expyear\022\020\n\003c" +
-      "vc\030\005 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002id\030\001 \001(\tR\002i" +
-      "d\022\026\n\006amount\030\002 \001(\003R\006amount\022\026\n\006period\030\003 \001(" +
-      "\tR\006period\022\034\n\tstatuspay\030\004 \001(\tR\tstatuspay\022" +
-      "\022\n\004date\030\005 \001(\tR\004date\022\030\n\007product\030\006 \001(\tR\007pr" +
-      "oduct\"\310\001\n\006Biling\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014acco" +
-      "unt_name\030\002 \001(\tR\013accountName\022\035\n\ninvoice_i" +
-      "d\030\003 \001(\tR\tinvoiceId\022\036\n\ntotalusage\030\004 \001(\003R\n" +
-      "totalusage\022\020\n\003cpu\030\005 \001(\003R\003cpu\022\020\n\003ram\030\006 \001(" +
-      "\003R\003ram\022\024\n\005month\030\007 \001(\tR\005month\022\022\n\004year\030\010 \001" +
-      "(\tR\004year\">\n\013InvoiceList\022/\n\005items\030\001 \003(\0132\031" +
-      ".payment.v1alpha1.InvoiceR\005items\"@\n\014Cust" +
-      "omerList\0220\n\005items\030\001 \003(\0132\032.payment.v1alph" +
-      "a1.CustomerR\005items\"<\n\nBilingList\022.\n\005item" +
-      "s\030\001 \003(\0132\030.payment.v1alpha1.BilingR\005items" +
-      "B8Z6github.com/cuemby/ccp-payment-servic" +
-      "e/payment/v1alpha1b\006proto3"
+      "invoice_id\030\010 \001(\tR\tinvoiceId\022%\n\016suscripti" +
+      "on_id\030\t \001(\tR\rsuscriptionId\"\217\001\n\007Payment\022\016" +
+      "\n\002id\030\001 \001(\tR\002id\022\030\n\007default\030\002 \001(\010R\007default" +
+      "\022\030\n\007enabled\030\003 \001(\010R\007enabled\022\024\n\005alias\030\004 \001(" +
+      "\tR\005alias\022*\n\004card\030\005 \001(\0132\026.payment.v1alpha" +
+      "1.CardR\004card\"v\n\004Card\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006" +
+      "number\030\002 \001(\tR\006number\022\032\n\010expmonth\030\003 \001(\tR\010" +
+      "expmonth\022\030\n\007expyear\030\004 \001(\tR\007expyear\022\020\n\003cv" +
+      "c\030\005 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002id\030\001 \001(\tR\002id" +
+      "\022\026\n\006amount\030\002 \001(\003R\006amount\022\026\n\006period\030\003 \001(\t" +
+      "R\006period\022\034\n\tstatuspay\030\004 \001(\tR\tstatuspay\022\022" +
+      "\n\004date\030\005 \001(\tR\004date\022\030\n\007product\030\006 \001(\tR\007pro" +
+      "duct\"\310\001\n\006Biling\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014accou" +
+      "nt_name\030\002 \001(\tR\013accountName\022\035\n\ninvoice_id" +
+      "\030\003 \001(\tR\tinvoiceId\022\036\n\ntotalusage\030\004 \001(\003R\nt" +
+      "otalusage\022\020\n\003cpu\030\005 \001(\003R\003cpu\022\020\n\003ram\030\006 \001(\003" +
+      "R\003ram\022\024\n\005month\030\007 \001(\tR\005month\022\022\n\004year\030\010 \001(" +
+      "\tR\004year\">\n\013InvoiceList\022/\n\005items\030\001 \003(\0132\031." +
+      "payment.v1alpha1.InvoiceR\005items\"@\n\014Custo" +
+      "merList\0220\n\005items\030\001 \003(\0132\032.payment.v1alpha" +
+      "1.CustomerR\005items\"<\n\nBilingList\022.\n\005items" +
+      "\030\001 \003(\0132\030.payment.v1alpha1.BilingR\005items\"" +
+      "F\n\017SuscriptionList\0223\n\005items\030\001 \003(\0132\035.paym" +
+      "ent.v1alpha1.SuscriptionR\005itemsB8Z6githu" +
+      "b.com/cuemby/ccp-payment-service/payment" +
+      "/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11043,7 +11994,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_Suscription_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Suscription_descriptor,
-        new java.lang.String[] { "Id", "Price", "PriceCpu", "PriceBytes", "Currency", "Interval", "SuscriptionItemId", "InvoiceId", });
+        new java.lang.String[] { "Id", "Price", "PriceCpu", "PriceBytes", "Currency", "Interval", "SuscriptionItemId", "InvoiceId", "SuscriptionId", });
     internal_static_payment_v1alpha1_Payment_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_payment_v1alpha1_Payment_fieldAccessorTable = new
@@ -11085,6 +12036,12 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_BilingList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_BilingList_descriptor,
+        new java.lang.String[] { "Items", });
+    internal_static_payment_v1alpha1_SuscriptionList_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_payment_v1alpha1_SuscriptionList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_v1alpha1_SuscriptionList_descriptor,
         new java.lang.String[] { "Items", });
   }
 

@@ -47,7 +47,8 @@ constexpr Suscription::Suscription(
   , currency_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , interval_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , suscription_item_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , invoice_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , invoice_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , suscription_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct SuscriptionDefaultTypeInternal {
   constexpr SuscriptionDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -161,9 +162,21 @@ struct BilingListDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BilingListDefaultTypeInternal _BilingList_default_instance_;
+constexpr SuscriptionList::SuscriptionList(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : items_(){}
+struct SuscriptionListDefaultTypeInternal {
+  constexpr SuscriptionListDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SuscriptionListDefaultTypeInternal() {}
+  union {
+    SuscriptionList _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SuscriptionListDefaultTypeInternal _SuscriptionList_default_instance_;
 }  // namespace v1alpha1
 }  // namespace payment
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto[9];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto[10];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_payment_2fv1alpha1_2fpayment_2eproto = nullptr;
 
@@ -195,6 +208,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_2
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Suscription, interval_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Suscription, suscription_item_id_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Suscription, invoice_id_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Suscription, suscription_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -257,17 +271,24 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_2
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BilingList, items_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::SuscriptionList, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::SuscriptionList, items_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::payment::v1alpha1::Customer)},
   { 14, -1, sizeof(::payment::v1alpha1::Suscription)},
-  { 27, -1, sizeof(::payment::v1alpha1::Payment)},
-  { 37, -1, sizeof(::payment::v1alpha1::Card)},
-  { 47, -1, sizeof(::payment::v1alpha1::Invoice)},
-  { 58, -1, sizeof(::payment::v1alpha1::Biling)},
-  { 71, -1, sizeof(::payment::v1alpha1::InvoiceList)},
-  { 77, -1, sizeof(::payment::v1alpha1::CustomerList)},
-  { 83, -1, sizeof(::payment::v1alpha1::BilingList)},
+  { 28, -1, sizeof(::payment::v1alpha1::Payment)},
+  { 38, -1, sizeof(::payment::v1alpha1::Card)},
+  { 48, -1, sizeof(::payment::v1alpha1::Invoice)},
+  { 59, -1, sizeof(::payment::v1alpha1::Biling)},
+  { 72, -1, sizeof(::payment::v1alpha1::InvoiceList)},
+  { 78, -1, sizeof(::payment::v1alpha1::CustomerList)},
+  { 84, -1, sizeof(::payment::v1alpha1::BilingList)},
+  { 90, -1, sizeof(::payment::v1alpha1::SuscriptionList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -280,6 +301,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::payment::v1alpha1::_InvoiceList_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::payment::v1alpha1::_CustomerList_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::payment::v1alpha1::_BilingList_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::payment::v1alpha1::_SuscriptionList_default_instance_),
 };
 
 const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -293,40 +315,43 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROT
   "payment.v1alpha1.PaymentR\007payment\0223\n\007inv"
   "oice\030\010 \001(\0132\031.payment.v1alpha1.InvoiceR\007i"
   "nvoice\0220\n\006biling\030\t \001(\0132\030.payment.v1alpha"
-  "1.BilingR\006biling\"\370\001\n\013Suscription\022\016\n\002id\030\001"
+  "1.BilingR\006biling\"\237\002\n\013Suscription\022\016\n\002id\030\001"
   " \001(\tR\002id\022\024\n\005price\030\002 \001(\tR\005price\022\033\n\tprice_"
   "cpu\030\003 \001(\tR\010priceCpu\022\037\n\013price_bytes\030\004 \001(\t"
   "R\npriceBytes\022\032\n\010currency\030\005 \001(\tR\010currency"
   "\022\032\n\010interval\030\006 \001(\tR\010interval\022.\n\023suscript"
   "ion_item_id\030\007 \001(\tR\021suscriptionItemId\022\035\n\n"
-  "invoice_id\030\010 \001(\tR\tinvoiceId\"\217\001\n\007Payment\022"
-  "\016\n\002id\030\001 \001(\tR\002id\022\030\n\007default\030\002 \001(\010R\007defaul"
-  "t\022\030\n\007enabled\030\003 \001(\010R\007enabled\022\024\n\005alias\030\004 \001"
-  "(\tR\005alias\022*\n\004card\030\005 \001(\0132\026.payment.v1alph"
-  "a1.CardR\004card\"v\n\004Card\022\016\n\002id\030\001 \001(\tR\002id\022\026\n"
-  "\006number\030\002 \001(\tR\006number\022\032\n\010expmonth\030\003 \001(\tR"
-  "\010expmonth\022\030\n\007expyear\030\004 \001(\tR\007expyear\022\020\n\003c"
-  "vc\030\005 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002id\030\001 \001(\tR\002i"
-  "d\022\026\n\006amount\030\002 \001(\003R\006amount\022\026\n\006period\030\003 \001("
-  "\tR\006period\022\034\n\tstatuspay\030\004 \001(\tR\tstatuspay\022"
-  "\022\n\004date\030\005 \001(\tR\004date\022\030\n\007product\030\006 \001(\tR\007pr"
-  "oduct\"\310\001\n\006Biling\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014acco"
-  "unt_name\030\002 \001(\tR\013accountName\022\035\n\ninvoice_i"
-  "d\030\003 \001(\tR\tinvoiceId\022\036\n\ntotalusage\030\004 \001(\003R\n"
-  "totalusage\022\020\n\003cpu\030\005 \001(\003R\003cpu\022\020\n\003ram\030\006 \001("
-  "\003R\003ram\022\024\n\005month\030\007 \001(\tR\005month\022\022\n\004year\030\010 \001"
-  "(\tR\004year\">\n\013InvoiceList\022/\n\005items\030\001 \003(\0132\031"
-  ".payment.v1alpha1.InvoiceR\005items\"@\n\014Cust"
-  "omerList\0220\n\005items\030\001 \003(\0132\032.payment.v1alph"
-  "a1.CustomerR\005items\"<\n\nBilingList\022.\n\005item"
-  "s\030\001 \003(\0132\030.payment.v1alpha1.BilingR\005items"
-  "B8Z6github.com/cuemby/ccp-payment-servic"
-  "e/payment/v1alpha1b\006proto3"
+  "invoice_id\030\010 \001(\tR\tinvoiceId\022%\n\016suscripti"
+  "on_id\030\t \001(\tR\rsuscriptionId\"\217\001\n\007Payment\022\016"
+  "\n\002id\030\001 \001(\tR\002id\022\030\n\007default\030\002 \001(\010R\007default"
+  "\022\030\n\007enabled\030\003 \001(\010R\007enabled\022\024\n\005alias\030\004 \001("
+  "\tR\005alias\022*\n\004card\030\005 \001(\0132\026.payment.v1alpha"
+  "1.CardR\004card\"v\n\004Card\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006"
+  "number\030\002 \001(\tR\006number\022\032\n\010expmonth\030\003 \001(\tR\010"
+  "expmonth\022\030\n\007expyear\030\004 \001(\tR\007expyear\022\020\n\003cv"
+  "c\030\005 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002id\030\001 \001(\tR\002id"
+  "\022\026\n\006amount\030\002 \001(\003R\006amount\022\026\n\006period\030\003 \001(\t"
+  "R\006period\022\034\n\tstatuspay\030\004 \001(\tR\tstatuspay\022\022"
+  "\n\004date\030\005 \001(\tR\004date\022\030\n\007product\030\006 \001(\tR\007pro"
+  "duct\"\310\001\n\006Biling\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014accou"
+  "nt_name\030\002 \001(\tR\013accountName\022\035\n\ninvoice_id"
+  "\030\003 \001(\tR\tinvoiceId\022\036\n\ntotalusage\030\004 \001(\003R\nt"
+  "otalusage\022\020\n\003cpu\030\005 \001(\003R\003cpu\022\020\n\003ram\030\006 \001(\003"
+  "R\003ram\022\024\n\005month\030\007 \001(\tR\005month\022\022\n\004year\030\010 \001("
+  "\tR\004year\">\n\013InvoiceList\022/\n\005items\030\001 \003(\0132\031."
+  "payment.v1alpha1.InvoiceR\005items\"@\n\014Custo"
+  "merList\0220\n\005items\030\001 \003(\0132\032.payment.v1alpha"
+  "1.CustomerR\005items\"<\n\nBilingList\022.\n\005items"
+  "\030\001 \003(\0132\030.payment.v1alpha1.BilingR\005items\""
+  "F\n\017SuscriptionList\0223\n\005items\030\001 \003(\0132\035.paym"
+  "ent.v1alpha1.SuscriptionR\005itemsB8Z6githu"
+  "b.com/cuemby/ccp-payment-service/payment"
+  "/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_2eproto = {
-  false, false, 1546, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
-  &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once, nullptr, 0, 9,
+  false, false, 1657, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
+  &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once, nullptr, 0, 10,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_2eproto,
 };
@@ -910,6 +935,11 @@ Suscription::Suscription(const Suscription& from)
     invoice_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_invoice_id(), 
       GetArenaForAllocation());
   }
+  suscription_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_suscription_id().empty()) {
+    suscription_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_suscription_id(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.Suscription)
 }
 
@@ -922,6 +952,7 @@ currency_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlr
 interval_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 suscription_item_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 invoice_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+suscription_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Suscription::~Suscription() {
@@ -941,6 +972,7 @@ inline void Suscription::SharedDtor() {
   interval_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   suscription_item_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   invoice_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  suscription_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Suscription::ArenaDtor(void* object) {
@@ -967,6 +999,7 @@ void Suscription::Clear() {
   interval_.ClearToEmpty();
   suscription_item_id_.ClearToEmpty();
   invoice_id_.ClearToEmpty();
+  suscription_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1045,6 +1078,15 @@ const char* Suscription::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           auto str = _internal_mutable_invoice_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Suscription.invoice_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string suscription_id = 9 [json_name = "suscriptionId"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          auto str = _internal_mutable_suscription_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Suscription.suscription_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1157,6 +1199,16 @@ failure:
         8, this->_internal_invoice_id(), target);
   }
 
+  // string suscription_id = 9 [json_name = "suscriptionId"];
+  if (!this->_internal_suscription_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_suscription_id().data(), static_cast<int>(this->_internal_suscription_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Suscription.suscription_id");
+    target = stream->WriteStringMaybeAliased(
+        9, this->_internal_suscription_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1229,6 +1281,13 @@ size_t Suscription::ByteSizeLong() const {
         this->_internal_invoice_id());
   }
 
+  // string suscription_id = 9 [json_name = "suscriptionId"];
+  if (!this->_internal_suscription_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_suscription_id());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -1280,6 +1339,9 @@ void Suscription::MergeFrom(const Suscription& from) {
   }
   if (!from._internal_invoice_id().empty()) {
     _internal_set_invoice_id(from._internal_invoice_id());
+  }
+  if (!from._internal_suscription_id().empty()) {
+    _internal_set_suscription_id(from._internal_suscription_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1337,6 +1399,11 @@ void Suscription::InternalSwap(Suscription* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &invoice_id_, GetArenaForAllocation(),
       &other->invoice_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &suscription_id_, GetArenaForAllocation(),
+      &other->suscription_id_, other->GetArenaForAllocation()
   );
 }
 
@@ -3472,6 +3539,196 @@ void BilingList::InternalSwap(BilingList* other) {
       file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto[8]);
 }
 
+// ===================================================================
+
+class SuscriptionList::_Internal {
+ public:
+};
+
+SuscriptionList::SuscriptionList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  items_(arena) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:payment.v1alpha1.SuscriptionList)
+}
+SuscriptionList::SuscriptionList(const SuscriptionList& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      items_(from.items_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.SuscriptionList)
+}
+
+inline void SuscriptionList::SharedCtor() {
+}
+
+SuscriptionList::~SuscriptionList() {
+  // @@protoc_insertion_point(destructor:payment.v1alpha1.SuscriptionList)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void SuscriptionList::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void SuscriptionList::ArenaDtor(void* object) {
+  SuscriptionList* _this = reinterpret_cast< SuscriptionList* >(object);
+  (void)_this;
+}
+void SuscriptionList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void SuscriptionList::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void SuscriptionList::Clear() {
+// @@protoc_insertion_point(message_clear_start:payment.v1alpha1.SuscriptionList)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  items_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SuscriptionList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_items(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* SuscriptionList::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:payment.v1alpha1.SuscriptionList)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_items_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_items(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:payment.v1alpha1.SuscriptionList)
+  return target;
+}
+
+size_t SuscriptionList::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:payment.v1alpha1.SuscriptionList)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .payment.v1alpha1.Suscription items = 1 [json_name = "items"];
+  total_size += 1UL * this->_internal_items_size();
+  for (const auto& msg : this->items_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SuscriptionList::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    SuscriptionList::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SuscriptionList::GetClassData() const { return &_class_data_; }
+
+void SuscriptionList::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<SuscriptionList *>(to)->MergeFrom(
+      static_cast<const SuscriptionList &>(from));
+}
+
+
+void SuscriptionList::MergeFrom(const SuscriptionList& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:payment.v1alpha1.SuscriptionList)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  items_.MergeFrom(from.items_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SuscriptionList::CopyFrom(const SuscriptionList& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:payment.v1alpha1.SuscriptionList)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SuscriptionList::IsInitialized() const {
+  return true;
+}
+
+void SuscriptionList::InternalSwap(SuscriptionList* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  items_.InternalSwap(&other->items_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SuscriptionList::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_getter, &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once,
+      file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto[9]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace payment
@@ -3502,6 +3759,9 @@ template<> PROTOBUF_NOINLINE ::payment::v1alpha1::CustomerList* Arena::CreateMay
 }
 template<> PROTOBUF_NOINLINE ::payment::v1alpha1::BilingList* Arena::CreateMaybeMessage< ::payment::v1alpha1::BilingList >(Arena* arena) {
   return Arena::CreateMessageInternal< ::payment::v1alpha1::BilingList >(arena);
+}
+template<> PROTOBUF_NOINLINE ::payment::v1alpha1::SuscriptionList* Arena::CreateMaybeMessage< ::payment::v1alpha1::SuscriptionList >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::payment::v1alpha1::SuscriptionList >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
