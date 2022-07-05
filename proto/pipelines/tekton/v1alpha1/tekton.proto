@@ -61,4 +61,5 @@ message Pipeline {
     bool active = 16;
     string instance_type = 17;
     repeated Workspaces workspaces_main = 18;
+    int32 traffic_type = 19;
 }

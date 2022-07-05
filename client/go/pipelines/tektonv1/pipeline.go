@@ -71,7 +71,7 @@ func CreateTektonPipeline(
 	organizationId uint32, projectId uint32, name string, namespace string, instanceType string,
 	integration, environmentVariables, commands, secrets map[string]string,
 	workspacesMain []WorkspaceStruct, params []ParamsStruct, tasks []TaskStruct, userId string,
-	labels map[string]string,
+	labels map[string]string, trafficType int32,
 ) (response *tektonPipelinepkgv1.CreateTektonPipelineResponse, err error) {
 	bylogs.LogInfo("Client: Create tekton pipeline")
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
@@ -168,6 +168,7 @@ func CreateTektonPipeline(
 			Commands:             commands,
 			Secrets:              secrets,
 			Labels:               labels,
+			TrafficType:          trafficType,
 		},
 		UserId: userId,
 	}
