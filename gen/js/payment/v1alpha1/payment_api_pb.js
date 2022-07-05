@@ -4556,8 +4556,7 @@ proto.payment.v1alpha1.CancelSuscriptionRequest.prototype.toObject = function(op
  */
 proto.payment.v1alpha1.CancelSuscriptionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    suscriptionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    customerId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    suscriptionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -4598,10 +4597,6 @@ proto.payment.v1alpha1.CancelSuscriptionRequest.deserializeBinaryFromReader = fu
       var value = /** @type {string} */ (reader.readString());
       msg.setSuscriptionId(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCustomerId(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -4638,13 +4633,6 @@ proto.payment.v1alpha1.CancelSuscriptionRequest.serializeBinaryToWriter = functi
       f
     );
   }
-  f = message.getCustomerId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -4663,24 +4651,6 @@ proto.payment.v1alpha1.CancelSuscriptionRequest.prototype.getSuscriptionId = fun
  */
 proto.payment.v1alpha1.CancelSuscriptionRequest.prototype.setSuscriptionId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string customer_id = 2;
- * @return {string}
- */
-proto.payment.v1alpha1.CancelSuscriptionRequest.prototype.getCustomerId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.payment.v1alpha1.CancelSuscriptionRequest} returns this
- */
-proto.payment.v1alpha1.CancelSuscriptionRequest.prototype.setCustomerId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
