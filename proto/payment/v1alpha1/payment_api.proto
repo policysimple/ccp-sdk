@@ -65,8 +65,8 @@ message GetOrganizationPaymentRequest {
 }
 
 message GetOrganizationPaymentResponse {
-    payment.v1alpha1.CustomerList customer_list = 1;
-    string status = 2;
+    payment.v1alpha1.Customer customer = 1;
+    string status = 3;
 }
 
 message GetCustomerRequest {
