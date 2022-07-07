@@ -34,8 +34,9 @@ func init() {
 		client = applicationpkgv1.NewApplicationServiceClient(con)
 	})
 }
-func ListApplicationByOrganization(organizationId uint32) (response *applicationpkgv1.ListApplicationsByOrganizationResponse, err error) {
-	bylogs.LogInfo("ListApplication-clientSdk")
+
+func GetOneApplicationById(applicationId string) (response *applicationpkgv1.GetApplicationResponse, err error) {
+	bylogs.LogInfo("GetOneApplicationById: ", applicationId)
 	d, err := time.ParseDuration(applicationServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -43,18 +44,17 @@ func ListApplicationByOrganization(organizationId uint32) (response *application
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.ListApplicationsByOrganization(ctx, &applicationpkgv1.ListApplicationsByOrganizationRequest{
-		OrganizationId: organizationId,
+	response, err = client.GetApplication(ctx, &applicationpkgv1.GetApplicationRequest{
+		Id: applicationId,
 	})
 
 	if err != nil {
-		bylogs.LogErr("ListApplicationByOrganization-clientSdk", err)
+		bylogs.LogErr("error GetOneApplicationById: ", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			err.Error(),
 		)
-	} else {
-		bylogs.LogInfo("ListApplicationByOrganization-clientSdk", response)
 	}
+	bylogs.LogInfo("response GetOneApplicationById: ", response)
 	return response, nil
 }
