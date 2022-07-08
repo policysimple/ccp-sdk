@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-Ö®
+ô´
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"4
 EnableOrDisableMFARequest
 user_id (	RuserId".
@@ -29,7 +29,22 @@ MFARequest
 MFAResponse
 	token_ccp (	RtokenCcp
 msg (	Rmsg
-error (	Rerror"2
+error (	Rerror"T
+DeleteUserByProjectRequest
+user_id (RuserId
+
+project_id (R	projectId"E
+DeleteUserByProjectResponse
+msg (	Rmsg
+error (	Rerror"o
+EditRoleUserByProjectRequest
+user_id (RuserId
+
+project_id (R	projectId
+role_id (RroleId"G
+EditRoleUserByProjectResponse
+msg (	Rmsg
+error (	Rerror"2
 GetUsersEmailFilterRequest
 value (	Rvalue"P
 GetUsersEmailFilterResponse1
@@ -83,18 +98,16 @@ project_id (R	projectId
 user_id (	RuserId"“
 GetRolesByUserResponseC
 organization (2.accounts.v1alpha1.OrganizationRorganization4
-project (2.accounts.v1alpha1.ProjectRproject"ˆ
+project (2.accounts.v1alpha1.ProjectRproject"í
 CreateApiKeyRequest
 name (	Rname
 user_id (	RuserId
 	roles_ids (RrolesIds\'
-permissions_ids (RpermissionsIds"°
-ApiKey
-id (	Rid
-name (	Rname
-user_id (	RuserId(
-rol (2.accounts.v1alpha1.RolRrol?
-permissions (2.accounts.v1alpha1.PermissionRpermissions"
+permissions_ids (RpermissionsIds\'
+organization_id (RorganizationId
+	is_active (RisActive
+
+project_id (R	projectId"
 CreateApiKeyResponse
 msg (	Rmsg
 api_key (	RapiKey&
@@ -102,30 +115,35 @@ project_id (R	projectId
 error (	Rerror"B
 GetOneApiKeyRequest
 id (Rid
-	value_key (	RvalueKey"Û
+	value_key (	RvalueKey"ó
 GetOneApiKeyResponse
 id (Rid
 api_key (	RapiKey
 name (	Rname
 user_id (	RuserId,
 roles (2.accounts.v1alpha1.RolRroles?
-permissions (2.accounts.v1alpha1.PermissionRpermissions",
+permissions (2.accounts.v1alpha1.PermissionRpermissions
+	is_active (RisActive4
+project	 (2.accounts.v1alpha1.ProjectRprojectC
+organization
+ (2.accounts.v1alpha1.OrganizationRorganization"U
 ListApiKeyRequest
-user_id (	RuserId"b
+user_id (	RuserId\'
+organization_id (RorganizationId"ú
 
 ApiKeyList
 id (Rid
 api_key (	RapiKey
 name (	Rname
-user_id (	RuserId"N
+user_id (	RuserId
+	is_active (RisActive4
+project (2.accounts.v1alpha1.ProjectRprojectC
+organization (2.accounts.v1alpha1.OrganizationRorganization"N
 ListApiKeyResponse8
-api_keys (2.accounts.v1alpha1.ApiKeyListRapiKeys"œ
+api_keys (2.accounts.v1alpha1.ApiKeyListRapiKeys"f
 UpdateApiKeyRequest
-id (Rid
-name (	Rname
-	roles_ids (RrolesIds\'
-permissions_ids (RpermissionsIds
-	is_active (RisActive"W
+id (Rid?
+api_key (2&.accounts.v1alpha1.CreateApiKeyRequestRapiKey"W
 UpdateApiKeyResponse
 msg (	Rmsg
 api_key (	RapiKey
@@ -620,7 +638,7 @@ updated_at (	R	updatedAt,
 read_notification" (RreadNotification*d
 InvitationResponse,
 (INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED  
-INVITATION_RESPONSE_REJECTED2¬(
+INVITATION_RESPONSE_REJECTED2ž*
 AccountServiceY
 
 CreateUser$.accounts.v1alpha1.CreateUserRequest%.accounts.v1alpha1.CreateUserResponseS
@@ -681,7 +699,9 @@ ListApiKey$.accounts.v1alpha1.ListApiKeyRequest%.accounts.v1alpha1.ListApiKeyR
 GetUsersEmailFilter-.accounts.v1alpha1.GetUsersEmailFilterRequest..accounts.v1alpha1.GetUsersEmailFilterResponseG
 Logs.accounts.v1alpha1.LogsRequest.accounts.v1alpha1.LogsResponseS
 SaveLogs".accounts.v1alpha1.SaveLogsRequest#.accounts.v1alpha1.SaveLogsResponseD
-MFA.accounts.v1alpha1.MFARequest.accounts.v1alpha1.MFAResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
+MFA.accounts.v1alpha1.MFARequest.accounts.v1alpha1.MFAResponset
+DeleteUserByProject-.accounts.v1alpha1.DeleteUserByProjectRequest..accounts.v1alpha1.DeleteUserByProjectResponsez
+EditRoleUserByProject/.accounts.v1alpha1.EditRoleUserByProjectRequest0.accounts.v1alpha1.EditRoleUserByProjectResponseB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

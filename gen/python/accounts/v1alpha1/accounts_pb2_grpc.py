@@ -269,6 +269,16 @@ class AccountServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.MFARequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.MFAResponse.FromString,
         )
+    self.DeleteUserByProject = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/DeleteUserByProject',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteUserByProjectRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteUserByProjectResponse.FromString,
+        )
+    self.EditRoleUserByProject = channel.unary_unary(
+        '/accounts.v1alpha1.AccountService/EditRoleUserByProject',
+        request_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.EditRoleUserByProjectRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.EditRoleUserByProjectResponse.FromString,
+        )
 
 
 class AccountServiceServicer(object):
@@ -556,7 +566,7 @@ class AccountServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def CreateApiKey(self, request, context):
-    """Tokens
+    """Api Keys
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -626,6 +636,20 @@ class AccountServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def MFA(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteUserByProject(self, request, context):
+    """EDITTS AND DELETE USERS
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def EditRoleUserByProject(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -889,6 +913,16 @@ def add_AccountServiceServicer_to_server(servicer, server):
           servicer.MFA,
           request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.MFARequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.MFAResponse.SerializeToString,
+      ),
+      'DeleteUserByProject': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteUserByProject,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteUserByProjectRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.DeleteUserByProjectResponse.SerializeToString,
+      ),
+      'EditRoleUserByProject': grpc.unary_unary_rpc_method_handler(
+          servicer.EditRoleUserByProject,
+          request_deserializer=accounts_dot_v1alpha1_dot_accounts__pb2.EditRoleUserByProjectRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_accounts__pb2.EditRoleUserByProjectResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

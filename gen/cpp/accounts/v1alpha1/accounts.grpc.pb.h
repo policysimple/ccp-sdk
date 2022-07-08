@@ -324,7 +324,7 @@ class AccountService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneCountryResponse>> PrepareAsyncGetOneCountry(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::GetOneCountryResponse>>(PrepareAsyncGetOneCountryRaw(context, request, cq));
     }
-    // Tokens
+    // Api Keys
     virtual ::grpc::Status CreateApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateApiKeyRequest& request, ::accounts::v1alpha1::CreateApiKeyResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CreateApiKeyResponse>> AsyncCreateApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateApiKeyRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::CreateApiKeyResponse>>(AsyncCreateApiKeyRaw(context, request, cq));
@@ -405,6 +405,21 @@ class AccountService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::MFAResponse>> PrepareAsyncMFA(::grpc::ClientContext* context, const ::accounts::v1alpha1::MFARequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::MFAResponse>>(PrepareAsyncMFARaw(context, request, cq));
     }
+    // EDITTS AND DELETE USERS
+    virtual ::grpc::Status DeleteUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest& request, ::accounts::v1alpha1::DeleteUserByProjectResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::DeleteUserByProjectResponse>> AsyncDeleteUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::DeleteUserByProjectResponse>>(AsyncDeleteUserByProjectRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::DeleteUserByProjectResponse>> PrepareAsyncDeleteUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::DeleteUserByProjectResponse>>(PrepareAsyncDeleteUserByProjectRaw(context, request, cq));
+    }
+    virtual ::grpc::Status EditRoleUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest& request, ::accounts::v1alpha1::EditRoleUserByProjectResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::EditRoleUserByProjectResponse>> AsyncEditRoleUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::EditRoleUserByProjectResponse>>(AsyncEditRoleUserByProjectRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::EditRoleUserByProjectResponse>> PrepareAsyncEditRoleUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::EditRoleUserByProjectResponse>>(PrepareAsyncEditRoleUserByProjectRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -456,7 +471,7 @@ class AccountService final {
       //  Countries
       virtual void ListCountries(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListCountriesRequest* request, ::accounts::v1alpha1::ListCountriesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetOneCountry(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneCountryRequest* request, ::accounts::v1alpha1::GetOneCountryResponse* response, std::function<void(::grpc::Status)>) = 0;
-      // Tokens
+      // Api Keys
       virtual void CreateApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateApiKeyRequest* request, ::accounts::v1alpha1::CreateApiKeyResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetOneApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::GetOneApiKeyRequest* request, ::accounts::v1alpha1::GetOneApiKeyResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListApiKey(::grpc::ClientContext* context, const ::accounts::v1alpha1::ListApiKeyRequest* request, ::accounts::v1alpha1::ListApiKeyResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -471,6 +486,9 @@ class AccountService final {
       virtual void Logs(::grpc::ClientContext* context, const ::accounts::v1alpha1::LogsRequest* request, ::accounts::v1alpha1::LogsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SaveLogs(::grpc::ClientContext* context, const ::accounts::v1alpha1::SaveLogsRequest* request, ::accounts::v1alpha1::SaveLogsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void MFA(::grpc::ClientContext* context, const ::accounts::v1alpha1::MFARequest* request, ::accounts::v1alpha1::MFAResponse* response, std::function<void(::grpc::Status)>) = 0;
+      // EDITTS AND DELETE USERS
+      virtual void DeleteUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest* request, ::accounts::v1alpha1::DeleteUserByProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void EditRoleUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest* request, ::accounts::v1alpha1::EditRoleUserByProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -576,6 +594,10 @@ class AccountService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::SaveLogsResponse>* PrepareAsyncSaveLogsRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::SaveLogsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::MFAResponse>* AsyncMFARaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::MFARequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::MFAResponse>* PrepareAsyncMFARaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::MFARequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::DeleteUserByProjectResponse>* AsyncDeleteUserByProjectRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::DeleteUserByProjectResponse>* PrepareAsyncDeleteUserByProjectRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::EditRoleUserByProjectResponse>* AsyncEditRoleUserByProjectRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::EditRoleUserByProjectResponse>* PrepareAsyncEditRoleUserByProjectRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -937,6 +959,20 @@ class AccountService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::MFAResponse>> PrepareAsyncMFA(::grpc::ClientContext* context, const ::accounts::v1alpha1::MFARequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::MFAResponse>>(PrepareAsyncMFARaw(context, request, cq));
     }
+    ::grpc::Status DeleteUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest& request, ::accounts::v1alpha1::DeleteUserByProjectResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteUserByProjectResponse>> AsyncDeleteUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteUserByProjectResponse>>(AsyncDeleteUserByProjectRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteUserByProjectResponse>> PrepareAsyncDeleteUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteUserByProjectResponse>>(PrepareAsyncDeleteUserByProjectRaw(context, request, cq));
+    }
+    ::grpc::Status EditRoleUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest& request, ::accounts::v1alpha1::EditRoleUserByProjectResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::EditRoleUserByProjectResponse>> AsyncEditRoleUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::EditRoleUserByProjectResponse>>(AsyncEditRoleUserByProjectRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::EditRoleUserByProjectResponse>> PrepareAsyncEditRoleUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::EditRoleUserByProjectResponse>>(PrepareAsyncEditRoleUserByProjectRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -991,6 +1027,8 @@ class AccountService final {
       void Logs(::grpc::ClientContext* context, const ::accounts::v1alpha1::LogsRequest* request, ::accounts::v1alpha1::LogsResponse* response, std::function<void(::grpc::Status)>) override;
       void SaveLogs(::grpc::ClientContext* context, const ::accounts::v1alpha1::SaveLogsRequest* request, ::accounts::v1alpha1::SaveLogsResponse* response, std::function<void(::grpc::Status)>) override;
       void MFA(::grpc::ClientContext* context, const ::accounts::v1alpha1::MFARequest* request, ::accounts::v1alpha1::MFAResponse* response, std::function<void(::grpc::Status)>) override;
+      void DeleteUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest* request, ::accounts::v1alpha1::DeleteUserByProjectResponse* response, std::function<void(::grpc::Status)>) override;
+      void EditRoleUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest* request, ::accounts::v1alpha1::EditRoleUserByProjectResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -1104,6 +1142,10 @@ class AccountService final {
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::SaveLogsResponse>* PrepareAsyncSaveLogsRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::SaveLogsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::MFAResponse>* AsyncMFARaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::MFARequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::MFAResponse>* PrepareAsyncMFARaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::MFARequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteUserByProjectResponse>* AsyncDeleteUserByProjectRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteUserByProjectResponse>* PrepareAsyncDeleteUserByProjectRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::EditRoleUserByProjectResponse>* AsyncEditRoleUserByProjectRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::EditRoleUserByProjectResponse>* PrepareAsyncEditRoleUserByProjectRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateUser_;
     const ::grpc::internal::RpcMethod rpcmethod_ListUser_;
     const ::grpc::internal::RpcMethod rpcmethod_GetOneUser_;
@@ -1155,6 +1197,8 @@ class AccountService final {
     const ::grpc::internal::RpcMethod rpcmethod_Logs_;
     const ::grpc::internal::RpcMethod rpcmethod_SaveLogs_;
     const ::grpc::internal::RpcMethod rpcmethod_MFA_;
+    const ::grpc::internal::RpcMethod rpcmethod_DeleteUserByProject_;
+    const ::grpc::internal::RpcMethod rpcmethod_EditRoleUserByProject_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -1210,7 +1254,7 @@ class AccountService final {
     //  Countries
     virtual ::grpc::Status ListCountries(::grpc::ServerContext* context, const ::accounts::v1alpha1::ListCountriesRequest* request, ::accounts::v1alpha1::ListCountriesResponse* response);
     virtual ::grpc::Status GetOneCountry(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneCountryRequest* request, ::accounts::v1alpha1::GetOneCountryResponse* response);
-    // Tokens
+    // Api Keys
     virtual ::grpc::Status CreateApiKey(::grpc::ServerContext* context, const ::accounts::v1alpha1::CreateApiKeyRequest* request, ::accounts::v1alpha1::CreateApiKeyResponse* response);
     virtual ::grpc::Status GetOneApiKey(::grpc::ServerContext* context, const ::accounts::v1alpha1::GetOneApiKeyRequest* request, ::accounts::v1alpha1::GetOneApiKeyResponse* response);
     virtual ::grpc::Status ListApiKey(::grpc::ServerContext* context, const ::accounts::v1alpha1::ListApiKeyRequest* request, ::accounts::v1alpha1::ListApiKeyResponse* response);
@@ -1225,6 +1269,9 @@ class AccountService final {
     virtual ::grpc::Status Logs(::grpc::ServerContext* context, const ::accounts::v1alpha1::LogsRequest* request, ::accounts::v1alpha1::LogsResponse* response);
     virtual ::grpc::Status SaveLogs(::grpc::ServerContext* context, const ::accounts::v1alpha1::SaveLogsRequest* request, ::accounts::v1alpha1::SaveLogsResponse* response);
     virtual ::grpc::Status MFA(::grpc::ServerContext* context, const ::accounts::v1alpha1::MFARequest* request, ::accounts::v1alpha1::MFAResponse* response);
+    // EDITTS AND DELETE USERS
+    virtual ::grpc::Status DeleteUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest* request, ::accounts::v1alpha1::DeleteUserByProjectResponse* response);
+    virtual ::grpc::Status EditRoleUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest* request, ::accounts::v1alpha1::EditRoleUserByProjectResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateUser : public BaseClass {
@@ -2246,7 +2293,47 @@ class AccountService final {
       ::grpc::Service::RequestAsyncUnary(50, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateUser<WithAsyncMethod_ListUser<WithAsyncMethod_GetOneUser<WithAsyncMethod_UpdateUser<WithAsyncMethod_DeleteUser<WithAsyncMethod_ListUserPagination<WithAsyncMethod_SendInvitationUser<WithAsyncMethod_GetInvitationUser<WithAsyncMethod_AgreeInvitationUser<WithAsyncMethod_ListInvitationUser<WithAsyncMethod_EnableOrDisableMFA<WithAsyncMethod_CreatePermission<WithAsyncMethod_ListPermission<WithAsyncMethod_GetOnePermission<WithAsyncMethod_UpdatePermission<WithAsyncMethod_DeletePermission<WithAsyncMethod_CreateOrganization<WithAsyncMethod_ListOrganization<WithAsyncMethod_GetOneOrganization<WithAsyncMethod_UpdateOrganization<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_CreateRole<WithAsyncMethod_ListRoles<WithAsyncMethod_UpdateRole<WithAsyncMethod_GetOneRole<WithAsyncMethod_GetRolesByUser<WithAsyncMethod_GetRolesByOrgUser<WithAsyncMethod_DeleteRole<WithAsyncMethod_CreateProject<WithAsyncMethod_GetOneProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_DeleteProject<WithAsyncMethod_ListProject<WithAsyncMethod_GetListUserDex<WithAsyncMethod_GetOneUserDex<WithAsyncMethod_CheckUser<WithAsyncMethod_SendVerificationEmail<WithAsyncMethod_VerifyEmail<WithAsyncMethod_ListCountries<WithAsyncMethod_GetOneCountry<WithAsyncMethod_CreateApiKey<WithAsyncMethod_GetOneApiKey<WithAsyncMethod_ListApiKey<WithAsyncMethod_UpdateApiKey<WithAsyncMethod_DeleteApiKey<WithAsyncMethod_CreateTokenCCP<WithAsyncMethod_GetOneTokenCCP<WithAsyncMethod_GetUsersEmailFilter<WithAsyncMethod_Logs<WithAsyncMethod_SaveLogs<WithAsyncMethod_MFA<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_DeleteUserByProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_DeleteUserByProject() {
+      ::grpc::Service::MarkMethodAsync(51);
+    }
+    ~WithAsyncMethod_DeleteUserByProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest* request, ::accounts::v1alpha1::DeleteUserByProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteUserByProject(::grpc::ServerContext* context, ::accounts::v1alpha1::DeleteUserByProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::DeleteUserByProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(51, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_EditRoleUserByProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_EditRoleUserByProject() {
+      ::grpc::Service::MarkMethodAsync(52);
+    }
+    ~WithAsyncMethod_EditRoleUserByProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status EditRoleUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest* request, ::accounts::v1alpha1::EditRoleUserByProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestEditRoleUserByProject(::grpc::ServerContext* context, ::accounts::v1alpha1::EditRoleUserByProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::EditRoleUserByProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(52, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateUser<WithAsyncMethod_ListUser<WithAsyncMethod_GetOneUser<WithAsyncMethod_UpdateUser<WithAsyncMethod_DeleteUser<WithAsyncMethod_ListUserPagination<WithAsyncMethod_SendInvitationUser<WithAsyncMethod_GetInvitationUser<WithAsyncMethod_AgreeInvitationUser<WithAsyncMethod_ListInvitationUser<WithAsyncMethod_EnableOrDisableMFA<WithAsyncMethod_CreatePermission<WithAsyncMethod_ListPermission<WithAsyncMethod_GetOnePermission<WithAsyncMethod_UpdatePermission<WithAsyncMethod_DeletePermission<WithAsyncMethod_CreateOrganization<WithAsyncMethod_ListOrganization<WithAsyncMethod_GetOneOrganization<WithAsyncMethod_UpdateOrganization<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_CreateRole<WithAsyncMethod_ListRoles<WithAsyncMethod_UpdateRole<WithAsyncMethod_GetOneRole<WithAsyncMethod_GetRolesByUser<WithAsyncMethod_GetRolesByOrgUser<WithAsyncMethod_DeleteRole<WithAsyncMethod_CreateProject<WithAsyncMethod_GetOneProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_DeleteProject<WithAsyncMethod_ListProject<WithAsyncMethod_GetListUserDex<WithAsyncMethod_GetOneUserDex<WithAsyncMethod_CheckUser<WithAsyncMethod_SendVerificationEmail<WithAsyncMethod_VerifyEmail<WithAsyncMethod_ListCountries<WithAsyncMethod_GetOneCountry<WithAsyncMethod_CreateApiKey<WithAsyncMethod_GetOneApiKey<WithAsyncMethod_ListApiKey<WithAsyncMethod_UpdateApiKey<WithAsyncMethod_DeleteApiKey<WithAsyncMethod_CreateTokenCCP<WithAsyncMethod_GetOneTokenCCP<WithAsyncMethod_GetUsersEmailFilter<WithAsyncMethod_Logs<WithAsyncMethod_SaveLogs<WithAsyncMethod_MFA<WithAsyncMethod_DeleteUserByProject<WithAsyncMethod_EditRoleUserByProject<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateUser : public BaseClass {
    private:
@@ -3110,6 +3197,40 @@ class AccountService final {
     }
     // disable synchronous version of this method
     ::grpc::Status MFA(::grpc::ServerContext* context, const ::accounts::v1alpha1::MFARequest* request, ::accounts::v1alpha1::MFAResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DeleteUserByProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_DeleteUserByProject() {
+      ::grpc::Service::MarkMethodGeneric(51);
+    }
+    ~WithGenericMethod_DeleteUserByProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest* request, ::accounts::v1alpha1::DeleteUserByProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_EditRoleUserByProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_EditRoleUserByProject() {
+      ::grpc::Service::MarkMethodGeneric(52);
+    }
+    ~WithGenericMethod_EditRoleUserByProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status EditRoleUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest* request, ::accounts::v1alpha1::EditRoleUserByProjectResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4135,6 +4256,46 @@ class AccountService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_DeleteUserByProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_DeleteUserByProject() {
+      ::grpc::Service::MarkMethodRaw(51);
+    }
+    ~WithRawMethod_DeleteUserByProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest* request, ::accounts::v1alpha1::DeleteUserByProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteUserByProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(51, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_EditRoleUserByProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_EditRoleUserByProject() {
+      ::grpc::Service::MarkMethodRaw(52);
+    }
+    ~WithRawMethod_EditRoleUserByProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status EditRoleUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest* request, ::accounts::v1alpha1::EditRoleUserByProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestEditRoleUserByProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(52, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateUser : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -5154,9 +5315,49 @@ class AccountService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedMFA(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::MFARequest,::accounts::v1alpha1::MFAResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_ListInvitationUser<WithStreamedUnaryMethod_EnableOrDisableMFA<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_GetRolesByUser<WithStreamedUnaryMethod_GetRolesByOrgUser<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<WithStreamedUnaryMethod_ListCountries<WithStreamedUnaryMethod_GetOneCountry<WithStreamedUnaryMethod_CreateApiKey<WithStreamedUnaryMethod_GetOneApiKey<WithStreamedUnaryMethod_ListApiKey<WithStreamedUnaryMethod_UpdateApiKey<WithStreamedUnaryMethod_DeleteApiKey<WithStreamedUnaryMethod_CreateTokenCCP<WithStreamedUnaryMethod_GetOneTokenCCP<WithStreamedUnaryMethod_GetUsersEmailFilter<WithStreamedUnaryMethod_Logs<WithStreamedUnaryMethod_SaveLogs<WithStreamedUnaryMethod_MFA<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DeleteUserByProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_DeleteUserByProject() {
+      ::grpc::Service::MarkMethodStreamed(51,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::DeleteUserByProjectRequest, ::accounts::v1alpha1::DeleteUserByProjectResponse>(std::bind(&WithStreamedUnaryMethod_DeleteUserByProject<BaseClass>::StreamedDeleteUserByProject, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_DeleteUserByProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DeleteUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest* request, ::accounts::v1alpha1::DeleteUserByProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDeleteUserByProject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::DeleteUserByProjectRequest,::accounts::v1alpha1::DeleteUserByProjectResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_EditRoleUserByProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_EditRoleUserByProject() {
+      ::grpc::Service::MarkMethodStreamed(52,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::EditRoleUserByProjectRequest, ::accounts::v1alpha1::EditRoleUserByProjectResponse>(std::bind(&WithStreamedUnaryMethod_EditRoleUserByProject<BaseClass>::StreamedEditRoleUserByProject, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_EditRoleUserByProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status EditRoleUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest* request, ::accounts::v1alpha1::EditRoleUserByProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedEditRoleUserByProject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::EditRoleUserByProjectRequest,::accounts::v1alpha1::EditRoleUserByProjectResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_ListInvitationUser<WithStreamedUnaryMethod_EnableOrDisableMFA<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_GetRolesByUser<WithStreamedUnaryMethod_GetRolesByOrgUser<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<WithStreamedUnaryMethod_ListCountries<WithStreamedUnaryMethod_GetOneCountry<WithStreamedUnaryMethod_CreateApiKey<WithStreamedUnaryMethod_GetOneApiKey<WithStreamedUnaryMethod_ListApiKey<WithStreamedUnaryMethod_UpdateApiKey<WithStreamedUnaryMethod_DeleteApiKey<WithStreamedUnaryMethod_CreateTokenCCP<WithStreamedUnaryMethod_GetOneTokenCCP<WithStreamedUnaryMethod_GetUsersEmailFilter<WithStreamedUnaryMethod_Logs<WithStreamedUnaryMethod_SaveLogs<WithStreamedUnaryMethod_MFA<WithStreamedUnaryMethod_DeleteUserByProject<WithStreamedUnaryMethod_EditRoleUserByProject<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_ListInvitationUser<WithStreamedUnaryMethod_EnableOrDisableMFA<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_GetRolesByUser<WithStreamedUnaryMethod_GetRolesByOrgUser<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<WithStreamedUnaryMethod_ListCountries<WithStreamedUnaryMethod_GetOneCountry<WithStreamedUnaryMethod_CreateApiKey<WithStreamedUnaryMethod_GetOneApiKey<WithStreamedUnaryMethod_ListApiKey<WithStreamedUnaryMethod_UpdateApiKey<WithStreamedUnaryMethod_DeleteApiKey<WithStreamedUnaryMethod_CreateTokenCCP<WithStreamedUnaryMethod_GetOneTokenCCP<WithStreamedUnaryMethod_GetUsersEmailFilter<WithStreamedUnaryMethod_Logs<WithStreamedUnaryMethod_SaveLogs<WithStreamedUnaryMethod_MFA<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_ListInvitationUser<WithStreamedUnaryMethod_EnableOrDisableMFA<WithStreamedUnaryMethod_CreatePermission<WithStreamedUnaryMethod_ListPermission<WithStreamedUnaryMethod_GetOnePermission<WithStreamedUnaryMethod_UpdatePermission<WithStreamedUnaryMethod_DeletePermission<WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_CreateRole<WithStreamedUnaryMethod_ListRoles<WithStreamedUnaryMethod_UpdateRole<WithStreamedUnaryMethod_GetOneRole<WithStreamedUnaryMethod_GetRolesByUser<WithStreamedUnaryMethod_GetRolesByOrgUser<WithStreamedUnaryMethod_DeleteRole<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<WithStreamedUnaryMethod_ListCountries<WithStreamedUnaryMethod_GetOneCountry<WithStreamedUnaryMethod_CreateApiKey<WithStreamedUnaryMethod_GetOneApiKey<WithStreamedUnaryMethod_ListApiKey<WithStreamedUnaryMethod_UpdateApiKey<WithStreamedUnaryMethod_DeleteApiKey<WithStreamedUnaryMethod_CreateTokenCCP<WithStreamedUnaryMethod_GetOneTokenCCP<WithStreamedUnaryMethod_GetUsersEmailFilter<WithStreamedUnaryMethod_Logs<WithStreamedUnaryMethod_SaveLogs<WithStreamedUnaryMethod_MFA<WithStreamedUnaryMethod_DeleteUserByProject<WithStreamedUnaryMethod_EditRoleUserByProject<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

@@ -70,6 +70,8 @@ static const char* AccountService_method_names[] = {
   "/accounts.v1alpha1.AccountService/Logs",
   "/accounts.v1alpha1.AccountService/SaveLogs",
   "/accounts.v1alpha1.AccountService/MFA",
+  "/accounts.v1alpha1.AccountService/DeleteUserByProject",
+  "/accounts.v1alpha1.AccountService/EditRoleUserByProject",
 };
 
 std::unique_ptr< AccountService::Stub> AccountService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -130,6 +132,8 @@ AccountService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& cha
   , rpcmethod_Logs_(AccountService_method_names[48], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SaveLogs_(AccountService_method_names[49], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_MFA_(AccountService_method_names[50], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteUserByProject_(AccountService_method_names[51], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_EditRoleUserByProject_(AccountService_method_names[52], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status AccountService::Stub::CreateUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::CreateUserRequest& request, ::accounts::v1alpha1::CreateUserResponse* response) {
@@ -948,6 +952,38 @@ void AccountService::Stub::experimental_async::MFA(::grpc::ClientContext* contex
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::MFAResponse>::Create(channel_.get(), cq, rpcmethod_MFA_, context, request, false);
 }
 
+::grpc::Status AccountService::Stub::DeleteUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest& request, ::accounts::v1alpha1::DeleteUserByProjectResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteUserByProject_, context, request, response);
+}
+
+void AccountService::Stub::experimental_async::DeleteUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest* request, ::accounts::v1alpha1::DeleteUserByProjectResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteUserByProject_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteUserByProjectResponse>* AccountService::Stub::AsyncDeleteUserByProjectRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::DeleteUserByProjectResponse>::Create(channel_.get(), cq, rpcmethod_DeleteUserByProject_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::DeleteUserByProjectResponse>* AccountService::Stub::PrepareAsyncDeleteUserByProjectRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::DeleteUserByProjectResponse>::Create(channel_.get(), cq, rpcmethod_DeleteUserByProject_, context, request, false);
+}
+
+::grpc::Status AccountService::Stub::EditRoleUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest& request, ::accounts::v1alpha1::EditRoleUserByProjectResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_EditRoleUserByProject_, context, request, response);
+}
+
+void AccountService::Stub::experimental_async::EditRoleUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest* request, ::accounts::v1alpha1::EditRoleUserByProjectResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_EditRoleUserByProject_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::EditRoleUserByProjectResponse>* AccountService::Stub::AsyncEditRoleUserByProjectRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::EditRoleUserByProjectResponse>::Create(channel_.get(), cq, rpcmethod_EditRoleUserByProject_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::EditRoleUserByProjectResponse>* AccountService::Stub::PrepareAsyncEditRoleUserByProjectRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::EditRoleUserByProjectResponse>::Create(channel_.get(), cq, rpcmethod_EditRoleUserByProject_, context, request, false);
+}
+
 AccountService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AccountService_method_names[0],
@@ -1204,6 +1240,16 @@ AccountService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::MFARequest, ::accounts::v1alpha1::MFAResponse>(
           std::mem_fn(&AccountService::Service::MFA), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AccountService_method_names[51],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::DeleteUserByProjectRequest, ::accounts::v1alpha1::DeleteUserByProjectResponse>(
+          std::mem_fn(&AccountService::Service::DeleteUserByProject), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AccountService_method_names[52],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AccountService::Service, ::accounts::v1alpha1::EditRoleUserByProjectRequest, ::accounts::v1alpha1::EditRoleUserByProjectResponse>(
+          std::mem_fn(&AccountService::Service::EditRoleUserByProject), this)));
 }
 
 AccountService::Service::~Service() {
@@ -1560,6 +1606,20 @@ AccountService::Service::~Service() {
 }
 
 ::grpc::Status AccountService::Service::MFA(::grpc::ServerContext* context, const ::accounts::v1alpha1::MFARequest* request, ::accounts::v1alpha1::MFAResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AccountService::Service::DeleteUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::DeleteUserByProjectRequest* request, ::accounts::v1alpha1::DeleteUserByProjectResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AccountService::Service::EditRoleUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::EditRoleUserByProjectRequest* request, ::accounts::v1alpha1::EditRoleUserByProjectResponse* response) {
   (void) context;
   (void) request;
   (void) response;

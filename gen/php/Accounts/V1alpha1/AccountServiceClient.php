@@ -545,7 +545,7 @@ class AccountServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Tokens
+     * Api Keys
      * @param \Accounts\V1alpha1\CreateApiKeyRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -688,6 +688,33 @@ class AccountServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/accounts.v1alpha1.AccountService/MFA',
         $argument,
         ['\Accounts\V1alpha1\MFAResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * EDITTS AND DELETE USERS
+     * @param \Accounts\V1alpha1\DeleteUserByProjectRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DeleteUserByProject(\Accounts\V1alpha1\DeleteUserByProjectRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/DeleteUserByProject',
+        $argument,
+        ['\Accounts\V1alpha1\DeleteUserByProjectResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\EditRoleUserByProjectRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function EditRoleUserByProject(\Accounts\V1alpha1\EditRoleUserByProjectRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.AccountService/EditRoleUserByProject',
+        $argument,
+        ['\Accounts\V1alpha1\EditRoleUserByProjectResponse', 'decode'],
         $metadata, $options);
     }
 

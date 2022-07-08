@@ -70,7 +70,7 @@ type AccountServiceClient interface {
 	//  Countries
 	ListCountries(ctx context.Context, in *ListCountriesRequest, opts ...grpc.CallOption) (*ListCountriesResponse, error)
 	GetOneCountry(ctx context.Context, in *GetOneCountryRequest, opts ...grpc.CallOption) (*GetOneCountryResponse, error)
-	// Tokens
+	// Api Keys
 	CreateApiKey(ctx context.Context, in *CreateApiKeyRequest, opts ...grpc.CallOption) (*CreateApiKeyResponse, error)
 	GetOneApiKey(ctx context.Context, in *GetOneApiKeyRequest, opts ...grpc.CallOption) (*GetOneApiKeyResponse, error)
 	ListApiKey(ctx context.Context, in *ListApiKeyRequest, opts ...grpc.CallOption) (*ListApiKeyResponse, error)
@@ -85,6 +85,9 @@ type AccountServiceClient interface {
 	Logs(ctx context.Context, in *LogsRequest, opts ...grpc.CallOption) (*LogsResponse, error)
 	SaveLogs(ctx context.Context, in *SaveLogsRequest, opts ...grpc.CallOption) (*SaveLogsResponse, error)
 	MFA(ctx context.Context, in *MFARequest, opts ...grpc.CallOption) (*MFAResponse, error)
+	// EDITTS AND DELETE USERS
+	DeleteUserByProject(ctx context.Context, in *DeleteUserByProjectRequest, opts ...grpc.CallOption) (*DeleteUserByProjectResponse, error)
+	EditRoleUserByProject(ctx context.Context, in *EditRoleUserByProjectRequest, opts ...grpc.CallOption) (*EditRoleUserByProjectResponse, error)
 }
 
 type accountServiceClient struct {
@@ -554,6 +557,24 @@ func (c *accountServiceClient) MFA(ctx context.Context, in *MFARequest, opts ...
 	return out, nil
 }
 
+func (c *accountServiceClient) DeleteUserByProject(ctx context.Context, in *DeleteUserByProjectRequest, opts ...grpc.CallOption) (*DeleteUserByProjectResponse, error) {
+	out := new(DeleteUserByProjectResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/DeleteUserByProject", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountServiceClient) EditRoleUserByProject(ctx context.Context, in *EditRoleUserByProjectRequest, opts ...grpc.CallOption) (*EditRoleUserByProjectResponse, error) {
+	out := new(EditRoleUserByProjectResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.AccountService/EditRoleUserByProject", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AccountServiceServer is the server API for AccountService service.
 // All implementations should embed UnimplementedAccountServiceServer
 // for forward compatibility
@@ -606,7 +627,7 @@ type AccountServiceServer interface {
 	//  Countries
 	ListCountries(context.Context, *ListCountriesRequest) (*ListCountriesResponse, error)
 	GetOneCountry(context.Context, *GetOneCountryRequest) (*GetOneCountryResponse, error)
-	// Tokens
+	// Api Keys
 	CreateApiKey(context.Context, *CreateApiKeyRequest) (*CreateApiKeyResponse, error)
 	GetOneApiKey(context.Context, *GetOneApiKeyRequest) (*GetOneApiKeyResponse, error)
 	ListApiKey(context.Context, *ListApiKeyRequest) (*ListApiKeyResponse, error)
@@ -621,6 +642,9 @@ type AccountServiceServer interface {
 	Logs(context.Context, *LogsRequest) (*LogsResponse, error)
 	SaveLogs(context.Context, *SaveLogsRequest) (*SaveLogsResponse, error)
 	MFA(context.Context, *MFARequest) (*MFAResponse, error)
+	// EDITTS AND DELETE USERS
+	DeleteUserByProject(context.Context, *DeleteUserByProjectRequest) (*DeleteUserByProjectResponse, error)
+	EditRoleUserByProject(context.Context, *EditRoleUserByProjectRequest) (*EditRoleUserByProjectResponse, error)
 }
 
 // UnimplementedAccountServiceServer should be embedded to have forward compatible implementations.
@@ -779,6 +803,12 @@ func (UnimplementedAccountServiceServer) SaveLogs(context.Context, *SaveLogsRequ
 }
 func (UnimplementedAccountServiceServer) MFA(context.Context, *MFARequest) (*MFAResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MFA not implemented")
+}
+func (UnimplementedAccountServiceServer) DeleteUserByProject(context.Context, *DeleteUserByProjectRequest) (*DeleteUserByProjectResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteUserByProject not implemented")
+}
+func (UnimplementedAccountServiceServer) EditRoleUserByProject(context.Context, *EditRoleUserByProjectRequest) (*EditRoleUserByProjectResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EditRoleUserByProject not implemented")
 }
 
 // UnsafeAccountServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -1710,6 +1740,42 @@ func _AccountService_MFA_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AccountService_DeleteUserByProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteUserByProjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).DeleteUserByProject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/DeleteUserByProject",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).DeleteUserByProject(ctx, req.(*DeleteUserByProjectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountService_EditRoleUserByProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EditRoleUserByProjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).EditRoleUserByProject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.AccountService/EditRoleUserByProject",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).EditRoleUserByProject(ctx, req.(*EditRoleUserByProjectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AccountService_ServiceDesc is the grpc.ServiceDesc for AccountService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1920,6 +1986,14 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "MFA",
 			Handler:    _AccountService_MFA_Handler,
+		},
+		{
+			MethodName: "DeleteUserByProject",
+			Handler:    _AccountService_DeleteUserByProject_Handler,
+		},
+		{
+			MethodName: "EditRoleUserByProject",
+			Handler:    _AccountService_EditRoleUserByProject_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

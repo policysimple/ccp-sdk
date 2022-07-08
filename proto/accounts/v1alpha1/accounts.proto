@@ -55,7 +55,7 @@ service AccountService {
     //  Countries
     rpc ListCountries(ListCountriesRequest) returns (ListCountriesResponse);
     rpc GetOneCountry(GetOneCountryRequest) returns (GetOneCountryResponse);
-    // Tokens
+    // Api Keys
     rpc CreateApiKey(CreateApiKeyRequest) returns (CreateApiKeyResponse);
     rpc GetOneApiKey(GetOneApiKeyRequest) returns (GetOneApiKeyResponse);
     rpc ListApiKey(ListApiKeyRequest) returns (ListApiKeyResponse);
@@ -71,6 +71,11 @@ service AccountService {
     rpc SaveLogs(SaveLogsRequest) returns (SaveLogsResponse);
 
     rpc MFA(MFARequest) returns (MFAResponse);
+
+
+    // EDITTS AND DELETE USERS
+    rpc DeleteUserByProject(DeleteUserByProjectRequest) returns (DeleteUserByProjectResponse);
+    rpc EditRoleUserByProject(EditRoleUserByProjectRequest) returns (EditRoleUserByProjectResponse);
 
 }
 
@@ -94,6 +99,30 @@ message  MFAResponse {
     string error = 3;
 }
 
+/*
+    DELETE ROLE BY USER
+*/
+
+message  DeleteUserByProjectRequest {
+    uint32 user_id = 1;
+    uint32 project_id = 2;
+}
+
+message DeleteUserByProjectResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message  EditRoleUserByProjectRequest {
+    uint32 user_id = 1;
+    uint32 project_id = 2;
+    uint32 role_id = 3;
+}
+
+message EditRoleUserByProjectResponse {
+    string msg = 1;
+    string error = 2;
+}
 
 /*
 
@@ -217,15 +246,13 @@ message CreateApiKeyRequest {
     string user_id =2;
     repeated uint32 roles_ids = 3;
     repeated uint32 permissions_ids = 4;
+    uint32 organization_id = 5;
+    bool is_active = 6;
+    uint32 project_id = 7;
+
+
 }
 
-message ApiKey {
-    string id = 1;
-    string name = 2;
-    string user_id = 3;
-    repeated Rol rol = 4;
-    repeated Permission permissions = 5;
-}
 
 message CreateApiKeyResponse {
     string msg = 1;
@@ -250,14 +277,18 @@ message GetOneApiKeyResponse {
     string user_id =4;
     repeated Rol roles = 5;
     repeated Permission permissions = 6;
-}
+    bool is_active = 8;
+    Project project = 9;
+    Organization organization = 10;
 
+
+}
 /*
     Tokens List
 */
-
 message ListApiKeyRequest {
     string user_id = 1;
+    uint32 organization_id = 2;
 }
 
 message ApiKeyList {
@@ -265,6 +296,9 @@ message ApiKeyList {
     string api_key = 2;
     string name = 3;
     string user_id = 4;
+    bool is_active = 6;
+    Project project = 7;
+    Organization organization = 8;
 }
 
 message ListApiKeyResponse {
@@ -277,10 +311,7 @@ message ListApiKeyResponse {
 
 message UpdateApiKeyRequest {
     uint32 id = 1;
-    string name = 2;
-    repeated uint32 roles_ids = 3;
-    repeated uint32 permissions_ids = 4;
-    bool is_active = 5;
+    CreateApiKeyRequest api_key = 6;
 }
 
 message UpdateApiKeyResponse {

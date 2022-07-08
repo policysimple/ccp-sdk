@@ -29,6 +29,18 @@ class CreateApiKeyRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated uint32 permissions_ids = 4 [json_name = "permissionsIds"];</code>
      */
     private $permissions_ids;
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>bool is_active = 6 [json_name = "isActive"];</code>
+     */
+    protected $is_active = false;
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 7 [json_name = "projectId"];</code>
+     */
+    protected $project_id = 0;
 
     /**
      * Constructor.
@@ -40,6 +52,9 @@ class CreateApiKeyRequest extends \Google\Protobuf\Internal\Message
      *     @type string $user_id
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $roles_ids
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $permissions_ids
+     *     @type int $organization_id
+     *     @type bool $is_active
+     *     @type int $project_id
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +146,72 @@ class CreateApiKeyRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
         $this->permissions_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_active = 6 [json_name = "isActive"];</code>
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->is_active;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_active = 6 [json_name = "isActive"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsActive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_active = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 7 [json_name = "projectId"];</code>
+     * @return int
+     */
+    public function getProjectId()
+    {
+        return $this->project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 7 [json_name = "projectId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setProjectId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->project_id = $var;
 
         return $this;
     }

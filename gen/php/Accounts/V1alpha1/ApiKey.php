@@ -33,6 +33,14 @@ class ApiKey extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 5 [json_name = "permissions"];</code>
      */
     private $permissions;
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 6 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>bool is_active = 7 [json_name = "isActive"];</code>
+     */
+    protected $is_active = false;
 
     /**
      * Constructor.
@@ -45,6 +53,8 @@ class ApiKey extends \Google\Protobuf\Internal\Message
      *     @type string $user_id
      *     @type \Accounts\V1alpha1\Rol[]|\Google\Protobuf\Internal\RepeatedField $rol
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
+     *     @type int $organization_id
+     *     @type bool $is_active
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +168,50 @@ class ApiKey extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Permission::class);
         $this->permissions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 6 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 6 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_active = 7 [json_name = "isActive"];</code>
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->is_active;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_active = 7 [json_name = "isActive"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsActive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_active = $var;
 
         return $this;
     }
