@@ -29,6 +29,18 @@ class ApiKeyList extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_id = 4 [json_name = "userId"];</code>
      */
     protected $user_id = '';
+    /**
+     * Generated from protobuf field <code>bool is_active = 6 [json_name = "isActive"];</code>
+     */
+    protected $is_active = false;
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.Project project = 7 [json_name = "project"];</code>
+     */
+    protected $project = null;
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.Organization organization = 8 [json_name = "organization"];</code>
+     */
+    protected $organization = null;
 
     /**
      * Constructor.
@@ -40,6 +52,9 @@ class ApiKeyList extends \Google\Protobuf\Internal\Message
      *     @type string $api_key
      *     @type string $name
      *     @type string $user_id
+     *     @type bool $is_active
+     *     @type \Accounts\V1alpha1\Project $project
+     *     @type \Accounts\V1alpha1\Organization $organization
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +146,92 @@ class ApiKeyList extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_active = 6 [json_name = "isActive"];</code>
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->is_active;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_active = 6 [json_name = "isActive"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsActive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_active = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.Project project = 7 [json_name = "project"];</code>
+     * @return \Accounts\V1alpha1\Project|null
+     */
+    public function getProject()
+    {
+        return $this->project;
+    }
+
+    public function hasProject()
+    {
+        return isset($this->project);
+    }
+
+    public function clearProject()
+    {
+        unset($this->project);
+    }
+
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.Project project = 7 [json_name = "project"];</code>
+     * @param \Accounts\V1alpha1\Project $var
+     * @return $this
+     */
+    public function setProject($var)
+    {
+        GPBUtil::checkMessage($var, \Accounts\V1alpha1\Project::class);
+        $this->project = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.Organization organization = 8 [json_name = "organization"];</code>
+     * @return \Accounts\V1alpha1\Organization|null
+     */
+    public function getOrganization()
+    {
+        return $this->organization;
+    }
+
+    public function hasOrganization()
+    {
+        return isset($this->organization);
+    }
+
+    public function clearOrganization()
+    {
+        unset($this->organization);
+    }
+
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.Organization organization = 8 [json_name = "organization"];</code>
+     * @param \Accounts\V1alpha1\Organization $var
+     * @return $this
+     */
+    public function setOrganization($var)
+    {
+        GPBUtil::checkMessage($var, \Accounts\V1alpha1\Organization::class);
+        $this->organization = $var;
 
         return $this;
     }

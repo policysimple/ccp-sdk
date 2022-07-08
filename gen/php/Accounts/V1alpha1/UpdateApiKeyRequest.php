@@ -18,21 +18,9 @@ class UpdateApiKeyRequest extends \Google\Protobuf\Internal\Message
      */
     protected $id = 0;
     /**
-     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
+     * Generated from protobuf field <code>.accounts.v1alpha1.CreateApiKeyRequest api_key = 6 [json_name = "apiKey"];</code>
      */
-    protected $name = '';
-    /**
-     * Generated from protobuf field <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-     */
-    private $roles_ids;
-    /**
-     * Generated from protobuf field <code>repeated uint32 permissions_ids = 4 [json_name = "permissionsIds"];</code>
-     */
-    private $permissions_ids;
-    /**
-     * Generated from protobuf field <code>bool is_active = 5 [json_name = "isActive"];</code>
-     */
-    protected $is_active = false;
+    protected $api_key = null;
 
     /**
      * Constructor.
@@ -41,10 +29,7 @@ class UpdateApiKeyRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $id
-     *     @type string $name
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $roles_ids
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $permissions_ids
-     *     @type bool $is_active
+     *     @type \Accounts\V1alpha1\CreateApiKeyRequest $api_key
      * }
      */
     public function __construct($data = NULL) {
@@ -75,89 +60,33 @@ class UpdateApiKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
-     * @return string
+     * Generated from protobuf field <code>.accounts.v1alpha1.CreateApiKeyRequest api_key = 6 [json_name = "apiKey"];</code>
+     * @return \Accounts\V1alpha1\CreateApiKeyRequest|null
      */
-    public function getName()
+    public function getApiKey()
     {
-        return $this->name;
+        return $this->api_key;
+    }
+
+    public function hasApiKey()
+    {
+        return isset($this->api_key);
+    }
+
+    public function clearApiKey()
+    {
+        unset($this->api_key);
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>.accounts.v1alpha1.CreateApiKeyRequest api_key = 6 [json_name = "apiKey"];</code>
+     * @param \Accounts\V1alpha1\CreateApiKeyRequest $var
      * @return $this
      */
-    public function setName($var)
+    public function setApiKey($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getRolesIds()
-    {
-        return $this->roles_ids;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setRolesIds($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
-        $this->roles_ids = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated uint32 permissions_ids = 4 [json_name = "permissionsIds"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPermissionsIds()
-    {
-        return $this->permissions_ids;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated uint32 permissions_ids = 4 [json_name = "permissionsIds"];</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPermissionsIds($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
-        $this->permissions_ids = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool is_active = 5 [json_name = "isActive"];</code>
-     * @return bool
-     */
-    public function getIsActive()
-    {
-        return $this->is_active;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool is_active = 5 [json_name = "isActive"];</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setIsActive($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->is_active = $var;
+        GPBUtil::checkMessage($var, \Accounts\V1alpha1\CreateApiKeyRequest::class);
+        $this->api_key = $var;
 
         return $this;
     }

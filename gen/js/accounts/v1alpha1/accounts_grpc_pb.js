@@ -312,6 +312,28 @@ function deserialize_accounts_v1alpha1_DeleteRoleResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.DeleteRoleResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_DeleteUserByProjectRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.DeleteUserByProjectRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.DeleteUserByProjectRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_DeleteUserByProjectRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.DeleteUserByProjectRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_DeleteUserByProjectResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.DeleteUserByProjectResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.DeleteUserByProjectResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_DeleteUserByProjectResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.DeleteUserByProjectResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_DeleteUserRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_accounts_pb.DeleteUserRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.DeleteUserRequest');
@@ -332,6 +354,28 @@ function serialize_accounts_v1alpha1_DeleteUserResponse(arg) {
 
 function deserialize_accounts_v1alpha1_DeleteUserResponse(buffer_arg) {
   return accounts_v1alpha1_accounts_pb.DeleteUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_EditRoleUserByProjectRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.EditRoleUserByProjectRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.EditRoleUserByProjectRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_EditRoleUserByProjectRequest(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.EditRoleUserByProjectRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_EditRoleUserByProjectResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_accounts_pb.EditRoleUserByProjectResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.EditRoleUserByProjectResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_EditRoleUserByProjectResponse(buffer_arg) {
+  return accounts_v1alpha1_accounts_pb.EditRoleUserByProjectResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_accounts_v1alpha1_EnableOrDisableMFARequest(arg) {
@@ -1576,7 +1620,7 @@ var AccountServiceService = exports.AccountServiceService = {
     responseSerialize: serialize_accounts_v1alpha1_GetOneCountryResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_GetOneCountryResponse,
   },
-  // Tokens
+  // Api Keys
   createApiKey: {
     path: '/accounts.v1alpha1.AccountService/CreateApiKey',
     requestStream: false,
@@ -1700,6 +1744,29 @@ var AccountServiceService = exports.AccountServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_MFARequest,
     responseSerialize: serialize_accounts_v1alpha1_MFAResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_MFAResponse,
+  },
+  // EDITTS AND DELETE USERS
+  deleteUserByProject: {
+    path: '/accounts.v1alpha1.AccountService/DeleteUserByProject',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.DeleteUserByProjectRequest,
+    responseType: accounts_v1alpha1_accounts_pb.DeleteUserByProjectResponse,
+    requestSerialize: serialize_accounts_v1alpha1_DeleteUserByProjectRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_DeleteUserByProjectRequest,
+    responseSerialize: serialize_accounts_v1alpha1_DeleteUserByProjectResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_DeleteUserByProjectResponse,
+  },
+  editRoleUserByProject: {
+    path: '/accounts.v1alpha1.AccountService/EditRoleUserByProject',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_accounts_pb.EditRoleUserByProjectRequest,
+    responseType: accounts_v1alpha1_accounts_pb.EditRoleUserByProjectResponse,
+    requestSerialize: serialize_accounts_v1alpha1_EditRoleUserByProjectRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_EditRoleUserByProjectRequest,
+    responseSerialize: serialize_accounts_v1alpha1_EditRoleUserByProjectResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_EditRoleUserByProjectResponse,
   },
 };
 
