@@ -2067,7 +2067,7 @@ proto.payment.v1alpha1.GetOrganizationPaymentResponse.prototype.toObject = funct
 proto.payment.v1alpha1.GetOrganizationPaymentResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     customer: (f = msg.getCustomer()) && payment_v1alpha1_payment_pb.Customer.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 3, "")
+    status: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2109,7 +2109,7 @@ proto.payment.v1alpha1.GetOrganizationPaymentResponse.deserializeBinaryFromReade
       reader.readMessage(value,payment_v1alpha1_payment_pb.Customer.deserializeBinaryFromReader);
       msg.setCustomer(value);
       break;
-    case 3:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
       break;
@@ -2153,7 +2153,7 @@ proto.payment.v1alpha1.GetOrganizationPaymentResponse.serializeBinaryToWriter = 
   f = message.getStatus();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
@@ -2198,11 +2198,11 @@ proto.payment.v1alpha1.GetOrganizationPaymentResponse.prototype.hasCustomer = fu
 
 
 /**
- * optional string status = 3;
+ * optional string status = 2;
  * @return {string}
  */
 proto.payment.v1alpha1.GetOrganizationPaymentResponse.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -2211,7 +2211,7 @@ proto.payment.v1alpha1.GetOrganizationPaymentResponse.prototype.getStatus = func
  * @return {!proto.payment.v1alpha1.GetOrganizationPaymentResponse} returns this
  */
 proto.payment.v1alpha1.GetOrganizationPaymentResponse.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -4065,7 +4065,7 @@ proto.payment.v1alpha1.CreateInvoiceResponse.prototype.toObject = function(opt_i
 proto.payment.v1alpha1.CreateInvoiceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     customer: (f = msg.getCustomer()) && payment_v1alpha1_payment_pb.Customer.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 4, "")
+    status: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -4107,7 +4107,7 @@ proto.payment.v1alpha1.CreateInvoiceResponse.deserializeBinaryFromReader = funct
       reader.readMessage(value,payment_v1alpha1_payment_pb.Customer.deserializeBinaryFromReader);
       msg.setCustomer(value);
       break;
-    case 4:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
       break;
@@ -4151,7 +4151,7 @@ proto.payment.v1alpha1.CreateInvoiceResponse.serializeBinaryToWriter = function(
   f = message.getStatus();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      2,
       f
     );
   }
@@ -4196,11 +4196,11 @@ proto.payment.v1alpha1.CreateInvoiceResponse.prototype.hasCustomer = function() 
 
 
 /**
- * optional string status = 4;
+ * optional string status = 2;
  * @return {string}
  */
 proto.payment.v1alpha1.CreateInvoiceResponse.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -4209,7 +4209,7 @@ proto.payment.v1alpha1.CreateInvoiceResponse.prototype.getStatus = function() {
  * @return {!proto.payment.v1alpha1.CreateInvoiceResponse} returns this
  */
 proto.payment.v1alpha1.CreateInvoiceResponse.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
