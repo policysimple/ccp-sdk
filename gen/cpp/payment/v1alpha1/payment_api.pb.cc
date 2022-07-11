@@ -831,7 +831,7 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto[
   "ization_id\030\001 \001(\rR\016organizationId\"p\n\036GetO"
   "rganizationPaymentResponse\0226\n\010customer\030\001"
   " \001(\0132\032.payment.v1alpha1.CustomerR\010custom"
-  "er\022\026\n\006status\030\003 \001(\tR\006status\"5\n\022GetCustome"
+  "er\022\026\n\006status\030\002 \001(\tR\006status\"5\n\022GetCustome"
   "rRequest\022\037\n\013customer_id\030\001 \001(\tR\ncustomerI"
   "d\"e\n\023GetCustomerResponse\0226\n\010customer\030\001 \001"
   "(\0132\032.payment.v1alpha1.CustomerR\010customer"
@@ -859,7 +859,7 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto[
   "uest\022\035\n\ninvoice_id\030\001 \001(\tR\tinvoiceId\022\026\n\006s"
   "tatus\030\002 \001(\tR\006status\"g\n\025CreateInvoiceResp"
   "onse\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha"
-  "1.CustomerR\010customer\022\026\n\006status\030\004 \001(\tR\006st"
+  "1.CustomerR\010customer\022\026\n\006status\030\002 \001(\tR\006st"
   "atus\"\?\n\021CreateCardRequest\022*\n\004card\030\001 \001(\0132"
   "\026.payment.v1alpha1.CardR\004card\"G\n\022CreateC"
   "ardResponse\022\031\n\010token_id\030\001 \001(\tR\007tokenId\022\026"
@@ -2762,9 +2762,9 @@ const char* GetOrganizationPaymentResponse::_InternalParse(const char* ptr, ::PR
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string status = 3 [json_name = "status"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // string status = 2 [json_name = "status"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.GetOrganizationPaymentResponse.status"));
@@ -2808,14 +2808,14 @@ failure:
         1, _Internal::customer(this), target, stream);
   }
 
-  // string status = 3 [json_name = "status"];
+  // string status = 2 [json_name = "status"];
   if (!this->_internal_status().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "payment.v1alpha1.GetOrganizationPaymentResponse.status");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_status(), target);
+        2, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2834,7 +2834,7 @@ size_t GetOrganizationPaymentResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string status = 3 [json_name = "status"];
+  // string status = 2 [json_name = "status"];
   if (!this->_internal_status().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -5588,9 +5588,9 @@ const char* CreateInvoiceResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string status = 4 [json_name = "status"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // string status = 2 [json_name = "status"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.CreateInvoiceResponse.status"));
@@ -5634,14 +5634,14 @@ failure:
         1, _Internal::customer(this), target, stream);
   }
 
-  // string status = 4 [json_name = "status"];
+  // string status = 2 [json_name = "status"];
   if (!this->_internal_status().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "payment.v1alpha1.CreateInvoiceResponse.status");
     target = stream->WriteStringMaybeAliased(
-        4, this->_internal_status(), target);
+        2, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5660,7 +5660,7 @@ size_t CreateInvoiceResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string status = 4 [json_name = "status"];
+  // string status = 2 [json_name = "status"];
   if (!this->_internal_status().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(

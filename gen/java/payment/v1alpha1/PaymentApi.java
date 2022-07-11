@@ -5165,12 +5165,12 @@ public final class PaymentApi {
     payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder getCustomerOrBuilder();
 
     /**
-     * <code>string status = 3 [json_name = "status"];</code>
+     * <code>string status = 2 [json_name = "status"];</code>
      * @return The status.
      */
     java.lang.String getStatus();
     /**
-     * <code>string status = 3 [json_name = "status"];</code>
+     * <code>string status = 2 [json_name = "status"];</code>
      * @return The bytes for status.
      */
     com.google.protobuf.ByteString
@@ -5235,7 +5235,7 @@ public final class PaymentApi {
 
               break;
             }
-            case 26: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               status_ = s;
@@ -5299,10 +5299,10 @@ public final class PaymentApi {
       return getCustomer();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 3;
+    public static final int STATUS_FIELD_NUMBER = 2;
     private volatile java.lang.Object status_;
     /**
-     * <code>string status = 3 [json_name = "status"];</code>
+     * <code>string status = 2 [json_name = "status"];</code>
      * @return The status.
      */
     @java.lang.Override
@@ -5319,7 +5319,7 @@ public final class PaymentApi {
       }
     }
     /**
-     * <code>string status = 3 [json_name = "status"];</code>
+     * <code>string status = 2 [json_name = "status"];</code>
      * @return The bytes for status.
      */
     @java.lang.Override
@@ -5355,7 +5355,7 @@ public final class PaymentApi {
         output.writeMessage(1, getCustomer());
       }
       if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, status_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
       }
       unknownFields.writeTo(output);
     }
@@ -5371,7 +5371,7 @@ public final class PaymentApi {
           .computeMessageSize(1, getCustomer());
       }
       if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, status_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5790,7 +5790,7 @@ public final class PaymentApi {
 
       private java.lang.Object status_ = "";
       /**
-       * <code>string status = 3 [json_name = "status"];</code>
+       * <code>string status = 2 [json_name = "status"];</code>
        * @return The status.
        */
       public java.lang.String getStatus() {
@@ -5806,7 +5806,7 @@ public final class PaymentApi {
         }
       }
       /**
-       * <code>string status = 3 [json_name = "status"];</code>
+       * <code>string status = 2 [json_name = "status"];</code>
        * @return The bytes for status.
        */
       public com.google.protobuf.ByteString
@@ -5823,7 +5823,7 @@ public final class PaymentApi {
         }
       }
       /**
-       * <code>string status = 3 [json_name = "status"];</code>
+       * <code>string status = 2 [json_name = "status"];</code>
        * @param value The status to set.
        * @return This builder for chaining.
        */
@@ -5838,7 +5838,7 @@ public final class PaymentApi {
         return this;
       }
       /**
-       * <code>string status = 3 [json_name = "status"];</code>
+       * <code>string status = 2 [json_name = "status"];</code>
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
@@ -5848,7 +5848,7 @@ public final class PaymentApi {
         return this;
       }
       /**
-       * <code>string status = 3 [json_name = "status"];</code>
+       * <code>string status = 2 [json_name = "status"];</code>
        * @param value The bytes for status to set.
        * @return This builder for chaining.
        */
@@ -13755,12 +13755,12 @@ public final class PaymentApi {
     payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder getCustomerOrBuilder();
 
     /**
-     * <code>string status = 4 [json_name = "status"];</code>
+     * <code>string status = 2 [json_name = "status"];</code>
      * @return The status.
      */
     java.lang.String getStatus();
     /**
-     * <code>string status = 4 [json_name = "status"];</code>
+     * <code>string status = 2 [json_name = "status"];</code>
      * @return The bytes for status.
      */
     com.google.protobuf.ByteString
@@ -13825,7 +13825,7 @@ public final class PaymentApi {
 
               break;
             }
-            case 34: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               status_ = s;
@@ -13889,10 +13889,10 @@ public final class PaymentApi {
       return getCustomer();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 4;
+    public static final int STATUS_FIELD_NUMBER = 2;
     private volatile java.lang.Object status_;
     /**
-     * <code>string status = 4 [json_name = "status"];</code>
+     * <code>string status = 2 [json_name = "status"];</code>
      * @return The status.
      */
     @java.lang.Override
@@ -13909,7 +13909,7 @@ public final class PaymentApi {
       }
     }
     /**
-     * <code>string status = 4 [json_name = "status"];</code>
+     * <code>string status = 2 [json_name = "status"];</code>
      * @return The bytes for status.
      */
     @java.lang.Override
@@ -13945,7 +13945,7 @@ public final class PaymentApi {
         output.writeMessage(1, getCustomer());
       }
       if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
       }
       unknownFields.writeTo(output);
     }
@@ -13961,7 +13961,7 @@ public final class PaymentApi {
           .computeMessageSize(1, getCustomer());
       }
       if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -14380,7 +14380,7 @@ public final class PaymentApi {
 
       private java.lang.Object status_ = "";
       /**
-       * <code>string status = 4 [json_name = "status"];</code>
+       * <code>string status = 2 [json_name = "status"];</code>
        * @return The status.
        */
       public java.lang.String getStatus() {
@@ -14396,7 +14396,7 @@ public final class PaymentApi {
         }
       }
       /**
-       * <code>string status = 4 [json_name = "status"];</code>
+       * <code>string status = 2 [json_name = "status"];</code>
        * @return The bytes for status.
        */
       public com.google.protobuf.ByteString
@@ -14413,7 +14413,7 @@ public final class PaymentApi {
         }
       }
       /**
-       * <code>string status = 4 [json_name = "status"];</code>
+       * <code>string status = 2 [json_name = "status"];</code>
        * @param value The status to set.
        * @return This builder for chaining.
        */
@@ -14428,7 +14428,7 @@ public final class PaymentApi {
         return this;
       }
       /**
-       * <code>string status = 4 [json_name = "status"];</code>
+       * <code>string status = 2 [json_name = "status"];</code>
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
@@ -14438,7 +14438,7 @@ public final class PaymentApi {
         return this;
       }
       /**
-       * <code>string status = 4 [json_name = "status"];</code>
+       * <code>string status = 2 [json_name = "status"];</code>
        * @param value The bytes for status to set.
        * @return This builder for chaining.
        */
@@ -25678,7 +25678,7 @@ public final class PaymentApi {
       "ization_id\030\001 \001(\rR\016organizationId\"p\n\036GetO" +
       "rganizationPaymentResponse\0226\n\010customer\030\001" +
       " \001(\0132\032.payment.v1alpha1.CustomerR\010custom" +
-      "er\022\026\n\006status\030\003 \001(\tR\006status\"5\n\022GetCustome" +
+      "er\022\026\n\006status\030\002 \001(\tR\006status\"5\n\022GetCustome" +
       "rRequest\022\037\n\013customer_id\030\001 \001(\tR\ncustomerI" +
       "d\"e\n\023GetCustomerResponse\0226\n\010customer\030\001 \001" +
       "(\0132\032.payment.v1alpha1.CustomerR\010customer" +
@@ -25706,7 +25706,7 @@ public final class PaymentApi {
       "uest\022\035\n\ninvoice_id\030\001 \001(\tR\tinvoiceId\022\026\n\006s" +
       "tatus\030\002 \001(\tR\006status\"g\n\025CreateInvoiceResp" +
       "onse\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha" +
-      "1.CustomerR\010customer\022\026\n\006status\030\004 \001(\tR\006st" +
+      "1.CustomerR\010customer\022\026\n\006status\030\002 \001(\tR\006st" +
       "atus\"?\n\021CreateCardRequest\022*\n\004card\030\001 \001(\0132" +
       "\026.payment.v1alpha1.CardR\004card\"G\n\022CreateC" +
       "ardResponse\022\031\n\010token_id\030\001 \001(\tR\007tokenId\022\026" +
