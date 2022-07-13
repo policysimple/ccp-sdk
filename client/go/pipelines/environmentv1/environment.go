@@ -110,3 +110,26 @@ func DeleteEnvironment(environmentId string, userId string) (response *environme
 	}
 	return response, nil
 }
+
+func GetOneEnvironment(environmentId string) (response *environmentpkgv1.GetOneEnvironmentResponse, err error) {
+	bylogs.LogInfo("Client: Get One environment")
+	d, err := time.ParseDuration(environmentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetOneEnvironment(ctx, &environmentpkgv1.GetOneEnvironmentRequest{
+		EnvironmentId: environmentId,
+	})
+
+	if err != nil {
+		bylogs.LogErr("Client: Error get one environment", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error get one environment", err),
+		)
+	}
+	return response, nil
+}
