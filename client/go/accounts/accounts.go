@@ -58,3 +58,27 @@ func ListOrganization() (*accountpkgv1.ListOrganizationResponse, error) {
 
 	return response, nil
 }
+
+func DeleteOrganization() (*accountpkgv1.DeleteOrganizationResponse, error) {
+	bylogs.LogInfo("DeleteOrganization Client Sdk")
+	d, err := time.ParseDuration(accountServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.DeleteOrganization(ctx, &accountpkgv1.DeleteOrganizationRequest{})
+
+	if err != nil {
+		bylogs.LogErr("DeleteOrganization Client Sdk", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("Error delete Organization: %v", err),
+		)
+	} else {
+		bylogs.LogInfo("DeleteOrganization Client Sdk", "Success")
+	}
+
+	return response, nil
+}

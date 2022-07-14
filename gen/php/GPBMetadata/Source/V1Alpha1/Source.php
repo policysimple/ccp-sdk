@@ -30,7 +30,7 @@ class Source
 total_pages (R
 totalPages"R
 \'DeleteIntegrationsByOrganizationRequest\'
-organization_id (	RorganizationId"<
+organization_id (RorganizationId"<
 (DeleteIntegrationsByOrganizationResponse
 msg (	Rmsg"1
 GetOneProviderByNameRequest

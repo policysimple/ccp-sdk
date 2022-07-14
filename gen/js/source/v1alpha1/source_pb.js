@@ -1665,7 +1665,7 @@ proto.source.v1alpha1.DeleteIntegrationsByOrganizationRequest.prototype.toObject
  */
 proto.source.v1alpha1.DeleteIntegrationsByOrganizationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -1703,7 +1703,7 @@ proto.source.v1alpha1.DeleteIntegrationsByOrganizationRequest.deserializeBinaryF
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setOrganizationId(value);
       break;
     default:
@@ -1736,8 +1736,8 @@ proto.source.v1alpha1.DeleteIntegrationsByOrganizationRequest.prototype.serializ
 proto.source.v1alpha1.DeleteIntegrationsByOrganizationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeUint32(
       1,
       f
     );
@@ -1746,20 +1746,20 @@ proto.source.v1alpha1.DeleteIntegrationsByOrganizationRequest.serializeBinaryToW
 
 
 /**
- * optional string organization_id = 1;
- * @return {string}
+ * optional uint32 organization_id = 1;
+ * @return {number}
  */
 proto.source.v1alpha1.DeleteIntegrationsByOrganizationRequest.prototype.getOrganizationId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.source.v1alpha1.DeleteIntegrationsByOrganizationRequest} returns this
  */
 proto.source.v1alpha1.DeleteIntegrationsByOrganizationRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
