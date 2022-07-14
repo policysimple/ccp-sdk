@@ -3,6 +3,7 @@ package source
 import (
 	"context"
 	"errors"
+	"log"
 	"os"
 	"sync"
 	"time"
@@ -50,6 +51,8 @@ func DeleteIntegration(req *sourcepkgv1.DeleteIntegrationRequest) (*sourcepkgv1.
 }
 
 func DeleteIntegrationsByOrganization(OrganizationId uint32) (*sourcepkgv1.DeleteIntegrationsByOrganizationResponse, error) {
+	log.Println("DeleteIntegrationsByOrganization")
+
 	d, err := time.ParseDuration(sourceServiceTimeout)
 	if err != nil {
 		return nil, err

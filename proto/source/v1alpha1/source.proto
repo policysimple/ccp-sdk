@@ -80,6 +80,7 @@ message DeleteIntegrationsByOrganizationRequest {
 
 message DeleteIntegrationsByOrganizationResponse {
     string msg = 1;
+    string error = 2;
 }
 
 /*
