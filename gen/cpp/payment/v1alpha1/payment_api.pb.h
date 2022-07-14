@@ -1454,10 +1454,10 @@ class GetOrganizationPaymentResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 3,
+    kStatusFieldNumber = 2,
     kCustomerFieldNumber = 1,
   };
-  // string status = 3 [json_name = "status"];
+  // string status = 2 [json_name = "status"];
   void clear_status();
   const std::string& status() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -3358,10 +3358,10 @@ class CreateInvoiceResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 4,
+    kStatusFieldNumber = 2,
     kCustomerFieldNumber = 1,
   };
-  // string status = 4 [json_name = "status"];
+  // string status = 2 [json_name = "status"];
   void clear_status();
   const std::string& status() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -6814,7 +6814,7 @@ inline void GetOrganizationPaymentResponse::set_allocated_customer(::payment::v1
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.GetOrganizationPaymentResponse.customer)
 }
 
-// string status = 3 [json_name = "status"];
+// string status = 2 [json_name = "status"];
 inline void GetOrganizationPaymentResponse::clear_status() {
   status_.ClearToEmpty();
 }
@@ -8148,7 +8148,7 @@ inline void CreateInvoiceResponse::set_allocated_customer(::payment::v1alpha1::C
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CreateInvoiceResponse.customer)
 }
 
-// string status = 4 [json_name = "status"];
+// string status = 2 [json_name = "status"];
 inline void CreateInvoiceResponse::clear_status() {
   status_.ClearToEmpty();
 }
