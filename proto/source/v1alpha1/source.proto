@@ -75,11 +75,12 @@ message AccountsProvidersResponse {
 */
 
 message DeleteIntegrationsByOrganizationRequest {
-    string organization_id = 1;
+    uint32 organization_id = 1;
 }
 
 message DeleteIntegrationsByOrganizationResponse {
     string msg = 1;
+    string error = 2;
 }
 
 /*

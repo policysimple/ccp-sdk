@@ -12381,6 +12381,7 @@ class SendInvitationUserResponse final :
     kPermissionsFieldNumber = 6,
     kInvitationCodeFieldNumber = 3,
     kResultFieldNumber = 4,
+    kErrorFieldNumber = 7,
     kOrganizationFieldNumber = 1,
   };
   // repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];
@@ -12465,6 +12466,20 @@ class SendInvitationUserResponse final :
   std::string* _internal_mutable_result();
   public:
 
+  // string error = 7 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
   // .accounts.v1alpha1.Organization organization = 1 [json_name = "organization"];
   bool has_organization() const;
   private:
@@ -12495,6 +12510,7 @@ class SendInvitationUserResponse final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission > permissions_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invitation_code_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr result_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   ::accounts::v1alpha1::Organization* organization_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
@@ -33176,6 +33192,52 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Pe
 SendInvitationUserResponse::permissions() const {
   // @@protoc_insertion_point(field_list:accounts.v1alpha1.SendInvitationUserResponse.permissions)
   return permissions_;
+}
+
+// string error = 7 [json_name = "error"];
+inline void SendInvitationUserResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& SendInvitationUserResponse::error() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.SendInvitationUserResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SendInvitationUserResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.SendInvitationUserResponse.error)
+}
+inline std::string* SendInvitationUserResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.SendInvitationUserResponse.error)
+  return _s;
+}
+inline const std::string& SendInvitationUserResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void SendInvitationUserResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SendInvitationUserResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SendInvitationUserResponse::release_error() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.SendInvitationUserResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SendInvitationUserResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.SendInvitationUserResponse.error)
 }
 
 // -------------------------------------------------------------------

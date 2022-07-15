@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-ô´
+Šµ
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"4
 EnableOrDisableMFARequest
 user_id (	RuserId".
@@ -333,14 +333,15 @@ updated_at (	R	updatedAt,
 user_id_admin (	RuserIdAdmin
 	roles_ids (RrolesIds\'
 permissions_ids (RpermissionsIds\'
-organization_id (RorganizationId"É
+organization_id (RorganizationId"ß
 SendInvitationUserResponseC
 organization (2.accounts.v1alpha1.OrganizationRorganization6
 projects (2.accounts.v1alpha1.ProjectRprojects\'
 invitation_code (	RinvitationCode
 result (	Rresult,
 roles (2.accounts.v1alpha1.RolRroles?
-permissions (2.accounts.v1alpha1.PermissionRpermissions"Y
+permissions (2.accounts.v1alpha1.PermissionRpermissions
+error (	Rerror"Y
 GetInvitationUserRequest\'
 invitation_code (	RinvitationCode
 email (	Remail"¬

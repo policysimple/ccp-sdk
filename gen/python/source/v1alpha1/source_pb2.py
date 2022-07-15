@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z0github.com/cuemby/ccp-sdk/gen/go/source/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1csource/v1alpha1/source.proto\x12\x0fsource.v1alpha1\"9\n\x0f\x41\x63\x63ountProvider\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n\x04type\x18\x02 \x01(\tR\x04type\"U\n\x18\x41\x63\x63ountsProvidersRequest\x12%\n\x0eintegration_id\x18\x01 \x01(\tR\rintegrationId\x12\x12\n\x04page\x18\x02 \x01(\rR\x04page\"\x90\x01\n\x19\x41\x63\x63ountsProvidersResponse\x12<\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32 .source.v1alpha1.AccountProviderR\x08\x61\x63\x63ounts\x12\x14\n\x05\x63ount\x18\x02 \x01(\rR\x05\x63ount\x12\x1f\n\x0btotal_pages\x18\x03 \x01(\rR\ntotalPages\"R\n\'DeleteIntegrationsByOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"<\n(DeleteIntegrationsByOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"1\n\x1bGetOneProviderByNameRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\"U\n\x1cGetOneProviderByNameResponse\x12\x35\n\x08provider\x18\x01 \x01(\x0b\x32\x19.source.v1alpha1.ProviderR\x08provider\"@\n\x06\x42ranch\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x10\n\x03sha\x18\x02 \x01(\tR\x03sha\x12\x10\n\x03url\x18\x03 \x01(\tR\x03url\"\\\n\x1fListRepositoriesProviderRequest\x12%\n\x0eintegration_id\x18\x01 \x01(\tR\rintegrationId\x12\x12\n\x04page\x18\x02 \x01(\rR\x04page\"\x9a\x01\n ListRepositoriesProviderResponse\x12?\n\x0crepositories\x18\x01 \x03(\x0b\x32\x1b.source.v1alpha1.RepositoryR\x0crepositories\x12\x1f\n\x0btotal_pages\x18\x02 \x01(\rR\ntotalPages\x12\x14\n\x05\x63ount\x18\x03 \x01(\rR\x05\x63ount\"Y\n\x1cGetRepositoryProviderRequest\x12%\n\x0eintegration_id\x18\x01 \x01(\tR\rintegrationId\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\"R\n\x1dGetRepositoryProviderResponse\x12\x31\n\x07\x62ranchs\x18\x01 \x03(\x0b\x32\x17.source.v1alpha1.BranchR\x07\x62ranchs\"\xc8\x02\n\x10\x44\x65tailRepository\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n\x07private\x18\x03 \x01(\x08R\x07private\x12\x1a\n\x08\x66ullname\x18\x04 \x01(\tR\x08\x66ullname\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ork\x18\x06 \x01(\x08R\x04\x66ork\x12\x1b\n\tclone_url\x18\x07 \x01(\tR\x08\x63loneUrl\x12\x1d\n\nproject_id\x18\x08 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\t \x01(\rR\x0eorganizationId\x12\x18\n\x07\x62ranchs\x18\n \x03(\tR\x07\x62ranchs\x12%\n\x0eintegration_id\x18\x0b \x01(\tR\rintegrationId\"\x98\x02\n\x0eListRepository\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n\x07private\x18\x03 \x01(\x08R\x07private\x12\x1a\n\x08\x66ullname\x18\x04 \x01(\tR\x08\x66ullname\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1b\n\tclone_url\x18\x07 \x01(\tR\x08\x63loneUrl\x12\x1d\n\nproject_id\x18\x08 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\t \x01(\rR\x0eorganizationId\x12%\n\x0eintegration_id\x18\x0b \x01(\tR\rintegrationId\"\xa4\x02\n\x16\x43reateDetailRepository\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x18\n\x07private\x18\x02 \x01(\x08R\x07private\x12\x1a\n\x08\x66ullname\x18\x03 \x01(\tR\x08\x66ullname\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ork\x18\x05 \x01(\x08R\x04\x66ork\x12\x1b\n\tclone_url\x18\x06 \x01(\tR\x08\x63loneUrl\x12\x1d\n\nproject_id\x18\x07 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x08 \x01(\rR\x0eorganizationId\x12%\n\x0eintegration_id\x18\t \x01(\tR\rintegrationId\"\xaa\x01\n\x17\x43reateRepositoryRequest\x12G\n\nrepository\x18\x01 \x01(\x0b\x32\'.source.v1alpha1.CreateDetailRepositoryR\nrepository\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x03 \x01(\rR\x0eorganizationId\"B\n\x18\x43reateRepositoryResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"a\n\x17ListRepositoriesRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\"_\n\x18ListRepositoriesResponse\x12\x43\n\x0crepositories\x18\x01 \x03(\x0b\x32\x1f.source.v1alpha1.ListRepositoryR\x0crepositories\";\n\x14GetRepositoryRequest\x12#\n\rrepository_id\x18\x01 \x01(\tR\x0crepositoryId\"Z\n\x15GetRepositoryResponse\x12\x41\n\nrepository\x18\x01 \x01(\x0b\x32!.source.v1alpha1.DetailRepositoryR\nrepository\">\n\x17\x44\x65leteRepositoryRequest\x12#\n\rrepository_id\x18\x01 \x01(\tR\x0crepositoryId\"B\n\x18\x44\x65leteRepositoryResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x81\x01\n\x17UpdateRepositoryRequest\x12#\n\rrepository_id\x18\x01 \x01(\tR\x0crepositoryId\x12\x41\n\nrepository\x18\x02 \x01(\x0b\x32!.source.v1alpha1.DetailRepositoryR\nrepository\"B\n\x18UpdateRepositoryResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xe3\x03\n\x0bIntegration\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x35\n\x08provider\x18\x04 \x01(\x0b\x32\x19.source.v1alpha1.ProviderR\x08provider\x12:\n\x04\x64\x61ta\x18\x05 \x03(\x0b\x32&.source.v1alpha1.Integration.DataEntryR\x04\x64\x61ta\x12\x46\n\x08metadata\x18\x06 \x03(\x0b\x32*.source.v1alpha1.Integration.MetadataEntryR\x08metadata\x12\x17\n\x07user_id\x18\x07 \x01(\tR\x06userId\x12=\n\x07\x61\x63\x63ount\x18\x08 \x01(\x0b\x32#.source.v1alpha1.AccountIntegrationR\x07\x61\x63\x63ount\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rMetadataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\xc1\x01\n\nRepository\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x18\n\x07private\x18\x02 \x01(\x08R\x07private\x12\x1a\n\x08\x66ullname\x18\x03 \x01(\tR\x08\x66ullname\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ork\x18\x05 \x01(\x08R\x04\x66ork\x12\x1b\n\tclone_url\x18\x06 \x01(\tR\x08\x63loneUrl\x12\x16\n\x06\x62ranch\x18\x07 \x01(\tR\x06\x62ranch\"<\n\x12\x41\x63\x63ountIntegration\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n\x04type\x18\x02 \x01(\tR\x04type\"\xe4\x03\n\x18\x43reateIntegrationRequest\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12G\n\x04\x64\x61ta\x18\x05 \x03(\x0b\x32\x33.source.v1alpha1.CreateIntegrationRequest.DataEntryR\x04\x64\x61ta\x12S\n\x08metadata\x18\x06 \x03(\x0b\x32\x37.source.v1alpha1.CreateIntegrationRequest.MetadataEntryR\x08metadata\x12\x17\n\x07user_id\x18\x07 \x01(\tR\x06userId\x12\x1f\n\x0bprovider_id\x18\x08 \x01(\tR\nproviderId\x12=\n\x07\x61\x63\x63ount\x18\t \x01(\x0b\x32#.source.v1alpha1.AccountIntegrationR\x07\x61\x63\x63ount\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rMetadataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"j\n\x19\x43reateIntegrationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\x12%\n\x0eintegration_id\x18\x03 \x01(\tR\rintegrationId\"[\n\x17ListIntegrationsRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\"\\\n\x18ListIntegrationsResponse\x12@\n\x0cintegrations\x18\x01 \x03(\x0b\x32\x1c.source.v1alpha1.IntegrationR\x0cintegrations\"\'\n\x15GetIntegrationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"X\n\x16GetIntegrationResponse\x12>\n\x0bintegration\x18\x01 \x01(\x0b\x32\x1c.source.v1alpha1.IntegrationR\x0bintegration\"y\n\x18UpdateIntegrationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12M\n\x0cintegrations\x18\x02 \x01(\x0b\x32).source.v1alpha1.CreateIntegrationRequestR\x0cintegrations\"C\n\x19UpdateIntegrationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"*\n\x18\x44\x65leteIntegrationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"C\n\x19\x44\x65leteIntegrationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xd8\x02\n\x08Provider\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04logo\x18\x04 \x01(\tR\x04logo\x12\x37\n\x04\x64\x61ta\x18\x05 \x03(\x0b\x32#.source.v1alpha1.Provider.DataEntryR\x04\x64\x61ta\x12\x43\n\x08metadata\x18\x06 \x03(\x0b\x32\'.source.v1alpha1.Provider.MetadataEntryR\x08metadata\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rMetadataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\'\n\x15\x44\x65leteProviderRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"@\n\x16\x44\x65leteProviderResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"k\n\x15UpdateProviderRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x42\n\x08provider\x18\x02 \x01(\x0b\x32&.source.v1alpha1.CreateProviderRequestR\x08provider\"@\n\x16UpdateProviderResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"$\n\x12GetProviderRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"L\n\x13GetProviderResponse\x12\x35\n\x08provider\x18\x01 \x01(\x0b\x32\x19.source.v1alpha1.ProviderR\x08provider\"\xef\x02\n\x15\x43reateProviderRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04logo\x18\x03 \x01(\tR\x04logo\x12\x44\n\x04\x64\x61ta\x18\x05 \x03(\x0b\x32\x30.source.v1alpha1.CreateProviderRequest.DataEntryR\x04\x64\x61ta\x12P\n\x08metadata\x18\x06 \x03(\x0b\x32\x34.source.v1alpha1.CreateProviderRequest.MetadataEntryR\x08metadata\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rMetadataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"@\n\x16\x43reateProviderResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x16\n\x14ListProvidersRequest\"\x87\x01\n\x15ListProvidersResponse\x12\x37\n\tproviders\x18\x01 \x03(\x0b\x32\x19.source.v1alpha1.ProviderR\tproviders\x12\x1f\n\x0btotal_pages\x18\x02 \x01(\rR\ntotalPages\x12\x14\n\x05\x63ount\x18\x03 \x01(\rR\x05\x63ount2\xfa\x10\n\rSourceService\x12\x61\n\x0e\x43reateProvider\x12&.source.v1alpha1.CreateProviderRequest\x1a\'.source.v1alpha1.CreateProviderResponse\x12^\n\rListProviders\x12%.source.v1alpha1.ListProvidersRequest\x1a&.source.v1alpha1.ListProvidersResponse\x12X\n\x0bGetProvider\x12#.source.v1alpha1.GetProviderRequest\x1a$.source.v1alpha1.GetProviderResponse\x12s\n\x14GetOneProviderByName\x12,.source.v1alpha1.GetOneProviderByNameRequest\x1a-.source.v1alpha1.GetOneProviderByNameResponse\x12\x61\n\x0eUpdateProvider\x12&.source.v1alpha1.UpdateProviderRequest\x1a\'.source.v1alpha1.UpdateProviderResponse\x12\x61\n\x0e\x44\x65leteProvider\x12&.source.v1alpha1.DeleteProviderRequest\x1a\'.source.v1alpha1.DeleteProviderResponse\x12j\n\x11\x41\x63\x63ountsProviders\x12).source.v1alpha1.AccountsProvidersRequest\x1a*.source.v1alpha1.AccountsProvidersResponse\x12j\n\x11\x43reateIntegration\x12).source.v1alpha1.CreateIntegrationRequest\x1a*.source.v1alpha1.CreateIntegrationResponse\x12g\n\x10ListIntegrations\x12(.source.v1alpha1.ListIntegrationsRequest\x1a).source.v1alpha1.ListIntegrationsResponse\x12\x61\n\x0eGetIntegration\x12&.source.v1alpha1.GetIntegrationRequest\x1a\'.source.v1alpha1.GetIntegrationResponse\x12j\n\x11UpdateIntegration\x12).source.v1alpha1.UpdateIntegrationRequest\x1a*.source.v1alpha1.UpdateIntegrationResponse\x12j\n\x11\x44\x65leteIntegration\x12).source.v1alpha1.DeleteIntegrationRequest\x1a*.source.v1alpha1.DeleteIntegrationResponse\x12\x97\x01\n DeleteIntegrationsByOrganization\x12\x38.source.v1alpha1.DeleteIntegrationsByOrganizationRequest\x1a\x39.source.v1alpha1.DeleteIntegrationsByOrganizationResponse\x12\x7f\n\x18ListRepositoriesProvider\x12\x30.source.v1alpha1.ListRepositoriesProviderRequest\x1a\x31.source.v1alpha1.ListRepositoriesProviderResponse\x12v\n\x15GetRepositoryProvider\x12-.source.v1alpha1.GetRepositoryProviderRequest\x1a..source.v1alpha1.GetRepositoryProviderResponse\x12g\n\x10\x43reateRepository\x12(.source.v1alpha1.CreateRepositoryRequest\x1a).source.v1alpha1.CreateRepositoryResponse\x12g\n\x10ListRepositories\x12(.source.v1alpha1.ListRepositoriesRequest\x1a).source.v1alpha1.ListRepositoriesResponse\x12^\n\rGetRepository\x12%.source.v1alpha1.GetRepositoryRequest\x1a&.source.v1alpha1.GetRepositoryResponse\x12g\n\x10\x44\x65leteRepository\x12(.source.v1alpha1.DeleteRepositoryRequest\x1a).source.v1alpha1.DeleteRepositoryResponse\x12g\n\x10UpdateRepository\x12(.source.v1alpha1.UpdateRepositoryRequest\x1a).source.v1alpha1.UpdateRepositoryResponseB2Z0github.com/cuemby/ccp-sdk/gen/go/source/v1alpha1b\x06proto3'
+  serialized_pb=b'\n\x1csource/v1alpha1/source.proto\x12\x0fsource.v1alpha1\"9\n\x0f\x41\x63\x63ountProvider\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n\x04type\x18\x02 \x01(\tR\x04type\"U\n\x18\x41\x63\x63ountsProvidersRequest\x12%\n\x0eintegration_id\x18\x01 \x01(\tR\rintegrationId\x12\x12\n\x04page\x18\x02 \x01(\rR\x04page\"\x90\x01\n\x19\x41\x63\x63ountsProvidersResponse\x12<\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32 .source.v1alpha1.AccountProviderR\x08\x61\x63\x63ounts\x12\x14\n\x05\x63ount\x18\x02 \x01(\rR\x05\x63ount\x12\x1f\n\x0btotal_pages\x18\x03 \x01(\rR\ntotalPages\"R\n\'DeleteIntegrationsByOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"R\n(DeleteIntegrationsByOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"1\n\x1bGetOneProviderByNameRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\"U\n\x1cGetOneProviderByNameResponse\x12\x35\n\x08provider\x18\x01 \x01(\x0b\x32\x19.source.v1alpha1.ProviderR\x08provider\"@\n\x06\x42ranch\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x10\n\x03sha\x18\x02 \x01(\tR\x03sha\x12\x10\n\x03url\x18\x03 \x01(\tR\x03url\"\\\n\x1fListRepositoriesProviderRequest\x12%\n\x0eintegration_id\x18\x01 \x01(\tR\rintegrationId\x12\x12\n\x04page\x18\x02 \x01(\rR\x04page\"\x9a\x01\n ListRepositoriesProviderResponse\x12?\n\x0crepositories\x18\x01 \x03(\x0b\x32\x1b.source.v1alpha1.RepositoryR\x0crepositories\x12\x1f\n\x0btotal_pages\x18\x02 \x01(\rR\ntotalPages\x12\x14\n\x05\x63ount\x18\x03 \x01(\rR\x05\x63ount\"Y\n\x1cGetRepositoryProviderRequest\x12%\n\x0eintegration_id\x18\x01 \x01(\tR\rintegrationId\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\"R\n\x1dGetRepositoryProviderResponse\x12\x31\n\x07\x62ranchs\x18\x01 \x03(\x0b\x32\x17.source.v1alpha1.BranchR\x07\x62ranchs\"\xc8\x02\n\x10\x44\x65tailRepository\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n\x07private\x18\x03 \x01(\x08R\x07private\x12\x1a\n\x08\x66ullname\x18\x04 \x01(\tR\x08\x66ullname\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ork\x18\x06 \x01(\x08R\x04\x66ork\x12\x1b\n\tclone_url\x18\x07 \x01(\tR\x08\x63loneUrl\x12\x1d\n\nproject_id\x18\x08 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\t \x01(\rR\x0eorganizationId\x12\x18\n\x07\x62ranchs\x18\n \x03(\tR\x07\x62ranchs\x12%\n\x0eintegration_id\x18\x0b \x01(\tR\rintegrationId\"\x98\x02\n\x0eListRepository\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n\x07private\x18\x03 \x01(\x08R\x07private\x12\x1a\n\x08\x66ullname\x18\x04 \x01(\tR\x08\x66ullname\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1b\n\tclone_url\x18\x07 \x01(\tR\x08\x63loneUrl\x12\x1d\n\nproject_id\x18\x08 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\t \x01(\rR\x0eorganizationId\x12%\n\x0eintegration_id\x18\x0b \x01(\tR\rintegrationId\"\xa4\x02\n\x16\x43reateDetailRepository\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x18\n\x07private\x18\x02 \x01(\x08R\x07private\x12\x1a\n\x08\x66ullname\x18\x03 \x01(\tR\x08\x66ullname\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ork\x18\x05 \x01(\x08R\x04\x66ork\x12\x1b\n\tclone_url\x18\x06 \x01(\tR\x08\x63loneUrl\x12\x1d\n\nproject_id\x18\x07 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x08 \x01(\rR\x0eorganizationId\x12%\n\x0eintegration_id\x18\t \x01(\tR\rintegrationId\"\xaa\x01\n\x17\x43reateRepositoryRequest\x12G\n\nrepository\x18\x01 \x01(\x0b\x32\'.source.v1alpha1.CreateDetailRepositoryR\nrepository\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x03 \x01(\rR\x0eorganizationId\"B\n\x18\x43reateRepositoryResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"a\n\x17ListRepositoriesRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\"_\n\x18ListRepositoriesResponse\x12\x43\n\x0crepositories\x18\x01 \x03(\x0b\x32\x1f.source.v1alpha1.ListRepositoryR\x0crepositories\";\n\x14GetRepositoryRequest\x12#\n\rrepository_id\x18\x01 \x01(\tR\x0crepositoryId\"Z\n\x15GetRepositoryResponse\x12\x41\n\nrepository\x18\x01 \x01(\x0b\x32!.source.v1alpha1.DetailRepositoryR\nrepository\">\n\x17\x44\x65leteRepositoryRequest\x12#\n\rrepository_id\x18\x01 \x01(\tR\x0crepositoryId\"B\n\x18\x44\x65leteRepositoryResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x81\x01\n\x17UpdateRepositoryRequest\x12#\n\rrepository_id\x18\x01 \x01(\tR\x0crepositoryId\x12\x41\n\nrepository\x18\x02 \x01(\x0b\x32!.source.v1alpha1.DetailRepositoryR\nrepository\"B\n\x18UpdateRepositoryResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xe3\x03\n\x0bIntegration\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x35\n\x08provider\x18\x04 \x01(\x0b\x32\x19.source.v1alpha1.ProviderR\x08provider\x12:\n\x04\x64\x61ta\x18\x05 \x03(\x0b\x32&.source.v1alpha1.Integration.DataEntryR\x04\x64\x61ta\x12\x46\n\x08metadata\x18\x06 \x03(\x0b\x32*.source.v1alpha1.Integration.MetadataEntryR\x08metadata\x12\x17\n\x07user_id\x18\x07 \x01(\tR\x06userId\x12=\n\x07\x61\x63\x63ount\x18\x08 \x01(\x0b\x32#.source.v1alpha1.AccountIntegrationR\x07\x61\x63\x63ount\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rMetadataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\xc1\x01\n\nRepository\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x18\n\x07private\x18\x02 \x01(\x08R\x07private\x12\x1a\n\x08\x66ullname\x18\x03 \x01(\tR\x08\x66ullname\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ork\x18\x05 \x01(\x08R\x04\x66ork\x12\x1b\n\tclone_url\x18\x06 \x01(\tR\x08\x63loneUrl\x12\x16\n\x06\x62ranch\x18\x07 \x01(\tR\x06\x62ranch\"<\n\x12\x41\x63\x63ountIntegration\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n\x04type\x18\x02 \x01(\tR\x04type\"\xe4\x03\n\x18\x43reateIntegrationRequest\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12G\n\x04\x64\x61ta\x18\x05 \x03(\x0b\x32\x33.source.v1alpha1.CreateIntegrationRequest.DataEntryR\x04\x64\x61ta\x12S\n\x08metadata\x18\x06 \x03(\x0b\x32\x37.source.v1alpha1.CreateIntegrationRequest.MetadataEntryR\x08metadata\x12\x17\n\x07user_id\x18\x07 \x01(\tR\x06userId\x12\x1f\n\x0bprovider_id\x18\x08 \x01(\tR\nproviderId\x12=\n\x07\x61\x63\x63ount\x18\t \x01(\x0b\x32#.source.v1alpha1.AccountIntegrationR\x07\x61\x63\x63ount\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rMetadataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"j\n\x19\x43reateIntegrationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\x12%\n\x0eintegration_id\x18\x03 \x01(\tR\rintegrationId\"[\n\x17ListIntegrationsRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\"\\\n\x18ListIntegrationsResponse\x12@\n\x0cintegrations\x18\x01 \x03(\x0b\x32\x1c.source.v1alpha1.IntegrationR\x0cintegrations\"\'\n\x15GetIntegrationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"X\n\x16GetIntegrationResponse\x12>\n\x0bintegration\x18\x01 \x01(\x0b\x32\x1c.source.v1alpha1.IntegrationR\x0bintegration\"y\n\x18UpdateIntegrationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12M\n\x0cintegrations\x18\x02 \x01(\x0b\x32).source.v1alpha1.CreateIntegrationRequestR\x0cintegrations\"C\n\x19UpdateIntegrationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"*\n\x18\x44\x65leteIntegrationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"C\n\x19\x44\x65leteIntegrationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xd8\x02\n\x08Provider\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04logo\x18\x04 \x01(\tR\x04logo\x12\x37\n\x04\x64\x61ta\x18\x05 \x03(\x0b\x32#.source.v1alpha1.Provider.DataEntryR\x04\x64\x61ta\x12\x43\n\x08metadata\x18\x06 \x03(\x0b\x32\'.source.v1alpha1.Provider.MetadataEntryR\x08metadata\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rMetadataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\'\n\x15\x44\x65leteProviderRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"@\n\x16\x44\x65leteProviderResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"k\n\x15UpdateProviderRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x42\n\x08provider\x18\x02 \x01(\x0b\x32&.source.v1alpha1.CreateProviderRequestR\x08provider\"@\n\x16UpdateProviderResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"$\n\x12GetProviderRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"L\n\x13GetProviderResponse\x12\x35\n\x08provider\x18\x01 \x01(\x0b\x32\x19.source.v1alpha1.ProviderR\x08provider\"\xef\x02\n\x15\x43reateProviderRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04logo\x18\x03 \x01(\tR\x04logo\x12\x44\n\x04\x64\x61ta\x18\x05 \x03(\x0b\x32\x30.source.v1alpha1.CreateProviderRequest.DataEntryR\x04\x64\x61ta\x12P\n\x08metadata\x18\x06 \x03(\x0b\x32\x34.source.v1alpha1.CreateProviderRequest.MetadataEntryR\x08metadata\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rMetadataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"@\n\x16\x43reateProviderResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x16\n\x14ListProvidersRequest\"\x87\x01\n\x15ListProvidersResponse\x12\x37\n\tproviders\x18\x01 \x03(\x0b\x32\x19.source.v1alpha1.ProviderR\tproviders\x12\x1f\n\x0btotal_pages\x18\x02 \x01(\rR\ntotalPages\x12\x14\n\x05\x63ount\x18\x03 \x01(\rR\x05\x63ount2\xfa\x10\n\rSourceService\x12\x61\n\x0e\x43reateProvider\x12&.source.v1alpha1.CreateProviderRequest\x1a\'.source.v1alpha1.CreateProviderResponse\x12^\n\rListProviders\x12%.source.v1alpha1.ListProvidersRequest\x1a&.source.v1alpha1.ListProvidersResponse\x12X\n\x0bGetProvider\x12#.source.v1alpha1.GetProviderRequest\x1a$.source.v1alpha1.GetProviderResponse\x12s\n\x14GetOneProviderByName\x12,.source.v1alpha1.GetOneProviderByNameRequest\x1a-.source.v1alpha1.GetOneProviderByNameResponse\x12\x61\n\x0eUpdateProvider\x12&.source.v1alpha1.UpdateProviderRequest\x1a\'.source.v1alpha1.UpdateProviderResponse\x12\x61\n\x0e\x44\x65leteProvider\x12&.source.v1alpha1.DeleteProviderRequest\x1a\'.source.v1alpha1.DeleteProviderResponse\x12j\n\x11\x41\x63\x63ountsProviders\x12).source.v1alpha1.AccountsProvidersRequest\x1a*.source.v1alpha1.AccountsProvidersResponse\x12j\n\x11\x43reateIntegration\x12).source.v1alpha1.CreateIntegrationRequest\x1a*.source.v1alpha1.CreateIntegrationResponse\x12g\n\x10ListIntegrations\x12(.source.v1alpha1.ListIntegrationsRequest\x1a).source.v1alpha1.ListIntegrationsResponse\x12\x61\n\x0eGetIntegration\x12&.source.v1alpha1.GetIntegrationRequest\x1a\'.source.v1alpha1.GetIntegrationResponse\x12j\n\x11UpdateIntegration\x12).source.v1alpha1.UpdateIntegrationRequest\x1a*.source.v1alpha1.UpdateIntegrationResponse\x12j\n\x11\x44\x65leteIntegration\x12).source.v1alpha1.DeleteIntegrationRequest\x1a*.source.v1alpha1.DeleteIntegrationResponse\x12\x97\x01\n DeleteIntegrationsByOrganization\x12\x38.source.v1alpha1.DeleteIntegrationsByOrganizationRequest\x1a\x39.source.v1alpha1.DeleteIntegrationsByOrganizationResponse\x12\x7f\n\x18ListRepositoriesProvider\x12\x30.source.v1alpha1.ListRepositoriesProviderRequest\x1a\x31.source.v1alpha1.ListRepositoriesProviderResponse\x12v\n\x15GetRepositoryProvider\x12-.source.v1alpha1.GetRepositoryProviderRequest\x1a..source.v1alpha1.GetRepositoryProviderResponse\x12g\n\x10\x43reateRepository\x12(.source.v1alpha1.CreateRepositoryRequest\x1a).source.v1alpha1.CreateRepositoryResponse\x12g\n\x10ListRepositories\x12(.source.v1alpha1.ListRepositoriesRequest\x1a).source.v1alpha1.ListRepositoriesResponse\x12^\n\rGetRepository\x12%.source.v1alpha1.GetRepositoryRequest\x1a&.source.v1alpha1.GetRepositoryResponse\x12g\n\x10\x44\x65leteRepository\x12(.source.v1alpha1.DeleteRepositoryRequest\x1a).source.v1alpha1.DeleteRepositoryResponse\x12g\n\x10UpdateRepository\x12(.source.v1alpha1.UpdateRepositoryRequest\x1a).source.v1alpha1.UpdateRepositoryResponseB2Z0github.com/cuemby/ccp-sdk/gen/go/source/v1alpha1b\x06proto3'
 )
 
 
@@ -159,8 +159,8 @@ _DELETEINTEGRATIONSBYORGANIZATIONREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='source.v1alpha1.DeleteIntegrationsByOrganizationRequest.organization_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -196,6 +196,13 @@ _DELETEINTEGRATIONSBYORGANIZATIONRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='msg', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='error', full_name='source.v1alpha1.DeleteIntegrationsByOrganizationResponse.error', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='error', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -209,7 +216,7 @@ _DELETEINTEGRATIONSBYORGANIZATIONRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=426,
-  serialized_end=486,
+  serialized_end=508,
 )
 
 
@@ -240,8 +247,8 @@ _GETONEPROVIDERBYNAMEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=488,
-  serialized_end=537,
+  serialized_start=510,
+  serialized_end=559,
 )
 
 
@@ -272,8 +279,8 @@ _GETONEPROVIDERBYNAMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=539,
-  serialized_end=624,
+  serialized_start=561,
+  serialized_end=646,
 )
 
 
@@ -318,8 +325,8 @@ _BRANCH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=626,
-  serialized_end=690,
+  serialized_start=648,
+  serialized_end=712,
 )
 
 
@@ -357,8 +364,8 @@ _LISTREPOSITORIESPROVIDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=692,
-  serialized_end=784,
+  serialized_start=714,
+  serialized_end=806,
 )
 
 
@@ -403,8 +410,8 @@ _LISTREPOSITORIESPROVIDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=787,
-  serialized_end=941,
+  serialized_start=809,
+  serialized_end=963,
 )
 
 
@@ -442,8 +449,8 @@ _GETREPOSITORYPROVIDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=943,
-  serialized_end=1032,
+  serialized_start=965,
+  serialized_end=1054,
 )
 
 
@@ -474,8 +481,8 @@ _GETREPOSITORYPROVIDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1034,
-  serialized_end=1116,
+  serialized_start=1056,
+  serialized_end=1138,
 )
 
 
@@ -576,8 +583,8 @@ _DETAILREPOSITORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1119,
-  serialized_end=1447,
+  serialized_start=1141,
+  serialized_end=1469,
 )
 
 
@@ -664,8 +671,8 @@ _LISTREPOSITORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1450,
-  serialized_end=1730,
+  serialized_start=1472,
+  serialized_end=1752,
 )
 
 
@@ -752,8 +759,8 @@ _CREATEDETAILREPOSITORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1733,
-  serialized_end=2025,
+  serialized_start=1755,
+  serialized_end=2047,
 )
 
 
@@ -798,8 +805,8 @@ _CREATEREPOSITORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2028,
-  serialized_end=2198,
+  serialized_start=2050,
+  serialized_end=2220,
 )
 
 
@@ -837,8 +844,8 @@ _CREATEREPOSITORYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2200,
-  serialized_end=2266,
+  serialized_start=2222,
+  serialized_end=2288,
 )
 
 
@@ -876,8 +883,8 @@ _LISTREPOSITORIESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2268,
-  serialized_end=2365,
+  serialized_start=2290,
+  serialized_end=2387,
 )
 
 
@@ -908,8 +915,8 @@ _LISTREPOSITORIESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2367,
-  serialized_end=2462,
+  serialized_start=2389,
+  serialized_end=2484,
 )
 
 
@@ -940,8 +947,8 @@ _GETREPOSITORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2464,
-  serialized_end=2523,
+  serialized_start=2486,
+  serialized_end=2545,
 )
 
 
@@ -972,8 +979,8 @@ _GETREPOSITORYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2525,
-  serialized_end=2615,
+  serialized_start=2547,
+  serialized_end=2637,
 )
 
 
@@ -1004,8 +1011,8 @@ _DELETEREPOSITORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2617,
-  serialized_end=2679,
+  serialized_start=2639,
+  serialized_end=2701,
 )
 
 
@@ -1043,8 +1050,8 @@ _DELETEREPOSITORYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2681,
-  serialized_end=2747,
+  serialized_start=2703,
+  serialized_end=2769,
 )
 
 
@@ -1082,8 +1089,8 @@ _UPDATEREPOSITORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2750,
-  serialized_end=2879,
+  serialized_start=2772,
+  serialized_end=2901,
 )
 
 
@@ -1121,8 +1128,8 @@ _UPDATEREPOSITORYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2881,
-  serialized_end=2947,
+  serialized_start=2903,
+  serialized_end=2969,
 )
 
 
@@ -1160,8 +1167,8 @@ _INTEGRATION_DATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3317,
-  serialized_end=3372,
+  serialized_start=3339,
+  serialized_end=3394,
 )
 
 _INTEGRATION_METADATAENTRY = _descriptor.Descriptor(
@@ -1198,8 +1205,8 @@ _INTEGRATION_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3374,
-  serialized_end=3433,
+  serialized_start=3396,
+  serialized_end=3455,
 )
 
 _INTEGRATION = _descriptor.Descriptor(
@@ -1278,8 +1285,8 @@ _INTEGRATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2950,
-  serialized_end=3433,
+  serialized_start=2972,
+  serialized_end=3455,
 )
 
 
@@ -1352,8 +1359,8 @@ _REPOSITORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3436,
-  serialized_end=3629,
+  serialized_start=3458,
+  serialized_end=3651,
 )
 
 
@@ -1391,8 +1398,8 @@ _ACCOUNTINTEGRATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3631,
-  serialized_end=3691,
+  serialized_start=3653,
+  serialized_end=3713,
 )
 
 
@@ -1430,8 +1437,8 @@ _CREATEINTEGRATIONREQUEST_DATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3317,
-  serialized_end=3372,
+  serialized_start=3339,
+  serialized_end=3394,
 )
 
 _CREATEINTEGRATIONREQUEST_METADATAENTRY = _descriptor.Descriptor(
@@ -1468,8 +1475,8 @@ _CREATEINTEGRATIONREQUEST_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3374,
-  serialized_end=3433,
+  serialized_start=3396,
+  serialized_end=3455,
 )
 
 _CREATEINTEGRATIONREQUEST = _descriptor.Descriptor(
@@ -1541,8 +1548,8 @@ _CREATEINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3694,
-  serialized_end=4178,
+  serialized_start=3716,
+  serialized_end=4200,
 )
 
 
@@ -1587,8 +1594,8 @@ _CREATEINTEGRATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4180,
-  serialized_end=4286,
+  serialized_start=4202,
+  serialized_end=4308,
 )
 
 
@@ -1626,8 +1633,8 @@ _LISTINTEGRATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4288,
-  serialized_end=4379,
+  serialized_start=4310,
+  serialized_end=4401,
 )
 
 
@@ -1658,8 +1665,8 @@ _LISTINTEGRATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4381,
-  serialized_end=4473,
+  serialized_start=4403,
+  serialized_end=4495,
 )
 
 
@@ -1690,8 +1697,8 @@ _GETINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4475,
-  serialized_end=4514,
+  serialized_start=4497,
+  serialized_end=4536,
 )
 
 
@@ -1722,8 +1729,8 @@ _GETINTEGRATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4516,
-  serialized_end=4604,
+  serialized_start=4538,
+  serialized_end=4626,
 )
 
 
@@ -1761,8 +1768,8 @@ _UPDATEINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4606,
-  serialized_end=4727,
+  serialized_start=4628,
+  serialized_end=4749,
 )
 
 
@@ -1800,8 +1807,8 @@ _UPDATEINTEGRATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4729,
-  serialized_end=4796,
+  serialized_start=4751,
+  serialized_end=4818,
 )
 
 
@@ -1832,8 +1839,8 @@ _DELETEINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4798,
-  serialized_end=4840,
+  serialized_start=4820,
+  serialized_end=4862,
 )
 
 
@@ -1871,8 +1878,8 @@ _DELETEINTEGRATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4842,
-  serialized_end=4909,
+  serialized_start=4864,
+  serialized_end=4931,
 )
 
 
@@ -1910,8 +1917,8 @@ _PROVIDER_DATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3317,
-  serialized_end=3372,
+  serialized_start=3339,
+  serialized_end=3394,
 )
 
 _PROVIDER_METADATAENTRY = _descriptor.Descriptor(
@@ -1948,8 +1955,8 @@ _PROVIDER_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3374,
-  serialized_end=3433,
+  serialized_start=3396,
+  serialized_end=3455,
 )
 
 _PROVIDER = _descriptor.Descriptor(
@@ -2014,8 +2021,8 @@ _PROVIDER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4912,
-  serialized_end=5256,
+  serialized_start=4934,
+  serialized_end=5278,
 )
 
 
@@ -2046,8 +2053,8 @@ _DELETEPROVIDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5258,
-  serialized_end=5297,
+  serialized_start=5280,
+  serialized_end=5319,
 )
 
 
@@ -2085,8 +2092,8 @@ _DELETEPROVIDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5299,
-  serialized_end=5363,
+  serialized_start=5321,
+  serialized_end=5385,
 )
 
 
@@ -2124,8 +2131,8 @@ _UPDATEPROVIDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5365,
-  serialized_end=5472,
+  serialized_start=5387,
+  serialized_end=5494,
 )
 
 
@@ -2163,8 +2170,8 @@ _UPDATEPROVIDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5474,
-  serialized_end=5538,
+  serialized_start=5496,
+  serialized_end=5560,
 )
 
 
@@ -2195,8 +2202,8 @@ _GETPROVIDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5540,
-  serialized_end=5576,
+  serialized_start=5562,
+  serialized_end=5598,
 )
 
 
@@ -2227,8 +2234,8 @@ _GETPROVIDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5578,
-  serialized_end=5654,
+  serialized_start=5600,
+  serialized_end=5676,
 )
 
 
@@ -2266,8 +2273,8 @@ _CREATEPROVIDERREQUEST_DATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3317,
-  serialized_end=3372,
+  serialized_start=3339,
+  serialized_end=3394,
 )
 
 _CREATEPROVIDERREQUEST_METADATAENTRY = _descriptor.Descriptor(
@@ -2304,8 +2311,8 @@ _CREATEPROVIDERREQUEST_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3374,
-  serialized_end=3433,
+  serialized_start=3396,
+  serialized_end=3455,
 )
 
 _CREATEPROVIDERREQUEST = _descriptor.Descriptor(
@@ -2363,8 +2370,8 @@ _CREATEPROVIDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5657,
-  serialized_end=6024,
+  serialized_start=5679,
+  serialized_end=6046,
 )
 
 
@@ -2402,8 +2409,8 @@ _CREATEPROVIDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6026,
-  serialized_end=6090,
+  serialized_start=6048,
+  serialized_end=6112,
 )
 
 
@@ -2427,8 +2434,8 @@ _LISTPROVIDERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6092,
-  serialized_end=6114,
+  serialized_start=6114,
+  serialized_end=6136,
 )
 
 
@@ -2473,8 +2480,8 @@ _LISTPROVIDERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6117,
-  serialized_end=6252,
+  serialized_start=6139,
+  serialized_end=6274,
 )
 
 _ACCOUNTSPROVIDERSRESPONSE.fields_by_name['accounts'].message_type = _ACCOUNTPROVIDER
@@ -2986,8 +2993,8 @@ _SOURCESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=6255,
-  serialized_end=8425,
+  serialized_start=6277,
+  serialized_end=8447,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateProvider',

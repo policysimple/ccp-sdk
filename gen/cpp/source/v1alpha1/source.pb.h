@@ -897,18 +897,13 @@ class DeleteIntegrationsByOrganizationRequest final :
   enum : int {
     kOrganizationIdFieldNumber = 1,
   };
-  // string organization_id = 1 [json_name = "organizationId"];
+  // uint32 organization_id = 1 [json_name = "organizationId"];
   void clear_organization_id();
-  const std::string& organization_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_organization_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_organization_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
-  void set_allocated_organization_id(std::string* organization_id);
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  const std::string& _internal_organization_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
-  std::string* _internal_mutable_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:source.v1alpha1.DeleteIntegrationsByOrganizationRequest)
@@ -918,7 +913,7 @@ class DeleteIntegrationsByOrganizationRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
 };
@@ -1040,6 +1035,7 @@ class DeleteIntegrationsByOrganizationResponse final :
 
   enum : int {
     kMsgFieldNumber = 1,
+    kErrorFieldNumber = 2,
   };
   // string msg = 1 [json_name = "msg"];
   void clear_msg();
@@ -1055,6 +1051,20 @@ class DeleteIntegrationsByOrganizationResponse final :
   std::string* _internal_mutable_msg();
   public:
 
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
   // @@protoc_insertion_point(class_scope:source.v1alpha1.DeleteIntegrationsByOrganizationResponse)
  private:
   class _Internal;
@@ -1063,6 +1073,7 @@ class DeleteIntegrationsByOrganizationResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
 };
@@ -9150,50 +9161,24 @@ inline void AccountsProvidersResponse::set_total_pages(::PROTOBUF_NAMESPACE_ID::
 
 // DeleteIntegrationsByOrganizationRequest
 
-// string organization_id = 1 [json_name = "organizationId"];
+// uint32 organization_id = 1 [json_name = "organizationId"];
 inline void DeleteIntegrationsByOrganizationRequest::clear_organization_id() {
-  organization_id_.ClearToEmpty();
+  organization_id_ = 0u;
 }
-inline const std::string& DeleteIntegrationsByOrganizationRequest::organization_id() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteIntegrationsByOrganizationRequest::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteIntegrationsByOrganizationRequest::organization_id() const {
   // @@protoc_insertion_point(field_get:source.v1alpha1.DeleteIntegrationsByOrganizationRequest.organization_id)
   return _internal_organization_id();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void DeleteIntegrationsByOrganizationRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
- 
- organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void DeleteIntegrationsByOrganizationRequest::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void DeleteIntegrationsByOrganizationRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
   // @@protoc_insertion_point(field_set:source.v1alpha1.DeleteIntegrationsByOrganizationRequest.organization_id)
-}
-inline std::string* DeleteIntegrationsByOrganizationRequest::mutable_organization_id() {
-  std::string* _s = _internal_mutable_organization_id();
-  // @@protoc_insertion_point(field_mutable:source.v1alpha1.DeleteIntegrationsByOrganizationRequest.organization_id)
-  return _s;
-}
-inline const std::string& DeleteIntegrationsByOrganizationRequest::_internal_organization_id() const {
-  return organization_id_.Get();
-}
-inline void DeleteIntegrationsByOrganizationRequest::_internal_set_organization_id(const std::string& value) {
-  
-  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* DeleteIntegrationsByOrganizationRequest::_internal_mutable_organization_id() {
-  
-  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* DeleteIntegrationsByOrganizationRequest::release_organization_id() {
-  // @@protoc_insertion_point(field_release:source.v1alpha1.DeleteIntegrationsByOrganizationRequest.organization_id)
-  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void DeleteIntegrationsByOrganizationRequest::set_allocated_organization_id(std::string* organization_id) {
-  if (organization_id != nullptr) {
-    
-  } else {
-    
-  }
-  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.DeleteIntegrationsByOrganizationRequest.organization_id)
 }
 
 // -------------------------------------------------------------------
@@ -9244,6 +9229,52 @@ inline void DeleteIntegrationsByOrganizationResponse::set_allocated_msg(std::str
   msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.DeleteIntegrationsByOrganizationResponse.msg)
+}
+
+// string error = 2 [json_name = "error"];
+inline void DeleteIntegrationsByOrganizationResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& DeleteIntegrationsByOrganizationResponse::error() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.DeleteIntegrationsByOrganizationResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteIntegrationsByOrganizationResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.DeleteIntegrationsByOrganizationResponse.error)
+}
+inline std::string* DeleteIntegrationsByOrganizationResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.DeleteIntegrationsByOrganizationResponse.error)
+  return _s;
+}
+inline const std::string& DeleteIntegrationsByOrganizationResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void DeleteIntegrationsByOrganizationResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteIntegrationsByOrganizationResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteIntegrationsByOrganizationResponse::release_error() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.DeleteIntegrationsByOrganizationResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteIntegrationsByOrganizationResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.DeleteIntegrationsByOrganizationResponse.error)
 }
 
 // -------------------------------------------------------------------

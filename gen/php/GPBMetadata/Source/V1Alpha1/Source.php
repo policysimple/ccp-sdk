@@ -16,7 +16,7 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-¥B
+»B
 source/v1alpha1/source.protosource.v1alpha1"9
 AccountProvider
 name (	Rname
@@ -30,9 +30,10 @@ class Source
 total_pages (R
 totalPages"R
 \'DeleteIntegrationsByOrganizationRequest\'
-organization_id (	RorganizationId"<
+organization_id (RorganizationId"R
 (DeleteIntegrationsByOrganizationResponse
-msg (	Rmsg"1
+msg (	Rmsg
+error (	Rerror"1
 GetOneProviderByNameRequest
 name (	Rname"U
 GetOneProviderByNameResponse5
