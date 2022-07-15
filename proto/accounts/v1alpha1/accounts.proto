@@ -622,6 +622,7 @@ message SendInvitationUserResponse {
     string result=4;
     repeated Rol roles = 5;
     repeated Permission permissions = 6;
+    string error = 7;
 }
 
 message GetInvitationUserRequest {

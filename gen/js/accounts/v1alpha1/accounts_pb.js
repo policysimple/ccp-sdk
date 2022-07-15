@@ -16989,7 +16989,8 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.toObject = function(includeIn
     rolesList: jspb.Message.toObjectList(msg.getRolesList(),
     proto.accounts.v1alpha1.Rol.toObject, includeInstance),
     permissionsList: jspb.Message.toObjectList(msg.getPermissionsList(),
-    proto.accounts.v1alpha1.Permission.toObject, includeInstance)
+    proto.accounts.v1alpha1.Permission.toObject, includeInstance),
+    error: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -17053,6 +17054,10 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.deserializeBinaryFromReader =
       var value = new proto.accounts.v1alpha1.Permission;
       reader.readMessage(value,proto.accounts.v1alpha1.Permission.deserializeBinaryFromReader);
       msg.addPermissions(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
       break;
     default:
       reader.skipField();
@@ -17127,6 +17132,13 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.serializeBinaryToWriter = fun
       6,
       f,
       proto.accounts.v1alpha1.Permission.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
     );
   }
 };
@@ -17316,6 +17328,24 @@ proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.addPermissions = fu
  */
 proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.clearPermissionsList = function() {
   return this.setPermissionsList([]);
+};
+
+
+/**
+ * optional string error = 7;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.SendInvitationUserResponse} returns this
+ */
+proto.accounts.v1alpha1.SendInvitationUserResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
