@@ -21,11 +21,15 @@ service PaymentAPIService{
     rpc GetBilingMonth(GetBilingMonthRequest) returns (GetBilingMonthResponse) {};
     rpc GetPayments(GetPaymentsRequest) returns (GetPaymentsResponse) {};
     rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {};
+    rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse) {};
     rpc UpdatePayment(UpdatePaymentRequest) returns (UpdatePaymentResponse) {};
     rpc DeletePayment(DeletePaymentRequest) returns (DeletePaymentResponse) {};
     rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {}; 
+    rpc ListProjects(ListProjectsRequest) returns (ListProjectsResponse) {}; 
+    rpc GetProject(GetProjectRequest) returns (GetProjectResponse) {}; 
     rpc CreateInvoice(CreateInvoiceRequest) returns (CreateInvoiceResponse) {}; 
     rpc InvoiceFilter(InvoiceFilterRequest) returns (InvoiceFilterResponse) {}; 
+
 
 
 }
@@ -111,6 +115,16 @@ message CreateSuscriptionRequest {
 }
 
 message CreateSuscriptionResponse {
+    payment.v1alpha1.Customer customer = 1;
+    string status = 2;
+}
+
+message CreateProjectRequest {
+    string customer_id = 1;
+    payment.v1alpha1.Project project = 2;
+}
+
+message CreateProjectResponse {
     payment.v1alpha1.Customer customer = 1;
     string status = 2;
 }
@@ -201,4 +215,25 @@ message ListPaymentRequest {
 message ListPaymentResponse {
     payment.v1alpha1.Payment payment = 1;
     string status = 2;
+}
+
+message ListProjectsRequest {
+    uint32 organization_id = 1;
+}
+
+message ListProjectsResponse {
+    payment.v1alpha1.ProjectList project_list = 1;
+    string status = 2;
+}
+
+message GetProjectRequest {
+    string project_id = 1;
+}
+
+message GetProjectResponse {
+    payment.v1alpha1.CustomerList customer_list = 1;
+    payment.v1alpha1.InvoiceList invoice_list = 2;
+    payment.v1alpha1.BilingList biling_list = 3;
+    payment.v1alpha1.ProjectList project_list = 4;
+    string status = 5;
 }

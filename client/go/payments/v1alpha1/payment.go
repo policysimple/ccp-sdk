@@ -104,6 +104,29 @@ func CreateSuscription(in *paymentpkgv1.CreateSuscriptionRequest) (response *pay
 	return response, nil
 }
 
+func CreateProject(in *paymentpkgv1.CreateProjectRequest) (response *paymentpkgv1.CreateProjectResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.CreateProject(ctx, &paymentpkgv1.CreateProjectRequest{
+		CustomerId: in.CustomerId,
+		Project:    in.Project,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error create Project", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error create Project", err),
+		)
+	}
+	return response, nil
+}
+
 func CreateInvoice(in *paymentpkgv1.CreateInvoiceRequest) (response *paymentpkgv1.CreateInvoiceResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
@@ -180,6 +203,28 @@ func GetSuscription(in *paymentpkgv1.GetSuscriptionRequest) (response *paymentpk
 
 	response, err = client.GetSuscription(ctx, &paymentpkgv1.GetSuscriptionRequest{
 		SuscriptionId: in.SuscriptionId,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error get suscription", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error get suscription", err),
+		)
+	}
+	return response, nil
+}
+
+func GetProject(in *paymentpkgv1.GetProjectRequest) (response *paymentpkgv1.GetProjectResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetProject(ctx, &paymentpkgv1.GetProjectRequest{
+		ProjectId: in.ProjectId,
 	})
 
 	if err != nil {
@@ -320,6 +365,28 @@ func GetOrganizationPayments(organizationId uint32) (response *paymentpkgv1.GetO
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: %v", "Error get payments", err),
+		)
+	}
+	return response, nil
+}
+
+func ListProjects(organizationId uint32) (response *paymentpkgv1.ListProjectsResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ListProjects(ctx, &paymentpkgv1.ListProjectsRequest{
+		OrganizationId: organizationId,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error get  ListProjects", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error get  ListProjects", err),
 		)
 	}
 	return response, nil

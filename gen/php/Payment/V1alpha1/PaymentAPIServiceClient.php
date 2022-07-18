@@ -186,6 +186,19 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Payment\V1alpha1\CreateProjectRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function CreateProject(\Payment\V1alpha1\CreateProjectRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/CreateProject',
+        $argument,
+        ['\Payment\V1alpha1\CreateProjectResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Payment\V1alpha1\UpdatePaymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -221,6 +234,32 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/ListPayment',
         $argument,
         ['\Payment\V1alpha1\ListPaymentResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Payment\V1alpha1\ListProjectsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListProjects(\Payment\V1alpha1\ListProjectsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/ListProjects',
+        $argument,
+        ['\Payment\V1alpha1\ListProjectsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Payment\V1alpha1\GetProjectRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetProject(\Payment\V1alpha1\GetProjectRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/GetProject',
+        $argument,
+        ['\Payment\V1alpha1\GetProjectResponse', 'decode'],
         $metadata, $options);
     }
 

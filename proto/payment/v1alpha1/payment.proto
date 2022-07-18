@@ -14,10 +14,21 @@ message Customer {
   repeated Payment payment = 7;
   Invoice invoice = 8;
   Biling biling = 9;
+  repeated Project project = 10;
+
+}
+
+message Project {
+  int32 id = 1;
+  string name = 2;
+  string image = 3;
+  uint32 organization_id = 4;
+  string description = 5;
+  string created_at = 6;
+  string updated_at = 7;
 }
 
 message Suscription {
-
   string id =1;
   string price= 2;
   string price_cpu =3;
@@ -81,4 +92,16 @@ message BilingList{
 
 message SuscriptionList {
   repeated Suscription items = 1;
+} 
+
+message CardList {
+  repeated Card items = 1;
+} 
+
+message PaymentList {
+  repeated Payment items = 1;
+} 
+
+message ProjectList {
+  repeated Project items = 1;
 } 
