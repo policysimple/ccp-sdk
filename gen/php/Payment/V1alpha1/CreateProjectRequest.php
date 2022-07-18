@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateProjectRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
      */
     protected $customer_id = '';
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
      */
     protected $project = null;
 
@@ -28,6 +32,7 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $organization_id
      *     @type string $customer_id
      *     @type \Payment\V1alpha1\Project $project
      * }
@@ -38,7 +43,29 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
      * @return string
      */
     public function getCustomerId()
@@ -47,7 +74,7 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
      * @return \Payment\V1alpha1\Project|null
      */
     public function getProject()
@@ -79,7 +106,7 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
      * @param \Payment\V1alpha1\Project $var
      * @return $this
      */

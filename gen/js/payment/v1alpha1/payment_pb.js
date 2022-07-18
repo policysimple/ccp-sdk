@@ -40,7 +40,7 @@ goog.exportSymbol('proto.payment.v1alpha1.SuscriptionList', null, global);
  * @constructor
  */
 proto.payment.v1alpha1.Customer = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.payment.v1alpha1.Customer.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.payment.v1alpha1.Customer, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -324,13 +324,6 @@ if (goog.DEBUG && !COMPILED) {
   proto.payment.v1alpha1.ProjectList.displayName = 'proto.payment.v1alpha1.ProjectList';
 }
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.payment.v1alpha1.Customer.repeatedFields_ = [7,10];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -363,17 +356,15 @@ proto.payment.v1alpha1.Customer.prototype.toObject = function(opt_includeInstanc
 proto.payment.v1alpha1.Customer.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    email: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    customerId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    customerId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    email: jspb.Message.getFieldWithDefault(msg, 5, ""),
     suscription: (f = msg.getSuscription()) && proto.payment.v1alpha1.Suscription.toObject(includeInstance, f),
-    paymentList: jspb.Message.toObjectList(msg.getPaymentList(),
-    proto.payment.v1alpha1.Payment.toObject, includeInstance),
+    payments: (f = msg.getPayments()) && proto.payment.v1alpha1.PaymentList.toObject(includeInstance, f),
     invoice: (f = msg.getInvoice()) && proto.payment.v1alpha1.Invoice.toObject(includeInstance, f),
     biling: (f = msg.getBiling()) && proto.payment.v1alpha1.Biling.toObject(includeInstance, f),
-    projectList: jspb.Message.toObjectList(msg.getProjectList(),
-    proto.payment.v1alpha1.Project.toObject, includeInstance)
+    project: (f = msg.getProject()) && proto.payment.v1alpha1.ProjectList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -416,19 +407,19 @@ proto.payment.v1alpha1.Customer.deserializeBinaryFromReader = function(msg, read
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setCustomerId(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEmail(value);
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setOrganizationId(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCustomerId(value);
+      msg.setName(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setOrganizationId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEmail(value);
       break;
     case 6:
       var value = new proto.payment.v1alpha1.Suscription;
@@ -436,9 +427,9 @@ proto.payment.v1alpha1.Customer.deserializeBinaryFromReader = function(msg, read
       msg.setSuscription(value);
       break;
     case 7:
-      var value = new proto.payment.v1alpha1.Payment;
-      reader.readMessage(value,proto.payment.v1alpha1.Payment.deserializeBinaryFromReader);
-      msg.addPayment(value);
+      var value = new proto.payment.v1alpha1.PaymentList;
+      reader.readMessage(value,proto.payment.v1alpha1.PaymentList.deserializeBinaryFromReader);
+      msg.setPayments(value);
       break;
     case 8:
       var value = new proto.payment.v1alpha1.Invoice;
@@ -451,9 +442,9 @@ proto.payment.v1alpha1.Customer.deserializeBinaryFromReader = function(msg, read
       msg.setBiling(value);
       break;
     case 10:
-      var value = new proto.payment.v1alpha1.Project;
-      reader.readMessage(value,proto.payment.v1alpha1.Project.deserializeBinaryFromReader);
-      msg.addProject(value);
+      var value = new proto.payment.v1alpha1.ProjectList;
+      reader.readMessage(value,proto.payment.v1alpha1.ProjectList.deserializeBinaryFromReader);
+      msg.setProject(value);
       break;
     default:
       reader.skipField();
@@ -491,30 +482,30 @@ proto.payment.v1alpha1.Customer.serializeBinaryToWriter = function(message, writ
       f
     );
   }
-  f = message.getName();
+  f = message.getCustomerId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getEmail();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getOrganizationId();
+  if (f !== 0) {
+    writer.writeUint32(
       3,
       f
     );
   }
-  f = message.getCustomerId();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getEmail();
+  if (f.length > 0) {
+    writer.writeString(
       5,
       f
     );
@@ -527,12 +518,12 @@ proto.payment.v1alpha1.Customer.serializeBinaryToWriter = function(message, writ
       proto.payment.v1alpha1.Suscription.serializeBinaryToWriter
     );
   }
-  f = message.getPaymentList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getPayments();
+  if (f != null) {
+    writer.writeMessage(
       7,
       f,
-      proto.payment.v1alpha1.Payment.serializeBinaryToWriter
+      proto.payment.v1alpha1.PaymentList.serializeBinaryToWriter
     );
   }
   f = message.getInvoice();
@@ -551,12 +542,12 @@ proto.payment.v1alpha1.Customer.serializeBinaryToWriter = function(message, writ
       proto.payment.v1alpha1.Biling.serializeBinaryToWriter
     );
   }
-  f = message.getProjectList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getProject();
+  if (f != null) {
+    writer.writeMessage(
       10,
       f,
-      proto.payment.v1alpha1.Project.serializeBinaryToWriter
+      proto.payment.v1alpha1.ProjectList.serializeBinaryToWriter
     );
   }
 };
@@ -581,10 +572,10 @@ proto.payment.v1alpha1.Customer.prototype.setId = function(value) {
 
 
 /**
- * optional string name = 2;
+ * optional string customer_id = 2;
  * @return {string}
  */
-proto.payment.v1alpha1.Customer.prototype.getName = function() {
+proto.payment.v1alpha1.Customer.prototype.getCustomerId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -593,53 +584,17 @@ proto.payment.v1alpha1.Customer.prototype.getName = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Customer} returns this
  */
-proto.payment.v1alpha1.Customer.prototype.setName = function(value) {
+proto.payment.v1alpha1.Customer.prototype.setCustomerId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string email = 3;
- * @return {string}
- */
-proto.payment.v1alpha1.Customer.prototype.getEmail = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.payment.v1alpha1.Customer} returns this
- */
-proto.payment.v1alpha1.Customer.prototype.setEmail = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string customer_id = 4;
- * @return {string}
- */
-proto.payment.v1alpha1.Customer.prototype.getCustomerId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.payment.v1alpha1.Customer} returns this
- */
-proto.payment.v1alpha1.Customer.prototype.setCustomerId = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional uint32 organization_id = 5;
+ * optional uint32 organization_id = 3;
  * @return {number}
  */
 proto.payment.v1alpha1.Customer.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -648,7 +603,43 @@ proto.payment.v1alpha1.Customer.prototype.getOrganizationId = function() {
  * @return {!proto.payment.v1alpha1.Customer} returns this
  */
 proto.payment.v1alpha1.Customer.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string name = 4;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Customer.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Customer} returns this
+ */
+proto.payment.v1alpha1.Customer.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string email = 5;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Customer.prototype.getEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Customer} returns this
+ */
+proto.payment.v1alpha1.Customer.prototype.setEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -690,40 +681,39 @@ proto.payment.v1alpha1.Customer.prototype.hasSuscription = function() {
 
 
 /**
- * repeated Payment payment = 7;
- * @return {!Array<!proto.payment.v1alpha1.Payment>}
+ * optional PaymentList payments = 7;
+ * @return {?proto.payment.v1alpha1.PaymentList}
  */
-proto.payment.v1alpha1.Customer.prototype.getPaymentList = function() {
-  return /** @type{!Array<!proto.payment.v1alpha1.Payment>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.payment.v1alpha1.Payment, 7));
+proto.payment.v1alpha1.Customer.prototype.getPayments = function() {
+  return /** @type{?proto.payment.v1alpha1.PaymentList} */ (
+    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.PaymentList, 7));
 };
 
 
 /**
- * @param {!Array<!proto.payment.v1alpha1.Payment>} value
+ * @param {?proto.payment.v1alpha1.PaymentList|undefined} value
  * @return {!proto.payment.v1alpha1.Customer} returns this
 */
-proto.payment.v1alpha1.Customer.prototype.setPaymentList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+proto.payment.v1alpha1.Customer.prototype.setPayments = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
 /**
- * @param {!proto.payment.v1alpha1.Payment=} opt_value
- * @param {number=} opt_index
- * @return {!proto.payment.v1alpha1.Payment}
- */
-proto.payment.v1alpha1.Customer.prototype.addPayment = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.payment.v1alpha1.Payment, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.payment.v1alpha1.Customer} returns this
  */
-proto.payment.v1alpha1.Customer.prototype.clearPaymentList = function() {
-  return this.setPaymentList([]);
+proto.payment.v1alpha1.Customer.prototype.clearPayments = function() {
+  return this.setPayments(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.payment.v1alpha1.Customer.prototype.hasPayments = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -802,40 +792,39 @@ proto.payment.v1alpha1.Customer.prototype.hasBiling = function() {
 
 
 /**
- * repeated Project project = 10;
- * @return {!Array<!proto.payment.v1alpha1.Project>}
+ * optional ProjectList project = 10;
+ * @return {?proto.payment.v1alpha1.ProjectList}
  */
-proto.payment.v1alpha1.Customer.prototype.getProjectList = function() {
-  return /** @type{!Array<!proto.payment.v1alpha1.Project>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.payment.v1alpha1.Project, 10));
+proto.payment.v1alpha1.Customer.prototype.getProject = function() {
+  return /** @type{?proto.payment.v1alpha1.ProjectList} */ (
+    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.ProjectList, 10));
 };
 
 
 /**
- * @param {!Array<!proto.payment.v1alpha1.Project>} value
+ * @param {?proto.payment.v1alpha1.ProjectList|undefined} value
  * @return {!proto.payment.v1alpha1.Customer} returns this
 */
-proto.payment.v1alpha1.Customer.prototype.setProjectList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 10, value);
+proto.payment.v1alpha1.Customer.prototype.setProject = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
 /**
- * @param {!proto.payment.v1alpha1.Project=} opt_value
- * @param {number=} opt_index
- * @return {!proto.payment.v1alpha1.Project}
- */
-proto.payment.v1alpha1.Customer.prototype.addProject = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.payment.v1alpha1.Project, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.payment.v1alpha1.Customer} returns this
  */
-proto.payment.v1alpha1.Customer.prototype.clearProjectList = function() {
-  return this.setProjectList([]);
+proto.payment.v1alpha1.Customer.prototype.clearProject = function() {
+  return this.setProject(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.payment.v1alpha1.Customer.prototype.hasProject = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -871,14 +860,13 @@ proto.payment.v1alpha1.Project.prototype.toObject = function(opt_includeInstance
  */
 proto.payment.v1alpha1.Project.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     image: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    description: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    createdAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 8, "")
+    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    createdAt: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -916,7 +904,7 @@ proto.payment.v1alpha1.Project.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
     case 2:
@@ -932,18 +920,14 @@ proto.payment.v1alpha1.Project.deserializeBinaryFromReader = function(msg, reade
       msg.setImage(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setOrganizationId(value);
-      break;
-    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
-    case 7:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setCreatedAt(value);
       break;
-    case 8:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setUpdatedAt(value);
       break;
@@ -977,8 +961,8 @@ proto.payment.v1alpha1.Project.prototype.serializeBinary = function() {
 proto.payment.v1alpha1.Project.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -1004,31 +988,24 @@ proto.payment.v1alpha1.Project.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
-      5,
-      f
-    );
-  }
   f = message.getDescription();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      5,
       f
     );
   }
   f = message.getCreatedAt();
   if (f.length > 0) {
     writer.writeString(
-      7,
+      6,
       f
     );
   }
   f = message.getUpdatedAt();
   if (f.length > 0) {
     writer.writeString(
-      8,
+      7,
       f
     );
   }
@@ -1036,20 +1013,20 @@ proto.payment.v1alpha1.Project.serializeBinaryToWriter = function(message, write
 
 
 /**
- * optional int32 id = 1;
- * @return {number}
+ * optional string id = 1;
+ * @return {string}
  */
 proto.payment.v1alpha1.Project.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.payment.v1alpha1.Project} returns this
  */
 proto.payment.v1alpha1.Project.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1108,29 +1085,11 @@ proto.payment.v1alpha1.Project.prototype.setImage = function(value) {
 
 
 /**
- * optional uint32 organization_id = 5;
- * @return {number}
- */
-proto.payment.v1alpha1.Project.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.payment.v1alpha1.Project} returns this
- */
-proto.payment.v1alpha1.Project.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
-};
-
-
-/**
- * optional string description = 6;
+ * optional string description = 5;
  * @return {string}
  */
 proto.payment.v1alpha1.Project.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -1139,16 +1098,16 @@ proto.payment.v1alpha1.Project.prototype.getDescription = function() {
  * @return {!proto.payment.v1alpha1.Project} returns this
  */
 proto.payment.v1alpha1.Project.prototype.setDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string created_at = 7;
+ * optional string created_at = 6;
  * @return {string}
  */
 proto.payment.v1alpha1.Project.prototype.getCreatedAt = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -1157,16 +1116,16 @@ proto.payment.v1alpha1.Project.prototype.getCreatedAt = function() {
  * @return {!proto.payment.v1alpha1.Project} returns this
  */
 proto.payment.v1alpha1.Project.prototype.setCreatedAt = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional string updated_at = 8;
+ * optional string updated_at = 7;
  * @return {string}
  */
 proto.payment.v1alpha1.Project.prototype.getUpdatedAt = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -1175,7 +1134,7 @@ proto.payment.v1alpha1.Project.prototype.getUpdatedAt = function() {
  * @return {!proto.payment.v1alpha1.Project} returns this
  */
 proto.payment.v1alpha1.Project.prototype.setUpdatedAt = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -1212,14 +1171,14 @@ proto.payment.v1alpha1.Suscription.prototype.toObject = function(opt_includeInst
 proto.payment.v1alpha1.Suscription.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    price: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    priceCpu: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    priceBytes: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    currency: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    interval: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    suscriptionItemId: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    invoiceId: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    suscriptionId: jspb.Message.getFieldWithDefault(msg, 9, "")
+    suscriptionId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    price: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    priceCpu: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    priceBytes: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    currency: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    interval: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    suscriptionItemId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    invoiceId: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -1262,35 +1221,35 @@ proto.payment.v1alpha1.Suscription.deserializeBinaryFromReader = function(msg, r
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPrice(value);
+      msg.setSuscriptionId(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPriceCpu(value);
+      msg.setPrice(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPriceBytes(value);
+      msg.setPriceCpu(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCurrency(value);
+      msg.setPriceBytes(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setInterval(value);
+      msg.setCurrency(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSuscriptionItemId(value);
+      msg.setInterval(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setInvoiceId(value);
+      msg.setSuscriptionItemId(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSuscriptionId(value);
+      msg.setInvoiceId(value);
       break;
     default:
       reader.skipField();
@@ -1328,56 +1287,56 @@ proto.payment.v1alpha1.Suscription.serializeBinaryToWriter = function(message, w
       f
     );
   }
-  f = message.getPrice();
+  f = message.getSuscriptionId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getPriceCpu();
+  f = message.getPrice();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getPriceBytes();
+  f = message.getPriceCpu();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getCurrency();
+  f = message.getPriceBytes();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getInterval();
+  f = message.getCurrency();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
-  f = message.getSuscriptionItemId();
+  f = message.getInterval();
   if (f.length > 0) {
     writer.writeString(
       7,
       f
     );
   }
-  f = message.getInvoiceId();
+  f = message.getSuscriptionItemId();
   if (f.length > 0) {
     writer.writeString(
       8,
       f
     );
   }
-  f = message.getSuscriptionId();
+  f = message.getInvoiceId();
   if (f.length > 0) {
     writer.writeString(
       9,
@@ -1406,10 +1365,10 @@ proto.payment.v1alpha1.Suscription.prototype.setId = function(value) {
 
 
 /**
- * optional string price = 2;
+ * optional string suscription_id = 2;
  * @return {string}
  */
-proto.payment.v1alpha1.Suscription.prototype.getPrice = function() {
+proto.payment.v1alpha1.Suscription.prototype.getSuscriptionId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1418,16 +1377,16 @@ proto.payment.v1alpha1.Suscription.prototype.getPrice = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Suscription} returns this
  */
-proto.payment.v1alpha1.Suscription.prototype.setPrice = function(value) {
+proto.payment.v1alpha1.Suscription.prototype.setSuscriptionId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string price_cpu = 3;
+ * optional string price = 3;
  * @return {string}
  */
-proto.payment.v1alpha1.Suscription.prototype.getPriceCpu = function() {
+proto.payment.v1alpha1.Suscription.prototype.getPrice = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -1436,16 +1395,16 @@ proto.payment.v1alpha1.Suscription.prototype.getPriceCpu = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Suscription} returns this
  */
-proto.payment.v1alpha1.Suscription.prototype.setPriceCpu = function(value) {
+proto.payment.v1alpha1.Suscription.prototype.setPrice = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string price_bytes = 4;
+ * optional string price_cpu = 4;
  * @return {string}
  */
-proto.payment.v1alpha1.Suscription.prototype.getPriceBytes = function() {
+proto.payment.v1alpha1.Suscription.prototype.getPriceCpu = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -1454,16 +1413,16 @@ proto.payment.v1alpha1.Suscription.prototype.getPriceBytes = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Suscription} returns this
  */
-proto.payment.v1alpha1.Suscription.prototype.setPriceBytes = function(value) {
+proto.payment.v1alpha1.Suscription.prototype.setPriceCpu = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string currency = 5;
+ * optional string price_bytes = 5;
  * @return {string}
  */
-proto.payment.v1alpha1.Suscription.prototype.getCurrency = function() {
+proto.payment.v1alpha1.Suscription.prototype.getPriceBytes = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -1472,16 +1431,16 @@ proto.payment.v1alpha1.Suscription.prototype.getCurrency = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Suscription} returns this
  */
-proto.payment.v1alpha1.Suscription.prototype.setCurrency = function(value) {
+proto.payment.v1alpha1.Suscription.prototype.setPriceBytes = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string interval = 6;
+ * optional string currency = 6;
  * @return {string}
  */
-proto.payment.v1alpha1.Suscription.prototype.getInterval = function() {
+proto.payment.v1alpha1.Suscription.prototype.getCurrency = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -1490,16 +1449,16 @@ proto.payment.v1alpha1.Suscription.prototype.getInterval = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Suscription} returns this
  */
-proto.payment.v1alpha1.Suscription.prototype.setInterval = function(value) {
+proto.payment.v1alpha1.Suscription.prototype.setCurrency = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional string suscription_item_id = 7;
+ * optional string interval = 7;
  * @return {string}
  */
-proto.payment.v1alpha1.Suscription.prototype.getSuscriptionItemId = function() {
+proto.payment.v1alpha1.Suscription.prototype.getInterval = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -1508,16 +1467,16 @@ proto.payment.v1alpha1.Suscription.prototype.getSuscriptionItemId = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Suscription} returns this
  */
-proto.payment.v1alpha1.Suscription.prototype.setSuscriptionItemId = function(value) {
+proto.payment.v1alpha1.Suscription.prototype.setInterval = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string invoice_id = 8;
+ * optional string suscription_item_id = 8;
  * @return {string}
  */
-proto.payment.v1alpha1.Suscription.prototype.getInvoiceId = function() {
+proto.payment.v1alpha1.Suscription.prototype.getSuscriptionItemId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -1526,16 +1485,16 @@ proto.payment.v1alpha1.Suscription.prototype.getInvoiceId = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Suscription} returns this
  */
-proto.payment.v1alpha1.Suscription.prototype.setInvoiceId = function(value) {
+proto.payment.v1alpha1.Suscription.prototype.setSuscriptionItemId = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional string suscription_id = 9;
+ * optional string invoice_id = 9;
  * @return {string}
  */
-proto.payment.v1alpha1.Suscription.prototype.getSuscriptionId = function() {
+proto.payment.v1alpha1.Suscription.prototype.getInvoiceId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -1544,7 +1503,7 @@ proto.payment.v1alpha1.Suscription.prototype.getSuscriptionId = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Suscription} returns this
  */
-proto.payment.v1alpha1.Suscription.prototype.setSuscriptionId = function(value) {
+proto.payment.v1alpha1.Suscription.prototype.setInvoiceId = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
 };
 

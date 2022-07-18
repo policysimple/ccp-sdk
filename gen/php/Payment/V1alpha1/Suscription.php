@@ -18,37 +18,37 @@ class Suscription extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string price = 2 [json_name = "price"];</code>
+     * Generated from protobuf field <code>string suscription_id = 2 [json_name = "suscriptionId"];</code>
+     */
+    protected $suscription_id = '';
+    /**
+     * Generated from protobuf field <code>string price = 3 [json_name = "price"];</code>
      */
     protected $price = '';
     /**
-     * Generated from protobuf field <code>string price_cpu = 3 [json_name = "priceCpu"];</code>
+     * Generated from protobuf field <code>string price_cpu = 4 [json_name = "priceCpu"];</code>
      */
     protected $price_cpu = '';
     /**
-     * Generated from protobuf field <code>string price_bytes = 4 [json_name = "priceBytes"];</code>
+     * Generated from protobuf field <code>string price_bytes = 5 [json_name = "priceBytes"];</code>
      */
     protected $price_bytes = '';
     /**
-     * Generated from protobuf field <code>string currency = 5 [json_name = "currency"];</code>
+     * Generated from protobuf field <code>string currency = 6 [json_name = "currency"];</code>
      */
     protected $currency = '';
     /**
-     * Generated from protobuf field <code>string interval = 6 [json_name = "interval"];</code>
+     * Generated from protobuf field <code>string interval = 7 [json_name = "interval"];</code>
      */
     protected $interval = '';
     /**
-     * Generated from protobuf field <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     * Generated from protobuf field <code>string suscription_item_id = 8 [json_name = "suscriptionItemId"];</code>
      */
     protected $suscription_item_id = '';
     /**
-     * Generated from protobuf field <code>string invoice_id = 8 [json_name = "invoiceId"];</code>
+     * Generated from protobuf field <code>string invoice_id = 9 [json_name = "invoiceId"];</code>
      */
     protected $invoice_id = '';
-    /**
-     * Generated from protobuf field <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
-     */
-    protected $suscription_id = '';
 
     /**
      * Constructor.
@@ -57,6 +57,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $suscription_id
      *     @type string $price
      *     @type string $price_cpu
      *     @type string $price_bytes
@@ -64,7 +65,6 @@ class Suscription extends \Google\Protobuf\Internal\Message
      *     @type string $interval
      *     @type string $suscription_item_id
      *     @type string $invoice_id
-     *     @type string $suscription_id
      * }
      */
     public function __construct($data = NULL) {
@@ -95,7 +95,29 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string price = 2 [json_name = "price"];</code>
+     * Generated from protobuf field <code>string suscription_id = 2 [json_name = "suscriptionId"];</code>
+     * @return string
+     */
+    public function getSuscriptionId()
+    {
+        return $this->suscription_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string suscription_id = 2 [json_name = "suscriptionId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSuscriptionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->suscription_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price = 3 [json_name = "price"];</code>
      * @return string
      */
     public function getPrice()
@@ -104,7 +126,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string price = 2 [json_name = "price"];</code>
+     * Generated from protobuf field <code>string price = 3 [json_name = "price"];</code>
      * @param string $var
      * @return $this
      */
@@ -117,7 +139,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string price_cpu = 3 [json_name = "priceCpu"];</code>
+     * Generated from protobuf field <code>string price_cpu = 4 [json_name = "priceCpu"];</code>
      * @return string
      */
     public function getPriceCpu()
@@ -126,7 +148,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string price_cpu = 3 [json_name = "priceCpu"];</code>
+     * Generated from protobuf field <code>string price_cpu = 4 [json_name = "priceCpu"];</code>
      * @param string $var
      * @return $this
      */
@@ -139,7 +161,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string price_bytes = 4 [json_name = "priceBytes"];</code>
+     * Generated from protobuf field <code>string price_bytes = 5 [json_name = "priceBytes"];</code>
      * @return string
      */
     public function getPriceBytes()
@@ -148,7 +170,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string price_bytes = 4 [json_name = "priceBytes"];</code>
+     * Generated from protobuf field <code>string price_bytes = 5 [json_name = "priceBytes"];</code>
      * @param string $var
      * @return $this
      */
@@ -161,7 +183,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string currency = 5 [json_name = "currency"];</code>
+     * Generated from protobuf field <code>string currency = 6 [json_name = "currency"];</code>
      * @return string
      */
     public function getCurrency()
@@ -170,7 +192,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string currency = 5 [json_name = "currency"];</code>
+     * Generated from protobuf field <code>string currency = 6 [json_name = "currency"];</code>
      * @param string $var
      * @return $this
      */
@@ -183,7 +205,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string interval = 6 [json_name = "interval"];</code>
+     * Generated from protobuf field <code>string interval = 7 [json_name = "interval"];</code>
      * @return string
      */
     public function getInterval()
@@ -192,7 +214,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string interval = 6 [json_name = "interval"];</code>
+     * Generated from protobuf field <code>string interval = 7 [json_name = "interval"];</code>
      * @param string $var
      * @return $this
      */
@@ -205,7 +227,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     * Generated from protobuf field <code>string suscription_item_id = 8 [json_name = "suscriptionItemId"];</code>
      * @return string
      */
     public function getSuscriptionItemId()
@@ -214,7 +236,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string suscription_item_id = 7 [json_name = "suscriptionItemId"];</code>
+     * Generated from protobuf field <code>string suscription_item_id = 8 [json_name = "suscriptionItemId"];</code>
      * @param string $var
      * @return $this
      */
@@ -227,7 +249,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string invoice_id = 8 [json_name = "invoiceId"];</code>
+     * Generated from protobuf field <code>string invoice_id = 9 [json_name = "invoiceId"];</code>
      * @return string
      */
     public function getInvoiceId()
@@ -236,7 +258,7 @@ class Suscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string invoice_id = 8 [json_name = "invoiceId"];</code>
+     * Generated from protobuf field <code>string invoice_id = 9 [json_name = "invoiceId"];</code>
      * @param string $var
      * @return $this
      */
@@ -244,28 +266,6 @@ class Suscription extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->invoice_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
-     * @return string
-     */
-    public function getSuscriptionId()
-    {
-        return $this->suscription_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string suscription_id = 9 [json_name = "suscriptionId"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSuscriptionId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->suscription_id = $var;
 
         return $this;
     }

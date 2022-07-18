@@ -14,7 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetProjectRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = '';
+    /**
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
      */
     protected $project_id = '';
 
@@ -24,6 +28,7 @@ class GetProjectRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $organization_id
      *     @type string $project_id
      * }
      */
@@ -33,7 +38,29 @@ class GetProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return string
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
      * @return string
      */
     public function getProjectId()
@@ -42,7 +69,7 @@ class GetProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
      * @param string $var
      * @return $this
      */

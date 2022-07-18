@@ -14,13 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
      */
-    protected $card_id = '';
+    protected $organization_id = 0;
     /**
      * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
      */
     protected $customer_id = '';
+    /**
+     * Generated from protobuf field <code>string card_id = 3 [json_name = "cardId"];</code>
+     */
+    protected $card_id = '';
 
     /**
      * Constructor.
@@ -28,8 +32,9 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $card_id
+     *     @type int $organization_id
      *     @type string $customer_id
+     *     @type string $card_id
      * }
      */
     public function __construct($data = NULL) {
@@ -38,23 +43,23 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
-     * @return string
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @return int
      */
-    public function getCardId()
+    public function getOrganizationId()
     {
-        return $this->card_id;
+        return $this->organization_id;
     }
 
     /**
-     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @param int $var
      * @return $this
      */
-    public function setCardId($var)
+    public function setOrganizationId($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->card_id = $var;
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
 
         return $this;
     }
@@ -77,6 +82,28 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->customer_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string card_id = 3 [json_name = "cardId"];</code>
+     * @return string
+     */
+    public function getCardId()
+    {
+        return $this->card_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string card_id = 3 [json_name = "cardId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCardId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->card_id = $var;
 
         return $this;
     }
