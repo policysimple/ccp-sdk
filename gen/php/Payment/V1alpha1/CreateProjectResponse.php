@@ -14,11 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateProjectResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     */
-    protected $customer = null;
-    /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
      */
     protected $status = '';
 
@@ -28,7 +24,6 @@ class CreateProjectResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Customer $customer
      *     @type string $status
      * }
      */
@@ -38,39 +33,7 @@ class CreateProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @return \Payment\V1alpha1\Customer|null
-     */
-    public function getCustomer()
-    {
-        return $this->customer;
-    }
-
-    public function hasCustomer()
-    {
-        return isset($this->customer);
-    }
-
-    public function clearCustomer()
-    {
-        unset($this->customer);
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @param \Payment\V1alpha1\Customer $var
-     * @return $this
-     */
-    public function setCustomer($var)
-    {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
-        $this->customer = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
      * @return string
      */
     public function getStatus()
@@ -79,7 +42,7 @@ class CreateProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */

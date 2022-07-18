@@ -125,8 +125,7 @@ message CreateProjectRequest {
 }
 
 message CreateProjectResponse {
-    payment.v1alpha1.Customer customer = 1;
-    string status = 2;
+    string status = 1;
 }
 
 message CreateInvoiceRequest {
@@ -231,9 +230,9 @@ message GetProjectRequest {
 }
 
 message GetProjectResponse {
-    payment.v1alpha1.CustomerList customer_list = 1;
-    payment.v1alpha1.InvoiceList invoice_list = 2;
-    payment.v1alpha1.BilingList biling_list = 3;
-    payment.v1alpha1.ProjectList project_list = 4;
+    payment.v1alpha1.Customer customer = 1;
+    payment.v1alpha1.Invoice invoice = 2;
+    payment.v1alpha1.Biling biling = 3;
+    payment.v1alpha1.Project project = 4;
     string status = 5;
 }

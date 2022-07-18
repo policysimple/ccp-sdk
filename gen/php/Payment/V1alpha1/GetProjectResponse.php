@@ -14,21 +14,21 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetProjectResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
      */
-    protected $customer_list = null;
+    protected $customer = null;
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.InvoiceList invoice_list = 2 [json_name = "invoiceList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 2 [json_name = "invoice"];</code>
      */
-    protected $invoice_list = null;
+    protected $invoice = null;
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.BilingList biling_list = 3 [json_name = "bilingList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 3 [json_name = "biling"];</code>
      */
-    protected $biling_list = null;
+    protected $biling = null;
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project_list = 4 [json_name = "projectList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 4 [json_name = "project"];</code>
      */
-    protected $project_list = null;
+    protected $project = null;
     /**
      * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
      */
@@ -40,10 +40,10 @@ class GetProjectResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\CustomerList $customer_list
-     *     @type \Payment\V1alpha1\InvoiceList $invoice_list
-     *     @type \Payment\V1alpha1\BilingList $biling_list
-     *     @type \Payment\V1alpha1\ProjectList $project_list
+     *     @type \Payment\V1alpha1\Customer $customer
+     *     @type \Payment\V1alpha1\Invoice $invoice
+     *     @type \Payment\V1alpha1\Biling $biling
+     *     @type \Payment\V1alpha1\Project $project
      *     @type string $status
      * }
      */
@@ -53,129 +53,129 @@ class GetProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
-     * @return \Payment\V1alpha1\CustomerList|null
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @return \Payment\V1alpha1\Customer|null
      */
-    public function getCustomerList()
+    public function getCustomer()
     {
-        return $this->customer_list;
+        return $this->customer;
     }
 
-    public function hasCustomerList()
+    public function hasCustomer()
     {
-        return isset($this->customer_list);
+        return isset($this->customer);
     }
 
-    public function clearCustomerList()
+    public function clearCustomer()
     {
-        unset($this->customer_list);
+        unset($this->customer);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
-     * @param \Payment\V1alpha1\CustomerList $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @param \Payment\V1alpha1\Customer $var
      * @return $this
      */
-    public function setCustomerList($var)
+    public function setCustomer($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\CustomerList::class);
-        $this->customer_list = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
+        $this->customer = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.InvoiceList invoice_list = 2 [json_name = "invoiceList"];</code>
-     * @return \Payment\V1alpha1\InvoiceList|null
+     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 2 [json_name = "invoice"];</code>
+     * @return \Payment\V1alpha1\Invoice|null
      */
-    public function getInvoiceList()
+    public function getInvoice()
     {
-        return $this->invoice_list;
+        return $this->invoice;
     }
 
-    public function hasInvoiceList()
+    public function hasInvoice()
     {
-        return isset($this->invoice_list);
+        return isset($this->invoice);
     }
 
-    public function clearInvoiceList()
+    public function clearInvoice()
     {
-        unset($this->invoice_list);
+        unset($this->invoice);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.InvoiceList invoice_list = 2 [json_name = "invoiceList"];</code>
-     * @param \Payment\V1alpha1\InvoiceList $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 2 [json_name = "invoice"];</code>
+     * @param \Payment\V1alpha1\Invoice $var
      * @return $this
      */
-    public function setInvoiceList($var)
+    public function setInvoice($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\InvoiceList::class);
-        $this->invoice_list = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Invoice::class);
+        $this->invoice = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.BilingList biling_list = 3 [json_name = "bilingList"];</code>
-     * @return \Payment\V1alpha1\BilingList|null
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 3 [json_name = "biling"];</code>
+     * @return \Payment\V1alpha1\Biling|null
      */
-    public function getBilingList()
+    public function getBiling()
     {
-        return $this->biling_list;
+        return $this->biling;
     }
 
-    public function hasBilingList()
+    public function hasBiling()
     {
-        return isset($this->biling_list);
+        return isset($this->biling);
     }
 
-    public function clearBilingList()
+    public function clearBiling()
     {
-        unset($this->biling_list);
+        unset($this->biling);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.BilingList biling_list = 3 [json_name = "bilingList"];</code>
-     * @param \Payment\V1alpha1\BilingList $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 3 [json_name = "biling"];</code>
+     * @param \Payment\V1alpha1\Biling $var
      * @return $this
      */
-    public function setBilingList($var)
+    public function setBiling($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\BilingList::class);
-        $this->biling_list = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Biling::class);
+        $this->biling = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project_list = 4 [json_name = "projectList"];</code>
-     * @return \Payment\V1alpha1\ProjectList|null
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 4 [json_name = "project"];</code>
+     * @return \Payment\V1alpha1\Project|null
      */
-    public function getProjectList()
+    public function getProject()
     {
-        return $this->project_list;
+        return $this->project;
     }
 
-    public function hasProjectList()
+    public function hasProject()
     {
-        return isset($this->project_list);
+        return isset($this->project);
     }
 
-    public function clearProjectList()
+    public function clearProject()
     {
-        unset($this->project_list);
+        unset($this->project);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project_list = 4 [json_name = "projectList"];</code>
-     * @param \Payment\V1alpha1\ProjectList $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 4 [json_name = "project"];</code>
+     * @param \Payment\V1alpha1\Project $var
      * @return $this
      */
-    public function setProjectList($var)
+    public function setProject($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\ProjectList::class);
-        $this->project_list = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Project::class);
+        $this->project = $var;
 
         return $this;
     }
