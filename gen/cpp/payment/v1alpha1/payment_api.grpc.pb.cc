@@ -32,9 +32,12 @@ static const char* PaymentAPIService_method_names[] = {
   "/payment.v1alpha1.PaymentAPIService/GetBilingMonth",
   "/payment.v1alpha1.PaymentAPIService/GetPayments",
   "/payment.v1alpha1.PaymentAPIService/CreatePayment",
+  "/payment.v1alpha1.PaymentAPIService/CreateProject",
   "/payment.v1alpha1.PaymentAPIService/UpdatePayment",
   "/payment.v1alpha1.PaymentAPIService/DeletePayment",
   "/payment.v1alpha1.PaymentAPIService/ListPayment",
+  "/payment.v1alpha1.PaymentAPIService/ListProjects",
+  "/payment.v1alpha1.PaymentAPIService/GetProject",
   "/payment.v1alpha1.PaymentAPIService/CreateInvoice",
   "/payment.v1alpha1.PaymentAPIService/InvoiceFilter",
 };
@@ -59,11 +62,14 @@ PaymentAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_GetBilingMonth_(PaymentAPIService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetPayments_(PaymentAPIService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_CreatePayment_(PaymentAPIService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdatePayment_(PaymentAPIService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeletePayment_(PaymentAPIService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListPayment_(PaymentAPIService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateInvoice_(PaymentAPIService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_InvoiceFilter_(PaymentAPIService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateProject_(PaymentAPIService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdatePayment_(PaymentAPIService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeletePayment_(PaymentAPIService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListPayment_(PaymentAPIService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListProjects_(PaymentAPIService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetProject_(PaymentAPIService_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateInvoice_(PaymentAPIService_method_names[19], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_InvoiceFilter_(PaymentAPIService_method_names[20], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status PaymentAPIService::Stub::CreateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest& request, ::payment::v1alpha1::CreateSuscriptionResponse* response) {
@@ -274,6 +280,22 @@ void PaymentAPIService::Stub::experimental_async::CreatePayment(::grpc::ClientCo
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::CreatePaymentResponse>::Create(channel_.get(), cq, rpcmethod_CreatePayment_, context, request, false);
 }
 
+::grpc::Status PaymentAPIService::Stub::CreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::payment::v1alpha1::CreateProjectResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateProject_, context, request, response);
+}
+
+void PaymentAPIService::Stub::experimental_async::CreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateProject_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateProjectResponse>* PaymentAPIService::Stub::AsyncCreateProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::CreateProjectResponse>::Create(channel_.get(), cq, rpcmethod_CreateProject_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateProjectResponse>* PaymentAPIService::Stub::PrepareAsyncCreateProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::CreateProjectResponse>::Create(channel_.get(), cq, rpcmethod_CreateProject_, context, request, false);
+}
+
 ::grpc::Status PaymentAPIService::Stub::UpdatePayment(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdatePaymentRequest& request, ::payment::v1alpha1::UpdatePaymentResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdatePayment_, context, request, response);
 }
@@ -320,6 +342,38 @@ void PaymentAPIService::Stub::experimental_async::ListPayment(::grpc::ClientCont
 
 ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::ListPaymentResponse>* PaymentAPIService::Stub::PrepareAsyncListPaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ListPaymentRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::ListPaymentResponse>::Create(channel_.get(), cq, rpcmethod_ListPayment_, context, request, false);
+}
+
+::grpc::Status PaymentAPIService::Stub::ListProjects(::grpc::ClientContext* context, const ::payment::v1alpha1::ListProjectsRequest& request, ::payment::v1alpha1::ListProjectsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListProjects_, context, request, response);
+}
+
+void PaymentAPIService::Stub::experimental_async::ListProjects(::grpc::ClientContext* context, const ::payment::v1alpha1::ListProjectsRequest* request, ::payment::v1alpha1::ListProjectsResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListProjects_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::ListProjectsResponse>* PaymentAPIService::Stub::AsyncListProjectsRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ListProjectsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::ListProjectsResponse>::Create(channel_.get(), cq, rpcmethod_ListProjects_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::ListProjectsResponse>* PaymentAPIService::Stub::PrepareAsyncListProjectsRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ListProjectsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::ListProjectsResponse>::Create(channel_.get(), cq, rpcmethod_ListProjects_, context, request, false);
+}
+
+::grpc::Status PaymentAPIService::Stub::GetProject(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectRequest& request, ::payment::v1alpha1::GetProjectResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetProject_, context, request, response);
+}
+
+void PaymentAPIService::Stub::experimental_async::GetProject(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectRequest* request, ::payment::v1alpha1::GetProjectResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetProject_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetProjectResponse>* PaymentAPIService::Stub::AsyncGetProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::GetProjectResponse>::Create(channel_.get(), cq, rpcmethod_GetProject_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetProjectResponse>* PaymentAPIService::Stub::PrepareAsyncGetProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::GetProjectResponse>::Create(channel_.get(), cq, rpcmethod_GetProject_, context, request, false);
 }
 
 ::grpc::Status PaymentAPIService::Stub::CreateInvoice(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest& request, ::payment::v1alpha1::CreateInvoiceResponse* response) {
@@ -423,25 +477,40 @@ PaymentAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       PaymentAPIService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::CreateProjectRequest, ::payment::v1alpha1::CreateProjectResponse>(
+          std::mem_fn(&PaymentAPIService::Service::CreateProject), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PaymentAPIService_method_names[14],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::UpdatePaymentRequest, ::payment::v1alpha1::UpdatePaymentResponse>(
           std::mem_fn(&PaymentAPIService::Service::UpdatePayment), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[14],
+      PaymentAPIService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::DeletePaymentRequest, ::payment::v1alpha1::DeletePaymentResponse>(
           std::mem_fn(&PaymentAPIService::Service::DeletePayment), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[15],
+      PaymentAPIService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::ListPaymentRequest, ::payment::v1alpha1::ListPaymentResponse>(
           std::mem_fn(&PaymentAPIService::Service::ListPayment), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[16],
+      PaymentAPIService_method_names[17],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::ListProjectsRequest, ::payment::v1alpha1::ListProjectsResponse>(
+          std::mem_fn(&PaymentAPIService::Service::ListProjects), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PaymentAPIService_method_names[18],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::GetProjectRequest, ::payment::v1alpha1::GetProjectResponse>(
+          std::mem_fn(&PaymentAPIService::Service::GetProject), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PaymentAPIService_method_names[19],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::CreateInvoiceRequest, ::payment::v1alpha1::CreateInvoiceResponse>(
           std::mem_fn(&PaymentAPIService::Service::CreateInvoice), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PaymentAPIService_method_names[17],
+      PaymentAPIService_method_names[20],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::InvoiceFilterRequest, ::payment::v1alpha1::InvoiceFilterResponse>(
           std::mem_fn(&PaymentAPIService::Service::InvoiceFilter), this)));
@@ -541,6 +610,13 @@ PaymentAPIService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
+::grpc::Status PaymentAPIService::Service::CreateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 ::grpc::Status PaymentAPIService::Service::UpdatePayment(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdatePaymentRequest* request, ::payment::v1alpha1::UpdatePaymentResponse* response) {
   (void) context;
   (void) request;
@@ -556,6 +632,20 @@ PaymentAPIService::Service::~Service() {
 }
 
 ::grpc::Status PaymentAPIService::Service::ListPayment(::grpc::ServerContext* context, const ::payment::v1alpha1::ListPaymentRequest* request, ::payment::v1alpha1::ListPaymentResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PaymentAPIService::Service::ListProjects(::grpc::ServerContext* context, const ::payment::v1alpha1::ListProjectsRequest* request, ::payment::v1alpha1::ListProjectsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PaymentAPIService::Service::GetProject(::grpc::ServerContext* context, const ::payment::v1alpha1::GetProjectRequest* request, ::payment::v1alpha1::GetProjectResponse* response) {
   (void) context;
   (void) request;
   (void) response;

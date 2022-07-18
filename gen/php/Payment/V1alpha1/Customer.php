@@ -49,6 +49,10 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 9 [json_name = "biling"];</code>
      */
     protected $biling = null;
+    /**
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project project = 10 [json_name = "project"];</code>
+     */
+    private $project;
 
     /**
      * Constructor.
@@ -65,6 +69,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      *     @type \Payment\V1alpha1\Payment[]|\Google\Protobuf\Internal\RepeatedField $payment
      *     @type \Payment\V1alpha1\Invoice $invoice
      *     @type \Payment\V1alpha1\Biling $biling
+     *     @type \Payment\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $project
      * }
      */
     public function __construct($data = NULL) {
@@ -296,6 +301,28 @@ class Customer extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Payment\V1alpha1\Biling::class);
         $this->biling = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project project = 10 [json_name = "project"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getProject()
+    {
+        return $this->project;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project project = 10 [json_name = "project"];</code>
+     * @param \Payment\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProject($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Payment\V1alpha1\Project::class);
+        $this->project = $arr;
 
         return $this;
     }
