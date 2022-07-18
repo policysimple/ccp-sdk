@@ -16,7 +16,7 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-·
+Ö
 payment/v1alpha1/payment.protopayment.v1alpha1" 
 Customer
 id (	Rid
@@ -30,17 +30,19 @@ customerId\'
 invoice (2.payment.v1alpha1.InvoiceRinvoice0
 biling	 (2.payment.v1alpha1.BilingRbiling3
 project
- (2.payment.v1alpha1.ProjectRproject"Ì
+ (2.payment.v1alpha1.ProjectRproject"ë
 Project
-id (Rid
-name (	Rname
-image (	Rimage\'
-organization_id (RorganizationId 
-description (	Rdescription
+id (Rid
 
-created_at (	R	createdAt
+project_id (	R	projectId
+name (	Rname
+image (	Rimage\'
+organization_id (RorganizationId 
+description (	Rdescription
 
-updated_at (	R	updatedAt"Ÿ
+created_at (	R	createdAt
+
+updated_at (	R	updatedAt"Ÿ
 Suscription
 id (	Rid
 price (	Rprice

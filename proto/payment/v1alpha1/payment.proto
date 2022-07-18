@@ -20,12 +20,13 @@ message Customer {
 
 message Project {
   int32 id = 1;
-  string name = 2;
-  string image = 3;
-  uint32 organization_id = 4;
-  string description = 5;
-  string created_at = 6;
-  string updated_at = 7;
+  string project_id = 2;
+  string name = 3;
+  string image = 4;
+  uint32 organization_id = 5;
+  string description = 6;
+  string created_at = 7;
+  string updated_at = 8;
 }
 
 message Suscription {

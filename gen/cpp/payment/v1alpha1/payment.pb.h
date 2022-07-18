@@ -538,15 +538,30 @@ class Project final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 2,
-    kImageFieldNumber = 3,
-    kDescriptionFieldNumber = 5,
-    kCreatedAtFieldNumber = 6,
-    kUpdatedAtFieldNumber = 7,
+    kProjectIdFieldNumber = 2,
+    kNameFieldNumber = 3,
+    kImageFieldNumber = 4,
+    kDescriptionFieldNumber = 6,
+    kCreatedAtFieldNumber = 7,
+    kUpdatedAtFieldNumber = 8,
     kIdFieldNumber = 1,
-    kOrganizationIdFieldNumber = 4,
+    kOrganizationIdFieldNumber = 5,
   };
-  // string name = 2 [json_name = "name"];
+  // string project_id = 2 [json_name = "projectId"];
+  void clear_project_id();
+  const std::string& project_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_project_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_id();
+  void set_allocated_project_id(std::string* project_id);
+  private:
+  const std::string& _internal_project_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_id(const std::string& value);
+  std::string* _internal_mutable_project_id();
+  public:
+
+  // string name = 3 [json_name = "name"];
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -560,7 +575,7 @@ class Project final :
   std::string* _internal_mutable_name();
   public:
 
-  // string image = 3 [json_name = "image"];
+  // string image = 4 [json_name = "image"];
   void clear_image();
   const std::string& image() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -574,7 +589,7 @@ class Project final :
   std::string* _internal_mutable_image();
   public:
 
-  // string description = 5 [json_name = "description"];
+  // string description = 6 [json_name = "description"];
   void clear_description();
   const std::string& description() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -588,7 +603,7 @@ class Project final :
   std::string* _internal_mutable_description();
   public:
 
-  // string created_at = 6 [json_name = "createdAt"];
+  // string created_at = 7 [json_name = "createdAt"];
   void clear_created_at();
   const std::string& created_at() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -602,7 +617,7 @@ class Project final :
   std::string* _internal_mutable_created_at();
   public:
 
-  // string updated_at = 7 [json_name = "updatedAt"];
+  // string updated_at = 8 [json_name = "updatedAt"];
   void clear_updated_at();
   const std::string& updated_at() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -625,7 +640,7 @@ class Project final :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // uint32 organization_id = 4 [json_name = "organizationId"];
+  // uint32 organization_id = 5 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
   void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -641,6 +656,7 @@ class Project final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
@@ -3418,7 +3434,53 @@ inline void Project::set_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:payment.v1alpha1.Project.id)
 }
 
-// string name = 2 [json_name = "name"];
+// string project_id = 2 [json_name = "projectId"];
+inline void Project::clear_project_id() {
+  project_id_.ClearToEmpty();
+}
+inline const std::string& Project::project_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Project.project_id)
+  return _internal_project_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Project::set_project_id(ArgT0&& arg0, ArgT... args) {
+ 
+ project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Project.project_id)
+}
+inline std::string* Project::mutable_project_id() {
+  std::string* _s = _internal_mutable_project_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Project.project_id)
+  return _s;
+}
+inline const std::string& Project::_internal_project_id() const {
+  return project_id_.Get();
+}
+inline void Project::_internal_set_project_id(const std::string& value) {
+  
+  project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Project::_internal_mutable_project_id() {
+  
+  return project_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Project::release_project_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Project.project_id)
+  return project_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Project::set_allocated_project_id(std::string* project_id) {
+  if (project_id != nullptr) {
+    
+  } else {
+    
+  }
+  project_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Project.project_id)
+}
+
+// string name = 3 [json_name = "name"];
 inline void Project::clear_name() {
   name_.ClearToEmpty();
 }
@@ -3464,7 +3526,7 @@ inline void Project::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Project.name)
 }
 
-// string image = 3 [json_name = "image"];
+// string image = 4 [json_name = "image"];
 inline void Project::clear_image() {
   image_.ClearToEmpty();
 }
@@ -3510,7 +3572,7 @@ inline void Project::set_allocated_image(std::string* image) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Project.image)
 }
 
-// uint32 organization_id = 4 [json_name = "organizationId"];
+// uint32 organization_id = 5 [json_name = "organizationId"];
 inline void Project::clear_organization_id() {
   organization_id_ = 0u;
 }
@@ -3530,7 +3592,7 @@ inline void Project::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) 
   // @@protoc_insertion_point(field_set:payment.v1alpha1.Project.organization_id)
 }
 
-// string description = 5 [json_name = "description"];
+// string description = 6 [json_name = "description"];
 inline void Project::clear_description() {
   description_.ClearToEmpty();
 }
@@ -3576,7 +3638,7 @@ inline void Project::set_allocated_description(std::string* description) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Project.description)
 }
 
-// string created_at = 6 [json_name = "createdAt"];
+// string created_at = 7 [json_name = "createdAt"];
 inline void Project::clear_created_at() {
   created_at_.ClearToEmpty();
 }
@@ -3622,7 +3684,7 @@ inline void Project::set_allocated_created_at(std::string* created_at) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Project.created_at)
 }
 
-// string updated_at = 7 [json_name = "updatedAt"];
+// string updated_at = 8 [json_name = "updatedAt"];
 inline void Project::clear_updated_at() {
   updated_at_.ClearToEmpty();
 }
