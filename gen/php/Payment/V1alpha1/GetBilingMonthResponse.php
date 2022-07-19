@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetBilingMonthResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 1 [json_name = "biling"];</code>
      */
-    protected $customer = null;
+    protected $biling = null;
     /**
      * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
@@ -28,7 +28,7 @@ class GetBilingMonthResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Customer $customer
+     *     @type \Payment\V1alpha1\Biling $biling
      *     @type string $status
      * }
      */
@@ -38,33 +38,33 @@ class GetBilingMonthResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @return \Payment\V1alpha1\Customer|null
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 1 [json_name = "biling"];</code>
+     * @return \Payment\V1alpha1\Biling|null
      */
-    public function getCustomer()
+    public function getBiling()
     {
-        return $this->customer;
+        return $this->biling;
     }
 
-    public function hasCustomer()
+    public function hasBiling()
     {
-        return isset($this->customer);
+        return isset($this->biling);
     }
 
-    public function clearCustomer()
+    public function clearBiling()
     {
-        unset($this->customer);
+        unset($this->biling);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @param \Payment\V1alpha1\Customer $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 1 [json_name = "biling"];</code>
+     * @param \Payment\V1alpha1\Biling $var
      * @return $this
      */
-    public function setCustomer($var)
+    public function setBiling($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
-        $this->customer = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Biling::class);
+        $this->biling = $var;
 
         return $this;
     }

@@ -9,18 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>payment.v1alpha1.CreateProjectRequest</code>
+ * Generated from protobuf message <code>payment.v1alpha1.GetOrganizationRequest</code>
  */
-class CreateProjectRequest extends \Google\Protobuf\Internal\Message
+class GetOrganizationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
      */
     protected $organization_id = 0;
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
-     */
-    protected $project = null;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $organization_id
-     *     @type \Payment\V1alpha1\Project $project
      * }
      */
     public function __construct($data = NULL) {
@@ -55,38 +50,6 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->organization_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
-     * @return \Payment\V1alpha1\Project|null
-     */
-    public function getProject()
-    {
-        return $this->project;
-    }
-
-    public function hasProject()
-    {
-        return isset($this->project);
-    }
-
-    public function clearProject()
-    {
-        unset($this->project);
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
-     * @param \Payment\V1alpha1\Project $var
-     * @return $this
-     */
-    public function setProject($var)
-    {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Project::class);
-        $this->project = $var;
 
         return $this;
     }

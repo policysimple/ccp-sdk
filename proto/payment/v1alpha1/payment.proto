@@ -30,13 +30,13 @@ message Project {
 message Suscription {
   string id =1;
   string suscription_id =2;
-  string price= 3;
-  string price_cpu =4;
-  string price_bytes =5;
-  string currency =6;
-  string interval =7;
-  string suscription_item_id =8;
-  string invoice_id = 9;  
+  string suscription_item_id =3;
+  string invoice_id = 4; 
+  string price= 5;
+  string price_cpu =6;
+  string price_bytes =7;
+  string currency =8;
+  string interval =9;   
 }
 
 message Payment {
@@ -50,9 +50,10 @@ message Payment {
 message Card {
   string id = 1;
   string number = 2;
-  string expmonth = 3;
-  string expyear = 4;
-  string cvc = 5;  
+  string card_holder = 3;
+  string expmonth = 4;
+  string expyear = 5;
+  string cvc = 6;  
 }
 
 message Invoice {
@@ -66,8 +67,8 @@ message Invoice {
 
 message Biling {
   string id =1;
-  string account_name = 2;
-  string invoice_id =3;
+  string invoice_id =2;
+  string account_name = 3;  
   int64 totalusage = 4;
   int64 cpu = 5;
   int64 ram = 6;

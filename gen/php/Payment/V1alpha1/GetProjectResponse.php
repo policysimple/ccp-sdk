@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetProjectResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
      */
-    protected $customer = null;
+    protected $project = null;
     /**
      * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
@@ -28,7 +28,7 @@ class GetProjectResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Customer $customer
+     *     @type \Payment\V1alpha1\Project $project
      *     @type string $status
      * }
      */
@@ -38,33 +38,33 @@ class GetProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @return \Payment\V1alpha1\Customer|null
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+     * @return \Payment\V1alpha1\Project|null
      */
-    public function getCustomer()
+    public function getProject()
     {
-        return $this->customer;
+        return $this->project;
     }
 
-    public function hasCustomer()
+    public function hasProject()
     {
-        return isset($this->customer);
+        return isset($this->project);
     }
 
-    public function clearCustomer()
+    public function clearProject()
     {
-        unset($this->customer);
+        unset($this->project);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @param \Payment\V1alpha1\Customer $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+     * @param \Payment\V1alpha1\Project $var
      * @return $this
      */
-    public function setCustomer($var)
+    public function setProject($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
-        $this->customer = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Project::class);
+        $this->project = $var;
 
         return $this;
     }

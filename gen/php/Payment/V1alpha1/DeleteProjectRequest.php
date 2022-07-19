@@ -9,14 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>payment.v1alpha1.GetOrganizationPaymentRequest</code>
+ * Generated from protobuf message <code>payment.v1alpha1.DeleteProjectRequest</code>
  */
-class GetOrganizationPaymentRequest extends \Google\Protobuf\Internal\Message
+class DeleteProjectRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
      */
     protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
+     */
+    protected $project_id = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class GetOrganizationPaymentRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $organization_id
+     *     @type string $project_id
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class GetOrganizationPaymentRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return string
+     */
+    public function getProjectId()
+    {
+        return $this->project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProjectId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->project_id = $var;
 
         return $this;
     }

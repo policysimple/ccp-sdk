@@ -18,13 +18,13 @@ class Biling extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
-     */
-    protected $account_name = '';
-    /**
-     * Generated from protobuf field <code>string invoice_id = 3 [json_name = "invoiceId"];</code>
+     * Generated from protobuf field <code>string invoice_id = 2 [json_name = "invoiceId"];</code>
      */
     protected $invoice_id = '';
+    /**
+     * Generated from protobuf field <code>string account_name = 3 [json_name = "accountName"];</code>
+     */
+    protected $account_name = '';
     /**
      * Generated from protobuf field <code>int64 totalusage = 4 [json_name = "totalusage"];</code>
      */
@@ -53,8 +53,8 @@ class Biling extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $account_name
      *     @type string $invoice_id
+     *     @type string $account_name
      *     @type int|string $totalusage
      *     @type int|string $cpu
      *     @type int|string $ram
@@ -90,29 +90,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
-     * @return string
-     */
-    public function getAccountName()
-    {
-        return $this->account_name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string account_name = 2 [json_name = "accountName"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAccountName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->account_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string invoice_id = 3 [json_name = "invoiceId"];</code>
+     * Generated from protobuf field <code>string invoice_id = 2 [json_name = "invoiceId"];</code>
      * @return string
      */
     public function getInvoiceId()
@@ -121,7 +99,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string invoice_id = 3 [json_name = "invoiceId"];</code>
+     * Generated from protobuf field <code>string invoice_id = 2 [json_name = "invoiceId"];</code>
      * @param string $var
      * @return $this
      */
@@ -129,6 +107,28 @@ class Biling extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->invoice_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string account_name = 3 [json_name = "accountName"];</code>
+     * @return string
+     */
+    public function getAccountName()
+    {
+        return $this->account_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string account_name = 3 [json_name = "accountName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAccountName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->account_name = $var;
 
         return $this;
     }
