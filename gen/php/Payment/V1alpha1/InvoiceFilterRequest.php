@@ -14,21 +14,21 @@ use Google\Protobuf\Internal\GPBUtil;
 class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string year = 1 [json_name = "year"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>string year = 2 [json_name = "year"];</code>
      */
     protected $year = '';
     /**
-     * Generated from protobuf field <code>string month = 2 [json_name = "month"];</code>
+     * Generated from protobuf field <code>string month = 3 [json_name = "month"];</code>
      */
     protected $month = '';
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 3 [json_name = "customerList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 4 [json_name = "customerList"];</code>
      */
     protected $customer_list = null;
-    /**
-     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
-     */
-    protected $organization_id = 0;
 
     /**
      * Constructor.
@@ -36,10 +36,10 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $organization_id
      *     @type string $year
      *     @type string $month
      *     @type \Payment\V1alpha1\CustomerList $customer_list
-     *     @type int $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -48,7 +48,29 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string year = 1 [json_name = "year"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string year = 2 [json_name = "year"];</code>
      * @return string
      */
     public function getYear()
@@ -57,7 +79,7 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string year = 1 [json_name = "year"];</code>
+     * Generated from protobuf field <code>string year = 2 [json_name = "year"];</code>
      * @param string $var
      * @return $this
      */
@@ -70,7 +92,7 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string month = 2 [json_name = "month"];</code>
+     * Generated from protobuf field <code>string month = 3 [json_name = "month"];</code>
      * @return string
      */
     public function getMonth()
@@ -79,7 +101,7 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string month = 2 [json_name = "month"];</code>
+     * Generated from protobuf field <code>string month = 3 [json_name = "month"];</code>
      * @param string $var
      * @return $this
      */
@@ -92,7 +114,7 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 3 [json_name = "customerList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 4 [json_name = "customerList"];</code>
      * @return \Payment\V1alpha1\CustomerList|null
      */
     public function getCustomerList()
@@ -111,7 +133,7 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 3 [json_name = "customerList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 4 [json_name = "customerList"];</code>
      * @param \Payment\V1alpha1\CustomerList $var
      * @return $this
      */
@@ -119,28 +141,6 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Payment\V1alpha1\CustomerList::class);
         $this->customer_list = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
-     * @return int
-     */
-    public function getOrganizationId()
-    {
-        return $this->organization_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setOrganizationId($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->organization_id = $var;
 
         return $this;
     }

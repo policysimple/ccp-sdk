@@ -14,23 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetProjectResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     */
-    protected $customer = null;
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 2 [json_name = "invoice"];</code>
-     */
-    protected $invoice = null;
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 3 [json_name = "biling"];</code>
-     */
-    protected $biling = null;
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 4 [json_name = "project"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
      */
     protected $project = null;
     /**
-     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
     protected $status = '';
 
@@ -40,9 +28,6 @@ class GetProjectResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Customer $customer
-     *     @type \Payment\V1alpha1\Invoice $invoice
-     *     @type \Payment\V1alpha1\Biling $biling
      *     @type \Payment\V1alpha1\Project $project
      *     @type string $status
      * }
@@ -53,103 +38,7 @@ class GetProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @return \Payment\V1alpha1\Customer|null
-     */
-    public function getCustomer()
-    {
-        return $this->customer;
-    }
-
-    public function hasCustomer()
-    {
-        return isset($this->customer);
-    }
-
-    public function clearCustomer()
-    {
-        unset($this->customer);
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @param \Payment\V1alpha1\Customer $var
-     * @return $this
-     */
-    public function setCustomer($var)
-    {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
-        $this->customer = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 2 [json_name = "invoice"];</code>
-     * @return \Payment\V1alpha1\Invoice|null
-     */
-    public function getInvoice()
-    {
-        return $this->invoice;
-    }
-
-    public function hasInvoice()
-    {
-        return isset($this->invoice);
-    }
-
-    public function clearInvoice()
-    {
-        unset($this->invoice);
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 2 [json_name = "invoice"];</code>
-     * @param \Payment\V1alpha1\Invoice $var
-     * @return $this
-     */
-    public function setInvoice($var)
-    {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Invoice::class);
-        $this->invoice = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 3 [json_name = "biling"];</code>
-     * @return \Payment\V1alpha1\Biling|null
-     */
-    public function getBiling()
-    {
-        return $this->biling;
-    }
-
-    public function hasBiling()
-    {
-        return isset($this->biling);
-    }
-
-    public function clearBiling()
-    {
-        unset($this->biling);
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Biling biling = 3 [json_name = "biling"];</code>
-     * @param \Payment\V1alpha1\Biling $var
-     * @return $this
-     */
-    public function setBiling($var)
-    {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Biling::class);
-        $this->biling = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 4 [json_name = "project"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
      * @return \Payment\V1alpha1\Project|null
      */
     public function getProject()
@@ -168,7 +57,7 @@ class GetProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 4 [json_name = "project"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
      * @param \Payment\V1alpha1\Project $var
      * @return $this
      */
@@ -181,7 +70,7 @@ class GetProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      * @return string
      */
     public function getStatus()
@@ -190,7 +79,7 @@ class GetProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */

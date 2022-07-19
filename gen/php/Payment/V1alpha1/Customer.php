@@ -18,29 +18,29 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
-     */
-    protected $name = '';
-    /**
-     * Generated from protobuf field <code>string email = 3 [json_name = "email"];</code>
-     */
-    protected $email = '';
-    /**
-     * Generated from protobuf field <code>string customer_id = 4 [json_name = "customerId"];</code>
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
      */
     protected $customer_id = '';
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 3 [json_name = "organizationId"];</code>
      */
     protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>string name = 4 [json_name = "name"];</code>
+     */
+    protected $name = '';
+    /**
+     * Generated from protobuf field <code>string email = 5 [json_name = "email"];</code>
+     */
+    protected $email = '';
     /**
      * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 6 [json_name = "suscription"];</code>
      */
     protected $suscription = null;
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 7 [json_name = "payment"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.PaymentList payments = 7 [json_name = "payments"];</code>
      */
-    private $payment;
+    protected $payments = null;
     /**
      * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 8 [json_name = "invoice"];</code>
      */
@@ -50,9 +50,9 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     protected $biling = null;
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project project = 10 [json_name = "project"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
      */
-    private $project;
+    protected $project = null;
 
     /**
      * Constructor.
@@ -61,15 +61,15 @@ class Customer extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $name
-     *     @type string $email
      *     @type string $customer_id
      *     @type int $organization_id
+     *     @type string $name
+     *     @type string $email
      *     @type \Payment\V1alpha1\Suscription $suscription
-     *     @type \Payment\V1alpha1\Payment[]|\Google\Protobuf\Internal\RepeatedField $payment
+     *     @type \Payment\V1alpha1\PaymentList $payments
      *     @type \Payment\V1alpha1\Invoice $invoice
      *     @type \Payment\V1alpha1\Biling $biling
-     *     @type \Payment\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $project
+     *     @type \Payment\V1alpha1\ProjectList $project
      * }
      */
     public function __construct($data = NULL) {
@@ -100,51 +100,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string email = 3 [json_name = "email"];</code>
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Generated from protobuf field <code>string email = 3 [json_name = "email"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setEmail($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->email = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string customer_id = 4 [json_name = "customerId"];</code>
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
      * @return string
      */
     public function getCustomerId()
@@ -153,7 +109,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string customer_id = 4 [json_name = "customerId"];</code>
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
      * @param string $var
      * @return $this
      */
@@ -166,7 +122,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 3 [json_name = "organizationId"];</code>
      * @return int
      */
     public function getOrganizationId()
@@ -175,7 +131,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 3 [json_name = "organizationId"];</code>
      * @param int $var
      * @return $this
      */
@@ -183,6 +139,50 @@ class Customer extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 4 [json_name = "name"];</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 4 [json_name = "name"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 5 [json_name = "email"];</code>
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 5 [json_name = "email"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email = $var;
 
         return $this;
     }
@@ -220,23 +220,33 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 7 [json_name = "payment"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.payment.v1alpha1.PaymentList payments = 7 [json_name = "payments"];</code>
+     * @return \Payment\V1alpha1\PaymentList|null
      */
-    public function getPayment()
+    public function getPayments()
     {
-        return $this->payment;
+        return $this->payments;
+    }
+
+    public function hasPayments()
+    {
+        return isset($this->payments);
+    }
+
+    public function clearPayments()
+    {
+        unset($this->payments);
     }
 
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Payment payment = 7 [json_name = "payment"];</code>
-     * @param \Payment\V1alpha1\Payment[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.payment.v1alpha1.PaymentList payments = 7 [json_name = "payments"];</code>
+     * @param \Payment\V1alpha1\PaymentList $var
      * @return $this
      */
-    public function setPayment($var)
+    public function setPayments($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Payment\V1alpha1\Payment::class);
-        $this->payment = $arr;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\PaymentList::class);
+        $this->payments = $var;
 
         return $this;
     }
@@ -306,23 +316,33 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project project = 10 [json_name = "project"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
+     * @return \Payment\V1alpha1\ProjectList|null
      */
     public function getProject()
     {
         return $this->project;
     }
 
+    public function hasProject()
+    {
+        return isset($this->project);
+    }
+
+    public function clearProject()
+    {
+        unset($this->project);
+    }
+
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project project = 10 [json_name = "project"];</code>
-     * @param \Payment\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
+     * @param \Payment\V1alpha1\ProjectList $var
      * @return $this
      */
     public function setProject($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Payment\V1alpha1\Project::class);
-        $this->project = $arr;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\ProjectList::class);
+        $this->project = $var;
 
         return $this;
     }

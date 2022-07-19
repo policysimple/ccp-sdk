@@ -9,10 +9,9 @@ import "payment/v1alpha1/payment.proto";
 
 service PaymentAPIService{
     rpc CreateSuscription(CreateSuscriptionRequest) returns (CreateSuscriptionResponse) {}; 
-    rpc CreateCard(CreateCardRequest) returns (CreateCardResponse) {}; 
-    rpc UpdateSuscription(UpdateSuscriptionRequest) returns (UpdateSuscriptionResponse) {}; 
+    rpc CreateCard(CreateCardRequest) returns (CreateCardResponse) {};
     rpc CancelSuscription(CancelSuscriptionRequest) returns (CancelSuscriptionResponse) {}; 
-    rpc GetOrganizationPayment(GetOrganizationPaymentRequest) returns (GetOrganizationPaymentResponse) {}; 
+    rpc GetOrganization(GetOrganizationRequest) returns (GetOrganizationResponse) {}; 
     rpc GetSuscription(GetSuscriptionRequest) returns (GetSuscriptionResponse) {}; 
     rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse) {}
     rpc DeleteCustomer(DeleteCustomerRequest) returns (DeleteCustomerResponse) {}
@@ -22,34 +21,31 @@ service PaymentAPIService{
     rpc GetPayments(GetPaymentsRequest) returns (GetPaymentsResponse) {};
     rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {};
     rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse) {};
-    rpc UpdatePayment(UpdatePaymentRequest) returns (UpdatePaymentResponse) {};
-    rpc DeletePayment(DeletePaymentRequest) returns (DeletePaymentResponse) {};
-    rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {}; 
     rpc ListProjects(ListProjectsRequest) returns (ListProjectsResponse) {}; 
-    rpc GetProject(GetProjectRequest) returns (GetProjectResponse) {}; 
+    rpc DeleteProject(DeleteProjectRequest) returns (DeleteProjectResponse) {};
+    rpc DeletePayment(DeletePaymentRequest) returns (DeletePaymentResponse) {};
+    rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {};    
     rpc CreateInvoice(CreateInvoiceRequest) returns (CreateInvoiceResponse) {}; 
-    rpc InvoiceFilter(InvoiceFilterRequest) returns (InvoiceFilterResponse) {}; 
-
-
-
+    rpc InvoiceFilter(InvoiceFilterRequest) returns (InvoiceFilterResponse) {};
 }
+
 message InvoiceFilterRequest {
-        string year = 1;
-        string month = 2;
-        payment.v1alpha1.CustomerList customer_list = 3;
-        uint32  organization_id = 4;
-       
-    }
+    uint32  organization_id = 1;
+    string year = 2;
+    string month = 3;
+    payment.v1alpha1.CustomerList customer_list = 4;               
+}
     
 message InvoiceFilterResponse {
     payment.v1alpha1.CustomerList customer_list = 1;
     payment.v1alpha1.InvoiceList invoice_list = 2;
     payment.v1alpha1.BilingList biling_list = 3;
-        string status = 4;
-    }
+    string status = 4;
+}
 
 message DeleteCustomerRequest {
-    string customer_id =1; 
+    uint32 organization_id = 1;
+    string customer_id =2; 
 }
 
 message DeleteCustomerResponse {
@@ -57,24 +53,26 @@ message DeleteCustomerResponse {
 }
 
 message GetSuscriptionRequest {
-    string suscription_id = 1;
+    uint32 organization_id = 1;
+    string suscription_id = 2;
 }
 
 message GetSuscriptionResponse {
     payment.v1alpha1.Suscription suscription = 1;
     string status = 2;
 }
-message GetOrganizationPaymentRequest {
+message GetOrganizationRequest {
     uint32 organization_id = 1;
 }
 
-message GetOrganizationPaymentResponse {
+message GetOrganizationResponse {
     payment.v1alpha1.Customer customer = 1;
     string status = 2;
 }
 
 message GetCustomerRequest {
-    string customer_id =1;
+    uint32 organization_id = 1;
+    string customer_id =2;
 }
 
 message GetCustomerResponse {
@@ -83,44 +81,37 @@ message GetCustomerResponse {
 }
 
 message GetBilingMonthRequest {
-    string invoice_id = 1;
+    uint32 organization_id = 1;
+    string invoice_id = 2;
 }
 
 message GetBilingMonthResponse {
-    payment.v1alpha1.Customer customer = 1;
+    payment.v1alpha1.Biling biling = 1;
     string status = 2;
 }
 
 message GetPaymentsRequest {
-    string customer_id = 1;
+    uint32 organization_id = 1;
 }
 
 message GetPaymentsResponse {
-    payment.v1alpha1.Payment payment = 1;
-    string status = 2;
-}
-message UpdateSuscriptionRequest {
-    string customer_id = 1;
-    Suscription suscription = 2;
-}
-
-message UpdateSuscriptionResponse {
-    payment.v1alpha1.Suscription suscription = 1;
+    payment.v1alpha1.PaymentList payment = 1;
     string status = 2;
 }
 
 message CreateSuscriptionRequest {
-    string customer_id = 1;
-    payment.v1alpha1.Suscription suscription = 2;
+    uint32 organization_id = 1;
+    string customer_id = 2;
+    payment.v1alpha1.Suscription suscription = 3;
 }
 
 message CreateSuscriptionResponse {
-    payment.v1alpha1.Customer customer = 1;
+    payment.v1alpha1.Suscription suscription = 1;
     string status = 2;
 }
 
 message CreateProjectRequest {
-    string customer_id = 1;
+    uint32 organization_id = 1;
     payment.v1alpha1.Project project = 2;
 }
 
@@ -129,18 +120,20 @@ message CreateProjectResponse {
 }
 
 message CreateInvoiceRequest {
-    string invoice_id = 1;
-    string status = 2;
-
+    uint32 organization_id = 1;
+    string invoice_id = 2;
+    string status = 3;
 }
 
 message CreateInvoiceResponse {
-    payment.v1alpha1.Customer customer = 1;
+    payment.v1alpha1.Invoice invoice = 1;
     string status = 2;
 }
 
 message CreateCardRequest {
-    payment.v1alpha1.Card card = 1;
+    uint32 organization_id = 1;
+    string customer_id = 2;
+    payment.v1alpha1.Card card = 3;
 
 }
 
@@ -150,8 +143,9 @@ message CreateCardResponse {
 }
 
 message CancelSuscriptionRequest {
-    string suscription_id =1;
-    
+    uint32 organization_id = 1;
+    string customer_id = 2;
+    string suscription_id =3;    
 }
 
 message  CancelSuscriptionResponse {
@@ -168,9 +162,9 @@ message CreateCustomerResponse {
 }
 
 message CreatePaymentRequest {
-    string customer_id = 1;
-    payment.v1alpha1.Payment payment = 2;
-
+    uint32 organization_id = 1;
+    string customer_id = 2;
+    payment.v1alpha1.Payment payment = 3;
 }
 
 message CreatePaymentResponse {
@@ -178,19 +172,10 @@ message CreatePaymentResponse {
     string status = 2;
 }
 
-message UpdatePaymentRequest {
-    string customer_id = 1;
-    payment.v1alpha1.Payment payment = 2;
-}
-
-message UpdatePaymentResponse {
-    payment.v1alpha1.Payment payment = 1;
-    string status = 2;
-}
-
 message DeletePaymentRequest {
-    string card_id = 1;
+    uint32 organization_id = 1;
     string customer_id = 2;
+    string card_id = 3;
 }
 
 message DeletePaymentResponse {
@@ -198,8 +183,9 @@ message DeletePaymentResponse {
 }
 
 message GetPaymentRequest {
-    string card_id = 1;
+    uint32 organization_id = 1;
     string customer_id = 2;
+    string card_id = 3;
 }
 
 message GetPaymentResponse {
@@ -208,11 +194,12 @@ message GetPaymentResponse {
 }
 
 message ListPaymentRequest {
-    string customer_id = 1;
+    uint32 organization_id = 1;
+    string customer_id = 2;
 }
 
 message ListPaymentResponse {
-    payment.v1alpha1.Payment payment = 1;
+    payment.v1alpha1.PaymentList payment_list = 1;
     string status = 2;
 }
 
@@ -226,13 +213,20 @@ message ListProjectsResponse {
 }
 
 message GetProjectRequest {
-    string project_id = 1;
+    string organization_id = 1;
+    string project_id = 2;
 }
 
 message GetProjectResponse {
-    payment.v1alpha1.Customer customer = 1;
-    payment.v1alpha1.Invoice invoice = 2;
-    payment.v1alpha1.Biling biling = 3;
-    payment.v1alpha1.Project project = 4;
-    string status = 5;
+    payment.v1alpha1.Project project = 1;
+    string status = 2;
+}
+
+message DeleteProjectRequest {
+    uint32 organization_id = 1;
+    string project_id = 2;
+}
+
+message DeleteProjectResponse {
+    string status = 1;
 }

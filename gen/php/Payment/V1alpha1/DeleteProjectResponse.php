@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>payment.v1alpha1.GetProjectsRequest</code>
+ * Generated from protobuf message <code>payment.v1alpha1.DeleteProjectResponse</code>
  */
-class GetProjectsRequest extends \Google\Protobuf\Internal\Message
+class DeleteProjectResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
      */
-    protected $project_id = '';
+    protected $status = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class GetProjectsRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $project_id
+     *     @type string $status
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class GetProjectsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
      * @return string
      */
-    public function getProjectId()
+    public function getStatus()
     {
-        return $this->project_id;
+        return $this->status;
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */
-    public function setProjectId($var)
+    public function setStatus($var)
     {
         GPBUtil::checkString($var, True);
-        $this->project_id = $var;
+        $this->status = $var;
 
         return $this;
     }

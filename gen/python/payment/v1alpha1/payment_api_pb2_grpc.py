@@ -24,20 +24,15 @@ class PaymentAPIServiceStub(object):
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCardRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCardResponse.FromString,
         )
-    self.UpdateSuscription = channel.unary_unary(
-        '/payment.v1alpha1.PaymentAPIService/UpdateSuscription',
-        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSuscriptionRequest.SerializeToString,
-        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSuscriptionResponse.FromString,
-        )
     self.CancelSuscription = channel.unary_unary(
         '/payment.v1alpha1.PaymentAPIService/CancelSuscription',
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CancelSuscriptionRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CancelSuscriptionResponse.FromString,
         )
-    self.GetOrganizationPayment = channel.unary_unary(
-        '/payment.v1alpha1.PaymentAPIService/GetOrganizationPayment',
-        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetOrganizationPaymentRequest.SerializeToString,
-        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetOrganizationPaymentResponse.FromString,
+    self.GetOrganization = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/GetOrganization',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetOrganizationRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetOrganizationResponse.FromString,
         )
     self.GetSuscription = channel.unary_unary(
         '/payment.v1alpha1.PaymentAPIService/GetSuscription',
@@ -84,10 +79,15 @@ class PaymentAPIServiceStub(object):
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateProjectRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateProjectResponse.FromString,
         )
-    self.UpdatePayment = channel.unary_unary(
-        '/payment.v1alpha1.PaymentAPIService/UpdatePayment',
-        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdatePaymentRequest.SerializeToString,
-        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdatePaymentResponse.FromString,
+    self.ListProjects = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/ListProjects',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListProjectsRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListProjectsResponse.FromString,
+        )
+    self.DeleteProject = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/DeleteProject',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.DeleteProjectRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.DeleteProjectResponse.FromString,
         )
     self.DeletePayment = channel.unary_unary(
         '/payment.v1alpha1.PaymentAPIService/DeletePayment',
@@ -98,16 +98,6 @@ class PaymentAPIServiceStub(object):
         '/payment.v1alpha1.PaymentAPIService/ListPayment',
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListPaymentRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListPaymentResponse.FromString,
-        )
-    self.ListProjects = channel.unary_unary(
-        '/payment.v1alpha1.PaymentAPIService/ListProjects',
-        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListProjectsRequest.SerializeToString,
-        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListProjectsResponse.FromString,
-        )
-    self.GetProject = channel.unary_unary(
-        '/payment.v1alpha1.PaymentAPIService/GetProject',
-        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetProjectRequest.SerializeToString,
-        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetProjectResponse.FromString,
         )
     self.CreateInvoice = channel.unary_unary(
         '/payment.v1alpha1.PaymentAPIService/CreateInvoice',
@@ -139,13 +129,6 @@ class PaymentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def UpdateSuscription(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
   def CancelSuscription(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -153,7 +136,7 @@ class PaymentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetOrganizationPayment(self, request, context):
+  def GetOrganization(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -223,7 +206,14 @@ class PaymentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def UpdatePayment(self, request, context):
+  def ListProjects(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteProject(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -238,20 +228,6 @@ class PaymentAPIServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def ListPayment(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def ListProjects(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def GetProject(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -285,20 +261,15 @@ def add_PaymentAPIServiceServicer_to_server(servicer, server):
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCardRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateCardResponse.SerializeToString,
       ),
-      'UpdateSuscription': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateSuscription,
-          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSuscriptionRequest.FromString,
-          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSuscriptionResponse.SerializeToString,
-      ),
       'CancelSuscription': grpc.unary_unary_rpc_method_handler(
           servicer.CancelSuscription,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CancelSuscriptionRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CancelSuscriptionResponse.SerializeToString,
       ),
-      'GetOrganizationPayment': grpc.unary_unary_rpc_method_handler(
-          servicer.GetOrganizationPayment,
-          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetOrganizationPaymentRequest.FromString,
-          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetOrganizationPaymentResponse.SerializeToString,
+      'GetOrganization': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOrganization,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetOrganizationRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetOrganizationResponse.SerializeToString,
       ),
       'GetSuscription': grpc.unary_unary_rpc_method_handler(
           servicer.GetSuscription,
@@ -345,10 +316,15 @@ def add_PaymentAPIServiceServicer_to_server(servicer, server):
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateProjectRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.CreateProjectResponse.SerializeToString,
       ),
-      'UpdatePayment': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdatePayment,
-          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdatePaymentRequest.FromString,
-          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdatePaymentResponse.SerializeToString,
+      'ListProjects': grpc.unary_unary_rpc_method_handler(
+          servicer.ListProjects,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListProjectsRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListProjectsResponse.SerializeToString,
+      ),
+      'DeleteProject': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteProject,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.DeleteProjectRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.DeleteProjectResponse.SerializeToString,
       ),
       'DeletePayment': grpc.unary_unary_rpc_method_handler(
           servicer.DeletePayment,
@@ -359,16 +335,6 @@ def add_PaymentAPIServiceServicer_to_server(servicer, server):
           servicer.ListPayment,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListPaymentRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListPaymentResponse.SerializeToString,
-      ),
-      'ListProjects': grpc.unary_unary_rpc_method_handler(
-          servicer.ListProjects,
-          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListProjectsRequest.FromString,
-          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListProjectsResponse.SerializeToString,
-      ),
-      'GetProject': grpc.unary_unary_rpc_method_handler(
-          servicer.GetProject,
-          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetProjectRequest.FromString,
-          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetProjectResponse.SerializeToString,
       ),
       'CreateInvoice': grpc.unary_unary_rpc_method_handler(
           servicer.CreateInvoice,

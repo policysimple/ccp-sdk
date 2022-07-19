@@ -20,9 +20,8 @@ const _ = grpc.SupportPackageIsVersion7
 type PaymentAPIServiceClient interface {
 	CreateSuscription(ctx context.Context, in *CreateSuscriptionRequest, opts ...grpc.CallOption) (*CreateSuscriptionResponse, error)
 	CreateCard(ctx context.Context, in *CreateCardRequest, opts ...grpc.CallOption) (*CreateCardResponse, error)
-	UpdateSuscription(ctx context.Context, in *UpdateSuscriptionRequest, opts ...grpc.CallOption) (*UpdateSuscriptionResponse, error)
 	CancelSuscription(ctx context.Context, in *CancelSuscriptionRequest, opts ...grpc.CallOption) (*CancelSuscriptionResponse, error)
-	GetOrganizationPayment(ctx context.Context, in *GetOrganizationPaymentRequest, opts ...grpc.CallOption) (*GetOrganizationPaymentResponse, error)
+	GetOrganization(ctx context.Context, in *GetOrganizationRequest, opts ...grpc.CallOption) (*GetOrganizationResponse, error)
 	GetSuscription(ctx context.Context, in *GetSuscriptionRequest, opts ...grpc.CallOption) (*GetSuscriptionResponse, error)
 	CreateCustomer(ctx context.Context, in *CreateCustomerRequest, opts ...grpc.CallOption) (*CreateCustomerResponse, error)
 	DeleteCustomer(ctx context.Context, in *DeleteCustomerRequest, opts ...grpc.CallOption) (*DeleteCustomerResponse, error)
@@ -32,11 +31,10 @@ type PaymentAPIServiceClient interface {
 	GetPayments(ctx context.Context, in *GetPaymentsRequest, opts ...grpc.CallOption) (*GetPaymentsResponse, error)
 	CreatePayment(ctx context.Context, in *CreatePaymentRequest, opts ...grpc.CallOption) (*CreatePaymentResponse, error)
 	CreateProject(ctx context.Context, in *CreateProjectRequest, opts ...grpc.CallOption) (*CreateProjectResponse, error)
-	UpdatePayment(ctx context.Context, in *UpdatePaymentRequest, opts ...grpc.CallOption) (*UpdatePaymentResponse, error)
+	ListProjects(ctx context.Context, in *ListProjectsRequest, opts ...grpc.CallOption) (*ListProjectsResponse, error)
+	DeleteProject(ctx context.Context, in *DeleteProjectRequest, opts ...grpc.CallOption) (*DeleteProjectResponse, error)
 	DeletePayment(ctx context.Context, in *DeletePaymentRequest, opts ...grpc.CallOption) (*DeletePaymentResponse, error)
 	ListPayment(ctx context.Context, in *ListPaymentRequest, opts ...grpc.CallOption) (*ListPaymentResponse, error)
-	ListProjects(ctx context.Context, in *ListProjectsRequest, opts ...grpc.CallOption) (*ListProjectsResponse, error)
-	GetProject(ctx context.Context, in *GetProjectRequest, opts ...grpc.CallOption) (*GetProjectResponse, error)
 	CreateInvoice(ctx context.Context, in *CreateInvoiceRequest, opts ...grpc.CallOption) (*CreateInvoiceResponse, error)
 	InvoiceFilter(ctx context.Context, in *InvoiceFilterRequest, opts ...grpc.CallOption) (*InvoiceFilterResponse, error)
 }
@@ -67,15 +65,6 @@ func (c *paymentAPIServiceClient) CreateCard(ctx context.Context, in *CreateCard
 	return out, nil
 }
 
-func (c *paymentAPIServiceClient) UpdateSuscription(ctx context.Context, in *UpdateSuscriptionRequest, opts ...grpc.CallOption) (*UpdateSuscriptionResponse, error) {
-	out := new(UpdateSuscriptionResponse)
-	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/UpdateSuscription", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *paymentAPIServiceClient) CancelSuscription(ctx context.Context, in *CancelSuscriptionRequest, opts ...grpc.CallOption) (*CancelSuscriptionResponse, error) {
 	out := new(CancelSuscriptionResponse)
 	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/CancelSuscription", in, out, opts...)
@@ -85,9 +74,9 @@ func (c *paymentAPIServiceClient) CancelSuscription(ctx context.Context, in *Can
 	return out, nil
 }
 
-func (c *paymentAPIServiceClient) GetOrganizationPayment(ctx context.Context, in *GetOrganizationPaymentRequest, opts ...grpc.CallOption) (*GetOrganizationPaymentResponse, error) {
-	out := new(GetOrganizationPaymentResponse)
-	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/GetOrganizationPayment", in, out, opts...)
+func (c *paymentAPIServiceClient) GetOrganization(ctx context.Context, in *GetOrganizationRequest, opts ...grpc.CallOption) (*GetOrganizationResponse, error) {
+	out := new(GetOrganizationResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/GetOrganization", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -175,9 +164,18 @@ func (c *paymentAPIServiceClient) CreateProject(ctx context.Context, in *CreateP
 	return out, nil
 }
 
-func (c *paymentAPIServiceClient) UpdatePayment(ctx context.Context, in *UpdatePaymentRequest, opts ...grpc.CallOption) (*UpdatePaymentResponse, error) {
-	out := new(UpdatePaymentResponse)
-	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/UpdatePayment", in, out, opts...)
+func (c *paymentAPIServiceClient) ListProjects(ctx context.Context, in *ListProjectsRequest, opts ...grpc.CallOption) (*ListProjectsResponse, error) {
+	out := new(ListProjectsResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/ListProjects", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *paymentAPIServiceClient) DeleteProject(ctx context.Context, in *DeleteProjectRequest, opts ...grpc.CallOption) (*DeleteProjectResponse, error) {
+	out := new(DeleteProjectResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/DeleteProject", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -196,24 +194,6 @@ func (c *paymentAPIServiceClient) DeletePayment(ctx context.Context, in *DeleteP
 func (c *paymentAPIServiceClient) ListPayment(ctx context.Context, in *ListPaymentRequest, opts ...grpc.CallOption) (*ListPaymentResponse, error) {
 	out := new(ListPaymentResponse)
 	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/ListPayment", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *paymentAPIServiceClient) ListProjects(ctx context.Context, in *ListProjectsRequest, opts ...grpc.CallOption) (*ListProjectsResponse, error) {
-	out := new(ListProjectsResponse)
-	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/ListProjects", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *paymentAPIServiceClient) GetProject(ctx context.Context, in *GetProjectRequest, opts ...grpc.CallOption) (*GetProjectResponse, error) {
-	out := new(GetProjectResponse)
-	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/GetProject", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -244,9 +224,8 @@ func (c *paymentAPIServiceClient) InvoiceFilter(ctx context.Context, in *Invoice
 type PaymentAPIServiceServer interface {
 	CreateSuscription(context.Context, *CreateSuscriptionRequest) (*CreateSuscriptionResponse, error)
 	CreateCard(context.Context, *CreateCardRequest) (*CreateCardResponse, error)
-	UpdateSuscription(context.Context, *UpdateSuscriptionRequest) (*UpdateSuscriptionResponse, error)
 	CancelSuscription(context.Context, *CancelSuscriptionRequest) (*CancelSuscriptionResponse, error)
-	GetOrganizationPayment(context.Context, *GetOrganizationPaymentRequest) (*GetOrganizationPaymentResponse, error)
+	GetOrganization(context.Context, *GetOrganizationRequest) (*GetOrganizationResponse, error)
 	GetSuscription(context.Context, *GetSuscriptionRequest) (*GetSuscriptionResponse, error)
 	CreateCustomer(context.Context, *CreateCustomerRequest) (*CreateCustomerResponse, error)
 	DeleteCustomer(context.Context, *DeleteCustomerRequest) (*DeleteCustomerResponse, error)
@@ -256,11 +235,10 @@ type PaymentAPIServiceServer interface {
 	GetPayments(context.Context, *GetPaymentsRequest) (*GetPaymentsResponse, error)
 	CreatePayment(context.Context, *CreatePaymentRequest) (*CreatePaymentResponse, error)
 	CreateProject(context.Context, *CreateProjectRequest) (*CreateProjectResponse, error)
-	UpdatePayment(context.Context, *UpdatePaymentRequest) (*UpdatePaymentResponse, error)
+	ListProjects(context.Context, *ListProjectsRequest) (*ListProjectsResponse, error)
+	DeleteProject(context.Context, *DeleteProjectRequest) (*DeleteProjectResponse, error)
 	DeletePayment(context.Context, *DeletePaymentRequest) (*DeletePaymentResponse, error)
 	ListPayment(context.Context, *ListPaymentRequest) (*ListPaymentResponse, error)
-	ListProjects(context.Context, *ListProjectsRequest) (*ListProjectsResponse, error)
-	GetProject(context.Context, *GetProjectRequest) (*GetProjectResponse, error)
 	CreateInvoice(context.Context, *CreateInvoiceRequest) (*CreateInvoiceResponse, error)
 	InvoiceFilter(context.Context, *InvoiceFilterRequest) (*InvoiceFilterResponse, error)
 }
@@ -275,14 +253,11 @@ func (UnimplementedPaymentAPIServiceServer) CreateSuscription(context.Context, *
 func (UnimplementedPaymentAPIServiceServer) CreateCard(context.Context, *CreateCardRequest) (*CreateCardResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCard not implemented")
 }
-func (UnimplementedPaymentAPIServiceServer) UpdateSuscription(context.Context, *UpdateSuscriptionRequest) (*UpdateSuscriptionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateSuscription not implemented")
-}
 func (UnimplementedPaymentAPIServiceServer) CancelSuscription(context.Context, *CancelSuscriptionRequest) (*CancelSuscriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CancelSuscription not implemented")
 }
-func (UnimplementedPaymentAPIServiceServer) GetOrganizationPayment(context.Context, *GetOrganizationPaymentRequest) (*GetOrganizationPaymentResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetOrganizationPayment not implemented")
+func (UnimplementedPaymentAPIServiceServer) GetOrganization(context.Context, *GetOrganizationRequest) (*GetOrganizationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrganization not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) GetSuscription(context.Context, *GetSuscriptionRequest) (*GetSuscriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSuscription not implemented")
@@ -311,20 +286,17 @@ func (UnimplementedPaymentAPIServiceServer) CreatePayment(context.Context, *Crea
 func (UnimplementedPaymentAPIServiceServer) CreateProject(context.Context, *CreateProjectRequest) (*CreateProjectResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateProject not implemented")
 }
-func (UnimplementedPaymentAPIServiceServer) UpdatePayment(context.Context, *UpdatePaymentRequest) (*UpdatePaymentResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdatePayment not implemented")
+func (UnimplementedPaymentAPIServiceServer) ListProjects(context.Context, *ListProjectsRequest) (*ListProjectsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListProjects not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) DeleteProject(context.Context, *DeleteProjectRequest) (*DeleteProjectResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteProject not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) DeletePayment(context.Context, *DeletePaymentRequest) (*DeletePaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeletePayment not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) ListPayment(context.Context, *ListPaymentRequest) (*ListPaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListPayment not implemented")
-}
-func (UnimplementedPaymentAPIServiceServer) ListProjects(context.Context, *ListProjectsRequest) (*ListProjectsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListProjects not implemented")
-}
-func (UnimplementedPaymentAPIServiceServer) GetProject(context.Context, *GetProjectRequest) (*GetProjectResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetProject not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) CreateInvoice(context.Context, *CreateInvoiceRequest) (*CreateInvoiceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateInvoice not implemented")
@@ -380,24 +352,6 @@ func _PaymentAPIService_CreateCard_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
-func _PaymentAPIService_UpdateSuscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateSuscriptionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(PaymentAPIServiceServer).UpdateSuscription(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/payment.v1alpha1.PaymentAPIService/UpdateSuscription",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentAPIServiceServer).UpdateSuscription(ctx, req.(*UpdateSuscriptionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _PaymentAPIService_CancelSuscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CancelSuscriptionRequest)
 	if err := dec(in); err != nil {
@@ -416,20 +370,20 @@ func _PaymentAPIService_CancelSuscription_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _PaymentAPIService_GetOrganizationPayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetOrganizationPaymentRequest)
+func _PaymentAPIService_GetOrganization_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrganizationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(PaymentAPIServiceServer).GetOrganizationPayment(ctx, in)
+		return srv.(PaymentAPIServiceServer).GetOrganization(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/payment.v1alpha1.PaymentAPIService/GetOrganizationPayment",
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/GetOrganization",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentAPIServiceServer).GetOrganizationPayment(ctx, req.(*GetOrganizationPaymentRequest))
+		return srv.(PaymentAPIServiceServer).GetOrganization(ctx, req.(*GetOrganizationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -596,20 +550,38 @@ func _PaymentAPIService_CreateProject_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _PaymentAPIService_UpdatePayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdatePaymentRequest)
+func _PaymentAPIService_ListProjects_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListProjectsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(PaymentAPIServiceServer).UpdatePayment(ctx, in)
+		return srv.(PaymentAPIServiceServer).ListProjects(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/payment.v1alpha1.PaymentAPIService/UpdatePayment",
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/ListProjects",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentAPIServiceServer).UpdatePayment(ctx, req.(*UpdatePaymentRequest))
+		return srv.(PaymentAPIServiceServer).ListProjects(ctx, req.(*ListProjectsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PaymentAPIService_DeleteProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteProjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).DeleteProject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/DeleteProject",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).DeleteProject(ctx, req.(*DeleteProjectRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -646,42 +618,6 @@ func _PaymentAPIService_ListPayment_Handler(srv interface{}, ctx context.Context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PaymentAPIServiceServer).ListPayment(ctx, req.(*ListPaymentRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _PaymentAPIService_ListProjects_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListProjectsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(PaymentAPIServiceServer).ListProjects(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/payment.v1alpha1.PaymentAPIService/ListProjects",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentAPIServiceServer).ListProjects(ctx, req.(*ListProjectsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _PaymentAPIService_GetProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetProjectRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(PaymentAPIServiceServer).GetProject(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/payment.v1alpha1.PaymentAPIService/GetProject",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentAPIServiceServer).GetProject(ctx, req.(*GetProjectRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -738,16 +674,12 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _PaymentAPIService_CreateCard_Handler,
 		},
 		{
-			MethodName: "UpdateSuscription",
-			Handler:    _PaymentAPIService_UpdateSuscription_Handler,
-		},
-		{
 			MethodName: "CancelSuscription",
 			Handler:    _PaymentAPIService_CancelSuscription_Handler,
 		},
 		{
-			MethodName: "GetOrganizationPayment",
-			Handler:    _PaymentAPIService_GetOrganizationPayment_Handler,
+			MethodName: "GetOrganization",
+			Handler:    _PaymentAPIService_GetOrganization_Handler,
 		},
 		{
 			MethodName: "GetSuscription",
@@ -786,8 +718,12 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _PaymentAPIService_CreateProject_Handler,
 		},
 		{
-			MethodName: "UpdatePayment",
-			Handler:    _PaymentAPIService_UpdatePayment_Handler,
+			MethodName: "ListProjects",
+			Handler:    _PaymentAPIService_ListProjects_Handler,
+		},
+		{
+			MethodName: "DeleteProject",
+			Handler:    _PaymentAPIService_DeleteProject_Handler,
 		},
 		{
 			MethodName: "DeletePayment",
@@ -796,14 +732,6 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListPayment",
 			Handler:    _PaymentAPIService_ListPayment_Handler,
-		},
-		{
-			MethodName: "ListProjects",
-			Handler:    _PaymentAPIService_ListProjects_Handler,
-		},
-		{
-			MethodName: "GetProject",
-			Handler:    _PaymentAPIService_GetProject_Handler,
 		},
 		{
 			MethodName: "CreateInvoice",

@@ -6,40 +6,37 @@ option go_package = "github.com/cuemby/ccp-payment-service/payment/v1alpha1";
 
 message Customer {
   string id =1;
-  string name = 2;
-  string email = 3;
-  string customer_id = 4;
-  uint32 organization_id = 5;
+  string customer_id = 2;
+  uint32 organization_id = 3;
+  string name = 4;
+  string email = 5;  
   Suscription suscription = 6;
-  repeated Payment payment = 7;
+  PaymentList payments = 7;
   Invoice invoice = 8;
   Biling biling = 9;
-  repeated Project project = 10;
-
+  ProjectList project = 10;
 }
 
 message Project {
-  int32 id = 1;
+  string id =1;
   string project_id = 2;
   string name = 3;
   string image = 4;
-  uint32 organization_id = 5;
-  string description = 6;
-  string created_at = 7;
-  string updated_at = 8;
+  string description = 5;
+  string created_at = 6;
+  string updated_at = 7;
 }
 
 message Suscription {
   string id =1;
-  string price= 2;
-  string price_cpu =3;
-  string price_bytes =4;
-  string currency =5;
-  string interval =6;
-  string suscription_item_id = 7;
-  string invoice_id = 8;
-  string suscription_id =9;
-
+  string suscription_id =2;
+  string suscription_item_id =3;
+  string invoice_id = 4; 
+  string price= 5;
+  string price_cpu =6;
+  string price_bytes =7;
+  string currency =8;
+  string interval =9;   
 }
 
 message Payment {
@@ -53,10 +50,10 @@ message Payment {
 message Card {
   string id = 1;
   string number = 2;
-  string expmonth = 3;
-  string expyear = 4;
-  string cvc = 5;
-  
+  string card_holder = 3;
+  string expmonth = 4;
+  string expyear = 5;
+  string cvc = 6;  
 }
 
 message Invoice {
@@ -70,15 +67,15 @@ message Invoice {
 
 message Biling {
   string id =1;
-  string account_name = 2;
-  string invoice_id =3;
+  string invoice_id =2;
+  string account_name = 3;  
   int64 totalusage = 4;
   int64 cpu = 5;
   int64 ram = 6;
   string month = 7;
   string year = 8;
+}
 
-} 
 message InvoiceList {
   repeated Invoice items = 1;
 } 

@@ -22,15 +22,19 @@ class Card extends \Google\Protobuf\Internal\Message
      */
     protected $number = '';
     /**
-     * Generated from protobuf field <code>string expmonth = 3 [json_name = "expmonth"];</code>
+     * Generated from protobuf field <code>string card_holder = 3 [json_name = "cardHolder"];</code>
+     */
+    protected $card_holder = '';
+    /**
+     * Generated from protobuf field <code>string expmonth = 4 [json_name = "expmonth"];</code>
      */
     protected $expmonth = '';
     /**
-     * Generated from protobuf field <code>string expyear = 4 [json_name = "expyear"];</code>
+     * Generated from protobuf field <code>string expyear = 5 [json_name = "expyear"];</code>
      */
     protected $expyear = '';
     /**
-     * Generated from protobuf field <code>string cvc = 5 [json_name = "cvc"];</code>
+     * Generated from protobuf field <code>string cvc = 6 [json_name = "cvc"];</code>
      */
     protected $cvc = '';
 
@@ -42,6 +46,7 @@ class Card extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $number
+     *     @type string $card_holder
      *     @type string $expmonth
      *     @type string $expyear
      *     @type string $cvc
@@ -97,7 +102,29 @@ class Card extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string expmonth = 3 [json_name = "expmonth"];</code>
+     * Generated from protobuf field <code>string card_holder = 3 [json_name = "cardHolder"];</code>
+     * @return string
+     */
+    public function getCardHolder()
+    {
+        return $this->card_holder;
+    }
+
+    /**
+     * Generated from protobuf field <code>string card_holder = 3 [json_name = "cardHolder"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCardHolder($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->card_holder = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string expmonth = 4 [json_name = "expmonth"];</code>
      * @return string
      */
     public function getExpmonth()
@@ -106,7 +133,7 @@ class Card extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string expmonth = 3 [json_name = "expmonth"];</code>
+     * Generated from protobuf field <code>string expmonth = 4 [json_name = "expmonth"];</code>
      * @param string $var
      * @return $this
      */
@@ -119,7 +146,7 @@ class Card extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string expyear = 4 [json_name = "expyear"];</code>
+     * Generated from protobuf field <code>string expyear = 5 [json_name = "expyear"];</code>
      * @return string
      */
     public function getExpyear()
@@ -128,7 +155,7 @@ class Card extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string expyear = 4 [json_name = "expyear"];</code>
+     * Generated from protobuf field <code>string expyear = 5 [json_name = "expyear"];</code>
      * @param string $var
      * @return $this
      */
@@ -141,7 +168,7 @@ class Card extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string cvc = 5 [json_name = "cvc"];</code>
+     * Generated from protobuf field <code>string cvc = 6 [json_name = "cvc"];</code>
      * @return string
      */
     public function getCvc()
@@ -150,7 +177,7 @@ class Card extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string cvc = 5 [json_name = "cvc"];</code>
+     * Generated from protobuf field <code>string cvc = 6 [json_name = "cvc"];</code>
      * @param string $var
      * @return $this
      */

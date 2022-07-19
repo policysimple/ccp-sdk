@@ -43,19 +43,6 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Payment\V1alpha1\UpdateSuscriptionRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function UpdateSuscription(\Payment\V1alpha1\UpdateSuscriptionRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/UpdateSuscription',
-        $argument,
-        ['\Payment\V1alpha1\UpdateSuscriptionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * @param \Payment\V1alpha1\CancelSuscriptionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -69,15 +56,15 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Payment\V1alpha1\GetOrganizationPaymentRequest $argument input argument
+     * @param \Payment\V1alpha1\GetOrganizationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function GetOrganizationPayment(\Payment\V1alpha1\GetOrganizationPaymentRequest $argument,
+    public function GetOrganization(\Payment\V1alpha1\GetOrganizationRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/GetOrganizationPayment',
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/GetOrganization',
         $argument,
-        ['\Payment\V1alpha1\GetOrganizationPaymentResponse', 'decode'],
+        ['\Payment\V1alpha1\GetOrganizationResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -199,15 +186,28 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Payment\V1alpha1\UpdatePaymentRequest $argument input argument
+     * @param \Payment\V1alpha1\ListProjectsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function UpdatePayment(\Payment\V1alpha1\UpdatePaymentRequest $argument,
+    public function ListProjects(\Payment\V1alpha1\ListProjectsRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/UpdatePayment',
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/ListProjects',
         $argument,
-        ['\Payment\V1alpha1\UpdatePaymentResponse', 'decode'],
+        ['\Payment\V1alpha1\ListProjectsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Payment\V1alpha1\DeleteProjectRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DeleteProject(\Payment\V1alpha1\DeleteProjectRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/DeleteProject',
+        $argument,
+        ['\Payment\V1alpha1\DeleteProjectResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -234,32 +234,6 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/ListPayment',
         $argument,
         ['\Payment\V1alpha1\ListPaymentResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * @param \Payment\V1alpha1\ListProjectsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function ListProjects(\Payment\V1alpha1\ListProjectsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/ListProjects',
-        $argument,
-        ['\Payment\V1alpha1\ListProjectsResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * @param \Payment\V1alpha1\GetProjectRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function GetProject(\Payment\V1alpha1\GetProjectRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/GetProject',
-        $argument,
-        ['\Payment\V1alpha1\GetProjectResponse', 'decode'],
         $metadata, $options);
     }
 
