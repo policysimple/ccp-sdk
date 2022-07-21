@@ -68,6 +68,7 @@ func DeleteCustomer(in *paymentpkgv1.DeleteCustomerRequest) (response *paymentpk
 	defer cancel()
 
 	response, err = client.DeleteCustomer(ctx, &paymentpkgv1.DeleteCustomerRequest{
+		OrganizationId: in.OrganizationId,
 		CustomerId: in.CustomerId,
 	})
 
