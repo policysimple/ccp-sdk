@@ -113,8 +113,8 @@ func CreateProject(in *paymentpkgv1.CreateProjectRequest) (response *paymentpkgv
 	defer cancel()
 
 	response, err = client.CreateProject(ctx, &paymentpkgv1.CreateProjectRequest{
-		CustomerId: in.CustomerId,
-		Project:    in.Project,
+		OrganizationId: in.OrganizationId,
+		Project:        in.Project,
 	})
 
 	if err != nil {
@@ -144,28 +144,6 @@ func CreateInvoice(in *paymentpkgv1.CreateInvoiceRequest) (response *paymentpkgv
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: %v", "Error create subscription", err),
-		)
-	}
-	return response, nil
-}
-
-func UpdateSuscription(in *paymentpkgv1.UpdateSuscriptionRequest) (response *paymentpkgv1.UpdateSuscriptionResponse, err error) {
-	d, err := time.ParseDuration(paymentServiceTimeout)
-	if err != nil {
-		return
-	}
-	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
-	defer cancel()
-
-	response, err = client.UpdateSuscription(ctx, &paymentpkgv1.UpdateSuscriptionRequest{
-		Suscription: in.Suscription,
-	})
-
-	if err != nil {
-		log.Printf("%s: %v", "Error update subscription", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error update subscription", err),
 		)
 	}
 	return response, nil
@@ -203,28 +181,6 @@ func GetSuscription(in *paymentpkgv1.GetSuscriptionRequest) (response *paymentpk
 
 	response, err = client.GetSuscription(ctx, &paymentpkgv1.GetSuscriptionRequest{
 		SuscriptionId: in.SuscriptionId,
-	})
-
-	if err != nil {
-		log.Printf("%s: %v", "Error get suscription", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get suscription", err),
-		)
-	}
-	return response, nil
-}
-
-func GetProject(in *paymentpkgv1.GetProjectRequest) (response *paymentpkgv1.GetProjectResponse, err error) {
-	d, err := time.ParseDuration(paymentServiceTimeout)
-	if err != nil {
-		return
-	}
-	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
-	defer cancel()
-
-	response, err = client.GetProject(ctx, &paymentpkgv1.GetProjectRequest{
-		ProjectId: in.ProjectId,
 	})
 
 	if err != nil {
@@ -335,7 +291,7 @@ func GetPayments(in *paymentpkgv1.GetPaymentsRequest) (response *paymentpkgv1.Ge
 	defer cancel()
 
 	response, err = client.GetPayments(ctx, &paymentpkgv1.GetPaymentsRequest{
-		CustomerId: in.CustomerId,
+		OrganizationId: in.OrganizationId,
 	})
 
 	if err != nil {
@@ -348,7 +304,7 @@ func GetPayments(in *paymentpkgv1.GetPaymentsRequest) (response *paymentpkgv1.Ge
 	return response, nil
 }
 
-func GetOrganizationPayments(organizationId uint32) (response *paymentpkgv1.GetOrganizationPaymentResponse, err error) {
+func GetOrganizationPayments(organizationId uint32) (response *paymentpkgv1.GetPaymentResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
 		return
@@ -356,7 +312,7 @@ func GetOrganizationPayments(organizationId uint32) (response *paymentpkgv1.GetO
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.GetOrganizationPayment(ctx, &paymentpkgv1.GetOrganizationPaymentRequest{
+	response, err = client.GetPayment(ctx, &paymentpkgv1.GetPaymentRequest{
 		OrganizationId: organizationId,
 	})
 
@@ -387,28 +343,6 @@ func ListProjects(organizationId uint32) (response *paymentpkgv1.ListProjectsRes
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: %v", "Error get  ListProjects", err),
-		)
-	}
-	return response, nil
-}
-
-func UpdatePayment(in *paymentpkgv1.UpdatePaymentRequest) (response *paymentpkgv1.UpdatePaymentResponse, err error) {
-	d, err := time.ParseDuration(paymentServiceTimeout)
-	if err != nil {
-		return
-	}
-	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
-	defer cancel()
-
-	response, err = client.UpdatePayment(ctx, &paymentpkgv1.UpdatePaymentRequest{
-		Payment: in.Payment,
-	})
-
-	if err != nil {
-		log.Printf("%s: %v", "Error update payment", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error update payment", err),
 		)
 	}
 	return response, nil
