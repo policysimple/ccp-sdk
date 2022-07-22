@@ -930,8 +930,9 @@ proto.payment.v1alpha1.InvoiceFilterRequest.prototype.toObject = function(opt_in
 proto.payment.v1alpha1.InvoiceFilterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    year: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    month: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    invoiceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    year: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    month: jspb.Message.getFieldWithDefault(msg, 4, ""),
     customerList: (f = msg.getCustomerList()) && payment_v1alpha1_payment_pb.CustomerList.toObject(includeInstance, f)
   };
 
@@ -975,13 +976,17 @@ proto.payment.v1alpha1.InvoiceFilterRequest.deserializeBinaryFromReader = functi
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setYear(value);
+      msg.setInvoiceId(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMonth(value);
+      msg.setYear(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMonth(value);
+      break;
+    case 5:
       var value = new payment_v1alpha1_payment_pb.CustomerList;
       reader.readMessage(value,payment_v1alpha1_payment_pb.CustomerList.deserializeBinaryFromReader);
       msg.setCustomerList(value);
@@ -1022,24 +1027,31 @@ proto.payment.v1alpha1.InvoiceFilterRequest.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getYear();
+  f = message.getInvoiceId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getMonth();
+  f = message.getYear();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
+  f = message.getMonth();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getCustomerList();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       payment_v1alpha1_payment_pb.CustomerList.serializeBinaryToWriter
     );
@@ -1066,10 +1078,10 @@ proto.payment.v1alpha1.InvoiceFilterRequest.prototype.setOrganizationId = functi
 
 
 /**
- * optional string year = 2;
+ * optional string invoice_id = 2;
  * @return {string}
  */
-proto.payment.v1alpha1.InvoiceFilterRequest.prototype.getYear = function() {
+proto.payment.v1alpha1.InvoiceFilterRequest.prototype.getInvoiceId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1078,16 +1090,16 @@ proto.payment.v1alpha1.InvoiceFilterRequest.prototype.getYear = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.InvoiceFilterRequest} returns this
  */
-proto.payment.v1alpha1.InvoiceFilterRequest.prototype.setYear = function(value) {
+proto.payment.v1alpha1.InvoiceFilterRequest.prototype.setInvoiceId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string month = 3;
+ * optional string year = 3;
  * @return {string}
  */
-proto.payment.v1alpha1.InvoiceFilterRequest.prototype.getMonth = function() {
+proto.payment.v1alpha1.InvoiceFilterRequest.prototype.getYear = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -1096,18 +1108,36 @@ proto.payment.v1alpha1.InvoiceFilterRequest.prototype.getMonth = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.InvoiceFilterRequest} returns this
  */
-proto.payment.v1alpha1.InvoiceFilterRequest.prototype.setMonth = function(value) {
+proto.payment.v1alpha1.InvoiceFilterRequest.prototype.setYear = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional CustomerList customer_list = 4;
+ * optional string month = 4;
+ * @return {string}
+ */
+proto.payment.v1alpha1.InvoiceFilterRequest.prototype.getMonth = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.InvoiceFilterRequest} returns this
+ */
+proto.payment.v1alpha1.InvoiceFilterRequest.prototype.setMonth = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional CustomerList customer_list = 5;
  * @return {?proto.payment.v1alpha1.CustomerList}
  */
 proto.payment.v1alpha1.InvoiceFilterRequest.prototype.getCustomerList = function() {
   return /** @type{?proto.payment.v1alpha1.CustomerList} */ (
-    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.CustomerList, 4));
+    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.CustomerList, 5));
 };
 
 
@@ -1116,7 +1146,7 @@ proto.payment.v1alpha1.InvoiceFilterRequest.prototype.getCustomerList = function
  * @return {!proto.payment.v1alpha1.InvoiceFilterRequest} returns this
 */
 proto.payment.v1alpha1.InvoiceFilterRequest.prototype.setCustomerList = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -1134,7 +1164,7 @@ proto.payment.v1alpha1.InvoiceFilterRequest.prototype.clearCustomerList = functi
  * @return {boolean}
  */
 proto.payment.v1alpha1.InvoiceFilterRequest.prototype.hasCustomerList = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -1173,7 +1203,8 @@ proto.payment.v1alpha1.InvoiceFilterResponse.toObject = function(includeInstance
     customerList: (f = msg.getCustomerList()) && payment_v1alpha1_payment_pb.CustomerList.toObject(includeInstance, f),
     invoiceList: (f = msg.getInvoiceList()) && payment_v1alpha1_payment_pb.InvoiceList.toObject(includeInstance, f),
     bilingList: (f = msg.getBilingList()) && payment_v1alpha1_payment_pb.BilingList.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 4, "")
+    suscriptionList: (f = msg.getSuscriptionList()) && payment_v1alpha1_payment_pb.SuscriptionList.toObject(includeInstance, f),
+    status: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1226,6 +1257,11 @@ proto.payment.v1alpha1.InvoiceFilterResponse.deserializeBinaryFromReader = funct
       msg.setBilingList(value);
       break;
     case 4:
+      var value = new payment_v1alpha1_payment_pb.SuscriptionList;
+      reader.readMessage(value,payment_v1alpha1_payment_pb.SuscriptionList.deserializeBinaryFromReader);
+      msg.setSuscriptionList(value);
+      break;
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
       break;
@@ -1282,10 +1318,18 @@ proto.payment.v1alpha1.InvoiceFilterResponse.serializeBinaryToWriter = function(
       payment_v1alpha1_payment_pb.BilingList.serializeBinaryToWriter
     );
   }
+  f = message.getSuscriptionList();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      payment_v1alpha1_payment_pb.SuscriptionList.serializeBinaryToWriter
+    );
+  }
   f = message.getStatus();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      5,
       f
     );
   }
@@ -1404,11 +1448,48 @@ proto.payment.v1alpha1.InvoiceFilterResponse.prototype.hasBilingList = function(
 
 
 /**
- * optional string status = 4;
+ * optional SuscriptionList suscription_list = 4;
+ * @return {?proto.payment.v1alpha1.SuscriptionList}
+ */
+proto.payment.v1alpha1.InvoiceFilterResponse.prototype.getSuscriptionList = function() {
+  return /** @type{?proto.payment.v1alpha1.SuscriptionList} */ (
+    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.SuscriptionList, 4));
+};
+
+
+/**
+ * @param {?proto.payment.v1alpha1.SuscriptionList|undefined} value
+ * @return {!proto.payment.v1alpha1.InvoiceFilterResponse} returns this
+*/
+proto.payment.v1alpha1.InvoiceFilterResponse.prototype.setSuscriptionList = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.payment.v1alpha1.InvoiceFilterResponse} returns this
+ */
+proto.payment.v1alpha1.InvoiceFilterResponse.prototype.clearSuscriptionList = function() {
+  return this.setSuscriptionList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.payment.v1alpha1.InvoiceFilterResponse.prototype.hasSuscriptionList = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string status = 5;
  * @return {string}
  */
 proto.payment.v1alpha1.InvoiceFilterResponse.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -1417,7 +1498,7 @@ proto.payment.v1alpha1.InvoiceFilterResponse.prototype.getStatus = function() {
  * @return {!proto.payment.v1alpha1.InvoiceFilterResponse} returns this
  */
 proto.payment.v1alpha1.InvoiceFilterResponse.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

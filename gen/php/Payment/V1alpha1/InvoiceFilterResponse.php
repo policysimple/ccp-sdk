@@ -26,7 +26,11 @@ class InvoiceFilterResponse extends \Google\Protobuf\Internal\Message
      */
     protected $biling_list = null;
     /**
-     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.SuscriptionList suscription_list = 4 [json_name = "suscriptionList"];</code>
+     */
+    protected $suscription_list = null;
+    /**
+     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
      */
     protected $status = '';
 
@@ -39,6 +43,7 @@ class InvoiceFilterResponse extends \Google\Protobuf\Internal\Message
      *     @type \Payment\V1alpha1\CustomerList $customer_list
      *     @type \Payment\V1alpha1\InvoiceList $invoice_list
      *     @type \Payment\V1alpha1\BilingList $biling_list
+     *     @type \Payment\V1alpha1\SuscriptionList $suscription_list
      *     @type string $status
      * }
      */
@@ -144,7 +149,39 @@ class InvoiceFilterResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.SuscriptionList suscription_list = 4 [json_name = "suscriptionList"];</code>
+     * @return \Payment\V1alpha1\SuscriptionList|null
+     */
+    public function getSuscriptionList()
+    {
+        return $this->suscription_list;
+    }
+
+    public function hasSuscriptionList()
+    {
+        return isset($this->suscription_list);
+    }
+
+    public function clearSuscriptionList()
+    {
+        unset($this->suscription_list);
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.SuscriptionList suscription_list = 4 [json_name = "suscriptionList"];</code>
+     * @param \Payment\V1alpha1\SuscriptionList $var
+     * @return $this
+     */
+    public function setSuscriptionList($var)
+    {
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\SuscriptionList::class);
+        $this->suscription_list = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
      * @return string
      */
     public function getStatus()
@@ -153,7 +190,7 @@ class InvoiceFilterResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */

@@ -340,12 +340,27 @@ class InvoiceFilterRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kYearFieldNumber = 2,
-    kMonthFieldNumber = 3,
-    kCustomerListFieldNumber = 4,
+    kInvoiceIdFieldNumber = 2,
+    kYearFieldNumber = 3,
+    kMonthFieldNumber = 4,
+    kCustomerListFieldNumber = 5,
     kOrganizationIdFieldNumber = 1,
   };
-  // string year = 2 [json_name = "year"];
+  // string invoice_id = 2 [json_name = "invoiceId"];
+  void clear_invoice_id();
+  const std::string& invoice_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_invoice_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_invoice_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_invoice_id();
+  void set_allocated_invoice_id(std::string* invoice_id);
+  private:
+  const std::string& _internal_invoice_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_invoice_id(const std::string& value);
+  std::string* _internal_mutable_invoice_id();
+  public:
+
+  // string year = 3 [json_name = "year"];
   void clear_year();
   const std::string& year() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -359,7 +374,7 @@ class InvoiceFilterRequest final :
   std::string* _internal_mutable_year();
   public:
 
-  // string month = 3 [json_name = "month"];
+  // string month = 4 [json_name = "month"];
   void clear_month();
   const std::string& month() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -373,7 +388,7 @@ class InvoiceFilterRequest final :
   std::string* _internal_mutable_month();
   public:
 
-  // .payment.v1alpha1.CustomerList customer_list = 4 [json_name = "customerList"];
+  // .payment.v1alpha1.CustomerList customer_list = 5 [json_name = "customerList"];
   bool has_customer_list() const;
   private:
   bool _internal_has_customer_list() const;
@@ -407,6 +422,7 @@ class InvoiceFilterRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invoice_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr year_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr month_;
   ::payment::v1alpha1::CustomerList* customer_list_;
@@ -531,12 +547,13 @@ class InvoiceFilterResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 4,
+    kStatusFieldNumber = 5,
     kCustomerListFieldNumber = 1,
     kInvoiceListFieldNumber = 2,
     kBilingListFieldNumber = 3,
+    kSuscriptionListFieldNumber = 4,
   };
-  // string status = 4 [json_name = "status"];
+  // string status = 5 [json_name = "status"];
   void clear_status();
   const std::string& status() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -604,6 +621,24 @@ class InvoiceFilterResponse final :
       ::payment::v1alpha1::BilingList* biling_list);
   ::payment::v1alpha1::BilingList* unsafe_arena_release_biling_list();
 
+  // .payment.v1alpha1.SuscriptionList suscription_list = 4 [json_name = "suscriptionList"];
+  bool has_suscription_list() const;
+  private:
+  bool _internal_has_suscription_list() const;
+  public:
+  void clear_suscription_list();
+  const ::payment::v1alpha1::SuscriptionList& suscription_list() const;
+  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::SuscriptionList* release_suscription_list();
+  ::payment::v1alpha1::SuscriptionList* mutable_suscription_list();
+  void set_allocated_suscription_list(::payment::v1alpha1::SuscriptionList* suscription_list);
+  private:
+  const ::payment::v1alpha1::SuscriptionList& _internal_suscription_list() const;
+  ::payment::v1alpha1::SuscriptionList* _internal_mutable_suscription_list();
+  public:
+  void unsafe_arena_set_allocated_suscription_list(
+      ::payment::v1alpha1::SuscriptionList* suscription_list);
+  ::payment::v1alpha1::SuscriptionList* unsafe_arena_release_suscription_list();
+
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.InvoiceFilterResponse)
  private:
   class _Internal;
@@ -615,6 +650,7 @@ class InvoiceFilterResponse final :
   ::payment::v1alpha1::CustomerList* customer_list_;
   ::payment::v1alpha1::InvoiceList* invoice_list_;
   ::payment::v1alpha1::BilingList* biling_list_;
+  ::payment::v1alpha1::SuscriptionList* suscription_list_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 };
@@ -6692,7 +6728,53 @@ inline void InvoiceFilterRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::u
   // @@protoc_insertion_point(field_set:payment.v1alpha1.InvoiceFilterRequest.organization_id)
 }
 
-// string year = 2 [json_name = "year"];
+// string invoice_id = 2 [json_name = "invoiceId"];
+inline void InvoiceFilterRequest::clear_invoice_id() {
+  invoice_id_.ClearToEmpty();
+}
+inline const std::string& InvoiceFilterRequest::invoice_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.InvoiceFilterRequest.invoice_id)
+  return _internal_invoice_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void InvoiceFilterRequest::set_invoice_id(ArgT0&& arg0, ArgT... args) {
+ 
+ invoice_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.InvoiceFilterRequest.invoice_id)
+}
+inline std::string* InvoiceFilterRequest::mutable_invoice_id() {
+  std::string* _s = _internal_mutable_invoice_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.InvoiceFilterRequest.invoice_id)
+  return _s;
+}
+inline const std::string& InvoiceFilterRequest::_internal_invoice_id() const {
+  return invoice_id_.Get();
+}
+inline void InvoiceFilterRequest::_internal_set_invoice_id(const std::string& value) {
+  
+  invoice_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* InvoiceFilterRequest::_internal_mutable_invoice_id() {
+  
+  return invoice_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* InvoiceFilterRequest::release_invoice_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.InvoiceFilterRequest.invoice_id)
+  return invoice_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void InvoiceFilterRequest::set_allocated_invoice_id(std::string* invoice_id) {
+  if (invoice_id != nullptr) {
+    
+  } else {
+    
+  }
+  invoice_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), invoice_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.InvoiceFilterRequest.invoice_id)
+}
+
+// string year = 3 [json_name = "year"];
 inline void InvoiceFilterRequest::clear_year() {
   year_.ClearToEmpty();
 }
@@ -6738,7 +6820,7 @@ inline void InvoiceFilterRequest::set_allocated_year(std::string* year) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.InvoiceFilterRequest.year)
 }
 
-// string month = 3 [json_name = "month"];
+// string month = 4 [json_name = "month"];
 inline void InvoiceFilterRequest::clear_month() {
   month_.ClearToEmpty();
 }
@@ -6784,7 +6866,7 @@ inline void InvoiceFilterRequest::set_allocated_month(std::string* month) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.InvoiceFilterRequest.month)
 }
 
-// .payment.v1alpha1.CustomerList customer_list = 4 [json_name = "customerList"];
+// .payment.v1alpha1.CustomerList customer_list = 5 [json_name = "customerList"];
 inline bool InvoiceFilterRequest::_internal_has_customer_list() const {
   return this != internal_default_instance() && customer_list_ != nullptr;
 }
@@ -7132,7 +7214,93 @@ inline void InvoiceFilterResponse::set_allocated_biling_list(::payment::v1alpha1
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.InvoiceFilterResponse.biling_list)
 }
 
-// string status = 4 [json_name = "status"];
+// .payment.v1alpha1.SuscriptionList suscription_list = 4 [json_name = "suscriptionList"];
+inline bool InvoiceFilterResponse::_internal_has_suscription_list() const {
+  return this != internal_default_instance() && suscription_list_ != nullptr;
+}
+inline bool InvoiceFilterResponse::has_suscription_list() const {
+  return _internal_has_suscription_list();
+}
+inline const ::payment::v1alpha1::SuscriptionList& InvoiceFilterResponse::_internal_suscription_list() const {
+  const ::payment::v1alpha1::SuscriptionList* p = suscription_list_;
+  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::SuscriptionList&>(
+      ::payment::v1alpha1::_SuscriptionList_default_instance_);
+}
+inline const ::payment::v1alpha1::SuscriptionList& InvoiceFilterResponse::suscription_list() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.InvoiceFilterResponse.suscription_list)
+  return _internal_suscription_list();
+}
+inline void InvoiceFilterResponse::unsafe_arena_set_allocated_suscription_list(
+    ::payment::v1alpha1::SuscriptionList* suscription_list) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(suscription_list_);
+  }
+  suscription_list_ = suscription_list;
+  if (suscription_list) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.InvoiceFilterResponse.suscription_list)
+}
+inline ::payment::v1alpha1::SuscriptionList* InvoiceFilterResponse::release_suscription_list() {
+  
+  ::payment::v1alpha1::SuscriptionList* temp = suscription_list_;
+  suscription_list_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::payment::v1alpha1::SuscriptionList* InvoiceFilterResponse::unsafe_arena_release_suscription_list() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.InvoiceFilterResponse.suscription_list)
+  
+  ::payment::v1alpha1::SuscriptionList* temp = suscription_list_;
+  suscription_list_ = nullptr;
+  return temp;
+}
+inline ::payment::v1alpha1::SuscriptionList* InvoiceFilterResponse::_internal_mutable_suscription_list() {
+  
+  if (suscription_list_ == nullptr) {
+    auto* p = CreateMaybeMessage<::payment::v1alpha1::SuscriptionList>(GetArenaForAllocation());
+    suscription_list_ = p;
+  }
+  return suscription_list_;
+}
+inline ::payment::v1alpha1::SuscriptionList* InvoiceFilterResponse::mutable_suscription_list() {
+  ::payment::v1alpha1::SuscriptionList* _msg = _internal_mutable_suscription_list();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.InvoiceFilterResponse.suscription_list)
+  return _msg;
+}
+inline void InvoiceFilterResponse::set_allocated_suscription_list(::payment::v1alpha1::SuscriptionList* suscription_list) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(suscription_list_);
+  }
+  if (suscription_list) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(suscription_list));
+    if (message_arena != submessage_arena) {
+      suscription_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, suscription_list, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  suscription_list_ = suscription_list;
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.InvoiceFilterResponse.suscription_list)
+}
+
+// string status = 5 [json_name = "status"];
 inline void InvoiceFilterResponse::clear_status() {
   status_.ClearToEmpty();
 }
