@@ -92,6 +92,7 @@ message GetBilingMonthResponse {
 
 message GetPaymentsRequest {
     uint32 organization_id = 1;
+    string customer_id = 2;
 }
 
 message GetPaymentsResponse {
@@ -126,7 +127,7 @@ message CreateInvoiceRequest {
 }
 
 message CreateInvoiceResponse {
-    payment.v1alpha1.Invoice invoice = 1;
+    payment.v1alpha1.Customer customer = 1;
     string status = 2;
 }
 

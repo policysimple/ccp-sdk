@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateInvoiceResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 1 [json_name = "invoice"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
      */
-    protected $invoice = null;
+    protected $customer = null;
     /**
      * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
@@ -28,7 +28,7 @@ class CreateInvoiceResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Invoice $invoice
+     *     @type \Payment\V1alpha1\Customer $customer
      *     @type string $status
      * }
      */
@@ -38,33 +38,33 @@ class CreateInvoiceResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 1 [json_name = "invoice"];</code>
-     * @return \Payment\V1alpha1\Invoice|null
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @return \Payment\V1alpha1\Customer|null
      */
-    public function getInvoice()
+    public function getCustomer()
     {
-        return $this->invoice;
+        return $this->customer;
     }
 
-    public function hasInvoice()
+    public function hasCustomer()
     {
-        return isset($this->invoice);
+        return isset($this->customer);
     }
 
-    public function clearInvoice()
+    public function clearCustomer()
     {
-        unset($this->invoice);
+        unset($this->customer);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Invoice invoice = 1 [json_name = "invoice"];</code>
-     * @param \Payment\V1alpha1\Invoice $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @param \Payment\V1alpha1\Customer $var
      * @return $this
      */
-    public function setInvoice($var)
+    public function setCustomer($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Invoice::class);
-        $this->invoice = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
+        $this->customer = $var;
 
         return $this;
     }

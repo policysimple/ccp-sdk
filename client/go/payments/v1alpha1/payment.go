@@ -69,7 +69,7 @@ func DeleteCustomer(in *paymentpkgv1.DeleteCustomerRequest) (response *paymentpk
 
 	response, err = client.DeleteCustomer(ctx, &paymentpkgv1.DeleteCustomerRequest{
 		OrganizationId: in.OrganizationId,
-		CustomerId: in.CustomerId,
+		CustomerId:     in.CustomerId,
 	})
 
 	if err != nil {
@@ -293,6 +293,7 @@ func GetPayments(in *paymentpkgv1.GetPaymentsRequest) (response *paymentpkgv1.Ge
 
 	response, err = client.GetPayments(ctx, &paymentpkgv1.GetPaymentsRequest{
 		OrganizationId: in.OrganizationId,
+		CustomerId:     in.CustomerId,
 	})
 
 	if err != nil {
