@@ -31,16 +31,18 @@ service PaymentAPIService{
 
 message InvoiceFilterRequest {
     uint32  organization_id = 1;
-    string year = 2;
-    string month = 3;
-    payment.v1alpha1.CustomerList customer_list = 4;               
+    string invoice_id = 2;
+    string year = 3;
+    string month = 4;
+    payment.v1alpha1.CustomerList customer_list = 5;               
 }
     
 message InvoiceFilterResponse {
     payment.v1alpha1.CustomerList customer_list = 1;
     payment.v1alpha1.InvoiceList invoice_list = 2;
     payment.v1alpha1.BilingList biling_list = 3;
-    string status = 4;
+    payment.v1alpha1.SuscriptionList suscription_list = 4;
+    string status = 5;
 }
 
 message DeleteCustomerRequest {
