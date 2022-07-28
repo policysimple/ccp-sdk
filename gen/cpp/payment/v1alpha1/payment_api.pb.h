@@ -340,17 +340,10 @@ class InvoiceFilterRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-<<<<<<< HEAD
-    kYearFieldNumber = 2,
-    kMonthFieldNumber = 3,
-    kInvoiceIdFieldNumber = 5,
-    kCustomerListFieldNumber = 4,
-=======
     kInvoiceIdFieldNumber = 2,
     kYearFieldNumber = 3,
     kMonthFieldNumber = 4,
     kCustomerListFieldNumber = 5,
->>>>>>> 60e8c8da5e281da2fa4a627d69c4b319ac2a5b93
     kOrganizationIdFieldNumber = 1,
   };
   // string invoice_id = 2 [json_name = "invoiceId"];
@@ -395,25 +388,7 @@ class InvoiceFilterRequest final :
   std::string* _internal_mutable_month();
   public:
 
-<<<<<<< HEAD
-  // string invoice_id = 5 [json_name = "invoiceId"];
-  void clear_invoice_id();
-  const std::string& invoice_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_invoice_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_invoice_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_invoice_id();
-  void set_allocated_invoice_id(std::string* invoice_id);
-  private:
-  const std::string& _internal_invoice_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_invoice_id(const std::string& value);
-  std::string* _internal_mutable_invoice_id();
-  public:
-
-  // .payment.v1alpha1.CustomerList customer_list = 4 [json_name = "customerList"];
-=======
   // .payment.v1alpha1.CustomerList customer_list = 5 [json_name = "customerList"];
->>>>>>> 60e8c8da5e281da2fa4a627d69c4b319ac2a5b93
   bool has_customer_list() const;
   private:
   bool _internal_has_customer_list() const;
@@ -450,7 +425,6 @@ class InvoiceFilterRequest final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invoice_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr year_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr month_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invoice_id_;
   ::payment::v1alpha1::CustomerList* customer_list_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -6976,52 +6950,6 @@ inline void InvoiceFilterRequest::set_allocated_customer_list(::payment::v1alpha
   }
   customer_list_ = customer_list;
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.InvoiceFilterRequest.customer_list)
-}
-
-// string invoice_id = 5 [json_name = "invoiceId"];
-inline void InvoiceFilterRequest::clear_invoice_id() {
-  invoice_id_.ClearToEmpty();
-}
-inline const std::string& InvoiceFilterRequest::invoice_id() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.InvoiceFilterRequest.invoice_id)
-  return _internal_invoice_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void InvoiceFilterRequest::set_invoice_id(ArgT0&& arg0, ArgT... args) {
- 
- invoice_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.InvoiceFilterRequest.invoice_id)
-}
-inline std::string* InvoiceFilterRequest::mutable_invoice_id() {
-  std::string* _s = _internal_mutable_invoice_id();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.InvoiceFilterRequest.invoice_id)
-  return _s;
-}
-inline const std::string& InvoiceFilterRequest::_internal_invoice_id() const {
-  return invoice_id_.Get();
-}
-inline void InvoiceFilterRequest::_internal_set_invoice_id(const std::string& value) {
-  
-  invoice_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* InvoiceFilterRequest::_internal_mutable_invoice_id() {
-  
-  return invoice_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* InvoiceFilterRequest::release_invoice_id() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.InvoiceFilterRequest.invoice_id)
-  return invoice_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void InvoiceFilterRequest::set_allocated_invoice_id(std::string* invoice_id) {
-  if (invoice_id != nullptr) {
-    
-  } else {
-    
-  }
-  invoice_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), invoice_id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.InvoiceFilterRequest.invoice_id)
 }
 
 // -------------------------------------------------------------------
