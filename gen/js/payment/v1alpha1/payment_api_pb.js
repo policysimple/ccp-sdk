@@ -3892,7 +3892,7 @@ proto.payment.v1alpha1.CreateProjectRequest.prototype.toObject = function(opt_in
 proto.payment.v1alpha1.CreateProjectRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    projectList: (f = msg.getProjectList()) && payment_v1alpha1_payment_pb.ProjectList.toObject(includeInstance, f)
+    project: (f = msg.getProject()) && payment_v1alpha1_payment_pb.Project.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3934,9 +3934,9 @@ proto.payment.v1alpha1.CreateProjectRequest.deserializeBinaryFromReader = functi
       msg.setOrganizationId(value);
       break;
     case 2:
-      var value = new payment_v1alpha1_payment_pb.ProjectList;
-      reader.readMessage(value,payment_v1alpha1_payment_pb.ProjectList.deserializeBinaryFromReader);
-      msg.setProjectList(value);
+      var value = new payment_v1alpha1_payment_pb.Project;
+      reader.readMessage(value,payment_v1alpha1_payment_pb.Project.deserializeBinaryFromReader);
+      msg.setProject(value);
       break;
     default:
       reader.skipField();
@@ -3974,12 +3974,12 @@ proto.payment.v1alpha1.CreateProjectRequest.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getProjectList();
+  f = message.getProject();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      payment_v1alpha1_payment_pb.ProjectList.serializeBinaryToWriter
+      payment_v1alpha1_payment_pb.Project.serializeBinaryToWriter
     );
   }
 };
@@ -4004,20 +4004,20 @@ proto.payment.v1alpha1.CreateProjectRequest.prototype.setOrganizationId = functi
 
 
 /**
- * optional ProjectList project_list = 2;
- * @return {?proto.payment.v1alpha1.ProjectList}
+ * optional Project project = 2;
+ * @return {?proto.payment.v1alpha1.Project}
  */
-proto.payment.v1alpha1.CreateProjectRequest.prototype.getProjectList = function() {
-  return /** @type{?proto.payment.v1alpha1.ProjectList} */ (
-    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.ProjectList, 2));
+proto.payment.v1alpha1.CreateProjectRequest.prototype.getProject = function() {
+  return /** @type{?proto.payment.v1alpha1.Project} */ (
+    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Project, 2));
 };
 
 
 /**
- * @param {?proto.payment.v1alpha1.ProjectList|undefined} value
+ * @param {?proto.payment.v1alpha1.Project|undefined} value
  * @return {!proto.payment.v1alpha1.CreateProjectRequest} returns this
 */
-proto.payment.v1alpha1.CreateProjectRequest.prototype.setProjectList = function(value) {
+proto.payment.v1alpha1.CreateProjectRequest.prototype.setProject = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -4026,8 +4026,8 @@ proto.payment.v1alpha1.CreateProjectRequest.prototype.setProjectList = function(
  * Clears the message field making it undefined.
  * @return {!proto.payment.v1alpha1.CreateProjectRequest} returns this
  */
-proto.payment.v1alpha1.CreateProjectRequest.prototype.clearProjectList = function() {
-  return this.setProjectList(undefined);
+proto.payment.v1alpha1.CreateProjectRequest.prototype.clearProject = function() {
+  return this.setProject(undefined);
 };
 
 
@@ -4035,7 +4035,7 @@ proto.payment.v1alpha1.CreateProjectRequest.prototype.clearProjectList = functio
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.payment.v1alpha1.CreateProjectRequest.prototype.hasProjectList = function() {
+proto.payment.v1alpha1.CreateProjectRequest.prototype.hasProject = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 

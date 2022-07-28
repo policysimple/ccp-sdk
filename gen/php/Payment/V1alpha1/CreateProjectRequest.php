@@ -18,9 +18,9 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
      */
     protected $organization_id = 0;
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
      */
-    protected $project_list = null;
+    protected $project = null;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $organization_id
-     *     @type \Payment\V1alpha1\ProjectList $project_list
+     *     @type \Payment\V1alpha1\Project $project
      * }
      */
     public function __construct($data = NULL) {
@@ -60,33 +60,33 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-     * @return \Payment\V1alpha1\ProjectList|null
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * @return \Payment\V1alpha1\Project|null
      */
-    public function getProjectList()
+    public function getProject()
     {
-        return $this->project_list;
+        return $this->project;
     }
 
-    public function hasProjectList()
+    public function hasProject()
     {
-        return isset($this->project_list);
+        return isset($this->project);
     }
 
-    public function clearProjectList()
+    public function clearProject()
     {
-        unset($this->project_list);
+        unset($this->project);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-     * @param \Payment\V1alpha1\ProjectList $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * @param \Payment\V1alpha1\Project $var
      * @return $this
      */
-    public function setProjectList($var)
+    public function setProject($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\ProjectList::class);
-        $this->project_list = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Project::class);
+        $this->project = $var;
 
         return $this;
     }

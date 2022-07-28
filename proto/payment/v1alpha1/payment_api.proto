@@ -115,7 +115,7 @@ message CreateSuscriptionResponse {
 
 message CreateProjectRequest {
     uint32 organization_id = 1;
-    payment.v1alpha1.ProjectList project_list = 2;
+    payment.v1alpha1.Project project = 2;
 }
 
 message CreateProjectResponse {
