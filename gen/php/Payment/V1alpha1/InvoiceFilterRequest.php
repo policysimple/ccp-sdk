@@ -18,15 +18,19 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
      */
     protected $organization_id = 0;
     /**
-     * Generated from protobuf field <code>string year = 2 [json_name = "year"];</code>
+     * Generated from protobuf field <code>string invoice_id = 2 [json_name = "invoiceId"];</code>
+     */
+    protected $invoice_id = '';
+    /**
+     * Generated from protobuf field <code>string year = 3 [json_name = "year"];</code>
      */
     protected $year = '';
     /**
-     * Generated from protobuf field <code>string month = 3 [json_name = "month"];</code>
+     * Generated from protobuf field <code>string month = 4 [json_name = "month"];</code>
      */
     protected $month = '';
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 4 [json_name = "customerList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 5 [json_name = "customerList"];</code>
      */
     protected $customer_list = null;
     /**
@@ -41,6 +45,7 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $organization_id
+     *     @type string $invoice_id
      *     @type string $year
      *     @type string $month
      *     @type \Payment\V1alpha1\CustomerList $customer_list
@@ -75,7 +80,29 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string year = 2 [json_name = "year"];</code>
+     * Generated from protobuf field <code>string invoice_id = 2 [json_name = "invoiceId"];</code>
+     * @return string
+     */
+    public function getInvoiceId()
+    {
+        return $this->invoice_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string invoice_id = 2 [json_name = "invoiceId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInvoiceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->invoice_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string year = 3 [json_name = "year"];</code>
      * @return string
      */
     public function getYear()
@@ -84,7 +111,7 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string year = 2 [json_name = "year"];</code>
+     * Generated from protobuf field <code>string year = 3 [json_name = "year"];</code>
      * @param string $var
      * @return $this
      */
@@ -97,7 +124,7 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string month = 3 [json_name = "month"];</code>
+     * Generated from protobuf field <code>string month = 4 [json_name = "month"];</code>
      * @return string
      */
     public function getMonth()
@@ -106,7 +133,7 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string month = 3 [json_name = "month"];</code>
+     * Generated from protobuf field <code>string month = 4 [json_name = "month"];</code>
      * @param string $var
      * @return $this
      */
@@ -119,7 +146,7 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 4 [json_name = "customerList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 5 [json_name = "customerList"];</code>
      * @return \Payment\V1alpha1\CustomerList|null
      */
     public function getCustomerList()
@@ -138,7 +165,7 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 4 [json_name = "customerList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 5 [json_name = "customerList"];</code>
      * @param \Payment\V1alpha1\CustomerList $var
      * @return $this
      */
