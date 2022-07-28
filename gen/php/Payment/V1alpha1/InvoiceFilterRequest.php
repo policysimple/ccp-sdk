@@ -29,6 +29,10 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 4 [json_name = "customerList"];</code>
      */
     protected $customer_list = null;
+    /**
+     * Generated from protobuf field <code>string invoice_id = 5 [json_name = "invoiceId"];</code>
+     */
+    protected $invoice_id = '';
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
      *     @type string $year
      *     @type string $month
      *     @type \Payment\V1alpha1\CustomerList $customer_list
+     *     @type string $invoice_id
      * }
      */
     public function __construct($data = NULL) {
@@ -141,6 +146,28 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Payment\V1alpha1\CustomerList::class);
         $this->customer_list = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string invoice_id = 5 [json_name = "invoiceId"];</code>
+     * @return string
+     */
+    public function getInvoiceId()
+    {
+        return $this->invoice_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string invoice_id = 5 [json_name = "invoiceId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInvoiceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->invoice_id = $var;
 
         return $this;
     }

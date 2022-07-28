@@ -932,7 +932,8 @@ proto.payment.v1alpha1.InvoiceFilterRequest.toObject = function(includeInstance,
     organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     year: jspb.Message.getFieldWithDefault(msg, 2, ""),
     month: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    customerList: (f = msg.getCustomerList()) && payment_v1alpha1_payment_pb.CustomerList.toObject(includeInstance, f)
+    customerList: (f = msg.getCustomerList()) && payment_v1alpha1_payment_pb.CustomerList.toObject(includeInstance, f),
+    invoiceId: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -985,6 +986,10 @@ proto.payment.v1alpha1.InvoiceFilterRequest.deserializeBinaryFromReader = functi
       var value = new payment_v1alpha1_payment_pb.CustomerList;
       reader.readMessage(value,payment_v1alpha1_payment_pb.CustomerList.deserializeBinaryFromReader);
       msg.setCustomerList(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInvoiceId(value);
       break;
     default:
       reader.skipField();
@@ -1042,6 +1047,13 @@ proto.payment.v1alpha1.InvoiceFilterRequest.serializeBinaryToWriter = function(m
       4,
       f,
       payment_v1alpha1_payment_pb.CustomerList.serializeBinaryToWriter
+    );
+  }
+  f = message.getInvoiceId();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
     );
   }
 };
@@ -1138,6 +1150,24 @@ proto.payment.v1alpha1.InvoiceFilterRequest.prototype.hasCustomerList = function
 };
 
 
+/**
+ * optional string invoice_id = 5;
+ * @return {string}
+ */
+proto.payment.v1alpha1.InvoiceFilterRequest.prototype.getInvoiceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.InvoiceFilterRequest} returns this
+ */
+proto.payment.v1alpha1.InvoiceFilterRequest.prototype.setInvoiceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
 
 
 
@@ -1173,7 +1203,8 @@ proto.payment.v1alpha1.InvoiceFilterResponse.toObject = function(includeInstance
     customerList: (f = msg.getCustomerList()) && payment_v1alpha1_payment_pb.CustomerList.toObject(includeInstance, f),
     invoiceList: (f = msg.getInvoiceList()) && payment_v1alpha1_payment_pb.InvoiceList.toObject(includeInstance, f),
     bilingList: (f = msg.getBilingList()) && payment_v1alpha1_payment_pb.BilingList.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 4, "")
+    suscriptionList: (f = msg.getSuscriptionList()) && payment_v1alpha1_payment_pb.SuscriptionList.toObject(includeInstance, f),
+    status: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1226,6 +1257,11 @@ proto.payment.v1alpha1.InvoiceFilterResponse.deserializeBinaryFromReader = funct
       msg.setBilingList(value);
       break;
     case 4:
+      var value = new payment_v1alpha1_payment_pb.SuscriptionList;
+      reader.readMessage(value,payment_v1alpha1_payment_pb.SuscriptionList.deserializeBinaryFromReader);
+      msg.setSuscriptionList(value);
+      break;
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
       break;
@@ -1282,10 +1318,18 @@ proto.payment.v1alpha1.InvoiceFilterResponse.serializeBinaryToWriter = function(
       payment_v1alpha1_payment_pb.BilingList.serializeBinaryToWriter
     );
   }
+  f = message.getSuscriptionList();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      payment_v1alpha1_payment_pb.SuscriptionList.serializeBinaryToWriter
+    );
+  }
   f = message.getStatus();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      5,
       f
     );
   }
@@ -1404,11 +1448,48 @@ proto.payment.v1alpha1.InvoiceFilterResponse.prototype.hasBilingList = function(
 
 
 /**
- * optional string status = 4;
+ * optional SuscriptionList suscription_list = 4;
+ * @return {?proto.payment.v1alpha1.SuscriptionList}
+ */
+proto.payment.v1alpha1.InvoiceFilterResponse.prototype.getSuscriptionList = function() {
+  return /** @type{?proto.payment.v1alpha1.SuscriptionList} */ (
+    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.SuscriptionList, 4));
+};
+
+
+/**
+ * @param {?proto.payment.v1alpha1.SuscriptionList|undefined} value
+ * @return {!proto.payment.v1alpha1.InvoiceFilterResponse} returns this
+*/
+proto.payment.v1alpha1.InvoiceFilterResponse.prototype.setSuscriptionList = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.payment.v1alpha1.InvoiceFilterResponse} returns this
+ */
+proto.payment.v1alpha1.InvoiceFilterResponse.prototype.clearSuscriptionList = function() {
+  return this.setSuscriptionList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.payment.v1alpha1.InvoiceFilterResponse.prototype.hasSuscriptionList = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string status = 5;
  * @return {string}
  */
 proto.payment.v1alpha1.InvoiceFilterResponse.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -1417,7 +1498,7 @@ proto.payment.v1alpha1.InvoiceFilterResponse.prototype.getStatus = function() {
  * @return {!proto.payment.v1alpha1.InvoiceFilterResponse} returns this
  */
 proto.payment.v1alpha1.InvoiceFilterResponse.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -3811,7 +3892,7 @@ proto.payment.v1alpha1.CreateProjectRequest.prototype.toObject = function(opt_in
 proto.payment.v1alpha1.CreateProjectRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    project: (f = msg.getProject()) && payment_v1alpha1_payment_pb.Project.toObject(includeInstance, f)
+    projectList: (f = msg.getProjectList()) && payment_v1alpha1_payment_pb.ProjectList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3853,9 +3934,9 @@ proto.payment.v1alpha1.CreateProjectRequest.deserializeBinaryFromReader = functi
       msg.setOrganizationId(value);
       break;
     case 2:
-      var value = new payment_v1alpha1_payment_pb.Project;
-      reader.readMessage(value,payment_v1alpha1_payment_pb.Project.deserializeBinaryFromReader);
-      msg.setProject(value);
+      var value = new payment_v1alpha1_payment_pb.ProjectList;
+      reader.readMessage(value,payment_v1alpha1_payment_pb.ProjectList.deserializeBinaryFromReader);
+      msg.setProjectList(value);
       break;
     default:
       reader.skipField();
@@ -3893,12 +3974,12 @@ proto.payment.v1alpha1.CreateProjectRequest.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getProject();
+  f = message.getProjectList();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      payment_v1alpha1_payment_pb.Project.serializeBinaryToWriter
+      payment_v1alpha1_payment_pb.ProjectList.serializeBinaryToWriter
     );
   }
 };
@@ -3923,20 +4004,20 @@ proto.payment.v1alpha1.CreateProjectRequest.prototype.setOrganizationId = functi
 
 
 /**
- * optional Project project = 2;
- * @return {?proto.payment.v1alpha1.Project}
+ * optional ProjectList project_list = 2;
+ * @return {?proto.payment.v1alpha1.ProjectList}
  */
-proto.payment.v1alpha1.CreateProjectRequest.prototype.getProject = function() {
-  return /** @type{?proto.payment.v1alpha1.Project} */ (
-    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Project, 2));
+proto.payment.v1alpha1.CreateProjectRequest.prototype.getProjectList = function() {
+  return /** @type{?proto.payment.v1alpha1.ProjectList} */ (
+    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.ProjectList, 2));
 };
 
 
 /**
- * @param {?proto.payment.v1alpha1.Project|undefined} value
+ * @param {?proto.payment.v1alpha1.ProjectList|undefined} value
  * @return {!proto.payment.v1alpha1.CreateProjectRequest} returns this
 */
-proto.payment.v1alpha1.CreateProjectRequest.prototype.setProject = function(value) {
+proto.payment.v1alpha1.CreateProjectRequest.prototype.setProjectList = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -3945,8 +4026,8 @@ proto.payment.v1alpha1.CreateProjectRequest.prototype.setProject = function(valu
  * Clears the message field making it undefined.
  * @return {!proto.payment.v1alpha1.CreateProjectRequest} returns this
  */
-proto.payment.v1alpha1.CreateProjectRequest.prototype.clearProject = function() {
-  return this.setProject(undefined);
+proto.payment.v1alpha1.CreateProjectRequest.prototype.clearProjectList = function() {
+  return this.setProjectList(undefined);
 };
 
 
@@ -3954,7 +4035,7 @@ proto.payment.v1alpha1.CreateProjectRequest.prototype.clearProject = function() 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.payment.v1alpha1.CreateProjectRequest.prototype.hasProject = function() {
+proto.payment.v1alpha1.CreateProjectRequest.prototype.hasProjectList = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 

@@ -40,7 +40,7 @@ goog.exportSymbol('proto.payment.v1alpha1.SuscriptionList', null, global);
  * @constructor
  */
 proto.payment.v1alpha1.Customer = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.payment.v1alpha1.Customer.repeatedFields_, null);
 };
 goog.inherits(proto.payment.v1alpha1.Customer, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -324,6 +324,13 @@ if (goog.DEBUG && !COMPILED) {
   proto.payment.v1alpha1.ProjectList.displayName = 'proto.payment.v1alpha1.ProjectList';
 }
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.payment.v1alpha1.Customer.repeatedFields_ = [10];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -364,7 +371,8 @@ proto.payment.v1alpha1.Customer.toObject = function(includeInstance, msg) {
     payments: (f = msg.getPayments()) && proto.payment.v1alpha1.PaymentList.toObject(includeInstance, f),
     invoice: (f = msg.getInvoice()) && proto.payment.v1alpha1.Invoice.toObject(includeInstance, f),
     biling: (f = msg.getBiling()) && proto.payment.v1alpha1.Biling.toObject(includeInstance, f),
-    project: (f = msg.getProject()) && proto.payment.v1alpha1.ProjectList.toObject(includeInstance, f)
+    projectsList: jspb.Message.toObjectList(msg.getProjectsList(),
+    proto.payment.v1alpha1.Project.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -442,9 +450,9 @@ proto.payment.v1alpha1.Customer.deserializeBinaryFromReader = function(msg, read
       msg.setBiling(value);
       break;
     case 10:
-      var value = new proto.payment.v1alpha1.ProjectList;
-      reader.readMessage(value,proto.payment.v1alpha1.ProjectList.deserializeBinaryFromReader);
-      msg.setProject(value);
+      var value = new proto.payment.v1alpha1.Project;
+      reader.readMessage(value,proto.payment.v1alpha1.Project.deserializeBinaryFromReader);
+      msg.addProjects(value);
       break;
     default:
       reader.skipField();
@@ -542,12 +550,12 @@ proto.payment.v1alpha1.Customer.serializeBinaryToWriter = function(message, writ
       proto.payment.v1alpha1.Biling.serializeBinaryToWriter
     );
   }
-  f = message.getProject();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getProjectsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       10,
       f,
-      proto.payment.v1alpha1.ProjectList.serializeBinaryToWriter
+      proto.payment.v1alpha1.Project.serializeBinaryToWriter
     );
   }
 };
@@ -792,39 +800,40 @@ proto.payment.v1alpha1.Customer.prototype.hasBiling = function() {
 
 
 /**
- * optional ProjectList project = 10;
- * @return {?proto.payment.v1alpha1.ProjectList}
+ * repeated Project projects = 10;
+ * @return {!Array<!proto.payment.v1alpha1.Project>}
  */
-proto.payment.v1alpha1.Customer.prototype.getProject = function() {
-  return /** @type{?proto.payment.v1alpha1.ProjectList} */ (
-    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.ProjectList, 10));
+proto.payment.v1alpha1.Customer.prototype.getProjectsList = function() {
+  return /** @type{!Array<!proto.payment.v1alpha1.Project>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.payment.v1alpha1.Project, 10));
 };
 
 
 /**
- * @param {?proto.payment.v1alpha1.ProjectList|undefined} value
+ * @param {!Array<!proto.payment.v1alpha1.Project>} value
  * @return {!proto.payment.v1alpha1.Customer} returns this
 */
-proto.payment.v1alpha1.Customer.prototype.setProject = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+proto.payment.v1alpha1.Customer.prototype.setProjectsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.payment.v1alpha1.Project=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.payment.v1alpha1.Project}
+ */
+proto.payment.v1alpha1.Customer.prototype.addProjects = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.payment.v1alpha1.Project, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.payment.v1alpha1.Customer} returns this
  */
-proto.payment.v1alpha1.Customer.prototype.clearProject = function() {
-  return this.setProject(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.payment.v1alpha1.Customer.prototype.hasProject = function() {
-  return jspb.Message.getField(this, 10) != null;
+proto.payment.v1alpha1.Customer.prototype.clearProjectsList = function() {
+  return this.setProjectsList([]);
 };
 
 
