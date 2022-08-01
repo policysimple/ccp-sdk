@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetPaymentsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.PaymentList payment = 1 [json_name = "payment"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.CardList card = 1 [json_name = "card"];</code>
      */
-    protected $payment = null;
+    protected $card = null;
     /**
      * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
@@ -28,7 +28,7 @@ class GetPaymentsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\PaymentList $payment
+     *     @type \Payment\V1alpha1\CardList $card
      *     @type string $status
      * }
      */
@@ -38,33 +38,33 @@ class GetPaymentsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.PaymentList payment = 1 [json_name = "payment"];</code>
-     * @return \Payment\V1alpha1\PaymentList|null
+     * Generated from protobuf field <code>.payment.v1alpha1.CardList card = 1 [json_name = "card"];</code>
+     * @return \Payment\V1alpha1\CardList|null
      */
-    public function getPayment()
+    public function getCard()
     {
-        return $this->payment;
+        return $this->card;
     }
 
-    public function hasPayment()
+    public function hasCard()
     {
-        return isset($this->payment);
+        return isset($this->card);
     }
 
-    public function clearPayment()
+    public function clearCard()
     {
-        unset($this->payment);
+        unset($this->card);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.PaymentList payment = 1 [json_name = "payment"];</code>
-     * @param \Payment\V1alpha1\PaymentList $var
+     * Generated from protobuf field <code>.payment.v1alpha1.CardList card = 1 [json_name = "card"];</code>
+     * @param \Payment\V1alpha1\CardList $var
      * @return $this
      */
-    public function setPayment($var)
+    public function setCard($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\PaymentList::class);
-        $this->payment = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\CardList::class);
+        $this->card = $var;
 
         return $this;
     }

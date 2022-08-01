@@ -45,6 +45,7 @@ message Payment {
   bool enabled = 3;
   string alias = 4;
   Card card = 5;
+
 }
 
 message Card {
