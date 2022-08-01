@@ -14,11 +14,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateSecretRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
      */
     protected $project_id = '';
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
+     */
+    protected $namespace = '';
+    /**
+     * Generated from protobuf field <code>string application_id = 4 [json_name = "applicationId"];</code>
+     */
+    protected $application_id = '';
+    /**
+     * Generated from protobuf field <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
      */
     protected $secret = null;
 
@@ -28,7 +40,10 @@ class UpdateSecretRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $organization_id
      *     @type string $project_id
+     *     @type string $namespace
+     *     @type string $application_id
      *     @type \Vault\V1Alpha1\Secret $secret
      * }
      */
@@ -38,7 +53,29 @@ class UpdateSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
      * @return string
      */
     public function getProjectId()
@@ -47,7 +84,7 @@ class UpdateSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +97,51 @@ class UpdateSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_id = 4 [json_name = "applicationId"];</code>
+     * @return string
+     */
+    public function getApplicationId()
+    {
+        return $this->application_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_id = 4 [json_name = "applicationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setApplicationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->application_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
      * @return \Vault\V1Alpha1\Secret|null
      */
     public function getSecret()
@@ -79,7 +160,7 @@ class UpdateSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
      * @param \Vault\V1Alpha1\Secret $var
      * @return $this
      */
