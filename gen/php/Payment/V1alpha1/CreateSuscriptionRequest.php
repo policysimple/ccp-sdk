@@ -21,6 +21,10 @@ class CreateSuscriptionRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
      */
     protected $customer_id = '';
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];</code>
+     */
+    protected $suscription = null;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class CreateSuscriptionRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int $organization_id
      *     @type string $customer_id
+     *     @type \Payment\V1alpha1\Suscription $suscription
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,38 @@ class CreateSuscriptionRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->customer_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];</code>
+     * @return \Payment\V1alpha1\Suscription|null
+     */
+    public function getSuscription()
+    {
+        return $this->suscription;
+    }
+
+    public function hasSuscription()
+    {
+        return isset($this->suscription);
+    }
+
+    public function clearSuscription()
+    {
+        unset($this->suscription);
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];</code>
+     * @param \Payment\V1alpha1\Suscription $var
+     * @return $this
+     */
+    public function setSuscription($var)
+    {
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Suscription::class);
+        $this->suscription = $var;
 
         return $this;
     }

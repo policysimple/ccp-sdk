@@ -105,7 +105,7 @@ message GetPaymentsResponse {
 message CreateSuscriptionRequest {
     uint32 organization_id = 1;
     string customer_id = 2;
- 
+    payment.v1alpha1.Suscription suscription = 3;
 }
 
 message CreateSuscriptionResponse {
@@ -211,7 +211,8 @@ message ListProjectsRequest {
 }
 
 message ListProjectsResponse {
-    payment.v1alpha1.CustomerList customer_list = 1;
+    payment.v1alpha1.Customer customer = 1;
+  
     string status = 3;
 }
 
