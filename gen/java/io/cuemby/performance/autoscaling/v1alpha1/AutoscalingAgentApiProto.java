@@ -117,33 +117,33 @@ public final class AutoscalingAgentApiProto {
       "autoscalings\022\026\n\006origin\030\002 \001(\tR\006origin\022F\n\010" +
       "metadata\030\003 \001(\0132*.performance.autoscaling" +
       ".v1alpha1.MetadataR\010metadata\022\026\n\006status\030\004" +
-      " \001(\tR\006status2\301\006\n\032AutoscalingAgentAPIServ" +
-      "ice\022\241\001\n\026AgentCreateAutoscaling\022?.perform" +
+      " \001(\tR\006status2\255\006\n\032AutoscalingAgentAPIServ" +
+      "ice\022\235\001\n\026AgentCreateAutoscaling\022?.perform" +
       "ance.autoscaling.v1alpha1.AgentCreateAut" +
       "oscalingRequest\032@.performance.autoscalin" +
       "g.v1alpha1.AgentCreateAutoscalingRespons" +
-      "e\"\000(\0010\001\022\241\001\n\026AgentUpdateAutoscaling\022?.per" +
-      "formance.autoscaling.v1alpha1.AgentUpdat" +
-      "eAutoscalingRequest\032@.performance.autosc" +
-      "aling.v1alpha1.AgentUpdateAutoscalingRes" +
-      "ponse\"\000(\0010\001\022\241\001\n\026AgentDeleteAutoscaling\022?" +
-      ".performance.autoscaling.v1alpha1.AgentD" +
-      "eleteAutoscalingRequest\032@.performance.au" +
-      "toscaling.v1alpha1.AgentDeleteAutoscalin" +
-      "gResponse\"\000(\0010\001\022\230\001\n\023AgentGetAutoscaling\022" +
-      "<.performance.autoscaling.v1alpha1.Agent" +
-      "GetAutoscalingRequest\032=.performance.auto" +
-      "scaling.v1alpha1.AgentGetAutoscalingResp" +
-      "onse\"\000(\0010\001\022\233\001\n\024AgentListAutoscaling\022=.pe" +
-      "rformance.autoscaling.v1alpha1.AgentList" +
-      "AutoscalingRequest\032>.performance.autosca" +
-      "ling.v1alpha1.AgentListAutoscalingRespon" +
-      "se\"\000(\0010\001B\312\001\n*io.cuemby.performance.autos" +
-      "caling.v1alpha1B\030AutoscalingAgentApiProt" +
-      "oP\001Z4github.com/performance-grpc-sdk/aut" +
-      "oscaling/v1alpha1\242\002\003PFX\252\002 Performance.Au" +
-      "toscaling.V1Alpha1\312\002 Performance\\Autosca" +
-      "ling\\V1Alpha1b\006proto3"
+      "e\"\000\022\235\001\n\026AgentUpdateAutoscaling\022?.perform" +
+      "ance.autoscaling.v1alpha1.AgentUpdateAut" +
+      "oscalingRequest\032@.performance.autoscalin" +
+      "g.v1alpha1.AgentUpdateAutoscalingRespons" +
+      "e\"\000\022\235\001\n\026AgentDeleteAutoscaling\022?.perform" +
+      "ance.autoscaling.v1alpha1.AgentDeleteAut" +
+      "oscalingRequest\032@.performance.autoscalin" +
+      "g.v1alpha1.AgentDeleteAutoscalingRespons" +
+      "e\"\000\022\224\001\n\023AgentGetAutoscaling\022<.performanc" +
+      "e.autoscaling.v1alpha1.AgentGetAutoscali" +
+      "ngRequest\032=.performance.autoscaling.v1al" +
+      "pha1.AgentGetAutoscalingResponse\"\000\022\227\001\n\024A" +
+      "gentListAutoscaling\022=.performance.autosc" +
+      "aling.v1alpha1.AgentListAutoscalingReque" +
+      "st\032>.performance.autoscaling.v1alpha1.Ag" +
+      "entListAutoscalingResponse\"\000B\312\001\n*io.cuem" +
+      "by.performance.autoscaling.v1alpha1B\030Aut" +
+      "oscalingAgentApiProtoP\001Z4github.com/perf" +
+      "ormance-grpc-sdk/autoscaling/v1alpha1\242\002\003" +
+      "PFX\252\002 Performance.Autoscaling.V1Alpha1\312\002" +
+      " Performance\\Autoscaling\\V1Alpha1b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
