@@ -483,6 +483,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListProjectsRequestDefaultTypeI
 constexpr ListProjectsResponse::ListProjectsResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , customer_list_(nullptr)
   , project_list_(nullptr){}
 struct ListProjectsResponseDefaultTypeInternal {
   constexpr ListProjectsResponseDefaultTypeInternal()
@@ -808,6 +809,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_5
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::ListProjectsResponse, customer_list_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::ListProjectsResponse, project_list_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::ListProjectsResponse, status_),
   ~0u,  // no _has_bits_
@@ -875,10 +877,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 239, -1, sizeof(::payment::v1alpha1::ListPaymentResponse)},
   { 246, -1, sizeof(::payment::v1alpha1::ListProjectsRequest)},
   { 252, -1, sizeof(::payment::v1alpha1::ListProjectsResponse)},
-  { 259, -1, sizeof(::payment::v1alpha1::GetProjectRequest)},
-  { 266, -1, sizeof(::payment::v1alpha1::GetProjectResponse)},
-  { 273, -1, sizeof(::payment::v1alpha1::DeleteProjectRequest)},
-  { 280, -1, sizeof(::payment::v1alpha1::DeleteProjectResponse)},
+  { 260, -1, sizeof(::payment::v1alpha1::GetProjectRequest)},
+  { 267, -1, sizeof(::payment::v1alpha1::GetProjectResponse)},
+  { 274, -1, sizeof(::payment::v1alpha1::DeleteProjectRequest)},
+  { 281, -1, sizeof(::payment::v1alpha1::DeleteProjectResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1023,75 +1025,77 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto[
   " \001(\0132\035.payment.v1alpha1.PaymentListR\013pay"
   "mentList\022\026\n\006status\030\002 \001(\tR\006status\">\n\023List"
   "ProjectsRequest\022\'\n\017organization_id\030\001 \001(\r"
-  "R\016organizationId\"p\n\024ListProjectsResponse"
-  "\022@\n\014project_list\030\001 \001(\0132\035.payment.v1alpha"
-  "1.ProjectListR\013projectList\022\026\n\006status\030\002 \001"
-  "(\tR\006status\"[\n\021GetProjectRequest\022\'\n\017organ"
-  "ization_id\030\001 \001(\tR\016organizationId\022\035\n\nproj"
-  "ect_id\030\002 \001(\tR\tprojectId\"a\n\022GetProjectRes"
-  "ponse\0223\n\007project\030\001 \001(\0132\031.payment.v1alpha"
-  "1.ProjectR\007project\022\026\n\006status\030\002 \001(\tR\006stat"
-  "us\"^\n\024DeleteProjectRequest\022\'\n\017organizati"
-  "on_id\030\001 \001(\rR\016organizationId\022\035\n\nproject_i"
-  "d\030\002 \001(\tR\tprojectId\"/\n\025DeleteProjectRespo"
-  "nse\022\026\n\006status\030\001 \001(\tR\006status2\202\017\n\021PaymentA"
-  "PIService\022n\n\021CreateSuscription\022*.payment"
-  ".v1alpha1.CreateSuscriptionRequest\032+.pay"
-  "ment.v1alpha1.CreateSuscriptionResponse\""
-  "\000\022Y\n\nCreateCard\022#.payment.v1alpha1.Creat"
-  "eCardRequest\032$.payment.v1alpha1.CreateCa"
-  "rdResponse\"\000\022n\n\021CancelSuscription\022*.paym"
-  "ent.v1alpha1.CancelSuscriptionRequest\032+."
-  "payment.v1alpha1.CancelSuscriptionRespon"
-  "se\"\000\022h\n\017GetOrganization\022(.payment.v1alph"
-  "a1.GetOrganizationRequest\032).payment.v1al"
-  "pha1.GetOrganizationResponse\"\000\022e\n\016GetSus"
-  "cription\022\'.payment.v1alpha1.GetSuscripti"
-  "onRequest\032(.payment.v1alpha1.GetSuscript"
-  "ionResponse\"\000\022e\n\016CreateCustomer\022\'.paymen"
-  "t.v1alpha1.CreateCustomerRequest\032(.payme"
-  "nt.v1alpha1.CreateCustomerResponse\"\000\022e\n\016"
-  "DeleteCustomer\022\'.payment.v1alpha1.Delete"
-  "CustomerRequest\032(.payment.v1alpha1.Delet"
-  "eCustomerResponse\"\000\022Y\n\nGetPayment\022#.paym"
-  "ent.v1alpha1.GetPaymentRequest\032$.payment"
-  ".v1alpha1.GetPaymentResponse\"\000\022\\\n\013GetCus"
-  "tomer\022$.payment.v1alpha1.GetCustomerRequ"
-  "est\032%.payment.v1alpha1.GetCustomerRespon"
-  "se\"\000\022e\n\016GetBilingMonth\022\'.payment.v1alpha"
-  "1.GetBilingMonthRequest\032(.payment.v1alph"
-  "a1.GetBilingMonthResponse\"\000\022\\\n\013GetPaymen"
-  "ts\022$.payment.v1alpha1.GetPaymentsRequest"
-  "\032%.payment.v1alpha1.GetPaymentsResponse\""
-  "\000\022b\n\rCreatePayment\022&.payment.v1alpha1.Cr"
-  "eatePaymentRequest\032\'.payment.v1alpha1.Cr"
-  "eatePaymentResponse\"\000\022b\n\rCreateProject\022&"
-  ".payment.v1alpha1.CreateProjectRequest\032\'"
-  ".payment.v1alpha1.CreateProjectResponse\""
-  "\000\022_\n\014ListProjects\022%.payment.v1alpha1.Lis"
-  "tProjectsRequest\032&.payment.v1alpha1.List"
-  "ProjectsResponse\"\000\022b\n\rDeleteProject\022&.pa"
-  "yment.v1alpha1.DeleteProjectRequest\032\'.pa"
-  "yment.v1alpha1.DeleteProjectResponse\"\000\022b"
-  "\n\rDeletePayment\022&.payment.v1alpha1.Delet"
-  "ePaymentRequest\032\'.payment.v1alpha1.Delet"
-  "ePaymentResponse\"\000\022\\\n\013ListPayment\022$.paym"
-  "ent.v1alpha1.ListPaymentRequest\032%.paymen"
-  "t.v1alpha1.ListPaymentResponse\"\000\022b\n\rCrea"
-  "teInvoice\022&.payment.v1alpha1.CreateInvoi"
-  "ceRequest\032\'.payment.v1alpha1.CreateInvoi"
-  "ceResponse\"\000\022b\n\rInvoiceFilter\022&.payment."
-  "v1alpha1.InvoiceFilterRequest\032\'.payment."
-  "v1alpha1.InvoiceFilterResponse\"\000B8Z6gith"
-  "ub.com/cuemby/ccp-payment-service/paymen"
-  "t/v1alpha1b\006proto3"
+  "R\016organizationId\"\265\001\n\024ListProjectsRespons"
+  "e\022C\n\rcustomer_list\030\001 \001(\0132\036.payment.v1alp"
+  "ha1.CustomerListR\014customerList\022@\n\014projec"
+  "t_list\030\002 \001(\0132\035.payment.v1alpha1.ProjectL"
+  "istR\013projectList\022\026\n\006status\030\003 \001(\tR\006status"
+  "\"[\n\021GetProjectRequest\022\'\n\017organization_id"
+  "\030\001 \001(\tR\016organizationId\022\035\n\nproject_id\030\002 \001"
+  "(\tR\tprojectId\"a\n\022GetProjectResponse\0223\n\007p"
+  "roject\030\001 \001(\0132\031.payment.v1alpha1.ProjectR"
+  "\007project\022\026\n\006status\030\002 \001(\tR\006status\"^\n\024Dele"
+  "teProjectRequest\022\'\n\017organization_id\030\001 \001("
+  "\rR\016organizationId\022\035\n\nproject_id\030\002 \001(\tR\tp"
+  "rojectId\"/\n\025DeleteProjectResponse\022\026\n\006sta"
+  "tus\030\001 \001(\tR\006status2\202\017\n\021PaymentAPIService\022"
+  "n\n\021CreateSuscription\022*.payment.v1alpha1."
+  "CreateSuscriptionRequest\032+.payment.v1alp"
+  "ha1.CreateSuscriptionResponse\"\000\022Y\n\nCreat"
+  "eCard\022#.payment.v1alpha1.CreateCardReque"
+  "st\032$.payment.v1alpha1.CreateCardResponse"
+  "\"\000\022n\n\021CancelSuscription\022*.payment.v1alph"
+  "a1.CancelSuscriptionRequest\032+.payment.v1"
+  "alpha1.CancelSuscriptionResponse\"\000\022h\n\017Ge"
+  "tOrganization\022(.payment.v1alpha1.GetOrga"
+  "nizationRequest\032).payment.v1alpha1.GetOr"
+  "ganizationResponse\"\000\022e\n\016GetSuscription\022\'"
+  ".payment.v1alpha1.GetSuscriptionRequest\032"
+  "(.payment.v1alpha1.GetSuscriptionRespons"
+  "e\"\000\022e\n\016CreateCustomer\022\'.payment.v1alpha1"
+  ".CreateCustomerRequest\032(.payment.v1alpha"
+  "1.CreateCustomerResponse\"\000\022e\n\016DeleteCust"
+  "omer\022\'.payment.v1alpha1.DeleteCustomerRe"
+  "quest\032(.payment.v1alpha1.DeleteCustomerR"
+  "esponse\"\000\022Y\n\nGetPayment\022#.payment.v1alph"
+  "a1.GetPaymentRequest\032$.payment.v1alpha1."
+  "GetPaymentResponse\"\000\022\\\n\013GetCustomer\022$.pa"
+  "yment.v1alpha1.GetCustomerRequest\032%.paym"
+  "ent.v1alpha1.GetCustomerResponse\"\000\022e\n\016Ge"
+  "tBilingMonth\022\'.payment.v1alpha1.GetBilin"
+  "gMonthRequest\032(.payment.v1alpha1.GetBili"
+  "ngMonthResponse\"\000\022\\\n\013GetPayments\022$.payme"
+  "nt.v1alpha1.GetPaymentsRequest\032%.payment"
+  ".v1alpha1.GetPaymentsResponse\"\000\022b\n\rCreat"
+  "ePayment\022&.payment.v1alpha1.CreatePaymen"
+  "tRequest\032\'.payment.v1alpha1.CreatePaymen"
+  "tResponse\"\000\022b\n\rCreateProject\022&.payment.v"
+  "1alpha1.CreateProjectRequest\032\'.payment.v"
+  "1alpha1.CreateProjectResponse\"\000\022_\n\014ListP"
+  "rojects\022%.payment.v1alpha1.ListProjectsR"
+  "equest\032&.payment.v1alpha1.ListProjectsRe"
+  "sponse\"\000\022b\n\rDeleteProject\022&.payment.v1al"
+  "pha1.DeleteProjectRequest\032\'.payment.v1al"
+  "pha1.DeleteProjectResponse\"\000\022b\n\rDeletePa"
+  "yment\022&.payment.v1alpha1.DeletePaymentRe"
+  "quest\032\'.payment.v1alpha1.DeletePaymentRe"
+  "sponse\"\000\022\\\n\013ListPayment\022$.payment.v1alph"
+  "a1.ListPaymentRequest\032%.payment.v1alpha1"
+  ".ListPaymentResponse\"\000\022b\n\rCreateInvoice\022"
+  "&.payment.v1alpha1.CreateInvoiceRequest\032"
+  "\'.payment.v1alpha1.CreateInvoiceResponse"
+  "\"\000\022b\n\rInvoiceFilter\022&.payment.v1alpha1.I"
+  "nvoiceFilterRequest\032\'.payment.v1alpha1.I"
+  "nvoiceFilterResponse\"\000B8Z6github.com/cue"
+  "mby/ccp-payment-service/payment/v1alpha1"
+  "b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_deps[1] = {
   &::descriptor_table_payment_2fv1alpha1_2fpayment_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto = {
-  false, false, 6378, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto, "payment/v1alpha1/payment_api.proto", 
+  false, false, 6448, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto, "payment/v1alpha1/payment_api.proto", 
   &descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_once, descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_deps, 1, 40,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_5fapi_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_5fapi_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_5fapi_2eproto,
@@ -9757,12 +9761,23 @@ void ListProjectsRequest::InternalSwap(ListProjectsRequest* other) {
 
 class ListProjectsResponse::_Internal {
  public:
+  static const ::payment::v1alpha1::CustomerList& customer_list(const ListProjectsResponse* msg);
   static const ::payment::v1alpha1::ProjectList& project_list(const ListProjectsResponse* msg);
 };
 
+const ::payment::v1alpha1::CustomerList&
+ListProjectsResponse::_Internal::customer_list(const ListProjectsResponse* msg) {
+  return *msg->customer_list_;
+}
 const ::payment::v1alpha1::ProjectList&
 ListProjectsResponse::_Internal::project_list(const ListProjectsResponse* msg) {
   return *msg->project_list_;
+}
+void ListProjectsResponse::clear_customer_list() {
+  if (GetArenaForAllocation() == nullptr && customer_list_ != nullptr) {
+    delete customer_list_;
+  }
+  customer_list_ = nullptr;
 }
 void ListProjectsResponse::clear_project_list() {
   if (GetArenaForAllocation() == nullptr && project_list_ != nullptr) {
@@ -9787,6 +9802,11 @@ ListProjectsResponse::ListProjectsResponse(const ListProjectsResponse& from)
     status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
       GetArenaForAllocation());
   }
+  if (from._internal_has_customer_list()) {
+    customer_list_ = new ::payment::v1alpha1::CustomerList(*from.customer_list_);
+  } else {
+    customer_list_ = nullptr;
+  }
   if (from._internal_has_project_list()) {
     project_list_ = new ::payment::v1alpha1::ProjectList(*from.project_list_);
   } else {
@@ -9797,7 +9817,10 @@ ListProjectsResponse::ListProjectsResponse(const ListProjectsResponse& from)
 
 inline void ListProjectsResponse::SharedCtor() {
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-project_list_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&customer_list_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&project_list_) -
+    reinterpret_cast<char*>(&customer_list_)) + sizeof(project_list_));
 }
 
 ListProjectsResponse::~ListProjectsResponse() {
@@ -9810,6 +9833,7 @@ ListProjectsResponse::~ListProjectsResponse() {
 inline void ListProjectsResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete customer_list_;
   if (this != internal_default_instance()) delete project_list_;
 }
 
@@ -9830,6 +9854,10 @@ void ListProjectsResponse::Clear() {
   (void) cached_has_bits;
 
   status_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && customer_list_ != nullptr) {
+    delete customer_list_;
+  }
+  customer_list_ = nullptr;
   if (GetArenaForAllocation() == nullptr && project_list_ != nullptr) {
     delete project_list_;
   }
@@ -9843,16 +9871,23 @@ const char* ListProjectsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .payment.v1alpha1.ProjectList project_list = 1 [json_name = "projectList"];
+      // .payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_customer_list(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_project_list(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string status = 2 [json_name = "status"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // string status = 3 [json_name = "status"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.ListProjectsResponse.status"));
@@ -9888,22 +9923,30 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .payment.v1alpha1.ProjectList project_list = 1 [json_name = "projectList"];
+  // .payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];
+  if (this->_internal_has_customer_list()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::customer_list(this), target, stream);
+  }
+
+  // .payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];
   if (this->_internal_has_project_list()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::project_list(this), target, stream);
+        2, _Internal::project_list(this), target, stream);
   }
 
-  // string status = 2 [json_name = "status"];
+  // string status = 3 [json_name = "status"];
   if (!this->_internal_status().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "payment.v1alpha1.ListProjectsResponse.status");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_status(), target);
+        3, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -9922,14 +9965,21 @@ size_t ListProjectsResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string status = 2 [json_name = "status"];
+  // string status = 3 [json_name = "status"];
   if (!this->_internal_status().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_status());
   }
 
-  // .payment.v1alpha1.ProjectList project_list = 1 [json_name = "projectList"];
+  // .payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];
+  if (this->_internal_has_customer_list()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *customer_list_);
+  }
+
+  // .payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];
   if (this->_internal_has_project_list()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -9967,6 +10017,9 @@ void ListProjectsResponse::MergeFrom(const ListProjectsResponse& from) {
   if (!from._internal_status().empty()) {
     _internal_set_status(from._internal_status());
   }
+  if (from._internal_has_customer_list()) {
+    _internal_mutable_customer_list()->::payment::v1alpha1::CustomerList::MergeFrom(from._internal_customer_list());
+  }
   if (from._internal_has_project_list()) {
     _internal_mutable_project_list()->::payment::v1alpha1::ProjectList::MergeFrom(from._internal_project_list());
   }
@@ -9992,7 +10045,12 @@ void ListProjectsResponse::InternalSwap(ListProjectsResponse* other) {
       &status_, GetArenaForAllocation(),
       &other->status_, other->GetArenaForAllocation()
   );
-  swap(project_list_, other->project_list_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ListProjectsResponse, project_list_)
+      + sizeof(ListProjectsResponse::project_list_)
+      - PROTOBUF_FIELD_OFFSET(ListProjectsResponse, customer_list_)>(
+          reinterpret_cast<char*>(&customer_list_),
+          reinterpret_cast<char*>(&other->customer_list_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListProjectsResponse::GetMetadata() const {
