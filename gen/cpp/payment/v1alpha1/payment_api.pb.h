@@ -6047,10 +6047,11 @@ class ListProjectsResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 2,
-    kProjectListFieldNumber = 1,
+    kStatusFieldNumber = 3,
+    kCustomerListFieldNumber = 1,
+    kProjectListFieldNumber = 2,
   };
-  // string status = 2 [json_name = "status"];
+  // string status = 3 [json_name = "status"];
   void clear_status();
   const std::string& status() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -6064,7 +6065,25 @@ class ListProjectsResponse final :
   std::string* _internal_mutable_status();
   public:
 
-  // .payment.v1alpha1.ProjectList project_list = 1 [json_name = "projectList"];
+  // .payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];
+  bool has_customer_list() const;
+  private:
+  bool _internal_has_customer_list() const;
+  public:
+  void clear_customer_list();
+  const ::payment::v1alpha1::CustomerList& customer_list() const;
+  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::CustomerList* release_customer_list();
+  ::payment::v1alpha1::CustomerList* mutable_customer_list();
+  void set_allocated_customer_list(::payment::v1alpha1::CustomerList* customer_list);
+  private:
+  const ::payment::v1alpha1::CustomerList& _internal_customer_list() const;
+  ::payment::v1alpha1::CustomerList* _internal_mutable_customer_list();
+  public:
+  void unsafe_arena_set_allocated_customer_list(
+      ::payment::v1alpha1::CustomerList* customer_list);
+  ::payment::v1alpha1::CustomerList* unsafe_arena_release_customer_list();
+
+  // .payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];
   bool has_project_list() const;
   private:
   bool _internal_has_project_list() const;
@@ -6090,6 +6109,7 @@ class ListProjectsResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::payment::v1alpha1::CustomerList* customer_list_;
   ::payment::v1alpha1::ProjectList* project_list_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
@@ -10719,7 +10739,93 @@ inline void ListProjectsRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::ui
 
 // ListProjectsResponse
 
-// .payment.v1alpha1.ProjectList project_list = 1 [json_name = "projectList"];
+// .payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];
+inline bool ListProjectsResponse::_internal_has_customer_list() const {
+  return this != internal_default_instance() && customer_list_ != nullptr;
+}
+inline bool ListProjectsResponse::has_customer_list() const {
+  return _internal_has_customer_list();
+}
+inline const ::payment::v1alpha1::CustomerList& ListProjectsResponse::_internal_customer_list() const {
+  const ::payment::v1alpha1::CustomerList* p = customer_list_;
+  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::CustomerList&>(
+      ::payment::v1alpha1::_CustomerList_default_instance_);
+}
+inline const ::payment::v1alpha1::CustomerList& ListProjectsResponse::customer_list() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.ListProjectsResponse.customer_list)
+  return _internal_customer_list();
+}
+inline void ListProjectsResponse::unsafe_arena_set_allocated_customer_list(
+    ::payment::v1alpha1::CustomerList* customer_list) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer_list_);
+  }
+  customer_list_ = customer_list;
+  if (customer_list) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.ListProjectsResponse.customer_list)
+}
+inline ::payment::v1alpha1::CustomerList* ListProjectsResponse::release_customer_list() {
+  
+  ::payment::v1alpha1::CustomerList* temp = customer_list_;
+  customer_list_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::payment::v1alpha1::CustomerList* ListProjectsResponse::unsafe_arena_release_customer_list() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.ListProjectsResponse.customer_list)
+  
+  ::payment::v1alpha1::CustomerList* temp = customer_list_;
+  customer_list_ = nullptr;
+  return temp;
+}
+inline ::payment::v1alpha1::CustomerList* ListProjectsResponse::_internal_mutable_customer_list() {
+  
+  if (customer_list_ == nullptr) {
+    auto* p = CreateMaybeMessage<::payment::v1alpha1::CustomerList>(GetArenaForAllocation());
+    customer_list_ = p;
+  }
+  return customer_list_;
+}
+inline ::payment::v1alpha1::CustomerList* ListProjectsResponse::mutable_customer_list() {
+  ::payment::v1alpha1::CustomerList* _msg = _internal_mutable_customer_list();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ListProjectsResponse.customer_list)
+  return _msg;
+}
+inline void ListProjectsResponse::set_allocated_customer_list(::payment::v1alpha1::CustomerList* customer_list) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer_list_);
+  }
+  if (customer_list) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer_list));
+    if (message_arena != submessage_arena) {
+      customer_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, customer_list, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  customer_list_ = customer_list;
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ListProjectsResponse.customer_list)
+}
+
+// .payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];
 inline bool ListProjectsResponse::_internal_has_project_list() const {
   return this != internal_default_instance() && project_list_ != nullptr;
 }
@@ -10805,7 +10911,7 @@ inline void ListProjectsResponse::set_allocated_project_list(::payment::v1alpha1
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ListProjectsResponse.project_list)
 }
 
-// string status = 2 [json_name = "status"];
+// string status = 3 [json_name = "status"];
 inline void ListProjectsResponse::clear_status() {
   status_.ClearToEmpty();
 }

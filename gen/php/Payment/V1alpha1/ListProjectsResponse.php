@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListProjectsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project_list = 1 [json_name = "projectList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
+     */
+    protected $customer_list = null;
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
      */
     protected $project_list = null;
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
      */
     protected $status = '';
 
@@ -28,6 +32,7 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Payment\V1alpha1\CustomerList $customer_list
      *     @type \Payment\V1alpha1\ProjectList $project_list
      *     @type string $status
      * }
@@ -38,7 +43,39 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project_list = 1 [json_name = "projectList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
+     * @return \Payment\V1alpha1\CustomerList|null
+     */
+    public function getCustomerList()
+    {
+        return $this->customer_list;
+    }
+
+    public function hasCustomerList()
+    {
+        return isset($this->customer_list);
+    }
+
+    public function clearCustomerList()
+    {
+        unset($this->customer_list);
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
+     * @param \Payment\V1alpha1\CustomerList $var
+     * @return $this
+     */
+    public function setCustomerList($var)
+    {
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\CustomerList::class);
+        $this->customer_list = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
      * @return \Payment\V1alpha1\ProjectList|null
      */
     public function getProjectList()
@@ -57,7 +94,7 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project_list = 1 [json_name = "projectList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
      * @param \Payment\V1alpha1\ProjectList $var
      * @return $this
      */
@@ -70,7 +107,7 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
      * @return string
      */
     public function getStatus()
@@ -79,7 +116,7 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */
