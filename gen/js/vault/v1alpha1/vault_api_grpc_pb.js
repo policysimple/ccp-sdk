@@ -27,6 +27,28 @@ function deserialize_vault_v1alpha1_CreateSecretResponse(buffer_arg) {
   return vault_v1alpha1_vault_api_pb.CreateSecretResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_vault_v1alpha1_DeleteOrganizationRequest(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.DeleteOrganizationRequest)) {
+    throw new Error('Expected argument of type vault.v1alpha1.DeleteOrganizationRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_DeleteOrganizationRequest(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.DeleteOrganizationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vault_v1alpha1_DeleteOrganizationResponse(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.DeleteOrganizationResponse)) {
+    throw new Error('Expected argument of type vault.v1alpha1.DeleteOrganizationResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_DeleteOrganizationResponse(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.DeleteOrganizationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_vault_v1alpha1_DeleteSecretRequest(arg) {
   if (!(arg instanceof vault_v1alpha1_vault_api_pb.DeleteSecretRequest)) {
     throw new Error('Expected argument of type vault.v1alpha1.DeleteSecretRequest');
@@ -69,28 +91,6 @@ function serialize_vault_v1alpha1_GetSecretResponse(arg) {
 
 function deserialize_vault_v1alpha1_GetSecretResponse(buffer_arg) {
   return vault_v1alpha1_vault_api_pb.GetSecretResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_vault_v1alpha1_ListSecretRequest(arg) {
-  if (!(arg instanceof vault_v1alpha1_vault_api_pb.ListSecretRequest)) {
-    throw new Error('Expected argument of type vault.v1alpha1.ListSecretRequest');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_vault_v1alpha1_ListSecretRequest(buffer_arg) {
-  return vault_v1alpha1_vault_api_pb.ListSecretRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_vault_v1alpha1_ListSecretResponse(arg) {
-  if (!(arg instanceof vault_v1alpha1_vault_api_pb.ListSecretResponse)) {
-    throw new Error('Expected argument of type vault.v1alpha1.ListSecretResponse');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_vault_v1alpha1_ListSecretResponse(buffer_arg) {
-  return vault_v1alpha1_vault_api_pb.ListSecretResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_vault_v1alpha1_UpdateSecretRequest(arg) {
@@ -161,16 +161,16 @@ var VaultAPIServiceService = exports.VaultAPIServiceService = {
     responseSerialize: serialize_vault_v1alpha1_GetSecretResponse,
     responseDeserialize: deserialize_vault_v1alpha1_GetSecretResponse,
   },
-  listSecret: {
-    path: '/vault.v1alpha1.VaultAPIService/ListSecret',
+  deleteOrganization: {
+    path: '/vault.v1alpha1.VaultAPIService/DeleteOrganization',
     requestStream: false,
     responseStream: false,
-    requestType: vault_v1alpha1_vault_api_pb.ListSecretRequest,
-    responseType: vault_v1alpha1_vault_api_pb.ListSecretResponse,
-    requestSerialize: serialize_vault_v1alpha1_ListSecretRequest,
-    requestDeserialize: deserialize_vault_v1alpha1_ListSecretRequest,
-    responseSerialize: serialize_vault_v1alpha1_ListSecretResponse,
-    responseDeserialize: deserialize_vault_v1alpha1_ListSecretResponse,
+    requestType: vault_v1alpha1_vault_api_pb.DeleteOrganizationRequest,
+    responseType: vault_v1alpha1_vault_api_pb.DeleteOrganizationResponse,
+    requestSerialize: serialize_vault_v1alpha1_DeleteOrganizationRequest,
+    requestDeserialize: deserialize_vault_v1alpha1_DeleteOrganizationRequest,
+    responseSerialize: serialize_vault_v1alpha1_DeleteOrganizationResponse,
+    responseDeserialize: deserialize_vault_v1alpha1_DeleteOrganizationResponse,
   },
 };
 

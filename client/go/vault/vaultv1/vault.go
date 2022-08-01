@@ -159,8 +159,8 @@ func GetSecret(projectId uint32, applicationId string, namespace string) (*vault
 	return response, nil
 }
 
-func ListSecret(in *vaultpkgv1.ListSecretRequest) (*vaultpkgv1.ListSecretResponse, error) {
-	bylogs.LogInfo("ListSecret Client Sdk")
+func DeleteOrganization(orgId uint32) (*vaultpkgv1.DeleteOrganizationResponse, error) {
+	bylogs.LogInfo("DeleteOrganization Client Sdk")
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -168,19 +168,18 @@ func ListSecret(in *vaultpkgv1.ListSecretRequest) (*vaultpkgv1.ListSecretRespons
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err := client.ListSecret(ctx, &vaultpkgv1.ListSecretRequest{
-		ProjectId: in.ProjectId,
-		Namespace: in.Namespace,
+	response, err := client.DeleteOrganization(ctx, &vaultpkgv1.DeleteOrganizationRequest{
+		OrganizationId: orgId,
 	})
 
 	if err != nil {
-		bylogs.LogErr("ListSecret Client Sdk", err)
+		bylogs.LogErr("DeleteOrganization Client Sdk", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("Error list secret: %v", err),
+			fmt.Sprintf("Error delete organization: %v", err),
 		)
 	} else {
-		bylogs.LogInfo("ListSecret Client Sdk", "Success")
+		bylogs.LogInfo("DeleteOrganization Client Sdk", "Success")
 	}
 
 	return response, nil

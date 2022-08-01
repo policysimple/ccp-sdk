@@ -20,7 +20,7 @@ service VaultAPIService{
     rpc UpdateSecret(UpdateSecretRequest) returns (UpdateSecretResponse) {};
     rpc DeleteSecret(DeleteSecretRequest) returns (DeleteSecretResponse) {};
     rpc GetSecret(GetSecretRequest) returns (GetSecretResponse) {};
-    rpc ListSecret(ListSecretRequest) returns (ListSecretResponse) {};
+    rpc DeleteOrganization(DeleteOrganizationRequest) returns (DeleteOrganizationResponse) {};
 }
 
 message CreateSecretRequest {
@@ -69,14 +69,11 @@ message GetSecretResponse {
     string error = 2;
 }
 
-message ListSecretRequest {
+message DeleteOrganizationRequest {
     uint32 organization_id = 1;
-    string project_id = 2;
-    string application_id = 3;
-    string namespace = 4;
 }
 
-message ListSecretResponse {
-    repeated Secret secrets = 1;
+message DeleteOrganizationResponse {
+    string msg = 1;
     string error = 2;
 }
