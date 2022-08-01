@@ -119,8 +119,8 @@ function deserialize_performance_autoscaling_v1alpha1_AgentUpdateAutoscalingResp
 var AutoscalingAgentAPIServiceService = exports.AutoscalingAgentAPIServiceService = {
   agentCreateAutoscaling: {
     path: '/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentCreateAutoscaling',
-    requestStream: true,
-    responseStream: true,
+    requestStream: false,
+    responseStream: false,
     requestType: performance_autoscaling_v1alpha1_autoscaling_agent_api_pb.AgentCreateAutoscalingRequest,
     responseType: performance_autoscaling_v1alpha1_autoscaling_agent_api_pb.AgentCreateAutoscalingResponse,
     requestSerialize: serialize_performance_autoscaling_v1alpha1_AgentCreateAutoscalingRequest,
@@ -130,8 +130,8 @@ var AutoscalingAgentAPIServiceService = exports.AutoscalingAgentAPIServiceServic
   },
   agentUpdateAutoscaling: {
     path: '/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentUpdateAutoscaling',
-    requestStream: true,
-    responseStream: true,
+    requestStream: false,
+    responseStream: false,
     requestType: performance_autoscaling_v1alpha1_autoscaling_agent_api_pb.AgentUpdateAutoscalingRequest,
     responseType: performance_autoscaling_v1alpha1_autoscaling_agent_api_pb.AgentUpdateAutoscalingResponse,
     requestSerialize: serialize_performance_autoscaling_v1alpha1_AgentUpdateAutoscalingRequest,
@@ -141,8 +141,8 @@ var AutoscalingAgentAPIServiceService = exports.AutoscalingAgentAPIServiceServic
   },
   agentDeleteAutoscaling: {
     path: '/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentDeleteAutoscaling',
-    requestStream: true,
-    responseStream: true,
+    requestStream: false,
+    responseStream: false,
     requestType: performance_autoscaling_v1alpha1_autoscaling_agent_api_pb.AgentDeleteAutoscalingRequest,
     responseType: performance_autoscaling_v1alpha1_autoscaling_agent_api_pb.AgentDeleteAutoscalingResponse,
     requestSerialize: serialize_performance_autoscaling_v1alpha1_AgentDeleteAutoscalingRequest,
@@ -152,8 +152,8 @@ var AutoscalingAgentAPIServiceService = exports.AutoscalingAgentAPIServiceServic
   },
   agentGetAutoscaling: {
     path: '/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentGetAutoscaling',
-    requestStream: true,
-    responseStream: true,
+    requestStream: false,
+    responseStream: false,
     requestType: performance_autoscaling_v1alpha1_autoscaling_agent_api_pb.AgentGetAutoscalingRequest,
     responseType: performance_autoscaling_v1alpha1_autoscaling_agent_api_pb.AgentGetAutoscalingResponse,
     requestSerialize: serialize_performance_autoscaling_v1alpha1_AgentGetAutoscalingRequest,
@@ -163,8 +163,8 @@ var AutoscalingAgentAPIServiceService = exports.AutoscalingAgentAPIServiceServic
   },
   agentListAutoscaling: {
     path: '/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentListAutoscaling',
-    requestStream: true,
-    responseStream: true,
+    requestStream: false,
+    responseStream: false,
     requestType: performance_autoscaling_v1alpha1_autoscaling_agent_api_pb.AgentListAutoscalingRequest,
     responseType: performance_autoscaling_v1alpha1_autoscaling_agent_api_pb.AgentListAutoscalingResponse,
     requestSerialize: serialize_performance_autoscaling_v1alpha1_AgentListAutoscalingRequest,

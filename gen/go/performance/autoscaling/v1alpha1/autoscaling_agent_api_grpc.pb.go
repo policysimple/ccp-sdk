@@ -18,11 +18,11 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AutoscalingAgentAPIServiceClient interface {
-	AgentCreateAutoscaling(ctx context.Context, opts ...grpc.CallOption) (AutoscalingAgentAPIService_AgentCreateAutoscalingClient, error)
-	AgentUpdateAutoscaling(ctx context.Context, opts ...grpc.CallOption) (AutoscalingAgentAPIService_AgentUpdateAutoscalingClient, error)
-	AgentDeleteAutoscaling(ctx context.Context, opts ...grpc.CallOption) (AutoscalingAgentAPIService_AgentDeleteAutoscalingClient, error)
-	AgentGetAutoscaling(ctx context.Context, opts ...grpc.CallOption) (AutoscalingAgentAPIService_AgentGetAutoscalingClient, error)
-	AgentListAutoscaling(ctx context.Context, opts ...grpc.CallOption) (AutoscalingAgentAPIService_AgentListAutoscalingClient, error)
+	AgentCreateAutoscaling(ctx context.Context, in *AgentCreateAutoscalingRequest, opts ...grpc.CallOption) (*AgentCreateAutoscalingResponse, error)
+	AgentUpdateAutoscaling(ctx context.Context, in *AgentUpdateAutoscalingRequest, opts ...grpc.CallOption) (*AgentUpdateAutoscalingResponse, error)
+	AgentDeleteAutoscaling(ctx context.Context, in *AgentDeleteAutoscalingRequest, opts ...grpc.CallOption) (*AgentDeleteAutoscalingResponse, error)
+	AgentGetAutoscaling(ctx context.Context, in *AgentGetAutoscalingRequest, opts ...grpc.CallOption) (*AgentGetAutoscalingResponse, error)
+	AgentListAutoscaling(ctx context.Context, in *AgentListAutoscalingRequest, opts ...grpc.CallOption) (*AgentListAutoscalingResponse, error)
 }
 
 type autoscalingAgentAPIServiceClient struct {
@@ -33,190 +33,80 @@ func NewAutoscalingAgentAPIServiceClient(cc grpc.ClientConnInterface) Autoscalin
 	return &autoscalingAgentAPIServiceClient{cc}
 }
 
-func (c *autoscalingAgentAPIServiceClient) AgentCreateAutoscaling(ctx context.Context, opts ...grpc.CallOption) (AutoscalingAgentAPIService_AgentCreateAutoscalingClient, error) {
-	stream, err := c.cc.NewStream(ctx, &AutoscalingAgentAPIService_ServiceDesc.Streams[0], "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentCreateAutoscaling", opts...)
+func (c *autoscalingAgentAPIServiceClient) AgentCreateAutoscaling(ctx context.Context, in *AgentCreateAutoscalingRequest, opts ...grpc.CallOption) (*AgentCreateAutoscalingResponse, error) {
+	out := new(AgentCreateAutoscalingResponse)
+	err := c.cc.Invoke(ctx, "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentCreateAutoscaling", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &autoscalingAgentAPIServiceAgentCreateAutoscalingClient{stream}
-	return x, nil
+	return out, nil
 }
 
-type AutoscalingAgentAPIService_AgentCreateAutoscalingClient interface {
-	Send(*AgentCreateAutoscalingRequest) error
-	Recv() (*AgentCreateAutoscalingResponse, error)
-	grpc.ClientStream
-}
-
-type autoscalingAgentAPIServiceAgentCreateAutoscalingClient struct {
-	grpc.ClientStream
-}
-
-func (x *autoscalingAgentAPIServiceAgentCreateAutoscalingClient) Send(m *AgentCreateAutoscalingRequest) error {
-	return x.ClientStream.SendMsg(m)
-}
-
-func (x *autoscalingAgentAPIServiceAgentCreateAutoscalingClient) Recv() (*AgentCreateAutoscalingResponse, error) {
-	m := new(AgentCreateAutoscalingResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
-func (c *autoscalingAgentAPIServiceClient) AgentUpdateAutoscaling(ctx context.Context, opts ...grpc.CallOption) (AutoscalingAgentAPIService_AgentUpdateAutoscalingClient, error) {
-	stream, err := c.cc.NewStream(ctx, &AutoscalingAgentAPIService_ServiceDesc.Streams[1], "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentUpdateAutoscaling", opts...)
+func (c *autoscalingAgentAPIServiceClient) AgentUpdateAutoscaling(ctx context.Context, in *AgentUpdateAutoscalingRequest, opts ...grpc.CallOption) (*AgentUpdateAutoscalingResponse, error) {
+	out := new(AgentUpdateAutoscalingResponse)
+	err := c.cc.Invoke(ctx, "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentUpdateAutoscaling", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &autoscalingAgentAPIServiceAgentUpdateAutoscalingClient{stream}
-	return x, nil
+	return out, nil
 }
 
-type AutoscalingAgentAPIService_AgentUpdateAutoscalingClient interface {
-	Send(*AgentUpdateAutoscalingRequest) error
-	Recv() (*AgentUpdateAutoscalingResponse, error)
-	grpc.ClientStream
-}
-
-type autoscalingAgentAPIServiceAgentUpdateAutoscalingClient struct {
-	grpc.ClientStream
-}
-
-func (x *autoscalingAgentAPIServiceAgentUpdateAutoscalingClient) Send(m *AgentUpdateAutoscalingRequest) error {
-	return x.ClientStream.SendMsg(m)
-}
-
-func (x *autoscalingAgentAPIServiceAgentUpdateAutoscalingClient) Recv() (*AgentUpdateAutoscalingResponse, error) {
-	m := new(AgentUpdateAutoscalingResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
-func (c *autoscalingAgentAPIServiceClient) AgentDeleteAutoscaling(ctx context.Context, opts ...grpc.CallOption) (AutoscalingAgentAPIService_AgentDeleteAutoscalingClient, error) {
-	stream, err := c.cc.NewStream(ctx, &AutoscalingAgentAPIService_ServiceDesc.Streams[2], "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentDeleteAutoscaling", opts...)
+func (c *autoscalingAgentAPIServiceClient) AgentDeleteAutoscaling(ctx context.Context, in *AgentDeleteAutoscalingRequest, opts ...grpc.CallOption) (*AgentDeleteAutoscalingResponse, error) {
+	out := new(AgentDeleteAutoscalingResponse)
+	err := c.cc.Invoke(ctx, "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentDeleteAutoscaling", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &autoscalingAgentAPIServiceAgentDeleteAutoscalingClient{stream}
-	return x, nil
+	return out, nil
 }
 
-type AutoscalingAgentAPIService_AgentDeleteAutoscalingClient interface {
-	Send(*AgentDeleteAutoscalingRequest) error
-	Recv() (*AgentDeleteAutoscalingResponse, error)
-	grpc.ClientStream
-}
-
-type autoscalingAgentAPIServiceAgentDeleteAutoscalingClient struct {
-	grpc.ClientStream
-}
-
-func (x *autoscalingAgentAPIServiceAgentDeleteAutoscalingClient) Send(m *AgentDeleteAutoscalingRequest) error {
-	return x.ClientStream.SendMsg(m)
-}
-
-func (x *autoscalingAgentAPIServiceAgentDeleteAutoscalingClient) Recv() (*AgentDeleteAutoscalingResponse, error) {
-	m := new(AgentDeleteAutoscalingResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
-func (c *autoscalingAgentAPIServiceClient) AgentGetAutoscaling(ctx context.Context, opts ...grpc.CallOption) (AutoscalingAgentAPIService_AgentGetAutoscalingClient, error) {
-	stream, err := c.cc.NewStream(ctx, &AutoscalingAgentAPIService_ServiceDesc.Streams[3], "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentGetAutoscaling", opts...)
+func (c *autoscalingAgentAPIServiceClient) AgentGetAutoscaling(ctx context.Context, in *AgentGetAutoscalingRequest, opts ...grpc.CallOption) (*AgentGetAutoscalingResponse, error) {
+	out := new(AgentGetAutoscalingResponse)
+	err := c.cc.Invoke(ctx, "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentGetAutoscaling", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &autoscalingAgentAPIServiceAgentGetAutoscalingClient{stream}
-	return x, nil
+	return out, nil
 }
 
-type AutoscalingAgentAPIService_AgentGetAutoscalingClient interface {
-	Send(*AgentGetAutoscalingRequest) error
-	Recv() (*AgentGetAutoscalingResponse, error)
-	grpc.ClientStream
-}
-
-type autoscalingAgentAPIServiceAgentGetAutoscalingClient struct {
-	grpc.ClientStream
-}
-
-func (x *autoscalingAgentAPIServiceAgentGetAutoscalingClient) Send(m *AgentGetAutoscalingRequest) error {
-	return x.ClientStream.SendMsg(m)
-}
-
-func (x *autoscalingAgentAPIServiceAgentGetAutoscalingClient) Recv() (*AgentGetAutoscalingResponse, error) {
-	m := new(AgentGetAutoscalingResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
-func (c *autoscalingAgentAPIServiceClient) AgentListAutoscaling(ctx context.Context, opts ...grpc.CallOption) (AutoscalingAgentAPIService_AgentListAutoscalingClient, error) {
-	stream, err := c.cc.NewStream(ctx, &AutoscalingAgentAPIService_ServiceDesc.Streams[4], "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentListAutoscaling", opts...)
+func (c *autoscalingAgentAPIServiceClient) AgentListAutoscaling(ctx context.Context, in *AgentListAutoscalingRequest, opts ...grpc.CallOption) (*AgentListAutoscalingResponse, error) {
+	out := new(AgentListAutoscalingResponse)
+	err := c.cc.Invoke(ctx, "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentListAutoscaling", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &autoscalingAgentAPIServiceAgentListAutoscalingClient{stream}
-	return x, nil
-}
-
-type AutoscalingAgentAPIService_AgentListAutoscalingClient interface {
-	Send(*AgentListAutoscalingRequest) error
-	Recv() (*AgentListAutoscalingResponse, error)
-	grpc.ClientStream
-}
-
-type autoscalingAgentAPIServiceAgentListAutoscalingClient struct {
-	grpc.ClientStream
-}
-
-func (x *autoscalingAgentAPIServiceAgentListAutoscalingClient) Send(m *AgentListAutoscalingRequest) error {
-	return x.ClientStream.SendMsg(m)
-}
-
-func (x *autoscalingAgentAPIServiceAgentListAutoscalingClient) Recv() (*AgentListAutoscalingResponse, error) {
-	m := new(AgentListAutoscalingResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	return out, nil
 }
 
 // AutoscalingAgentAPIServiceServer is the server API for AutoscalingAgentAPIService service.
 // All implementations should embed UnimplementedAutoscalingAgentAPIServiceServer
 // for forward compatibility
 type AutoscalingAgentAPIServiceServer interface {
-	AgentCreateAutoscaling(AutoscalingAgentAPIService_AgentCreateAutoscalingServer) error
-	AgentUpdateAutoscaling(AutoscalingAgentAPIService_AgentUpdateAutoscalingServer) error
-	AgentDeleteAutoscaling(AutoscalingAgentAPIService_AgentDeleteAutoscalingServer) error
-	AgentGetAutoscaling(AutoscalingAgentAPIService_AgentGetAutoscalingServer) error
-	AgentListAutoscaling(AutoscalingAgentAPIService_AgentListAutoscalingServer) error
+	AgentCreateAutoscaling(context.Context, *AgentCreateAutoscalingRequest) (*AgentCreateAutoscalingResponse, error)
+	AgentUpdateAutoscaling(context.Context, *AgentUpdateAutoscalingRequest) (*AgentUpdateAutoscalingResponse, error)
+	AgentDeleteAutoscaling(context.Context, *AgentDeleteAutoscalingRequest) (*AgentDeleteAutoscalingResponse, error)
+	AgentGetAutoscaling(context.Context, *AgentGetAutoscalingRequest) (*AgentGetAutoscalingResponse, error)
+	AgentListAutoscaling(context.Context, *AgentListAutoscalingRequest) (*AgentListAutoscalingResponse, error)
 }
 
 // UnimplementedAutoscalingAgentAPIServiceServer should be embedded to have forward compatible implementations.
 type UnimplementedAutoscalingAgentAPIServiceServer struct {
 }
 
-func (UnimplementedAutoscalingAgentAPIServiceServer) AgentCreateAutoscaling(AutoscalingAgentAPIService_AgentCreateAutoscalingServer) error {
-	return status.Errorf(codes.Unimplemented, "method AgentCreateAutoscaling not implemented")
+func (UnimplementedAutoscalingAgentAPIServiceServer) AgentCreateAutoscaling(context.Context, *AgentCreateAutoscalingRequest) (*AgentCreateAutoscalingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AgentCreateAutoscaling not implemented")
 }
-func (UnimplementedAutoscalingAgentAPIServiceServer) AgentUpdateAutoscaling(AutoscalingAgentAPIService_AgentUpdateAutoscalingServer) error {
-	return status.Errorf(codes.Unimplemented, "method AgentUpdateAutoscaling not implemented")
+func (UnimplementedAutoscalingAgentAPIServiceServer) AgentUpdateAutoscaling(context.Context, *AgentUpdateAutoscalingRequest) (*AgentUpdateAutoscalingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AgentUpdateAutoscaling not implemented")
 }
-func (UnimplementedAutoscalingAgentAPIServiceServer) AgentDeleteAutoscaling(AutoscalingAgentAPIService_AgentDeleteAutoscalingServer) error {
-	return status.Errorf(codes.Unimplemented, "method AgentDeleteAutoscaling not implemented")
+func (UnimplementedAutoscalingAgentAPIServiceServer) AgentDeleteAutoscaling(context.Context, *AgentDeleteAutoscalingRequest) (*AgentDeleteAutoscalingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AgentDeleteAutoscaling not implemented")
 }
-func (UnimplementedAutoscalingAgentAPIServiceServer) AgentGetAutoscaling(AutoscalingAgentAPIService_AgentGetAutoscalingServer) error {
-	return status.Errorf(codes.Unimplemented, "method AgentGetAutoscaling not implemented")
+func (UnimplementedAutoscalingAgentAPIServiceServer) AgentGetAutoscaling(context.Context, *AgentGetAutoscalingRequest) (*AgentGetAutoscalingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AgentGetAutoscaling not implemented")
 }
-func (UnimplementedAutoscalingAgentAPIServiceServer) AgentListAutoscaling(AutoscalingAgentAPIService_AgentListAutoscalingServer) error {
-	return status.Errorf(codes.Unimplemented, "method AgentListAutoscaling not implemented")
+func (UnimplementedAutoscalingAgentAPIServiceServer) AgentListAutoscaling(context.Context, *AgentListAutoscalingRequest) (*AgentListAutoscalingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AgentListAutoscaling not implemented")
 }
 
 // UnsafeAutoscalingAgentAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -230,134 +120,94 @@ func RegisterAutoscalingAgentAPIServiceServer(s grpc.ServiceRegistrar, srv Autos
 	s.RegisterService(&AutoscalingAgentAPIService_ServiceDesc, srv)
 }
 
-func _AutoscalingAgentAPIService_AgentCreateAutoscaling_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(AutoscalingAgentAPIServiceServer).AgentCreateAutoscaling(&autoscalingAgentAPIServiceAgentCreateAutoscalingServer{stream})
-}
-
-type AutoscalingAgentAPIService_AgentCreateAutoscalingServer interface {
-	Send(*AgentCreateAutoscalingResponse) error
-	Recv() (*AgentCreateAutoscalingRequest, error)
-	grpc.ServerStream
-}
-
-type autoscalingAgentAPIServiceAgentCreateAutoscalingServer struct {
-	grpc.ServerStream
-}
-
-func (x *autoscalingAgentAPIServiceAgentCreateAutoscalingServer) Send(m *AgentCreateAutoscalingResponse) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-func (x *autoscalingAgentAPIServiceAgentCreateAutoscalingServer) Recv() (*AgentCreateAutoscalingRequest, error) {
-	m := new(AgentCreateAutoscalingRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
+func _AutoscalingAgentAPIService_AgentCreateAutoscaling_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AgentCreateAutoscalingRequest)
+	if err := dec(in); err != nil {
 		return nil, err
 	}
-	return m, nil
+	if interceptor == nil {
+		return srv.(AutoscalingAgentAPIServiceServer).AgentCreateAutoscaling(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentCreateAutoscaling",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AutoscalingAgentAPIServiceServer).AgentCreateAutoscaling(ctx, req.(*AgentCreateAutoscalingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
-func _AutoscalingAgentAPIService_AgentUpdateAutoscaling_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(AutoscalingAgentAPIServiceServer).AgentUpdateAutoscaling(&autoscalingAgentAPIServiceAgentUpdateAutoscalingServer{stream})
-}
-
-type AutoscalingAgentAPIService_AgentUpdateAutoscalingServer interface {
-	Send(*AgentUpdateAutoscalingResponse) error
-	Recv() (*AgentUpdateAutoscalingRequest, error)
-	grpc.ServerStream
-}
-
-type autoscalingAgentAPIServiceAgentUpdateAutoscalingServer struct {
-	grpc.ServerStream
-}
-
-func (x *autoscalingAgentAPIServiceAgentUpdateAutoscalingServer) Send(m *AgentUpdateAutoscalingResponse) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-func (x *autoscalingAgentAPIServiceAgentUpdateAutoscalingServer) Recv() (*AgentUpdateAutoscalingRequest, error) {
-	m := new(AgentUpdateAutoscalingRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
+func _AutoscalingAgentAPIService_AgentUpdateAutoscaling_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AgentUpdateAutoscalingRequest)
+	if err := dec(in); err != nil {
 		return nil, err
 	}
-	return m, nil
+	if interceptor == nil {
+		return srv.(AutoscalingAgentAPIServiceServer).AgentUpdateAutoscaling(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentUpdateAutoscaling",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AutoscalingAgentAPIServiceServer).AgentUpdateAutoscaling(ctx, req.(*AgentUpdateAutoscalingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
-func _AutoscalingAgentAPIService_AgentDeleteAutoscaling_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(AutoscalingAgentAPIServiceServer).AgentDeleteAutoscaling(&autoscalingAgentAPIServiceAgentDeleteAutoscalingServer{stream})
-}
-
-type AutoscalingAgentAPIService_AgentDeleteAutoscalingServer interface {
-	Send(*AgentDeleteAutoscalingResponse) error
-	Recv() (*AgentDeleteAutoscalingRequest, error)
-	grpc.ServerStream
-}
-
-type autoscalingAgentAPIServiceAgentDeleteAutoscalingServer struct {
-	grpc.ServerStream
-}
-
-func (x *autoscalingAgentAPIServiceAgentDeleteAutoscalingServer) Send(m *AgentDeleteAutoscalingResponse) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-func (x *autoscalingAgentAPIServiceAgentDeleteAutoscalingServer) Recv() (*AgentDeleteAutoscalingRequest, error) {
-	m := new(AgentDeleteAutoscalingRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
+func _AutoscalingAgentAPIService_AgentDeleteAutoscaling_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AgentDeleteAutoscalingRequest)
+	if err := dec(in); err != nil {
 		return nil, err
 	}
-	return m, nil
+	if interceptor == nil {
+		return srv.(AutoscalingAgentAPIServiceServer).AgentDeleteAutoscaling(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentDeleteAutoscaling",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AutoscalingAgentAPIServiceServer).AgentDeleteAutoscaling(ctx, req.(*AgentDeleteAutoscalingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
-func _AutoscalingAgentAPIService_AgentGetAutoscaling_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(AutoscalingAgentAPIServiceServer).AgentGetAutoscaling(&autoscalingAgentAPIServiceAgentGetAutoscalingServer{stream})
-}
-
-type AutoscalingAgentAPIService_AgentGetAutoscalingServer interface {
-	Send(*AgentGetAutoscalingResponse) error
-	Recv() (*AgentGetAutoscalingRequest, error)
-	grpc.ServerStream
-}
-
-type autoscalingAgentAPIServiceAgentGetAutoscalingServer struct {
-	grpc.ServerStream
-}
-
-func (x *autoscalingAgentAPIServiceAgentGetAutoscalingServer) Send(m *AgentGetAutoscalingResponse) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-func (x *autoscalingAgentAPIServiceAgentGetAutoscalingServer) Recv() (*AgentGetAutoscalingRequest, error) {
-	m := new(AgentGetAutoscalingRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
+func _AutoscalingAgentAPIService_AgentGetAutoscaling_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AgentGetAutoscalingRequest)
+	if err := dec(in); err != nil {
 		return nil, err
 	}
-	return m, nil
+	if interceptor == nil {
+		return srv.(AutoscalingAgentAPIServiceServer).AgentGetAutoscaling(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentGetAutoscaling",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AutoscalingAgentAPIServiceServer).AgentGetAutoscaling(ctx, req.(*AgentGetAutoscalingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
-func _AutoscalingAgentAPIService_AgentListAutoscaling_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(AutoscalingAgentAPIServiceServer).AgentListAutoscaling(&autoscalingAgentAPIServiceAgentListAutoscalingServer{stream})
-}
-
-type AutoscalingAgentAPIService_AgentListAutoscalingServer interface {
-	Send(*AgentListAutoscalingResponse) error
-	Recv() (*AgentListAutoscalingRequest, error)
-	grpc.ServerStream
-}
-
-type autoscalingAgentAPIServiceAgentListAutoscalingServer struct {
-	grpc.ServerStream
-}
-
-func (x *autoscalingAgentAPIServiceAgentListAutoscalingServer) Send(m *AgentListAutoscalingResponse) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-func (x *autoscalingAgentAPIServiceAgentListAutoscalingServer) Recv() (*AgentListAutoscalingRequest, error) {
-	m := new(AgentListAutoscalingRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
+func _AutoscalingAgentAPIService_AgentListAutoscaling_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AgentListAutoscalingRequest)
+	if err := dec(in); err != nil {
 		return nil, err
 	}
-	return m, nil
+	if interceptor == nil {
+		return srv.(AutoscalingAgentAPIServiceServer).AgentListAutoscaling(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentListAutoscaling",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AutoscalingAgentAPIServiceServer).AgentListAutoscaling(ctx, req.(*AgentListAutoscalingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 // AutoscalingAgentAPIService_ServiceDesc is the grpc.ServiceDesc for AutoscalingAgentAPIService service.
@@ -366,38 +216,28 @@ func (x *autoscalingAgentAPIServiceAgentListAutoscalingServer) Recv() (*AgentLis
 var AutoscalingAgentAPIService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "performance.autoscaling.v1alpha1.AutoscalingAgentAPIService",
 	HandlerType: (*AutoscalingAgentAPIServiceServer)(nil),
-	Methods:     []grpc.MethodDesc{},
-	Streams: []grpc.StreamDesc{
+	Methods: []grpc.MethodDesc{
 		{
-			StreamName:    "AgentCreateAutoscaling",
-			Handler:       _AutoscalingAgentAPIService_AgentCreateAutoscaling_Handler,
-			ServerStreams: true,
-			ClientStreams: true,
+			MethodName: "AgentCreateAutoscaling",
+			Handler:    _AutoscalingAgentAPIService_AgentCreateAutoscaling_Handler,
 		},
 		{
-			StreamName:    "AgentUpdateAutoscaling",
-			Handler:       _AutoscalingAgentAPIService_AgentUpdateAutoscaling_Handler,
-			ServerStreams: true,
-			ClientStreams: true,
+			MethodName: "AgentUpdateAutoscaling",
+			Handler:    _AutoscalingAgentAPIService_AgentUpdateAutoscaling_Handler,
 		},
 		{
-			StreamName:    "AgentDeleteAutoscaling",
-			Handler:       _AutoscalingAgentAPIService_AgentDeleteAutoscaling_Handler,
-			ServerStreams: true,
-			ClientStreams: true,
+			MethodName: "AgentDeleteAutoscaling",
+			Handler:    _AutoscalingAgentAPIService_AgentDeleteAutoscaling_Handler,
 		},
 		{
-			StreamName:    "AgentGetAutoscaling",
-			Handler:       _AutoscalingAgentAPIService_AgentGetAutoscaling_Handler,
-			ServerStreams: true,
-			ClientStreams: true,
+			MethodName: "AgentGetAutoscaling",
+			Handler:    _AutoscalingAgentAPIService_AgentGetAutoscaling_Handler,
 		},
 		{
-			StreamName:    "AgentListAutoscaling",
-			Handler:       _AutoscalingAgentAPIService_AgentListAutoscaling_Handler,
-			ServerStreams: true,
-			ClientStreams: true,
+			MethodName: "AgentListAutoscaling",
+			Handler:    _AutoscalingAgentAPIService_AgentListAutoscaling_Handler,
 		},
 	},
+	Streams:  []grpc.StreamDesc{},
 	Metadata: "performance/autoscaling/v1alpha1/autoscaling_agent_api.proto",
 }

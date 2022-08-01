@@ -14,27 +14,27 @@ class AutoscalingAgentAPIServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.AgentCreateAutoscaling = channel.stream_stream(
+    self.AgentCreateAutoscaling = channel.unary_unary(
         '/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentCreateAutoscaling',
         request_serializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentCreateAutoscalingRequest.SerializeToString,
         response_deserializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentCreateAutoscalingResponse.FromString,
         )
-    self.AgentUpdateAutoscaling = channel.stream_stream(
+    self.AgentUpdateAutoscaling = channel.unary_unary(
         '/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentUpdateAutoscaling',
         request_serializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentUpdateAutoscalingRequest.SerializeToString,
         response_deserializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentUpdateAutoscalingResponse.FromString,
         )
-    self.AgentDeleteAutoscaling = channel.stream_stream(
+    self.AgentDeleteAutoscaling = channel.unary_unary(
         '/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentDeleteAutoscaling',
         request_serializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentDeleteAutoscalingRequest.SerializeToString,
         response_deserializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentDeleteAutoscalingResponse.FromString,
         )
-    self.AgentGetAutoscaling = channel.stream_stream(
+    self.AgentGetAutoscaling = channel.unary_unary(
         '/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentGetAutoscaling',
         request_serializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentGetAutoscalingRequest.SerializeToString,
         response_deserializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentGetAutoscalingResponse.FromString,
         )
-    self.AgentListAutoscaling = channel.stream_stream(
+    self.AgentListAutoscaling = channel.unary_unary(
         '/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentListAutoscaling',
         request_serializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentListAutoscalingRequest.SerializeToString,
         response_deserializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentListAutoscalingResponse.FromString,
@@ -45,35 +45,35 @@ class AutoscalingAgentAPIServiceServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
-  def AgentCreateAutoscaling(self, request_iterator, context):
+  def AgentCreateAutoscaling(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def AgentUpdateAutoscaling(self, request_iterator, context):
+  def AgentUpdateAutoscaling(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def AgentDeleteAutoscaling(self, request_iterator, context):
+  def AgentDeleteAutoscaling(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def AgentGetAutoscaling(self, request_iterator, context):
+  def AgentGetAutoscaling(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def AgentListAutoscaling(self, request_iterator, context):
+  def AgentListAutoscaling(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -83,27 +83,27 @@ class AutoscalingAgentAPIServiceServicer(object):
 
 def add_AutoscalingAgentAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'AgentCreateAutoscaling': grpc.stream_stream_rpc_method_handler(
+      'AgentCreateAutoscaling': grpc.unary_unary_rpc_method_handler(
           servicer.AgentCreateAutoscaling,
           request_deserializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentCreateAutoscalingRequest.FromString,
           response_serializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentCreateAutoscalingResponse.SerializeToString,
       ),
-      'AgentUpdateAutoscaling': grpc.stream_stream_rpc_method_handler(
+      'AgentUpdateAutoscaling': grpc.unary_unary_rpc_method_handler(
           servicer.AgentUpdateAutoscaling,
           request_deserializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentUpdateAutoscalingRequest.FromString,
           response_serializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentUpdateAutoscalingResponse.SerializeToString,
       ),
-      'AgentDeleteAutoscaling': grpc.stream_stream_rpc_method_handler(
+      'AgentDeleteAutoscaling': grpc.unary_unary_rpc_method_handler(
           servicer.AgentDeleteAutoscaling,
           request_deserializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentDeleteAutoscalingRequest.FromString,
           response_serializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentDeleteAutoscalingResponse.SerializeToString,
       ),
-      'AgentGetAutoscaling': grpc.stream_stream_rpc_method_handler(
+      'AgentGetAutoscaling': grpc.unary_unary_rpc_method_handler(
           servicer.AgentGetAutoscaling,
           request_deserializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentGetAutoscalingRequest.FromString,
           response_serializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentGetAutoscalingResponse.SerializeToString,
       ),
-      'AgentListAutoscaling': grpc.stream_stream_rpc_method_handler(
+      'AgentListAutoscaling': grpc.unary_unary_rpc_method_handler(
           servicer.AgentListAutoscaling,
           request_deserializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentListAutoscalingRequest.FromString,
           response_serializer=performance_dot_autoscaling_dot_v1alpha1_dot_autoscaling__agent__api__pb2.AgentListAutoscalingResponse.SerializeToString,
