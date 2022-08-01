@@ -211,8 +211,8 @@ message ListProjectsRequest {
 }
 
 message ListProjectsResponse {
-    payment.v1alpha1.CustomerList customer_list = 1;
-    payment.v1alpha1.ProjectList project_list = 2;
+    payment.v1alpha1.Customer customer = 1;
+  
     string status = 3;
 }
 

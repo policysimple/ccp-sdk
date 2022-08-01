@@ -26071,34 +26071,19 @@ public final class PaymentApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
-     * @return Whether the customerList field is set.
+     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @return Whether the customer field is set.
      */
-    boolean hasCustomerList();
+    boolean hasCustomer();
     /**
-     * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
-     * @return The customerList.
+     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @return The customer.
      */
-    payment.v1alpha1.PaymentOuterClass.CustomerList getCustomerList();
+    payment.v1alpha1.PaymentOuterClass.Customer getCustomer();
     /**
-     * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
+     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
      */
-    payment.v1alpha1.PaymentOuterClass.CustomerListOrBuilder getCustomerListOrBuilder();
-
-    /**
-     * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-     * @return Whether the projectList field is set.
-     */
-    boolean hasProjectList();
-    /**
-     * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-     * @return The projectList.
-     */
-    payment.v1alpha1.PaymentOuterClass.ProjectList getProjectList();
-    /**
-     * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-     */
-    payment.v1alpha1.PaymentOuterClass.ProjectListOrBuilder getProjectListOrBuilder();
+    payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder getCustomerOrBuilder();
 
     /**
      * <code>string status = 3 [json_name = "status"];</code>
@@ -26159,27 +26144,14 @@ public final class PaymentApi {
               done = true;
               break;
             case 10: {
-              payment.v1alpha1.PaymentOuterClass.CustomerList.Builder subBuilder = null;
-              if (customerList_ != null) {
-                subBuilder = customerList_.toBuilder();
+              payment.v1alpha1.PaymentOuterClass.Customer.Builder subBuilder = null;
+              if (customer_ != null) {
+                subBuilder = customer_.toBuilder();
               }
-              customerList_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.CustomerList.parser(), extensionRegistry);
+              customer_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.Customer.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(customerList_);
-                customerList_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              payment.v1alpha1.PaymentOuterClass.ProjectList.Builder subBuilder = null;
-              if (projectList_ != null) {
-                subBuilder = projectList_.toBuilder();
-              }
-              projectList_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.ProjectList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(projectList_);
-                projectList_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(customer_);
+                customer_ = subBuilder.buildPartial();
               }
 
               break;
@@ -26222,56 +26194,30 @@ public final class PaymentApi {
               payment.v1alpha1.PaymentApi.ListProjectsResponse.class, payment.v1alpha1.PaymentApi.ListProjectsResponse.Builder.class);
     }
 
-    public static final int CUSTOMER_LIST_FIELD_NUMBER = 1;
-    private payment.v1alpha1.PaymentOuterClass.CustomerList customerList_;
+    public static final int CUSTOMER_FIELD_NUMBER = 1;
+    private payment.v1alpha1.PaymentOuterClass.Customer customer_;
     /**
-     * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
-     * @return Whether the customerList field is set.
+     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @return Whether the customer field is set.
      */
     @java.lang.Override
-    public boolean hasCustomerList() {
-      return customerList_ != null;
+    public boolean hasCustomer() {
+      return customer_ != null;
     }
     /**
-     * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
-     * @return The customerList.
+     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @return The customer.
      */
     @java.lang.Override
-    public payment.v1alpha1.PaymentOuterClass.CustomerList getCustomerList() {
-      return customerList_ == null ? payment.v1alpha1.PaymentOuterClass.CustomerList.getDefaultInstance() : customerList_;
+    public payment.v1alpha1.PaymentOuterClass.Customer getCustomer() {
+      return customer_ == null ? payment.v1alpha1.PaymentOuterClass.Customer.getDefaultInstance() : customer_;
     }
     /**
-     * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
+     * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
      */
     @java.lang.Override
-    public payment.v1alpha1.PaymentOuterClass.CustomerListOrBuilder getCustomerListOrBuilder() {
-      return getCustomerList();
-    }
-
-    public static final int PROJECT_LIST_FIELD_NUMBER = 2;
-    private payment.v1alpha1.PaymentOuterClass.ProjectList projectList_;
-    /**
-     * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-     * @return Whether the projectList field is set.
-     */
-    @java.lang.Override
-    public boolean hasProjectList() {
-      return projectList_ != null;
-    }
-    /**
-     * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-     * @return The projectList.
-     */
-    @java.lang.Override
-    public payment.v1alpha1.PaymentOuterClass.ProjectList getProjectList() {
-      return projectList_ == null ? payment.v1alpha1.PaymentOuterClass.ProjectList.getDefaultInstance() : projectList_;
-    }
-    /**
-     * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-     */
-    @java.lang.Override
-    public payment.v1alpha1.PaymentOuterClass.ProjectListOrBuilder getProjectListOrBuilder() {
-      return getProjectList();
+    public payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder getCustomerOrBuilder() {
+      return getCustomer();
     }
 
     public static final int STATUS_FIELD_NUMBER = 3;
@@ -26326,11 +26272,8 @@ public final class PaymentApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (customerList_ != null) {
-        output.writeMessage(1, getCustomerList());
-      }
-      if (projectList_ != null) {
-        output.writeMessage(2, getProjectList());
+      if (customer_ != null) {
+        output.writeMessage(1, getCustomer());
       }
       if (!getStatusBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, status_);
@@ -26344,13 +26287,9 @@ public final class PaymentApi {
       if (size != -1) return size;
 
       size = 0;
-      if (customerList_ != null) {
+      if (customer_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getCustomerList());
-      }
-      if (projectList_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getProjectList());
+          .computeMessageSize(1, getCustomer());
       }
       if (!getStatusBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, status_);
@@ -26370,15 +26309,10 @@ public final class PaymentApi {
       }
       payment.v1alpha1.PaymentApi.ListProjectsResponse other = (payment.v1alpha1.PaymentApi.ListProjectsResponse) obj;
 
-      if (hasCustomerList() != other.hasCustomerList()) return false;
-      if (hasCustomerList()) {
-        if (!getCustomerList()
-            .equals(other.getCustomerList())) return false;
-      }
-      if (hasProjectList() != other.hasProjectList()) return false;
-      if (hasProjectList()) {
-        if (!getProjectList()
-            .equals(other.getProjectList())) return false;
+      if (hasCustomer() != other.hasCustomer()) return false;
+      if (hasCustomer()) {
+        if (!getCustomer()
+            .equals(other.getCustomer())) return false;
       }
       if (!getStatus()
           .equals(other.getStatus())) return false;
@@ -26393,13 +26327,9 @@ public final class PaymentApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasCustomerList()) {
-        hash = (37 * hash) + CUSTOMER_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getCustomerList().hashCode();
-      }
-      if (hasProjectList()) {
-        hash = (37 * hash) + PROJECT_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getProjectList().hashCode();
+      if (hasCustomer()) {
+        hash = (37 * hash) + CUSTOMER_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomer().hashCode();
       }
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
@@ -26536,17 +26466,11 @@ public final class PaymentApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (customerListBuilder_ == null) {
-          customerList_ = null;
+        if (customerBuilder_ == null) {
+          customer_ = null;
         } else {
-          customerList_ = null;
-          customerListBuilder_ = null;
-        }
-        if (projectListBuilder_ == null) {
-          projectList_ = null;
-        } else {
-          projectList_ = null;
-          projectListBuilder_ = null;
+          customer_ = null;
+          customerBuilder_ = null;
         }
         status_ = "";
 
@@ -26576,15 +26500,10 @@ public final class PaymentApi {
       @java.lang.Override
       public payment.v1alpha1.PaymentApi.ListProjectsResponse buildPartial() {
         payment.v1alpha1.PaymentApi.ListProjectsResponse result = new payment.v1alpha1.PaymentApi.ListProjectsResponse(this);
-        if (customerListBuilder_ == null) {
-          result.customerList_ = customerList_;
+        if (customerBuilder_ == null) {
+          result.customer_ = customer_;
         } else {
-          result.customerList_ = customerListBuilder_.build();
-        }
-        if (projectListBuilder_ == null) {
-          result.projectList_ = projectList_;
-        } else {
-          result.projectList_ = projectListBuilder_.build();
+          result.customer_ = customerBuilder_.build();
         }
         result.status_ = status_;
         onBuilt();
@@ -26635,11 +26554,8 @@ public final class PaymentApi {
 
       public Builder mergeFrom(payment.v1alpha1.PaymentApi.ListProjectsResponse other) {
         if (other == payment.v1alpha1.PaymentApi.ListProjectsResponse.getDefaultInstance()) return this;
-        if (other.hasCustomerList()) {
-          mergeCustomerList(other.getCustomerList());
-        }
-        if (other.hasProjectList()) {
-          mergeProjectList(other.getProjectList());
+        if (other.hasCustomer()) {
+          mergeCustomer(other.getCustomer());
         }
         if (!other.getStatus().isEmpty()) {
           status_ = other.status_;
@@ -26674,242 +26590,123 @@ public final class PaymentApi {
         return this;
       }
 
-      private payment.v1alpha1.PaymentOuterClass.CustomerList customerList_;
+      private payment.v1alpha1.PaymentOuterClass.Customer customer_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          payment.v1alpha1.PaymentOuterClass.CustomerList, payment.v1alpha1.PaymentOuterClass.CustomerList.Builder, payment.v1alpha1.PaymentOuterClass.CustomerListOrBuilder> customerListBuilder_;
+          payment.v1alpha1.PaymentOuterClass.Customer, payment.v1alpha1.PaymentOuterClass.Customer.Builder, payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder> customerBuilder_;
       /**
-       * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
-       * @return Whether the customerList field is set.
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+       * @return Whether the customer field is set.
        */
-      public boolean hasCustomerList() {
-        return customerListBuilder_ != null || customerList_ != null;
+      public boolean hasCustomer() {
+        return customerBuilder_ != null || customer_ != null;
       }
       /**
-       * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
-       * @return The customerList.
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+       * @return The customer.
        */
-      public payment.v1alpha1.PaymentOuterClass.CustomerList getCustomerList() {
-        if (customerListBuilder_ == null) {
-          return customerList_ == null ? payment.v1alpha1.PaymentOuterClass.CustomerList.getDefaultInstance() : customerList_;
+      public payment.v1alpha1.PaymentOuterClass.Customer getCustomer() {
+        if (customerBuilder_ == null) {
+          return customer_ == null ? payment.v1alpha1.PaymentOuterClass.Customer.getDefaultInstance() : customer_;
         } else {
-          return customerListBuilder_.getMessage();
+          return customerBuilder_.getMessage();
         }
       }
       /**
-       * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
        */
-      public Builder setCustomerList(payment.v1alpha1.PaymentOuterClass.CustomerList value) {
-        if (customerListBuilder_ == null) {
+      public Builder setCustomer(payment.v1alpha1.PaymentOuterClass.Customer value) {
+        if (customerBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          customerList_ = value;
+          customer_ = value;
           onChanged();
         } else {
-          customerListBuilder_.setMessage(value);
+          customerBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
        */
-      public Builder setCustomerList(
-          payment.v1alpha1.PaymentOuterClass.CustomerList.Builder builderForValue) {
-        if (customerListBuilder_ == null) {
-          customerList_ = builderForValue.build();
+      public Builder setCustomer(
+          payment.v1alpha1.PaymentOuterClass.Customer.Builder builderForValue) {
+        if (customerBuilder_ == null) {
+          customer_ = builderForValue.build();
           onChanged();
         } else {
-          customerListBuilder_.setMessage(builderForValue.build());
+          customerBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
        */
-      public Builder mergeCustomerList(payment.v1alpha1.PaymentOuterClass.CustomerList value) {
-        if (customerListBuilder_ == null) {
-          if (customerList_ != null) {
-            customerList_ =
-              payment.v1alpha1.PaymentOuterClass.CustomerList.newBuilder(customerList_).mergeFrom(value).buildPartial();
+      public Builder mergeCustomer(payment.v1alpha1.PaymentOuterClass.Customer value) {
+        if (customerBuilder_ == null) {
+          if (customer_ != null) {
+            customer_ =
+              payment.v1alpha1.PaymentOuterClass.Customer.newBuilder(customer_).mergeFrom(value).buildPartial();
           } else {
-            customerList_ = value;
+            customer_ = value;
           }
           onChanged();
         } else {
-          customerListBuilder_.mergeFrom(value);
+          customerBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
        */
-      public Builder clearCustomerList() {
-        if (customerListBuilder_ == null) {
-          customerList_ = null;
+      public Builder clearCustomer() {
+        if (customerBuilder_ == null) {
+          customer_ = null;
           onChanged();
         } else {
-          customerList_ = null;
-          customerListBuilder_ = null;
+          customer_ = null;
+          customerBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
        */
-      public payment.v1alpha1.PaymentOuterClass.CustomerList.Builder getCustomerListBuilder() {
+      public payment.v1alpha1.PaymentOuterClass.Customer.Builder getCustomerBuilder() {
         
         onChanged();
-        return getCustomerListFieldBuilder().getBuilder();
+        return getCustomerFieldBuilder().getBuilder();
       }
       /**
-       * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
        */
-      public payment.v1alpha1.PaymentOuterClass.CustomerListOrBuilder getCustomerListOrBuilder() {
-        if (customerListBuilder_ != null) {
-          return customerListBuilder_.getMessageOrBuilder();
+      public payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder getCustomerOrBuilder() {
+        if (customerBuilder_ != null) {
+          return customerBuilder_.getMessageOrBuilder();
         } else {
-          return customerList_ == null ?
-              payment.v1alpha1.PaymentOuterClass.CustomerList.getDefaultInstance() : customerList_;
+          return customer_ == null ?
+              payment.v1alpha1.PaymentOuterClass.Customer.getDefaultInstance() : customer_;
         }
       }
       /**
-       * <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
+       * <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          payment.v1alpha1.PaymentOuterClass.CustomerList, payment.v1alpha1.PaymentOuterClass.CustomerList.Builder, payment.v1alpha1.PaymentOuterClass.CustomerListOrBuilder> 
-          getCustomerListFieldBuilder() {
-        if (customerListBuilder_ == null) {
-          customerListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              payment.v1alpha1.PaymentOuterClass.CustomerList, payment.v1alpha1.PaymentOuterClass.CustomerList.Builder, payment.v1alpha1.PaymentOuterClass.CustomerListOrBuilder>(
-                  getCustomerList(),
+          payment.v1alpha1.PaymentOuterClass.Customer, payment.v1alpha1.PaymentOuterClass.Customer.Builder, payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder> 
+          getCustomerFieldBuilder() {
+        if (customerBuilder_ == null) {
+          customerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              payment.v1alpha1.PaymentOuterClass.Customer, payment.v1alpha1.PaymentOuterClass.Customer.Builder, payment.v1alpha1.PaymentOuterClass.CustomerOrBuilder>(
+                  getCustomer(),
                   getParentForChildren(),
                   isClean());
-          customerList_ = null;
+          customer_ = null;
         }
-        return customerListBuilder_;
-      }
-
-      private payment.v1alpha1.PaymentOuterClass.ProjectList projectList_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          payment.v1alpha1.PaymentOuterClass.ProjectList, payment.v1alpha1.PaymentOuterClass.ProjectList.Builder, payment.v1alpha1.PaymentOuterClass.ProjectListOrBuilder> projectListBuilder_;
-      /**
-       * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-       * @return Whether the projectList field is set.
-       */
-      public boolean hasProjectList() {
-        return projectListBuilder_ != null || projectList_ != null;
-      }
-      /**
-       * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-       * @return The projectList.
-       */
-      public payment.v1alpha1.PaymentOuterClass.ProjectList getProjectList() {
-        if (projectListBuilder_ == null) {
-          return projectList_ == null ? payment.v1alpha1.PaymentOuterClass.ProjectList.getDefaultInstance() : projectList_;
-        } else {
-          return projectListBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-       */
-      public Builder setProjectList(payment.v1alpha1.PaymentOuterClass.ProjectList value) {
-        if (projectListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          projectList_ = value;
-          onChanged();
-        } else {
-          projectListBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-       */
-      public Builder setProjectList(
-          payment.v1alpha1.PaymentOuterClass.ProjectList.Builder builderForValue) {
-        if (projectListBuilder_ == null) {
-          projectList_ = builderForValue.build();
-          onChanged();
-        } else {
-          projectListBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-       */
-      public Builder mergeProjectList(payment.v1alpha1.PaymentOuterClass.ProjectList value) {
-        if (projectListBuilder_ == null) {
-          if (projectList_ != null) {
-            projectList_ =
-              payment.v1alpha1.PaymentOuterClass.ProjectList.newBuilder(projectList_).mergeFrom(value).buildPartial();
-          } else {
-            projectList_ = value;
-          }
-          onChanged();
-        } else {
-          projectListBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-       */
-      public Builder clearProjectList() {
-        if (projectListBuilder_ == null) {
-          projectList_ = null;
-          onChanged();
-        } else {
-          projectList_ = null;
-          projectListBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-       */
-      public payment.v1alpha1.PaymentOuterClass.ProjectList.Builder getProjectListBuilder() {
-        
-        onChanged();
-        return getProjectListFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-       */
-      public payment.v1alpha1.PaymentOuterClass.ProjectListOrBuilder getProjectListOrBuilder() {
-        if (projectListBuilder_ != null) {
-          return projectListBuilder_.getMessageOrBuilder();
-        } else {
-          return projectList_ == null ?
-              payment.v1alpha1.PaymentOuterClass.ProjectList.getDefaultInstance() : projectList_;
-        }
-      }
-      /**
-       * <code>.payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          payment.v1alpha1.PaymentOuterClass.ProjectList, payment.v1alpha1.PaymentOuterClass.ProjectList.Builder, payment.v1alpha1.PaymentOuterClass.ProjectListOrBuilder> 
-          getProjectListFieldBuilder() {
-        if (projectListBuilder_ == null) {
-          projectListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              payment.v1alpha1.PaymentOuterClass.ProjectList, payment.v1alpha1.PaymentOuterClass.ProjectList.Builder, payment.v1alpha1.PaymentOuterClass.ProjectListOrBuilder>(
-                  getProjectList(),
-                  getParentForChildren(),
-                  isClean());
-          projectList_ = null;
-        }
-        return projectListBuilder_;
+        return customerBuilder_;
       }
 
       private java.lang.Object status_ = "";
@@ -30042,11 +29839,9 @@ public final class PaymentApi {
       " \001(\0132\035.payment.v1alpha1.PaymentListR\013pay" +
       "mentList\022\026\n\006status\030\002 \001(\tR\006status\">\n\023List" +
       "ProjectsRequest\022\'\n\017organization_id\030\001 \001(\r" +
-      "R\016organizationId\"\265\001\n\024ListProjectsRespons" +
-      "e\022C\n\rcustomer_list\030\001 \001(\0132\036.payment.v1alp" +
-      "ha1.CustomerListR\014customerList\022@\n\014projec" +
-      "t_list\030\002 \001(\0132\035.payment.v1alpha1.ProjectL" +
-      "istR\013projectList\022\026\n\006status\030\003 \001(\tR\006status" +
+      "R\016organizationId\"f\n\024ListProjectsResponse" +
+      "\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.Cu" +
+      "stomerR\010customer\022\026\n\006status\030\003 \001(\tR\006status" +
       "\"[\n\021GetProjectRequest\022\'\n\017organization_id" +
       "\030\001 \001(\tR\016organizationId\022\035\n\nproject_id\030\002 \001" +
       "(\tR\tprojectId\"a\n\022GetProjectResponse\0223\n\007p" +
@@ -30327,7 +30122,7 @@ public final class PaymentApi {
     internal_static_payment_v1alpha1_ListProjectsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_ListProjectsResponse_descriptor,
-        new java.lang.String[] { "CustomerList", "ProjectList", "Status", });
+        new java.lang.String[] { "Customer", "Status", });
     internal_static_payment_v1alpha1_GetProjectRequest_descriptor =
       getDescriptor().getMessageTypes().get(36);
     internal_static_payment_v1alpha1_GetProjectRequest_fieldAccessorTable = new

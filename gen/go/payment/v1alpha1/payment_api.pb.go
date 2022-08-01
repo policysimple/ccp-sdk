@@ -2006,9 +2006,8 @@ type ListProjectsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CustomerList *CustomerList `protobuf:"bytes,1,opt,name=customer_list,json=customerList,proto3" json:"customer_list,omitempty"`
-	ProjectList  *ProjectList  `protobuf:"bytes,2,opt,name=project_list,json=projectList,proto3" json:"project_list,omitempty"`
-	Status       string        `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
+	Customer *Customer `protobuf:"bytes,1,opt,name=customer,proto3" json:"customer,omitempty"`
+	Status   string    `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
 }
 
 func (x *ListProjectsResponse) Reset() {
@@ -2043,16 +2042,9 @@ func (*ListProjectsResponse) Descriptor() ([]byte, []int) {
 	return file_payment_v1alpha1_payment_api_proto_rawDescGZIP(), []int{35}
 }
 
-func (x *ListProjectsResponse) GetCustomerList() *CustomerList {
+func (x *ListProjectsResponse) GetCustomer() *Customer {
 	if x != nil {
-		return x.CustomerList
-	}
-	return nil
-}
-
-func (x *ListProjectsResponse) GetProjectList() *ProjectList {
-	if x != nil {
-		return x.ProjectList
+		return x.Customer
 	}
 	return nil
 }
@@ -2525,16 +2517,11 @@ var file_payment_v1alpha1_payment_api_proto_rawDesc = []byte{
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x27, 0x0a, 0x0f, 0x6f, 0x72, 0x67, 0x61, 0x6e,
 	0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d,
 	0x52, 0x0e, 0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64,
-	0x22, 0xb5, 0x01, 0x0a, 0x14, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x43, 0x0a, 0x0d, 0x63, 0x75, 0x73,
-	0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x1e, 0x2e, 0x70, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70,
-	0x68, 0x61, 0x31, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74,
-	0x52, 0x0c, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x40,
-	0x0a, 0x0c, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x70, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76,
-	0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x4c,
-	0x69, 0x73, 0x74, 0x52, 0x0b, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x4c, 0x69, 0x73, 0x74,
+	0x22, 0x66, 0x0a, 0x14, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x73,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x36, 0x0a, 0x08, 0x63, 0x75, 0x73, 0x74,
+	0x6f, 0x6d, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x70, 0x61, 0x79,
+	0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x43, 0x75,
+	0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x52, 0x08, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
 	0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
 	0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x22, 0x5b, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x50,
 	0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x27, 0x0a,
@@ -2750,7 +2737,6 @@ var file_payment_v1alpha1_payment_api_proto_goTypes = []interface{}{
 	(*Project)(nil),                   // 49: payment.v1alpha1.Project
 	(*Payment)(nil),                   // 50: payment.v1alpha1.Payment
 	(*PaymentList)(nil),               // 51: payment.v1alpha1.PaymentList
-	(*ProjectList)(nil),               // 52: payment.v1alpha1.ProjectList
 }
 var file_payment_v1alpha1_payment_api_proto_depIdxs = []int32{
 	40, // 0: payment.v1alpha1.InvoiceFilterRequest.customer_list:type_name -> payment.v1alpha1.CustomerList
@@ -2773,52 +2759,51 @@ var file_payment_v1alpha1_payment_api_proto_depIdxs = []int32{
 	50, // 17: payment.v1alpha1.CreatePaymentRequest.payment:type_name -> payment.v1alpha1.Payment
 	50, // 18: payment.v1alpha1.GetPaymentResponse.payment:type_name -> payment.v1alpha1.Payment
 	51, // 19: payment.v1alpha1.ListPaymentResponse.payment_list:type_name -> payment.v1alpha1.PaymentList
-	40, // 20: payment.v1alpha1.ListProjectsResponse.customer_list:type_name -> payment.v1alpha1.CustomerList
-	52, // 21: payment.v1alpha1.ListProjectsResponse.project_list:type_name -> payment.v1alpha1.ProjectList
-	49, // 22: payment.v1alpha1.GetProjectResponse.project:type_name -> payment.v1alpha1.Project
-	14, // 23: payment.v1alpha1.PaymentAPIService.CreateSuscription:input_type -> payment.v1alpha1.CreateSuscriptionRequest
-	20, // 24: payment.v1alpha1.PaymentAPIService.CreateCard:input_type -> payment.v1alpha1.CreateCardRequest
-	22, // 25: payment.v1alpha1.PaymentAPIService.CancelSuscription:input_type -> payment.v1alpha1.CancelSuscriptionRequest
-	6,  // 26: payment.v1alpha1.PaymentAPIService.GetOrganization:input_type -> payment.v1alpha1.GetOrganizationRequest
-	4,  // 27: payment.v1alpha1.PaymentAPIService.GetSuscription:input_type -> payment.v1alpha1.GetSuscriptionRequest
-	24, // 28: payment.v1alpha1.PaymentAPIService.CreateCustomer:input_type -> payment.v1alpha1.CreateCustomerRequest
-	2,  // 29: payment.v1alpha1.PaymentAPIService.DeleteCustomer:input_type -> payment.v1alpha1.DeleteCustomerRequest
-	30, // 30: payment.v1alpha1.PaymentAPIService.GetPayment:input_type -> payment.v1alpha1.GetPaymentRequest
-	8,  // 31: payment.v1alpha1.PaymentAPIService.GetCustomer:input_type -> payment.v1alpha1.GetCustomerRequest
-	10, // 32: payment.v1alpha1.PaymentAPIService.GetBilingMonth:input_type -> payment.v1alpha1.GetBilingMonthRequest
-	12, // 33: payment.v1alpha1.PaymentAPIService.GetPayments:input_type -> payment.v1alpha1.GetPaymentsRequest
-	26, // 34: payment.v1alpha1.PaymentAPIService.CreatePayment:input_type -> payment.v1alpha1.CreatePaymentRequest
-	16, // 35: payment.v1alpha1.PaymentAPIService.CreateProject:input_type -> payment.v1alpha1.CreateProjectRequest
-	34, // 36: payment.v1alpha1.PaymentAPIService.ListProjects:input_type -> payment.v1alpha1.ListProjectsRequest
-	38, // 37: payment.v1alpha1.PaymentAPIService.DeleteProject:input_type -> payment.v1alpha1.DeleteProjectRequest
-	28, // 38: payment.v1alpha1.PaymentAPIService.DeletePayment:input_type -> payment.v1alpha1.DeletePaymentRequest
-	32, // 39: payment.v1alpha1.PaymentAPIService.ListPayment:input_type -> payment.v1alpha1.ListPaymentRequest
-	18, // 40: payment.v1alpha1.PaymentAPIService.CreateInvoice:input_type -> payment.v1alpha1.CreateInvoiceRequest
-	0,  // 41: payment.v1alpha1.PaymentAPIService.InvoiceFilter:input_type -> payment.v1alpha1.InvoiceFilterRequest
-	15, // 42: payment.v1alpha1.PaymentAPIService.CreateSuscription:output_type -> payment.v1alpha1.CreateSuscriptionResponse
-	21, // 43: payment.v1alpha1.PaymentAPIService.CreateCard:output_type -> payment.v1alpha1.CreateCardResponse
-	23, // 44: payment.v1alpha1.PaymentAPIService.CancelSuscription:output_type -> payment.v1alpha1.CancelSuscriptionResponse
-	7,  // 45: payment.v1alpha1.PaymentAPIService.GetOrganization:output_type -> payment.v1alpha1.GetOrganizationResponse
-	5,  // 46: payment.v1alpha1.PaymentAPIService.GetSuscription:output_type -> payment.v1alpha1.GetSuscriptionResponse
-	25, // 47: payment.v1alpha1.PaymentAPIService.CreateCustomer:output_type -> payment.v1alpha1.CreateCustomerResponse
-	3,  // 48: payment.v1alpha1.PaymentAPIService.DeleteCustomer:output_type -> payment.v1alpha1.DeleteCustomerResponse
-	31, // 49: payment.v1alpha1.PaymentAPIService.GetPayment:output_type -> payment.v1alpha1.GetPaymentResponse
-	9,  // 50: payment.v1alpha1.PaymentAPIService.GetCustomer:output_type -> payment.v1alpha1.GetCustomerResponse
-	11, // 51: payment.v1alpha1.PaymentAPIService.GetBilingMonth:output_type -> payment.v1alpha1.GetBilingMonthResponse
-	13, // 52: payment.v1alpha1.PaymentAPIService.GetPayments:output_type -> payment.v1alpha1.GetPaymentsResponse
-	27, // 53: payment.v1alpha1.PaymentAPIService.CreatePayment:output_type -> payment.v1alpha1.CreatePaymentResponse
-	17, // 54: payment.v1alpha1.PaymentAPIService.CreateProject:output_type -> payment.v1alpha1.CreateProjectResponse
-	35, // 55: payment.v1alpha1.PaymentAPIService.ListProjects:output_type -> payment.v1alpha1.ListProjectsResponse
-	39, // 56: payment.v1alpha1.PaymentAPIService.DeleteProject:output_type -> payment.v1alpha1.DeleteProjectResponse
-	29, // 57: payment.v1alpha1.PaymentAPIService.DeletePayment:output_type -> payment.v1alpha1.DeletePaymentResponse
-	33, // 58: payment.v1alpha1.PaymentAPIService.ListPayment:output_type -> payment.v1alpha1.ListPaymentResponse
-	19, // 59: payment.v1alpha1.PaymentAPIService.CreateInvoice:output_type -> payment.v1alpha1.CreateInvoiceResponse
-	1,  // 60: payment.v1alpha1.PaymentAPIService.InvoiceFilter:output_type -> payment.v1alpha1.InvoiceFilterResponse
-	42, // [42:61] is the sub-list for method output_type
-	23, // [23:42] is the sub-list for method input_type
-	23, // [23:23] is the sub-list for extension type_name
-	23, // [23:23] is the sub-list for extension extendee
-	0,  // [0:23] is the sub-list for field type_name
+	46, // 20: payment.v1alpha1.ListProjectsResponse.customer:type_name -> payment.v1alpha1.Customer
+	49, // 21: payment.v1alpha1.GetProjectResponse.project:type_name -> payment.v1alpha1.Project
+	14, // 22: payment.v1alpha1.PaymentAPIService.CreateSuscription:input_type -> payment.v1alpha1.CreateSuscriptionRequest
+	20, // 23: payment.v1alpha1.PaymentAPIService.CreateCard:input_type -> payment.v1alpha1.CreateCardRequest
+	22, // 24: payment.v1alpha1.PaymentAPIService.CancelSuscription:input_type -> payment.v1alpha1.CancelSuscriptionRequest
+	6,  // 25: payment.v1alpha1.PaymentAPIService.GetOrganization:input_type -> payment.v1alpha1.GetOrganizationRequest
+	4,  // 26: payment.v1alpha1.PaymentAPIService.GetSuscription:input_type -> payment.v1alpha1.GetSuscriptionRequest
+	24, // 27: payment.v1alpha1.PaymentAPIService.CreateCustomer:input_type -> payment.v1alpha1.CreateCustomerRequest
+	2,  // 28: payment.v1alpha1.PaymentAPIService.DeleteCustomer:input_type -> payment.v1alpha1.DeleteCustomerRequest
+	30, // 29: payment.v1alpha1.PaymentAPIService.GetPayment:input_type -> payment.v1alpha1.GetPaymentRequest
+	8,  // 30: payment.v1alpha1.PaymentAPIService.GetCustomer:input_type -> payment.v1alpha1.GetCustomerRequest
+	10, // 31: payment.v1alpha1.PaymentAPIService.GetBilingMonth:input_type -> payment.v1alpha1.GetBilingMonthRequest
+	12, // 32: payment.v1alpha1.PaymentAPIService.GetPayments:input_type -> payment.v1alpha1.GetPaymentsRequest
+	26, // 33: payment.v1alpha1.PaymentAPIService.CreatePayment:input_type -> payment.v1alpha1.CreatePaymentRequest
+	16, // 34: payment.v1alpha1.PaymentAPIService.CreateProject:input_type -> payment.v1alpha1.CreateProjectRequest
+	34, // 35: payment.v1alpha1.PaymentAPIService.ListProjects:input_type -> payment.v1alpha1.ListProjectsRequest
+	38, // 36: payment.v1alpha1.PaymentAPIService.DeleteProject:input_type -> payment.v1alpha1.DeleteProjectRequest
+	28, // 37: payment.v1alpha1.PaymentAPIService.DeletePayment:input_type -> payment.v1alpha1.DeletePaymentRequest
+	32, // 38: payment.v1alpha1.PaymentAPIService.ListPayment:input_type -> payment.v1alpha1.ListPaymentRequest
+	18, // 39: payment.v1alpha1.PaymentAPIService.CreateInvoice:input_type -> payment.v1alpha1.CreateInvoiceRequest
+	0,  // 40: payment.v1alpha1.PaymentAPIService.InvoiceFilter:input_type -> payment.v1alpha1.InvoiceFilterRequest
+	15, // 41: payment.v1alpha1.PaymentAPIService.CreateSuscription:output_type -> payment.v1alpha1.CreateSuscriptionResponse
+	21, // 42: payment.v1alpha1.PaymentAPIService.CreateCard:output_type -> payment.v1alpha1.CreateCardResponse
+	23, // 43: payment.v1alpha1.PaymentAPIService.CancelSuscription:output_type -> payment.v1alpha1.CancelSuscriptionResponse
+	7,  // 44: payment.v1alpha1.PaymentAPIService.GetOrganization:output_type -> payment.v1alpha1.GetOrganizationResponse
+	5,  // 45: payment.v1alpha1.PaymentAPIService.GetSuscription:output_type -> payment.v1alpha1.GetSuscriptionResponse
+	25, // 46: payment.v1alpha1.PaymentAPIService.CreateCustomer:output_type -> payment.v1alpha1.CreateCustomerResponse
+	3,  // 47: payment.v1alpha1.PaymentAPIService.DeleteCustomer:output_type -> payment.v1alpha1.DeleteCustomerResponse
+	31, // 48: payment.v1alpha1.PaymentAPIService.GetPayment:output_type -> payment.v1alpha1.GetPaymentResponse
+	9,  // 49: payment.v1alpha1.PaymentAPIService.GetCustomer:output_type -> payment.v1alpha1.GetCustomerResponse
+	11, // 50: payment.v1alpha1.PaymentAPIService.GetBilingMonth:output_type -> payment.v1alpha1.GetBilingMonthResponse
+	13, // 51: payment.v1alpha1.PaymentAPIService.GetPayments:output_type -> payment.v1alpha1.GetPaymentsResponse
+	27, // 52: payment.v1alpha1.PaymentAPIService.CreatePayment:output_type -> payment.v1alpha1.CreatePaymentResponse
+	17, // 53: payment.v1alpha1.PaymentAPIService.CreateProject:output_type -> payment.v1alpha1.CreateProjectResponse
+	35, // 54: payment.v1alpha1.PaymentAPIService.ListProjects:output_type -> payment.v1alpha1.ListProjectsResponse
+	39, // 55: payment.v1alpha1.PaymentAPIService.DeleteProject:output_type -> payment.v1alpha1.DeleteProjectResponse
+	29, // 56: payment.v1alpha1.PaymentAPIService.DeletePayment:output_type -> payment.v1alpha1.DeletePaymentResponse
+	33, // 57: payment.v1alpha1.PaymentAPIService.ListPayment:output_type -> payment.v1alpha1.ListPaymentResponse
+	19, // 58: payment.v1alpha1.PaymentAPIService.CreateInvoice:output_type -> payment.v1alpha1.CreateInvoiceResponse
+	1,  // 59: payment.v1alpha1.PaymentAPIService.InvoiceFilter:output_type -> payment.v1alpha1.InvoiceFilterResponse
+	41, // [41:60] is the sub-list for method output_type
+	22, // [22:41] is the sub-list for method input_type
+	22, // [22:22] is the sub-list for extension type_name
+	22, // [22:22] is the sub-list for extension extendee
+	0,  // [0:22] is the sub-list for field type_name
 }
 
 func init() { file_payment_v1alpha1_payment_api_proto_init() }

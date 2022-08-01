@@ -483,8 +483,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListProjectsRequestDefaultTypeI
 constexpr ListProjectsResponse::ListProjectsResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , customer_list_(nullptr)
-  , project_list_(nullptr){}
+  , customer_(nullptr){}
 struct ListProjectsResponseDefaultTypeInternal {
   constexpr ListProjectsResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -809,8 +808,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_5
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::ListProjectsResponse, customer_list_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::ListProjectsResponse, project_list_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::ListProjectsResponse, customer_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::ListProjectsResponse, status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::GetProjectRequest, _internal_metadata_),
@@ -877,10 +875,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 239, -1, sizeof(::payment::v1alpha1::ListPaymentResponse)},
   { 246, -1, sizeof(::payment::v1alpha1::ListProjectsRequest)},
   { 252, -1, sizeof(::payment::v1alpha1::ListProjectsResponse)},
-  { 260, -1, sizeof(::payment::v1alpha1::GetProjectRequest)},
-  { 267, -1, sizeof(::payment::v1alpha1::GetProjectResponse)},
-  { 274, -1, sizeof(::payment::v1alpha1::DeleteProjectRequest)},
-  { 281, -1, sizeof(::payment::v1alpha1::DeleteProjectResponse)},
+  { 259, -1, sizeof(::payment::v1alpha1::GetProjectRequest)},
+  { 266, -1, sizeof(::payment::v1alpha1::GetProjectResponse)},
+  { 273, -1, sizeof(::payment::v1alpha1::DeleteProjectRequest)},
+  { 280, -1, sizeof(::payment::v1alpha1::DeleteProjectResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1025,11 +1023,9 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto[
   " \001(\0132\035.payment.v1alpha1.PaymentListR\013pay"
   "mentList\022\026\n\006status\030\002 \001(\tR\006status\">\n\023List"
   "ProjectsRequest\022\'\n\017organization_id\030\001 \001(\r"
-  "R\016organizationId\"\265\001\n\024ListProjectsRespons"
-  "e\022C\n\rcustomer_list\030\001 \001(\0132\036.payment.v1alp"
-  "ha1.CustomerListR\014customerList\022@\n\014projec"
-  "t_list\030\002 \001(\0132\035.payment.v1alpha1.ProjectL"
-  "istR\013projectList\022\026\n\006status\030\003 \001(\tR\006status"
+  "R\016organizationId\"f\n\024ListProjectsResponse"
+  "\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.Cu"
+  "stomerR\010customer\022\026\n\006status\030\003 \001(\tR\006status"
   "\"[\n\021GetProjectRequest\022\'\n\017organization_id"
   "\030\001 \001(\tR\016organizationId\022\035\n\nproject_id\030\002 \001"
   "(\tR\tprojectId\"a\n\022GetProjectResponse\0223\n\007p"
@@ -1095,7 +1091,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto = {
-  false, false, 6448, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto, "payment/v1alpha1/payment_api.proto", 
+  false, false, 6368, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto, "payment/v1alpha1/payment_api.proto", 
   &descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_once, descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_deps, 1, 40,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_5fapi_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_5fapi_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_5fapi_2eproto,
@@ -9761,29 +9757,18 @@ void ListProjectsRequest::InternalSwap(ListProjectsRequest* other) {
 
 class ListProjectsResponse::_Internal {
  public:
-  static const ::payment::v1alpha1::CustomerList& customer_list(const ListProjectsResponse* msg);
-  static const ::payment::v1alpha1::ProjectList& project_list(const ListProjectsResponse* msg);
+  static const ::payment::v1alpha1::Customer& customer(const ListProjectsResponse* msg);
 };
 
-const ::payment::v1alpha1::CustomerList&
-ListProjectsResponse::_Internal::customer_list(const ListProjectsResponse* msg) {
-  return *msg->customer_list_;
+const ::payment::v1alpha1::Customer&
+ListProjectsResponse::_Internal::customer(const ListProjectsResponse* msg) {
+  return *msg->customer_;
 }
-const ::payment::v1alpha1::ProjectList&
-ListProjectsResponse::_Internal::project_list(const ListProjectsResponse* msg) {
-  return *msg->project_list_;
-}
-void ListProjectsResponse::clear_customer_list() {
-  if (GetArenaForAllocation() == nullptr && customer_list_ != nullptr) {
-    delete customer_list_;
+void ListProjectsResponse::clear_customer() {
+  if (GetArenaForAllocation() == nullptr && customer_ != nullptr) {
+    delete customer_;
   }
-  customer_list_ = nullptr;
-}
-void ListProjectsResponse::clear_project_list() {
-  if (GetArenaForAllocation() == nullptr && project_list_ != nullptr) {
-    delete project_list_;
-  }
-  project_list_ = nullptr;
+  customer_ = nullptr;
 }
 ListProjectsResponse::ListProjectsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -9802,25 +9787,17 @@ ListProjectsResponse::ListProjectsResponse(const ListProjectsResponse& from)
     status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_customer_list()) {
-    customer_list_ = new ::payment::v1alpha1::CustomerList(*from.customer_list_);
+  if (from._internal_has_customer()) {
+    customer_ = new ::payment::v1alpha1::Customer(*from.customer_);
   } else {
-    customer_list_ = nullptr;
-  }
-  if (from._internal_has_project_list()) {
-    project_list_ = new ::payment::v1alpha1::ProjectList(*from.project_list_);
-  } else {
-    project_list_ = nullptr;
+    customer_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.ListProjectsResponse)
 }
 
 inline void ListProjectsResponse::SharedCtor() {
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&customer_list_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&project_list_) -
-    reinterpret_cast<char*>(&customer_list_)) + sizeof(project_list_));
+customer_ = nullptr;
 }
 
 ListProjectsResponse::~ListProjectsResponse() {
@@ -9833,8 +9810,7 @@ ListProjectsResponse::~ListProjectsResponse() {
 inline void ListProjectsResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete customer_list_;
-  if (this != internal_default_instance()) delete project_list_;
+  if (this != internal_default_instance()) delete customer_;
 }
 
 void ListProjectsResponse::ArenaDtor(void* object) {
@@ -9854,14 +9830,10 @@ void ListProjectsResponse::Clear() {
   (void) cached_has_bits;
 
   status_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && customer_list_ != nullptr) {
-    delete customer_list_;
+  if (GetArenaForAllocation() == nullptr && customer_ != nullptr) {
+    delete customer_;
   }
-  customer_list_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && project_list_ != nullptr) {
-    delete project_list_;
-  }
-  project_list_ = nullptr;
+  customer_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -9871,17 +9843,10 @@ const char* ListProjectsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];
+      // .payment.v1alpha1.Customer customer = 1 [json_name = "customer"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_customer_list(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_project_list(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_customer(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -9923,20 +9888,12 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];
-  if (this->_internal_has_customer_list()) {
+  // .payment.v1alpha1.Customer customer = 1 [json_name = "customer"];
+  if (this->_internal_has_customer()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::customer_list(this), target, stream);
-  }
-
-  // .payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];
-  if (this->_internal_has_project_list()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::project_list(this), target, stream);
+        1, _Internal::customer(this), target, stream);
   }
 
   // string status = 3 [json_name = "status"];
@@ -9972,18 +9929,11 @@ size_t ListProjectsResponse::ByteSizeLong() const {
         this->_internal_status());
   }
 
-  // .payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];
-  if (this->_internal_has_customer_list()) {
+  // .payment.v1alpha1.Customer customer = 1 [json_name = "customer"];
+  if (this->_internal_has_customer()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *customer_list_);
-  }
-
-  // .payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];
-  if (this->_internal_has_project_list()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *project_list_);
+        *customer_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -10017,11 +9967,8 @@ void ListProjectsResponse::MergeFrom(const ListProjectsResponse& from) {
   if (!from._internal_status().empty()) {
     _internal_set_status(from._internal_status());
   }
-  if (from._internal_has_customer_list()) {
-    _internal_mutable_customer_list()->::payment::v1alpha1::CustomerList::MergeFrom(from._internal_customer_list());
-  }
-  if (from._internal_has_project_list()) {
-    _internal_mutable_project_list()->::payment::v1alpha1::ProjectList::MergeFrom(from._internal_project_list());
+  if (from._internal_has_customer()) {
+    _internal_mutable_customer()->::payment::v1alpha1::Customer::MergeFrom(from._internal_customer());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -10045,12 +9992,7 @@ void ListProjectsResponse::InternalSwap(ListProjectsResponse* other) {
       &status_, GetArenaForAllocation(),
       &other->status_, other->GetArenaForAllocation()
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ListProjectsResponse, project_list_)
-      + sizeof(ListProjectsResponse::project_list_)
-      - PROTOBUF_FIELD_OFFSET(ListProjectsResponse, customer_list_)>(
-          reinterpret_cast<char*>(&customer_list_),
-          reinterpret_cast<char*>(&other->customer_list_));
+  swap(customer_, other->customer_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListProjectsResponse::GetMetadata() const {
