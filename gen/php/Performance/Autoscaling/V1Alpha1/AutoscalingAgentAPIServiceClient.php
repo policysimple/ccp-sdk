@@ -17,52 +17,67 @@ class AutoscalingAgentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Performance\Autoscaling\V1Alpha1\AgentCreateAutoscalingRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function AgentCreateAutoscaling($metadata = [], $options = []) {
-        return $this->_bidiRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentCreateAutoscaling',
-        ['\Performance\Autoscaling\V1Alpha1\AgentCreateAutoscalingResponse','decode'],
+    public function AgentCreateAutoscaling(\Performance\Autoscaling\V1Alpha1\AgentCreateAutoscalingRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentCreateAutoscaling',
+        $argument,
+        ['\Performance\Autoscaling\V1Alpha1\AgentCreateAutoscalingResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
+     * @param \Performance\Autoscaling\V1Alpha1\AgentUpdateAutoscalingRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function AgentUpdateAutoscaling($metadata = [], $options = []) {
-        return $this->_bidiRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentUpdateAutoscaling',
-        ['\Performance\Autoscaling\V1Alpha1\AgentUpdateAutoscalingResponse','decode'],
+    public function AgentUpdateAutoscaling(\Performance\Autoscaling\V1Alpha1\AgentUpdateAutoscalingRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentUpdateAutoscaling',
+        $argument,
+        ['\Performance\Autoscaling\V1Alpha1\AgentUpdateAutoscalingResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
+     * @param \Performance\Autoscaling\V1Alpha1\AgentDeleteAutoscalingRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function AgentDeleteAutoscaling($metadata = [], $options = []) {
-        return $this->_bidiRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentDeleteAutoscaling',
-        ['\Performance\Autoscaling\V1Alpha1\AgentDeleteAutoscalingResponse','decode'],
+    public function AgentDeleteAutoscaling(\Performance\Autoscaling\V1Alpha1\AgentDeleteAutoscalingRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentDeleteAutoscaling',
+        $argument,
+        ['\Performance\Autoscaling\V1Alpha1\AgentDeleteAutoscalingResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
+     * @param \Performance\Autoscaling\V1Alpha1\AgentGetAutoscalingRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function AgentGetAutoscaling($metadata = [], $options = []) {
-        return $this->_bidiRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentGetAutoscaling',
-        ['\Performance\Autoscaling\V1Alpha1\AgentGetAutoscalingResponse','decode'],
+    public function AgentGetAutoscaling(\Performance\Autoscaling\V1Alpha1\AgentGetAutoscalingRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentGetAutoscaling',
+        $argument,
+        ['\Performance\Autoscaling\V1Alpha1\AgentGetAutoscalingResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
+     * @param \Performance\Autoscaling\V1Alpha1\AgentListAutoscalingRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function AgentListAutoscaling($metadata = [], $options = []) {
-        return $this->_bidiRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentListAutoscaling',
-        ['\Performance\Autoscaling\V1Alpha1\AgentListAutoscalingResponse','decode'],
+    public function AgentListAutoscaling(\Performance\Autoscaling\V1Alpha1\AgentListAutoscalingRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/performance.autoscaling.v1alpha1.AutoscalingAgentAPIService/AgentListAutoscaling',
+        $argument,
+        ['\Performance\Autoscaling\V1Alpha1\AgentListAutoscalingResponse', 'decode'],
         $metadata, $options);
     }
 

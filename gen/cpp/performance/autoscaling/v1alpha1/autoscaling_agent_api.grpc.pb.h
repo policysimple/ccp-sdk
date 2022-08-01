@@ -37,124 +37,109 @@ class AutoscalingAgentAPIService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    std::unique_ptr< ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>> AgentCreateAutoscaling(::grpc::ClientContext* context) {
-      return std::unique_ptr< ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>>(AgentCreateAutoscalingRaw(context));
+    virtual ::grpc::Status AgentCreateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest& request, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>> AsyncAgentCreateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>>(AsyncAgentCreateAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>> AsyncAgentCreateAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>>(AsyncAgentCreateAutoscalingRaw(context, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>> PrepareAsyncAgentCreateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>>(PrepareAsyncAgentCreateAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>> PrepareAsyncAgentCreateAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>>(PrepareAsyncAgentCreateAutoscalingRaw(context, cq));
+    virtual ::grpc::Status AgentUpdateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest& request, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>> AsyncAgentUpdateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>>(AsyncAgentUpdateAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>> AgentUpdateAutoscaling(::grpc::ClientContext* context) {
-      return std::unique_ptr< ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>>(AgentUpdateAutoscalingRaw(context));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>> PrepareAsyncAgentUpdateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>>(PrepareAsyncAgentUpdateAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>> AsyncAgentUpdateAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>>(AsyncAgentUpdateAutoscalingRaw(context, cq, tag));
+    virtual ::grpc::Status AgentDeleteAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest& request, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>> AsyncAgentDeleteAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>>(AsyncAgentDeleteAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>> PrepareAsyncAgentUpdateAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>>(PrepareAsyncAgentUpdateAutoscalingRaw(context, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>> PrepareAsyncAgentDeleteAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>>(PrepareAsyncAgentDeleteAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>> AgentDeleteAutoscaling(::grpc::ClientContext* context) {
-      return std::unique_ptr< ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>>(AgentDeleteAutoscalingRaw(context));
+    virtual ::grpc::Status AgentGetAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest& request, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>> AsyncAgentGetAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>>(AsyncAgentGetAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>> AsyncAgentDeleteAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>>(AsyncAgentDeleteAutoscalingRaw(context, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>> PrepareAsyncAgentGetAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>>(PrepareAsyncAgentGetAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>> PrepareAsyncAgentDeleteAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>>(PrepareAsyncAgentDeleteAutoscalingRaw(context, cq));
+    virtual ::grpc::Status AgentListAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest& request, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>> AsyncAgentListAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>>(AsyncAgentListAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>> AgentGetAutoscaling(::grpc::ClientContext* context) {
-      return std::unique_ptr< ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>>(AgentGetAutoscalingRaw(context));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>> AsyncAgentGetAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>>(AsyncAgentGetAutoscalingRaw(context, cq, tag));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>> PrepareAsyncAgentGetAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>>(PrepareAsyncAgentGetAutoscalingRaw(context, cq));
-    }
-    std::unique_ptr< ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>> AgentListAutoscaling(::grpc::ClientContext* context) {
-      return std::unique_ptr< ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>>(AgentListAutoscalingRaw(context));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>> AsyncAgentListAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>>(AsyncAgentListAutoscalingRaw(context, cq, tag));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>> PrepareAsyncAgentListAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>>(PrepareAsyncAgentListAutoscalingRaw(context, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>> PrepareAsyncAgentListAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>>(PrepareAsyncAgentListAutoscalingRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
+      virtual void AgentCreateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AgentUpdateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AgentDeleteAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AgentGetAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AgentListAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>* AgentCreateAutoscalingRaw(::grpc::ClientContext* context) = 0;
-    virtual ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>* AsyncAgentCreateAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>* PrepareAsyncAgentCreateAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>* AgentUpdateAutoscalingRaw(::grpc::ClientContext* context) = 0;
-    virtual ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>* AsyncAgentUpdateAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>* PrepareAsyncAgentUpdateAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>* AgentDeleteAutoscalingRaw(::grpc::ClientContext* context) = 0;
-    virtual ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>* AsyncAgentDeleteAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>* PrepareAsyncAgentDeleteAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>* AgentGetAutoscalingRaw(::grpc::ClientContext* context) = 0;
-    virtual ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>* AsyncAgentGetAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>* PrepareAsyncAgentGetAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>* AgentListAutoscalingRaw(::grpc::ClientContext* context) = 0;
-    virtual ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>* AsyncAgentListAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderWriterInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>* PrepareAsyncAgentListAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>* AsyncAgentCreateAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>* PrepareAsyncAgentCreateAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>* AsyncAgentUpdateAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>* PrepareAsyncAgentUpdateAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>* AsyncAgentDeleteAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>* PrepareAsyncAgentDeleteAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>* AsyncAgentGetAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>* PrepareAsyncAgentGetAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>* AsyncAgentListAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>* PrepareAsyncAgentListAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    std::unique_ptr< ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>> AgentCreateAutoscaling(::grpc::ClientContext* context) {
-      return std::unique_ptr< ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>>(AgentCreateAutoscalingRaw(context));
+    ::grpc::Status AgentCreateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest& request, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>> AsyncAgentCreateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>>(AsyncAgentCreateAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr<  ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>> AsyncAgentCreateAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>>(AsyncAgentCreateAutoscalingRaw(context, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>> PrepareAsyncAgentCreateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>>(PrepareAsyncAgentCreateAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr<  ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>> PrepareAsyncAgentCreateAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>>(PrepareAsyncAgentCreateAutoscalingRaw(context, cq));
+    ::grpc::Status AgentUpdateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest& request, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>> AsyncAgentUpdateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>>(AsyncAgentUpdateAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>> AgentUpdateAutoscaling(::grpc::ClientContext* context) {
-      return std::unique_ptr< ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>>(AgentUpdateAutoscalingRaw(context));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>> PrepareAsyncAgentUpdateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>>(PrepareAsyncAgentUpdateAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr<  ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>> AsyncAgentUpdateAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>>(AsyncAgentUpdateAutoscalingRaw(context, cq, tag));
+    ::grpc::Status AgentDeleteAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest& request, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>> AsyncAgentDeleteAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>>(AsyncAgentDeleteAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr<  ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>> PrepareAsyncAgentUpdateAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>>(PrepareAsyncAgentUpdateAutoscalingRaw(context, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>> PrepareAsyncAgentDeleteAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>>(PrepareAsyncAgentDeleteAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>> AgentDeleteAutoscaling(::grpc::ClientContext* context) {
-      return std::unique_ptr< ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>>(AgentDeleteAutoscalingRaw(context));
+    ::grpc::Status AgentGetAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest& request, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>> AsyncAgentGetAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>>(AsyncAgentGetAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr<  ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>> AsyncAgentDeleteAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>>(AsyncAgentDeleteAutoscalingRaw(context, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>> PrepareAsyncAgentGetAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>>(PrepareAsyncAgentGetAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr<  ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>> PrepareAsyncAgentDeleteAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>>(PrepareAsyncAgentDeleteAutoscalingRaw(context, cq));
+    ::grpc::Status AgentListAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest& request, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>> AsyncAgentListAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>>(AsyncAgentListAutoscalingRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>> AgentGetAutoscaling(::grpc::ClientContext* context) {
-      return std::unique_ptr< ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>>(AgentGetAutoscalingRaw(context));
-    }
-    std::unique_ptr<  ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>> AsyncAgentGetAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>>(AsyncAgentGetAutoscalingRaw(context, cq, tag));
-    }
-    std::unique_ptr<  ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>> PrepareAsyncAgentGetAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>>(PrepareAsyncAgentGetAutoscalingRaw(context, cq));
-    }
-    std::unique_ptr< ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>> AgentListAutoscaling(::grpc::ClientContext* context) {
-      return std::unique_ptr< ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>>(AgentListAutoscalingRaw(context));
-    }
-    std::unique_ptr<  ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>> AsyncAgentListAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>>(AsyncAgentListAutoscalingRaw(context, cq, tag));
-    }
-    std::unique_ptr<  ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>> PrepareAsyncAgentListAutoscaling(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>>(PrepareAsyncAgentListAutoscalingRaw(context, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>> PrepareAsyncAgentListAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>>(PrepareAsyncAgentListAutoscalingRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
+      void AgentCreateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse* response, std::function<void(::grpc::Status)>) override;
+      void AgentUpdateAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse* response, std::function<void(::grpc::Status)>) override;
+      void AgentDeleteAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse* response, std::function<void(::grpc::Status)>) override;
+      void AgentGetAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse* response, std::function<void(::grpc::Status)>) override;
+      void AgentListAutoscaling(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -166,21 +151,16 @@ class AutoscalingAgentAPIService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>* AgentCreateAutoscalingRaw(::grpc::ClientContext* context) override;
-    ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>* AsyncAgentCreateAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>* PrepareAsyncAgentCreateAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>* AgentUpdateAutoscalingRaw(::grpc::ClientContext* context) override;
-    ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>* AsyncAgentUpdateAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>* PrepareAsyncAgentUpdateAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>* AgentDeleteAutoscalingRaw(::grpc::ClientContext* context) override;
-    ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>* AsyncAgentDeleteAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>* PrepareAsyncAgentDeleteAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>* AgentGetAutoscalingRaw(::grpc::ClientContext* context) override;
-    ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>* AsyncAgentGetAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>* PrepareAsyncAgentGetAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReaderWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>* AgentListAutoscalingRaw(::grpc::ClientContext* context) override;
-    ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>* AsyncAgentListAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>* PrepareAsyncAgentListAutoscalingRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>* AsyncAgentCreateAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>* PrepareAsyncAgentCreateAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>* AsyncAgentUpdateAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>* PrepareAsyncAgentUpdateAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>* AsyncAgentDeleteAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>* PrepareAsyncAgentDeleteAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>* AsyncAgentGetAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>* PrepareAsyncAgentGetAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>* AsyncAgentListAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>* PrepareAsyncAgentListAutoscalingRaw(::grpc::ClientContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_AgentCreateAutoscaling_;
     const ::grpc::internal::RpcMethod rpcmethod_AgentUpdateAutoscaling_;
     const ::grpc::internal::RpcMethod rpcmethod_AgentDeleteAutoscaling_;
@@ -193,11 +173,11 @@ class AutoscalingAgentAPIService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status AgentCreateAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest>* stream);
-    virtual ::grpc::Status AgentUpdateAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest>* stream);
-    virtual ::grpc::Status AgentDeleteAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest>* stream);
-    virtual ::grpc::Status AgentGetAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest>* stream);
-    virtual ::grpc::Status AgentListAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest>* stream);
+    virtual ::grpc::Status AgentCreateAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse* response);
+    virtual ::grpc::Status AgentUpdateAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse* response);
+    virtual ::grpc::Status AgentDeleteAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse* response);
+    virtual ::grpc::Status AgentGetAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse* response);
+    virtual ::grpc::Status AgentListAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_AgentCreateAutoscaling : public BaseClass {
@@ -211,12 +191,12 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentCreateAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentCreateAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAgentCreateAutoscaling(::grpc::ServerContext* context, ::grpc::ServerAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest>* stream, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncBidiStreaming(0, context, stream, new_call_cq, notification_cq, tag);
+    void RequestAgentCreateAutoscaling(::grpc::ServerContext* context, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest* request, ::grpc::ServerAsyncResponseWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -231,12 +211,12 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentUpdateAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentUpdateAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAgentUpdateAutoscaling(::grpc::ServerContext* context, ::grpc::ServerAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest>* stream, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncBidiStreaming(1, context, stream, new_call_cq, notification_cq, tag);
+    void RequestAgentUpdateAutoscaling(::grpc::ServerContext* context, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest* request, ::grpc::ServerAsyncResponseWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -251,12 +231,12 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentDeleteAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentDeleteAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAgentDeleteAutoscaling(::grpc::ServerContext* context, ::grpc::ServerAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest>* stream, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncBidiStreaming(2, context, stream, new_call_cq, notification_cq, tag);
+    void RequestAgentDeleteAutoscaling(::grpc::ServerContext* context, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest* request, ::grpc::ServerAsyncResponseWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -271,12 +251,12 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentGetAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentGetAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAgentGetAutoscaling(::grpc::ServerContext* context, ::grpc::ServerAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest>* stream, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncBidiStreaming(3, context, stream, new_call_cq, notification_cq, tag);
+    void RequestAgentGetAutoscaling(::grpc::ServerContext* context, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest* request, ::grpc::ServerAsyncResponseWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -291,12 +271,12 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentListAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentListAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAgentListAutoscaling(::grpc::ServerContext* context, ::grpc::ServerAsyncReaderWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest>* stream, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncBidiStreaming(4, context, stream, new_call_cq, notification_cq, tag);
+    void RequestAgentListAutoscaling(::grpc::ServerContext* context, ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest* request, ::grpc::ServerAsyncResponseWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   typedef WithAsyncMethod_AgentCreateAutoscaling<WithAsyncMethod_AgentUpdateAutoscaling<WithAsyncMethod_AgentDeleteAutoscaling<WithAsyncMethod_AgentGetAutoscaling<WithAsyncMethod_AgentListAutoscaling<Service > > > > > AsyncService;
@@ -312,7 +292,7 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentCreateAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentCreateAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -329,7 +309,7 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentUpdateAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentUpdateAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -346,7 +326,7 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentDeleteAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentDeleteAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -363,7 +343,7 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentGetAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentGetAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -380,7 +360,7 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentListAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentListAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -397,12 +377,12 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentCreateAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentCreateAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAgentCreateAutoscaling(::grpc::ServerContext* context, ::grpc::ServerAsyncReaderWriter< ::grpc::ByteBuffer, ::grpc::ByteBuffer>* stream, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncBidiStreaming(0, context, stream, new_call_cq, notification_cq, tag);
+    void RequestAgentCreateAutoscaling(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -417,12 +397,12 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentUpdateAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentUpdateAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAgentUpdateAutoscaling(::grpc::ServerContext* context, ::grpc::ServerAsyncReaderWriter< ::grpc::ByteBuffer, ::grpc::ByteBuffer>* stream, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncBidiStreaming(1, context, stream, new_call_cq, notification_cq, tag);
+    void RequestAgentUpdateAutoscaling(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -437,12 +417,12 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentDeleteAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentDeleteAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAgentDeleteAutoscaling(::grpc::ServerContext* context, ::grpc::ServerAsyncReaderWriter< ::grpc::ByteBuffer, ::grpc::ByteBuffer>* stream, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncBidiStreaming(2, context, stream, new_call_cq, notification_cq, tag);
+    void RequestAgentDeleteAutoscaling(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -457,12 +437,12 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentGetAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentGetAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAgentGetAutoscaling(::grpc::ServerContext* context, ::grpc::ServerAsyncReaderWriter< ::grpc::ByteBuffer, ::grpc::ByteBuffer>* stream, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncBidiStreaming(3, context, stream, new_call_cq, notification_cq, tag);
+    void RequestAgentGetAutoscaling(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -477,17 +457,117 @@ class AutoscalingAgentAPIService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AgentListAutoscaling(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse, ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest>* stream)  override {
+    ::grpc::Status AgentListAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAgentListAutoscaling(::grpc::ServerContext* context, ::grpc::ServerAsyncReaderWriter< ::grpc::ByteBuffer, ::grpc::ByteBuffer>* stream, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncBidiStreaming(4, context, stream, new_call_cq, notification_cq, tag);
+    void RequestAgentListAutoscaling(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef Service StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AgentCreateAutoscaling : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_AgentCreateAutoscaling() {
+      ::grpc::Service::MarkMethodStreamed(0,
+        new ::grpc::internal::StreamedUnaryHandler< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>(std::bind(&WithStreamedUnaryMethod_AgentCreateAutoscaling<BaseClass>::StreamedAgentCreateAutoscaling, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_AgentCreateAutoscaling() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AgentCreateAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAgentCreateAutoscaling(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::performance::autoscaling::v1alpha1::AgentCreateAutoscalingRequest,::performance::autoscaling::v1alpha1::AgentCreateAutoscalingResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AgentUpdateAutoscaling : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_AgentUpdateAutoscaling() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>(std::bind(&WithStreamedUnaryMethod_AgentUpdateAutoscaling<BaseClass>::StreamedAgentUpdateAutoscaling, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_AgentUpdateAutoscaling() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AgentUpdateAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAgentUpdateAutoscaling(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingRequest,::performance::autoscaling::v1alpha1::AgentUpdateAutoscalingResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AgentDeleteAutoscaling : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_AgentDeleteAutoscaling() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>(std::bind(&WithStreamedUnaryMethod_AgentDeleteAutoscaling<BaseClass>::StreamedAgentDeleteAutoscaling, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_AgentDeleteAutoscaling() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AgentDeleteAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAgentDeleteAutoscaling(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingRequest,::performance::autoscaling::v1alpha1::AgentDeleteAutoscalingResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AgentGetAutoscaling : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_AgentGetAutoscaling() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>(std::bind(&WithStreamedUnaryMethod_AgentGetAutoscaling<BaseClass>::StreamedAgentGetAutoscaling, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_AgentGetAutoscaling() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AgentGetAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAgentGetAutoscaling(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::performance::autoscaling::v1alpha1::AgentGetAutoscalingRequest,::performance::autoscaling::v1alpha1::AgentGetAutoscalingResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AgentListAutoscaling : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_AgentListAutoscaling() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>(std::bind(&WithStreamedUnaryMethod_AgentListAutoscaling<BaseClass>::StreamedAgentListAutoscaling, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_AgentListAutoscaling() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AgentListAutoscaling(::grpc::ServerContext* context, const ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest* request, ::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAgentListAutoscaling(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::performance::autoscaling::v1alpha1::AgentListAutoscalingRequest,::performance::autoscaling::v1alpha1::AgentListAutoscalingResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_AgentCreateAutoscaling<WithStreamedUnaryMethod_AgentUpdateAutoscaling<WithStreamedUnaryMethod_AgentDeleteAutoscaling<WithStreamedUnaryMethod_AgentGetAutoscaling<WithStreamedUnaryMethod_AgentListAutoscaling<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef Service StreamedService;
+  typedef WithStreamedUnaryMethod_AgentCreateAutoscaling<WithStreamedUnaryMethod_AgentUpdateAutoscaling<WithStreamedUnaryMethod_AgentDeleteAutoscaling<WithStreamedUnaryMethod_AgentGetAutoscaling<WithStreamedUnaryMethod_AgentListAutoscaling<Service > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

@@ -749,14 +749,15 @@ class Secret final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kApplicationIdFieldNumber = 2,
-    kNamespaceFieldNumber = 3,
-    kMetadataFieldNumber = 4,
-    kDataFieldNumber = 5,
-    kWarningsFieldNumber = 6,
-    kProjectIdFieldNumber = 1,
+    kApplicationIdFieldNumber = 3,
+    kNamespaceFieldNumber = 4,
+    kMetadataFieldNumber = 5,
+    kDataFieldNumber = 6,
+    kWarningsFieldNumber = 7,
+    kOrganizationIdFieldNumber = 1,
+    kProjectIdFieldNumber = 2,
   };
-  // string application_id = 2 [json_name = "applicationId"];
+  // string application_id = 3 [json_name = "applicationId"];
   void clear_application_id();
   const std::string& application_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -770,7 +771,7 @@ class Secret final :
   std::string* _internal_mutable_application_id();
   public:
 
-  // string namespace = 3 [json_name = "namespace"];
+  // string namespace = 4 [json_name = "namespace"];
   void clear_namespace_();
   const std::string& namespace_() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -784,7 +785,7 @@ class Secret final :
   std::string* _internal_mutable_namespace_();
   public:
 
-  // .vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];
+  // .vault.v1alpha1.Metadata metadata = 5 [json_name = "metadata"];
   bool has_metadata() const;
   private:
   bool _internal_has_metadata() const;
@@ -802,7 +803,7 @@ class Secret final :
       ::vault::v1alpha1::Metadata* metadata);
   ::vault::v1alpha1::Metadata* unsafe_arena_release_metadata();
 
-  // .vault.v1alpha1.SecretData data = 5 [json_name = "data"];
+  // .vault.v1alpha1.SecretData data = 6 [json_name = "data"];
   bool has_data() const;
   private:
   bool _internal_has_data() const;
@@ -820,7 +821,7 @@ class Secret final :
       ::vault::v1alpha1::SecretData* data);
   ::vault::v1alpha1::SecretData* unsafe_arena_release_data();
 
-  // .vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];
+  // .vault.v1alpha1.SecretWarnings warnings = 7 [json_name = "warnings"];
   bool has_warnings() const;
   private:
   bool _internal_has_warnings() const;
@@ -838,7 +839,16 @@ class Secret final :
       ::vault::v1alpha1::SecretWarnings* warnings);
   ::vault::v1alpha1::SecretWarnings* unsafe_arena_release_warnings();
 
-  // uint32 project_id = 1 [json_name = "projectId"];
+  // uint32 organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 project_id = 2 [json_name = "projectId"];
   void clear_project_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
   void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -859,6 +869,7 @@ class Secret final :
   ::vault::v1alpha1::Metadata* metadata_;
   ::vault::v1alpha1::SecretData* data_;
   ::vault::v1alpha1::SecretWarnings* warnings_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vault_2fv1alpha1_2fvault_2eproto;
@@ -1216,7 +1227,27 @@ SecretWarnings::mutable_warnings() {
 
 // Secret
 
-// uint32 project_id = 1 [json_name = "projectId"];
+// uint32 organization_id = 1 [json_name = "organizationId"];
+inline void Secret::clear_organization_id() {
+  organization_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Secret::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Secret::organization_id() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.Secret.organization_id)
+  return _internal_organization_id();
+}
+inline void Secret::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void Secret::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.Secret.organization_id)
+}
+
+// uint32 project_id = 2 [json_name = "projectId"];
 inline void Secret::clear_project_id() {
   project_id_ = 0u;
 }
@@ -1236,7 +1267,7 @@ inline void Secret::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:vault.v1alpha1.Secret.project_id)
 }
 
-// string application_id = 2 [json_name = "applicationId"];
+// string application_id = 3 [json_name = "applicationId"];
 inline void Secret::clear_application_id() {
   application_id_.ClearToEmpty();
 }
@@ -1282,7 +1313,7 @@ inline void Secret::set_allocated_application_id(std::string* application_id) {
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.Secret.application_id)
 }
 
-// string namespace = 3 [json_name = "namespace"];
+// string namespace = 4 [json_name = "namespace"];
 inline void Secret::clear_namespace_() {
   namespace__.ClearToEmpty();
 }
@@ -1328,7 +1359,7 @@ inline void Secret::set_allocated_namespace_(std::string* namespace_) {
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.Secret.namespace)
 }
 
-// .vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];
+// .vault.v1alpha1.Metadata metadata = 5 [json_name = "metadata"];
 inline bool Secret::_internal_has_metadata() const {
   return this != internal_default_instance() && metadata_ != nullptr;
 }
@@ -1418,7 +1449,7 @@ inline void Secret::set_allocated_metadata(::vault::v1alpha1::Metadata* metadata
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.Secret.metadata)
 }
 
-// .vault.v1alpha1.SecretData data = 5 [json_name = "data"];
+// .vault.v1alpha1.SecretData data = 6 [json_name = "data"];
 inline bool Secret::_internal_has_data() const {
   return this != internal_default_instance() && data_ != nullptr;
 }
@@ -1508,7 +1539,7 @@ inline void Secret::set_allocated_data(::vault::v1alpha1::SecretData* data) {
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.Secret.data)
 }
 
-// .vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];
+// .vault.v1alpha1.SecretWarnings warnings = 7 [json_name = "warnings"];
 inline bool Secret::_internal_has_warnings() const {
   return this != internal_default_instance() && warnings_ != nullptr;
 }

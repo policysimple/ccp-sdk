@@ -14,15 +14,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetSecretRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 2 [json_name = "projectId"];</code>
      */
     protected $project_id = 0;
     /**
-     * Generated from protobuf field <code>string application_id = 2 [json_name = "applicationId"];</code>
+     * Generated from protobuf field <code>string application_id = 3 [json_name = "applicationId"];</code>
      */
     protected $application_id = '';
     /**
-     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
+     * Generated from protobuf field <code>string namespace = 4 [json_name = "namespace"];</code>
      */
     protected $namespace = '';
 
@@ -32,6 +36,7 @@ class GetSecretRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $organization_id
      *     @type int $project_id
      *     @type string $application_id
      *     @type string $namespace
@@ -43,7 +48,29 @@ class GetSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 2 [json_name = "projectId"];</code>
      * @return int
      */
     public function getProjectId()
@@ -52,7 +79,7 @@ class GetSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>uint32 project_id = 2 [json_name = "projectId"];</code>
      * @param int $var
      * @return $this
      */
@@ -65,7 +92,7 @@ class GetSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string application_id = 2 [json_name = "applicationId"];</code>
+     * Generated from protobuf field <code>string application_id = 3 [json_name = "applicationId"];</code>
      * @return string
      */
     public function getApplicationId()
@@ -74,7 +101,7 @@ class GetSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string application_id = 2 [json_name = "applicationId"];</code>
+     * Generated from protobuf field <code>string application_id = 3 [json_name = "applicationId"];</code>
      * @param string $var
      * @return $this
      */
@@ -87,7 +114,7 @@ class GetSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
+     * Generated from protobuf field <code>string namespace = 4 [json_name = "namespace"];</code>
      * @return string
      */
     public function getNamespace()
@@ -96,7 +123,7 @@ class GetSecretRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
+     * Generated from protobuf field <code>string namespace = 4 [json_name = "namespace"];</code>
      * @param string $var
      * @return $this
      */

@@ -14,11 +14,11 @@ import "performance/autoscaling/v1alpha1/autoscaling.proto";
 
 
 service AutoscalingAgentAPIService{
-    rpc AgentCreateAutoscaling(stream AgentCreateAutoscalingRequest) returns (stream AgentCreateAutoscalingResponse) {};
-    rpc AgentUpdateAutoscaling(stream AgentUpdateAutoscalingRequest) returns (stream AgentUpdateAutoscalingResponse) {};
-    rpc AgentDeleteAutoscaling(stream AgentDeleteAutoscalingRequest) returns (stream AgentDeleteAutoscalingResponse) {};
-    rpc AgentGetAutoscaling(stream AgentGetAutoscalingRequest) returns (stream AgentGetAutoscalingResponse) {};
-    rpc AgentListAutoscaling(stream AgentListAutoscalingRequest) returns (stream AgentListAutoscalingResponse) {};
+    rpc AgentCreateAutoscaling(AgentCreateAutoscalingRequest) returns (AgentCreateAutoscalingResponse) {};
+    rpc AgentUpdateAutoscaling(AgentUpdateAutoscalingRequest) returns (AgentUpdateAutoscalingResponse) {};
+    rpc AgentDeleteAutoscaling(AgentDeleteAutoscalingRequest) returns (AgentDeleteAutoscalingResponse) {};
+    rpc AgentGetAutoscaling(AgentGetAutoscalingRequest) returns (AgentGetAutoscalingResponse) {};
+    rpc AgentListAutoscaling(AgentListAutoscalingRequest) returns (AgentListAutoscalingResponse) {};
 }
 
 message AgentCreateAutoscalingResponse {

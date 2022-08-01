@@ -34,10 +34,10 @@ class VaultAPIServiceStub(object):
         request_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretRequest.SerializeToString,
         response_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretResponse.FromString,
         )
-    self.ListSecret = channel.unary_unary(
-        '/vault.v1alpha1.VaultAPIService/ListSecret',
-        request_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.ListSecretRequest.SerializeToString,
-        response_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.ListSecretResponse.FromString,
+    self.DeleteOrganization = channel.unary_unary(
+        '/vault.v1alpha1.VaultAPIService/DeleteOrganization',
+        request_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.DeleteOrganizationRequest.SerializeToString,
+        response_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.DeleteOrganizationResponse.FromString,
         )
 
 
@@ -73,7 +73,7 @@ class VaultAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def ListSecret(self, request, context):
+  def DeleteOrganization(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -103,10 +103,10 @@ def add_VaultAPIServiceServicer_to_server(servicer, server):
           request_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretRequest.FromString,
           response_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretResponse.SerializeToString,
       ),
-      'ListSecret': grpc.unary_unary_rpc_method_handler(
-          servicer.ListSecret,
-          request_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.ListSecretRequest.FromString,
-          response_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.ListSecretResponse.SerializeToString,
+      'DeleteOrganization': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteOrganization,
+          request_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.DeleteOrganizationRequest.FromString,
+          response_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.DeleteOrganizationResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

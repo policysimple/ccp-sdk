@@ -64,12 +64,12 @@ class VaultAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetSecretResponse>> PrepareAsyncGetSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetSecretResponse>>(PrepareAsyncGetSecretRaw(context, request, cq));
     }
-    virtual ::grpc::Status ListSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest& request, ::vault::v1alpha1::ListSecretResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::ListSecretResponse>> AsyncListSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::ListSecretResponse>>(AsyncListSecretRaw(context, request, cq));
+    virtual ::grpc::Status DeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::vault::v1alpha1::DeleteOrganizationResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteOrganizationResponse>> AsyncDeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteOrganizationResponse>>(AsyncDeleteOrganizationRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::ListSecretResponse>> PrepareAsyncListSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::ListSecretResponse>>(PrepareAsyncListSecretRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteOrganizationResponse>> PrepareAsyncDeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteOrganizationResponse>>(PrepareAsyncDeleteOrganizationRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
@@ -78,7 +78,7 @@ class VaultAPIService final {
       virtual void UpdateSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::UpdateSecretRequest* request, ::vault::v1alpha1::UpdateSecretResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteSecretRequest* request, ::vault::v1alpha1::DeleteSecretResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretRequest* request, ::vault::v1alpha1::GetSecretResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void ListSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest* request, ::vault::v1alpha1::ListSecretResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -90,8 +90,8 @@ class VaultAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteSecretResponse>* PrepareAsyncDeleteSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteSecretRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetSecretResponse>* AsyncGetSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetSecretResponse>* PrepareAsyncGetSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::ListSecretResponse>* AsyncListSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::ListSecretResponse>* PrepareAsyncListSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteOrganizationResponse>* AsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteOrganizationResponse>* PrepareAsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -124,12 +124,12 @@ class VaultAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetSecretResponse>> PrepareAsyncGetSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetSecretResponse>>(PrepareAsyncGetSecretRaw(context, request, cq));
     }
-    ::grpc::Status ListSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest& request, ::vault::v1alpha1::ListSecretResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretResponse>> AsyncListSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretResponse>>(AsyncListSecretRaw(context, request, cq));
+    ::grpc::Status DeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::vault::v1alpha1::DeleteOrganizationResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteOrganizationResponse>> AsyncDeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteOrganizationResponse>>(AsyncDeleteOrganizationRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretResponse>> PrepareAsyncListSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretResponse>>(PrepareAsyncListSecretRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteOrganizationResponse>> PrepareAsyncDeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteOrganizationResponse>>(PrepareAsyncDeleteOrganizationRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -138,7 +138,7 @@ class VaultAPIService final {
       void UpdateSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::UpdateSecretRequest* request, ::vault::v1alpha1::UpdateSecretResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteSecretRequest* request, ::vault::v1alpha1::DeleteSecretResponse* response, std::function<void(::grpc::Status)>) override;
       void GetSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretRequest* request, ::vault::v1alpha1::GetSecretResponse* response, std::function<void(::grpc::Status)>) override;
-      void ListSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest* request, ::vault::v1alpha1::ListSecretResponse* response, std::function<void(::grpc::Status)>) override;
+      void DeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -158,13 +158,13 @@ class VaultAPIService final {
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteSecretResponse>* PrepareAsyncDeleteSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteSecretRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetSecretResponse>* AsyncGetSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetSecretResponse>* PrepareAsyncGetSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretResponse>* AsyncListSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretResponse>* PrepareAsyncListSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteOrganizationResponse>* AsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteOrganizationResponse>* PrepareAsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateSecret_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateSecret_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteSecret_;
     const ::grpc::internal::RpcMethod rpcmethod_GetSecret_;
-    const ::grpc::internal::RpcMethod rpcmethod_ListSecret_;
+    const ::grpc::internal::RpcMethod rpcmethod_DeleteOrganization_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -176,7 +176,7 @@ class VaultAPIService final {
     virtual ::grpc::Status UpdateSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::UpdateSecretRequest* request, ::vault::v1alpha1::UpdateSecretResponse* response);
     virtual ::grpc::Status DeleteSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::DeleteSecretRequest* request, ::vault::v1alpha1::DeleteSecretResponse* response);
     virtual ::grpc::Status GetSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::GetSecretRequest* request, ::vault::v1alpha1::GetSecretResponse* response);
-    virtual ::grpc::Status ListSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::ListSecretRequest* request, ::vault::v1alpha1::ListSecretResponse* response);
+    virtual ::grpc::Status DeleteOrganization(::grpc::ServerContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateSecret : public BaseClass {
@@ -259,26 +259,26 @@ class VaultAPIService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_ListSecret : public BaseClass {
+  class WithAsyncMethod_DeleteOrganization : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithAsyncMethod_ListSecret() {
+    WithAsyncMethod_DeleteOrganization() {
       ::grpc::Service::MarkMethodAsync(4);
     }
-    ~WithAsyncMethod_ListSecret() override {
+    ~WithAsyncMethod_DeleteOrganization() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ListSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::ListSecretRequest* request, ::vault::v1alpha1::ListSecretResponse* response) override {
+    ::grpc::Status DeleteOrganization(::grpc::ServerContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestListSecret(::grpc::ServerContext* context, ::vault::v1alpha1::ListSecretRequest* request, ::grpc::ServerAsyncResponseWriter< ::vault::v1alpha1::ListSecretResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestDeleteOrganization(::grpc::ServerContext* context, ::vault::v1alpha1::DeleteOrganizationRequest* request, ::grpc::ServerAsyncResponseWriter< ::vault::v1alpha1::DeleteOrganizationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateSecret<WithAsyncMethod_UpdateSecret<WithAsyncMethod_DeleteSecret<WithAsyncMethod_GetSecret<WithAsyncMethod_ListSecret<Service > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateSecret<WithAsyncMethod_UpdateSecret<WithAsyncMethod_DeleteSecret<WithAsyncMethod_GetSecret<WithAsyncMethod_DeleteOrganization<Service > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateSecret : public BaseClass {
    private:
@@ -348,18 +348,18 @@ class VaultAPIService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_ListSecret : public BaseClass {
+  class WithGenericMethod_DeleteOrganization : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithGenericMethod_ListSecret() {
+    WithGenericMethod_DeleteOrganization() {
       ::grpc::Service::MarkMethodGeneric(4);
     }
-    ~WithGenericMethod_ListSecret() override {
+    ~WithGenericMethod_DeleteOrganization() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ListSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::ListSecretRequest* request, ::vault::v1alpha1::ListSecretResponse* response) override {
+    ::grpc::Status DeleteOrganization(::grpc::ServerContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -445,22 +445,22 @@ class VaultAPIService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_ListSecret : public BaseClass {
+  class WithRawMethod_DeleteOrganization : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithRawMethod_ListSecret() {
+    WithRawMethod_DeleteOrganization() {
       ::grpc::Service::MarkMethodRaw(4);
     }
-    ~WithRawMethod_ListSecret() override {
+    ~WithRawMethod_DeleteOrganization() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ListSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::ListSecretRequest* request, ::vault::v1alpha1::ListSecretResponse* response) override {
+    ::grpc::Status DeleteOrganization(::grpc::ServerContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestListSecret(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestDeleteOrganization(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -545,28 +545,28 @@ class VaultAPIService final {
     virtual ::grpc::Status StreamedGetSecret(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vault::v1alpha1::GetSecretRequest,::vault::v1alpha1::GetSecretResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_ListSecret : public BaseClass {
+  class WithStreamedUnaryMethod_DeleteOrganization : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithStreamedUnaryMethod_ListSecret() {
+    WithStreamedUnaryMethod_DeleteOrganization() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::vault::v1alpha1::ListSecretRequest, ::vault::v1alpha1::ListSecretResponse>(std::bind(&WithStreamedUnaryMethod_ListSecret<BaseClass>::StreamedListSecret, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::vault::v1alpha1::DeleteOrganizationRequest, ::vault::v1alpha1::DeleteOrganizationResponse>(std::bind(&WithStreamedUnaryMethod_DeleteOrganization<BaseClass>::StreamedDeleteOrganization, this, std::placeholders::_1, std::placeholders::_2)));
     }
-    ~WithStreamedUnaryMethod_ListSecret() override {
+    ~WithStreamedUnaryMethod_DeleteOrganization() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status ListSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::ListSecretRequest* request, ::vault::v1alpha1::ListSecretResponse* response) override {
+    ::grpc::Status DeleteOrganization(::grpc::ServerContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedListSecret(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vault::v1alpha1::ListSecretRequest,::vault::v1alpha1::ListSecretResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedDeleteOrganization(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vault::v1alpha1::DeleteOrganizationRequest,::vault::v1alpha1::DeleteOrganizationResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_ListSecret<Service > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_DeleteOrganization<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_ListSecret<Service > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_DeleteOrganization<Service > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1
