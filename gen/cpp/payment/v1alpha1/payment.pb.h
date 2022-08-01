@@ -235,6 +235,7 @@ class Customer final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kProjectsFieldNumber = 10,
     kIdFieldNumber = 1,
     kCustomerIdFieldNumber = 2,
     kNameFieldNumber = 4,
@@ -243,9 +244,26 @@ class Customer final :
     kPaymentsFieldNumber = 7,
     kInvoiceFieldNumber = 8,
     kBilingFieldNumber = 9,
-    kProjectFieldNumber = 10,
     kOrganizationIdFieldNumber = 3,
   };
+  // repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];
+  int projects_size() const;
+  private:
+  int _internal_projects_size() const;
+  public:
+  void clear_projects();
+  ::payment::v1alpha1::Project* mutable_projects(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::Project >*
+      mutable_projects();
+  private:
+  const ::payment::v1alpha1::Project& _internal_projects(int index) const;
+  ::payment::v1alpha1::Project* _internal_add_projects();
+  public:
+  const ::payment::v1alpha1::Project& projects(int index) const;
+  ::payment::v1alpha1::Project* add_projects();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::Project >&
+      projects() const;
+
   // string id = 1 [json_name = "id"];
   void clear_id();
   const std::string& id() const;
@@ -374,24 +392,6 @@ class Customer final :
       ::payment::v1alpha1::Biling* biling);
   ::payment::v1alpha1::Biling* unsafe_arena_release_biling();
 
-  // .payment.v1alpha1.ProjectList project = 10 [json_name = "project"];
-  bool has_project() const;
-  private:
-  bool _internal_has_project() const;
-  public:
-  void clear_project();
-  const ::payment::v1alpha1::ProjectList& project() const;
-  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::ProjectList* release_project();
-  ::payment::v1alpha1::ProjectList* mutable_project();
-  void set_allocated_project(::payment::v1alpha1::ProjectList* project);
-  private:
-  const ::payment::v1alpha1::ProjectList& _internal_project() const;
-  ::payment::v1alpha1::ProjectList* _internal_mutable_project();
-  public:
-  void unsafe_arena_set_allocated_project(
-      ::payment::v1alpha1::ProjectList* project);
-  ::payment::v1alpha1::ProjectList* unsafe_arena_release_project();
-
   // uint32 organization_id = 3 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
@@ -408,6 +408,7 @@ class Customer final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::Project > projects_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr customer_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
@@ -416,7 +417,6 @@ class Customer final :
   ::payment::v1alpha1::PaymentList* payments_;
   ::payment::v1alpha1::Invoice* invoice_;
   ::payment::v1alpha1::Biling* biling_;
-  ::payment::v1alpha1::ProjectList* project_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_2eproto;
@@ -3430,94 +3430,44 @@ inline void Customer::set_allocated_biling(::payment::v1alpha1::Biling* biling) 
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Customer.biling)
 }
 
-// .payment.v1alpha1.ProjectList project = 10 [json_name = "project"];
-inline bool Customer::_internal_has_project() const {
-  return this != internal_default_instance() && project_ != nullptr;
+// repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];
+inline int Customer::_internal_projects_size() const {
+  return projects_.size();
 }
-inline bool Customer::has_project() const {
-  return _internal_has_project();
+inline int Customer::projects_size() const {
+  return _internal_projects_size();
 }
-inline void Customer::clear_project() {
-  if (GetArenaForAllocation() == nullptr && project_ != nullptr) {
-    delete project_;
-  }
-  project_ = nullptr;
+inline void Customer::clear_projects() {
+  projects_.Clear();
 }
-inline const ::payment::v1alpha1::ProjectList& Customer::_internal_project() const {
-  const ::payment::v1alpha1::ProjectList* p = project_;
-  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::ProjectList&>(
-      ::payment::v1alpha1::_ProjectList_default_instance_);
+inline ::payment::v1alpha1::Project* Customer::mutable_projects(int index) {
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Customer.projects)
+  return projects_.Mutable(index);
 }
-inline const ::payment::v1alpha1::ProjectList& Customer::project() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.Customer.project)
-  return _internal_project();
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::Project >*
+Customer::mutable_projects() {
+  // @@protoc_insertion_point(field_mutable_list:payment.v1alpha1.Customer.projects)
+  return &projects_;
 }
-inline void Customer::unsafe_arena_set_allocated_project(
-    ::payment::v1alpha1::ProjectList* project) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_);
-  }
-  project_ = project;
-  if (project) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.Customer.project)
+inline const ::payment::v1alpha1::Project& Customer::_internal_projects(int index) const {
+  return projects_.Get(index);
 }
-inline ::payment::v1alpha1::ProjectList* Customer::release_project() {
-  
-  ::payment::v1alpha1::ProjectList* temp = project_;
-  project_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
+inline const ::payment::v1alpha1::Project& Customer::projects(int index) const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Customer.projects)
+  return _internal_projects(index);
 }
-inline ::payment::v1alpha1::ProjectList* Customer::unsafe_arena_release_project() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.Customer.project)
-  
-  ::payment::v1alpha1::ProjectList* temp = project_;
-  project_ = nullptr;
-  return temp;
+inline ::payment::v1alpha1::Project* Customer::_internal_add_projects() {
+  return projects_.Add();
 }
-inline ::payment::v1alpha1::ProjectList* Customer::_internal_mutable_project() {
-  
-  if (project_ == nullptr) {
-    auto* p = CreateMaybeMessage<::payment::v1alpha1::ProjectList>(GetArenaForAllocation());
-    project_ = p;
-  }
-  return project_;
+inline ::payment::v1alpha1::Project* Customer::add_projects() {
+  ::payment::v1alpha1::Project* _add = _internal_add_projects();
+  // @@protoc_insertion_point(field_add:payment.v1alpha1.Customer.projects)
+  return _add;
 }
-inline ::payment::v1alpha1::ProjectList* Customer::mutable_project() {
-  ::payment::v1alpha1::ProjectList* _msg = _internal_mutable_project();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Customer.project)
-  return _msg;
-}
-inline void Customer::set_allocated_project(::payment::v1alpha1::ProjectList* project) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete project_;
-  }
-  if (project) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::payment::v1alpha1::ProjectList>::GetOwningArena(project);
-    if (message_arena != submessage_arena) {
-      project = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, project, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  project_ = project;
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Customer.project)
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::Project >&
+Customer::projects() const {
+  // @@protoc_insertion_point(field_list:payment.v1alpha1.Customer.projects)
+  return projects_;
 }
 
 // -------------------------------------------------------------------

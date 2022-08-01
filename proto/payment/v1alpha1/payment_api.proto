@@ -51,7 +51,7 @@ message DeleteCustomerRequest {
 }
 
 message DeleteCustomerResponse {
-    string status = 1;
+    string status = 1;  repeated Card cards = 6;
 }
 
 message GetSuscriptionRequest {
@@ -75,7 +75,7 @@ message GetOrganizationResponse {
 message GetCustomerRequest {
     uint32 organization_id = 1;
     string customer_id =2;
-}
+}  
 
 message GetCustomerResponse {
     payment.v1alpha1.Customer customer = 1;
@@ -98,7 +98,7 @@ message GetPaymentsRequest {
 }
 
 message GetPaymentsResponse {
-    payment.v1alpha1.PaymentList payment = 1;
+    payment.v1alpha1.CardList card = 1;
     string status = 2;
 }
 

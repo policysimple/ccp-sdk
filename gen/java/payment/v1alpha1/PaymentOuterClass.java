@@ -133,19 +133,28 @@ public final class PaymentOuterClass {
     payment.v1alpha1.PaymentOuterClass.BilingOrBuilder getBilingOrBuilder();
 
     /**
-     * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
-     * @return Whether the project field is set.
+     * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
      */
-    boolean hasProject();
+    java.util.List<payment.v1alpha1.PaymentOuterClass.Project> 
+        getProjectsList();
     /**
-     * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
-     * @return The project.
+     * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
      */
-    payment.v1alpha1.PaymentOuterClass.ProjectList getProject();
+    payment.v1alpha1.PaymentOuterClass.Project getProjects(int index);
     /**
-     * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
+     * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
      */
-    payment.v1alpha1.PaymentOuterClass.ProjectListOrBuilder getProjectOrBuilder();
+    int getProjectsCount();
+    /**
+     * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    java.util.List<? extends payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> 
+        getProjectsOrBuilderList();
+    /**
+     * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code payment.v1alpha1.Customer}
@@ -164,6 +173,7 @@ public final class PaymentOuterClass {
       customerId_ = "";
       name_ = "";
       email_ = "";
+      projects_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -186,6 +196,7 @@ public final class PaymentOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -278,16 +289,12 @@ public final class PaymentOuterClass {
               break;
             }
             case 82: {
-              payment.v1alpha1.PaymentOuterClass.ProjectList.Builder subBuilder = null;
-              if (project_ != null) {
-                subBuilder = project_.toBuilder();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                projects_ = new java.util.ArrayList<payment.v1alpha1.PaymentOuterClass.Project>();
+                mutable_bitField0_ |= 0x00000001;
               }
-              project_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.ProjectList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(project_);
-                project_ = subBuilder.buildPartial();
-              }
-
+              projects_.add(
+                  input.readMessage(payment.v1alpha1.PaymentOuterClass.Project.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -305,6 +312,9 @@ public final class PaymentOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          projects_ = java.util.Collections.unmodifiableList(projects_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -589,30 +599,44 @@ public final class PaymentOuterClass {
       return getBiling();
     }
 
-    public static final int PROJECT_FIELD_NUMBER = 10;
-    private payment.v1alpha1.PaymentOuterClass.ProjectList project_;
+    public static final int PROJECTS_FIELD_NUMBER = 10;
+    private java.util.List<payment.v1alpha1.PaymentOuterClass.Project> projects_;
     /**
-     * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
-     * @return Whether the project field is set.
+     * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
      */
     @java.lang.Override
-    public boolean hasProject() {
-      return project_ != null;
+    public java.util.List<payment.v1alpha1.PaymentOuterClass.Project> getProjectsList() {
+      return projects_;
     }
     /**
-     * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
-     * @return The project.
+     * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
      */
     @java.lang.Override
-    public payment.v1alpha1.PaymentOuterClass.ProjectList getProject() {
-      return project_ == null ? payment.v1alpha1.PaymentOuterClass.ProjectList.getDefaultInstance() : project_;
+    public java.util.List<? extends payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> 
+        getProjectsOrBuilderList() {
+      return projects_;
     }
     /**
-     * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
+     * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
      */
     @java.lang.Override
-    public payment.v1alpha1.PaymentOuterClass.ProjectListOrBuilder getProjectOrBuilder() {
-      return getProject();
+    public int getProjectsCount() {
+      return projects_.size();
+    }
+    /**
+     * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public payment.v1alpha1.PaymentOuterClass.Project getProjects(int index) {
+      return projects_.get(index);
+    }
+    /**
+     * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectsOrBuilder(
+        int index) {
+      return projects_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -656,8 +680,8 @@ public final class PaymentOuterClass {
       if (biling_ != null) {
         output.writeMessage(9, getBiling());
       }
-      if (project_ != null) {
-        output.writeMessage(10, getProject());
+      for (int i = 0; i < projects_.size(); i++) {
+        output.writeMessage(10, projects_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -700,9 +724,9 @@ public final class PaymentOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getBiling());
       }
-      if (project_ != null) {
+      for (int i = 0; i < projects_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getProject());
+          .computeMessageSize(10, projects_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -749,11 +773,8 @@ public final class PaymentOuterClass {
         if (!getBiling()
             .equals(other.getBiling())) return false;
       }
-      if (hasProject() != other.hasProject()) return false;
-      if (hasProject()) {
-        if (!getProject()
-            .equals(other.getProject())) return false;
-      }
+      if (!getProjectsList()
+          .equals(other.getProjectsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -791,9 +812,9 @@ public final class PaymentOuterClass {
         hash = (37 * hash) + BILING_FIELD_NUMBER;
         hash = (53 * hash) + getBiling().hashCode();
       }
-      if (hasProject()) {
-        hash = (37 * hash) + PROJECT_FIELD_NUMBER;
-        hash = (53 * hash) + getProject().hashCode();
+      if (getProjectsCount() > 0) {
+        hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getProjectsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -923,6 +944,7 @@ public final class PaymentOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getProjectsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -962,11 +984,11 @@ public final class PaymentOuterClass {
           biling_ = null;
           bilingBuilder_ = null;
         }
-        if (projectBuilder_ == null) {
-          project_ = null;
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          project_ = null;
-          projectBuilder_ = null;
+          projectsBuilder_.clear();
         }
         return this;
       }
@@ -994,6 +1016,7 @@ public final class PaymentOuterClass {
       @java.lang.Override
       public payment.v1alpha1.PaymentOuterClass.Customer buildPartial() {
         payment.v1alpha1.PaymentOuterClass.Customer result = new payment.v1alpha1.PaymentOuterClass.Customer(this);
+        int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.customerId_ = customerId_;
         result.organizationId_ = organizationId_;
@@ -1019,10 +1042,14 @@ public final class PaymentOuterClass {
         } else {
           result.biling_ = bilingBuilder_.build();
         }
-        if (projectBuilder_ == null) {
-          result.project_ = project_;
+        if (projectsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            projects_ = java.util.Collections.unmodifiableList(projects_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.projects_ = projects_;
         } else {
-          result.project_ = projectBuilder_.build();
+          result.projects_ = projectsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1103,8 +1130,31 @@ public final class PaymentOuterClass {
         if (other.hasBiling()) {
           mergeBiling(other.getBiling());
         }
-        if (other.hasProject()) {
-          mergeProject(other.getProject());
+        if (projectsBuilder_ == null) {
+          if (!other.projects_.isEmpty()) {
+            if (projects_.isEmpty()) {
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureProjectsIsMutable();
+              projects_.addAll(other.projects_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.projects_.isEmpty()) {
+            if (projectsBuilder_.isEmpty()) {
+              projectsBuilder_.dispose();
+              projectsBuilder_ = null;
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              projectsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProjectsFieldBuilder() : null;
+            } else {
+              projectsBuilder_.addAllMessages(other.projects_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1134,6 +1184,7 @@ public final class PaymentOuterClass {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -1946,123 +1997,244 @@ public final class PaymentOuterClass {
         return bilingBuilder_;
       }
 
-      private payment.v1alpha1.PaymentOuterClass.ProjectList project_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          payment.v1alpha1.PaymentOuterClass.ProjectList, payment.v1alpha1.PaymentOuterClass.ProjectList.Builder, payment.v1alpha1.PaymentOuterClass.ProjectListOrBuilder> projectBuilder_;
-      /**
-       * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
-       * @return Whether the project field is set.
-       */
-      public boolean hasProject() {
-        return projectBuilder_ != null || project_ != null;
+      private java.util.List<payment.v1alpha1.PaymentOuterClass.Project> projects_ =
+        java.util.Collections.emptyList();
+      private void ensureProjectsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          projects_ = new java.util.ArrayList<payment.v1alpha1.PaymentOuterClass.Project>(projects_);
+          bitField0_ |= 0x00000001;
+         }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> projectsBuilder_;
+
       /**
-       * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
-       * @return The project.
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
        */
-      public payment.v1alpha1.PaymentOuterClass.ProjectList getProject() {
-        if (projectBuilder_ == null) {
-          return project_ == null ? payment.v1alpha1.PaymentOuterClass.ProjectList.getDefaultInstance() : project_;
+      public java.util.List<payment.v1alpha1.PaymentOuterClass.Project> getProjectsList() {
+        if (projectsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(projects_);
         } else {
-          return projectBuilder_.getMessage();
+          return projectsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
        */
-      public Builder setProject(payment.v1alpha1.PaymentOuterClass.ProjectList value) {
-        if (projectBuilder_ == null) {
+      public int getProjectsCount() {
+        if (projectsBuilder_ == null) {
+          return projects_.size();
+        } else {
+          return projectsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.Project getProjects(int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);
+        } else {
+          return projectsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public Builder setProjects(
+          int index, payment.v1alpha1.PaymentOuterClass.Project value) {
+        if (projectsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          project_ = value;
+          ensureProjectsIsMutable();
+          projects_.set(index, value);
           onChanged();
         } else {
-          projectBuilder_.setMessage(value);
+          projectsBuilder_.setMessage(index, value);
         }
-
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
        */
-      public Builder setProject(
-          payment.v1alpha1.PaymentOuterClass.ProjectList.Builder builderForValue) {
-        if (projectBuilder_ == null) {
-          project_ = builderForValue.build();
+      public Builder setProjects(
+          int index, payment.v1alpha1.PaymentOuterClass.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.set(index, builderForValue.build());
           onChanged();
         } else {
-          projectBuilder_.setMessage(builderForValue.build());
+          projectsBuilder_.setMessage(index, builderForValue.build());
         }
-
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
        */
-      public Builder mergeProject(payment.v1alpha1.PaymentOuterClass.ProjectList value) {
-        if (projectBuilder_ == null) {
-          if (project_ != null) {
-            project_ =
-              payment.v1alpha1.PaymentOuterClass.ProjectList.newBuilder(project_).mergeFrom(value).buildPartial();
-          } else {
-            project_ = value;
+      public Builder addProjects(payment.v1alpha1.PaymentOuterClass.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
           }
+          ensureProjectsIsMutable();
+          projects_.add(value);
           onChanged();
         } else {
-          projectBuilder_.mergeFrom(value);
+          projectsBuilder_.addMessage(value);
         }
-
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
        */
-      public Builder clearProject() {
-        if (projectBuilder_ == null) {
-          project_ = null;
+      public Builder addProjects(
+          int index, payment.v1alpha1.PaymentOuterClass.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.add(index, value);
           onChanged();
         } else {
-          project_ = null;
-          projectBuilder_ = null;
+          projectsBuilder_.addMessage(index, value);
         }
-
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
        */
-      public payment.v1alpha1.PaymentOuterClass.ProjectList.Builder getProjectBuilder() {
-        
-        onChanged();
-        return getProjectFieldBuilder().getBuilder();
+      public Builder addProjects(
+          payment.v1alpha1.PaymentOuterClass.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
       }
       /**
-       * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
        */
-      public payment.v1alpha1.PaymentOuterClass.ProjectListOrBuilder getProjectOrBuilder() {
-        if (projectBuilder_ != null) {
-          return projectBuilder_.getMessageOrBuilder();
+      public Builder addProjects(
+          int index, payment.v1alpha1.PaymentOuterClass.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(index, builderForValue.build());
+          onChanged();
         } else {
-          return project_ == null ?
-              payment.v1alpha1.PaymentOuterClass.ProjectList.getDefaultInstance() : project_;
+          projectsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public Builder addAllProjects(
+          java.lang.Iterable<? extends payment.v1alpha1.PaymentOuterClass.Project> values) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, projects_);
+          onChanged();
+        } else {
+          projectsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public Builder clearProjects() {
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          projectsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public Builder removeProjects(int index) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.remove(index);
+          onChanged();
+        } else {
+          projectsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.Project.Builder getProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectsOrBuilder(
+          int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);  } else {
+          return projectsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>.payment.v1alpha1.ProjectList project = 10 [json_name = "project"];</code>
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          payment.v1alpha1.PaymentOuterClass.ProjectList, payment.v1alpha1.PaymentOuterClass.ProjectList.Builder, payment.v1alpha1.PaymentOuterClass.ProjectListOrBuilder> 
-          getProjectFieldBuilder() {
-        if (projectBuilder_ == null) {
-          projectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              payment.v1alpha1.PaymentOuterClass.ProjectList, payment.v1alpha1.PaymentOuterClass.ProjectList.Builder, payment.v1alpha1.PaymentOuterClass.ProjectListOrBuilder>(
-                  getProject(),
+      public java.util.List<? extends payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> 
+           getProjectsOrBuilderList() {
+        if (projectsBuilder_ != null) {
+          return projectsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(projects_);
+        }
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.Project.Builder addProjectsBuilder() {
+        return getProjectsFieldBuilder().addBuilder(
+            payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.Project.Builder addProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().addBuilder(
+            index, payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public java.util.List<payment.v1alpha1.PaymentOuterClass.Project.Builder> 
+           getProjectsBuilderList() {
+        return getProjectsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> 
+          getProjectsFieldBuilder() {
+        if (projectsBuilder_ == null) {
+          projectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder>(
+                  projects_,
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          project_ = null;
+          projects_ = null;
         }
-        return projectBuilder_;
+        return projectsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -15985,7 +16157,7 @@ public final class PaymentOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036payment/v1alpha1/payment.proto\022\020paymen" +
-      "t.v1alpha1\"\252\003\n\010Customer\022\016\n\002id\030\001 \001(\tR\002id\022" +
+      "t.v1alpha1\"\250\003\n\010Customer\022\016\n\002id\030\001 \001(\tR\002id\022" +
       "\037\n\013customer_id\030\002 \001(\tR\ncustomerId\022\'\n\017orga" +
       "nization_id\030\003 \001(\rR\016organizationId\022\022\n\004nam" +
       "e\030\004 \001(\tR\004name\022\024\n\005email\030\005 \001(\tR\005email\022?\n\013s" +
@@ -15994,50 +16166,50 @@ public final class PaymentOuterClass {
       ".payment.v1alpha1.PaymentListR\010payments\022" +
       "3\n\007invoice\030\010 \001(\0132\031.payment.v1alpha1.Invo" +
       "iceR\007invoice\0220\n\006biling\030\t \001(\0132\030.payment.v" +
-      "1alpha1.BilingR\006biling\0227\n\007project\030\n \001(\0132" +
-      "\035.payment.v1alpha1.ProjectListR\007project\"" +
-      "\302\001\n\007Project\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nproject_i" +
-      "d\030\002 \001(\tR\tprojectId\022\022\n\004name\030\003 \001(\tR\004name\022\024" +
-      "\n\005image\030\004 \001(\tR\005image\022 \n\013description\030\005 \001(" +
-      "\tR\013description\022\035\n\ncreated_at\030\006 \001(\tR\tcrea" +
-      "tedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\"\237\002\n" +
-      "\013Suscription\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016suscript" +
-      "ion_id\030\002 \001(\tR\rsuscriptionId\022.\n\023suscripti" +
-      "on_item_id\030\003 \001(\tR\021suscriptionItemId\022\035\n\ni" +
-      "nvoice_id\030\004 \001(\tR\tinvoiceId\022\024\n\005price\030\005 \001(" +
-      "\tR\005price\022\033\n\tprice_cpu\030\006 \001(\tR\010priceCpu\022\037\n" +
-      "\013price_bytes\030\007 \001(\tR\npriceBytes\022\032\n\010curren" +
-      "cy\030\010 \001(\tR\010currency\022\032\n\010interval\030\t \001(\tR\010in" +
-      "terval\"\217\001\n\007Payment\022\016\n\002id\030\001 \001(\tR\002id\022\030\n\007de" +
-      "fault\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 \001(\010R\007e" +
-      "nabled\022\024\n\005alias\030\004 \001(\tR\005alias\022*\n\004card\030\005 \001" +
-      "(\0132\026.payment.v1alpha1.CardR\004card\"\227\001\n\004Car" +
-      "d\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006numbe" +
-      "r\022\037\n\013card_holder\030\003 \001(\tR\ncardHolder\022\032\n\010ex" +
-      "pmonth\030\004 \001(\tR\010expmonth\022\030\n\007expyear\030\005 \001(\tR" +
-      "\007expyear\022\020\n\003cvc\030\006 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016" +
-      "\n\002id\030\001 \001(\tR\002id\022\026\n\006amount\030\002 \001(\003R\006amount\022\026" +
-      "\n\006period\030\003 \001(\tR\006period\022\034\n\tstatuspay\030\004 \001(" +
-      "\tR\tstatuspay\022\022\n\004date\030\005 \001(\tR\004date\022\030\n\007prod" +
-      "uct\030\006 \001(\tR\007product\"\310\001\n\006Biling\022\016\n\002id\030\001 \001(" +
-      "\tR\002id\022\035\n\ninvoice_id\030\002 \001(\tR\tinvoiceId\022!\n\014" +
-      "account_name\030\003 \001(\tR\013accountName\022\036\n\ntotal" +
-      "usage\030\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\003R\003cp" +
-      "u\022\020\n\003ram\030\006 \001(\003R\003ram\022\024\n\005month\030\007 \001(\tR\005mont" +
-      "h\022\022\n\004year\030\010 \001(\tR\004year\">\n\013InvoiceList\022/\n\005" +
-      "items\030\001 \003(\0132\031.payment.v1alpha1.InvoiceR\005" +
-      "items\"@\n\014CustomerList\0220\n\005items\030\001 \003(\0132\032.p" +
-      "ayment.v1alpha1.CustomerR\005items\"<\n\nBilin" +
-      "gList\022.\n\005items\030\001 \003(\0132\030.payment.v1alpha1." +
-      "BilingR\005items\"F\n\017SuscriptionList\0223\n\005item" +
-      "s\030\001 \003(\0132\035.payment.v1alpha1.SuscriptionR\005" +
-      "items\"8\n\010CardList\022,\n\005items\030\001 \003(\0132\026.payme" +
-      "nt.v1alpha1.CardR\005items\">\n\013PaymentList\022/" +
-      "\n\005items\030\001 \003(\0132\031.payment.v1alpha1.Payment" +
-      "R\005items\">\n\013ProjectList\022/\n\005items\030\001 \003(\0132\031." +
-      "payment.v1alpha1.ProjectR\005itemsB8Z6githu" +
-      "b.com/cuemby/ccp-payment-service/payment" +
-      "/v1alpha1b\006proto3"
+      "1alpha1.BilingR\006biling\0225\n\010projects\030\n \003(\013" +
+      "2\031.payment.v1alpha1.ProjectR\010projects\"\302\001" +
+      "\n\007Project\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nproject_id\030" +
+      "\002 \001(\tR\tprojectId\022\022\n\004name\030\003 \001(\tR\004name\022\024\n\005" +
+      "image\030\004 \001(\tR\005image\022 \n\013description\030\005 \001(\tR" +
+      "\013description\022\035\n\ncreated_at\030\006 \001(\tR\tcreate" +
+      "dAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\"\237\002\n\013S" +
+      "uscription\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016suscriptio" +
+      "n_id\030\002 \001(\tR\rsuscriptionId\022.\n\023suscription" +
+      "_item_id\030\003 \001(\tR\021suscriptionItemId\022\035\n\ninv" +
+      "oice_id\030\004 \001(\tR\tinvoiceId\022\024\n\005price\030\005 \001(\tR" +
+      "\005price\022\033\n\tprice_cpu\030\006 \001(\tR\010priceCpu\022\037\n\013p" +
+      "rice_bytes\030\007 \001(\tR\npriceBytes\022\032\n\010currency" +
+      "\030\010 \001(\tR\010currency\022\032\n\010interval\030\t \001(\tR\010inte" +
+      "rval\"\217\001\n\007Payment\022\016\n\002id\030\001 \001(\tR\002id\022\030\n\007defa" +
+      "ult\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 \001(\010R\007ena" +
+      "bled\022\024\n\005alias\030\004 \001(\tR\005alias\022*\n\004card\030\005 \001(\013" +
+      "2\026.payment.v1alpha1.CardR\004card\"\227\001\n\004Card\022" +
+      "\016\n\002id\030\001 \001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006number\022" +
+      "\037\n\013card_holder\030\003 \001(\tR\ncardHolder\022\032\n\010expm" +
+      "onth\030\004 \001(\tR\010expmonth\022\030\n\007expyear\030\005 \001(\tR\007e" +
+      "xpyear\022\020\n\003cvc\030\006 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002" +
+      "id\030\001 \001(\tR\002id\022\026\n\006amount\030\002 \001(\003R\006amount\022\026\n\006" +
+      "period\030\003 \001(\tR\006period\022\034\n\tstatuspay\030\004 \001(\tR" +
+      "\tstatuspay\022\022\n\004date\030\005 \001(\tR\004date\022\030\n\007produc" +
+      "t\030\006 \001(\tR\007product\"\310\001\n\006Biling\022\016\n\002id\030\001 \001(\tR" +
+      "\002id\022\035\n\ninvoice_id\030\002 \001(\tR\tinvoiceId\022!\n\014ac" +
+      "count_name\030\003 \001(\tR\013accountName\022\036\n\ntotalus" +
+      "age\030\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\003R\003cpu\022" +
+      "\020\n\003ram\030\006 \001(\003R\003ram\022\024\n\005month\030\007 \001(\tR\005month\022" +
+      "\022\n\004year\030\010 \001(\tR\004year\">\n\013InvoiceList\022/\n\005it" +
+      "ems\030\001 \003(\0132\031.payment.v1alpha1.InvoiceR\005it" +
+      "ems\"@\n\014CustomerList\0220\n\005items\030\001 \003(\0132\032.pay" +
+      "ment.v1alpha1.CustomerR\005items\"<\n\nBilingL" +
+      "ist\022.\n\005items\030\001 \003(\0132\030.payment.v1alpha1.Bi" +
+      "lingR\005items\"F\n\017SuscriptionList\0223\n\005items\030" +
+      "\001 \003(\0132\035.payment.v1alpha1.SuscriptionR\005it" +
+      "ems\"8\n\010CardList\022,\n\005items\030\001 \003(\0132\026.payment" +
+      ".v1alpha1.CardR\005items\">\n\013PaymentList\022/\n\005" +
+      "items\030\001 \003(\0132\031.payment.v1alpha1.PaymentR\005" +
+      "items\">\n\013ProjectList\022/\n\005items\030\001 \003(\0132\031.pa" +
+      "yment.v1alpha1.ProjectR\005itemsB8Z6github." +
+      "com/cuemby/ccp-payment-service/payment/v" +
+      "1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -16048,7 +16220,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_Customer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Customer_descriptor,
-        new java.lang.String[] { "Id", "CustomerId", "OrganizationId", "Name", "Email", "Suscription", "Payments", "Invoice", "Biling", "Project", });
+        new java.lang.String[] { "Id", "CustomerId", "OrganizationId", "Name", "Email", "Suscription", "Payments", "Invoice", "Biling", "Projects", });
     internal_static_payment_v1alpha1_Project_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_payment_v1alpha1_Project_fieldAccessorTable = new

@@ -14,7 +14,7 @@ message Customer {
   PaymentList payments = 7;
   Invoice invoice = 8;
   Biling biling = 9;
-  ProjectList project = 10;
+  repeated Project projects= 10;
 }
 
 message Project {
@@ -45,6 +45,7 @@ message Payment {
   bool enabled = 3;
   string alias = 4;
   Card card = 5;
+
 }
 
 message Card {
