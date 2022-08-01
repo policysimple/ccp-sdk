@@ -2670,7 +2670,6 @@ class CreateSuscriptionRequest final :
 
   enum : int {
     kCustomerIdFieldNumber = 2,
-    kSuscriptionFieldNumber = 3,
     kOrganizationIdFieldNumber = 1,
   };
   // string customer_id = 2 [json_name = "customerId"];
@@ -2686,24 +2685,6 @@ class CreateSuscriptionRequest final :
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_customer_id(const std::string& value);
   std::string* _internal_mutable_customer_id();
   public:
-
-  // .payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];
-  bool has_suscription() const;
-  private:
-  bool _internal_has_suscription() const;
-  public:
-  void clear_suscription();
-  const ::payment::v1alpha1::Suscription& suscription() const;
-  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::Suscription* release_suscription();
-  ::payment::v1alpha1::Suscription* mutable_suscription();
-  void set_allocated_suscription(::payment::v1alpha1::Suscription* suscription);
-  private:
-  const ::payment::v1alpha1::Suscription& _internal_suscription() const;
-  ::payment::v1alpha1::Suscription* _internal_mutable_suscription();
-  public:
-  void unsafe_arena_set_allocated_suscription(
-      ::payment::v1alpha1::Suscription* suscription);
-  ::payment::v1alpha1::Suscription* unsafe_arena_release_suscription();
 
   // uint32 organization_id = 1 [json_name = "organizationId"];
   void clear_organization_id();
@@ -2722,7 +2703,6 @@ class CreateSuscriptionRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr customer_id_;
-  ::payment::v1alpha1::Suscription* suscription_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
@@ -6049,7 +6029,6 @@ class ListProjectsResponse final :
   enum : int {
     kStatusFieldNumber = 3,
     kCustomerListFieldNumber = 1,
-    kProjectListFieldNumber = 2,
   };
   // string status = 3 [json_name = "status"];
   void clear_status();
@@ -6083,24 +6062,6 @@ class ListProjectsResponse final :
       ::payment::v1alpha1::CustomerList* customer_list);
   ::payment::v1alpha1::CustomerList* unsafe_arena_release_customer_list();
 
-  // .payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];
-  bool has_project_list() const;
-  private:
-  bool _internal_has_project_list() const;
-  public:
-  void clear_project_list();
-  const ::payment::v1alpha1::ProjectList& project_list() const;
-  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::ProjectList* release_project_list();
-  ::payment::v1alpha1::ProjectList* mutable_project_list();
-  void set_allocated_project_list(::payment::v1alpha1::ProjectList* project_list);
-  private:
-  const ::payment::v1alpha1::ProjectList& _internal_project_list() const;
-  ::payment::v1alpha1::ProjectList* _internal_mutable_project_list();
-  public:
-  void unsafe_arena_set_allocated_project_list(
-      ::payment::v1alpha1::ProjectList* project_list);
-  ::payment::v1alpha1::ProjectList* unsafe_arena_release_project_list();
-
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.ListProjectsResponse)
  private:
   class _Internal;
@@ -6110,7 +6071,6 @@ class ListProjectsResponse final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::payment::v1alpha1::CustomerList* customer_list_;
-  ::payment::v1alpha1::ProjectList* project_list_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 };
@@ -8597,92 +8557,6 @@ inline void CreateSuscriptionRequest::set_allocated_customer_id(std::string* cus
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CreateSuscriptionRequest.customer_id)
 }
 
-// .payment.v1alpha1.Suscription suscription = 3 [json_name = "suscription"];
-inline bool CreateSuscriptionRequest::_internal_has_suscription() const {
-  return this != internal_default_instance() && suscription_ != nullptr;
-}
-inline bool CreateSuscriptionRequest::has_suscription() const {
-  return _internal_has_suscription();
-}
-inline const ::payment::v1alpha1::Suscription& CreateSuscriptionRequest::_internal_suscription() const {
-  const ::payment::v1alpha1::Suscription* p = suscription_;
-  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::Suscription&>(
-      ::payment::v1alpha1::_Suscription_default_instance_);
-}
-inline const ::payment::v1alpha1::Suscription& CreateSuscriptionRequest::suscription() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.CreateSuscriptionRequest.suscription)
-  return _internal_suscription();
-}
-inline void CreateSuscriptionRequest::unsafe_arena_set_allocated_suscription(
-    ::payment::v1alpha1::Suscription* suscription) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(suscription_);
-  }
-  suscription_ = suscription;
-  if (suscription) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.CreateSuscriptionRequest.suscription)
-}
-inline ::payment::v1alpha1::Suscription* CreateSuscriptionRequest::release_suscription() {
-  
-  ::payment::v1alpha1::Suscription* temp = suscription_;
-  suscription_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::payment::v1alpha1::Suscription* CreateSuscriptionRequest::unsafe_arena_release_suscription() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.CreateSuscriptionRequest.suscription)
-  
-  ::payment::v1alpha1::Suscription* temp = suscription_;
-  suscription_ = nullptr;
-  return temp;
-}
-inline ::payment::v1alpha1::Suscription* CreateSuscriptionRequest::_internal_mutable_suscription() {
-  
-  if (suscription_ == nullptr) {
-    auto* p = CreateMaybeMessage<::payment::v1alpha1::Suscription>(GetArenaForAllocation());
-    suscription_ = p;
-  }
-  return suscription_;
-}
-inline ::payment::v1alpha1::Suscription* CreateSuscriptionRequest::mutable_suscription() {
-  ::payment::v1alpha1::Suscription* _msg = _internal_mutable_suscription();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.CreateSuscriptionRequest.suscription)
-  return _msg;
-}
-inline void CreateSuscriptionRequest::set_allocated_suscription(::payment::v1alpha1::Suscription* suscription) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(suscription_);
-  }
-  if (suscription) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(suscription));
-    if (message_arena != submessage_arena) {
-      suscription = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, suscription, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  suscription_ = suscription;
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.CreateSuscriptionRequest.suscription)
-}
-
 // -------------------------------------------------------------------
 
 // CreateSuscriptionResponse
@@ -10823,92 +10697,6 @@ inline void ListProjectsResponse::set_allocated_customer_list(::payment::v1alpha
   }
   customer_list_ = customer_list;
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ListProjectsResponse.customer_list)
-}
-
-// .payment.v1alpha1.ProjectList project_list = 2 [json_name = "projectList"];
-inline bool ListProjectsResponse::_internal_has_project_list() const {
-  return this != internal_default_instance() && project_list_ != nullptr;
-}
-inline bool ListProjectsResponse::has_project_list() const {
-  return _internal_has_project_list();
-}
-inline const ::payment::v1alpha1::ProjectList& ListProjectsResponse::_internal_project_list() const {
-  const ::payment::v1alpha1::ProjectList* p = project_list_;
-  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::ProjectList&>(
-      ::payment::v1alpha1::_ProjectList_default_instance_);
-}
-inline const ::payment::v1alpha1::ProjectList& ListProjectsResponse::project_list() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.ListProjectsResponse.project_list)
-  return _internal_project_list();
-}
-inline void ListProjectsResponse::unsafe_arena_set_allocated_project_list(
-    ::payment::v1alpha1::ProjectList* project_list) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_list_);
-  }
-  project_list_ = project_list;
-  if (project_list) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.ListProjectsResponse.project_list)
-}
-inline ::payment::v1alpha1::ProjectList* ListProjectsResponse::release_project_list() {
-  
-  ::payment::v1alpha1::ProjectList* temp = project_list_;
-  project_list_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::payment::v1alpha1::ProjectList* ListProjectsResponse::unsafe_arena_release_project_list() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.ListProjectsResponse.project_list)
-  
-  ::payment::v1alpha1::ProjectList* temp = project_list_;
-  project_list_ = nullptr;
-  return temp;
-}
-inline ::payment::v1alpha1::ProjectList* ListProjectsResponse::_internal_mutable_project_list() {
-  
-  if (project_list_ == nullptr) {
-    auto* p = CreateMaybeMessage<::payment::v1alpha1::ProjectList>(GetArenaForAllocation());
-    project_list_ = p;
-  }
-  return project_list_;
-}
-inline ::payment::v1alpha1::ProjectList* ListProjectsResponse::mutable_project_list() {
-  ::payment::v1alpha1::ProjectList* _msg = _internal_mutable_project_list();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ListProjectsResponse.project_list)
-  return _msg;
-}
-inline void ListProjectsResponse::set_allocated_project_list(::payment::v1alpha1::ProjectList* project_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_list_);
-  }
-  if (project_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_list));
-    if (message_arena != submessage_arena) {
-      project_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, project_list, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  project_list_ = project_list;
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ListProjectsResponse.project_list)
 }
 
 // string status = 3 [json_name = "status"];
